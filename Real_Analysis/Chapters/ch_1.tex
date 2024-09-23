@@ -1,0 +1,577 @@
+\section{Types of Numbers}
+
+The \gls{natural numbers}, $\N$:
+\begin{itemize}
+    \item No additive inverse.
+    \item You can:
+    \begin{itemize}
+        \item Add,
+        \item Multiply
+    \end{itemize}
+\end{itemize}
+
+The \gls{integers}, $\Z$ are known as a Group (more specifically, a ``ring'').
+
+\begin{itemize}
+    \item You can:
+    \begin{itemize}
+        \item Add,
+        \item Multiply,
+        \item Subtract
+    \end{itemize}
+\end{itemize}
+
+The \gls{rational numbers}, $\Q$ are known as a ``Field.''
+
+\begin{itemize}
+    \item You can:
+    \begin{itemize}
+        \item Add,
+        \item Subtract,
+        \item Multiply,
+        \item Divide
+    \end{itemize}
+\end{itemize}
+
+A problem that rational numbers could not explain: The $45, 45, 90$ triangle had a hypotenuse of $\sqrt{2}$. This did not exist at the time, so it was simply $c^2 = 2$. Therefore, new numbers needed to be invented.
+
+\begin{theorem}
+    There does not exist a rational number $r$ such that $r^2 = 2$.
+\end{theorem}
+
+\tpf{
+    Suppose there exists a rational number $r$ such that $r^2 = 2$. Since $r$ is rational, there exists $p,q \in \Z$ such that $r = \frac{p}{q}$. We can assume the $p$ and $q$ have no common factors. (If not, we can factor out the common factor.) By our assumption, 
+    \begin{align*}
+        r^2 &= 2 \\
+        \frac{p^2}{q^2} &= 2 
+    \end{align*}
+    It follows that, \begin{align*}
+        p^2 = 2q^2
+    \end{align*}
+    Such that $p^2$ is an even number because if $p$ were odd, then $p^2$ would be odd. There exists $x \in \Z$ such that $p = 2x$. Recall that $p^2 = 2q^2$. Thus\begin{align*}
+        (2x)^2 &= 2q^2 \\
+        4x^2 &= 2q^2 \\
+        2x^2 &= q
+    \end{align*} Thus, $q^2$ is even. Hence $q$ is also even. So $p$ and $q$ are both divisible by 2. This contradicts that $p$ and $q$ have no common factors. Thus, our supposition is false. Therefore, there does not exist a rational number $r$ such that $r^2 = 2$ 
+}
+
+So we are going to work with a larger set called the real numbers, $\R$. 
+\begin{itemize}
+    \item $\N \subset \Z \subset \Q \subset \R$
+    \item You can:
+    \begin{itemize}
+        \item Add,
+        \item Subtract,
+        \item Multiply,
+        \item Divide
+    \end{itemize}
+    \item In other words, all field axioms apply.
+    \item Totally ordered set for any $x,y \in \R$. Thus, one of these are true:
+    \begin{enumerate}
+        \item $x < y$,
+        \item $x > y$,
+        \item $x = y$
+    \end{enumerate}
+    \item  Think of it as a number line.
+    \item $\Q$ is dense: \\
+    If $a,b \in \Q$ with $a \ne b$, there exists $c \in \Q$ which is between $a$ and $b$ such that $a < c < b$. One example is $\frac{a + b}{2}$.
+    \item $\Q$ is not \textit{complete}, but $\R$ is.
+    \begin{itemize}
+        \item \textit{Complete:} Think, ``no gaps.''
+    \end{itemize}
+\end{itemize}
+
+\section{Preliminaries}
+
+Things to remember from Intro and Discrete.
+
+\begin{table}[htbp]
+\begin{tabular}{c||c}
+Set Notation & Complement \\
+\hline 
+$x \in A$ & $A^c$ (not $\overline{A}$) \\
+$A \cup B$ & $\R \setminus A$ \\
+$A \cap B$
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\item $\displaystyle \bigcup^\infty_{n=1} A_n = A_1 \cup A_2 \cup A_3 \cup \dots$. \\
+
+\item $\displaystyle \bigcap^\infty_{n=1} A_n = A_1 \cap A_2 \cap \dots$. \\
+
+\item \textbf{\Gls{De Morgan's Laws}} \\
+\end{itemize}
+
+
+\pfs
+
+\subsection{Infinite Unions and Intersections} \hfill
+
+For each $n \in \N$, define $A_n = \{n, n+1, n+2,\dots\} = \{k \in \N \ | \ k \geq n\}$. In other words, each subsequent element in the subset will start at $n$. For example, $A_1 = \{1,2,\dots\}$, whereas $A_5 = \{5,6,\dots\}.$   \\
+
+$\bigcup^\infty_{n=1} A_n = \N$. To show a number $\in \N$ belongs in the set $A_n$, we can start with that, $k \in \N$. Then $k \in A_k$. Thus, $k \in A_k \subseteq \bigcup^\infty_{n=1}A_n$. therefore, $\N \subseteq \bigcup^\infty_{n=1}A_n$. \\
+
+$\bigcap^\infty_{n=1}A_n = \emptyset$. Obviously, we know that the empty set is a subset of $A_n$, but to prove that $\bigcap^\infty_{n=1}A_n$ is a subset of the empty set, we should suppose a $k \in \N$ such that $k \in \bigcap^\infty_{n=1}A_n$. Notice that $k \notin \bigcap^\infty_{n=1}A_n$. So, $\bigcap^\infty_{n=1}A_n = \emptyset$.
+
+\pfs
+
+\subsection{Functions and Notation} \hfill
+
+$f \colon A \rightarrow B$ where $f$ is a function, $A$ is a domain, and $B$ is the co-domain. Thus, $f(x) = y$ such that $x \in A$ and $y \in B$. \\
+
+Some definitions to keep in mind: \\
+
+\textbf{\Gls{The Dirichlet Function}} \\
+
+\textit{[Refer to notepaper for these following definitions]} \\
+
+\textbf{\Gls{image}} \\
+
+Example: $g \ \colon \ \R \rightarrow \R$, when we say $y \in g(A)$ implies $\exists x$ such that $g(x) = y$
+
+\textbf{\Gls{pre-image}} \\
+
+\textbf{\Gls{triangle inequality}}: \\
+The most common application: For any $a,b,c \in \R$, $|a - b| \leq |a-c| + |c-b|$, with the intermediate step of $a - b = (a-c) + (c-b)$.
+
+\subsection{Common Strategies for Analysis Proofs} \hfill
+
+\setcounter{BoxCounter}{5}
+\begin{theorem}
+    Let $a,b \in \R$. Then, $$a = b \text{ if and only if for all } \epsilon > 0, |a-b| < \epsilon.$$
+\end{theorem}
+
+\iffpf
+    {Assume $a = b$. Let $\epsilon > 0$. Then $|a-b| = 0 < \epsilon$}
+    {Assume for all $\epsilon > 0$, $|a-b| < \epsilon$. Suppose $a \ne b$. Then $a - b \ne 0$. So, $|a-b| \ne 0$. Now, Consider $\epsilon_0 = |a-b|$. By our assumption we know that $|a-b| < \epsilon_0$. It is not true that $|a-b| < |a - b|$. Therefore, it must be the case that $a = b$.}
+    {Therefore, by showing both sides of the implication accomplish the same thing as the other side, we know that $a = b \text{ if and only if for all } \epsilon > 0, |a-b| < \epsilon.$}
+    {xblue}
+
+\subsection{Mathematical Induction} \hfill
+
+\textit{Inductive Hypothesis:} Let $x_1 = 1$. For all $n \in \N$, let $x_{n+1} = \frac{1}{2}x_n + 1$. \\
+
+\textit{Inductive Step:} $x_1 = 1, x_2 = 1.5, x_3 = 1.75, x_4 = 1.875$. \\
+
+\begin{example}
+    {Induction} The sequence $(x_n)$ is increasing. In other words, for all $n\in \N$, $x_n \leq x_{n+1}$. 
+\end{example}
+
+\epf{
+    Suppose the sequence $(x_n)$ is increasing. We will prove this point by using induction. \\
+    
+    \textbf{Base Case:} We see that $x_1 = 1$ and $x_2 = 1.5$. Thus, $x_1 \leq x_2$. \\
+    
+    \textbf{Inductive Hypothesis:} For $n \in \N$, assume $x_n \leq x_{n+1}$. \\
+    
+    \indent \textit{Scratch work:} We want: $x_{n+1} \leq x_{n+2}$. We know: $x_{n+1} = \frac{1}{2}x_{n+1}+1$. \\
+    
+    \textbf{Inductive Step:} Then $\frac{1}{2}x_n \leq \frac{1}{2}x_{n+1}$. Hence, $\frac{1}{2}x_{n} + 1 \leq \frac{1}{2}x_{n+1} + 1$. Therefore we have proven through induction that, $x_{n+1} \leq x_{n+2}$.
+}
+
+\subsection*{Exercises}
+
+\begin{exercise}
+    {1.2.3}Decide which of the following represent true statements about
+the nature of sets. For any that are false, provide a specific example where the
+statement in question does not hold.
+\begin{enumerate}
+    \item If $A_1 \supseteq A_2 \supseteq A_3 \supseteq A_4\dots$ are all sets containing an infinite number of
+elements, then the intersection $\bigcap^\infty_{n=1} A_n$ is infinite as well.
+    \item If $A_1 \supseteq A_2 \supseteq A_3 \supseteq A_4\dots$ are all finite, nonempty sets of real numbers,
+then the intersection $\bigcap^\infty_{n=1} A_n$ is finite and nonempty.
+    \item $A \cap (B \cup C) = (A \cap B) \cup C$
+    \item $A \cap (B \cap C) = (A \cap B) \cap C$
+    \item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+\end{enumerate}
+\end{exercise}
+
+\sol{\hfill
+    \begin{enumerate}
+        \item This is false. Consider the following as a counterexample: If we define $A_1$ as $A_n = \{n, n+1, n+2,\dots\} = \{k \in \N \ | \ k \geq n\}$, we can see why the intersection of these sets of infinite numbers are actually empty. Consider a number $m$ that actually satisfies $m \in A_n$ for every $A_n$ in our collection of sets. Because $m$ is not an element of $A_{m + 1}$, no such $m$ exists and the intersection is empty.
+        \item This is false. Consider the following as a counter example: Since $A_n$ is finite, consider the following sets: $A_1 = \{1\}$, $A_2 = \{2\}$, and so on. The intersection of these sets is empty because none of the sets contain numbers that are present in the other sets.
+        \item This is false. Let the following sets be defined as $A = \{1\}$, $B = \{2\}$, $C = \{3\}$. If we start on the left side of the equation: $A \cap (B \cup C)$ implies $\{1\} \cap (\{2\} \cup \{3\})$ implies $\{1\} \cap \{2, 3\}$ implies $\emptyset$. From the right: $(A \cap B) \cup C$ implies $ (\{1\} \cap \{2\}) \cup \{3\}$ implies $ \emptyset \cup \{3\}$ implies $ \{\emptyset, 3\}$.
+        \item  This is true. Let $x \in A$, $y \in B$, and $z \in C$. Consider the following:
+        \begin{enumerate}[label=(\arabic*)]
+            \item \textbf{From the left of the equation:} Inside the parenthesis, either the sets share an element and combine, or they do not share an element and are empty. This means we have two possibilities:
+            \begin{enumerate}[label=\roman*.]
+                \item \textbf{If the set inside the parenthesis is not empty}, then we have $x$ and $y \in A \cap B$. Then it could be the case that $x$ and $y \in C$. From this, we know 3 things can occur. Either every set contains only $y$, or $x$ and $y$.
+                \item \textbf{If the set inside the parenthesis is empty}, then the resulting intersection with $C$ would be the empty set.
+            \end{enumerate}
+            \item \textbf{From the right of the equation:} Similar to (1), either the sets share an element and combine, and they do not share an element and are empty. This means we have two possibilities:
+            \begin{enumerate}[label=\roman*.]
+                \item \textbf{If the set inside the parenthesis is not empty}, then we have $y$ and $z \in B \cap C$. Then it could be the case that $y$ and $z \in A$. From this, we know 2 things can occur. Either every set contains only $y$, or $y$ and $z$.
+                \item \textbf{If the set inside the parenthesis is empty}, then the resulting intersection with $A$ would be the empty set.
+            \end{enumerate}
+            \item In every case, either we get the empty set, or end up in a situation where every set contains just $y$ or all elements. Hence, the two sides of the equation will always equal each other. 
+        \end{enumerate}
+        \item This is true. Because $B \cap C$ contains all the elements in $B$ or $C$, so when the intersection is taken on either side of the equation, you will have the same elements regardless. (This statement is much shorter than the explanation given in the previous problem because I am unsure if I even a proof at all. I'm testing both waters here.) 
+    \end{enumerate}
+}
+
+\newpage
+\begin{exercise}
+    {1.2.5}\Gls{De Morgan's Laws}. Let $A$ and $B$ be subsets of $\R$.
+    \begin{enumerate}
+        \item  If $x \in (A \cap B)^c$, explain why $x \in A^c \cup B^c$. This shows that $(A \cap B)^c \subseteq A^c \cup B^c$.
+        \item Prove the reverse inclusion $(A \cap B)^c \supseteq A^c \cup B^c$, and conclude that $(A \cap B)^c = A^c \cup B^c$.
+        \item Show $(A \cup B)^c = A^c \cap B^c$ by demonstrating inclusion both ways.
+    \end{enumerate}
+\end{exercise}
+
+\sol{\hfill
+    \begin{enumerate}
+        \item If $x \in (A \cap B)^c$, and we know that $A^c = \{x \in \R \ \colon x \notin A\}$, then we know $x$ must cannot exist in $A^c$ and $B^c$ because $(A \cap B)^c = \{x \in \R \ \colon x \notin (A \cap B)\}$. Thus, $x$ is in either $A^c$ or $B^c$. Put another way $x \in A^c \cup B^c$. Since we have shown that an element that started in $(A \cap B)^c$ ended up in $A^c \cup B^c$, then we know $(A \cap B)^c \subseteq A^c \cup B^c$.
+        \item Assume there exists a $y \in A^c \cup B^c$. Thus, it must be the case that $y \notin A$ or $y \notin B$. Hence, $y$ cannot be exist in both sets at the same time, so $y \in (A \cap B)^c$. Because we have taken an element that started in $A^c \cup B^c$ and have shown that it exists in $(A \cap B)^c$, we have proven $A^c \cup B^c \subseteq (A \cap B)^c$. 
+        \item\hfill \sbseteqpf
+    {Assume there exists $x \in (A \cap B)^c$, and we know that $A^c = \{x \in \R \ \colon x \notin A\}$, then we know $x$ must cannot exist in $A^c$ and $B^c$ because $(A \cap B)^c = \{x \in \R \ \colon x \notin (A \cap B)\}$. Thus, $x$ is in either $A^c$ or $B^c$. Put another way $x \in A^c \cup B^c$. Since we have shown that an element that started in $(A \cap B)^c$ ended up in $A^c \cup B^c$, then we know $(A \cap B)^c \subseteq A^c \cup B^c$.}
+    {Now assume there exists a $y \in A^c \cup B^c$. Thus, it must be the case that $y \notin A$ or $y \notin B$. Hence, $y$ cannot be exist in both sets at the same time, so $y \in (A \cap B)^c$. Because we have taken an element that started in $A^c \cup B^c$ and have shown that it exists in $(A \cap B)^c$, we have proven $A^c \cup B^c \subseteq (A \cap B)^c$.}
+    {Therefore, we have shown through proving both sides of the implication, that these two statements are logically equivalent. In that, all elements of $A^c \cup B^c$ are the same elements that are in $(A \cap B)^c$}
+    {xgray}
+    \end{enumerate}
+}
+
+
+
+\begin{exercise}
+    {1.2.7}Given a function $f$ and a subset $A$ of its domain, let $f(A)$
+represent the range of $f$ over the set $A$; that is, $f(a) = \{f(x) \colon x \in A\}$.
+\begin{enumerate}
+    \item Let $f(x) = x^2$. if $A = [0,2]$ (the closed interval $\{x \in \R \colon 0 \leq x \leq 2\}$) and $B = [1,4]$, find $f(A)$ and $f(B)$. Does $f(A\cap B) = f(A) \cap f(B)$ in this case? Does $f(A \cup B) = f(A) \cup f(B)$?
+    \item Find two sets $A$ and $B$ for which $f(A\cap B) \ne f(A) \cap f(B)$.
+    \item Show that, for an arbitrary function $g \ \colon \ \R \rightarrow \R$, it is always true that $g(A \cap B) \subseteq g(A) \cap g(B)$ for all sets $A,B\subseteq \R$.
+    \item Form and prove a conjecture about the relationship between $g(A \cup B)$ and $g(A) \cup g(B)$ for an arbitrary function $g$.
+\end{enumerate}
+\end{exercise}
+
+\sol{\hfill
+    \begin{enumerate}
+        \item Since $f(x) = x^2$, the intervals of $f(A)$ would be $[0,4]$ and $f(B)$ would be $[1,16]$. The interval of the intersection of $A \cap B$ is $[1,2]$. Take this through our function, we get $f(A \cap B) = [1,4]$. On the other side of the equation, we already know the intervals of $f(A)$ and $f(B)$, and the intersection of theirs would be $[1,4]$. So they do equal each other. We know $f(A \cup B)$ and $f(A) \cup f(B)$ will be equivalent because $f(A \cup B)$ has an interval of $[0,16]$, and $f(A) \cup f(B)$ also has an interval of $[0,16]$ because taking the union of $[0,4] \cup [1,16]$ is $[0,16]$.
+        \item Two sets could be $A = [5,6]$ and $B = [0,0]$. Because the sets have nothing in common even after taking their function, they do not equal each other. 
+        \item \hfill \expf{Let $x \in g(A \cap B)$. Using the definition of function, we know there exists a $y \in A \cap B$ to which that $y$ is mapped to as $g(y) = x$. From the definition of intersection, we know $y \in A$ and $y \in B$ such that $x = g(y) \in g(A)$ and $x = g(y) \in g(B)$ because $y \in A \cap B$. Putting it together, we have $x \in g(A) \cap g(B)$ thus proving $g(A \cap B) \subseteq g(A) \cap g(B)$}
+        \item Conjecture: For any function $g$ defined as $g \ \colon \R \rightarrow \R$ and for any subsets $A,B \subseteq \R$, the following holds: $$g(A \cup B) = g(A) \cup g(B)$$ 
+        \sbseteqpf
+        {Take any element $x \in g(A \cap B)$. By definition of function, we know there exists some $y \in A \cup B$ such that $g(x) = y$. From the definition of union, we know $y \in A$ or $y \in B$ such that $x = g(y) \in g(A)$ or $x = g(y) \in g(B)$ or both. Putting it together, we have $x \in g(A) \cup g(B)$ thus proving $g(A \cup B) \subseteq g(A) \cup g(B)$.}
+        {Take any element $p \in g(A) \cap g(B)$. By definition of union, we know $p$ is either in $g(A)$ or $g(B)$ or both. From the definition of function, we know that if $p \in g(A)$ or $p \in g(B)$ then there exists some $q \in A$ or $q \in B$ such that $g(q) = p$. Putting it together, we have $q \in A \cup B$. Moreover, this means $p = g(x) \in g(A \cup B)$. And since $p \in g(A) \cup g(B)$ implies $p \in g(A \cup B)$, we know $g(A) \cup g(B) \subseteq g(A \cup B)$.}
+        {Therefore, since we have proven that both expressions are functions of each other, we have proved that they are equal.}
+        {xgray}
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {1.2.8}Given a function $f \ \colon A \rightarrow B$ can be defined as either \gls{one-to-one} or \gls{onto}, give an example of each or state that the request is impossible:
+    \begin{enumerate}
+        \item $f \ \colon \N \rightarrow \N$ that is 1-1 but not onto.
+        \item $f \ \colon \N \rightarrow \N$ that is onto but not 1-1.
+        \item $f \ \colon \N \rightarrow \Z$ that is 1-1 and onto.
+    \end{enumerate}
+\end{exercise}
+
+\sol{\hfill
+    \begin{enumerate}
+        \item The function $f(a) + 1$ is 1-1 because when \begin{align*}
+            f(a_1) &= f(a_2)\\
+            a_1 + 1 &= a_2 + 1 \\
+            a_1 &= a_2
+        \end{align*}
+        However, the function is not onto because the entire co-domain is not covered. That being 1.
+        \item \textit{We need to find a function that will cover every entry in the co-domain, while also avoiding a scenario where $a_1 = a_2$...} Consider the function, 
+        $$f(a) =
+        \begin{cases}
+            a &\text{ if \textit{a} is odd,}\\
+            a - 1 &\text{ if \textit{a} is even}
+        \end{cases}$$
+        This function is onto because every natural number is covered, but it is not 1-1 because $a_1 \ne a_2 - 1$.
+        \item This request is not possible. There is no way to map every natural number to every integer because we are simply missing 0! (Not 0 factorial, we do have the number 1, I just mean the number 0 in a exclamatory sense.)
+    \end{enumerate}
+}
+\setcounter{section}{2}
+\section{Axiom of Completeness}
+
+Think about $\Q$ and $\R$.
+    \begin{itemize}
+        \item Both are fields.
+        \begin{itemize}
+            \item Both have $+,-,\times,\div$ operations.
+        \end{itemize}
+        \item Both are totally ordered
+        \begin{itemize}
+            \item $a < b$,
+            \item $a > b$, 
+            \item or $a = b$
+        \end{itemize}
+        \item $\R$ is complete. $\Q$ is not.
+    \end{itemize}
+    
+\begin{axiom}
+    {Completeness}Every nonempty set of real numbers that is \textbf{\gls{bounded}} has a \textbf{\gls{least upper bound}}.
+\end{axiom}
+
+\textbf{Note that \glspl{upper bound} are not unique!} For example, consider the line, $A$, from $0$ to $1$. There are infinitely many upper bounds past $1$ because $A$ is bounded. \\
+
+We often call the least upper bound the \textit{supremum} of a set. Example: \\
+
+Imagine a number line from $(1,8)$. Note that parenthesis mean $<$ and not $\leq$. Hence, the supremum is $8$. Wrote simply as $\sup A$. \\
+
+\begin{example}
+    {Supremum}Consider a set, $B = [-5,-2] \cup (3,6) \cup \{13\}$. What is the supremum?
+\end{example}
+
+\sol{
+    $\sup B = 13$
+}
+
+At the other end of the set, we have the following:
+\begin{itemize}
+    \item lower bounds,
+    \item greatest lower bound
+    \item often called infimum.
+\end{itemize}
+
+The infimum of the previous example would be $\inf B = -5$.
+
+\begin{example}
+    {}Consider the set, $\C = \{\frac{1}{n} \ \colon \ n \in \N\}$. What is the supremum and the infimum?
+\end{example}
+
+\lesol{
+    $\sup \C = 1$, $\inf \C = 0$.
+}
+
+\begin{example}
+    Let $A \subseteq \R$ be nonempty and bounded above, and let $c \in \R$. Define the set $c + A$ by $$c + A = \{c+a \ \colon \ a \in A\}$$ Then $\sup(c + A) = c + \sup A$.
+\end{example}
+
+\lesol{
+To properly verify this we focus separately on each part of Definition 1.3.2. Setting $s = \sup A$, we see that $a \leq s$ for all $a \in A$, which implies $c + a \leq c + s$ for all $a \in A$. Thus, $c + s$ is an upper bound for $c + A$ and condition (i) is verified. For (ii), let $b$ be an arbitrary upper bound for $c + A$; i.e., $c + a \leq b$ for all $a \in A$. This is equivalent to $a \leq b - c$ for all $a \in A$, from which we conclude that $b - c$ is an upper bound for $A$. Because $s$ is the least upper bound of $A$, $s \leq b - c$, which can be rewritten as $c + s \leq b$. This verifies part (ii) of Definition 1.3.2, and we conclude $\sup (c + A) = c + \sup A$.
+}
+
+Why do we need to include infimum and supremum? Don't we have the max and min of a set already? Well, what exactly do we mean by the \gls{maximum value} of a set? \\
+
+We say $m \in \R$ is the \textit{maximum} of $A$ if $m \in A$ and for all $x\in A$, $x \leq m$. Note that some sets have a maximum and some sets do not. You cannot refer to a maximum without first knowing it exists. This is the same with minimums. Suprema do not exist if the set is bounded.
+
+\begin{lemma}
+    {1.3.8}Assume $s$ is an \gls{upper bound} for a set $A \subseteq \R$. Then, $s$ is the supremum of $A$ if and only if for every $\epsilon > 0$, there exists $x\in A$ such that $s - \epsilon < x$.
+\end{lemma}
+
+This lemma allows us to take any positive number and take a ``step back.'' In essence, you can verify something as an upper bound if you continuously back up over and over until you cannot back up any longer.
+
+\iffpf
+{
+Assume $s = \sup A$. Let $\epsilon > 0$. Suppose there are no elements $x$ of $A$ such that $s - \epsilon < x$. Then $s - \epsilon$ would be an upper bound. This contradicts that $s$ is the least upper bound. Therefore, there must exist an element $x \in A$ such that $s - \epsilon < x$. 
+}{
+Assume for every $\epsilon > 0$, there exists $x \in A$ such that $s - \epsilon < x$. Let $t$ be an upper bound of $A$. Suppose $t < s$. Consider $\epsilon_0 = s - t > 0$. By our assumption, there exists $x \in A$ such that $s - \epsilon_0 < x$. So, $t < x$. This contradicts that $t$ is an upper bound of $A$. So, $t \geq s$. Thus, $s$ is the least upper bound
+}{
+Therefore, by proving both the right and left implication, we have shown the statement to be true.
+}{xpurple}
+Analogous statement about infimums: Assume $z$ is a lower bound of a set $A \subseteq \R$. Then $z = \inf A \iff $ for all $ \epsilon >0$, there exists $y \in A$ such that $y < z + \epsilon$.
+
+\subsection*{Exercises}
+
+\begin{exercise}
+    {1.3.4}Let $A_1,A_2,A_3\dots$ be a collection of nonempty sets each of which is bounded above. 
+    \begin{enumerate}
+        \item Find a formula for $\sup(A_1 \cup A_2)$. Extend this to $\sup (\bigcup^n_{k=1}A_k)$.
+        \item Consider $\sup(\bigcup^\infty_{k=1} A_k)$. Does the formula in (a) extend to the infinite case?
+    \end{enumerate}
+\end{exercise}
+
+\sol{\hfill
+\begin{enumerate}
+    \item Let $A_1$ and $A_2$ be nonempty sets, each bounded above. To find the largest of the two suprema, we can use the following: $\sup(A_1 \cap A_2) = \max\{\sup A_1, \sup A_2\}$. If we extend this notion to $\sup (\bigcup^n_{k=1}A_k)$, we can use the same idea from before and write it as $\sup (\bigcup^n_{k=1}A_k) = \max\{\sup A_1, \sup A_2, \dots, \sup A_n\}$.
+    \item The formula does not extend to the infinite case. Consider the counterexample $\bigcup^\infty_{k=1} A_k$ where $A_k := [k, k+1]$. Even though these sets are bounded above, when we take the union of them, we approach infinity, which is not bounded: $\bigcup^\infty_{k=1} A_k = [1,2] \cup [2,3] \cup \dots = [1, \infty)$.
+\end{enumerate}
+}
+
+\begin{exercise}
+    {1.3.5}As in Example 1.3.7, let $A \subseteq \R$ be nonempty and bounded above, and let $c \in \R$. This time define the set $cA = \{ca \ \colon a \in A\}$.
+    \begin{enumerate}
+        \item If $c \geq 0$, show that $\sup(cA) = c\sup A$.
+        \item Postulate a similar type of statement for $\sup(cA)$ for the case $c < 0$.
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+\begin{enumerate}
+    \item Let $A \subseteq \R$ be nonempty and bounded above. Define the set $cA := \{ca \ \colon a \in A\}$. From the axiom of completeness, because $A$ is bounded above, we know there is a least upper bound, $s = \sup A$. Following from Example 1.3.7, we see that $a \leq s$ for all $a \in A$ which implies $ca \leq cs$ for all $a \in A$. Thus, $cs$ is an upper bound for $cA$, and the first condition of Definition 1.3.2 is satisfied. For the second condition, we need to look at both $c = 0$ and $c > 0$ to avoid dividing by zero. So, we have two cases:
+    \begin{itemize}
+        \item \textbf{$c = 0$:} If $c = 0$, then $cA = \{0 \colon \ a \in A\} = \{0\}$. Since the only element in $cA$ is $0$, $\sup(cA) = 0$. Similarly, because $c = 0$, $c \sup A = 0 \cdot \sup A = 0$. Therefore, $\sup(cA) = c \sup(A)$.
+        \item \textbf{$c > 0$:} Let $b$ be an arbitrary upper bound for $cA$ and $c > 0$. In other words, $ca \leq b$ for all $a \in A$. This is equivalent to $a \leq b / c$ where $c \ne 0$, from which we can see that $b / c$ is an upper bound for $A$. Because $s$ is the least upper bound of $A$, $s \leq b / c$, which can be rewritten as $cs \leq b$. This verifies the second part of Definition 1.3.2, and we conclude $\sup(cA) = c \sup A$.
+    \end{itemize}
+    \item Postulate: If $c < 0$, then $\sup(cA) = c \inf (A)$. \\
+    % \expf{Assume $c < 0$, Multiplying $a \leq s$ by $c$ reverses the inequality, so $ca \geq cs$ for all $a \in A$. Therefore, $cs$ is a lower bound of for $cA$. To verify this as the lowest upper bound, let $m  = \inf A$. Using the same logic as before, for all $a \in A$, $m \leq a$, so $cm \geq ca$. This shows that $cm$ is the least upper bound of $cA$, and thus $\sup(cA) = cm = c \inf A$.}
+\end{enumerate}
+}
+
+\begin{exercise}
+    {1.3.8}Compute, without proofs, the suprema and infima (if they exist) of the following sets:
+\begin{enumerate}
+    \item $\left\{\frac{m}{n} : m, n \in \mathbb{N} \text{ with } m < n\right\}$.
+    \item $\left\{\frac{(-1)^m}{n} : m, n \in \mathbb{N}\right\}$.
+    \item $\left\{\frac{n}{3n+ 1} : n \in \mathbb{N}\right\}$.
+    \item $\left\{\frac{m}{m+ n} : m, n \in \mathbb{N}\right\}$.
+\end{enumerate}
+\end{exercise}
+
+\sol{To avoid writing out every set definition, I am going to denote each set as $A_n$ where $n$ corresponds to the numerical value of the list from (a) - (d).
+\begin{enumerate}
+    \item $\sup A_1 = 1$, $\inf A_1 = 0$
+    \item $\sup A_2 = 1$, $\inf A_2 = -1$
+    \item $\sup A_3 = \frac{1}{3}$, $\inf A_3 = \frac{1}{4}$
+    \item $\sup A_4 = 1$, $\inf A_3 = 0$
+\end{enumerate}
+}
+
+\section{Consequences of Completeness}
+
+\begin{ntheorem}
+    {Nested Interval Property}For each $n \in \N$, assume we are given a closed interval $I_n = (a_n, b_n)$. Assume $I_n$ contains $I_{n+1}$. This results in a nested sequence of intervals. $$I_1 \supseteq I_2 \supseteq I_3 \supseteq I_4\dots$$ Then, $\bigcap^\infty_{n=1} \ne \emptyset$.
+\end{ntheorem}
+
+\textbf{tl;dr} there has to be something that is common to all of the sets.
+
+\tpf{
+    Notice that the sequence, $a_1,a_2,a_3,\dots$ is increasing. In other words, for each $n \in \N$, since $I_n \supset I_{n + 1}$ we have $a_n \leq a_{n+1}$. If we consider the set $A = \{a_n \ \colon \ n\in \N\}$. The element $b_1$ is an upper bound of $A$. (Note that $b_1$ and $a_1$ corresponds to the endpoints of the first set, $I_1$. Think of this as a tornado looking structure where the larger the $I_n$, the smaller the number line.) For each $n \in \N$, $a_n \leq b_n \leq b_1$. \\
+
+    Since $A$ has an upper bound, it must have a least upper bound. Hence, let $\alpha = \sup A$. We claim that $\alpha \in \bigcap^\infty_{n=1} I_n$. We said $b_1$ was an upper bound. In fact, every $b_n$ is an upper bound of $A$. Choose any $n,m \in \N$. We want to show that $a_n \leq b_m$. Consider the following cases: \\
+
+    \textbf{Case 1:} If $n < m$, then $a_n \leq a_m \leq b_m$. (Think: two number lines stacked on top of each other. The top number line is larger, call it $I_n$ and it has $a_n$ and $b_n$ as endpoints. Consider a contained line ($I_n \supseteq I_m$) that is smaller, and has endpoints $a_m$ and $b_m$.) \\
+
+    \textbf{Case 2:} If $n > m$, then $a_n \leq b_n \leq b_m$. So every $b_n$ is an upper bound of $A$.\\
+
+    Hence, 
+    \begin{itemize}
+        \item Because $\alpha = \sup A$, we have $\alpha \geq a_n$. 
+        \item Since $b_n$ is an upper bound of $A$, we have $\alpha \leq b_n$.
+    \end{itemize}
+    so, $\alpha \in [a_n, b_n] = I_n$. Thus, $\alpha \in \bigcap^\infty_{n=1} I_n.$
+}
+
+Nested, closed, Bounded Intervals $\Rightarrow$ non-empty intersection.
+
+\begin{ntheorem}
+    {Archimedean Principle} 
+    \begin{enumerate}
+        \item Given any number $x \in R$, there exists an $n \in N$ satisfying $n > x$.
+        \item Given any real number $y > 0$, there exists an $n \in N$ satisfying $1/n < y$.
+    \end{enumerate}
+\end{ntheorem}
+
+\tpf{
+    \begin{enumerate}
+        \item If $\N$ was bounded, then we can let $s \in \N = \sup \N$. However, we know that there is always a higher number (e.g., $n+1$) for any $n \in \N$ that is given. Thus, by contradiction, there must exist $n \geq x$.
+        \item For any $x > 0$, there exists $n \in \N$ such that $\frac{1}{n} < x$. 
+    \end{enumerate}
+}
+
+\begin{theorem}
+    Density of $\Q$ in $\R$. For any $a,b \in \R$ with $a < b$, there exists $q \in \Q$ such that $a < q < b$.
+\end{theorem}
+
+\tpf{
+Since $ b - a > 0$, there exists $n \in \N$ such that $\frac{1}{n} < b - a$. From the \namrefthm{Archimedean Principle}, since $a\times n \in \R$, there exists $m \in \N$ such that $a\times n < m$. Let $m$ be there smallest such natural numbers (by the well ordered principle). Since $m$ is the smallest such natural number, it follows that $m - 1 \leq a\times n < m$. We then see that $a < \frac{m}{n}$. Now, we need to find some $\frac{m}{n} < b$. \begin{align*}
+    m - 1 &\leq a\times n \\
+    m &\leq a \times n + 1 \\
+    \frac{m}{n} &\leq a + \frac{1}{n} \\
+    \frac{m}{n} &< a + (b - a) \\
+    \frac{m}{n} &< b
+\end{align*} We now have that $a < \frac{m}{n} < b$ so $ \frac{m}{n}$ is a rational number in $(a,b)$
+}
+
+\begin{exercise}
+    {1.4.1}Recall that $\mathbb{I}$ stands for the set of irrational numbers. 
+    \begin{enumerate}
+        \item Show that if $a,b \in \Q$, then $ab$ and $a + b$ are elements of $\Q$ as well.
+        \item Show that if $a \in \Q$ and $t \in \mathbb{I}$, then $a + t \in \mathbb{I}$ and $at \in \mathbb{I}$ as long as $a \ne 0$.
+        \item Part (a) can be summarized by saying that $\Q$ is closed under addition and multiplication. Is $\mathbb{I}$ closed under addition and multiplication? Given two irrational numbers $s$ and $t$, what can we say about $s + t$ and $st$? In other words, are there two irrational numbers that can be added and multiplied such that you get a number $x$ such that $x \notin \mathbb{I}$.
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+\begin{enumerate}
+    \item Let $a,b \in \Q$. This means there exists some $p,q,a,b \in \Z$ such that $$a = \frac{p}{q}$$ and $$b = \frac{a}{b}$$ where $q,b \ne 0$. The product of these numbers is $$ab = \frac{p}{q} \cdot \frac{a}{b} = \frac{pa}{qb}.$$ Since $pa,qb \in \Z$, $ab \in \Q$. The sum of these numbers is $$a + b = \frac{p}{q} + \frac{a}{b} = \frac{pb + aq}{qb}.$$ Since $pb + aq, qb \in \Z$, $a + b \in \Q$. 
+    \item Let $a \in \Q$ and $t \in \I$. Assume, for contradiction, that $a + t \in \Q$. This would imply $t = (a + t) - a$ (because we can subtract $t + a$ from the original equation and rearrange terms). Since $a + t, a \in \Q$ their sum would be rational because the rational numbers are closed under addition. However, that would contradict the assumption that $t \in \I$. Hence, $a + t \in \I$.   
+    \item For $\I$, it is not closed under addition and multiplication. Consider the following counterexample: $\sqrt{2} + (-\sqrt{2}) = 0$ which is not in the irrationals. For multiplication, consider $\sqrt{2} \cdot \sqrt{2} = 2$, which is also not in the irrationals. 
+\end{enumerate}
+}
+
+\section{Cardinality}
+
+Two sets have the same \textit{cardinality} if there exists a bijection between them. Thus, the natural numbers, the integers, and the rational numbers have the same cardinality. A set is \textit{countably infinite} if it has the same cardinality as $\N$. (If it can be put into one-to-one correspondence with $\N$.) A set is \textit{countable} if it is countably infinite or finite. \\
+
+\setcounter{BoxCounter}{5}
+\begin{theorem}
+    $\R$ is not countable.
+\end{theorem}
+
+\tpf{%
+    \textit{1} (most common) \\
+    Suppose $\R$ is countable. Then we can list them all, or we can enumerate them. $\R = \{x_1,x_2,x_3,x_4,\dots\}$. We can write the decimal expansion of each of these. Consider the following table:
+\begin{center}
+\begin{tabular}{lllllll}
+$x_1 =$ & $\boxed{a_{10}}$ & $a_{11}$ & $a_{12}$ & $a_{13}$ & $a_{14} $ & \dots \\ \hline
+$x_2 =$ & $a_{20} $ & $\boxed{a_{21}}$ & $a_{22} $ & $a_{23} $ & $a_{24} $ & \dots \\ \hline
+$x_3 =$ & $a_{30} $ & $a_{31} $ & $\boxed{a_{32}}$ & $a_{33} $ & $a_{34} $ & \dots \\ \hline
+$x_4 =$ & $a_{40} $ & $a_{41} $ & $a_{42} $ & $\boxed{a_{43}}$ & $a_{44} $ & \dots \\ \hline
+$x_5 =$ & $a_{50} $ & $a_{51} $ & $a_{52} $ & $a_{53} $ & $\boxed{a_{54}}$ & \dots \\ \hline
+$x_6 =$ & $a_{60} $ & $a_{61} $ & $a_{62} $ & $a_{63} $ & $a_{64} $ & \dots
+\end{tabular}
+\end{center}
+
+We will now construct a number that is not in this list. Focus on diagonal entries. For each $n \in \N$, let $b_n$ be a digit that is different fron $a_{nn}$. Now consider the number $y = 0.b_1b_2b_3b_4b_5\dots$. This number $y$ is not in our list. So our list did not include all of $\R$. Avoid repeating $9$s.
+}
+
+\tpf{
+\textit{2} (uses nested interval theorem) \\
+Suppose $\R$ is countable. Then we can enumerate $\R$ $\R = \{x_1,x_2,x_3,\dots\}$. Let $I_1$ be any closed interval that does not contain $x_1$. Next, we will find another closed interval $I_2$ that:\begin{itemize}
+    \item $I_2 \subseteq I_1$ 
+    \item $x_2 \notin I_2$
+\end{itemize} Continue in this fashion creating a sequence of nested closed intervals: $I_1\supseteq I_2 \supseteq I_3 \supseteq \dots$ such that for all $k \in \N$, $x_k \notin I_k$. Now consider: $$\bigcap^\infty_{n=1} I_n$$
+\begin{itemize}
+    \item For each $k \in \N$, since $x_k \notin I_k$, we see $x_k \notin \bigcap^\infty_{n=1} I_n$.
+    \item By the nested interval theorem, there exists $x \in \R$ such that $x \in \bigcap^\infty_{n=1} I_n$. So $x$ is a real number that is not included in our list.
+\end{itemize}
+}
+
+\begin{theorem}
+    A countable collection of finite sets is \textit{countable}.
+\end{theorem}
+
+\begin{theorem}
+    \begin{enumerate}[label=(\roman*)]
+        \item The union of two countable sets is \textit{countable}.
+        \item A countable union of countable sets is \textit{countable}.
+    \end{enumerate}
+\end{theorem}
+
+From Theorem \ref{thm:1.5.6}, we know that $\R$ is uncountable, but what about $(0,1)$? It does have the same cardinality of $\R$ because we can make a one-to-one and onto function between both the sets. Similarly, $(a,b)$ also has the same cardinality. What about $[a,b]$? 
+
+\textbf{Recap:} $\N$ is countable, and $\R$ is uncountable and has a different cardinality than $\N$. Thus, the question is, do all uncountable sets have the same cardinality as $\R$? The answer is \textbf{no}.
+    
+\begin{ntheorem}
+    {Canter's Theorem} For any set $A$, there does not exist an onto map from $A$ into $\mathcal{P}$.
+\end{ntheorem}
+
+\tpf{
+    Suppose there exists an onto function, $f \ \colon \ A \rightarrow \mathcal{P}(A)$. So each $a \in A$ is mapped to an element $f(a) \in \mathcal{P}(A)$. Then, $f(a) \subseteq A$. We are going to construct an element of $\mathcal{P}(A)$ which is not mapped to by $f$. 
+
+    Consider $B = \{a \in A \ \colon \ a \notin f(a)\}$. Since $f$ is onto there exists $a' \in A$ such that $B = f(a')$. Thus, there are two cases to consider:
+
+    \begin{itemize}
+        \item \textbf{Case 1:} If $a' \in B = f(a')$, then $a' \notin B$.
+        \item \textbf{Case 2:} If $a' \notin B = f(a')$, then $a' \in B$.
+    \end{itemize}
+
+    As evidenced, both cases lead to contradictions, so $B$ is not the image of any $a \in A$. Therefore $f$ is not onto.
+}
+
+\begin{example}
+    {Set and Power Set Matching}$A = \{a,b,c\}$. 
+\end{example}
+
+\sol{
+$\mathcal{P}(A) = \emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}$. Note that you can map $\{a\}$, $\{b\}$, $\{c\}$, to elements such as $\emptyset$, $\{a,b\}$, $\{a,b,c\}$, but there are still more elements that are left unmapped. We can extrapolate from our proof a set $B$ such that $B = \{a,c\}$ because those elements are not mapped to.
+}
+
+All of this is to show $\mathcal{P}(\R)$ has a larger cardinality than $\R$. Then $\mathcal{P}(\mathcal{P}(\R))$ has a larger cardinality than $\mathcal{P}(\R)$.
