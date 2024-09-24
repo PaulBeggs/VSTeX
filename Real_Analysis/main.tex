@@ -196,6 +196,7 @@
 
 % Command to link specific words within the definition
 \newcommand{\defword}[2]{\hyperref[def:#2]{#1}}
+\newcommand{\defref}[1]{\hyperref[def:#1]{Definition #1}}
 
 
 %% Axioms %%
@@ -220,6 +221,8 @@
     title={\large \textbf{Exercise: #2}},
     #1,
 }
+
+\newcommand{\defex}[1]{\hyperref[ex:#1]{Exercise #1}}
 
 %% Examples %%
 \newcounter{ExampleCounter}
@@ -270,6 +273,7 @@
 \usepackage{multicol}
 \usepackage{slashed}
 \usepackage{enumerate}
+\usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{lipsum}  %This package lets us generate random text for example purposes.
 
@@ -590,11 +594,11 @@
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\chapter{The Real Numbers} \label{Real nums}
+\chapter{The Real Numbers}\label{Real nums}
 \vspace*{-0.25in}
 \input{Chapters/ch_1}
 
-\chapter{Sequences and Series} \label{sequences and series}
+\chapter{Sequences and Series}\label{sequences and series}
 \vspace*{-0.25in}
 \input{Chapters/ch_2}
 
@@ -618,7 +622,7 @@
 % % \vspace*{-0.25in}
 % % \input{Chapters/ch_11}
 
-\chapter*{Presentation Problem 1} \label{pres 1}
+\chapter*{Presentation Problem 1}\label{pres 1}
 \vspace*{0.25in}
 \input{Presentation Problems/Problem 1.2.13c}
 \addcontentsline{toc}{chapter}{Presentation Problem 1}

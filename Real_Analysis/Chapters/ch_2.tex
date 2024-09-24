@@ -5,7 +5,7 @@ A countable, ordered list of elements. An example could be $1,2,3,4,5,\dots$. No
 % This needs to be a part of the definition environment
 A \textit{sequence} is a function whose domain is $\N$. \textbf{Note:} The domain $\N$ refers to each element's position in the list. For example, $(a_n) = a_1,a_2,a_3,\dots$.
 
-We will focus on the \textit{limit} of a sequence. We use sequences to approximate other things. 
+We will focus on the \textit{limit} of a sequence. We use sequences to approximate other things.
 
 \begin{example}
     {Sequence}$3,3.1,3.14,3.141,3.1415,\dots \approx \pi$. \\
@@ -20,7 +20,7 @@ An infinite sum. We look at the sequence of partial sums. We ask, do the partial
     {Alternating Harmonic Series}$1 - 1/2 + 1/3 - 1/4 + 1/5 - 1/6 + \dots$
 \end{example}
 
-We can rearrange these terms such that we can `force' the series to converge to a specific number. Therefore, we will need to be careful with our definitions. 
+We can rearrange these terms such that we can `force' the series to converge to a specific number. Therefore, we will need to be careful with our definitions.
 
 \section{Discussion: Rearrangement of Infinite Series}
 
@@ -29,27 +29,31 @@ We can rearrange these terms such that we can `force' the series to converge to 
 \begin{itemize}
     \item What happens if I add these in a different order?
     \item Are infinite sums commutative? \\
-    In general, no. But sometimes, yes. 
+          In general, no. But sometimes, yes.
 \end{itemize}
 
 \section{The Limit of a Sequence}
 
-We know that $(a_n)$ is a sequence: $a_1,a_2,a_3,\dots$. We say $(a_n)$ \textit{converges} to a number $L$ and use the notation $\displaystyle \lim_{n \rightarrow \infty} a_n = L$ if the terms $a_n$ get close to $l$ as $n$ increases.
-
-Formally put, the \textbf{definition} of a \textit{limit} is: The sequence $(a_n)$ converges to $L$ if for all $\epsilon > 0$, there exists $N \in \N$ such that for all $n \geq \N$, $|a_n - L| < \epsilon$. In other words, there exists $N \in \N$ such that 
-\begin{itemize}
-    \item \textbf{(In the interval)} $a_N \in (L - \epsilon, L + \epsilon$.
-    \item \textbf{(Stays in the interval)} $\forall n \geq N$, $a_n \in (L - \epsilon, L + \epsilon$.
-\end{itemize}
+\begin{definition}
+    A \textit{sequence} is a function whose domain is $\N$. We write $(a_n) = a_1,a_2,a_3,\dots$.
+\end{definition}
+\setcounter{BoxCounter}{2}
+\begin{definition}
+    The sequence $(a_n)$ converges to $L$ if for all $\epsilon > 0$, there exists $N \in \N$ such that for all $n \geq \N$, $|a_n - L| < \epsilon$. In other words, there exists $N \in \N$ such that
+    \begin{itemize}
+        \item \textbf{(In the interval)} $a_N \in (L - \epsilon, L + \epsilon)$.
+        \item \textbf{(Stays in the interval)} $\forall n \geq N$, $a_n \in (L - \epsilon, L + \epsilon)$.
+    \end{itemize}
+\end{definition}
 
 \begin{example}
     {In-class}Let $a_n = \frac{1}{n}$. $(a_n) = (1,\frac{1}{2},\frac{1}{3},\dots$)
 \end{example}
 
 \epf{
-Our claim is $\displaystyle \lim_{1 \rightarrow \infty} \frac{1}{n} = 0$. Thus, let $\epsilon = .01$. Does the sequence eventually get inside $(-.01,.01)$? We will set $N = 101$. So, for any $n \geq |0|$, $$\left|\frac{1}{n} - 0\right| = \frac{1}{n} \leq \frac{1}{101} < .01.$$ From $A_n$ and on, the sequence stayed within $\epsilon$ of $0$. But what about $\epsilon = .001$, $\epsilon = .00001$ and so on? \\
+    Our claim is $\displaystyle \lim_{1 \rightarrow \infty} \frac{1}{n} = 0$. Thus, let $\epsilon = .01$. Does the sequence eventually get inside $(-.01,.01)$? We will set $N = 101$. So, for any $n \geq |0|$, $$\left|\frac{1}{n} - 0\right| = \frac{1}{n} \leq \frac{1}{101} < .01.$$ From $A_n$ and on, the sequence stayed within $\epsilon$ of $0$. But what about $\epsilon = .001$, $\epsilon = .00001$ and so on? \\
 
-Actual proof let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such that $N > \frac{1}{\epsilon}$. Now, for any $n \geq N$, $$\left|\frac{1}{n}\right| = \frac{1}{n} \leq \frac{1}{N} < \frac{1}{1/\epsilon}.$$ (Where $\frac{1}{1/\epsilon} = \epsilon$, but is in that form for demonstration purposes.) Therefore $\displaystyle \lim_{n \rightarrow \infty} \frac{1}{n} = 0$ 
+    Actual proof let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such that $N > \frac{1}{\epsilon}$. Now, for any $n \geq N$, $$\left|\frac{1}{n}\right| = \frac{1}{n} \leq \frac{1}{N} < \frac{1}{1/\epsilon}.$$ (Where $\frac{1}{1/\epsilon} = \epsilon$, but is in that form for demonstration purposes.) Therefore $\displaystyle \lim_{n \rightarrow \infty} \frac{1}{n} = 0$
 }
 
 ``To get close'' means is that we are finding a bigger and bigger $N$ as $\epsilon$ gets smaller. Note that the choice of $N$ certainly depends on $\epsilon$.
@@ -59,14 +63,14 @@ Actual proof let $\epsilon > 0$. By the Archimedean Principle, there exists $N \
 Claim: $\displaystyle \lim_{n \rightarrow \infty} a_n = L$. \\
 Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involving $\epsilon$\}. Assume $n \geq N$. Then, $$|a-n - L| \ \boxed{\dots} < \epsilon$$ (Where $\boxed{\dots}$ is going to be where the majority of the work is going to lie.
 
-\newpage 
+\newpage
 
 \begin{example}
-    {In-class}Claim: $\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1$ 
+    {In-class}Claim: $\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1$
 \end{example}
 
 \epf{
-Let $\epsilon > 0$. \textit{Scratch paper:} Solve for: $$\left|\frac{2n - 3}{2n} - 1\right| = \left|\frac{-3}{2n}\right| = \frac{3}{2n} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n.$$ By the Archimedean Principle, there exists $N \in \N$ such that $N > \frac{3}{2\epsilon}$. Assume $n \geq N$, (want to know what happens past this point) $$\left|\frac{2n-3}{2n}-1\right| \leq \frac{3}{2N} < \frac{3}{3/2\epsilon} = \epsilon.$$ Therefore, $\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1$
+    Let $\epsilon > 0$. \textit{Scratch paper:} Solve for: $$\left|\frac{2n - 3}{2n} - 1\right| = \left|\frac{-3}{2n}\right| = \frac{3}{2n} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n.$$ By the Archimedean Principle, there exists $N \in \N$ such that $N > \frac{3}{2\epsilon}$. Assume $n \geq N$, (want to know what happens past this point) $$\left|\frac{2n-3}{2n}-1\right| \leq \frac{3}{2N} < \frac{3}{3/2\epsilon} = \epsilon.$$ Therefore, $\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1$
 }
 
 \begin{example}
@@ -74,15 +78,15 @@ Let $\epsilon > 0$. \textit{Scratch paper:} Solve for: $$\left|\frac{2n - 3}{2n}
 \end{example}
 
 \epf{
-Let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such that [leave off] \textit{Scratch paper:} Solve for $$\disabs{\frac{2n^2 + 1}{n^2} - 2} =  \frac{2n^2}{n^2} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n$$ [pick up] there exists $N \in \N$ such that $$N > \frac{1}{\sqrt{\epsilon}}.$$ Assume $n \geq N$, then 
-\begin{align*}
-    \disabs{\frac{2n^2 + 1}{n^2} - 2} &= \frac{1}{n^2} \\
-    &\leq \frac{1}{N^2} \\
-    &< \frac{1}{(1/(\sqrt{\epsilon})^2} \\
-    &= \frac{1}{1/\epsilon} \\
-    &= \epsilon
-\end{align*} 
-Therefore, $\limn{\frac{2n^2 + 1}{n^2}} = 2$
+    Let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such that [leave off] \textit{Scratch paper:} Solve for $$\disabs{\frac{2n^2 + 1}{n^2} - 2} =  \frac{2n^2}{n^2} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n$$ [pick up] there exists $N \in \N$ such that $$N > \frac{1}{\sqrt{\epsilon}}.$$ Assume $n \geq N$, then
+    \begin{align*}
+        \disabs{\frac{2n^2 + 1}{n^2} - 2} & = \frac{1}{n^2}                    \\
+                                          & \leq \frac{1}{N^2}                 \\
+                                          & < \frac{1}{(1/(\sqrt{\epsilon})^2} \\
+                                          & = \frac{1}{1/\epsilon}             \\
+                                          & = \epsilon
+    \end{align*}
+    Therefore, $\limn{\frac{2n^2 + 1}{n^2}} = 2$
 }
 
 \begin{example}
@@ -90,22 +94,22 @@ Therefore, $\limn{\frac{2n^2 + 1}{n^2}} = 2$
 \end{example}
 
 \epf{
-\begin{align*}
-    \disabs{\frac{7n+8}{3n+6} - \frac{7}{3}} &= \disabs{\frac{21n + 24}{3(3n + 6)} - \frac{21n + 42}{3(3n + 6}} \\
-    &= \disabs{\frac{-18}{9n + 18}} \\
-    &= \frac{18}{9n + 18} < \epsilon** \\
-    &= \frac{18}{3} < 9n + 18 \\
-    &= \frac{18}{3} - 18 < 9n \\
-    &= \frac{18/\epsilon - 18}{9} < n
-\end{align*}
-$** \frac{18}{9n + 8} < \frac{18}{9n} < \epsilon \Rightarrow \frac{2}{\epsilon} < N$. $\exists N \in \N$ such that $N > \frac{2}{\epsilon}$. Assume $n \geq N$, \begin{align*}
-    \disabs{\frac{7n + 8}{3n + 6} - \frac{7}{3}} &= \frac{18}{9n + 18} \\
-    &= \frac{2}{n+2} \\
-    &< \frac{2}{n} \\
-    &\leq \frac{2}{N} \\
-    &< \frac{2}{\epsilon/2} \\
-    &= \epsilon
-\end{align*}
+    \begin{align*}
+        \disabs{\frac{7n+8}{3n+6} - \frac{7}{3}} & = \disabs{\frac{21n + 24}{3(3n + 6)} - \frac{21n + 42}{3(3n + 6}} \\
+                                                 & = \disabs{\frac{-18}{9n + 18}}                                    \\
+                                                 & = \frac{18}{9n + 18} < \epsilon**                                 \\
+                                                 & = \frac{18}{3} < 9n + 18                                          \\
+                                                 & = \frac{18}{3} - 18 < 9n                                          \\
+                                                 & = \frac{18/\epsilon - 18}{9} < n
+    \end{align*}
+    $** \frac{18}{9n + 8} < \frac{18}{9n} < \epsilon \Rightarrow \frac{2}{\epsilon} < N$. $\exists N \in \N$ such that $N > \frac{2}{\epsilon}$. Assume $n \geq N$, \begin{align*}
+        \disabs{\frac{7n + 8}{3n + 6} - \frac{7}{3}} & = \frac{18}{9n + 18}   \\
+                                                     & = \frac{2}{n+2}        \\
+                                                     & < \frac{2}{n}          \\
+                                                     & \leq \frac{2}{N}       \\
+                                                     & < \frac{2}{\epsilon/2} \\
+                                                     & = \epsilon
+    \end{align*}
 }
 
 \textbf{Does every sequence have a limit?}
@@ -116,23 +120,21 @@ $** \frac{18}{9n + 8} < \frac{18}{9n} < \epsilon \Rightarrow \frac{2}{\epsilon} 
 
 
 \tpf{
-Let $(x_n)$ be a convergent sequence. Suppose $L$ and $M$ are limits of this sequence. Without the loss of generality, we are going to assume $M > L$ Let $$\epsilon = \frac{M - L}{3}.$$ Since $n_x$ converges to $L$, there exists $N_1 \in \N$ such that for all $n \geq N$, $\disabs{(x_n) - L} < \epsilon$. Since $(x_n)$ converges to $M$, there exists an $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{(x_n) - M} < \epsilon$. Consider $n = \max\{N_1, N_2\}$. Since $n \geq N_1$, $\disabs{(x_n) - L} < \epsilon$. Since $n \geq N_2$, $\disabs{(x_n) - M} < \epsilon$. Then $L - \epsilon < x_n < L + \epsilon$ and $M - \epsilon < x_n < M + \epsilon$. By our choice of $\epsilon$, we now have $$(x_n) < L + \epsilon < M - \epsilon < (x_n).$$ This is a contradiction. Thus, $(x_n)$ cannot have two different limits.
+    Let $(x_n)$ be a convergent sequence. Suppose $L$ and $M$ are limits of this sequence. Without the loss of generality, we are going to assume $M > L$ Let $$\epsilon = \frac{M - L}{3}.$$ Since $n_x$ converges to $L$, there exists $N_1 \in \N$ such that for all $n \geq N$, $\disabs{(x_n) - L} < \epsilon$. Since $(x_n)$ converges to $M$, there exists an $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{(x_n) - M} < \epsilon$. Consider $n = \max\{N_1, N_2\}$. Since $n \geq N_1$, $\disabs{(x_n) - L} < \epsilon$. Since $n \geq N_2$, $\disabs{(x_n) - M} < \epsilon$. Then $L - \epsilon < x_n < L + \epsilon$ and $M - \epsilon < x_n < M + \epsilon$. By our choice of $\epsilon$, we now have $$(x_n) < L + \epsilon < M - \epsilon < (x_n).$$ This is a contradiction. Thus, $(x_n)$ cannot have two different limits.
 }
-
-\namrefthm{Uniqueness of Limits}
 
 \begin{example}
     {}Let $(x_n) = \displaystyle \frac{\cos(n)}{3n}$. Claim: $\limn{(x_n)} = 0$
 \end{example}
 
 \epf{
-Let $\epsilon > 0$. By the \namrefthm{Archimedean Principle}, there exists $N \in \N$ such that $N > \frac{1}{3\epsilon}$ for all $n \geq N$, 
-\begin{align*}
-    \disabs{\frac{\cos(n)}{3n} - 0} &= \disabs{\frac{\cos(n)}{3n}} \\
-    &\leq \frac{1}{3n} \\
-    &\leq \frac{1}{3N} \\
-    &< \frac{1}{3(1/ 3\epsilon)} \\
-    &= \epsilon
+    Let $\epsilon > 0$. By the \namrefthm{Archimedean Principle}, there exists $N \in \N$ such that $N > \frac{1}{3\epsilon}$ for all $n \geq N$,
+    \begin{align*}
+        \disabs{\frac{\cos(n)}{3n} - 0} & = \disabs{\frac{\cos(n)}{3n}} \\
+                                        & \leq \frac{1}{3n}             \\
+                                        & \leq \frac{1}{3N}             \\
+                                        & < \frac{1}{3(1/ 3\epsilon)}   \\
+                                        & = \epsilon
     \end{align*}
 }
 
@@ -141,16 +143,68 @@ Let $\epsilon > 0$. By the \namrefthm{Archimedean Principle}, there exists $N \i
 \end{example}
 
 \epf{
-Let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such that $N > \frac{1}{\epsilon}$. For all $n \geq N$, 
-\begin{align*}
-    \disabs{\frac{4n-1}{n^2} - 0} &= \disabs{\frac{4n-1}{n^2}} \\
-    &= \frac{4n-1}{n} \\
-    &< \frac{4n}{n^2} \\
-    &= \frac{4}{n} \\
-    &\leq \frac{4}{N} \\
-    &< \frac{4}{4 / \epsilon} \\
-    &= \epsilon
-\end{align*}
+    Let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such that $N > \frac{1}{\epsilon}$. For all $n \geq N$,
+    \begin{align*}
+        \disabs{\frac{4n-1}{n^2} - 0} & = \disabs{\frac{4n-1}{n^2}} \\
+                                      & = \frac{4n-1}{n}            \\
+                                      & < \frac{4n}{n^2}            \\
+                                      & = \frac{4}{n}               \\
+                                      & \leq \frac{4}{N}            \\
+                                      & < \frac{4}{4 / \epsilon}    \\
+                                      & = \epsilon
+    \end{align*}
+}
+
+\section*{Exercises}
+
+\begin{exercise}
+    {2.2.2(b)}Verify, using \defref{2.2.3}, that
+    the following sequences converge to the proposed limit.
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item \(\limn{\frac{2n^2}{n^3+3}} = 0\)
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item \(\limn{\frac{2n^2}{n^3+3}} = \text{ the answer }\). Question: Should we use \defref{2.2.3}, or the \namrefthm{Archimedean Principle}?
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {2.2.3} Describe what we would have to demonstrate in order to disprove each of the following statements.
+    \begin{enumerate}
+        \item At every college in the United States, there is a student who is at least
+              seven feet tall.
+        \item For all colleges in the United States, there exists a professor who gives every student a grade of either A or B.
+        \item There exists a college in the United States where every student is at least six feet tall.
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item There is at least one college in the United States where all students are less than seven feet tall.
+        \item There is at least one college in the United States where all professors give at least one student a grade of C or lower.
+        \item For all colleges in the United States, there exists a student who is less than six feet tall.
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {2.2.4} Give an example of each or state that the request is impossible.
+    For any that are impossible, give a compelling argument for why that is the case.
+    \begin{enumerate}
+        \item A sequence with an infinite number of ones that converges to one.
+        \item A sequence with an infinite number of ones that converges to a limit not equal to one.
+        \item A divergent sequence such such that for every \(n \in \N\) it is possible to find \(n\) consecutive ones somewhere in the sequence.
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item
+    \end{enumerate}
 }
 
 \section{The Algebraic and Order Limit Theorems}
@@ -164,9 +218,9 @@ Let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such t
 \end{theorem}
 
 \tpf{
-Let $(x_n)$ be a convergent sequence with limit $L$. There exists $N \in \N$ such that for all $n \geq N$, $\disabs{(x_n) - L} < 1$. Equivalently, $(x_n) \in (L - 1, L + 1)$. Let $$M = \max\{|x_1|,|x_2|,\dots,|x_{N-1}|,|L + 1|, |L - 1|\}.$$ We claim that for all $n \in \N$, $|x_n| \leq M$. 
+Let $(x_n)$ be a convergent sequence with limit $L$. There exists $N \in \N$ such that for all $n \geq N$, $\disabs{(x_n) - L} < 1$. Equivalently, $(x_n) \in (L - 1, L + 1)$. Let $$M = \max\{|x_1|,|x_2|,\dots,|x_{N-1}|,|L + 1|, |L - 1|\}.$$ We claim that for all $n \in \N$, $|x_n| \leq M$.
 \begin{enumerate}
-    \item This is true for $n < N$. 
+    \item This is true for $n < N$.
     \item For $n \geq N$, we know $L - 1 < x_n < L + 1$, so $(x_n) \leq \max\{| L - 1 |, |L + 1|\}$
 \end{enumerate}
 Thus, every term is in $[-M,M]$.
@@ -177,19 +231,19 @@ Thus, every term is in $[-M,M]$.
 \end{theorem}
 
 \textit{Scratch Paper:}
-\begin{align*}    
-\disabs{ca_n - ca} = \disabs{C}\disabs{a_n - a} &< \epsilon \\
-\disabs{a_n - a} &< \frac{\epsilon}{\disabs{c}} 
+\begin{align*}
+    \disabs{ca_n - ca} = \disabs{C}\disabs{a_n - a} & < \epsilon                    \\
+    \disabs{a_n - a}                                & < \frac{\epsilon}{\disabs{c}}
 \end{align*}
 \text{Leave off and go back to proof$^1$}
 \tpf{
-Let $\epsilon > 0$.$^1$ Since $(a_n)$ converges to $a$, there exists $N \in \N$ such that for all $n \geq N$, $\disabs{a_n - a} < \frac{\epsilon}{\disabs{c}}$. Now, for any $n \geq N$ we have two case because we want to avoid dividing by 0: 
-\begin{itemize}
-    \item If $c = 0$: \\
-    then each $ca_n = 0$. So $(ca_n)$ converges to 0, which can equal $ca$.
-    \item If $c > 0$: \\
-    $\disabs{ca_n - ca} = \disabs{c}\disabs{a_n - a} < \disabs{c}\frac{\epsilon}{\disabs{c} = \epsilon}$.
-\end{itemize}
+    Let $\epsilon > 0$.$^1$ Since $(a_n)$ converges to $a$, there exists $N \in \N$ such that for all $n \geq N$, $\disabs{a_n - a} < \frac{\epsilon}{\disabs{c}}$. Now, for any $n \geq N$ we have two case because we want to avoid dividing by 0:
+    \begin{itemize}
+        \item If $c = 0$: \\
+              then each $ca_n = 0$. So $(ca_n)$ converges to 0, which can equal $ca$.
+        \item If $c > 0$: \\
+              $\disabs{ca_n - ca} = \disabs{c}\disabs{a_n - a} < \disabs{c}\frac{\epsilon}{\disabs{c} = \epsilon}$. \qedhere
+    \end{itemize}
 }
 
 \begin{theorem}
@@ -198,11 +252,22 @@ Let $\epsilon > 0$.$^1$ Since $(a_n)$ converges to $a$, there exists $N \in \N$ 
 
 \textit{Scratch paper:}
 \begin{align}
-    \disabs{(a_n + b_n)} &= \disabs{(a_n - a) + (b_n - b)} \\
-    &\leq \disabs{a_n - a} + \disabs{b_n - b} \\
-    &< \frac{\epsilon}{2} + \frac{\epsilon}{2}
+    \disabs{(a_n + b_n)} & = \disabs{(a_n - a) + (b_n - b)}          \\
+                         & \leq \disabs{a_n - a} + \disabs{b_n - b}  \\
+                         & < \frac{\epsilon}{2} + \frac{\epsilon}{2}
 \end{align}
 Note that (2.2) is from the triangle inequality. Now, we will pick up to back at $\epsilon > 0$.
 \tpf{
     Since $(a_n)$ converges to $a$, there exists $N_1 \in \N$ such that for all $n \geq N_1$, $\disabs{a_n - a} < \frac{\epsilon}{2}$. Since $(b_n)$ converges to $b$, there exists $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{b_n - b} < \frac{\epsilon}{2}$. Now, let $N = \max\{N_1, N_2\}$. Thus, for any $n \geq N$, (refer back to scratch paper).
 }
+
+\section*{Exercises}
+
+\begin{exercise}
+    {2.3.2}Using only \defref{2.2.3}, prove that if $(x_n) \rightarrow 2$, then
+    \begin{enumerate}
+        \item $\displaystyle \left(\frac{2x_n - 1}{3}\right) \rightarrow 1$;
+        \item $\displaystyle \left(1 / x_n\right) \rightarrow 1 / 2$.
+    \end{enumerate}
+    (For this exercise the Algebraic Limit Theorem is off-limits, so to speak.)
+\end{exercise}
