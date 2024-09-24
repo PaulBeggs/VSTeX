@@ -231,7 +231,7 @@
     colframe=teal,
     colback=teal!15,
     coltitle=white,
-    label={ex:},
+    label={ex:\theExampleCounter},
     title={\large \textbf{Example \theExampleCounter: #2}},
     #1,
 }
@@ -246,13 +246,13 @@
     #1
 }
 
-\newtcolorbox[]{lemma}[2][]{%
+\newtcolorbox[use counter=BoxCounter, number within=section]{lemma}[1][]{%
     rounded corners,
     colframe=xpurple,
     colback=xpurple!15,
     coltitle=white,
-    label={ex:},
-    title={\large \textbf{Lemma: #2}},
+    label={lm:\theBoxCounter},
+    title={\large \textbf{Lemma \theBoxCounter}},
     #1,
 }
 
@@ -561,14 +561,14 @@
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 	
-	% \thispagestyle{plain}
-	% % Table of Contents will automatically update based on included chapters
-	% % You may need to compile twice for the toc to update
-	% \begin{spacing}{1} %Can change spacing between entries in toc
-	% 	\renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
-	% 	\tableofcontents
-	% 	\addtocontents{toc}{\protect\enlargethispage{\baselineskip}} 
-	% \end{spacing}
+	\thispagestyle{plain}
+	% Table of Contents will automatically update based on included chapters
+	% You may need to compile twice for the toc to update
+	\begin{spacing}{1} %Can change spacing between entries in toc
+		\renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
+		\tableofcontents
+		\addtocontents{toc}{\protect\enlargethispage{\baselineskip}} 
+	\end{spacing}
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

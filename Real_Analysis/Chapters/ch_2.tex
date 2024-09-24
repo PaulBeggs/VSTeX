@@ -226,9 +226,15 @@ Let $(x_n)$ be a convergent sequence with limit $L$. There exists $N \in \N$ suc
 Thus, every term is in $[-M,M]$.
 }
 
-\begin{theorem}
-    Let $(a_n)$ be a sequence that converges to $a$. Let $c \in \R$. Then $(ca_n)$ converges to $ca$.
-\end{theorem}
+\begin{ntheorem}
+    {Algebraic Limit Theorem}Let \(\limn{a_n} = a\) and \(\limn{b_n} = b\). Then,
+    \begin{enumerate}[label=(\roman*)]
+        \item \(\limn{ca_n} = ca\) for all $c \in \R$;
+        \item \(\limn{(a_n + b_n)} = a + b\);
+        \item \(\limn{(a_nb_n)} = ab\);
+        \item \(\limn{\frac{a_n}{b_n}} = \frac{a}{b}\) provided $b \neq 0$.
+    \end{enumerate}
+\end{ntheorem}
 
 \textit{Scratch Paper:}
 \begin{align*}
@@ -236,7 +242,7 @@ Thus, every term is in $[-M,M]$.
     \disabs{a_n - a}                                & < \frac{\epsilon}{\disabs{c}}
 \end{align*}
 \text{Leave off and go back to proof$^1$}
-\tpf{
+\tpf{(i) \\
     Let $\epsilon > 0$.$^1$ Since $(a_n)$ converges to $a$, there exists $N \in \N$ such that for all $n \geq N$, $\disabs{a_n - a} < \frac{\epsilon}{\disabs{c}}$. Now, for any $n \geq N$ we have two case because we want to avoid dividing by 0:
     \begin{itemize}
         \item If $c = 0$: \\
@@ -244,24 +250,83 @@ Thus, every term is in $[-M,M]$.
         \item If $c > 0$: \\
               $\disabs{ca_n - ca} = \disabs{c}\disabs{a_n - a} < \disabs{c}\frac{\epsilon}{\disabs{c} = \epsilon}$. \qedhere
     \end{itemize}
+
+    (ii) \\
+    \textit{Scratch paper:}
+    \begin{align}
+        \disabs{(a_n + b_n)} & = \disabs{(a_n - a) + (b_n - b)}          \\
+                             & \leq \disabs{a_n - a} + \disabs{b_n - b}  \\
+                             & < \frac{\epsilon}{2} + \frac{\epsilon}{2}
+    \end{align}
+    Note that (2.2) is from the triangle inequality. Now, we will pick up to back at $\epsilon > 0$. \\
+
+    Let \(\epsilon > 0\). Since $(a_n)$ converges to $a$, there exists $N_1 \in \N$ such that for all $n \geq N_1$, $\disabs{a_n - a} < \frac{\epsilon}{2}$. Since $(b_n)$ converges to $b$, there exists $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{b_n - b} < \frac{\epsilon}{2}$. Now, let $N = \max\{N_1, N_2\}$. Thus, for any $n \geq N$, (refer back to scratch paper). \\
+
+    (iii) \\
+    \textit{Scratch paper:}
+    \begin{align}
+        \disabs{a_nb_n - ab} & = \disabs{a_nb_n - ab_n + ab_n - ab}                                    \\
+                             & = \disabs{a_n(b_n - b) + b(b_n - b)}                                    \\
+                             & \leq \disabs{a_n}\disabs{b_n - b} + \disabs{b}\disabs{b_n - b}          \\
+                             & \leq M\disabs{b_n - b} + M\disabs{a_n - a}.                             \\
+                             & < M\left(\frac{\epsilon}{2M}\right) + M\left(\frac{\epsilon}{2M}\right) \\
+                             & = \epsilon
+    \end{align}
+    Note that: (2.4) is where we added 0, (2.5) is from the triangle inequality, and (2.6) is just factored. Additionally, we choose \(N\) to get the fractions in (2.8) Now, we will pick up to back at $\epsilon > 0$. \\
+
+    Let \(\epsilon > 0\). Since convergent sequences are bounded, then there exists $M > 0$ such that for all $n \in \N$, $|a_n| \leq M$. We can choose \(M\) so that \(|b_n| \leq M\) as well. Since $(a_n)$ converges to $a$, there exists $N_1 \in \N$ such that for all $n \geq N_1$, $\disabs{a_n - a} < \frac{\epsilon}{2M}$. Since $(b_n)$ converges to $b$, there exists $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{b_n - b} < \frac{\epsilon}{2M}$. Now, let $N = \max\{N_1, N_2\}$. Thus, for any $n \geq N$, (refer back to scratch paper, and change (2.1)'s sign from an `=' to `$\leq$'). \\
+
+    (iv) \\
+    \textit{Scratch paper:}
+    \begin{align*}
+        \disabs{\frac{a_n}{b_n} - \frac{a}{b}} & = \disabs{\frac{a_nb - ab_n}{b_nb}}                                                     \\
+                                               & = \disabs{\frac{a_nb - ab_n + ab_n - ab}{b_nb}}                                         \\
+                                               & = \disabs{\frac{a_n(b - b_n) + b(b_n - b)}{b_nb}}                                       \\
+                                               & = \disabs{\frac{a_n(b - b_n)}{b_nb} + \frac{b(b_n - b)}{b_nb}}                          \\
+                                               & \leq \disabs{\frac{a_n}{b_n}}\disabs{b - b_n} + \disabs{b}\disabs{\frac{b_n - b}{b_nb}} \\
+                                               & < \epsilon
+    \end{align*}
+    Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in \N\) such that for all \(n \geq N_1\), \(\disabs{b_n } > \disabs{\frac{b}{2}}\). There also exists \(N_2 \in \N\) such that for all \(n \geq N_2\), \(\disabs{b_n - b} < \frac{\epsilon|b|^{2}}{2}\). Now, let \(N = \max\{N_1, N_2\}\). Let \(n \geq N\), (refer back to scratch paper). \qedhere
 }
 
-\begin{theorem}
-    {}Let $(a_n)$ converge to $a$ and $(b_n)$ converge to $b$. Then, $(a_n + b_n)$ converges to $a + b$.
-\end{theorem}
+\begin{lemma}
+    Let \((a_n)\) and \(c < a\). there exists\(N \in \N\) such that for all \(n \geq N\), \(a_n > c\). Similarly, if \(a < d\), there exists \(N \in \N\) such that for all \(n \geq N\), \(a_n < d\).
+\end{lemma}
 
-\textit{Scratch paper:}
-\begin{align}
-    \disabs{(a_n + b_n)} & = \disabs{(a_n - a) + (b_n - b)}          \\
-                         & \leq \disabs{a_n - a} + \disabs{b_n - b}  \\
-                         & < \frac{\epsilon}{2} + \frac{\epsilon}{2}
-\end{align}
-Note that (2.2) is from the triangle inequality. Now, we will pick up to back at $\epsilon > 0$.
-\tpf{
-    Since $(a_n)$ converges to $a$, there exists $N_1 \in \N$ such that for all $n \geq N_1$, $\disabs{a_n - a} < \frac{\epsilon}{2}$. Since $(b_n)$ converges to $b$, there exists $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{b_n - b} < \frac{\epsilon}{2}$. Now, let $N = \max\{N_1, N_2\}$. Thus, for any $n \geq N$, (refer back to scratch paper).
-}
+\subsection{Limits and Order}
+
+\begin{ntheorem}
+    {Order Limit Theorem}Let \((a_n)\) and \((b_n)\) be sequences. If \(\limn{a_n} = a\) and \(\limn{b_n} = b\), then
+    \begin{enumerate}[label=(\roman*)]
+        \item If \(a_n \geq c\) for all \(n \in \N\), then \(a \geq c\).
+        \item If \(a_n \leq b_n\) for all \(n \in \N\), then \(a \leq b\).
+        \item If \(a_n \leq b_n\) for all \(n \in \N\), then \(a \leq b\).
+    \end{enumerate}
+\end{ntheorem}
+
+
 
 \section*{Exercises}
+
+\begin{exercise}
+    {2.3.1}
+    \begin{enumerate}
+        \item Assume \(\limn{x_n = 0}\) with \(x_n \geq 0\). Show that \(\limn{\sqrt{x_n}} = 0\).
+        \item Assume \(\limn{x_n = 49}\) with \(x_n \geq 0\). Show that \(\limn{\sqrt{x_n} = 7}\)
+    \end{enumerate} 
+\end{exercise}
+
+\expf{
+    \begin{enumerate}
+    \item Let \(\epsilon > 0\). Since \((x_n)\) converges to 0, there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - 0} < \epsilon^{2}\). Now, for any \(n \geq N\), \(\disabs{\sqrt{x_n} - 0} = \sqrt{x_n} < \sqrt{\epsilon^{2}} = \epsilon\). Therefore, \(\limn \sqrt{x_n} = 0\).
+    \item Let \(\epsilon > 0\). Since \((x_n)\) converges to 49, there exists \(N \in \N\) such that for all \(n \geq N\), 
+    \begin{align*}
+        \disabs{x_n - 7} & = \disabs{\frac{(x_n - 7)(x_n + 7)}{\sqrt{x_n} + 7}} \\
+            & = \disabs{\frac{x_n - 49}{\sqrt{x_n} + 7}} \\
+            & \leq \frac{\disabs{x_n - 49}}{7}
+        \end{align*}
+\end{enumerate}
+}
 
 \begin{exercise}
     {2.3.2}Using only \defref{2.2.3}, prove that if $(x_n) \rightarrow 2$, then
