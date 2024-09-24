@@ -312,7 +312,7 @@ algorithm (Theorem 1.11) to find integers $u$ and $v$ such that $au + bv = \gcd(
 
 \expf{
 \begin{enumerate}
-    \item Suppose there are integers $a,b,u,v$ such that $av + bv = 1$. Assume $d \in \Z$ such that $d = \gcd(a,b)$. Since $d$ divides both $a$ and $b$ by definition of common divisor, it must also divide $av$ and $bv$ by definition of divisibility. Moreover, because $au + bv = 1$ and $d$ is a common divisor of both $av$ and $bv$, it must also divide $1$ by Proposition 1.4 (c). Then, the only positive integer that divides $1$ is $1$ itself, so it must be the case that $d = 1$. Therefore, since $d = 1$ and $\gcd(a,b) = d$, it follows that $\gcd(a,b) = 1$.
+    \item Suppose there are integers $a,b,u,v$ such that $av + bv = 1$. Assume $d \in \Z$ such that $d = \gcd(a,b)$. Since $d$ divides both $a$ and $b$ by definition of common divisor, it must also divide $av$ and $bv$ by definition of divisibility. Moreover, because $au + bv = 1$ and $d$ is a common divisor of both $av$ and $bv$, it must also divide $1$ by Proposition 1.4 (c). Then, the only positive integer that divides $1$ is $1$ itself, so it must be the case that $d = 1$. Therefore, since $d = 1$ and $\gcd(a,b) = d$, it follows that $\gcd(a,b) = 1$. \qedhere
 \end{enumerate}
 }
 
@@ -333,7 +333,7 @@ algorithm (Theorem 1.11) to find integers $u$ and $v$ such that $au + bv = \gcd(
         a_1 \cdot b_1 - a_2 \cdot b_2 &= a_1 \cdot b_1 - a_1 \cdot b_2 + a_1 \cdot b_2 - a_2 \cdot b_2 \\
         &= a_1 \cdot (b_1 - b_2) + b_2 \cdot (a_1 - a_2)
     \end{align*}
-    Because $m \mid (b_1 - b_2)$ and $m \mid (a_1 - a_2)$, we know from the definition of division that when we multiply those numbers by an integer like $a_1$ and $b_2$, $m$ still divides the expression. Hence, $m \mid (a_1 \cdot (b_1 - b_2))$ and $m \mid (b_2 \cdot (a_1 - a_2))$. Therefore, $m \mid (a_1 \cdot b_1 - a_2 \cdot b_2)$ and $a_1 \cdot b_1 \equiv a_2 \cdot b_2 \ (\text{mod } m)$.
+    Because $m \mid (b_1 - b_2)$ and $m \mid (a_1 - a_2)$, we know from the definition of division that when we multiply those numbers by an integer like $a_1$ and $b_2$, $m$ still divides the expression. Hence, $m \mid (a_1 \cdot (b_1 - b_2))$ and $m \mid (b_2 \cdot (a_1 - a_2))$. Therefore, $m \mid (a_1 \cdot b_1 - a_2 \cdot b_2)$ and $a_1 \cdot b_1 \equiv a_2 \cdot b_2 \ (\text{mod } m)$. \qedhere
     \end{itemize}
 }
 
@@ -384,7 +384,7 @@ algorithm (Theorem 1.11) to find integers $u$ and $v$ such that $au + bv = \gcd(
     \begin{enumerate}
         \item $x = 6$
         \setcounter{enumi}{2}
-        \item We know that $x$ cannot be any number who's square does not exceed 11 because we cannot square a number to get $3$ (other than $\sqrt{3}$), but these are only the integers, so we cannot use that). Hence, $x \ne 1,2,3$ because we know that the results of these, $1^2 = 1$, $2^2 = 4$, $3^2 = 9$ are not equivalent to 3. Let's try some more values: $x = 4$: $4^2 = 16 \ (\text{mod } 11) = 5 \ \slashed{\equiv} \ 3$; $x = 5$: $5^2 = 25 \ (\text{mod } 11) = 3 \equiv 3$; $x = 6$: $6^2 = 36 \ (\text{mod } 11) = 3 \equiv 3$; $x = 7$: $7^2 = 49 \ (\text{mod } 11) = 5 \ \slashed{\equiv} \ 3$; $x = 8$: $8^2 = 64 \ (\text{mod } 11) = 9 \ \slashed{\equiv} \ 3$; $x = 9$: $9^2 = 81 \ (\text{mod } 11) = 4 \ \slashed{\equiv} \ 3$; $x = 10$: $10^2 = 100 \ (\text{mod } 11) = 1 \ \slashed{\equiv} \ 3$. 
+        \item We know that $x$ cannot be any number who's square does not exceed 11 because we cannot square a number to get $3$ (other than $\sqrt{3}$, but these are only the integers, so we cannot use that). Hence, $x \ne 1,2,3$ because we know that the results of these, $1^2 = 1$, $2^2 = 4$, $3^2 = 9$ are not equivalent to 3. Let's try some more values: $x = 4$: $4^2 = 16 \ (\text{mod } 11) = 5 \ \slashed{\equiv} \ 3$; $x = 5$: $5^2 = 25 \ (\text{mod } 11) = 3 \equiv 3$; $x = 6$: $6^2 = 36 \ (\text{mod } 11) = 3 \equiv 3$; $x = 7$: $7^2 = 49 \ (\text{mod } 11) = 5 \ \slashed{\equiv} \ 3$; $x = 8$: $8^2 = 64 \ (\text{mod } 11) = 9 \ \slashed{\equiv} \ 3$; $x = 9$: $9^2 = 81 \ (\text{mod } 11) = 4 \ \slashed{\equiv} \ 3$; $x = 10$: $10^2 = 100 \ (\text{mod } 11) = 1 \ \slashed{\equiv} \ 3$. 
 
         Thus, we have it that $x = 5,6$.  
         \setcounter{enumi}{6}
