@@ -247,6 +247,10 @@
 \usepackage{enumerate}
 \usepackage{enumitem}
 \usepackage{lipsum}  %This package lets us generate random text for example purposes.
+\usepackage{glossaries}
+
+\makeglossaries
+
 
 
 %%% New Environments %%%
@@ -347,7 +351,7 @@
                 #2
             \end{proofpart}
     \vspace{2mm}
-            #3 
+            #3
         \end{proof}
     \end{customframedproof}
 }
@@ -356,7 +360,7 @@
 \newcommand{\expf}[1]{
     \begin{customframedproof}[linecolor=orangehdx!75]
         \begin{proof}
-        #1 
+        #1
         \end{proof}
     \end{customframedproof}
 }
@@ -562,9 +566,9 @@
 \vspace*{-0.25in}
 \input{Exercises/2}
 
-% \chapter{The Real Numbers} \label{Real nums}
-% \vspace*{-0.25in}
-% \input{Chapters/ch_1}
+\chapter{The Real Numbers} \label{Real nums}
+\vspace*{-0.25in}
+\input{Chapters/ch_1}
 
 % \chapter{Power Set} \label{Power Set}
 % \vspace*{-0.25in}
@@ -590,7 +594,7 @@
 % \vspace*{-0.25in}
 % \input{Chapters/ch_11}
 
-
+\printglossaries
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \end{document}

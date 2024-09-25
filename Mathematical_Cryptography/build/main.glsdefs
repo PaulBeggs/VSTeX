@@ -1,0 +1,560 @@
+\glsdefs@newdocentry{Caesar Shift Cipher}%
+{%
+name={Caesar Shift Cipher},%
+sort={Caesar Shift Cipher},%
+type={main},%
+first={Caesar Shift Cipher},%
+firstplural={Caesar Shift Ciphers},%
+text={Caesar Shift Cipher},%
+plural={Caesar Shift Ciphers},%
+description={An encrypted text (by \textbf {shifting}), and you match it up with the alphabet. To encrypt, you write out a sentence, match it with a random assortment of letters by shifting the letters by a predetermined amount},%
+descriptionplural={An encrypted text (by \textbf {shifting}), and you match it up with the alphabet. To encrypt, you write out a sentence, match it with a random assortment of letters by shifting the letters by a predetermined amount},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Code}%
+{%
+name={Code},%
+sort={Code},%
+type={main},%
+first={Code},%
+firstplural={Codes},%
+text={Code},%
+plural={Codes},%
+description={Replace words / concepts. Example: Eagle has landed},%
+descriptionplural={Replace words / concepts. Example: Eagle has landed},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Cipher}%
+{%
+name={Cipher},%
+sort={Cipher},%
+type={main},%
+first={Cipher},%
+firstplural={Ciphers},%
+text={Cipher},%
+plural={Ciphers},%
+description={Replacing characters or letters. Simply, replacing one letter for another},%
+descriptionplural={Replacing characters or letters. Simply, replacing one letter for another},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Scytale Cipher}%
+{%
+name={Scytale Cipher},%
+sort={Scytale Cipher},%
+type={main},%
+first={Scytale Cipher},%
+firstplural={Scytale Ciphers},%
+text={Scytale Cipher},%
+plural={Scytale Ciphers},%
+description={Used by the Spartans in the $5^{\text {th}}$ century B.C.. This is also known as a \textbf {Transposition Cipher}},%
+descriptionplural={Used by the Spartans in the $5^{\text {th}}$ century B.C.. This is also known as a \textbf {Transposition Cipher}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Transposition Cipher}%
+{%
+name={Transposition Cipher},%
+sort={Transposition Cipher},%
+type={main},%
+first={Transposition Cipher},%
+firstplural={Transposition Ciphers},%
+text={Transposition Cipher},%
+plural={Transposition Ciphers},%
+description={Changed order, but the stayed the same},%
+descriptionplural={Changed order, but the stayed the same},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Plain Text}%
+{%
+name={Plain Text},%
+sort={Plain Text},%
+type={main},%
+first={Plain Text},%
+firstplural={Plain Texts},%
+text={Plain Text},%
+plural={Plain Texts},%
+description={Original message that is readable to humans. Abbreviated as [pt]},%
+descriptionplural={Original message that is readable to humans. Abbreviated as [pt]},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Cipher Text}%
+{%
+name={Cipher Text},%
+sort={Cipher Text},%
+type={main},%
+first={Cipher Text},%
+firstplural={Cipher Texts},%
+text={Cipher Text},%
+plural={Cipher Texts},%
+description={Encrypted message that is unreadable to humans. Abbreviated as [ct]},%
+descriptionplural={Encrypted message that is unreadable to humans. Abbreviated as [ct]},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Encrypting}%
+{%
+name={Encrypting},%
+sort={Encrypting},%
+type={main},%
+first={Encrypting},%
+firstplural={Encryptings},%
+text={Encrypting},%
+plural={Encryptings},%
+description={From \gls {Plain Text} to \gls {Cipher Text}. The inverse of encrypting is decrypting; which is going from the \glslink {Plain Text}{[ct]} to the \glslink {Cipher Text}{[pt]}},%
+descriptionplural={From \gls {Plain Text} to \gls {Cipher Text}. The inverse of encrypting is decrypting; which is going from the \glslink {Plain Text}{[ct]} to the \glslink {Cipher Text}{[pt]}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Key}%
+{%
+name={Key},%
+sort={Key},%
+type={main},%
+first={Key},%
+firstplural={Keys},%
+text={Key},%
+plural={Keys},%
+description={A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: $A \rightarrow R$ rotated clockwise by 17},%
+descriptionplural={A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: $A \rightarrow R$ rotated clockwise by 17},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Key Space}%
+{%
+name={Key Space},%
+sort={Key Space},%
+type={main},%
+first={Key Space},%
+firstplural={Key Spaces},%
+text={Key Space},%
+plural={Key Spaces},%
+description={The set of all keys, notated $\mathcal {K}$. The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, $|\mathcal {K}| = 26$ because there are 26 letters in the alphabet. Similarly, Scytale $|\mathcal {K}| = \text {pt}$.)},%
+descriptionplural={The set of all keys, notated $\mathcal {K}$. The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, $|\mathcal {K}| = 26$ because there are 26 letters in the alphabet. Similarly, Scytale $|\mathcal {K}| = \text {pt}$.)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Brute Force Attack}%
+{%
+name={Brute Force Attack},%
+sort={Brute Force Attack},%
+type={main},%
+first={Brute Force Attack},%
+firstplural={Brute Force Attacks},%
+text={Brute Force Attack},%
+plural={Brute Force Attacks},%
+description={[During decryption] Trying all possible keys},%
+descriptionplural={[During decryption] Trying all possible keys},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Cryptanalysis}%
+{%
+name={Cryptanalysis},%
+sort={Cryptanalysis},%
+type={main},%
+first={Cryptanalysis},%
+firstplural={Cryptanalysiss},%
+text={Cryptanalysis},%
+plural={Cryptanalysiss},%
+description={Process of decrypting without a key},%
+descriptionplural={Process of decrypting without a key},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Bigrams}%
+{%
+name={Bigrams},%
+sort={Bigrams},%
+type={main},%
+first={Bigrams},%
+firstplural={Bigramss},%
+text={Bigrams},%
+plural={Bigramss},%
+description={Two letters that are commonly placed together in language. For example, ``Th'', ``is'', or ``He''},%
+descriptionplural={Two letters that are commonly placed together in language. For example, ``Th'', ``is'', or ``He''},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Frequency Analysis}%
+{%
+name={Frequency Analysis},%
+sort={Frequency Analysis},%
+type={main},%
+first={Frequency Analysis},%
+firstplural={Frequency Analysiss},%
+text={Frequency Analysis},%
+plural={Frequency Analysiss},%
+description={English language patterns},%
+descriptionplural={English language patterns},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Divides}%
+{%
+name={Divides},%
+sort={Divides},%
+type={main},%
+first={Divides},%
+firstplural={Dividess},%
+text={Divides},%
+plural={Dividess},%
+description={$(b \mid a)$ if $a = b \times n $ for some $n \in \Z $},%
+descriptionplural={$(b \mid a)$ if $a = b \times n $ for some $n \in \Z $},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Greatest Common Divisor}%
+{%
+name={Greatest Common Divisor},%
+sort={Greatest Common Divisor},%
+type={main},%
+first={Greatest Common Divisor},%
+firstplural={Greatest Common Divisors},%
+text={Greatest Common Divisor},%
+plural={Greatest Common Divisors},%
+description={Let $a,b,d \in \Z $. The largest positive integer, $d$ such that $d \mid a$ and $d \mid b$. Abbreviated as GCD and notated as $\gcd (a,b)$},%
+descriptionplural={Let $a,b,d \in \Z $. The largest positive integer, $d$ such that $d \mid a$ and $d \mid b$. Abbreviated as GCD and notated as $\gcd (a,b)$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Quotient and Remainder}%
+{%
+name={Quotient and Remainder},%
+sort={Quotient and Remainder},%
+type={main},%
+first={Quotient and Remainder},%
+firstplural={Quotient and Remainders},%
+text={Quotient and Remainder},%
+plural={Quotient and Remainders},%
+description={Let $a,b \in \Z ^+$. If $r = a = qb + r, \text { where } 0 \leq r < b$ (Note that $r$ is the remainder, and $q$ is the quotient in the above formula)},%
+descriptionplural={Let $a,b \in \Z ^+$. If $r = a = qb + r, \text { where } 0 \leq r < b$ (Note that $r$ is the remainder, and $q$ is the quotient in the above formula)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Modular Arithmetic}%
+{%
+name={Modular Arithmetic},%
+sort={Modular Arithmetic},%
+type={main},%
+first={Modular Arithmetic},%
+firstplural={Modular Arithmetics},%
+text={Modular Arithmetic},%
+plural={Modular Arithmetics},%
+description={Let $m\in \Z $. $a$ and $b$ are congruent $\mod m$ if their $m \mid (b - a)$ or $m \mid (a - b)$. Notated as $a = b\mod m$},%
+descriptionplural={Let $m\in \Z $. $a$ and $b$ are congruent $\mod m$ if their $m \mid (b - a)$ or $m \mid (a - b)$. Notated as $a = b\mod m$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Ring}%
+{%
+name={Ring},%
+sort={Ring},%
+type={main},%
+first={Ring},%
+firstplural={Rings},%
+text={Ring},%
+plural={Rings},%
+description={The set $\{0,1,2,\dots ,m-1\}$ and use addition mod $m$ and multiplication mod $m$. Additionally, the set needs to be closed under addition},%
+descriptionplural={The set $\{0,1,2,\dots ,m-1\}$ and use addition mod $m$ and multiplication mod $m$. Additionally, the set needs to be closed under addition},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{Group}%
+{%
+name={Group},%
+sort={Group},%
+type={main},%
+first={Group},%
+firstplural={Groups},%
+text={Group},%
+plural={Groups},%
+description={A set $G$ along with a binary operation (closure) such that for all $a,b \in G$, $a\times b \in G$ (closure), and there exists an $e \in G$ such that $a \times e = a$ and $e \times a = a$ (identity), for all $a \in G$, there exists $a^{-1} \in G$ such that $a \times a^{-1} = a^{-1} \times a = e$ (inverse), and for all $a,b,c \in G$, $(a \times b) \times c = a \times (b \times c)$ (associativity)},%
+descriptionplural={A set $G$ along with a binary operation (closure) such that for all $a,b \in G$, $a\times b \in G$ (closure), and there exists an $e \in G$ such that $a \times e = a$ and $e \times a = a$ (identity), for all $a \in G$, there exists $a^{-1} \in G$ such that $a \times a^{-1} = a^{-1} \times a = e$ (inverse), and for all $a,b,c \in G$, $(a \times b) \times c = a \times (b \times c)$ (associativity)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+

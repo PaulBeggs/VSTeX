@@ -1,0 +1,189 @@
+\section{Introduction (Terms)}
+
+\begin{note}
+    Before starting the course, it is important to understand that this document is for notetaking, and will therefore be a bit more informal than the actual textbook. The textbook is \textit{An Introduction to Mathematical Cryptography} by Hoffstein, Pipher, and Silverman. The textbook can be located at \href{run:./An%20Introduction%20to%20Mathematical%20Cryptography.pdf}{this link}
+
+\end{note}
+
+\wrpdef{Caesar Shift Cipher}{An encrypted text (by \textbf{shifting}), and you match it up with the alphabet. To encrypt, you write out a sentence, match it with a random assortment of letters by shifting the letters by a predetermined amount}
+
+\wrpdef{Code}{Replace words / concepts. Example: Eagle has landed}
+
+\wrpdef{Cipher}{Replacing characters or letters. Simply, replacing one letter for another}
+
+\wrpdef{Scytale Cipher}{Used by the Spartans in the $5^{\text{th}}$ century B.C.. This is also known as a \textbf{Transposition Cipher}}
+\wrpdef{Transposition Cipher}{Changed order, but the stayed the same}
+
+\wrpdef{Plain Text}{Original message that is readable to humans. Abbreviated as [pt]}
+
+\wrpdef{Cipher Text}{Encrypted message that is unreadable to humans. Abbreviated as [ct]}
+
+\wrpdef{Encrypting}{From \gls{Plain Text} to \gls{Cipher Text}. The inverse of encrypting is decrypting; which is going from the \glslink{Plain Text}{[ct]} to the \glslink{Cipher Text}{[pt]}} \\
+
+\wrpdef{Key}{A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: $A \rightarrow R$ rotated clockwise by 17}
+\wrpdef{Key Space}{The set of all keys, notated $\mathcal{K}$. The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, $|\mathcal{K}| = 26$ because there are 26 letters in the alphabet. Similarly, Scytale $|\mathcal{K}| = \text{pt}$.)} \\
+
+\wrpdef{Brute Force Attack}{[During decryption] Trying all possible keys} \\
+
+\subsection{Goals of Cryptography}
+
+\begin{enumerate}
+    \item Provide confidentiality -- You can't read the message.
+    \item Provide integrity -- You can't change the message.
+    \item Provide authenticity -- You can't forge the message.
+\end{enumerate}
+
+Generally, these are the people and setting that will be used in examples: Alice and Bob are trying to communicate. Eve is trying to eavesdrop on the conversation. \\
+
+\subsection{Simple Substitution Ciphers (Mono-alphabetic Cipher)}
+
+Each letter can be replaced with any other letter. For example, you may have a key: $\{a,b,c,\dots,z\} \rightarrow \{q,m,w,\dots,t\}$. Its cardinality is $|\mathcal{K}| = 26!$. \\
+
+\wrpdef{Cryptanalysis}{Process of decrypting without a key} \\
+
+\wrpdef{Bigrams}{Two letters that are commonly placed together in language. For example, ``Th'', ``is'', or ``He''} \\
+
+\wrpdef{Frequency Analysis}{English language patterns} Note that $13\%$ of letters that are used in the alphabet are (in order from least to greatest): E, T, A, O, N. In brief, the longer the text, the more likely these letters will pop up.
+
+\section{Divisibility and Greatest Common Denominators}
+
+Can assume all the properties of $\R, \Z, \text{ and } \N$. Note that $\N$ does not include 0. \\
+
+\wrpdef{Divides}{$(b \mid a)$ if $a = b \times n $ for some $n \in \Z$}
+
+Let $a, b, \in \Z$  Example 1: $-4 \mid 100 \rightarrow (-4)(-25) = 100$. Example 2: $100 = 8(12) + 4 \ne 100$. Therefore, $8 \nmid 100$.
+
+\begin{theorem}
+    {} $\{x \mid 0 \ \colon \ \forall x \in \Z\}$ and $\{1 \mid x \ \colon \ \forall x \in \Z\}$.
+\end{theorem}
+
+\tpf{
+    $0 \times x = 0 \therefore x \mid 0$ and $x \times 1 = x \therefore 1 \mid x$ because $x\in \Z$.
+}
+
+\textbf{Proposition 1.4:} Let $a,b,c \in \Z$:
+\begin{enumerate}
+    \item If $a \mid b$ and $b \mid c$, then $a \mid c$.
+    \item If $a \mid b$ and $b \mid a$, then $a = \pm 2$.
+    \item If $a \mid b$ and $a \mid c$, then $a \mid (b + c) and a \mid (b - c)$.
+\end{enumerate}
+
+Answers:
+
+\begin{enumerate}
+    \item Let $a,b,c \in \Z$ such that $a \mid b$ and $b \mid c$. We know there exists an $n \in \Z$ such that $a \times n = b$. Similarly, $b \mid c$ means there exists an $n \in \Z$ such that $b\times k = c$. We can use the commutative property to show that $k(an) = (b)k \Rightarrow ank = bk = c \Rightarrow a(nk) = c \Rightarrow a \mid c$.
+    \item Homework
+    \item Homework
+\end{enumerate}
+
+\wrpdef{Greatest Common Divisor}{Let $a,b,d \in \Z$. The largest positive integer, $d$ such that $d \mid a$ and $d \mid b$. Abbreviated as GCD and notated as $\gcd(a,b)$}
+
+This is less complicated than it sounds: we are simply factoring the integers and finding the largest common divisor between the two numbers. \\
+
+\wrpdef{Quotient and Remainder}{Let $a,b \in \Z^+$. If $r = a = qb + r, \text{ where } 0 \leq r < b$ (Note that $r$ is the remainder, and $q$ is the quotient in the above formula)}
+
+Example: $24$ divided by $16$ gives $1$ and $16$. Hence, $24 = 1 \times 16 + 8$.
+
+\begin{theorem}
+    {}Let $a,b \in \Z^+$ with $a = bq + r$, $0 \leq r < b$. Then, $\gcd(a,b) = \gcd(b,r)$
+\end{theorem}
+
+\tpf{
+    Let $d = \gcd(a,b) \Rightarrow d \mid a \text{ and } d \mid b \Rightarrow a = dk \text{ and } b = dl \text{ for some } k,l \in \Z$. We need to show $d \mid b$ and $d \mid r$. We already have $d \mid b$, so we just need to solve for $r$: \begin{align*}
+        r & = a - bq    \\
+          & = dk - dlq  \\
+          & = d(k - lq)
+    \end{align*} Notice that $(k - lq) \in \Z$. However, we also need to prove that $d$ is the largest factor that \gls{Divides} both. Hence, assume there exists a $D \in \Z^+$ such that $D\mid b$, $D \mid r$, and $D > d$. Then, $D \times m = b$ and $D \times n = r \Rightarrow a = D(mq) + D(n) \Rightarrow D \mid a$, but this leads to a contradiction because we said that $d$ was the \gls{Greatest Common Divisor} of $a$. Hence, $D = d$.
+}
+
+Example: $150 = 4(36) + 6$ (Def 1.1.3) $\Rightarrow \gcd(150,36) = \gcd(36,6) \Rightarrow 36 = 6(6) + 0 \Rightarrow \gcd(36,6) = \gcd(6,0) = 6$. \\
+
+\begin{theorem}
+    {Euclidean Algorithm}Let $a,b \in \Z^+$ with $a \geq b)$. The following algorithm computes $\gcd(a,b)$ in a finite number of steps. \begin{enumerate}
+        \item Let $r_0 = a, r_1 = b$;
+        \item Set $i = 1$;
+        \item Divide $r_{i - 1}$ by $r_i$ to get quotient $q_i$ and remainder $r_{i + 1}$;
+        \item If $r_{i + 1} = 0$, stop, and $\gcd(a,b) = r_i$;
+        \item Otherwise, $r_{i + 1} > 0$. Set $i = i + 1$, and go back to step 3.
+        \item Step 3 is executed at most $2\log_2(b) + 2$ times.
+    \end{enumerate}
+    (Extended Version): There exists $u,v \in \Z$ such that $\gcd(a,b) = ua + cb$. Thus, $r_0 = a$, $r_1 = b$, $r_{i + 1} = r_{i - 1} - g_ir_i$, $s_0 = 1$, $s_1 = 0$, $s_{i + 1} = s_{i - 1} - q_is_i$ $(\text{up } 2) - (q\text{ left}) \times (\text{up } 1)$, $t_0 = 0$, $t_1 = 1$, $t_{i + 1} = t_{i - 1} - q_it_i$. Stop when $r_i = 0$, $u = s_{i - 1}$, $v = t_{i - 1}$
+\end{theorem}
+
+Example 1: $\gcd(24,16)$ at most $2\log_2(16) + 2$ steps to get $10 steps$. \\
+
+Example 2: $\gcd(2300, 2024)$
+
+\begin{table}[htbp]
+    \begin{tabular}{c|c|c|c|c}
+        $i$ & $r_i$        & $q_i$ & $s_i$             & $t_i$             \\ \hline
+        $0$ & $2300$       & N/A   & 1                 & 0                 \\
+        $1$ & $276$        & N/A   & 0                 & 1                 \\ \hline
+        $2$ & $276$        & $1$   & $1 - (1)(0) = 1$  & $0 - (1)(1) = -1$ \\ \hline
+        $3$ & $\boxed{92}$ & $7$   & $0 - (7)(1) = -7$ & $1 - (7)(-1) = 8$ \\
+        $4$ & $0$          & $4$   &                   &
+    \end{tabular}
+\end{table}
+
+Because \begin{align*}
+    2300 & = 1(2024) + 276     \\
+    2024 & = 7(276) + 92       \\
+    276  & = \boxed{3(92) + 0}
+\end{align*} Hence, we stop at 92. \\
+
+\section{Modular Arithmetic}
+
+\wrpdef{Modular Arithmetic}{Let $m\in \Z$. $a$ and $b$ are congruent $\mod m$ if their $m \mid (b - a)$ or $m \mid (a - b)$. Notated as $a = b\mod m$}
+
+Because of \gls{Divides}, we can write this as $b - a = mk$ for some $k \in \Z$ and $b = mk + a$ for some $k \in \Z$. For example, $17\mod 4 \equiv 1$. Or for another example, $-17\mod 4 \equiv -1 \equiv 3$. For addition, you can go in two separate directions. For the first, sequence of operations, we could add the numbers inside of the parentheses and then take the mod of the number as demonstrated $(26 + 14)\mod 5 \equiv 40 \mod 5 \equiv 0$, or we could take the mod of both numbers inside the parentheses, demonstrated as $26\mod + 14\mod 5 = 1 + 4 = 0$. \\
+
+\textbf{Proposition 1.13:} Let $m \in \Z^+$
+\begin{enumerate}
+    \item If $a_1 \equiv a_2 (\mod m)$ and $b_1 \equiv b_2 (\mod m)$ then $a_1 \pm b_1 \equiv a_2 \pm b_2 (\mod m) \equiv a_2(\mod m) + b_2(\mod m)$. Also, $a_1b_1 = a_2b_2(\mod m)=a_2(\mod m) b_2(\mod m)$
+    \item Let $a \in \Z$. Then $ab \equiv 1(\mod m)$ for some $b\equiv \Z \iff \gcd(a,m)=1$
+\end{enumerate}
+\pfs
+\begin{enumerate}
+    \item Homework
+    \item $(\Rightarrow)$ Assume $ab\equiv 1\mod m$ for some $b\in \Z$. $m\mid ab -1 \Rightarrow \exists k\in \Z$ such that $ab - 1 = mk$. $b(a) - k(m) = 1$ (from linear combination). By Pb. 1.11a on the homework, $\gcd (a,m) = 1$. \\
+          $(\Leftarrow)$ in book.
+\end{enumerate}
+
+\wrpdef{Ring}{The set $\{0,1,2,\dots,m-1\}$ and use addition mod $m$ and multiplication mod $m$. Additionally, the set needs to be closed under addition}
+
+\textbf{Fast forward to section 2.5:} \\
+
+\wrpdef{Group}{A set $G$ along with a binary operation (closure) such that for all $a,b \in G$, $a\times b \in G$ (closure), and there exists an $e \in G$ such that $a \times e = a$ and $e \times a = a$ (identity), for all $a \in G$, there exists $a^{-1} \in G$ such that $a \times a^{-1} = a^{-1} \times a = e$ (inverse), and for all $a,b,c \in G$, $(a \times b) \times c = a \times (b \times c)$ (associativity)}
+
+For commutativity, for all $a,b \in G$, $a\times b = b \times a$. Some groups have this, some do not. \\
+
+\begin{example}
+    {Integer Addition}Lets check to see addition among the integers are a group: $(\Z, +)$
+\end{example}
+
+\sol{
+    \begin{enumerate}
+        \item True. Let $a,b \in \Z$ $a + b \in \Z$.
+        \item True. $e = 0 \in \Z$, $a + 0 = a$ and $0 + a = a$
+        \item True. For all $a\in \Z$, $a^{-1} = -a$ because $a + (-a) = 0 = -a + a$
+        \item True. For all $a,b,c \in \Z$, $(a + b) + c = a + (b + c)$
+    \end{enumerate}
+    Therefore, the additive property of the integers are a group.In fact, because $a + b = b + a$ $\Z$ are a commutative group (abelian group).
+}
+
+\begin{example}
+    {Integer Multiplication}Lets check to see multiplication among the integers are a group: $(\Z, +)$
+\end{example}
+\sol{
+    \begin{enumerate}
+        \item True. Let $a,b \in \Z$ $ab \in \Z$.
+        \item True. $e = 1 \in \Z$, $a * 1 = a$ and $1 * a = a$
+        \item False. Counterexample: consider $2^{-1} = \frac{1}{2}$ because $2(\frac{1}{2}) = 1$ but $\frac{1}{2} \notin \Z$
+    \end{enumerate}
+}
+
+\begin{example}
+    {Even Number Addition}
+\end{example}
+
+Solve for the even numbers under addition, for the real numbers under multiplication, for $\Z_4$ under addition, and for $\Z_4$ under multiplication.
