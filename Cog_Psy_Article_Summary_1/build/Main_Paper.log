@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  26 SEP 2024 00:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  26 SEP 2024 00:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -866,17 +866,13 @@ LaTeX Info: Redefining \hbar on input line 50.
 )
 \c@NumberOfAuthors=\count468
 \c@NumberOfSuperscripts=\count469
-
-
-Class apa7 Warning: Deprecated: see documentation for \authorsaffiliations on input line 55.
-
 \c@NumberOfAffiliations=\count470
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'american'.
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 64.
-(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (c:\Users\paulb\VSTeX\Cog_Psy_Article_Summary_1\build\Main_Paper.aux)
 \openout1 = `Main_Paper.aux'.

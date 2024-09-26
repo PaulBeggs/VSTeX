@@ -169,20 +169,18 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 \expf{\hfill
     \begin{enumerate}
         \setcounter{enumi}{1}
-        \item Let \(\epsilon > 0\) and \(N = \frac{2}{\epsilon}\). Then, for \(n > N\),
+        \item Let \(\epsilon > 0\). Choose \(N = \frac{2}{\epsilon}\). Then, for \(n > N\),
               \begin{align*}
                   \disabs{\frac{2n^2}{n^3 + 3} - 0} & = \disabs{\frac{2n^2}{n^3 + 3}} \\
                                                     & = \frac{2n^2}{n^3 + 3}          \\
-                                                    & = \frac{2n^2}{n^3 + 3}          \\
                                                     & < \frac{2n^2}{n^3}              \\
-                                                    & < \frac{2}{n}                   \\
+                                                    & = \frac{2}{n}                   \\
                                                     & < \frac{2}{N}                   \\
-                                                    & < \frac{2}{2/\epsilon}          \\
-                                                    & = \epsilon
+                                                    & = \frac{2}{2/\epsilon}          \\
+                                                    & = \epsilon.
               \end{align*}
         Therefore, \(\limn{\frac{2n^2}{n^3 + 3}} = 0\). \qedhere
     \end{enumerate}
-
 }
 
 \begin{exercise}
@@ -215,7 +213,9 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 
 \sol{
     \begin{enumerate}
-        \item
+        \item Possible. Example: \(a_n = 1 \text{ for all } n \in \N\).
+        \item Impossible. We can use the \namrefthm{Uniqueness of Limits} to show that this is impossible. Essentially, because we found in (a) that the limit of an infinite number of ones converges to 1, it must be the case that if the limit is not equal to one, then the sequence cannot converge to one.
+        \item Possible. Example: \(\{2,2,2,2,4,4,4,4,1,1,1,1,1,3,3,\dots\}\)
     \end{enumerate}
 }
 
@@ -260,7 +260,7 @@ Let $\epsilon > 0$.$^1$ Since $(a_n)$ converges to $a$, there exists $N \in \N$ 
     \item If $c = 0$: \\
           then each $ca_n = 0$. So $(ca_n)$ converges to 0, which can equal $ca$.
     \item If $c > 0$: \\
-          $\disabs{ca_n - ca} = \disabs{c}\disabs{a_n - a} < \disabs{c}\frac{\epsilon}{\disabs{c} = \epsilon}$. \qedhere
+          $\disabs{ca_n - ca} = \disabs{c}\disabs{a_n - a} < \disabs{c}\frac{\epsilon}{\disabs{c}} = \epsilon$. \qedhere
 \end{itemize}
 
 (ii) \\
@@ -286,7 +286,7 @@ Let \(\epsilon > 0\). Since $(a_n)$ converges to $a$, there exists $N_1 \in \N$ 
 \end{align}
 Note that: (2.4) is where we added 0, (2.5) is from the triangle inequality, and (2.6) is just factored. Additionally, we choose \(N\) to get the fractions in (2.8) Now, we will pick up to back at $\epsilon > 0$. \\
 
-Let \(\epsilon > 0\). Since convergent sequences are bounded, then there exists $M > 0$ such that for all $n \in \N$, $|a_n| \leq M$. We can choose \(M\) so that \(|b_n| \leq M\) as well. Since $(a_n)$ converges to $a$, there exists $N_1 \in \N$ such that for all $n \geq N_1$, $\disabs{a_n - a} < \frac{\epsilon}{2M}$. Since $(b_n)$ converges to $b$, there exists $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{b_n - b} < \frac{\epsilon}{2M}$. Now, let $N = \max\{N_1, N_2\}$. Thus, for any $n \geq N$, (refer back to scratch paper, and change (2.1)'s sign from an `=' to `$\leq$'). \\
+Let \(\epsilon > 0\). Since convergent sequences are bounded, then there exists $M > 0$ such that for all $n \in \N$, $|a_n| \leq M$. We can choose \(M\) so that \(|b_n| \leq M\) as well. Since $(a_n)$ converges to $a$, there exists $N_1 \in \N$ such that for all $n \geq N_1$, $\disabs{a_n - a} < \frac{\epsilon}{2M}$. Since $(b_n)$ converges to $b$, there exists $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{b_n - b} < \frac{\epsilon}{2M}$. Now, let $N = \max\{N_1, N_2\}$. Thus, for any $n \geq N$, (refer back to scratch paper, and change (2.4)'s sign from an `=' to `$\leq$'). \\
 
 (iv) \\
 \textit{Scratch paper:}
@@ -302,7 +302,7 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
 }
 
 \begin{lemma}
-    Let \((a_n)\) and \(c < a\). there exists\(N \in \N\) such that for all \(n \geq N\), \(a_n > c\). Similarly, if \(a < d\), there exists \(N \in \N\) such that for all \(n \geq N\), \(a_n < d\).
+    Let \((a_n)\) and \(c < a\). there exists \(N \in \N\) such that for all \(n \geq N\), \(a_n > c\). Similarly, if \(a < d\), there exists \(N \in \N\) such that for all \(n \geq N\), \(a_n < d\).
 \end{lemma}
 
 \subsection{Limits and Order}
@@ -348,3 +348,76 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
     \end{enumerate}
     (For this exercise the Algebraic Limit Theorem is off-limits, so to speak.)
 \end{exercise}
+
+\sol{ \hfill
+    \begin{enumerate}
+        \item \textit{Proof.} Let $\epsilon > 0$. Since $(x_n)$ converges to 2, there exists $N \in \N$ such that for all $n \geq N$, $\disabs{x_n - 2} < \epsilon$. Now, for any $n \geq N$,
+              \begin{align*}
+                  \disabs{\frac{2x_n - 1}{3} - 1} & = \disabs{\frac{2x_n - 1 - 3}{3}} \\
+                                                 & = \disabs{\frac{2x_n - 4}{3}}      \\
+                                                 & = \frac{2}{3}\disabs{x_n - 2}      \\
+                                                 & < \disabs{x_n - 2} \\
+                                                    & < \epsilon
+              \end{align*} 
+              Therefore, \(\frac{2x_n - 1}{3} \rightarrow 1\) \qed
+        \item \textit{Proof.} Let $\epsilon > 0$. Since $(x_n)$ converges to 2, there exists $N \in \N$ such that for all $n \geq N$, $\disabs{x_n - 2} < \epsilon$. Now, for any $n \geq N$,
+              \begin{align*}
+                  \disabs{\frac{1}{x_n} - \frac{1}{2}} & = \disabs{\frac{2 - x_n}{2x_n}} \\
+                                                        & = \frac{1}{2x_n}\disabs{2 - x_n} \\
+              \end{align*} \qed
+    \end{enumerate}
+}
+
+\section{The Monotone Convergence Theorem and a First Look at Infinite Series}
+
+\begin{definition}
+    A sequence \(a_n\) is \textit{increasing} if \(a_n \leq a_{n+1}\) for all \(n \in \N\) and \textit{decreasing} if \(a_n \geq a_{n+1}\) for all \(n \in \N\). A sequence is \textit{monotone} if it is either increasing or decreasing.
+\end{definition}
+
+\begin{ntheorem}
+    {Monotone Convergence Theorem}If a sequence is monotone and bounded, then it converges.
+\end{ntheorem}
+
+\tpf{
+    Let \((a_n)\) be an increasing and bounded sequence. Since \((a_n)\) is bounded, the set \(A = \{a_n \ |\ n \in \N\}\) is clearly also bounded. Since \(A\) is bounded, \(\sup{A}\) exists. We claim that \(\limn{a_n} = \sup{A}\). Thus, for all \(\epsilon > 0\) and by our definition of supremum, there exists \(N \in \N\) such that \(\sup{A} - \epsilon < a_N \leq \sup{A}\). Since \((a_n)\) is increasing, for all \(n \geq N\), \(\sup{A} - \epsilon < a_N \leq a_n \leq \sup{A}\). It follows that \(\disabs{a_n - \sup{A}} < \epsilon\). Therefore, \(\limn{a_n} = \sup{A}\). 
+}
+
+\begin{example}
+    {MCT}Consider the recursively defined sequence \(x_n\) where \(x_1 = 3\) and for all \(n \in \N\), \(x_{n + 1} = \frac{1}{4 - x_n}\). Show that \(x_n\) converges.
+\end{example}
+
+\epf{
+    We will show that \(x_n\) is monotone and bounded. 
+    \begin{itemize}
+        \item \textbf{Part 1: Monotone Decreasing}
+        \begin{itemize}
+        \item \underline{Base case}: \(x_1 = 3\), \(x_2 = 1\). 
+        \item \underline{Induction step}: Assume for some \(n \in \N\), \(x_n \geq x_{n+1}\). It follows that 
+        \begin{align*}
+            x_n & \geq x_{n + 1} \\
+            4 - x_n & \leq 4 - x_{n + 1} \\
+            \frac{1}{4 - x_n} & \geq \frac{1}{4 - x_{n + 1}} \\
+            x_{n + 1} & \geq x_{n + 2}
+        \end{align*}
+        \end{itemize}
+    \item \textbf{Part 2: Bounded Below}
+    Claim: Sequence is bounded below by 0.
+    \begin{itemize}
+        \item \underline{Base case}: \(x_1 = 3 > 0\).
+        \item \underline{Induction step}: Assume for some \(n \in \N\), \(x_n \geq 0\). It follows that \(4 - x_n \leq 4\), and when we take the reciprocal, we get \begin{align*}
+               \frac{1}{4 - x_n} &\leq \frac{1}{4} \\
+               x_{n+1} &\geq 1/4 \\
+               &> 0
+        \end{align*}
+        By math induction, \(x_n\) is bounded below by 0. 
+    \end{itemize}
+    \end{itemize}
+    By the Monotone Convergence Theorem, \(x_n\) converges.
+
+    So, what is the limit? We know \((x_n)\) converges so let \(L = \limn{x_n}\). Then, \(\limn{x_{n+1}} = L\). We also know \(x_{n+1} = \frac{1}{4 - x_n}\). So \(L = \limn{x_{n+1}} = \limn{\frac{1}{4- x_n} = \frac{1}{4 - L}}\). It must be true that \(L = \frac{1}{4 - L}\). Solving for \(L\), we get \begin{align*}
+    L(4 - L) &= 1 \\
+    4L - L^2 &= 1 \\
+    L^2 - 4L + 1 &= 0
+\end{align*} Hence, \(L = 2 - \sqrt{3}\) or \(L = 2 + \sqrt{3}\). Notice that it cannot be the latter because it is bigger than 3.
+}
+
