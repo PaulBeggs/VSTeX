@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/Main_Paper"] 1727326745.65997 "build/Main_Paper.bcf" "build/Main_Paper.bbl" "build/Main_Paper" 1727327651.76179 0
+["biber build/Main_Paper"] 0 "build/Main_Paper.bcf" "build/Main_Paper.bbl" "build/Main_Paper" 1727327761.82037 -1
   "bibliography.bib" 1727325751 3780 fb816332b1037696ddeeefbe10e3db89 ""
-  "build/Main_Paper.bcf" 1727327651 133818 ed6fee6c57a364c2f8dc8a29f13e639a "pdflatex"
+  "build/Main_Paper.bcf" 1727327761 133818 ed6fee6c57a364c2f8dc8a29f13e639a "pdflatex"
   (generated)
   "build/Main_Paper.bbl"
   "build/Main_Paper.blg"
   (rewritten before read)
-["pdflatex"] 1727327650.33911 "c:/Users/paulb/VSTeX/Cog_Psy_Article_Summary_1/Main_Paper.tex" "build/Main_Paper.pdf" "Main_Paper" 1727327651.76256 0
+["pdflatex"] 1727327760.33393 "c:/Users/paulb/VSTeX/Cog_Psy_Article_Summary_1/Main_Paper.tex" "build/Main_Paper.pdf" "Main_Paper" 1727327761.82111 0
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1727316222 179281 07163ff08e7168fbcd0ad4df2d5a0958 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1727050291 11948197 d4504eab49177879c265b4debf5694f6 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -210,12 +210,12 @@
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty" 1718356376 10214 61188260d324e94bc2f66825d7d3fdf4 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "Main_Paper.tex" 1727327266 7878 8142d780b9ec49d9d09c4e6b9462add1 ""
-  "build/Main_Paper.aux" 1727327651 1617 e70e79b15f4097c99946427928ea00bd "pdflatex"
+  "Main_Paper.tex" 1727327759 7886 35491db72b1875a2f2ee35aa502d453c ""
+  "build/Main_Paper.aux" 1727327761 1617 e70e79b15f4097c99946427928ea00bd "pdflatex"
   "build/Main_Paper.bbl" 1727326747 9623 33622957b9dc3244412e4c379db19d57 "biber build/Main_Paper"
-  "build/Main_Paper.out" 1727327651 79 9ffaff75dcb2b717c2b22a25364f0572 "pdflatex"
-  "build/Main_Paper.run.xml" 1727327651 2471 0c8567df017cb34292f48d8a36efb765 "pdflatex"
-  "c:/Users/paulb/VSTeX/Cog_Psy_Article_Summary_1/Main_Paper.tex" 1727327266 7878 8142d780b9ec49d9d09c4e6b9462add1 ""
+  "build/Main_Paper.out" 1727327761 79 9ffaff75dcb2b717c2b22a25364f0572 "pdflatex"
+  "build/Main_Paper.run.xml" 1727327761 2471 0c8567df017cb34292f48d8a36efb765 "pdflatex"
+  "c:/Users/paulb/VSTeX/Cog_Psy_Article_Summary_1/Main_Paper.tex" 1727327759 7886 35491db72b1875a2f2ee35aa502d453c ""
   (generated)
   "build/Main_Paper.aux"
   "build/Main_Paper.bcf"
