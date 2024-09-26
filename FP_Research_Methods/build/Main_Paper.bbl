@@ -1,0 +1,194 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/apasortcite//global/global/global}
+    \entry{aron1992inclusion}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=70372818c3f3284a9faeea3559ee0c06}{%
+           family={Aron},
+           familyi={A\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=094119463ae6333a38c0c7e33c9532ba}{%
+           family={Aron},
+           familyi={A\bibinitperiod},
+           given={Elaine\bibnamedelima N},
+           giveni={E\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c1b4e61d858d2a1788b93beac8d9ab39}{%
+           family={Smollan},
+           familyi={S\bibinitperiod},
+           given={Danny},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {American Psychological Association}%
+      }
+      \strng{namehash}{964498f3eb3b8df06f19d33d1779d37a}
+      \strng{fullhash}{d990dadab309520b4fd69d5006375f28}
+      \strng{fullhashraw}{d990dadab309520b4fd69d5006375f28}
+      \strng{bibnamehash}{d990dadab309520b4fd69d5006375f28}
+      \strng{authorbibnamehash}{d990dadab309520b4fd69d5006375f28}
+      \strng{authornamehash}{964498f3eb3b8df06f19d33d1779d37a}
+      \strng{authorfullhash}{d990dadab309520b4fd69d5006375f28}
+      \strng{authorfullhashraw}{d990dadab309520b4fd69d5006375f28}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of personality and social psychology}
+      \field{number}{4}
+      \field{title}{Inclusion of other in the self scale and the structure of interpersonal closeness.}
+      \field{volume}{63}
+      \field{year}{1992}
+      \field{pages}{596}
+      \range{pages}{1}
+    \endentry
+    \entry{sunstein2015wiser}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7db9319b9972b60d9670001d1e4afa7d}{%
+           family={Sunstein},
+           familyi={S\bibinitperiod},
+           given={Cass\bibnamedelima R},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=63c6d078277375ae928f3821fec55287}{%
+           family={Hastie},
+           familyi={H\bibinitperiod},
+           given={Reid},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Harvard Business Press}%
+      }
+      \strng{namehash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{fullhash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{fullhashraw}{4865c059e1787ec3665b3344b73a390e}
+      \strng{bibnamehash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{authorbibnamehash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{authornamehash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{authorfullhash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{authorfullhashraw}{4865c059e1787ec3665b3344b73a390e}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Wiser: Getting beyond groupthink to make groups smarter}
+      \field{year}{2015}
+    \endentry
+  \enddatalist
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{aron1992inclusion}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=70372818c3f3284a9faeea3559ee0c06}{%
+           family={Aron},
+           familyi={A\bibinitperiod},
+           given={Arthur},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=094119463ae6333a38c0c7e33c9532ba}{%
+           family={Aron},
+           familyi={A\bibinitperiod},
+           given={Elaine\bibnamedelima N},
+           giveni={E\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c1b4e61d858d2a1788b93beac8d9ab39}{%
+           family={Smollan},
+           familyi={S\bibinitperiod},
+           given={Danny},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {American Psychological Association}%
+      }
+      \strng{namehash}{964498f3eb3b8df06f19d33d1779d37a}
+      \strng{fullhash}{d990dadab309520b4fd69d5006375f28}
+      \strng{fullhashraw}{d990dadab309520b4fd69d5006375f28}
+      \strng{bibnamehash}{d990dadab309520b4fd69d5006375f28}
+      \strng{authorbibnamehash}{d990dadab309520b4fd69d5006375f28}
+      \strng{authornamehash}{964498f3eb3b8df06f19d33d1779d37a}
+      \strng{authorfullhash}{d990dadab309520b4fd69d5006375f28}
+      \strng{authorfullhashraw}{d990dadab309520b4fd69d5006375f28}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of personality and social psychology}
+      \field{number}{4}
+      \field{title}{Inclusion of other in the self scale and the structure of interpersonal closeness.}
+      \field{volume}{63}
+      \field{year}{1992}
+      \field{pages}{596}
+      \range{pages}{1}
+    \endentry
+    \entry{sunstein2015wiser}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7db9319b9972b60d9670001d1e4afa7d}{%
+           family={Sunstein},
+           familyi={S\bibinitperiod},
+           given={Cass\bibnamedelima R},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=63c6d078277375ae928f3821fec55287}{%
+           family={Hastie},
+           familyi={H\bibinitperiod},
+           given={Reid},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Harvard Business Press}%
+      }
+      \strng{namehash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{fullhash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{fullhashraw}{4865c059e1787ec3665b3344b73a390e}
+      \strng{bibnamehash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{authorbibnamehash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{authornamehash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{authorfullhash}{4865c059e1787ec3665b3344b73a390e}
+      \strng{authorfullhashraw}{4865c059e1787ec3665b3344b73a390e}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Wiser: Getting beyond groupthink to make groups smarter}
+      \field{year}{2015}
+    \endentry
+  \enddatalist
+  \missing{tedvideo}
+\endrefsection
+\endinput
+
