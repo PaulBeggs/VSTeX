@@ -192,24 +192,9 @@ then the intersection $\bigcap^\infty_{n=1} A_n$ is finite and nonempty.
 \sol{\hfill
     \begin{enumerate}
         \item This is false. Consider the following as a counterexample: If we define $A_1$ as $A_n = \{n, n+1, n+2,\dots\} = \{k \in \N \ | \ k \geq n\}$, we can see why the intersection of these sets of infinite numbers are actually empty. Consider a number $m$ that actually satisfies $m \in A_n$ for every $A_n$ in our collection of sets. Because $m$ is not an element of $A_{m + 1}$, no such $m$ exists and the intersection is empty.
-        \item This is false. Consider the following as a counter example: Since $A_n$ is finite, consider the following sets: $A_1 = \{1\}$, $A_2 = \{2\}$, and so on. The intersection of these sets is empty because none of the sets contain numbers that are present in the other sets.
-        \item This is false. Let the following sets be defined as $A = \{1\}$, $B = \{2\}$, $C = \{3\}$. If we start on the left side of the equation: $A \cap (B \cup C)$ implies $\{1\} \cap (\{2\} \cup \{3\})$ implies $\{1\} \cap \{2, 3\}$ implies $\emptyset$. From the right: $(A \cap B) \cup C$ implies $ (\{1\} \cap \{2\}) \cup \{3\}$ implies $ \emptyset \cup \{3\}$ implies $ \{\emptyset, 3\}$.
-        \item  This is true. Let $x \in A$, $y \in B$, and $z \in C$. Consider the following:
-        \begin{enumerate}[label=(\arabic*)]
-            \item \textbf{From the left of the equation:} Inside the parenthesis, either the sets share an element and combine, or they do not share an element and are empty. This means we have two possibilities:
-            \begin{enumerate}[label=\roman*.]
-                \item \textbf{If the set inside the parenthesis is not empty}, then we have $x$ and $y \in A \cap B$. Then it could be the case that $x$ and $y \in C$. From this, we know 3 things can occur. Either every set contains only $y$, or $x$ and $y$.
-                \item \textbf{If the set inside the parenthesis is empty}, then the resulting intersection with $C$ would be the empty set.
-            \end{enumerate}
-            \item \textbf{From the right of the equation:} Similar to (1), either the sets share an element and combine, and they do not share an element and are empty. This means we have two possibilities:
-            \begin{enumerate}[label=\roman*.]
-                \item \textbf{If the set inside the parenthesis is not empty}, then we have $y$ and $z \in B \cap C$. Then it could be the case that $y$ and $z \in A$. From this, we know 2 things can occur. Either every set contains only $y$, or $y$ and $z$.
-                \item \textbf{If the set inside the parenthesis is empty}, then the resulting intersection with $A$ would be the empty set.
-            \end{enumerate}
-            \item In every case, either we get the empty set, or end up in a situation where every set contains just $y$ or all elements. Hence, the two sides of the equation will always equal each other. 
-        \end{enumerate}
-        \item This is true. Because $B \cap C$ contains all the elements in $B$ or $C$, so when the intersection is taken on either side of the equation, you will have the same elements regardless. (This statement is much shorter than the explanation given in the previous problem because I am unsure if I even a proof at all. I'm testing both waters here.) 
-    \end{enumerate}
+        \item This is true.
+        \item This is false. Let the following sets be defined as $A = \{1\}$, $B = \{2\}$, $C = \{3\}$. If we start on the left side of the equation: $A \cap (B \cup C)$ implies $\{1\} \cap (\{2\} \cup \{3\})$ implies $\{1\} \cap \{2, 3\}$ implies $\emptyset$. From the right: $(A \cap B) \cup C$ implies $ (\{1\} \cap \{2\}) \cup \{3\}$ implies $ \emptyset \cup \{3\}$ implies $ \{3\}$.
+        \item  This is true. 
 }
 
 \newpage

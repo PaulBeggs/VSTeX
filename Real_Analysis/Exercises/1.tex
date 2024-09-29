@@ -1,0 +1,115 @@
+
+\begin{exercise}
+    {1.2.3}Decide which of the following represent true statements about
+the nature of sets. For any that are false, provide a specific example where the
+statement in question does not hold.
+\begin{enumerate}
+    \item If $A_1 \supseteq A_2 \supseteq A_3 \supseteq A_4\dots$ are all sets containing an infinite number of
+elements, then the intersection $\bigcap^\infty_{n=1} A_n$ is infinite as well.
+    \item If $A_1 \supseteq A_2 \supseteq A_3 \supseteq A_4\dots$ are all finite, nonempty sets of real numbers,
+then the intersection $\bigcap^\infty_{n=1} A_n$ is finite and nonempty.
+    \item $A \cap (B \cup C) = (A \cap B) \cup C$
+    \item $A \cap (B \cap C) = (A \cap B) \cap C$
+    \item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+\end{enumerate}
+\end{exercise}
+
+\sol{\hfill
+    \begin{enumerate}
+        \item This is false. Consider the following as a counterexample: If we define $A_1$ as $A_n = \{n, n+1, n+2,\dots\} = \{k \in \N \ | \ k \geq n\}$, we can see why the intersection of these sets of infinite numbers are actually empty. Consider a number $m$ that actually satisfies $m \in A_n$ for every $A_n$ in our collection of sets. Because $m$ is not an element of $A_{m + 1}$, no such $m$ exists and the intersection is empty.
+        \item This is false. Consider the following as a counter example: Since $A_n$ is finite, consider the following sets: $A_1 = \{1\}$, $A_2 = \{2\}$, and so on. The intersection of these sets is empty because none of the sets contain numbers that are present in the other sets.
+        \item This is false. Let the following sets be defined as $A = \{1\}$, $B = \{2\}$, $C = \{3\}$. If we start on the left side of the equation: $A \cap (B \cup C)$ implies $\{1\} \cap (\{2\} \cup \{3\})$ implies $\{1\} \cap \{2, 3\}$ implies $\emptyset$. From the right: $(A \cap B) \cup C$ implies $ (\{1\} \cap \{2\}) \cup \{3\}$ implies $ \emptyset \cup \{3\}$ implies $ \{\emptyset, 3\}$.
+        \item  This is true. Let $x \in A$, $y \in B$, and $z \in C$. Consider the following:
+        \begin{enumerate}[label=(\arabic*)]
+            \item \textbf{From the left of the equation:} Inside the parenthesis, either the sets share an element and combine, or they do not share an element and are empty. This means we have two possibilities:
+            \begin{enumerate}[label=\roman*.]
+                \item \textbf{If the set inside the parenthesis is not empty}, then we have $x$ and $y \in A \cap B$. Then it could be the case that $x$ and $y \in C$. From this, we know 3 things can occur. Either every set contains only $y$, or $x$ and $y$.
+                \item \textbf{If the set inside the parenthesis is empty}, then the resulting intersection with $C$ would be the empty set.
+            \end{enumerate}
+            \item \textbf{From the right of the equation:} Similar to (1), either the sets share an element and combine, and they do not share an element and are empty. This means we have two possibilities:
+            \begin{enumerate}[label=\roman*.]
+                \item \textbf{If the set inside the parenthesis is not empty}, then we have $y$ and $z \in B \cap C$. Then it could be the case that $y$ and $z \in A$. From this, we know 2 things can occur. Either every set contains only $y$, or $y$ and $z$.
+                \item \textbf{If the set inside the parenthesis is empty}, then the resulting intersection with $A$ would be the empty set.
+            \end{enumerate}
+            \item In every case, either we get the empty set, or end up in a situation where every set contains just $y$ or all elements. Hence, the two sides of the equation will always equal each other. 
+        \end{enumerate}
+        \item This is true. Because $B \cap C$ contains all the elements in $B$ or $C$, so when the intersection is taken on either side of the equation, you will have the same elements regardless. (This statement is much shorter than the explanation given in the previous problem because I am unsure if I even a proof at all. I'm testing both waters here.) 
+    \end{enumerate}
+}
+
+\newpage
+\begin{exercise}
+    {1.2.5}\Gls{De Morgan's Laws}. Let $A$ and $B$ be subsets of $\R$.
+    \begin{enumerate}
+        \item  If $x \in (A \cap B)^c$, explain why $x \in A^c \cup B^c$. This shows that $(A \cap B)^c \subseteq A^c \cup B^c$.
+        \item Prove the reverse inclusion $(A \cap B)^c \supseteq A^c \cup B^c$, and conclude that $(A \cap B)^c = A^c \cup B^c$.
+        \item Show $(A \cup B)^c = A^c \cap B^c$ by demonstrating inclusion both ways.
+    \end{enumerate}
+\end{exercise}
+
+\sol{\hfill
+    \begin{enumerate}
+        \item If $x \in (A \cap B)^c$, and we know that $A^c = \{x \in \R \ \colon x \notin A\}$, then we know $x$ must cannot exist in $A^c$ and $B^c$ because $(A \cap B)^c = \{x \in \R \ \colon x \notin (A \cap B)\}$. Thus, $x$ is in either $A^c$ or $B^c$. Put another way $x \in A^c \cup B^c$. Since we have shown that an element that started in $(A \cap B)^c$ ended up in $A^c \cup B^c$, then we know $(A \cap B)^c \subseteq A^c \cup B^c$.
+        \item Assume there exists a $y \in A^c \cup B^c$. Thus, it must be the case that $y \notin A$ or $y \notin B$. Hence, $y$ cannot be exist in both sets at the same time, so $y \in (A \cap B)^c$. Because we have taken an element that started in $A^c \cup B^c$ and have shown that it exists in $(A \cap B)^c$, we have proven $A^c \cup B^c \subseteq (A \cap B)^c$. 
+        \item\hfill \sbseteqpf
+    {Assume there exists $x \in (A \cap B)^c$, and we know that $A^c = \{x \in \R \ \colon x \notin A\}$, then we know $x$ must cannot exist in $A^c$ and $B^c$ because $(A \cap B)^c = \{x \in \R \ \colon x \notin (A \cap B)\}$. Thus, $x$ is in either $A^c$ or $B^c$. Put another way $x \in A^c \cup B^c$. Since we have shown that an element that started in $(A \cap B)^c$ ended up in $A^c \cup B^c$, then we know $(A \cap B)^c \subseteq A^c \cup B^c$.}
+    {Now assume there exists a $y \in A^c \cup B^c$. Thus, it must be the case that $y \notin A$ or $y \notin B$. Hence, $y$ cannot be exist in both sets at the same time, so $y \in (A \cap B)^c$. Because we have taken an element that started in $A^c \cup B^c$ and have shown that it exists in $(A \cap B)^c$, we have proven $A^c \cup B^c \subseteq (A \cap B)^c$.}
+    {Therefore, we have shown through proving both sides of the implication, that these two statements are logically equivalent. In that, all elements of $A^c \cup B^c$ are the same elements that are in $(A \cap B)^c$}
+    {xgray}
+    \end{enumerate}
+}
+
+
+
+\begin{exercise}
+    {1.2.7}Given a function $f$ and a subset $A$ of its domain, let $f(A)$
+represent the range of $f$ over the set $A$; that is, $f(a) = \{f(x) \colon x \in A\}$.
+\begin{enumerate}
+    \item Let $f(x) = x^2$. if $A = [0,2]$ (the closed interval $\{x \in \R \colon 0 \leq x \leq 2\}$) and $B = [1,4]$, find $f(A)$ and $f(B)$. Does $f(A\cap B) = f(A) \cap f(B)$ in this case? Does $f(A \cup B) = f(A) \cup f(B)$?
+    \item Find two sets $A$ and $B$ for which $f(A\cap B) \ne f(A) \cap f(B)$.
+    \item Show that, for an arbitrary function $g \ \colon \ \R \rightarrow \R$, it is always true that $g(A \cap B) \subseteq g(A) \cap g(B)$ for all sets $A,B\subseteq \R$.
+    \item Form and prove a conjecture about the relationship between $g(A \cup B)$ and $g(A) \cup g(B)$ for an arbitrary function $g$.
+\end{enumerate}
+\end{exercise}
+
+\sol{\hfill
+    \begin{enumerate}
+        \item Since $f(x) = x^2$, the intervals of $f(A)$ would be $[0,4]$ and $f(B)$ would be $[1,16]$. The interval of the intersection of $A \cap B$ is $[1,2]$. Take this through our function, we get $f(A \cap B) = [1,4]$. On the other side of the equation, we already know the intervals of $f(A)$ and $f(B)$, and the intersection of theirs would be $[1,4]$. So they do equal each other. We know $f(A \cup B)$ and $f(A) \cup f(B)$ will be equivalent because $f(A \cup B)$ has an interval of $[0,16]$, and $f(A) \cup f(B)$ also has an interval of $[0,16]$ because taking the union of $[0,4] \cup [1,16]$ is $[0,16]$.
+        \item Two sets could be $A = [5,6]$ and $B = [0,0]$. Because the sets have nothing in common even after taking their function, they do not equal each other. 
+        \item \hfill \expf{Let $x \in g(A \cap B)$. Using the definition of function, we know there exists a $y \in A \cap B$ to which that $y$ is mapped to as $g(y) = x$. From the definition of intersection, we know $y \in A$ and $y \in B$ such that $x = g(y) \in g(A)$ and $x = g(y) \in g(B)$ because $y \in A \cap B$. Putting it together, we have $x \in g(A) \cap g(B)$ thus proving $g(A \cap B) \subseteq g(A) \cap g(B)$}
+        \item Conjecture: For any function $g$ defined as $g \ \colon \R \rightarrow \R$ and for any subsets $A,B \subseteq \R$, the following holds: $$g(A \cup B) = g(A) \cup g(B)$$ 
+        \sbseteqpf
+        {Take any element $x \in g(A \cap B)$. By definition of function, we know there exists some $y \in A \cup B$ such that $g(x) = y$. From the definition of union, we know $y \in A$ or $y \in B$ such that $x = g(y) \in g(A)$ or $x = g(y) \in g(B)$ or both. Putting it together, we have $x \in g(A) \cup g(B)$ thus proving $g(A \cup B) \subseteq g(A) \cup g(B)$.}
+        {Take any element $p \in g(A) \cap g(B)$. By definition of union, we know $p$ is either in $g(A)$ or $g(B)$ or both. From the definition of function, we know that if $p \in g(A)$ or $p \in g(B)$ then there exists some $q \in A$ or $q \in B$ such that $g(q) = p$. Putting it together, we have $q \in A \cup B$. Moreover, this means $p = g(x) \in g(A \cup B)$. And since $p \in g(A) \cup g(B)$ implies $p \in g(A \cup B)$, we know $g(A) \cup g(B) \subseteq g(A \cup B)$.}
+        {Therefore, since we have proven that both expressions are functions of each other, we have proved that they are equal.}
+        {xgray}
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {1.2.8}Given a function $f \ \colon A \rightarrow B$ can be defined as either \gls{one-to-one} or \gls{onto}, give an example of each or state that the request is impossible:
+    \begin{enumerate}
+        \item $f \ \colon \N \rightarrow \N$ that is 1-1 but not onto.
+        \item $f \ \colon \N \rightarrow \N$ that is onto but not 1-1.
+        \item $f \ \colon \N \rightarrow \Z$ that is 1-1 and onto.
+    \end{enumerate}
+\end{exercise}
+
+\sol{\hfill
+    \begin{enumerate}
+        \item The function $f(a) + 1$ is 1-1 because when \begin{align*}
+            f(a_1) &= f(a_2)\\
+            a_1 + 1 &= a_2 + 1 \\
+            a_1 &= a_2
+        \end{align*}
+        However, the function is not onto because the entire co-domain is not covered. That being 1.
+        \item \textit{We need to find a function that will cover every entry in the co-domain, while also avoiding a scenario where $a_1 = a_2$...} Consider the function, 
+        $$f(a) =
+        \begin{cases}
+            a &\text{ if \textit{a} is odd,}\\
+            a - 1 &\text{ if \textit{a} is even}
+        \end{cases}$$
+        This function is onto because every natural number is covered, but it is not 1-1 because $a_1 \ne a_2 - 1$.
+        \item This request is not possible. There is no way to map every natural number to every integer because we are simply missing 0! (Not 0 factorial, we do have the number 1, I just mean the number 0 in a exclamatory sense.)
+    \end{enumerate}
+}

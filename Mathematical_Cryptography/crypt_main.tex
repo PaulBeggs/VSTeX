@@ -15,6 +15,8 @@
 \usepackage{setspace}
 \linespread{1}
 
+\setlength{\headheight}{18.5764pt}
+
 %%% Define new colors %%%
 \usepackage{xcolor}
 \definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
@@ -135,8 +137,6 @@
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
-\setlength{\headheight}{15pt} % Adjust accordingly if you have a tall header
-
 
 %%%%% Colored Boxes %%%%%
 \usepackage{tcolorbox}
@@ -151,7 +151,7 @@
     colframe=xblue, %color of frame
     colback=xblue!15, %color of background
     coltitle=white, %color of title text
-    label={thm:#2},
+    before={\noindent\hypertarget{thm:#2}{}},
     title={\large \textbf{Theorem: #2}},
     #1
 }
@@ -170,14 +170,14 @@
 
 %% Definitions %%
 \newenvironment{definition}[2][]{%
-    \textbf{Definition \Gls{#2}:} #1
+    \textbf{Definition \textcolor{horange}{#2}:} #1
     \par\vspace{0.5em}\noindent
 }{\par\vspace{1em}\noindent}
 
 \newcommand{\wrpdef}[2]{%
-    \newglossaryentry{#1}{name=#1,description={#2}}
+    \hypertarget{#1}{}
     \begin{definition}
-        {#1}#2.
+        {#1}#2
     \end{definition}
 }
 
@@ -198,23 +198,20 @@
     colframe=orangehdx!75,
     colback=orangehdx!10,
     coltitle=white,
-    label={ex:#2},
     title={\large \textbf{Exercise #2}},
-    before={\setstretch{1}}, % Set line spacing to 1 before the box content
-    after={\setstretch{1}},  % Reset line spacing after the box content
-    #1,
+    after={\hypertarget{ex:#2}{}},
+    #1
 }
 
 
-%% Examples %%
-% need to add counter here: use counter=boxcounter
-\newtcolorbox[]{example}[2][]{%
+\newcounter{ExampleCounter}
+\newtcolorbox[use counter=ExampleCounter, number within=chapter]{example}[2][]{%
     rounded corners,
     colframe=teal,
     colback=teal!15,
     coltitle=white,
-    label={ex:},
-    title={\large \textbf{Example: #2}},
+    label={ex:\theExampleCounter},
+    title={\large \textbf{Example \theExampleCounter: #2}},
     #1,
 }
 
@@ -247,9 +244,10 @@
 \usepackage{enumerate}
 \usepackage{enumitem}
 \usepackage{lipsum}  %This package lets us generate random text for example purposes.
-\usepackage{glossaries}
+\usepackage{booktabs}   
+\usepackage{ragged2e}
+\usepackage{multirow}
 
-\makeglossaries
 
 
 
@@ -269,6 +267,9 @@
 
 % Integers
 \newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Finite fields
+\newcommand{\F}{\ensuremath{\mathbb{F}}}
 
 % Rational Numbers
 \newcommand{\Q}{\ensuremath{\mathbb{Q}}}
@@ -392,6 +393,14 @@
     \end{customframedproof}
 }
 
+\newcommand{\lesol}[1]{
+    \begin{customframedproof}[linecolor=teal]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
 \newcommand{\pb}[2]{
     \begin{exercise}{#1}[label=ex:#1]
     #2
@@ -411,8 +420,10 @@
     \end{customframedproof}
 }
 
-\renewcommand{\theenumi}{\alph{enumi}} 
-\renewcommand{\labelenumi}{(\theenumi)}
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+
+
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
    %% CODE FORMATING %%%
@@ -558,17 +569,25 @@
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\chapter*{Exercises pt. 1} \label{ex 1}
-\vspace*{-0.25in}
-\input{Exercises/1}
 
-\chapter*{Exercises pt. 2} \label{ex 2}
-\vspace*{-0.25in}
-\input{Exercises/2}
 
 \chapter{The Real Numbers} \label{Real nums}
 \vspace*{-0.25in}
 \input{Chapters/ch_1}
+
+\chapter{Discrete Logarithms and Diffie-Hellman}\label{discrete log}
+\vspace*{-0.25in}
+\input{Chapters/ch_2}
+
+\renewcommand{\theenumi}{\alph{enumi}} 
+\renewcommand{\labelenumi}{(\theenumi)}
+\chapter*{Exercises pt. 1} \label{ex 1}
+\vspace*{-0.25in}
+\input{Exercises/1}
+
+% \chapter*{Exercises pt. 2} \label{ex 2}
+% \vspace*{-0.25in}
+% \input{Exercises/2}
 
 % \chapter{Power Set} \label{Power Set}
 % \vspace*{-0.25in}
@@ -594,7 +613,6 @@
 % \vspace*{-0.25in}
 % \input{Chapters/ch_11}
 
-\printglossaries
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \end{document}

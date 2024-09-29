@@ -134,7 +134,7 @@
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
-\setlength{\headheight}{15pt} % Adjust accordingly if you have a tall header
+\setlength{\headheight}{18.5764pt}
 
 
 %%%%% Colored Boxes %%%%%
@@ -260,7 +260,7 @@
 
 %% MATH PACKAGES, ENVIRONMENTS, COMMANDS %%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-%You'll need your own packages, theroem types, and commands.
+%You'll need your own packages, theorem types, and commands.
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds,calc,patterns}
@@ -335,14 +335,14 @@
         leftmargin=0pt,
         rightmargin=0pt,
         skipabove=\topsep,
-        skipbelow=\topsep
+        skipbelow=\topsep%
     ]
     \noindent
-    \begin{minipage}[t]{0.08\textwidth} % Adjust width as needed
-        \textbf{#2} % The label for the implication (Rightarrow or Leftarrow)
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
     \end{minipage}%
-    \begin{minipage}[t]{0.90\textwidth} % Adjust width as needed
-        \begin{adjustwidth}{0pt}{0pt} % No additional indentation
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
 }{
     \end{adjustwidth}
     \end{minipage}
@@ -559,7 +559,7 @@
 
 % No need to edit.
 
-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 	
 	\thispagestyle{plain}
 	% Table of Contents will automatically update based on included chapters
@@ -571,65 +571,43 @@
 	\end{spacing}
 
 
-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-
-
-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-
-
-
-%%% CHAPTERS %%%
-
-% The document will automatically update (including numbering and toc)
-% You may need to compile twice to update the toc
-% Witness magic!
-	
-% Chapter files -- containing the actual text of the document
- % These are in the chapters folder
-% All images (for any chapter) must be placed in the images folder
-
-% Example chapters are included with examples on formatting boxes and figures
-
-
-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-
-% \chapter{The Real Numbers}\label{Real nums}
-% \vspace*{-0.25in}
-% \input{Chapters/ch_1}
-
-\stepcounter{chapter}{1}
+\chapter{The Real Numbers}\label{Real nums}
+\vspace*{-0.25in}
+\input{Chapters/ch_1}
 
 \chapter{Sequences and Series}\label{sequences and series}
 \vspace*{-0.25in}
 \input{Chapters/ch_2}
 
-% \chapter{Equivalency} \label{Equivalency}
+
+
+% \printglossary[title=Glossary]
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+% \chapter*{Exercises 1}\label{Exercises 1}
 % \vspace*{-0.25in}
-% \input{Chapters/ch_7}
+% \input{Exercises/1}
 
-% % \chapter{Functions \& Bijections}\label{Functions}
-% % \vspace*{-0.25in}
-% % \input{Chapters/ch_8}
+% \chapter*{Exercises 2}\label{Exercises 2}
+% \vspace*{-0.25in}
+% \input{Exercises/2}
 
-% % \chapter{Recursion \& The Whole Numbers}\label{Recursion}
-% % \vspace*{-0.25in}
-% % \input{Chapters/ch_9}
+% \fancyhead[R]{Exercises 3}
 
-% % \chapter{The Integers} \label{Integers}
-% % \vspace*{-0.25in}
-% % \input{Chapters/ch_10}
-
-% % \chapter{Cardinality} \label{Cardinality}
-% % \vspace*{-0.25in}
-% % \input{Chapters/ch_11}
+% \chapter*{Exercises 3}\label{Exercises 3}
+% \vspace*{-0.25in}
+% \input{Exercises/3}
 
 % \chapter*{Presentation Problem 1}\label{pres 1}
 % \vspace*{0.25in}
 % \input{Presentation Problems/Problem 1.2.13c}
 % \addcontentsline{toc}{chapter}{Presentation Problem 1}
 
-\printglossary[title=Glossary]
+
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 

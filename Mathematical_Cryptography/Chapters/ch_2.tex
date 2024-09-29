@@ -1,0 +1,108 @@
+\section{The Birth of Public Key Cryptography}
+
+\wrpdef{One-way Function}{A \textit{one-way function} that is easy to computer, but whose inverse is difficult.}
+
+\wrpdef{Trap-door Function}{A \textit{trap-door function} is a one-way function with an extra piece of information that makes \(f^{-1}\) easy.}
+
+\section{Discrete Logarithm Problem (DLP)}
+
+\wrpdef{Discrete Logarithm Problem}{Let \(g\) be a primitive root for \(\F_p\) and let \(h\) be a nonzero element of \(\F_p\). The \textit{Discrete Logarithm Problem} is the problem of finding an exponent \(x\) such that \[g^x \equiv h \ (\text{mod } p).\] The number \(x\) is called the \textit{discrete logarithm} of \(h\) to the base \(g\) and is denoted by \(\log_g(h)\).}
+
+Remember the rules of logarithms: \begin{align*}
+    \log_b(a \cdot c) & = \log_b(a) + \log_b(c) \\
+    \log_b(a^c)       & = c \cdot \log_b(a)     \\
+    \log_b(a / c)     & = \log_b(a) - \log_b(c)
+\end{align*}
+
+What is the value of \(x\) such that \(20^x = 21 \ (\text{mod } 23) \overset{\text{Brute-f}}{\Longrightarrow} \log_{20}21 = \boxed{7} \ (\text{mod } 23)\). (where \(7\) is from wolfram.)
+
+\begin{example}
+    {DLP}Find \(\log_2(10) \ (\text{mod } 11)\). In other words, find the value of \(x\) such that \(2^x = 10 \ (\text{mod } 11)\).
+\end{example}
+
+\lesol{
+    \begin{align*}
+        2^1        & = 2 \ (\text{mod } 11)          \\
+        2^2        & = 4 \ (\text{mod } 11)          \\
+        2^3        & = 8 \ (\text{mod } 11)          \\
+        2^4        & = 5 \ (\text{mod } 11)          \\
+        2^5        & = 10 \ (\text{mod } 11)         \\
+        \log_2(10) & = \boxed{5} \ (\text{mod } 11).
+    \end{align*}
+}
+
+\subsection{Diffie-Hellman Key Exchange}
+
+D-H gives a way for Alice and Bob to get a secret shared key in an unsecure environment (i.e., when Eve is listening). Now, we will follow the steps of D-H below:
+
+\begin{enumerate}[label=\arabic*.]
+    \item Alice and Bob choose large prime \(p\) and primitive root \(g\) and make public \(k_{\text{pub}} = (p,g)\).
+    \item Alice and Bob each pick their own secret integers, \(a,b\) such that \(k_{\text{priv } A} = a\) and \(k_{\text{priv } B} = b\). Compute \(g^a \ (\text{mod } p) = A\) and \(g^b \ (\text{mod } p) = B\).
+    \item Exchange \(a\) and \(b\) over an insecure channel.
+          \begin{enumerate}[label=\roman*.]
+              \item Note that Eve would have to solve \hyperlink{Discrete Logarithm Problem}{DLP} if she obtained \(a\) and \(b\) where \(a = \log_A(A)\) and \(b = \log_g(B)\).
+              \item Guidelines \(\approx 2^{1000} g \approx p/2\).
+          \end{enumerate}
+    \item Alice computes \(B^a \ (\text{mod } p) = A'\) and Bob computes \(A^b \ (\text{mod } p) = B'\).
+\end{enumerate}
+
+\begin{example}
+    {D-H}Let \(p = 23\) and \(g = 5\). Alice chooses \(a = 6\) and Bob chooses \(b = 15\). Compute the shared secret key.
+\end{example}
+
+\lesol{
+    \begin{align*}
+        A  & = 5^6 \ (\text{mod } 23) = 8     \\
+        B  & = 5^{15} \ (\text{mod } 23) = 19 \\
+        A' & = 19^6 \ (\text{mod } 23) = 2    \\
+        B' & = 8^{15} \ (\text{mod } 23) = 2.
+    \end{align*}
+}
+
+\wrpdef{Diffie-Hellman Problem}{Let \(p\) be a prime number and \(g\) an integer. The \textit{Diffie-Hellman Problem} is the problem of computing the value of \(g^{ab} \ (\text{mod } p)\) from the known values of \(g^a \ (\text{mod } p)\) and \(g^b \ (\text{mod } p)\).}
+
+\section{Elgamal Public Key Cryptosystem}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{@{}p{0.9\textwidth}l@{}}
+        \toprule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Public parameter creation}}}                                                                            \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering A trusted party chooses and publishes a large prime $p$ and an element $g$ modulo $p$ of large (prime) order.}} \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Key creation}}}                                                                                         \\ \midrule
+        \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Alice}}} & \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Bob}}}                     \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{Choose private key \(1 \leq a \leq p -1.\)                                                                                \\ Compute \(A = g^a \ (\text{mod } p)\). \\ Publish the public key \(A\).}} &  \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}\centering\textbf{Encryption}}                                                                                                                    \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{}}                     & \multicolumn{1}{r}{\parbox[t]{0.45\textwidth}{\raggedright Choose plaintext $m$. \\ Choose random element \(k\). \\ Use Alice's public key \(A\) \\ \quad to compute \(c_1 = g^k \ (\text{mod } p)\) \\ \quad and \(c_2 = mA^k \ (\text{mod } p). \) \\ Send ciphertext \(c_1,c_2\) to Alice.}}                                            \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering\textbf{Decryption}}}                                                                                                                    \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{Compute \((a_1^a)^{-1} \cdot c_2 \ (\text{mod } p)\).\\  This quantity is equal to \(m\).}}                     &                                                                                             \\ \bottomrule
+    \end{tabular}
+    \caption{Elgamal Key Creation, Encryption, and Decryption}
+\end{table}
+
+\begin{example}
+    {Elgamal}Let \(p = 29\) and \(g = 2\). Alice chooses \(a = 12\) and Bob chooses \(k = 5\) and wants to send secret message \(m = 26\). Compute the shared secret key.
+\end{example}
+
+\lesol{First, we need to calculate Alice's \(A\) and Bob's \(B\). Then, we can calculate the ciphertexts \(c_1\) and \(c_2\):
+    \begin{align*}
+        A  & = g^{a} \ (\text{mod } p) & = &\ 2^{12} \ (\text{mod } 29) = 7    \\
+        B  & = g^k \ (\text{mod } p) & = &\ 2^5 \ (\text{mod } 29) = 3   \\
+        c_1 & = g^k \ (\text{mod } p)  & = &\ 2^5 \ (\text{mod } 29) = 3     \\
+        c_2 & = m(A^k) \ (\text{mod } p)  & = &\ 26(7^{5} \ (\text{mod } 29)) = 10 \\
+    \end{align*}
+    Now, for Alice to decrypt the message, she must compute \((c_1^a)^{-1} \cdot c_2 \ (\text{mod } p)\):
+    \[
+    (c_1^a)^{-1} \cdot c_2 \ (\text{mod } p) = (3^{12})^{-1} \cdot 10 \ (\text{mod } 29)
+    \] 
+    The order of operations to compute this is as follows:
+    \begin{enumerate}[label=\arabic*.]
+        \item \textbf{Compute} \(3^{12} \ (\text{mod } 29) = 16\);
+        \item \textbf{Compute} \(16^{-1} \ (\text{mod } 29) = 20\);
+        \item \textbf{Finish by multiplying} \(20 \cdot 10 \ (\text{mod } 29) = 26\).
+    \end{enumerate}
+}
+
+\begin{note}
+    Be aware: You should only use this encryption scheme once. If you use it more than once, it is possible for an attacker to decrypt the message. For example, Eve knows \(m_1(c_1, c_2) \rightarrow\) Eve finds \(A\) by keeping record of the first message, then by solving for \(d_2\) such that \(c_1, d_2\) (where \(c_1\) is the \textit{same} as the first message) and \(d_2\) is the second message. Then, Eve can solve for \(m_2\) by computing \((c_1^d)^{-1} \cdot d_2 \ (\text{mod } p)\).
+\end{note}

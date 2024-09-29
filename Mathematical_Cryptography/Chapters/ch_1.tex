@@ -1,29 +1,29 @@
-\section{Introduction (Terms)}
+\section{Introduction}
 
 \begin{note}
     Before starting the course, it is important to understand that this document is for notetaking, and will therefore be a bit more informal than the actual textbook. The textbook is \textit{An Introduction to Mathematical Cryptography} by Hoffstein, Pipher, and Silverman. The textbook can be located at \href{run:./An%20Introduction%20to%20Mathematical%20Cryptography.pdf}{this link}
 
 \end{note}
 
-\wrpdef{Caesar Shift Cipher}{An encrypted text (by \textbf{shifting}), and you match it up with the alphabet. To encrypt, you write out a sentence, match it with a random assortment of letters by shifting the letters by a predetermined amount}
+\wrpdef{Caesar Shift Cipher}{An encrypted text (by \textbf{shifting}), and you match it up with the alphabet. To encrypt, you write out a sentence, match it with a random assortment of letters by shifting the letters by a predetermined amount.}
 
-\wrpdef{Code}{Replace words / concepts. Example: Eagle has landed}
+\wrpdef{Code}{Replace words / concepts. Example: Eagle has landed.}
 
-\wrpdef{Cipher}{Replacing characters or letters. Simply, replacing one letter for another}
+\wrpdef{Cipher}{Replacing characters or letters. Simply, replacing one letter for another.}
 
-\wrpdef{Scytale Cipher}{Used by the Spartans in the $5^{\text{th}}$ century B.C.. This is also known as a \textbf{Transposition Cipher}}
-\wrpdef{Transposition Cipher}{Changed order, but the stayed the same}
+\wrpdef{Scytale Cipher}{Used by the Spartans in the $5^{\text{th}}$ century B.C.. This is also known as a \textbf{Transposition Cipher}.}
+\wrpdef{Transposition Cipher}{Changed order, but the stayed the same.}
 
-\wrpdef{Plain Text}{Original message that is readable to humans. Abbreviated as [pt]}
+\wrpdef{Plain Text}{Original message that is readable to humans. Abbreviated as [pt].}
 
-\wrpdef{Cipher Text}{Encrypted message that is unreadable to humans. Abbreviated as [ct]}
+\wrpdef{Cipher Text}{Encrypted message that is unreadable to humans. Abbreviated as [ct].}
 
-\wrpdef{Encrypting}{From \gls{Plain Text} to \gls{Cipher Text}. The inverse of encrypting is decrypting; which is going from the \glslink{Plain Text}{[ct]} to the \glslink{Cipher Text}{[pt]}} \\
+\wrpdef{Encrypting}{From plain text to cipher text. The inverse of encrypting is decrypting; which is going from the Plain Text [pt] to the Cipher Text [ct].}
 
 \wrpdef{Key}{A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: $A \rightarrow R$ rotated clockwise by 17}
-\wrpdef{Key Space}{The set of all keys, notated $\mathcal{K}$. The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, $|\mathcal{K}| = 26$ because there are 26 letters in the alphabet. Similarly, Scytale $|\mathcal{K}| = \text{pt}$.)} \\
+\wrpdef{Key Space}{The set of all keys, notated $\mathcal{K}$. The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, $|\mathcal{K}| = 26$ because there are 26 letters in the alphabet. Similarly, Scytale $|\mathcal{K}| = \text{pt}$.)}
 
-\wrpdef{Brute Force Attack}{[During decryption] Trying all possible keys} \\
+\wrpdef{Brute Force Attack}{[During decryption] Trying all possible keys.}
 
 \subsection{Goals of Cryptography}
 
@@ -39,9 +39,9 @@ Generally, these are the people and setting that will be used in examples: Alice
 
 Each letter can be replaced with any other letter. For example, you may have a key: $\{a,b,c,\dots,z\} \rightarrow \{q,m,w,\dots,t\}$. Its cardinality is $|\mathcal{K}| = 26!$. \\
 
-\wrpdef{Cryptanalysis}{Process of decrypting without a key} \\
+\wrpdef{Cryptanalysis}{Process of decrypting without a key.} \\
 
-\wrpdef{Bigrams}{Two letters that are commonly placed together in language. For example, ``Th'', ``is'', or ``He''} \\
+\wrpdef{Bigrams}{Two letters that are commonly placed together in language. For example, ``Th'', ``is'', or ``He''.}
 
 \wrpdef{Frequency Analysis}{English language patterns} Note that $13\%$ of letters that are used in the alphabet are (in order from least to greatest): E, T, A, O, N. In brief, the longer the text, the more likely these letters will pop up.
 
@@ -49,16 +49,22 @@ Each letter can be replaced with any other letter. For example, you may have a k
 
 Can assume all the properties of $\R, \Z, \text{ and } \N$. Note that $\N$ does not include 0. \\
 
-\wrpdef{Divides}{$(b \mid a)$ if $a = b \times n $ for some $n \in \Z$}
+\wrpdef{Divides}{Let \(a\) and \(b\) be integers with \(b \ne 0\). We say that \(b \textit{ divides } a\) or that \(a \) is divisible by \(b\), denoted by \(b \mid a\), if there exists an integer \(n\) such that \(a = nb\).} 
 
-Let $a, b, \in \Z$  Example 1: $-4 \mid 100 \rightarrow (-4)(-25) = 100$. Example 2: $100 = 8(12) + 4 \ne 100$. Therefore, $8 \nmid 100$.
+\begin{example}
+    {Divisibility}Let \(a = 100\) and \(b = 4\). Is \(b \mid a\)?
+\end{example}
 
-\begin{theorem}
-    {} $\{x \mid 0 \ \colon \ \forall x \in \Z\}$ and $\{1 \mid x \ \colon \ \forall x \in \Z\}$.
-\end{theorem}
+\lesol{
+    Yes, because \(100 = 4 \times 25\).
+}
 
-\tpf{
-    $0 \times x = 0 \therefore x \mid 0$ and $x \times 1 = x \therefore 1 \mid x$ because $x\in \Z$.
+\begin{example}
+    {Divisibility}Let \(a = 100\) and \(b = 8\). Is \(b \mid a\)?
+\end{example}
+
+\lesol{
+    No, because \(100 = 8 \times 12 + 4\).
 }
 
 \textbf{Proposition 1.4:} Let $a,b,c \in \Z$:
@@ -68,38 +74,52 @@ Let $a, b, \in \Z$  Example 1: $-4 \mid 100 \rightarrow (-4)(-25) = 100$. Exampl
     \item If $a \mid b$ and $a \mid c$, then $a \mid (b + c) and a \mid (b - c)$.
 \end{enumerate}
 
-Answers:
 
-\begin{enumerate}
-    \item Let $a,b,c \in \Z$ such that $a \mid b$ and $b \mid c$. We know there exists an $n \in \Z$ such that $a \times n = b$. Similarly, $b \mid c$ means there exists an $n \in \Z$ such that $b\times k = c$. We can use the commutative property to show that $k(an) = (b)k \Rightarrow ank = bk = c \Rightarrow a(nk) = c \Rightarrow a \mid c$.
-    \item Homework
-    \item Homework
-\end{enumerate}
-
-\wrpdef{Greatest Common Divisor}{Let $a,b,d \in \Z$. The largest positive integer, $d$ such that $d \mid a$ and $d \mid b$. Abbreviated as GCD and notated as $\gcd(a,b)$}
+\wrpdef{Greatest Common Divisor}{A \textit{common divisor} of two integers $a$ and $b$ is a positive integer \(d\) that divides both of them. The \textit{greatest common divisor} of \(a\) and \(b\), denoted by \(\gcd(a,b)\), is the largest positive integer such that \(d \mid a \) and \(d \mid b\).} \\
 
 This is less complicated than it sounds: we are simply factoring the integers and finding the largest common divisor between the two numbers. \\
 
-\wrpdef{Quotient and Remainder}{Let $a,b \in \Z^+$. If $r = a = qb + r, \text{ where } 0 \leq r < b$ (Note that $r$ is the remainder, and $q$ is the quotient in the above formula)}
+\wrpdef{Divison with Remainder}{Let \(a,b\) be positive integers. Then we say that \(a\) \textit{divided by} \(b\) gives a \textit{quotient} \(q\) and a \textit{remainder} \(r\) if \(a = bq + r\) and \(0 \leq r < b\).} \\
 
-Example: $24$ divided by $16$ gives $1$ and $16$. Hence, $24 = 1 \times 16 + 8$.
-
-\begin{theorem}
-    {}Let $a,b \in \Z^+$ with $a = bq + r$, $0 \leq r < b$. Then, $\gcd(a,b) = \gcd(b,r)$
-\end{theorem}
-
-\tpf{
-    Let $d = \gcd(a,b) \Rightarrow d \mid a \text{ and } d \mid b \Rightarrow a = dk \text{ and } b = dl \text{ for some } k,l \in \Z$. We need to show $d \mid b$ and $d \mid r$. We already have $d \mid b$, so we just need to solve for $r$: \begin{align*}
-        r & = a - bq    \\
-          & = dk - dlq  \\
-          & = d(k - lq)
-    \end{align*} Notice that $(k - lq) \in \Z$. However, we also need to prove that $d$ is the largest factor that \gls{Divides} both. Hence, assume there exists a $D \in \Z^+$ such that $D\mid b$, $D \mid r$, and $D > d$. Then, $D \times m = b$ and $D \times n = r \Rightarrow a = D(mq) + D(n) \Rightarrow D \mid a$, but this leads to a contradiction because we said that $d$ was the \gls{Greatest Common Divisor} of $a$. Hence, $D = d$.
+\begin{example}
+    {Division with Remainder}Let $a = 24$ and $b = 16$. Find the quotient and remainder.
+\end{example}
+\lesol{
+    $24 = 16(1) + 8$. Therefore, the quotient is 1 and the remainder is 8.  
 }
 
-Example: $150 = 4(36) + 6$ (Def 1.1.3) $\Rightarrow \gcd(150,36) = \gcd(36,6) \Rightarrow 36 = 6(6) + 0 \Rightarrow \gcd(36,6) = \gcd(6,0) = 6$. \\
+\begin{example}
+    {Euclidean Algorithm} Compute \(\gcd(2024, 748)\) using the Euclidean Algorithm.
+\end{example}
+
+\lesol{
+    Notice how the \(b\) and \(r\) values on each line become the new \(a\) and \(b\) values on the subsequent line:
+    \begin{align*}
+        2024 & = 2(748) + 528 \\
+        748  & = 1(528) + 220  \\
+        528  & = 2(220) + 88   \\
+        220  & = 2(88) + \boxed{44}    \\
+        88   & = 2(44) + 0
+    \end{align*}
+    Therefore, the greatest common divisor is 44.
+}
+
+% \begin{theorem}
+%     {}Let $a,b \in \Z^+$ with $a = bq + r$, $0 \leq r < b$. Then, $\gcd(a,b) = \gcd(b,r)$
+% \end{theorem}
+
+% \tpf{
+%     Let $d = \gcd(a,b) \Rightarrow d \mid a \text{ and } d \mid b \Rightarrow a = dk \text{ and } b = dl \text{ for some } k,l \in \Z$. We need to show $d \mid b$ and $d \mid r$. We already have $d \mid b$, so we just need to solve for $r$: \begin{align*}
+%         r & = a - bq    \\
+%           & = dk - dlq  \\
+%           & = d(k - lq)
+%     \end{align*} Notice that $(k - lq) \in \Z$. However, we also need to prove that $d$ is the largest factor that Divides both. Hence, assume there exists a $D \in \Z^+$ such that $D\mid b$, $D \mid r$, and $D > d$. Then, $D \times m = b$ and $D \times n = r \Rightarrow a = D(mq) + D(n) \Rightarrow D \mid a$, but this leads to a contradiction because we said that $d$ was the Greatest Common Divisor of $a$. Hence, $D = d$.
+% }
+
+% Example: $150 = 4(36) + 6$ (Def 1.1.3) $\Rightarrow \gcd(150,36) = \gcd(36,6) \Rightarrow 36 = 6(6) + 0 \Rightarrow \gcd(36,6) = \gcd(6,0) = 6$. \\
 
 \begin{theorem}
-    {Euclidean Algorithm}Let $a,b \in \Z^+$ with $a \geq b)$. The following algorithm computes $\gcd(a,b)$ in a finite number of steps. \begin{enumerate}
+    {Euclidean Algorithm}Let $a,b \in \Z^+$ with $a \geq b$. The following algorithm computes $\gcd(a,b)$ in a finite number of steps. \begin{enumerate}
         \item Let $r_0 = a, r_1 = b$;
         \item Set $i = 1$;
         \item Divide $r_{i - 1}$ by $r_i$ to get quotient $q_i$ and remainder $r_{i + 1}$;
@@ -110,46 +130,108 @@ Example: $150 = 4(36) + 6$ (Def 1.1.3) $\Rightarrow \gcd(150,36) = \gcd(36,6) \R
     (Extended Version): There exists $u,v \in \Z$ such that $\gcd(a,b) = ua + cb$. Thus, $r_0 = a$, $r_1 = b$, $r_{i + 1} = r_{i - 1} - g_ir_i$, $s_0 = 1$, $s_1 = 0$, $s_{i + 1} = s_{i - 1} - q_is_i$ $(\text{up } 2) - (q\text{ left}) \times (\text{up } 1)$, $t_0 = 0$, $t_1 = 1$, $t_{i + 1} = t_{i - 1} - q_it_i$. Stop when $r_i = 0$, $u = s_{i - 1}$, $v = t_{i - 1}$
 \end{theorem}
 
-Example 1: $\gcd(24,16)$ at most $2\log_2(16) + 2$ steps to get $10 steps$. \\
+\begin{example}
+    {Linear Combinations}Use Example 1.2 in determining the linear combination of 2024 and 748 that equals 44.
+\end{example}
 
-Example 2: $\gcd(2300, 2024)$
+\lesol{
+    We let \(a = 2024\) and \(b = 748\). From the equation in Example 1.2, we read the first line: 
+    \[
+    528 = a - 2b.
+    \] 
+    We substitue this into the second line to get 
+    \[
+    b = (a - 2b) \cdot 1 + 220, \quad \text{ so } \quad 220 = 2b - a.
+    \]
+    We next substitute the expressions \(528 = a - 2b\) and \(220 = 2b - a\) into the third line to get
+    \[
+    a - 2b = (-a + 3b) \cdot 2 + 88, \quad \text{ so } \quad 88 = 3a - 8b.
+    \]
+    Finally, we substitute the expressions \(220 = -a + 3b\) and \(88 = 3a - 8b\) into the fourth line to get
+    \[
+    -a + 3b = (3a - 8b) \cdot 2 + 44, \quad \text{ so } \quad 44 = 7a - 19b.
+    \]
+    In other words, 
+    \[
+    -7 \cdot 2024 + 19 \cdot 748 = 44 = \gcd(2024, 748),
+    \]
+    so we have found a way to write \(\gcd(a, b)\) as a linear combination of \(a\) and \(b\) using integer coefficients. \\
+}
 
-\begin{table}[htbp]
-    \begin{tabular}{c|c|c|c|c}
-        $i$ & $r_i$        & $q_i$ & $s_i$             & $t_i$             \\ \hline
-        $0$ & $2300$       & N/A   & 1                 & 0                 \\
-        $1$ & $276$        & N/A   & 0                 & 1                 \\ \hline
-        $2$ & $276$        & $1$   & $1 - (1)(0) = 1$  & $0 - (1)(1) = -1$ \\ \hline
-        $3$ & $\boxed{92}$ & $7$   & $0 - (7)(1) = -7$ & $1 - (7)(-1) = 8$ \\
-        $4$ & $0$          & $4$   &                   &
-    \end{tabular}
-\end{table}
+\wrpdef{Relatively Prime}{Let \(a\) and \(b\) be \textit{relatively prime} if \(\gcd(a,b) = 1\). More generally, any equation \(Au + Bv = \gcd(A,B)\) can be reduced to the case of relatively prime numbers by dividing both sides by \(\gcd(A,B)\). Thus, \(\frac{A}{\gcd(A,B)}u + \frac{B}{\gcd(A,B)} = 1\) where \(a = A / \gcd(A,B)\) and \(b = B / \gcd(A,B)\) are relatively prime and satisfy \(au + bv = 1\).}
 
-Because \begin{align*}
-    2300 & = 1(2024) + 276     \\
-    2024 & = 7(276) + 92       \\
-    276  & = \boxed{3(92) + 0}
-\end{align*} Hence, we stop at 92. \\
+\begin{theorem}
+{Extended Euclidean Algorithm}Let \(a,b \in \Z^+\) with \(a \geq b\). Then the equation \(\gcd(a,b) = ua + vb\) always has a solution in integers \(u\) and \(v\). If \(u_0,v_0\) is any one solution, then every solution has the form \[u = u_0 + \frac{b \cdot t}{\gcd(a,b)} \text{ and } v = v_0 - \frac{a \cdot t}{\gcd(a,b)} \text{ for some integer } t \in \Z.\]
+\end{theorem}
+
+\textbf{See Exercise~\hyperlink{ex:1.10}{1.10} for a detailed example.}
+
+\begin{example}
+    {Relative Prime}What are the relative prime numbers of 2024 and 748?
+\end{example}
+
+\lesol{
+    In Example 1.2, we found that the gcd of 2024 and 748 have greatest common divisor of 44 and satisfy the equation $-7 \cdot 2024 + 19 \cdot 748 = 44$. We can divide both sides by 44 to get $46u + 17v = 1$. Therefore, 46 and 17 are relatively prime and \(u = -7\) and \(v = 19\) are the coefficents of a linear combination of 46 and 17 that equals 1.
+}
 
 \section{Modular Arithmetic}
 
-\wrpdef{Modular Arithmetic}{Let $m\in \Z$. $a$ and $b$ are congruent $\mod m$ if their $m \mid (b - a)$ or $m \mid (a - b)$. Notated as $a = b\mod m$}
+\wrpdef{Modular Arithmetic}{Let $m \geq 1$ be an integer. We say that the integers $a$ and $b$ are congruent modulo $m$ if their difference is divisible by $m$: $m \mid (b - a)$ or $m \mid (a - b)$. Notated as $a = b\mod m$}
 
-Because of \gls{Divides}, we can write this as $b - a = mk$ for some $k \in \Z$ and $b = mk + a$ for some $k \in \Z$. For example, $17\mod 4 \equiv 1$. Or for another example, $-17\mod 4 \equiv -1 \equiv 3$. For addition, you can go in two separate directions. For the first, sequence of operations, we could add the numbers inside of the parentheses and then take the mod of the number as demonstrated $(26 + 14)\mod 5 \equiv 40 \mod 5 \equiv 0$, or we could take the mod of both numbers inside the parentheses, demonstrated as $26\mod + 14\mod 5 = 1 + 4 = 0$. \\
+By the definition of division, we can write this as $b - a = mk$ for some $k \in \Z$ and $b = mk + a$ for some $k \in \Z$. For example, $17\mod 4 \equiv 1$. Or for another example, $-17\mod 4 \equiv -1 \equiv 3$. For addition, you can go in two separate directions. For the first, sequence of operations, we could add the numbers inside of the parentheses and then take the mod of the number as demonstrated $(26 + 14)\mod 5 \equiv 40 \mod 5 \equiv 0$, or we could take the mod of both numbers inside the parentheses, demonstrated as $26\mod + 14\mod 5 = 1 + 4 = 0$. \\
 
-\textbf{Proposition 1.13:} Let $m \in \Z^+$
+\hypertarget{prop 1.13}{\textbf{Proposition 1.13:}} Let $m \in \Z^+$
 \begin{enumerate}
-    \item If $a_1 \equiv a_2 (\mod m)$ and $b_1 \equiv b_2 (\mod m)$ then $a_1 \pm b_1 \equiv a_2 \pm b_2 (\mod m) \equiv a_2(\mod m) + b_2(\mod m)$. Also, $a_1b_1 = a_2b_2(\mod m)=a_2(\mod m) b_2(\mod m)$
-    \item Let $a \in \Z$. Then $ab \equiv 1(\mod m)$ for some $b\equiv \Z \iff \gcd(a,m)=1$
-\end{enumerate}
-\pfs
-\begin{enumerate}
-    \item Homework
-    \item $(\Rightarrow)$ Assume $ab\equiv 1\mod m$ for some $b\in \Z$. $m\mid ab -1 \Rightarrow \exists k\in \Z$ such that $ab - 1 = mk$. $b(a) - k(m) = 1$ (from linear combination). By Pb. 1.11a on the homework, $\gcd (a,m) = 1$. \\
-          $(\Leftarrow)$ in book.
+    \item If $a_1 \equiv a_2 \ (\text{mod } m)$ and $b_1 \equiv b_2 \ (\text{mod } m)$ then $a_1 \pm b_1 \equiv a_2 \pm b_2 \ (\text{mod } m) \equiv a_2\ (\text{mod } m) + b_2\ (\text{mod } m)$. Also, $a_1b_1 = a_2b_2\ (\text{mod } m)=a_2\ (\text{mod } m) b_2\ (\text{mod } m)$
+    \item Let $a \in \Z$. Then $ab \equiv 1\ (\text{mod } m)$ for some $b\equiv \Z \iff \gcd(a,m)=1$
 \end{enumerate}
 
-\wrpdef{Ring}{The set $\{0,1,2,\dots,m-1\}$ and use addition mod $m$ and multiplication mod $m$. Additionally, the set needs to be closed under addition}
+\wrpdef{Ring}{We write $\Z/m\Z = \{0,1,2,\dots,m-1\}$ and call $\Z / m\Z$ the \textit{ring of integers modulo} $m$. We add and multiplying them as integers and then dividing the result by $m$ and taking the remainder in order to obtain an element in $\Z/m\Z$.}
+
+Note that we will be finding the more traditional rings that are brought up in Algebra. Thus, for a ring to be a ring, it must have the following properties: \begin{enumerate}[label=\arabic*.]
+    \item \textbf{Additive Closure:} For any \( a, b \in R \), the sum \( a + b \) is also in \( R \).
+    \item \textbf{Associativity of Addition:} For any \( a, b, c \in R \), \( (a + b) + c = a + (b + c) \).
+    \item \textbf{Commutativity of Addition:} For any \( a, b \in R \), \( a + b = b + a \).
+    \item \textbf{Additive Identity:} There exists an element \( 0 \in R \) such that for any \( a \in R \), \( a + 0 = a \).
+    \item \textbf{Additive Inverses:} For each \( a \in R \), there exists an element \( -a \in R \) such that \( a + (-a) = 0 \).
+    \item \textbf{Multiplicative Closure:} For any \( a, b \in R \), the product \( a \cdot b \) is also in \( R \).
+    \item \textbf{Associativity of Multiplication:} For any \( a, b, c \in R \), \( (a \cdot b) \cdot c = a \cdot (b \cdot c) \).
+    \item \textbf{Distributive Property:} For any \( a, b, c \in R \), \( a \cdot (b + c) = a \cdot b + a \cdot c \) and \( (a + b) \cdot c = a \cdot c + b \cdot c \).
+\end{enumerate}
+
+\begin{example}
+    {\((\Z_6, \cdot)\)}Find the ring of integers modulo 6 bound under multiplication.
+\end{example}
+
+\lesol{
+    Note that from the following table, 6 only has 2 inverses, \(1\) and \(5\). This is because in their respective column, there is a 1 in each row. 
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            \(a\) & 0 & 1 & 2 & 3 & 4 & 5 \\
+            \hline
+            \(a \cdot 0\) & 0 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \(a \cdot 1\) & 0 & 1 & 2 & 3 & 4 & 5 \\
+            \hline
+            \(a \cdot 2\) & 0 & 2 & 4 & 0 & 2 & 4 \\
+            \hline
+            \(a \cdot 3\) & 0 & 3 & 0 & 3 & 0 & 3 \\
+            \hline
+            \(a \cdot 4\) & 0 & 4 & 2 & 0 & 4 & 2 \\
+            \hline
+            \(a \cdot 5\) & 0 & 5 & 4 & 3 & 2 & 1 \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+}
+
+\wrpdef{Unit}{Recall from \hyperlink{prop 1.13}{Proposition 1.13} that \(a\) has an inverse modulo \(m\) if and only if \(\gcd(a, m) = 1\). Numbers that have inverses are called \textit{units}. We denote the set of all units by 
+\begin{align*}
+    (\Z/m\Z)^* &= \{a \in \Z/m\Z \mid \gcd(a,m) = 1\} \\
+    & = \{a \in \Z/m\Z \mid \text{a has an inverse modulo } m\}
+\end{align*}}
 
 \textbf{Fast forward to section 2.5:} \\
 
@@ -158,23 +240,23 @@ Because of \gls{Divides}, we can write this as $b - a = mk$ for some $k \in \Z$ 
 For commutativity, for all $a,b \in G$, $a\times b = b \times a$. Some groups have this, some do not. \\
 
 \begin{example}
-    {Integer Addition}Lets check to see addition among the integers are a group: $(\Z, +)$
+    {Integer Addition as a Group}Lets check to see addition among the integers are a group: $(\Z, +)$
 \end{example}
 
-\sol{
+\lesol{
     \begin{enumerate}
         \item True. Let $a,b \in \Z$ $a + b \in \Z$.
         \item True. $e = 0 \in \Z$, $a + 0 = a$ and $0 + a = a$
         \item True. For all $a\in \Z$, $a^{-1} = -a$ because $a + (-a) = 0 = -a + a$
         \item True. For all $a,b,c \in \Z$, $(a + b) + c = a + (b + c)$
     \end{enumerate}
-    Therefore, the additive property of the integers are a group.In fact, because $a + b = b + a$ $\Z$ are a commutative group (abelian group).
+    Therefore, the additive property of the integers are a group. In fact, because $a + b = b + a$ $\Z$ are a commutative group (abelian group).
 }
 
 \begin{example}
     {Integer Multiplication}Lets check to see multiplication among the integers are a group: $(\Z, +)$
 \end{example}
-\sol{
+\lesol{
     \begin{enumerate}
         \item True. Let $a,b \in \Z$ $ab \in \Z$.
         \item True. $e = 1 \in \Z$, $a * 1 = a$ and $1 * a = a$
@@ -182,8 +264,185 @@ For commutativity, for all $a,b \in G$, $a\times b = b \times a$. Some groups ha
     \end{enumerate}
 }
 
+\wrpdef{Euler's Phi Function}{The function \(\phi(m)\) defined by the rule \[\phi(m) = |\{0 \leq a < m \mid \gcd(a,m) = 1\}| \]}
+
+\subsection{Modular Arithmetic and Shift Ciphers}
+
 \begin{example}
-    {Even Number Addition}
+    {Shift Cipher}Let's say we have a shift cipher with a key of 3. We want to encrypt the message ``HELLO''. What is the encrypted message?
 \end{example}
 
-Solve for the even numbers under addition, for the real numbers under multiplication, for $\Z_4$ under addition, and for $\Z_4$ under multiplication.
+\lesol{
+    By shifting the letters by 3, we get ``KHOOR''. For the decryption, we would shift the letters by -3 to get the original message.
+}
+
+\subsection{Fast Powering Algorithm}
+
+We can write the algorithm as follows: \begin{enumerate}[label=\arabic*.]
+    \item Write the exponent in binary.
+    \item Compute the powers of the base in binary. For example, 
+    \begin{align*}
+    k_0 &= a \ (\text{mod } m) \\
+    k_1 &= k_0^2 \ (\text{mod } m) = a^2 \ (\text{mod } m) \\
+    k_2 &= k_1^2 \ (\text{mod } m) = (a^2)^{2} \ (\text{mod } m)\\
+    & \vdots \\
+    k_r &= k_{r-1}^2 \ (\text{mod } m) = (a^{2^{n-1}})^2 \ (\text{mod } m)
+    \end{align*}
+    \item Multiply the powers of the base that correspond to the 1s in the binary representation of the exponent.
+    Compute \(a_b \ (\text{mod } m)\) by using \[a^b = a^{b_0 \cdot b_{12} + \cdots + b_r2^r}\]
+\end{enumerate}
+
+\begin{example}
+    {Fast Powering Algorithm}Compute \(3^{218} \ (\text{mod } 1000)\).
+\end{example}
+
+
+\lesol{
+    The first step is to write 218 in binary: \(218 = 11011010\). Then, we can write the powers of 3 in binary: \begin{align*}
+        3^1 & = 3 \ (\text{mod } 1000) = 3 \\
+        3^2 & = 3^2 \ (\text{mod } 1000) = 9 \\
+        3^4 & = 9^2 \ (\text{mod } 1000) = 81 \\
+        3^8 & = 81^2 \ (\text{mod } 1000) = 561 \\
+        3^{16} & = 561^2 \ (\text{mod } 1000) = 721 \\
+        3^{32} & = 721^2 \ (\text{mod } 1000) = 841 \\
+        3^{64} & = 841^2 \ (\text{mod } 1000) = 281 \\
+        3^{128} & = 281^2 \ (\text{mod } 1000) = 961         
+    \end{align*} Now, we can calculate the value of \(3^{218}\) by multiplying the values of \(3^{128}\), \(3^{64}\), \(3^{16}\), \(3^{8}\), and \(3^{2}\) together: \begin{align*}
+        3^{218} & = 3^{128} \times 3^{64} \times 3^{16} \times 3^{8} \times 3^{2} \\
+        & = 961 \times 281 \times 721 \times 561 \times 9 \\
+        & = 489 \ (\text{mod } 1000)
+        \end{align*}
+}
+
+\section{Prime Numbers, Unique Factorization, and Finite Fields}
+
+\begin{definition}
+    {Prime Number}A prime number is a positive integer greater than 1 whose only divisors are 1 and itself.
+\end{definition}
+
+\textbf{Proposition 1.19} Let \(p\) be a prime number with \(a,b \in \Z\) such that \(p \mid ab\). \\
+Then \(p \mid a\) or \(p \mid b\). \\
+
+\begin{theorem}
+    {Fundamental Theorem of Arithmetic}Let \(a \geq 2\) be an integer. Then \(a\) can be factored as a product of prime numbers \[a = p_1^{e_1} \cdot p_2^{e_2} \cdots p_r^{e_r}.\] Further, other than rearranging the order of the factors, this factorization is unique.
+\end{theorem}
+
+\textbf{Proposition 1.21:} Let \(p\) be prime. Then every non-zero element of \(\Z/p\Z\) has a multiplicative inverse. \\
+
+Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\gcd(x,p) = 1\) because of \hyperlink{prop 1.13}{Proposition 1.13}. \\
+
+\wrpdef{Field}{If \(p\) is prime, then \(\Z/p\Z\) of integers modulo \(p\) with its addition, subtraction, multiplication, and division rules is a \textit{field}. See the definition of \hyperlink{Ring}{Ring} for more information on the properties of a field. (Note that a field is a type of ring, called a communicative ring.) We often notate fields as \(\F_p\) and \(\F_p^*\) as the group of units}
+
+\pfs%
+
+\section{Powers and Primitive Roots in Finite Fields}
+
+\begin{theorem}
+    {Fermat's Little Theorem}Let \(p\) be a prime number and \(a\) be an integer. Then, \[a^{p - 1} \equiv \begin{cases}
+        1 \ (\text{mod } p) & \text{if } p \nmid a \\
+        0 \ (\text{mod } p) & \text{if } p \mid a
+    \end{cases}\]
+\end{theorem}
+
+\wrpdef{Order}{The \textit{order} of an element \(a \ (\text{mod } p)\) is the smallest exponent \(k \geq 1\) such that \(a^k \equiv 1 \ (\text{mod } p)\).}
+
+\begin{example}
+    {Order}Find the order of 2 modulo 7.
+\end{example}
+
+\lesol{\(2^3 = 8 \ (\text{mod } 7) = 1\). Thus, the order of 2 modulo 7 is 3.}
+
+\begin{example}
+    {Order}Find the order of 5 modulo 7.
+\end{example}
+
+\lesol{\(5^6 = 15625 \ (\text{mod } 7) = 1\). Thus, the order of 5 modulo 7 is 6.}
+
+\begin{theorem}
+    {Primitive Root Theorem}Let \(p\) be a prime number. Then there exists an integer \(g\) such that there exists an \(x \in \F_p^*\) whose powers give every element of \(\F_p^*\), i.e., \[\F_p^* = \{1,g,g^2,g^3.\dots,g^{p - 2}\}.\] Elements with this property are called the \textit{primitive roots of} \(\F_p\) or \textit{generators of} \(\F_p^*\). They are elements of order \(p - 1\).
+\end{theorem}
+
+\begin{example}
+    {Primitive Root}Find a primitive root modulo 7.
+\end{example}
+
+\lesol{We can look to the \hyperlink{thm:Primitive Root Theorem}{Primitive Root Theorem} to see how many primitive roots are \(7\) has. Because 7 is prime, we know that \(\phi = 6\). Thus, we know that 7 will have 6 primitive roots. Because there are 6 primitive roots in total, and \(\F_7^*\) has 7 elements (including 0), we know that 1-6 will be the primitive roots.}
+
+
+\section{Symmetric and Antisymmetric Ciphers}
+
+\subsection{Symmetric Ciphers}
+
+\wrpdef{Symmetric Cipher}{A cipher that uses the same key for both encryption and decryption.}
+
+\begin{center}
+    \subsubsection{Review of Notation}
+\end{center}
+
+\begin{itemize}
+    \item \(k\) implies \hyperlink{Key}{key};
+    \item \(\mathcal{K}\) implies \hyperlink{Key Space}{key space};
+    \item \(m\) implies plaintext \hyperlink{Plain Text}{plain text};
+    \item \(c\) implies \hyperlink{Cipher Text}{cipher text};
+    \item \(\mathcal{M}\) implies all possible messages (message space);
+    \item \(\mathcal{C}\) implies all possible cipher texts (cipher space);
+    \item Encryption is a function that is defined as: \[e: \mathcal{K} \times \mathcal{M} \rightarrow \mathcal{C} \text{ such that } d(k(e(k,m))) = m\]
+    \item Decryption is a function that is defined as: \[d: \mathcal{K} \times \mathcal{C} \rightarrow \mathcal{M} \text{ such that } e(k,d(k,c)) = c\]
+\end{itemize}
+
+This brings us to what it means to be a \textit{successful} cipher. Thus, we look to \textit{Kerckhoff's Principle} which states that the security of a cipher should not depend on the secrecy of the algorithm, but rather on the secrecy of the key. Therefore, we have the following properties that are required for each cipher:
+\begin{enumerate}[label=\arabic*.]
+    \item For all \(k\) and \(m\), it is easy to computer \(e_k(m)\). (Note that \textit{easy} is relative to the computational power of the adversary. For this course, \textit{easy} denotes a decryption time of less than a second.)
+    \item For all \(k\) and \(c\), it is easy to compute \(e_k(c)\).
+    \item Given one or more ciphertext, \(c_1,\dots c_n\), all encrypted with the same key, it is hard to compute any plaintext, \(m\), such that \(d_k(m)\) without knowing the key. 
+\end{enumerate}
+
+The next traits are desired, but not required:
+
+\begin{enumerate}[label=\arabic*.]
+    \setcounter{enumi}{3}
+    \item Given one or more PT and CT pair, \((m_1,c_1),\dots,(m_n,c_n)\) it is decrypt another CT not on this list without knowing the key. An example would be the \textit{enigma cipher} from WW-II\@.
+    \item For any PT chosen by the adversary and their CT's, \((c_1,\dots c_n)\), it should be hard to decrypt any CT not in this list.
+\end{enumerate}
+
+\begin{center}
+    \subsubsection{Types of Attacks}
+\end{center}
+
+\begin{itemize}
+    \item \textit{Brute Force Attack}: Trying all possible keys.
+    \item \textit{Known PT Attack}: The adversary knows the plaintext and the corresponding ciphertext.
+    \item \textit{Chosen PT Attack}: The adversary chooses the plaintext and receives the corresponding ciphertext.
+\end{itemize}
+
+\begin{center}
+    \subsubsection{Types of Ciphers}
+\end{center}
+
+\begin{enumerate}[label=\arabic*.]
+    \item Multiplication modulo \(m\): \(c = m \times k \ (\text{mod } m)\). 
+    \begin{itemize}
+        \item \(\mathcal{K} = \mathcal{M} = \mathcal{C} = \F_p^*\)
+        \item \(k \in \F_p^*\)
+        \item \(e_k(m) = k \cdot m \ (\text{mod } p)\)
+        \item \(d_k(m) = k^{-1} \cdot c \ (\text{mod } p)\)
+        \item Example: \(\F_{307}, k = 258, m = 444, e_{258}(444) = 258.444 \ (\text{mod } 1307) = 843\). To find decrypt this message, Eve needs to iterate through \(1307 - 1\) different keys. (Easy.)
+    \end{itemize}
+    \item Add \((\text{mod } m)\): \(c = m + k \ (\text{mod } m)\). (Caesar Cipher.)
+    \item Affine Cipher: Key \(= (k_1,k_2) \in \Z \times \Z\).
+    \item Hill Cipher.
+    \item Vernam's One-time Pad.
+\end{enumerate}
+
+\subsection{Encoding Schemes}
+
+\begin{definition}
+    {Encoding Scheme}An \textit{encoding scheme} is a method of converting plaintext into a form that can be transmitted over a channel. An encoding scheme is assumed to be entirely public knowledge and used by everyone for the same purposes. An encryption scheme is designed to hide information from anyone who dopes not know the key. Thus, an encoding scheme, like an encryption scheme, consists of an encoding functions are public knowledge and should be fast and easy to compute. 
+\end{definition}
+
+This section will cover ASCII\@: We can take strings of 8 bits and convert them into a single character. From 0 to 255, and use them to represent the letters of the alphabet via \(\texttt{a} = 00000000, \texttt{b} = 00000001, \texttt{c} = 00000010, \dots, \texttt{z} = 00011001\). To distinguish between upper and lower case letters, we can use the first bit to represent the case.
+
+
+\subsection{Asymmetric (public key) Cryptography}
+
+This section will lead us to the following chapter.

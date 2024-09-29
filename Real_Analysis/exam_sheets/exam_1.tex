@@ -1,0 +1,469 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+\usepackage{amsmath,amssymb}
+\usepackage{subcaption}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\makeatletter
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\title{Discrete Exam 2 Note Sheets}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight
+3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.40in
+\advance\evensidemargin-1.45in
+\parindent0pt
+\parskip1pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\setlist[enumerate,1]{left=0pt}
+\setlist[enumerate,2]{left=-10pt}
+
+
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{center}{\huge{\textbf{Real Analysis Exam 1}}}\\
+\end{center}
+\begin{multicols*}{2}
+
+    \tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+    \tikzstyle{innerbox} = [draw=black, fill=gray!20, thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+    \tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+    %------------ Measures of Center ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+                \begin{center}
+                    \textbf{Infinite Unions and Intersections:}
+                \end{center}
+
+                \begin{tabular}{lp{10.2cm} l}
+                    \textit{Note:}
+                     & For the following, we define \(A_n = \{n,n+1,\dots\} = \{k \in \N \mid k \geq n\}\). In other words, each subsequent element in the subset will start at $n$. For example, $A_1 = \{1,2,\dots\}$, whereas $A_5 = \{5,6,\dots\}.$                                                                                                                  \\
+                    \textit{Union:}
+                     & $\bigcup^\infty_{n=1} A_n = \N$. To show a number $\in \N$ belongs in the set $A_n$, we can start with that, $k \in \N$. Then $k \in A_k$. Thus, $k \in A_k \subseteq \bigcup^\infty_{n=1}A_n$. therefore, $\N \subseteq \bigcup^\infty_{n=1}A_n$.                                                                                                \\
+                    \textit{Inters.:}
+                     & $\bigcap^\infty_{n=1}A_n = \emptyset$. Obviously, we know that the empty set is a subset of $A_n$, but to prove that $\bigcap^\infty_{n=1}A_n$ is a subset of the empty set, we should suppose a $k \in \N$ such that $k \in \bigcap^\infty_{n=1}A_n$. Notice that $k \notin \bigcap^\infty_{n=1}A_n$. So, $\bigcap^\infty_{n=1}A_n = \emptyset$.
+                \end{tabular}
+
+
+                \begin{center}
+                    \textbf{Proof Definitions and Structure:}
+                \end{center}
+
+                \begin{tabular}{lp{10.2cm} l}
+                    \textit{Tri. Ineq.:}
+                     & For any $a,b,c \in \R$, $|a - b| \leq |a-c| + |c-b|$, with the intermediate step of $a - b = (a-c) + (c-b)$. \\
+                \end{tabular}
+
+                \vspace{0.3cm}
+
+                \underline{\textbf{Induction Proof and Set Theory Exercises}} \\
+
+                \textbf{EX 1:} Let \(x_1 = 1\). Show that the sequence \(x_{n + 1} = \frac{1}{2}x_n + 1\) is increasing. Or, in other words, for all \(n \in \N\), \(x_n \leq x_{n + 1}\).
+                \begin{enumerate}
+                    \item \textbf{Base Case:} We see that \(x_1 = 1\) and \(x_2 = 1.5\). Thus, \(x_1 \leq x_2\)
+                    \item \textbf{Inductive Hypothesis:} For some \(n \in \N\), assume \(x_n \leq x_{n + 1}\)
+                    \item \textbf{Inductive Step:} $\frac{1}{2}x_n \leq \frac{1}{2}x_{n+1}$. Hence, $\frac{1}{2}x_{n} + 1 \leq \frac{1}{2}x_{n+1} + 1$. Therefore we have proven through induction that, $x_{n+1} \leq x_{n+2}$. \qed
+                \end{enumerate}
+
+                \textbf{EX 2:} Evaluate as either true or false. If false, provide a counterexample.
+
+                \begin{enumerate}[label=(\alph*)]
+                    \item If $A_1 \supseteq A_2 \supseteq A_3 \supseteq A_4\dots$ are all sets containing an infinite number of
+                          elements, then the intersection $\bigcap^\infty_{n=1} A_n$ is infinite as well.
+                    \item If $A_1 \supseteq A_2 \supseteq A_3 \supseteq A_4\dots$ are all finite, nonempty sets of real numbers, then the intersection $\bigcap^\infty_{n=1} A_n$ is finite and nonempty. \\
+                          This is false. Consider the following as a counterexample: If we define $A_1$ as $A_n = \{n, n+1, n+2,\dots\} = \{k \in \N \ | \ k \geq n\}$, we can see why the intersection of these sets of infinite numbers are actually empty. Consider a number $m$ that actually satisfies $m \in A_n$ for every $A_n$ in our collection of sets. Because $m$ is not an element of $A_{m + 1}$, no such $m$ exists and the intersection is empty.
+                    \item $A \cap (B \cup C) = (A \cap B) \cup C$ \\
+                          This is true.
+                \end{enumerate}
+
+
+
+            \end{minipage}
+        };
+        %------------ Measures of Center Header ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {1.2 Some Preliminaries};
+    \end{tikzpicture}
+
+
+    %------------ Discrete Random Variable and Distributions ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+
+                \textbf{EX 2: Cont.}
+                \begin{enumerate}[label=(\alph*)]
+                    \setcounter{enumi}{3}
+                    \item $A \cap (B \cap C) = (A \cap B) \cap C$ \\
+                    This is false. Let the following sets be defined as $A = \{1\}$, $B = \{2\}$, $C = \{3\}$. If we start on the left side of the equation: $A \cap (B \cup C)$ implies $\{1\} \cap (\{2\} \cup \{3\})$ implies $\{1\} \cap \{2, 3\}$ implies $\emptyset$. From the right: $(A \cap B) \cup C$ implies $ (\{1\} \cap \{2\}) \cup \{3\}$ implies $ \emptyset \cup \{3\}$ implies $ \{3\}$.
+                    \item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$. \\
+                    This is true.
+                \end{enumerate}
+
+
+            \end{minipage}
+        };
+        %------------ Discrete Random Variable and Distributions Header ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {1.2 Some Preliminaries (cont.)};
+    \end{tikzpicture}
+
+
+    %------------ Sets and Probability ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+
+                \textbf{AXIOM:} \textit{Every non-empty set of real numbers that is bounded above has a least upper bound (suprema).} \\
+
+
+                \underline{\textbf{Definitions}:} \\
+
+                \begin{tabular}{lp{10cm} l}
+                    \textit{Functions:}
+                     & A \textit{function} is the association $x\in X$, with a unique $y\in Y$. Denoted as $f(x) = y$. \\
+                    \textit{One-to-one:}
+                     & $f$ is \textit{one-to-one} if for each $x_1, x_2 \in X$, if $f(x_1) = f(x_2)$, and $x_1 = x_2$. \\
+                    \textit{Onto:}
+                     & $f$ is onto if there exists an $x\in E$ so that $f(x) = y$.                                     \\
+                \end{tabular} \\
+
+            \end{minipage}
+        };
+        %------------ Sets and Probability Header ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {1.3 Axiom of Completeness};
+    \end{tikzpicture}
+
+
+    %------------ Continuous Random Variable and Distributions ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+
+                \underline{\textbf{Onto and One-to-One Examples}:}
+
+                \begin{enumerate}[left=0pt]
+                    \setlength\itemsep{0em}
+                    \item Let $f\colon \mathbb{N} \rightarrow \mathbb{N}$ by $f(x) = 3n + 1$. Then $f$ is one-to-one. \\
+
+                          Let $x_1,x_2\in \mathbb{N}$ so that $f(x_1) = f(x_2)$. We hope to show $x_1 = x_2$. $f(x_1) = 3x_1 + 1$ and $f(x_2) = 3x_2 + 1$. Then,
+                          \begin{align*}
+                              3x_1 + 1 & = 3x_2 + 1 \\
+                              3x_1     & = 3x_2     \\
+                              x_1      & = x_2
+                          \end{align*}
+                          Therefore, $f$ is one-to-one.
+                    \item Suppose that each of $f\colon B \rightarrow C$ and $A \rightarrow B$ are one-to-one and onto functions. Let $h \colon A \rightarrow C$ be defined as $h = f \circ g$.
+                          \begin{enumerate}
+                              \item Show that $h$ is one-to-one.
+
+                                    Let $x_1, x_2 \in A$ and suppose $h(x_1) = h(x_2)$. By definition of \textit{h}, $h(x_1) = f(g(x_1))$ and $h(x_2) = f(g(x_2))$. $\therefore f(g(x_1)) = f(g(x_2))$. Now, since $f$ is one-to-one, $f(g(x_1)) = f(g(x_2)) \rightarrow g(x_1) = g(x_2)$. And since $g$ is one-to-one as well, $g(x_1) = g(x_2)$ and $x_1 = x_2$. \\
+
+                              \item Show that $h$ is onto.
+
+                                    Let $c\in C$. Since \textit{f} is onto, there exists $b\in B \colon f(b) = c$. And by the same logic, since $g$ is onto, for this $b\in B$, $\exists a\in A \colon g(a) = b$. Now, consider $h(a) = f(g(a)) = f(b) = c$, by substitution. Thus, $\forall c \in C, \exists a \in A \colon h(a) = c$. $\therefore$ \textit{h} is onto.
+                          \end{enumerate}
+                    \item Find functions for all $f,g,h \colon \mathbb{Z} \rightarrow \mathbb{Z}$ so that (a) \textit{f} is one-to-one and not onto, (b) \textit{g} is not one-to-one and is onto, and\dots
+                          \begin{enumerate}
+                              \item Let f(x) = 2x. Assume $f(x_1) = f(x_2)$. Then $2x_1 = 2x_2$. Then, $x_1 = x_2$. Therefore, \textit{f} is one-to-one. Now, let $y,k \in \mathbb{Z} \colon y = 2k + 1$ (\textit{y} is odd). There is no integer \textit{x} such that $2x=2k +1$ because the left side is always even, and the right side is always odd. $\therefore f$ is not onto.
+                              \item Consider the piece-wise function,
+                                    \[
+                                        g(x) =
+                                        \begin{cases}
+                                            \frac{x}{2}      & \text{if } x \text{ is even}, \\
+                                            \frac{-(x+1)}{2} & \text{if } x \text{ is odd}.
+                                        \end{cases}
+                                    \]
+                                    If $y\geq 0$, let $y = 2y$. Then $g(x) = g(2y) = y$ because \textit{x} is even by definition. If $y < 0$, let $x = -2y - 1$. Then $g(x) = g(-2y-1) = \frac{-(2y-1)}{2} = y$ because $x$ is odd by definition $\therefore$ for any $y\in \mathbb{Z}, \exists x\colon g(x) = y, \therefore g$ is onto. Now, consider $x_1 = 2$ and $x_2 = -3$. Then $g(2) = \frac{2}{2} = 1$ and $g(-3) = \frac{-((-3) + 1}{2} = 1$. Since $2 \ne 3$, $x_1 \ne x_2 \therefore g$ is not one-to-one.
+                          \end{enumerate}
+                \end{enumerate}
+
+            \end{minipage}
+        };
+        %------------ Continuous Random Variable and Distributions Header ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {2.3 Functions (cont.)};
+    \end{tikzpicture}
+
+
+    %------------ Summarizing Main Features of f(x) ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+
+                \begin{enumerate}
+                    \setcounter{enumi}{2}
+                    \item \dots \textit{h} is neither.
+                          \begin{enumerate}
+                              \setcounter{enumii}{2}
+                              \item Consider $h(x) = x^2$. Let $x_1 = -1$, and $x_2 = 1$. $h(-1) = 1$ and $h(1) = 1$. Hence, $x_1 \ne x_2$ and is not one-to-one. Because $h(x)$ only produces positive numbers, it cannot cover every possible integer, and hence, $h(x) \ne y$ for $y \in \mathbb{Z} \therefore h$ is not onto.
+                          \end{enumerate}
+                \end{enumerate}
+
+
+            \end{minipage}
+        };
+        %------------ Summarizing Main Features of f(x) ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {2.3 Functions (cont.)};
+    \end{tikzpicture}
+
+
+    %------------ Sum and Average of Independent Random Variables ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+                \underline{\textbf{Definitions}:} \\
+
+                \begin{tabular}{lp{8.7cm} l}
+                    \textit{Relation:}
+                     & Defined as $r \colon X \rightarrow Y$ if $R \subseteq X \times Y$.                                                                                                                                                                                                                    \\
+                    \textit{Reflexive:}
+                     & If for each $x\in X$, $x \ R \ x$.                                                                                                                                                                                                                                                    \\
+                    \textit{Symmetric:}
+                     & If when $a \ R \ b$, then $a\ R \ b$.                                                                                                                                                                                                                                                 \\
+                    \textit{Transitive:}
+                     & If when $a \ R \ b$, and $b \ R \ c$, then $a \ R \ c$.                                                                                                                                                                                                                               \\
+                    \textit{Equivalence relation:}
+                     & Has all three above traits.                                                                                                                                                                                                                                                           \\
+                    \textit{Equivalence class:}
+                     & Because equivalence relations allow us to partition the domain, each partition is then labeled as $[a]$.                                                                                                                                                                              \\
+                    \textit{Modulo (\%):}
+                     & For two integers, \textit{a} and \textit{b}, \textit{a} is said to be equivalent to \textit{b} modulo \textit{n} if the difference between \textit{a} and \textit{b} (that is, $a-b$) is divisible by \textit{n}. This means there exists an integer \textit{k} such that $a-b = kn$.
+                \end{tabular} \\
+
+                \textbf{Note:} All functions are relations, but not all relations are functions. Abiding by the definition of a function, if $x$ can be mapped to more than one $y$-value, the statement is not a function. Also note for the relation traits, those items are true on the basis that $R\colon X \rightarrow X$ is a relation.
+
+                \begin{center}\textbf{Prove Modulo Is an Equivalence Class}
+                \end{center}
+                Let $n\in \mathbb{N}$, and let $a,b,c\in \mathbb{Z}$.
+                \begin{itemize}
+                    \item Is $a\equiv a \mod{n}$ reflexive? $a-a = 0$, which is divisible by \textit{n}. So, Yes.
+                    \item Is $a\equiv a \mod{n}$ symmetric? Well, we must find out if $a\equiv b \mod {n}$ is equivalent to $b\equiv a \mod{n}$. We know that $(a-b)$ is divisible by \textit{n}, and there are no restrictions to also include that $b- a$ is also divisible by $n$. Yes.
+                    \item Is $a\equiv a \mod{n}$ transitive? Let $a \equiv b \mod{n}$ and $b \equiv c \mod{n}$. This means that $a = b + kn$ and $b = c + ln$ for some integers \textit{k} and \textit{l}. Substituting the second equation into the first, we find that $a = (c + ln) + kn = c + (l + k)n$. So, $a\equiv c \mod{n}$, as required for transitivity.
+                \end{itemize}
+                \begin{center}\textbf{Integers Modulo \textit{n}}
+                \end{center}
+                The set of equivalence classes form by this equivalence relation is called the \textit{integers modulo n}, and is denoted as $\mathbb{Z} /n$. We use $[k]$ to denote the equivalence class of $[k]$. For example, elements of $\mathbb{Z} \ 3$ are $[0] = \{\dots, -9, -8, -6, -3, 0, 3, 6, 9,\dots \}, \text{ and } [1] = \{\dots, -8,-5,-2,1,4,7,10, \dots \}$.
+            \end{minipage}
+        };
+        %------------ Sum and Average of Independent Random Variables ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {2.4 Relations};
+    \end{tikzpicture}
+
+
+    %------------ Maximum and Minimum of Independent Variables ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+
+                \underline{\textbf{Definitions}:}
+                \begin{center} \textbf{Graphs} \\
+                \end{center}
+                \begin{tabular}{lp{10cm} l}
+                    \textit{Graph:}
+                     & $G = (V,E)$, is a pair of sets $V$, the \textit{vertex set}, and \textit{E} the \textit{edge set}, so that each element of \textit{E} has the form $\{v_i,v_j\}, v_1, v_j \in V$. \\
+                    \textit{Degree:}
+                     & The number of edges which include $v$. Granted that $v\in V$.                                                                                                                     \\
+                    \textit{Adjacent:}
+                     & Vertices $u, v$ belong to $\{u,v\} \in E$.                                                                                                                                        \\
+                    \textit{Path:}
+                     & From vertex $v_0$ to vertex $v_n$ is a sequence $v_0, v_1, v_2 \dots, v_n$, where each $v_i \in V$ and $\{v_i,v_{i+1}\} \in E$.                                                   \\
+                    \textit{Simple:}
+                     & No edge occurs twice in a path.                                                                                                                                                   \\
+                    \textit{Connected:}
+                     & If each pair of vertices are adjoined by an edge.                                                                                                                                 \\
+                \end{tabular}
+
+                \begin{center} \textbf{Circuits} \\
+                \end{center}
+
+                \begin{tabular}{lp{10cm} l}
+                    \textit{Circuit:}
+                     & A path with the same starting and ending vertex.                                            \\
+                    \textit{Complete:}
+                     & On $n$ vertices, $K_n$, is the connected graph where each vertex is adjacent to each other. \\
+                \end{tabular}
+
+                \begin{center}\textbf{Bipartite Graphs} \\
+                \end{center}
+
+                \begin{tabular}{lp{10cm} l}
+
+                    \textit{Bipartite:}
+                     & The vertex set $V = v_1 \cup v_2, v_1 \cap v_2 = \emptyset$, and no vertex in $V_1$ is adjacent to any other in $V_1$, and no vertex in $V_2$ is adjacent to any other in $V_2$.
+                \end{tabular}
+
+                \begin{center}\textbf{Trees} \\
+                \end{center}
+
+                \begin{tabular}{lp{10cm} l}
+                    \textit{Tree:}
+                     & A connected graph that has no circuit.                                                                                              \\
+                    \textit{BiSTree:}
+                     & For every node, all elements in the left subtree are less than the node's value, and all elements in the right subtree are greater. \\
+                    \textbf{\textit{Lemma}:}
+                     & If $G$ is a tree, $G$ has at least one vertex of degree 1.
+                \end{tabular}
+                \begin{proof}
+                    For the sake of contradiction, suppose each vertex has degree $\geq 2$. Pick a vertex, $v_0$. Since, $\deg(v_0) \geq 2$, it is adjacent to some $v_j$. Because $\deg(v_1) \geq 2$, it has an edge distinct from $\{v_0,v_1\}$, follow it to $v_2$. Then, $v_2$ has edge distinct from $\{v_1,v_2\}$, follow it to $v-3$. If $v_3=v_0 (v_1,v_2)$ we have a circuit. $v_3$ has edge distinct from $\{v_2,v_3\}$. Go to $v_4$. Continue \dots. Either some $v_j$ is visited again, or $v_0,v_1,v_2,\dots v_n$. Therefore, it must be a circuit. \\
+
+                    Hence, $G$ must have a vertex with degree of at least 1 such that $1\leq$.
+                \end{proof}
+                \begin{tabular}{lp{10cm} l}
+                    \textbf{\textit{Theorem 1}:}
+                     & A tree with \textit{n} vertices always has $n - 1$ edges.
+                \end{tabular}
+                \begin{proof}
+                    By the Lemma, there exists a vertex of degree 1. Remove it and its edge. We still have a tree. This new tree has vertex of degree 1. Remove it and its edge. Continue until you get to $k_2$, then $k_1$. We stop with 1 vertex, 0 edges, we have removed $n-1$ vertices. Each edge was removed. Thus, we threw out \textit{all} $n-1$ edges.
+                \end{proof}
+
+            \end{minipage}
+        };
+        %------------ Maximum and Minimum of Independent Variables ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {2.6 Graph Theory};
+    \end{tikzpicture}
+
+
+    %------------ Some Continuous Distributions ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+
+                \begin{center}\textbf{Euler Circuits} \\
+                \end{center}
+
+                \begin{tabular}{lp{9cm} l}
+                    \textit{Euler circuit:}
+                     & A circuit graph which uses each edge only once.                     \\
+                    \textit{Euler path:}
+                     & A path which uses each edge -- start and end vertices are distinct.
+                \end{tabular} \\
+
+                \textbf{Note:} $G$ has an Euler circuit if, and only if, it is connected and each vertex has an even degree. Intuitively, if each vertex has an even degree, then if you come into the vertex through the entrance (first edge), and you leave through the exit (second edge) you have used up both openings. \\
+
+                $G$ has an Euler path if, and only if, it is connected and has exactly two vertices of odd degree.
+
+                \begin{center}\textbf{Isomorphisms} \\
+                \end{center}
+                Two graphs, $G = (V,E)$ and $H = (W,f)$ are \textit{isomorphic} if there is an $f\colon V\rightarrow W$ which is one-to-one, onto, and $\{v_i, v_j\} \in E \iff \{f(v_i), f(v_j)\} \in F$.
+
+                \begin{center}\textbf{Vertex Colorings} \\
+                \end{center}
+                If $G$ contains a triangle (i.e., if it has a copy of $k_3$), we need at least 3 colors. If $G$ contains a copy of $K_n$, we need at least $n$. \\
+
+                If a graph has no overlapping paths, the graph requires no more than 4 colors.
+
+                \begin{center}\textbf{Hamilton Graphs} \\
+                \end{center}
+                A graph has a \textit{Hamilton Circuit} if there is a circuit that uses each vertex once. \\
+
+                \textbf{Note:} This is different from Euler, as Euler uses edges. This is specifically for vertices. If it has a vertex of degree 1, it cannot have a Hamilton circuit.
+
+
+
+
+
+            \end{minipage}
+        };
+        %------------ Some Continuous Distributions Header ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {2.6 Graph Theory (cont.)};
+    \end{tikzpicture}
+
+
+    %------------ Normal Distribution ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+
+                \begin{center}\textbf{Sets}
+                \end{center}
+
+                \begin{enumerate}
+                    \item Suppose that the universal set $U = \{1,2,3,4,5,6,7,8,9,10\}$ and the particular sets $A = \{2,3,5\}$ and $B = \{1,3,5,7,9\}$. Find each of the following:
+                          \begin{enumerate}
+                              \item $A \cup B = \{1,2,3,5,7,9\}$
+                              \item $A \cap B = \{3,5\}$
+                              \item $\{x\in U \colon x^2 < 10 \land x \in A\} = \{2,3\}$
+                              \item $B' \cap A = \{2\}$
+                              \item $\{x \in A \colon x \geq 7\} = \emptyset$
+                              \item $\mathcal{P}(A) = \{\emptyset, \{2\}, \{3\}, \{5\}, \{2,3\}, \{2,5\}, \{3,5\}, \{2,3,5\}\}$
+                          \end{enumerate}
+                \end{enumerate}
+
+            \end{minipage}
+        };
+
+        %------------ Normal Distribution Header ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {Estimating Big $\Theta$};
+    \end{tikzpicture}
+
+\end{multicols*}
+\end{document}

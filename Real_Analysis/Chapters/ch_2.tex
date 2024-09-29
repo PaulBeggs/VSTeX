@@ -169,13 +169,13 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 \expf{\hfill
     \begin{enumerate}
         \setcounter{enumi}{1}
-        \item Let \(\epsilon > 0\). Choose \(N = \frac{2}{\epsilon}\). Then, for \(n > N\),
+        \item Let \(\epsilon > 0\). Choose \(N = \frac{2}{\epsilon}\). Then, for \(n \geq N\),
               \begin{align*}
                   \disabs{\frac{2n^2}{n^3 + 3} - 0} & = \disabs{\frac{2n^2}{n^3 + 3}} \\
                                                     & = \frac{2n^2}{n^3 + 3}          \\
                                                     & < \frac{2n^2}{n^3}              \\
                                                     & = \frac{2}{n}                   \\
-                                                    & < \frac{2}{N}                   \\
+                                                    & \leq \frac{2}{N}                   \\
                                                     & = \frac{2}{2/\epsilon}          \\
                                                     & = \epsilon.
               \end{align*}
@@ -360,10 +360,11 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
                                                     & < \epsilon
               \end{align*} 
               Therefore, \(\frac{2x_n - 1}{3} \rightarrow 1\) \qed
-        \item \textit{Proof.} Let $\epsilon > 0$. Since $(x_n)$ converges to 2, there exists $N \in \N$ such that for all $n \geq N$, $\disabs{x_n - 2} < \epsilon$. Now, for any $n \geq N$,
+        \item \textit{Proof.} Let $\epsilon > 0$. We will choose \(N_1\) so that \(x_n - < 1\) for all \(n \geq N_1\). Then, \(|x_n| > 1\) for all \(n \geq N_1\), so \(\frac{1}{x_n} < 1\). We will choose \(N_2\) so that \(|x_n - 2 < 2\epsilon\) for all \(n \geq N\). Then take \(N = \max\{N_1, N_2\}\). And note that for \(n \geq N\), 
+
               \begin{align*}
-                  \disabs{\frac{1}{x_n} - \frac{1}{2}} & = \disabs{\frac{2 - x_n}{2x_n}} \\
-                                                        & = \frac{1}{2x_n}\disabs{2 - x_n} \\
+                  \frac{\disabs{x_n - 2}}{2|x_n|} & < \frac{2\epsilon}{2} \\
+                  & = \epsilon
               \end{align*} \qed
     \end{enumerate}
 }
