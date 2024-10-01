@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1727639379.43332 "c:/Users/paulb/VSTeX/Real_Analysis/analysis_main.tex" "build/analysis_main.pdf" "analysis_main" 1727639381.82132 0
+["pdflatex"] 1727791394.48294 "c:/Users/paulb/VSTeX/Real_Analysis/analysis_main.tex" "build/analysis_main.pdf" "analysis_main" 1727791396.61976 0
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1727639024 179281 07163ff08e7168fbcd0ad4df2d5a0958 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1727051388 14064 e4c3d6dc0307aa16e774363be70b5216 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1708494351 688 37338d6ab346c2f1466b29e195316aa4 ""
@@ -245,13 +245,14 @@
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "Chapters/ch_1.tex" 1727545530 37664 a775f4b2fa0071c6b6a4ef1775153a53 ""
-  "Chapters/ch_2.tex" 1727497869 24412 ddd30d1185eff9c3dc7dae59c5994d7d ""
-  "analysis_main.tex" 1727639378 16430 27af5acac7069ca955003fa41a6a05c4 ""
-  "build/analysis_main.aux" 1727639381 6728 f9a335e71e98d3ac726e1175d38dbc69 "pdflatex"
-  "build/analysis_main.out" 1727639381 3396 22df853619c06882399c1c3429f478e7 "pdflatex"
-  "build/analysis_main.toc" 1727639381 1576 355b41493fd03f2c1520690bbfd653a8 "pdflatex"
-  "c:/Users/paulb/VSTeX/Real_Analysis/analysis_main.tex" 1727639378 16430 27af5acac7069ca955003fa41a6a05c4 ""
+  "Chapters/ch_1.tex" 1727756220 35231 6dfb316aff07205f34cceddd9e28bc61 ""
+  "Chapters/ch_2.tex" 1727790889 25446 b9ee26a5b1302785235e59afd3c98f0c ""
+  "Presentation Problems/Problem 1.2.13c.tex" 1727147905 2657 2ac53934dc3e61d7dede97b0f49d030f ""
+  "analysis_main.tex" 1727791391 16422 4ab1b321f5dfbdfa93ed0d5d17dbc767 ""
+  "build/analysis_main.aux" 1727791396 6945 3a79e7ac70a7de9dee2eb99e2dd326cf "pdflatex"
+  "build/analysis_main.out" 1727791396 3396 22df853619c06882399c1c3429f478e7 "pdflatex"
+  "build/analysis_main.toc" 1727791396 1576 355b41493fd03f2c1520690bbfd653a8 "pdflatex"
+  "c:/Users/paulb/VSTeX/Real_Analysis/analysis_main.tex" 1727791391 16422 4ab1b321f5dfbdfa93ed0d5d17dbc767 ""
   "glossary.tex" 1727051388 2495 e95229a4b8efacfa51b1a386e7eb1674 ""
   "images/Hendrix Logo.png" 1712992668 30579 73165ffe7013fe439368d0e42c21a9e2 ""
   "images/small logo.png" 1724718700 5993 222e12945759b88634f971ea0e3ba232 ""

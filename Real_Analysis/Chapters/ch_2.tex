@@ -1,3 +1,7 @@
+\section{Discussion: Rearrangement of Infinite Series}
+
+\noindent \textbf{Questions:}
+
 \textbf{What is a \textit{sequence}?} \\
 
 A countable, ordered list of elements. An example could be $1,2,3,4,5,\dots$. Note that this is \textit{ordered}, therefore distinguishing it from a sequence like $3,1,2,4,5,6,\dots$. Hence, order matters.
@@ -22,15 +26,7 @@ An infinite sum. We look at the sequence of partial sums. We ask, do the partial
 
 We can rearrange these terms such that we can `force' the series to converge to a specific number. Therefore, we will need to be careful with our definitions.
 
-\section{Discussion: Rearrangement of Infinite Series}
 
-\noindent \textbf{Questions:}
-
-\begin{itemize}
-    \item What happens if I add these in a different order?
-    \item Are infinite sums commutative? \\
-          In general, no. But sometimes, yes.
-\end{itemize}
 
 \section{The Limit of a Sequence}
 
@@ -51,7 +47,7 @@ We can rearrange these terms such that we can `force' the series to converge to 
 \end{example}
 
 \epf{
-    Our claim is $\displaystyle \lim_{1 \rightarrow \infty} \frac{1}{n} = 0$. Thus, let $\epsilon = .01$. Does the sequence eventually get inside $(-.01,.01)$? We will set $N = 101$. So, for any $n \geq |0|$, $$\left|\frac{1}{n} - 0\right| = \frac{1}{n} \leq \frac{1}{101} < .01.$$ From $A_n$ and on, the sequence stayed within $\epsilon$ of $0$. But what about $\epsilon = .001$, $\epsilon = .00001$ and so on? \\
+    Our claim is $\displaystyle \lim_{n \rightarrow \infty} \frac{1}{n} = 0$. Thus, let $\epsilon = .01$. Does the sequence eventually get inside $(-.01,.01)$? We will set $N = 101$. So, for any $n \geq |0|$, $$\left|\frac{1}{n} - 0\right| = \frac{1}{n} \leq \frac{1}{101} < .01.$$ From $A_n$ and on, the sequence stayed within $\epsilon$ of $0$. But what about $\epsilon = .001$, $\epsilon = .00001$ and so on? \\
 
     Actual proof let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such that $N > \frac{1}{\epsilon}$. Now, for any $n \geq N$, $$\left|\frac{1}{n}\right| = \frac{1}{n} \leq \frac{1}{N} < \frac{1}{1/\epsilon}.$$ (Where $\frac{1}{1/\epsilon} = \epsilon$, but is in that form for demonstration purposes.) Therefore $\displaystyle \lim_{n \rightarrow \infty} \frac{1}{n} = 0$
 }
@@ -70,7 +66,7 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 \end{example}
 
 \epf{
-    Let $\epsilon > 0$. \textit{Scratch paper:} Solve for: $$\left|\frac{2n - 3}{2n} - 1\right| = \left|\frac{-3}{2n}\right| = \frac{3}{2n} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n.$$ By the Archimedean Principle, there exists $N \in \N$ such that $N > \frac{3}{2\epsilon}$. Assume $n \geq N$, (want to know what happens past this point) $$\left|\frac{2n-3}{2n}-1\right| \leq \frac{3}{2N} < \frac{3}{3/2\epsilon} = \epsilon.$$ Therefore, $\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1$
+    Let $\epsilon > 0$. \textit{Scratch paper:} Solve for: $$\left|\frac{2n - 3}{2n} - 1\right| = \left|\frac{-3}{2n}\right| = \frac{3}{2n} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n.$$ By the \namrefthm{Archimedean Principle}, there exists $N \in \N$ such that $N > \frac{3}{2\epsilon}$. Assume $n \geq N$, (want to know what happens past this point) $$\left|\frac{2n-3}{2n}-1\right| \leq \frac{3}{2N} < \frac{3}{2 \cdot 3/2\epsilon} = \epsilon.$$ Therefore, $\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1$
 }
 
 \begin{example}
@@ -78,7 +74,7 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 \end{example}
 
 \epf{
-    Let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such that [leave off] \textit{Scratch paper:} Solve for $$\disabs{\frac{2n^2 + 1}{n^2} - 2} =  \frac{2n^2}{n^2} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n$$ [pick up] there exists $N \in \N$ such that $$N > \frac{1}{\sqrt{\epsilon}}.$$ Assume $n \geq N$, then
+    Let $\epsilon > 0$. By the \namrefthm{Archimedean Principle}, there exists $N \in \N$ such that [leave off] \textit{Scratch paper:} Solve for $$\disabs{\frac{2n^2 + 1}{n^2} - 2} =  \frac{2n^2}{n^2} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n$$ [pick up] there exists $N \in \N$ such that $$N > \frac{1}{\sqrt{\epsilon}}.$$ Assume $n \geq N$, then
     \begin{align*}
         \disabs{\frac{2n^2 + 1}{n^2} - 2} & = \frac{1}{n^2}                    \\
                                           & \leq \frac{1}{N^2}                 \\
@@ -143,7 +139,7 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 \end{example}
 
 \epf{
-    Let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such that $N > \frac{1}{\epsilon}$. For all $n \geq N$,
+    Let $\epsilon > 0$. By the \namrefthm{Archimedean Principle}, there exists $N \in \N$ such that $N > \frac{1}{\epsilon}$. For all $n \geq N$,
     \begin{align*}
         \disabs{\frac{4n-1}{n^2} - 0} & = \disabs{\frac{4n-1}{n^2}} \\
                                       & = \frac{4n-1}{n}            \\
@@ -169,17 +165,17 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 \expf{\hfill
     \begin{enumerate}
         \setcounter{enumi}{1}
-        \item Let \(\epsilon > 0\). Choose \(N = \frac{2}{\epsilon}\). Then, for \(n \geq N\),
+        \item Let \(\epsilon > 0\). By the \namrefthm{Archimedean Principle}, there exists an \(N \in \N\) such that \(N > \frac{2}{\epsilon}\). Then, for \(n \geq N\),
               \begin{align*}
                   \disabs{\frac{2n^2}{n^3 + 3} - 0} & = \disabs{\frac{2n^2}{n^3 + 3}} \\
                                                     & = \frac{2n^2}{n^3 + 3}          \\
                                                     & < \frac{2n^2}{n^3}              \\
                                                     & = \frac{2}{n}                   \\
-                                                    & \leq \frac{2}{N}                   \\
+                                                    & \leq \frac{2}{N}                \\
                                                     & = \frac{2}{2/\epsilon}          \\
                                                     & = \epsilon.
               \end{align*}
-        Therefore, \(\limn{\frac{2n^2}{n^3 + 3}} = 0\). \qedhere
+              Therefore, \(\limn{\frac{2n^2}{n^3 + 3}} = 0\). \qedhere
     \end{enumerate}
 }
 
@@ -205,7 +201,7 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
     {2.2.4} Give an example of each or state that the request is impossible.
     For any that are impossible, give a compelling argument for why that is the case.
     \begin{enumerate}
-        \item A sequence with an infinite number of ones that converges to one.
+        \item A sequence with an infinite number of ones that does not converge to one.
         \item A sequence with an infinite number of ones that converges to a limit not equal to one.
         \item A divergent sequence such such that for every \(n \in \N\) it is possible to find \(n\) consecutive ones somewhere in the sequence.
     \end{enumerate}
@@ -213,9 +209,12 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 
 \sol{
     \begin{enumerate}
-        \item Possible. Example: \(a_n = 1 \text{ for all } n \in \N\).
-        \item Impossible. We can use the \namrefthm{Uniqueness of Limits} to show that this is impossible. Essentially, because we found in (a) that the limit of an infinite number of ones converges to 1, it must be the case that if the limit is not equal to one, then the sequence cannot converge to one.
-        \item Possible. Example: \(\{2,2,2,2,4,4,4,4,1,1,1,1,1,3,3,\dots\}\)
+        \item Possible. Consider the piecewise function: \(a_n = \begin{cases}
+                    1 & \text{if } n \text{ is even} \\
+                    0 & \text{if } n \text{ is odd}
+        \end{cases}\)
+        \item Impossible. A sequence that converges must have its terms approach a specific value (the limit). If the sequence has an infinite number of ones, it must have subsequences of ones arbitrarily far out. For the sequence to converge to a limit different from 1, the terms would have to approach that different limit, say \(L \ne 1\), meaning the ones must become rare or eventually stop appearing, contradicting the infinite number of ones. Therefore, such a sequence is impossible.
+        \item Possible. \((0,1,0,1,1,0,1,1,1,0,1,1,1,1,0,\dots)\)
     \end{enumerate}
 }
 
@@ -250,7 +249,7 @@ Thus, every term is in $[-M,M]$.
 
 \textit{Scratch Paper:}
 \begin{align*}
-    \disabs{ca_n - ca} = \disabs{C}\disabs{a_n - a} & < \epsilon                    \\
+    \disabs{ca_n - ca} = \disabs{c}\disabs{a_n - a} & < \epsilon                    \\
     \disabs{a_n - a}                                & < \frac{\epsilon}{\disabs{c}}
 \end{align*}
 \text{Leave off and go back to proof$^1$}
@@ -302,7 +301,7 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
 }
 
 \begin{lemma}
-    Let \((a_n)\) and \(c < a\). there exists \(N \in \N\) such that for all \(n \geq N\), \(a_n > c\). Similarly, if \(a < d\), there exists \(N \in \N\) such that for all \(n \geq N\), \(a_n < d\).
+    Let \((a_n)\) and \(c < a\). There exists \(N \in \N\) such that for all \(n \geq N\), \(a_n > c\). Similarly, if \(a < d\), there exists \(N \in \N\) such that for all \(n \geq N\), \(a_n < d\).
 \end{lemma}
 
 \subsection{Limits and Order}
@@ -312,7 +311,8 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
     \begin{enumerate}[label=(\roman*)]
         \item If \(a_n \geq c\) for all \(n \in \N\), then \(a \geq c\).
         \item If \(a_n \leq b_n\) for all \(n \in \N\), then \(a \leq b\).
-        \item If \(a_n \leq b_n\) for all \(n \in \N\), then \(a \leq b\).
+        \item If there exists \( c \in \mathbb{R} \) for which \( c \leq b_n \) for all \( n \in \mathbb{N} \), then \( c \leq b \). Similarly, if \( a_n \leq c \) for all \( n \in \mathbb{N} \), then \( a \leq c \).
+        
     \end{enumerate}
 \end{ntheorem}
 
@@ -328,7 +328,7 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
     \end{enumerate}
 \end{exercise}
 
-\expf{
+\expf{ \hfill
     \begin{enumerate}
         \item Let \(\epsilon > 0\). Since \((x_n)\) converges to 0, there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - 0} < \epsilon^{2}\). Now, for any \(n \geq N\), \(\disabs{\sqrt{x_n} - 0} = \sqrt{x_n} < \sqrt{\epsilon^{2}} = \epsilon\). Therefore, \(\limn \sqrt{x_n} = 0\).
         \item Let \(\epsilon > 0\). Since \((x_n)\) converges to 49, there exists \(N \in \N\) such that for all \(n \geq N\),
@@ -354,17 +354,19 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
         \item \textit{Proof.} Let $\epsilon > 0$. Since $(x_n)$ converges to 2, there exists $N \in \N$ such that for all $n \geq N$, $\disabs{x_n - 2} < \epsilon$. Now, for any $n \geq N$,
               \begin{align*}
                   \disabs{\frac{2x_n - 1}{3} - 1} & = \disabs{\frac{2x_n - 1 - 3}{3}} \\
-                                                 & = \disabs{\frac{2x_n - 4}{3}}      \\
-                                                 & = \frac{2}{3}\disabs{x_n - 2}      \\
-                                                 & < \disabs{x_n - 2} \\
-                                                    & < \epsilon
-              \end{align*} 
+                                                  & = \disabs{\frac{2x_n - 4}{3}}     \\
+                                                  & = \frac{2}{3}\disabs{x_n - 2}     \\
+                                                  & < \disabs{x_n - 2}                \\
+                                                  & < \epsilon
+              \end{align*}
               Therefore, \(\frac{2x_n - 1}{3} \rightarrow 1\) \qed
-        \item \textit{Proof.} Let $\epsilon > 0$. We will choose \(N_1\) so that \(x_n - < 1\) for all \(n \geq N_1\). Then, \(|x_n| > 1\) for all \(n \geq N_1\), so \(\frac{1}{x_n} < 1\). We will choose \(N_2\) so that \(|x_n - 2 < 2\epsilon\) for all \(n \geq N\). Then take \(N = \max\{N_1, N_2\}\). And note that for \(n \geq N\), 
+        \item \textit{Proof.} Let $\epsilon > 0$. Since \((x_n)\) converges to 2, there exists \(N_1 \in \N\) such that for all \(n \geq N_1\), \(x_n \geq 1\). Then, we will choose \(N_2\) so that \(|x_n - 2 | < \epsilon\) for all \(n \geq N_2\). Afterwards, we take \(N = \max\{N_1, N_2\}\). And note that for \(n \geq N\),
 
               \begin{align*}
-                  \frac{\disabs{x_n - 2}}{2|x_n|} & < \frac{2\epsilon}{2} \\
-                  & = \epsilon
+                  \disabs{\frac{1}{x_n} - \frac{1}{2}} & = \disabs{\frac{2 - x_n}{2x_n}}  \\
+                                                       & < \frac{\disabs{2 - x_n}}{2}     \\
+                                                       & < \frac{\epsilon}{2}             \\
+                                                       & < \epsilon
               \end{align*} \qed
     \end{enumerate}
 }
@@ -380,7 +382,7 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
 \end{ntheorem}
 
 \tpf{
-    Let \((a_n)\) be an increasing and bounded sequence. Since \((a_n)\) is bounded, the set \(A = \{a_n \ |\ n \in \N\}\) is clearly also bounded. Since \(A\) is bounded, \(\sup{A}\) exists. We claim that \(\limn{a_n} = \sup{A}\). Thus, for all \(\epsilon > 0\) and by our definition of supremum, there exists \(N \in \N\) such that \(\sup{A} - \epsilon < a_N \leq \sup{A}\). Since \((a_n)\) is increasing, for all \(n \geq N\), \(\sup{A} - \epsilon < a_N \leq a_n \leq \sup{A}\). It follows that \(\disabs{a_n - \sup{A}} < \epsilon\). Therefore, \(\limn{a_n} = \sup{A}\). 
+    Let \((a_n)\) be an increasing and bounded sequence. Since \((a_n)\) is bounded, the set \(A = \{a_n \ |\ n \in \N\}\) is clearly also bounded. Since \(A\) is bounded, \(\sup{A}\) exists. We claim that \(\limn{a_n} = \sup{A}\). Thus, for all \(\epsilon > 0\) and by our definition of supremum, there exists \(N \in \N\) such that \(\sup{A} - \epsilon < a_N \leq \sup{A}\). Since \((a_n)\) is increasing, for all \(n \geq N\), \(\sup{A} - \epsilon < a_N \leq a_n \leq \sup{A}\). It follows that \(\disabs{a_n - \sup{A}} < \epsilon\). Therefore, \(\limn{a_n} = \sup{A}\).
 }
 
 \begin{example}
@@ -388,37 +390,37 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
 \end{example}
 
 \epf{
-    We will show that \(x_n\) is monotone and bounded. 
+    We will show that \(x_n\) is monotone and bounded.
     \begin{itemize}
         \item \textbf{Part 1: Monotone Decreasing}
-        \begin{itemize}
-        \item \underline{Base case}: \(x_1 = 3\), \(x_2 = 1\). 
-        \item \underline{Induction step}: Assume for some \(n \in \N\), \(x_n \geq x_{n+1}\). It follows that 
-        \begin{align*}
-            x_n & \geq x_{n + 1} \\
-            4 - x_n & \leq 4 - x_{n + 1} \\
-            \frac{1}{4 - x_n} & \geq \frac{1}{4 - x_{n + 1}} \\
-            x_{n + 1} & \geq x_{n + 2}
-        \end{align*}
-        \end{itemize}
-    \item \textbf{Part 2: Bounded Below}
-    Claim: Sequence is bounded below by 0.
-    \begin{itemize}
-        \item \underline{Base case}: \(x_1 = 3 > 0\).
-        \item \underline{Induction step}: Assume for some \(n \in \N\), \(x_n \geq 0\). It follows that \(4 - x_n \leq 4\), and when we take the reciprocal, we get \begin{align*}
-               \frac{1}{4 - x_n} &\leq \frac{1}{4} \\
-               x_{n+1} &\geq 1/4 \\
-               &> 0
-        \end{align*}
-        By math induction, \(x_n\) is bounded below by 0. 
-    \end{itemize}
+              \begin{itemize}
+                  \item \underline{Base case}: \(x_1 = 3\), \(x_2 = 1\).
+                  \item \underline{Induction step}: Assume for some \(n \in \N\), \(x_n \geq x_{n+1}\). It follows that
+                        \begin{align*}
+                            x_n               & \geq x_{n + 1}               \\
+                            4 - x_n           & \leq 4 - x_{n + 1}           \\
+                            \frac{1}{4 - x_n} & \geq \frac{1}{4 - x_{n + 1}} \\
+                            x_{n + 1}         & \geq x_{n + 2}
+                        \end{align*}
+              \end{itemize}
+        \item \textbf{Part 2: Bounded Below}
+              Claim: Sequence is bounded below by 0.
+              \begin{itemize}
+                  \item \underline{Base case}: \(x_1 = 3 > 0\).
+                  \item \underline{Induction step}: Assume for some \(n \in \N\), \(x_n \geq 0\). It follows that \(4 - x_n \leq 4\), and when we take the reciprocal, we get \begin{align*}
+                            \frac{1}{4 - x_n} & \leq \frac{1}{4} \\
+                            x_{n+1}           & \geq 1/4         \\
+                                              & > 0
+                        \end{align*}
+                        By math induction, \(x_n\) is bounded below by 0.
+              \end{itemize}
     \end{itemize}
     By the Monotone Convergence Theorem, \(x_n\) converges.
 
     So, what is the limit? We know \((x_n)\) converges so let \(L = \limn{x_n}\). Then, \(\limn{x_{n+1}} = L\). We also know \(x_{n+1} = \frac{1}{4 - x_n}\). So \(L = \limn{x_{n+1}} = \limn{\frac{1}{4- x_n} = \frac{1}{4 - L}}\). It must be true that \(L = \frac{1}{4 - L}\). Solving for \(L\), we get \begin{align*}
-    L(4 - L) &= 1 \\
-    4L - L^2 &= 1 \\
-    L^2 - 4L + 1 &= 0
-\end{align*} Hence, \(L = 2 - \sqrt{3}\) or \(L = 2 + \sqrt{3}\). Notice that it cannot be the latter because it is bigger than 3.
+        L(4 - L)     & = 1 \\
+        4L - L^2     & = 1 \\
+        L^2 - 4L + 1 & = 0
+    \end{align*} Hence, \(L = 2 - \sqrt{3}\) or \(L = 2 + \sqrt{3}\). Notice that it cannot be the latter because it is bigger than 3.
 }
 

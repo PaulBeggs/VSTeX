@@ -193,8 +193,11 @@ then the intersection $\bigcap^\infty_{n=1} A_n$ is finite and nonempty.
     \begin{enumerate}
         \item This is false. Consider the following as a counterexample: If we define $A_1$ as $A_n = \{n, n+1, n+2,\dots\} = \{k \in \N \ | \ k \geq n\}$, we can see why the intersection of these sets of infinite numbers are actually empty. Consider a number $m$ that actually satisfies $m \in A_n$ for every $A_n$ in our collection of sets. Because $m$ is not an element of $A_{m + 1}$, no such $m$ exists and the intersection is empty.
         \item This is true.
-        \item This is false. Let the following sets be defined as $A = \{1\}$, $B = \{2\}$, $C = \{3\}$. If we start on the left side of the equation: $A \cap (B \cup C)$ implies $\{1\} \cap (\{2\} \cup \{3\})$ implies $\{1\} \cap \{2, 3\}$ implies $\emptyset$. From the right: $(A \cap B) \cup C$ implies $ (\{1\} \cap \{2\}) \cup \{3\}$ implies $ \emptyset \cup \{3\}$ implies $ \{3\}$.
-        \item  This is true. 
+        \item False. Consider sets \(A = \{1, 2, 3\}\), \(B = \{3, 6, 7\}\) and \(C = \{5\}\). Note that
+        \(A \cap (B \cup C) = \{3\}\) is not equal to \((A \cap B) \cup C = \{3, 5\}\).
+        \item  This is true. A proof would start with \(x \in A \cap (B \cap C)\).
+        \item This is true. A proof would start with \(x \in A \cap (B \cup C)\).
+    \end{enumerate}
 }
 
 \newpage
@@ -336,7 +339,7 @@ To properly verify this we focus separately on each part of Definition 1.3.2. Se
 
 Why do we need to include infimum and supremum? Don't we have the max and min of a set already? Well, what exactly do we mean by the \gls{maximum value} of a set? \\
 
-We say $m \in \R$ is the \textit{maximum} of $A$ if $m \in A$ and for all $x\in A$, $x \leq m$. Note that some sets have a maximum and some sets do not. You cannot refer to a maximum without first knowing it exists. This is the same with minimums. Suprema do not exist if the set is bounded.
+We say $m \in \R$ is the \textit{maximum} of $A$ if $m \in A$ and for all $x\in A$, $x \leq m$. Note that some sets have a maximum and some sets do not. You cannot refer to a maximum without first knowing it exists. This is the same with minimums.
 
 \begin{lemma}
     {1.3.8}Assume $s$ is an \gls{upper bound} for a set $A \subseteq \R$. Then, $s$ is the supremum of $A$ if and only if for every $\epsilon > 0$, there exists $x\in A$ such that $s - \epsilon < x$.
@@ -451,10 +454,9 @@ Nested, closed, Bounded Intervals $\Rightarrow$ non-empty intersection.
         \item For any $x > 0$, there exists $n \in \N$ such that $\frac{1}{n} < x$. 
     \end{enumerate}
 }
-
-\begin{theorem}
-    Density of $\Q$ in $\R$. For any $a,b \in \R$ with $a < b$, there exists $q \in \Q$ such that $a < q < b$.
-\end{theorem}
+\begin{ntheorem}
+    {Density of the Rationals in the Reals}For any $a,b \in \R$ with $a < b$, there exists $q \in \Q$ such that $a < q < b$.
+\end{ntheorem}
 
 \tpf{
 Since $ b - a > 0$, there exists $n \in \N$ such that $\frac{1}{n} < b - a$. From the \namrefthm{Archimedean Principle}, since $a\times n \in \R$, there exists $m \in \N$ such that $a\times n < m$. Let $m$ be there smallest such natural numbers (by the well ordered principle). Since $m$ is the smallest such natural number, it follows that $m - 1 \leq a\times n < m$. We then see that $a < \frac{m}{n}$. Now, we need to find some $\frac{m}{n} < b$. \begin{align*}
