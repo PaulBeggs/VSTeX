@@ -106,3 +106,21 @@ D-H gives a way for Alice and Bob to get a secret shared key in an unsecure envi
 \begin{note}
     Be aware: You should only use this encryption scheme once. If you use it more than once, it is possible for an attacker to decrypt the message. For example, Eve knows \(m_1(c_1, c_2) \rightarrow\) Eve finds \(A\) by keeping record of the first message, then by solving for \(d_2\) such that \(c_1, d_2\) (where \(c_1\) is the \textit{same} as the first message) and \(d_2\) is the second message. Then, Eve can solve for \(m_2\) by computing \((c_1^d)^{-1} \cdot d_2 \ (\text{mod } p)\).
 \end{note}
+
+\underline{\hfill}
+
+Notes (ver batim for the most part)
+
+DLP \(a^x \equiv b \ (\text{mod p})\).
+
+Fermat's Little theorem: \(a^{p - 1} \equiv \ (\text{mod p}) \forall a \ne 0\). 
+Is FLT true if modulus is not prime? 
+
+No, \(2^5 \ (\text{mod 6}) = 32 \)
+
+\begin{example}
+    {Alterative to FLT for non-prime moduli} Find \(a^4 \ (\text{mod 15})\) for all \(a\). 
+\end{example}
+
+\(\equiv 1\), \(a=1,2,4,7,8,11,13,14\) \((\gcd(a,15) = 1)\)
+\(\slashed{\equiv}\), \(a =3,5,6,9,10,12\) \((\gcd(a,15) \ne 1)\)
