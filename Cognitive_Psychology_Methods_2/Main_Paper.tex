@@ -5,8 +5,6 @@
 
 
 \documentclass[stu,12pt,floatsintext]{apa7}
-\usepackage{geometry}
-\linespread{2}
 % Document class input explanation ________________
 % LaTeX files need to start with the document class, so it knows what it's using
 % - This file is using the apa7 document class, as it has a lot of the formatting built in
@@ -22,14 +20,12 @@
 % - 12pt: sets the font size to 12pt. Other options are 10pt or 11pt
 % - floatsintext: makes it so tables and figures will appear in text rather than at the end. Unforunately, not having this option set breaks the whole document, and I haven't been able to figure out why. IT's GREAT WHEN THINGS WORK LIKE THEY'RE SUPPOSED TO.
 
-\usepackage[american]{babel}
 
 \usepackage{csquotes} % One of the things you learn about LaTeX is at some level, it's like magic. The references weren't printing as they should without this line, and the guy who wrote the package included it, so here it is. Because LaTeX reasons.
-\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
-% biblatex: loads the package that will handle the bibliographic info. Other option is natbib, which allows for more customization
-% - style=apa: sets the reference format to use apa (albeit the 6th edition)
-\DeclareLanguageMapping{american}{american-apa} % Gotta make sure we're patriotic up in here. Seriously, though, there can be local variants to how citations are handled, this sets it to the American idiosyncrasies 
-\addbibresource{bibliography.bib} % This is the companion file to the main one you're writing. It contains all of the bibliographic info for your references. It's a little bit of a pain to get used to, but once you do, it's the best. Especially if you recycle references between papers. You only have to get the pieces in the holes once.`
+
+\usepackage[T1]{fontenc} 
+\usepackage{mathptmx} % This is the Times New Roman font, which was the norm back in my day. If you'd like to use a different font, the options are laid out here: https://www.overleaf.com/learn/latex/Font_typefaces
+% Alternately, you can comment out or delete these two commands and just use the Overleaf default font. So many choices!
 
 \usepackage{hyperref}
 
@@ -39,59 +35,56 @@
 	linkcolor=horange,
 	filecolor=horange,      
 	urlcolor=horange,
+    citecolor=horange
 }
 
-\usepackage[T1]{fontenc} 
-\usepackage{mathptmx} % This is the Times New Roman font, which was the norm back in my day. If you'd like to use a different font, the options are laid out here: https://www.overleaf.com/learn/latex/Font_typefaces
-% Alternately, you can comment out or delete these two commands and just use the Overleaf default font. So many choices!
-
-
 % Title page stuff _____________________
-\title{Applying Cognitive Psychology Methods Activity 1: Attention} % The big, long version of the title for the title page
+\title{Applying Cognitive Psychology Methods Activity 2: Working Memory} % The big, long version of the title for the title page
 \author{Paul Beggs}
 \duedate{\today}
 % \date{January 17, 2024} The student version doesn't use the \date command, for whatever reason
-\affiliation{Department of Psychology, Hendrix College}
+\authorsaffiliations{Department of Psychology, Hendrix College}
 \course{PSYC 319: Cognitive Psychology} % LaTeX gets annoyed (i.e., throws a grumble-error) if this is blank, so I put something here. However, if your instructor will mark you off for this being on the title page, you can leave this entry blank (delete the PSY 4321, but leave the command), and just make peace with the error that will happen. It won't break the document.
-\professor{Dr. Carmen Merrick}  % Same situation as for the course info. Some instructors want this, some absolutely don't and will take off points. So do what you gotta.
-
-% \abstract{In this paper, I plan to investigate two functions of attention, those being \href{https://www.psytoolkit.org/lessons/experiment_visualsearch.html}{\textit{Visual Search Task}} and \href{https://www.psytoolkit.org/experiment-library/multitasking.html}{\textit{Divided Attention}}. In doing so, I will report my observations by answering a sequential list of questions that will are outlined on the Evaluation Rubric. In addition, I will include the \hyperlink{results}{results} of both tests.}
+\professor{Dr.\ Carmen Merrick}  % Same situation as for the course info. Some instructors want this, some absolutely don't and will take off points. So do what you gotta
 
 
 %\characterwords{APA style, demonstration} % If you need to have characterwords for your paper, delete the % at the start of this line
 
 \begin{document}
 
+
 \maketitle % This tells LaTeX to make the title page
 
-\subsection{Visual Search Task}
+\subsection{Mental Rotation Task}
 
-    This study was designed to study how \textit{search}---scanning of the environment for particular features---functions. To be more specific, the researchers utilized \hypertarget{Conjunction}{\textit{conjunctive search}}---sifting through a combination (or conjunction) of two or more features in the same stimulus---in their experimentation to highlight a specific subset of search.
+    For this experiment, I presented with an image that comprised three shapes. I was to look at the shape presented at the top, first, and then compare the two similar---but rotated---images with it. The goal was to mentally rotate the given shapes in my visuospatial sketch pad to align with the focus stimuli. The catch was that one of the images looked like the focus stimuli, but it has a malformation that did not align with the focus (no matter how I rotated the shape). The test recorded if I got the correct image from the two options, and then takes an average of the time for each image pairing session.
 
-    During the experimentation my goal was to identify an upright red `T'. In the procedure, I was to focus on a white cross that would briefly flash. After the flash, a varying number of upside down red `T's that were presented for me to search through. Additionally, there would be blue upright `T's that were designed to mimic the orientation of the target---the upright red `T'. In some cases, the upright `T' would not be present among the noise, but when it was, I would be signaled to press the space bar. In doing this experiment, I aligned the most with the \textit{Guided Search Theory}---an observer looks for a target among several distracting items. In that, I knew exactly what I was looking for, so when I across an upright, blue `T', I was able to tune it out because I knew any object of that color would be a red herring. This allowed me to focus specifically on the red `T's, but this still did not allow me to instantly identify the upright `T's among the others. 
+    This research can be used to study the effects of mental rotation upon the visuospatial sketch pad that resides within working memory. In other words, depending on the complexity of the shapes, the time it takes to rotate the shape in your mind will vary. This is because the visuospatial sketch pad is limited in its capacity to hold and manipulate information. 
 
-    Let's examine what would happen if we looked at this theory from the lens of \textit{Signal Similarity Theory}---the task's difficulty is dependent on the similarity of stimulus to distractor. If this theory was utilized during the task of search, then I would not be able to tune out the blue upright `T's because they would be the most familiar to me. Thus, I would take more time, and be more inaccurate. 
+    (For the answer to the second part of question one, see the first and second paragraphs of the \hyperlink{comparison}{comparison} section.)
 
-    I think that this experiment correctly isolated the focus of attention that it was after. That being, I was tasked to \textit{search} through a variety of objects that had combined traits in order to find the target. I believe this is the most pertinent type of experiment for this task.
-
-\subsection{Divided Attention}
-
-    This study was designed to test \textit{divided attention}---the distribution of attention among multiple tasks (see the \hyperlink{last}{last paragraph} for discussion). Researchers had a rectangle diagram that was halved along the equator, exposing two sections that were labeled either shape or filling. In these sections, there are different rules, as shown below:
-    \begin{enumerate}
-        \item \textbf{Shape:} A shape would flash on the screen, and I was to press either \texttt{b} for a diamond shape, or \texttt{n} for a square.
-        \item \textbf{Filling:} In this section, two sets of dots flashed on the screen. I was to use the same characters again, but this time, the letters \texttt{b} corresponded to 2 dots inside of a shape, and the letter \texttt{n} corresponded to 3 dots.
-    \end{enumerate}
     
-    This is a divided attention study because the dots were inside the shape on the top section. Similarly, the shapes containing the dots on the bottom section were the same diamond or square that I had to identify on the top screen. This mix-matching of signals made it difficult to differentiate what character to press. For instance, because the same characters were utilized for both the top and bottom sections, the assignment of the rules for each section `bled' into the other section.
+
+\subsection{N-Back Task}
+
+To complete the experiment, I kept track of letters. More specifically, I held both the letter from one letter ago, and the letter from two letters ago in my phonological loop by using rehearsal. With the latter held in your phonological loop---kept there with auditory rehearsal---you were to compare it with the present letter. Press \texttt{m} if it matched, and if it did not match, do nothing. From the onset of seeing a word, and then getting a new letter took a total of 3000 ms. The letter flashed for 500 ms, and then a black screen appeared for 2500 ms, which totaled to three seconds between letters. The difficulty stemmed from the constrictions placed on the phonological store. With only so much space, there was much to do simultaneously:
+\begin{enumerate}
+    \item Keep track of the two letters.
+    \item Make the comparison between \(n\) and \(n - 2\).
+    \item Discard the \(n - 2\) letter.
+    \item Assign the previous \(n - 1\) as the new \(n - 2\).
+\end{enumerate}
+
+\hypertarget{comparison}{\subsection{Comparison}}
+
+    While both the mental rotation task and the N-Back task are used to study working memory, the former is more focused on the visuospatial sketch pad, while the latter is more focused on the phonological loop---specifically, the articulatory rehearsal process that resides within the phonological store. However, the difference between the two tasks can be attributed to the model of working memory. In that, the phonological loop and the visuospatial sketch pad are separated and managed by the central executive.
     
-    This `bleeding' of rules can be attributed to Treisman's \textit{Feature Integration Theory}---objects are analyzed into their features in the preattentive stage, and the features are later combined with the aid of attention. That is, when I first saw the object that flashed on my screen (preattentive), I mentally noted how many dots were in the shape, and what the shape was. Depending on where the shape spawned in the diagram, I was primed to favor the numerical value or the shape's orientation. In a way, I was preemptively dialing down one aspect of the figure that was dependent on its placement in either half. Interestingly, after a few milliseconds, I would combine the two features into one, and that would complicate things; I learned the longer that I analyze the shape, the slower (and more inaccurate) I became. 
+    Furthermore, the visuospatial sketch pad was used for mental rotation. It involved holding an image in your mind and rotating it to fit the focus stimuli. The N-Back task, on the other hand, was used to hold and compare auditory information. Specifically, the process of rehearsal that occurs in the phonological store.
 
-    This is in stark contrast to a theory posed by Broadbent's \textit{Filter Model of Attention}---selective attention is the ability to focus on one stimuli and ignore other stimuli simultaneously. According to his early selection model, if I were to focus on either the top or bottom of the rectangle and associate the corresponding rule with either section, I would get the correct answer every time by completely tuning out the dots or the shape. This was not the case.
+    To answer the question of what test was better for my working memory, and I had to choose one, I would say that the N-Back task required more attentiveness than the mental rotation task.\footnote{If I had another option other than the binary yes or no, I would that I cannot choose one because both tests work on various parts of the working memory. In essence, because each part of the working memory is confined by different physiological restrictions, there would not be an equal playing field to compare them.} For the mental rotation task, I did not have to hold the rotated image in my head for long---just long enough so I could find an imperfection. Thus, if manipulation of information in the mind is the qualifier for what makes a test better or worse, then the mental rotation task was worse.
 
-    \hypertarget{last}{}The researchers wanted to specifically study divided attention in this study, and I do not think this is the best method to use for this topic. In fact, I think this study is more akin to the \hyperlink{Conjunction}{\textit{Conjunction Search}} that was defined above. I make this claim because conjunction searches are designed to study \textit{binding}---the process by which features such as color, form, motion, and location are combined to create our perception of a coherent object---and that was the primary distractor of the study. One could argue that juggling the rules in your head is divided attention, but I would disagree: the `juggling' of rules is more appropriately attributed to binding. Instead of `juggling the rules' a more fitting term would be `entanglement of rules' (specifically, in dealing with the de-entanglement of the rules to find the correct one). Perhaps a study more akin to David Strayer and William Johnston (2001) would be a more viable research direction for distracted attention.
-
-\newpage
-
+    Regarding the third question, I felt that I was better at the N-Back task. I suppose the reason for me being better is because I have more space allotted for my phonological store when compared to my visuospatial sketch pad. Because I did better at the N-Back test, I would posit that a person's working memory is not equal in all areas. In other words, the capacity of the visuospatial sketch pad and the phonological store are not equal. 
+    
 
 \end{document}
 
