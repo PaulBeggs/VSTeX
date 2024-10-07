@@ -4,6 +4,7 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \documentclass[12pt, oneside]{book}
+\usepackage{bold-extra}
 
 
 %%% AESTHETICS %%%
@@ -170,6 +171,7 @@
 
 %% Definitions %%
 \newenvironment{definition}[2][]{%
+    \vspace{0.5em}
     \textbf{Definition \textcolor{horange}{#2}:} #1
     \par\vspace{0.5em}\noindent
 }{\par\vspace{1em}\noindent}
@@ -215,14 +217,40 @@
     #1,
 }
 
+
 %% Corollaries %%
-\newtcolorbox[]{corollary}[3][]{%
+\newtcolorbox[]{corollary}[2][]{%
     rounded corners,
     colframe=xpurple,  
     colback=xpurple!15,        
     coltitle=white,
-    title={\large \textbf{Corollary to #3: #2}},
+    title={\large \textbf{Corollary #2}},
     #1
+}
+
+% \newenvironment{definition}[2][]{%
+%     \textbf{Definition \textcolor{horange}{#2}:} #1
+%     \par\vspace{0.5em}\noindent
+% }{\par\vspace{1em}\noindent}
+
+% \newcommand{\wrpdef}[2]{%
+%     \hypertarget{#1}{}
+%     \begin{definition}
+%         {#1}#2
+%     \end{definition}
+% }
+
+\newenvironment{proposition}[2][]{ % Optional title argument
+    \vspace{0.5em}
+    \textbf{Proposition #2:} \textit{#1}
+    \par\vspace{0.5em}\noindent
+}{\par\vspace{1em}\noindent}
+
+\newcommand{\wrpprop}[2]{%
+    \hypertarget{#1}{}
+    \begin{proposition}
+        {#1}#2
+    \end{proposition}
 }
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -377,7 +405,7 @@
 }
 % Command for corollaries proofs with a predefined color
 \newcommand{\cpf}[1]{
-    \begin{customframedproof}[linecolor=purplehdx]
+    \begin{customframedproof}[linecolor=xpurple]
         \begin{proof}
         #1
         \end{proof}
@@ -536,14 +564,14 @@
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 	
-	% \thispagestyle{plain}
-	% % Table of Contents will automatically update based on included chapters
-	% % You may need to compile twice for the toc to update
-	% \begin{spacing}{1} %Can change spacing between entries in toc
-	% 	\renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
-	% 	\tableofcontents
-	% 	\addtocontents{toc}{\protect\enlargethispage{\baselineskip}} 
-	% \end{spacing}
+	\thispagestyle{plain}
+	% Table of Contents will automatically update based on included chapters
+	% You may need to compile twice for the toc to update
+	\begin{spacing}{1} %Can change spacing between entries in toc
+		\renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
+		\tableofcontents
+		\addtocontents{toc}{\protect\enlargethispage{\baselineskip}} 
+	\end{spacing}
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -571,7 +599,7 @@
 
 
 
-\chapter{The Real Numbers} \label{Real nums}
+\chapter{The Real Numbers}\label{Real nums}
 \vspace*{-0.25in}
 \input{Chapters/ch_1}
 
@@ -579,15 +607,23 @@
 \vspace*{-0.25in}
 \input{Chapters/ch_2}
 
+\chapter{Integer Factorization and RSA}\label{RSA}
+\vspace*{-0.25in}
+\input{Chapters/ch_3}
+
 \renewcommand{\theenumi}{\alph{enumi}} 
 \renewcommand{\labelenumi}{(\theenumi)}
 \chapter*{Exercises pt. 1} \label{ex 1}
 \vspace*{-0.25in}
 \input{Exercises/1}
 
-% \chapter*{Exercises pt. 2} \label{ex 2}
-% \vspace*{-0.25in}
-% \input{Exercises/2}
+\chapter*{Exercises pt. 2} \label{ex 2}
+\vspace*{-0.25in}
+\input{Exercises/2}
+
+\chapter*{Exercises pt. 3}\label{ex 3}
+\vspace*{-0.25in}
+\input{Exercises/3}
 
 % \chapter{Power Set} \label{Power Set}
 % \vspace*{-0.25in}

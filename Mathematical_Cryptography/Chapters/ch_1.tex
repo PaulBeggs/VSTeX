@@ -39,7 +39,7 @@ Generally, these are the people and setting that will be used in examples: Alice
 
 Each letter can be replaced with any other letter. For example, you may have a key: $\{a,b,c,\dots,z\} \rightarrow \{q,m,w,\dots,t\}$. Its cardinality is $|\mathcal{K}| = 26!$. \\
 
-\wrpdef{Cryptanalysis}{Process of decrypting without a key.} \\
+\wrpdef{Cryptanalysis}{Process of decrypting without a key.}
 
 \wrpdef{Bigrams}{Two letters that are commonly placed together in language. For example, ``Th'', ``is'', or ``He''.}
 
@@ -49,7 +49,7 @@ Each letter can be replaced with any other letter. For example, you may have a k
 
 Can assume all the properties of $\R, \Z, \text{ and } \N$. Note that $\N$ does not include 0. \\
 
-\wrpdef{Divides}{Let \(a\) and \(b\) be integers with \(b \ne 0\). We say that \(b \textit{ divides } a\) or that \(a \) is divisible by \(b\), denoted by \(b \mid a\), if there exists an integer \(n\) such that \(a = nb\).} 
+\wrpdef{Divides}{Let \(a\) and \(b\) be integers with \(b \ne 0\). We say that \(b \textit{ divides } a\) or that \(a \) is divisible by \(b\), denoted by \(b \mid a\), if there exists an integer \(n\) such that \(a = nb\).}
 
 \begin{example}
     {Divisibility}Let \(a = 100\) and \(b = 4\). Is \(b \mid a\)?
@@ -85,7 +85,7 @@ This is less complicated than it sounds: we are simply factoring the integers an
     {Division with Remainder}Let $a = 24$ and $b = 16$. Find the quotient and remainder.
 \end{example}
 \lesol{
-    $24 = 16(1) + 8$. Therefore, the quotient is 1 and the remainder is 8.  
+    $24 = 16(1) + 8$. Therefore, the quotient is 1 and the remainder is 8.
 }
 
 \begin{example}
@@ -95,10 +95,10 @@ This is less complicated than it sounds: we are simply factoring the integers an
 \lesol{
     Notice how the \(b\) and \(r\) values on each line become the new \(a\) and \(b\) values on the subsequent line:
     \begin{align*}
-        2024 & = 2(748) + 528 \\
-        748  & = 1(528) + 220  \\
-        528  & = 2(220) + 88   \\
-        220  & = 2(88) + \boxed{44}    \\
+        2024 & = 2(748) + 528       \\
+        748  & = 1(528) + 220       \\
+        528  & = 2(220) + 88        \\
+        220  & = 2(88) + \boxed{44} \\
         88   & = 2(44) + 0
     \end{align*}
     Therefore, the greatest common divisor is 44.
@@ -127,7 +127,6 @@ This is less complicated than it sounds: we are simply factoring the integers an
         \item Otherwise, $r_{i + 1} > 0$. Set $i = i + 1$, and go back to step 3.
         \item Step 3 is executed at most $2\log_2(b) + 2$ times.
     \end{enumerate}
-    (Extended Version): There exists $u,v \in \Z$ such that $\gcd(a,b) = ua + cb$. Thus, $r_0 = a$, $r_1 = b$, $r_{i + 1} = r_{i - 1} - g_ir_i$, $s_0 = 1$, $s_1 = 0$, $s_{i + 1} = s_{i - 1} - q_is_i$ $(\text{up } 2) - (q\text{ left}) \times (\text{up } 1)$, $t_0 = 0$, $t_1 = 1$, $t_{i + 1} = t_{i - 1} - q_it_i$. Stop when $r_i = 0$, $u = s_{i - 1}$, $v = t_{i - 1}$
 \end{theorem}
 
 \begin{example}
@@ -135,25 +134,25 @@ This is less complicated than it sounds: we are simply factoring the integers an
 \end{example}
 
 \lesol{
-    We let \(a = 2024\) and \(b = 748\). From the equation in Example 1.2, we read the first line: 
+    We let \(a = 2024\) and \(b = 748\). From the equation in Example 1.2, we read the first line:
     \[
-    528 = a - 2b.
-    \] 
-    We substitue this into the second line to get 
+        528 = a - 2b.
+    \]
+    We substitue this into the second line to get
     \[
-    b = (a - 2b) \cdot 1 + 220, \quad \text{ so } \quad 220 = 2b - a.
+        b = (a - 2b) \cdot 1 + 220, \quad \text{ so } \quad 220 = 2b - a.
     \]
     We next substitute the expressions \(528 = a - 2b\) and \(220 = 2b - a\) into the third line to get
     \[
-    a - 2b = (-a + 3b) \cdot 2 + 88, \quad \text{ so } \quad 88 = 3a - 8b.
+        a - 2b = (-a + 3b) \cdot 2 + 88, \quad \text{ so } \quad 88 = 3a - 8b.
     \]
     Finally, we substitute the expressions \(220 = -a + 3b\) and \(88 = 3a - 8b\) into the fourth line to get
     \[
-    -a + 3b = (3a - 8b) \cdot 2 + 44, \quad \text{ so } \quad 44 = 7a - 19b.
+        -a + 3b = (3a - 8b) \cdot 2 + 44, \quad \text{ so } \quad 44 = 7a - 19b.
     \]
-    In other words, 
+    In other words,
     \[
-    -7 \cdot 2024 + 19 \cdot 748 = 44 = \gcd(2024, 748),
+        -7 \cdot 2024 + 19 \cdot 748 = 44 = \gcd(2024, 748),
     \]
     so we have found a way to write \(\gcd(a, b)\) as a linear combination of \(a\) and \(b\) using integer coefficients. \\
 }
@@ -161,7 +160,7 @@ This is less complicated than it sounds: we are simply factoring the integers an
 \wrpdef{Relatively Prime}{Let \(a\) and \(b\) be \textit{relatively prime} if \(\gcd(a,b) = 1\). More generally, any equation \(Au + Bv = \gcd(A,B)\) can be reduced to the case of relatively prime numbers by dividing both sides by \(\gcd(A,B)\). Thus, \(\frac{A}{\gcd(A,B)}u + \frac{B}{\gcd(A,B)} = 1\) where \(a = A / \gcd(A,B)\) and \(b = B / \gcd(A,B)\) are relatively prime and satisfy \(au + bv = 1\).}
 
 \begin{theorem}
-{Extended Euclidean Algorithm}Let \(a,b \in \Z^+\) with \(a \geq b\). Then the equation \(\gcd(a,b) = ua + vb\) always has a solution in integers \(u\) and \(v\). If \(u_0,v_0\) is any one solution, then every solution has the form \[u = u_0 + \frac{b \cdot t}{\gcd(a,b)} \text{ and } v = v_0 - \frac{a \cdot t}{\gcd(a,b)} \text{ for some integer } t \in \Z.\]
+    {Extended Euclidean Algorithm}Let \(a,b \in \Z^+\) with \(a \geq b\). Then the equation \(\gcd(a,b) = ua + vb\) always has a solution in integers \(u\) and \(v\). If \(u_0,v_0\) is any one solution, then every solution has the form \[u = u_0 + \frac{b \cdot t}{\gcd(a,b)} \text{ and } v = v_0 - \frac{a \cdot t}{\gcd(a,b)} \text{ for some integer } t \in \Z.\]
 \end{theorem}
 
 \textbf{See Exercise~\hyperlink{ex:1.10}{1.10} for a detailed example.}
@@ -204,11 +203,11 @@ Note that we will be finding the more traditional rings that are brought up in A
 \end{example}
 
 \lesol{
-    Note that from the following table, 6 only has 2 inverses, \(1\) and \(5\). This is because in their respective column, there is a 1 in each row. 
+    Note that from the following table, 6 only has 2 inverses, \(1\) and \(5\). This is because in their respective column, there is a 1 in each row.
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|}
             \hline
-            \(a\) & 0 & 1 & 2 & 3 & 4 & 5 \\
+            \(a\)         & 0 & 1 & 2 & 3 & 4 & 5 \\
             \hline
             \(a \cdot 0\) & 0 & 0 & 0 & 0 & 0 & 0 \\
             \hline
@@ -227,44 +226,17 @@ Note that we will be finding the more traditional rings that are brought up in A
 
 }
 
-\wrpdef{Unit}{Recall from \hyperlink{prop 1.13}{Proposition 1.13} that \(a\) has an inverse modulo \(m\) if and only if \(\gcd(a, m) = 1\). Numbers that have inverses are called \textit{units}. We denote the set of all units by 
-\begin{align*}
-    (\Z/m\Z)^* &= \{a \in \Z/m\Z \mid \gcd(a,m) = 1\} \\
-    & = \{a \in \Z/m\Z \mid \text{a has an inverse modulo } m\}
-\end{align*}}
+\wrpdef{Unit}{Recall from \hyperlink{prop 1.13}{Proposition 1.13} that \(a\) has an inverse modulo \(m\) if and only if \(\gcd(a, m) = 1\). Numbers that have inverses are called \textit{units}. We denote the set of all units by
+    \begin{align*}
+        (\Z/m\Z)^* & = \{a \in \Z/m\Z \mid \gcd(a,m) = 1\}                     \\
+                   & = \{a \in \Z/m\Z \mid \text{a has an inverse modulo } m\}
+    \end{align*}}
 
-\textbf{Fast forward to section 2.5:} \\
+\textbf{Click \hyperlink{2.5 group}{this link} to be teleported to section 2.5 where we discuss Groups which is relevant to us now.} \\
 
-\wrpdef{Group}{A set $G$ along with a binary operation (closure) such that for all $a,b \in G$, $a\times b \in G$ (closure), and there exists an $e \in G$ such that $a \times e = a$ and $e \times a = a$ (identity), for all $a \in G$, there exists $a^{-1} \in G$ such that $a \times a^{-1} = a^{-1} \times a = e$ (inverse), and for all $a,b,c \in G$, $(a \times b) \times c = a \times (b \times c)$ (associativity)}
 
-For commutativity, for all $a,b \in G$, $a\times b = b \times a$. Some groups have this, some do not. \\
 
-\begin{example}
-    {Integer Addition as a Group}Lets check to see addition among the integers are a group: $(\Z, +)$
-\end{example}
-
-\lesol{
-    \begin{enumerate}
-        \item True. Let $a,b \in \Z$ $a + b \in \Z$.
-        \item True. $e = 0 \in \Z$, $a + 0 = a$ and $0 + a = a$
-        \item True. For all $a\in \Z$, $a^{-1} = -a$ because $a + (-a) = 0 = -a + a$
-        \item True. For all $a,b,c \in \Z$, $(a + b) + c = a + (b + c)$
-    \end{enumerate}
-    Therefore, the additive property of the integers are a group. In fact, because $a + b = b + a$ $\Z$ are a commutative group (abelian group).
-}
-
-\begin{example}
-    {Integer Multiplication}Lets check to see multiplication among the integers are a group: $(\Z, +)$
-\end{example}
-\lesol{
-    \begin{enumerate}
-        \item True. Let $a,b \in \Z$ $ab \in \Z$.
-        \item True. $e = 1 \in \Z$, $a * 1 = a$ and $1 * a = a$
-        \item False. Counterexample: consider $2^{-1} = \frac{1}{2}$ because $2(\frac{1}{2}) = 1$ but $\frac{1}{2} \notin \Z$
-    \end{enumerate}
-}
-
-\wrpdef{Euler's Phi Function}{The function \(\phi(m)\) defined by the rule \[\phi(m) = |\{0 \leq a < m \mid \gcd(a,m) = 1\}| \]}
+\wrpdef{Euler's Phi Function}{The function \(\varphi(m)\) defined by the rule \[\varphi(m) = |\{0 \leq a < m \mid \gcd(a,m) = 1\}| \]}
 
 \subsection{Modular Arithmetic and Shift Ciphers}
 
@@ -280,16 +252,16 @@ For commutativity, for all $a,b \in G$, $a\times b = b \times a$. Some groups ha
 
 We can write the algorithm as follows: \begin{enumerate}[label=\arabic*.]
     \item Write the exponent in binary.
-    \item Compute the powers of the base in binary. For example, 
-    \begin{align*}
-    k_0 &= a \ (\text{mod } m) \\
-    k_1 &= k_0^2 \ (\text{mod } m) = a^2 \ (\text{mod } m) \\
-    k_2 &= k_1^2 \ (\text{mod } m) = (a^2)^{2} \ (\text{mod } m)\\
-    & \vdots \\
-    k_r &= k_{r-1}^2 \ (\text{mod } m) = (a^{2^{n-1}})^2 \ (\text{mod } m)
-    \end{align*}
+    \item Compute the powers of the base in binary. For example,
+          \begin{align*}
+              k_0 & = a \ (\text{mod } m)                                             \\
+              k_1 & = k_0^2 \ (\text{mod } m) = a^2 \ (\text{mod } m)                 \\
+              k_2 & = k_1^2 \ (\text{mod } m) = (a^2)^{2} \ (\text{mod } m)           \\
+                  & \vdots                                                            \\
+              k_r & = k_{r-1}^2 \ (\text{mod } m) = (a^{2^{n-1}})^2 \ (\text{mod } m)
+          \end{align*}
     \item Multiply the powers of the base that correspond to the 1s in the binary representation of the exponent.
-    Compute \(a_b \ (\text{mod } m)\) by using \[a^b = a^{b_0 \cdot b_{12} + \cdots + b_r2^r}\]
+          Compute \(a_b \ (\text{mod } m)\) by using \[a^b = a^{b_0 \cdot b_{12} + \cdots + b_r2^r}\]
 \end{enumerate}
 
 \begin{example}
@@ -299,19 +271,19 @@ We can write the algorithm as follows: \begin{enumerate}[label=\arabic*.]
 
 \lesol{
     The first step is to write 218 in binary: \(218 = 11011010\). Then, we can write the powers of 3 in binary: \begin{align*}
-        3^1 & = 3 \ (\text{mod } 1000) = 3 \\
-        3^2 & = 3^2 \ (\text{mod } 1000) = 9 \\
-        3^4 & = 9^2 \ (\text{mod } 1000) = 81 \\
-        3^8 & = 81^2 \ (\text{mod } 1000) = 561 \\
-        3^{16} & = 561^2 \ (\text{mod } 1000) = 721 \\
-        3^{32} & = 721^2 \ (\text{mod } 1000) = 841 \\
-        3^{64} & = 841^2 \ (\text{mod } 1000) = 281 \\
-        3^{128} & = 281^2 \ (\text{mod } 1000) = 961         
+        3^1     & = 3 \ (\text{mod } 1000) = 3       \\
+        3^2     & = 3^2 \ (\text{mod } 1000) = 9     \\
+        3^4     & = 9^2 \ (\text{mod } 1000) = 81    \\
+        3^8     & = 81^2 \ (\text{mod } 1000) = 561  \\
+        3^{16}  & = 561^2 \ (\text{mod } 1000) = 721 \\
+        3^{32}  & = 721^2 \ (\text{mod } 1000) = 841 \\
+        3^{64}  & = 841^2 \ (\text{mod } 1000) = 281 \\
+        3^{128} & = 281^2 \ (\text{mod } 1000) = 961
     \end{align*} Now, we can calculate the value of \(3^{218}\) by multiplying the values of \(3^{128}\), \(3^{64}\), \(3^{16}\), \(3^{8}\), and \(3^{2}\) together: \begin{align*}
         3^{218} & = 3^{128} \times 3^{64} \times 3^{16} \times 3^{8} \times 3^{2} \\
-        & = 961 \times 281 \times 721 \times 561 \times 9 \\
-        & = 489 \ (\text{mod } 1000)
-        \end{align*}
+                & = 961 \times 281 \times 721 \times 561 \times 9                 \\
+                & = 489 \ (\text{mod } 1000)
+    \end{align*}
 }
 
 \section{Prime Numbers, Unique Factorization, and Finite Fields}
@@ -339,9 +311,9 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
 
 \begin{theorem}
     {Fermat's Little Theorem}Let \(p\) be a prime number and \(a\) be an integer. Then, \[a^{p - 1} \equiv \begin{cases}
-        1 \ (\text{mod } p) & \text{if } p \nmid a \\
-        0 \ (\text{mod } p) & \text{if } p \mid a
-    \end{cases}\]
+            1 \ (\text{mod } p) & \text{if } p \nmid a \\
+            0 \ (\text{mod } p) & \text{if } p \mid a
+        \end{cases}\]
 \end{theorem}
 
 \wrpdef{Order}{The \textit{order} of an element \(a \ (\text{mod } p)\) is the smallest exponent \(k \geq 1\) such that \(a^k \equiv 1 \ (\text{mod } p)\).}
@@ -366,7 +338,7 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
     {Primitive Root}Find a primitive root modulo 7.
 \end{example}
 
-\lesol{We can look to the \hyperlink{thm:Primitive Root Theorem}{Primitive Root Theorem} to see how many primitive roots are \(7\) has. Because 7 is prime, we know that \(\phi = 6\). Thus, we know that 7 will have 6 primitive roots. Because there are 6 primitive roots in total, and \(\F_7^*\) has 7 elements (including 0), we know that 1-6 will be the primitive roots.}
+\lesol{We can look to the \hyperlink{thm:Primitive Root Theorem}{Primitive Root Theorem} to see how many primitive roots are \(7\) has. Because 7 is prime, we know that \(\varphi = 6\). Thus, we know that 7 will have 6 primitive roots. Because there are 6 primitive roots in total, and \(\F_7^*\) has 7 elements (including 0), we know that 1-6 will be the primitive roots.}
 
 
 \section{Symmetric and Antisymmetric Ciphers}
@@ -394,7 +366,7 @@ This brings us to what it means to be a \textit{successful} cipher. Thus, we loo
 \begin{enumerate}[label=\arabic*.]
     \item For all \(k\) and \(m\), it is easy to computer \(e_k(m)\). (Note that \textit{easy} is relative to the computational power of the adversary. For this course, \textit{easy} denotes a decryption time of less than a second.)
     \item For all \(k\) and \(c\), it is easy to compute \(e_k(c)\).
-    \item Given one or more ciphertext, \(c_1,\dots c_n\), all encrypted with the same key, it is hard to compute any plaintext, \(m\), such that \(d_k(m)\) without knowing the key. 
+    \item Given one or more ciphertext, \(c_1,\dots c_n\), all encrypted with the same key, it is hard to compute any plaintext, \(m\), such that \(d_k(m)\) without knowing the key.
 \end{enumerate}
 
 The next traits are desired, but not required:
@@ -420,14 +392,14 @@ The next traits are desired, but not required:
 \end{center}
 
 \begin{enumerate}[label=\arabic*.]
-    \item Multiplication modulo \(m\): \(c = m \times k \ (\text{mod } m)\). 
-    \begin{itemize}
-        \item \(\mathcal{K} = \mathcal{M} = \mathcal{C} = \F_p^*\)
-        \item \(k \in \F_p^*\)
-        \item \(e_k(m) = k \cdot m \ (\text{mod } p)\)
-        \item \(d_k(m) = k^{-1} \cdot c \ (\text{mod } p)\)
-        \item Example: \(\F_{307}, k = 258, m = 444, e_{258}(444) = 258.444 \ (\text{mod } 1307) = 843\). To find decrypt this message, Eve needs to iterate through \(1307 - 1\) different keys. (Easy.)
-    \end{itemize}
+    \item Multiplication modulo \(m\): \(c = m \times k \ (\text{mod } m)\).
+          \begin{itemize}
+              \item \(\mathcal{K} = \mathcal{M} = \mathcal{C} = \F_p^*\)
+              \item \(k \in \F_p^*\)
+              \item \(e_k(m) = k \cdot m \ (\text{mod } p)\)
+              \item \(d_k(m) = k^{-1} \cdot c \ (\text{mod } p)\)
+              \item Example: \(\F_{307}, k = 258, m = 444, e_{258}(444) = 258.444 \ (\text{mod } 1307) = 843\). To find decrypt this message, Eve needs to iterate through \(1307 - 1\) different keys. (Easy.)
+          \end{itemize}
     \item Add \((\text{mod } m)\): \(c = m + k \ (\text{mod } m)\). (Caesar Cipher.)
     \item Affine Cipher: Key \(= (k_1,k_2) \in \Z \times \Z\).
     \item Hill Cipher.
@@ -437,12 +409,7 @@ The next traits are desired, but not required:
 \subsection{Encoding Schemes}
 
 \begin{definition}
-    {Encoding Scheme}An \textit{encoding scheme} is a method of converting plaintext into a form that can be transmitted over a channel. An encoding scheme is assumed to be entirely public knowledge and used by everyone for the same purposes. An encryption scheme is designed to hide information from anyone who dopes not know the key. Thus, an encoding scheme, like an encryption scheme, consists of an encoding functions are public knowledge and should be fast and easy to compute. 
+    {Encoding Scheme}An \textit{encoding scheme} is a method of converting plaintext into a form that can be transmitted over a channel. An encoding scheme is assumed to be entirely public knowledge and used by everyone for the same purposes. An encryption scheme is designed to hide information from anyone who dopes not know the key. Thus, an encoding scheme, like an encryption scheme, consists of an encoding functions are public knowledge and should be fast and easy to compute.
 \end{definition}
 
 This section will cover ASCII\@: We can take strings of 8 bits and convert them into a single character. From 0 to 255, and use them to represent the letters of the alphabet via \(\texttt{a} = 00000000, \texttt{b} = 00000001, \texttt{c} = 00000010, \dots, \texttt{z} = 00011001\). To distinguish between upper and lower case letters, we can use the first bit to represent the case.
-
-
-\subsection{Asymmetric (public key) Cryptography}
-
-This section will lead us to the following chapter.

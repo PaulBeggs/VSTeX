@@ -31,7 +31,7 @@
             \item $A = 119$ is odd. Therefore, $b = b \cdot a \ (\text{mod } 1000) = 2 \cdot 16 \ (\text{mod } 1000) = 32$; and $a = a^2 \ (\text{mod } 1000) = 16^2 \ (\text{mod } 1000) = 256$. $A = \lfloor 119 / 2 \rfloor = 59$.
             \item $A = 59$ is odd. Therefore, $b = b \cdot a \ (\text{mod } 1000) = 32 \cdot 256 \ (\text{mod } 1000) = 192$; and $a = a^2 \ (\text{mod } 1000) = 256^2 \ (\text{mod } 1000) = 536$. $A = \lfloor 59 / 2 \rfloor = 29$.
             \item $A = 29$ is odd. Therefore, $b = b \cdot a \ (\text{mod } 1000) = 192 \cdot 536 \ (\text{mod } 1000) = 912$; and $a = a^2 \ (\text{mod } 1000) = 536^2 \ (\text{mod } 1000) = 296$. $A = \lfloor 29 / 2 \rfloor = 14$.
-            \item $A = 14$ is even. Therefore, $a = a^2 \ (\text{mod } 1000) = 296^2 \ (\text{mod } 1000) = 616$ (\href{https://en.wikipedia.org/wiki/616_(number)}{devil's number}!!!). $A = \lfloor 14 / 2 \rfloor = 7$.
+            \item $A = 14$ is even. Therefore, $a = a^2 \ (\text{mod } 1000) = 296^2 \ (\text{mod } 1000) = 616$. $A = \lfloor 14 / 2 \rfloor = 7$.
             \item $A = 7$ is odd. Therefore, $b = b \cdot a \ (\text{mod } 1000) = 912 \cdot 616 \ (\text{mod } 1000) = 792$; and $a = a^2 \ (\text{mod } 1000) = 616^2 \ (\text{mod } 1000) = 456$. $A = \lfloor 7 / 2 \rfloor = 3$.
             \item $A = 3$ is odd. Therefore, $b = b \cdot a \ (\text{mod } 1000) = 792 \cdot 456 \ (\text{mod } 1000) = 152$; and $a = a^2 \ (\text{mod } 1000) = 456^2 \ (\text{mod } 1000) = 936$. $A = \lfloor 3 / 2 \rfloor = 1$.
             \item $A = 1$ is odd. Therefore, $b = b \cdot a \ (\text{mod } 1000) = 152 \cdot 936 \ (\text{mod } 1000) = 272$; and $a = a^2 \ (\text{mod } 1000) = 936^2 \ (\text{mod } 1000) = 96$. $A = \lfloor 1 / 2 \rfloor = 0$.
@@ -206,7 +206,7 @@
             a^{p - 2} &\equiv a^{-1} \ (\text{mod } p) \\
             11^{45} & \ (\text{mod } 47)
         \end{align*}
-        By the fast power algorithm, we need to find the binary representation of 45. Thus, $45 \ (\text{mod } 2) = 1$, $22 \ (\text{mod } 2) = 0$, $11 \ (\text{mod } 2) = 1$, $5 \ (\text{mod } 2) = 1$, $2 \ (\text{mod } 2) = 0$, $1 \ (\text{mod } 2) = 1$. From this, we have the binary representation of $45_{10}z$ as $101101_2$. Hence, we will need to calculate $2^5 \cdot 2^3 \cdot 2^2 \cdot 2^1 \cdot 2^0 \Rightarrow 11^{2^5} \cdot 11^{2^3} \cdot 11^{2^0} \Rightarrow 11^{32} \cdot 11^8 \cdot 11^4 \cdot 11 \equiv 17 \cdot 14 \cdot 25 \cdot 11$. Now, lets find the values of these numbers:
+        By the fast power algorithm, we need to find the binary representation of 45. Thus, $45 \ (\text{mod } 2) = 1$, $22 \ (\text{mod } 2) = 0$, $11 \ (\text{mod } 2) = 1$, $5 \ (\text{mod } 2) = 1$, $2 \ (\text{mod } 2) = 0$, $1 \ (\text{mod } 2) = 1$. From this, we have the binary representation of $45_{10}$ as $101101_2$. Hence, we will need to calculate $2^5 \cdot 2^3 \cdot 2^2 \cdot 2^1 \cdot 2^0 \Rightarrow 11^{2^5} \cdot 11^{2^3} \cdot 11^{2^0} \Rightarrow 11^{32} \cdot 11^8 \cdot 11^4 \cdot 11 \equiv 17 \cdot 14 \cdot 25 \cdot 11$. Now, lets find the values of these numbers:
         \begin{align*}
             11^1 &\equiv 11 \ (\text{mod } 47) \\
             11^2 &\equiv 27 \ (\text{mod } 47) \\
