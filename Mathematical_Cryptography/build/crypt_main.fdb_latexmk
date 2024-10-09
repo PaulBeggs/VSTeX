@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1728269232.17554 "c:/Users/paulb/VSTeX/Mathematical_Cryptography/crypt_main.tex" "build/crypt_main.pdf" "crypt_main" 1728269234.62645 0
+["pdflatex"] 1728342774.44641 "c:/Users/paulb/VSTeX/Mathematical_Cryptography/crypt_main.tex" "build/crypt_main.pdf" "crypt_main" 1728342776.72279 0
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1727827053 179281 07163ff08e7168fbcd0ad4df2d5a0958 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1727051388 14064 e4c3d6dc0307aa16e774363be70b5216 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/pk/ljfour/public/cm/dpi1037/cmbcsc10.pk" 1727200123 21800 bc6e9b5edc58c10aaac757a40b854290 ""
@@ -244,10 +244,10 @@
   "Chapters/ch_3.tex" 1728147778 4185 9ea2eef11a857c323a52f98b4bef9902 ""
   "Exercises/1.tex" 1727550274 25982 78c6132fc43d50cf18b5affe2b0a5404 ""
   "Exercises/2.tex" 1728251121 25820 cd8d4691c0e097743e2b3aaf9f5f8e1e ""
-  "Exercises/3.tex" 1728269229 13813 b588f03815b67768c39fe3486b8a48e6 ""
-  "build/crypt_main.aux" 1728269234 6754 25b33a56a0892b9b763a8627f517554f "pdflatex"
-  "build/crypt_main.out" 1728269234 5189 297a7815974d2be2d7a71e95a43ba6b5 "pdflatex"
-  "build/crypt_main.toc" 1728269234 2462 ed139628bd1a438c581893e2dd24ce3f "pdflatex"
+  "Exercises/3.tex" 1728342773 13860 012889c0946bd06af1a0e186d32992fd ""
+  "build/crypt_main.aux" 1728342776 6754 25b33a56a0892b9b763a8627f517554f "pdflatex"
+  "build/crypt_main.out" 1728342776 5189 297a7815974d2be2d7a71e95a43ba6b5 "pdflatex"
+  "build/crypt_main.toc" 1728342776 2462 ed139628bd1a438c581893e2dd24ce3f "pdflatex"
   "c:/Users/paulb/VSTeX/Mathematical_Cryptography/crypt_main.tex" 1728250625 17122 2456c4b8b7a9e8086b83aae0ef7c95e3 ""
   "crypt_main.tex" 1728250625 17122 2456c4b8b7a9e8086b83aae0ef7c95e3 ""
   "images/Hendrix Logo.png" 1712992668 30579 73165ffe7013fe439368d0e42c21a9e2 ""

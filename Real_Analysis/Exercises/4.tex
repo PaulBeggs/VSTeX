@@ -1,0 +1,48 @@
+\begin{exercise}
+    {2.5.1}Give an example of each of the following, or argue that such a request is impossible.
+    \begin{enumerate}
+        \item A sequence that has a subsequence that is bounded but contains no subsequence that converges.
+        \item A sequence that does not contain 0 or 1 as a term but contains subsequences converging to each of these values.
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item Impossible. This violates the \namrefthm{Bolzano-Weierstrass Theorem}. The theorem states that if the sequence is bounded, then there exists a convergent subsequence.
+        \item You could have a subsequence, \((\frac{1}{2}, \frac{1}{3}, \dots, \frac{1}{n})\) which converges to 0, and also a subsequence \((\frac{1}{2}, \frac{2}{3}, \dots \frac{n}{n + 1})\), which converges to 1. 
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {2.5.2} Decide whether the following propositions are true or false, providing a short justification for each conclusion.
+    \begin{enumerate}
+        \item If every proper subsequence of $(x_n)$ converges, then $(x_n)$ converges as well.
+        \setcounter{enumi}{2}
+        \item If $(x_n)$ is bounded and diverges, then there exist two subsequences of $(x_n)$ that converge to different limits.
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item False. As shown in Example 2.5.4, if we have a sequence like \((1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \frac{1}{5}, -\frac{1}{5}, \frac{1}{5}, \cdots)\), we see that it is divergent, and has two proper subsequences \((\frac{1}{5},\frac{1}{5}, \cdots)\) and \((-\frac{1}{5}, -\frac{1}{5}, \cdots)\) that both converge to values \(\frac{1}{5}\) and \(-\frac{1}{5}\), respectively.
+        \setcounter{enumi}{2}
+        \item True. As shown in Example 2.5.4, if we have a sequence like \((1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \frac{1}{5}, -\frac{1}{5}, \frac{1}{5}, \cdots)\), we see that it is divergent and bounded. Furthermore, notice that \((\frac{1}{5},\frac{1}{5}, \cdots)\) and \((-\frac{1}{5}, -\frac{1}{5}, \cdots)\) are valid subsequences that converge to \(\frac{1}{5}\) and \(-\frac{1}{5}\), respectively. 
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {2.5.5} Assume $(a_n)$ is a bounded sequence with the property that every convergent subsequence of $(a_n)$ converges to the same limit $a \in \mathbb{R}$. Show that $(a_n)$ must converge to $a$.
+\end{exercise}
+
+\expf{
+
+}
+
+\begin{exercise}
+    {2.5.6} Use a similar strategy to the one in \numrefthm{2.5.5} to show
+    \[\lim b^{1/n} \text{ exists for all } b \geq 0\] and find the value of the limit. (The results in \hyperref[ex:2.3.1]{Exercise 2.3.1} may be assumed.)
+\end{exercise}
+
+\expf{
+
+}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  6 OCT 2024 21:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  7 OCT 2024 18:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1711,7 +1711,7 @@ pdfTeX warning (dest): name{thm:Fermat's\040Little\040Theorem} has been referenc
 pdfTeX warning (dest): name{2.5\040group} has been referenced but does not exist, replaced by a fixed one
 
  <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi720\cmbcsc10.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi864\cmbcsc10.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi1037\cmbcsc10.pk><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.pdf (54 pages, 527673 bytes).
+Output written on c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.pdf (54 pages, 527711 bytes).
 PDF statistics:
  1053 PDF objects out of 1200 (max. 8388607)
  485 named destinations out of 1000 (max. 500000)

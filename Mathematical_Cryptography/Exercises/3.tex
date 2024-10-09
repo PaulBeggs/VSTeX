@@ -11,8 +11,8 @@
     \begin{enumerate}
         \setcounter{enumi}{1}
         \item \textit{Proof.} We know that \(g^x \equiv h \pmod{p}\), which means that \(x = \log_g(h)\). Similarly, if \(g^{x_1} \equiv h_1 \pmod{p}\) and \(g^{x_2} \equiv h_2 \pmod{p}\), then \(x_1 = \log_g(h_1)\) and \(x_2 = \log(h_2)\). Now, we can substitute these values into the first equation to get \(g^{x_1 + x_2} \equiv h_1h_2 \pmod{p} \equiv g^{\log_g(h_1) + \log_g(h_2)} \pmod{p}\). Then, from the properties of exponents, we can rewrite this equation as \(h_1 \cdot h_2 \pmod{p} \equiv g^{\log_g(h_1h_2)} \pmod{p}\). Therefore, \(\log_g(h_1 \cdot h_2) = \log_g(h_1) + \log_g(h_2)\).
-        \item \textit{Proof} Following a similar process to \((b)\), we start with \(g^{n\log_g(h)}\). Then, by using the properties of exponents, we can rewrite this as \(g^{\log_g(h)^n}\). Since \(g^{\log_g(h)^n} = h^n\). Putting everything together, we have \begin{align*}
-                  g^{\log_g(h)^n} & \equiv h^n \pmod{p}         \\
+        \item \textit{Proof} Following a similar process to \((b)\), we start with \(g^{n\log_g(h)}\). Then, by using the properties of logarithms, we can rewrite this as \(g^{\log_g(h^n)}\). Then, because \(g^{\log_g}\) cancel out, we see that \(g^{\log_g(h^n)} = h^n\). Putting everything together, we have \begin{align*}
+                  g^{\log_g(h^n)} & \equiv h^n \pmod{p}         \\
                   \log_g(h^n)     & \equiv n\log_g(h) \pmod{p}.
               \end{align*}
     \end{enumerate}
@@ -44,7 +44,7 @@
 \end{exercise}
 
 \begin{center}
-    \textbf{Added (a) and (b) for clarity for Exercise 2.6.}
+    \textbf{Added (a) and (b) for clarity in Exercise 2.6.}
 \end{center}
 
 \sol{

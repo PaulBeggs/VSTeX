@@ -35,7 +35,7 @@ We can rearrange these terms such that we can `force' the series to converge to 
 \end{definition}
 \setcounter{BoxCounter}{2}
 \begin{definition}
-    The sequence $(a_n)$ converges to $L$ if for all $\epsilon > 0$, there exists $N \in \N$ such that for all $n \geq \N$, $|a_n - L| < \epsilon$. In other words, there exists $N \in \N$ such that
+    The sequence $(a_n)$ \textit{converges} to $L$ if for all $\epsilon > 0$, there exists $N \in \N$ such that for all $n \geq \N$, $|a_n - L| < \epsilon$. In other words, there exists $N \in \N$ such that
     \begin{itemize}
         \item \textbf{(In the interval)} $a_N \in (L - \epsilon, L + \epsilon)$.
         \item \textbf{(Stays in the interval)} $\forall n \geq N$, $a_n \in (L - \epsilon, L + \epsilon)$.
@@ -495,7 +495,7 @@ Looking to the future, we are going to use functions and summations together. Fo
 \end{ntheorem}
 
 \tpf{
-    Let \(x_n\) be a bounded sequence. There exists an \(M > 0\) such that every term \(x_n\) belongs to \([-M,M]\). To prove this theorem, we will be utilizing a recursive argument style. Thus, let \(I_0 = [-M,M]\). \(I_0\) has length \(2M\). Cut \(I_0\) in half with \(I_1\) and \(I_2\) both being half as long as \(I_0\). Since \(x_n\) is bounded, there exists an \(I_L\) or \(I_R\) that contains infinitely many terms of \(x_n\). We will pick one, call it \(I_1\) that is contained in \(I_L\). \(I_1\) has length \(M\). Pick one of those terms inside \(I_1\) and call it \(x_{n_1}\). Now, cut \(I_1\) in half with equal length in intervals. One of them contains infinitely many terms. Call that interval \(I_2\). \(I_2\) has length \(\frac{M}{2}\). Pick one of those terms inside \(I_2\) and call it \(x_{n_2}\). Continue this process indefinitely for all \(n \N\) with \(n_1 > n_2\). Continue this process, and we get 
+    Let \(x_n\) be a bounded sequence. There exists an \(M > 0\) such that every term \(x_n\) belongs to \([-M,M]\). To prove this theorem, we will be utilizing a recursive argument style. Thus, let \(I_0 = [-M,M]\). \(I_0\) has length \(2M\). Cut \(I_0\) in half with \(I_1\) and \(I_2\) both being half as long as \(I_0\). Since \(x_n\) is bounded, there exists an \(I_L\) or \(I_R\) that contains infinitely many terms of \(x_n\). We will pick one, call it \(I_1\) that is contained in \(I_L\). \(I_1\) has length \(M\). Pick one of those terms inside \(I_1\) and call it \(x_{n_1}\). Now, cut \(I_1\) in half with equal length in intervals. One of them contains infinitely many terms. Call that interval \(I_2\). \(I_2\) has length \(\frac{M}{2}\). Pick one of those terms inside \(I_2\) and call it \(x_{n_2}\). Continue this process indefinitely for all \(n \geq \N\) with \(n_1 > n_2\). Continue this process, and we get 
     \begin{itemize}
         \item a sequence of closed intervals \(I_n\).
         \begin{itemize}
@@ -510,7 +510,7 @@ Looking to the future, we are going to use functions and summations together. Fo
 
 
 
-    The \namrefthm{Nested Interval Property} states that \(\displaystyle \bigcup_{n = 1}^\infty I_n\) is non empty. Let \(L\) be a point in \(\displaystyle \bigcup_{n = 1}^\infty I_n\). We claim \(\limn{x_{n_k}} = L\). Let \(\epsilon > 0\). There exists an \(N \in \N\) such that \(\frac{2M}{2^n} < \epsilon\). (Since \(\limn{\frac{2M}{2^n}} = 0\). See ) For any \(k \geq N\), recall that \(x_{n_k}\), \(L \in I_k\). Since \(I_k\) has length \(\frac{2M}{2^n}\). Thus, \(\disabs{x_{n_k} - L} < \epsilon\). Therefore, \(\limn{x_{n_k}} = L\) and \((x_n)\) has a convergence sequence. 
+    The \namrefthm{Nested Interval Property} states that \(\bigcup_{n = 1}^\infty I_n\) is non empty. Let \(L\) be a point in \(\bigcup_{n = 1}^\infty I_n\). We claim \(\limn{x_{n_k}} = L\). Let \(\epsilon > 0\). There exists an \(N \in \N\) such that \(\frac{2M}{2^n} < \epsilon\). (Since \(\limn{\frac{2M}{2^n}} = 0\). See \numrefthm{2.5.5}) For any \(k \geq N\), recall that \(x_{n_k}\), \(L \in I_k\). Since \(I_k\) has length \(\frac{2M}{2^n}\). Thus, \(\disabs{x_{n_k} - L} < \epsilon\). Therefore, \(\limn{x_{n_k}} = L\) and \((x_n)\) has a convergence subsequence. 
 }
 
 \begin{tikzpicture}
@@ -522,37 +522,36 @@ Looking to the future, we are going to use functions and summations together. Fo
     \draw[thick] (-\M, 0) -- (\M, 0) node[anchor=west] {$I_0 = [-M,M]$};
     \draw[thick] (-\M, 0.1) -- (-\M, -0.1) node[below] {$-M$};
     \draw[thick] (\M, 0.1) -- (\M, -0.1) node[below] {$M$};
+
+    \draw[thick] (5, 0.2) node[above] {$Right$};
+    \draw[thick] (-5, 0.2) node[above] {$Left$};
     
     % Draw the midpoint of I_0
     \draw[thick] (0, 0.1) -- (0, -0.1) node[below] {$0$};
     
     % Draw subintervals I_1, I_L, I_R
     \def\halfM{\M / 2}
-    \draw[thick] (-\halfM, -1) -- (\halfM, -1) node[anchor=west] {$I_1$};
-    \draw[thick] (-\halfM, -0.9) -- (-\halfM, -1.1) node[below] {};
+    \draw[thick] (0, -1) -- (\halfM, -1) node[anchor=west] {$I_1$};
+    \draw[thick] (0, -0.9) -- (0, -1.1) node[below] {};
     \draw[thick] (\halfM, -0.9) -- (\halfM, -1.1) node[below] {};
-    
-    % Left and Right halves
-    \draw[dashed] (-\M, -1.5) -- (0, -1.5) node[anchor=west] {$I_L$};
-    \draw[dashed] (0, -1.5) -- (\M, -1.5) node[anchor=west] {$I_R$};
     
     % Draw I_2 within I_1
     \def\quarterM{\M / 4}
-    \draw[thick] (-\quarterM, -2) -- (\quarterM, -2) node[anchor=west] {$I_2$};
-    \draw[thick] (-\quarterM, -1.9) -- (-\quarterM, -2.1) node[below] {};
+    \draw[thick] (\quarterM, -2) -- (\halfM, -2) node[anchor=west] {$I_2$};
     \draw[thick] (\quarterM, -1.9) -- (\quarterM, -2.1) node[below] {};
+    \draw[thick] (\halfM, -1.9) -- (\halfM, -2.1) node[below] {};
     
     % Further subintervals
     \def\eighthM{\M / 8}
-    \draw[thick] (-\eighthM, -3) -- (\eighthM, -3) node[anchor=west] {$I_3$};
-    \draw[thick] (-\eighthM, -2.9) -- (-\eighthM, -3.1) node[below] {};
-    \draw[thick] (\eighthM, -2.9) -- (\eighthM, -3.1) node[below] {};
+    \draw[thick] (\quarterM, -3) -- (\quarterM + \eighthM, -3) node[anchor=west] {$I_3$};
+    \draw[thick] (\quarterM + \eighthM, -2.9) -- (\quarterM + \eighthM, -3.1) node[below] {};
+    \draw[thick] (\quarterM, -2.9) -- (\quarterM, -3.1) node[below] {};
     
     % Points representing x_n's
-    \filldraw[red] (1.5, 0) circle (2pt) node[anchor=north] {$x_{n_1}$};
-    \filldraw[red] (0.7, -1) circle (2pt) node[anchor=north] {$x_{n_2}$};
-    \filldraw[red] (0.35, -2) circle (2pt) node[anchor=north] {$x_{n_3}$};
-    \filldraw[red] (0.18, -3) circle (2pt) node[anchor=north] {$x_{n_4}$};
+    \filldraw[red] (2.5, 0) circle (2pt) node[anchor=north] {$x_{n_1}$};
+    \filldraw[red] (2.25, -1) circle (2pt) node[anchor=north] {$x_{n_2}$};
+    \filldraw[red] (2.125, -2) circle (2pt) node[anchor=north] {$x_{n_3}$};
+    \filldraw[red] (2.0625, -3) circle (2pt) node[anchor=north] {$x_{n_4}$};
     
 \end{tikzpicture}
 
@@ -561,10 +560,54 @@ Looking to the future, we are going to use functions and summations together. Fo
 \end{theorem}
 
 \tpf{
-    The sequence \((b^n)\) is monotone decreasing. This is because \(b^{n + 1} = b^nb < b^n\). This sequence is also bounded by 0. Hence, by the \namrefthm{Monotone Convergence Theorem}, \((b^n)\) converges. Now, let \(L = \limn{b^n}\). Consider the subsequence \(b^{2n}\). This sequence also converges to \(L\). Thus, \begin{align}
+    The sequence \((b^n)\) is monotone decreasing. This is because \(b^{n + 1} = b^nb < b^n\). This sequence is also bounded by 0. Hence, by the \namrefthm{Monotone Convergence Theorem}, \((b^n)\) converges. Now, let \(L = \limn{b^n}\). Consider the subsequence \(b^{2n}\). This sequence also converges to \(L\). Thus, \begin{align*}
         L & = \limn{b^{2n}} \\
           & = \limn{b^nb^n} \\
           & = \limn{b^n}\limn{b^n} \\
             & = L^2.
-    \end{align} Thus, \(L = 0\) or \(L = 1\). The limit cannot be 1 because \(b^n\) is decreasing away from 1. Therefore, \(L = 0\).
+    \end{align*} Thus, \(L = 0\) or \(L = 1\). The limit cannot be 1 because \(b^n\) is decreasing away from 1. Therefore, \(L = 0\).
 }
+
+
+\section{The Cauchy Criterion}
+
+\begin{center}
+    \textbf{Recall}
+\end{center}
+How do we prove \(x_n\) converges?
+\begin{enumerate}
+    \item We know and prove the limit \(\rightarrow\) claim \(L\), show terms get close to \(L\).
+    \item \namrefthm{Monotone Convergence Theorem}.
+\end{enumerate}
+
+\begin{definition}
+    A sequence \(x_n\) is a \textit{Cauchy sequence} if for all \(\epsilon > 0\), there exists \(N \in \N\) such that for all \(m,n \geq N\), \(\disabs{x_m - x_n} < \epsilon\).
+\end{definition}
+
+This says that as terms get close to each other and stay close together, there's some value they're all getting close to.
+
+\begin{ntheorem}
+    {Cauchy Criterion}A sequence \(x_n\) converges if, and only if, it is a Cauchy sequence.
+\end{ntheorem}
+
+\iffpf{Assume \((x_n)\) is a convergent seqeuence in \(\R\). Given \(\epsilon > 0\). Let \(L = \limn{x_n}\). Since \((x_n) \rightarrow L\), there exists an \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - L} < \frac{\epsilon}{2}\). For all \(n,m \geq N\), \begin{align*}
+  \disabs{x_m - x_n} & = \disabs{x_m - L + L - x_n} \\
+                                   & \leq \disabs{x_m - L} + \disabs{L - x_n} \\
+                                   & < \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+                                   & = \epsilon.
+\end{align*}
+Therefore, \(x_n\) is a Cauchy sequence.}{Assume \(x_n\) is a Cauchy sequence. 
+\begin{itemize}
+    \item \textbf{Step 1:} Show that \(x_n\) is bounded.
+    
+    Since \(x_n\) is Cauchy, there exists \(N \in \N\) such that for all \(n,m \geq N\), \(\disabs{x_n - x_m} < l\). It follows that for all \(n \geq N\), we need to account for \(x_1\dots,x_{n-1}\). Thus, let \(M = \max\{\disabs{x_1},\disabs{x_2},\dots,\disabs{x_{n-1}},\disabs{x_n}+1\}\). Then for all \(n \in \N\), \(\disabs{x_m} < M\).
+    \item \textbf{Step 2:} Since \(x_n\) is bounded, there exits a convergent subsequence \(x_{n_k}\) by the \namrefthm{Bolzano-Weierstrass Theorem}. Let \(L\) be the limit of the subsequence.
+    \item \textbf{Step 3:} Show that \(x_n\) converges to \(L\).
+
+    If some get close to \(L\) and all get close to each other, they all get close to \(L\). Let \(\epsilon > 0\). Since \(x_{n_k}\) converges to \(L\), there exists \(N \in \N\) such that for all \(k \geq N\), \(\disabs{x_{n_k} - L} < \frac{\epsilon}{2}\). Since \(x_n\) is Cauchy, there exists \(M \in \N\) such that for all \(n,m \geq M\), \(\disabs{x_n - x_m} < \frac{\epsilon}{2}\). Let \(M_0 = \max \{N_1, n_k\}\). By the \namrefthm{Archimedean Principle}, there exists \(N_0\) such that \(n_{k_0} \geq M_0\). Then, from the \hyperlink{Triangle Inequality}{Triangle Inequality}, we say that for all \(n \geq N_0\), \begin{align*}
+        \disabs{x_n - L} & \leq \disabs{x_n - x_{n_{k_0}}} + \disabs{x_{n_{k_0}} - L} \\
+                         & < \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+                         & = \epsilon.
+    \end{align*} Therefore, \((x_n) \rightarrow L\). 
+\end{itemize}}{By proving both directions of the inequality, we found that a sequence \((x_n)\) converges if, and only if, it is a Cauchy sequence.}%
+{xblue}%
