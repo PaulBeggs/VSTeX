@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  8 OCT 2024 21:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  10 OCT 2024 09:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1755,30 +1755,31 @@ Overfull \hbox (22.14656pt too wide) in paragraph at lines 31--31
  []
 
 
-Overfull \hbox (19.94498pt too wide) in paragraph at lines 31--31
-[]\OT1/cmr/m/n/12 True. As shown in Ex-am-ple 2.5.4, if we have a se-quence like $(1\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@[]\OML/cmm/m/it/12 ; []; \OMS/cmsy/m/n/12 ^^@[]\OML/cmm/m/it/12 ; []; \OMS/cmsy/m/n/12 ^^@[]\OML/cmm/m/it/12 ; []; [] \OT1/cmr/m/n/12 )$,
- []
-
-
 
 [38
 
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 39.
+(mdframed)              on input line 45.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 48.
-)
+(mdframed)              on input line 69.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 69.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[39])
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 609.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[39] (Presentation Problems/Problem 1.2.13c.tex
+[40] (Presentation Problems/Problem 1.2.13c.tex
 
-[40
+[41
 
 ]
 Package mdframed Info: mdframed detected package amsthm 
@@ -1807,7 +1808,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 617.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[41] (c:\Users\paulb\VSTeX\Real_Analysis\build\analysis_main.aux)
+[42] (c:\Users\paulb\VSTeX\Real_Analysis\build\analysis_main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1820,8 +1821,8 @@ Package rerunfilecheck Info: File `analysis_main.out' has not changed.
 (rerunfilecheck)             Checksum: E1F1E0317135BDCF473E6973A817BA4D;4119.
  ) 
 Here is how much of TeX's memory you used:
- 34499 strings out of 473899
- 679333 string characters out of 5726500
+ 34505 strings out of 473899
+ 679380 string characters out of 5726500
  1242158 words of memory out of 5000000
  56485 multiletter control sequences out of 15000+600000
  568689 words of font info for 74 fonts, out of 8000000 for 9000
@@ -1867,9 +1868,9 @@ pdfTeX warning (dest): name{glo:integers} has been referenced but does not exist
 pdfTeX warning (dest): name{glo:natural\040numbers} has been referenced but does not exist, replaced by a fixed one
 
  <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:\Users\paulb\VSTeX\Real_Analysis\build\analysis_main.pdf (42 pages, 421428 bytes).
+Output written on c:\Users\paulb\VSTeX\Real_Analysis\build\analysis_main.pdf (43 pages, 429375 bytes).
 PDF statistics:
- 649 PDF objects out of 1000 (max. 8388607)
- 246 named destinations out of 1000 (max. 500000)
+ 666 PDF objects out of 1000 (max. 8388607)
+ 252 named destinations out of 1000 (max. 500000)
  191 words of extra memory for PDF output out of 10000 (max. 10000000)
 

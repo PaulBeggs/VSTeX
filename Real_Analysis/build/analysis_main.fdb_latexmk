@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1728441479.39051 "c:/Users/paulb/VSTeX/Real_Analysis/analysis_main.tex" "build/analysis_main.pdf" "analysis_main" 1728441481.70653 0
+["pdflatex"] 1728569903.50284 "c:/Users/paulb/VSTeX/Real_Analysis/analysis_main.tex" "build/analysis_main.pdf" "analysis_main" 1728569905.93556 0
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1727827053 179281 07163ff08e7168fbcd0ad4df2d5a0958 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1727051388 14064 e4c3d6dc0307aa16e774363be70b5216 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1708494351 688 37338d6ab346c2f1466b29e195316aa4 ""
@@ -247,12 +247,12 @@
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Chapters/ch_1.tex" 1728440686 35240 a4b0ad4899b67a1d21c299670a424410 ""
   "Chapters/ch_2.tex" 1728441478 36835 4cffd082f1f452bc5b79163829f91e72 ""
-  "Exercises/4.tex" 1728441320 2772 b6c5554b53974df106fa4f0305be960f ""
+  "Exercises/4.tex" 1728569902 6850 d4de2f5326582a464fa3933ee75e3411 ""
   "Presentation Problems/Problem 1.2.13c.tex" 1727147905 2657 2ac53934dc3e61d7dede97b0f49d030f ""
   "analysis_main.tex" 1728346259 16472 c4fd200727f4fbc4164a88ef2062eb5f ""
-  "build/analysis_main.aux" 1728441481 8807 b59946d68ab321a72f9bddba0560f994 "pdflatex"
-  "build/analysis_main.out" 1728441481 4119 e1f1e0317135bdcf473e6973a817ba4d "pdflatex"
-  "build/analysis_main.toc" 1728441481 1922 020596130452196c4d2fe6c821d71356 "pdflatex"
+  "build/analysis_main.aux" 1728569905 8807 3a6f4d5428f3770d383c3b4eaaea3faf "pdflatex"
+  "build/analysis_main.out" 1728569905 4119 e1f1e0317135bdcf473e6973a817ba4d "pdflatex"
+  "build/analysis_main.toc" 1728569905 1922 020596130452196c4d2fe6c821d71356 "pdflatex"
   "c:/Users/paulb/VSTeX/Real_Analysis/analysis_main.tex" 1728346259 16472 c4fd200727f4fbc4164a88ef2062eb5f ""
   "glossary.tex" 1727051388 2495 e95229a4b8efacfa51b1a386e7eb1674 ""
   "images/Hendrix Logo.png" 1712992668 30579 73165ffe7013fe439368d0e42c21a9e2 ""
