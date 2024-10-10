@@ -432,15 +432,17 @@ We use limits to define multiple things in calculus. This is why we are focusing
     \item Derivatives: \(\lim_{h \to 0} \frac{f(x + h) - f(x)}{h}\)
     \item Integrals: \(\lim_{n \to \infty} \sum_{i = 1}^{n} f(x_i) \Delta x\)
     \item Infinite Series: \(\lim_{n \to \infty} \sum_{i = 1}^{n} a_i\)
+    Consider geometric series, \(C_a\) such that each term is multiplied by a ratio \(r\). This is represented as \(\sum_{n=0}^\infty ar^n = 1 + r + r^2 + r^3\dots\). When we look at partial sums, we get \(S_n = 1 + r + r^2 + r^3 + \dots + r^n\). We can then multiply by \(r\) to get \(rS_n = r + r^2 + r^3 + r^4 + \dots + r^{n+1}\). Subtracting the two, we get \((1 - r)S_n = 1 - r^{n+1}\). Thus, \[S_n = \frac{1 - r^{n+1}}{1 - r}.\] If \(|r| < 1\), then \(\lim_{n \to \infty} r^n = 0\). Thus, \(\lim_{n \to \infty} S_n = \frac{1}{1 - r}\).
 \end{enumerate}
 
 Looking to the future, we are going to use functions and summations together. For example, when we have \(f(x) = \sum_{n=0}^\infty (a_n)x^n\) such that \(f'(x) = \sum_{n=0}^\infty (a_n)x^{n-1}\).
 
+
 % Formalize this later:
 
-\textit{Limit Inferior:} Let \(x_n\) be a bounded sequence, then \(\liminf_{n \to \infty} x_n = \lim_{n \to \infty} \inf\{x_k \ | \ k \geq n\}\). This is the largest a limit can get.
-
-\textit{Limit Superior:} Let \((x_n)\) be a bounded sequence, then \(\limsup_{n \to \infty} x_n = \lim_{n \to \infty} \sup\{x_k \ | \ k \geq n\}\). This is the smallest a limit can get.
+\begin{definition}
+    Let \(x_n\) be a bounded sequence. Then the \textit{limit inferior} is \(\liminf_{n \to \infty} x_n = \lim_{n \to \infty} \inf\{x_k \ | \ k \geq n\}\). This is the largest a limit can get. The \textit{limit superior} is \(\limsup_{n \to \infty} x_n = \lim_{n \to \infty} \sup\{x_k \ | \ k \geq n\}\). This is the smallest a limit can get.
+\end{definition}
 
 \textbf{See Exercise 2.4.7 in the book for more information.}
 
@@ -489,6 +491,17 @@ Looking to the future, we are going to use functions and summations together. Fo
 \begin{ntheorem}
     {Divergence Criterion}If \(x_n\) has two subsequences that converge to different limits, then \(x_n\) diverges.
 \end{ntheorem}
+
+Building upon this idea of Divergence, we can list some other ways a sequence can diverge:
+\begin{enumerate}
+    \item Find one subsequence that diverges.
+    \item Find tow subsequences that converge to separate limits.
+    \item Negate the \defword{definition of convergence}{2.2.3}.
+    \begin{itemize}
+        \item For example, a sequence converges to \(L\) if there exists \(\epsilon > 0\) such that for all \(N \in \N\) there exists \(n \geq N\) such that \(\disabs{a_n - a} \geq \epsilon\). There exists a subsequence \((a_{n_k})\) such that for all \(k \in \N\), \(\disabs{a_{n_k} - L} \geq \epsilon\).
+        % implement a tikz visialization of this.
+    \end{itemize}
+\end{enumerate}
 
 \begin{ntheorem}
     {Bolzano-Weierstrass Theorem}Every bounded sequence in \(\R\) has a convergent subsequence.
