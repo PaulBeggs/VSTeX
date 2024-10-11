@@ -4,16 +4,16 @@
 
 \textbf{What is a \textit{sequence}?} \\
 
-A countable, ordered list of elements. An example could be $1,2,3,4,5,\dots$. Note that this is \textit{ordered}, therefore distinguishing it from a sequence like $3,1,2,4,5,6,\dots$. Hence, order matters.
+A countable, ordered list of elements. An example could be \(1,2,3,4,5,\dots\). Note that this is \textit{ordered}, therefore distinguishing it from a sequence like \(3,1,2,4,5,6,\dots\). Hence, order matters.
 
 % This needs to be a part of the definition environment
-A \textit{sequence} is a function whose domain is $\N$. \textbf{Note:} The domain $\N$ refers to each element's position in the list. For example, $(a_n) = a_1,a_2,a_3,\dots$.
+A \textit{sequence} is a function whose domain is \(\N\). \textbf{Note:} The domain \(\N\) refers to each element's position in the list. For example, \((a_n) = a_1,a_2,a_3,\dots\).
 
 We will focus on the \textit{limit} of a sequence. We use sequences to approximate other things.
 
 \begin{example}
-    {Sequence}$3,3.1,3.14,3.141,3.1415,\dots \approx \pi$. \\
-    $x, x - \frac{x^3}{6}, x - \frac{x^3}{6} + \frac{x^5}{120}, x - \frac{x^3}{6} + \frac{x^5}{120} - \frac{x^7}{7!}, \dots \approx \sin(x)$
+    {Sequence} \(3,3.1,3.14,3.141,3.1415,\dots \approx \pi\). \\
+    \(x, x - \frac{x^3}{6}, x - \frac{x^3}{6} + \frac{x^5}{120}, x - \frac{x^3}{6} + \frac{x^5}{120} - \frac{x^7}{7!}, \dots \approx \sin(x)\)
 \end{example}
 
 \noindent\textbf{What is a \textit{series}?} \\
@@ -21,7 +21,7 @@ We will focus on the \textit{limit} of a sequence. We use sequences to approxima
 An infinite sum. We look at the sequence of partial sums. We ask, do the partial sums approach a limit?
 
 \begin{example}
-    {Alternating Harmonic Series}$1 - 1/2 + 1/3 - 1/4 + 1/5 - 1/6 + \dots$
+    {Alternating Harmonic Series} \(1 - 1/2 + 1/3 - 1/4 + 1/5 - 1/6 + \dots\)
 \end{example}
 
 We can rearrange these terms such that we can `force' the series to converge to a specific number. Therefore, we will need to be careful with our definitions.
@@ -31,50 +31,50 @@ We can rearrange these terms such that we can `force' the series to converge to 
 \section{The Limit of a Sequence}
 
 \begin{definition}
-    A \textit{sequence} is a function whose domain is $\N$. We write $(a_n) = a_1,a_2,a_3,\dots$.
+    A \textit{sequence} is a function whose domain is \(\N\). We write \((a_n) = a_1,a_2,a_3,\dots\).
 \end{definition}
 \setcounter{BoxCounter}{2}
 \begin{definition}
-    The sequence $(a_n)$ \textit{converges} to $L$ if for all $\epsilon > 0$, there exists $N \in \N$ such that for all $n \geq \N$, $|a_n - L| < \epsilon$. In other words, there exists $N \in \N$ such that
+    The sequence \((a_n)\) \textit{converges} to \(L\) if for all \(\epsilon > 0\), there exists \(N \in \N\) such that for all \(n \geq \N\), \(|a_n - L| < \epsilon\). In other words, there exists \(N \in \N\) such that
     \begin{itemize}
-        \item \textbf{(In the interval)} $a_N \in (L - \epsilon, L + \epsilon)$.
-        \item \textbf{(Stays in the interval)} $\forall n \geq N$, $a_n \in (L - \epsilon, L + \epsilon)$.
+        \item \textbf{(In the interval)} \(a_N \in (L - \epsilon, L + \epsilon)\).
+        \item \textbf{(Stays in the interval)} \(\forall n \geq N\), \(a_n \in (L - \epsilon, L + \epsilon)\).
     \end{itemize}
 \end{definition}
 
 \begin{example}
-    {In-class}Let $a_n = \frac{1}{n}$. $(a_n) = (1,\frac{1}{2},\frac{1}{3},\dots$)
+    {In-class}Let \(a_n = \frac{1}{n}\). \((a_n) = (1,\frac{1}{2},\frac{1}{3},\dots\))
 \end{example}
 
 \epf{
-    Our claim is $\displaystyle \lim_{n \rightarrow \infty} \frac{1}{n} = 0$. Thus, let $\epsilon = .01$. Does the sequence eventually get inside $(-.01,.01)$? We will set $N = 101$. So, for any $n \geq |0|$, $$\left|\frac{1}{n} - 0\right| = \frac{1}{n} \leq \frac{1}{101} < .01.$$ From $A_n$ and on, the sequence stayed within $\epsilon$ of $0$. But what about $\epsilon = .001$, $\epsilon = .00001$ and so on? \\
+    Our claim is \(\displaystyle \lim_{n \rightarrow \infty} \frac{1}{n} = 0\). Thus, let \(\epsilon = .01\). Does the sequence eventually get inside \((-.01,.01)\)? We will set \(N = 101\). So, for any \(n \geq |0|\), \[\left|\frac{1}{n} - 0\right| = \frac{1}{n} \leq \frac{1}{101} < .01.\] From \(A_n\) and on, the sequence stayed within \(\epsilon\) of \(0\). But what about \(\epsilon = .001\), \(\epsilon = .00001\) and so on? \\
 
-    Actual proof let $\epsilon > 0$. By the Archimedean Principle, there exists $N \in \N$ such that $N > \frac{1}{\epsilon}$. Now, for any $n \geq N$, $$\left|\frac{1}{n}\right| = \frac{1}{n} \leq \frac{1}{N} < \frac{1}{1/\epsilon}.$$ (Where $\frac{1}{1/\epsilon} = \epsilon$, but is in that form for demonstration purposes.) Therefore $\displaystyle \lim_{n \rightarrow \infty} \frac{1}{n} = 0$
+    Actual proof let \(\epsilon > 0\). By the Archimedean Principle, there exists \(N \in \N\) such that \(N > \frac{1}{\epsilon}\). Now, for any \(n \geq N\), \[\left|\frac{1}{n}\right| = \frac{1}{n} \leq \frac{1}{N} < \frac{1}{1/\epsilon}.\] (Where \(\frac{1}{1/\epsilon} = \epsilon\), but is in that form for demonstration purposes.) Therefore \(\displaystyle \lim_{n \rightarrow \infty} \frac{1}{n} = 0\)
 }
 
-``To get close'' means is that we are finding a bigger and bigger $N$ as $\epsilon$ gets smaller. Note that the choice of $N$ certainly depends on $\epsilon$.
+``To get close'' means is that we are finding a bigger and bigger \(N\) as \(\epsilon\) gets smaller. Note that the choice of \(N\) certainly depends on \(\epsilon\).
 
 \subsection{Basic Structure of a Limit Proof}
 
-Claim: $\displaystyle \lim_{n \rightarrow \infty} a_n = L$. \\
-Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involving $\epsilon$\}. Assume $n \geq N$. Then, $$|a-n - L| \ \boxed{\dots} < \epsilon$$ (Where $\boxed{\dots}$ is going to be where the majority of the work is going to lie.
+Claim: \(\displaystyle \lim_{n \rightarrow \infty} a_n = L\). \\
+Proof: Let \(\epsilon > 0\). There exists \(N \in \N\) such that \{something involving \(\epsilon\)\}. Assume \(n \geq N\). Then, \[|a-n - L| \ \boxed{\dots} < \epsilon\] (Where \(\boxed{\dots}\) is going to be where the majority of the work is going to lie.
 
 \newpage
 
 \begin{example}
-    {In-class}Claim: $\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1$
+    {In-class}Claim: \(\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1\)
 \end{example}
 
 \epf{
-    Let $\epsilon > 0$. \textit{Scratch paper:} Solve for: $$\left|\frac{2n - 3}{2n} - 1\right| = \left|\frac{-3}{2n}\right| = \frac{3}{2n} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n.$$ By the \namrefthm{Archimedean Principle}, there exists $N \in \N$ such that $N > \frac{3}{2\epsilon}$. Assume $n \geq N$, (want to know what happens past this point) $$\left|\frac{2n-3}{2n}-1\right| \leq \frac{3}{2N} < \frac{3}{2 \cdot 3/2\epsilon} = \epsilon.$$ Therefore, $\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1$
+    Let \(\epsilon > 0\). \textit{Scratch paper:} Solve for: \[\left|\frac{2n - 3}{2n} - 1\right| = \left|\frac{-3}{2n}\right| = \frac{3}{2n} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n.\] By the \namrefthm{Archimedean Principle}, there exists \(N \in \N\) such that \(N > \frac{3}{2\epsilon}\). Assume \(n \geq N\), (want to know what happens past this point) \[\left|\frac{2n-3}{2n}-1\right| \leq \frac{3}{2N} < \frac{3}{2 \cdot 3/2\epsilon} = \epsilon.\] Therefore, \(\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1\)
 }
 
 \begin{example}
-    Claim: $\limn{\frac{2n^2 + 1}{n^2}} = 2$
+    Claim: \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
 \end{example}
 
 \epf{
-    Let $\epsilon > 0$. By the \namrefthm{Archimedean Principle}, there exists $N \in \N$ such that [leave off] \textit{Scratch paper:} Solve for $$\disabs{\frac{2n^2 + 1}{n^2} - 2} =  \frac{2n^2}{n^2} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n$$ [pick up] there exists $N \in \N$ such that $$N > \frac{1}{\sqrt{\epsilon}}.$$ Assume $n \geq N$, then
+    Let \(\epsilon > 0\). By the \namrefthm{Archimedean Principle}, there exists \(N \in \N\) such that [leave off] \textit{Scratch paper:} Solve for \[\disabs{\frac{2n^2 + 1}{n^2} - 2} =  \frac{2n^2}{n^2} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n\] [pick up] there exists \(N \in \N\) such that \[N > \frac{1}{\sqrt{\epsilon}}.\] Assume \(n \geq N\), then
     \begin{align*}
         \disabs{\frac{2n^2 + 1}{n^2} - 2} & = \frac{1}{n^2}                    \\
                                           & \leq \frac{1}{N^2}                 \\
@@ -82,11 +82,11 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
                                           & = \frac{1}{1/\epsilon}             \\
                                           & = \epsilon
     \end{align*}
-    Therefore, $\limn{\frac{2n^2 + 1}{n^2}} = 2$
+    Therefore, \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
 }
 
 \begin{example}
-    {In-class}Claim: $\limn{\frac{7n + 8}{3n + 6}} = \frac{7}{3}$
+    {In-class}Claim: \(\limn{\frac{7n + 8}{3n + 6}} = \frac{7}{3} \)
 \end{example}
 
 \epf{
@@ -98,7 +98,7 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
                                                  & = \frac{18}{3} - 18 < 9n                                          \\
                                                  & = \frac{18/\epsilon - 18}{9} < n
     \end{align*}
-    $** \frac{18}{9n + 8} < \frac{18}{9n} < \epsilon \Rightarrow \frac{2}{\epsilon} < N$. $\exists N \in \N$ such that $N > \frac{2}{\epsilon}$. Assume $n \geq N$, \begin{align*}
+    \(** \frac{18}{9n + 8} < \frac{18}{9n} < \epsilon \Rightarrow \frac{2}{\epsilon} < N\). \(\exists N \in \N\) such that \(N > \frac{2}{\epsilon}\). Assume \(n \geq N\), \begin{align*}
         \disabs{\frac{7n + 8}{3n + 6} - \frac{7}{3}} & = \frac{18}{9n + 18}   \\
                                                      & = \frac{2}{n+2}        \\
                                                      & < \frac{2}{n}          \\
@@ -116,15 +116,15 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 
 
 \tpf{
-    Let $(x_n)$ be a convergent sequence. Suppose $L$ and $M$ are limits of this sequence. Without the loss of generality, we are going to assume $M > L$ Let $$\epsilon = \frac{M - L}{3}.$$ Since $n_x$ converges to $L$, there exists $N_1 \in \N$ such that for all $n \geq N$, $\disabs{(x_n) - L} < \epsilon$. Since $(x_n)$ converges to $M$, there exists an $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{(x_n) - M} < \epsilon$. Consider $n = \max\{N_1, N_2\}$. Since $n \geq N_1$, $\disabs{(x_n) - L} < \epsilon$. Since $n \geq N_2$, $\disabs{(x_n) - M} < \epsilon$. Then $L - \epsilon < x_n < L + \epsilon$ and $M - \epsilon < x_n < M + \epsilon$. By our choice of $\epsilon$, we now have $$(x_n) < L + \epsilon < M - \epsilon < (x_n).$$ This is a contradiction. Thus, $(x_n)$ cannot have two different limits.
+    Let \((x_n)\) be a convergent sequence. Suppose \(L\) and \(M\) are limits of this sequence. Without the loss of generality, we are going to assume \(M > L\) Let \[\epsilon = \frac{M - L}{3}.\] Since \(n_x\) converges to \(L\), there exists \(N_1 \in \N\) such that for all \(n \geq N\), \(\disabs{(x_n) - L} < \epsilon\). Since \((x_n)\) converges to \(M\), there exists an \(N_2 \in \N\) such that for all \(n \geq N_2\), \(\disabs{(x_n) - M} < \epsilon\). Consider \(n = \max\{N_1, N_2\}\). Since \(n \geq N_1\), \(\disabs{(x_n) - L} < \epsilon\). Since \(n \geq N_2\), \(\disabs{(x_n) - M} < \epsilon\). Then \(L - \epsilon < x_n < L + \epsilon\) and \(M - \epsilon < x_n < M + \epsilon\). By our choice of \(\epsilon\), we now have \[(x_n) < L + \epsilon < M - \epsilon < (x_n).\] This is a contradiction. Thus, \((x_n)\) cannot have two different limits.
 }
 
 \begin{example}
-    {}Let $(x_n) = \displaystyle \frac{\cos(n)}{3n}$. Claim: $\limn{(x_n)} = 0$
+    {}Let \((x_n) = \displaystyle \frac{\cos(n)}{3n}\). Claim: \(\limn{(x_n)} = 0\)
 \end{example}
 
 \epf{
-    Let $\epsilon > 0$. By the \namrefthm{Archimedean Principle}, there exists $N \in \N$ such that $N > \frac{1}{3\epsilon}$ for all $n \geq N$,
+    Let \(\epsilon > 0\). By the \namrefthm{Archimedean Principle}, there exists \(N \in \N\) such that \(N > \frac{1}{3\epsilon}\) for all \(n \geq N\),
     \begin{align*}
         \disabs{\frac{\cos(n)}{3n} - 0} & = \disabs{\frac{\cos(n)}{3n}} \\
                                         & \leq \frac{1}{3n}             \\
@@ -135,11 +135,11 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 }
 
 \begin{example}
-    {}Let $(y_n) = \frac{4n-1}{n^2}$. Claim: $\limn{y_n} = 0$.
+    {}Let \((y_n) = \frac{4n-1}{n^2}\). Claim: \(\limn{y_n} = 0\).
 \end{example}
 
 \epf{
-    Let $\epsilon > 0$. By the \namrefthm{Archimedean Principle}, there exists $N \in \N$ such that $N > \frac{1}{\epsilon}$. For all $n \geq N$,
+    Let \(\epsilon > 0\). By the \namrefthm{Archimedean Principle}, there exists \(N \in \N\) such that \(N > \frac{1}{\epsilon}\). For all \(n \geq N\),
     \begin{align*}
         \disabs{\frac{4n-1}{n^2} - 0} & = \disabs{\frac{4n-1}{n^2}} \\
                                       & = \frac{4n-1}{n}            \\
@@ -221,7 +221,7 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 \section{The Algebraic and Order Limit Theorems}
 
 \begin{definition}
-    A sequence $(x_n)$ is \textit{bounded} if there exists some $M > 0$ such that every term in the sequence belongs to $[-M,M]$.
+    A sequence \((x_n)\) is \textit{bounded} if there exists some \(M > 0\) such that every term in the sequence belongs to \([-M,M]\).
 \end{definition}
 
 \begin{theorem}
@@ -229,21 +229,21 @@ Proof: Let $\epsilon > 0$. There exists $N \in \N$ such that \{something involvi
 \end{theorem}
 
 \tpf{
-Let $(x_n)$ be a convergent sequence with limit $L$. There exists $N \in \N$ such that for all $n \geq N$, $\disabs{(x_n) - L} < 1$. Equivalently, $(x_n) \in (L - 1, L + 1)$. Let $$M = \max\{|x_1|,|x_2|,\dots,|x_{N-1}|,|L + 1|, |L - 1|\}.$$ We claim that for all $n \in \N$, $|x_n| \leq M$.
+Let \((x_n)\) be a convergent sequence with limit \(L\). There exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{(x_n) - L} < 1\). Equivalently, \((x_n) \in (L - 1, L + 1)\). Let \[M = \max\{|x_1|,|x_2|,\dots,|x_{N-1}|,|L + 1|, |L - 1|\}.\] We claim that for all \(n \in \N\), \(|x_n| \leq M\).
 \begin{enumerate}
-    \item This is true for $n < N$.
-    \item For $n \geq N$, we know $L - 1 < x_n < L + 1$, so $(x_n) \leq \max\{| L - 1 |, |L + 1|\}$
+    \item This is true for \(n < N\).
+    \item For \(n \geq N\), we know \(L - 1 < x_n < L + 1\), so \((x_n) \leq \max\{| L - 1 |, |L + 1|\} \)
 \end{enumerate}
-Thus, every term is in $[-M,M]$.
+Thus, every term is in \([-M,M]\).
 }
 
 \begin{ntheorem}
     {Algebraic Limit Theorem}Let \(\limn{a_n} = a\) and \(\limn{b_n} = b\). Then,
     \begin{enumerate}[label=(\roman*)]
-        \item \(\limn{ca_n} = ca\) for all $c \in \R$;
+        \item \(\limn{ca_n} = ca\) for all \(c \in \R\);
         \item \(\limn{(a_n + b_n)} = a + b\);
         \item \(\limn{(a_nb_n)} = ab\);
-        \item \(\limn{\frac{a_n}{b_n}} = \frac{a}{b}\) provided $b \neq 0$.
+        \item \(\limn{\frac{a_n}{b_n}} = \frac{a}{b}\) provided \(b \neq 0\).
     \end{enumerate}
 \end{ntheorem}
 
@@ -252,14 +252,14 @@ Thus, every term is in $[-M,M]$.
     \disabs{ca_n - ca} = \disabs{c}\disabs{a_n - a} & < \epsilon                    \\
     \disabs{a_n - a}                                & < \frac{\epsilon}{\disabs{c}}
 \end{align*}
-\text{Leave off and go back to proof$^1$}
+\text{Leave off and go back to proof\(^1\)}
 \tpf{(i) \\
-Let $\epsilon > 0$.$^1$ Since $(a_n)$ converges to $a$, there exists $N \in \N$ such that for all $n \geq N$, $\disabs{a_n - a} < \frac{\epsilon}{\disabs{c}}$. Now, for any $n \geq N$ we have two case because we want to avoid dividing by 0:
+Let \(\epsilon > 0\).\)^1\) Since \((a_n)\) converges to \(a\), there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{a_n - a} < \frac{\epsilon}{\disabs{c}}\). Now, for any \(n \geq N\) we have two case because we want to avoid dividing by 0:
 \begin{itemize}
-    \item If $c = 0$: \\
-          then each $ca_n = 0$. So $(ca_n)$ converges to 0, which can equal $ca$.
-    \item If $c > 0$: \\
-          $\disabs{ca_n - ca} = \disabs{c}\disabs{a_n - a} < \disabs{c}\frac{\epsilon}{\disabs{c}} = \epsilon$. \qedhere
+    \item If \(c = 0\): \\
+          then each \(ca_n = 0\). So \((ca_n)\) converges to 0, which can equal \(ca\).
+    \item If \(c > 0\): \\
+          \(\disabs{ca_n - ca} = \disabs{c}\disabs{a_n - a} < \disabs{c}\frac{\epsilon}{\disabs{c}} = \epsilon\). \qedhere
 \end{itemize}
 
 (ii) \\
@@ -269,9 +269,9 @@ Let $\epsilon > 0$.$^1$ Since $(a_n)$ converges to $a$, there exists $N \in \N$ 
                          & \leq \disabs{a_n - a} + \disabs{b_n - b}  \\
                          & < \frac{\epsilon}{2} + \frac{\epsilon}{2}
 \end{align}
-Note that (2.2) is from the triangle inequality. Now, we will pick up to back at $\epsilon > 0$. \\
+Note that (2.2) is from the triangle inequality. Now, we will pick up to back at \(\epsilon > 0\). \\
 
-Let \(\epsilon > 0\). Since $(a_n)$ converges to $a$, there exists $N_1 \in \N$ such that for all $n \geq N_1$, $\disabs{a_n - a} < \frac{\epsilon}{2}$. Since $(b_n)$ converges to $b$, there exists $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{b_n - b} < \frac{\epsilon}{2}$. Now, let $N = \max\{N_1, N_2\}$. Thus, for any $n \geq N$, (refer back to scratch paper). \\
+Let \(\epsilon > 0\). Since \((a_n)\) converges to \(a\), there exists \(N_1 \in \N\) such that for all \(n \geq N_1\), \(\disabs{a_n - a} < \frac{\epsilon}{2}\). Since \((b_n)\) converges to \(b\), there exists \(N_2 \in \N\) such that for all \(n \geq N_2\), \(\disabs{b_n - b} < \frac{\epsilon}{2}\). Now, let \(N = \max\{N_1, N_2\}\). Thus, for any \(n \geq N\), (refer back to scratch paper). \\
 
 (iii) \\
 \textit{Scratch paper:}
@@ -283,9 +283,9 @@ Let \(\epsilon > 0\). Since $(a_n)$ converges to $a$, there exists $N_1 \in \N$ 
                          & < M\left(\frac{\epsilon}{2M}\right) + M\left(\frac{\epsilon}{2M}\right) \\
                          & = \epsilon
 \end{align}
-Note that: (2.4) is where we added 0, (2.5) is from the triangle inequality, and (2.6) is just factored. Additionally, we choose \(N\) to get the fractions in (2.8) Now, we will pick up to back at $\epsilon > 0$. \\
+Note that: (2.4) is where we added 0, (2.5) is from the triangle inequality, and (2.6) is just factored. Additionally, we choose \(N\) to get the fractions in (2.8) Now, we will pick up to back at \(\epsilon > 0\). \\
 
-Let \(\epsilon > 0\). Since convergent sequences are bounded, then there exists $M > 0$ such that for all $n \in \N$, $|a_n| \leq M$. We can choose \(M\) so that \(|b_n| \leq M\) as well. Since $(a_n)$ converges to $a$, there exists $N_1 \in \N$ such that for all $n \geq N_1$, $\disabs{a_n - a} < \frac{\epsilon}{2M}$. Since $(b_n)$ converges to $b$, there exists $N_2 \in \N$ such that for all $n \geq N_2$, $\disabs{b_n - b} < \frac{\epsilon}{2M}$. Now, let $N = \max\{N_1, N_2\}$. Thus, for any $n \geq N$, (refer back to scratch paper, and change (2.4)'s sign from an `=' to `$\leq$'). \\
+Let \(\epsilon > 0\). Since convergent sequences are bounded, then there exists \(M > 0\) such that for all \(n \in \N\), \(|a_n| \leq M\). We can choose \(M\) so that \(|b_n| \leq M\) as well. Since \((a_n)\) converges to \(a\), there exists \(N_1 \in \N\) such that for all \(n \geq N_1\), \(\disabs{a_n - a} < \frac{\epsilon}{2M}\). Since \((b_n)\) converges to \(b\), there exists \(N_2 \in \N\) such that for all \(n \geq N_2\), \(\disabs{b_n - b} < \frac{\epsilon}{2M}\). Now, let \(N = \max\{N_1, N_2\}\). Thus, for any \(n \geq N\), (refer back to scratch paper, and change (2.4)'s sign from an `=' to `\)\leq\)'). \\
 
 (iv) \\
 \textit{Scratch paper:}
@@ -341,17 +341,17 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
 }
 
 \begin{exercise}
-    {2.3.2}Using only \defref{2.2.3}, prove that if $(x_n) \rightarrow 2$, then
+    {2.3.2}Using only \defref{2.2.3}, prove that if \((x_n) \rightarrow 2\), then
     \begin{enumerate}
-        \item $\displaystyle \left(\frac{2x_n - 1}{3}\right) \rightarrow 1$;
-        \item $\displaystyle \left(1 / x_n\right) \rightarrow 1 / 2$.
+        \item \(\displaystyle \left(\frac{2x_n - 1}{3}\right) \rightarrow 1\);
+        \item \(\displaystyle \left(1 / x_n\right) \rightarrow 1 / 2\).
     \end{enumerate}
     (For this exercise the Algebraic Limit Theorem is off-limits, so to speak.)
 \end{exercise}
 
 \sol{ \hfill
     \begin{enumerate}
-        \item \textit{Proof.} Let $\epsilon > 0$. Since $(x_n)$ converges to 2, there exists $N \in \N$ such that for all $n \geq N$, $\disabs{x_n - 2} < \epsilon$. Now, for any $n \geq N$,
+        \item \textit{Proof.} Let \(\epsilon > 0\). Since \((x_n)\) converges to 2, there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - 2} < \epsilon\). Now, for any \(n \geq N\),
               \begin{align*}
                   \disabs{\frac{2x_n - 1}{3} - 1} & = \disabs{\frac{2x_n - 1 - 3}{3}} \\
                                                   & = \disabs{\frac{2x_n - 4}{3}}     \\
@@ -360,7 +360,7 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
                                                   & < \epsilon
               \end{align*}
               Therefore, \(\frac{2x_n - 1}{3} \rightarrow 1\) \qed
-        \item \textit{Proof.} Let $\epsilon > 0$. Since \((x_n)\) converges to 2, there exists \(N_1 \in \N\) such that for all \(n \geq N_1\), \(x_n \geq 1\). Then, we will choose \(N_2\) so that \(|x_n - 2 | < \epsilon\) for all \(n \geq N_2\). Afterwards, we take \(N = \max\{N_1, N_2\}\). And note that for \(n \geq N\),
+        \item \textit{Proof.} Let \(\epsilon > 0\). Since \((x_n)\) converges to 2, there exists \(N_1 \in \N\) such that for all \(n \geq N_1\), \(x_n \geq 1\). Then, we will choose \(N_2\) so that \(|x_n - 2 | < \epsilon\) for all \(n \geq N_2\). Afterwards, we take \(N = \max\{N_1, N_2\}\). And note that for \(n \geq N\),
 
               \begin{align*}
                   \disabs{\frac{1}{x_n} - \frac{1}{2}} & = \disabs{\frac{2 - x_n}{2x_n}}  \\
@@ -532,39 +532,39 @@ Building upon this idea of Divergence, we can list some other ways a sequence ca
     \def\M{6} % Length of I_0
     
     % Draw the first interval I_0
-    \draw[thick] (-\M, 0) -- (\M, 0) node[anchor=west] {$I_0 = [-M,M]$};
-    \draw[thick] (-\M, 0.1) -- (-\M, -0.1) node[below] {$-M$};
-    \draw[thick] (\M, 0.1) -- (\M, -0.1) node[below] {$M$};
+    \draw[thick] (-\M, 0) -- (\M, 0) node[anchor=west] {\(I_0 = [-M,M]\)};
+    \draw[thick] (-\M, 0.1) -- (-\M, -0.1) node[below] {\(-M\)};
+    \draw[thick] (\M, 0.1) -- (\M, -0.1) node[below] {\(M\)};
 
-    \draw[thick] (5, 0.2) node[above] {$Right$};
-    \draw[thick] (-5, 0.2) node[above] {$Left$};
+    \draw[thick] (5, 0.2) node[above] {\(Right\)};
+    \draw[thick] (-5, 0.2) node[above] {\(Left\)};
     
     % Draw the midpoint of I_0
-    \draw[thick] (0, 0.1) -- (0, -0.1) node[below] {$0$};
+    \draw[thick] (0, 0.1) -- (0, -0.1) node[below] {\(0\)};
     
     % Draw subintervals I_1, I_L, I_R
     \def\halfM{\M / 2}
-    \draw[thick] (0, -1) -- (\halfM, -1) node[anchor=west] {$I_1$};
+    \draw[thick] (0, -1) -- (\halfM, -1) node[anchor=west] {\(I_1\)};
     \draw[thick] (0, -0.9) -- (0, -1.1) node[below] {};
     \draw[thick] (\halfM, -0.9) -- (\halfM, -1.1) node[below] {};
     
     % Draw I_2 within I_1
     \def\quarterM{\M / 4}
-    \draw[thick] (\quarterM, -2) -- (\halfM, -2) node[anchor=west] {$I_2$};
+    \draw[thick] (\quarterM, -2) -- (\halfM, -2) node[anchor=west] {\(I_2\)};
     \draw[thick] (\quarterM, -1.9) -- (\quarterM, -2.1) node[below] {};
     \draw[thick] (\halfM, -1.9) -- (\halfM, -2.1) node[below] {};
     
     % Further subintervals
     \def\eighthM{\M / 8}
-    \draw[thick] (\quarterM, -3) -- (\quarterM + \eighthM, -3) node[anchor=west] {$I_3$};
+    \draw[thick] (\quarterM, -3) -- (\quarterM + \eighthM, -3) node[anchor=west] {\(I_3\)};
     \draw[thick] (\quarterM + \eighthM, -2.9) -- (\quarterM + \eighthM, -3.1) node[below] {};
     \draw[thick] (\quarterM, -2.9) -- (\quarterM, -3.1) node[below] {};
     
     % Points representing x_n's
-    \filldraw[red] (2.5, 0) circle (2pt) node[anchor=north] {$x_{n_1}$};
-    \filldraw[red] (2.25, -1) circle (2pt) node[anchor=north] {$x_{n_2}$};
-    \filldraw[red] (2.125, -2) circle (2pt) node[anchor=north] {$x_{n_3}$};
-    \filldraw[red] (2.0625, -3) circle (2pt) node[anchor=north] {$x_{n_4}$};
+    \filldraw[red] (2.5, 0) circle (2pt) node[anchor=north] {\(x_{n_1}\)};
+    \filldraw[red] (2.25, -1) circle (2pt) node[anchor=north] {\(x_{n_2}\)};
+    \filldraw[red] (2.125, -2) circle (2pt) node[anchor=north] {\(x_{n_3}\)};
+    \filldraw[red] (2.0625, -3) circle (2pt) node[anchor=north] {\(x_{n_4}\)};
     
 \end{tikzpicture}
 

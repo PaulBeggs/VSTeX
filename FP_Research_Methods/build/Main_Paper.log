@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  25 SEP 2024 22:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  10 OCT 2024 20:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -952,7 +952,6 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 48.
- (c:\Users\paulb\VSTeX\FP_Research_Methods\build\Main_Paper.out) (c:\Users\paulb\VSTeX\FP_Research_Methods\build\Main_Paper.out)
 \@outlinefile=\write7
 \openout7 = `Main_Paper.out'.
 
@@ -1002,16 +1001,21 @@ Package biblatex Info: Automatic encoding selection.
 \openout6 = `Main_Paper.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'Main_Paper.bbl' found.
- (c:\Users\paulb\VSTeX\FP_Research_Methods\build\Main_Paper.bbl
 
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                tedvideo
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
 
-)
+c:/Users/paulb/VSTeX/FP_Research_Methods/Main_Paper.tex:48: Package biblatex Error: File 'Main_Paper.bbl' not created by biblatex.
+
+See the biblatex package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 \begin{document}
+                     ^^M
+This file was apparently not created by biblatex. Rename it or
+move it to a location were TeX will not find it. If this error
+persists, consider redefining \blxauxsuffix.See the biblatex
+manual for details.
+
 Package biblatex Info: Reference section=0 on input line 48.
 Package biblatex Info: Reference segment=0 on input line 48.
 \big@size=\dimen292
@@ -1029,6 +1033,24 @@ LaTeX Warning: Citation '' on page 2 undefined on input line 66.
 
 
 [2]
+
+LaTeX Warning: Citation 'sunstein2015wiser' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation '' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation 'sunstein2015wiser' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation '' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation 'aron1992inclusion' on page 3 undefined on input line 74.
+
+
+LaTeX Warning: Citation '' on page 3 undefined on input line 74.
+
 
 LaTeX Warning: Citation 'tedvideo' on page 3 undefined on input line 74.
 
@@ -1067,33 +1089,50 @@ LaTeX Warning: Citation '' on page 5 undefined on input line 104.
 
 
 
-[5] AED endfloat: Processing end Figures and Tables
+[5]
 
-[6
+LaTeX Warning: Empty bibliography on input line 109.
 
-] (c:\Users\paulb\VSTeX\FP_Research_Methods\build\Main_Paper.aux)
+AED endfloat: Processing end Figures and Tables
+
+[6] (c:\Users\paulb\VSTeX\FP_Research_Methods\build\Main_Paper.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
-Package rerunfilecheck Info: File `Main_Paper.out' has not changed.
-(rerunfilecheck)             Checksum: C361EE16C1D4EDCEB4AD1E56D061E0BE;440.
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package rerunfilecheck Warning: File `Main_Paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Main_Paper.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  C361EE16C1D4EDCEB4AD1E56D061E0BE;440.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Main_Paper
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'Main_Paper.run.xml'.
 \openout1 = `Main_Paper.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32206 strings out of 473899
- 621189 string characters out of 5726500
- 1525293 words of memory out of 5000000
- 54599 multiletter control sequences out of 15000+600000
- 569739 words of font info for 44 fonts, out of 8000000 for 9000
+ 32135 strings out of 473899
+ 619204 string characters out of 5726500
+ 1524931 words of memory out of 5000000
+ 54539 multiletter control sequences out of 15000+600000
+ 566891 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,107p,740b,5237s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\paulb\VSTeX\FP_Research_Methods\build\Main_Paper.pdf (6 pages, 57707 bytes).
+<C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
+Output written on c:\Users\paulb\VSTeX\FP_Research_Methods\build\Main_Paper.pdf (6 pages, 43083 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 16 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 54 PDF objects out of 1000 (max. 8388607)
+ 13 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

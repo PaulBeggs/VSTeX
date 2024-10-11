@@ -1,9 +1,9 @@
 \begin{exercise}
-    {2.3} Let $g$ be a \hyperlink{section 2.2}{primitive root} for $\mathbb{F}_p$.
+    {2.3} Let \(g\) be a \hyperlink{section 2.2}{primitive root} for \(\mathbb{F}_p\).
     \begin{enumerate}
         \setcounter{enumi}{1} % Start enumeration at (b)
-        \item Prove that $\log_g(h_1 h_2) = \log_g(h_1) + \log_g(h_2)$ for all $h_1, h_2 \in \mathbb{F}_p^*$.
-        \item Prove that $\log_g(h^n) = n \log_g(h)$ for all $h \in \mathbb{F}_p^*$ and $n \in \mathbb{Z}$.
+        \item Prove that \(\log_g(h_1 h_2) = \log_g(h_1) + \log_g(h_2)\) for all \(h_1, h_2 \in \mathbb{F}_p^*\).
+        \item Prove that \(\log_g(h^n) = n \log_g(h)\) for all \(h \in \mathbb{F}_p^*\) and \(n \in \mathbb{Z}\).
     \end{enumerate}
 \end{exercise}
 
@@ -21,9 +21,9 @@
 \begin{exercise}
     {2.4} Compute the following \hyperlink{section 2.3}{discrete logarithms}.
     \begin{enumerate}
-        \item $\log_2(13)$ for the prime $23$, i.e., $p = 23$, $g = 2$, and you must solve the congruence $2^x \equiv 13 \pmod{23}$.
-        \item $\log_{10}(22)$ for the prime $p = 47$.
-        \item $\log_{627}(608)$ for the prime $p = 941$. (Hint: Look in the second column of Table 2.1 on page 66.)
+        \item \(\log_2(13)\) for the prime \(23\), i.e., \(p = 23\), \(g = 2\), and you must solve the congruence \(2^x \equiv 13 \pmod{23}\).
+        \item \(\log_{10}(22)\) for the prime \(p = 47\).
+        \item \(\log_{627}(608)\) for the prime \(p = 941\). (Hint: Look in the second column of Table 2.1 on page 66.)
     \end{enumerate}
 \end{exercise}
 
@@ -36,9 +36,9 @@
 }
 
 \begin{exercise}
-    {2.6} Alice and Bob agree to use the prime $p = 1373$ and the base $g = 2$ for a \hyperlink{d-h key}{Diffie-Hellman key exchange}. Alice sends Bob the value $A = 974$. Bob asks for your assistance, so you tell him to use the secret exponent $b = 871$.
+    {2.6} Alice and Bob agree to use the prime \(p = 1373\) and the base \(g = 2\) for a \hyperlink{d-h key}{Diffie-Hellman key exchange}. Alice sends Bob the value \(A = 974\). Bob asks for your assistance, so you tell him to use the secret exponent \(b = 871\).
     \begin{enumerate}
-        \item What value $B$ should Bob send to Alice, and what is their secret shared value?
+        \item What value \(B\) should Bob send to Alice, and what is their secret shared value?
         \item Can you figure out Alice's secret exponent?
     \end{enumerate}
 \end{exercise}
@@ -55,11 +55,11 @@
 }
 
 \begin{exercise}
-    {2.7} Let $p$ be a prime and let $g$ be an integer. The \textit{Decision Diffie-Hellman Problem} is as follows. Suppose that you are given three numbers $A$, $B$, and $C$, and suppose that $A$ and $B$ are equal to
+    {2.7} Let \(p\) be a prime and let \(g\) be an integer. The \textit{Decision Diffie-Hellman Problem} is as follows. Suppose that you are given three numbers \(A\), \(B\), and \(C\), and suppose that \(A\) and \(B\) are equal to
     \[
         A \equiv g^a \pmod{p} \quad \text{and} \quad B \equiv g^b \pmod{p},
     \]
-    but that you do not necessarily know the values of the exponents $a$ and $b$. Determine whether $C$ is equal to $g^{ab} \pmod{p}$. Notice that this is different from the Diffie-Hellman problem described on page 69. The Diffie-Hellman problem asks you to actually compute the value of $g^{ab}$.
+    but that you do not necessarily know the values of the exponents \(a\) and \(b\). Determine whether \(C\) is equal to \(g^{ab} \pmod{p}\). Notice that this is different from the Diffie-Hellman problem described on page 69. The Diffie-Hellman problem asks you to actually compute the value of \(g^{ab}\).
     \begin{enumerate}
         \item Prove that an algorithm that solves the Diffie-Hellman problem can be used to solve the decision Diffie-Hellman problem.
         \item Do you think that the decision Diffie-Hellman problem is hard or easy? Why? See Exercise 6.40 for a related example in which the decision problem is easy, but it is believed that the associated computational problem is hard.
@@ -74,20 +74,20 @@
 }
 
 \begin{exercise}
-    {2.8} Alice and Bob agree to use the prime $p = 1373$ and the base $g = 2$ for communications using the \hyperlink{Elgamal}{Elgamal public key cryptosystem}.
+    {2.8} Alice and Bob agree to use the prime \(p = 1373\) and the base \(g = 2\) for communications using the \hyperlink{Elgamal}{Elgamal public key cryptosystem}.
     \begin{enumerate}
-        \item Alice chooses $a = 947$ as her private key. What is the value of her public key $A$?
-        \item Bob chooses $b = 716$ as his private key, so his public key is
+        \item Alice chooses \(a = 947\) as her private key. What is the value of her public key \(A\)?
+        \item Bob chooses \(b = 716\) as his private key, so his public key is
               \[
                   B \equiv 2^{716} \equiv 469 \pmod{1373}.
               \]
-              Alice encrypts the message $m = 583$ using the random element $k = 877$. What is the ciphertext $(c_1, c_2)$ that Alice sends to Bob?
-        \item Alice decides to choose a new private key $a = 299$ with associated public key
+              Alice encrypts the message \(m = 583\) using the random element \(k = 877\). What is the ciphertext \((c_1, c_2)\) that Alice sends to Bob?
+        \item Alice decides to choose a new private key \(a = 299\) with associated public key
               \[
                   A \equiv 2^{299} \equiv 34 \pmod{1373}.
               \]
-              Bob encrypts a message using Alice's public key and sends her the ciphertext $(c_1, c_2) = (661, 1325)$. Decrypt the message.
-        \item Now Bob chooses a new private key and publishes the associated public key $B = 893$. Alice encrypts a message using this public key and sends the ciphertext $(c_1, c_2) = (693, 793)$ to Bob. Eve intercepts the transmission. Help Eve by solving the discrete logarithm problem $2^b \equiv 893 \pmod{1373}$ and using the value of $b$ to decrypt the message.
+              Bob encrypts a message using Alice's public key and sends her the ciphertext \((c_1, c_2) = (661, 1325)\). Decrypt the message.
+        \item Now Bob chooses a new private key and publishes the associated public key \(B = 893\). Alice encrypts a message using this public key and sends the ciphertext \((c_1, c_2) = (693, 793)\) to Bob. Eve intercepts the transmission. Help Eve by solving the discrete logarithm problem \(2^b \equiv 893 \pmod{1373}\) and using the value of \(b\) to decrypt the message.
     \end{enumerate}
 \end{exercise}
 
@@ -95,7 +95,7 @@
     \begin{enumerate}
         \item \(p = 1373, \ g = 2, \ a = 947 \Rightarrow A \equiv 2^{947} \pmod{1373} \equiv 177\).
         \item \(c_1 \equiv 2^{877} \pmod{1373} \equiv 719, \ c_2 \equiv 583 \cdot 469^{877} \pmod{1373} \equiv 623\). Alice sends ``\((719, 623)\)'' to Bob.
-        \item To decrypt, we can use the \hyperlink{thm:Extended Euclidean Algorithm}{EEA} for the equation \(352x \equiv 1 \pmod{1373}\), which gives \(1 = 352 \cdot 667 - 1373 \cdot 171\). Thus, the modular inverse of 352 modulo 1373 is 667 because \(352 \cdot 667 \equiv 1 \pmod{1373}\). Now we solve \(667 \cdot 623 \pmod{1373}\), which gives us 895.
+        \item To decrypt, we can use the \hyperlink{thm:Extended Euclidean Algorithm}{EEA} to find the inverse of \(661^{299} \pmod{1373} \equiv 645^{-1} \equiv 794\). From here, we solve for the message: \(1325 \cdot 794 \pmod{1373} \equiv 332\). 
         \item Solving for \(b\) in \(2^b \equiv 893 \pmod{1373}\) gives \(b = 219\). Now we can decrypt: 
         \[
         (c_1^a)^{-1} \cdot c_2 \equiv (693^{219})^{-1} \equiv 431^{-1} \cdot 793 \equiv 532 \cdot 793 \equiv 365 \pmod{1373}.
@@ -106,10 +106,10 @@
 \begin{exercise}
     {1.46}
     \begin{enumerate}
-        \item Convert the 12-bit binary number $110101100101$ into a decimal integer between $0$ and $2^{12} - 1$.
+        \item Convert the 12-bit binary number \(110101100101\) into a decimal integer between \(0\) and \(2^{12} - 1\).
               \setcounter{enumi}{4}
 
-        \item Convert the decimal numbers $8734$ and $5177$ into binary numbers, combine them using XOR, and convert the result back into a decimal number.
+        \item Convert the decimal numbers \(8734\) and \(5177\) into binary numbers, combine them using XOR, and convert the result back into a decimal number.
     \end{enumerate}
 \end{exercise}
 
@@ -148,17 +148,17 @@ For this exercise, I will be using these python functions that I wrote:
 \begin{exercise}
     {2.17} Use \hyperlink{2.21}{Shanks's babystep-giantstep} method to solve the following discrete logarithm problems. 
     \begin{enumerate}
-        \item $11^x = 21$ in $\mathbb{F}_{71}$.
+        \item \(11^x = 21\) in \(\mathbb{F}_{71}\).
     \end{enumerate}
 \end{exercise}
 
 \sol{
     \begin{enumerate}
-        \item \begin{enumerate}[label=(\arabic*)]
+        \item \begin{enumerate}[label=\arabic*.]
             \item Let \(m = \lceil \sqrt{70} \rceil = 9\)
             \item Create two lists: \begin{itemize}
-                \item \textbf{Baby steps:} \[\{11^0, 11^1,\dots,11^9\} \pmod{71} \equiv \{1, \boxed{11}, 27, 15, 24, 29, 37, 31, 12, 38\}\]
-                \item \textbf{Giant steps:} \[\{21, 21 \cdot 11^{-9}, 21 \cdot 11^{-18}, \dots\} \pmod{71} \equiv \{21, 5, 35, 32, \boxed{11}\}\]
+                \item \textbf{Baby steps:} \[\{11^0, 11^1,\dots,11^9\} \pmod{71} \equiv \{1, \boxed{11}, 50, 53, 15, 23, 40, 14, 12\}\]
+                \item \textbf{Giant steps:} \[\{21, 21 \cdot 11^{-9}, 21 \cdot 11^{-18}, \dots\} \pmod{71} \equiv \{21, 5, 35, 32, \boxed{11}\dots\}\]
             \end{itemize}
             \item Find a match between the two lists: \(\boxed{11}\)
             \item Substitute values for \(i + jm = 1 + 4(9) = 37\). So, \(11^{37} \equiv 21 \pmod{71}\)  
@@ -170,9 +170,9 @@ For this exercise, I will be using these python functions that I wrote:
     {2.18} Solve each of the following simultaneous systems of congruences (or explain why no solution exists).
     \begin{enumerate}
         \setcounter{enumi}{1} % Start enumeration at (b)
-        \item $x \equiv 137 \pmod{423}$ and $x \equiv 87 \pmod{191}$.
+        \item \(x \equiv 137 \pmod{423}\) and \(x \equiv 87 \pmod{191}\).
               \setcounter{enumi}{3} % Start enumeration at (d)
-        \item $x \equiv 5 \pmod{9}$, $x \equiv 6 \pmod{10}$, and $x \equiv 7 \pmod{11}$.
+        \item \(x \equiv 5 \pmod{9}\), \(x \equiv 6 \pmod{10}\), and \(x \equiv 7 \pmod{11}\).
     \end{enumerate}
 \end{exercise}
 
@@ -191,14 +191,14 @@ For this exercise, I will be using these python functions that I wrote:
 \sol{
     \begin{enumerate}
         \setcounter{enumi}{1}
-        \item \begin{enumerate}[label=(\arabic*)]
+        \item \begin{enumerate}[label=\arabic*.]
             \item Let \(m = 423 \cdot 191 = 80793\).
             \item Compute \(n_1 = \frac{m}{m_1} = \frac{80793}{423} = 191\), and \(n_2 = \frac{80793}{191} = 423\)
             \item Compute \(y_1 = 191^{-1} \pmod{423} \equiv 392\) and \(y_2 = 423^{-1} \pmod{191} \equiv 14\).
             \item Compute \(x = (137)(191)(392) + (87)(423)(14) \pmod{80793} \equiv 27209\)
         \end{enumerate}
         \setcounter{enumi}{3} % Start enumeration at (d)
-        \item \begin{enumerate}[label=(\arabic*)]
+        \item \begin{enumerate}[label=\arabic*.]
             \item Let \(m = 9 \cdot 10 \cdot 11 = 990\).
             \item Compute \(n_1 = \frac{990}{9} = 110, \ n_2 = \frac{990}{10} = 99, \text{ and } n_3 = \frac{990}{11} = 90\).
             \item Compute \(y_1 = 110^{-1} \pmod{9} \equiv 5, \ y_2 = 99^{-1} \pmod{10} \equiv 9\), and \(y_3 = 90^{-1} \pmod{11} \equiv 6\)
@@ -209,9 +209,37 @@ For this exercise, I will be using these python functions that I wrote:
 }
 
 \begin{exercise}
-    {2.28} Use the \hyperlink{Pohlig-Hellman}{Pohlig-Hellman algorithm} (Theorem 2.31) to solve the discrete logarithm problem $g^x = a$ in $\mathbb{F}_p$ in each of the following cases.
+    {2.20}Let \( a, b, m, n \) be integers with \( \gcd(m, n) = 1 \). Let 
+    \[
+    c \equiv (b - a) \cdot m^{-1} \pmod{n}.
+    \]
+    Prove that \( x = a + cm \) is a solution to 
+    \[
+    x \equiv a \pmod{m} \quad \text{and} \quad x \equiv b \pmod{n}, \tag{2.24}
+    \]
+    and that every solution to (2.24) has the form \( x = a + cm + ymn \) for some \( y \in \mathbb{Z} \).    
+\end{exercise}
+
+\expf{
+    Let \(a,b,m,n \in \Z\) with \(\gcd(m,n) = 1\). Let \(c \equiv (b - a)m^{-1} \pmod{n}\). Review the following: \begin{align*}
+        x & \equiv a \pmod{m} \\
+        a + cm & \equiv a \pmod{m} \\
+        a & \equiv a \pmod{m} - cm. 
+    \end{align*} Then, because \(cm\) is a multiple of \(m\), when we take the mod of \(a - cm \pmod{m}\), we will always get \(a\). Hence, \(a \equiv a \pmod{m}\). For the other equation, we will be using the def of \(c\) in our proof: \begin{align*}
+        a + cm & \equiv b \pmod{n} \\
+        cm &\equiv b - a \pmod{n} \\
+        c & \equiv (b - a)m^{-1}\pmod{n}.
+    \end{align*} So, now when we multiply by \(m\) on both sides, we get \(cm \equiv b - a \pmod{n}\). Rearranging, we see \(cm + a \equiv b \pmod{n}\), so \(x\) is a solution. 
+    
+    For the second half of the proof, suppose we have \(x'\) as the solution for \(x' \equiv a \pmod{m}\) and \(x' \equiv b \pmod{n}\). We want to show that \(x' = x\). Thus, we subtract \(x\) from \(x'\) and get the following: \[
+        x' - x \equiv a - a = 0 \pmod{m}, \text{ which implies } x' - x = km \text{ for some } k \in \Z.
+    \] This is the outcome because we know that for anything to be equal to 0 in modulus, the number itself must be a multiple of the modulus, \(m\). We can follow the same logic for \(b\), and see that \(x' - x \equiv b - b = lm\) for some \(l \in \Z\). Since \(\gcd(m,n) = 1\), \(x' - x\) must be a multiple of \(m\) and \(n\), meaning \(x' - x = ymn\) for some \(y \in \Z\). Therefore, \(x' = x + ymn, = a + cm + ymn\). 
+}
+
+\begin{exercise}
+    {2.28} Use the \hyperlink{Pohlig-Hellman}{Pohlig-Hellman algorithm} (Theorem 2.31) to solve the discrete logarithm problem \(g^x = a\) in \(\mathbb{F}_p\) in each of the following cases.
     \begin{enumerate}
-        \item $p = 433$, $g = 7$, $a = 166$.
+        \item \(p = 433\), \(g = 7\), \(a = 166\).
     \end{enumerate}
 \end{exercise}
 
@@ -238,7 +266,7 @@ For this exercise, I will be using these python functions that I wrote:
         x_2 &= 20 \pmod{27}
     \end{align*}
     At this point, we can solve the \hyperlink{thm:Chinese Remainder}{CRT}. 
-    \begin{enumerate}
+    \begin{enumerate}[label=\arabic*.]
         \item Let \(m = 16 \cdot 27 = 432\).
         \item Compute \(n_1 = \frac{432}{16} = 27\) and \(n_2 = \frac{432}{27} = 16\).
         \item Compute \(y_1 = 27^{-1} \pmod{16} \equiv 3\) and \(y_2 = 16^{-1} \pmod{27} \equiv 22\).

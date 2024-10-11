@@ -1,4 +1,4 @@
-% This is the "preamble" of the document. This is where the format options get set.
+% This is the ``preamble'' of the document. This is where the format options get set.
 % Pro-tip: things following the % mark will not be compiled by LaTeX. I'll be using them extensively to explain things as we go.
 % Note: not to scare you off of LaTeX, but it's normal to have problems. And ya girl has been having some. I've included the copyright info at the bottom of the document from the guy who wrote this package, because his documentation doesn't entirely match how it's actually used. So this is a combination of his working preamble along with my added commentary or explanation. 
 %% 
@@ -12,7 +12,7 @@
 % - The squiggle brackets {} are mandatory for executing the command
 % - The square brackets [] are options for that command. There can be more than one set of square brackets for some commands
 % Options used in this document (general note - for each of these, if you want to use the other options, swap it out in that spot in the square brackets):
-% - stu: this sets the `document mode' as the "student paper" version. Other options are jou (journal), man (manuscript, for journal submission), and doc (a plain document)
+% - stu: this sets the `document mode' as the ``student paper'' version. Other options are jou (journal), man (manuscript, for journal submission), and doc (a plain document)
 % --- The student setting includes things like 'duedate', 'course', and 'professor' on the title page. If these aren't wanted/needed, use the 'man' setting. It also defaults to including the tables and figures at the end of the document. This can be changed by including the 'floatsintext' option, as I have for you. If the instructor wants those at the end, remove that from the square brackets.
 % --- The manuscript setting is roughly what you would use to submit to a journal, so uses 'date' instead of 'duedate', and doesn't include the 'course' or 'professor' info. As with 'stu', it defaults to putting the tables and figures at the end rather than in text. The same option will bump those images in text.
 % --- Journal ('jou') outputs something similar to a common journal format - double columned text and figurs in place. This can be fun, especially if you are sumbitting this as a writing sample in applications.
@@ -51,7 +51,7 @@
 \begin{document}
 \maketitle % This tells LaTeX to make the title page
 
-% \section{Introduction} This command is commented out, because I was taught it was redundant to have the paper's title and introduction together. If your instructor wants it to say "Introduction", delete the % at the start
+% \section{Introduction} This command is commented out, because I was taught it was redundant to have the paper's title and introduction together. If your instructor wants it to say ``Introduction", delete the % at the start
 
 Begin your paper with the introduction. The active voice, rather than the passive voice (i.e., the zombie voice), should be used in your writing.
 
@@ -64,7 +64,7 @@ For whatever reason, it does not seem like the multi-author work \parencite[e.g.
 
 As a formatting note, the References page needs to start on a new page. This \textit{should be} handled automatically by \LaTeX{}, but it's still useful to know the format.
 
-While I have your attention before diving into the sections, something that may slip by unnoticed is the \LaTeX{} quirk about quotation marks. If you were to include a quote using the regular quotation marks, "it will look like this." However, the \LaTeX{} specific way of doing it, that just gives it that little bit extra flair, is to use a double tick mark (on the tilde key up on the number row) to start the quote, and a double apostrophe to close it. That will make the quote ``look like this instead.'' They are ``fun little guys'' hugging your quote, instead of the "more bland marks" you get from the regular quotation marks.
+While I have your attention before diving into the sections, something that may slip by unnoticed is the \LaTeX{} quirk about quotation marks. If you were to include a quote using the regular quotation marks, ``it will look like this.'' However, the \LaTeX{} specific way of doing it, that just gives it that little bit extra flair, is to use a double tick mark (on the tilde key up on the number row) to start the quote, and a double apostrophe to close it. That will make the quote ``look like this instead.'' They are ``fun little guys'' hugging your quote, instead of the ``more bland marks'' you get from the regular quotation marks.
 
 To close out this section, I will finally talk about the contents of the Introduction. In these sorts of papers, think of the information process in the shape of an hourglass (stay with me, it'll make sense). The general idea is that you start at the broadest point, work your way into more and more specific, until you are at the point of this paper - the theory its testing and the hypothesis. Then you stay in that specific level of detail through the Methods and Results. The Discussion starts specific (i.e., what you did or did not find), then work your way back out to the broader meaning or implications. 
 
@@ -115,7 +115,7 @@ This sets up what measure(s) you took during your experiment, including informat
 
 This is typically used to describe the conditions of the experiment. Did everyone experience the same things throughout the experiment, or were there counterbalances, such as for item order exposure, condition order exposure, conditions on days, etc.? 
 
-For undergrad research projects, lab instructors generally try to encourage students towards easier projects, as analyzing a 3 x 2 x 5 experiment is rough, no matter how far along the academic process you are. So I would expect to see something more along the lines of a 2 (experimental manipulation) x 2 (order counterbalance) design.
+For undergrad research projects, lab instructors generally try to encourage students towards easier projects, as analyzing a 3 \(\times\) 2 \(\times\) 5 experiment is rough, no matter how far along the academic process you are. So I would expect to see something more along the lines of a 2 (experimental manipulation) \(\times\) 2 (order counterbalance) design.
 
 
 \subsection{Procedure}
@@ -136,7 +136,7 @@ In this portion, you describe the data obtained. This includes things like the c
 
 
 
-Figure shows the means and standard errors for the four experimental groups. As shown, the mean vibes for the second word ($M = $ 69, $SE = $ 7.5) were greater than the first word ($M = $ 42, $SE = $ 3), but roughly equivalent between presentation order conditions. Another fun little \LaTeX{} thing here: your instructor may explicitly want you to use $M$, but one of \LaTeX{}'s strengths is the easy of ``math mode'' (i.e., everything enclosed by the dollar signs). %In math mode, you can easily throw in Greek characters. So you \textit{could} instead present the descriptive statistics as ($\mu = $ 42). Oooh. Shiny. Although that seems to make Overleaf work extra hard, so I keep seeing a message encouraging upgrading to a paid plan, so I've commented this part out.
+Figure shows the means and standard errors for the four experimental groups. As shown, the mean vibes for the second word (\(M = \) 69, \(SE = \) 7.5) were greater than the first word (\(M = \) 42, \(SE = \) 3), but roughly equivalent between presentation order conditions. Another fun little \LaTeX{} thing here: your instructor may explicitly want you to use \(M\), but one of \LaTeX{}'s strengths is the easy of ``math mode'' (i.e., everything enclosed by the dollar signs). %In math mode, you can easily throw in Greek characters. So you \textit{could} instead present the descriptive statistics as (\(\mu = \) 42). Oooh. Shiny. Although that seems to make Overleaf work extra hard, so I keep seeing a message encouraging upgrading to a paid plan, so I've commented this part out.
 
 \subsection{Inferential Statistics}
 
@@ -146,12 +146,12 @@ A benefit of using \LaTeX{} is the ease in adding in macros to simplify your lif
 
 % A macro will have this format \newcommand{macroNameYoullUseToCallIt}[Number of inputs]{What the macro does} 
 % The #s indicate where information will be slotted in when the macro is used
-% The dollar signs indicate "math mode" is being used. It's mandatory for some functionality (like super/subscripts) or accessing the Greek alphabet used in statistical reporting.
+% The dollar signs indicate ``math mode'' is being used. It's mandatory for some functionality (like super/subscripts) or accessing the Greek alphabet used in statistical reporting.
 % These macros are including the amount of info we expected from students when I was TAing labs. You can fill them out further if more info is required - just make sure you update the number in the square brackets!
-\newcommand{\ttestSig}[2]{$t$(#1) = #2, $p < .05$}
-\newcommand{\ttestInsig}[2]{$t$(#1) = #2, $p > .05$}
-\newcommand{\anovaSig}[3]{$F$(#1,#2) = #3, $p < .05$}
-\newcommand{\anovaInsig}[3]{$F$(#1,#2) = #3, $p > .05$}
+\newcommand{\ttestSig}[2]{\(t\)(#1) = #2, \(p < .05\)}
+\newcommand{\ttestInsig}[2]{\(t\)(#1) = #2, \(p > .05\)}
+\newcommand{\anovaSig}[3]{\(F\)(#1,#2) = #3, \(p < .05\)}
+\newcommand{\anovaInsig}[3]{\(F\)(#1,#2) = #3, \(p > .05\)}
 
 Using the hypothetical experiment we have set up, let's say there was a significant interaction found between the word conditions (first versus second) and exposure order (first-second versus second-first), \anovaSig{11}{111}{4.20}. Pairwise comparisons indicate that this was driven by the words themselves, as there was a significant difference between the words, \ttestSig{111}{3.21}, but not for the exposure order, \ttestInsig{111}{.42}.
 
@@ -188,7 +188,7 @@ Finally, close things out by reiterating the brief version of your findings, wha
 %% This work is not endorsed by, affiliated with, or probably even known
 %% by, the American Psychological Association.
 %% 
-%% This work is "maintained" (as per LPPL maintenance status) by
+%% This work is ``maintained'' (as per LPPL maintenance status) by
 %% Daniel A. Weiss.
 %% 
 %% This work consists of the file  apa7.dtx

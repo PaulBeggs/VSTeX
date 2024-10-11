@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  25 SEP 2024 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  10 OCT 2024 20:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1002,8 +1002,21 @@ Package biblatex Info: Automatic encoding selection.
 \openout6 = `shortsample.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'shortsample.bbl' found.
- (c:\Users\paulb\VSTeX\APA7_Format\build\shortsample.bbl)
+
+
+c:/Users/paulb/VSTeX/APA7_Format/shortsample.tex:51: Package biblatex Error: File 'shortsample.bbl' not created by biblatex.
+
+See the biblatex package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.51 \begin{document}
+                     ^^M
+This file was apparently not created by biblatex. Rename it or
+move it to a location were TeX will not find it. If this error
+persists, consider redefining \blxauxsuffix.See the biblatex
+manual for details.
+
 Package biblatex Info: Reference section=0 on input line 51.
 Package biblatex Info: Reference segment=0 on input line 51.
 \big@size=\dimen292
@@ -1054,6 +1067,22 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 60.
 
 
+LaTeX Warning: Citation 'Sample2024' on page 3 undefined on input line 62.
+
+
+LaTeX Warning: Citation '' on page 3 undefined on input line 62.
+
+
+LaTeX Warning: Citation 'FullBook2021' on page 3 undefined on input line 62.
+
+
+LaTeX Warning: Citation 'Multiauthor2020' on page 3 undefined on input line 63.
+
+
+LaTeX Warning: Citation 'Multiauthor2020' on page 3 undefined on input line 63.
+
+
+
 [3]
 
 [4]
@@ -1062,35 +1091,54 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 [6]
 
+LaTeX Warning: Citation 'Contributor2023' on page 7 undefined on input line 162.
+
+
+LaTeX Warning: Citation '' on page 7 undefined on input line 162.
+
+
+LaTeX Warning: Citation 'Sample2024' on page 7 undefined on input line 162.
+
+
+
 [7]
 
-[8] AED endfloat: Processing end Figures and Tables
+LaTeX Warning: Empty bibliography on input line 171.
 
-[9
+AED endfloat: Processing end Figures and Tables
 
-] (c:\Users\paulb\VSTeX\APA7_Format\build\shortsample.aux)
+[8] (c:\Users\paulb\VSTeX\APA7_Format\build\shortsample.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `shortsample.out' has not changed.
 (rerunfilecheck)             Checksum: 454B43BAB0A52804C9419AEE4DF48C85;1700.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                shortsample
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'shortsample.run.xml'.
 \openout1 = `shortsample.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32425 strings out of 473899
- 625702 string characters out of 5726500
- 1527823 words of memory out of 5000000
- 54763 multiletter control sequences out of 15000+600000
- 592755 words of font info for 77 fonts, out of 8000000 for 9000
+ 32349 strings out of 473899
+ 623505 string characters out of 5726500
+ 1527619 words of memory out of 5000000
+ 54693 multiletter control sequences out of 15000+600000
+ 593177 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,107p,948b,5237s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\paulb\VSTeX\APA7_Format\build\shortsample.pdf (9 pages, 92346 bytes).
+<C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on c:\Users\paulb\VSTeX\APA7_Format\build\shortsample.pdf (8 pages, 97172 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
+ 128 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

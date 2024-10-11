@@ -91,8 +91,8 @@ first={Scytale Cipher},%
 firstplural={Scytale Ciphers},%
 text={Scytale Cipher},%
 plural={Scytale Ciphers},%
-description={Used by the Spartans in the $5^{\text {th}}$ century B.C.. This is also known as a \textbf {Transposition Cipher}},%
-descriptionplural={Used by the Spartans in the $5^{\text {th}}$ century B.C.. This is also known as a \textbf {Transposition Cipher}},%
+description={Used by the Spartans in the \(5^{\text {th}}\) century B.C.. This is also known as a \textbf {Transposition Cipher}},%
+descriptionplural={Used by the Spartans in the \(5^{\text {th}}\) century B.C.. This is also known as a \textbf {Transposition Cipher}},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -231,8 +231,8 @@ first={Key},%
 firstplural={Keys},%
 text={Key},%
 plural={Keys},%
-description={A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: $A \rightarrow R$ rotated clockwise by 17},%
-descriptionplural={A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: $A \rightarrow R$ rotated clockwise by 17},%
+description={A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: \(A \rightarrow R\) rotated clockwise by 17},%
+descriptionplural={A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: \(A \rightarrow R\) rotated clockwise by 17},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -259,8 +259,8 @@ first={Key Space},%
 firstplural={Key Spaces},%
 text={Key Space},%
 plural={Key Spaces},%
-description={The set of all keys, notated $\mathcal {K}$. The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, $|\mathcal {K}| = 26$ because there are 26 letters in the alphabet. Similarly, Scytale $|\mathcal {K}| = \text {pt}$.)},%
-descriptionplural={The set of all keys, notated $\mathcal {K}$. The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, $|\mathcal {K}| = 26$ because there are 26 letters in the alphabet. Similarly, Scytale $|\mathcal {K}| = \text {pt}$.)},%
+description={The set of all keys, notated \(\mathcal {K}\). The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, \(|\mathcal {K}| = 26\) because there are 26 letters in the alphabet. Similarly, Scytale \(|\mathcal {K}| = \text {pt}\).)},%
+descriptionplural={The set of all keys, notated \(\mathcal {K}\). The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, \(|\mathcal {K}| = 26\) because there are 26 letters in the alphabet. Similarly, Scytale \(|\mathcal {K}| = \text {pt}\).)},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -399,8 +399,8 @@ first={Divides},%
 firstplural={Dividess},%
 text={Divides},%
 plural={Dividess},%
-description={$(b \mid a)$ if $a = b \times n $ for some $n \in \Z $},%
-descriptionplural={$(b \mid a)$ if $a = b \times n $ for some $n \in \Z $},%
+description={\((b \mid a)\) if \(a = b \times n \( for some \(n \in \Z \(},%
+descriptionplural={\((b \mid a)\) if \(a = b \times n \( for some \(n \in \Z \(},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -427,8 +427,8 @@ first={Greatest Common Divisor},%
 firstplural={Greatest Common Divisors},%
 text={Greatest Common Divisor},%
 plural={Greatest Common Divisors},%
-description={Let $a,b,d \in \Z $. The largest positive integer, $d$ such that $d \mid a$ and $d \mid b$. Abbreviated as GCD and notated as $\gcd (a,b)$},%
-descriptionplural={Let $a,b,d \in \Z $. The largest positive integer, $d$ such that $d \mid a$ and $d \mid b$. Abbreviated as GCD and notated as $\gcd (a,b)$},%
+description={Let \(a,b,d \in \Z \(. The largest positive integer, \(d\) such that \(d \mid a\) and \(d \mid b\). Abbreviated as GCD and notated as \(\gcd (a,b)\)},%
+descriptionplural={Let \(a,b,d \in \Z \(. The largest positive integer, \(d\) such that \(d \mid a\) and \(d \mid b\). Abbreviated as GCD and notated as \(\gcd (a,b)\)},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -455,8 +455,8 @@ first={Quotient and Remainder},%
 firstplural={Quotient and Remainders},%
 text={Quotient and Remainder},%
 plural={Quotient and Remainders},%
-description={Let $a,b \in \Z ^+$. If $r = a = qb + r, \text { where } 0 \leq r < b$ (Note that $r$ is the remainder, and $q$ is the quotient in the above formula)},%
-descriptionplural={Let $a,b \in \Z ^+$. If $r = a = qb + r, \text { where } 0 \leq r < b$ (Note that $r$ is the remainder, and $q$ is the quotient in the above formula)},%
+description={Let \(a,b \in \Z ^+\). If \(r = a = qb + r, \text { where } 0 \leq r < b\) (Note that \(r\) is the remainder, and \(q\) is the quotient in the above formula)},%
+descriptionplural={Let \(a,b \in \Z ^+\). If \(r = a = qb + r, \text { where } 0 \leq r < b\) (Note that \(r\) is the remainder, and \(q\) is the quotient in the above formula)},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -483,8 +483,8 @@ first={Modular Arithmetic},%
 firstplural={Modular Arithmetics},%
 text={Modular Arithmetic},%
 plural={Modular Arithmetics},%
-description={Let $m\in \Z $. $a$ and $b$ are congruent $\mod m$ if their $m \mid (b - a)$ or $m \mid (a - b)$. Notated as $a = b\mod m$},%
-descriptionplural={Let $m\in \Z $. $a$ and $b$ are congruent $\mod m$ if their $m \mid (b - a)$ or $m \mid (a - b)$. Notated as $a = b\mod m$},%
+description={Let \(m\in \Z \(. \(a\) and \(b\) are congruent \(\mod m\) if their \(m \mid (b - a)\) or \(m \mid (a - b)\). Notated as \(a = b\mod m\)},%
+descriptionplural={Let \(m\in \Z \(. \(a\) and \(b\) are congruent \(\mod m\) if their \(m \mid (b - a)\) or \(m \mid (a - b)\). Notated as \(a = b\mod m\)},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -511,8 +511,8 @@ first={Ring},%
 firstplural={Rings},%
 text={Ring},%
 plural={Rings},%
-description={The set $\{0,1,2,\dots ,m-1\}$ and use addition mod $m$ and multiplication mod $m$. Additionally, the set needs to be closed under addition},%
-descriptionplural={The set $\{0,1,2,\dots ,m-1\}$ and use addition mod $m$ and multiplication mod $m$. Additionally, the set needs to be closed under addition},%
+description={The set \(\{0,1,2,\dots ,m-1\}\) and use addition mod \(m\) and multiplication mod \(m\). Additionally, the set needs to be closed under addition},%
+descriptionplural={The set \(\{0,1,2,\dots ,m-1\}\) and use addition mod \(m\) and multiplication mod \(m\). Additionally, the set needs to be closed under addition},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -539,8 +539,8 @@ first={Group},%
 firstplural={Groups},%
 text={Group},%
 plural={Groups},%
-description={A set $G$ along with a binary operation (closure) such that for all $a,b \in G$, $a\times b \in G$ (closure), and there exists an $e \in G$ such that $a \times e = a$ and $e \times a = a$ (identity), for all $a \in G$, there exists $a^{-1} \in G$ such that $a \times a^{-1} = a^{-1} \times a = e$ (inverse), and for all $a,b,c \in G$, $(a \times b) \times c = a \times (b \times c)$ (associativity)},%
-descriptionplural={A set $G$ along with a binary operation (closure) such that for all $a,b \in G$, $a\times b \in G$ (closure), and there exists an $e \in G$ such that $a \times e = a$ and $e \times a = a$ (identity), for all $a \in G$, there exists $a^{-1} \in G$ such that $a \times a^{-1} = a^{-1} \times a = e$ (inverse), and for all $a,b,c \in G$, $(a \times b) \times c = a \times (b \times c)$ (associativity)},%
+description={A set \(G\) along with a binary operation (closure) such that for all \(a,b \in G\), \(a\times b \in G\) (closure), and there exists an \(e \in G\) such that \(a \times e = a\) and \(e \times a = a\) (identity), for all \(a \in G\), there exists \(a^{-1} \in G\) such that \(a \times a^{-1} = a^{-1} \times a = e\) (inverse), and for all \(a,b,c \in G\), \((a \times b) \times c = a \times (b \times c)\) (associativity)},%
+descriptionplural={A set \(G\) along with a binary operation (closure) such that for all \(a,b \in G\), \(a\times b \in G\) (closure), and there exists an \(e \in G\) such that \(a \times e = a\) and \(e \times a = a\) (identity), for all \(a \in G\), there exists \(a^{-1} \in G\) such that \(a \times a^{-1} = a^{-1} \times a = e\) (inverse), and for all \(a,b,c \in G\), \((a \times b) \times c = a \times (b \times c)\) (associativity)},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%

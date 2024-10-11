@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {1.6.1}Symmetric Ciphers}{12}{subsection.1.6.1}%
 \contentsline {subsubsection}{Review of Notation}{12}{section*.2}%
 \contentsline {subsubsection}{Types of Attacks}{13}{section*.3}%
-\contentsline {subsubsection}{Types of Ciphers}{13}{section*.4}%
+\contentsline {subsubsection}{Types of Ciphers}{14}{section*.4}%
 \contentsline {subsection}{\numberline {1.6.2}Encoding Schemes}{14}{subsection.1.6.2}%
 \contentsline {chapter}{\numberline {2}Discrete Logarithms and Diffie-Hellman}{15}{chapter.2}%
 \contentsline {section}{\numberline {2.1}The Birth of Public Key Cryptography}{15}{section.2.1}%

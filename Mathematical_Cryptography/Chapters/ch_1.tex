@@ -11,7 +11,7 @@
 
 \wrpdef{Cipher}{Replacing characters or letters. Simply, replacing one letter for another.}
 
-\wrpdef{Scytale Cipher}{Used by the Spartans in the $5^{\text{th}}$ century B.C.. This is also known as a \textbf{Transposition Cipher}.}
+\wrpdef{Scytale Cipher}{Used by the Spartans in the \(5^{\text{th}}\) century B.C.. This is also known as a \textbf{Transposition Cipher}.}
 \wrpdef{Transposition Cipher}{Changed order, but the stayed the same.}
 
 \wrpdef{Plain Text}{Original message that is readable to humans. Abbreviated as [pt].}
@@ -20,8 +20,8 @@
 
 \wrpdef{Encrypting}{From plain text to cipher text. The inverse of encrypting is decrypting; which is going from the Plain Text [pt] to the Cipher Text [ct].}
 
-\wrpdef{Key}{A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: $A \rightarrow R$ rotated clockwise by 17}
-\wrpdef{Key Space}{The set of all keys, notated $\mathcal{K}$. The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, $|\mathcal{K}| = 26$ because there are 26 letters in the alphabet. Similarly, Scytale $|\mathcal{K}| = \text{pt}$.)}
+\wrpdef{Key}{A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: \(A \rightarrow R\) rotated clockwise by 17}
+\wrpdef{Key Space}{The set of all keys, notated \(\mathcal{K}\). The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, \(|\mathcal{K}| = 26\) because there are 26 letters in the alphabet. Similarly, Scytale \(|\mathcal{K}| = \text{pt}\).)}
 
 \wrpdef{Brute Force Attack}{[During decryption] Trying all possible keys.}
 
@@ -37,17 +37,17 @@ Generally, these are the people and setting that will be used in examples: Alice
 
 \subsection{Simple Substitution Ciphers (Mono-alphabetic Cipher)}
 
-Each letter can be replaced with any other letter. For example, you may have a key: $\{a,b,c,\dots,z\} \rightarrow \{q,m,w,\dots,t\}$. Its cardinality is $|\mathcal{K}| = 26!$. \\
+Each letter can be replaced with any other letter. For example, you may have a key: \(\{a,b,c,\dots,z\} \rightarrow \{q,m,w,\dots,t\}\). Its cardinality is \(|\mathcal{K}| = 26!\). \\
 
 \wrpdef{Cryptanalysis}{Process of decrypting without a key.}
 
 \wrpdef{Bigrams}{Two letters that are commonly placed together in language. For example, ``Th'', ``is'', or ``He''.}
 
-\wrpdef{Frequency Analysis}{English language patterns} Note that $13\%$ of letters that are used in the alphabet are (in order from least to greatest): E, T, A, O, N. In brief, the longer the text, the more likely these letters will pop up.
+\wrpdef{Frequency Analysis}{English language patterns} Note that \(13\%\) of letters that are used in the alphabet are (in order from least to greatest): E, T, A, O, N. In brief, the longer the text, the more likely these letters will pop up.
 
 \section{Divisibility and Greatest Common Denominators}
 
-Can assume all the properties of $\R, \Z, \text{ and } \N$. Note that $\N$ does not include 0. \\
+Can assume all the properties of \(\R, \Z, \text{ and } \N\). Note that \(\N\) does not include 0. \\
 
 \wrpdef{Divides}{Let \(a\) and \(b\) be integers with \(b \ne 0\). We say that \(b \textit{ divides } a\) or that \(a \) is divisible by \(b\), denoted by \(b \mid a\), if there exists an integer \(n\) such that \(a = nb\).}
 
@@ -67,25 +67,25 @@ Can assume all the properties of $\R, \Z, \text{ and } \N$. Note that $\N$ does 
     No, because \(100 = 8 \times 12 + 4\).
 }
 
-\textbf{Proposition 1.4:} Let $a,b,c \in \Z$:
+\textbf{Proposition 1.4:} Let \(a,b,c \in \Z\):
 \begin{enumerate}
-    \item If $a \mid b$ and $b \mid c$, then $a \mid c$.
-    \item If $a \mid b$ and $b \mid a$, then $a = \pm 2$.
-    \item If $a \mid b$ and $a \mid c$, then $a \mid (b + c) and a \mid (b - c)$.
+    \item If \(a \mid b\) and \(b \mid c\), then \(a \mid c\).
+    \item If \(a \mid b\) and \(b \mid a\), then \(a = \pm 2\).
+    \item If \(a \mid b\) and \(a \mid c\), then \(a \mid (b + c) and a \mid (b - c)\).
 \end{enumerate}
 
 
-\wrpdef{Greatest Common Divisor}{A \textit{common divisor} of two integers $a$ and $b$ is a positive integer \(d\) that divides both of them. The \textit{greatest common divisor} of \(a\) and \(b\), denoted by \(\gcd(a,b)\), is the largest positive integer such that \(d \mid a \) and \(d \mid b\).} \\
+\wrpdef{Greatest Common Divisor}{A \textit{common divisor} of two integers \(a\) and \(b\) is a positive integer \(d\) that divides both of them. The \textit{greatest common divisor} of \(a\) and \(b\), denoted by \(\gcd(a,b)\), is the largest positive integer such that \(d \mid a \) and \(d \mid b\).} \\
 
 This is less complicated than it sounds: we are simply factoring the integers and finding the largest common divisor between the two numbers. \\
 
 \wrpdef{Divison with Remainder}{Let \(a,b\) be positive integers. Then we say that \(a\) \textit{divided by} \(b\) gives a \textit{quotient} \(q\) and a \textit{remainder} \(r\) if \(a = bq + r\) and \(0 \leq r < b\).} \\
 
 \begin{example}
-    {Division with Remainder}Let $a = 24$ and $b = 16$. Find the quotient and remainder.
+    {Division with Remainder}Let \(a = 24\) and \(b = 16\). Find the quotient and remainder.
 \end{example}
 \lesol{
-    $24 = 16(1) + 8$. Therefore, the quotient is 1 and the remainder is 8.
+    \(24 = 16(1) + 8\). Therefore, the quotient is 1 and the remainder is 8.
 }
 
 \begin{example}
@@ -105,27 +105,27 @@ This is less complicated than it sounds: we are simply factoring the integers an
 }
 
 % \begin{theorem}
-%     {}Let $a,b \in \Z^+$ with $a = bq + r$, $0 \leq r < b$. Then, $\gcd(a,b) = \gcd(b,r)$
+%     {}Let \(a,b \in \Z^+\) with \(a = bq + r\), \(0 \leq r < b\). Then, \(\gcd(a,b) = \gcd(b,r)\)
 % \end{theorem}
 
 % \tpf{
-%     Let $d = \gcd(a,b) \Rightarrow d \mid a \text{ and } d \mid b \Rightarrow a = dk \text{ and } b = dl \text{ for some } k,l \in \Z$. We need to show $d \mid b$ and $d \mid r$. We already have $d \mid b$, so we just need to solve for $r$: \begin{align*}
+%     Let \(d = \gcd(a,b) \Rightarrow d \mid a \text{ and } d \mid b \Rightarrow a = dk \text{ and } b = dl \text{ for some } k,l \in \Z\). We need to show \(d \mid b\) and \(d \mid r\). We already have \(d \mid b\), so we just need to solve for \(r\): \begin{align*}
 %         r & = a - bq    \\
 %           & = dk - dlq  \\
 %           & = d(k - lq)
-%     \end{align*} Notice that $(k - lq) \in \Z$. However, we also need to prove that $d$ is the largest factor that Divides both. Hence, assume there exists a $D \in \Z^+$ such that $D\mid b$, $D \mid r$, and $D > d$. Then, $D \times m = b$ and $D \times n = r \Rightarrow a = D(mq) + D(n) \Rightarrow D \mid a$, but this leads to a contradiction because we said that $d$ was the Greatest Common Divisor of $a$. Hence, $D = d$.
+%     \end{align*} Notice that \((k - lq) \in \Z\). However, we also need to prove that \(d\) is the largest factor that Divides both. Hence, assume there exists a \(D \in \Z^+\) such that \(D\mid b\), \(D \mid r\), and \(D > d\). Then, \(D \times m = b\) and \(D \times n = r \Rightarrow a = D(mq) + D(n) \Rightarrow D \mid a\), but this leads to a contradiction because we said that \(d\) was the Greatest Common Divisor of \(a\). Hence, \(D = d\).
 % }
 
-% Example: $150 = 4(36) + 6$ (Def 1.1.3) $\Rightarrow \gcd(150,36) = \gcd(36,6) \Rightarrow 36 = 6(6) + 0 \Rightarrow \gcd(36,6) = \gcd(6,0) = 6$. \\
+% Example: \(150 = 4(36) + 6\) (Def 1.1.3) \(\Rightarrow \gcd(150,36) = \gcd(36,6) \Rightarrow 36 = 6(6) + 0 \Rightarrow \gcd(36,6) = \gcd(6,0) = 6\). \\
 
 \begin{theorem}
-    {Euclidean Algorithm}Let $a,b \in \Z^+$ with $a \geq b$. The following algorithm computes $\gcd(a,b)$ in a finite number of steps. \begin{enumerate}
-        \item Let $r_0 = a, r_1 = b$;
-        \item Set $i = 1$;
-        \item Divide $r_{i - 1}$ by $r_i$ to get quotient $q_i$ and remainder $r_{i + 1}$;
-        \item If $r_{i + 1} = 0$, stop, and $\gcd(a,b) = r_i$;
-        \item Otherwise, $r_{i + 1} > 0$. Set $i = i + 1$, and go back to step 3.
-        \item Step 3 is executed at most $2\log_2(b) + 2$ times.
+    {Euclidean Algorithm}Let \(a,b \in \Z^+\) with \(a \geq b\). The following algorithm computes \(\gcd(a,b)\) in a finite number of steps. \begin{enumerate}
+        \item Let \(r_0 = a, r_1 = b\);
+        \item Set \(i = 1\);
+        \item Divide \(r_{i - 1}\) by \(r_i\) to get quotient \(q_i\) and remainder \(r_{i + 1}\);
+        \item If \(r_{i + 1} = 0\), stop, and \(\gcd(a,b) = r_i\);
+        \item Otherwise, \(r_{i + 1} > 0\). Set \(i = i + 1\), and go back to step 3.
+        \item Step 3 is executed at most \(2\log_2(b) + 2\) times.
     \end{enumerate}
 \end{theorem}
 
@@ -170,22 +170,22 @@ This is less complicated than it sounds: we are simply factoring the integers an
 \end{example}
 
 \lesol{
-    In Example 1.2, we found that the gcd of 2024 and 748 have greatest common divisor of 44 and satisfy the equation $-7 \cdot 2024 + 19 \cdot 748 = 44$. We can divide both sides by 44 to get $46u + 17v = 1$. Therefore, 46 and 17 are relatively prime and \(u = -7\) and \(v = 19\) are the coefficents of a linear combination of 46 and 17 that equals 1.
+    In Example 1.2, we found that the gcd of 2024 and 748 have greatest common divisor of 44 and satisfy the equation \(-7 \cdot 2024 + 19 \cdot 748 = 44\). We can divide both sides by 44 to get \(46u + 17v = 1\). Therefore, 46 and 17 are relatively prime and \(u = -7\) and \(v = 19\) are the coefficents of a linear combination of 46 and 17 that equals 1.
 }
 
 \section{Modular Arithmetic}
 
-\wrpdef{Modular Arithmetic}{Let $m \geq 1$ be an integer. We say that the integers $a$ and $b$ are congruent modulo $m$ if their difference is divisible by $m$: $m \mid (b - a)$ or $m \mid (a - b)$. Notated as $a = b\mod m$}
+\wrpdef{Modular Arithmetic}{Let \(m \geq 1\) be an integer. We say that the integers \(a\) and \(b\) are congruent modulo \(m\) if their difference is divisible by \(m\): \(m \mid (b - a)\) or \(m \mid (a - b)\). Notated as \(a = b\mod m\)}
 
-By the definition of division, we can write this as $b - a = mk$ for some $k \in \Z$ and $b = mk + a$ for some $k \in \Z$. For example, $17\mod 4 \equiv 1$. Or for another example, $-17\mod 4 \equiv -1 \equiv 3$. For addition, you can go in two separate directions. For the first, sequence of operations, we could add the numbers inside of the parentheses and then take the mod of the number as demonstrated $(26 + 14)\mod 5 \equiv 40 \mod 5 \equiv 0$, or we could take the mod of both numbers inside the parentheses, demonstrated as $26\mod + 14\mod 5 = 1 + 4 = 0$. \\
+By the definition of division, we can write this as \(b - a = mk\) for some \(k \in \Z\) and \(b = mk + a\) for some \(k \in \Z\). For example, \(17\mod 4 \equiv 1\). Or for another example, \(-17\mod 4 \equiv -1 \equiv 3\). For addition, you can go in two separate directions. For the first, sequence of operations, we could add the numbers inside of the parentheses and then take the mod of the number as demonstrated \((26 + 14)\mod 5 \equiv 40 \mod 5 \equiv 0\), or we could take the mod of both numbers inside the parentheses, demonstrated as \(26\mod + 14\mod 5 = 1 + 4 = 0\). \\
 
-\hypertarget{prop 1.13}{\textbf{Proposition 1.13:}} Let $m \in \Z^+$
+\hypertarget{prop 1.13}{\textbf{Proposition 1.13:}} Let \(m \in \Z^+\)
 \begin{enumerate}
-    \item If $a_1 \equiv a_2 \ (\text{mod } m)$ and $b_1 \equiv b_2 \ (\text{mod } m)$ then $a_1 \pm b_1 \equiv a_2 \pm b_2 \ (\text{mod } m) \equiv a_2\ (\text{mod } m) + b_2\ (\text{mod } m)$. Also, $a_1b_1 = a_2b_2\ (\text{mod } m)=a_2\ (\text{mod } m) b_2\ (\text{mod } m)$
-    \item Let $a \in \Z$. Then $ab \equiv 1\ (\text{mod } m)$ for some $b\equiv \Z \iff \gcd(a,m)=1$
+    \item If \(a_1 \equiv a_2 \ (\text{mod } m)\) and \(b_1 \equiv b_2 \ (\text{mod } m)\) then \(a_1 \pm b_1 \equiv a_2 \pm b_2 \ (\text{mod } m) \equiv a_2\ (\text{mod } m) + b_2\ (\text{mod } m)\). Also, \(a_1b_1 = a_2b_2\ (\text{mod } m)=a_2\ (\text{mod } m) b_2\ (\text{mod } m)\)
+    \item Let \(a \in \Z\). Then \(ab \equiv 1\ (\text{mod } m)\) for some \(b\equiv \Z \iff \gcd(a,m)=1\)
 \end{enumerate}
 
-\wrpdef{Ring}{We write $\Z/m\Z = \{0,1,2,\dots,m-1\}$ and call $\Z / m\Z$ the \textit{ring of integers modulo} $m$. We add and multiplying them as integers and then dividing the result by $m$ and taking the remainder in order to obtain an element in $\Z/m\Z$.}
+\wrpdef{Ring}{We write \(\Z/m\Z = \{0,1,2,\dots,m-1\}\) and call \(\Z / m\Z\) the \textit{ring of integers modulo} \(m\). We add and multiplying them as integers and then dividing the result by \(m\) and taking the remainder in order to obtain an element in \(\Z/m\Z\).}
 
 Note that we will be finding the more traditional rings that are brought up in Algebra. Thus, for a ring to be a ring, it must have the following properties: \begin{enumerate}[label=\arabic*.]
     \item \textbf{Additive Closure:} For any \( a, b \in R \), the sum \( a + b \) is also in \( R \).
@@ -206,21 +206,21 @@ Note that we will be finding the more traditional rings that are brought up in A
     Note that from the following table, 6 only has 2 inverses, \(1\) and \(5\). This is because in their respective column, there is a 1 in each row.
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|}
-            \hline
+            \toprule
             \(a\)         & 0 & 1 & 2 & 3 & 4 & 5 \\
-            \hline
+            \midrule
             \(a \cdot 0\) & 0 & 0 & 0 & 0 & 0 & 0 \\
-            \hline
+            \midrule
             \(a \cdot 1\) & 0 & 1 & 2 & 3 & 4 & 5 \\
-            \hline
+            \midrule
             \(a \cdot 2\) & 0 & 2 & 4 & 0 & 2 & 4 \\
-            \hline
+            \midrule
             \(a \cdot 3\) & 0 & 3 & 0 & 3 & 0 & 3 \\
-            \hline
+            \midrule
             \(a \cdot 4\) & 0 & 4 & 2 & 0 & 4 & 2 \\
-            \hline
+            \midrule
             \(a \cdot 5\) & 0 & 5 & 4 & 3 & 2 & 1 \\
-            \hline
+            \bottomrule
         \end{tabular}
     \end{center}
 
@@ -228,7 +228,7 @@ Note that we will be finding the more traditional rings that are brought up in A
 
 \wrpdef{Unit}{Recall from \hyperlink{prop 1.13}{Proposition 1.13} that \(a\) has an inverse modulo \(m\) if and only if \(\gcd(a, m) = 1\). Numbers that have inverses are called \textit{units}. We denote the set of all units by
     \begin{align*}
-        (\Z/m\Z)^* & = \{a \in \Z/m\Z \mid \gcd(a,m) = 1\}                     \\
+        {(\Z/m\Z)}^* & = \{a \in \Z/m\Z \mid \gcd(a,m) = 1\}                     \\
                    & = \{a \in \Z/m\Z \mid \text{a has an inverse modulo } m\}
     \end{align*}}
 

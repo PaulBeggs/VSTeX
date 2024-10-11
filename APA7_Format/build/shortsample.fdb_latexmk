@@ -1,13 +1,14 @@
 # Fdb version 4
-["biber build/shortsample"] 1727317153.14413 "build/shortsample.bcf" "build/shortsample.bbl" "build/shortsample" 1727317157.92784 0
+["biber build/shortsample"] 0 "build/shortsample.bcf" "build/shortsample.bbl" "build/shortsample" 1728609878.08777 -1
   "bibliography.bib" 1727317142 3953 d29ebbddca6ebb203168b738796234ba ""
-  "build/shortsample.bcf" 1727317157 133834 762d2d1683c1215f714717898d4e432c "pdflatex"
+  "build/shortsample.bcf" 1728609877 133699 31c82e5d36a7e57c7150c04cc65a6404 "pdflatex"
   (generated)
   "build/shortsample.bbl"
   "build/shortsample.blg"
   (rewritten before read)
-["pdflatex"] 1727317156.43792 "c:/Users/paulb/VSTeX/APA7_Format/shortsample.tex" "build/shortsample.pdf" "shortsample" 1727317157.92859 0
-  "C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1727316222 179281 07163ff08e7168fbcd0ad4df2d5a0958 ""
+["pdflatex"] 1728609876.50946 "c:/Users/paulb/VSTeX/APA7_Format/shortsample.tex" "build/shortsample.pdf" "shortsample" 1728609878.08854 2
+  "C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1727827053 179281 07163ff08e7168fbcd0ad4df2d5a0958 ""
+  "C:/Users/paulb/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1708494351 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1727050291 11948197 d4504eab49177879c265b4debf5694f6 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/symbol/psyr.tfm" 1136793854 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -27,6 +28,7 @@
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmmi10.tfm" 1136765053 1528 abec98dbc43e172678c11b3b9031252a ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr10.tfm" 1136765053 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
+  "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmsy10.tfm" 1136765053 1124 6c73e740cf17375f03eec0ee63599741 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr12.tfm" 1256929440 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmbsy10.tfm" 1256929440 1300 2df9da0fc09d4a8c772b3dd386a47c6a ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/lmbsy7.tfm" 1256929440 1304 535e0954c1961c817723e44bc6a9662c ""
@@ -37,6 +39,7 @@
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/rm-lmbx9.tfm" 1256929440 11872 6fc83bd89656207db7e11b4f7ac7546e ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1247596667 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
+  "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb" 1136874948 44729 fea0975e20ec51c992338362f05f1146 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb" 1136874948 46026 687528a208fbfc1f00832bb96cccebbb ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb" 1136874948 45458 504e2b06fa82109d168c7a0afb09e145 ""
@@ -45,6 +48,7 @@
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmri8t.vf" 1136793854 2328 6cd7df782b09b29cfc4d93e55b6b9a59 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/zptmcm7m.vf" 1136793854 1132 27520247d3fe18d4266a226b461885c2 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/zptmcm7t.vf" 1136793854 1108 d271d6f9de4122c3f8d3b65666167fac ""
+  "C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/zptmcm7y.vf" 1136793854 964 5673178ff30617b900214de28ab32b38 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty" 1724932513 146459 bc754156bcff0b0651cf59d8ba0cb2bc ""
@@ -210,12 +214,12 @@
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/tools/calc.sty" 1718356376 10214 61188260d324e94bc2f66825d7d3fdf4 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "build/shortsample.aux" 1727317157 3288 269f79f84dbc1c869ff082a6cadf0495 "pdflatex"
-  "build/shortsample.bbl" 1727317154 14047 af3ab8ff9270237469e1933b3687a3c7 "biber build/shortsample"
-  "build/shortsample.out" 1727317157 1700 454b43bab0a52804c9419aee4df48c85 "pdflatex"
-  "build/shortsample.run.xml" 1727317157 2478 ab9af58b09c985e2f2839e4b09f9fe4e "pdflatex"
-  "c:/Users/paulb/VSTeX/APA7_Format/shortsample.tex" 1727317146 23009 6fc50662d286f30b26fc51bfc71907bb ""
-  "shortsample.tex" 1727317146 23009 6fc50662d286f30b26fc51bfc71907bb ""
+  "build/shortsample.aux" 1728609877 2637 dc0c451720df4b67b4267d1d6f097b1b "pdflatex"
+  "build/shortsample.bbl" 1728608713 14051 82d43067fc7f62cea4f0522e02888cc3 "biber build/shortsample"
+  "build/shortsample.out" 1728609877 1700 454b43bab0a52804c9419aee4df48c85 "pdflatex"
+  "build/shortsample.run.xml" 1728609877 2478 4f77f7b2386de3b3ee2cc264ee39012f "pdflatex"
+  "c:/Users/paulb/VSTeX/APA7_Format/shortsample.tex" 1728609876 23077 4aeec8a524a7d219a526a00f43849ad5 ""
+  "shortsample.tex" 1728609876 23077 4aeec8a524a7d219a526a00f43849ad5 ""
   (generated)
   "build/shortsample.aux"
   "build/shortsample.bcf"

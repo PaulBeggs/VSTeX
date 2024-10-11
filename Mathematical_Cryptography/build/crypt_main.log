@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  7 OCT 2024 18:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  10 OCT 2024 20:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1141,7 +1141,7 @@ Package mdframed Info: mdframed detected package amsthm
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 235.
+Package pdftex.def Info: images/small logo.png  used on input line 233.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [8]
 Underfull \hbox (badness 10000) in paragraph at lines 235--236
@@ -1155,19 +1155,24 @@ Package mdframed Info: mdframed detected package amsthm
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 287.
+Package pdftex.def Info: images/small logo.png  used on input line 264.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [9]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 287.
-Package mdframed Info: Not enough space on this page on input line 287.
 
 Underfull \hbox (badness 10000) in paragraph at lines 295--297
 
  []
 
 
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 301.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 302--303
 
  []
@@ -1177,26 +1182,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 304--305
 
  []
 
-
-
-File: images/small logo.png Graphic file (type png)
-<use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 306.
-(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[10]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 325.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 331.
+Package mdframed Info: Not enough space on this page on input line 325.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 336.
+Package pdftex.def Info: images/small logo.png  used on input line 325.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [11]
+Package mdframed Info: Not enough space on this page on input line 325.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 331.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 341.
@@ -1204,13 +1204,13 @@ Package mdframed Info: mdframed detected package amsthm
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 362.
+Package pdftex.def Info: images/small logo.png  used on input line 361.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [12]
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 406.
+Package pdftex.def Info: images/small logo.png  used on input line 400.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [13])
 
@@ -1669,20 +1669,31 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 209.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 247.
+(mdframed)              on input line 237.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 247.
+Package pdftex.def Info: images/small logo.png  used on input line 237.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[52])
+[52]
+Package mdframed Info: Not enough space on this page on input line 237.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 275.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 275.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[53])
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 654.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[53] (c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.aux)
+[54] (c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1691,13 +1702,13 @@ Package rerunfilecheck Info: File `crypt_main.out' has not changed.
 (rerunfilecheck)             Checksum: 297A7815974D2BE2D7A71E95A43BA6B5;5189.
  ) 
 Here is how much of TeX's memory you used:
- 32314 strings out of 473899
- 632199 string characters out of 5726500
- 1341174 words of memory out of 5000000
- 54122 multiletter control sequences out of 15000+600000
+ 32318 strings out of 473899
+ 632234 string characters out of 5726500
+ 1341190 words of memory out of 5000000
+ 54123 multiletter control sequences out of 15000+600000
  573231 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,15n,101p,887b,1220s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,15n,101p,931b,1220s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{thm:Chinese\040Remainder} has been referenced but does not exist, replaced by a fixed one
 
@@ -1711,9 +1722,9 @@ pdfTeX warning (dest): name{thm:Fermat's\040Little\040Theorem} has been referenc
 pdfTeX warning (dest): name{2.5\040group} has been referenced but does not exist, replaced by a fixed one
 
  <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi720\cmbcsc10.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi864\cmbcsc10.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi1037\cmbcsc10.pk><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.pdf (54 pages, 527711 bytes).
+Output written on c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.pdf (55 pages, 531961 bytes).
 PDF statistics:
- 1053 PDF objects out of 1200 (max. 8388607)
- 485 named destinations out of 1000 (max. 500000)
+ 1061 PDF objects out of 1200 (max. 8388607)
+ 488 named destinations out of 1000 (max. 500000)
  215 words of extra memory for PDF output out of 10000 (max. 10000000)
 

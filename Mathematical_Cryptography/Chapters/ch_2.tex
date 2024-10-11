@@ -70,14 +70,14 @@ D-H gives a way for Alice and Bob to get a secret shared key in an unsecure envi
     \begin{tabular}{@{}p{0.9\textwidth}l@{}}
         \toprule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Public parameter creation}}}                                                                            \\ \midrule
-        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering A trusted party chooses and publishes a large prime $p$ and an element $g$ modulo $p$ of large (prime) order.}} \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering A trusted party chooses and publishes a large prime \(p\) and an element \(g\) modulo \(p\) of large (prime) order.}} \\ \midrule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Key creation}}}                                                                                         \\ \midrule
         \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Alice}}} & \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Bob}}}                     \\ \midrule
         \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{Choose private key \(1 \leq a \leq p -1.\)                                                                                \\ Compute \(A = g^a \ (\text{mod } p)\). \\ Publish the public key \(A\).}} &  \\ \midrule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}\centering\textbf{Encryption}}                                                                                              \\ \midrule
-        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{}}                          & \multicolumn{1}{r}{\parbox[t]{0.45\textwidth}{\raggedright Choose plaintext $m$.            \\ Choose random element \(k\). \\ Use Alice's public key \(A\) \\ \quad to compute \(c_1 = g^k \ (\text{mod } p)\) \\ \quad and \(c_2 = mA^k \ (\text{mod } p). \) \\ Send ciphertext \(c_1,c_2\) to Alice.}}                                            \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{}}                          & \multicolumn{1}{r}{\parbox[t]{0.45\textwidth}{\raggedright Choose plaintext \(m\).            \\ Choose random element \(k\). \\ Use Alice's public key \(A\) \\ \quad to compute \(c_1 = g^k \ (\text{mod } p)\) \\ \quad and \(c_2 = mA^k \ (\text{mod } p). \) \\ Send ciphertext \(c_1,c_2\) to Alice.}}                                            \\ \midrule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering\textbf{Decryption}}}                                                                                            \\ \midrule
-        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{Compute \((c_1^a)^{-1} \cdot c_2 \ (\text{mod } p)\).                                                                     \\  This quantity is equal to \(m\).}}                     &                                                                                             \\ \bottomrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{Compute \({(c_1^a)}^{-1} \cdot c_2 \ (\text{mod } p)\).                                                                     \\  This quantity is equal to \(m\).}}                     &                                                                                             \\ \bottomrule
     \end{tabular}
     \caption{Elgamal Key Creation, Encryption, and Decryption}
 \end{table}
@@ -93,9 +93,9 @@ D-H gives a way for Alice and Bob to get a secret shared key in an unsecure envi
         c_1 & = g^k \ (\text{mod } p)    & = & \ 2^5 \ (\text{mod } 29) = 3        \\
         c_2 & = m(A^k) \ (\text{mod } p) & = & \ 26(7^{5} \ (\text{mod } 29)) = 10 \\
     \end{align*}
-    Now, for Alice to decrypt the message, she must compute \((c_1^a)^{-1} \cdot c_2 \ (\text{mod } p)\):
+    Now, for Alice to decrypt the message, she must compute \({(c_1^a)}^{-1} \cdot c_2 \ (\text{mod } p)\):
     \[
-        (c_1^a)^{-1} \cdot c_2 \ (\text{mod } p) = (3^{12})^{-1} \cdot 10 \ (\text{mod } 29)
+        {(c_1^a)}^{-1} \cdot c_2 \ (\text{mod } p) = {(3^{12})}^{-1} \cdot 10 \ (\text{mod } 29)
     \]
     The order of operations to compute this is as follows:
     \begin{enumerate}[label=\arabic*.]
@@ -106,7 +106,7 @@ D-H gives a way for Alice and Bob to get a secret shared key in an unsecure envi
 }
 
 \begin{note}
-    Be aware: You should only use this encryption scheme once. If you use it more than once, it is possible for an attacker to decrypt the message. For example, Eve knows \(m_1(c_1, c_2) \rightarrow\) Eve finds \(A\) by keeping record of the first message, then by solving for \(d_2\) such that \(c_1, d_2\) (where \(c_1\) is the \textit{same} as the first message) and \(d_2\) is the second message. Then, Eve can solve for \(m_2\) by computing \((c_1^d)^{-1} \cdot d_2 \ (\text{mod } p)\).
+    Be aware: You should only use this encryption scheme once. If you use it more than once, it is possible for an attacker to decrypt the message. For example, Eve knows \(m_1(c_1, c_2) \rightarrow\) Eve finds \(A\) by keeping record of the first message, then by solving for \(d_2\) such that \(c_1, d_2\) (where \(c_1\) is the \textit{same} as the first message) and \(d_2\) is the second message. Then, Eve can solve for \(m_2\) by computing \({(c_1^d)}^{-1} \cdot d_2 \ (\text{mod } p)\).
 \end{note}
 
 
@@ -118,32 +118,32 @@ D-H gives a way for Alice and Bob to get a secret shared key in an unsecure envi
 \hypertarget{2.5}{}
 \section{An Overview of the Theory of Groups}
 
-\wrpdef{Group}{A set $G$ along with a binary operation (closure) such that for all $a,b \in G$, $a\times b \in G$ (closure), and there exists an $e \in G$ such that $a \times e = a$ and $e \times a = a$ (identity), for all $a \in G$, there exists $a^{-1} \in G$ such that $a \times a^{-1} = a^{-1} \times a = e$ (inverse), and for all $a,b,c \in G$, $(a \times b) \times c = a \times (b \times c)$ (associativity)}
+\wrpdef{Group}{A set \(G\) along with a binary operation (closure) such that for all \(a,b \in G\), \(a\times b \in G\) (closure), and there exists an \(e \in G\) such that \(a \times e = a\) and \(e \times a = a\) (identity), for all \(a \in G\), there exists \(a^{-1} \in G\) such that \(a \times a^{-1} = a^{-1} \times a = e\) (inverse), and for all \(a,b,c \in G\), \((a \times b) \times c = a \times (b \times c)\) (associativity)}
 
-For commutativity, for all $a,b \in G$, $a\times b = b \times a$. Some groups have this, some do not. \\
+For commutativity, for all \(a,b \in G\), \(a\times b = b \times a\). Some groups have this, some do not. \\
 
 \begin{example}
-    {Integer Addition as a Group}Lets check to see addition among the integers are a group: $(\Z, +)$
+    {Integer Addition as a Group}Lets check to see addition among the integers are a group: \((\Z, +)\)
 \end{example}
 
 \lesol{
     \begin{enumerate}
-        \item True. Let $a,b \in \Z$ $a + b \in \Z$.
-        \item True. $e = 0 \in \Z$, $a + 0 = a$ and $0 + a = a$
-        \item True. For all $a\in \Z$, $a^{-1} = -a$ because $a + (-a) = 0 = -a + a$
-        \item True. For all $a,b,c \in \Z$, $(a + b) + c = a + (b + c)$
+        \item True. Let \(a,b \in \Z\) \(a + b \in \Z\).
+        \item True. \(e = 0 \in \Z\), \(a + 0 = a\) and \(0 + a = a\)
+        \item True. For all \(a\in \Z\), \(a^{-1} = -a\) because \(a + (-a) = 0 = -a + a\)
+        \item True. For all \(a,b,c \in \Z\), \((a + b) + c = a + (b + c)\)
     \end{enumerate}
-    Therefore, the additive property of the integers are a group. In fact, because $a + b = b + a$ $\Z$ are a commutative group (abelian group).
+    Therefore, the additive property of the integers are a group. In fact, because \(a + b = b + a\) \(\Z\) are a commutative group (abelian group).
 }
 
 \begin{example}
-    {Integer Multiplication}Lets check to see multiplication among the integers are a group: $(\Z, +)$
+    {Integer Multiplication}Lets check to see multiplication among the integers are a group: \((\Z, +)\)
 \end{example}
 \lesol{
     \begin{enumerate}
-        \item True. Let $a,b \in \Z$ $ab \in \Z$.
-        \item True. $e = 1 \in \Z$, $a * 1 = a$ and $1 * a = a$
-        \item False. Counterexample: consider $2^{-1} = \frac{1}{2}$ because $2(\frac{1}{2}) = 1$ but $\frac{1}{2} \notin \Z$
+        \item True. Let \(a,b \in \Z\) \(ab \in \Z\).
+        \item True. \(e = 1 \in \Z\), \(a * 1 = a\) and \(1 * a = a\)
+        \item False. Counterexample: consider \(2^{-1} = \frac{1}{2}\) because \(2(\frac{1}{2}) = 1\) but \(\frac{1}{2} \notin \Z\)
     \end{enumerate}
 }
 \setcounter{section}{6}
@@ -188,7 +188,7 @@ Remember that to brute force the DLP, it takes \(P - 1\) steps. Recall \(g^{p-1}
 \end{example}
 
 \lesol{
-The number \(9704\) has order 1242 in \(\F_{17389}^*\). Set \(n = \lceil \sqrt{1242} \rceil = 36\) and \(u = g^{-n} = 9704{-36} = 2494\). Table 2.4 in the book lists the values of \(g^k\) and \(h\cdot u^{k}\) for \(k = 1,2 \dots\). From the table, we find the collision \[9704^7 = 14567 = 13896 \cdot 2494^{32} \text{ in } \F_{17389}.\] Using the fact that \(2494 = 9704^{-36}\), we compute \[13896 = 9704^7 \cdot 2494^{-32} = 9704^7 \cdot (9704^{36})^{32} = 9704^{1159} \text{ in } \F_{17389}.\] Hence, \(x = 1159\) solves the problem \(9704^x = 13896\) in \(\F_{17389}\).
+The number \(9704\) has order 1242 in \(\F_{17389}^*\). Set \(n = \lceil \sqrt{1242} \rceil = 36\) and \(u = g^{-n} = 9704{-36} = 2494\). Table 2.4 in the book lists the values of \(g^k\) and \(h\cdot u^{k}\) for \(k = 1,2 \dots\). From the table, we find the collision \[9704^7 = 14567 = 13896 \cdot 2494^{32} \text{ in } \F_{17389}.\] Using the fact that \(2494 = 9704^{-36}\), we compute \[13896 = 9704^7 \cdot 2494^{-32} = 9704^7 \cdot {(9704^{36}})^{32} = 9704^{1159} \text{ in } \F_{17389}.\] Hence, \(x = 1159\) solves the problem \(9704^x = 13896\) in \(\F_{17389}\).
     }
 
 \section{Chinese Remainder Theorem (CRT)}
