@@ -1,0 +1,295 @@
+\section{The Birth of Public Key Cryptography}
+
+\wrpdef{One-way Function}{A \textit{one-way function} that is easy to computer, but whose inverse is difficult.}
+
+\wrpdef{Trap-door Function}{A \textit{trap-door function} is a one-way function with an extra piece of information that makes \(f^{-1}\) easy.}
+
+\hypertarget{section 2.2}{}
+\section{Discrete Logarithm Problem (DLP)}
+
+\wrpdef{Discrete Logarithm Problem}{Let \(g\) be a primitive root for \(\F_p\) and let \(h\) be a nonzero element of \(\F_p\). The \textit{Discrete Logarithm Problem} is the problem of finding an exponent \(x\) such that \[g^x \equiv h \ (\text{mod } p).\] The number \(x\) is called the \textit{discrete logarithm} of \(h\) to the base \(g\) and is denoted by \(\log_g(h)\).}
+
+Remember the rules of logarithms: \begin{align*}
+    \log_b(a \cdot c) & = \log_b(a) + \log_b(c) \\
+    \log_b(a^c)       & = c \cdot \log_b(a)     \\
+    \log_b(a / c)     & = \log_b(a) - \log_b(c)
+\end{align*}
+
+What is the value of \(x\) such that \(20^x = 21 \ (\text{mod } 23) \overset{\text{Brute-f}}{\Longrightarrow} \log_{20}21 = \boxed{7} \ (\text{mod } 23)\).~(Where \(7\) is from wolfram.)
+
+\begin{example}
+    {DLP}Find \(\log_2(10) \ (\text{mod } 11)\). In other words, find the value of \(x\) such that \(2^x \equiv 10 \ (\text{mod } 11)\).
+\end{example}
+
+\lesol{
+    \begin{align*}
+        2^1        & = 2 \ (\text{mod } 11)          \\
+        2^2        & = 4 \ (\text{mod } 11)          \\
+        2^3        & = 8 \ (\text{mod } 11)          \\
+        2^4        & = 5 \ (\text{mod } 11)          \\
+        2^5        & = 10 \ (\text{mod } 11)         \\
+        \log_2(10) & = \boxed{5} \ (\text{mod } 11).
+    \end{align*}
+}
+\hypertarget{d-h key}{}
+\section{Diffie-Hellman Key Exchange}
+
+D-H gives a way for Alice and Bob to get a secret shared key in an unsecure environment (i.e., when Eve is listening). Now, we will follow the steps of D-H below:
+
+\begin{enumerate}[label=\arabic*.]
+    \item Alice and Bob choose large prime \(p\) and primitive root \(g\) and make public \(k_{\text{pub}} = (p,g)\).
+    \item Alice and Bob each pick their own secret integers, \(a,b\) such that \(k_{\text{priv } A} = a\) and \(k_{\text{priv } B} = b\). Compute \(g^a \ (\text{mod } p) = A\) and \(g^b \ (\text{mod } p) = B\).
+    \item Exchange \(a\) and \(b\) over an insecure channel.
+          \begin{enumerate}[label=\roman*.]
+              \item Note that Eve would have to solve \hyperlink{Discrete Logarithm Problem}{DLP} if she obtained \(a\) and \(b\) where \(a = \log_g(A)\) and \(b = \log_g(B)\).
+              \item Guidelines \(\approx 2^{1000} g \approx p/2\).
+          \end{enumerate}
+    \item Alice computes \(B^a \ (\text{mod } p) = A'\) and Bob computes \(A^b \ (\text{mod } p) = B'\).
+\end{enumerate}
+
+\begin{example}
+    {D-H}Let \(p = 23\) and \(g = 5\). Alice chooses \(a = 6\) and Bob chooses \(b = 15\). Compute the shared secret key.
+\end{example}
+
+\lesol{
+    \begin{align*}
+        A  & = 5^6 \ (\text{mod } 23) = 8     \\
+        B  & = 5^{15} \ (\text{mod } 23) = 19 \\
+        A' & = 19^6 \ (\text{mod } 23) = 2    \\
+        B' & = 8^{15} \ (\text{mod } 23) = 2.
+    \end{align*}
+}
+
+\wrpdef{Diffie-Hellman Problem}{Let \(p\) be a prime number and \(g\) an integer. The \textit{Diffie-Hellman Problem} is the problem of computing the value of \(g^{ab} \ (\text{mod } p)\) from the known values of \(g^a \ (\text{mod } p)\) and \(g^b \ (\text{mod } p)\).}
+
+\hypertarget{Elgamal}{}
+\section{Elgamal Public Key Cryptosystem}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{@{}p{0.9\textwidth}l@{}}
+        \toprule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Public parameter creation}}}                                                                                  \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering A trusted party chooses and publishes a large prime \(p\) and an element \(g\) modulo \(p\) of large (prime) order.}} \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Key creation}}}                                                                                               \\ \midrule
+        \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Alice}}} & \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Bob}}}                           \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{Choose private key \(1 \leq a \leq p -1.\)                                                                                      \\ Compute \(A = g^a \ (\text{mod } p)\). \\ Publish the public key \(A\).}} &  \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}\centering\textbf{Encryption}}                                                                                                    \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{}}                          & \multicolumn{1}{r}{\parbox[t]{0.45\textwidth}{\raggedright Choose plaintext \(m\).                \\ Choose random element \(k\). \\ Use Alice's public key \(A\) \\ \quad to compute \(c_1 = g^k \ (\text{mod } p)\) \\ \quad and \(c_2 = mA^k \ (\text{mod } p). \) \\ Send ciphertext \(c_1,c_2\) to Alice.}}                                            \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering\textbf{Decryption}}}                                                                                                  \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{Compute \({(c_1^a)}^{-1} \cdot c_2 \ (\text{mod } p)\).                                                                         \\  This quantity is equal to \(m\).}}                     &                                                                                             \\ \bottomrule
+    \end{tabular}
+    \caption{Elgamal Key Creation, Encryption, and Decryption}
+\end{table}
+
+\begin{example}
+    {Elgamal}Let \(p = 29\) and \(g = 2\). Alice chooses \(a = 12\) and Bob chooses \(k = 5\) and wants to send secret message \(m = 26\). Compute the shared secret key.
+\end{example}
+
+\lesol{First, we need to calculate Alice's \(A\) and Bob's \(B\). Then, we can calculate the ciphertexts \(c_1\) and \(c_2\):
+\begin{align*}
+    A   & = g^{a} \ (\text{mod } p)  & = & \ 2^{12} \ (\text{mod } 29) = 7     \\
+    B   & = g^k \ (\text{mod } p)    & = & \ 2^5 \ (\text{mod } 29) = 3        \\
+    c_1 & = g^k \ (\text{mod } p)    & = & \ 2^5 \ (\text{mod } 29) = 3        \\
+    c_2 & = m(A^k) \ (\text{mod } p) & = & \ 26(7^{5} \ (\text{mod } 29)) = 10 \\
+\end{align*}
+Now, for Alice to decrypt the message, she must compute \({(c_1^a)}^{-1} \cdot c_2 \ (\text{mod } p)\):
+\[
+    {(c_1^a)}^{-1} \cdot c_2 \ (\text{mod } p) = {(3^{12})}^{-1} \cdot 10 \ (\text{mod } 29)
+\]
+The order of operations to compute this is as follows:
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Compute} \(3^{12} \ (\text{mod } 29) = 16\);
+    \item \textbf{Compute} \(16^{-1} \ (\text{mod } 29) = 20\);
+    \item \textbf{Finish by multiplying} \(20 \cdot 10 \ (\text{mod } 29) = 26\).
+\end{enumerate}
+}
+
+\begin{note}
+    Be aware: You should only use this encryption scheme once. If you use it more than once, it is possible for an attacker to decrypt the message. For example, Eve knows \(m_1(c_1, c_2) \rightarrow\) Eve finds \(A\) by keeping record of the first message, then by solving for \(d_2\) such that \(c_1, d_2\) (where \(c_1\) is the \textit{same} as the first message) and \(d_2\) is the second message. Then, Eve can solve for \(m_2\) by computing \({(c_1^d)}^{-1} \cdot d_2 \ (\text{mod } p)\).
+\end{note}
+
+
+
+
+
+
+
+\hypertarget{2.5}{}
+\section{An Overview of the Theory of Groups}
+
+\wrpdef{Group}{A set \(G\) along with a binary operation (closure) such that for all \(a,b \in G\), \(a\times b \in G\) (closure), and there exists an \(e \in G\) such that \(a \times e = a\) and \(e \times a = a\) (identity), for all \(a \in G\), there exists \(a^{-1} \in G\) such that \(a \times a^{-1} = a^{-1} \times a = e\) (inverse), and for all \(a,b,c \in G\), \((a \times b) \times c = a \times (b \times c)\) (associativity)}
+
+For commutativity, for all \(a,b \in G\), \(a\times b = b \times a\). Some groups have this, some do not. \\
+
+\begin{example}
+    {Integer Addition as a Group}Lets check to see addition among the integers are a group: \((\Z, +)\)
+\end{example}
+
+\lesol{
+    \begin{enumerate}
+        \item True. Let \(a,b \in \Z\) \(a + b \in \Z\).
+        \item True. \(e = 0 \in \Z\), \(a + 0 = a\) and \(0 + a = a\)
+        \item True. For all \(a\in \Z\), \(a^{-1} = -a\) because \(a + (-a) = 0 = -a + a\)
+        \item True. For all \(a,b,c \in \Z\), \((a + b) + c = a + (b + c)\)
+    \end{enumerate}
+    Therefore, the additive property of the integers are a group. In fact, because \(a + b = b + a\) \(\Z\) are a commutative group (abelian group).
+}
+
+\begin{example}
+    {Integer Multiplication}Lets check to see multiplication among the integers are a group: \((\Z, +)\)
+\end{example}
+\lesol{
+    \begin{enumerate}
+        \item True. Let \(a,b \in \Z\) \(ab \in \Z\).
+        \item True. \(e = 1 \in \Z\), \(a * 1 = a\) and \(1 * a = a\)
+        \item False. Counterexample: consider \(2^{-1} = \frac{1}{2}\) because \(2(\frac{1}{2}) = 1\) but \(\frac{1}{2} \notin \Z\)
+    \end{enumerate}
+}
+\setcounter{section}{6}
+\section{A Collision Algorithm for the DLP}
+
+\begin{note}
+    Recall that the DLP is the problem of finding \(x\) such that \(g^x \equiv h \ (\text{mod } p)\) for a given value of \(h\).
+\end{note}
+
+Remember that to brute force the DLP, it takes \(P - 1\) steps. Recall \(g^{p-1} \ (\text{mod } p) \equiv 1\). In computational complexity, \textbf{we say that the DLP is \(\mathcal{O}(P)\).}
+
+\wrpprop{2.21}{(Shanks Baby-Step Giant-Step Algorithm) Computational time of \(\mathcal{O}(\sqrt{P})\). Below is the algorithm: \begin{enumerate}
+        \item Let \(m = \lceil \sqrt{P} \rceil\).
+        \item Create two lists:
+              \begin{enumerate}
+                  \item Baby steps: \(\{g^0, g^1, g^2, \ldots, g^{m}\}\).
+                  \item Giant steps: \(\{h, h \cdot g^{-m}, h \cdot g^{-2m}, \ldots, h \cdot g^{-m^2}\}\).
+              \end{enumerate}
+        \item Find a match between the two lists: \(g^i \equiv hg^{-in} \ (\text{mod } p)\)
+        \item \(x = i + jm\) is a solution for \(g^x \equiv h \ (\text{mod } p)\) (another way of saying ``\(x = i + jm\) is a solution for the \hyperlink{Discrete Logarithm Problem}{DLP}'').
+    \end{enumerate}}
+
+\begin{example}
+    {Baby-step, Giant-step}Use the Baby-step, Giant-step algorithm to solve for \(13^x \equiv 5 \ (\text{mod } 47)\).
+\end{example}
+
+\lesol{
+    \begin{enumerate}
+        \item Let \(m = \lceil \sqrt{47} \rceil = 7\).
+        \item Create the two lists:
+              \begin{enumerate}
+                  \item Baby steps: \(\{13^0, 13^1, 13^2, \ldots, 13^6\}\ (\text{mod } 47) \equiv \{1,13,28,35,32,40,3,39\}\).
+                  \item Giant steps: \(\{5, 5 \cdot 13^{-7}, 5 \cdot 13^{-14}, \ldots, 5 \cdot 13^{-49}\} \ (\text{mod } 47) \equiv \{5, 17, 39, 1, 48, 36, 19, 27\}\).
+              \end{enumerate}
+        \item Find a match between the two lists: \(39\) and \(39\), or \(1\) and \(1\).
+        \item Substitute the following variables: \(i = 7, \ j = 2,\  n = 7\) for the equation \(x = i + jm \Rightarrow x = 7 + 2(7) = \boxed{21}\). So, \(13^{21} \equiv 5 \ (\text{mod } 47)\).
+    \end{enumerate}
+}
+
+\begin{example}
+    {(From Book) Baby-step, Giant-step} Solve the discrete logarithm problem with these values: \(g = 9704, h = 13896, p = 17389\).
+\end{example}
+
+\lesol{
+The number \(9704\) has order 1242 in \(\F_{17389}^*\). Set \(n = \lceil \sqrt{1242} \rceil = 36\) and \(u = g^{-n} = 9704{-36} = 2494\). Table 2.4 in the book lists the values of \(g^k\) and \(h\cdot u^{k}\) for \(k = 1,2 \dots\). From the table, we find the collision \[9704^7 = 14567 = 13896 \cdot 2494^{32} \text{ in } \F_{17389}.\] Using the fact that \(2494 = 9704^{-36}\), we compute \[13896 = 9704^7 \cdot 2494^{-32} = 9704^7 \cdot {(9704^{36}})^{32} = 9704^{1159} \text{ in } \F_{17389}.\] Hence, \(x = 1159\) solves the problem \(9704^x = 13896\) in \(\F_{17389}\).
+    }
+
+\section{Chinese Remainder Theorem (CRT)}
+
+\begin{theorem}
+    {Chinese Remainder} Let \(n_1, n_2, \ldots, n_k\) be pairwise relatively prime integers. This means that \(\gcd(m_i,m_j) = 1 \textit{ for all } i \ne j\). Then, for any integers \(a_1, a_2, \ldots, a_k\), the system of congruences \begin{align*}
+        x & \equiv a_1 \ (\text{mod } n_1) \\
+        x & \equiv a_2 \ (\text{mod } n_2) \\
+          & \vdots                         \\
+        x & \equiv a_k \ (\text{mod } n_k)
+    \end{align*} has a unique solution \(c \ (\text{mod } n_1n_2 \ldots n_k)\).
+\end{theorem}
+
+\begin{example}
+    {CRT}Solve the following system of congruences: \begin{align*}
+        x & \equiv 6 \ (\text{mod } 7) \\
+        x & \equiv 4 \ (\text{mod } 8)
+    \end{align*}
+\end{example}
+
+\lesol{
+    Note that \(x \equiv 6 \ (\text{mod } 7)\) means \begin{align*}
+        x      & = 7n + 6                                \\
+        7n + 6 & \equiv 4 \ (\text{mod } 8)              \\
+        7n     & \equiv 6 \ (\text{mod } 8)              \\
+        n      & \equiv 6 \cdot 7^{-1} \ (\text{mod } 8) \\
+               & \equiv 6 \cdot 7\ (\text{mod } 8)       \\
+               & \equiv 2 \ (\text{mod } 8),
+    \end{align*} where \(2\ (\text{mod } 8 = 8m + 2) = n\). We plug this back into the following: \begin{align*}
+        x & = 7(8m + 2) + 6 \ (\text{mod } 7 \cdot 8) \\
+          & = 56m + 14 + 6 \ (\text{mod } 56)         \\
+          & = 56m + 20 \ (\text{mod } 56).
+    \end{align*} Note that \(56m\) is a multiple of \(56\) and so it will always be equal to 0. Thus, \(x = 20 \ (\text{mod } 56)\).
+}
+
+\begin{note}
+    In general, to solve for CRT such that \(x \equiv a_1 \ (\text{mod } m_1)\dots, x \equiv a_k \ (\text{mod } m_k)\) we follow the algorithm below:
+    \begin{enumerate}
+        \item Let \(m = m_1 \cdot m_2 \cdots m_k\).
+        \item Take \(n_i = \frac{m}{m_i}\).
+        \item  Check to see if there is a solution, \(y_i\). \(y_i = n_i^{-1} \ (\text{mod } m_i)\). Note that the inverse exists because \(m_i\) and \(n_i\) are relatively prime.
+        \item Compute \(x = a_1n_1y_1 + a_2n_2y_2 + \cdots + a_kn_ky_k \ (\text{mod } m)\).
+    \end{enumerate}
+\end{note}
+
+\begin{example}
+    {CRT with New Algorithm}
+    Solve the following system of congruences: \(x \equiv a_1 \ (\text{mod } m_1)\) and \(x \equiv a_2 \ (\text{mod } m_2)\) where \(a_1 = 6, m_1 = 7, a_2 = 4, m_2 = 8\).
+\end{example}
+
+\lesol{
+    \begin{enumerate}
+        \item Let \(m = 7 \cdot 8 = 56\).
+        \item Compute \(n_1 = 8\) and \(n_2 = 7\).
+        \item Compute \(y_1 = 8^{-1} \ (\text{mod } 7) = 1\) and \(y_2 = 7^{-1} \ (\text{mod } 8) = 7\).
+        \item Compute \begin{align*}
+                  x & = 6 \cdot 8 \cdot 1 + 4 \cdot 7 \cdot 7 \ (\text{mod } 56) \\
+                    & = 48 + 196 \ (\text{mod } 56)                              \\
+                    & = 244 \ (\text{mod } 56)                                   \\
+                    & = \boxed{20}.
+              \end{align*}
+    \end{enumerate}
+}
+\hypertarget{Pohlig-Hellman}{}
+\section{Pohlig-Hellman Algorithm}
+
+This algorithm is used to solve \(g^x \equiv h \ (\text{mod } p)\) for \(p\) prime and \(g\) primitive root. This has computational time of \(\mathcal{O}(\sqrt{p-1})\). Order of \(g\) is \(p-1\) is composite. This is most efficient when \(p - 1\) has small prime factors. Look below for the algorithm:
+
+\begin{enumerate}
+    \item Factor \(p - 1 = n_1^{e_1} \cdot n_2^{e_2} \cdots n_k^{e_k}\). (Note that \(\gcd(q_j, q_i) = 1 \  \forall i \ne j\).)
+    \item For each \(1 \leq i \leq k\), let \(m_i = \frac{p-1}{n_i^{e_i}}\).
+    \item Solve \(g^{x_i} \equiv h^{m_i} \ (\text{mod } p)\) for \(x_i\). (Note this DLP is easier because order of \(g_i\) is way less than the order of \(g\).)
+    \item Use CRT to find \(x\) such that \(x \equiv x_1 \ (\text{mod } q_1^{e+1}), \dots, x_i \ (\text{mod } n_i^{e_i})\).
+\end{enumerate}
+
+\begin{example}
+    {Pohlig-Hellman Algorithm} Solve the following DLP: \(7^x \equiv 12 \ (\text{mod } 41)\).
+\end{example}
+
+\lesol{
+    \begin{enumerate}
+        \item Factor \(41 - 1 = 40 = 2^3 \cdot 5 = 8 \cdot 5\).
+        \item Find \(g_1\): \(g_1 = 7^{40/8} \ (\text{mod } 41) = 7^5 \ (\text{mod } 41) = 38 \). Find \(h_1\): \(h_1 = 12^5 \ (\text{mod } 41) = 3\).
+        \item We can brute force solve for \(x_1\) up to 8 steps:
+              \begin{align*}
+                  38^{x_1} & \equiv 3 \ (\text{mod } 41) \\
+                  x_1      & = 5 \ (\text{mod } 8).
+              \end{align*} Continue for \(g_2\) and \(h_2\):
+              \begin{align*}
+                  g_2 & = 7^{40/5} \ (\text{mod } 41) = 7^8 \ (\text{mod } 41) = 37 \\
+                  h_2 & = 12^8 \ (\text{mod } 41) = 18.
+              \end{align*} Solve for \(x_2\):
+              \begin{align*}
+                  37^{x_2} & \equiv 18 \ (\text{mod } 41) \\
+                  x_2      & = 3 \ (\text{mod } 5).
+              \end{align*}
+        \item Use CRT to solve for \(x\):
+              \begin{align*}
+                  x & \equiv 5 \ (\text{mod } 8)  \\
+                  x & \equiv 3 \ (\text{mod } 5).
+              \end{align*} This gives us \(M = 8\cdot 5 = 40\) with \(n_1 = 40/8 = 5\), \(n_2 = 40/ 5 = 8\), and \(y_1 \equiv 5^{-1} \ (\text{mod } 8 = \equiv 5)\), \(y_2 \equiv 8^{-1} \ (\text{mod } 5) \equiv 2\). Now we can substitute and see that \(x = 5 \cdot 5 \cdot 5 + 3 \cdot 8 \cdot 2 \ (\text{mod } 40) = \boxed{13}\).
+
+    \end{enumerate}
+}

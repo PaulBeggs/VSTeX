@@ -1,0 +1,158 @@
+% This is the "preamble" of the document. This is where the format options get set.
+% Pro-tip: things following the % mark will not be compiled by LaTeX. I'll be using them extensively to explain things as we go.
+% Note: not to scare you off of LaTeX, but it's normal to have problems. And ya girl has been having some. I've included the copyright info at the bottom of the document from the guy who wrote this package, because his documentation doesn't entirely match how it's actually used. So this is a combination of his working preamble along with my added commentary or explanation. 
+%% 
+
+
+\documentclass[stu,12pt,floatsintext]{apa7}
+% Document class input explanation ________________
+% LaTeX files need to start with the document class, so it knows what it's using
+% - This file is using the apa7 document class, as it has a lot of the formatting built in
+% There are two sets of brackets in LaTeX, for each command (the things that start with the slash \ )
+% - The squiggle brackets {} are mandatory for executing the command
+% - The square brackets [] are options for that command. There can be more than one set of square brackets for some commands
+% Options used in this document (general note - for each of these, if you want to use the other options, swap it out in that spot in the square brackets):
+% - stu: this sets the `document mode' as the "student paper" version. Other options are jou (journal), man (manuscript, for journal submission), and doc (a plain document)
+% --- The student setting includes things like 'duedate', 'course', and 'professor' on the title page. If these aren't wanted/needed, use the 'man' setting. It also defaults to including the tables and figures at the end of the document. This can be changed by including the 'floatsintext' option, as I have for you. If the instructor wants those at the end, remove that from the square brackets.
+% --- The manuscript setting is roughly what you would use to submit to a journal, so uses 'date' instead of 'duedate', and doesn't include the 'course' or 'professor' info. As with 'stu', it defaults to putting the tables and figures at the end rather than in text. The same option will bump those images in text.
+% --- Journal ('jou') outputs something similar to a common journal format - double columned text and figurs in place. This can be fun, especially if you are sumbitting this as a writing sample in applications.
+% --- Document ('doc') outputs single columned, single spaced text with figures in place. Another option for producing a more polished looking document as a writing sample.
+% - 12pt: sets the font size to 12pt. Other options are 10pt or 11pt
+% - floatsintext: makes it so tables and figures will appear in text rather than at the end. Unforunately, not having this option set breaks the whole document, and I haven't been able to figure out why. IT's GREAT WHEN THINGS WORK LIKE THEY'RE SUPPOSED TO.
+
+
+\usepackage{csquotes} % One of the things you learn about LaTeX is at some level, it's like magic. The references weren't printing as they should without this line, and the guy who wrote the package included it, so here it is. Because LaTeX reasons.
+
+\usepackage[T1]{fontenc} 
+\usepackage{mathptmx} % This is the Times New Roman font, which was the norm back in my day. If you'd like to use a different font, the options are laid out here: https://www.overleaf.com/learn/latex/Font_typefaces
+% Alternately, you can comment out or delete these two commands and just use the Overleaf default font. So many choices!
+
+\usepackage{hyperref}
+
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+    citecolor=horange
+}
+
+% Title page stuff _____________________
+\title{Applying Cognitive Psychology Methods Activity 2: Working Memory} % The big, long version of the title for the title page
+\author{Paul Beggs}
+\duedate{\today}
+% \date{January 17, 2024} The student version doesn't use the \date command, for whatever reason
+\authorsaffiliations{Department of Psychology, Hendrix College}
+\course{PSYC 319: Cognitive Psychology} % LaTeX gets annoyed (i.e., throws a grumble-error) if this is blank, so I put something here. However, if your instructor will mark you off for this being on the title page, you can leave this entry blank (delete the PSY 4321, but leave the command), and just make peace with the error that will happen. It won't break the document.
+\professor{Dr.\ Carmen Merrick}  % Same situation as for the course info. Some instructors want this, some absolutely don't and will take off points. So do what you gotta
+
+
+%\characterwords{APA style, demonstration} % If you need to have characterwords for your paper, delete the % at the start of this line
+
+\begin{document}
+
+
+\maketitle % This tells LaTeX to make the title page
+
+\subsection{Mental Rotation Task}
+
+For this experiment, I presented with an image that comprised three shapes. I was to look at the shape presented at the top, first, and then compare the two similar---but rotated---images with it. The goal was to mentally rotate the given shapes in my visuospatial sketch pad to align with the focus stimuli. The catch was that one of the images looked like the focus stimuli, but it has a malformation that did not align with the focus (no matter how I rotated the shape). The test recorded if I got the correct image from the two options, and then takes an average of the time for each image pairing session.
+
+This research can be used to study the effects of mental rotation upon the visuospatial sketch pad that resides within working memory. In other words, depending on the complexity of the shapes, the time it takes to rotate the shape in your mind will vary. This is because the visuospatial sketch pad is limited in its capacity to hold and manipulate information.
+
+(For the answer to the second part of question one, see the first and second paragraphs of the \hyperlink{comparison}{comparison} section.)
+
+
+
+\subsection{N-Back Task}
+
+To complete the experiment, I kept track of letters. More specifically, I held both the letter from one letter ago, and the letter from two letters ago in my phonological loop by using rehearsal. With the latter held in your phonological loop---kept there with auditory rehearsal---you were to compare it with the present letter. Press \texttt{m} if it matched, and if it did not match, do nothing. From the onset of seeing a word, and then getting a new letter took a total of 3000 ms. The letter flashed for 500 ms, and then a black screen appeared for 2500 ms, which totaled to three seconds between letters. The difficulty stemmed from the constrictions placed on the phonological store. With only so much space, there was much to do simultaneously:
+\begin{enumerate}
+    \item Keep track of the two letters.
+    \item Make the comparison between \(n\) and \(n - 2\).
+    \item Discard the \(n - 2\) letter.
+    \item Assign the previous \(n - 1\) as the new \(n - 2\).
+\end{enumerate}
+
+\hypertarget{comparison}{\subsection{Comparison}}
+
+While both the mental rotation task and the N-Back task are used to study working memory, the former is more focused on the visuospatial sketch pad, while the latter is more focused on the phonological loop---specifically, the articulatory rehearsal process that resides within the phonological store. However, the difference between the two tasks can be attributed to the model of working memory. In that, the phonological loop and the visuospatial sketch pad are separated and managed by the central executive.
+
+Furthermore, the visuospatial sketch pad was used for mental rotation. It involved holding an image in your mind and rotating it to fit the focus stimuli. The N-Back task, on the other hand, was used to hold and compare auditory information. Specifically, the process of rehearsal that occurs in the phonological store.
+
+To answer the question of what test was better for my working memory, and I had to choose one, I would say that the N-Back task required more attentiveness than the mental rotation task.\footnote{If I had another option other than the binary yes or no, I would that I cannot choose one because both tests work on various parts of the working memory. In essence, because each part of the working memory is confined by different physiological restrictions, there would not be an equal playing field to compare them.} For the mental rotation task, I did not have to hold the rotated image in my head for long---just long enough so I could find an imperfection. Thus, if manipulation of information in the mind is the qualifier for what makes a test better or worse, then the mental rotation task was worse.
+
+Regarding the third question, I felt that I was better at the N-Back task. I suppose the reason for me being better is because I have more space allotted for my phonological store when compared to my visuospatial sketch pad. Because I did better at the N-Back test, I would posit that a person's working memory is not equal in all areas. In other words, the capacity of the visuospatial sketch pad and the phonological store are not equal.
+
+
+\end{document}
+
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Daniel A. Weiss.
+%% 
+%% This work consists of the file  apa7.dtx
+%% and the derived files           apa7.ins,
+%%                                 apa7.cls,
+%%                                 apa7.pdf,
+%%                                 README,
+%%                                 APA7american.txt,
+%%                                 APA7british.txt,
+%%                                 APA7dutch.txt,
+%%                                 APA7english.txt,
+%%                                 APA7german.txt,
+%%                                 APA7ngerman.txt,
+%%                                 APA7greek.txt,
+%%                                 APA7czech.txt,
+%%                                 APA7turkish.txt,
+%%                                 APA7endfloat.cfg,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%%
+%% This is file `./samples/shortsample.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% apa7.dtx  (with options: `shortsample')
+%% ----------------------------------------------------------------------
+%% 
+%% apa7 - A LaTeX class for formatting documents in compliance with the
+%% American Psychological Association's Publication Manual, 7th edition
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% ----------------------------------------------------------------------

@@ -1,0 +1,71 @@
+
+\begin{exercise}
+    {1.3.4}Let \(A_1,A_2,A_3\dots\) be a collection of nonempty sets each of which is bounded above.
+    \begin{enumerate}
+        \item Find a formula for \(\sup(A_1 \cup A_2)\). Extend this to \(\sup (\bigcup^n_{k=1}A_k)\).
+        \item Consider \(\sup(\bigcup^\infty_{k=1} A_k)\). Does the formula in (a) extend to the infinite case?
+    \end{enumerate}
+\end{exercise}
+
+\sol{\hfill
+    \begin{enumerate}
+        \item Let \(A_1\) and \(A_2\) be nonempty sets, each bounded above. To find the largest of the two suprema, we can use the following: \(\sup(A_1 \cap A_2) = \max\{\sup A_1, \sup A_2\}\). If we extend this notion to \(\sup (\bigcup^n_{k=1}A_k)\), we can use the same idea from before and write it as \(\sup (\bigcup^n_{k=1}A_k) = \max\{\sup A_1, \sup A_2, \dots, \sup A_n\}\).
+        \item The formula does not extend to the infinite case. Consider the counterexample \(\bigcup^\infty_{k=1} A_k\) where \(A_k := [k, k+1]\). Even though these sets are bounded above, when we take the union of them, we approach infinity, which is not bounded: \(\bigcup^\infty_{k=1} A_k = [1,2] \cup [2,3] \cup \dots = [1, \infty)\).
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {1.3.5}As in Example 1.3.7, let \(A \subseteq \R\) be nonempty and bounded above, and let \(c \in \R\). This time define the set \(cA = \{ca \ \colon a \in A\}\).
+    \begin{enumerate}
+        \item If \(c \geq 0\), show that \(\sup(cA) = c\sup A\).
+        \item Postulate a similar type of statement for \(\sup(cA)\) for the case \(c < 0\).
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item Let \(A \subseteq \R\) be nonempty and bounded above. Define the set \(cA := \{ca \ \colon a \in A\}\). From the axiom of completeness, because \(A\) is bounded above, we know there is a least upper bound, \(s = \sup A\). Following from Example 1.3.7, we see that \(a \leq s\) for all \(a \in A\) which implies \(ca \leq cs\) for all \(a \in A\). Thus, \(cs\) is an upper bound for \(cA\), and the first condition of Definition 1.3.2 is satisfied. For the second condition, we need to look at both \(c = 0\) and \(c > 0\) to avoid dividing by zero. So, we have two cases:
+              \begin{itemize}
+                  \item \textbf{\(c = 0\):} If \(c = 0\), then \(cA = \{0 \colon \ a \in A\} = \{0\}\). Since the only element in \(cA\) is \(0\), \(\sup(cA) = 0\). Similarly, because \(c = 0\), \(c \sup A = 0 \cdot \sup A = 0\). Therefore, \(\sup(cA) = c \sup(A)\).
+                  \item \textbf{\(c > 0\):} Let \(b\) be an arbitrary upper bound for \(cA\) and \(c > 0\). In other words, \(ca \leq b\) for all \(a \in A\). This is equivalent to \(a \leq b / c\) where \(c \ne 0\), from which we can see that \(b / c\) is an upper bound for \(A\). Because \(s\) is the least upper bound of \(A\), \(s \leq b / c\), which can be rewritten as \(cs \leq b\). This verifies the second part of Definition 1.3.2, and we conclude \(\sup(cA) = c \sup A\).
+              \end{itemize}
+        \item Postulate: If \(c < 0\), then \(\sup(cA) = c \inf (A)\). \\
+              % \expf{Assume \(c < 0\), Multiplying \(a \leq s\) by \(c\) reverses the inequality, so \(ca \geq cs\) for all \(a \in A\). Therefore, \(cs\) is a lower bound of for \(cA\). To verify this as the lowest upper bound, let \(m  = \inf A\). Using the same logic as before, for all \(a \in A\), \(m \leq a\), so \(cm \geq ca\). This shows that \(cm\) is the least upper bound of \(cA\), and thus \(\sup(cA) = cm = c \inf A\).}
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {1.3.8}Compute, without proofs, the suprema and infima (if they exist) of the following sets:
+    \begin{enumerate}
+        \item \(\left\{\frac{m}{n} : m, n \in \mathbb{N} \text{ with } m < n\right\}\).
+        \item \(\left\{\frac{{(-1)}^{m}}{n} : m, n \in \mathbb{N}\right\}\).
+        \item \(\left\{\frac{n}{3n+ 1} : n \in \mathbb{N}\right\}\).
+        \item \(\left\{\frac{m}{m+ n} : m, n \in \mathbb{N}\right\}\).
+    \end{enumerate}
+\end{exercise}
+
+\sol{To avoid writing out every set definition, I am going to denote each set as \(A_n\) where \(n\) corresponds to the numerical value of the list from (a) - (d).
+    \begin{enumerate}
+        \item \(\sup A_1 = 1\), \(\inf A_1 = 0\)
+        \item \(\sup A_2 = 1\), \(\inf A_2 = -1\)
+        \item \(\sup A_3 = \frac{1}{3}\), \(\inf A_3 = \frac{1}{4}\)
+        \item \(\sup A_4 = 1\), \(\inf A_3 = 0\)
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {1.4.1}Recall that \(\mathbb{I}\) stands for the set of irrational numbers.
+    \begin{enumerate}
+        \item Show that if \(a,b \in \Q\), then \(ab\) and \(a + b\) are elements of \(\Q\) as well.
+        \item Show that if \(a \in \Q\) and \(t \in \mathbb{I}\), then \(a + t \in \mathbb{I}\) and \(at \in \mathbb{I}\) as long as \(a \ne 0\).
+        \item Part (a) can be summarized by saying that \(\Q\) is closed under addition and multiplication. Is \(\mathbb{I}\) closed under addition and multiplication? Given two irrational numbers \(s\) and \(t\), what can we say about \(s + t\) and \(st\)? In other words, are there two irrational numbers that can be added and multiplied such that you get a number \(x\) such that \(x \notin \mathbb{I}\).
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item Let \(a,b \in \Q\). This means there exists some \(p,q,a,b \in \Z\) such that \[a = \frac{p}{q}\] and \[b = \frac{a}{b}\] where \(q,b \ne 0\). The product of these numbers is \[ab = \frac{p}{q} \cdot \frac{a}{b} = \frac{pa}{qb}.\] Since \(pa,qb \in \Z\), \(ab \in \Q\). The sum of these numbers is \[a + b = \frac{p}{q} + \frac{a}{b} = \frac{pb + aq}{qb}.\] Since \(pb + aq, qb \in \Z\), \(a + b \in \Q\).
+        \item Let \(a \in \Q\) and \(t \in \I\). Assume, for contradiction, that \(a + t \in \Q\). This would imply \(t = (a + t) - a\) (because we can subtract \(t + a\) from the original equation and rearrange terms). Since \(a + t, a \in \Q\) their sum would be rational because the rational numbers are closed under addition. However, that would contradict the assumption that \(t \in \I\). Hence, \(a + t \in \I\).
+        \item For \(\I\), it is not closed under addition and multiplication. Consider the following counterexample: \(\sqrt{2} + (-\sqrt{2}) = 0\) which is not in the irrationals. For multiplication, consider \(\sqrt{2} \cdot \sqrt{2} = 2\), which is also not in the irrationals.
+    \end{enumerate}
+}
