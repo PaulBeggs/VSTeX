@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  21 OCT 2024 20:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  21 OCT 2024 21:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2111,34 +2111,28 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 255.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[52]
-
-File: images/small logo.png Graphic file (type png)
-<use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 257.
-(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[53] (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+[52] (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/05/25 1.10b listings language file
 )
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 267.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 266.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 267.
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 268.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 266.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 267.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
 File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 268.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 267.
 )
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 658.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[54] (c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux)
+[53] (c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -2147,20 +2141,20 @@ Package rerunfilecheck Info: File `crypt_main.out' has not changed.
 (rerunfilecheck)             Checksum: A1831BAF26F36885CB9B5C6387691118;7066.
  ) 
 Here is how much of TeX's memory you used:
- 32354 strings out of 473899
- 633241 string characters out of 5726500
- 1312233 words of memory out of 5000000
+ 32353 strings out of 473899
+ 633234 string characters out of 5726500
+ 1312362 words of memory out of 5000000
  54145 multiletter control sequences out of 15000+600000
  574572 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,15n,101p,935b,1551s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,15n,101p,935b,1549s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Fernat\040Witness} has been referenced but does not exist, replaced by a fixed one
 
  <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi720\cmbcsc10.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi864\cmbcsc10.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi1037\cmbcsc10.pk><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.pdf (55 pages, 532580 bytes).
+Output written on c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.pdf (54 pages, 531657 bytes).
 PDF statistics:
- 1123 PDF objects out of 1200 (max. 8388607)
- 497 named destinations out of 1000 (max. 500000)
+ 1118 PDF objects out of 1200 (max. 8388607)
+ 496 named destinations out of 1000 (max. 500000)
  295 words of extra memory for PDF output out of 10000 (max. 10000000)
 
