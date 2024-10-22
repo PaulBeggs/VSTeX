@@ -1,8 +1,7 @@
 \section{Introduction}
 
 \begin{note}
-    Before starting the course, it is important to understand that this document is for notetaking, and will therefore be a bit more informal than the actual textbook. The textbook is \textit{An Introduction to Mathematical Cryptography} by Hoffstein, Pipher, and Silverman. The textbook can be located at \href{run:./An%20Introduction%20to%20Mathematical%20Cryptography.pdf}{this link}
-
+    Before starting the course, it is important to understand that this document is for notetaking, and will therefore be a bit more informal than the actual textbook. The textbook is \textit{An Introduction to Mathematical Cryptography} by Hoffstein, Pipher, and Silverman.
 \end{note}
 
 \wrpdef{Caesar Shift Cipher}{An encrypted text (by \textbf{shifting}), and you match it up with the alphabet. To encrypt, you write out a sentence, match it with a random assortment of letters by shifting the letters by a predetermined amount.}
@@ -163,7 +162,7 @@ This is less complicated than it sounds: we are simply factoring the integers an
     {Extended Euclidean Algorithm}Let \(a,b \in \Z^+\) with \(a \geq b\). Then the equation \(\gcd(a,b) = ua + vb\) always has a solution in integers \(u\) and \(v\). If \(u_0,v_0\) is any one solution, then every solution has the form \[u = u_0 + \frac{b \cdot t}{\gcd(a,b)} \text{ and } v = v_0 - \frac{a \cdot t}{\gcd(a,b)} \text{ for some integer } t \in \Z.\]
 \end{theorem}
 
-\textbf{See Exercise~\hyperlink{ex:1.10}{1.10} for a detailed example.}
+\textbf{See Exercise~\hyperlink{exerc:1.10}{1.10} for a detailed example.}
 
 \begin{example}
     {Relative Prime}What are the relative prime numbers of 2024 and 748?
@@ -232,8 +231,9 @@ Note that we will be finding the more traditional rings that are brought up in A
                      & = \{a \in \Z/m\Z \mid \text{a has an inverse modulo } m\}
     \end{align*}}
 
-\textbf{Click \hyperlink{2.5 group}{this link} to be teleported to section 2.5 where we discuss Groups which is relevant to us now.} \\
-
+\begin{center}
+    \textbf{Click \hyperlink{sec:2.5 groups}{this link} to be teleported to section 2.5 where we discuss Groups. We use groups throughout the remainder of Chapter 1.} \\
+\end{center}
 
 
 \wrpdef{Euler's Phi Function}{The function \(\varphi(m)\) defined by the rule \[\varphi(m) = |\{0 \leq a < m \mid \gcd(a,m) = 1\}| \]}
@@ -247,7 +247,7 @@ Note that we will be finding the more traditional rings that are brought up in A
 \lesol{
     By shifting the letters by 3, we get ``KHOOR''. For the decryption, we would shift the letters by -3 to get the original message.
 }
-
+\hypertarget{fast powering algorithm}{}
 \subsection{Fast Powering Algorithm}
 
 We can write the algorithm as follows: \begin{enumerate}[label=\arabic*.]
@@ -308,6 +308,7 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
 \pfs%
 
 \section{Powers and Primitive Roots in Finite Fields}
+\hypertarget{thm:Fermat's Little Theorem}{}
 
 \begin{theorem}
     {Fermat's Little Theorem}Let \(p\) be a prime number and \(a\) be an integer. Then, \[a^{p - 1} \equiv \begin{cases}
@@ -319,13 +320,13 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
 \wrpdef{Order}{The \textit{order} of an element \(a \ (\text{mod } p)\) is the smallest exponent \(k \geq 1\) such that \(a^k \equiv 1 \ (\text{mod } p)\).}
 
 \begin{example}
-    {Order}Find the order of 2 modulo 7.
+    {Order 1}Find the order of 2 modulo 7.
 \end{example}
 
 \lesol{\(2^3 = 8 \ (\text{mod } 7) = 1\). Thus, the order of 2 modulo 7 is 3.}
 
 \begin{example}
-    {Order}Find the order of 5 modulo 7.
+    {Order 2}Find the order of 5 modulo 7.
 \end{example}
 
 \lesol{\(5^6 = 15625 \ (\text{mod } 7) = 1\). Thus, the order of 5 modulo 7 is 6.}
@@ -361,10 +362,12 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
     \item Encryption is a function that is defined as: \[e: \mathcal{K} \times \mathcal{M} \rightarrow \mathcal{C} \text{ such that } d(k(e(k,m))) = m\]
     \item Decryption is a function that is defined as: \[d: \mathcal{K} \times \mathcal{C} \rightarrow \mathcal{M} \text{ such that } e(k,d(k,c)) = c\]
 \end{itemize}
+\hypertarget{Successful Ciphers}{}
+\subsection{Successful Ciphers}
 
 This brings us to what it means to be a \textit{successful} cipher. Thus, we look to \textit{Kerckhoff's Principle} which states that the security of a cipher should not depend on the secrecy of the algorithm, but rather on the secrecy of the key. Therefore, we have the following properties that are required for each cipher:
 \begin{enumerate}[label=\arabic*.]
-    \item For all \(k\) and \(m\), it is easy to computer \(e_k(m)\). (Note that \textit{easy} is relative to the computational power of the adversary. For this course, \textit{easy} denotes a decryption time of less than a second.)
+    \item For all \(k\) and \(m\), it is easy to compute \(e_k(m)\). (Note that \textit{easy} is relative to the computational power of the adversary. For this course, \textit{easy} denotes a decryption time of less than a second.)
     \item For all \(k\) and \(c\), it is easy to compute \(e_k(c)\).
     \item Given one or more ciphertext, \(c_1,\dots c_n\), all encrypted with the same key, it is hard to compute any plaintext, \(m\), such that \(d_k(m)\) without knowing the key.
 \end{enumerate}

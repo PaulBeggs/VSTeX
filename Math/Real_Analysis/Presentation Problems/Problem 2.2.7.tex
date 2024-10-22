@@ -1,0 +1,30 @@
+
+
+\begin{exercise}
+    {2.2.7} {Here are two useful definitions:}
+    \begin{enumerate}[label=(\roman*)]
+        \item A sequence \((a_n)\) is \emph{eventually} in a set \(A \subseteq \mathbb{R}\) if there exists an \(N \in \mathbb{N}\) such that \(a_n \in A\) for all \(n \geq N\).
+        \item A sequence \((a_n)\) is \emph{frequently} in a set \(A \subseteq \mathbb{R}\) if, for every \(N \in \mathbb{N}\), there exists an \(n \geq N\) such that \(a_n \in A\).
+        \begin{enumerate}[label=(\alph*)]
+            \item Is the sequence \((-1)^n\) eventually or frequently in the set \(\{1\}\)?
+            \item Which definition is stronger? Does frequently imply eventually, or does eventually imply frequently?
+            \item Give an alternate rephrasing of \defref{2.2.3B} using either frequently or eventually. Which is the term we want?
+            \item Suppose an infinite number of terms of a sequence \((x_n)\) are equal to \(2\). Is \((x_n)\) necessarily eventually in the interval \((1.9, 2.1)\)? Is it frequently in \((1.9, 2.1)\)?
+        \end{enumerate}
+    \end{enumerate}
+
+\end{exercise}
+
+\sol{
+    \begin{enumerate}[label=(\alph*)]
+        \item The sequence \((-1)^n\) is \textit{frequently} in the set \(\{1\}\) because for every \(N \in \mathbb{N}\), we can find an \(n \geq N\) such that \((-1)^n = 1\).
+        \item The definition of \textit{eventually} is stronger because \textit{eventually} implies \textit{frequently}, but \textit{frequently} does not imply \textit{eventually}.
+        \item An alternate rephrasing of Definition 2.2.3B using \textit{eventually} is: A sequence \((a_n)\) converges to \(a\) if, given any \(\epsilon\)-neighborhood---\(V_\epsilon(a)\) of \(a\)---\(a_n\) is \textit{eventually} in \(V_\epsilon(a)\). The term we want is eventually.
+        \item If an infinite number of terms of a sequence \((x_n)\) are equal to \(2\),  \((x_n)\) is not \textit{eventually} in \((1.9, 2.1)\) because we can have a sequence \((a_n)\) that will not settle in \((1.9, 2.1)\). For example, \((a_n) = (0,2,0,2,\cdots)\) does not settle in \((1.9, 2.1)\). Whereas, \((x_n)\) is \textit{frequently} in the interval \((1.9, 2.1)\) because for every \(N \in \mathbb{N}\) there exists an \(n \geq N\) such that \(x_n \in (1.9, 2.1)\) for all \(n \geq N\). We can see an instance of this being true by examining the previous example. 
+    \end{enumerate}
+}
+
+\begin{tcolorbox}%
+    [rounded corners, colframe=xred, colback=xred!15, coltitle=white, label=def:2.2.3B, title={\large \textbf{Definition 2.2.3B}}]
+    A sequence \( (a_n) \) converges to \( a \) if, given any \( \epsilon \)-neighborhood \( V_\epsilon(a) \) of \( a \), there exists a point in the sequence after which all of the terms are in \( V_\epsilon(a) \). In other words, every \( \epsilon \)-neighborhood contains all but a finite number of the terms of \( (a_n) \).
+\end{tcolorbox}

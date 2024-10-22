@@ -1,0 +1,272 @@
+\begin{exercise}
+    {3.1} {Solve the following congruences (use \hyperlink{ex:3.3}{this example} for help).}
+    \begin{enumerate}
+        \item \(x^{19} \equiv 36 \pmod{97}\).
+        \item \(x^{137} \equiv 428 \pmod{541}\).
+        \item \(x^{73} \equiv 614 \pmod{1159}\).
+        \item \(x^{751} \equiv 677 \pmod{8023}\).
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item Because we know 97 is a prime number, and that \(\gcd(19, 96) = 1\), we can use \hyperlink{3.2}{Proposition 3.2}. Thus, we need to solve for \(d\): \begin{align*}
+                  d \cdot 19 & \equiv 1 \pmod{96}       \\
+                  d          & \equiv 19^{-1} \pmod{96} \\
+                  d          & \equiv 91.
+              \end{align*} Then, we can solve for \(x\): \begin{align*}
+                  x^{19} & \equiv 36 \pmod{97}      \\
+                  x      & \equiv 36^{91} \pmod{97} \\
+                  x      & = 36.
+              \end{align*}
+
+        \item Using \hyperlink{3.2}{Proposition 3.2}, again:
+              \begin{align*}
+                  d \cdot 137 & \equiv 1 \pmod{540}        \\
+                  d           & \equiv 137^{-1} \pmod{540} \\
+                  d           & \equiv 473.
+              \end{align*} Then, for \(x\):
+              \begin{align*}
+                  x^{137} & \equiv 428 \pmod{541}       \\
+                  x       & \equiv 428^{473} \pmod{541} \\
+                  x       & \equiv 213.
+              \end{align*}
+        \item \begin{align*}
+                  d & \equiv 73^{-1} \pmod{1158} \\
+                  d & \equiv 349.
+              \end{align*} Then,
+              \begin{align*}
+                  x & \equiv 614^{349} \pmod{1159} \\
+                  x & \equiv 598. \text{ \textcolor{red}{diff ans}}
+              \end{align*}
+        \item \begin{align*}
+                  d & \equiv 751^{-1} \pmod{8022} \\
+                  d & \equiv 235.
+              \end{align*} Then, \begin{align*}
+                  x & \equiv 677^{235} \pmod{8023} \\
+                  x & \equiv 4858. \text{ \textcolor{red}{diff ans}}
+              \end{align*}
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {3.7} {Alice publishes her \hyperlink{sec:RSA Algorithm}{RSA} public key: modulus \(N = 2038667\) and exponent \(e = 103\).}
+    \begin{enumerate}
+        \item Bob wants to send Alice the message \(m = 892383\). What ciphertext does Bob send to Alice?
+        \item Alice knows that her modulus factors into a product of two primes, one of which is \(p = 1301\). Find a decryption exponent \(d\) for Alice.
+        \item Alice receives the ciphertext \(c = 317730\) from Bob. Decrypt the message.
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item Bob needs to calculate \(c \equiv 892383^{103} \pmod{2038667} \equiv 45293\)
+        \item To get the other prime factor of the modulus, Alice simply divides 2038667 by 1301. She gets 1567. Then Alice finds: \begin{align*}
+                  d & \equiv 103^{-1} \pmod{(1301 - 1)(1567 - 1)} \\
+                  d & \equiv 810367
+              \end{align*}
+        \item To decrypt, Alice solves for \(m\): \begin{align*}
+                  m & \equiv 317730^{810367} \pmod{2038667} \\
+                  m & \equiv 514407
+              \end{align*}
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {3.8} {Bob's RSA public key has modulus \(N = 12191\) and exponent \(e = 37\). Alice sends Bob the ciphertext \(c = 587\). Unfortunately, Bob has chosen too small a modulus. Help Eve \hyperlink{sec:Ciphertext Attack}{by factoring} \(N\) and decrypting Alice's message. (Hint: \(N\) has a factor smaller than \(100\).)}
+    \begin{enumerate}
+        \item Factor \(N\).
+        \item Decrypt Alice's message.
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item \(N\)'s factors are \(p = 73\) and \(q = 167\). (This was found by simply looping through all integers less than 100 and dividing \(N\) by each. If I got a number that was not a decimal (i.e., \texttt{if m \% a == 0}), then the loop broke, and \(p\) and \(q\) were printed.)
+        \item Eve will solve for \(d\): \begin{align*}
+                  d & \equiv 37^{-1} \pmod{(73 - 1)(167 - 1)} \\
+                  d & \equiv 11629
+              \end{align*}
+
+
+              Then she will solve for \(m\):
+              \begin{align*}
+                  m & \equiv 587^{11629} \pmod{12191} \\
+                  m & \equiv 4894
+              \end{align*}
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {3.9} {For each of the given values of \(N = pq\) and \((p - 1)(q - 1)\), use the method described in \hyperlink{sec:Ciphertext Attack}{Remark 3.11} to determine \(p\) and \(q\).}
+    \begin{enumerate}
+        \item \(N = pq = 352717\) and \((p - 1)(q - 1) = 351520\).
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item First, we need get \((p + q)\) alone: \begin{align*}
+                  (p-1)(q-1) & = pq - (p + q) + 1 \\
+                  351520     & = 352718 - (p + q) \\
+                  1198       & = p + q.
+              \end{align*} Now, we can solve the quadratic equation \(x^2 -1198x + 352717\) to find \(p,q\). The answer is \(p = 521, \ q = 677\). To check: \(521 \cdot 677 = 352717\). \cmark%
+    \end{enumerate}
+}
+
+
+
+\begin{exercise}
+    {Additional Problem 1} Prove that \(\varphi(pq) = (p-1)(q-1)\) when \(p\) and \(q\) are distinct primes (where \(\varphi\) is \hyperlink{Euler's Phi Function}{Euler's Phi Function}).
+\end{exercise}
+
+\expf{
+    Let \(p\) and \(q\) be distinct primes. From the definition of \hyperlink{Euler's Phi Function}{Euler's Phi Function}, we know \(\varphi(pq)\) counts the number of integers from 1 to \(pq - 1\) that are co-prime to \(pq\). Since \(p\) and \(q\) are distinct primes, the only numbers that are not co-prime to \(pq\) are multiples of \(p\) and multiples of \(q\).
+
+    The numbers divisible by \(p\) are \(p, 2p, 3p, \dots, (q - 1)p\), for a total of \(q - 1\) multiples of \(p\). Similarly, the numbers divisible by \(q\) are \(q, 2q, 3q, \dots, (p - 1)q\), for a total of \(p - 1\) multiples of \(q\).
+
+    Notice that the number \(pq\) itself is counted twice, once as a multiple of \(p\) and once as a multiple of \(q\). To correct this over-counting, we apply the \href{https://en.wikipedia.org/wiki/Inclusion\%E2\%80\%93exclusion_principle}{Inclusion-Exclusion Principle}. Thus, the total number of integers divisible by either \(p\) or \(q\) is:
+    \[
+        p + q - 1
+    \]
+
+    Since there are \(pq\) integers in total from 1 to \(pq - 1\), the number of integers that are co-prime to \(pq\) is:
+    \[
+        \varphi(pq) = pq - (p + q - 2) = pq - p - q + 1
+    \]
+
+    Simplifying the expression gives:
+    \[
+        \varphi(pq) = (p - 1)(q - 1) \qedhere
+    \]
+}
+
+
+
+\begin{exercise}
+    {Additional Problem 2} Decide whether each of the following numbers is composite or probably prime by finding a witness or finding 5 liars using \hyperlink{thm:Fermat's Little Theorem, Version 2}{Fermat's Little Theorem, V2}:
+    \[8911; 13291; 415693\]
+    For each of the possible primes left over from the previous part, use the \hyperlink{sec:Miller-Rabin}{Miller-Rabin} test to either find a witness for the compositeness of the number or give 5 more liars to show the number is probably prime.
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item For 8911: pick \(a = 2\). Thus, \(2^{8911} \stackrel{?}{\equiv} 2 \pmod{8911} \equiv 2\) \cmark. Thus, 2 is either a Fermat liar, or 8911 is prime. Let's continue for 4 more \(a\)'s:
+              \begin{itemize}
+                  \item \(a = 3^{8911} \pmod{8911} \stackrel{?}{\equiv} 3\)\ \cmark%
+                  \item \(a = 4^{8911} \pmod{8911} \stackrel{?}{\equiv} 4\)\ \cmark%
+                  \item \(a = 5^{8911} \pmod{8911} \stackrel{?}{\equiv} 5\)\ \cmark%
+                  \item \(a = 6^{8911} \pmod{8911} \stackrel{?}{\equiv} 6\)\ \cmark%
+              \end{itemize}
+              Since every \(a\) we tested was true for the equation \(a^{N} \equiv a \pmod{N}\), 8911 is either prime, or all the \(a\)'s are liars. Now, we can use the Miller-Rabin test to further probe the possibility that 8911 is prime. We start by writing \(N - 1 = 2^kq\) with \(q\) odd. Thus, \(8911 = 2^1 \cdot 4455\). Now, we pick random \(a\)'s and solve for \(a^{4455} \pmod{8911} \stackrel{?}{\equiv} 1\):
+              \begin{itemize}
+                \item \(a = 3^{4455} \pmod{8911} \stackrel{?}{\equiv} 1\). Probably prime because \(\not\equiv 1\) or \(N - 1\).
+                \item \(a = 5^{4455} \pmod{8911} \stackrel{?}{\equiv} 1\)\ \xmark. This gives 2813. Now, we need to use the \hyperlink{fast powering algorithm}{fast powering algorithm} to check if for any \(k\), \(5^{2^k \cdot q}\) is equal to \(N - 1\) or \(1\):
+                \begin{align*}
+                    k_0 &= 2813 \pmod{8911} \\
+                    k_1 &= 2813^2 \pmod{8911} \equiv 1 \\
+                    k_2 &= 1^2 \pmod{8911} \equiv 1 \\
+                    &\vdots
+                \end{align*} Since we did not have any result of \(a^{2^k \cdot q} = N - 1\), 8911 is not prime with 5 as a Miller-Rabin witness.
+              \end{itemize} \text{ \textcolor{red}{diff ans}}
+        \item For 13291: pick \(a = 2\): \(2^{13291} \stackrel{?}{\equiv} 2 \pmod{13291} \equiv 2\) \cmark. Thus, 2 is either a Fermat liar, or 13291 is prime. Let's continue for 4 more \(a\)'s:
+              \begin{itemize}
+                  \item \(a = 3^{13291} \pmod{13291} \stackrel{?}{\equiv} 3\)\ \cmark%
+                  \item \(a = 4^{13291} \pmod{13291} \stackrel{?}{\equiv} 4\)\ \cmark%
+                  \item \(a = 5^{13291} \pmod{13291} \stackrel{?}{\equiv} 5\)\ \cmark%
+                  \item \(a = 6^{13291} \pmod{13291} \stackrel{?}{\equiv} 6\)\ \cmark%
+              \end{itemize}
+              We can use the Miller-Rabin test to see if 13291 is prime. From the formula \(N - 1 = 2^kq\) with \(q\) odd: \(13290 = 2^1 \cdot 6645\). Pick random \(a\)'s and solve for \(a^{6645} \pmod{13291} \stackrel{?}{\equiv} 1\):
+              \begin{itemize}
+                  \item \(a = 3^{6645} \pmod{13291} \equiv 13290\)\ \cmark%
+                  \item \(a = 7^{6645} \pmod{13291} \equiv 1\)\ \cmark%
+                  \item \(a = 11^{6645} \pmod{13291} \equiv 13290\)\ \cmark%
+                  \item \(a = 13^{6645} \pmod{13291} \equiv 13290\)\ \cmark%
+                  \item \(a = 17^{6645} \pmod{13291} \equiv 13290\)\ \cmark%
+              \end{itemize} Either 13290 is prime, or all \(a\)'s that we have chosen are Miller-Rabin liars.
+        \item For 415693: pick \(a = 2\): \(2^{415693} \stackrel{?}{\equiv} 2 \pmod{415693} \equiv 116692\) \xmark. Therefore, 2 is a witness that 415693 is composite.
+    \end{enumerate}
+}
+
+
+
+\begin{exercise}
+    {3.22} Use \hyperlink{ex:3.10}{Pollard's} \(p - 1\) method to factor each of the following numbers.
+    \begin{enumerate}
+        \item \(n = 1739\)
+        \item \(n = 220459\)
+    \end{enumerate}
+    Be sure to show your work and indicate which prime factor \(p\) of \(n\) has the property that \(p - 1\) is a product of small primes.
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item
+              \begin{itemize}
+                  \item \textbf{Step 1:} Choose a smooth \(B = 5\). We assume that one of the prime factors \(p\) of \(n = 1739\) has the property \(p - 1\) is divisible by small primes, and we will try a small \(B\).
+                  \item \textbf{Step 2:} Compute the least common multiple of all integers up to \(B = 5\): \[k = \text{lcm}(1,2,3,4,5) = 60.\]
+                  \item \textbf{Step 3:} Pick a random base \(a = 2\).
+                  \item \textbf{Step 4:} Compute \(a^{k} - 1 \pmod{n}\): \[2^{60} - 1 \pmod{1739} = 638.\]
+                  \item \textbf{Step 5:} Compute the greatest common divisor of \(n\) and \(a^{k} - 1\): \[\gcd(1739, 638) = 1\]
+                  \item Since the greatest common divisor is 1, we need to try a larger \(B\). We will try \(B = 7\): \[k = \text{lcm}(1,2,3,4,5,6,7) = 420.\]
+                  \item Compute \[2^{420} - 1 \pmod{1739} = 157, \ \gcd(157, 1739) = 1.\]
+                  \item Try \(B = 11\), and compute: \[2^{27720} - 1 \pmod{1739} = 407, \ \gcd(407, 1739) = 37\]
+              \end{itemize}
+              Thus, we have found a factor of 1739: 37. By dividing 1739 by 37, we get 47. Thus, 1739 factors into 37 and 47. Note that \(p - 1 = 36 = 2^2 \cdot 3^2\) and \(q - 1 = 46 = 2 \cdot 23\).
+              %   \(B = 13\): \(2^{360360} \pmod{1739} = 1037\), \(\gcd(1037, 1739) = 37\) \\
+              %   \(B = 17\): \(2^{12252240} \pmod{1739} = 1555\), \(\gcd(1555, 1739) = 37\) \\
+              %   \(B = 19\): \(2^{232792560} \pmod{1739} = 667\), \(\gcd(666, 1739) = 37\) \\
+        \item We will still be using the same steps from part (a), except this time we will skip straight to trying different \(B\)'s.
+              \begin{itemize}
+                  \item \(B = 5\): \(2^{60} - 1 \pmod{220459} = 120157\), \(\gcd(120157, 220459) = 1\).
+                  \item \(B = 7\): \(2^{420} - 1 \pmod{220459} = 89023\), \(\gcd(89023, 220459) = 1\).
+                  \item \(B = 11\): \(2^{27720} - 1 \pmod{220459} = 155869\), \(\gcd(155869, 220459) = 1\).
+                  \item \(B = 13\): \(2^{360360} - 1 \pmod{220459} = 97948\), \(\gcd(97948, 220459) = 1\).
+                  \item \(B = 17\): \(2^{12252240} - 1 \pmod{220459} = 144576\), \(\gcd(144576, 220459) = 1\).
+                  \item \(B = 19\): \(2^{232792560} - 1 \pmod{220459} = 71838\), \(\gcd(71838, 220459) = 1\).
+                  \item \(B = 23\): \(2^{5354228880} - 1 \pmod{220459} = 201150\), \(\gcd(201150, 220459) = 1\).
+              \end{itemize}
+              If we continue this process, we find a \(B = 5342931457063200\), which gives the factor 449. Divide 220459 by 449, and we get 491. Note that \(p - 1 = 448 = 2^6 \cdot 7\) and \(q - 1 = 490 = 2 \cdot 5 \cdot 7^2\). (See this \hyperlink{pollard's p python}{Python code} for how I automated finding the factors of 220459.)
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {3.24} {For each of the following numbers \(N\), compute the values of \(N + 1^2, N + 2^2, N + 3^2, N + 4^2\),\dots as we did in Example 3.34 (\hyperlink{ex:3.11}{Example 3.11 in notes}), until you find a value \(N + b^2\) that is a perfect square \(a^2\). Then use the values of \(a\) and \(b\) to factor \(N\).}
+    \begin{enumerate}
+        \item \(N = 53357\)
+        \item \(N = 34571\)
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item     \begin{align*}
+                  53357 + 1^2 & = 53358         & \text{not a square},            \\
+                  53357 + 2^2 & = 53361 = 231^2 & \text{Eureka! \textbf{square}.}
+              \end{align*} \(53357 = 231^2 - 2^2 = (231 + 2)(231 - 2) = 233 \cdot 229\). Therefore, 53357 factors into 233 and 229.
+        \item \begin{align*}
+                  34571 + 1^2 & = 34572         & \text{not a square},            \\
+                  34571 + 2^2 & = 34575         & \text{not a square},            \\
+                  34571 + 3^2 & = 34580         & \text{not a square},            \\
+                  34571 + 4^2 & = 34587         & \text{not a square},            \\
+                  34571 + 5^2 & = 34596 = 186^2 & \text{Eureka! \textbf{square}.}
+              \end{align*} \(34571 = 186^2 - 5^2 = (186 + 5)(186 - 5) = 191 \cdot 181\). Therefore, 34571 factors into 191 and 181.
+    \end{enumerate}
+}
+
+\newpage
+\begin{center}
+    \hypertarget{pollard's p python}{}
+    \begin{lstlisting}[language=Python, numbers=left]
+    def pollards_p_minus_1(base, mod, limit):
+    lcm_val = 1
+    for i in range(1, limit + 1):
+        lcm_val = math.lcm(lcm_val, i)
+        pow_val = pow(base, lcm_val, mod) - 1
+        gcd_val = math.gcd(pow_val, mod)
+        print(f"lcm({i}) = {lcm_val}, gcd: {gcd_val}")
+        if 1 < gcd_val < mod:
+            return gcd_val
+    return None
+\end{lstlisting}
+\end{center}

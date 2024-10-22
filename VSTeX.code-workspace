@@ -6,7 +6,11 @@
 	],
 	"settings": {
 		"cSpell.words": [
-			"Totient"
+			"Cryptosystem",
+			"primality",
+			"squarings",
+			"Totient",
+			"Uncountably"
 		],
 		"latex-workshop.linting.chktex.exec.args": [
 			"-wall",

@@ -152,7 +152,7 @@
     colframe=xblue, %color of frame
     colback=xblue!15, %color of background
     coltitle=white, %color of title text
-    before={\noindent\hypertarget{thm:#2}{}},
+    after={\noindent\hypertarget{thm:#2}{}},
     title={\large \textbf{Theorem: #2}},
     #1
 }
@@ -174,7 +174,7 @@
     \vspace{0.5em}
     \textbf{Definition \textcolor{horange}{#2}:} #1
     \par\vspace{0.5em}\noindent
-}{\par\vspace{1em}\noindent}
+}{\par\vspace{0.3em}\noindent}
 
 \newcommand{\wrpdef}[2]{%
     \hypertarget{#1}{}
@@ -201,7 +201,7 @@
     colback=orangehdx!10,
     coltitle=white,
     title={\large \textbf{Exercise #2}},
-    after={\hypertarget{ex:#2}{}},
+    after={\hypertarget{exerc:#2}{}},
     #1
 }
 
@@ -212,7 +212,7 @@
     colframe=teal,
     colback=teal!15,
     coltitle=white,
-    label={ex:\theExampleCounter},
+    after={\hypertarget{ex:\theExampleCounter}{}},
     title={\large \textbf{Example \theExampleCounter: #2}},
     #1,
 }
@@ -617,13 +617,17 @@
 \vspace*{-0.25in}
 \input{Exercises/1}
 
-\chapter*{Exercises pt. 2} \label{ex 2}
-\vspace*{-0.25in}
-\input{Exercises/2}
+% \chapter*{Exercises pt. 2} \label{ex 2}
+% \vspace*{-0.25in}
+% \input{Exercises/2}
 
-\chapter*{Exercises pt. 3}\label{ex 3}
+% \chapter*{Exercises pt. 3}\label{ex 3}
+% \vspace*{-0.25in}
+% \input{Exercises/3}
+
+\chapter*{Exercises pt. 4}\label{ex 4}
 \vspace*{-0.25in}
-\input{Exercises/3}
+\input{Exercises/4}
 
 % \chapter{Power Set} \label{Power Set}
 % \vspace*{-0.25in}

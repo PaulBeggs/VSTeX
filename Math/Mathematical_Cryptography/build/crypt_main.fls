@@ -1,7 +1,7 @@
-PWD c:\Users\paulb\VSTeX\Mathematical_Cryptography
+PWD c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\crypt_main.tex
-OUTPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.log
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\crypt_main.tex
+OUTPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.log
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\bk12.clo
@@ -339,10 +339,10 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.st
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.aux
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.aux
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.aux
-OUTPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.aux
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
+OUTPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -351,14 +351,14 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstop
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.out
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.out
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.out
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.out
-OUTPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.pdf
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.out
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.out
-OUTPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.out
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
+OUTPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.pdf
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
+OUTPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
 INPUT .\images\Hendrix Logo.png
 INPUT .\images\Hendrix Logo.png
 INPUT .\images\Hendrix Logo.png
@@ -378,9 +378,9 @@ INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbcsc10.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbcsc10.tfm
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.toc
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.toc
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.toc
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.toc
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.toc
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.toc
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
@@ -410,7 +410,7 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
-OUTPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.toc
+OUTPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.toc
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbcsc10.tfm
 INPUT .\Chapters\ch_1.tex
@@ -541,6 +541,38 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfding\pzdr.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfding\pzdr.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT .\Exercises\1.tex
 INPUT .\Exercises\1.tex
 INPUT .\Exercises\1.tex
@@ -590,11 +622,11 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
-INPUT .\Exercises\2.tex
-INPUT .\Exercises\2.tex
-INPUT .\Exercises\2.tex
-INPUT .\Exercises\2.tex
-INPUT Exercises\2.tex
+INPUT .\Exercises\4.tex
+INPUT .\Exercises\4.tex
+INPUT .\Exercises\4.tex
+INPUT .\Exercises\4.tex
+INPUT Exercises\4.tex
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -615,23 +647,6 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Exercises\3.tex
-INPUT .\Exercises\3.tex
-INPUT .\Exercises\3.tex
-INPUT .\Exercises\3.tex
-INPUT Exercises\3.tex
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -643,25 +658,19 @@ INPUT .\images\small logo.png
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omlcmr.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omlcmr.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omlcmr.fd
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.aux
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.out
-INPUT c:\Users\paulb\VSTeX\Mathematical_Cryptography\build\crypt_main.out
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
+INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\public\cm\dpi720\cmbcsc10.pk
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\public\cm\dpi720\cmbcsc10.pk
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk

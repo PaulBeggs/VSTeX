@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{xcolor}
+% \usepackage{draculatheme}
+
+% Define colors using RGB values
+\definecolor{backcolor}{RGB}{40, 42, 54}
+\definecolor{stringcolor}{RGB}{248, 217, 60}
+\definecolor{functioncolor}{RGB}{97, 227, 108}
+\definecolor{variablecolor}{RGB}{248, 248, 242}
+\definecolor{ifelsecolor}{RGB}{255, 121, 198}
+\definecolor{passedvarcolor}{RGB}{255, 184, 108}
+\definecolor{bordercolor}{RGB}{197, 31, 250}
+\definecolor{black}{RGB}{0, 0, 0}
+\definecolor{commentcolor}{RGB}{98, 114, 164}
+
+% Define a custom style
+\lstdefinestyle{myStyle}{
+    backgroundcolor=\color{backcolor},   
+    commentstyle=\color{commentcolor},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,       
+    keywordstyle=\color{blue},          
+    keepspaces=true,
+    numberstyle=\color{commentcolor},                 
+    numbers=left,
+    stringstyle=\color{stringcolor},
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,            
+    tabsize=4,
+    frame=tlrb      % Adds black bars on top and bottom
+    rulecolor=\color{black},         % Sets the frame color to black
+    xleftmargin=5.5ex,               % Extends background to include line numbers
+    framexleftmargin=5.5ex,          % Ensures the frame includes the margin area
+    framexrightmargin=0pt,           % Right margin
+    framextopmargin=1pt,             % Adjusts top margin of frame
+    framexbottommargin=1pt           % Adjusts bottom margin of frame
+}
+
+% Use \lstset to make myStyle the global default
+\lstset{style=myStyle}
+
+\begin{document}
+
+I am going to type some words. Does this work?
+\lstinputlisting[caption=Sample Code Listing Python, label={lst:listing-python}, linerange={30-35}, firstnumber=30, language=Python]{test.py}
+
+\end{document}

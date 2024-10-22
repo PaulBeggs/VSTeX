@@ -600,12 +600,27 @@ How do we prove \(x_n\) converges?
 This says that as terms get close to each other and stay close together, there's some value they're all getting close to.
 
 \begin{example}
-    Consider the sequence \(a_1 = 1, a_2 = 2,\) where \[a_n = \frac{a_{n-1} + a_{n-2}}{2} \text{ for all } n \geq 2.\]
+    {Cauchy Sequence}Consider the sequence \(a_1 = 1, a_2 = 2,\) where \[a_n = \frac{a_{n-1} + a_{n-2}}{2} \text{ for all } n \geq 2.\] Show this sequence is Cauchy.
 \end{example}
 
-\lesol{
-    solution stuff he
+\expf{
+    Look at the differences of consequtive terms, \(\disabs{a_1 - a_2} = 1\), \(\disabs{a_2 - a_3} = 1/2\), we can see a formula \(a_n - a_{n+1} = {1/2}^{n-1}\). Assume \(\disabs{a_n - a_m}= \disabs{a_n - a_{n+1} - a_{n+2}} - \cdots - a_{m - 1} - a_m\) with \(n <m\). From the \hyperlink{Triangle Inequality}{Triangle Inequality},
+    \begin{align}
+        \disabs{a_n - a_m} & \leq \disabs{a_n - a_{n+1}} + \disabs{a_{n+1} - a_{n+2}} + \cdots + \disabs{a_{m-1} - a_m} \\
+        & = \frac{1}{2^{n-1}} + \frac{1}{2}^{n} + \cdots + \frac{1}{2}^{m-2} \\
+        & = \frac{1}{2^{n-1}} \left(1 + \frac{1}{2} + \cdots + \frac{1}{2}^{m-n-1}\right) \\
+        & = \frac{1}{2^{n-1}} \left(\frac{1 - \frac{1}{2}^{m-n}}{1 - \frac{1}{2}}\right) \\
+        & = \frac{1}{2^n} \left(1 - \frac{1}{2^{m-n}}\right) \\
+        & < \frac{1}{2}. 
+    \end{align}
+    Notice that we were able to pull out the \(1/2\) and use the geometric series formula at step 2.12. From here we know that \(\disabs{a_n - a_m} < \frac{1}{2^n}\). 
+    
+    Now, conclude the proof by letting \(\epsilon > 0\). We know \((1/2^n) \rightarrow 0\). Thus, there exists \(N \in \N\) such that \(\frac{1}{2^N} < \epsilon\). For all \(n,m \geq N\), (without loss of generality \(n < m\)) \(\disabs{a_n - a_m} < \frac{1}{2}n \leq \frac{1}{2}N < \epsilon\). Therefore, \(a_n\) is \hyperlink{def:2.6.1}{Cauchy} and it converges.
 }
+
+\begin{note}
+    \textbf{Note:} To find the limit of this series, a proof strategy is finding subsequences that are odd and even, and show the converge to the same limit.
+\end{note}
 
 \begin{ntheorem}
     {Cauchy Criterion}A sequence \(x_n\) converges if, and only if, it is a Cauchy sequence.
@@ -632,3 +647,22 @@ This says that as terms get close to each other and stay close together, there's
               \end{align*} Therefore, \((x_n) \rightarrow L\).
     \end{itemize}}{By proving both directions of the inequality, we found that a sequence \((x_n)\) converges if, and only if, it is a Cauchy sequence.}%
 {xblue}%
+
+\begin{definition}
+    A sequence is called \textit{contracting} is there exists \(0 < C < 1\) such that for all \(n \in \N\), \(\disabs{x_{n+1} - x_n} \leq C\disabs{x_n - x_{n-1}}\).
+\end{definition}
+
+How this works: we take a sequence \(a_1, a_2, \dots\) and subtract \(a_1 - a_2\). Then, we have the inequality: \begin{align*}
+    \disabs{a_2 - a_3} & \leq C\disabs{a_1 - a_2} \\
+    \disabs{a_3 - a_4} & \leq C\disabs{a_2 - a_3} \leq C^2\disabs{a_1 - a_2} \\
+    \disabs{a_4 - a_5} & \leq C\disabs{a_3 - a_4} \leq C^3\disabs{a_1 - a_2} \\
+    & \quad \vdots
+\end{align*} From this a theorem emerges:
+
+\begin{theorem}
+    If a sequence is contracting, then it is Cauchy, and thus converges.
+\end{theorem}
+
+\tpf{
+    No formal proof for this one. Just use the triangle inequality along with the geometric sum identity to show that the sequence is Cauchy. Something like \(\disabs{a_n - a_m} \leq \frac{C^n}{1 - C}\disabs{a_1 - a_2}\). Then, use the \namrefthm{Cauchy Criterion} to show that the sequence converges.
+}
