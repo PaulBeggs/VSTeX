@@ -251,6 +251,23 @@ However, there are some numbers will force all \(a\)'s to be fermat liars. These
     \item Repeat the test with different random bases \(a\).
 \end{enumerate}
 
+\begin{lstlisting}[language=Python, numbers=left]
+    # Input: N is the integer to be factored.
+    def pollard_s_p(N):
+        # Set a to a to a convenient value.
+        a = 2
+        j = 0
+        # Set an arbitrary bound for j.
+        while j < 100:
+            a = pow(a, j, N)
+            d = math.gcd(a - 1, N)
+            if 1 < d < N:
+                return d
+            j += 1
+        # The number is either prime, or j's bound was not large enough.
+        return None
+\end{lstlisting}
+
 \wrpdef{Miller-Rabin Witness}{Let \(N\) be an odd number. Write \(N - 1 = 2^kq\) with \(q\) odd. If \(a\) is an integer that satisfies \(\gcd(a,N) = 1\), then \(a\) is a \textit{Miller-Rabin Witness} for \(N\) if both of the following hold: \begin{enumerate}[label=(\roman*)]
         \item \(a^q \not\equiv 1 \pmod{N}\).
         \item \(a^{2^iq} \not\equiv -1 \pmod{N}\) for all \(i\) such that \(0 \leq i \leq k-1\).
