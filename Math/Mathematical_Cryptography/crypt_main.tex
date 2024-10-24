@@ -5,7 +5,7 @@
 
 \documentclass[12pt, oneside]{book}
 \usepackage{bold-extra}
-
+\usepackage{draculatheme}
 
 %%% AESTHETICS %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -85,9 +85,12 @@
 
 %%% Chapter Headings %%%
 \usepackage[Glenn]{fncychap}
-\ChTitleVar{\bfseries\scshape\color{black}}
-\ChNumVar{\large\selectfont\color{black}}
-\ChNameVar{\large\color{black}}
+\ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
+\ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
+% \ChTitleVar{\bfseries\scshape\color{black}}
+% \ChNumVar{\large\selectfont\color{black}}
+% \ChNameVar{\large\color{black}}
 \usepackage{xpatch}
 \xpatchcmd\DOCH
 {\mghrulefill}{\color{orangehdx}\mghrulefill}
@@ -205,7 +208,7 @@
     #1
 }
 
-
+%% Examples %%
 \newcounter{ExampleCounter}
 \newtcolorbox[use counter=ExampleCounter, number within=chapter]{example}[2][]{%
     rounded corners,
@@ -240,6 +243,7 @@
 %     \end{definition}
 % }
 
+%% Propositions %%
 \newenvironment{proposition}[2][]{ % Optional title argument
     \vspace{0.5em}
     \textbf{Proposition #2:} \textit{#1}
@@ -251,6 +255,10 @@
     \begin{proposition}
         {#1}#2
     \end{proposition}
+}
+
+\newcommand{\refprop}[1]{%
+    \hyperlink{Proposition #1}{Proposition #1}
 }
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -314,13 +322,15 @@
 
 \newmdenv[
   topline=false,
-  bottomline=false,
+  bottomline=true,
   rightline=false,
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
+  backgroundcolor=draculabg, % Needed for Dracula theme
+  fontcolor=draculafg, % Needed for Dracula theme
   innertopmargin=0pt,
-  innerbottommargin=0pt,
+  innerbottommargin=5pt,
   innerrightmargin=10pt,
   innerleftmargin=10pt,
   leftmargin=0pt,
@@ -344,10 +354,17 @@
         leftmargin=0pt,
         rightmargin=0pt,
         skipabove=\topsep,
-        skipbelow=\topsep
+        skipbelow=\topsep%
     ]
-    \noindent #2
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
 }{
+    \end{adjustwidth}
+    \end{minipage}
     \end{mdframed}
 }
 
@@ -613,45 +630,48 @@
 
 \renewcommand{\theenumi}{\alph{enumi}}
 \renewcommand{\labelenumi}{(\theenumi)}
+
+\fancyhead[R]{Exercises 1}
+
 \chapter*{Exercises pt. 1} \label{ex 1}
 \vspace*{-0.25in}
 \input{Exercises/1}
+\addcontentsline{toc}{chapter}{Exercises 1}
 
-% \chapter*{Exercises pt. 2} \label{ex 2}
-% \vspace*{-0.25in}
-% \input{Exercises/2}
+\fancyhead[R]{Exercises 2}
 
-% \chapter*{Exercises pt. 3}\label{ex 3}
-% \vspace*{-0.25in}
-% \input{Exercises/3}
+
+\chapter*{Exercises pt. 2} \label{ex 2}
+\vspace*{-0.25in}
+\input{Exercises/2}
+\addcontentsline{toc}{chapter}{Exercises 2}
+
+\fancyhead[R]{Exercises 3}
+
+\chapter*{Exercises pt. 3}\label{ex 3}
+\vspace*{-0.25in}
+\input{Exercises/3}
+\addcontentsline{toc}{chapter}{Exercises 3}
+
+\fancyhead[R]{Exercises 4}
+
 
 \chapter*{Exercises pt. 4}\label{ex 4}
 \vspace*{-0.25in}
 \input{Exercises/4}
+\addcontentsline{toc}{chapter}{Exercises 4}
 
-% \chapter{Power Set} \label{Power Set}
-% \vspace*{-0.25in}
-% \input{Chapters/ch_6}
 
-% \chapter{Equivalency} \label{Equivalency}
-% \vspace*{-0.25in}
-% \input{Chapters/ch_7}
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\fancyhead[R]{Exam Prep}
 
-% \chapter{Functions \& Bijections}\label{Functions}
-% \vspace*{-0.25in}
-% \input{Chapters/ch_8}
 
-% \chapter{Recursion \& The Whole Numbers}\label{Recursion}
-% \vspace*{-0.25in}
-% \input{Chapters/ch_9}
+\chapter*{Exam Prep}\label{prep}
+\vspace{-0.25in}
+\input{Exam_Prep/Exam_2}
+\addcontentsline{toc}{chapter}{Exam Prep}
 
-% \chapter{The Integers} \label{Integers}
-% \vspace*{-0.25in}
-% \input{Chapters/ch_10}
-
-% \chapter{Cardinality} \label{Cardinality}
-% \vspace*{-0.25in}
-% \input{Chapters/ch_11}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 

@@ -8,6 +8,19 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\bk12.clo
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\bk12.clo
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\bk12.clo
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT .\draculatheme.sty
+INPUT draculatheme.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
@@ -32,17 +45,6 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.st
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
@@ -464,9 +466,13 @@ INPUT .\Chapters\ch_1.tex
 INPUT .\Chapters\ch_1.tex
 INPUT .\Chapters\ch_1.tex
 INPUT Chapters\ch_1.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -540,19 +546,27 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT .\Chapters\ch_2.tex
 INPUT .\Chapters\ch_2.tex
 INPUT .\Chapters\ch_2.tex
 INPUT .\Chapters\ch_2.tex
 INPUT Chapters\ch_2.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -602,6 +616,18 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -644,84 +670,6 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Exercises\1.tex
-INPUT .\Exercises\1.tex
-INPUT .\Exercises\1.tex
-INPUT .\Exercises\1.tex
-INPUT Exercises\1.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Exercises\2.tex
-INPUT .\Exercises\2.tex
-INPUT .\Exercises\2.tex
-INPUT .\Exercises\2.tex
-INPUT Exercises\2.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Exercises\3.tex
-INPUT .\Exercises\3.tex
-INPUT .\Exercises\3.tex
-INPUT .\Exercises\3.tex
-INPUT Exercises\3.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Exercises\4.tex
-INPUT .\Exercises\4.tex
-INPUT .\Exercises\4.tex
-INPUT .\Exercises\4.tex
-INPUT Exercises\4.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Presentation Problems\Problem 1.2.13c.tex
-INPUT .\Presentation Problems\Problem 1.2.13c.tex
-INPUT Presentation Problems\Problem 1.2.13c.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Presentation Problems\Problem 2.2.7.tex
-INPUT .\Presentation Problems\Problem 2.2.7.tex
-INPUT Presentation Problems\Problem 2.2.7.tex
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png

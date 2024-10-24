@@ -252,7 +252,7 @@ For the second half of the proof, suppose we have \(x'\) as the solution for \(x
         (7^{27})^{a_0}(7^{a_1})^{432} & \equiv                     \\
         (265)^{a_0}                   & \equiv 250 \pmod{433}
     \end{align}
-    For (3.1), we got the expression by substituting \(x\) for \(a_0 + 16a_1\) for the exponent in \(g^x \equiv \dots\). From there, (3.2) --- (3.4) is simple algebra. Then for (3.5), because \(7^{a_1}\) is congruent to 1, \((7^{a_1})^{432} = 1\). Additionally, we take \(7^{27} \pmod{432}\) to get \(265^{a_0}\). Then, we do the same thing for the other side of the equation. Now, we can brute force this by setting \(a_1 = \{0,1,2,3,\dots, 27\}\). We find that when \(a_0 = 15\), \(265^{a_0} \equiv 250 \pmod{433}\). Seeing that we have \(a_0\), we need to find \(b_0\):
+    For (3.1), we got the expression by substituting \(x\) for \(a_0 + 16a_1\) for the exponent in \(g^x \equiv \dots\). From there, (3.2) --- (3.4) is simple algebra. Then for (3.5), because \(7^{a_1}\) is congruent to 1, \((7^{a_1})^{432} = 1\). Additionally, we take \(7^{27} \pmod{432}\) to get \(265^{a_0}\). Then, we do the same thing for the other side of the equation. Now, we can brute force this by setting \(a_0 = \{0,1,2,3,\dots, 27\}\). We find that when \(a_0 = 15\), \(265^{a_0} \equiv 250 \pmod{433}\). Seeing that we have \(a_0\), we need to find \(b_0\):
     \begin{align*}
         (7^{b_0 + 27b_1})^{16} & \equiv 166^{16} \pmod{433} \\
         374^{b_0}              & \equiv 335 \pmod{433}

@@ -224,12 +224,8 @@ However, there are some numbers will force all \(a\)'s to be fermat liars. These
 
 \wrpprop{3.17}{Let \(p\) be an odd prime, and write \(p - 1 = 2^kq\) with \(q\) being odd. Then, let \(a\) be any number not divisible by \(p\). Then, one of the following must hold: \begin{enumerate}[label=(\roman*)]
         \item \(a^q \equiv 1 \pmod{p}\).
-        \item \(a^{2^iq} \equiv -1 \pmod{p}\) for some \(i\) such that \(0 \leq i \leq k-1\).
-    \end{enumerate}} Further, if one of these 3 are congruent, then the previous would be \(\pm 1\). So either,
-\begin{enumerate}[label=(\roman*)]
-    \item \(a^q \equiv 1 \pmod{p}\) or
-    \item \(a^{2^iq} \equiv -1 \pmod{p}\) for some \(i\) such that \(0 \leq i \leq k-1\).
-\end{enumerate} Thus if there is not only 1 or \(-1\) in the sequence, \(p\) is composite.
+        \item One of \(a^q,a^{2q},a^{4q},\dots,a^{2^{k-1}q}\) is congruent to \(-1\) modulo \(p\). 
+    \end{enumerate}}
 
 \begin{center}
     \textbf{Miller-Rabin Algorithm }    
@@ -241,12 +237,14 @@ However, there are some numbers will force all \(a\)'s to be fermat liars. These
     \item Pick a random integer \(a\) such that \(2 \leq a \leq n - 2\).
     \item compute \(x = a^q \pmod{n}\).
     \begin{itemize}
-        \item If \(x = 1\) or \(x = n - 1\), \textbf{continue to the next base.}
+        \item If \(x = 1\) or \(x = n - 1\), \textbf{continue to the next base because this indicates that the number is probably prime.}
     \end{itemize}
     \item Square \(x\), up to \(k - 1\) times:
     \begin{itemize}
-        \item If \(x = n - 1\) at any step, \textbf{continue to the next base.}
-        \item If \(x \ne n - 1\) for all squarings, \(n\) is composite.
+        \item If \(x = n - 1\) at any step, \textbf{continue to the next base for the same reason.}
+        \item If \(x \ne n - 1\) for all squarings, \textbf{\(n\) is composite.}
+        
+        For example, if we have a number and we keep squaring \(x\) up to \(k - 1\), and we never encounter a \(n - 1\), but we encounter other numbers like 1 or anything else, then the number is composite. Remember: ONLY composite if there was NO record of a \(n - 1\) for a given base \(x\).
     \end{itemize}
     \item Repeat the test with different random bases \(a\).
 \end{enumerate}
@@ -280,13 +278,13 @@ However, there are some numbers will force all \(a\)'s to be fermat liars. These
 \lesol{
     \begin{enumerate}
         \item Write \(N - 1 = 2^4 \cdot 35\).
-        \item Pick \(a = 7\). Start by solving \(7^{35} \pmod{561} \equiv 241\). If it was congruent to 1, then \(N\) is a possible prime. Then, if \(7^{35} \equiv -1\), then N is a possible prime.
-        \item If the number is neither congruent to 1 or \(-1\), keep squaring and checking.
+        \item Pick \(a = 7\). Start by solving \(7^{35} \pmod{561} \equiv 241\). If it was congruent to 1 or \(-1\), then \(N\) is a possible prime.
+        \item If the number is neither congruent to 1 or \(-1\), keep squaring and checking up to \(k - 1\) times.
               \begin{itemize}
-                  \item Like this: \((7^{36})^2 \pmod{561} \equiv 298\). If this number is congruent to 1, then we are done.
+                  \item Like this: \((7^{36})^2 \pmod{561} \equiv 298\). If this number is congruent to 1, then we are done and the number is composite.
               \end{itemize}
-        \item If it is congruent to \(-1\), then we choose another \(N\), and note this is a possible prime. If congruent to \(k\), keep going.
-        \item Thus, \((7^{36})^4 \pmod{561} \equiv 166\), \((7^{36})^4 \pmod{561} \equiv 67\), and \((7^{36})^{16} \pmod{561} \equiv 1\), so 561 is composite and 7 is a \hyperlink{Miller-Rabin Witness}{M-R witness}.
+        \item If it is congruent to \(-1\), then we choose another \(a\), and note this is a possible prime. If it is not congruent to either \(-1\) or 1, then keep squaring up to \(k - 1\) times.
+        \item Thus, \((7^{36})^4 \pmod{561} \equiv 166\), \((7^{36})^8 \pmod{561} \equiv 67\), and \((7^{36})^{16} \pmod{561} \equiv 1\), so 561 is composite and 7 is a \hyperlink{Miller-Rabin Witness}{M-R witness} because we found a 1 before we found a \(-1\) in the sequence.
     \end{enumerate}
 }
 
@@ -296,6 +294,20 @@ However, there are some numbers will force all \(a\)'s to be fermat liars. These
 
 \lesol{
     \(N - 1 = 562 = 2(281)\). Start by solving \(7^{281} \pmod{563} \equiv 1\). Thus, 563 is a possible prime. Choose \(a = 8\). Then, \(8^{281} \pmod{563} \equiv -1\), so \(N\) is a possible prime.
+}
+
+\begin{example}
+    {Miller-Rabin Test 3}Let \(N = 31001\). Determine if \(N\) is prime. 
+\end{example}
+
+\lesol{
+    Start by finding \(p - 1 = 31000 = 2^3 \cdot 3875\). Then, use the fast powering algorithm to find \(b_0 = 2^{3875} \pmod{31001} \equiv 5799\) for \(b_1\). Since \(b_1\) is not 1 or \(-1\), we will try the other bases up to \(k - 1 = 3 - 1 = 2\). Thus, we use the fast powering algorithm to solve for subsequent \(b\)'s: 
+    \[\begin{array}{lccccr}
+        b_0^{3875} &=& 2^{3875} &\equiv& 5799 \pmod{31001} &= b_1 \\
+        b^2_1 &=& 5799^2 &\equiv& 13026 \pmod{31001} &= b_2 \\
+        b^2_2 &=& 13026^2 &\equiv& 8203 \pmod{31001} &= b_3
+    \end{array}\] 
+    Since no \(n - 1\) appeared in these steps, and there was not a 1 that appeared before a \(-1\), then this number is composite.
 }
 
 \begin{note}
