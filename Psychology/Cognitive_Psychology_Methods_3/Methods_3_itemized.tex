@@ -1,0 +1,188 @@
+% This is the "preamble" of the document. This is where the format options get set.
+% Pro-tip: things following the % mark will not be compiled by LaTeX. I'll be using them extensively to explain things as we go.
+% Note: not to scare you off of LaTeX, but it's normal to have problems. And ya girl has been having some. I've included the copyright info at the bottom of the document from the guy who wrote this package, because his documentation doesn't entirely match how it's actually used. So this is a combination of his working preamble along with my added commentary or explanation. 
+%% 
+
+
+\documentclass[stu,12pt,floatsintext]{apa7}
+\usepackage{marginnote}
+% Document class input explanation ________________
+% LaTeX files need to start with the document class, so it knows what it's using
+% - This file is using the apa7 document class, as it has a lot of the formatting built in
+% There are two sets of brackets in LaTeX, for each command (the things that start with the slash \ )
+% - The squiggle brackets {} are mandatory for executing the command
+% - The square brackets [] are options for that command. There can be more than one set of square brackets for some commands
+% Options used in this document (general note - for each of these, if you want to use the other options, swap it out in that spot in the square brackets):
+% - stu: this sets the `document mode' as the "student paper" version. Other options are jou (journal), man (manuscript, for journal submission), and doc (a plain document)
+% --- The student setting includes things like 'duedate', 'course', and 'professor' on the title page. If these aren't wanted/needed, use the 'man' setting. It also defaults to including the tables and figures at the end of the document. This can be changed by including the 'floatsintext' option, as I have for you. If the instructor wants those at the end, remove that from the square brackets.
+% --- The manuscript setting is roughly what you would use to submit to a journal, so uses 'date' instead of 'duedate', and doesn't include the 'course' or 'professor' info. As with 'stu', it defaults to putting the tables and figures at the end rather than in text. The same option will bump those images in text.
+% --- Journal ('jou') outputs something similar to a common journal format - double columned text and figurs in place. This can be fun, especially if you are sumbitting this as a writing sample in applications.
+% --- Document ('doc') outputs single columned, single spaced text with figures in place. Another option for producing a more polished looking document as a writing sample.
+% - 12pt: sets the font size to 12pt. Other options are 10pt or 11pt
+% - floatsintext: makes it so tables and figures will appear in text rather than at the end. Unforunately, not having this option set breaks the whole document, and I haven't been able to figure out why. IT's GREAT WHEN THINGS WORK LIKE THEY'RE SUPPOSED TO.
+
+
+\usepackage{csquotes} % One of the things you learn about LaTeX is at some level, it's like magic. The references weren't printing as they should without this line, and the guy who wrote the package included it, so here it is. Because LaTeX reasons.
+
+\usepackage[T1]{fontenc} 
+\usepackage{mathptmx} % This is the Times New Roman font, which was the norm back in my day. If you'd like to use a different font, the options are laid out here: https://www.overleaf.com/learn/latex/Font_typefaces
+% Alternately, you can comment out or delete these two commands and just use the Overleaf default font. So many choices!
+
+\usepackage{hyperref}
+
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+    citecolor=horange
+}
+
+% Title page stuff _____________________
+\title{Applying Cognitive Psychology Methods Activity 3: Long-Term Memory (B)} % The big, long version of the title for the title page
+\author{Paul Beggs}
+\duedate{\today}
+% \date{January 17, 2024} The student version doesn't use the \date command, for whatever reason
+\authorsaffiliations{Department of Psychology, Hendrix College}
+\course{PSYC 319: Cognitive Psychology} % LaTeX gets annoyed (i.e., throws a grumble-error) if this is blank, so I put something here. However, if your instructor will mark you off for this being on the title page, you can leave this entry blank (delete the PSY 4321, but leave the command), and just make peace with the error that will happen. It won't break the document.
+\professor{Dr.\ Carmen Merrick}  % Same situation as for the course info. Some instructors want this, some absolutely don't and will take off points. So do what you gotta
+
+
+%\characterwords{APA style, demonstration} % If you need to have characterwords for your paper, delete the % at the start of this line
+
+\begin{document}
+
+% Questions to answer:
+
+% 1. Describe the experiment – Include: what were you studying? What were the experimental 
+% groups? What did we do? (don’t forget that we took two tests!) How did we control for
+% confounds? (6 pts)
+
+% 2. Describe the process of learning the list of words and then retrieving them for the first
+% quiz (regardless of study type – you will comment on different study types in a question
+% below). Include encoding, rehearsal, consolidation, retrieval (10 pts)
+
+% 3. Looking at the information about studying in Chapter 7 – what study techniques did you
+% implement and how do they work (name at least 2), OR (if you didn’t use any of them)
+% what study techniques could you have used and how would those have helped you retain
+% information? (You should describe at least two techniques for this question. So, if you
+% used 2, describe them; if you used 1, then describe it and add 1 that you could have used;
+% if you didn’t use any, describe 2 that you could have used) (10 pts)
+
+% 4. Why might distributed practice be hypothesized to be better than single-session studying?
+% Include encoding, consolidation, retrieval, and reconsolidation in your answer (15 pts)
+
+% 5. Evaluate our experiment. Provide one reason (potential confound) that may account for
+% us not getting the results that we expected. How could we have controlled for that
+% confound? (5 pts)
+
+\maketitle % This tells LaTeX to make the title page
+
+\begin{enumerate}
+    \item \textbf{Describe the experiment.}
+    \begin{enumerate}
+        \item \textbf{What were you studying?}
+
+        We were studying the effects of studying the night before an exam (cramming), vs. studying over multiple days leading up to an exam (distributive practicing).
+        
+        \item \textbf{What were the experimental groups?}
+
+        We had two groups: the cramming group, and the distributive practice group.
+
+        \item \textbf{What did we do?}
+        
+        The two groups studied German words, but their studying methods were different. They both studied for one hour total, but the cramming group studied for one hour the night before, and the distributive practice group studied for 15 minutes each day for four days. Then, after the studying period was finished, we took an exam to test our \textit{retrieval}---bringing information into consciousness by transferring it from long term memory to working memory (memory that you manipulate in real time). Then, after 2 days, we took another exam, but were not allowed to study in-between the two.
+
+        \item \textbf{How did we control for confounds?}
+        
+        We used the demographics for both groups, and we recorded the time we spent studying. 
+
+    \end{enumerate}  
+    \item \textbf{Describe the process of learning the list of words and then retrieving them for the first quiz.}
+
+    While we were studying for the exam, we \textit{encoded}---the process of acquiring information and transferring it to long term memory---the German words, and associated the word with the literal English translation, and the actual translation. Then, we \textit{rehearsed}---repeating a stimulus over and over---these words to \textit{consolidate}---the process that transforms new memories from a fragile state, in which they can be disrupted, to a more permanent state, in which they are resistant to disruption---the terms into our long term memories. Then, when we were about to take the exam, we used retrieval get that stored information and cite it on the paper. 
+
+    \item \textbf{What study techniques did you implement and how do they work?}
+
+    Because I was a part of the distributive practice group, I utilized \textit{breaks}---studying in short sessions rather than trying to learn everything all at once---and because I used note cards, I utilized \textit{generation and test}---given a stimulus, produce an associated word or phrase that goes along with the stimulus. 
+
+    \item \textbf{Why might distributed practice be hypothesized to be better than single-session studying?}
+
+    Distributive practice allows a student to encode, consolidate, and then take a break. Then, they can revisit the vocab words and \textit{reconsolidate}---modify or expel a memory---upon the knowledge they learned in their previous session. Perhaps, after they finished studying for the first 15 minutes, they were subconsciously making connections to things in their memory. This would strengthen these novel memories, and would allow for easier retrieval during the exam.
+
+    \item \textbf{Evaluate our experiment.}
+
+    Our experiment was far from perfect, but we were able to get a ``back of the envelope'' estimate for the efficacy of cramming verses distributive studying. However, we could have controlled for the confounding variable of multitasking. There could have been additional clarification to only study the words, and do nothing else in the meantime. Or, more extreme, we could have conducted the study in a laboratory so we can be sure the students are only studying for their requisite times, and are not multitasking.
+\end{enumerate}
+
+\end{document}
+
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Daniel A. Weiss.
+%% 
+%% This work consists of the file  apa7.dtx
+%% and the derived files           apa7.ins,
+%%                                 apa7.cls,
+%%                                 apa7.pdf,
+%%                                 README,
+%%                                 APA7american.txt,
+%%                                 APA7british.txt,
+%%                                 APA7dutch.txt,
+%%                                 APA7english.txt,
+%%                                 APA7german.txt,
+%%                                 APA7ngerman.txt,
+%%                                 APA7greek.txt,
+%%                                 APA7czech.txt,
+%%                                 APA7turkish.txt,
+%%                                 APA7endfloat.cfg,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%%
+%% This is file `./samples/shortsample.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% apa7.dtx  (with options: `shortsample')
+%% ----------------------------------------------------------------------
+%% 
+%% apa7 - A LaTeX class for formatting documents in compliance with the
+%% American Psychological Association's Publication Manual, 7th edition
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% ----------------------------------------------------------------------

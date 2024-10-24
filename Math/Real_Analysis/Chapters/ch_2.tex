@@ -52,14 +52,17 @@ We can rearrange these terms such that we can `force' the series to converge to 
     Actual proof let \(\epsilon > 0\). By the Archimedean Principle, there exists \(N \in \N\) such that \(N > \frac{1}{\epsilon}\). Now, for any \(n \geq N\), \[\left|\frac{1}{n}\right| = \frac{1}{n} \leq \frac{1}{N} < \frac{1}{1/\epsilon}.\] (Where \(\frac{1}{1/\epsilon} = \epsilon\), but is in that form for demonstration purposes.) Therefore \(\displaystyle \lim_{n \rightarrow \infty} \frac{1}{n} = 0\)
 }
 
-``To get close'' means is that we are finding a bigger and bigger \(N\) as \(\epsilon\) gets smaller. Note that the choice of \(N\) certainly depends on \(\epsilon\).
+``To get close'' means is that we are finding a bigger and bigger \(N\) as \(\epsilon\) gets smaller. Note that the choice of \(N\) certainly depends on \(\epsilon\). This idea of ``getting close'' can be seen in the following definition:
+
+\begin{tcolorbox}%
+    [rounded corners, colframe=xred, colback=xred!15, coltitle=white, label=def:2.2.3B, title={\large \textbf{Definition 2.2.3B}}]
+    A sequence \( (a_n) \) converges to \( a \) if, given any \( \epsilon \)-neighborhood \( V_\epsilon(a) \) of \( a \), there exists a point in the sequence after which all of the terms are in \( V_\epsilon(a) \). In other words, every \( \epsilon \)-neighborhood contains all but a finite number of the terms of \( (a_n) \).
+\end{tcolorbox}
 
 \subsection{Basic Structure of a Limit Proof}
 
 Claim: \(\displaystyle \lim_{n \rightarrow \infty} a_n = L\). \\
 Proof: Let \(\epsilon > 0\). There exists \(N \in \N\) such that \{something involving \(\epsilon\)\}. Assume \(n \geq N\). Then, \[|a-n - L| \ \boxed{\dots} < \epsilon\] (Where \(\boxed{\dots}\) is going to be where the majority of the work is going to lie.
-
-\newpage
 
 \begin{example}
     {In-class}Claim: \(\displaystyle \lim_{n \rightarrow \infty} \frac{2n-3}{2n} = 1\)
@@ -151,7 +154,7 @@ Therefore, \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
     \end{align*}
 }
 
-\section*{Exercises}
+\subsection{Exercises}
 
 \begin{exercise}
     {2.2.2(b)}Verify, using \defref{2.2.3}, that
@@ -217,6 +220,34 @@ Therefore, \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
         \item Possible. \((0,1,0,1,1,0,1,1,1,0,1,1,1,1,0,\dots)\)
     \end{enumerate}
 }
+
+
+
+\begin{exercise}
+    {2.2.7} {Here are two useful definitions:}
+    \begin{enumerate}[label=(\roman*)]
+        \item A sequence \((a_n)\) is \emph{eventually} in a set \(A \subseteq \mathbb{R}\) if there exists an \(N \in \mathbb{N}\) such that \(a_n \in A\) for all \(n \geq N\).
+        \item A sequence \((a_n)\) is \emph{frequently} in a set \(A \subseteq \mathbb{R}\) if, for every \(N \in \mathbb{N}\), there exists an \(n \geq N\) such that \(a_n \in A\).
+              \begin{enumerate}[label=(\alph*)]
+                  \item Is the sequence \((-1)^n\) eventually or frequently in the set \(\{1\}\)?
+                  \item Which definition is stronger? Does frequently imply eventually, or does eventually imply frequently?
+                  \item Give an alternate rephrasing of \defref{2.2.3B} using either frequently or eventually. Which is the term we want?
+                  \item Suppose an infinite number of terms of a sequence \((x_n)\) are equal to \(2\). Is \((x_n)\) necessarily eventually in the interval \((1.9, 2.1)\)? Is it frequently in \((1.9, 2.1)\)?
+              \end{enumerate}
+    \end{enumerate}
+
+\end{exercise}
+
+\sol{
+    \begin{enumerate}[label=(\alph*)]
+        \item The sequence \((-1)^n\) is \textit{frequently} in the set \(\{1\}\) because for every \(N \in \mathbb{N}\), we can find an \(n \geq N\) such that \((-1)^n = 1\).
+        \item The definition of \textit{eventually} is stronger because \textit{eventually} implies \textit{frequently}, but \textit{frequently} does not imply \textit{eventually}.
+        \item An alternate rephrasing of Definition 2.2.3B using \textit{eventually} is: A sequence \((a_n)\) converges to \(a\) if, given any \(\epsilon\)-neighborhood---\(V_\epsilon(a)\) of \(a\)---\((a_n)\) is \textit{eventually} in \(V_\epsilon(a)\). The term we want is eventually.
+        \item If an infinite number of terms of a sequence \((x_n)\) are equal to \(2\),  \((x_n)\) is not \textit{eventually} in \((1.9, 2.1)\) because we can have a sequence \((a_n)\) that will not settle in \((1.9, 2.1)\). For example, \((a_n) = (0,2,0,2,\cdots)\) does not settle in \((1.9, 2.1)\). Whereas, \((x_n)\) is \textit{frequently} in the interval \((1.9, 2.1)\) because for every \(N \in \mathbb{N}\) there exists an \(n \geq N\) such that \(x_n \in (1.9, 2.1)\) for all \(n \geq N\). We can see an instance of this being true by examining the previous example.
+    \end{enumerate}
+}
+
+
 
 \section{The Algebraic and Order Limit Theorems}
 
@@ -318,7 +349,7 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
 
 
 
-\section*{Exercises}
+\subsection{Exercises}
 
 \begin{exercise}
     {2.3.1}
@@ -581,6 +612,79 @@ The \namrefthm{Nested Interval Property} states that \(\bigcup_{n = 1}^\infty I_
     \end{align*} Thus, \(L = 0\) or \(L = 1\). The limit cannot be 1 because \(b^n\) is decreasing away from 1. Therefore, \(L = 0\).
 }
 
+\subsection{Exercises}
+
+\begin{exercise}
+    {2.5.1}Give an example of each of the following, or argue that such a request is impossible.
+    \begin{enumerate}
+        \item A sequence that has a subsequence that is bounded but contains no subsequence that converges.
+        \item A sequence that does not contain 0 or 1 as a term but contains subsequences converging to each of these values.
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item Impossible. This violates the \namrefthm{Bolzano-Weierstrass Theorem}. It assures us that every bounded sequence has a convergent subsequence. If a subsequence is bounded, then it must have a convergent subsequence.
+        \item Consider the sequence \((\frac{1}{2},\frac{1}{2},\frac{1}{3},\frac{2}{3},\frac{1}{4},\frac{3}{4}, \cdots \frac{1}{n}, \frac{(n-1)}{n})\). From this, you can have a subsequence \((\frac{1}{2}, \frac{1}{3}, \dots, \frac{1}{n})\) which converges to 0, and also a subsequence \((\frac{1}{2}, \frac{2}{3}, \dots \frac{n - 1}{n})\), which converges to 1.
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {2.5.2} Decide whether the following propositions are true or false, providing a short justification for each conclusion.
+    \begin{enumerate}
+        \item If every proper subsequence of \((x_n)\) converges, then \((x_n)\) converges as well.
+              \setcounter{enumi}{2}
+        \item If \((x_n)\) is bounded and diverges, then there exist two subsequences of \((x_n)\) that converge to different limits.
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item False. As shown in Example 2.5.4, if we have a sequence like \((1, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{4}, \frac{1}{5}, -\frac{1}{5}, \frac{1}{5}, \cdots)\), we see that it is divergent, and has two proper subsequences \((\frac{1}{5},\frac{1}{5}, \cdots)\) and \((-\frac{1}{5}, -\frac{1}{5}, \cdots)\) that both converge to values \(\frac{1}{5}\) and \(-\frac{1}{5}\), respectively.
+              \setcounter{enumi}{2}
+        \item True. If we assume that \((x_n)\) is bounded and diverges, then by the \namrefthm{Bolzano-Weierstrass Theorem}, every bounded sequence has a convergent subsequence. Let \((x_{n_k})\) be that convergent subsequence of \((x_n)\), and let \(L_1\) be its limit. Since \((x_n)\) diverges, it cannot converge to \(L_1\). Thus, there exists an \(\epsilon_0 > 0\) such that for all terms of \((x_n)\), they stay outside the \(\epsilon_0\)-neighborhood of \(L_1\). Assume this sub-subsequence \((x_{m_k})\) contains these terms. When we apply the same logic to this sub-subsequence, we see that by the \namrefthm{Bolzano-Weierstrass Theorem}, \((x_{m_k})\) has a convergent subsequence with limit \(L_2\), where \(L_2 \ne L_1\) because the terms of \((x_{m_k})\) stay outside the \(\epsilon_0\)-neighborhood of \(L_1\). Thus \((x_n)\) contains two subsequences that converge to different limits, \(L_1\) and \(L_2\).
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {2.5.5} Assume \((a_n)\) is a bounded sequence with the property that every convergent subsequence of \((a_n)\) converges to the same limit \(a \in \mathbb{R}\). Show that \((a_n)\) must converge to \(a\).
+\end{exercise}
+
+\expf{
+Suppose that \((a_n)\) does not converge to \(a \in \R\). By the definition of convergence, this means there is a positive real number \(\epsilon_0\) such that no matter how large we choose \(N \in \N\), there will always exist some \(n > N\) where \(|a_n - a| \geq \epsilon_0\). In a formal way, this shows that \((a_n)\) does not converge to \(a\) within the \(\epsilon_0\)-neighborhood.
+
+We aim to demonstrate that this leads to a contradiction by constructing a subsequence of \((a_n)\) that stays outside this neighborhood. Begin by selecting \(n_1\) such that \(|a_{n_1} - a| \geq \epsilon_0\). Next, since the condition holds for all \(N \in \N\), we can find another index \(n_2 > n_1\) such that \(|a_{n_2} - a| \geq \epsilon_0\). Continuing this process, we generate an increasing sequence of indices \(n_1 < n_2 < n_3 < \dots\) such that for each \(i \in \N\), \(|a_{n_i} - a| \geq \epsilon_0\).
+
+Now consider the subsequence \((a_{n_i})\) we have built. Since \((a_n)\) is bounded by assumption, its subsequence \((a_{n_i})\) is also bounded. By the \namrefthm{Bolzano-Weierstrass Theorem}, every bounded sequence has a convergent subsequence. Let \((a_{n_{i_k}})\) denote a convergent subsequence of \((a_{n_i})\). According to our assumption, any convergent subsequence of \((a_n)\) must converge to \(a\).
+
+However, each term of \((a_{n_{i_k}})\) remains outside the \(\epsilon_0\)-neighborhood of \(a\). Thus, it is impossible for \((a_{n_{i_k}})\) to converge to \(a\). This contradiction implies that our initial assumption—that \((a_n)\) does not converge to \(a\)—is false. Therefore, the sequence \((a_n)\) must converge to \(a\).
+}
+
+
+
+\begin{exercise}
+    {2.5.6} Use a similar strategy to the one in \numrefthm{2.5.5} to show
+    \[\lim b^{1/n} \text{ exists for all } b \geq 0\] and find the value of the limit. (The results in \hyperref[ex:2.3.1]{Exercise 2.3.1} may be assumed.)
+\end{exercise}
+
+\expf{
+    For this proof, we will be examining different cases that \(b\) may fall under. These cases are \(b = 0\) and \(b > 0\).
+    \begin{enumerate}[label=\arabic*.]
+        \item If \(b = 0\), then the sequence \((b^{1/n})\) is simply \((0, 0, 0, \dots)\). Thus, the limit of this sequence is 0.
+        \item For \(b > 0\), it is more complicated. We see that this sequence is decreasing because as \(n\) increases, the exponent \(\frac{1}{n}\) trends toward a higher denominator, so \(b^{1/n}\) decreases. We can see this by observing the property that for any \(m < n\), \(\frac{1}{n} < \frac{1}{m}\). This implies that \(b^{1/n} < b^{1/m}\).
+
+              Further, we see that this sequence is bounded below by \(0\) when \(b > 1\) and by 1 when \(b = 1\) (because \(1\) to any exponent is just 1). Therefore, this sequence is monotone and bounded below, so it must converge to some \(L \geq 0\) by the \namrefthm{Monotone Convergence Theorem}.
+
+              To find \(L\), we need to consider another set of cases for \(b\). \begin{enumerate}[label = \roman*.]
+                  \item If \(b = 1\), then \(b^{1/n} = 1\) for all \(n\), so its limit is 1.
+                  \item If \(b > 1\), then as \(n\) increases, the exponent \(\frac{1}{n}\) approaches 0, so \(b^{1/n}\) approaches \(b^0 = 1\). So, its limit is also 1.
+                  \item If \(0 < b < 1\), then we know \(\limn{b^{1/n}} = 1\) because \(b^{1/n}\) is a decreasing sequence bounded by 0, and when we have smaller and smaller powers of a number less than 1, it pushes it closer to 1.
+              \end{enumerate}
+    \end{enumerate}
+    Through these cases, we see that for all \(b \geq 0\), \(\limn{b^{1/n}} = 1\).
+}
+
+
 
 \section{The Cauchy Criterion}
 
@@ -603,19 +707,19 @@ This says that as terms get close to each other and stay close together, there's
     {Cauchy Sequence}Consider the sequence \(a_1 = 1, a_2 = 2,\) where \[a_n = \frac{a_{n-1} + a_{n-2}}{2} \text{ for all } n \geq 2.\] Show this sequence is Cauchy.
 \end{example}
 
-\expf{
-    Look at the differences of consequtive terms, \(\disabs{a_1 - a_2} = 1\), \(\disabs{a_2 - a_3} = 1/2\), we can see a formula \(a_n - a_{n+1} = {1/2}^{n-1}\). Assume \(\disabs{a_n - a_m}= \disabs{a_n - a_{n+1} - a_{n+2}} - \cdots - a_{m - 1} - a_m\) with \(n <m\). From the \hyperlink{Triangle Inequality}{Triangle Inequality},
-    \begin{align}
-        \disabs{a_n - a_m} & \leq \disabs{a_n - a_{n+1}} + \disabs{a_{n+1} - a_{n+2}} + \cdots + \disabs{a_{m-1} - a_m} \\
-        & = \frac{1}{2^{n-1}} + \frac{1}{2}^{n} + \cdots + \frac{1}{2}^{m-2} \\
-        & = \frac{1}{2^{n-1}} \left(1 + \frac{1}{2} + \cdots + \frac{1}{2}^{m-n-1}\right) \\
-        & = \frac{1}{2^{n-1}} \left(\frac{1 - \frac{1}{2}^{m-n}}{1 - \frac{1}{2}}\right) \\
-        & = \frac{1}{2^n} \left(1 - \frac{1}{2^{m-n}}\right) \\
-        & < \frac{1}{2}. 
-    \end{align}
-    Notice that we were able to pull out the \(1/2\) and use the geometric series formula at step 2.12. From here we know that \(\disabs{a_n - a_m} < \frac{1}{2^n}\). 
-    
-    Now, conclude the proof by letting \(\epsilon > 0\). We know \((1/2^n) \rightarrow 0\). Thus, there exists \(N \in \N\) such that \(\frac{1}{2^N} < \epsilon\). For all \(n,m \geq N\), (without loss of generality \(n < m\)) \(\disabs{a_n - a_m} < \frac{1}{2}n \leq \frac{1}{2}N < \epsilon\). Therefore, \(a_n\) is \hyperlink{def:2.6.1}{Cauchy} and it converges.
+\lepf{
+Look at the differences of consequtive terms, \(\disabs{a_1 - a_2} = 1\), \(\disabs{a_2 - a_3} = 1/2\), we can see a formula \(a_n - a_{n+1} = {1/2}^{n-1}\). Assume \(\disabs{a_n - a_m}= \disabs{a_n - a_{n+1} - a_{n+2}} - \cdots - a_{m - 1} - a_m\) with \(n <m\). From the \hyperref[def:1.2.4]{Triangle Inequality},
+\begin{align}
+    \disabs{a_n - a_m} & \leq \disabs{a_n - a_{n+1}} + \disabs{a_{n+1} - a_{n+2}} + \cdots + \disabs{a_{m-1} - a_m} \\
+                       & = \frac{1}{2^{n-1}} + \frac{1}{2}^{n} + \cdots + \frac{1}{2}^{m-2}                         \\
+                       & = \frac{1}{2^{n-1}} \left(1 + \frac{1}{2} + \cdots + \frac{1}{2}^{m-n-1}\right)            \\
+                       & = \frac{1}{2^{n-1}} \left(\frac{1 - \frac{1}{2}^{m-n}}{1 - \frac{1}{2}}\right)             \\
+                       & = \frac{1}{2^n} \left(1 - \frac{1}{2^{m-n}}\right)                                         \\
+                       & < \frac{1}{2}.
+\end{align}
+Notice that we were able to pull out the \(1/2\) and use the geometric series formula at step 2.12. From here we know that \(\disabs{a_n - a_m} < \frac{1}{2^n}\).
+
+Now, conclude the proof by letting \(\epsilon > 0\). We know \((1/2^n) \rightarrow 0\). Thus, there exists \(N \in \N\) such that \(\frac{1}{2^N} < \epsilon\). For all \(n,m \geq N\), (without loss of generality \(n < m\)) \(\disabs{a_n - a_m} < \frac{1}{2}n \leq \frac{1}{2}N < \epsilon\). Therefore, \(a_n\) is \hyperref[def:2.6.1]{Cauchy} and it converges.
 }
 
 \begin{note}
@@ -653,11 +757,11 @@ This says that as terms get close to each other and stay close together, there's
 \end{definition}
 
 How this works: we take a sequence \(a_1, a_2, \dots\) and subtract \(a_1 - a_2\). Then, we have the inequality: \begin{align*}
-    \disabs{a_2 - a_3} & \leq C\disabs{a_1 - a_2} \\
+    \disabs{a_2 - a_3} & \leq C\disabs{a_1 - a_2}                            \\
     \disabs{a_3 - a_4} & \leq C\disabs{a_2 - a_3} \leq C^2\disabs{a_1 - a_2} \\
     \disabs{a_4 - a_5} & \leq C\disabs{a_3 - a_4} \leq C^3\disabs{a_1 - a_2} \\
-    & \quad \vdots
-\end{align*} From this a theorem emerges:
+                       & \quad \vdots
+\end{align*} From this, a theorem emerges:
 
 \begin{theorem}
     If a sequence is contracting, then it is Cauchy, and thus converges.

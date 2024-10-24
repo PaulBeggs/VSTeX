@@ -1,39 +1,20 @@
 \section{Types of Numbers}
 
-The book, \textit{Understanding Analysis} by Stephen Abbott, can be found at \href{file:///C:/Users/paulb/OneDrive%20-%20Hendrix%20College/0.3%20Junior%20Year/Real%20Analysis%20(MATH%20350%2001)/2015_Book_UnderstandingAnalysis.pdf}{this link}
+\begin{definition}
+    
+The \textit{natural numbers} contain all positive, non-zero, and non-fractional numbers. Expressed as \(\N = \{1,2,3,4\dots\}\). They do not have an additive inverse, but you can add and multiply them.
+\end{definition}
 
-The \gls{natural numbers}, \(\N\):
-\begin{itemize}
-    \item No additive inverse.
-    \item You can:
-          \begin{itemize}
-              \item Add,
-              \item Multiply
-          \end{itemize}
-\end{itemize}
+\begin{definition}
+    
+The \textit{integers} contains all non-fractional numbers. Expressed as: \(\Z = \{\dots-2,-1,0,1,2\dots\}\)---are known as a Group (more specifically, a ``ring''). You can add, multiply, and subtract these numbers.
+\end{definition}
 
-The \gls{integers}, \(\Z\) are known as a Group (more specifically, a ``ring'').
+\begin{definition}
+    
+The \textit{rational numbers} contain all numbers, except irrational numbers. Expressed as: \(\Q = \{\frac{p}{q} \ | \ p,q \in \Z, q \ne 0\}\)---are known as a ``Field.'' You can add, subtract, multiply, and divide these numbers.
 
-\begin{itemize}
-    \item You can:
-          \begin{itemize}
-              \item Add,
-              \item Multiply,
-              \item Subtract
-          \end{itemize}
-\end{itemize}
-
-The \gls{rational numbers}, \(\Q\) are known as a ``Field.''
-
-\begin{itemize}
-    \item You can:
-          \begin{itemize}
-              \item Add,
-              \item Subtract,
-              \item Multiply,
-              \item Divide
-          \end{itemize}
-\end{itemize}
+\end{definition}
 
 A problem that rational numbers could not explain: The \(45, 45, 90\) triangle had a hypotenuse of \(\sqrt{2}\). This did not exist at the time, so it was simply \(c^2 = 2\). Therefore, new numbers needed to be invented.
 
@@ -101,12 +82,12 @@ Things to remember from Intro and Discrete.
     \item \(\displaystyle \bigcup^\infty_{n=1} A_n = A_1 \cup A_2 \cup A_3 \cup \dots\). \\
 
     \item \(\displaystyle \bigcap^\infty_{n=1} A_n = A_1 \cap A_2 \cap \dots\). \\
-
-    \item \textbf{\Gls{De Morgan's Laws}} \\
 \end{itemize}
 
+\begin{definition}
+    \textit{De Morgan's Laws} are defined as \((A \cup B)^c = A^c \cap B^c\) and \((A \cap B)^c = A^c \cup B^c\). 
+\end{definition}
 
-\pfs
 
 \subsection{Infinite Unions and Intersections} \hfill
 
@@ -116,27 +97,38 @@ For each \(n \in \N\), define \(A_n = \{n, n+1, n+2,\dots\} = \{k \in \N \ | \ k
 
 \(\bigcap^\infty_{n=1}A_n = \emptyset\). Obviously, we know that the empty set is a subset of \(A_n\), but to prove that \(\bigcap^\infty_{n=1}A_n\) is a subset of the empty set, we should suppose a \(k \in \N\) such that \(k \in \bigcap^\infty_{n=1}A_n\). Notice that \(k \notin \bigcap^\infty_{n=1}A_n\). So, \(\bigcap^\infty_{n=1}A_n = \emptyset\).
 
-\pfs
-
 \subsection{Functions and Notation} \hfill
 
 \(f \colon A \rightarrow B\) where \(f\) is a function, \(A\) is a domain, and \(B\) is the co-domain. Thus, \(f(x) = y\) such that \(x \in A\) and \(y \in B\). \\
 
-Some definitions to keep in mind: \\
+\subsubsection{Some definitions to keep in mind}
 
-\textbf{\Gls{The Dirichlet Function}} \\
 
-\textit{[Refer to notepaper for these following definitions]} \\
+\begin{definition}
+    The \textit{Dirichlet Function} is defined as \[f(x) = \begin{cases} 1 & \text{if } x \in \Q \\ 0 & \text{if } x \notin \Q \end{cases}\]
+\end{definition}
 
-\textbf{\Gls{image}} \\
+\begin{definition}
+    Let \(f \ \colon \ \R \rightarrow \R\). If \(E \subseteq \R\), then \(f(E) = \{f(x) \ | \ x \in E\}\).
+\end{definition}
 
-Example: \(g \ \colon \ \R \rightarrow \R\), when we say \(y \in g(A)\) implies \(\exists x\) such that \(g(x) = y\) \\
+Example: \(g \ \colon \ \R \rightarrow \R\), when we say \(y \in g(A)\) implies there exists an \(x\) such that \(g(x) = y\) \\
 
 \hypertarget{Triangle Inequality}{}
-\textbf{\Gls{triangle inequality}}: \\
+\begin{definition}
+    The \textit{Triangle Inequality} is defined as: For any \(a,b \in \R\), \(|a + b| \leq  |a| + |b|\).
+\end{definition}
 The most common application: For any \(a,b,c \in \R\), \(|a - b| \leq |a-c| + |c-b|\), with the intermediate step of \(a - b = (a-c) + (c-b)\).
 
-\subsection{Common Strategies for Analysis Proofs} \hfill
+\begin{definition}
+    A function \(f\) is \textit{injective} (or \textit{one-to-one}) if \(a_1 \ne a_2\) in \(A\) implies that \(f(a_1) \ne f(a_2)\) in \(B\). Note the contrapositive of this definition: If \(f(a_1) = f(a_2)\), then \(a_1 = a_2\).
+\end{definition}
+
+\begin{definition}
+    A function \(f\) is \textit{surjective} (or \textit{onto}) if for every \(b \in B\), there exists an \(a \in A\) such that \(f(a) = b\). Note the contrapositive of this definition: If there exists a \(b \in B\) such that there is no \(a \in A\) such that \(f(a) = b\), then the function is not surjective.
+\end{definition}
+
+\subsection{Common Strategies for Analysis Proofs}
 
 \setcounter{BoxCounter}{5}
 \begin{theorem}
@@ -171,7 +163,7 @@ Suppose the sequence \((x_n)\) is increasing. We will prove this point by using 
 \textbf{Inductive Step:} Then \(\frac{1}{2}x_n \leq \frac{1}{2}x_{n+1}\). Hence, \(\frac{1}{2}x_{n} + 1 \leq \frac{1}{2}x_{n+1} + 1\). Therefore we have proven through induction that, \(x_{n+1} \leq x_{n+2}\).
 }
 
-\subsection*{Exercises}
+\subsection{Exercises}
 
 \begin{exercise}
     {1.2.3}Decide which of the following represent true statements about
@@ -201,7 +193,7 @@ Suppose the sequence \((x_n)\) is increasing. We will prove this point by using 
 
 \newpage
 \begin{exercise}
-    {1.2.5}\Gls{De Morgan's Laws}. Let \(A\) and \(B\) be subsets of \(\R\).
+    {1.2.5}\hyperref[def:1.2.1]{De Morgan's Laws} Let \(A\) and \(B\) be subsets of \(\R\).
     \begin{enumerate}
         \item  If \(x \in (A \cap B)^c\), explain why \(x \in A^c \cup B^c\). This shows that \((A \cap B)^c \subseteq A^c \cup B^c\).
         \item Prove the reverse inclusion \((A \cap B)^c \supseteq A^c \cup B^c\), and conclude that \((A \cap B)^c = A^c \cup B^c\).
@@ -238,7 +230,7 @@ Suppose the sequence \((x_n)\) is increasing. We will prove this point by using 
     \begin{enumerate}
         \item Since \(f(x) = x^2\), the intervals of \(f(A)\) would be \([0,4]\) and \(f(B)\) would be \([1,16]\). The interval of the intersection of \(A \cap B\) is \([1,2]\). Take this through our function, we get \(f(A \cap B) = [1,4]\). On the other side of the equation, we already know the intervals of \(f(A)\) and \(f(B)\), and the intersection of theirs would be \([1,4]\). So they do equal each other. We know \(f(A \cup B)\) and \(f(A) \cup f(B)\) will be equivalent because \(f(A \cup B)\) has an interval of \([0,16]\), and \(f(A) \cup f(B)\) also has an interval of \([0,16]\) because taking the union of \([0,4] \cup [1,16]\) is \([0,16]\).
         \item Two sets could be \(A = [5,6]\) and \(B = [0,0]\). Because the sets have nothing in common even after taking their function, they do not equal each other.
-        \item \hfill \expf{Let \(x \in g(A \cap B)\). Using the definition of function, we know there exists a \(y \in A \cap B\) to which that \(y\) is mapped to as \(g(y) = x\). From the definition of intersection, we know \(y \in A\) and \(y \in B\) such that \(x = g(y) \in g(A)\) and \(x = g(y) \in g(B)\) because \(y \in A \cap B\). Putting it together, we have \(x \in g(A) \cap g(B)\) thus proving \(g(A \cap B) \subseteq g(A) \cap g(B)\)}
+        \item \hfill \innerpf{Let \(x \in g(A \cap B)\). Using the definition of function, we know there exists a \(y \in A \cap B\) to which that \(y\) is mapped to as \(g(y) = x\). From the definition of intersection, we know \(y \in A\) and \(y \in B\) such that \(x = g(y) \in g(A)\) and \(x = g(y) \in g(B)\) because \(y \in A \cap B\). Putting it together, we have \(x \in g(A) \cap g(B)\) thus proving \(g(A \cap B) \subseteq g(A) \cap g(B)\)}
         \item Conjecture: For any function \(g\) defined as \(g \ \colon \R \rightarrow \R\) and for any subsets \(A,B \subseteq \R\), the following holds: \[g(A \cup B) = g(A) \cup g(B)\]
               \sbseteqpf
               {Take any element \(x \in g(A \cap B)\). By definition of function, we know there exists some \(y \in A \cup B\) such that \(g(x) = y\). From the definition of union, we know \(y \in A\) or \(y \in B\) such that \(x = g(y) \in g(A)\) or \(x = g(y) \in g(B)\) or both. Putting it together, we have \(x \in g(A) \cup g(B)\) thus proving \(g(A \cup B) \subseteq g(A) \cup g(B)\).}
@@ -249,7 +241,7 @@ Suppose the sequence \((x_n)\) is increasing. We will prove this point by using 
 }
 
 \begin{exercise}
-    {1.2.8}Given a function \(f \ \colon A \rightarrow B\) can be defined as either \gls{one-to-one} or \gls{onto}, give an example of each or state that the request is impossible:
+    {1.2.8}Given a function \(f \ \colon A \rightarrow B\) can be defined as either \hyperref[def:1.2.5]{injective} or \hyperref[def:1.2.6]{surjective}, give an example of each or state that the request is impossible:
     \begin{enumerate}
         \item \(f \ \colon \N \rightarrow \N\) that is 1-1 but not onto.
         \item \(f \ \colon \N \rightarrow \N\) that is onto but not 1-1.
@@ -275,8 +267,81 @@ Suppose the sequence \((x_n)\) is increasing. We will prove this point by using 
         \item This request is not possible. There is no way to map every natural number to every integer because we are simply missing 0! (Not 0 factorial, we do have the number 1, I just mean the number 0 in a exclamatory sense.)
     \end{enumerate}
 }
+
+
+\begin{exercise}
+    {1.2.13}For this exercise, assume \hyperref[ex:1.2.5]{Exercise 1.2.5} has been successfully completed.
+    \begin{enumerate}[label=(\alph*)]
+        \item Show how induction can be used to conclude that
+              \[
+                  (A_1 \cup A_2 \cup \cdots \cup A_n)^c = A_1^c \cap A_2^c \cap \cdots \cap A_n^c
+              \]
+              for any finite \(n \in \mathbb{N}\).
+
+        \item It is tempting to appeal to induction to conclude
+              \[
+                  \left( \bigcup_{i=1}^{\infty} A_i \right)^c = \bigcap_{i=1}^{\infty} A_i^c,
+              \]
+              but induction does not apply here. Induction is used to prove that a particular statement holds for every value of \(n \in \mathbb{N}\), but this does not imply the validity of the infinite case. To illustrate this point, find an example of a collection of sets \(B_1, B_2, B_3, \dots\) where
+              \[
+                  \bigcap_{i=1}^{n} B_i \neq \emptyset \quad \text{is true for every } n \in \mathbb{N},
+              \]
+              but
+              \[
+                  \bigcap_{i=1}^{\infty} B_i = \emptyset
+              \]
+              fails.
+
+        \item Nevertheless, the infinite version of De Morgan’s Law stated in (b) is a valid statement. Provide a proof that does not use induction.
+    \end{enumerate}
+\end{exercise}
+\newpage
+\sbseteqpf%
+%
+[In this proof, we plan to prove (c). Thus, we need to show that:
+    \[
+        \left( \bigcup_{i=1}^{\infty} A_i \right)^c \subseteq \bigcap_{i=1}^{\infty} A_i^c
+    \]
+    and
+    \[
+        \left( \bigcup_{i=1}^{\infty} A_i \right)^c \supseteq \bigcap_{i=1}^{\infty} A_i^c.
+    \]]%
+%
+{Let \(x \in \left( \bigcup_{i=1}^{\infty} A_i \right)^c\). This means \(x\) is in the union set of \(A_i\) for all \(i \in \N\). Then, because we are taking the complement of \(\left( \bigcup_{i=1}^{\infty} A_i \right)\), that means \(x \notin A_i\) for all \(i \in \mathbb{N}\). Hence, \(x\) is in the complement of each \(A_i\). Thus, we can use the definition of intersection to assert \(x \in \bigcap_{i=1}^{\infty} A_i^c\).
+
+    Therefore, we have shown:
+    \[
+        \left( \bigcup_{i=1}^{\infty} A_i \right)^c \subseteq \ \bigcap_{i=1}^{\infty} A_i^c.
+    \]}%
+%
+%
+%
+{Similar to before, let \(x \in \bigcap_{i=1}^{\infty} A_i^c\). Because \(x \in A^c_i\) for all \(i \in \N\) we know \(x \notin A_i\). Hence, \(x \notin \left(\bigcup_{i=1}^{\infty} A_i\right)\), which means \(x \in \left( \bigcup_{i=1}^{\infty} A_i \right)^c\).
+
+    Therefore, we have shown:
+    \[
+        \left( \bigcup_{i=1}^{\infty} A_i \right)^c \supseteq \ \bigcap_{i=1}^{\infty} A_i^c.
+    \]}%
+%
+%
+{By showing both inclusions, we see that:
+    \[
+        \left( \bigcup_{i=1}^{\infty} A_i \right)^c = \bigcap_{i=1}^{\infty} A_i^c.
+    \] \qedhere
+}%
+%
+%
+{xgray}
+
+
+
+
 \setcounter{section}{2}
 \section{Axiom of Completeness}
+
+\begin{axiom}
+    {Completeness}Every nonempty set of real numbers that is \hyperref[def:1.3.1]{bounded} has a \hyperref[def:1.3.2]{least upper bound}.
+\end{axiom}
 
 Think about \(\Q\) and \(\R\).
 \begin{itemize}
@@ -293,35 +358,43 @@ Think about \(\Q\) and \(\R\).
     \item \(\R\) is complete. \(\Q\) is not.
 \end{itemize}
 
-\begin{axiom}
-    {Completeness}Every nonempty set of real numbers that is \textbf{\gls{bounded}} has a \textbf{\gls{least upper bound}}.
-\end{axiom}
+\subsection{Least Upper Bounds and Greatest Lower Bounds}
 
-\textbf{Note that \glspl{upper bound} are not unique!} For example, consider the line, \(A\), from \(0\) to \(1\). There are infinitely many upper bounds past \(1\) because \(A\) is bounded. \\
+\begin{definition}
+    A set \(A \subseteq \R\) is \textit{bounded above} if there exists a number \(b \in \R\) such that \(a \leq b\) for all \(a \in A\). The number \(b\) is called an \textit{upper bound} of \(A\).
 
-We often call the least upper bound the \textit{supremum} of a set. Example: \\
+    Similarly, a set \(A \subseteq \R\) is \textit{bounded below} if there exists a \textit{lower bound} \(l \in \R\) satisfying \(l \leq a\) for every \(a \in A\).
+\end{definition}
 
-Imagine a number line from \((1,8)\). Note that parenthesis mean \(<\) and not \(\leq\). Hence, the supremum is \(8\). Wrote simply as \(\sup A\). \\
+\textbf{Note that upper bounds are not unique!} For example, consider the line, \(A\), from \(0\) to \(1\). There are infinitely many upper bounds past \(1\) because \(A\) is bounded.
+
+\begin{definition}
+    A number \(s\) is a \textit{least upper bound} for a set \(A \subseteq \R\) if it meets the following two criteria:
+    \begin{enumerate}[label=(\roman*)]
+        \item \(s\) is an upper bound for \(A\);
+        \item if \(b\) is any upper bound for \(A\), then \(s \leq b\).
+    \end{enumerate}
+\end{definition}
+
+We often call the least upper bound the \textit{supremum} of a set. 
 
 \begin{example}
-    {Supremum}Consider a set, \(B = [-5,-2] \cup (3,6) \cup \{13\}\). What is the supremum?
+    {Supremum} Imagine a number line from \((1,8)\). Note that parenthesis mean \(<\) and not \(\leq\). Hence, the supremum is \(8\). Wrote simply as \(\sup A\).
 \end{example}
 
-\sol{
-    \(\sup B = 13\)
-}
 
-At the other end of the set, we have the following:
-\begin{itemize}
-    \item lower bounds,
-    \item greatest lower bound
-    \item often called infimum.
-\end{itemize}
 
-The infimum of the previous example would be \(\inf B = -5\).
 
 \begin{example}
-    {}Consider the set, \(\C = \{\frac{1}{n} \ \colon \ n \in \N\}\). What is the supremum and the infimum?
+    {Supremum and Infimum 1}Consider a set, \(B = [-5,-2] \cup (3,6) \cup \{13\}\). What is the supremum and the infimum?
+\end{example}
+
+\lesol{
+    \(\sup B = 13\); \(\inf B = -5\) because \(-5\) is the greatest lower bound.
+}
+
+\begin{example}
+    {Supremum and Infimum 2}Consider the set, \(\C = \{\frac{1}{n} \ \colon \ n \in \N\}\). What is the supremum and the infimum?
 \end{example}
 
 \lesol{
@@ -333,15 +406,19 @@ The infimum of the previous example would be \(\inf B = -5\).
 \end{example}
 
 \lesol{
-    To properly verify this we focus separately on each part of Definition 1.3.2. Setting \(s = \sup A\), we see that \(a \leq s\) for all \(a \in A\), which implies \(c + a \leq c + s\) for all \(a \in A\). Thus, \(c + s\) is an upper bound for \(c + A\) and condition (i) is verified. For (ii), let \(b\) be an arbitrary upper bound for \(c + A\); i.e., \(c + a \leq b\) for all \(a \in A\). This is equivalent to \(a \leq b - c\) for all \(a \in A\), from which we conclude that \(b - c\) is an upper bound for \(A\). Because \(s\) is the least upper bound of \(A\), \(s \leq b - c\), which can be rewritten as \(c + s \leq b\). This verifies part (ii) of Definition 1.3.2, and we conclude \(\sup (c + A) = c + \sup A\).
+    To properly verify this we focus separately on each part of \hyperref[def:1.3.2]{Definition 1.3.2}. Setting \(s = \sup A\), we see that \(a \leq s\) for all \(a \in A\), which implies \(c + a \leq c + s\) for all \(a \in A\). Thus, \(c + s\) is an upper bound for \(c + A\) and condition (i) is verified. For (ii), let \(b\) be an arbitrary upper bound for \(c + A\); i.e., \(c + a \leq b\) for all \(a \in A\). This is equivalent to \(a \leq b - c\) for all \(a \in A\), from which we conclude that \(b - c\) is an upper bound for \(A\). Because \(s\) is the least upper bound of \(A\), \(s \leq b - c\), which can be rewritten as \(c + s \leq b\). This verifies part (ii) of \hyperref[def:1.3.2]{Definition 1.3.2}, and we conclude \(\sup (c + A) = c + \sup A\).
 }
 
-Why do we need to include infimum and supremum? Don't we have the max and min of a set already? Well, what exactly do we mean by the \gls{maximum value} of a set? \\
+\setcounter{BoxCounter}{3}
 
-We say \(m \in \R\) is the \textit{maximum} of \(A\) if \(m \in A\) and for all \(x\in A\), \(x \leq m\). Note that some sets have a maximum and some sets do not. You cannot refer to a maximum without first knowing it exists. This is the same with minimums.
+\begin{definition}
+    A real number \(a_0\) is a \textit{maximum} of the set \(A\) if \(a_0\) is an element of \(A\) and \(a_a \geq a\) for all \(a \in A\). Similarly, a number \(a_1\) is a \textit{minimum} of \(A\) if \(a_1\) is an element of \(A\) and \(a_1 \leq a\) for all \(a \in A\).
+\end{definition}
+
+Note that some sets have a maximum and some sets do not. You cannot refer to a maximum without first knowing it exists. This is the same with minimums.
 
 \begin{lemma}
-    {1.3.8}Assume \(s\) is an \gls{upper bound} for a set \(A \subseteq \R\). Then, \(s\) is the supremum of \(A\) if and only if for every \(\epsilon > 0\), there exists \(x\in A\) such that \(s - \epsilon < x\).
+    {1.3.8}Assume \(s\) is an \hyperref[def:1.3.1]{upper bound} for a set \(A \subseteq \R\). Then, \(s\) is the supremum of \(A\) if and only if for every \(\epsilon > 0\), there exists \(x\in A\) such that \(s - \epsilon < x\).
 \end{lemma}
 
 This lemma allows us to take any positive number and take a ``step back.'' In essence, you can verify something as an upper bound if you continuously back up over and over until you cannot back up any longer.
@@ -356,7 +433,7 @@ This lemma allows us to take any positive number and take a ``step back.'' In es
 }{xpurple}
 Analogous statement about infimums: Assume \(z\) is a lower bound of a set \(A \subseteq \R\). Then \(z = \inf A \iff \) for all \( \epsilon >0\), there exists \(y \in A\) such that \(y < z + \epsilon\).
 
-\subsection*{Exercises}
+\subsection{Exercises}
 
 \begin{exercise}
     {1.3.4}Let \(A_1,A_2,A_3\dots\) be a collection of nonempty sets each of which is bounded above.
@@ -383,10 +460,10 @@ Analogous statement about infimums: Assume \(z\) is a lower bound of a set \(A \
 
 \sol{
     \begin{enumerate}
-        \item Let \(A \subseteq \R\) be nonempty and bounded above. Define the set \(cA := \{ca \ \colon a \in A\}\). From the axiom of completeness, because \(A\) is bounded above, we know there is a least upper bound, \(s = \sup A\). Following from Example 1.3.7, we see that \(a \leq s\) for all \(a \in A\) which implies \(ca \leq cs\) for all \(a \in A\). Thus, \(cs\) is an upper bound for \(cA\), and the first condition of Definition 1.3.2 is satisfied. For the second condition, we need to look at both \(c = 0\) and \(c > 0\) to avoid dividing by zero. So, we have two cases:
+        \item Let \(A \subseteq \R\) be nonempty and bounded above. Define the set \(cA := \{ca \ \colon a \in A\}\). From the axiom of completeness, because \(A\) is bounded above, we know there is a least upper bound, \(s = \sup A\). Following from Example 1.3.7, we see that \(a \leq s\) for all \(a \in A\) which implies \(ca \leq cs\) for all \(a \in A\). Thus, \(cs\) is an upper bound for \(cA\), and the first condition of \hyperref[def:1.3.2]{Definition 1.3.2} is satisfied. For the second condition, we need to look at both \(c = 0\) and \(c > 0\) to avoid dividing by zero. So, we have two cases:
               \begin{itemize}
                   \item \textbf{\(c = 0\):} If \(c = 0\), then \(cA = \{0 \colon \ a \in A\} = \{0\}\). Since the only element in \(cA\) is \(0\), \(\sup(cA) = 0\). Similarly, because \(c = 0\), \(c \sup A = 0 \cdot \sup A = 0\). Therefore, \(\sup(cA) = c \sup(A)\).
-                  \item \textbf{\(c > 0\):} Let \(b\) be an arbitrary upper bound for \(cA\) and \(c > 0\). In other words, \(ca \leq b\) for all \(a \in A\). This is equivalent to \(a \leq b / c\) where \(c \ne 0\), from which we can see that \(b / c\) is an upper bound for \(A\). Because \(s\) is the least upper bound of \(A\), \(s \leq b / c\), which can be rewritten as \(cs \leq b\). This verifies the second part of Definition 1.3.2, and we conclude \(\sup(cA) = c \sup A\).
+                  \item \textbf{\(c > 0\):} Let \(b\) be an arbitrary upper bound for \(cA\) and \(c > 0\). In other words, \(ca \leq b\) for all \(a \in A\). This is equivalent to \(a \leq b / c\) where \(c \ne 0\), from which we can see that \(b / c\) is an upper bound for \(A\). Because \(s\) is the least upper bound of \(A\), \(s \leq b / c\), which can be rewritten as \(cs \leq b\). This verifies the second part of \hyperref[def:1.3.2]{Definition 1.3.2}, and we conclude \(\sup(cA) = c \sup A\).
               \end{itemize}
         \item Postulate: If \(c < 0\), then \(\sup(cA) = c \inf (A)\). \\
               % \expf{Assume \(c < 0\), Multiplying \(a \leq s\) by \(c\) reverses the inequality, so \(ca \geq cs\) for all \(a \in A\). Therefore, \(cs\) is a lower bound of for \(cA\). To verify this as the lowest upper bound, let \(m  = \inf A\). Using the same logic as before, for all \(a \in A\), \(m \leq a\), so \(cm \geq ca\). This shows that \(cm\) is the least upper bound of \(cA\), and thus \(\sup(cA) = cm = c \inf A\).}

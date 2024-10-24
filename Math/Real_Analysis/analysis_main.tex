@@ -4,7 +4,7 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \documentclass[12pt, oneside]{book}
-
+\usepackage{draculatheme}
 
 %%% AESTHETICS %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -14,7 +14,6 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
 \linespread{1}
-% \usepackage{draculatheme}
 \usepackage{listings}
 
 %%% Define new colors %%%
@@ -225,8 +224,8 @@
 %% Exercises %%
 \newtcolorbox[]{exercise}[2][]{%
     rounded corners,
-    colframe=xdarkgray,
-    colback=xgray!15,
+    colframe=orangehdx!75,
+    colback=orangehdx!10,
     coltitle=white,
     label={ex:#2},
     title={\large \textbf{Exercise: #2}},
@@ -334,13 +333,15 @@
 
 \newmdenv[
   topline=false,
-  bottomline=false,
+  bottomline=true,
   rightline=false,
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
+  backgroundcolor=draculabg, % Needed for Dracula theme
+  fontcolor=draculafg, % Needed for Dracula theme
   innertopmargin=0pt,
-  innerbottommargin=0pt,
+  innerbottommargin=5pt,
   innerrightmargin=10pt,
   innerleftmargin=10pt,
   leftmargin=0pt,
@@ -434,9 +435,17 @@
 
 % Command for lemma proofs with a predefined color
 \newcommand{\expf}[1]{
-    \begin{customframedproof}[linecolor=xgray]
+    \begin{customframedproof}[linecolor=orangehdx!75,]
         \begin{proof}
         #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\innerpf}[1]{%
+    \begin{customframedproof}[linecolor=xgray]
+        \begin{proof}
+            #1
         \end{proof}
     \end{customframedproof}
 }
@@ -460,7 +469,7 @@
 }
 
 \newcommand{\sol}[1]{
-    \begin{customframedproof}[linecolor=xgray]
+    \begin{customframedproof}[linecolor=orangehdx!75,]
         \begin{solution}
         #1
         \end{solution}
@@ -472,6 +481,14 @@
         \begin{solution}
         #1
         \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\lepf}[1]{
+    \begin{customframedproof}[linecolor=teal]
+        \begin{proof}
+        #1
+        \end{proof}
     \end{customframedproof}
 }
 
@@ -621,33 +638,33 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\chapter*{Exercises 1}\label{Exercises 1}
-\vspace*{-0.25in}
-\input{Exercises/1}
+% \chapter*{Exercises 1}\label{Exercises 1}
+% \vspace*{-0.25in}
+% \input{Exercises/1}
 
-\chapter*{Exercises 2}\label{Exercises 2}
-\vspace*{-0.25in}
-\input{Exercises/2}
+% \chapter*{Exercises 2}\label{Exercises 2}
+% \vspace*{-0.25in}
+% \input{Exercises/2}
 
-\fancyhead[R]{Exercises 3}
+% \fancyhead[R]{Exercises 3}
 
-\chapter*{Exercises 3}\label{Exercises 3}
-\vspace*{-0.25in}
-\input{Exercises/3}
+% \chapter*{Exercises 3}\label{Exercises 3}
+% \vspace*{-0.25in}
+% \input{Exercises/3}
 
-\chapter*{Exercises 4}\label{ex 4}
-\vspace*{-0.25in}
-\input{Exercises/4}
+% \chapter*{Exercises 4}\label{ex 4}
+% \vspace*{-0.25in}
+% \input{Exercises/4}
 
-\chapter*{Presentation Problem 1}\label{pres 1}
-\vspace*{-0.25in}
-\input{Presentation Problems/Problem 1.2.13c}
-\addcontentsline{toc}{chapter}{Presentation Problem 1}
+% \chapter*{Presentation Problem 1}\label{pres 1}
+% \vspace*{-0.25in}
+% \input{Presentation Problems/Problem 1.2.13c}
+% \addcontentsline{toc}{chapter}{Presentation Problem 1}
 
-\chapter*{Presentation Problem 2}\label{pres 2}
-\vspace*{-0.25in}
-\input{Presentation Problems/Problem 2.2.7}
-\addcontentsline{toc}{chapter}{Presentation Problem 2}
+% \chapter*{Presentation Problem 2}\label{pres 2}
+% \vspace*{-0.25in}
+% \input{Presentation Problems/Problem 2.2.7}
+% \addcontentsline{toc}{chapter}{Presentation Problem 2}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 \end{document}

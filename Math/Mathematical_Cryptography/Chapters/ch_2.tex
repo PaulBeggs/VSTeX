@@ -39,9 +39,9 @@ D-H gives a way for Alice and Bob to get a secret shared key in an unsecure envi
 \begin{enumerate}[label=\arabic*.]
     \item Alice and Bob choose large prime \(p\) and primitive root \(g\) and make public \(k_{\text{pub}} = (p,g)\).
     \item Alice and Bob each pick their own secret integers, \(a,b\) such that \(k_{\text{priv } A} = a\) and \(k_{\text{priv } B} = b\). Compute \(g^a \ (\text{mod } p) = A\) and \(g^b \ (\text{mod } p) = B\).
-    \item Exchange \(a\) and \(b\) over an insecure channel.
+    \item Exchange \(A\) and \(B\) over an insecure channel.
           \begin{enumerate}[label=\roman*.]
-              \item Note that Eve would have to solve \hyperlink{Discrete Logarithm Problem}{DLP} if she obtained \(a\) and \(b\) where \(a = \log_g(A)\) and \(b = \log_g(B)\).
+              \item Note that Eve would have to solve \hyperlink{Discrete Logarithm Problem}{DLP} if she obtained \(A\) and \(B\) where \(a = \log_g(A)\) and \(b = \log_g(B)\).
               \item Guidelines \(\approx 2^{1000} g \approx p/2\).
           \end{enumerate}
     \item Alice computes \(B^a \ (\text{mod } p) = A'\) and Bob computes \(A^b \ (\text{mod } p) = B'\).
@@ -146,6 +146,9 @@ For commutativity, for all \(a,b \in G\), \(a\times b = b \times a\). Some group
         \item False. Counterexample: consider \(2^{-1} = \frac{1}{2}\) because \(2(\frac{1}{2}) = 1\) but \(\frac{1}{2} \notin \Z\)
     \end{enumerate}
 }
+
+\wrpdef{Order}{The \textit{order} of an element \(a \ (\text{mod } p)\) is the smallest exponent \(k \geq 1\) such that \(a^k \equiv 1 \ (\text{mod } p)\).}
+
 \setcounter{section}{6}
 \section{A Collision Algorithm for the DLP}
 
@@ -162,7 +165,7 @@ Remember that to brute force the DLP, it takes \(P - 1\) steps. Recall \(g^{p-1}
                   \item Baby steps: \(\{g^0, g^1, g^2, \ldots, g^{m}\}\).
                   \item Giant steps: \(\{h, h \cdot g^{-m}, h \cdot g^{-2m}, \ldots, h \cdot g^{-m^2}\}\).
               \end{enumerate}
-        \item Find a match between the two lists: \(g^i \equiv hg^{-in} \ (\text{mod } p)\)
+        \item Find a match between the two lists: \(g^i \equiv hg^{-im} \ (\text{mod } p)\)
         \item \(x = i + jm\) is a solution for \(g^x \equiv h \ (\text{mod } p)\) (another way of saying ``\(x = i + jm\) is a solution for the \hyperlink{Discrete Logarithm Problem}{DLP}'').
     \end{enumerate}}
 
@@ -217,7 +220,7 @@ The number \(9704\) has order 1242 in \(\F_{17389}^*\). Set \(n = \lceil \sqrt{1
         n      & \equiv 6 \cdot 7^{-1} \ (\text{mod } 8) \\
                & \equiv 6 \cdot 7\ (\text{mod } 8)       \\
                & \equiv 2 \ (\text{mod } 8),
-    \end{align*} where \(2\ (\text{mod } 8 = 8m + 2) = n\). We plug this back into the following: \begin{align*}
+    \end{align*} where \(2\ (\text{mod } 8) = 8m + 2 = n\). We plug this back into the following: \begin{align*}
         x & = 7(8m + 2) + 6 \ (\text{mod } 7 \cdot 8) \\
           & = 56m + 14 + 6 \ (\text{mod } 56)         \\
           & = 56m + 20 \ (\text{mod } 56).
