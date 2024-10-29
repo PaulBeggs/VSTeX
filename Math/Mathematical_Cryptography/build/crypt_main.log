@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  28 OCT 2024 22:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  29 OCT 2024 06:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2533,22 +2533,22 @@ Package pdftex.def Info: images/small logo.png  used on input line 545.
 [51]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 579.
+(mdframed)              on input line 584.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 591.
+Package pdftex.def Info: images/small logo.png  used on input line 584.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [52]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 621.
+(mdframed)              on input line 626.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 621.
+Package pdftex.def Info: images/small logo.png  used on input line 626.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [53])
 
@@ -2580,33 +2580,35 @@ Package mdframed Info: mdframed detected package amsthm
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 73.
+Package pdftex.def Info: images/small logo.png  used on input line 81.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [56]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 80.
+(mdframed)              on input line 93.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 135.
+(mdframed)              on input line 148.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 135.
+Package pdftex.def Info: images/small logo.png  used on input line 148.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [57]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 160.
+(mdframed)              on input line 173.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 160.
+Package pdftex.def Info: images/small logo.png  used on input line 173.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [58]
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
+Package mdframed Info: Not enough space on this page on input line 173.
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
@@ -2614,606 +2616,188 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 196.
+Package pdftex.def Info: images/small logo.png  used on input line 201.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [59]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 225.
+(mdframed)              on input line 238.
+
+
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 238.
+
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 232.
+Package pdftex.def Info: images/small logo.png  used on input line 238.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [60]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 262.
+(mdframed)              on input line 275.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 271.
+Package pdftex.def Info: images/small logo.png  used on input line 284.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [61]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 287.
+(mdframed)              on input line 300.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 304.
+(mdframed)              on input line 317.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 316.
+Package pdftex.def Info: images/small logo.png  used on input line 329.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [62]
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 337.
+(mdframed)              on input line 350.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 354.
+Package pdftex.def Info: images/small logo.png  used on input line 367.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [63]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 361.
+(mdframed)              on input line 374.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 370.
+Package pdftex.def Info: images/small logo.png  used on input line 383.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [64]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 380.
+(mdframed)              on input line 393.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 415.
+Package pdftex.def Info: images/small logo.png  used on input line 427.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [65]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 418.
- (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
-File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 418.
-
-Overfull \hbox (37.8441pt too wide) in paragraph at lines 424--425
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 448.
+(mdframed)              on input line 444.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 452.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 466.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 448.
+Package pdftex.def Info: images/small logo.png  used on input line 466.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [66]
+Package mdframed Info: Not enough space on this page on input line 466.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 456.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 470.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 523.
-Package mdframed Info: Not enough space on this page on input line 523.
+(mdframed)              on input line 519.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 523.
+Package pdftex.def Info: images/small logo.png  used on input line 519.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [67]
-Package mdframed Info: Not enough space on this page on input line 523.
-
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 523.
+Package pdftex.def Info: images/small logo.png  used on input line 531.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [68]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 554.
-
-Overfull \hbox (5.82715pt too wide) in paragraph at lines 554--554
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 554--554
-
- []
-
-
-
-File: images/small logo.png Graphic file (type png)
-<use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 568.
-(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[69]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 598.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 598.
-
-
-File: images/small logo.png Graphic file (type png)
-<use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 598.
-(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[70]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 609.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 549.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 609.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 549.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 550.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 550.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 636.
+(mdframed)              on input line 567.
 
-Overfull \vbox (35.02327pt too high) detected at line 636
+Overfull \hbox (5.82715pt too wide) in paragraph at lines 567--567
+[] 
  []
 
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 636.
 
-Overfull \vbox (36.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (37.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (38.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (39.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (40.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (41.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (42.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (43.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (44.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (45.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (46.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (47.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (48.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (49.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (50.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (51.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (52.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (53.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (54.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (55.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (56.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (57.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (58.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (59.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (60.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (61.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (62.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (63.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (64.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (65.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (66.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (67.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (68.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (69.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (70.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (71.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (72.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (73.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (74.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (75.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (76.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (77.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (78.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (79.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (80.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (81.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (82.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (83.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (84.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (85.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (86.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (87.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (88.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (89.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (90.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (91.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (92.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (93.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (94.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (95.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (96.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (97.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (98.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (99.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (100.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (101.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (102.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (103.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (104.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (105.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (106.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (107.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (108.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (109.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (110.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (111.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (112.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (113.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (114.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (115.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (116.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (117.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (118.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (119.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (120.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (121.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (122.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (123.02327pt too high) detected at line 636
- []
-
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
-Overfull \vbox (124.02327pt too high) detected at line 636
  []
-
-
-Overfull \vbox (125.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (126.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (127.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (128.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (129.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (130.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (131.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (132.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (133.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (134.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (135.02327pt too high) detected at line 636
- []
-
-
-Overfull \vbox (136.02327pt too high) detected at line 636
- []
-
-
-Package mdframed Warning: correct box splittet fails
- It seems you are using a non splittable contents
-(mdframed)                 on input line 636.
 
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 636.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 636.
+Package pdftex.def Info: images/small logo.png  used on input line 581.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[69]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 611.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 611.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 611.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[70]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 635.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 665.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 665.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [71]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 666.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 694.
-Package mdframed Info: Not enough space on this page on input line 694.
+(mdframed)              on input line 693.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 693.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 694.
+Package pdftex.def Info: images/small logo.png  used on input line 693.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[72]
-Package mdframed Info: Not enough space on this page on input line 694.
-)
+[72])
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
@@ -3229,20 +2813,20 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `crypt_main.out' has not changed.
-(rerunfilecheck)             Checksum: 067023D208025F1751E424DEEA904D78;9241.
+(rerunfilecheck)             Checksum: CFB08CB6CF10DEC7BD3FDF264A8DB552;9353.
  ) 
 Here is how much of TeX's memory you used:
- 32620 strings out of 473899
- 636755 string characters out of 5726500
- 1348474 words of memory out of 5000000
- 54350 multiletter control sequences out of 15000+600000
+ 32605 strings out of 473899
+ 636570 string characters out of 5726500
+ 1348632 words of memory out of 5000000
+ 54345 multiletter control sequences out of 15000+600000
  574572 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,15n,101p,1005b,1950s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,15n,101p,1005b,1353s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi864\cmbcsc10.pk> <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cm/dpi1037\cmbcsc10.pk><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.pdf (74 pages, 623330 bytes).
+Output written on c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.pdf (74 pages, 622419 bytes).
 PDF statistics:
- 1336 PDF objects out of 1440 (max. 8388607)
- 562 named destinations out of 1000 (max. 500000)
+ 1325 PDF objects out of 1440 (max. 8388607)
+ 552 named destinations out of 1000 (max. 500000)
  447 words of extra memory for PDF output out of 10000 (max. 10000000)
 

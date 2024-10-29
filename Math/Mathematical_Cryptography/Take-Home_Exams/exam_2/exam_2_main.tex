@@ -120,7 +120,7 @@
 % Header formatting for all pages except the title page
 \fancypagestyle{standard}{
     \fancyhf{}
-    \fancyhead[L]{Exam I -- Take Home}
+    \fancyhead[L]{Exam II -- Take Home}
     \fancyhead[R]{Cryptography}
     \fancyfoot[R]{\rule{\textwidth}{0.5pt} \\ Page \thepage\ of 3} % Right-aligned footer with page numbers
 }
@@ -131,7 +131,7 @@
 \fancypagestyle{titlepage}{
     \fancyhf{}
     \fancyhead[L]{Hendrix}
-    \fancyhead[C]{Sept. 19, 2024}  % Centered date in title page header
+    \fancyhead[C]{Oct. 24, 2024}  % Centered date in title page header
     \fancyhead[R]{Mathematical Cryptography}
 }
 
@@ -165,7 +165,7 @@
 \thispagestyle{titlepage}
 
 \begin{center}
-    {\large Exam 1 -- Take home}
+    {\large Exam 2 -- Take home}
 \end{center}
 
 \noindent Printed Name: Paul Beggs \underline{\hspace{341.49907pt}}
@@ -223,18 +223,18 @@
 
                     %% SOLUTION HERE! %%
                     \sol{
-                        To use the Pohlig-Hellman algorithm, we need to find the order of the prime number \(p = 24691\). Since it is prime, we know the order to be \(\varphi(24691) = 24690\). We can factor this number to \(30 \cdot 823\). Let \(x = a_0 + 30a_1\):
+                        To use the Pohlig-Hellman algorithm, we need to find the order of the prime number \(p = 24691\). Since it is prime, we calculate the order to be \(\varphi(24691) = 24691 - 1 = 24690\). We can factor this number to \(30 \cdot 823\). Let \(x = a_0 + 30a_1\):
                         \begin{align}
                             (106^{a_0 + 30a_1})^{823}                   & \equiv 12375^{823} \pmod{24691} \\
                             (106^{823a_0 + 24690a_1})                   & \equiv 24143 \pmod{24691}       \\
                             (106^{823a_0} \cdot 106^{24690a_1})         & \equiv 24143 \pmod{24691}       \\
                             (106^{823})^{a_0} \cdot (106^{24690})^{a_1} & \equiv 24143 \pmod{24691}       \\
-                            (1410)^{a_0}                                & \equiv 24143 \pmod{24691}
+                            (1410)^{a_0}                                & \equiv 24143 \pmod{24691}.
                         \end{align}
                         For (1), we got the expression by substituting \(x\) for \(a_0 + 30a_1\) for the exponent in \(g^x \equiv \dots\). From there, (2) --- (4) is simple algebra. Then for (5), because \(106^{a_1}\) is congruent to 1, \((106^{a_1})^{24690} = 1\). Additionally, we take \(106^{823} \pmod{24691}\) to get \(1410^{a_0}\). Then, we do the same thing for the other side of the equation. Now, we can brute force this by setting \(a_0 = \{0,1,2,3,\dots, 823\}\). We find that when \(a_0 = 12\), \(1410^{a_0} \equiv 24143 \pmod{24691}\). Seeing that we have \(a_0\), we need to find \(b_0\):
                         \begin{align*}
                             (106^{b_0 + 823b_1})^{30} & \equiv 12375^{30} \pmod{24691} \\
-                            15097^{b_0}               & \equiv 7229 \pmod{24691}
+                            15097^{b_0}               & \equiv 7229 \pmod{24691}.
                         \end{align*}
                         Thus, through brute force, we find that \(b_0 = 171\). We can take our \(a_0\) and \(b_0\) to solve for \(x_1,x_2\):
                         \begin{align*}
@@ -242,7 +242,7 @@
                             x_1 & = 12 \pmod{30}
                         \end{align*} and \begin{align*}
                             x_2 & = b_0 + 823b_1   \\
-                            x_2 & = 171 \pmod{823}
+                            x_2 & = 171 \pmod{823}.
                         \end{align*}
                         At this point, we can solve the Chinese Remainder Theorem.
                         \begin{enumerate}[label=\arabic*.]
@@ -250,17 +250,16 @@
                             \item Compute \(n_1 = \frac{24690}{30} = 823\) and \(n_2 = \frac{24690}{823} = 30\).
                             \item Compute \(y_1 = 823^{-1} \pmod{30} \equiv 7\) and \(y_2 = 30^{-1} \pmod{823} \equiv 631\).
                             \item Compute \(x = (12)(823)(7) + (171)(30)(631) \pmod{24690} \equiv 22392\).
-                        \end{enumerate} Therefore, \(a = 22392\)
-
+                        \end{enumerate} Therefore, \(a = 22392\).
                     }
 
 
-
-              \item Use the private key found in part (a) to decrypt the ciphertext (be sure to convert from ascii back to text). Note: This will be the first part of a message that will continue in the next questions so the last character will be a hyphen.
+                    \newpage
+              \item Use the private key found in part (a) to decrypt the ciphertext (be sure to convert from ascii back to text).
 
                     %% SOLUTION HERE! %%
                     \sol{
-                        to decrypt the message, we will compute \((c_1^a)^{-1} \cdot c_2 \pmod{p}\). Substituting values, we get \((3799^{22392})^{-1} \cdot 5973 \pmod{24691} \equiv 7378\). From ascii translation, we get \texttt{IN}.
+                        to decrypt the message, we will compute \((c_1^a)^{-1} \cdot c_2 \pmod{p}\). Substituting values, we get \((3799^{22392})^{-1} \cdot 5973 \pmod{24691} \equiv 7378\). Turning this from ascii into regular text, we get ``\texttt{IN-}''.
                     }
 
 
@@ -270,9 +269,9 @@
               \item Use your knowledge of algorithms to factor \(N\). Show all work.
 
                     %% SOLUTION HERE! %%
-            \sol{
-                If we use an method like factoring by difference of squares, we can set up a brute force algorithm to decrypt the factors of \(N\). Thus, we find a value \(k\) such that \(N + k^2 = m^2\) for some \(m \in \Z\). This is equal to \(N = m^2 - k^2 = (m+k)(m-k)\). The brute force algorithm will iterate through values for k until it finds a square \(m^2\). To do this in Python, we can look to the code below. From the algorithm we get \((p,q) = (421, 135979)\)
-            }
+                    \sol{
+                        If we use an method like factoring by difference of squares, we can set up a brute force algorithm to decrypt the factors of \(N\). To compute this algorithmically, we will calculate values up to \texttt{i < limit} for which we add \(N + i^2\). We square root this value, and take the integer value so we cut off the decimal. Then, we compare the squared value to the original. To do this in Python, we can look to the code below. From the algorithm we get \((p,q) = (421, 135979)\).
+                    }
 \begin{lstlisting}[language=Python,numbers=left]
     import math
 
@@ -280,7 +279,6 @@
         i = 1
         while i < limit:
             prod = n + i ** 2
-            print(f"i: {i}, prod: {prod}")
             sqrt_prod = int(math.sqrt(prod))
             
             # Check if prod is a perfect square
@@ -299,9 +297,9 @@
               \item Use the factors of \(N\) from part (b) to find the private decryption exponent \(d\).
 
                     %% SOLUTION HERE! %%
-                \sol{
-                We can compute \(d\) to be \(d = e^{-1} \pmod{420 \cdot 135978} = 11^{-1} \pmod{57110760} \equiv 36343211\)
-                }
+                    \sol{
+                    We can compute \(d = e^{-1} \pmod{420 \cdot 135978} = 11^{-1} \pmod{57110760} \equiv 36343211\).
+                        }
 
               \item Use the private key found in parts (a) and (b) to decrypt the ciphertext \(c\) and discover fully where the pirates hid their treasure.
 
@@ -309,9 +307,6 @@
                     \sol{
                         To decrypt, we compute \(m' = c^d \pmod{N} = 2772237^{36343211} \pmod{57247159} \equiv 667988\). Turning this from ascii into regular text, we get ``\texttt{BOX}.'' Thus, from the first question, the full text is ``\texttt{IN-BOX}.''
                     }
-
-
-
           \end{enumerate}
 \end{enumerate}
 

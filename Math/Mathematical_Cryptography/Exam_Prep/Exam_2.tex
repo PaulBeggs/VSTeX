@@ -16,8 +16,6 @@
           \end{itemize}
 \end{enumerate}
 
-
-
 \begin{center}
     \textbf{Discrete Logarithm}
 \end{center}
@@ -198,21 +196,6 @@ In general, to solve for CRT such that \(x \equiv a_1 \ (\text{mod } m_1)\dots, 
         x^{5277} \equiv 4714 \pmod{7919} \quad \Rightarrow \quad x \equiv 4714^{5277} \pmod{7919} \quad \Rightarrow \quad x \equiv 6059.
     \]
 }
-
-\wrpprop{3.5}{Let \(p\) and \(q\) be distinct primes and let \(e \geq 1\)   satisfy
-    \[
-        \gcd(e, (p - 1)(q - 1)) = 1.
-    \]
-    Then, \refprop{1.13} tells us that \(e\) has an inverse modulo \((p-1)(q-1)\), say
-    \[
-        de \equiv 1 \pmod{(p-1)(q-1)}.
-    \]
-    Then the congruence
-    \[
-        x^e \equiv c \pmod{pq}
-    \]
-    has the unique solution \(x \equiv c^d \pmod{pq}\).
-}%
 
 \begin{example}
     {Congruence with p and q}Solve the congruence \(x^{17389} \equiv 43927 \pmod{64349}\)

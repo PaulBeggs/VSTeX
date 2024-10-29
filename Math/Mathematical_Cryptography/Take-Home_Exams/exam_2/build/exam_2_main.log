@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  28 OCT 2024 20:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  29 OCT 2024 06:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -848,7 +848,7 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 255.
+(mdframed)              on input line 254.
 
 
 
@@ -866,43 +866,32 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 [2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 264.
+(mdframed)              on input line 263.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 275.
+(mdframed)              on input line 274.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/05/25 1.10b listings language file
 )
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 281.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 280.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
 File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 281.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 283.
- (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
-File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 283.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 280.
 
-Overfull \hbox (5.78874pt too wide) in paragraph at lines 290--291
+Overfull \hbox (5.78874pt too wide) in paragraph at lines 288--289
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 304.
-
-Overfull \hbox (22.75635pt too wide) in paragraph at lines 304--304
-[]\OT1/cmr/m/it/10.95 Solution.  \OT1/cmr/m/n/10.95 We can com-pute $\OML/cmm/m/it/10.95 d$ \OT1/cmr/m/n/10.95 to be $\OML/cmm/m/it/10.95 d \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 e[]\OT1/cmr/m/n/10.95 ([]420 \OMS/cmsy/m/n/10.95 ^^A \OT1/cmr/m/n/10.95 135978) = 11[]([]57110760) \OMS/cmsy/m/n/10.95 ^^Q
- []
-
+(mdframed)              on input line 302.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 311.
+(mdframed)              on input line 309.
 
-Overfull \hbox (32.08476pt too wide) in paragraph at lines 311--311
+Overfull \hbox (32.08476pt too wide) in paragraph at lines 309--309
 []\OT1/cmr/m/it/10.95 Solution.  \OT1/cmr/m/n/10.95 To de-crypt, we com-pute $\OML/cmm/m/it/10.95 m[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 c[]\OT1/cmr/m/n/10.95 ([]\OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 ) = 2772237[]([]57247159) \OMS/cmsy/m/n/10.95 ^^Q
  []
 
@@ -931,17 +920,17 @@ Package rerunfilecheck Info: File `exam_2_main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36222 strings out of 473899
- 837295 string characters out of 5726500
- 1512349 words of memory out of 5000000
- 58496 multiletter control sequences out of 15000+600000
+ 36199 strings out of 473899
+ 836876 string characters out of 5726500
+ 1510470 words of memory out of 5000000
+ 58477 multiletter control sequences out of 15000+600000
  564178 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,11n,121p,799b,1744s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\exam_2\build\exam_2_main.pdf (3 pages, 157015 bytes).
+ 116i,11n,121p,799b,1718s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\exam_2\build\exam_2_main.pdf (3 pages, 153554 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
+ 129 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

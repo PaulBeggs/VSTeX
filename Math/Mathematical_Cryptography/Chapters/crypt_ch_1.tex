@@ -1328,18 +1328,18 @@ This section will cover ASCII\@: We can take strings of 8 bits and convert them 
 
 For this exercise, I will be using these python functions that I wrote:
 \begin{lstlisting}[language=Python,numbers=left]
-    def compute_binary(num):
-        binary_representation = []
-        while num != 0:
-            result = num % 2
-            num = num // 2
-            binary_representation.append(result)
-        binary_str = ''.join(map(str, binary_representation))
-        print(binary_str)
+def compute_binary(num):
+    binary_representation = []
+    while num != 0:
+        result = num % 2
+        num = num // 2
+        binary_representation.append(result)
+    binary_str = ''.join(map(str, binary_representation))
+    print(binary_str)
 
-    def compute_decimal_int(binary_str):
-        int_representation = int(binary_str, 2)
-        print(int_representation)
+def compute_decimal_int(binary_str):
+    int_representation = int(binary_str, 2)
+    print(int_representation)
 \end{lstlisting}
 % Note that this is just what \texttt{bin} does, but I am providing this function to show work for the problem. 
 

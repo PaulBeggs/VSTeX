@@ -1,4 +1,4 @@
-\section{Euler's Totient Theorem}
+\section{Euler's Totient Theorem and Roots Modulo pq}
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}
@@ -65,7 +65,20 @@ Recall that for Diffie Hellman Elgamal we need to find \(a^x \ (\text{mod } p)\)
     \end{enumerate}
 }
 
-\wrpprop{3.5}{Let \(p \ne q\) be primes, and let \(e\) be defined as \(\{e \in \Z \geq 1 \ \mid \ \gcd(e,p-q) = 1\}\) Thus, there exists a \(d = e^{-1}\ (\text{mod } (p - 1)(q - 1))\). Then, \(x^e \equiv c \ (\text{mod } pq)\) has the unique solution \(x \equiv c^d \ (\text{mod } pq)\).}
+\wrpprop{3.5}{Let \(p\) and \(q\) be distinct primes and let \(e \geq 1\) satisfy
+    \[
+        \gcd(e, (p - 1)(q - 1)) = 1.
+    \]
+    Then, \refprop{1.13} tells us that \(e\) has an inverse modulo \((p-1)(q-1)\), say
+    \[
+        de \equiv 1 \pmod{(p-1)(q-1)}.
+    \]
+    Then the congruence
+    \[
+        x^e \equiv c \pmod{pq}
+    \]
+    has the unique solution \(x \equiv c^d \pmod{pq}\).
+}%
 
 \begin{example}
     {RSA 2}Solve \(x^{169} \equiv 1000 \ (\text{mod } 6887)\)
@@ -408,23 +421,6 @@ However, there are some numbers will force all \(a\)'s to be fermat liars. These
     \item Repeat the test with different random bases \(a\).
 \end{enumerate}
 
-\begin{lstlisting}[language=Python, numbers=left]
-    # Input: N is the integer to be factored.
-    def pollard_s_p(N):
-        # Set a to a to a convenient value.
-        a = 2
-        j = 0
-        # Set an arbitrary bound for j.
-        while j < 100:
-            a = pow(a, j, N)
-            d = math.gcd(a - 1, N)
-            if 1 < d < N:
-                return d
-            j += 1
-        # The number is either prime, or j's bound was not large enough.
-        return None
-\end{lstlisting}
-
 \wrpdef{Miller-Rabin Witness}{Let \(N\) be an odd number. Write \(N - 1 = 2^kq\) with \(q\) odd. If \(a\) is an integer that satisfies \(\gcd(a,N) = 1\), then \(a\) is a \textit{Miller-Rabin Witness} for \(N\) if both of the following hold: \begin{enumerate}[label=(\roman*)]
         \item \(a^q \not\equiv 1 \pmod{N}\).
         \item \(a^{2^iq} \not\equiv -1 \pmod{N}\) for all \(i\) such that \(0 \leq i \leq k-1\).
@@ -539,6 +535,23 @@ This algorithm is based on the following steps:
     \item \textbf{Step 6:} If \(\gcd(a^k - 1,n) = n\), try a different \(a\) or increase \(B\).
 \end{itemize}
 
+\begin{center}
+    \textbf{In Python:}
+\end{center}
+\label{pollard's p python}
+\begin{lstlisting}[language=Python, numbers=left]
+def pollards_p_minus_1(base, mod, limit):
+    lcm_val = 1
+    for i in range(1, limit + 1):
+        lcm_val = math.lcm(lcm_val, i)
+        pow_val = pow(base, lcm_val, mod) - 1
+        gcd_val = math.gcd(pow_val, mod)
+        print(f"lcm({i}) = {lcm_val}, gcd: {gcd_val}")
+        if 1 < gcd_val < mod:
+            return gcd_val
+    return None
+\end{lstlisting}
+
 \begin{example}
     {Pollard's Factorization Algorithm}Factor 540143 with \(a = 2\).
 \end{example}
@@ -597,21 +610,7 @@ This algorithm is based on the following steps:
     \end{enumerate}
 }
 
-\begin{center}
-    \label{pollard's p python}
-    \begin{lstlisting}[language=Python, numbers=left]
-    def pollards_p_minus_1(base, mod, limit):
-    lcm_val = 1
-    for i in range(1, limit + 1):
-        lcm_val = math.lcm(lcm_val, i)
-        pow_val = pow(base, lcm_val, mod) - 1
-        gcd_val = math.gcd(pow_val, mod)
-        print(f"lcm({i}) = {lcm_val}, gcd: {gcd_val}")
-        if 1 < gcd_val < mod:
-            return gcd_val
-    return None
-\end{lstlisting}
-\end{center}
+
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}

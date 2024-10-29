@@ -40,7 +40,7 @@
 \contentsline {section}{\numberline {2.9}Pohlig-Hellman Algorithm}{51}{section.2.9}%
 \contentsline {subsection}{\numberline {2.9.1}Exercise}{53}{subsection.2.9.1}%
 \contentsline {chapter}{\numberline {3}Integer Factorization and RSA}{55}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Euler's Totient Theorem}{55}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Euler's Totient Theorem and Roots Modulo pq}{55}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Exercises}{57}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}RSA Cryptosystem}{59}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}RSA Algorithm}{59}{subsection.3.2.1}%
@@ -52,7 +52,7 @@
 \contentsline {section}{\numberline {3.4}Primality Testing}{63}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Miller-Rabin Primality Test}{65}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Exercises}{67}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Pollard's Factorization Algorithm}{69}{section.3.5}%
+\contentsline {section}{\numberline {3.5}Pollard's Factorization Algorithm}{68}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Exercise}{70}{subsection.3.5.1}%
 \contentsline {section}{\numberline {3.6}Factorization via Difference of Squares}{71}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Exercise}{72}{subsection.3.6.1}%

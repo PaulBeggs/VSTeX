@@ -41,7 +41,7 @@ What is the value of \(x\) such that \(20^x = 21 \ (\text{mod } 23) \overset{\te
 \subsection{Exercises}
 
 \begin{exercise}
-    {2.3} Let \(g\) be a \hyperref[Relatively Prime]{primitive root} for \(\mathbb{F}_p\).
+    {2.3} Let \(g\) be a \hyperref[thm:Primitive Root Theorem]{primitive root} for \(\mathbb{F}_p\).
     \begin{enumerate}
         \setcounter{enumi}{1} % Start enumeration at (b)
         \item Prove that \(\log_g(h_1 h_2) = \log_g(h_1) + \log_g(h_2)\) for all \(h_1, h_2 \in \mathbb{F}_p^*\).
@@ -131,7 +131,7 @@ D-H gives a way for Alice and Bob to get a secret shared key in an unsecure envi
         \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Alice}}} & \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Bob}}}                           \\ \midrule
         \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{Choose private key \(1 \leq a \leq p -1.\)                                                                                      \\ Compute \(A = g^a \ (\text{mod } p)\). \\ Publish the public key \(A\).}} &  \\ \midrule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}\centering\textbf{Encryption}}                                                                                                    \\ \midrule
-        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}}                          & \multicolumn{1}{r}{\parbox[t]{0.45\textwidth}{\raggedright Choose plaintext \(m\).                \\ Choose random element \(k\). \\ Use Alice's public key \(A\) \\ \quad to compute \(c_1 = g^k \ (\text{mod } p)\) \\ \quad and \(c_2 = mA^k \ (\text{mod } p). \) \\ Send ciphertext \(c_1,c_2\) to Alice.}}                                            \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}}                            & \multicolumn{1}{r}{\parbox[t]{0.45\textwidth}{\raggedright Choose plaintext \(m\).                \\ Choose random element \(k\). \\ Use Alice's public key \(A\) \\ \quad to compute \(c_1 = g^k \ (\text{mod } p)\) \\ \quad and \(c_2 = mA^k \ (\text{mod } p). \) \\ Send ciphertext \(c_1,c_2\) to Alice.}}                                            \\ \midrule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering\textbf{Decryption}}}                                                                                                  \\ \midrule
         \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{Compute \({(c_1^a)}^{-1} \cdot c_2 \ (\text{mod } p)\).                                                                         \\  This quantity is equal to \(m\).}}                     &                                                                                             \\ \bottomrule
     \end{tabular}
@@ -549,33 +549,38 @@ This algorithm is used to solve \(g^x \equiv h \ (\text{mod } p)\) for \(p\) pri
 \end{enumerate}
 
 \begin{example}
-    {Pohlig-Hellman Algorithm} Solve the following DLP: \(7^x \equiv 12 \ (\text{mod } 41)\).
+    {Pohlig-Hellman Algorithm} Solve the following DLP: \(106^x \equiv 12375 \ (\text{mod } 24691)\).
 \end{example}
 
 \lesol{
-    \begin{enumerate}
-        \item Factor \(41 - 1 = 40 = 2^3 \cdot 5 = 8 \cdot 5\).
-        \item Find \(g_1\): \(g_1 = 7^{40/8} \ (\text{mod } 41) = 7^5 \ (\text{mod } 41) = 38 \). Find \(h_1\): \(h_1 = 12^5 \ (\text{mod } 41) = 3\).
-        \item We can brute force solve for \(x_1\) up to 8 steps:
-              \begin{align*}
-                  38^{x_1} & \equiv 3 \ (\text{mod } 41) \\
-                  x_1      & = 5 \ (\text{mod } 8).
-              \end{align*} Continue for \(g_2\) and \(h_2\):
-              \begin{align*}
-                  g_2 & = 7^{40/5} \ (\text{mod } 41) = 7^8 \ (\text{mod } 41) = 37 \\
-                  h_2 & = 12^8 \ (\text{mod } 41) = 18.
-              \end{align*} Solve for \(x_2\):
-              \begin{align*}
-                  37^{x_2} & \equiv 18 \ (\text{mod } 41) \\
-                  x_2      & = 3 \ (\text{mod } 5).
-              \end{align*}
-        \item Use CRT to solve for \(x\):
-              \begin{align*}
-                  x & \equiv 5 \ (\text{mod } 8)  \\
-                  x & \equiv 3 \ (\text{mod } 5).
-              \end{align*} This gives us \(M = 8\cdot 5 = 40\) with \(n_1 = 40/8 = 5\), \(n_2 = 40/ 5 = 8\), and \(y_1 \equiv 5^{-1} \ (\text{mod } 8) \equiv 5\), \(y_2 \equiv 8^{-1} \ (\text{mod } 5) \equiv 2\). Now we can substitute and see that \(x = 5 \cdot 5 \cdot 5 + 3 \cdot 8 \cdot 2 \ (\text{mod } 40) = \boxed{13}\).
-
-    \end{enumerate}
+    To use the Pohlig-Hellman algorithm, we need to find the order of the prime number \(p = 24691\). Since it is prime, we know the order to be \(\varphi(24691) = 24690\). We can factor this number to \(30 \cdot 823\). Let \(x = a_0 + 30a_1\):
+    \begin{align}
+        (106^{a_0 + 30a_1})^{823}                   & \equiv 12375^{823} \pmod{24691} \\
+        (106^{823a_0 + 24690a_1})                   & \equiv 24143 \pmod{24691}       \\
+        (106^{823a_0} \cdot 106^{24690a_1})         & \equiv 24143 \pmod{24691}       \\
+        (106^{823})^{a_0} \cdot (106^{24690})^{a_1} & \equiv 24143 \pmod{24691}       \\
+        (1410)^{a_0}                                & \equiv 24143 \pmod{24691}
+    \end{align}
+    For (1), we got the expression by substituting \(x\) for \(a_0 + 30a_1\) for the exponent in \(g^x \equiv \dots\). From there, (2) --- (4) is simple algebra. Then for (5), because \(106^{a_1}\) is congruent to 1, \((106^{a_1})^{24690} = 1\). Additionally, we take \(106^{823} \pmod{24691}\) to get \(1410^{a_0}\). Then, we do the same thing for the other side of the equation. Now, we can brute force this by setting \(a_0 = \{0,1,2,3,\dots, 823\}\). We find that when \(a_0 = 12\), \(1410^{a_0} \equiv 24143 \pmod{24691}\). Seeing that we have \(a_0\), we need to find \(b_0\):
+    \begin{align*}
+        (106^{b_0 + 823b_1})^{30} & \equiv 12375^{30} \pmod{24691} \\
+        15097^{b_0}               & \equiv 7229 \pmod{24691}
+    \end{align*}
+    Thus, through brute force, we find that \(b_0 = 171\). We can take our \(a_0\) and \(b_0\) to solve for \(x_1,x_2\):
+    \begin{align*}
+        x_1 & =  a_0 + 30a_1 \\
+        x_1 & = 12 \pmod{30}
+    \end{align*} and \begin{align*}
+        x_2 & = b_0 + 823b_1   \\
+        x_2 & = 171 \pmod{823}
+    \end{align*}
+    At this point, we can solve the Chinese Remainder Theorem.
+    \begin{enumerate}[label=\arabic*.]
+        \item Let \(m = 30 \cdot 823 = 24690\).
+        \item Compute \(n_1 = \frac{24690}{30} = 823\) and \(n_2 = \frac{24690}{823} = 30\).
+        \item Compute \(y_1 = 823^{-1} \pmod{30} \equiv 7\) and \(y_2 = 30^{-1} \pmod{823} \equiv 631\).
+        \item Compute \(x = (12)(823)(7) + (171)(30)(631) \pmod{24690} \equiv 22392\).
+    \end{enumerate} Therefore, \(a = 22392\)
 }
 
 \renewcommand{\theenumi}{\alph{enumi}}
