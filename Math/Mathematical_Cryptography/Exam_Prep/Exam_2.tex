@@ -193,7 +193,7 @@ In general, to solve for CRT such that \(x \equiv a_1 \ (\text{mod } m_1)\dots, 
         \item The quotient \(q = \lfloor \frac{2}{1} \rfloor = 2\).
         \item Because get a remainder of 0 from the previous calculation, we stop, and record the largest \(t\) value.
     \end{enumerate}
-    Now we have our \(t = -2641\), but we still need to find the modulo. Simply subtract 7919 by 2641, and you get the inverse, 5277. Thus, \(d = 5277\). Then we solve for
+    Now we have our \(t = -2641\), but we still need to find the modulo. Now, take the modulo of \(t\), and we get the inverse, 5277. Thus, \(d = 5277\). Then we solve for
     \[
         x^{5277} \equiv 4714 \pmod{7919} \quad \Rightarrow \quad x \equiv 4714^{5277} \pmod{7919} \quad \Rightarrow \quad x \equiv 6059.
     \]

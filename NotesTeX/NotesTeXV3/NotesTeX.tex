@@ -18,7 +18,9 @@
 	\pagestyle{fancynotes}
 	\part{Introduction}
 
-	\section{Required Packages}\label{sec:reqpackages}
+	\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Required Packages}\label{sec:reqpackages}
 	\begin{margintable}\vspace{.8in}\footnotesize
 		\begin{tabularx}{\marginparwidth}{|X}
 		%Section~\ref{sec:motivation}. Motivation\\
@@ -34,7 +36,9 @@
 
 	
 	\part{Modifications}\label{Part:Modification}
-	\section{Features}\label{sec:Features}
+	\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Features}\label{sec:Features}
 	\begin{margintable}\vspace{1.4in}\footnotesize
 		\begin{tabularx}{\marginparwidth}{|X}
 		Section~\ref{sec:Features}. Features\\
@@ -58,7 +62,9 @@
 	Each of these will be discussed in the following subsections.
 
 	\newpage
-	\section{Included Packages} % (fold)
+	\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Included Packages} % (fold)
 	\label{sec:incpackage}
 	Additional package are listed right under the required packages in \texttt{NotesTeX.sty}. These are divided into font styling packages and mathematical and physics related packages. The list of packages are also reiterated here and their links are in the sidenotes.
 	\begin{verbatim}
@@ -99,7 +105,9 @@
 
 	% section prepackage (end)
 
-	\section{Margins}\label{Sec:Margins}%
+	\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Margins}\label{Sec:Margins}%
 	\textit{NotesTeX} inherits all the margin commands that are used by \texttt{sidenote} and \texttt{marginnote}, and two additional pre-configured commands known as \texttt{$\backslash$mn} and \texttt{$\backslash$sn}. The relevant commands, and the packages they belong to, are
 	\begin{center}
 		\begin{multicols}{2}
@@ -152,7 +160,9 @@
 	\end{remark}
 	
 
-	\section{\texttt{amsthm} Environments}\label{Sub:Special}
+	\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{\texttt{amsthm} Environments}\label{Sub:Special}
 	\texttt{amsthm} environments are defined as usual being enclosed by \texttt{$\backslash$begin\{environment\}}$\cdots$ \texttt{$\backslash$end\{environment\}}. Modifications include integration with the \texttt{tcolorbox} package. Note that counting for \texttt{theorems} and \texttt{lemmas} is distinct from the counting for \texttt{definitio} \texttt{ns}. Also, the \texttt{breakable} option for \texttt{tcolorbox} allows these environments to span multiple pages.
 
 	If one wishes to change the color, simply modify the line which states \texttt{borderline west=\{1pt\}}\texttt{\{0pt\}\{blue\}}. The first numeric value dictates the width of the line, the second dictates how close it is away from the \textit{left} margin, while the last argument declares the color. This customization is independent of the \texttt{amsthm} environments.
@@ -258,7 +268,9 @@
 		\end{verbatim}
 	\end{remark}
 
-	\section{Fullpage Environment}\label{Sec: Fullpage}
+	\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Fullpage Environment}\label{Sec: Fullpage}
 	\begin{fullpage}
 		The \texttt{fullpage} environment is defined by
 		\begin{center}
@@ -295,7 +307,9 @@
 		If the \texttt{twoside} option is enabled in the \texttt{documentclass} header, then the \texttt{fullpage} is known to bleed out beyond the margin.
 	\end{remark}
 
-		\section{The Part Environment}\label{sec:part}
+		\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{The Part Environment}\label{sec:part}
 	In the original Jhep format, the \texttt{$\backslash$part} environment is not special and is set to the default given by the article class. In \textit{NotesTeX}, the \texttt{part} environment produces the following image. Furthermore the code responsible is noted below.\\
 	\begin{fullpage}
 		{{\centering
@@ -338,7 +352,9 @@
 
 	\part{Advanced}
 	For those wanting to adjust the margin sizes, or the \texttt{fancyhdr} layout, there are a few comments that could be made here.
-	\section{Page Dimensions}
+	\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Page Dimensions}
 	\textit{NotesTeX} relies on the \texttt{geometry} package to set its dimensions. The associated code is the deceptively simple chunk of code given by
 	\begin{verbatim}
 		\geometry{paperheight=11in,paperwidth=8.5in,
@@ -350,7 +366,9 @@
 	Ignoring most of the arguments, the \texttt{$\backslash$paperheight} and \texttt{$\backslash$paperwidth} are set to be the standard $8.5\times11$ inches. All other options, with the exception of \texttt{$\backslash$voffset}, inherit fractions of \texttt{$\backslash$paperheight} and \texttt{$\backslash$paperwidth}, the most important being \texttt{$\backslash$marginparwidth}. Increasing \texttt{$\backslash$marginparwidth} causes the margin to bleed off of the right side of the page. In order to increase this value, \texttt{$\backslash$textwidth} must be decreased accordingly.
 
 
-	\section{\texttt{Fancyhdr} Layout}
+	\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{\texttt{Fancyhdr} Layout}
 	As mentioned before, \texttt{fancyhdr} is overridden on the title page, the contents page, and the \texttt{$\backslash$part} page, and sets the header for all other pages through the code
 	\begin{verbatim}
 	\pagestyle{fancy}%
@@ -370,9 +388,13 @@
 	The header style is set so that it spans the width of the entire page as opposed to just the \texttt{$\backslash$textwidth} through the line \texttt{$\backslash$fancyheadoffset[rh]\{$\backslash$myoddoffset\}}. The \texttt{$\backslash$sectionmark} and \texttt{$\backslash$subsectionmark} are set up so that the \texttt{section} appears on the left and \texttt{subsections} appear on the right along with the page number, and this is given in the last two lines of code.
 
 
-	\section{Alternative Language Integration}
+	\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Alternative Language Integration}
 	For languages written right to left, such as Persian, it is possible to use \textit{NotesTeX}. A complied example can be found in the legacy V1 version on Github. Suggestions are welcome for a more comprehensive language integration.
 
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
 \section{License}\label{sec:license}
 	Aditya Dhumuntarao does not own the copyright to the original package, \texttt{jheppub.sty}. All modification have been approved by the Jhep Editorial committee, and permission has been attributed to Aditya to distribute freely the modified version of \texttt{jheppub.sty}, known as \texttt{NotesTeX.sty}.
 

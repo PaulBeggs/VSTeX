@@ -1,0 +1,321 @@
+\subsection{Cardinality}
+    
+        \subsubsection*{Motivation}
+            We want to answer the following questions: \\
+            How big are sets? E.g., $\{a,b,c\}$ has size 3, but what about $\W$? Or $\Z, \Q, \R$. \\
+            And what does infinity mean? \\
+            We need a way to count/measure the size of a set.
+
+            \begin{definition}
+                Say $A$ and $B$ are sets. If there exists a bijection, $f \ \colon A \rightarrow B$, then we say $A$ and $B$ have the same \textit{cardinality}.
+            \end{definition}
+
+            \begin{notation}
+                Denote cardinality of set $A$ by $|A|$. 
+                \begin{itemize}
+                    \item Define $|\emptyset| = 0$ (Cardinality 0) 
+                    \item Define for $n\in \W$, $|n| = n$. 
+                \end{itemize}
+            \end{notation}
+            \textbf{Think}: $n = \{0,1,\dots, n-1\}$. \\
+            \textbf{Note}: For the take-home exam 2, we proved that having the same cardinality is an equivalence relation on sets. So we can create equivalence classes, each containing sets of the same cardinality.
+
+        \subsubsection{Problems}
+
+% ------------------------------------------------------------------------------
+% Problem 63
+% ------------------------------------------------------------------------------
+
+            \pb{
+                Explicitly show that $|\{a,b,c\}| = 3$ using the definition, and assume $a,b,c$ are all distinct.
+            }
+
+            \expf{ 
+                Suppose $f$ is the relation defined by the ordered pairs $(a,0)$, $(b,1)$, and $(c,2)$ that maps the set $A = \{a,b,c\}$ to $B = \{0,1,2\}$. The cardinality of $B$ corresponds with the whole number three, so to also show that $A$'s cardinality is 3, we need to show that a bijection, $f$, exists. Thus, to show $f$ is a bijection, we need to show the following: \\
+                \begin{itemize}
+                    \item $f$ is a function. \\
+                    Since $f$ is defined such that: 
+                    \begin{itemize}
+                        \item $a$ maps to $0$,
+                        \item $b$ maps to $1$,
+                        \item $c$ maps to $2$,
+                    \end{itemize}
+                    each element in $A$ is associated with one and only one element in $B$. Thus, $f$ is a function by definition.
+                    \item $f \text{'s domain is all of } A$. \\
+                    The domain of $f$ is all of $A$ because every element $a,b,c \in A$ has a mapping in $B$. There is no element in $A$ that is left unattended to, so $f$ covers the whole domain.  
+                    \item $f$'s injective (each $b$ is mapped to by only one $a$). \\
+                    As shown in the first point, each element of $A$ maps to a unique element of $B$ (no two elements of $A$ share the same output in $B$). This confirms that $f$ is injective. 
+                    \item $f$'s surjective ($\text{range} = B$). \\
+                    Since $0,1,2 \in B$ are each mapped to by $a,b,c \in A$ respectively, $f$ covers all elements of $B$. Thus confirming that $f$ is surjective.
+                \end{itemize}
+                Therefore, because we have shown that $f$ is a function, its domain is all of $A$, its injective, and its surjective, $f$ must be a bijection.
+            }
+
+% ------------------------------------------------------------------------------
+% Problem 64
+% ------------------------------------------------------------------------------
+
+            \pb{
+                Suppose $A$ is a set for which there is $n\in \W$ where $|A| = n$. Induct on $n$ to show that, $$|\mathcal{P}(A)| = 2^n$$
+            }
+    
+            \expf{
+                Suppose $S := \{n\in \W \ | \ \text{if } |A| = n, \text{ then } |\mathcal{P}(A)| = 2^n\}$. We we must show that $S = \W$, and to do so, we must show that $S$ is a successor set. 
+                \begin{itemize}
+                    \item \textbf{Base Case}: \\
+                    For a set $A$ where $|A| = 0$, (i.e., $A = \emptyset$ by definition), the power set $\mathcal{P}(\emptyset)$ is just one subset -- that being the set of the empty set, by Example 1 of Week 5. Thus, $|P(A)| = |P(\emptyset)| = |\{\emptyset\}| = 1$ by Problem 63 (because the set of the empty set is not equal to the empty set by Problem 14). Since $2^0 = 1$, $0 \in S$. \\
+                    
+                    \item \textbf{Inductive Hypothesis}: \\
+                    Suppose for some $k \in \W$, that $k \in S$. In other words, if $|A| = k$, then $|\mathcal{P}(A)| = 2^k$. \\
+                    
+                    \item \textbf{Inductive Step}: \\
+                    We need to show that $k + 1 \in S$. \\
+                    
+                    Suppose $A$ is a set such that $|A| = k$. Then, consider the immediate successor of $A^+ := A \cup \{A\}$. Thus, the set $A^+$ contains all elements of $A$ plus the set $A$ itself as an additional element by the corollary to Axiom 5 (union). Therefore, the cardinality of $A^+$ is $k + 1$ by Problem 63.  \\
+
+                    Consider a single subset $S$ in $A$. We know that by the definition of subset, an element in that subset implies there is an element in $A$. Hence, because $A^+$ contains $A$ (and therefore its subsets), all subsets of $A$ form a subset of $A^+$ by definition of subset. Additionally, for each subset $S$ of $A$, there is a corresponding subset $S \cup \{A\} \subseteq A^+$. Further, by Axiom 6, we know that since $S \cup \{A\} \subseteq A^+$, then $S \cup \{A\} \in \mathcal{P}(A^+)$. This means for every subset of $A$, you get exactly two subsets in $\mathcal{P}(A^+)$. \\
+
+                    Since every subset $S$ of $A$ results in two distinct subsets in $\mathcal{P}(A^+)$, the total number of subsets in $\mathcal{P}(A^+)$ doubles. This can be represented as $|\mathcal{P}(A^+)| = 2 \times |P(A)|$ because each subset of $A$ contributes exactly two subsets to $\mathcal{P}(A^+)$. By using the inductive hypothesis, we see that $|\mathcal{P}(A)| = 2^k$, so $|\mathcal{P}(A^+)| = 2 \times 2^k = 2^{k+1}$.
+                \end{itemize}
+                Thus, $n^+ \in S$. Because $S$ contains 0, and whenever $S$ contains $n$, $S$ also contains $n^+$, $S$ is by definition, a successor set. Thus, by Peano's ``Axioms,'' $S = \W$.
+            }
+
+% ------------------------------------------------------------------------------
+% Problem 65
+% ------------------------------------------------------------------------------
+
+            \pb{
+                (Swapping Lemma) Suppose $f \ \colon A \rightarrow B$ is a bijection, and suppose $a_1,a_2 \in A$ are distinct such that $f(a_1) = b_1$ and $f(a_2) = b_2$. Then, $$g \ \colon A \rightarrow B \text{ defined by } 
+                \begin{cases}
+                    b_2 &\text { if } x = a_1 \\
+                    b_1 &\text { if } x = a_2 \\
+                    f(x) &\text{ otherwise} 
+                \end{cases}, \text{ is also a bijection.}$$
+            }
+    
+            \expf{
+                Suppose $f \ \colon A \rightarrow B$ is a bijection, and suppose $a_1,a_2\in A$ are distinct such that $f(a_1) = b_1$ and $f(a_2) = b_2$. To show $g$ is a bijection, we need to show the following:
+                \begin{itemize}
+                    \item $g$ is a function. \\
+                    We know that $g$ is a function because for every element $x\in A$, $g(x)$ corresponds to exactly one other element. Specifically, $(a_1,b_2) \in g$, $(a_2,b_1) \in g$, and $g(x) = f(x)$ for all $x \in A \ \backslash \ \{a_1,a_2\}$. \\
+                    
+                    \item $g \text{'s domain is all of } A$. \\
+                    The function $g$ is defined for every element $x \in A$ because we know for the distinct $a_1$ and $a_2$, $g$ assigns the values $b_2, b_1 \in B$ respectively. This assures that for these specific elements, they are covered. Furthermore, for all other elements in $A$ (which do not include $a_1, a_2$), $g$ adopts the values assigned by $f$; and since $f$ is a bijection, it already provides a unique output in $B$ for each of those elements. \\
+                    
+                    \item $g$'s injective (each $b$ is mapped to by only one $a$). \\
+                    Since $g$ is a piecewise function, we need to show for each case that for all $b \in B$, $g$ maps to only one $a$. Thus, consider $x,y\in A$ such that $g(x) = g(y)$. We need to show that $x = y$. \\
+                    
+                    \noindent If $x$ and $y$ are neither $a_1$ nor $a_2$, then $g(x) = f(x)$ and $g(y) = f(y)$. Since $f$ is injective, it must be the case that $x = y$. \\
+
+                    \noindent If $x$ or $y$ are either $a_1$ and the other is $a_2$, then $g(x)$ and $g(y)$ would not be equal to each other because one would map to distinct $b_2$, and the other would map to distinct $b_1$. Therefore supporting the argument that $g$ is injective. \\
+
+                    \noindent If $x = a_1$ and $y \ne a_2$ (or $x = a_2$ and $y \ne a_1$) the outputs from $g(x)$ and $g(y)$ would differ. That is, if $x = a_1$, then $g(x) = b_2$, and if $y \ne a_2$, $g(y) = f(y)$ which would have the same mapping (see paragraph 2). Since $b_2 = f(a_2)$ and $f$ is injective, $f(y) \ne b_2$ unless $y = a_2$, which is not the case. \\
+
+                    \noindent Therefore, the only possibility for $g(x) = g(y)$ is when $x = y$, thus confirming that $g$ is injective for all elements in $A$. \\
+                    
+                    \item $g$'s surjective ($\text{range} = B$). \\
+                    Similarly to injectivity, we need to show for each case that for every element in $B$, there exists at least one element in $A$ such that $g(x) = b$. \\ 
+                    
+                    For the third case, since $f$ is a bijection from $A$ to $B$, each element of $B$ is already paired uniquely with an element of $A$. Hence, we only show that $g$ is surjective for the first two cases. \\
+
+                    For these other cases, we know that $g$ maps an $x$ to $b$ because it is defined as such. Hence because we have covered all elements in $B$ with at least one element in $A$, $g$ must be surjective.
+                \end{itemize} 
+                Therefore, because we have shown that $g$ is a function, its domain is all of $A$, its injective, and its surjective, $g$ must be a bijection.
+            }
+
+% ------------------------------------------------------------------------------
+% Problem 66
+% ------------------------------------------------------------------------------
+
+            \pb{
+                Suppose $a,b \in \W$. Then, there exists a bijection between $a = \{0,1,\dots,a - 1\}$ and $b = \{0,1,\dots,b - 1\}$ if, and only if, $a = b$.
+            }
+            \textbf{Hint}:\\
+            ($\Rightarrow$) Use swapping Lemma \\
+            ($\Leftarrow$) create bijection (can use exam 2 problem)
+    
+            \expf{
+                ($\Rightarrow$) \\ 
+                \noindent Suppose $a$ is defined as $\{0,1,\dots,a-1\}$ and $b = \{0,1,\dots,b-1\}$. Then suppose there exists a bijection between $a$ and $b$. That is, \\
+                    
+                \noindent \textit{Proof}. ($\Leftarrow$) \\
+                Because we know $a$ and $b$ are whole numbers, and we know there exists a bijection between them, then we know that $|a|=|b|$. Thus, we know $|a| = a$, and $|b|=b$, so $a = b$.\footnote{This insight is attributed to a remark from Tanvi Keran.}
+            }
+
+        \subsubsection{Natural Numbers}
+
+            \begin{definition}
+                The set of \textit{natural numbers}, denoted $\N$, is the set $\W \backslash \{0\} = \{1,2,3,\dots\}$. We call the cardinality of $\N$: $|\N| := \ale$ (read ``aleph naught'').
+            \end{definition}
+
+        \subsubsection{Problem}
+
+% ------------------------------------------------------------------------------
+% Problem 67
+% ------------------------------------------------------------------------------
+
+            \pb{
+                Show $|\W| = \ale$.
+            }
+            \textbf{Note}: Feels a little bad because adding an element to a set didn't change the size: $\ale + 1 = \ale$.
+
+            \expf{
+                Consider a relation, $f$ defined as $f \ \colon \N \rightarrow \W$ by $f(n) = n - 1$. To show that $\W$ has the same cardinality as $\N$ ($\ale$), we need to prove that $f$ is a bijection. Thus, consider the following points: \\
+                \begin{itemize}
+                    \item $f$ is a function: \\
+                    Let $(a,b_1),(a,b_2) \in f$, then $b_1 = a - 1 = b_2$ by definition of $f$.
+                    \item $f$ has $\N$ as domain: \\
+                    Note that for all $n\in \N$, $f(n) = n - 1$ so $n$ is in the domain of $f$. 
+                    \item $f$ is injective: \\
+                    Let $(a_1,b),(a_2,b)\in f$, then $a_1 - 1 = b = a_2 - 1$ by definition of whole number addition. Thus, $a_1 = a_2$.
+                    \item $f$ is surjective: \\
+                    Let 
+                \end{itemize}
+            }
+
+        \begin{example}
+            Show $2\N = \ale$ where $2\N := \{2,4,6,8,\dots\}$
+        \end{example}
+
+        \sol{
+            Take out every other element yet of the same size: $1/2\ale = \ale$. Define $f \ \colon \N \rightarrow 2\N$ by $f(n) = 2n$. We'll show $f$ is a bijection. 
+            \begin{enumerate}
+                \item $f$ is a function: \\
+                Let $(a,b_1),(a,b_2) \in f$, then $b_1 = 2a = b_2$ by definition of $f$.
+                \item $f$ has $\N$ as domain: \\
+                Note that for all $n\in \N$, $f(n) = 2n$ so $n$ is in the domain of $f$. 
+                \item $f$ is injective: \\
+                Let $(a_1,b),(a_2,b)\in f$, then $2a_1 = b = 2a_2$. Thus, $a_1 = a_2$, and $f$ is injective.
+                \item $f$ is surjective: \\
+                Let $b \in 2\N$. Thus, there is $n\in \N$ such that $b = 2n$. Then, $f(n) = b$ with $n \in \N$, so $f$ is surjective.
+            \end{enumerate}
+        }
+
+        \textbf{Weird}: $2\N \subseteq \N$, yet $|2\N| = |\N|$. vs. $ 3< 4$, yet, $|3| < |4|$. \\
+
+        \subsubsection{Infinite \& Finite}
+
+            \begin{definition}
+                Suppose $A$ is a set. The statement that $A$ is \textit{infinite} means there exists a proper subset of $A$ that has the same cardinality of $A$ itself. \\
+                Similarly, $A$ is said to be \textit{finite} if $A$ is not infinite.
+            \end{definition}
+
+        \textbf{Analogy}: Hilbert's Hotel -- Hotel room for each number of $\N$. Asking if $|A| = \ale$ asks if $|A|$ guests arrive, can you \underline{exactly} fill the hotel with one guest per room and each guest has a room (a.k.a., bijection).
+
+        \subsubsection{Problem}
+
+% ------------------------------------------------------------------------------
+% Problem 68
+% ------------------------------------------------------------------------------
+
+            \pb{
+                Show $|\Z| = \ale$.
+            }
+            \textbf{Hint}: Create bijection $f \ \colon \N \rightarrow \Z$. Feels bad because $\ale + \ale = \ale$.
+
+            \expf{
+                Suppose $f$ is the relation defined by the following: $$\text{For each $n \in \W$, map $n$ to:} 
+                \begin{cases}
+                    \frac{n}{2} & \text{if } n \text{ is even} \\
+                    -\frac{n + 1}{2} & \text{if } n \text{ is odd and } \ne 1
+                \end{cases}. \leftarrow \text{ (period)} $$
+                To show that $\Z$ has the same cardinality as $\N$ ($\ale$), we need to prove that $f$ is a bijection. Thus, consider the following: \\
+                \begin{enumerate}
+                    \item $f$ is a function: \\
+                    Let $(a,b_1), (a,b_2) \in f$. If $n$ is even, then $b_1$ and $b_2$ both equal $\frac{a}{2}$ by definition of $f$, hence $b_1 = b_2$. If $a$ is odd, then $b_1$ and $b_2$ both equal $-\frac{a + 1}{2}$ by definition of $f$, hence $b_1 =b_2$. This shows that no matter the input in $\W$, there is always an output in $\Z$.
+                    \item $f$ has $\N$ as domain: \\
+                    Note that for all $n\in \N$, our function covers every possible integer, so the domain of $f$ is all of $\W$. 
+                    \item $f$ is injective: \\
+                    Let $f(n) = f(m)$ for some $n,m \in \W$. If both $n$ and $m$ are even, then $\frac{n}{2} = \frac{m}{2}$, which implies $n = m$. If both $n$ and $m$ are odd, then $-\frac{n + 1}{2} = -\frac{m + 1}{2}$ implies $n = m$. As for the last case, it is impossible for $n$ to be odd and $m$ to be even (or vice versa), because that would contradict $f(n) = f(m)$. Hence, $f$ is injective. 
+                    \item $f$ is surjective: \\
+                    For any positive integer, $z \in \Z$, there exists $n = 2z \in \W$ such that $f(n) = z$. For any negative integer, $z \in \Z$, there exists $n = -2n - 1 \in \W$ such that $f(n) = z$. Hence, every integer has a representation in the natural numbers, so $f$ is surjective.
+                \end{enumerate}
+                Therefore, because we have shown that $f$ is a function, its domain is all of $A$, its injective, and its surjective, $f$ must be a bijection.
+            }
+
+                    \subsubsection{Theorem 11}
+
+            \begin{ntheorem}
+                (Schröder-Bernstein Theorem) Suppose $A$ and $B$ are sets for which injections $f \ \colon A \rightarrow B$ and $g \ \colon B \rightarrow A$. Each of which uses all of their stated domains. Then, $$|A| = |B|$$
+            \end{ntheorem}
+
+            \textbf{Note}: Useful in cases where bijections might be difficult to construct. \\
+
+            Intuitively, injection $A \rightarrow B$ means $A$ is not larger than $B$. Thus, $|A| = |B| \iff \exists \text{ bijection } A \rightarrow B$. And $ \exists  \text{ bijection } A \rightarrow B \implies |A| \subseteq |B|$.
+            
+            \expf{
+                No proof. 
+            } \\
+
+            \noindent \textbf{Note}: If $A \subseteq B$, then $|A| \leq |B|$. \\
+            \textbf{Note}: $\N \subseteq \Q$, so that means $|\N| \leq |\Q|$ where $|\N| = \ale$.
+
+        \subsubsection{Problems}
+
+% ------------------------------------------------------------------------------
+% Problem 69
+% ------------------------------------------------------------------------------
+
+            \pb{
+                Show $|\Q| = \ale$.
+            }
+            \textbf{Hint}: We can focus on only the positive rationals: $\Q^+$. \\
+            Use the Schröder-Bernstein Theorem. Then, find injection $\N \rightarrow \Q^+$ (easy); $\Q^+ \rightarrow \N$ (weird).
+
+            \expf{
+                We need to show that the relation $f$---which is defined as $f \ \colon \N \rightarrow \Q^+$ by $f(n) = n$---is injective. Then, we also need to show that the relation $g$---which is defined as $g \ \colon \Q^+ \rightarrow \N$ by $g(\frac{n}{d}) = 2^n \times 3^d$---is also injective. Thus, we need to prove that both relations are injective functions. \\
+
+                \noindent Let $(a,b_1), (a,b_2) \in f$, then $b_1 = a = b_2$ by definition of $f$. Thus, $f$ is a function. To show that $f$ uses its whole domain, let $n \in \N$. We know that there is an associated $b \in \Q^+$ for that $n$ because our function $f$ maps each natural number to an equivalent number in $\Q^+$. Hence, the whole domain is used. To show that $f$ is injective, let $f(a_1) = f(a_2)$. Because $f$ is a function, we know that each of these outputs must be unique, and since the whole domain is being used, that means for every number in $\N$, there must be a unique output such that $a_1 = a_2$ for $f(a_1) = f(a_2)$ or else the functions would map to separate numbers and negate the equivalence that we stated. \\
+
+                \noindent For $g$, we need to use induction to show every $n > 1 \in \N$ can be expressed as a product of primes. Thus, consider the following: 
+                \begin{itemize}
+                    \item \textbf{Base Case}: \\
+                    When $n = 2$, $n$ itself is a prime, and thus is already in its factorized form. 
+                    \item \textbf{Inductive Hypothesis}: \\
+                    Suppose for every natural number greater than 1 and less than $n$ can be expressed as a product of primes. 
+                    \item \textbf{Inductive Step}: \\
+                    We have two cases: If $n$ is prime, and if $n$ is not prime. The first case is trivially true, because if $n$ is prime, then we accomplished our goal. If $n$ is not prime, then $n$ can be written as a product of two natural numbers, $a,b$. Then, by the inductive hypothesis, we know that $a$ and $b$ can be factored into primes, so it must be the case that the product of those numbers can also be expressed as primes.
+                \end{itemize}
+                To show that this factorization is unique, assume to the contrary that it is not unique. Thus, each number $n \in \N$ has two different prime factorizations. Considering this is the case, we can define a natural number $n$ as being equal to $p_1 \times p_2 \times \cdots \times p_k$ and $q_1 \times q_2 \times \cdots \times q_j$. By substitution, we can arrange these expressions as: $p_1 \times p_2 \times \cdots \times p_k = q_1 \times q_2 \times \cdots \times q_j$. While trying to solve this expression, we can divide both sides by $p_1$. Because $p_1$ is prime, we know it cannot divide the product of $q_1 \times q_2 \times \cdots \times q_j$ partially---it must completely divide one of them (because primes have only two divisors: 1, and themselves). \\
+
+                \noindent Hence, suppose $p_1$ divides $q_1$. The only possible way for $p_1$ to divide $q_1$ is if $p$ is equal to $q$ (note that we are not counting 1 as a prime number). Therefore, it must be the case that $p_1 = q_1$. There is an iterative effect here: if $p_1 = q_1$, then $p_2 = q_2$, then $p_3 = q_3 \dots p_k = q_j$. This proves that the prime factorization is unique, and that $g$ is a function. \\
+
+                \noindent We know that $g$ uses all of its domain because it is defined as $g(\frac{n}{d}) = 2^n \times 3^d$, which uses every positive rational number, $\frac{n}{d} \in \Q^+$. Then, for injectivity, suppose $g(\frac{n}{d}) = g(\frac{a}{c})$. Because we know that $g(\frac{n}{d})$ will result in a prime factorization that is unique, and $g(\frac{a}{c})$ will also result in a prime factorization that is unique, for $g(\frac{n}{d})$ to be equal to $g(\frac{a}{c})$, it must be the case that $\frac{n}{d} = \frac{a}{c}$. \\
+
+                \noindent Therefore, because we have found an injective function $f \ \colon \N \rightarrow \Q^+$ and injective function $g \ \colon \Q^+ \rightarrow \N$, by the Schröder-Bernstein Theorem, we know that the cardinality of $\Q^+$ is $\ale$. Then, because $\Q^+$ is a proper subset of $\Q$ and has cardinality $\ale$, then it must be the case that $|\Q| = \ale$ by definition of infinite. 
+            } \\
+            
+            \textbf{Note}: sometimes people call $\ale$ ``countably infinite.'' \\
+
+% ------------------------------------------------------------------------------
+% Problem 70
+% ------------------------------------------------------------------------------
+
+            \pb{
+                Suppose $A$ is a set with $|A| = \ale$. Show there exists an enumeration of $A$; that is, $$A = \{a_1,a_2,\dots\}$$ where $a_i \ne a_j$ for $i \ne j$.
+            }
+
+            \expf{
+                Suppose $A$ is a set with cardinality equal to $\ale$. Because $\N$ also has cardinality equal to $\ale$, we can posit that there is a bijection, $f \ \colon \N \rightarrow A$ by $f(n) = a_n$. Then, suppose $i,j \in \N$. Because $f$ is an injective function, the mapping of $f(i)$ must be unique for both the domain and the co-domain. Hence, it cannot be the case that $f(i) = f(j)$. It follows that since $f(i) \ne f(j)$, $a_i \ne a_j$ for $i \ne j$. Therefore, there exists an enumeration of $A$. 
+            }
+
+% ------------------------------------------------------------------------------
+% Problem 71
+% ------------------------------------------------------------------------------
+
+            \pb{
+                If $A$ is a set of cardinality, $\ale$, then $A$ is infinite.
+            }
+            \textbf{Hint}: Need to find a proper subset (i.e., $C \subseteq A$ and $C \ne A$. Notation: $C \subsetneq A$) $C$ of $A$ such that $|C| = \ale$. \\
+            Need to use Problem 70.
+
+            \expf{
+                Let $|A| = \ale$. To demonstrate that $A$ is infinite, we need to show that for any finite subset of $A$, there exists at least one element in $A$ not contained in this subset, implying $A$ cannot be exhausted by its finite subsets. \\
+                
+                \noindent Given the enumeration of $A$ from Problem 70, consider any subset $C \subseteq A$ where $C \ne A$, that has cardinality $\aleph_0$. We can define $C$ by selecting an element to exclude from $A$, like $a_1$. Thus, let $C$ be defined as $\{a_2,a_3,\dots\}$. \\
+                
+                \noindent Hence, $C$ is a proper subset of $A$ since it does not include $a_1$. Despite $C$ being infinite and having the same cardinality as $A$, it is still not equal to $A$ because it lacks at least one element ($a_1$) that is in $A$. That is, because $A \subsetneq C$ and $C \subseteq A$, it fails the criterion for Theorem 1.  \\
+                
+                \noindent If $A$ were finite, removing any element (like $a_1$) would reduce its size, making $|C|$ less than $|A|$. However, since both $A$ and $C$ share the same cardinality $\aleph_0$, and $C$ is a proper subset of $A$, we have shown that $A$ is indeed infinite by definition.
+            } 
+        

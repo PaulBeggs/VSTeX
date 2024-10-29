@@ -515,7 +515,9 @@
 
 
 %headings style
-\renewcommand\section{\@startsection{section}{1}{\z@}%
+\renewcommand\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{\@startsection{section}{1}{\z@}%
                                    {-3.5ex \@plus -1.3ex \@minus -.7ex}%
                                    {2.3ex \@plus.4ex \@minus .4ex}%
                                    {\normalfont\large\bfseries}}

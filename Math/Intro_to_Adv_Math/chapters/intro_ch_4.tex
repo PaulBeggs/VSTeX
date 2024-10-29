@@ -1,0 +1,120 @@
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Introduction}
+
+Let's create a similar analogy to the cereal one in Chapter 3 for the discussion of \textit{Intersections}. Imagine a situation where instead of merely combining milk with cereal, we look for elements common to both. To illustrate, consider a breakfast scenario where we have two sets: one containing various types of breakfast items including Cheerios, and another containing items needed for a morning meal, which also includes Cheerios among other things like milk, toast, and eggs:
+
+\begin{itemize}
+    \item Set $A$ (Breakfast Cereals): $\{\text{Cheerios, Corn Flakes, and Granola.}\}$
+    \item Set $B$ (My Breakfast): $\{\text{Cheerios, Milk, Toast, and Eggs.}\}$
+\end{itemize}
+
+Now, let’s consider what happens when we focus on the common elements between these two sets. Unlike union where we gather all distinct elements from both sets, the intersection requires that an element be present in both set $A$ \textit{and} set $B$ to be included.
+
+In this scenario, the only common element between set $A$ and set $B$ is Cheerios. Even though both sets contain other items, the intersection specifically identifies \textit{only} what they share.
+
+The intersection of these sets, therefore, would be the set of items that are both a breakfast cereal and part of my breakfast today. Mathematically, we would express this as: $$A \cap B = \{\text{Cheerios}\}.$$
+
+Here, the intersection doesn't imply that we create something new from the elements, as in the union where all elements are combined into a larger set. Instead, it focuses on what is shared between the sets, reflecting a narrower, more specific criterion.
+
+Thus, we formally define an intersection as: 
+\begin{definition}
+    {Intersection}Suppose $A$ and $B$ are sets. The \textit{intersection} of $A$ and $B$ is the set $\{x \in A \colon x \in B\}$. Denoted, $$A\cap B$$
+\end{definition}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Properties of Intersections}
+
+\pb{
+    {Intersection `Additive' Identity}Suppose $A$ is a set. Then, $$A \cap \emptyset = \emptyset$$
+}
+
+\expf{
+    Let $A$ be a set. \\
+
+    \indent By the definition of intersection, $A\cap \emptyset$ contains all elements that are in $A$ and $\emptyset$. Then, by the definition of empty set, $\emptyset$ has no elements. Hence, there cannot be any elements that is both in $A$ and in $\emptyset$. Because $A\cap \emptyset$ cannot contain any elements, the only set that has no elements would be the empty set itself. \\ 
+    
+    Therefore, $A\cap \emptyset = \emptyset$.
+}
+
+\pb{
+    {Intersection `Multiplicative' Identity}Suppose $A$ is a set. Then, $$A \cap A = A$$
+}
+
+\expf{
+    Let $A$ be a set. \\
+
+    By the definition of intersection, $A\cap A$ consists of all elements $x$ such that $x\in A$ and $x\in A$. Thus, every element $x\in A$ satisfies the condition to be in $A\cap A$, because every element in $A$ is also in $A$. \\
+
+    Therefore, $A\cap A = A$ as every element of $A$ is included in the intersection of $A$ with itself, and no additional elements outside of $A$ can be part of this intersection.
+}
+
+\newpage
+
+\pb{
+    {Intersection Commutativity}Suppose that $A$, $B$ are sets. Then, $$A\cap B = B\cap A$$
+}
+
+\expf{
+    Let $A$, $B$ be sets, such that $A\cap B$ and $B\cap A$ are separate unions. \\
+    
+    \vspace{-0.3cm}
+    
+    For any element $x$, assume $x \in A\cap B$, then by the definition of intersection, $x\in A$ and $x\in B$. Since $x\in A$ and $x\in B$, it follows that $x\in B$ and $x\in A$. Thus, $x\in B\cap A$. \\
+    
+    \vspace{-0.3cm}
+
+    Therefore, since every element $x$ in $A\cap B$ is also in $B\cap A$, and every element $x$ is in $B\cap A$ is also in $A \cap B$, by Axiom 1, $A\cap B = B\cap A$.
+}
+
+
+\pb{
+    {Denial}Complete the statement, $$\text{``}x\notin A \cap B \text{ means...''}$$
+}
+
+\sol{
+    ...$x\notin A$ or $x\notin B$.''
+}
+
+\pb{
+    {Intersection Associativity}Given $A, B$, and $C$ are sets. Then, $$A\cap (B\cap C) = (A \cap B) \cap C$$
+}
+
+\sbseteqpf
+    {Suppose $A,B$ and $C$ are sets. Let $x\in A\cap (B\cap C)$. By the definition of intersection, $x\in A$ and $x\in (B\cap C)$. Then, using the same reasoning, $x\in B$ and $x \in C$. Since $x\in A$ and $x\in B$, it follows that $A\cap B$. Since $A\cap B$ and $x\in C$, $x\in (A\cap B) \cap C$. This means that $A\cap (B\cap C) \subseteq (A\cap B) \cap C$.}
+    {Suppose $A,B$ and $C$ are sets. Let $y\in (A\cap B)\cap C$ By the definition of intersection, $y\in (A\cap B)$ and $x\in C$. Then, using the same reasoning, $y\in A$ and $y\in B$. Since $y\in B$ and $y\in C$, it follows that $B\cap C$. Since $B\cap C$ and $y\in A$, $x\in A \cap (B \cap C)$. This means that $(A\cap B)\cap C \subseteq A\cap (B \cap C)$.}
+    {$A\cap (B\cap C) = (A\cap B) \cap C$.}
+    {kindapink}
+
+\newpage
+
+% ------------------------------------------------------------------------------
+% Problem 27
+% ------------------------------------------------------------------------------
+
+\pb{
+    {}Given $A$ and $B$ are sets. Then, $$A\subseteq B \iff A \cap B = A$$
+}
+
+
+
+\begin{customframedproof}[linecolor=kindapink]
+    \begin{proof}
+    We show this by proving both implications:
+        \begin{proofpart}[kindapink]{(\(\Rightarrow\))}
+                We need to show these expressions are subsets of each other so we can utilize Theorem 1 to prove they are equal: 
+                \begin{proofpart}[kindapink]{(\(\subseteq\))}
+                    Suppose for sets $A$ and $B$, that $A\subseteq B$. For any element $x \in A\cap B$, by the definition of intersection, $x$ is in $A$ (and $x$ is in $B$). Thus, $A\cap B \subseteq A$, by definition of subset. 
+                \end{proofpart}
+                \begin{proofpart}[kindapink]{(\(\supseteq\))}
+                    Now, let $y\in A$. Since $A\subseteq B$ by assumption, we must have $y\in B$. This implies $y\in A \cap B$ by definition of intersection, and by the definition of subsets, $A \subseteq A\cap B$.
+                \end{proofpart}
+                Therefore, by Theorem 1, since $A\cap B\subseteq A$ and $A\subseteq A\cap B$, we know that $A\cap B = A$.
+        \end{proofpart}
+        \begin{proofpart}[kindapink]{(\(\Leftarrow\))}
+            Suppose for sets $A$ and $B$ that $A \cap B = A$. Let element $x\in A$. Then, by Theorem 1, we know that $A \subseteq A\cap B$. Thus, $x\in A \cap B$. By definition of intersection, $x \in B$. Therefore, since $x\in A$ and $x\in B$, then by definition of subset, $A\subseteq B$.
+        \end{proofpart}
+        Therefore, we have proven both sides of the implication, so we know that $A\subseteq B$ if, and only if, $A \cap B = A$.
+    \end{proof}
+\end{customframedproof}

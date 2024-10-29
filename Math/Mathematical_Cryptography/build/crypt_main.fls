@@ -423,12 +423,21 @@ INPUT .\images\small logo.png
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbcsc10.tfm
-INPUT .\Chapters\ch_1.tex
-INPUT .\Chapters\ch_1.tex
-INPUT .\Chapters\ch_1.tex
-INPUT .\Chapters\ch_1.tex
-INPUT Chapters\ch_1.tex
+INPUT .\Chapters\crypt_ch_1.tex
+INPUT .\Chapters\crypt_ch_1.tex
+INPUT .\Chapters\crypt_ch_1.tex
+INPUT .\Chapters\crypt_ch_1.tex
+INPUT Chapters\crypt_ch_1.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -448,6 +457,42 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -493,18 +538,60 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt8.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt8.tfm
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
-INPUT .\Chapters\ch_2.tex
-INPUT .\Chapters\ch_2.tex
-INPUT .\Chapters\ch_2.tex
-INPUT .\Chapters\ch_2.tex
-INPUT Chapters\ch_2.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\Chapters\crypt_ch_2.tex
+INPUT .\Chapters\crypt_ch_2.tex
+INPUT .\Chapters\crypt_ch_2.tex
+INPUT .\Chapters\crypt_ch_2.tex
+INPUT Chapters\crypt_ch_2.tex
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -537,11 +624,43 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
-INPUT .\Chapters\ch_3.tex
-INPUT .\Chapters\ch_3.tex
-INPUT .\Chapters\ch_3.tex
-INPUT .\Chapters\ch_3.tex
-INPUT Chapters\ch_3.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\Chapters\crypt_ch_3.tex
+INPUT .\Chapters\crypt_ch_3.tex
+INPUT .\Chapters\crypt_ch_3.tex
+INPUT .\Chapters\crypt_ch_3.tex
+INPUT Chapters\crypt_ch_3.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -563,9 +682,22 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -581,194 +713,29 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfding\pzdr.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfding\pzdr.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Exercises\1.tex
-INPUT .\Exercises\1.tex
-INPUT .\Exercises\1.tex
-INPUT .\Exercises\1.tex
-INPUT Exercises\1.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Exercises\2.tex
-INPUT .\Exercises\2.tex
-INPUT .\Exercises\2.tex
-INPUT .\Exercises\2.tex
-INPUT Exercises\2.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Exercises\3.tex
-INPUT .\Exercises\3.tex
-INPUT .\Exercises\3.tex
-INPUT .\Exercises\3.tex
-INPUT Exercises\3.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Exercises\4.tex
-INPUT .\Exercises\4.tex
-INPUT .\Exercises\4.tex
-INPUT .\Exercises\4.tex
-INPUT Exercises\4.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Exam_Prep\Exam_2.tex
-INPUT .\Exam_Prep\Exam_2.tex
-INPUT .\Exam_Prep\Exam_2.tex
-INPUT .\Exam_Prep\Exam_2.tex
-INPUT Exam_Prep\Exam_2.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
@@ -780,8 +747,6 @@ INPUT .\images\small logo.png
 INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
 INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
 INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\public\cm\dpi720\cmbcsc10.pk
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\public\cm\dpi720\cmbcsc10.pk
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\public\cm\dpi864\cmbcsc10.pk

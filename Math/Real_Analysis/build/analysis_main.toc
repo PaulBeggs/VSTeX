@@ -33,3 +33,6 @@
 \contentsline {subsubsection}{Some Examples of Open Sets}{48}{section*.4}%
 \contentsline {subsection}{\numberline {3.2.2}Closed Sets}{49}{subsection.3.2.2}%
 \contentsline {subsubsection}{Some Examples of Closed Sets}{49}{section*.5}%
+\contentsline {subsection}{\numberline {3.2.3}Exercises}{51}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Compact Sets}{53}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Exercises}{54}{subsection.3.3.1}%
