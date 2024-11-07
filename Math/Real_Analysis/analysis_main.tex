@@ -169,8 +169,8 @@
 %%%%% Colored Boxes %%%%%
 \usepackage{tcolorbox}
 \tcbuselibrary{skins}
-\tcbuselibrary{minted}
 \tcbuselibrary{theorems}
+\tcbuselibrary{minted}
 \newcounter{BoxCounter}
 
 
@@ -586,6 +586,10 @@ sharp corners=uphill,
 \newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
 \newcommand{\limn}[1]{\ensuremath{\lim_{n \rightarrow \infty}}#1}
 \newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
+
+\newcommand{\ninn}{n \in \N}
 
 
 \newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}

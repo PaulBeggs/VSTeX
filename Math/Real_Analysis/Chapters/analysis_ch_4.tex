@@ -210,3 +210,123 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
     Notice that we picked \(\delta < 1\) such that \(3 < x < 4\) so \(1 < \sqrt{x} < 2\) and \(3 < \sqrt{x} + 2 < 4\).
 }
 
+
+
+
+
+\begin{ntheorem}
+    {Sequential Criterion for Functional Limits}
+    The following statements are equivalent:
+
+    \begin{enumerate}
+        \item \(\lim_{x \rightarrow c} f(x) = L\).
+        \item For all sequences \((x_n)\) where \(x_n \ne c\) and \((x_n) \rightarrow c\), we have \(\limn{f(x_n)} = L\).
+    \end{enumerate}
+\end{ntheorem}
+
+\tpf{
+    \((1) \rightarrow (2)\) \\
+
+    Assume \(\limc{f(x)} = L\).
+
+    Let \((x_n) \rightarrow c\) with \(x_n \ne c\)
+
+    Let \(\epsilon > 0\).
+    \begin{itemize}
+        \item Since \(\limc{f(x)} = L\), there exists \(\delta > 0\) such that if \(0 < \disabs{x - c} < \delta\), then \(\disabs{f(x) - L} < \epsilon\).
+
+        \item Since \(x_n \rightarrow c\), there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - c} < \delta\).
+
+        \item Now, for all \(n \geq N\), it follows that \(x_n - c < \delta\) and thus \(\disabs{f(x) - L} < \epsilon\).
+    \end{itemize}
+
+    Thus, \(\limn{f(x_n)} = L\). \\
+
+    \((2) \rightarrow (1)\) \\
+
+    Proof by contrapositive.
+
+    Assume (1) is not true. Thus,
+    \[
+        \limc{f(x)} \ne L.
+    \]
+
+    There exists \(\epsilon_0 > 0\) such that for all \(\delta > 0\), there exists an \(x\) with \(0 < \disabs{x - c} < \delta\) and \(\disabs{f(x) - L} \geq \epsilon_0\).
+
+    For each \(n \in \N\), consider \(\delta = \frac{1}{n}\). There exists \(x_n \in (c - \frac{1}{n}, c + \frac{1}{n})\) with \(x_n \ne c\) such that \(\disabs{f(x) - L} \geq \epsilon_0\).
+
+    \begin{itemize}
+        \item Since \(\disabs{x_n - c} < \frac{1}{n}\), we see that \((x_n) \rightarrow c\).
+        \item Since for all \(\ninn\), \(\disabs{f(x) - L} \geq \epsilon_0\). Then, \(\limn{f(x)} \ne L\).
+    \end{itemize}
+    Thus, \(\neg(1) \rightarrow \neg(2)\). So \((2) \rightarrow (1)\) and \((1) \rightarrow (2)\).
+}
+
+If functional limits and sequential limits are the same thing, then everything we know about sequential limits is also true about functional limits.
+
+Recall \namrefthm{Algebraic Limit Theorem}. From this, we can write the functional equivalent:
+
+Assume \(\limc{f(x)} = L\) and \(\limc{g(x)} = M\). Then,
+\begin{itemize}
+    \item \(\limc{(f(x) + g(x))} = L + M\)
+    \item \(\limc{(f(x) - g(x))} = L - M\)
+    \item \(\limc{(f(x)g(x))} = LM\)
+    \item \(\limc{(\frac{f(x)}{g(x)})} = \frac{L}{M}\) unless \(M = 0\).
+\end{itemize}
+
+\begin{ntheorem}
+    {Divergence Criterion} Let \(f \colon A \rightarrow \R\) with \(c\) as a limit point of \(A\). If there exists two sequences \((x_n)\) and \((y_n)\) in \(A \setminus \{c\}\) (that both converge to \(c\)) such that \(\limn{f(x_n)} \ne \limn{f(y_n)}\), then \(\limc{f(x)}\) does not exist.
+\end{ntheorem}
+
+\begin{example}
+    {Divergence Criterion 1} \(f(x) = \frac{x}{|x|} = \begin{cases}
+        1, \text{ if } x > 0 \\
+        -1, \text{ if } x < 0
+    \end{cases}\)
+    Our goal is to show that \(\lim_{x \rightarrow 0} f(x)\) does not exist.
+\end{example}
+
+\lepf{
+    Let \((x_n) = (\frac{1}{n})\) and let \((y_n) = (\frac{-1}{n})\). We will see that as \(n \rightarrow \infty\), \(\limn{f(x_n)} = 1\) and \(\limn{f(y_n)} = -1\). Thus, \(\lim_{x \rightarrow 0} f(x)\) does not exist.
+}
+
+\begin{example}
+    {Divergence Criterion 2} \(g(x) = \sin(\frac{1}{x})\). Show that \(\lim_{x \rightarrow 0} g(x)\) does not exist.
+\end{example}
+
+\lepf{
+    Let \((x_n) = (\frac{1}{2\pi n})\) and let \((y_n) = (\frac{1}{2\pi n + \frac{\pi}{2}})\). We will see that as \(n \rightarrow \infty\), \(\limn{g(x_n)} = 1\) and \(\limn{g(y_n)} = -1\). Thus, \(\lim_{x \rightarrow 0} g(x)\) does not exist.
+}
+
+(section?) Infinite limits
+
+We say \(\limn{x_n} = \infty\) if for all \(M > 0\), there exists \(N \in \N\) such that for all \(n \geq N\), \(x_n > M\).
+
+We say \(\limc{f(x)} = \infty\) if for all \(M > 0\), there exists \(\delta > 0\) such that if \(0 < \disabs{x - c} < \delta\), then \(f(x) > M\). Think of vertical asymptotes.
+
+
+\begin{ntheorem}
+    {Infinite Limits Cauchy Criterion} If \((x_n) \rightarrow \infty\), \((x_n)\) will not be Cauchy. It is possible to have \(x_{n+1} - x_n\) approach 0, but \((x_n)\) converges to \(\infty\).
+\end{ntheorem}
+
+\section{Continuous Functions}
+
+\begin{definition}
+    We say a function \(f\) is \textit{continuous} at \(c\) if
+    \[
+        \limc{f(x)} = f(c).
+    \]
+
+    Equivalent definition:
+
+    For all \(\epsilon > 0\), there exists \(\delta > 0\) such that if \(\disabs{x - c} < \delta\), then
+    \[
+        \disabs{f(x) - f(c)} < \epsilon.
+    \]
+\end{definition}
+
+Idea: When \(x\) is close to \(c\), \(f(x)\) is close to \(f(c)\). Then, for the topological definition, we can say if \(x \in V_\delta(c)\) then \(f(x) \in V_\epsilon(f(c))\).
+
+\begin{definition}
+    We say function \(f\) is continuous on a set \(A\) if \(f\) is continuous at every point in \(A\). 
+\end{definition}
