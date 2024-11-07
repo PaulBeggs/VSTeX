@@ -33,3 +33,5 @@
 \contentsline {subsubsection}{Some Examples of Open Sets}{48}{section*.4}%
 \contentsline {subsection}{\numberline {3.2.2}Closed Sets}{49}{subsection.3.2.2}%
 \contentsline {subsubsection}{Some Examples of Closed Sets}{49}{section*.5}%
+\contentsline {section}{\numberline {3.3}4.2 Functional Limits}{51}{section.3.3}%
+\contentsline {section}{\numberline {3.4}4.3 Continuous Functions}{53}{section.3.4}%
