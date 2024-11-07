@@ -51,7 +51,9 @@
 \begin{document}
 \maketitle % This tells LaTeX to make the title page
 
-% \section{Introduction} This command is commented out, because I was taught it was redundant to have the paper's title and introduction together. If your instructor wants it to say ``Introduction", delete the % at the start
+% \renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Introduction} This command is commented out, because I was taught it was redundant to have the paper's title and introduction together. If your instructor wants it to say ``Introduction", delete the % at the start
 
 Begin your paper with the introduction. The active voice, rather than the passive voice (i.e., the zombie voice), should be used in your writing.
 
@@ -68,6 +70,8 @@ While I have your attention before diving into the sections, something that may 
 
 To close out this section, I will finally talk about the contents of the Introduction. In these sorts of papers, think of the information process in the shape of an hourglass (stay with me, it'll make sense). The general idea is that you start at the broadest point, work your way into more and more specific, until you are at the point of this paper - the theory its testing and the hypothesis. Then you stay in that specific level of detail through the Methods and Results. The Discussion starts specific (i.e., what you did or did not find), then work your way back out to the broader meaning or implications.
 
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
 \section{Method}
 
 \subsection{DELETE THIS SECTION - this is an informative section, not something to be included in your final paper.}
@@ -124,6 +128,8 @@ From the time the participant starts the experiment to the time they leave, what
 
 
 
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
 \section{Results}
 
 Some instructors will want things broken down with the subheadings (e.g., `Descriptive Statistics') I have included, some will light your paper on fire if you \textit{do} include these. Always check with the assignment/rubric for what is wanted. Also, don't check my math on these, I am making all of the numbers up as we go, so it's almost certainly not going to hang together correctly.
@@ -155,6 +161,8 @@ A benefit of using \LaTeX{} is the ease in adding in macros to simplify your lif
 
 Using the hypothetical experiment we have set up, let's say there was a significant interaction found between the word conditions (first versus second) and exposure order (first-second versus second-first), \anovaSig{11}{111}{4.20}. Pairwise comparisons indicate that this was driven by the words themselves, as there was a significant difference between the words, \ttestSig{111}{3.21}, but not for the exposure order, \ttestInsig{111}{.42}.
 
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
 \section{Discussion}
 
 As mentioned at the close of the Introduction, the Discussion starts out specific before building out to the broader picture. This will typically mean that the discussion starts with a reiteration of the Results, with more emphasis on interpretation. What differences were (or were not) found? Does this support your predictions, or have you failed to reject the null hypothesis? Statements of that nature.

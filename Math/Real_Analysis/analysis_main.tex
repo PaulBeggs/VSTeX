@@ -81,7 +81,7 @@
 %%% Chapter Headings %%%
 
 % \usepackage[explicit]{titlesec}
-% \newcommand*\chapterlabel{}
+% \newcommand*\chapterlabel{}\pmod
 % \titleformat{\chapter}
 %   {\gdef\chapterlabel{}
 %    \normalfont\sffamily\Huge\bfseries\scshape}
@@ -92,7 +92,7 @@
 %         \draw[fill=LightSkyBlue] (0,0) rectangle
 %           (\paperwidth,3cm);
 %         \node[anchor=east,xshift=.9\paperwidth,rectangle,
-%               rounded corners=20pt,inner sep=11pt,
+%               sharp corners=downhill=20pt,inner sep=11pt,
 %               fill=MidnightBlue]
 %               {\color{white}\chapterlabel#1};
 %        \end{tikzpicture}
@@ -168,6 +168,9 @@
 
 %%%%% Colored Boxes %%%%%
 \usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{minted}
+\tcbuselibrary{theorems}
 \newcounter{BoxCounter}
 
 
@@ -175,60 +178,75 @@
 
 %% Numbered Theorems %%
 \newtcolorbox[use counter=BoxCounter, number within=section]{theorem}[1][]{%
-    rounded corners,
+enhanced,
+sharp corners=uphill,
     colframe=xblue, %color of frame
     colback=xblue!15, %color of background
     coltitle=white, %color of title text
     label={thm:\theBoxCounter},
     title={\large \textbf{Theorem \theBoxCounter}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xblue},
     #1
 }
 
 
 %% Named Theorems %%
 \newtcolorbox[use counter=BoxCounter, number within=section]{ntheorem}[2][]{%
-    rounded corners,
+enhanced,
+sharp corners=south,
     colframe=xblue, %color of frame
     colback=xblue!15, %color of background
     coltitle=white, %color of title text
     label={thm:#2},
     title={\large \textbf{Theorem \theBoxCounter: #2}},
+    attach boxed title to top center,
+    boxed title style={colback=xblue},
     #1
 }
 
 
 %% Definitions %%
 \newtcolorbox[use counter=BoxCounter, number within=section]{definition}[1][]{%
-    rounded corners,
+enhanced,
+sharp corners=downhill,
     colframe=xred,
     colback=xred!15,
     coltitle=white,
     label={def:\theBoxCounter},
     title={\large \textbf{Definition \theBoxCounter}},
+    attach boxed title to top right={xshift=-0.5cm},
+    boxed title style={colback=xred},
     #1
 }
 
 
 %% Axioms %%
 \newtcolorbox[]{axiom}[2][]{%
-    rounded corners,
+enhanced,
+sharp corners=downhill,
     colframe=xdarkgreen,
     colback=xdarkgreen!15,
     coltitle=white,
     label={ax:#2},
     title={\large \textbf{Axiom of #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xdarkgreen},
     #1
 }
 
 
 %% Exercises %%
 \newtcolorbox[]{exercise}[2][]{%
-    rounded corners,
+    enhanced,
+    sharp corners=uphill,
     colframe=orangehdx!75,
     colback=orangehdx!10,
     coltitle=white,
     label={ex:#2},
     title={\large \textbf{Exercise: #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=orangehdx!75},
     #1,
 }
 
@@ -236,35 +254,44 @@
 %% Examples %%
 \newcounter{ExampleCounter}
 \newtcolorbox[use counter=ExampleCounter, number within=chapter]{example}[2][]{%
-    rounded corners,
+enhanced,
+sharp corners=south,
     colframe=teal,
     colback=teal!15,
     coltitle=white,
     label={ex:\theExampleCounter},
     title={\large \textbf{Example \theExampleCounter: #2}},
+    attach boxed title to top center,
+    boxed title style={colback=teal},
     #1,
 }
 
 
 %% Corollaries %%
 \newtcolorbox[]{corollary}[3][]{%
-    rounded corners,
+enhanced,
+sharp corners=downhill,
     colframe=xgrayblue,  
     colback=xgrayblue!15,        
     coltitle=white,
     title={\large \textbf{Corollary to #3: #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xgrayblue},
     #1
 }
 
 
 %% Lemmas %%
 \newtcolorbox[use counter=BoxCounter, number within=chapter]{lemma}[1][]{%
-    rounded corners,
+enhanced,
+sharp corners=uphill,
     colframe=xpurple,
     colback=xpurple!15,
     coltitle=white,
     label={lm:\theBoxCounter},
     title={\large \textbf{Lemma \theBoxCounter}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xpurple},
     #1,
 }
 
@@ -295,7 +322,7 @@
 \usepackage{amsmath,amsthm} 
 \usepackage{mathtools}
 \usepackage{amssymb}
-\usepackage{mdframed}
+\usepackage[framemethod=tikz]{mdframed}
 \usepackage{mathrsfs}
 \usepackage{changepage}
 \usepackage{multicol}
@@ -303,7 +330,8 @@
 \usepackage{enumerate}
 \usepackage{booktabs}
 \usepackage{enumitem}
-\usepackage{lipsum}  %This package lets us generate random text for example purposes.
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
 
 
 %%% Custom Comands %%%
@@ -379,6 +407,49 @@
     \end{mdframed}
 }
 
+% Define a new environment 'proofscratch' for Proof and Scratch Paper
+\newenvironment{proofscratch}[2]{%
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=false,
+        backgroundcolor=draculabg, % Background color for Dracula theme
+        fontcolor=draculafg,       % Font color for Dracula theme
+        innerleftmargin=-6pt,
+        innertopmargin=0pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        skipabove=\topsep,
+        skipbelow=\topsep,
+    ]
+    % % Begin TikZ picture for the vertical dotted line
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     % Draw a vertical dotted line at approximately the center of the mdframed width
+    %     \draw[dotted, thick] ([xshift=0.005\linewidth]current bounding box.north west) -- ([xshift=0.005\linewidth]current bounding box.south west);
+    % \end{tikzpicture}%
+    % % Create the left minipage for Proof
+    \begin{minipage}[t]{0.47\textwidth}%
+        \noindent\textit{Proof.} #1 \hfill $\qed$
+    \end{minipage}%
+    \hfill
+    % Create the right minipage for Scratch Paper
+    \begin{minipage}[t]{0.47\textwidth}%
+        \textit{Scratch Paper.} #2
+    \end{minipage}%
+}{
+    \end{mdframed}
+}
+
+\newcommand{\pfscratch}[3]{%
+    \begin{customframedproof}[linecolor=#3]
+        \begin{proofscratch}
+            {#1}{#2}
+        \end{proofscratch}
+    \end{customframedproof}
+}
+
+\newcommand{\lepfscratch}[2]{\pfscratch{#1}{#2}{teal}}
 
 \newcommand{\sbseteqpf}[5][We need to show these expressions are subsets of each other in order to prove they are equivalent.]{%
     \begin{customframedproof}[linecolor=#5]
@@ -442,6 +513,7 @@
     \end{customframedproof}
 }
 
+% Command for proofs that are contained within solution environments. 
 \newcommand{\innerpf}[1]{%
     \begin{customframedproof}[linecolor=xgray]
         \begin{proof}
@@ -513,6 +585,11 @@
 
 \newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
 \newcommand{\limn}[1]{\ensuremath{\lim_{n \rightarrow \infty}}#1}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+
+\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
 
 \renewcommand{\theenumi}{\alph{enumi}} 
 \renewcommand{\labelenumi}{(\theenumi)}
@@ -619,17 +696,22 @@
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\chapter{The Real Numbers}\label{Real nums}
-\vspace*{-0.25in}
-\input{Chapters/ch_1}
+% \chapter{The Real Numbers}\label{Real nums}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_1}
 
+\setcounter{chapter}{1}
 \chapter{Sequences and Series}\label{sequences and series}
 \vspace*{-0.25in}
-\input{Chapters/ch_2}
+\input{Chapters/analysis_ch_2}
 
 \chapter{Basic Topology of Real Numbers}\label{topology}
 \vspace*{-0.25in}
-\input{Chapters/ch_3}
+\input{Chapters/analysis_ch_3}
+
+\chapter{Functional Limits and Continuity}\label{functional limits}
+\vspace*{-0.25in}
+\input{Chapters/analysis_ch_4}
 
 
 
@@ -640,21 +722,26 @@
 
 % \chapter*{Exercises 1}\label{Exercises 1}
 % \vspace*{-0.25in}
-% \input{Exercises/1}
+% \input{Exercises/analysis_exercises_1}
 
 % \chapter*{Exercises 2}\label{Exercises 2}
 % \vspace*{-0.25in}
-% \input{Exercises/2}
+% \input{Exercises/analysis_exercises_2}
 
 % \fancyhead[R]{Exercises 3}
 
 % \chapter*{Exercises 3}\label{Exercises 3}
 % \vspace*{-0.25in}
-% \input{Exercises/3}
+% \input{Exercises/analysis_exercises_3}
 
 % \chapter*{Exercises 4}\label{ex 4}
 % \vspace*{-0.25in}
-% \input{Exercises/4}
+% \input{Exercises/analysis_exercises_4}
+
+% \chapter*{Exercises 5}\label{ex 5}
+% \vspace*{-0.25in}
+% \fancyhead[R]{Exercises 5}
+% \input{Exercises/analysis_exercises_5}
 
 % \chapter*{Presentation Problem 1}\label{pres 1}
 % \vspace*{-0.25in}

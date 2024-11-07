@@ -1,0 +1,115 @@
+\subsection{Equivalency}
+
+    \vspace{0.5cm}
+
+        \subsubsection{Equivalency Relations}
+    
+            \begin{definition}
+                Suppose $E$ is a relation on $A$. The statement that $E$ is an \textit{equivalence relation} means that $E$ is reflexive, symmetric, and transitive. 
+            \end{definition}
+        
+            \begin{example}
+                If $H$ is the set of all Hendrix students, and $E$ is the relation defined by $(a,b)\in E$ means $a$ has the same advisor as $b$.
+            \end{example}
+    
+        \subsubsection{Equivalence Classes}
+    
+            \begin{definition}
+                Suppose $E$ is an equivalence relation on $A$. If $a\in A$, we define the \textit{equivalence class} of $a$ (relative to $E$) by $[a]_E := \{b\in A\colon (a,b) \in E\}$
+            \end{definition}
+            \textbf{Note}: We denote the set of all equivalence classes by $A/E$.
+        
+            \begin{example}
+                $[\text{West}]_\text{Advisor} = \{\text{Yorgey's advisee}\}$. 
+            \end{example}
+    
+        \subsubsection{Problem}
+
+% ------------------------------------------------------------------------------
+% Problem 40
+% ------------------------------------------------------------------------------
+
+            \pb{
+                Suppose $E$ is an equivalence relation on $A$. Then, for distinct elements $a,b\in A$, either: $$[a]_E = [b]_E \text{ or } [a]_E \cap [b]_E = \emptyset$$
+            }
+            \textbf{Think}: Equivalence relations divide a set into classes. Kind dividing up sets into ``families.''
+
+            \expf{
+                Let $E$ be equivalent on set $A$ for $a,b\in A$ and $a\ne b$. \\
+
+                Suppose $[a]_E \cap [b]_E \ne \emptyset$. We'll show that $[a]_E = [b]_E$. By the definition of intersection, and the negation of Problem 11, there exists $x\in [a]_E$ and $x\in [b]_E$. Then by the definition of equivalence classes, we have $(a,x) \in E$ and $(b,x) \in E$. Because \textit{E} is symmetric and transitive, $(x,b) \in E$ and if $(a,x) \in E$, and $(x,b)\in E$, then $(a,b)\in E$, respectively. The fact that $(a,b) \in E$ means both $a$ and $b$ are in the same equivalence class, so $[a]_E = [b]_E$. \\
+                
+                Therefore, for distinct elements $a,b\in A$, either $[a]_E = [b]_E$, or their intersection is empty.
+            }
+
+% Proof: Need to add additional clarification about since the ordered pairs are in E, and the intersection cannot be empty, then the equivalence classes must be equal.
+
+        \subsubsection{Partitions}
+
+            \begin{definition}
+                Suppose $A$ is a set and $\mathcal{A}$ is a collection of subsets of $A$. We say that $\mathcal{A}$ is a \textit{partition} of $A$ provided: 
+                \begin{enumerate}
+                    \item $s\ne \emptyset$ for all $s\in \mathcal{A}$, and
+                    \item if $s_1, s_2 \in \mathcal{A}$, then $s_1\cap s_2 = \emptyset$ or $s_1 = s_2$, and
+                    \item if $a\in A$, then there exists $S\in \mathcal{A}$ such that $a\in S$.
+                \end{enumerate}
+            \end{definition}
+            \textbf{Note}: (1) generates no empty set. (2) Subsets are either the same or have no overlap (i.e., ``uniqueness''). (3) All elements of $A$ are included somewhere.
+
+        \vspace{0.5cm}
+
+        \subsubsection{Problems}
+
+% ------------------------------------------------------------------------------
+% Problem 41
+% ------------------------------------------------------------------------------
+
+            \pb{
+                Suppose $E$ is an equivalence relation on $A$. Then, $$A/E \text{ is a partition of } A.$$
+            }
+
+            \expf{
+                Let \textit{E} be an equivalence relation on \textit{A}. To show that $A/E$ is a partition of $A$, we need to prove three things:
+                \begin{enumerate}
+                    \item \textbf{Non-emptiness}: \\
+                    Suppose $a\in A$. By the definition of an equivalence relation and its equivalence classes, $[a]_E$ contains at least the element $a$ itself due to the reflexivity of \textit{E} (i.e., $(a,a) \in E$). Therefore, no equivalence class in $A/E$ can be empty.
+                    \item \textbf{Mutual exclusivity}: \\
+                    From Problem 40, we know that for any two distinct elements $a,b \in A$, their equivalence classes under \textit{E}, $[a]_E$ and $[b]_E$, are either identical or have no elements in common. This ensure that any two distinct equivalence classes do not overlap. 
+                    \item \textbf{Completeness}: \\
+                    By the definition of equivalence classes, every element $a\in A$ must belong to the equivalence class $[a]_E$. This guarantees that the union of all equivalence classes in $A/E$ covers the entire set of \textit{A}.
+                \end{enumerate}
+
+                Therefore, $A/E$ is a partition of \textit{A}.
+            }
+
+% ------------------------------------------------------------------------------
+% Problem 42
+% ------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------
+\newpage
+% ------------------------------------------------------------------------------
+
+            \pb{
+                Suppose $A$ is a set and $\mathcal{A}$ is a partition on $A$. Define the relation, $\sim : A \rightarrow A$ by $x \sim y$ if, and only if, there exists an $S\in A$ with $x,y\in S$. Then, $$\text{``}\sim \text{''} \text{ is an equivalence relation.}$$
+            }
+            \textbf{Note}: $\sim$: $A\rightarrow A$ by $x\sim y \iff \exists S\in A$ with $x,y\in S$. \\
+            Must prove that given this definition, $\sim$ is an equivalence relation.
+
+
+            \expf{
+                Let $A$ be a set with $\mathcal{A}$ as a partition on $A$. To show that $\text{``}\sim \text{''} \text{ is an equivalence relation}$, we need to prove three things:
+                \begin{enumerate}
+                    \item \textbf{Reflexivity}: \\
+                    For $\sim$ to be reflexive, we need to show that every element $x\in A$ is related to itself under $\sim$. Additionally, since $\mathcal{A}$ is a partition, then by definition, $\mathcal{A}$ is a collection of subsets of $A$. This is important because by the definition of partition 17 (3), it means for every element $x\in A$, there exists a subset $S\in A$ such that $x\in S$. \\
+                    Therefore, by definition, $x\sim x$ for all $x\in A$.
+                    \item \textbf{Symmetry}: \\
+                    For symmetry, we need to show that if $x\sim y$, then $y\sim x$ for any $x,y\in A$. So, suppose that $x\sim y$ by the definition of $\text{``}\sim \text{''}$. This implies that there exists an $S\in A$ with $x,y \in S$. By Problem 10, we can rearrange this to be $y,x$. \\
+                    Therefore, if $x\sim y$, then $y\sim x$.
+                    \item \textbf{Transitivity}: \\
+                    For $\sim$ to be transitive, we need to show that if $x \sim y$ and $y \sim z$, then $x\sim z$ for any $x,y,z\in A$. By the definition of $\text{``}\sim \text{''}$, we know that there exists an $s_1\in \mathcal{A}$ such that $x,y \in s_1$ and there exists an $s_2\in \mathcal{A}$ such that $y,z\in s_2$. Given that $y$ is an element of both $s_1$ and $s_2$, it follows that the intersection of these two partitions must not be empty. Hence, by Problem 40, we know that because $s_1 \cap s_2 \ne \emptyset$, then it must be the case that $s_1 = s_2$. \\
+                    Therefore, since $s_1 = s_2$, and both $x$ and $z$ belong to this \textit{same} subset, by definition of $\text{``}\sim \text{''}$, $x\sim z$.
+                \end{enumerate}
+            }
+
+\newpage 
