@@ -1,0 +1,347 @@
+\documentclass[12pt]{article}
+
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+\usepackage{amsmath,amsthm} 
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\linespread{1}
+\usepackage{listings}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+\graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}[1]{\ensuremath{\lim_{n \rightarrow \infty}}#1}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limsupn}[1]{\displaystyle\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\displaystyle\liminf_{n\rightarrow \infty}#1}
+
+
+\renewcommand{\theenumi}{\arabic{enumi}} 
+\renewcommand{\labelenumi}{(\theenumi)}
+
+\newenvironment{solution}{\textit{Solution.}}
+
+\title{Real Analysis: Exam 2}
+\author{Paul Beggs}
+\date{November 6, 2024}
+
+%%% Custom Comands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+
+\begin{document}
+
+\maketitle
+
+``All work on this take-home exam is my own.'' \hfill \textbf{Signature:} Paul Beggs
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item Let \( 0 < a_{1} < b_{1}\). Then, for each \(n \in \N\), define
+          \[
+              a_{n + 1} = \sqrt{a_{n}b_{n}}, \qquad b_{n + 1} = \frac{a_{n} + b_{n}}{2}.
+          \]
+          Prove the following (in order):
+          \begin{enumerate}
+              \item For any numbers \(x,y \in \R^{+}\) with \(x \ne y\), \(\displaystyle \sqrt{xy} < \frac{x + y}{2}\).
+
+                    Conclude that for all \(n \in \N\), \(0 < a_{n} < b_{n}\).
+              \item \((a_{n})\) is increasing and \((b_{n})\) is increasing.
+              \item Both sequences \((a_{n})\) and \((b_{n})\) must be convergent.
+              \item \(\limn{a_{n}} = \limn{b_{n}}\).
+          \end{enumerate}
+    \item Recall the definitions of the limit superior and limit inferior of a sequence:
+          \[
+              \limsupn{x_{n}} = \limn{\sup\{x_{k} \mid k \geq n\}} \quad \text{ and }\quad  \liminfn{x_{n}} = \limn{\inf \{x_{k} \mid k \geq n\}}.
+          \]
+          Let \((x_{n})\) and \((y_{n})\) be bounded sequences.
+          \begin{enumerate}
+              \item Show that \begin{align*}
+                        \liminfn{x_{n}} + \liminfn{y_{n}} & \leq \liminfn{(x_{n} + y_{n})}          \\
+                                                          & \leq \limsupn{(x_{n} + y_{n})}          \\
+                                                          & \leq \limsupn{x_{n}} + \limsupn{y_{n}}.
+                    \end{align*}
+              \item Give an example of a pair of sequences \((x_{n})\) and \((y_{n})\) for which all three of the above inequalities are strict. \textit{That means \(<\) instead of \(\leq\)}.
+          \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+    \textbf{Solutions}
+\end{center}
+\begin{enumerate}
+    \item
+          \begin{enumerate}
+              \item For \(x, y > 0\) with \(x \neq y\), note the following property:
+
+                    \[
+                        \sqrt{xy} < \frac{x + y}{2}.
+                    \]
+
+                    Since \(a_n, b_n > 0\) and \(a_n < b_n\), it follows that:
+
+                    \[
+                        a_{n+1} = \sqrt{a_n b_n} < \frac{a_n + b_n}{2} = b_{n+1}.
+                    \]
+
+                    Therefore, \(0 < a_{n+1} < b_{n+1}\), and by induction, \(0 < a_n < b_n\) for all \(n \in \mathbb{N}\).
+
+              \item Since \(a_n < b_n\), we know \(a_{n}^{2} < a_{n}b_{n}\). Taking the square root of both sides, we get:
+
+                    \[
+                        \sqrt{a_{n}^{2}} = a_{n} < a_{n + 1} = \sqrt{a_{n}b_{n}}.
+                    \]
+
+                    Thus, \((a_n)\) is increasing.
+
+                    Similarly, since \(a_n < b_n\), we have:
+
+                    \[
+                        a_{n} + b_{n} < b_{n} + b_{n} = 2b_{n}.
+                    \]
+
+                    Dividing by 2, we get:
+
+                    \[
+                        \frac{a_{n} + b_{n}}{2} < b_{n},
+                    \]
+                    which means
+                    \[
+                        b_{n + 1} < b_{n}.
+                    \]
+
+                    So, \((b_n)\) is decreasing.
+
+              \item The sequence \((a_n)\) is increasing and bounded above by \(b_1\), so it converges.
+
+                    The sequence \((b_n)\) is decreasing and bounded below by \(a_1\), so it converges.
+
+              \item Since \((a_{n})\) is increasing and is bounded above by \(b_{1}\), it converges to some limit \(L\):
+                    \[
+                        L = \limn{a_{n}}.
+                    \]
+                    Conversely, since \((b_{n})\) is decreasing and is bounded below by \(a_{1}\), it converges to some limit \(M\):
+                    \[
+                        M = \limn{b_{n}}.
+                    \]
+                    Thus, when we take the limit of both \(a_{n+1}\) and \(b_{n + 1}\), we get:
+                    \[\begin{array}{ccc}
+                            a_{n + 1} = \sqrt{a_{n}b_{n}} & \text{ and } & b_{n + 1} = \displaystyle \frac{a_{n} + b_{2}}{2} \\[1em]
+                            L = \sqrt{LM}                 & \text{ and } & M = \displaystyle \frac{L + M}{2}.
+                        \end{array}\]
+                    When we square the left equation, and then multiply both sides by 2 for the right equation, we have:
+
+                    \[
+                        L^{2} = LM \quad \text{ and } \quad 2M = L + M.
+                    \]
+
+                    Because we know \(0 < a_{1} < b_{1}\) and \(a_{n}\) is increasing, then we know the limit \(L \ne 0\) as \(n \rightarrow \infty\). Additionally, because \(b_{1}\) is decreasing and is bounded below by \(a_{1}\), we know its limit \(M \ne 0\). Thus, for the left equation, we can divide both sides by \(L\), and then for the right equation, we can subtract \(M\) from both sides. This gives us the following:
+                    \[
+                        L = M \qquad \text{ and } \qquad M = L.
+                    \]
+
+          \end{enumerate}
+    \item
+          \begin{enumerate}
+
+              \item
+
+                    Let \((x_n)\) and \((y_n)\) be bounded sequences.
+
+                    For each \( n \in \mathbb{N} \), we have:
+
+                    \[
+                        \inf_{k \geq n} x_k \leq x_k, \quad \inf_{k \geq n} y_k \leq y_k.
+                    \]
+
+                    Adding these inequalities:
+
+                    \[
+                        \inf_{k \geq n} x_k + \inf_{k \geq n} y_k \leq x_k + y_k.
+                    \]
+
+                    Since this holds for all \( k \geq n \), it follows that:
+
+                    \[
+                        \inf_{k \geq n} x_k + \inf_{k \geq n} y_k \leq \inf_{k \geq n} (x_k + y_k).
+                    \]
+
+                    Taking the limit inferior as \( n \to \infty \):
+
+                    \[
+                        \liminf_{n \rightarrow \infty} x_n + \liminf_{n \rightarrow \infty} y_n \leq \liminf_{n \rightarrow \infty} (x_n + y_n).
+                    \]
+
+                    Similarly, for the limit superior, note that for each \( n \in \mathbb{N} \):
+
+                    \[
+                        x_k + y_k \leq \sup_{k \geq n} x_k + \sup_{k \geq n} y_k.
+                    \]
+
+                    Taking the supremum over \( k \geq n \):
+
+                    \[
+                        \sup_{k \geq n} (x_k + y_k) \leq \sup_{k \geq n} x_k + \sup_{k \geq n} y_k.
+                    \]
+
+                    Taking the limit superior as \( n \to \infty \):
+
+                    \[
+                        \limsup_{n \rightarrow \infty} (x_n + y_n) \leq \limsup_{n \rightarrow \infty} x_n + \limsup_{n \rightarrow \infty} y_n.
+                    \]
+
+                    Combining these results:
+
+                    \begin{align*}
+                        \liminfn{x_{n}} + \liminfn{y_{n}} & \leq \liminfn{(x_{n} + y_{n})}          \\
+                                                          & \leq \limsupn{(x_{n} + y_{n})}          \\
+                                                          & \leq \limsupn{x_{n}} + \limsupn{y_{n}}.
+                    \end{align*}
+
+                    Note: we know \(\liminfn{x_{n}}, \liminfn{y_{n}}\) and \(\limsupn{x_{n}}, \limsupn{y_{n}}\) exist because these sequences are bounded.
+
+              \item Example:
+
+                    Let \(x_n = (-1)^n\), so \(\liminfn{x_n} = -1\), \(\limsupn{x_n} = 1\).
+
+                    Let \(y_n = (-1)^{n+1}\), so \(\liminfn{y_n} = -1\), \(\limsupn{y_n} = 1\).
+
+                    Then \(x_n + y_n = 0\) for all \(n\).
+
+                    Therefore:
+
+                    \[
+                        \liminfn{x_n} + \liminfn{y_n} = (-1) + (-1) = -2 < 0 = \liminfn{(x_n + y_n)},
+                    \]
+
+                    \[
+                        \liminfn{x_{n}} + \liminfn{y_{n}} = -2 < 0 = \limsupn{(x_n + y_n)},
+                    \]
+                    and 
+                    \[
+                    \liminfn{x_{n}} + \liminfn{y_{n}} = - 2 < 2 = 1 + 1 = \limsupn{x_{n}} \limsupn{y_{n}}.
+                    \]
+
+                    Hence, all three inequalities are strict.
+
+          \end{enumerate}
+\end{enumerate}
+
+
+
+\end{document}

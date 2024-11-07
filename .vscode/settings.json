@@ -15,6 +15,9 @@
         "suprema",
         "surjective",
         "Totient",
+        "verconge",
+        "vercongence",
+        "vercongent",
         "visuospatial"
     ],
     "python.analysis.autoImportCompletions": true

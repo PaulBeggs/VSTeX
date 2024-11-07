@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  10 OCT 2024 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  6 NOV 2024 16:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/paulb/VSTeX/Real_Analysis/Exam_take_home/Exam_1.tex
-(c:/Users/paulb/VSTeX/Real_Analysis/Exam_take_home/Exam_1.tex
+**c:/Users/paulb/VSTeX/Math/Real_Analysis/Exam_take_home/exam_1_folder/Exam_1.tex
+(c:/Users/paulb/VSTeX/Math/Real_Analysis/Exam_take_home/exam_1_folder/Exam_1.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
 (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -782,27 +782,27 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 \g__lipsum_par_int=\count349
 \l__lipsum_a_int=\count350
 \l__lipsum_b_int=\count351
- (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (c:\Users\paulb\VSTeX\Real_Analysis\Exam_take_home\build\Exam_1.aux)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex)) (c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.aux)
 \openout1 = `Exam_1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 309.
-LaTeX Font Info:    ... okay on input line 309.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -863,34 +863,34 @@ Package caption Info: changepage package is loaded.
 \caption@adjustwidth@linewidth=\dimen315
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 309.
- (c:\Users\paulb\VSTeX\Real_Analysis\Exam_take_home\build\Exam_1.out) (c:\Users\paulb\VSTeX\Real_Analysis\Exam_take_home\build\Exam_1.out)
+Package hyperref Info: Link coloring ON on input line 177.
+ (c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out) (c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out)
 \@outlinefile=\write4
 \openout4 = `Exam_1.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 312.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 180.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 312.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 180.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 312.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 180.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
@@ -902,7 +902,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
 [2]
 
-[3] (c:\Users\paulb\VSTeX\Real_Analysis\Exam_take_home\build\Exam_1.aux)
+[3] (c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
@@ -912,14 +912,14 @@ Package rerunfilecheck Info: File `Exam_1.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  26919 strings out of 473899
- 530050 string characters out of 5726500
+ 530335 string characters out of 5726500
  1039608 words of memory out of 5000000
  49293 multiletter control sequences out of 15000+600000
  567256 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,10n,93p,762b,815s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,10n,93p,757b,815s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:\Users\paulb\VSTeX\Real_Analysis\Exam_take_home\build\Exam_1.pdf (3 pages, 130764 bytes).
+Output written on c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.pdf (3 pages, 130842 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  17 named destinations out of 1000 (max. 500000)

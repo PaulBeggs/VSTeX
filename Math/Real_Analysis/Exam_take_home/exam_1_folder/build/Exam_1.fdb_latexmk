@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1728611423.61022 "c:/Users/paulb/VSTeX/Real_Analysis/Exam_take_home/Exam_1.tex" "build/Exam_1.pdf" "Exam_1" 1728611424.76778 0
-  "C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1727827053 179281 07163ff08e7168fbcd0ad4df2d5a0958 ""
+["pdflatex"] 1730933307.16698 "c:/Users/paulb/VSTeX/Math/Real_Analysis/Exam_take_home/exam_1_folder/Exam_1.tex" "build/Exam_1.pdf" "Exam_1" 1730933308.2681 0
+  "C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1730607729 193979 b4f99769d2b5800041f48da9909ebce4 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1708494351 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1708494352 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs7.tfm" 1725227609 692 1b6510779f0f05e9cbf03e0f6c8361e6 ""
@@ -198,10 +198,10 @@
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "Exam_1.tex" 1728611422 15620 e33264eb92f1579adfc1ceb22dcea993 ""
-  "build/Exam_1.aux" 1728611424 197 9209e434b99e0c0ad729210ef66e554a "pdflatex"
-  "build/Exam_1.out" 1728611424 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "c:/Users/paulb/VSTeX/Real_Analysis/Exam_take_home/Exam_1.tex" 1728611422 15620 e33264eb92f1579adfc1ceb22dcea993 ""
+  "Exam_1.tex" 1730933306 12115 990e81651e10e911186799b03918c628 ""
+  "build/Exam_1.aux" 1730933308 197 9209e434b99e0c0ad729210ef66e554a "pdflatex"
+  "build/Exam_1.out" 1730933307 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "c:/Users/paulb/VSTeX/Math/Real_Analysis/Exam_take_home/exam_1_folder/Exam_1.tex" 1730933306 12115 990e81651e10e911186799b03918c628 ""
   (generated)
   "build/Exam_1.aux"
   "build/Exam_1.log"

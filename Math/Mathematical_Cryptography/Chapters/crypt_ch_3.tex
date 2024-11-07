@@ -176,6 +176,22 @@ Recall that for Diffie Hellman Elgamal we need to find \(a^x \ (\text{mod } p)\)
 \renewcommand{\labelenumi}{\theenumi.}
 \section{RSA Cryptosystem}
 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{@{}p{0.9\textwidth}l@{}}
+        \toprule
+        \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Bob}}} & \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Alice}}}                           \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Key creation}}}                                                                                               \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{\raggedright Choose secret primes \(p\) and \(q\).                                                                                      \\ Choose encryption exponent \(e\)  \\ \quad with \(\gcd(e, (p-1)(q-1)) = 1\). \\ 
+        Publish \(N = pq\) and \(e\).}} &  \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}\centering\textbf{Encryption}}                                                                                                    \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}}                            & \multicolumn{1}{r}{\parbox[t]{0.45\textwidth}{\raggedright Choose plaintext \(m\).                \\ Use Bob's public key \(N,e\) \\ \quad to compute \(c \equiv m^{e} \pmod{N}\). \\ Send ciphertext \(c\) to Bob.}}                                            \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering\textbf{Decryption}}}                                                                                                  \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{\raggedright Compute \(d\) satisfying                                                                          \\ \quad \(ed \equiv 1 \pmod{(p-1)(q-1)}.\) \\ Compute \(m' \equiv c^{d} \pmod{N}\). \\ Then \(m'\) equals the plaintext \(m\). }}                     &                                                                                             \\ \bottomrule
+    \end{tabular}
+    \caption{Elgamal Key Creation, Encryption, and Decryption}
+\end{table}
+
 \label{sec:RSA Algorithm}
 
 \subsection{RSA Algorithm}

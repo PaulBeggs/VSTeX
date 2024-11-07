@@ -135,138 +135,6 @@
 
 \newcommand{\caution}{\marginnote{\includegraphics[width=2em]{caution.png}}}
 
-% \newmdenv[
-%   topline=false,
-%   bottomline=false,
-%   rightline=false,
-%   leftline=true,
-%   linewidth=1.5pt,
-%   linecolor=black, % default color, will be overridden in custom commands
-%   innertopmargin=0pt,
-%   innerbottommargin=0pt,
-%   innerrightmargin=10pt,
-%   innerleftmargin=10pt,
-%   leftmargin=0pt,
-%   rightmargin=0pt,
-%   skipabove=\topsep,
-%   skipbelow=\topsep,
-% ]{customframedproof}
-
-% \newenvironment{proofpart}[2][black]{
-%     \begin{mdframed}[
-%         topline=false,
-%         bottomline=false,
-%         rightline=false,
-%         leftline=true,
-%         linewidth=1pt,
-%         linecolor=#1!40, % Custom color
-%         innertopmargin=10pt,
-%         innerbottommargin=10pt,
-%         innerleftmargin=10pt,
-%         innerrightmargin=10pt,
-%         leftmargin=0pt,
-%         rightmargin=0pt,
-%         skipabove=\topsep,
-%         skipbelow=\topsep%
-%     ]
-%     \noindent
-%     \begin{minipage}[t]{0.08\textwidth}%
-%         \textbf{#2}%
-%     \end{minipage}%
-%     \begin{minipage}[t]{0.90\textwidth}%
-%         \begin{adjustwidth}{0pt}{0pt}%
-% }{
-%     \end{adjustwidth}
-%     \end{minipage}
-%     \end{mdframed}
-% }
-
-
-% \newcommand{\sbseteqpf}[5][We need to show these expressions are subsets of each other in order to prove they are equivalent.]{%
-%     \begin{customframedproof}[linecolor=#5]
-%         \begin{proof}
-%                 #1
-%             \begin{proofpart}[#5]{(\(\subseteq\))}
-%                 #2
-%             \end{proofpart}
-%     \vspace{2mm}
-%             \begin{proofpart}[#5]{(\(\supseteq\))}
-%                 #3
-%             \end{proofpart}
-%     \vspace{2mm}
-%             #4
-%         \end{proof}
-%     \end{customframedproof}
-% }
-
-% \newcommand{\iffpf}[5][We show this by proving both implications:]{
-%     \begin{customframedproof}[linecolor=#5]
-%         \begin{proof}
-%             #1 % This is the optional text, with a default value
-%             \begin{proofpart}[#5]{(\(\Rightarrow\))}
-%                 #2
-%             \end{proofpart}
-%     \vspace{2mm}
-%             \begin{proofpart}[#5]{(\(\Leftarrow\))}
-%                 #3
-%             \end{proofpart}
-%     \vspace{2mm}
-%             #4
-%         \end{proof}
-%     \end{customframedproof}
-% }
-
-
-
-% % Command for lemma proofs with a predefined color
-% \newcommand{\expf}[1]{
-%     \begin{customframedproof}[linecolor=xgray]
-%         \begin{proof}
-%         #1
-%         \end{proof}
-%     \end{customframedproof}
-% }
-
-
-% % Command for theorems proofs with a predefined color
-% \newcommand{\tpf}[1]{
-%     \begin{customframedproof}[linecolor=xblue]
-%         \begin{proof}
-%         #1
-%         \end{proof}
-%     \end{customframedproof}
-% }
-% % Command for corollaries proofs with a predefined color
-% \newcommand{\cpf}[1]{
-%     \begin{customframedproof}[linecolor=purplehdx]
-%         \begin{proof}
-%         #1
-%         \end{proof}
-%     \end{customframedproof}
-% }
-
-% \newcommand{\sol}[1]{
-%     \begin{customframedproof}[linecolor=xgray]
-%         \begin{solution}
-%         #1
-%         \end{solution}
-%     \end{customframedproof}
-% }
-
-% \newcommand{\lesol}[1]{
-%     \begin{customframedproof}[linecolor=teal]
-%         \begin{solution}
-%         #1
-%         \end{solution}
-%     \end{customframedproof}
-% }
-
-% \newcommand{\pb}[2]{
-%     \begin{exercise}{#1}[label=ex:#1]
-%     #2
-%     \end{exercise}
-% }
-
 \def \proofDistance {10pt}
 \newenvironment{solution}
   {\vspace{10pt}\\ \textit{Solution.} \vspace{10pt}}
@@ -321,7 +189,7 @@
           \begin{enumerate}
               \item Prove that \[\displaystyle \sup_{x \in D} (f(x) + g(x)) \leq \sup_{x \in D} f(x) + \sup_{x \in D} g(x).\]
                     \begin{proof}
-                        We are given that the function \(\displaystyle \sup_{x \in D} f(x)\) is the smallest number \(M\) such that \(f(x) \leq M\) for all \(x \in D\). Similarly, the function \(\displaystyle \sup_{x \in D} g(x)\) is the smallest number \(N\) such that \(g(x) \leq N\) for all \(x \in D\). From the definitions of \(M\) and \(N\), it follows that \(f(x) + g(x) \leq M + N\) for each \(x \in D\). Thus, since this holds for every \(x \in D\), \(f(x) + g(x)\) is bounded above by \(M + N\) for all \(x \in D\). Therefore, the supremum of \(f(x) + g(x)\) is also less than or equal to \(M + N\). Then, by substituting the definitions of \(M\) and \(N\), we find that
+                        We are given that the function \(\ \sup_{x \in D} f(x)\) is the smallest number \(M\) such that \(f(x) \leq M\) for all \(x \in D\). Similarly, the function \(\ \sup_{x \in D} g(x)\) is the smallest number \(N\) such that \(g(x) \leq N\) for all \(x \in D\). From the definitions of \(M\) and \(N\), it follows that \(f(x) + g(x) \leq M + N\) for each \(x \in D\). Thus, since this holds for every \(x \in D\), \(f(x) + g(x)\) is bounded above by \(M + N\) for all \(x \in D\). Therefore, the supremum of \(f(x) + g(x)\) is also less than or equal to \(M + N\). Then, by substituting the definitions of \(M\) and \(N\), we find that
                         \begin{align*}
                             \displaystyle \sup_{x \in D} \left(f(x) + g(x)\right) & \leq M + N                                               \\
                                                                                   & \leq \sup_{x \in D} f(x) + \sup_{x \in D} g(x). \qedhere
@@ -372,9 +240,9 @@
                               \begin{solution}
                                   \begin{align*}
                                       (a_{j, 1}) & = (1, 0, 0, 0, 0, \ldots) \\
-                                      (a_{j, 2}) & = (1, 1, 0. 0, 0, \ldots) \\
+                                      (a_{j, 2}) & = (1, 1, 0, 0, 0, \ldots) \\
                                       (a_{j, 3}) & = (1, 1, 1, 0, 0, \ldots) \\
-                                      (a_{k, 4}) & = (1, 1, 1, 1, 0, \ldots)
+                                      (a_{j, 4}) & = (1, 1, 1, 1, 0, \ldots)
                                   \end{align*}
                               \end{solution}
                         \item For any fixed \( k \in \N \), find the limit \( \lim_{j \rightarrow \infty} a_{j,k} \).

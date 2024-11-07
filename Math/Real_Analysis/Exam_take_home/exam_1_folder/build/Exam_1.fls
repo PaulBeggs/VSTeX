@@ -1,28 +1,29 @@
-PWD c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography
+PWD c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\crypt_main.tex
-OUTPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.log
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\bk12.clo
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\bk12.clo
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\bk12.clo
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\Exam_1.tex
+OUTPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.log
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\size12.clo
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\size12.clo
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\size12.clo
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\bold-extra\bold-extra.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\bold-extra\bold-extra.sty
-INPUT .\draculatheme.sty
-INPUT draculatheme.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
@@ -36,18 +37,17 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.c
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\setspace\setspace.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\setspace\setspace.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\fncychap\fncychap.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\fncychap\fncychap.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\xpatch\xpatch.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\xpatch\xpatch.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3kernel\expl3.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3kernel\expl3.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
@@ -87,6 +87,8 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\ge
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\gettitlestring\gettitlestring.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\stringenc\stringenc.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\stringenc\stringenc.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\hyperref\pd1enc.def
@@ -116,10 +118,6 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\reru
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcolorbox.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcolorbox.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\pgf\basiclayer\pgf.sty
@@ -216,22 +214,6 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgf
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmodulematrix.code.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\verbatim.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\verbatim.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\environ\environ.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\environ\environ.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\pifont.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\pifont.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upzd.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upzd.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upzd.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfding\pzdr.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upsy.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upsy.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\upsy.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshapes.code.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshapes.code.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshapes.geometric.code.tex
@@ -266,30 +248,20 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarypatterns.code.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibrarypatterns.code.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibrarypatterns.code.tex
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\calc.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mhsetup.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\mdframed.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\mdframed.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-abspage.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-abspage.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-base.sty
@@ -304,18 +276,18 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\graphics\color.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\md-frame-0.mdf
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\md-frame-0.mdf
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\mdframed\md-frame-0.mdf
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\mathrsfs.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\mathrsfs.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\changepage\changepage.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\changepage\changepage.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\multicol.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\multicol.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\carlisle\slashed.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\carlisle\slashed.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\lipsum\lipsum.sty
@@ -324,27 +296,10 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\l3keys2e
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\l3packages\l3keys2e\l3keys2e.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\lipsum\lipsum.ltd.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\lipsum\lipsum.ltd.tex
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\ragged2e\ragged2e.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\ragged2e\ragged2e.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\multirow\multirow.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstpatch.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstpatch.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstpatch.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstmisc.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\listings.cfg
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
-OUTPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.aux
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.aux
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.aux
+OUTPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.aux
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -353,36 +308,39 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstop
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
-OUTPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.pdf
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
-OUTPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
-INPUT .\images\Hendrix Logo.png
-INPUT .\images\Hendrix Logo.png
-INPUT .\images\Hendrix Logo.png
-INPUT .\images\Hendrix Logo.png
-INPUT .\images\Hendrix Logo.png
-INPUT .\images\Hendrix Logo.png
-INPUT .\images\Hendrix Logo.png
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out
+OUTPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out
+OUTPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.pdf
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmcsc10.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
+INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs7.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbcsc10.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbcsc10.tfm
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.toc
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.toc
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.toc
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
@@ -394,417 +352,39 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\jknappen\ursfs.fd
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
-OUTPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.toc
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbcsc10.tfm
-INPUT .\Chapters\crypt_ch_1.tex
-INPUT .\Chapters\crypt_ch_1.tex
-INPUT .\Chapters\crypt_ch_1.tex
-INPUT .\Chapters\crypt_ch_1.tex
-INPUT Chapters\crypt_ch_1.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs7.tfm
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt8.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt8.tfm
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Chapters\crypt_ch_2.tex
-INPUT .\Chapters\crypt_ch_2.tex
-INPUT .\Chapters\crypt_ch_2.tex
-INPUT .\Chapters\crypt_ch_2.tex
-INPUT Chapters\crypt_ch_2.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Chapters\crypt_ch_3.tex
-INPUT .\Chapters\crypt_ch_3.tex
-INPUT .\Chapters\crypt_ch_3.tex
-INPUT .\Chapters\crypt_ch_3.tex
-INPUT Chapters\crypt_ch_3.tex
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omscmr.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omlcmr.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omlcmr.fd
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\omlcmr.fd
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfding\pzdr.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\zapfding\pzdr.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\Chapters\crypt_ch_4.tex
-INPUT .\Chapters\crypt_ch_4.tex
-INPUT .\Chapters\crypt_ch_4.tex
-INPUT .\Chapters\crypt_ch_4.tex
-INPUT Chapters\crypt_ch_4.tex
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT .\images\small logo.png
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.aux
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
-INPUT c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\build\crypt_main.out
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\public\cm\dpi864\cmbcsc10.pk
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\public\cm\dpi864\cmbcsc10.pk
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\public\cm\dpi1037\cmbcsc10.pk
-INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\public\cm\dpi1037\cmbcsc10.pk
+INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.aux
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out
+INPUT c:\Users\paulb\VSTeX\Math\Real_Analysis\Exam_take_home\exam_1_folder\build\Exam_1.out
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\urw\zapfding\uzdr.pfb
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\urw\zapfding\uzdr.pfb
