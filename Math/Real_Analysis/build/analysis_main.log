@@ -1,0 +1,2392 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  7 NOV 2024 20:38
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/Users/paulb/VSTeX/Math/Real_Analysis/analysis_main.tex
+(c:/Users/paulb/VSTeX/Math/Real_Analysis/analysis_main.tex
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-08-30>
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2024/02/08 v1.4n Standard LaTeX document class
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\bk12.clo
+File: bk12.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count194
+\c@chapter=\count195
+\c@section=\count196
+\c@subsection=\count197
+\c@subsubsection=\count198
+\c@paragraph=\count199
+\c@subparagraph=\count266
+\c@figure=\count267
+\c@table=\count268
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+) (draculatheme.sty
+Package: draculatheme 2021/02/26 Dracula Theme
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count269
+\Gm@cntv=\count270
+\c@Gm@tempcnt=\count271
+\Gm@bindingoffset=\dimen142
+\Gm@wd@mp=\dimen143
+\Gm@odd@mp=\dimen144
+\Gm@even@mp=\dimen145
+\Gm@layoutwidth=\dimen146
+\Gm@layoutheight=\dimen147
+\Gm@layouthoffset=\dimen148
+\Gm@layoutvoffset=\dimen149
+\Gm@dimlist=\toks18
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count272
+\lst@gtempboxa=\box52
+\lst@token=\toks19
+\lst@length=\count273
+\lst@currlwidth=\dimen150
+\lst@column=\count274
+\lst@pos=\count275
+\lst@lostspace=\dimen151
+\lst@width=\dimen152
+\lst@newlines=\count276
+\lst@lineno=\count277
+\lst@maxwidth=\dimen153
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2024/05/25 1.10b (Carsten Heinz)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
+\c@lstnumber=\count278
+\lst@skipnumbers=\count279
+\lst@framebox=\box53
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2024/05/25 1.10b listings configuration
+))
+Package: listings 2024/05/25 1.10b (Carsten Heinz)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen154
+\Gin@req@width=\dimen155
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count280
+\float@exts=\toks20
+\float@box=\box54
+\@float@everytoks=\toks21
+\@floatcapt=\box55
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen156
+\captionmargin=\dimen157
+\caption@leftmargin=\dimen158
+\caption@rightmargin=\dimen159
+\caption@width=\dimen160
+\caption@indent=\dimen161
+\caption@parindent=\dimen162
+\caption@hangindent=\dimen163
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count281
+\c@continuedfloat=\count282
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count283
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count284
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen164
+\Hy@linkcounter=\count285
+\Hy@pagecounter=\count286
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count287
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count288
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen165
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count289
+\Field@Width=\dimen166
+\Fld@charsize=\dimen167
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count290
+\c@Item=\count291
+\c@Hfootnote=\count292
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2024-07-10 v7.01j Hyperref driver for pdfTeX
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count293
+\c@bookmark@seq@number=\count294
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip51
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 153.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2024/07/23 v4.3.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip52
+\f@nch@O@elh=\skip53
+\f@nch@O@erh=\skip54
+\f@nch@O@olh=\skip55
+\f@nch@O@orh=\skip56
+\f@nch@O@elf=\skip57
+\f@nch@O@erf=\skip58
+\f@nch@O@olf=\skip59
+\f@nch@O@orf=\skip60
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/xpatch\xpatch.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-08-30 L3 programming layer (loader) 
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count295
+\l__pdf_internal_box=\box56
+))
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
+Package: tcolorbox 2024/07/10 version 6.3.0 text color boxes
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks22
+\pgfutil@tempdima=\dimen168
+\pgfutil@tempdimb=\dimen169
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box57
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks23
+\pgfkeys@temptoks=\toks24
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks25
+))
+\pgf@x=\dimen170
+\pgf@y=\dimen171
+\pgf@xa=\dimen172
+\pgf@ya=\dimen173
+\pgf@xb=\dimen174
+\pgf@yb=\dimen175
+\pgf@xc=\dimen176
+\pgf@yc=\dimen177
+\pgf@xd=\dimen178
+\pgf@yd=\dimen179
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count296
+\c@pgf@countb=\count297
+\c@pgf@countc=\count298
+\c@pgf@countd=\count299
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+\pgf@sys@id@count=\count300
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count301
+\pgfsyssoftpath@bigbuffer@items=\count302
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen180
+\pgfmath@count=\count303
+\pgfmath@box=\box58
+\pgfmath@toks=\toks29
+\pgfmath@stack@operand=\toks30
+\pgfmath@stack@operation=\toks31
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count304
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen181
+\pgf@picmaxx=\dimen182
+\pgf@picminy=\dimen183
+\pgf@picmaxy=\dimen184
+\pgf@pathminx=\dimen185
+\pgf@pathmaxx=\dimen186
+\pgf@pathminy=\dimen187
+\pgf@pathmaxy=\dimen188
+\pgf@xx=\dimen189
+\pgf@xy=\dimen190
+\pgf@yx=\dimen191
+\pgf@yy=\dimen192
+\pgf@zx=\dimen193
+\pgf@zy=\dimen194
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen195
+\pgf@path@lasty=\dimen196
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen197
+\pgf@shorten@start@additional=\dimen198
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box59
+\pgf@hbox=\box60
+\pgf@layerbox@main=\box61
+\pgf@picture@serial@count=\count305
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen199
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen256
+\pgf@pt@y=\dimen257
+\pgf@pt@temp=\dimen258
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen259
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen260
+\pgf@sys@shading@range@num=\count306
+\pgf@shadingcount=\count307
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box62
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box63
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen261
+\pgf@nodesepend=\dimen262
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen263
+\pgffor@skip=\dimen264
+\pgffor@stack=\toks32
+\pgffor@toks=\toks33
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count308
+\pgfplotmarksize=\dimen265
+)
+\tikz@lastx=\dimen266
+\tikz@lasty=\dimen267
+\tikz@lastxsaved=\dimen268
+\tikz@lastysaved=\dimen269
+\tikz@lastmovetox=\dimen270
+\tikz@lastmovetoy=\dimen271
+\tikzleveldistance=\dimen272
+\tikzsiblingdistance=\dimen273
+\tikz@figbox=\box64
+\tikz@figbox@bg=\box65
+\tikz@tempbox=\box66
+\tikz@tempbox@bg=\box67
+\tikztreelevel=\count309
+\tikznumberofchildren=\count310
+\tikznumberofcurrentchild=\count311
+\tikz@fig@count=\count312
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count313
+\pgfmatrixcurrentcolumn=\count314
+\pgf@matrix@numberofcolumns=\count315
+)
+\tikz@expandcount=\count316
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks34
+\verbatim@line=\toks35
+\verbatim@in@stream=\read3
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks36
+)
+\tcb@titlebox=\box68
+\tcb@upperbox=\box69
+\tcb@lowerbox=\box70
+\tcb@phantombox=\box71
+\c@tcbbreakpart=\count317
+\c@tcblayer=\count318
+\c@tcolorbox@number=\count319
+\l__tcobox_tmpa_box=\box72
+\l__tcobox_tmpa_dim=\dimen274
+\tcb@temp=\box73
+\tcb@temp=\box74
+\tcb@temp=\box75
+\tcb@temp=\box76
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.3.0'
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill.image.sty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill-common.sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzlibraryfill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box77
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.3.0'
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.3.0'
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2024/05/23 v2.17q AMS math features
+\@mathmargin=\skip61
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks37
+\ex@=\dimen275
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen276
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count320
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count321
+\leftroot@=\count322
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count323
+\DOTSCASE@=\count324
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box78
+\strutbox@=\box79
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen277
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count325
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count326
+\dotsspace@=\muskip18
+\c@parentequation=\count327
+\dspbrk@lvl=\count328
+\tag@help=\toks38
+\row@=\count329
+\column@=\count330
+\maxfields@=\count331
+\andhelp@=\toks39
+\eqnshift@=\dimen278
+\alignsep@=\dimen279
+\tagshift@=\dimen280
+\tagwidth@=\dimen281
+\totwidth@=\dimen282
+\lineht@=\dimen283
+\@envbody=\toks40
+\multlinegap=\skip62
+\multlinetaggap=\skip63
+\mathdisplay@stack=\toks41
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbminted.code.tex
+Library (tcolorbox): 'tcbminted.code.tex' version '6.3.0'
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/minted\minted.sty
+Package: minted 2024/10/29 v3.2.0 Yet another Pygments shim for LaTeX
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/catchfile\catchfile.sty
+Package: catchfile 2019/12/09 v1.8 Catch the contents of a file (HO)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/fvextra\fvextra.sty
+Package: fvextra 2024/10/16 v1.9.0 fvextra - extensions and patches for fancyvrb
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count332
+\FV@InFile=\read4
+\FV@TabBox=\box80
+\c@FancyVerbLine=\count333
+\FV@StepNumber=\count334
+\FV@OutFile=\write4
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/lineno\lineno.sty
+Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+\linenopenalty=\count335
+\output=\toks42
+\linenoprevgraf=\count336
+\linenumbersep=\dimen284
+\linenumberwidth=\dimen285
+\c@linenumber=\count337
+\c@pagewiselinenumber=\count338
+\c@LN@truepage=\count339
+\c@internallinenumber=\count340
+\c@internallinenumbers=\count341
+\quotelinenumbersep=\dimen286
+\bframerule=\dimen287
+\bframesep=\dimen288
+\bframebox=\box81
+\linenoamsmath@ams@eqpen=\count342
+LaTeX Info: Redefining \\ on input line 3180.
+)
+\c@FancyVerbWriteLine=\count343
+\c@FancyVerbBufferIndex=\count344
+\c@FancyVerbBufferLine=\count345
+\c@FV@TrueTabGroupLevel=\count346
+\c@FV@TrueTabCounter=\count347
+\FV@TabBox@Group=\box82
+\FV@TmpLength=\skip64
+\c@FV@HighlightLinesStart=\count348
+\c@FV@HighlightLinesStop=\count349
+\FV@LoopCount=\count350
+\FV@NCharsBox=\box83
+\FV@BreakIndent=\dimen289
+\FV@BreakIndentNChars=\count351
+\FV@BreakSymbolSepLeft=\dimen290
+\FV@BreakSymbolSepLeftNChars=\count352
+\FV@BreakSymbolSepRight=\dimen291
+\FV@BreakSymbolSepRightNChars=\count353
+\FV@BreakSymbolIndentLeft=\dimen292
+\FV@BreakSymbolIndentLeftNChars=\count354
+\FV@BreakSymbolIndentRight=\dimen293
+\FV@BreakSymbolIndentRightNChars=\count355
+\c@FancyVerbLineBreakLast=\count356
+\FV@LineBox=\box84
+\FV@LineIndentBox=\box85
+\c@FV@BreakBufferDepth=\count357
+\FV@LineWidth=\dimen294
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/latex2pydata\latex2pydata.sty
+Package: latex2pydata 2024/10/16 v0.3.0 latex2pydata - write data to file in Python literal format
+\c@pydata@bufferindex=\count358
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgfopts\pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks43
+\pgfopts@list@add@b@toks=\toks44
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
+)
+\c@minted@tmpcnt=\count359
+\c@minted@FancyVerbLineTemp=\count360
+\@float@every@listing=\toks45
+\c@listing=\count361
+)
+
+Package minted Warning: Macro \minted@def@optcl is deprecated with minted v3 and no longer has any effect on input line 26.
+
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.3.0'
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.3.0'
+)
+\c@tcblisting=\count362
+))
+\c@BoxCounter=\count363
+\c@ExampleCounter=\count364
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\fix-cm.sty
+Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.callouts.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.callouts.code.tex)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box86
+\pgfnodeparttwobox=\box87
+\pgfnodepartthreebox=\box88
+\pgfnodepartfourbox=\box89
+\pgfnodeparttwentybox=\box90
+\pgfnodepartnineteenbox=\box91
+\pgfnodeparteighteenbox=\box92
+\pgfnodepartseventeenbox=\box93
+\pgfnodepartsixteenbox=\box94
+\pgfnodepartfifteenbox=\box95
+\pgfnodepartfourteenbox=\box96
+\pgfnodepartthirteenbox=\box97
+\pgfnodeparttwelvebox=\box98
+\pgfnodepartelevenbox=\box99
+\pgfnodeparttenbox=\box100
+\pgfnodepartninebox=\box101
+\pgfnodeparteightbox=\box102
+\pgfnodepartsevenbox=\box103
+\pgfnodepartsixbox=\box104
+\pgfnodepartfivebox=\box105
+))) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box106
+\pgf@layerboxsaved@background=\box107
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibrarypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks46
+\thm@bodyfont=\toks47
+\thm@headfont=\toks48
+\thm@notefont=\toks49
+\thm@headpunct=\toks50
+\thm@preskip=\skip65
+\thm@postskip=\skip66
+\thm@headsep=\skip67
+\dth@everypar=\toks51
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count365
+\calc@Bcount=\count366
+\calc@Adimen=\dimen295
+\calc@Bdimen=\dimen296
+\calc@Askip=\skip68
+\calc@Bskip=\skip69
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count367
+\calc@Cskip=\skip70
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count368
+\l_MT_multwidth_dim=\dimen297
+\origjot=\skip71
+\l_MT_shortvdotswithinadjustabove_dim=\dimen298
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen299
+\l_MT_above_intertext_sep=\dimen300
+\l_MT_below_intertext_sep=\dimen301
+\l_MT_above_shortintertext_sep=\dimen302
+\l_MT_below_shortintertext_sep=\dimen303
+\xmathstrut@box=\box108
+\xmathstrut@dim=\dimen304
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
+Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
+Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count369
+Package zref Info: New property: abspage on input line 67.
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+\mdf@templength=\skip72
+\c@mdf@globalstyle@cnt=\count370
+\mdf@skipabove@length=\skip73
+\mdf@skipbelow@length=\skip74
+\mdf@leftmargin@length=\skip75
+\mdf@rightmargin@length=\skip76
+\mdf@innerleftmargin@length=\skip77
+\mdf@innerrightmargin@length=\skip78
+\mdf@innertopmargin@length=\skip79
+\mdf@innerbottommargin@length=\skip80
+\mdf@splittopskip@length=\skip81
+\mdf@splitbottomskip@length=\skip82
+\mdf@outermargin@length=\skip83
+\mdf@innermargin@length=\skip84
+\mdf@linewidth@length=\skip85
+\mdf@innerlinewidth@length=\skip86
+\mdf@middlelinewidth@length=\skip87
+\mdf@outerlinewidth@length=\skip88
+\mdf@roundcorner@length=\skip89
+\mdf@footenotedistance@length=\skip90
+\mdf@userdefinedwidth@length=\skip91
+\mdf@needspace@length=\skip92
+\mdf@frametitleaboveskip@length=\skip93
+\mdf@frametitlebelowskip@length=\skip94
+\mdf@frametitlerulewidth@length=\skip95
+\mdf@frametitleleftmargin@length=\skip96
+\mdf@frametitlerightmargin@length=\skip97
+\mdf@shadowsize@length=\skip98
+\mdf@extratopheight@length=\skip99
+\mdf@subtitleabovelinewidth@length=\skip100
+\mdf@subtitlebelowlinewidth@length=\skip101
+\mdf@subtitleaboveskip@length=\skip102
+\mdf@subtitlebelowskip@length=\skip103
+\mdf@subtitleinneraboveskip@length=\skip104
+\mdf@subtitleinnerbelowskip@length=\skip105
+\mdf@subsubtitleabovelinewidth@length=\skip106
+\mdf@subsubtitlebelowlinewidth@length=\skip107
+\mdf@subsubtitleaboveskip@length=\skip108
+\mdf@subsubtitlebelowskip@length=\skip109
+\mdf@subsubtitleinneraboveskip@length=\skip110
+\mdf@subsubtitleinnerbelowskip@length=\skip111
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\md-frame-1.mdf
+File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
+)
+\mdf@frametitlebox=\box109
+\mdf@footnotebox=\box110
+\mdf@splitbox@one=\box111
+\mdf@splitbox@two=\box112
+\mdf@splitbox@save=\box113
+\mdfsplitboxwidth=\skip112
+\mdfsplitboxtotalwidth=\skip113
+\mdfsplitboxheight=\skip114
+\mdfsplitboxdepth=\skip115
+\mdfsplitboxtotalheight=\skip116
+\mdfframetitleboxwidth=\skip117
+\mdfframetitleboxtotalwidth=\skip118
+\mdfframetitleboxheight=\skip119
+\mdfframetitleboxdepth=\skip120
+\mdfframetitleboxtotalheight=\skip121
+\mdffootnoteboxwidth=\skip122
+\mdffootnoteboxtotalwidth=\skip123
+\mdffootnoteboxheight=\skip124
+\mdffootnoteboxdepth=\skip125
+\mdffootnoteboxtotalheight=\skip126
+\mdftotallinewidth=\skip127
+\mdfboundingboxwidth=\skip128
+\mdfboundingboxtotalwidth=\skip129
+\mdfboundingboxheight=\skip130
+\mdfboundingboxdepth=\skip131
+\mdfboundingboxtotalheight=\skip132
+\mdf@freevspace@length=\skip133
+\mdf@horizontalwidthofbox@length=\skip134
+\mdf@verticalmarginwhole@length=\skip135
+\mdf@horizontalspaceofbox=\skip136
+\mdfsubtitleheight=\skip137
+\mdfsubsubtitleheight=\skip138
+\c@mdfcountframes=\count371
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count372
+\c@mdf@env@i=\count373
+\c@mdf@env@ii=\count374
+\c@mdf@zref@counter=\count375
+Package zref Info: New property: mdf@pagevalue on input line 895.
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/changepage\changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count376
+\cp@tempcnt=\count377
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
+Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
+\c@tracingmulticols=\count378
+\mult@box=\box114
+\multicol@leftmargin=\dimen305
+\c@unbalance=\count379
+\c@collectmore=\count380
+\doublecol@number=\count381
+\multicoltolerance=\count382
+\multicolpretolerance=\count383
+\full@width=\dimen306
+\page@free=\dimen307
+\premulticols=\dimen308
+\postmulticols=\dimen309
+\multicolsep=\skip139
+\multicolbaselineskip=\skip140
+\partial@page=\box115
+\last@line=\box116
+\mc@boxedresult=\box117
+\maxbalancingoverflow=\dimen310
+\mult@rightbox=\box118
+\mult@grightbox=\box119
+\mult@firstbox=\box120
+\mult@gfirstbox=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\@tempa=\box134
+\@tempa=\box135
+\@tempa=\box136
+\@tempa=\box137
+\@tempa=\box138
+\@tempa=\box139
+\@tempa=\box140
+\@tempa=\box141
+\@tempa=\box142
+\@tempa=\box143
+\@tempa=\box144
+\@tempa=\box145
+\@tempa=\box146
+\@tempa=\box147
+\@tempa=\box148
+\@tempa=\box149
+\@tempa=\box150
+\@tempa=\box151
+\@tempa=\box152
+\@tempa=\box153
+\@tempa=\box154
+\@tempa=\box155
+\@tempa=\box156
+\@tempa=\box157
+\c@minrows=\count384
+\c@columnbadness=\count385
+\c@finalcolumnbadness=\count386
+\last@try=\dimen311
+\multicolovershoot=\dimen312
+\multicolundershoot=\dimen313
+\mult@nat@firstbox=\box158
+\colbreak@box=\box159
+\mc@col@check@num=\count387
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\slashed.sty
+Package: slashed 1997/01/16 v0.01 Feynman Slashed Character Notation (DPC)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.sty
+Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
+\@enLab=\toks52
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen314
+\lightrulewidth=\dimen315
+\cmidrulewidth=\dimen316
+\belowrulesep=\dimen317
+\belowbottomsep=\dimen318
+\aboverulesep=\dimen319
+\abovetopsep=\dimen320
+\cmidrulesep=\dimen321
+\cmidrulekern=\dimen322
+\defaultaddspace=\dimen323
+\@cmidla=\count388
+\@cmidlb=\count389
+\@aboverulesep=\dimen324
+\@belowrulesep=\dimen325
+\@thisruleclass=\count390
+\@lastruleclass=\count391
+\@thisrulewidth=\dimen326
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip141
+\enit@outerparindent=\dimen327
+\enit@toks=\toks53
+\enit@inbox=\box160
+\enit@count@id=\count392
+\enitdp@description=\count393
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/kantlipsum\kantlipsum.sty
+Package: kantlipsum 2023/11/27 v0.8c Generate text in Kantian style
+\l__kgl_start_int=\count394
+\l__kgl_end_int=\count395
+
+Package kantlipsum Info: The package provides paragraphs 1 to 164. Values
+(kantlipsum)             outside this range will be ignored.
+
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore.code.tex
+\t@pgfplots@toka=\toks54
+\t@pgfplots@tokb=\toks55
+\t@pgfplots@tokc=\toks56
+\pgfplots@tmpa=\dimen328
+\c@pgfplots@coordindex=\count396
+\c@pgfplots@scanlineindex=\count397
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks57
+\t@pgf@tokb=\toks58
+\t@pgf@tokc=\toks59
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructure.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructureext.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count398
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsmatrix.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count399
+\t@pgfplotstable@a=\toks60
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count400
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolormap.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolor.code.tex)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstackedplots.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplothandlers.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplothandler.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplotimage.code.tex))) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.scaling.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoordprocessing.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.errorbars.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.markers.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsticks.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.paths.code.tex) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen329
+\pgfdecoratedremainingdistance=\dimen330
+\pgfdecoratedinputsegmentcompleteddistance=\dimen331
+\pgfdecoratedinputsegmentremainingdistance=\dimen332
+\pgf@decorate@distancetomove=\dimen333
+\pgf@decorate@repeatstate=\count401
+\pgfdecorationsegmentamplitude=\dimen334
+\pgfdecorationsegmentlength=\dimen335
+)
+\tikz@lib@dec@box=\box161
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count402
+\pgfplots@xmin@reg=\dimen336
+\pgfplots@xmax@reg=\dimen337
+\pgfplots@ymin@reg=\dimen338
+\pgfplots@ymax@reg=\dimen339
+\pgfplots@zmin@reg=\dimen340
+\pgfplots@zmax@reg=\dimen341
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (c:\Users\paulb\VSTeX\Math\Real_Analysis\build\analysis_main.aux
+
+LaTeX Warning: Label `ex:3.2.8' multiply defined.
+
+
+LaTeX Warning: Label `thm:Divergence Criterion' multiply defined.
+
+)
+\openout1 = `analysis_main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 605.
+LaTeX Font Info:    ... okay on input line 605.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 605.
+LaTeX Font Info:    ... okay on input line 605.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 605.
+LaTeX Font Info:    ... okay on input line 605.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 605.
+LaTeX Font Info:    ... okay on input line 605.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 605.
+LaTeX Font Info:    ... okay on input line 605.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 605.
+LaTeX Font Info:    ... okay on input line 605.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 605.
+LaTeX Font Info:    ... okay on input line 605.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 605.
+LaTeX Font Info:    ... okay on input line 605.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 605.
+LaTeX Font Info:    ... okay on input line 605.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count403
+\scratchdimen=\dimen342
+\scratchbox=\box162
+\nofMPsegments=\count404
+\nofMParguments=\count405
+\everyMPshowfont=\toks61
+\MPscratchCnt=\count406
+\MPscratchDim=\dimen343
+\MPnumerator=\count407
+\makeMPintoPDFobject=\count408
+\everyMPtoPDFconversion=\toks62
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-31.8738pt
+* \headheight=18.5764pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=36.135pt
+* \marginparwidth=47.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+)
+\c@lstlisting=\count409
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: changepage package is loaded.
+\caption@adjustwidth@hsize=\dimen344
+\caption@adjustwidth@linewidth=\dimen345
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring ON on input line 605.
+ (c:\Users\paulb\VSTeX\Math\Real_Analysis\build\analysis_main.out) (c:\Users\paulb\VSTeX\Math\Real_Analysis\build\analysis_main.out)
+\@outlinefile=\write5
+\openout5 = `analysis_main.out'.
+
+
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
+ on input line 605.
+
+<images/Hendrix Logo.png, id=162, 368.8179pt x 258.7266pt>
+File: images/Hendrix Logo.png Graphic file (type png)
+<use images/Hendrix Logo.png>
+Package pdftex.def Info: images/Hendrix Logo.png  used on input line 631.
+(pdftex.def)             Requested size: 375.80544pt x 263.62915pt.
+
+
+[1
+
+
+{C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/Hendrix Logo.png>] (c:\Users\paulb\VSTeX\Math\Real_Analysis\build\analysis_main.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 ...onal Limits and Continuity}{74}{chapter.4}
+                                                  % [1
+
+])
+\tf@toc=\write6
+\openout6 = `analysis_main.toc'.
+
+
+
+<images/small logo.png, id=219, 70.01157pt x 96.36pt>
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 700.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[2 <./images/small logo.png>]
+Chapter 1.
+(Chapters/analysis_ch_1.tex
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 41.
+
+
+[3
+
+]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 83.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 114.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 146.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 146.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 146.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 146.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 146.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 146.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[6
+pdfTeX warning (ext4): destination with the same identifier (name{BoxCounter.1.2.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.146 {xblue}
+             ]
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 168.
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
+
+ []
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 188.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[7]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 198.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 200.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[8]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 220.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 220.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 220.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 220.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 220.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 220.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 220.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 220.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[9]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 247.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 247.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 247.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 247.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 247.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 247.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 247.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 247.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 247.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 247.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[10]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 257.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[11]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 275.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 304.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[12]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 304.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[13]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 340.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 340.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 340.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 340.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 340.
+Package mdframed Info: Not enough space on this page on input line 340.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 359.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[14]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 402.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 407.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[15]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 410.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 418.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 441.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 441.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 441.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 441.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 441.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 441.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[16]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 461.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 470.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[17]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 481.
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--481
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 500.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 500.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[18]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 527.
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--527
+
+ []
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 538.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[19]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 544.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 557.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 567.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[20]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 574.
+
+Underfull \hbox (badness 10000) in paragraph at lines 580--581
+
+ []
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 581.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[21]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 602.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 614.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 614.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 614.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[22]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 646.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 654.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 654.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[23]
+Package mdframed Info: Not enough space on this page on input line 654.
+)
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 705.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[24]
+Chapter 2.
+(Chapters/analysis_ch_2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+
+ []
+
+
+
+[25
+
+]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 57.
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+
+ []
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 65.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[26]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 69.
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 77.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 93.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 93.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[27]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 117.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 117.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[28]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 128.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 143.
+Package mdframed Info: Not enough space on this page on input line 143.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 143.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[29]
+Package mdframed Info: Not enough space on this page on input line 143.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 160.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 177.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[30]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 185.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 219.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 219.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[31]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 230.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[32]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 237.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 260.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 260.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[33]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 311.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 311.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 311.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 311.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 311.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 311.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[34]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 341.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 341.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[35]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 365.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 376.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[36]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 388.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 451.
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--451
+
+ []
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 451.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[37]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 451.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[38]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 518.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 518.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[39]
+Package mdframed Info: Not enough space on this page on input line 518.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 549.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 549.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[40]
+Package mdframed Info: Not enough space on this page on input line 549.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 565.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 565.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[41]
+Package mdframed Info: Not enough space on this page on input line 565.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 604.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 604.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[42]
+
+LaTeX Warning: Hyper reference `ex:2.4.7' on page 43 undefined on input line 625.
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 641.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[43]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 751.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 751.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 751.
+
+Underfull \hbox (badness 10000) in paragraph at lines 751--751
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 751.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 751.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 751.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 751.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 751.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 751.
+
+Underfull \hbox (badness 1043) in paragraph at lines 751--751
+\OT1/cmr/m/n/12 Since $\OML/cmm/m/it/12 ^^O > \OT1/cmr/m/n/12 0$ is ar-bi-trary, it fol-lows that $[][] \OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 =
+ []
+
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 751.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 751.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 751.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[44]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 751.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[45]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 751.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[46]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 762.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[47]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 774.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 812.
+Package mdframed Info: Not enough space on this page on input line 812.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 812.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[48]
+Package mdframed Info: Not enough space on this page on input line 812.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 867.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 867.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[49]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 886.
+
+Overfull \hbox (2.82733pt too wide) in paragraph at lines 886--886
+\OT1/cmr/m/n/12 ev-ery bounded se-quence has a con-ver-gent sub-se-quence. If a sub-se-quence is bounded,
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 905.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 905.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[50]
+Package mdframed Info: Not enough space on this page on input line 905.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 920.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 928.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[51]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 957.
+
+
+Package amsthm Warning: The \qedhere command may not work correctly here on input line 957.
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 979.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[52]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1019.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 1019.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[53]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1049.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1049.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 1049.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1049.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 1049.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 1049.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[54]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 1065.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[55]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1127.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 1127.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[56])
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 709.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[57]
+Chapter 3.
+(Chapters/analysis_ch_3.tex
+
+[58
+
+]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 78.
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--78
+
+ []
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 78.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[59]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 116.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 116.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 116.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 116.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 116.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 116.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[60]
+Package mdframed Info: Not enough space on this page on input line 116.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 135.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 153.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 153.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[61]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 161.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 169.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 180.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 193.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[62]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 230.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 242.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[63]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 267.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 267.
+
+Overfull \hbox (2.76059pt too wide) in paragraph at lines 267--267
+[]\OT1/cmr/m/n/12 The Nested In-ter-val Prop-erty holds for any nested se-quence of nonempty
+ []
+
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 267.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 267.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 267.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 267.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 267.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 267.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 267.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 267.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[64]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 333.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 333.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[65]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 387.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 387.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 387.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 387.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[66]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 401.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 401.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 401.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 401.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 401.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 401.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[67]
+Package mdframed Info: Not enough space on this page on input line 401.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 440.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 440.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 440.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 440.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 440.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 440.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 440.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 440.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 440.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 440.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 440.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 440.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 440.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 440.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[68]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 440.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[69]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 452.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 452.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[70]
+Package mdframed Info: Not enough space on this page on input line 452.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 511.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 511.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 511.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[71]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 584.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 584.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[72])
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 713.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[73]
+Chapter 4.
+(Chapters/analysis_ch_4.tex
+
+[74
+
+]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 78.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 78.
+
+Overfull \hbox (35.604pt too wide) detected at line 78
+[] \OT1/cmr/m/n/12 = [] = [] = 3 [] \OML/cmm/m/it/12 :
+ []
+
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 78.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 100.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 100.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 100.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 106.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[75]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 118.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 138.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 138.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 138.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 164.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 164.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 164.
+Package mdframed Info: You first box width is to small
+ mdframed fixed it
+(mdframed)              on input line 164.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 164.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[76]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 178.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 193.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 193.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 193.
+Package mdframed Info: Not enough space on this page on input line 193.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 193.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[77]
+Package mdframed Info: Not enough space on this page on input line 193.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 211.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 211.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 211.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 263.
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
+
+ []
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 263.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[78]
+Package mdframed Info: Not enough space on this page on input line 263.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 280.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[79]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 291.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 299.
+
+Overfull \hbox (15.14445pt too wide) in paragraph at lines 299--299
+[]\OT1/cmr/m/n/12 Let $(\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = ([])$ and let $(\OML/cmm/m/it/12 y[]\OT1/cmr/m/n/12 ) = ([])$. We will see that as $\OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ! 1$\OT1/cmr/m/n/12 , $[][] \OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) =
+ []
+
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 327.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[80])
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 758.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[81]
+runsystem(latexminted cleantemp  --timestamp 20241107203852 61DD775D25DC3C5317D2006938380996)...executed.
+
+ (c:\Users\paulb\VSTeX\Math\Real_Analysis\build\analysis_main.aux)
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2020/03/25>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `analysis_main.out' has not changed.
+(rerunfilecheck)             Checksum: 940FD64A64BB1BFA60048BD5C06CC375;6884.
+ ) 
+Here is how much of TeX's memory you used:
+ 47661 strings out of 473899
+ 1140363 string characters out of 5726500
+ 2026217 words of memory out of 5000000
+ 69343 multiletter control sequences out of 15000+600000
+ 568499 words of font info for 74 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 98i,15n,101p,1564b,1968s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on c:\Users\paulb\VSTeX\Math\Real_Analysis\build\analysis_main.pdf (82 pages, 671780 bytes).
+PDF statistics:
+ 1146 PDF objects out of 1200 (max. 8388607)
+ 447 named destinations out of 1000 (max. 500000)
+ 335 words of extra memory for PDF output out of 10000 (max. 10000000)
+

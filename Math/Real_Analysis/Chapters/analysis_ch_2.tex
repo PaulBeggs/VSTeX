@@ -98,14 +98,15 @@ Therefore, \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
 
 \epf{
     \begin{align*}
-        \disabs{\frac{7n+8}{3n+6} - \frac{7}{3}} & = \disabs{\frac{21n + 24}{3(3n + 6)} - \frac{21n + 42}{3(3n + 6}} \\
+        \disabs{\frac{7n+8}{3n+6} - \frac{7}{3}} & = \disabs{\frac{21n + 24}{3(3n + 6)} - \frac{21n + 42}{3(3n + 6)}} \\
                                                  & = \disabs{\frac{-18}{9n + 18}}                                    \\
                                                  & = \frac{18}{9n + 18} < \epsilon**                                 \\
                                                  & = \frac{18}{3} < 9n + 18                                          \\
                                                  & = \frac{18}{3} - 18 < 9n                                          \\
                                                  & = \frac{18/\epsilon - 18}{9} < n
     \end{align*}
-    \(** \frac{18}{9n + 8} < \frac{18}{9n} < \epsilon \Rightarrow \frac{2}{\epsilon} < N\). \(\exists N \in \N\) such that \(N > \frac{2}{\epsilon}\). Assume \(n \geq N\), \begin{align*}
+    \(** \frac{18}{9n + 8} < \frac{18}{9n} < \epsilon \Rightarrow \frac{2}{\epsilon} < N\). \(\exists N \in \N\) such that \(N > \frac{2}{\epsilon}\). Assume \(n \geq N\), 
+    \begin{align*}
         \disabs{\frac{7n + 8}{3n + 6} - \frac{7}{3}} & = \frac{18}{9n + 18}   \\
                                                      & = \frac{2}{n+2}        \\
                                                      & < \frac{2}{n}          \\
@@ -1101,11 +1102,11 @@ Applying the inequality obtained from the induction,
     |a_{j+1} - a_j| \leq C^{j - n +1} |a_n - a_{n-1}|.
 \]
 Therefore,
-\begin{align*}
-    |a_m - a_n| & \leq |a_n - a_{n-1}| \sum_{j=n}^{m-1} C^{j - n +1}                                  \\
-                & = |a_n - a_{n-1}| \sum_{k=1}^{m - n} C^{k} \quad \text{(Let } k = j - n +1 \text{)} \\
-                & = |a_n - a_{n-1}| \left( \frac{C (1 - C^{m - n})}{1 - C} \right).
-\end{align*}
+% \begin{align*}
+%     |a_m - a_n| & \leq |a_n - a_{n-1}| \sum_{j=n}^{m-1} C^{j - n +1}                                 \\
+%                 & = |a_n - a_{n-1}| \sum_{k=1}^{m - n} C^{k} \quad (\text{Let } k = j - n +1 \text)} \\
+%                 & = |a_n - a_{n-1}| \left( \frac{C (1 - C^{m - n})}{1 - C} \right)
+% \end{align*}
 Since \(C^{m - n} \geq 0\), we have:
 \[
     |a_m - a_n| \leq |a_n - a_{n-1}| \left( \frac{C}{1 - C} \right).

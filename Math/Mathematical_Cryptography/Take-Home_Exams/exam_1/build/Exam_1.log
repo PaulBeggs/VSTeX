@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  28 OCT 2024 15:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  7 NOV 2024 21:08
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/paulb/VSTeX/Math/Mathematical_Cryptography/Take-Home_Exams/Exam_1.tex
-(c:/Users/paulb/VSTeX/Math/Mathematical_Cryptography/Take-Home_Exams/Exam_1.tex
+**c:/Users/paulb/VSTeX/Math/Mathematical_Cryptography/Take-Home_Exams/exam_1/Exam_1.tex
+(c:/Users/paulb/VSTeX/Math/Mathematical_Cryptography/Take-Home_Exams/exam_1/Exam_1.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
 (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -686,7 +686,11 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 27.
- (c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\build\Exam_1.aux)
+ (c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\exam_1\build\Exam_1.aux
+
+LaTeX Warning: Label `Plot_2' multiply defined.
+
+)
 \openout1 = `Exam_1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
@@ -764,7 +768,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 Package hyperref Info: Link coloring ON on input line 112.
-(c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\build\Exam_1.out) (c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\build\Exam_1.out)
+(c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\exam_1\build\Exam_1.out) (c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\exam_1\build\Exam_1.out)
 \@outlinefile=\write4
 \openout4 = `Exam_1.out'.
 
@@ -903,24 +907,34 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 
 [5] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\build\Exam_1.aux)
+(c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\exam_1\build\Exam_1.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `Exam_1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34995 strings out of 473899
- 828842 string characters out of 5726500
- 1336368 words of memory out of 5000000
- 57300 multiletter control sequences out of 15000+600000
+ 34996 strings out of 473899
+ 828955 string characters out of 5726500
+ 1337513 words of memory out of 5000000
+ 57301 multiletter control sequences out of 15000+600000
  569019 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,11n,121p,787b,2386s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,11n,121p,794b,2386s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Plot_2} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Plot_1} has been referenced but does not exist, replaced by a fixed one
+
 <C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\build\Exam_1.pdf (5 pages, 195978 bytes).
+Output written on c:\Users\paulb\VSTeX\Math\Mathematical_Cryptography\Take-Home_Exams\exam_1\build\Exam_1.pdf (5 pages, 195903 bytes).
 PDF statistics:
  132 PDF objects out of 1000 (max. 8388607)
  25 named destinations out of 1000 (max. 500000)

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  10 OCT 2024 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  7 NOV 2024 20:59
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/paulb/VSTeX/Resume/template.tex
-(c:/Users/paulb/VSTeX/Resume/template.tex
+**c:/Users/paulb/VSTeX/Misc/Resume/template.tex
+(c:/Users/paulb/VSTeX/Misc/Resume/template.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
 (twentyonesecondcv.cls
@@ -661,7 +661,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 68.
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count352
 \l__pdf_internal_box=\box83
-) (c:\Users\paulb\VSTeX\Resume\build\template.aux)
+) (c:\Users\paulb\VSTeX\Misc\Resume\build\template.aux)
 \openout1 = `template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
@@ -750,7 +750,7 @@ Package: inputenc 2024/02/08 v1.3d Input encoding file
 \c@mv@tabular=\count360
 \c@mv@boldtabular=\count361
 Package hyperref Info: Link coloring ON on input line 57.
- (c:\Users\paulb\VSTeX\Resume\build\template.out) (c:\Users\paulb\VSTeX\Resume\build\template.out)
+ (c:\Users\paulb\VSTeX\Misc\Resume\build\template.out) (c:\Users\paulb\VSTeX\Misc\Resume\build\template.out)
 \@outlinefile=\write4
 \openout4 = `template.out'.
 
@@ -843,53 +843,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--70
 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ClearSans-TLF on input line 132.
+LaTeX Font Info:    Trying to load font information for TS1+ClearSans-TLF on input line 140.
 (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/clearsans\ts1clearsans-tlf.fd
 File: TS1ClearSans-TLF.fd 2019/10/16 (autoinst) Font definitions for TS1/ClearSans-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/ClearSans-TLF/m/n' in size <10> not available
-(Font)              Font shape `TS1/ClearSans-TLF/regular/n' tried instead on input line 132.
+(Font)              Font shape `TS1/ClearSans-TLF/regular/n' tried instead on input line 140.
 LaTeX Font Info:    Font shape `TS1/ClearSans-TLF/regular/n' will be
-(Font)              scaled to size 10.0pt on input line 132.
+(Font)              scaled to size 10.0pt on input line 140.
 LaTeX Font Info:    Font shape `T1/ClearSans-TLF/b/n' in size <10> not available
-(Font)              Font shape `T1/ClearSans-TLF/bold/n' tried instead on input line 132.
+(Font)              Font shape `T1/ClearSans-TLF/bold/n' tried instead on input line 140.
 LaTeX Font Info:    Font shape `T1/ClearSans-TLF/bold/n' will be
-(Font)              scaled to size 10.0pt on input line 132.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 132.
+(Font)              scaled to size 10.0pt on input line 140.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 140.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `T1/ClearSans-TLF/m/n' in size <8> not available
-(Font)              Font shape `T1/ClearSans-TLF/regular/n' tried instead on input line 132.
+(Font)              Font shape `T1/ClearSans-TLF/regular/n' tried instead on input line 140.
 LaTeX Font Info:    Font shape `T1/ClearSans-TLF/regular/n' will be
-(Font)              scaled to size 8.0pt on input line 132.
+(Font)              scaled to size 8.0pt on input line 140.
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--132
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 132--132
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--132
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
 
  []
 
 
-Overfull \hbox (1.79999pt too wide) in paragraph at lines 70--134
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+
+ []
+
+
+Overfull \hbox (1.79999pt too wide) in paragraph at lines 70--142
 [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--194
+Underfull \hbox (badness 10000) in paragraph at lines 206--206
 
  []
 
 
-Overfull \hbox (1.79999pt too wide) in paragraph at lines 154--195
+Overfull \hbox (1.79999pt too wide) in paragraph at lines 162--207
 [] [] 
  []
 
@@ -899,7 +899,7 @@ Overfull \hbox (1.79999pt too wide) in paragraph at lines 154--195
 
 {C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/clearsans/clr_zxbkm4.enc}{C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/fontawesome/fontawesomeone.enc}{C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/clearsans/clr_nrghxx.enc} <./image.jpg>]
 
-[2] (c:\Users\paulb\VSTeX\Resume\build\template.aux)
+[2] (c:\Users\paulb\VSTeX\Misc\Resume\build\template.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
@@ -913,14 +913,14 @@ Package rerunfilecheck Info: File `template.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  30209 strings out of 473899
- 604219 string characters out of 5726500
- 1040952 words of memory out of 5000000
+ 604304 string characters out of 5726500
+ 1040915 words of memory out of 5000000
  52572 multiletter control sequences out of 15000+600000
  600859 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,20n,135p,1225b,1110s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,20n,135p,1230b,1110s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/intel/clearsans/ClearSans-Bold.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/intel/clearsans/ClearSans-Regular.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/fontawesome/FontAwesome.pfb>
-Output written on c:\Users\paulb\VSTeX\Resume\build\template.pdf (2 pages, 2260913 bytes).
+Output written on c:\Users\paulb\VSTeX\Misc\Resume\build\template.pdf (2 pages, 2260910 bytes).
 PDF statistics:
  119 PDF objects out of 1000 (max. 8388607)
  3 named destinations out of 1000 (max. 500000)
