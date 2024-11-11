@@ -32,7 +32,7 @@
 	\begin{center}
 		\texttt{marginnote, sidenotes, fancyhdr, titlesec, geometry, and tcolorbox.}
 	\end{center}
-	The role of each packages is discussed in Part~\ref{Part:Modification}. Briefly, the \texttt{marginnote}, \texttt{sidenote}, \texttt{titlesec}, and \texttt{tcolorbox} packages are required to create the \texttt{$\backslash$part} environment. \texttt{geometry} is used globally to set the page width, page height, and margin width. \texttt{fancyhdr} (overridden on the title, contents, and \texttt{$\backslash$part} page) sets the header.
+	The role of each packages is discussed in Part~\ref{Part:Modification}. Briefly, the \texttt{marginnote}, \texttt{sidenote}, \texttt{titlesec}, and \texttt{tcolorbox} packages are required to create the \texttt{\(\backslash\)part} environment. \texttt{geometry} is used globally to set the page width, page height, and margin width. \texttt{fancyhdr} (overridden on the title, contents, and \texttt{\(\backslash\)part} page) sets the header.
 
 	
 	\part{Modifications}\label{Part:Modification}
@@ -108,28 +108,28 @@
 	\renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}
 \section{Margins}\label{Sec:Margins}%
-	\textit{NotesTeX} inherits all the margin commands that are used by \texttt{sidenote} and \texttt{marginnote}, and two additional pre-configured commands known as \texttt{$\backslash$mn} and \texttt{$\backslash$sn}. The relevant commands, and the packages they belong to, are
+	\textit{NotesTeX} inherits all the margin commands that are used by \texttt{sidenote} and \texttt{marginnote}, and two additional pre-configured commands known as \texttt{\(\backslash\)mn} and \texttt{\(\backslash\)sn}. The relevant commands, and the packages they belong to, are
 	\begin{center}
 		\begin{multicols}{2}
 		\noindent\texttt{
-		$\backslash$marginnote~[marginnote]\\
-		$\backslash$mn~[NotesTeX]\\
-		$\backslash$sidenote~[sidenote]\\
-		$\backslash$sn~[NotesTeX]\\
-		$\backslash$lec~[NotesTeX]\\
-		$\backslash$marginfigure~[sidenote]\\
-		$\backslash$margintable~[sidenote]\\
+		\(\backslash\)marginnote~[marginnote]\\
+		\(\backslash\)mn~[NotesTeX]\\
+		\(\backslash\)sidenote~[sidenote]\\
+		\(\backslash\)sn~[NotesTeX]\\
+		\(\backslash\)lec~[NotesTeX]\\
+		\(\backslash\)marginfigure~[sidenote]\\
+		\(\backslash\)margintable~[sidenote]\\
 		}
 	\end{multicols}
 	\end{center}
 	The implementation of each of these is as follows.
 	\begin{enumerate}
-		\item \texttt{Marginnote:} This is how a \texttt{$\backslash$marginnote\{...\}} behaves.\marginnote{Not numbered, 10pt.}
-		\item \texttt{Mn:} This is how a \texttt{$\backslash$mn\{...\}} behaves.\mn{Numbered, footnotesize.}
-		\item \texttt{Sidenote:} This is how a \texttt{$\backslash$sidenote\{...\}} behaves.\sidenote{Numbered, 10pt.}
-		\item \texttt{Sn:} This is how a \texttt{$\backslash$sn\{...\}} behaves.\sn{Numbered, footnotesize.}
-		\item \texttt{Lec:} This environment appears in the left column and requires two inputs. The example here is \texttt{$\backslash$lec\{Left Side\}\{Some text goes here.\}}.\lec{Left Side}{Some text goes here.}
-		\item \texttt{Marginfigure:} This environment requires the \texttt{$\backslash$begin\{marginfigure\}} {$\cdots$}\newline\texttt{$\backslash$end\{marginfigure\}} enclosings. The \texttt{caption} package is needed to caption the figure.
+		\item \texttt{Marginnote:} This is how a \texttt{\(\backslash\)marginnote\{...\}} behaves.\marginnote{Not numbered, 10pt.}
+		\item \texttt{Mn:} This is how a \texttt{\(\backslash\)mn\{...\}} behaves.\mn{Numbered, footnotesize.}
+		\item \texttt{Sidenote:} This is how a \texttt{\(\backslash\)sidenote\{...\}} behaves.\sidenote{Numbered, 10pt.}
+		\item \texttt{Sn:} This is how a \texttt{\(\backslash\)sn\{...\}} behaves.\sn{Numbered, footnotesize.}
+		\item \texttt{Lec:} This environment appears in the left column and requires two inputs. The example here is \texttt{\(\backslash\)lec\{Left Side\}\{Some text goes here.\}}.\lec{Left Side}{Some text goes here.}
+		\item \texttt{Marginfigure:} This environment requires the \texttt{\(\backslash\)begin\{marginfigure\}} {\(\cdots\)}\newline\texttt{\(\backslash\)end\{marginfigure\}} enclosings. The \texttt{caption} package is needed to caption the figure.
 		\begin{marginfigure}
 		\begin{center}
 			\begin{tikzpicture}
@@ -144,7 +144,7 @@
 		\end{center}
 		\caption{Marginfigure: Tikz}
 		\end{marginfigure}%
-		\item \texttt{Margintable:} This environment requires the \texttt{$\backslash$begin\{margintable\}} {$\cdots$}\newline\texttt{$\backslash$end\{margintable\}} enclosings. A table package, such as \texttt{tabular}, \texttt{tabulary}, \texttt{tabu}, or \texttt{tabularx} is required. The \texttt{caption} package is needed to caption the table.
+		\item \texttt{Margintable:} This environment requires the \texttt{\(\backslash\)begin\{margintable\}} {\(\cdots\)}\newline\texttt{\(\backslash\)end\{margintable\}} enclosings. A table package, such as \texttt{tabular}, \texttt{tabulary}, \texttt{tabu}, or \texttt{tabularx} is required. The \texttt{caption} package is needed to caption the table.
 		\begin{margintable}
 			\vspace{.1in}
 			\begin{tabularx}{\marginparwidth}{|X|X|}
@@ -163,11 +163,11 @@
 	\renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}
 \section{\texttt{amsthm} Environments}\label{Sub:Special}
-	\texttt{amsthm} environments are defined as usual being enclosed by \texttt{$\backslash$begin\{environment\}}$\cdots$ \texttt{$\backslash$end\{environment\}}. Modifications include integration with the \texttt{tcolorbox} package. Note that counting for \texttt{theorems} and \texttt{lemmas} is distinct from the counting for \texttt{definitio} \texttt{ns}. Also, the \texttt{breakable} option for \texttt{tcolorbox} allows these environments to span multiple pages.
+	\texttt{amsthm} environments are defined as usual being enclosed by \texttt{\(\backslash\)begin\{environment\}}\(\cdots\) \texttt{\(\backslash\)end\{environment\}}. Modifications include integration with the \texttt{tcolorbox} package. Note that counting for \texttt{theorems} and \texttt{lemmas} is distinct from the counting for \texttt{definitio} \texttt{ns}. Also, the \texttt{breakable} option for \texttt{tcolorbox} allows these environments to span multiple pages.
 
 	If one wishes to change the color, simply modify the line which states \texttt{borderline west=\{1pt\}}\texttt{\{0pt\}\{blue\}}. The first numeric value dictates the width of the line, the second dictates how close it is away from the \textit{left} margin, while the last argument declares the color. This customization is independent of the \texttt{amsthm} environments.
 
-	There is one issue with this however. Since we are using a \texttt{tcolorbox}, this proof environment is incompatible with \texttt{$\backslash$sn} and \texttt{$\backslash$sidenote}, as it results in a \textbf{Float(s) Error}. However, this environment is compatible with \texttt{$\backslash$mn} and \texttt{$\backslash$marginnote}.
+	There is one issue with this however. Since we are using a \texttt{tcolorbox}, this proof environment is incompatible with \texttt{\(\backslash\)sn} and \texttt{\(\backslash\)sidenote}, as it results in a \textbf{Float(s) Error}. However, this environment is compatible with \texttt{\(\backslash\)mn} and \texttt{\(\backslash\)marginnote}.
 
 	\begin{definition}
 		The \texttt{definition} environment and the associated \texttt{tcolorbox} are provided by the following code in \texttt{NotesTeX.sty}:
@@ -274,11 +274,11 @@
 	\begin{fullpage}
 		The \texttt{fullpage} environment is defined by
 		\begin{center}
-			\texttt{$\backslash$begin\{fullpage\}}\\
-			$\cdots$\\
-			\texttt{$\backslash$end\{fullpage\}}
+			\texttt{\(\backslash\)begin\{fullpage\}}\\
+			\(\cdots\)\\
+			\texttt{\(\backslash\)end\{fullpage\}}
 		\end{center}
-		with the width of the \texttt{fullpage} environment given by \texttt{$\backslash$textwidth}+\texttt{$\backslash$marginparsep}+\texttt{$\backslash$marginparwidth}.The code in \texttt{NotesTeX.sty} that is responsible for the \texttt{fullpage} environment is given by
+		with the width of the \texttt{fullpage} environment given by \texttt{\(\backslash\)textwidth}+\texttt{\(\backslash\)marginparsep}+\texttt{\(\backslash\)marginparwidth}.The code in \texttt{NotesTeX.sty} that is responsible for the \texttt{fullpage} environment is given by
 		\begin{verbatim}
 			\newenvironment{fullpage}{
 			{\smallskip\noindent
@@ -288,7 +288,7 @@
 			\end{verbatim}
 	\end{fullpage}
 	\begin{remark}
-		Eliminating the \texttt{$\backslash$hrule} in the code will remove the lines surrounding the \texttt{fullpage} environment. Similarly, it is possible to change the vertical spacing after the \texttt{fullpage} is over, by modifying the \texttt{$\backslash$vspace\{\}} argument. 
+		Eliminating the \texttt{\(\backslash\)hrule} in the code will remove the lines surrounding the \texttt{fullpage} environment. Similarly, it is possible to change the vertical spacing after the \texttt{fullpage} is over, by modifying the \texttt{\(\backslash\)vspace\{\}} argument. 
 	\end{remark}
 	
 	\begin{fullpage}
@@ -310,7 +310,7 @@
 		\renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}
 \section{The Part Environment}\label{sec:part}
-	In the original Jhep format, the \texttt{$\backslash$part} environment is not special and is set to the default given by the article class. In \textit{NotesTeX}, the \texttt{part} environment produces the following image. Furthermore the code responsible is noted below.\\
+	In the original Jhep format, the \texttt{\(\backslash\)part} environment is not special and is set to the default given by the article class. In \textit{NotesTeX}, the \texttt{part} environment produces the following image. Furthermore the code responsible is noted below.\\
 	\begin{fullpage}
 		{{\centering
 		\begin{tcolorbox}[width=\marginparwidth,height=\marginparwidth/2,colback=black!50!white,colframe=black!50!white,center title,fonttitle=\bfseries\normalsize,title=PART,text fill]
@@ -347,7 +347,7 @@
 	\end{verbatim}
 	\end{fullpage}
 	
-	This combines the \texttt{titlesec} and the \texttt{tcolorbox} packages, placing the title of the \texttt{$\backslash$part} on the left hand side, and the \texttt{$\backslash$part} number in the margin.
+	This combines the \texttt{titlesec} and the \texttt{tcolorbox} packages, placing the title of the \texttt{\(\backslash\)part} on the left hand side, and the \texttt{\(\backslash\)part} number in the margin.
 	
 
 	\part{Advanced}
@@ -363,13 +363,13 @@
           headsep=.03\paperheight,footskip=20pt,
           textheight=.795\paperheight,textwidth=.62\paperwidth}
 	\end{verbatim}
-	Ignoring most of the arguments, the \texttt{$\backslash$paperheight} and \texttt{$\backslash$paperwidth} are set to be the standard $8.5\times11$ inches. All other options, with the exception of \texttt{$\backslash$voffset}, inherit fractions of \texttt{$\backslash$paperheight} and \texttt{$\backslash$paperwidth}, the most important being \texttt{$\backslash$marginparwidth}. Increasing \texttt{$\backslash$marginparwidth} causes the margin to bleed off of the right side of the page. In order to increase this value, \texttt{$\backslash$textwidth} must be decreased accordingly.
+	Ignoring most of the arguments, the \texttt{\(\backslash\)paperheight} and \texttt{\(\backslash\)paperwidth} are set to be the standard \(8.5\times11\) inches. All other options, with the exception of \texttt{\(\backslash\)voffset}, inherit fractions of \texttt{\(\backslash\)paperheight} and \texttt{\(\backslash\)paperwidth}, the most important being \texttt{\(\backslash\)marginparwidth}. Increasing \texttt{\(\backslash\)marginparwidth} causes the margin to bleed off of the right side of the page. In order to increase this value, \texttt{\(\backslash\)textwidth} must be decreased accordingly.
 
 
 	\renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}
 \section{\texttt{Fancyhdr} Layout}
-	As mentioned before, \texttt{fancyhdr} is overridden on the title page, the contents page, and the \texttt{$\backslash$part} page, and sets the header for all other pages through the code
+	As mentioned before, \texttt{fancyhdr} is overridden on the title page, the contents page, and the \texttt{\(\backslash\)part} page, and sets the header for all other pages through the code
 	\begin{verbatim}
 	\pagestyle{fancy}%
 	\newlength{\offset}%
@@ -385,7 +385,7 @@
 	  \fancyhead[R]{\footnotesize \textit{\rightmark}~~~~ \thepage}%
 	}%
 	\end{verbatim}
-	The header style is set so that it spans the width of the entire page as opposed to just the \texttt{$\backslash$textwidth} through the line \texttt{$\backslash$fancyheadoffset[rh]\{$\backslash$myoddoffset\}}. The \texttt{$\backslash$sectionmark} and \texttt{$\backslash$subsectionmark} are set up so that the \texttt{section} appears on the left and \texttt{subsections} appear on the right along with the page number, and this is given in the last two lines of code.
+	The header style is set so that it spans the width of the entire page as opposed to just the \texttt{\(\backslash\)textwidth} through the line \texttt{\(\backslash\)fancyheadoffset[rh]\{\(\backslash\)myoddoffset\}}. The \texttt{\(\backslash\)sectionmark} and \texttt{\(\backslash\)subsectionmark} are set up so that the \texttt{section} appears on the left and \texttt{subsections} appear on the right along with the page number, and this is given in the last two lines of code.
 
 
 	\renewcommand{\theenumi}{\arabic{enumi}}

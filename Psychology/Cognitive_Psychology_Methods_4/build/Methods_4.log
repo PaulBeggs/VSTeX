@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  10 NOV 2024 21:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  11 NOV 2024 08:02
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/paulb/VSTeX/Psychology/Cognitive_Psychology_Methods_3/Methods_3.tex
-(c:/Users/paulb/VSTeX/Psychology/Cognitive_Psychology_Methods_3/Methods_3.tex
+**c:/Users/paulb/VSTeX/Psychology/Cognitive_Psychology_Methods_4/Methods_4.tex
+(c:/Users/paulb/VSTeX/Psychology/Cognitive_Psychology_Methods_4/Methods_4.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
 (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/apa7\apa7.cls
@@ -583,41 +583,152 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/lmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-08-30 L3 programming layer (loader) 
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count330
+\l__pdf_internal_box=\box67
+))
+Package: xparse 2024-08-16 L3 Experimental document command parser
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
+Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
+Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 40.
-\c@NumberOfAuthors=\count330
-\c@NumberOfSuperscripts=\count331
-\c@NumberOfAffiliations=\count332
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count331
+Package zref Info: New property: abspage on input line 67.
+) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+\mdf@templength=\skip84
+\c@mdf@globalstyle@cnt=\count332
+\mdf@skipabove@length=\skip85
+\mdf@skipbelow@length=\skip86
+\mdf@leftmargin@length=\skip87
+\mdf@rightmargin@length=\skip88
+\mdf@innerleftmargin@length=\skip89
+\mdf@innerrightmargin@length=\skip90
+\mdf@innertopmargin@length=\skip91
+\mdf@innerbottommargin@length=\skip92
+\mdf@splittopskip@length=\skip93
+\mdf@splitbottomskip@length=\skip94
+\mdf@outermargin@length=\skip95
+\mdf@innermargin@length=\skip96
+\mdf@linewidth@length=\skip97
+\mdf@innerlinewidth@length=\skip98
+\mdf@middlelinewidth@length=\skip99
+\mdf@outerlinewidth@length=\skip100
+\mdf@roundcorner@length=\skip101
+\mdf@footenotedistance@length=\skip102
+\mdf@userdefinedwidth@length=\skip103
+\mdf@needspace@length=\skip104
+\mdf@frametitleaboveskip@length=\skip105
+\mdf@frametitlebelowskip@length=\skip106
+\mdf@frametitlerulewidth@length=\skip107
+\mdf@frametitleleftmargin@length=\skip108
+\mdf@frametitlerightmargin@length=\skip109
+\mdf@shadowsize@length=\skip110
+\mdf@extratopheight@length=\skip111
+\mdf@subtitleabovelinewidth@length=\skip112
+\mdf@subtitlebelowlinewidth@length=\skip113
+\mdf@subtitleaboveskip@length=\skip114
+\mdf@subtitlebelowskip@length=\skip115
+\mdf@subtitleinneraboveskip@length=\skip116
+\mdf@subtitleinnerbelowskip@length=\skip117
+\mdf@subsubtitleabovelinewidth@length=\skip118
+\mdf@subsubtitlebelowlinewidth@length=\skip119
+\mdf@subsubtitleaboveskip@length=\skip120
+\mdf@subsubtitlebelowskip@length=\skip121
+\mdf@subsubtitleinneraboveskip@length=\skip122
+\mdf@subsubtitleinnerbelowskip@length=\skip123
+ (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\md-frame-1.mdf
+File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
+)
+\mdf@frametitlebox=\box68
+\mdf@footnotebox=\box69
+\mdf@splitbox@one=\box70
+\mdf@splitbox@two=\box71
+\mdf@splitbox@save=\box72
+\mdfsplitboxwidth=\skip124
+\mdfsplitboxtotalwidth=\skip125
+\mdfsplitboxheight=\skip126
+\mdfsplitboxdepth=\skip127
+\mdfsplitboxtotalheight=\skip128
+\mdfframetitleboxwidth=\skip129
+\mdfframetitleboxtotalwidth=\skip130
+\mdfframetitleboxheight=\skip131
+\mdfframetitleboxdepth=\skip132
+\mdfframetitleboxtotalheight=\skip133
+\mdffootnoteboxwidth=\skip134
+\mdffootnoteboxtotalwidth=\skip135
+\mdffootnoteboxheight=\skip136
+\mdffootnoteboxdepth=\skip137
+\mdffootnoteboxtotalheight=\skip138
+\mdftotallinewidth=\skip139
+\mdfboundingboxwidth=\skip140
+\mdfboundingboxtotalwidth=\skip141
+\mdfboundingboxheight=\skip142
+\mdfboundingboxdepth=\skip143
+\mdfboundingboxtotalheight=\skip144
+\mdf@freevspace@length=\skip145
+\mdf@horizontalwidthofbox@length=\skip146
+\mdf@verticalmarginwhole@length=\skip147
+\mdf@horizontalspaceofbox=\skip148
+\mdfsubtitleheight=\skip149
+\mdfsubsubtitleheight=\skip150
+\c@mdfcountframes=\count333
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count334
+\c@mdf@env@i=\count335
+\c@mdf@env@ii=\count336
+\c@mdf@zref@counter=\count337
+Package zref Info: New property: mdf@pagevalue on input line 895.
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 74.
+\c@NumberOfAuthors=\count338
+\c@NumberOfSuperscripts=\count339
+\c@NumberOfAffiliations=\count340
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 54.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 88.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count333
-\l__pdf_internal_box=\box67
-) (c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_3\build\Methods_3.aux)
-\openout1 = `Methods_3.aux'.
+) (c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_4\build\Methods_4.aux)
+\openout1 = `Methods_4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -655,16 +766,16 @@ LaTeX Font Info:    ... okay on input line 54.
 
 (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count334
+\scratchcounter=\count341
 \scratchdimen=\dimen289
-\scratchbox=\box68
-\nofMPsegments=\count335
-\nofMParguments=\count336
+\scratchbox=\box73
+\nofMPsegments=\count342
+\nofMParguments=\count343
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count337
+\MPscratchCnt=\count344
 \MPscratchDim=\dimen290
-\MPnumerator=\count338
-\makeMPintoPDFobject=\count339
+\MPnumerator=\count345
+\makeMPintoPDFobject=\count346
 \everyMPtoPDFconversion=\toks35
 ) (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -672,10 +783,10 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 54.
- (c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_3\build\Methods_3.out) (c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_3\build\Methods_3.out)
+Package hyperref Info: Link coloring ON on input line 88.
+ (c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_4\build\Methods_4.out) (c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_4\build\Methods_4.out)
 \@outlinefile=\write6
-\openout6 = `Methods_3.out'.
+\openout6 = `Methods_4.out'.
 
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/apa7/config\APA7american.txt
 File: APA7american.txt 2020/12/02 v1.02 apa7 configuration for American English
@@ -689,76 +800,81 @@ Package caption Info: End \AtBeginDocument code.
 [1{C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 92.
+
+[2]
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 133.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 92.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 133.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 92.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 133.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 92.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 133.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 92.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 133.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 92.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 133.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 92.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 133.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 92.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 133.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 133.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 133.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 133.
 
 
-[2]
+[3]
 
-[3] AED endfloat: Processing end Figures and Tables
+[4]
 
-[4] (c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_3\build\Methods_3.aux)
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+AED endfloat: Processing end Figures and Tables
+
+[5]
+
+[6] (c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_4\build\Methods_4.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
-Package rerunfilecheck Info: File `Methods_3.out' has not changed.
-(rerunfilecheck)             Checksum: 903EA8885AD59786B7FC0FCA90B7CA3D;495.
+Package rerunfilecheck Info: File `Methods_4.out' has not changed.
+(rerunfilecheck)             Checksum: CB87269707F3D5C7B07E50F8D6CB5C7C;987.
  ) 
 Here is how much of TeX's memory you used:
- 23443 strings out of 473899
- 443363 string characters out of 5726500
- 816698 words of memory out of 5000000
- 45888 multiletter control sequences out of 15000+600000
- 615769 words of font info for 104 fonts, out of 8000000 for 9000
+ 24556 strings out of 473899
+ 468331 string characters out of 5726500
+ 858350 words of memory out of 5000000
+ 46958 multiletter control sequences out of 15000+600000
+ 591443 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,107p,1120b,497s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_3\build\Methods_3.pdf (4 pages, 54102 bytes).
+ 99i,11n,107p,862b,1082s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_4\build\Methods_4.pdf (6 pages, 72651 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 110 PDF objects out of 1000 (max. 8388607)
+ 27 named destinations out of 1000 (max. 500000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

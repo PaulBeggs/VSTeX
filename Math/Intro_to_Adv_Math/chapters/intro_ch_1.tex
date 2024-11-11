@@ -22,9 +22,9 @@ In Mathematics, there are terms that cannot be defined. They should be seen as b
 
 
 \begin{note}
-    Sets: Uppercase letters, $(A, B)$;
-    Elements (elts): lowercase letters, $(a, b)$;
-    to say $x$ is an elt. of set A, we write ``$x \in A$.''
+    Sets: Uppercase letters, \((A, B)\);
+    Elements (elts): lowercase letters, \((a, b)\);
+    to say \(x\) is an elt. of set A, we write ``\(x \in A\).''
 \end{note}
 
 \pfs
@@ -40,8 +40,8 @@ Generally, when we try to prove something, we begin by assuming a general statem
 To formally prove \( A \subseteq B \), we can use the \defref{Subset}: for all \( x \), if \( x \in A \), then \( x \in B \). This condition ensures that any arbitrary element \( x \) chosen from \( A \) must satisfy \( x \in B \), thereby establishing \( A \subseteq B \).
 
 \begin{definition}
-    {Subset}Suppose $A$ and $B$ are Sets. The statement: $\text{``}A \text{ is in a \textit{subset} of } B\text{''}$ 
-    Means: If $x \in A$, $x \in B$. Notated as $A \subseteq B$
+    {Subset}Suppose \(A\) and \(B\) are Sets. The statement: \(\text{``}A \text{ is in a \textit{subset} of } B\text{''}\) 
+    Means: If \(x \in A\), \(x \in B\). Notated as \(A \subseteq B\)
 \end{definition}
 
 
@@ -56,10 +56,10 @@ To formally prove \( A \subseteq B \), we can use the \defref{Subset}: for all \
         \coordinate (A) at (2,2);
 
         % Draw A 
-        \draw (A) circle (1cm) node {$A$};
+        \draw (A) circle (1cm) node {\(A\)};
 
         % Draw B around A
-        \draw (A) circle (2cm) node [below right=2em] {$B$};
+        \draw (A) circle (2cm) node [below right=2em] {\(B\)};
 
         % Fill A to emphasize it is a subset of B
         \begin{scope}
@@ -68,7 +68,7 @@ To formally prove \( A \subseteq B \), we can use the \defref{Subset}: for all \
         \end{scope}
 
     \end{tikzpicture}
-    \caption{\textit{Set $A$ as a subset of set $B$.}}
+    \caption{\textit{Set \(A\) as a subset of set \(B\).}}
 \end{figure}
 
 % ------------------------------------------------------------------------------
@@ -80,11 +80,11 @@ It is important to note that each definition can be ``denied.'' That is, we can 
 When we consider the statement, ``Each definition can be denied,'' this implies that for every mathematical definition, there exists a corresponding negation that describes what it means for an object or number not to meet the criteria specified by that definition. This negation is crucial because it outlines the conditions under which an object falls outside the defined category.
 
 \begin{exercise}
-    {Subset Denial}Write the denial of the definition of a subset. In other words, complete the statement: $$\text{``}A \text{ is not a subset of $B$ means...}$$
+    {Subset Denial}Write the denial of the definition of a subset. In other words, complete the statement: \[\text{``}A \text{ is not a subset of \(B\) means...}\]
 \end{exercise}
 
 \sol{
-    ...there exists an $x \in A$ such that $x \notin B$.''
+    ...there exists an \(x \in A\) such that \(x \notin B\).''
 }
 
 % ------------------------------------------------------------------------------
@@ -92,15 +92,15 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 % ------------------------------------------------------------------------------
 
 \begin{exercise}
-    {Subset Identity}Suppose $A$ is a set. Then, $A\subseteq A$.
+    {Subset Identity}Suppose \(A\) is a set. Then, \(A\subseteq A\).
 \end{exercise}
 
 \expf{
-    Let $A$ be a set. 
+    Let \(A\) be a set. 
 
-     If an element $x$ is in $A$, then $x\in A$.
+     If an element \(x\) is in \(A\), then \(x\in A\).
 
-     Therefore, by the \defref{Subset}, $A\subseteq A$.
+     Therefore, by the \defref{Subset}, \(A\subseteq A\).
 }
 
 
@@ -108,20 +108,20 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 % Problem 3
 % ------------------------------------------------------------------------------
 
-\subsection{Introduction to Contraposition}
+\section{Introduction to Contraposition}
 
-\refex{3} gives us another ``road map'' (proof strategy) to prove a set $A$ is a subset of $B$. We can show this by following the logic of Exercise 3: take an arbitrary element $y \notin B$ and show $y \notin A$. This is known as the contrapositive of the conditional statement. Because the conditional statement and the contrapositive are \textit{logically equivalent}, if we can show that the contrapositive is true, then we have proven that the conditional statement must also be true.
+\refex{3} gives us another ``road map'' (proof strategy) to prove a set \(A\) is a subset of \(B\). We can show this by following the logic of Exercise 3: take an arbitrary element \(y \notin B\) and show \(y \notin A\). This is known as the contrapositive of the conditional statement. Because the conditional statement and the contrapositive are \textit{logically equivalent}, if we can show that the contrapositive is true, then we have proven that the conditional statement must also be true.
 
 \begin{exercise}
-    {Contraposition}Suppose $A$ and $B$ are sets with $A\subseteq B$. Also suppose $y\notin B$. Then, $$y\notin A$$
+    {Contraposition}Suppose \(A\) and \(B\) are sets with \(A\subseteq B\). Also suppose \(y\notin B\). Then, \[y\notin A\]
 \end{exercise}
 
 \expf{
-    Let $A$ and $B$ be sets such that $A \subseteq B$ and $y \notin B$. 
+    Let \(A\) and \(B\) be sets such that \(A \subseteq B\) and \(y \notin B\). 
 
-     Because $A \subseteq B$, we know that any element $y \in A$ implies $y \in B$ by the \defref{Subset}. Hence, since $y \notin B$, it must also be the case that $y \notin A$. If $y$ did belong to $A$, it would imply that $A$ cannot be a subset of $B$, which contradicts the given information. 
+     Because \(A \subseteq B\), we know that any element \(y \in A\) implies \(y \in B\) by the \defref{Subset}. Hence, since \(y \notin B\), it must also be the case that \(y \notin A\). If \(y\) did belong to \(A\), it would imply that \(A\) cannot be a subset of \(B\), which contradicts the given information. 
 
-     Therefore, for the given information to hold true, it must be the case that $y \notin B$ implies $y \notin A$.
+     Therefore, for the given information to hold true, it must be the case that \(y \notin B\) implies \(y \notin A\).
 }
 
 % ------------------------------------------------------------------------------
@@ -129,15 +129,15 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 % ------------------------------------------------------------------------------
 
 \begin{exercise}
-    {Contraposition (cont.)}Suppose $A$ and $B$ are sets. Also suppose that for each $y \notin B$ that $y \notin A$. Then, $$A\subseteq B$$
+    {Contraposition (cont.)}Suppose \(A\) and \(B\) are sets. Also suppose that for each \(y \notin B\) that \(y \notin A\). Then, \[A\subseteq B\]
 \end{exercise}
 
 \expf{
-    Let $A$ and $B$ be sets. Also assume that for all $y \notin B$ that $y \notin A$. 
+    Let \(A\) and \(B\) be sets. Also assume that for all \(y \notin B\) that \(y \notin A\). 
 
-     Because we know $y \notin B$ implies $y \notin A$, it must be the case that if $y \in A$, then $y \in B$. Any other alternative would contradict the given information as shown: $$y \notin B \text{ implies } y \in A.$$
+     Because we know \(y \notin B\) implies \(y \notin A\), it must be the case that if \(y \in A\), then \(y \in B\). Any other alternative would contradict the given information as shown: \[y \notin B \text{ implies } y \in A.\]
 
-     Therefore, for the given information to hold true, it must be the case that $x \in A$ implies $x \in B$. Hence, $A\subseteq B$ by the \defref{Subset}.
+     Therefore, for the given information to hold true, it must be the case that \(x \in A\) implies \(x \in B\). Hence, \(A\subseteq B\) by the \defref{Subset}.
 }
 
 \newpage
@@ -147,16 +147,16 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 % ------------------------------------------------------------------------------
 
 \begin{exercise}
-    {Transitivity of Subsets}Suppose $A, B, \text{and } C$ are sets with $A\subseteq B$ and $B \subseteq C$. Then, $$A\subseteq C$$
+    {Transitivity of Subsets}Suppose \(A, B, \text{and } C\) are sets with \(A\subseteq B\) and \(B \subseteq C\). Then, \[A\subseteq C\]
 \end{exercise}
 
 \expf{
 
-    Let $A,B$ and $C$ be sets such that $A\subseteq B$ and $B\subseteq C$. 
+    Let \(A,B\) and \(C\) be sets such that \(A\subseteq B\) and \(B\subseteq C\). 
 
-     By examining the properties of the \defref{Subset}, we know element $x \in A$ implies $x \in B$, and $y \in B$ implies $y\in C$. Hence, let any element $z \in A$. Because $A \subseteq B$, we know $z \in B$, and since $B \subseteq C$, by the same logic, $z \in C$. 
+     By examining the properties of the \defref{Subset}, we know element \(x \in A\) implies \(x \in B\), and \(y \in B\) implies \(y\in C\). Hence, let any element \(z \in A\). Because \(A \subseteq B\), we know \(z \in B\), and since \(B \subseteq C\), by the same logic, \(z \in C\). 
 
-     Therefore, by the \defref{Subset}, $A\subseteq C$.
+     Therefore, by the \defref{Subset}, \(A\subseteq C\).
 }
 
 \pfs
@@ -172,7 +172,7 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 \vspace*{\fill}
 
 \begin{definition}
-    {Extensionality}The symbol $\implies$ denotes the logical implication. For statements $P$ and $Q$, $P \implies Q$ is true if,
+    {Extensionality}The symbol \(\implies\) denotes the logical implication. For statements \(P\) and \(Q\), \(P \implies Q\) is true if,
     \begin{align*}
         1. & \quad \text{Whenever } P \text{ is true, } Q \text{ must also be true, and} \\
         2. & \quad \text{If } P \text{ is false, the implication is considered true.}
@@ -180,7 +180,7 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 \end{definition}
 
 \begin{axiom}
-    {Set Equality}Suppose $A$ and $B$ are sets. Then, set $A$ is equal to set $B$ if, and only if,
+    {Set Equality}Suppose \(A\) and \(B\) are sets. Then, set \(A\) is equal to set \(B\) if, and only if,
     \begin{align*}
         1. & \quad x \in A \implies x \in B, \\
         2. & \quad y \in B \implies y \in A.
@@ -188,7 +188,7 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 \end{axiom}
 
 \begin{note}
-    \textbf{Note:} Intuitively, two sets are equal if they have the same elements. We write this as ``$A = B$'' for sets $A$ and $B$. 
+    \textbf{Note:} Intuitively, two sets are equal if they have the same elements. We write this as ``\(A = B\)'' for sets \(A\) and \(B\). 
 
     \hspace{0.5em}\textbf{Careful}! In any proof, make sure to use axioms, theorems, definitions, and previous problems. Do not include intuitive statements.
 \end{note}
@@ -199,15 +199,15 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 % ------------------------------------------------------------------------------
 
 \begin{exercise}
-    {Set Identity Property}Suppose that $A$ is a set. Then, $$A = A$$
+    {Set Identity Property}Suppose that \(A\) is a set. Then, \[A = A\]
 \end{exercise}
 
 \expf{
-    Let $A$ be a set. 
+    Let \(A\) be a set. 
 
-     Let $x \in A$. From \refex{2}, we know that since $A \subseteq A$, then $x \in A$ implies $x \in A$. 
+     Let \(x \in A\). From \refex{2}, we know that since \(A \subseteq A\), then \(x \in A\) implies \(x \in A\). 
 
-     Therefore, we have shown that because an element in $A$ implies that element exists in $A$ -- and vice versa -- then by the \refax{Set Equality}, $A = A$.
+     Therefore, we have shown that because an element in \(A\) implies that element exists in \(A\) -- and vice versa -- then by the \refax{Set Equality}, \(A = A\).
 }
 
 \pfs
@@ -216,35 +216,35 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 % \namrefthm{Set Equality with Subsets}
 % ------------------------------------------------------------------------------
 
-\namrefthm{Set Equality with Subsets} introduces us to an \textit{``if, and only if''} statement (initialized as `iff'). These types of proofs are solved by showing each case of the forward ($\Rightarrow$) and backward ($\Leftarrow$) implications hold. Thus, in essentially one proof, we need to solve two proofs. We use the given information from the left ($\Rightarrow$) side of the ``if, and only if,'' and prove the right ($\Leftarrow$) side of the proof is true, and vice versa. Symbolically, we write this as ``$\iff$.''
+\namrefthm{Set Equality with Subsets} introduces us to an \textit{``if, and only if''} statement (initialized as `iff'). These types of proofs are solved by showing each case of the forward (\(\Rightarrow\)) and backward (\(\Leftarrow\)) implications hold. Thus, in essentially one proof, we need to solve two proofs. We use the given information from the left (\(\Rightarrow\)) side of the ``if, and only if,'' and prove the right (\(\Leftarrow\)) side of the proof is true, and vice versa. Symbolically, we write this as ``\(\iff\).''
 
 \vspace{0.5cm}
 
 \begin{ntheorem}
-    {Set Equality with Subsets}Suppose $A$ and $B$ are sets. Then, set $A = B$ if, and only if, $A\subseteq B$ and $B\subseteq A$. 
+    {Set Equality with Subsets}Suppose \(A\) and \(B\) are sets. Then, set \(A = B\) if, and only if, \(A\subseteq B\) and \(B\subseteq A\). 
 
-    Forward Implication: If $A = B$, then $A\subseteq B$, and $B\subseteq A$. 
-    Backward Implication: If $A \subseteq B$ and $B\subseteq A$, then $A = B$.
+    Forward Implication: If \(A = B\), then \(A\subseteq B\), and \(B\subseteq A\). 
+    Backward Implication: If \(A \subseteq B\) and \(B\subseteq A\), then \(A = B\).
 \end{ntheorem}
 
 \iffpf
-{Suppose $A$ and $B$ are sets with $A = B$. Let $x\in A$. Since $A = B$, by the \refax{Set Equality}, we know that $x\in B$. Therefore, by the \defref{Subset}, $A\in B$. Let $y\in B$. Since $A = B$, by the \refax{Set Equality}, we know $y\in A$. Therefore, $B\subseteq A$ the \defref{Subset}.}
-{Suppose $A$ and $B$ are sets with $A\subseteq B$ and $B\subseteq A$. Let $x\in A$. Then, by the \defref{Subset}, $x\in B$. Let $y\in B$. Then, by the \defref{Subset} $B\subseteq A$, we know $y\in A$.}
-{Therefore, by the \refax{Set Equality}, we know that $A = B$.}
+{Suppose \(A\) and \(B\) are sets with \(A = B\). Let \(x\in A\). Since \(A = B\), by the \refax{Set Equality}, we know that \(x\in B\). Therefore, by the \defref{Subset}, \(A\in B\). Let \(y\in B\). Since \(A = B\), by the \refax{Set Equality}, we know \(y\in A\). Therefore, \(B\subseteq A\) the \defref{Subset}.}
+{Suppose \(A\) and \(B\) are sets with \(A\subseteq B\) and \(B\subseteq A\). Let \(x\in A\). Then, by the \defref{Subset}, \(x\in B\). Let \(y\in B\). Then, by the \defref{Subset} \(B\subseteq A\), we know \(y\in A\).}
+{Therefore, by the \refax{Set Equality}, we know that \(A = B\).}
 {xblue}
 
 \newpage
 
 \begin{exercise}
-    {Transitivity of Equality}Suppose for the sets $A, B, \text{ and } C$ such that $A = B$ and $B = C$. Then, $$A = C$$
+    {Transitivity of Equality}Suppose for the sets \(A, B, \text{ and } C\) such that \(A = B\) and \(B = C\). Then, \[A = C\]
 \end{exercise}
 
 \expf{
-    Let $A, B$ be sets such that $A = B$. Additionally, for set $C$, $B = C$. 
+    Let \(A, B\) be sets such that \(A = B\). Additionally, for set \(C\), \(B = C\). 
 
-     By \namrefthm{Set Equality with Subsets}, we know that these sets must be subsets of each other. That is, $A\subseteq B$ and $B\subseteq A$. The same concept from Set Equality with Subsets ($\Rightarrow$) applies here: $C\subseteq B$ and $B\subseteq C$. Combining the first and second statements, we see that since the sets are equal, then they must be subsets of each respective other. Thus, by the \refax{Set Equality}, $x\in A$ implies $ x\in B$, $y\in B$ implies $y\in A$, and $x\in B$ implies $x\in C$, $y\in C$ implies $y\in B$. Then, by the \defref{Subset}, since $x\in A$ implies $x\in C$, then $A\subseteq C$; and since $y\in C$ implies $y\in A$, then $C\subseteq A$. 
+     By \namrefthm{Set Equality with Subsets}, we know that these sets must be subsets of each other. That is, \(A\subseteq B\) and \(B\subseteq A\). The same concept from Set Equality with Subsets (\(\Rightarrow\)) applies here: \(C\subseteq B\) and \(B\subseteq C\). Combining the first and second statements, we see that since the sets are equal, then they must be subsets of each respective other. Thus, by the \refax{Set Equality}, \(x\in A\) implies \( x\in B\), \(y\in B\) implies \(y\in A\), and \(x\in B\) implies \(x\in C\), \(y\in C\) implies \(y\in B\). Then, by the \defref{Subset}, since \(x\in A\) implies \(x\in C\), then \(A\subseteq C\); and since \(y\in C\) implies \(y\in A\), then \(C\subseteq A\). 
 
-     Therefore, using the backward implication of Set Equality with Subsets, given the previous statements, $A\subseteq B, B\subseteq A, B\subseteq C, C\subseteq B$, $A \subseteq C$ and $C \subseteq A$ implies $A = C$.
+     Therefore, using the backward implication of Set Equality with Subsets, given the previous statements, \(A\subseteq B, B\subseteq A, B\subseteq C, C\subseteq B\), \(A \subseteq C\) and \(C \subseteq A\) implies \(A = C\).
 }
 
 
@@ -253,23 +253,23 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 % ------------------------------------------------------------------------------
 
 \begin{exercise}
-    {}Suppose $A, B, \text{ and } C$ are sets such that $A\subseteq B, \ B\subseteq C \text{, and } C\subseteq A$. Then, $$A = B \text{ and } B = C$$
+    {}Suppose \(A, B, \text{ and } C\) are sets such that \(A\subseteq B, \ B\subseteq C \text{, and } C\subseteq A\). Then, \[A = B \text{ and } B = C\]
 \end{exercise}
 
 
 \expf{
-    Let $A, B,$ and $C$ be sets. Also, for each $A, B \text{, and } C,$ let $A\subseteq B \text{, and } B\subseteq C \text{, and } C\subseteq A$. 
+    Let \(A, B,\) and \(C\) be sets. Also, for each \(A, B \text{, and } C,\) let \(A\subseteq B \text{, and } B\subseteq C \text{, and } C\subseteq A\). 
 
-     By \refex{5}, we know that $A \subseteq C$, $B \subseteq A$ and by rearranging the given information, we know that $C \subseteq B$. 
+     By \refex{5}, we know that \(A \subseteq C\), \(B \subseteq A\) and by rearranging the given information, we know that \(C \subseteq B\). 
 
-     Therefore, by using \namrefthm{Set Equality with Subsets}, we can deduce further from this information that since $A \subseteq C \text{, and } C \subseteq A$, then $A = C$.
-    If you apply the same logic for $B \text{ and } C$, then, $B = C$. 
+     Therefore, by using \namrefthm{Set Equality with Subsets}, we can deduce further from this information that since \(A \subseteq C \text{, and } C \subseteq A\), then \(A = C\).
+    If you apply the same logic for \(B \text{ and } C\), then, \(B = C\). 
 }
 
 \pfs
 
 \begin{note}
-    When we say a set such as $A$ has elements $a, b, \text{ and } c$, we write this notation wise as: $$A = \{a,b,c\}$$
+    When we say a set such as \(A\) has elements \(a, b, \text{ and } c\), we write this notation wise as: \[A = \{a,b,c\}\]
     \textbf{Note}: when dealing with sets, the arrangement of elements and repetition are not considered. Sets are defined solely by membership; if two sets have the same elements, they are considered equal, regardless of the order in which the elements are listed.
 \end{note}
 
@@ -282,16 +282,16 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 % ------------------------------------------------------------------------------
 
 \begin{exercise}
-    {Duplicate Property of Elements}Suppose $A$ is a set, $x\in A$, and $A=\{x\}$. Then,
-    $$A = \{x,x\}$$
+    {Duplicate Property of Elements}Suppose \(A\) is a set, \(x\in A\), and \(A=\{x\}\). Then,
+    \[A = \{x,x\}\]
 \end{exercise}
 
 \expf{
-    Let $A$ be a set with $x\in A$ and $A = \{x\}$. 
+    Let \(A\) be a set with \(x\in A\) and \(A = \{x\}\). 
 
-     Let any $x \in A$. 
+     Let any \(x \in A\). 
 
-     Therefore, $A = \{x\} = \{x,x\}$
+     Therefore, \(A = \{x\} = \{x,x\}\)
 }
 
 
@@ -300,14 +300,14 @@ When we consider the statement, ``Each definition can be denied,'' this implies 
 % ------------------------------------------------------------------------------
 
 \begin{exercise}
-    {Commutativity of Elements}Suppose set $A = \{a,b\}.$ Then,
-    $$A = \{b,a\}$$
+    {Commutativity of Elements}Suppose set \(A = \{a,b\}.\) Then,
+    \[A = \{b,a\}\]
 \end{exercise}
 
 \expf{
-    Let $A$ be a set with $A = \{a,b\}$. 
+    Let \(A\) be a set with \(A = \{a,b\}\). 
 
-     Another way of writing $A = \{a,b\}$ would be to say $a,b \in A$. The natural order of these elements being added is arbitrary. Hence, we can also write this as $b,a \in A$, which would be equivalent to the first set. 
+     Another way of writing \(A = \{a,b\}\) would be to say \(a,b \in A\). The natural order of these elements being added is arbitrary. Hence, we can also write this as \(b,a \in A\), which would be equivalent to the first set. 
 
-     Therefore, $A = \{a,b\} = \{b,a\}$
+     Therefore, \(A = \{a,b\} = \{b,a\}\)
 }

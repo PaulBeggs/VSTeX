@@ -1,0 +1,319 @@
+% This is the "preamble" of the document. This is where the format options get set.
+% Pro-tip: things following the % mark will not be compiled by LaTeX. I'll be using them extensively to explain things as we go.
+% Note: not to scare you off of LaTeX, but it's normal to have problems. And ya girl has been having some. I've included the copyright info at the bottom of the document from the guy who wrote this package, because his documentation doesn't entirely match how it's actually used. So this is a combination of his working preamble along with my added commentary or explanation. 
+%% 
+
+
+\documentclass[stu,12pt,floatsintext]{apa7}
+\usepackage{marginnote}
+% Document class input explanation ________________
+% LaTeX files need to start with the document class, so it knows what it's using
+% - This file is using the apa7 document class, as it has a lot of the formatting built in
+% There are two sets of brackets in LaTeX, for each command (the things that start with the slash \ )
+% - The squiggle brackets {} are mandatory for executing the command
+% - The square brackets [] are options for that command. There can be more than one set of square brackets for some commands
+% Options used in this document (general note - for each of these, if you want to use the other options, swap it out in that spot in the square brackets):
+% - stu: this sets the `document mode' as the "student paper" version. Other options are jou (journal), man (manuscript, for journal submission), and doc (a plain document)
+% --- The student setting includes things like 'duedate', 'course', and 'professor' on the title page. If these aren't wanted/needed, use the 'man' setting. It also defaults to including the tables and figures at the end of the document. This can be changed by including the 'floatsintext' option, as I have for you. If the instructor wants those at the end, remove that from the square brackets.
+% --- The manuscript setting is roughly what you would use to submit to a journal, so uses 'date' instead of 'duedate', and doesn't include the 'course' or 'professor' info. As with 'stu', it defaults to putting the tables and figures at the end rather than in text. The same option will bump those images in text.
+% --- Journal ('jou') outputs something similar to a common journal format - double columned text and figurs in place. This can be fun, especially if you are sumbitting this as a writing sample in applications.
+% --- Document ('doc') outputs single columned, single spaced text with figures in place. Another option for producing a more polished looking document as a writing sample.
+% - 12pt: sets the font size to 12pt. Other options are 10pt or 11pt
+% - floatsintext: makes it so tables and figures will appear in text rather than at the end. Unforunately, not having this option set breaks the whole document, and I haven't been able to figure out why. IT's GREAT WHEN THINGS WORK LIKE THEY'RE SUPPOSED TO.
+
+
+\usepackage{csquotes} % One of the things you learn about LaTeX is at some level, it's like magic. The references weren't printing as they should without this line, and the guy who wrote the package included it, so here it is. Because LaTeX reasons.
+
+\usepackage[T1]{fontenc} 
+\usepackage{mathptmx} % This is the Times New Roman font, which was the norm back in my day. If you'd like to use a different font, the options are laid out here: https://www.overleaf.com/learn/latex/Font_typefaces
+% Alternately, you can comment out or delete these two commands and just use the Overleaf default font. So many choices!
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{xcolor}
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=gray, % default color, will be overridden in custom commands
+%   backgroundcolor=draculabg, % Needed for Dracula theme
+%   fontcolor=draculafg, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=1.2\topsep,
+  skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{solution}
+  {\textit{\textbf{Solution.}}}
+
+
+  \newcommand{\sol}[1]{
+    \begin{customframedproof}
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+    citecolor=horange
+}
+
+% Title page stuff _____________________
+\title{Applying Cognitive Psychology Methods Activity 4: Problem Solving and Creativity} % The big, long version of the title for the title page
+\author{Paul Beggs}
+\duedate{\today}
+% \date{January 17, 2024} The student version doesn't use the \date command, for whatever reason
+\authorsaffiliations{Department of Psychology, Hendrix College}
+\course{PSYC 319: Cognitive Psychology} % LaTeX gets annoyed (i.e., throws a grumble-error) if this is blank, so I put something here. However, if your instructor will mark you off for this being on the title page, you can leave this entry blank (delete the PSY 4321, but leave the command), and just make peace with the error that will happen. It won't break the document.
+\professor{Dr.\ Carmen Merrick}  % Same situation as for the course info. Some instructors want this, some absolutely don't and will take off points. So do what you gotta
+
+
+%\characterwords{APA style, demonstration} % If you need to have characterwords for your paper, delete the % at the start of this line
+
+\begin{document}
+
+\maketitle 
+
+\section{Problem Solving Tasks}
+
+\subsection{Task 1}
+
+
+\textbf{Goal:} Find each position and suit for each card in the row.
+
+From \hyperref[tab:table1]{Table 1}, we know the Queen can only be in the middle or right column. Similarly, the Jack can only be in the left or middle column. Whereas, the King could be in any row. This implies that the Queen must be in the right column, but does not give us enough information for positioning of the King or the Jack.
+
+We know the Spade must be in the right column because it is the only suit that is present. This means the right card must be a Queen of Spades. From here, we can construct \hyperref[tab:table2]{Table 2} that will have more restrictions which will allow us to decipher the remaining 4 variables. 
+
+From \hyperref[tab:table2]{Table 2}, can make out that since the King must be to the right of the Spade, it can be in either the left or middle column. The same argument for the Jack, only instead of a Spade, it needs to the left of the Queen. Because the Diamond needs to be to the left of the Spade, and the King needs to be to the right of the Heart, that means the Jack must be a Heart, and must be in the left column. This leaves the King and the Diamond suit to be in the middle. We know this works because the King is to the left of the Spade, and the Diamond is also to the left of the Spade. This leaves us with the \hyperref[tab:table3]{Table 3}.
+
+\subsection{Task 2}
+
+For this task, we need to find the worst case scenario for the maximum amount of coins needed. That being said, in the second digit position, we would have a 9. This way, we know we need at least 4 pennies and 1 nickel. Since we found the lowest amount of coins for the second digit, now we need to find the lowest amount of coins for the first digit. We know that it must have 1 half-dollar because we want to use the least amount of coins possible. Following the same logic, we need to have 1 quarter to get us up to 84. Lastly, we would need 1 dime to get us to 94. Thus, we would need 8 total coins. (Note that another possible solution could be 99 because we would still use 8 coins to get us to that number: 1 half-dollar, 1 quarter, 2 dimes, and 4 pennies.)
+
+\section{Creativity Tasks}
+
+\subsection{Task 3}
+
+This task is answered in \hyperref[tab:table4]{Table 4}
+
+\section{Evaluation Questions}
+
+\subsection{Problem Solving Tasks}
+
+\begin{enumerate}
+	\item Describe how you solved each problem. What strategies did you use? (make sure to mention any \textit{restructuring} \textbf{or} \textit{insights} you experienced) \textbf{(6 pts)}\\[0.25cm]
+	\sol{
+		For the first task, I started by simply following the rules that were laid out in front of me. I made a table to more easily visualize what the rules dictated, and then I tried to solve it from there. At first, I thought the rules implied that the suit or card must be \textit{directly} next to whatever it was stipulating, but I knew I needed to \textit{restructure}---change the problem's representation---when I was stuck with 4 rows, and only 1 item in the left column.
+		
+		Thus, I redid the problem, and this time when the rule said ``to the left (or right),'' I made sure to add the requisite content to both columns (if applicable) instead of one. 
+
+		For the second task \dots
+	}
+	\item Describe any obstacles you faced in solving these problems \textendash~or, if you did not, how might \textit{mental set} \textbf{or} \textit{functional fixedness} play a role.\ \textbf{(4 pts)}\\[0.25cm]
+	\sol{
+		With the first task, I struggled with a mental set---a preconcieved notion of how to solve a problem. I was stuck on the idea that the suit or card must be \textit{directly} next to whatever it was stipulating. This is because when I was told it needs to be ``to the left (or right)'' in the past, I always positioned it \textit{directly} next to it.
+	}
+	% Functional fixedness---the inability to see an object as being able to fulfill a function other than its intended one
+	\item \underline{For each task}, describe at least one other cognition that you employed (e.g., working memory, attention) and describe how that cognition is connected to problem-solving. (Make sure to include all relevant components of your cognition and define those components) \textbf{(15 pts)}\\[0.25cm]
+	\sol{
+		For the first task, I used \textit{working memory}---a limited-capacity system for temporary storage and manipulation of information for complex tasks like \textit{reasoning}---to keep track of the rules that were given to me, and assign cards based on that rule. Because my \textit{control process}---strategy I used to help make a stimulus more memorable---had to keep track of a lot of information (e.g., ) like I had to remember that the Queen could only be in the middle or right column, the Jack could only be in the left or middle column, and the King could be in any row. 
+	}
+	\item Evaluate these tasks. Is each one a good test of problem-solving? Why or why not? \textbf{(3 pts)}\\[0.25cm]
+	\sol{
+		
+	}
+\end{enumerate}
+
+\subsection{Creativity Task}
+
+\begin{enumerate}
+	\setcounter{enumi}{4}
+	\item Describe how you solved each test (coming up with the correct words). Did you use strategies? If so, what did that process look like? \textbf{(4 pts)} \\[0.25cm]
+	\sol{
+		
+	}
+	\item How does this task engage controlled processes? How does it engage associative processes? \textbf{(15 pts)}\\[0.25cm]
+	\sol{
+		
+	}
+	\item Evaluate this task. Is it a good test of creativity? Why or why not? \textbf{(3 pts)}\\[0.25cm]
+	\sol{
+		
+	}
+\end{enumerate}
+
+\newpage
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{cccc}
+		\toprule
+		\textbf{Possibilities} & \textbf{Left} & \textbf{Middle} & \textbf{Right} \\ \midrule
+		1a & Jack & Queen & --- \\ \midrule
+		1b & Jack & Jack & Queen \\ \midrule
+		2a & Diamond & Spade & --- \\ \midrule
+		2b & Diamond & Diamond & Spade  \\ \midrule
+		3a & Heart & Heart & King \\ \midrule
+		3b & Heart & King & --- \\ \midrule
+		4a & --- & King & Spade \\ \midrule
+		4b & King & Spade & Spade \\ \bottomrule
+	\end{tabular}
+	\vspace{0.25cm}
+	\caption{Initial Setup Adhering to All Rules}\label{tab:table1}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{cccc}
+		\toprule
+		\textbf{Possibilities} & \textbf{Left} & \textbf{Middle} & \textbf{Right} \\ \midrule
+		1b & Jack & Jack & Queen \\ \midrule
+		2b & Diamond & Diamond & Spade  \\ \midrule
+		3b & Heart & King & --- \\ \midrule
+		4a & --- & King & Spade \\ \bottomrule
+	\end{tabular}
+	\vspace{0.25cm}
+	\caption{Queen of Spades in Right Column for Restriction}\label{tab:table2}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{cccc}
+		\toprule
+		\textbf{Possibilities} & \textbf{Left} & \textbf{Middle} & \textbf{Right} \\ \midrule
+		1 & Jack of Hearts & King of Diamonds & Queen of Spades \\
+		\bottomrule
+	\end{tabular}
+	\vspace{0.25cm}
+	\caption{Final Table}\label{tab:table3}
+\end{table}
+
+\begin{table}[h]
+
+\centering
+\begin{minipage}{0.45\textwidth}
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{List} & \textbf{Your Answer} \\
+        \midrule
+        Falling Actor Dust & Star \\
+        \midrule
+        Broken Clear Eye & Glass \\
+        \midrule
+        Skunk Kings Boiled & Cabbage \\        
+		\midrule
+        Widow Bite Monkey & Spider \\
+        \midrule
+        Bass Complex Sleep & Deep \\
+        \bottomrule
+    \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \begin{tabular}{cc}
+        \toprule
+        \textbf{List} & \textbf{Your Answer} \\
+        \midrule
+        Ink Herring Neck & Red \\
+        \midrule
+        Measure Desk Scotch & Tape \\
+        \midrule
+		Strike Same Tennis & Match \\        
+		\midrule
+        Athletes Web Rabbit & Foot \\        
+		\midrule
+        Board Magic Death & Black \\
+        \bottomrule
+    \end{tabular}
+\end{minipage}
+\vspace{0.25cm}
+\caption{Remote Associations Tasks}\label{tab:table4}
+\end{table}
+
+
+\end{document}
+
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Daniel A. Weiss.
+%% 
+%% This work consists of the file  apa7.dtx
+%% and the derived files           apa7.ins,
+%%                                 apa7.cls,
+%%                                 apa7.pdf,
+%%                                 README,
+%%                                 APA7american.txt,
+%%                                 APA7british.txt,
+%%                                 APA7dutch.txt,
+%%                                 APA7english.txt,
+%%                                 APA7german.txt,
+%%                                 APA7ngerman.txt,
+%%                                 APA7greek.txt,
+%%                                 APA7czech.txt,
+%%                                 APA7turkish.txt,
+%%                                 APA7endfloat.cfg,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%%
+%% This is file `./samples/shortsample.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% apa7.dtx  (with options: `shortsample')
+%% ----------------------------------------------------------------------
+%% 
+%% apa7 - A LaTeX class for formatting documents in compliance with the
+%% American Psychological Association's Publication Manual, 7th edition
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% ----------------------------------------------------------------------

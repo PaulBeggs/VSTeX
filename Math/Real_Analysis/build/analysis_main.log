@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  7 NOV 2024 20:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  11 NOV 2024 00:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2358,7 +2358,7 @@ File: images/small logo.png Graphic file (type png)
 Package pdftex.def Info: images/small logo.png  used on input line 758.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [81]
-runsystem(latexminted cleantemp  --timestamp 20241107203852 61DD775D25DC3C5317D2006938380996)...executed.
+runsystem(latexminted cleantemp  --timestamp 20241111003827 61DD775D25DC3C5317D2006938380996)...executed.
 
  (c:\Users\paulb\VSTeX\Math\Real_Analysis\build\analysis_main.aux)
  ***********
@@ -2376,10 +2376,10 @@ Package rerunfilecheck Info: File `analysis_main.out' has not changed.
 (rerunfilecheck)             Checksum: 940FD64A64BB1BFA60048BD5C06CC375;6884.
  ) 
 Here is how much of TeX's memory you used:
- 47661 strings out of 473899
- 1140363 string characters out of 5726500
- 2026217 words of memory out of 5000000
- 69343 multiletter control sequences out of 15000+600000
+ 47659 strings out of 473899
+ 1140346 string characters out of 5726500
+ 2026215 words of memory out of 5000000
+ 69341 multiletter control sequences out of 15000+600000
  568499 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,15n,101p,1564b,1968s stack positions out of 10000i,1000n,20000p,200000b,200000s

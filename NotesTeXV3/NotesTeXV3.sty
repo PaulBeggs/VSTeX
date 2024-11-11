@@ -316,7 +316,7 @@
   \if!#1!%
     \auth@toks=\expandafter{\the\auth@toks#2\ }%
   \else
-    \auth@toks=\expandafter{\the\auth@toks#2$^{#1}$\ }%
+    \auth@toks=\expandafter{\the\auth@toks#2\(^{#1}\)\ }%
   \fi
 }
 
@@ -326,7 +326,7 @@
   \if!#1!%
     \affil@toks=\expandafter{\the\affil@toks{\item[]#2}}%
   \else
-    \affil@toks=\expandafter{\the\affil@toks{\item[$^{#1}$]#2}}%
+    \affil@toks=\expandafter{\the\affil@toks{\item[\(^{#1}\)]#2}}%
   \fi
 }
 

@@ -1,111 +1,103 @@
-\subsection{Integers}
-
-    \subsubsection{Theorem 10}
-
             \begin{ntheorem}
-               Suppose $a,b,c,d \in \W$. Define the relation $\sim$ on $\W \times \W$ as $(a,b) \sim (c,d)$ provided that $a + d = b + c$. Then, $$\sim \text{ is an equivalence relation}.$$ 
+               {Integers}Suppose \(a,b,c,d \in \W\). Define the relation \(\sim\) on \(\W \times \W\) as \((a,b) \sim (c,d)\) provided that \(a + d = b + c\). Then, \[\sim \text{ is an equivalence relation}.\] 
             \end{ntheorem}
 
             \textbf{How to show two equivalence classes are equal to each other}: \\
-            $x = [(a,b)], \ y = [(c,c)], \Rightarrow  x + y = y \Rightarrow [(a,b, b + c)] \stackrel{?}{=} [(a,b)]$. Show $(a+c,b+c) \sim (a,b)$.
-
-        \subsubsection{The Set of Integers, $\Z$}
+            \(x = [(a,b)], \ y = [(c,c)], \Rightarrow  x + y = y \Rightarrow [(a,b, b + c)] \stackrel{?}{=} [(a,b)]\). Show \((a+c,b+c) \sim (a,b)\).
 
             \begin{definition}
-                The set of integers denoted $\Z$, is the set of equivalence classes defined by relation in Theorem 10.
+                {The Set of Integers}The set of integers denoted \(\Z\), is the set of equivalence classes defined by relation in Theorem 10.
             \end{definition}
 
-            \noindent \textbf{Note}: $2_\W \ne 2_\Z$
-
-        \subsubsection{Addition}
+            \noindent \textbf{Note}: \(2_\W \ne 2_\Z\)
 
             \begin{definition}
-                Suppose $x,y \in \Z$ such that $x=[(a,b)]$ and $y = [(c,d)]$. Then we define the \textit{integer sum} of $x$ and $y$ as, $$x + y := [(a + c, b + d)]$$
+                {Integer Addition}Suppose \(x,y \in \Z\) such that \(x=[(a,b)]\) and \(y = [(c,d)]\). Then we define the \textit{integer sum} of \(x\) and \(y\) as, \[x + y := [(a + c, b + d)]\]
             \end{definition}
 
             \noindent \textbf{Note}: Integer sum is well-defined if two people take different representatives from equivalence class and then sum, they will get same equivalence after sum.
 
     \vspace{0.5cm}
 
-        \subsubsection{Problems}
+        \section{Problems}
 
 % ------------------------------------------------------------------------------
 % Problem 57
 % ------------------------------------------------------------------------------
     
-            \pb{
-                Suppose $x,y \in \Z \colon x = [(a,b)]$ and $y = [(c,c)]$ for $a,b,c \in \W$. Then, $$x + y = x$$
-            }
+            \begin{exercise}
+                {}Suppose \(x,y \in \Z \colon x = [(a,b)]\) and \(y = [(c,c)]\) for \(a,b,c \in \W\). Then, \[x + y = x\]
+            \end{exercise}
     
             \expf{
-                Suppose $x,y \in \Z$ and $a,b,c\in \W$ such that $x = [(a,b)]$ and $y = [(c,c)]$. \\
+                Suppose \(x,y \in \Z\) and \(a,b,c\in \W\) such that \(x = [(a,b)]\) and \(y = [(c,c)]\). \\
                 
-                Given $x = [(a,b)]$ and $y = [(c,c)]$, we can define $x + y$ as $[(a+c, b + c)]$ as per the definition of integer addition. To show that $x + y = x$, we must show that $(a+c, b + c) \sim (a,b)$. According to Theorem 10, we can do that by showing $a + c + b = b + c + a$. Hence, given $a,b,c\in \W$, we know by Problem 54 that $a + c + b = b + c + a$ because whole number addition is commutative.
+                Given \(x = [(a,b)]\) and \(y = [(c,c)]\), we can define \(x + y\) as \([(a+c, b + c)]\) as per the definition of integer addition. To show that \(x + y = x\), we must show that \((a+c, b + c) \sim (a,b)\). According to Theorem 10, we can do that by showing \(a + c + b = b + c + a\). Hence, given \(a,b,c\in \W\), we know by Problem 54 that \(a + c + b = b + c + a\) because whole number addition is commutative.
             }
 
 % ------------------------------------------------------------------------------
 % Problem 58
 % ------------------------------------------------------------------------------
 
-            \pb{
-                Suppose $x,y \in \Z \colon x = [(a,b)]$ and $y = [(b,a)]$ for $a,b \in \W$. Then, $$x + y = [(0,0)]$$
-            }
-            \noindent \textbf{Note}: $[(c,c)] = 0_\Z$ we have adding zero we have negatives (inverses).
+            \begin{exercise}
+                {}Suppose \(x,y \in \Z \colon x = [(a,b)]\) and \(y = [(b,a)]\) for \(a,b \in \W\). Then, \[x + y = [(0,0)]\]
+            \end{exercise}
+            \noindent \textbf{Note}: \([(c,c)] = 0_\Z\) we have adding zero we have negatives (inverses).
     
             \expf{
-                Suppose $x,y \in \Z$ and $a,b\in \W$ such that $x = [(a,b)]$ and $y = [(b,a)]$. \\
+                Suppose \(x,y \in \Z\) and \(a,b\in \W\) such that \(x = [(a,b)]\) and \(y = [(b,a)]\). \\
 
-                Given $x = [(a,b)]$ and $y = [(b,a)]$, we can define $x + y$ as $[(a + b, b + a)]$ as per the definition of integer addition. To show that $x + y = [(0,0)]$, we must show that the equivalence class, $(a + b, b + a)$, is equivalent to $(0,0)$. According to Theorem 10, we can do that by showing $a + 0 + b = b + 0 + a$. Hence, given $a,b,c\in \W$, we know by Problem 52 or the definition of addition that $a + 0 + b = b + 0 + a$ equals $a + b = b + a$, and by Problem 54, the two sides of the equation are equivalent to each other because whole number addition is commutative.
+                Given \(x = [(a,b)]\) and \(y = [(b,a)]\), we can define \(x + y\) as \([(a + b, b + a)]\) as per the definition of integer addition. To show that \(x + y = [(0,0)]\), we must show that the equivalence class, \((a + b, b + a)\), is equivalent to \((0,0)\). According to Theorem 10, we can do that by showing \(a + 0 + b = b + 0 + a\). Hence, given \(a,b,c\in \W\), we know by Problem 52 or the definition of addition that \(a + 0 + b = b + 0 + a\) equals \(a + b = b + a\), and by Problem 54, the two sides of the equation are equivalent to each other because whole number addition is commutative.
             }
 
 % ------------------------------------------------------------------------------
 % Problem 59
 % ------------------------------------------------------------------------------
 
-            \pb{
-                Suppose $x \in \Z \colon x = [(a,b)]$ for $a,b \in \W$ with $b < a$. Then, $$ x = [(a-b,0)]$$
-            }
+            \begin{exercise}
+                {}Suppose \(x \in \Z \colon x = [(a,b)]\) for \(a,b \in \W\) with \(b < a\). Then, \[ x = [(a-b,0)]\]
+            \end{exercise}
     
             \expf{
-                Suppose $x \in \Z$ and $a,b\in \W$ such that $x = [(a,b)]$ and $b < a$. \\
+                Suppose \(x \in \Z\) and \(a,b\in \W\) such that \(x = [(a,b)]\) and \(b < a\). \\
 
-                \noindent To show that $x$ is equal to $[(a - b, 0)]$, we must show that $(a,b)$ is equivalent to $(a-b,0)$. Using Theorem 10, we can do that by showing $a + 0 = b + a-b$. Thus, we know that \\
+                \noindent To show that \(x\) is equal to \([(a - b, 0)]\), we must show that \((a,b)\) is equivalent to \((a-b,0)\). Using Theorem 10, we can do that by showing \(a + 0 = b + a-b\). Thus, we know that \\
 
                 \begin{center}\begin{tabular}{rcll}
-                    $a + 0$&=&$b + a - b$ & by the given information; \\
-                    $a + 0$&=&$a + (b - b)$ & by Problem 54 and Theorem 7; \\
-                    $a + 0$&=&$a + 0$ & by definition of subtraction; \\
-                    $a$&=&$a$ & by definition of addition.
+                    \(a + 0\)&=&\(b + a - b\) & by the given information; \\
+                    \(a + 0\)&=&\(a + (b - b)\) & by Problem 54 and Theorem 7; \\
+                    \(a + 0\)&=&\(a + 0\) & by definition of subtraction; \\
+                    \(a\)&=&\(a\) & by definition of addition.
                 \end{tabular}\end{center}
-                Note that $b < a$ is an important caveat because it limits the results of the whole number subtraction to a positive solution. 
+                Note that \(b < a\) is an important caveat because it limits the results of the whole number subtraction to a positive solution. 
             }
     
 % ------------------------------------------------------------------------------
 % Problem 60
 % ------------------------------------------------------------------------------
     
-            \pb{
-                Show that integer addition is commutative.
-            }
+            \begin{exercise}
+                {Commutative Addition for Integers}Show that integer addition is commutative.
+            \end{exercise}
     
             \expf{
-                To show that integer addition is commutative, we need to show that for $x,y \in \Z$, $x + y = y + x$. Thus, let $x = [(a,b)]$ and $y = [(c,d)]$ with $a,b,c,d \in \W$. By the definition of integer addition, we can write $x + y$ as $[(a,b)] + [(c,d)] = [(a+c,b+d)]$, and $y + x$ as $[(c,d)] + [(a,b)] = [(c+a,d+b)]$. Thus, $[(a+c,b+d)] = [(c+a,d+b)]$. We need to show that these two equations are equivalent. \\
+                To show that integer addition is commutative, we need to show that for \(x,y \in \Z\), \(x + y = y + x\). Thus, let \(x = [(a,b)]\) and \(y = [(c,d)]\) with \(a,b,c,d \in \W\). By the definition of integer addition, we can write \(x + y\) as \([(a,b)] + [(c,d)] = [(a+c,b+d)]\), and \(y + x\) as \([(c,d)] + [(a,b)] = [(c+a,d+b)]\). Thus, \([(a+c,b+d)] = [(c+a,d+b)]\). We need to show that these two equations are equivalent. \\
 
-                \noindent We know that by Problem 54 that we can rearrange the right hand side to be $[(a+c,b+d)]$. And because $[(a+c,b+d)] = [(a+c,b+d)]$, integer addition is commutative. 
+                \noindent We know that by Problem 54 that we can rearrange the right hand side to be \([(a+c,b+d)]\). And because \([(a+c,b+d)] = [(a+c,b+d)]\), integer addition is commutative. 
             }
     
 % ------------------------------------------------------------------------------
 % Problem 61
 % ------------------------------------------------------------------------------
     
-            \pb{
-                Show that integer addition is associative.
-            }
+            \begin{exercise}
+                {Associative Addition for Integers}Show that integer addition is associative.
+            \end{exercise}
     
             \expf{
-                To show that integer addition is associative, we need to show that for $x,y,z \in \Z$, $x + (y + z) = (x + y) + z$. Thus, let $x = [(a,b)]$, $y = [(c,d)]$, and $z = [(e,f)]$ with $a,b,c,d,e,f \in \W$. By the definition of integer addition, we can write $x + (y + z)$ as $[(a,b)] + ([(c,d)] + [(e,f)])$, and $(x + y) + z$ as $ ([(a,b)] + [(c,d)]) + [(e,f)]$. We need to show that these two equations are equivalent. \\
+                To show that integer addition is associative, we need to show that for \(x,y,z \in \Z\), \(x + (y + z) = (x + y) + z\). Thus, let \(x = [(a,b)]\), \(y = [(c,d)]\), and \(z = [(e,f)]\) with \(a,b,c,d,e,f \in \W\). By the definition of integer addition, we can write \(x + (y + z)\) as \([(a,b)] + ([(c,d)] + [(e,f)])\), and \((x + y) + z\) as \( ([(a,b)] + [(c,d)]) + [(e,f)]\). We need to show that these two equations are equivalent. \\
 
-                \noindent By utilizing the definition of addition, we can rewrite $[(a,b)] + ([(c,d)] + [(e,f)])$ as $[(a,b)] + ([(c+e,d+f)])$, and $([(a,b)] + [(c,d)]) + [(e,f)]$ as $[(a+c,b+d)]+[(e,f)]$. Then, by using definition of addition again, we get $[(a+c+e,b+d+f)]$ for both expressions. Thus showing they are equivalent to each other. Hence, integer addition is associative.
+                \noindent By utilizing the definition of addition, we can rewrite \([(a,b)] + ([(c,d)] + [(e,f)])\) as \([(a,b)] + ([(c+e,d+f)])\), and \(([(a,b)] + [(c,d)]) + [(e,f)]\) as \([(a+c,b+d)]+[(e,f)]\). Then, by using definition of addition again, we get \([(a+c+e,b+d+f)]\) for both expressions. Thus showing they are equivalent to each other. Hence, integer addition is associative.
             }
     
 % Hint: no proof by inductions. Use definitions that we established with the whole numbers.
@@ -114,37 +106,34 @@
 % Problem 62
 % ------------------------------------------------------------------------------
 
-            \pb{
-                The set $\Z$ is not well-ordered.
-            }
-            \noindent \textbf{Note}: We created $\Z$ to solve the ``problem'' that whole number subtraction doesn't always make sense (i.e., negative numbers). \\
-            E.g., $-2_\Z = \{(0,2),(1,3),\dots\}$
+            \begin{exercise}
+                {Well-Ordered (Integers)}The set \(\Z\) is not well-ordered.
+            \end{exercise}
+            \noindent \textbf{Note}: We created \(\Z\) to solve the ``problem'' that whole number subtraction doesn't always make sense (i.e., negative numbers). \\
+            E.g., \(-2_\Z = \{(0,2),(1,3),\dots\}\)
     
             \expf{
-                For a set to be well-ordered, we know that it must have a least element by definition. Thus, consider the non-empty subset of $\Z$, $A$, as being defined by all negative integers: $A = \{x\in \Z \colon x < 0\}$. We know that for any integer $x\in A$, there is always an integer $y = x - 1$ that is also in $A$, and is less than $x$ by definition. Hence, for any element that you choose in $A$, there is always an element that is smaller. This implies that $A$ does not have a least element. \\
+                For a set to be well-ordered, we know that it must have a least element by definition. Thus, consider the non-empty subset of \(\Z\), \(A\), as being defined by all negative integers: \(A = \{x\in \Z \colon x < 0\}\). We know that for any integer \(x\in A\), there is always an integer \(y = x - 1\) that is also in \(A\), and is less than \(x\) by definition. Hence, for any element that you choose in \(A\), there is always an element that is smaller. This implies that \(A\) does not have a least element. \\
 
-                \noindent Thus, because we have found an subset of $\Z$ that does not have a least element, by the denial of the definition of well-ordered, we know that $\Z$ is not well-ordered.
+                \noindent Thus, because we have found an subset of \(\Z\) that does not have a least element, by the denial of the definition of well-ordered, we know that \(\Z\) is not well-ordered.
             }
 
-    \subsection{Rationals}
-
-        \subsubsection{The set of Rational Numbers, $\Q$}
 
             \begin{definition}
-                The \textit{rational numbers}, denoted as $\Q$, is the set, $$\{\frac{a}{b} \colon a,b \in \Z, b \ne 0\}$$
-                Where $\frac{a}{b} = \frac{c}{d} \iff ad = bc$.
+                {The set of Rational Numbers}The \textit{rational numbers}, denoted as \(\Q\), is the set, \[\{\frac{a}{b} \colon a,b \in \Z, b \ne 0\}\]
+                Where \(\frac{a}{b} = \frac{c}{d} \iff ad = bc\).
             \end{definition}
-            \noindent That is, $\Q$ is another set of equivalence classes. \\
-            \textbf{Note}: We will accept without proof the usual arithmetic properties of $\Q$. \\
+            \noindent That is, \(\Q\) is another set of equivalence classes. \\
+            \textbf{Note}: We will accept without proof the usual arithmetic properties of \(\Q\). \\
 
-            \textbf{Think}: $\Q$ is the set of decimals that repeat. \\
+            \textbf{Think}: \(\Q\) is the set of decimals that repeat. \\
 
-            \textbf{Question}: How do we get the real numbers? $\R$ \\
+            \textbf{Question}: How do we get the real numbers? \(\R\) \\
 
             Idea posed by Cantor: He posited that real numbers are a convergence of a sequence of rationals. 
 
             \begin{example}
-                $\{1/2,1/3,1/4,1/5,\dots\} \xrightarrow[\text{}]{\text{converges}} 0$
+                \(\{1/2,1/3,1/4,1/5,\dots\} \xrightarrow[\text{}]{\text{converges}} 0\)
             \end{example}
 
-            AKA, limits where $(x_n) \sim (y_n) \iff (x_n - y_n) \rightarrow 0$.
+            AKA, limits where \((x_n) \sim (y_n) \iff (x_n - y_n) \rightarrow 0\).

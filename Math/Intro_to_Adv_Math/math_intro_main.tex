@@ -92,7 +92,8 @@
 %         \draw[fill=LightSkyBlue] (0,0) rectangle
 %           (\paperwidth,3cm);
 %         \node[anchor=east,xshift=.9\paperwidth,rectangle,
-%               rounded corners=20pt,inner sep=11pt,
+%               enhanced,
+% sharp corners=20pt,inner sep=11pt,
 %               fill=MidnightBlue]
 %               {\color{white}\chapterlabel#1};
 %        \end{tikzpicture}
@@ -168,6 +169,9 @@
 
 %%%%% Colored Boxes %%%%%
 \usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+\tcbuselibrary{minted}
 \newcounter{BoxCounter}
 
 
@@ -175,48 +179,61 @@
 
 %% Numbered Theorems %%
 \newtcolorbox[use counter=BoxCounter, number within=section]{theorem}[1][]{%
-    rounded corners,
+    enhanced,
+sharp corners,
     colframe=xblue, %color of frame
     colback=xblue!15, %color of background
     coltitle=white, %color of title text
     label={thm:\theBoxCounter},
     title={\large \textbf{Theorem \theBoxCounter}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xblue},
     #1
 }
 
 
 %% Named Theorems %%
 \newtcolorbox[use counter=BoxCounter, number within=section]{ntheorem}[2][]{%
-    rounded corners,
+    enhanced,
+sharp corners=south,
     colframe=xblue, %color of frame
     colback=xblue!15, %color of background
     coltitle=white, %color of title text
     label={thm:#2},
     title={\large \textbf{Theorem \theBoxCounter: #2}},
+    attach boxed title to top center,
+    boxed title style={colback=xblue},
     #1
 }
 
 
 %% Definitions %%
 \newtcolorbox[use counter=BoxCounter, number within=section]{definition}[2][]{%
-    rounded corners,
+    enhanced,
+sharp corners=downhill,
     colframe=xred,
     colback=xred!15,
     coltitle=white,
     label={def:#2},
     title={\large \textbf{Definition \theBoxCounter: #2}},
+    attach boxed title to top right={xshift=-0.5cm},
+    boxed title style={colback=xred},
     #1
 }
 
 
 %% Axioms %%
 \newtcolorbox[use counter=BoxCounter, number within=section]{axiom}[2][]{%
-    rounded corners,
+    enhanced,
+sharp corners=south,
     colframe=xdarkgreen,
     colback=xdarkgreen!15,
     coltitle=white,
     label={ax:#2},
+    label={ax:\theBoxCounter},
     title={\large \textbf{Axiom \theBoxCounter: #2}},
+    attach boxed title to top center,
+    boxed title style={colback=xdarkgreen},
     #1
 }
 
@@ -225,48 +242,60 @@
 \newcounter{exerciseCounter}
 
 \newtcolorbox[use counter=exerciseCounter]{exercise}[2][]{%
-    rounded corners,
+    enhanced,
+sharp corners=uphill,
     colframe=orangehdx!75,
     colback=orangehdx!10,
     coltitle=white,
     label={ex:\theexerciseCounter},
     title={\large \textbf{Exercise \theexerciseCounter: #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=orangehdx!75},
     #1,
 }
 
 
 %% Examples %%
 \newcounter{ExampleCounter}
-\newtcolorbox[use counter=ExampleCounter, number within=section]{example}[2][]{%
-    rounded corners,
+\newtcolorbox[use counter=ExampleCounter, number within=section]{example}[1][]{%
+    enhanced,
+    sharp corners=south,
     colframe=teal,
     colback=teal!15,
     coltitle=white,
     label={ex:\theExampleCounter},
-    title={\large \textbf{Example \theExampleCounter: #2}},
+    title={\large \textbf{Example \theExampleCounter}},
+    attach boxed title to top center,
+    boxed title style={colback=teal},
     #1,
 }
 
 
 %% Corollaries %%
 \newtcolorbox[]{corollary}[3][]{%
-    rounded corners,
+    enhanced,
+sharp corners,
     colframe=xgrayblue,  
     colback=xgrayblue!15,        
     coltitle=white,
     title={\large \textbf{Corollary to #3: #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xgrayblue},
     #1
 }
 
 
 %% Lemmas %%
 \newtcolorbox[use counter=BoxCounter, number within=section]{lemma}[1][]{%
-    rounded corners,
+    enhanced,
+sharp corners=uphill,
     colframe=xpurple,
     colback=xpurple!15,
     coltitle=white,
     label={lm:\theBoxCounter},
     title={\large \textbf{Lemma \theBoxCounter}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xpurple},
     #1,
 }
 
@@ -307,6 +336,7 @@
 \usepackage{slashed}
 \usepackage{enumerate}
 \usepackage{booktabs}
+\usepackage{pgfplots}
 \usepackage{enumitem}
 \usepackage{lipsum}  %This package lets us generate random text for example purposes.
 
@@ -334,7 +364,9 @@
 
 \newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
 
-\newcommand{\caution}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+\newcommand{\ale}{\aleph_0}
+
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{./Math/Intro_to_Adv_Math/images/caution.png}}}
 
 \newmdenv[
   topline=false,
@@ -502,8 +534,8 @@
 }
 
 \newcommand{\pb}[2]{
-    \begin{exercise}{#1}[label=ex:#1]
-    #2
+    \begin{exercise}
+    {#1}#2
     \end{exercise}
 }
 
@@ -534,73 +566,73 @@
 
 \numberwithin{BoxCounter}{section}
 
-	
+
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
- %%% COVER PAGE %%%
- %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% COVER PAGE %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 % Do not use all caps.
-\newcommand{\titlestandin}[0]{Real Analysis}
-\newcommand{\cussubtitle}[0]{MATH 350}
+\newcommand{\titlestandin}[0]{Introduction to Advanced Mathematics}
+\newcommand{\cussubtitle}[0]{MATH 290}
 % Date format should be like: "January 1, 2001"
-\newcommand{\startdate}[0]{August 26, 2024}
-\newcommand{\customenddate}[0]{December 2, 2024}
+\newcommand{\startdate}[0]{January 17, 2024}
+\newcommand{\customenddate}[0]{May 2, 2024}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
-\newcommand{\professor}[0]{Prof. Christopher Camfield, Ph.D.}
+\newcommand{\professor}[0]{Prof. Carol Ann Downes, Ph.D.}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 
 
 \begin{titlepage}
-\begin{center}
+    \begin{center}
 
-\vspace*{-2cm}
-\includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
-\vfill
+        \vspace*{-2cm}
+        \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
+        \vfill
 
-% Horizontal line above the title in 'horange' color
-\textcolor{horange}{\rule{\textwidth}{1.0pt}}
+        % Horizontal line above the title in 'horange' color
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
-\vspace{2em}
+        \vspace{2em}
 
-{\huge \textbf{\titlestandin}}
+        {\huge \textbf{\titlestandin}}
 
-\vspace{1em} % Space between the title and the bottom line
+        \vspace{1em} % Space between the title and the bottom line
 
-\textcolor{horange}{\rule{\textwidth}{1.0pt}}
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
-\vspace*{1\baselineskip}
+        \vspace*{1\baselineskip}
 
-{\LARGE \textbf{\cussubtitle}}
+        {\LARGE \textbf{\cussubtitle}}
 
-\begin{large}
-\vspace*{2\baselineskip}
+        \begin{large}
+            \vspace*{2\baselineskip}
 
-\textit{Start}  \\[1ex]
-{\scshape \startdate} \\[0.3\baselineskip] % Year published
+            \textit{Start}  \\[1ex]
+            {\scshape \startdate} \\[0.3\baselineskip] % Year published
 
-\vspace*{1\baselineskip}
+            \vspace*{1\baselineskip}
 
-\emph{Author} \\[1ex]
-%Submitted by \\[\baselineskip]
-{\Large Paul Beggs \\ \par} % Editor list
-{\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
 
-\vspace*{1\baselineskip}
+            \vspace*{1\baselineskip}
 
-\textit{Instructor} \\[1ex] % Tagline(s) or further description
-\professor
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
 
-\vspace*{1\baselineskip}
+            \vspace*{1\baselineskip}
 
-\textit{End}\\[1ex]
-{\scshape  \customenddate} \\[0.3\baselineskip] % Year published
+            \textit{End}\\[1ex]
+            {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
 
-\thispagestyle{empty} 
+            \thispagestyle{empty}
 
-\end{large}
-\end{center}
+        \end{large}
+    \end{center}
 \end{titlepage}
 \pagebreak
 
@@ -612,15 +644,15 @@
 % No need to edit.
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-	
-	\thispagestyle{plain}
-	% Table of Contents will automatically update based on included chapters
-	% You may need to compile twice for the toc to update
-	\begin{spacing}{1} %Can change spacing between entries in toc
-		\renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
-		\tableofcontents
-		\addtocontents{toc}{\protect\enlargethispage{\baselineskip}} 
-	\end{spacing}
+
+\thispagestyle{plain}
+% Table of Contents will automatically update based on included chapters
+% You may need to compile twice for the toc to update
+\begin{spacing}{1} %Can change spacing between entries in toc
+    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
+    \tableofcontents
+    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+\end{spacing}
 
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -629,44 +661,44 @@
 \vspace*{-0.25in}
 \input{chapters/intro_ch_1}
 
-% \chapter{Specification} \label{Specification}
-% \vspace*{-0.25in}
-% \input{chapters/intro_ch_2}
+\chapter{Specification} \label{Specification}
+\vspace*{-0.25in}
+\input{chapters/intro_ch_2}
 
-% \chapter{Union}\label{Union}
-% \vspace*{-0.25in}
-% \input{chapters/intro_ch_3}
+\chapter{Union}\label{Union}
+\vspace*{-0.25in}
+\input{chapters/intro_ch_3}
 
-% \chapter{Intersection} \label{Intersection}
-% \vspace*{-0.25in}
-% \input{chapters/intro_ch_4}
+\chapter{Intersection} \label{Intersection}
+\vspace*{-0.25in}
+\input{chapters/intro_ch_4}
 
-% \chapter{Difference \& Universality} \label{Difference}
-% \vspace*{-0.25in}
-% \input{chapters/intro_ch_5}
+\chapter{Difference \& Universality} \label{Difference}
+\vspace*{-0.25in}
+\input{chapters/intro_ch_5}
 
-% \chapter{Power Set} \label{Power Set}
-% \vspace*{-0.25in}
-% \input{chapters/intro_ch_6}
+\chapter{Power Set} \label{Power Set}
+\vspace*{-0.25in}
+\input{chapters/intro_ch_6}
 
-% \chapter{Equivalency} \label{Equivalency}
-% \vspace*{-0.25in}
-% \input{chapters/intro_ch_7}
+\chapter{Equivalency} \label{Equivalency}
+\vspace*{-0.25in}
+\input{chapters/intro_ch_7}
 
-% \chapter{Functions \& Bijections}\label{Functions}
-% \vspace*{-0.25in}
-% \input{chapters/intro_ch_8}
+\chapter{Functions \& Bijections}\label{Functions}
+\vspace*{-0.25in}
+\input{chapters/intro_ch_8}
 
-% \chapter{Recursion \& The Whole Numbers}\label{Recursion}
-% \vspace*{-0.25in}
-% \input{chapters/intro_ch_9}
+\chapter{Recursion \& The Whole Numbers}\label{Recursion}
+\vspace*{-0.25in}
+\input{chapters/intro_ch_9}
 
-% \chapter{The Integers} \label{Integers}
-% \vspace*{-0.25in}
-% \input{chapters/intro_ch_10}
+\chapter{The Integers} \label{Integers}
+\vspace*{-0.25in}
+\input{chapters/intro_ch_10}
 
-% \chapter{Cardinality} \label{Cardinality}
-% \vspace*{-0.25in}
-% \input{chapters/intro_ch_11}
+\chapter{Cardinality} \label{Cardinality}
+\vspace*{-0.25in}
+\input{chapters/intro_ch_11}
 
 \end{document}

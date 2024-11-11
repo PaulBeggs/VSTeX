@@ -334,7 +334,7 @@ sharp corners=uphill,
 \usepackage{pgfplots}
 
 
-%%% Custom Comands %%%
+%%% Custom Commands %%%
 % Natural Numbers 
 \newcommand{\N}{\ensuremath{\mathbb{N}}}
 
@@ -357,7 +357,7 @@ sharp corners=uphill,
 
 \newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
 
-\newcommand{\caution}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
 
 \newmdenv[
   topline=false,
@@ -430,7 +430,7 @@ sharp corners=uphill,
     % \end{tikzpicture}%
     % % Create the left minipage for Proof
     \begin{minipage}[t]{0.47\textwidth}%
-        \noindent\textit{Proof.} #1 \hfill $\qed$
+        \noindent\textit{Proof.} #1 \hfill \(\qed\)
     \end{minipage}%
     \hfill
     % Create the right minipage for Scratch Paper
@@ -606,10 +606,10 @@ sharp corners=uphill,
 
 \numberwithin{BoxCounter}{section}
 
-	
+
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
- %%% COVER PAGE %%%
- %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% COVER PAGE %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 % Do not use all caps.
 \newcommand{\titlestandin}[0]{Real Analysis}
@@ -625,54 +625,54 @@ sharp corners=uphill,
 
 
 \begin{titlepage}
-\begin{center}
+    \begin{center}
 
-\vspace*{-2cm}
-\includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
-\vfill
+        \vspace*{-2cm}
+        \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
+        \vfill
 
-% Horizontal line above the title in 'horange' color
-\textcolor{horange}{\rule{\textwidth}{1.0pt}}
+        % Horizontal line above the title in 'horange' color
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
-\vspace{2em}
+        \vspace{2em}
 
-{\huge \textbf{\titlestandin}}
+        {\huge \textbf{\titlestandin}}
 
-\vspace{1em} % Space between the title and the bottom line
+        \vspace{1em} % Space between the title and the bottom line
 
-\textcolor{horange}{\rule{\textwidth}{1.0pt}}
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
-\vspace*{1\baselineskip}
+        \vspace*{1\baselineskip}
 
-{\LARGE \textbf{\cussubtitle}}
+        {\LARGE \textbf{\cussubtitle}}
 
-\begin{large}
-\vspace*{2\baselineskip}
+        \begin{large}
+            \vspace*{2\baselineskip}
 
-\textit{Start}  \\[1ex]
-{\scshape \startdate} \\[0.3\baselineskip] % Year published
+            \textit{Start}  \\[1ex]
+            {\scshape \startdate} \\[0.3\baselineskip] % Year published
 
-\vspace*{1\baselineskip}
+            \vspace*{1\baselineskip}
 
-\emph{Author} \\[1ex]
-%Submitted by \\[\baselineskip]
-{\Large Paul Beggs \\ \par} % Editor list
-{\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
 
-\vspace*{1\baselineskip}
+            \vspace*{1\baselineskip}
 
-\textit{Instructor} \\[1ex] % Tagline(s) or further description
-\professor
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
 
-\vspace*{1\baselineskip}
+            \vspace*{1\baselineskip}
 
-\textit{End}\\[1ex]
-{\scshape  \customenddate} \\[0.3\baselineskip] % Year published
+            \textit{End}\\[1ex]
+            {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
 
-\thispagestyle{empty} 
+            \thispagestyle{empty}
 
-\end{large}
-\end{center}
+        \end{large}
+    \end{center}
 \end{titlepage}
 \pagebreak
 
@@ -684,15 +684,15 @@ sharp corners=uphill,
 % No need to edit.
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-	
-	\thispagestyle{plain}
-	% Table of Contents will automatically update based on included chapters
-	% You may need to compile twice for the toc to update
-	\begin{spacing}{1} %Can change spacing between entries in toc
-		\renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
-		\tableofcontents
-		\addtocontents{toc}{\protect\enlargethispage{\baselineskip}} 
-	\end{spacing}
+
+\thispagestyle{plain}
+% Table of Contents will automatically update based on included chapters
+% You may need to compile twice for the toc to update
+\begin{spacing}{1} %Can change spacing between entries in toc
+    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
+    \tableofcontents
+    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+\end{spacing}
 
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

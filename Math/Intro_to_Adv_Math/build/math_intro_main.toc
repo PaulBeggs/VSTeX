@@ -1,6 +1,40 @@
 \enlargethispage {\baselineskip }
-\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Undefined Terms}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Subsets}{2}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Introduction to Contraposition}{3}{subsection.1.2.1}%
-\contentsline {section}{\numberline {1.3}Implication and Equality}{5}{section.1.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Undefined Terms}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Subsets}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Introduction to Contraposition}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Implication and Equality}{6}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Specification}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{10}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Existence}{12}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Union}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{14}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Properties of Unions}{16}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Intersection}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Properties of Intersections}{20}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Difference \& Universality}{23}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Power Set}{29}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction to the Power Set}{29}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Equivalency}{32}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Problem}{32}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Problems}{33}{section.7.2}%
+\contentsline {chapter}{\numberline {8}Functions \& Bijections}{36}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Problems}{36}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Problems}{38}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Problems}{40}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Problems}{41}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Problem}{43}{section.8.5}%
+\contentsline {chapter}{\numberline {9}Recursion \& The Whole Numbers}{45}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Peano's Axioms}{46}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Problems}{48}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Multiplication}{51}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Problem}{52}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Problem}{54}{section.9.5}%
+\contentsline {chapter}{\numberline {10}The Integers}{56}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Problems}{56}{section.10.1}%
+\contentsline {chapter}{\numberline {11}Cardinality}{60}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Problems}{60}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Problem}{64}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Problem}{65}{section.11.3}%
+\contentsline {section}{\numberline {11.4}Problems}{67}{section.11.4}%

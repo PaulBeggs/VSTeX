@@ -144,6 +144,9 @@
 
 %%%%% Colored Boxes %%%%%
 \usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+\tcbuselibrary{minted}
 % \numberwithin{BoxCounter}{section}
 
 
@@ -151,12 +154,16 @@
 
 %% Theorems %%
 \newtcolorbox[]{theorem}[2][]{%
+    enhanced,
+    sharp corners=uphill,
     rounded corners,
     colframe=xblue, %color of frame
     colback=xblue!15, %color of background
     coltitle=white, %color of title text
     label={thm:#2},
     title={\large \textbf{Theorem: #2}},
+    attach boxed title to top center,
+    boxed title style={colback=xblue},
     #1
 }
 
@@ -176,46 +183,58 @@
 
 %% Axioms %%
 \newtcolorbox[]{axiom}[2][]{%
-    rounded corners,
+    enhanced,
+    sharp corners=downhill
     colframe=xdarkgreen,
     colback=xdarkgreen!15,
     coltitle=white,
     label={ax:#2},
     title={\large \textbf{Axiom of #2}},
+    attach boxed title to top center,
+    boxed title style={colback=xdarkgreen, sharp corners=downhill},
     #1
 }
 
 %% Exercises %%
 \newtcolorbox[]{exercise}[2][]{%
-    rounded corners,
+    enhanced,
+    sharp corners=downhill,
     colframe=orangehdx!75,
     colback=orangehdx!10,
     coltitle=white,
     label={exerc:#2},
     title={\large \textbf{Exercise #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=orangehdx!75},
     #1
 }
 
 %% Examples %%
 \newcounter{ExampleCounter}
 \newtcolorbox[use counter=ExampleCounter, number within=chapter]{example}[2][]{%
-    rounded corners,
+enhanced,
+    sharp corners=downhill,
     colframe=teal,
     colback=teal!15,
     coltitle=white,
     label={ex:\theExampleCounter},
     title={\large \textbf{Example \theExampleCounter: #2}},
+    attach boxed title to top center,
+    boxed title style={colback=teal},
     #1,
 }
 
 
 %% Corollaries %%
 \newtcolorbox[]{corollary}[2][]{%
-    rounded corners,
+    enhanced,
+    sharp corners=downhill,
     colframe=xpurple,  
     colback=xpurple!15,        
     coltitle=white,
     title={\large \textbf{Corollary #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xpurple},
     #1
 }
 
@@ -306,7 +325,7 @@
 
 \newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
 
-\newcommand{\caution}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+\newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
 
 \newmdenv[
   topline=false,

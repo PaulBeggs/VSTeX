@@ -3,7 +3,7 @@
 	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
 	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
 	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// \(1, \)2 for tab stops, \(0 for the final cursor position, and \){1:label}, ${2:another} for placeholders. 
 	// Placeholders with the same ids are connected.
 	// Example:
 	// "Print to console": {
@@ -28,5 +28,34 @@
             "\\end{${1:environment}}"
         ],
         "description": "Insert LaTeX environment"
-    }
+    },
+
+	"Custom Table Environment": {
+        "prefix": "table",
+        "body": [
+            "\\begin{table}[htbp]",
+            "    \\centering",
+            "    \\begin{tabular}{cc}",
+            "        \\toprule",
+            "         & \\\\\\ \\midrule",
+            "         & \\\\\\",
+            "        \\bottomrule",
+            "    \\end{tabular}",
+            "    \\caption{$1}\\label{tab:$2}",
+            "\\end{table}"
+        ],
+        "description": "Insert a customized table environment with tabular and placeholders for caption and label."
+    },
+
+	"Custom Tabular Environment": {
+		"prefix": "tabular",
+		"body": [
+			"\\begin{tabular}{ccc}[htbp]",
+			"   \\toprule",
+			"    & & \\\\\\ \\midrule",
+            "    & & \\\\\\ \\bottomrule",
+			"\\end{tabular}",
+		],
+		"description": "Inserts a tabular environment with preset positioning "
+	}
 }

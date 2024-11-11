@@ -229,6 +229,48 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\environ\environ.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\environ\environ.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\trimspaces\trimspaces.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\trimspaces\trimspaces.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbskins.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzfill.image.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzfill.image.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzfill-common.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzfill-common.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzlibraryfill.image.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzlibraryfill.image.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbskinsjigsaw.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbtheorems.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbminted.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\minted\minted.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\minted\minted.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\catchfile\catchfile.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\catchfile\catchfile.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\fvextra\fvextra.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\fvextra\fvextra.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\fancyvrb\fancyvrb.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\fancyvrb\fancyvrb.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\upquote\upquote.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\upquote\upquote.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\lineno\lineno.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\lineno\lineno.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\latex2pydata\latex2pydata.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\latex2pydata\latex2pydata.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\pgfopts\pgfopts.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\pgfopts\pgfopts.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\shellesc.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\shellesc.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcblistingscore.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbprocessing.code.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\fix-cm.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\fix-cm.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\ts1enc.def
@@ -266,16 +308,6 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarypatterns.code.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibrarypatterns.code.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibrarypatterns.code.tex
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\mathtools\mathtools.sty
@@ -294,8 +326,6 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-abspage.s
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-abspage.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-base.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\zref\zref-base.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty
-INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\etexcmds\etexcmds.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\auxhook\auxhook.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\auxhook\auxhook.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\needspace\needspace.sty
@@ -316,6 +346,64 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\pgfplots\pgfplots.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\pgfplots\pgfplots.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplots.revision.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplots.revision.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplots.revision.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-luatex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\systemlayer\pgfsys-luatex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplots.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplotscore.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\sys\pgfplotssysgeneric.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\libs\pgfplotslibrary.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfpu.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfpu.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryfpu.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\util\pgfplotsutil.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\liststructure\pgfplotsliststructure.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\liststructure\pgfplotsliststructureext.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\liststructure\pgfplotsarray.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\liststructure\pgfplotsmatrix.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\numtable\pgfplotstableshared.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\liststructure\pgfplotsdeque.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\util\pgfplotsbinary.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\util\pgfplotsbinary.data.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\util\pgfplotsutil.verb.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\libs\pgflibrarypgfplots.surfshading.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\util\pgfplotscolormap.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\util\pgfplotscolor.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplotsstackedplots.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplotsplothandlers.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplotsmeshplothandler.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplotsmeshplotimage.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplots.scaling.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplotscoordprocessing.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplots.errorbars.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplots.markers.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplotsticks.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\pgfplots.paths.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\modules\pgfmoduledecorations.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathmorphing.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathmorphing.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\libs\tikzlibrarypgfplots.contourlua.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgfplots\libs\tikzlibrarypgfplots.contourlua.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryplotmarks.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryplotmarks.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplotmarks.code.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\generic\pgf\libraries\pgflibraryplotmarks.code.tex
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\lipsum\lipsum.sty
@@ -336,6 +424,8 @@ INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstop
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\textcomp.sty
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex\latex\base\textcomp.sty
 INPUT c:\Users\paulb\VSTeX\Math\Intro_to_Adv_Math\build\math_intro_main.out
 INPUT c:\Users\paulb\VSTeX\Math\Intro_to_Adv_Math\build\math_intro_main.out
 INPUT c:\Users\paulb\VSTeX\Math\Intro_to_Adv_Math\build\math_intro_main.out
@@ -395,6 +485,13 @@ INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
 INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
 OUTPUT c:\Users\paulb\VSTeX\Math\Intro_to_Adv_Math\build\math_intro_main.toc
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT .\chapters\intro_ch_1.tex
 INPUT .\chapters\intro_ch_1.tex
 INPUT .\chapters\intro_ch_1.tex
@@ -432,23 +529,299 @@ INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
+INPUT .\chapters\intro_ch_2.tex
+INPUT .\chapters\intro_ch_2.tex
+INPUT .\chapters\intro_ch_2.tex
+INPUT .\chapters\intro_ch_2.tex
+INPUT chapters\intro_ch_2.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\chapters\intro_ch_3.tex
+INPUT .\chapters\intro_ch_3.tex
+INPUT .\chapters\intro_ch_3.tex
+INPUT .\chapters\intro_ch_3.tex
+INPUT chapters\intro_ch_3.tex
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\chapters\intro_ch_4.tex
+INPUT .\chapters\intro_ch_4.tex
+INPUT .\chapters\intro_ch_4.tex
+INPUT .\chapters\intro_ch_4.tex
+INPUT chapters\intro_ch_4.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\chapters\intro_ch_5.tex
+INPUT .\chapters\intro_ch_5.tex
+INPUT .\chapters\intro_ch_5.tex
+INPUT .\chapters\intro_ch_5.tex
+INPUT chapters\intro_ch_5.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\chapters\intro_ch_6.tex
+INPUT .\chapters\intro_ch_6.tex
+INPUT .\chapters\intro_ch_6.tex
+INPUT .\chapters\intro_ch_6.tex
+INPUT chapters\intro_ch_6.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\chapters\intro_ch_7.tex
+INPUT .\chapters\intro_ch_7.tex
+INPUT .\chapters\intro_ch_7.tex
+INPUT .\chapters\intro_ch_7.tex
+INPUT chapters\intro_ch_7.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\chapters\intro_ch_8.tex
+INPUT .\chapters\intro_ch_8.tex
+INPUT .\chapters\intro_ch_8.tex
+INPUT .\chapters\intro_ch_8.tex
+INPUT chapters\intro_ch_8.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\chapters\intro_ch_9.tex
+INPUT .\chapters\intro_ch_9.tex
+INPUT .\chapters\intro_ch_9.tex
+INPUT .\chapters\intro_ch_9.tex
+INPUT chapters\intro_ch_9.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\chapters\intro_ch_10.tex
+INPUT .\chapters\intro_ch_10.tex
+INPUT .\chapters\intro_ch_10.tex
+INPUT .\chapters\intro_ch_10.tex
+INPUT chapters\intro_ch_10.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\chapters\intro_ch_11.tex
+INPUT .\chapters\intro_ch_11.tex
+INPUT .\chapters\intro_ch_11.tex
+INPUT .\chapters\intro_ch_11.tex
+INPUT chapters\intro_ch_11.tex
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs7.tfm
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
+INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT .\images\small logo.png
 INPUT c:\Users\paulb\VSTeX\Math\Intro_to_Adv_Math\build\math_intro_main.aux
 INPUT c:\Users\paulb\VSTeX\Math\Intro_to_Adv_Math\build\math_intro_main.out
 INPUT c:\Users\paulb\VSTeX\Math\Intro_to_Adv_Math\build\math_intro_main.out
+INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
+INPUT C:\Users\paulb\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti7.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti7.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti8.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti8.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Users\paulb\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb

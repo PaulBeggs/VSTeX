@@ -1,121 +1,105 @@
-\subsection{Recursion and the Whole Numbers}
-
-        \subsubsection{Axiom 7}
-
             \begin{axiom}
-                There exists a successor set.
+                {}There exists a successor set.
             \end{axiom}
 
             \begin{corollary}
-                There exists a \textit{minimal successor set}; that is, there exists a set $M$ such that $M$ is a successor set and $M\subseteq A$ for any $A$ successor set.
+                {Minimal Successor Set}{\hyperref[ax:9.2.1]{Axiom 9.2.1}}There exists a \textit{minimal successor set}; that is, there exists a set \(M\) such that \(M\) is a successor set and \(M\subseteq A\) for any \(A\) successor set.
             \end{corollary}
 
-        \subsubsection{Set of Whole Numbers, $\W$}
-
-            Thus, this starts the construction of $\W$
+            Thus, this starts the construction of \(\W\)
 
             \begin{definition}
-                We define the \textit{set of whole numbers} to be the minimal successor set and we denote it as $\W$.
+                {Set of Whole Numbers}We define the \textit{set of whole numbers} to be the minimal successor set and we denote it as \(\W\).
             \end{definition}
 
-        \subsubsection{Whole Number Zero}
 
             \begin{definition}
-                We define the \textit{whole number zero}, denoted as $0$, as $$0 := \emptyset$$
+                {Whole Number Zero}We define the \textit{whole number zero}, denoted as \(0\), as \[0 := \emptyset\]
             \end{definition}
 
-        \subsubsection{Whole Numbers}
 
             \begin{definition}
-                We define the \textit{whole number} $1,2,3,\dots$, as 
+                We define the \textit{whole number} \(1,2,3,\dots\), as 
                 \begin{align*}
                     1 &:= 0^+ \\
                     2 &:= 1^+ \\
                     3 &:= 2^+ \\
                     & \ \ \vdots
                 \end{align*}
-                So that we have $\W = \{0,1,2,3,\dots\}$.
+                So that we have \(\W = \{0,1,2,3,\dots\}\).
             \end{definition}
 
         \begin{example}
-            $1 = 0^+ = \emptyset \cup \{\emptyset\} = \{\emptyset\} = \{0\}$, and \\
-            $2 = 1^+ = \emptyset \cup \{\{\emptyset\}\} = \{\emptyset, \{\emptyset\}\} = \{0,1\}$, and \\
-            $3 = 2^+ = \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\} = \{0,1,2\}$
-            This yields that $2\in 3$ and $2\subseteq 3$.
+            \(1 = 0^+ = \emptyset \cup \{\emptyset\} = \{\emptyset\} = \{0\}\), and \\
+            \(2 = 1^+ = \emptyset \cup \{\{\emptyset\}\} = \{\emptyset, \{\emptyset\}\} = \{0,1\}\), and \\
+            \(3 = 2^+ = \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\} = \{0,1,2\}\)
+            This yields that \(2\in 3\) and \(2\subseteq 3\).
         \end{example}
 
-        \subsubsection{Theorem 6}
 
-            \begin{ntheorem}
-                Suppose that for each of $m,n\in \W$ that $m^+ = n^+$. Then, $$m = n$$
-            \end{ntheorem}
+            \begin{theorem}
+                Suppose that for each of \(m,n\in \W\) that \(m^+ = n^+\). Then, \[m = n\]
+            \end{theorem}
             i.e., if two whole numbers have the same successor, they are the same number.
 
-    \subsection{Peano's Axioms}
+    \section{Peano's Axioms}
 
         We can show that the following statements as theorems. \\
 
         \begin{enumerate}
-            \item $0 \in \W$ -- (follows definition of $0$ and $\W$) 
-            \item If $a\in \W$, then $a^+ \in \W$ -- (follows from def of $\W$)
-            \item If $a,b\in \W$ and $a^+ = b^+$, then $a = b$ -- (Theorem 6)
-            \item $0 \ne a^+$ for any $a\in \W$
-            \item If $S \subseteq \W$ and $S$ is a successor set, then $S = \W$ -- (Follows from $\W$ is the minimal successor set; $\W \subseteq S$)
+            \item \(0 \in \W\) -- (follows definition of \(0\) and \(\W\)) 
+            \item If \(a\in \W\), then \(a^+ \in \W\) -- (follows from def of \(\W\))
+            \item If \(a,b\in \W\) and \(a^+ = b^+\), then \(a = b\) -- (Theorem 6)
+            \item \(0 \ne a^+\) for any \(a\in \W\)
+            \item If \(S \subseteq \W\) and \(S\) is a successor set, then \(S = \W\) -- (Follows from \(\W\) is the minimal successor set; \(\W \subseteq S\))
         \end{enumerate}
 
 % ------------------------------------------------------------------------------
 \newpage 
 % ------------------------------------------------------------------------------
 
-\subsection{Addition}
 
 
 
     \vspace{0.5cm}
 
-        \subsubsection{$s_m$ and Recursivity}
-
             \begin{definition}
-                Suppose $m\in \W$. We define function $s_m \colon \W \rightarrow \W$ by $s_m(0) = m$ and $s_m(n^+) = (s_m(n))^+$
+                {Addition}Suppose \(m\in \W\). We define function \(s_m \colon \W \rightarrow \W\) by \(s_m(0) = m\) and \(s_m(n^+) = (s_m(n))^+\)
+
+                We may write \(s_m(n) = m + n\). For ease of reading, we could write \(s_m(n) = m + n\) so that \(s_m(n^+) = m + n^+ = (m + n)^+\)
             \end{definition}
-    
-            \begin{notation}
-                We may write $s_m(n) = m + n$. For ease of reading, we could write $s_m(n) = m + n$ so that $s_m(n^+) = m + n^+ = (m + n)^+$
-            \end{notation}
 
         \begin{example}
-            $s_3(2) = s_3(1^+)$ because $2=1^+$. Then, by definition of $s_3()$, $s_3(2) = (s_3(1))^+$. Then because $1 = 0^+$, $s_3(2) = ((s_3(1))^+)^+$ by definition of $s_3()$. then by 
+            \(s_3(2) = s_3(1^+)\) because \(2=1^+\). Then, by definition of \(s_3()\), \(s_3(2) = (s_3(1))^+\). Then because \(1 = 0^+\), \(s_3(2) = ((s_3(1))^+)^+\) by definition of \(s_3()\). then by 
         \end{example}
 
         \textbf{Meta Note:} This is a recursive definition. Here we define an explicit answer for a single base 
 
 % REFER TO TEAMS FOR ADDITONAL NOTES ON THE EXAMPLE, AND FOR THE META NOTE.
 
-        \subsubsection{Theorem 7 (Associativity)}
-
             \begin{ntheorem}
-                Suppose that $k,m,n\in \W$. Then, $$(k+m) + n = k + (m + n)$$
+                {Whole Number Associativity}Suppose that \(k,m,n\in \W\). Then, \[(k+m) + n = k + (m + n)\]
             \end{ntheorem}
             
             Proof by induction. \\
             \textbf{Think}: Dominoes. \\
             Base case: ``Show first domino falls.'' \\
-            Inductive hypothesis: ``Suppose $n^+$ domino falls.'' \\
-            Inductive Step: ``Show that $(n+1)^{\text{th}}$ domino is close enough to get knocked over by the $n^{\text{th}}$ one. Hence, the inductive step is always shown using inductive hypothesis.
+            Inductive hypothesis: ``Suppose \(n^+\) domino falls.'' \\
+            Inductive Step: ``Show that \((n+1)^{\text{th}}\) domino is close enough to get knocked over by the \(n^{\text{th}}\) one. Hence, the inductive step is always shown using inductive hypothesis.
             
             \expf{
-                Let $k,m\in \W$. Consider $S:= \{n\in \W \colon (k+m) + n = k + (m + n)\}$. We must show that $S = \W$, and to do so, we must show that $S$ is a successor set.
+                Let \(k,m\in \W\). Consider \(S:= \{n\in \W \colon (k+m) + n = k + (m + n)\}\). We must show that \(S = \W\), and to do so, we must show that \(S\) is a successor set.
                 \begin{itemize}
                     \item \textbf{Base Case}: \\
                     \begin{tabular}{rclc}
-                        $(k+m) + 0$ & $=$ & $k + m$ & definition of addition \\
-                         & $=$ & $k(m + 0)$ & definition of addition 
+                        \((k+m) + 0\) & \(=\) & \(k + m\) & definition of addition \\
+                         & \(=\) & \(k(m + 0)\) & definition of addition 
                     \end{tabular}
                     \item \textbf{Inductive Hypothesis}: \\
-                    Suppose $n\in S$. That is, $(k+m) + n = k + (m+n)$. \\
+                    Suppose \(n\in S\). That is, \((k+m) + n = k + (m+n)\). \\
                     
                     \item \textbf{Inductive Step}: \\
-                     We will show that $n^+ \in S$ 
+                     We will show that \(n^+ \in S\) 
                      \begin{align}
                          (k + m) + n^+ &= ((k + m) + n)^+ \\
                          &= (k + (m+n))^+ \\
@@ -125,35 +109,35 @@
                      (2) By definition of inductive hypothesis, \\
                      (3) \& (4) By definition of addition. \\
                 \end{itemize}
-                 Thus, $n^+ \in S$. Because $S$ contains 0, and whenever $S$ contains $n$, $S$ also contains $n^+$, $S$ is by definition, a successor set. Thus, by Peano's ``Axioms,'' $S = \W$. Therefore, we've shown addition is associative. 
+                 Thus, \(n^+ \in S\). Because \(S\) contains 0, and whenever \(S\) contains \(n\), \(S\) also contains \(n^+\), \(S\) is by definition, a successor set. Thus, by Peano's ``Axioms,'' \(S = \W\). Therefore, we've shown addition is associative. 
             }
 
-        \subsubsection{Problems}
+        \section{Problems}
 
 % ------------------------------------------------------------------------------
 % Problem 52
 % ------------------------------------------------------------------------------
 
-            \pb{
-                Suppose $n\in \W$ Then, $$0 + n = n$$
-            }
+            \begin{exercise}
+                {Identity Property}Suppose \(n\in \W\) Then, \[0 + n = n\]
+            \end{exercise}
 
             \expf{ 
-                Consider $S := \{n \in \W \colon 0 + n = n\}$. We must show that $S = \W$, and to do so, we must show that $S$ is a successor set.
+                Consider \(S := \{n \in \W \colon 0 + n = n\}\). We must show that \(S = \W\), and to do so, we must show that \(S\) is a successor set.
                 \begin{itemize}
                     \item \textbf{Base Case}: \\
-                    For $n = 0$:
+                    For \(n = 0\):
                     \begin{align*}
                         0 + 0 &= s_0(0) \\
                         &= 0
                     \end{align*}
-                    By the definition of addition. Hence, $0\in S$. \\
+                    By the definition of addition. Hence, \(0\in S\). \\
                     
                     \item \textbf{Inductive Hypothesis}: \\
-                    Suppose $n\in S$. That is, $0 + n = n$. \\
+                    Suppose \(n\in S\). That is, \(0 + n = n\). \\
                     
                     \item \textbf{Inductive Step}: \\
-                    We will show for all $n^+ \in S$ such that $0 + n^+ = n^+$:
+                    We will show for all \(n^+ \in S\) such that \(0 + n^+ = n^+\):
                     \begin{align}
                         0 + n^+ &= (0 + n)^+ \\
                         &= (n)^+ \\
@@ -163,7 +147,7 @@
                     (6) By inductive hypothesis, \\
                     (7) By definition of addition.
                 \end{itemize}
-                 Thus, $n^+ \in S$. Because $S$ contains 0, and whenever $S$ contains $n$, $S$ also contains $n^+$, $S$ is by definition, a successor set. Thus, by Peano's ``Axioms,'' $S = \W$. Therefore, we've shown that zero is the additive identity. 
+                 Thus, \(n^+ \in S\). Because \(S\) contains 0, and whenever \(S\) contains \(n\), \(S\) also contains \(n^+\), \(S\) is by definition, a successor set. Thus, by Peano's ``Axioms,'' \(S = \W\). Therefore, we've shown that zero is the additive identity. 
             }
             
 
@@ -171,27 +155,27 @@
 % Problem 53
 % ------------------------------------------------------------------------------
 
-            \pb{
-                Suppose $m,n\in \W$. Then, $$m^+ + n = (m + n)^+$$
-            }
+            \begin{exercise}
+                {}Suppose \(m,n\in \W\). Then, \[m^+ + n = (m + n)^+\]
+            \end{exercise}
 
             \expf{
-                Let $m \in \W$. Consider $S := \{n \in \W \colon m^+ + n = (m + n)^+\}$. We must show that $S$ is a successor set to prove $S = \W$.
+                Let \(m \in \W\). Consider \(S := \{n \in \W \colon m^+ + n = (m + n)^+\}\). We must show that \(S\) is a successor set to prove \(S = \W\).
                 \begin{itemize}
                     \item \textbf{Base Case}: \\
-                    For $n = 0$, we need to show that $m^+ + 0 = (m + 0)^+$. To do that, we will evaluate both the left hand side first, then the right hand side, to show they are equal to each other. Thus, building off Problem 52, we know:
+                    For \(n = 0\), we need to show that \(m^+ + 0 = (m + 0)^+\). To do that, we will evaluate both the left hand side first, then the right hand side, to show they are equal to each other. Thus, building off Problem 52, we know:
                     \begin{align*}
                         m^+ + 0 &= m^+ \\ 
                         \text{and}\\
                         (m + 0)^+ &= m^+
                     \end{align*}
-                    Thus, because $m^+ = m^+$, the base case is valid, and $0\in S$. \\
+                    Thus, because \(m^+ = m^+\), the base case is valid, and \(0\in S\). \\
                     
                     \item \textbf{Inductive Hypothesis}: \\
-                    Suppose $n\in S$. That is, $m^+ + n = (m + n)^+$. \\
+                    Suppose \(n\in S\). That is, \(m^+ + n = (m + n)^+\). \\
                     
                     \item \textbf{Inductive Step}: \\
-                    We will show that $n^+\in S$ such that $m^+ + n^+ = (m + n^+)^+$. 
+                    We will show that \(n^+\in S\) such that \(m^+ + n^+ = (m + n^+)^+\). 
                     \begin{align}
                         m^+ + n^+ &= (m^+ + n)^+ \\
                         &= ((m + n)^+)^+ \\
@@ -201,22 +185,22 @@
                     (9) By inductive hypothesis, \\
                     (10) By definition of addition.                    
                 \end{itemize}
-                 Thus, $n^+ \in S$. Because $S$ contains 0, and whenever $S$ contains $n$, $S$ also contains $n^+$, $S$ is by definition, a successor set. Thus, by Peano's ``Axioms,'' $S = \W$. Therefore, we've shown that taking the successor set of either $n$ on the left hand side or the expression inside the parenthesis on the right hand side will yield equal results. 
+                 Thus, \(n^+ \in S\). Because \(S\) contains 0, and whenever \(S\) contains \(n\), \(S\) also contains \(n^+\), \(S\) is by definition, a successor set. Thus, by Peano's ``Axioms,'' \(S = \W\). Therefore, we've shown that taking the successor set of either \(n\) on the left hand side or the expression inside the parenthesis on the right hand side will yield equal results. 
             }
 
 % ------------------------------------------------------------------------------
 % Problem 54
 % ------------------------------------------------------------------------------
 
-            \pb{
-                (Commutativity) Suppose $m,n\in \W$. Then, $$n + m = m + n$$ (Important: Must use proof by induction and the previous two problems in proof.)
-            }
+            \begin{exercise}
+                {Whole Number Commutativity} Suppose \(m,n\in \W\). Then, \[n + m = m + n\] (Important: Must use proof by induction and the previous two problems in proof.)
+            \end{exercise}
 
             \expf{
-                Let $m \in \W$. Consider $S := \{n \in \W \colon n + m = m + n\}$. We must show that $S$ is a successor set to prove $S = \W$.
+                Let \(m \in \W\). Consider \(S := \{n \in \W \colon n + m = m + n\}\). We must show that \(S\) is a successor set to prove \(S = \W\).
                 \begin{itemize}
                     \item \textbf{Base Case}: \\
-                    For $n = 0$, we need to show that $0 + m = m + 0$. To do that, we will evaluate both the left hand side first, then the right hand side, to show they are equal to each other. \\
+                    For \(n = 0\), we need to show that \(0 + m = m + 0\). To do that, we will evaluate both the left hand side first, then the right hand side, to show they are equal to each other. \\
                     
                     \textit{Left hand side}:
                     \begin{align*}
@@ -231,13 +215,13 @@
                     \end{align*}
                     By definition of addition. \\
                     
-                    Thus, because $m = m$, the base case is valid, and $0\in S$. \\
+                    Thus, because \(m = m\), the base case is valid, and \(0\in S\). \\
                     
                     \item \textbf{Inductive Hypothesis}: \\
-                    Suppose $n\in S$. That is, $n + m = m + n$. \\
+                    Suppose \(n\in S\). That is, \(n + m = m + n\). \\
                     
                     \item \textbf{Inductive Step}: \\
-                    We will show that $n^+\in S$ such that $n^+ + m = m + n^+$. 
+                    We will show that \(n^+\in S\) such that \(n^+ + m = m + n^+\). 
                     \begin{align}
                         n^+ + m &= (n + m)^+ \\
                         &= (m + n)^+ \\
@@ -247,59 +231,53 @@
                     (12) By inductive hypothesis, \\
                     (13) By definition of addition.                    
                 \end{itemize}
-                 Thus, $n^+ \in S$. Because $S$ contains 0, and whenever $S$ contains $n$, $S$ also contains $n^+$, $S$ is by definition, a successor set. Thus, by Peano's ``Axioms,'' $S = \W$. Therefore, we've shown that whole number addition is communicative.
+                 Thus, \(n^+ \in S\). Because \(S\) contains 0, and whenever \(S\) contains \(n\), \(S\) also contains \(n^+\), \(S\) is by definition, a successor set. Thus, by Peano's ``Axioms,'' \(S = \W\). Therefore, we've shown that whole number addition is commutative.
             }
 
-    \subsection{Multiplication}
+    \section{Multiplication}
 
         \begin{definition}
-            Suppose $m,n \in \W$. The product of $m$ and $n$, denoted as $p_m(n)$, is defined recursively as $p_m(0) = 0$ and $p_m(n^+) = p_m(n) + m$.
-        \end{definition}
-        
-        \begin{notation}
-            We can denote the above definition by $m\cdot n$ and we can call this multiplication.
-        \end{notation}
+            {Whole Number Multiplication}Suppose \(m,n \in \W\). The \textit{product} of \(m\) and \(n\), denoted as \(p_m(n)\), is defined recursively as \(p_m(0) = 0\) and \(p_m(n^+) = p_m(n) + m\).
 
-        \subsubsection{Theorem 8}
-        
-            \begin{ntheorem}
-                Multiplication is associative and communicative. 
-            \end{ntheorem}
+            We can denote the above definition by \(m\cdot n\) and we can call this multiplication.
+        \end{definition}
+
+            \begin{theorem}
+                Whole number multiplication is associative and commutative. 
+            \end{theorem}
 
             \expf{No proof for the sake of time, but induction arguments can be used to prove this.}
 
         \begin{example}
-            $3\cdot 2$
+            \(3\cdot 2\)
         \end{example}
-        \noindent$= 3 \cdot 1^+$ by definition of 2. Then, $3\cdot 1 + 3$ by definition of multiplication. Then, $3\cdot 0^+ + 3$ by definition of 1. Then, $(3\cdot 0 + 3)$ by definition of multiplication. Then, $(3 + 0) + 3$ by definition of multiplication. Then, $(0 + 2^+) + 3$ by definition, and property of addition, all the way down to $=6$.
-
-        \subsubsection{Corollary to Theorem 8 (unofficial corollary)}
+        \noindent\(= 3 \cdot 1^+\) by definition of 2. Then, \(3\cdot 1 + 3\) by definition of multiplication. Then, \(3\cdot 0^+ + 3\) by definition of 1. Then, \((3\cdot 0 + 3)\) by definition of multiplication. Then, \((3 + 0) + 3\) by definition of multiplication. Then, \((0 + 2^+) + 3\) by definition, and property of addition, all the way down to \(=6\).
 
             \begin{corollary}
-                Suppose $m \in \W$. Then, $$p_0(m) = 0 \text{ and } p_m(0) = 0$$
+                {}{\hyperref[thm:9.10.2]{Theorem 9.10.2}}Suppose \(m \in \W\). Then, \[p_0(m) = 0 \text{ and } p_m(0) = 0\]
             \end{corollary}
 
             \expf{
-                Suppose $m\in \W$. By the definition of multiplication, we know that $m \cdot 0 = 0$. Additionally, because we know that multiplication is communicative by Theorem 8, we can rewrite the expression as $0 \cdot m = 0$. Then, using the definition of multiplication, we can rewrite these expressions as, $p_0(m) = 0$ and $p_m(0) = 0$. \\
+                Suppose \(m\in \W\). By the definition of multiplication, we know that \(m \cdot 0 = 0\). Additionally, because we know that multiplication is commutative by Theorem 8, we can rewrite the expression as \(0 \cdot m = 0\). Then, using the definition of multiplication, we can rewrite these expressions as, \(p_0(m) = 0\) and \(p_m(0) = 0\). \\
 
                 Therefore, due to communicativity, regardless of where the zero is involved in the multiplicative string, the whole string is equal to zero.
             }
 
-        \subsubsection{Problem}
+        \section{Problem}
         
 % ------------------------------------------------------------------------------
 % Problem 55
 % ------------------------------------------------------------------------------
 
-            \pb{
-                Suppose that $k,m,n \in \W$. Then, $$k\cdot (m + n) = k\cdot m + k\cdot n$$
-            }
+            \begin{exercise}
+                {}Suppose that \(k,m,n \in \W\). Then, \[k\cdot (m + n) = k\cdot m + k\cdot n\]
+            \end{exercise}
 
             \expf{
-                Let $m,n \in \W$. Consider $S := \{k \in \W \colon k\cdot (m + n) = k\cdot m + k\cdot n\}$. We must show that $S$ is a successor set to prove $S = \W$.
+                Let \(m,n \in \W\). Consider \(S := \{k \in \W \colon k\cdot (m + n) = k\cdot m + k\cdot n\}\). We must show that \(S\) is a successor set to prove \(S = \W\).
                 \begin{itemize}
                     \item \textbf{Base Case}: \\
-                    For $k = 0$, we need to show that $0\cdot (m + n) = 0\cdot m + 0\cdot n$. To do that, we will evaluate both the left hand side first, then the right hand side to show they are equal to each other. \\
+                    For \(k = 0\), we need to show that \(0\cdot (m + n) = 0\cdot m + 0\cdot n\). To do that, we will evaluate both the left hand side first, then the right hand side to show they are equal to each other. \\
                     
                     \textit{Left hand side}:
                     \begin{align}
@@ -308,7 +286,7 @@
                         &= 0
                     \end{align}
                     (14) By Theorem 8, \\
-                    (15) By definition of multiplication (note that we can make this statement because we know that $s_{m}(n) \in \W$), \\
+                    (15) By definition of multiplication (note that we can make this statement because we know that \(s_{m}(n) \in \W\)), \\
                     (16) By definition of multiplication. \\
                     
                     \textit{Right hand side}:
@@ -321,13 +299,13 @@
                     (18) By the corollary to Theorem 8, \\
                     (19) By Problem 52. \\
                     
-                    Thus, because $0 = 0$, the base case is valid, and $0\in S$. \\
+                    Thus, because \(0 = 0\), the base case is valid, and \(0\in S\). \\
                     
                     \item \textbf{Inductive Hypothesis}: \\
-                    Suppose $k\in S$. That is, $k \cdot (m + n) = k\cdot m + k\cdot n$. \\
+                    Suppose \(k\in S\). That is, \(k \cdot (m + n) = k\cdot m + k\cdot n\). \\
                     
                     \item \textbf{Inductive Step}: \\
-                    We will show that $k^+\in S$ such that $k^+ \cdot (m + n) = k^+ \cdot m + k^+ \cdot n$. 
+                    We will show that \(k^+\in S\) such that \(k^+ \cdot (m + n) = k^+ \cdot m + k^+ \cdot n\). 
                     \begin{align}
                         k^+ \cdot (m + n) &= (m + n) \cdot k^+ \\ 
                         &= p_{s_m(n)}(k^+) \\
@@ -340,104 +318,96 @@
                     \end{align}
                     (20) By Theorem 8, \\
                     (21) \& (22) By definition of multiplication, \\
-                    (23) By definition of multiplication and addition (note that the transition from $p_{s_m(n)}$ to $p_{m + n}$ because that is shown in the transition of the latter half of the expression), \\
+                    (23) By definition of multiplication and addition (note that the transition from \(p_{s_m(n)}\) to \(p_{m + n}\) because that is shown in the transition of the latter half of the expression), \\
                     (24) By inductive hypothesis, \\
                     (25) By Theorem 7 \& 8 and Problem 54, \\
                     (26) \& (27) By definition of multiplication.
                     
                 \end{itemize}
-                 Thus, $k^+ \in S$. Because $S$ contains 0, and whenever $S$ contains $k$, $S$ also contains $k^+$, $S$ is by definition, a successor set. Thus, by Peano's ``Axioms,'' $S = \W$. Therefore, we've shown that whole number multiplication is distributive.
+                 Thus, \(k^+ \in S\). Because \(S\) contains 0, and whenever \(S\) contains \(k\), \(S\) also contains \(k^+\), \(S\) is by definition, a successor set. Thus, by Peano's ``Axioms,'' \(S = \W\). Therefore, we've shown that whole number multiplication is distributive.
             }
 
-            \noindent\textbf{Remark}: We have all necessary tools to define and prove basic arithmetic of $\W$. We could define $-$ and $/$ when they have whole number solutions.
+            \noindent\textbf{Remark}: We have all necessary tools to define and prove basic arithmetic of \(\W\). We could define \(-\) and \(/\) when they have whole number solutions.
             
             We could also define and prove properties of prime whole numbers. \\
 
             We will accept these facts of arithmetic of whole numbers as proven, but for the sake of time we will not prove them to be true. 
 
-    \subsection{Less Than}
-
         \begin{definition}
-            Suppose $m,n\in \W$. We say that $m$ is \textit{less than} $n$ provided than $m \ne n$ and $m \subseteq n$.
+            {Less Than}Suppose \(m,n\in \W\). We say that \(m\) is \textit{less than} \(n\) provided than \(m \ne n\) and \(m \subseteq n\).
+
+            Denoted as \(m < n\). By \(m \leq n\), we literally mean \(m < n\) or \(m = n\).
         \end{definition}
 
-        \begin{notation}
-            Denoted as $m < n$. By $m \leq n$, we literally mean $m < n$ or $m = n$.
-        \end{notation}
-
-        \subsubsection{Total Order}
     
             \begin{definition}
-                Suppose $\preceq$ is a relation on set $X$. We say that $\preceq$ is \textit{total order} provided that $\preceq$ is: \begin{enumerate}
+                {Total Order}Suppose \(\preceq\) is a relation on set \(X\). We say that \(\preceq\) is \textit{total order} provided that \(\preceq\) is: \begin{enumerate}
                     \item Reflexive,
-                    \item Anti-symmetric (if $a \preceq b$ and $b \preceq a$, then $a = b$),
+                    \item Anti-symmetric (if \(a \preceq b\) and \(b \preceq a\), then \(a = b\)),
                     \item Transitive,
-                    \item For all $x,y\in X$, either $x\preceq y$ or $y\preceq x$.
+                    \item For all \(x,y\in X\), either \(x\preceq y\) or \(y\preceq x\).
                 \end{enumerate}
             \end{definition}
         
         \noindent\textbf{Note}: (1)-(3) are ``order'', and (4) is ``total.''
 
-        \subsubsection{Theorem 9}
 
-            \begin{ntheorem}
-                Less than or equal to defines a total order on $\W$.
-            \end{ntheorem}
+            \begin{theorem}
+                Less than or equal to defines a total order on \(\W\).
+            \end{theorem}
 
             \expf{Talked through proof sketch.}
-
-        \subsubsection{Well Ordered}
     
             \begin{definition}
-                Suppose $X$ is a totally ordered set. The statement that $X$ is \textit{well ordered} means that each non-empty subset of $X$ has a smallest element; that is, $X$ is well ordered if for all $A \subseteq X$ with $A\ne \emptyset$, there exists an $a \in A$ such that if $x \in A$, then $a \leq x$.
+                {Well Ordered}Suppose \(X\) is a totally ordered set. The statement that \(X\) is \textit{well ordered} means that each non-empty subset of \(X\) has a smallest element; that is, \(X\) is well ordered if for all \(A \subseteq X\) with \(A\ne \emptyset\), there exists an \(a \in A\) such that if \(x \in A\), then \(a \leq x\).
             \end{definition}
 
-        \subsubsection{Problem}
+        \section{Problem}
 
 % ------------------------------------------------------------------------------
 % Problem 56
 % ------------------------------------------------------------------------------
 
 
-            \pb{
-                Show $\W$ is well ordered.
-            }
+            \begin{exercise}
+                {Well-Ordered (Whole Numbers)}Show \(\W\) is well ordered.
+            \end{exercise}
 
             \expf{
-                Let $A$ be a non-empty set such that $A \subseteq \W$, and consider $S := \{n \in \W \colon \text{ if } k \in \W \text{ and } k \leq n, \text{ then } k \notin A\}$. That is, $S$ includes whole numbers $n$ for which all whole numbers less than or equal to $n$ are not in $A$. We want to show that $S = \W$. 
+                Let \(A\) be a non-empty set such that \(A \subseteq \W\), and consider \(S := \{n \in \W \colon \text{ if } k \in \W \text{ and } k \leq n, \text{ then } k \notin A\}\). That is, \(S\) includes whole numbers \(n\) for which all whole numbers less than or equal to \(n\) are not in \(A\). We want to show that \(S = \W\). 
                 \begin{itemize}
                     \item \textbf{Base Case}: \\
-                    For $0 \in S$, since $0$ is the smallest whole number by definition, if $A$ lacks a smallest element, $0$ cannot be in $A$. Thus, by the definition of $S$, $0 \in S$. \\
+                    For \(0 \in S\), since \(0\) is the smallest whole number by definition, if \(A\) lacks a smallest element, \(0\) cannot be in \(A\). Thus, by the definition of \(S\), \(0 \in S\). \\
 
                     \item \textbf{Inductive Hypothesis}: \\
-                    Suppose $n \in S$. \\
+                    Suppose \(n \in S\). \\
 
                     \item \textbf{Inductive Step}: \\
-                    We need to prove that $n^+ \in S$. Given that $n \in S$, all numbers $k \leq n$ are not in $A$ by definition of $S$. Thus, if $n^+$ were in $A$, then $n \notin S$ by definition of immediate successor, which would contradict our hypothesis. Hence, by definition of $S$, $n^+$ must be in $S$, and thereby must not be in $A$. 
+                    We need to prove that \(n^+ \in S\). Given that \(n \in S\), all numbers \(k \leq n\) are not in \(A\) by definition of \(S\). Thus, if \(n^+\) were in \(A\), then \(n \notin S\) by definition of immediate successor, which would contradict our hypothesis. Hence, by definition of \(S\), \(n^+\) must be in \(S\), and thereby must not be in \(A\). 
                 \end{itemize}
-                Thus $n^+ \in S$. Because $S$ contains 0, and whenever $S$ contains $n$, $S$ also contains $n^+$, $S$ is by definition, a successor set. Thus, by Peano's ``Axioms,'' $S = \W$. \\
+                Thus \(n^+ \in S\). Because \(S\) contains 0, and whenever \(S\) contains \(n\), \(S\) also contains \(n^+\), \(S\) is by definition, a successor set. Thus, by Peano's ``Axioms,'' \(S = \W\). \\
 
-                \noindent Since $S = \W$, and $S$ is defined as an inclusive set of whole numbers for which its numbers that are less than or equal to those numbers are not in $A$, it follows that no elements of $\W$ can be in $A$. Hence, $A$ must be empty and by Problem 11, $A = \emptyset$. \\
+                \noindent Since \(S = \W\), and \(S\) is defined as an inclusive set of whole numbers for which its numbers that are less than or equal to those numbers are not in \(A\), it follows that no elements of \(\W\) can be in \(A\). Hence, \(A\) must be empty and by Problem 11, \(A = \emptyset\). \\
 
-                \noindent Therefore, every non-empty subset of $\W$ must have a smallest element, which confirms that $\W$ is well-ordered.
+                \noindent Therefore, every non-empty subset of \(\W\) must have a smallest element, which confirms that \(\W\) is well-ordered.
             }
 
-            \noindent \textbf{Hint}: $X$ being well ordered means that if $A \subseteq X$ either $A = \emptyset$ or $A$ has a smallest element.
+            \noindent \textbf{Hint}: \(X\) being well ordered means that if \(A \subseteq X\) either \(A = \emptyset\) or \(A\) has a smallest element.
 
-            So, to show $X$ is well-ordered, we let $A\subseteq X$ such that $A$ does not have a smallest element. \\
+            So, to show \(X\) is well-ordered, we let \(A\subseteq X\) such that \(A\) does not have a smallest element. \\
 
-            We must show that $A = \emptyset$. \\
+            We must show that \(A = \emptyset\). \\
 
             Theorem 1 outline:
 
-            $\subseteq$: \\
-            $\emptyset \subseteq A$ (by the corollary to Problem 13) \\
+            \(\subseteq\): \\
+            \(\emptyset \subseteq A\) (by the corollary to Problem 13) \\
 
-            $\supseteq$: \\
-            $A \subseteq \emptyset$. Show $x\notin \emptyset \implies x \notin A$. Here, $A \subseteq \W$. Equivalent to showing that $\forall n \in \W \implies n \notin A$. \\  
+            \(\supseteq\): \\
+            \(A \subseteq \emptyset\). Show \(x\notin \emptyset \implies x \notin A\). Here, \(A \subseteq \W\). Equivalent to showing that \(\forall n \in \W \implies n \notin A\). \\  
 
-            \noindent \textbf{Big hint}: Want to show $\{n \in \W \colon n \notin A\} = \W$. Instead, consider the set $S = \{n \in \W \colon \text{ if } k \in \W \text{ and } k \leq n, \text{ then } k \notin A\}$. \\
-            Set of whole numbers such that all previous whole numbers are not in $A$. Show $S = \W$. \\
+            \noindent \textbf{Big hint}: Want to show \(\{n \in \W \colon n \notin A\} = \W\). Instead, consider the set \(S = \{n \in \W \colon \text{ if } k \in \W \text{ and } k \leq n, \text{ then } k \notin A\}\). \\
+            Set of whole numbers such that all previous whole numbers are not in \(A\). Show \(S = \W\). \\
 
-            \textbf{Statement}: ``$X$ is well-ordered means $X$ is totally ordered and $\forall A \ne \emptyset \subseteq X$ has a smallest element.'' \\
-            \indent\textbf{Denial}: ``$X$ is not well ordered means $X$ is either not totally ordered, or $\exists A \ne \emptyset \subseteq X$ that has no smallest element (i.e., $\forall a \in A, a- 1 \in A$).''
+            \textbf{Statement}: ``\(X\) is well-ordered means \(X\) is totally ordered and \(\forall A \ne \emptyset \subseteq X\) has a smallest element.'' \\
+            \indent\textbf{Denial}: ``\(X\) is not well ordered means \(X\) is either not totally ordered, or \(\exists A \ne \emptyset \subseteq X\) that has no smallest element (i.e., \(\forall a \in A, a- 1 \in A\)).''

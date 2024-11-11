@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "Babystep",
+        "bijections",
         "ciphertext",
         "Cryptosystem",
         "Elgamal",
@@ -8,6 +9,7 @@
         "Giantstep",
         "infimum",
         "injective",
+        "injectivity",
         "primality",
         "RAINN",
         "squarings",
@@ -15,6 +17,7 @@
         "subcovers",
         "suprema",
         "surjective",
+        "Surjectivity",
         "Totient",
         "verconge",
         "vercongence",
