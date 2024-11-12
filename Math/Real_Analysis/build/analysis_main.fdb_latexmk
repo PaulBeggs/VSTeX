@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1731307107.57457 "c:/Users/paulb/VSTeX/Math/Real_Analysis/analysis_main.tex" "build/analysis_main.pdf" "analysis_main" 1731307115.03353 0
+["pdflatex"] 1731371266.8366 "c:/Users/paulb/VSTeX/Math/Real_Analysis/analysis_main.tex" "build/analysis_main.pdf" "analysis_main" 1731371273.98435 0
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731036736 195081 75d3825dcf541b78d14edbc7b55cbc74 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1727051388 14064 e4c3d6dc0307aa16e774363be70b5216 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1708494351 688 37338d6ab346c2f1466b29e195316aa4 ""
@@ -284,13 +284,13 @@
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Chapters/analysis_ch_1.tex" 1730653118 42795 78202bf6a1192e486868d8d8ac278f81 ""
-  "Chapters/analysis_ch_2.tex" 1731033432 67984 309c40258e71502a3f0d6425a2d35887 ""
+  "Chapters/analysis_ch_2.tex" 1731371266 71422 d4dffd75ee08f5f266aa8e71142591fc ""
   "Chapters/analysis_ch_3.tex" 1731033217 34466 ccff7837de07511e247f35048ee3bb6e ""
   "Chapters/analysis_ch_4.tex" 1731033531 13307 5791f2fd9112e05476fdf805273f75af ""
   "analysis_main.tex" 1731307091 21622 aee98ff1f5a86e5138cac3cf97e6e0cb ""
-  "build/analysis_main.aux" 1731307114 23450 72915f6021e6ac8adc5740f5b605ec68 "pdflatex"
-  "build/analysis_main.out" 1731307114 6884 940fd64a64bb1bfa60048bd5c06cc375 "pdflatex"
-  "build/analysis_main.toc" 1731307114 3682 e61007e55986fd2be92f914636cba1b0 "pdflatex"
+  "build/analysis_main.aux" 1731371273 23750 854235ba11b41707390cb3ff22b8b20d "pdflatex"
+  "build/analysis_main.out" 1731371273 6889 6d8002f05814f732ca7dec0f1f422bb2 "pdflatex"
+  "build/analysis_main.toc" 1731371273 3683 eefc009e7443480b2b0373e006b38652 "pdflatex"
   "c:/Users/paulb/VSTeX/Math/Real_Analysis/analysis_main.tex" 1731307091 21622 aee98ff1f5a86e5138cac3cf97e6e0cb ""
   "draculatheme.sty" 1729522198 746 5260882e522f4aca68973613cf56fb67 ""
   "images/Hendrix Logo.png" 1712992668 30579 73165ffe7013fe439368d0e42c21a9e2 ""

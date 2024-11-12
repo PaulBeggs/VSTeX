@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  11 NOV 2024 00:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  11 NOV 2024 18:27
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1133,7 +1133,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.40 ...onal Limits and Continuity}{74}{chapter.4}
+l.40 ...onal Limits and Continuity}{76}{chapter.4}
                                                   % [1
 
 ])
@@ -1532,12 +1532,12 @@ Package pdftex.def Info: images/small logo.png  used on input line 705.
 [24]
 Chapter 2.
 (Chapters/analysis_ch_2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
@@ -1548,9 +1548,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--22
 ]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 57.
+(mdframed)              on input line 64.
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--57
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 
  []
 
@@ -1558,158 +1558,158 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--57
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 65.
+Package pdftex.def Info: images/small logo.png  used on input line 72.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [26]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 69.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 76.
  (C:\Users\paulb\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
 File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 77.
+(mdframed)              on input line 84.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 93.
+(mdframed)              on input line 100.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 93.
+Package pdftex.def Info: images/small logo.png  used on input line 100.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [27]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 117.
+(mdframed)              on input line 124.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 117.
+Package pdftex.def Info: images/small logo.png  used on input line 124.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [28]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 128.
+(mdframed)              on input line 135.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 143.
-Package mdframed Info: Not enough space on this page on input line 143.
+(mdframed)              on input line 150.
+Package mdframed Info: Not enough space on this page on input line 150.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 143.
+Package pdftex.def Info: images/small logo.png  used on input line 150.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [29]
-Package mdframed Info: Not enough space on this page on input line 143.
+Package mdframed Info: Not enough space on this page on input line 150.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 160.
+(mdframed)              on input line 167.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 177.
+Package pdftex.def Info: images/small logo.png  used on input line 184.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [30]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 185.
+(mdframed)              on input line 192.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 219.
+(mdframed)              on input line 226.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 219.
+Package pdftex.def Info: images/small logo.png  used on input line 226.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [31]
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 230.
+Package pdftex.def Info: images/small logo.png  used on input line 237.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [32]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 237.
+(mdframed)              on input line 244.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 260.
+(mdframed)              on input line 267.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 260.
+Package pdftex.def Info: images/small logo.png  used on input line 267.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [33]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 311.
+(mdframed)              on input line 318.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 311.
+(mdframed)              on input line 318.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 311.
+ mdframed uses option nobreak mdframed on input line 318.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 311.
+(mdframed)              on input line 318.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 311.
+ mdframed uses option nobreak mdframed on input line 318.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 311.
+Package pdftex.def Info: images/small logo.png  used on input line 318.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [34]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 341.
+(mdframed)              on input line 348.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 341.
+Package pdftex.def Info: images/small logo.png  used on input line 348.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [35]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 365.
+(mdframed)              on input line 372.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 376.
+Package pdftex.def Info: images/small logo.png  used on input line 383.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [36]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 388.
+(mdframed)              on input line 395.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 451.
+(mdframed)              on input line 458.
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--451
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 451--451
+Underfull \hbox (badness 10000) in paragraph at lines 458--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--451
+Underfull \hbox (badness 10000) in paragraph at lines 458--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--451
+Underfull \hbox (badness 10000) in paragraph at lines 458--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--458
 
  []
 
@@ -1717,255 +1717,286 @@ Underfull \hbox (badness 10000) in paragraph at lines 451--451
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 451.
+Package pdftex.def Info: images/small logo.png  used on input line 458.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [37]
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 451.
+Package pdftex.def Info: images/small logo.png  used on input line 458.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [38]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 518.
+(mdframed)              on input line 525.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 518.
+Package pdftex.def Info: images/small logo.png  used on input line 525.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [39]
-Package mdframed Info: Not enough space on this page on input line 518.
+Package mdframed Info: Not enough space on this page on input line 525.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 549.
+(mdframed)              on input line 556.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 549.
+Package pdftex.def Info: images/small logo.png  used on input line 556.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [40]
-Package mdframed Info: Not enough space on this page on input line 549.
+Package mdframed Info: Not enough space on this page on input line 556.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 565.
+(mdframed)              on input line 572.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 565.
+Package pdftex.def Info: images/small logo.png  used on input line 572.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [41]
-Package mdframed Info: Not enough space on this page on input line 565.
+Package mdframed Info: Not enough space on this page on input line 572.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 604.
+(mdframed)              on input line 611.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 604.
+Package pdftex.def Info: images/small logo.png  used on input line 611.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [42]
 
-LaTeX Warning: Hyper reference `ex:2.4.7' on page 43 undefined on input line 625.
+LaTeX Warning: Hyper reference `ex:2.4.7' on page 43 undefined on input line 632.
 
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 641.
+Package pdftex.def Info: images/small logo.png  used on input line 648.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [43]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 751.
+(mdframed)              on input line 758.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 751.
+(mdframed)              on input line 758.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 751.
+ mdframed uses option nobreak mdframed on input line 758.
 
-Underfull \hbox (badness 10000) in paragraph at lines 751--751
+Underfull \hbox (badness 10000) in paragraph at lines 758--758
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 751.
+(mdframed)              on input line 758.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 751.
+ mdframed uses option nobreak mdframed on input line 758.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 751.
+(mdframed)              on input line 758.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 751.
+(mdframed)              on input line 758.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 751.
+ mdframed uses option nobreak mdframed on input line 758.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 751.
+(mdframed)              on input line 758.
 
-Underfull \hbox (badness 1043) in paragraph at lines 751--751
+Underfull \hbox (badness 1043) in paragraph at lines 758--758
 \OT1/cmr/m/n/12 Since $\OML/cmm/m/it/12 ^^O > \OT1/cmr/m/n/12 0$ is ar-bi-trary, it fol-lows that $[][] \OML/cmm/m/it/12 a[] \OT1/cmr/m/n/12 =
  []
 
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 751.
+ mdframed uses option nobreak mdframed on input line 758.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 751.
+ mdframed uses option nobreak mdframed on input line 758.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 751.
+Package pdftex.def Info: images/small logo.png  used on input line 758.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [44]
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 751.
+Package pdftex.def Info: images/small logo.png  used on input line 758.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [45]
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 751.
+Package pdftex.def Info: images/small logo.png  used on input line 758.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [46]
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 762.
+Package pdftex.def Info: images/small logo.png  used on input line 783.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [47]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 774.
+(mdframed)              on input line 825.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 812.
-Package mdframed Info: Not enough space on this page on input line 812.
+(mdframed)              on input line 825.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 825.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 825.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 825.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 825.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 825.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 812.
+Package pdftex.def Info: images/small logo.png  used on input line 825.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [48]
-Package mdframed Info: Not enough space on this page on input line 812.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 867.
-
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 867.
+Package pdftex.def Info: images/small logo.png  used on input line 835.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [49]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 886.
+(mdframed)              on input line 847.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 885.
+Package mdframed Info: Not enough space on this page on input line 885.
 
-Overfull \hbox (2.82733pt too wide) in paragraph at lines 886--886
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 885.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[50]
+Package mdframed Info: Not enough space on this page on input line 885.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 940.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 940.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[51]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 959.
+
+Overfull \hbox (2.82733pt too wide) in paragraph at lines 959--959
 \OT1/cmr/m/n/12 ev-ery bounded se-quence has a con-ver-gent sub-se-quence. If a sub-se-quence is bounded,
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 905.
+(mdframed)              on input line 978.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 905.
-(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[50]
-Package mdframed Info: Not enough space on this page on input line 905.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 920.
-
-
-File: images/small logo.png Graphic file (type png)
-<use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 928.
-(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[51]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 957.
-
-
-Package amsthm Warning: The \qedhere command may not work correctly here on input line 957.
-
-
-
-File: images/small logo.png Graphic file (type png)
-<use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 979.
+Package pdftex.def Info: images/small logo.png  used on input line 978.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [52]
+Package mdframed Info: Not enough space on this page on input line 978.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1019.
+(mdframed)              on input line 993.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 1019.
+Package pdftex.def Info: images/small logo.png  used on input line 1001.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [53]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1049.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1049.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 1049.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 1049.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 1049.
+(mdframed)              on input line 1030.
+
+
+Package amsthm Warning: The \qedhere command may not work correctly here on input line 1030.
+
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 1049.
+Package pdftex.def Info: images/small logo.png  used on input line 1052.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [54]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1092.
+
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 1065.
+Package pdftex.def Info: images/small logo.png  used on input line 1092.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
 [55]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 1127.
+(mdframed)              on input line 1122.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1122.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 1122.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1122.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 1122.
 
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
-Package pdftex.def Info: images/small logo.png  used on input line 1127.
+Package pdftex.def Info: images/small logo.png  used on input line 1122.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[56])
+[56]
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 1138.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[57]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1200.
+
+
+File: images/small logo.png Graphic file (type png)
+<use images/small logo.png>
+Package pdftex.def Info: images/small logo.png  used on input line 1200.
+(pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
+[58])
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 709.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[57]
+[59]
 Chapter 3.
 (Chapters/analysis_ch_3.tex
 
-[58
+[60
 
 ]
 Package mdframed Info: mdframed detected package amsthm 
@@ -1982,7 +2013,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 78.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[59]
+[61]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 116.
@@ -2002,7 +2033,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 116.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[60]
+[62]
 Package mdframed Info: Not enough space on this page on input line 116.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2016,7 +2047,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 153.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[61]
+[63]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 161.
@@ -2032,7 +2063,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 193.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[62]
+[64]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 230.
@@ -2042,7 +2073,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 242.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[63]
+[65]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 267.
@@ -2077,7 +2108,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 267.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[64]
+[66]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 333.
@@ -2087,7 +2118,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 333.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[65]
+[67]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 387.
@@ -2102,7 +2133,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 387.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[66]
+[68]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 401.
@@ -2122,7 +2153,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 401.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[67]
+[69]
 Package mdframed Info: Not enough space on this page on input line 401.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2163,13 +2194,13 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 440.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[68]
+[70]
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 440.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[69]
+[71]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 452.
@@ -2179,7 +2210,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 452.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[70]
+[72]
 Package mdframed Info: Not enough space on this page on input line 452.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2193,7 +2224,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 511.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[71]
+[73]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 584.
@@ -2203,17 +2234,17 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 584.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[72])
+[74])
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 713.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[73]
+[75]
 Chapter 4.
 (Chapters/analysis_ch_4.tex
 
-[74
+[76
 
 ]
 Package mdframed Info: mdframed detected package amsthm 
@@ -2243,7 +2274,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 106.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[75]
+[77]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 118.
@@ -2272,7 +2303,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 164.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[76]
+[78]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 178.
@@ -2291,7 +2322,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 193.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[77]
+[79]
 Package mdframed Info: Not enough space on this page on input line 193.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2325,7 +2356,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 263.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[78]
+[80]
 Package mdframed Info: Not enough space on this page on input line 263.
 
 
@@ -2333,7 +2364,7 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 280.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[79]
+[81]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 291.
@@ -2351,14 +2382,14 @@ File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 327.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[80])
+[82])
 
 File: images/small logo.png Graphic file (type png)
 <use images/small logo.png>
 Package pdftex.def Info: images/small logo.png  used on input line 758.
 (pdftex.def)             Requested size: 10.3357pt x 14.22636pt.
-[81]
-runsystem(latexminted cleantemp  --timestamp 20241111003827 61DD775D25DC3C5317D2006938380996)...executed.
+[83]
+runsystem(latexminted cleantemp  --timestamp 20241111182747 61DD775D25DC3C5317D2006938380996)...executed.
 
  (c:\Users\paulb\VSTeX\Math\Real_Analysis\build\analysis_main.aux)
  ***********
@@ -2373,20 +2404,20 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `analysis_main.out' has not changed.
-(rerunfilecheck)             Checksum: 940FD64A64BB1BFA60048BD5C06CC375;6884.
+(rerunfilecheck)             Checksum: 6D8002F05814F732CA7DEC0F1F422BB2;6889.
  ) 
 Here is how much of TeX's memory you used:
- 47659 strings out of 473899
- 1140346 string characters out of 5726500
- 2026215 words of memory out of 5000000
- 69341 multiletter control sequences out of 15000+600000
+ 47678 strings out of 473899
+ 1140682 string characters out of 5726500
+ 2026217 words of memory out of 5000000
+ 69354 multiletter control sequences out of 15000+600000
  568499 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,15n,101p,1564b,1968s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\paulb\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on c:\Users\paulb\VSTeX\Math\Real_Analysis\build\analysis_main.pdf (82 pages, 671780 bytes).
+Output written on c:\Users\paulb\VSTeX\Math\Real_Analysis\build\analysis_main.pdf (84 pages, 680147 bytes).
 PDF statistics:
- 1146 PDF objects out of 1200 (max. 8388607)
- 447 named destinations out of 1000 (max. 500000)
+ 1159 PDF objects out of 1200 (max. 8388607)
+ 453 named destinations out of 1000 (max. 500000)
  335 words of extra memory for PDF output out of 10000 (max. 10000000)
 

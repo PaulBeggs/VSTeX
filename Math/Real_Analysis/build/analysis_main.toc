@@ -23,21 +23,21 @@
 \contentsline {subsection}{\numberline {2.3.2}Exercises}{39}{subsection.2.3.2}%
 \contentsline {section}{\numberline {2.4}The Monotone Convergence Theorem and a First Look at Infinite Series}{41}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Recap and Summary}{43}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Exercise}{44}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Subsequences and the Bolzano-Weierstrass Theorem}{48}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Exercises}{50}{subsection.2.5.1}%
-\contentsline {section}{\numberline {2.6}The Cauchy Criterion}{52}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Basic Topology of Real Numbers}{58}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Discussion: The Cantor Set}{58}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Open and closed Sets}{59}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Open Sets}{59}{subsection.3.2.1}%
-\contentsline {subsubsection}{Some Examples of Open Sets}{59}{section*.4}%
-\contentsline {subsection}{\numberline {3.2.2}Closed Sets}{60}{subsection.3.2.2}%
-\contentsline {subsubsection}{Some Examples of Closed Sets}{60}{section*.5}%
-\contentsline {subsection}{\numberline {3.2.3}Exercises}{63}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Compact Sets}{67}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Exercises}{71}{subsection.3.3.1}%
-\contentsline {chapter}{\numberline {4}Functional Limits and Continuity}{74}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Discussion: Examples of Dirichlet and Thomae}{74}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Functional Limits}{75}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Continuous Functions}{81}{section.4.3}%
+\contentsline {subsection}{\numberline {2.4.2}Exercises}{44}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Subsequences and the Bolzano-Weierstrass Theorem}{50}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Exercises}{52}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}The Cauchy Criterion}{54}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Basic Topology of Real Numbers}{60}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Discussion: The Cantor Set}{60}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Open and closed Sets}{61}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Open Sets}{61}{subsection.3.2.1}%
+\contentsline {subsubsection}{Some Examples of Open Sets}{61}{section*.4}%
+\contentsline {subsection}{\numberline {3.2.2}Closed Sets}{62}{subsection.3.2.2}%
+\contentsline {subsubsection}{Some Examples of Closed Sets}{62}{section*.5}%
+\contentsline {subsection}{\numberline {3.2.3}Exercises}{65}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Compact Sets}{69}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Exercises}{73}{subsection.3.3.1}%
+\contentsline {chapter}{\numberline {4}Functional Limits and Continuity}{76}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Discussion: Examples of Dirichlet and Thomae}{76}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Functional Limits}{77}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Continuous Functions}{83}{section.4.3}%

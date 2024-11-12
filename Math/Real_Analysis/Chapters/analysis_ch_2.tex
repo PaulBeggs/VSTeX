@@ -2,6 +2,13 @@
 \renewcommand{\labelenumi}{\theenumi.}
 \section{Discussion: Rearrangement of Infinite Series}
 
+
+
+
+
+
+
+
 \noindent \textbf{Questions:}
 
 \textbf{What is a \textit{sequence}?} \\
@@ -653,7 +660,7 @@ Looking to the future, we are going to use functions and summations together. Fo
 
 \renewcommand{\theenumi}{\alph{enumi}}
 \renewcommand{\labelenumi}{(\theenumi)}
-\subsection{Exercise}
+\subsection{Exercises}
 
 \begin{exercise}
     {2.4.7 (Limit Superior)}Let \((a_{n})\) be a bounded sequence.
@@ -750,6 +757,72 @@ Looking to the future, we are going to use functions and summations together. Fo
     \end{enumerate}
 }
 
+\begin{exercise}
+    {2.4.10 (Infinite Products)}
+
+    A close relative of infinite series is the infinite product
+    \[
+    \prod_{n=1}^{\infty} b_n = b_1 b_2 b_3 \cdots,
+    \]
+    which is understood in terms of its sequence of partial products
+    \[
+    p_m = \prod_{n=1}^{m} b_n = b_1 b_2 b_3 \cdots b_m.
+    \]
+
+    Consider the special class of infinite products of the form
+    \[
+    \prod_{n=1}^{\infty} (1 + a_n) = (1 + a_1)(1 + a_2)(1 + a_3) \cdots, \quad \text{where} \quad a_n \geq 0.
+    \]
+
+    \begin{enumerate}
+    \item Find an explicit formula for the sequence of partial products in the case where \( a_n = \frac{1}{n} \) and decide whether the sequence converges. Write out the first few terms in the sequence of partial products in the case where \( a_n = \frac{1}{n^2} \) and make a conjecture about the convergence of this sequence.
+    \item Show, in general, the sequence of partial products converges if and only if \(\sum_{n=1}^{\infty} a_n \text{ converges.}\)
+    (The inequality \(1 + x \leq 3^{x} \text{ for positive } x\) will be useful in one direction.)
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item For \( a_n = \dfrac{1}{n} \):
+
+        The sequence of partial products is:
+        \[
+        p_m = \prod_{n=1}^m \left(1 + \dfrac{1}{n}\right) = \prod_{n=1}^m \dfrac{n + 1}{n}
+        \]
+        This telescopes:
+        \[
+        p_m = \dfrac{2}{1} \times \dfrac{3}{2} \times \dfrac{4}{3} \times \cdots \times \dfrac{m + 1}{m} = \dfrac{m + 1}{1} = m + 1
+        \]
+        Therefore, the sequence diverges as \( m \to \infty \).
+
+        For \( a_n = \dfrac{1}{n^2} \):
+
+        Compute the first few terms:
+        \begin{align*}
+            p_1 &= 1 + \dfrac{1}{1^2} = 2 \\
+            p_2 &= \left(1 + \dfrac{1}{1^2}\right)\left(1 + \dfrac{1}{2^2}\right) = 2 \times \dfrac{5}{4} = \dfrac{5}{2} \\
+            p_3 &= p_2 \times \left(1 + \dfrac{1}{3^2}\right) = \dfrac{5}{2} \times \dfrac{10}{9} = \dfrac{25}{9} \\
+            p_4 &= p_3 \times \left(1 + \dfrac{1}{4^2}\right) = \dfrac{25}{9} \times \dfrac{17}{16} = \dfrac{425}{144}
+        \end{align*}
+        The sequence increases slowly, suggesting that the infinite product is monotone increasing, and thus it converges.
+
+        \item We will provide an if and only if proof below.
+        
+        \iffpf[We will show that the infinite product \(\prod_{n=1}^\infty (1 + a_n)\) converges if and only if the series \(\sum_{n=1}^\infty a_n\) converges.]{If \(\sum_{n=1}^\infty a_n\) converges, then \(a_n \to 0\). For \(a_n \geq 0\), we have \(\ln(1 + a_n) \leq a_n\). Thus,
+        \[
+        \sum_{n=1}^\infty \ln(1 + a_n) \leq \sum_{n=1}^\infty a_n < \infty
+        \]
+        So the series \(\sum_{n=1}^\infty \ln(1 + a_n)\) converges, which implies that the product \(\prod_{n=1}^\infty (1 + a_n)\) converges.}{Conversely, if \(\prod_{n=1}^\infty (1 + a_n)\) converges, then the partial products are bounded. For \(a_n \geq 0\) and \(1 + x \geq e^{x/2}\) for small \(x\), we have
+        \[
+        \ln(1 + a_n) \geq \dfrac{a_n}{2}
+        \]
+        For sufficiently large \(n\), this gives
+        \[
+        \sum_{n=1}^\infty a_n \leq 2 \sum_{n=1}^\infty \ln(1 + a_n)
+        \]
+        Since \(\sum_{n=1}^\infty \ln(1 + a_n)\) converges, so does \(\sum_{n=1}^\infty a_n\).\qedhere}{}{xgray}
+    \end{enumerate}
+}
 
 
 \renewcommand{\theenumi}{\arabic{enumi}}
@@ -1125,3 +1198,5 @@ Then, for all \(m, n \geq N\) (with \(m > n\)),
 \]
 This shows that \((a_n)\) is a Cauchy sequence. Since every Cauchy sequence in \(\mathbb{R}\) converges, the sequence \((a_n)\) converges.
 }
+
+
