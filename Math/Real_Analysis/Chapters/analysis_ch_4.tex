@@ -211,9 +211,6 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
 }
 
 
-
-
-
 \begin{ntheorem}
     {Sequential Criterion for Functional Limits}
     The following statements are equivalent:
@@ -328,5 +325,56 @@ We say \(\limc{f(x)} = \infty\) if for all \(M > 0\), there exists \(\delta > 0\
 Idea: When \(x\) is close to \(c\), \(f(x)\) is close to \(f(c)\). Then, for the topological definition, we can say if \(x \in V_\delta(c)\) then \(f(x) \in V_\epsilon(f(c))\).
 
 \begin{definition}
-    We say function \(f\) is continuous on a set \(A\) if \(f\) is continuous at every point in \(A\). 
+    We say function \(f\) is \textit{continuous} on a set \(D\) if \(f\) is continuous at every point in \(D\). 
 \end{definition}
+
+The following are equivalent (TFAE):
+
+\begin{enumerate}
+    \item \(\limc{f(x)} = L\)
+    \item For all sequences \((x_n)\) such that \((x_n) \rightarrow c\), we have \(\limn{f(x_n)} = L\).
+\end{enumerate}
+
+\begin{center}
+    \underline{Continuous Functions} (Thm 4.3.2 in book)
+\end{center}
+
+Claim: Let \(a \in \R\). Then \(f(x) = a\) is continuous.
+
+\begin{customframedproof}[linecolor=xgray]
+    \begin{proof}
+        Let \(c \in \R\). Let \(\epsilon > 0\). Set \(\delta = 8\). Now, if \(x - c < 8\), then \(\disabs{f(x) - f(c)} = a - a = 0 < \epsilon\). Thus, constant functions are continuous.
+    \end{proof}
+\end{customframedproof}
+
+Claim: \(f(x) = x\) is continuous.
+
+\begin{customframedproof}[linecolor=xgray]
+    \begin{proof}
+        Let \(c \in \R\). Let \(\epsilon > 0\). Set \(\delta = \epsilon\). If \(\disabs{x - c} < \delta\), then \(\disabs{f(x) - f(c)} = \disabs{x - c} < \delta = \epsilon\). Thus, the identity function is continuous.
+    \end{proof}
+\end{customframedproof}
+
+% \namrefthm{Algebraic Limit Theorem} tells us that if \(f\) and \(g\) are continuous at \(c\), then \(f + g\), \(f - g\), \(fg\), and \(\frac{f}{g}\) (so long as \(g \ne 0\)) are continuous at \(c\). From this, we know that polynomials are continuous. We'll show that in the next theorem.
+
+% \begin{ntheorem}
+%     {Thm. 4.3.2 in book}
+% \end{ntheorem}
+
+Claim: \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
+
+\begin{customframedproof}[linecolor=xgray]
+    \begin{proof}
+        \begin{itemize}
+            \item\hfill \textbf{Case 1:} \(c \ne 0\) \\
+
+            Let \(c \in [0,\infty)\). Let \(\epsilon > 0\). Set \(\delta < \epsilon\). If \(\disabs{x - c} < \delta\), then \(\disabs{g(x) - g(c)} = \disabs{\sqrt{x} - \sqrt{c}} = \frac{\disabs{x - c}}{\sqrt{x} + \sqrt{c}} < \frac{\delta}{\sqrt{c}} < \epsilon\). Thus, \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
+
+            \item \textbf{Case 2:} \(c = 0\) \\
+
+            Let \(c \in [0,\infty)\). Let \(\epsilon > 0\) Set \(\delta = \epsilon^2\). If \(\disabs{x - 0} < \delta\), then \(\disabs{g(x) - g(0)} = \disabs{\sqrt{x} - 0} = \sqrt{x} < \sqrt{\delta} = \epsilon\). Thus, \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
+        \end{itemize}
+        
+    \end{proof}
+\end{customframedproof}
+
