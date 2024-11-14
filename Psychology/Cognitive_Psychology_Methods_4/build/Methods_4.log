@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  11 NOV 2024 22:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  13 NOV 2024 20:57
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -876,7 +876,7 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-08-30>
  ***********
 Package rerunfilecheck Info: File `Methods_4.out' has not changed.
-(rerunfilecheck)             Checksum: CB87269707F3D5C7B07E50F8D6CB5C7C;987.
+(rerunfilecheck)             Checksum: E99D33A9DABE55F942E8D0DA9853092A;981.
  ) 
 Here is how much of TeX's memory you used:
  24578 strings out of 473899
@@ -887,7 +887,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  99i,11n,107p,1102b,1105s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/paulb/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_4\build\Methods_4.pdf (9 pages, 97577 bytes).
+Output written on c:\Users\paulb\VSTeX\Psychology\Cognitive_Psychology_Methods_4\build\Methods_4.pdf (9 pages, 97596 bytes).
 PDF statistics:
  138 PDF objects out of 1000 (max. 8388607)
  31 named destinations out of 1000 (max. 500000)

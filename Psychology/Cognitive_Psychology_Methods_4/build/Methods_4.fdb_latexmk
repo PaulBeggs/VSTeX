@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1731385875.31405 "c:/Users/paulb/VSTeX/Psychology/Cognitive_Psychology_Methods_4/Methods_4.tex" "build/Methods_4.pdf" "Methods_4" 1731385876.4217 0
+["pdflatex"] 1731553064.48758 "c:/Users/paulb/VSTeX/Psychology/Cognitive_Psychology_Methods_4/Methods_4.tex" "build/Methods_4.pdf" "Methods_4" 1731553065.59877 0
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1731036736 195081 75d3825dcf541b78d14edbc7b55cbc74 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1708494351 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/paulb/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1727050291 11948197 d4504eab49177879c265b4debf5694f6 ""
@@ -195,10 +195,10 @@
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/paulb/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "Methods_4.tex" 1731385873 20890 453d46317dbd37a1546d6111d9d99d99 ""
-  "build/Methods_4.aux" 1731385876 2510 334bdc079722d3a42ce17dc87e5e8d20 "pdflatex"
-  "build/Methods_4.out" 1731385876 987 cb87269707f3d5c7b07e50f8d6cb5c7c "pdflatex"
-  "c:/Users/paulb/VSTeX/Psychology/Cognitive_Psychology_Methods_4/Methods_4.tex" 1731385873 20890 453d46317dbd37a1546d6111d9d99d99 ""
+  "Methods_4.tex" 1731553062 20851 3b34967cab4adb1122354751de07a583 ""
+  "build/Methods_4.aux" 1731553065 2510 3b6171ae20112245ea22b20ae1a6f915 "pdflatex"
+  "build/Methods_4.out" 1731553065 981 e99d33a9dabe55f942e8d0da9853092a "pdflatex"
+  "c:/Users/paulb/VSTeX/Psychology/Cognitive_Psychology_Methods_4/Methods_4.tex" 1731553062 20851 3b34967cab4adb1122354751de07a583 ""
   (generated)
   "build/Methods_4.aux"
   "build/Methods_4.log"

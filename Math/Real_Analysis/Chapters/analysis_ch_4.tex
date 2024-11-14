@@ -306,6 +306,38 @@ We say \(\limc{f(x)} = \infty\) if for all \(M > 0\), there exists \(\delta > 0\
     {Infinite Limits Cauchy Criterion} If \((x_n) \rightarrow \infty\), \((x_n)\) will not be Cauchy. It is possible to have \(x_{n+1} - x_n\) approach 0, but \((x_n)\) converges to \(\infty\).
 \end{ntheorem}
 
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{(\theenumi)}
+\subsection{Exercises}
+
+\begin{exercise}
+    {4.2.10} Right and Left Limits. Introductory calculus courses typically refer to the right-hand limit of a function as the limit obtained by “letting \(x\) approach \(a\) from the right-hand side.”
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item(a) Give a proper definition in the style of Definition 4.2.1 for the right-hand and left-hand limit statements:
+        \[
+            \lim_{x \to a^+} f(x) = L \quad \text{and} \quad \lim_{x \to a^-} f(x) = M.
+        \]
+        
+        \item(b) Prove that \(\lim_{x \to a} f(x) = L\) if and only if both the right and left-hand limits equal \(L\).
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {4.2.11} Squeeze Theorem. Let \(f\), \(g\), and \(h\) satisfy \(f(x) \leq g(x) \leq h(x)\) for all \(x\) in some common domain \(A\). If \(\lim_{x \to c} f(x) = L\) and \(\lim_{x \to c} h(x) = L\) at some limit point \(c\) of \(A\), show \(\lim_{x \to c} g(x) = L\) as well.
+\end{exercise}
+
+\sol{
+    % Proof of the Squeeze Theorem goes here, if needed.
+}
+
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+
 \section{Continuous Functions}
 
 \begin{definition}
@@ -336,7 +368,7 @@ The following are equivalent (TFAE):
 \end{enumerate}
 
 \begin{center}
-    \underline{Continuous Functions} (Thm 4.3.2 in book)
+    \underline{Continuous Functions} (THM 4.3.2 in book)
 \end{center}
 
 Claim: Let \(a \in \R\). Then \(f(x) = a\) is continuous.
@@ -378,3 +410,42 @@ Claim: \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
     \end{proof}
 \end{customframedproof}
 
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{(\theenumi)}
+\subsection{Exercises}
+
+\begin{exercise}
+    {4.3.1} Let \( g(x) = \sqrt{3} \, x \).
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item Prove that \( g \) is continuous at \( c = 0 \).
+        \item Prove that \( g \) is continuous at a point \( c \neq 0 \). (The identity \( a^3 - b^3 = (a - b)(a^2 + ab + b^2) \) will be helpful.)
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {4.3.8} Decide if the following claims are true or false, providing either a short proof or counterexample to justify each conclusion. Assume throughout that \( g \) is defined and continuous on all of \( \mathbb{R} \).
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item If \( g(x) \geq 0 \) for all \( x < 1 \), then \( g(1) \geq 0 \) as well.
+        \item If \( g(r) = 0 \) for all \( r \in \mathbb{Q} \), then \( g(x) = 0 \) for all \( x \in \mathbb{R} \).
+        \item If \( g(x_0) > 0 \) for a single point \( x_0 \in \mathbb{R} \), then \( g(x) \) is in fact strictly positive for uncountably many points.
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {4.3.9} Assume \( h : \mathbb{R} \to \mathbb{R} \) is continuous on \( \mathbb{R} \) and let \( K = \{x : h(x) = 0\} \). Show that \( K \) is a closed set.
+\end{exercise}
+
+\sol{
+    % Proof that \( K \) is a closed set goes here, if needed.
+}
+
+
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}

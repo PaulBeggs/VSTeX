@@ -1,0 +1,1 @@
+{"rule":"TOO_LONG_PARAGRAPH","sentence":"^\\QIt was a good balance of difficulty, and required me to think differently than I was used to.\\E$"}
