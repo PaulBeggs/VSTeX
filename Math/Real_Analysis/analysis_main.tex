@@ -504,9 +504,17 @@ sharp corners=uphill,
 
 
 
-% Command for lemma proofs with a predefined color
+% Command for exercise proofs with a predefined color
 \newcommand{\expf}[1]{
     \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\lemmapf}[1]{
+    \begin{customframedproof}[linecolor=xpurple!75,]
         \begin{proof}
         #1
         \end{proof}

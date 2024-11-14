@@ -410,6 +410,28 @@ Claim: \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
     \end{proof}
 \end{customframedproof}
 
+\begin{ntheorem}
+    {Compositions of Continuous Functions} Let \(f\) be continuous at \(c\). Let \(g\) be continuous at \(f(x)\). Then, 
+    \[
+    g \circ f(x) = g(f(x)) \text{ is continuous.}
+    \]
+\end{ntheorem}
+
+\tpf{
+    Let \(\epsilon > 0\). Since \(g\) is continuous at \(f(c)\), there exists \(\delta_1 > 0\) such that if \(\disabs{x - f(c)} < \delta_1\), then \(\disabs{g(x) - g(f(c))} < \epsilon\). Since \(f\) is continuous at \(c\), there exists \(\delta_2 > 0\) such that if \(\disabs{x - c} < \delta_2\), then \(\disabs{f(x) - f(c)} < \delta_1\). Thus, if \(\disabs{x - c} < \delta_2\), then \(\disabs{g(f(x)) - g(f(c))} < \epsilon\). Therefore, \(g \circ f(x)\) is continuous.
+}
+
+\begin{center}
+    \underline{Most Common Applications of Continuity} \\
+
+    Is with limits.
+\end{center}
+
+If \(f\) is continuous at \(c\) and \((x_n) \to c\), then \(\limn{f(x_n)} = f(c)\). Hence.
+\[
+    \limn{f(x_n)} = f(\limn{x_n}).
+\]
+
 \renewcommand{\theenumi}{\alph{enumi}}
 \renewcommand{\labelenumi}{(\theenumi)}
 \subsection{Exercises}
@@ -449,3 +471,93 @@ Claim: \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}
+
+\section{Continuous Functions on Compact Sets}
+
+\begin{ntheorem}
+    {Extreme Value Theorem} If \(K\) is compact and \(f : K \to \R\) is continuous, then \(f\) attains a maximum and minimum value on \(K\).
+
+    In other words, there exists \(a \in K\) such that \(f(a) = \sup\{f(x) \mid x \in K\}\). Also, there exists \(b \in K\) such that \(f(b) = \inf\{f(x) \mid x \in K\}\).
+\end{ntheorem}
+
+\tpf{
+    We know \(f\) is bounded on \(K\) from \hyperref[lm:4.4.2]{Lemma 4.4.2} below. Hence,
+    \[
+    S = \sup\{f(x) \mid x \in K\} \text{ exists.}
+    \] 
+    For every natural number, there exists an \(x_n \in K\) such that \(S - \frac{1}{n} < f(x_n) \leq S\). It follows that \(\limn{f(x_n) = S}\). So, now we have a sequence, \((x_n)\) in the compact set \(K\). Since \(K\) is compact, by the Bolzano-Weierstrass Theorem, there exists a convergent subsequence,
+    \[
+    (x_{n_j}) \text{ with } a = \lim_{j \to \infty} x_{n_j} \in K.
+    \] 
+    Since \(f\) is continuous, we have,
+    \[
+    f(a) = \lim_{j \to \infty} f(x_{n_j}) = S.
+    \]
+    By a similar method, there exists \(b \in K\) such that \[
+    f(b) = \inf\{f(x) \mid x \in K\}.
+    \]
+    \textbf{Note:} This proof hinges on the fact that \(f\) is bounded! We need to show that \(f\) is bounded on \(K\) with a proof with subcovers.
+}   
+
+\begin{lemma}
+    How do we know \(f\) is bounded on \(K\)? That is, 
+    \[
+    f(K) = \{f(x) \mid x \in K\}.
+    \]
+    Show that \(f(K)\) is bounded.
+\end{lemma}
+
+
+\lemmapf{
+    Let \(c \in K\). Since \(f\) is continuous at \(c\), there exists \(\delta_c > 0\) such that if \(\disabs{x - c} < \delta_c\), then 
+    \[
+    \disabs{f(x) - f(c)} < 1.
+    \]
+    Do this over every \(c \in K\).  We get an open cover of \(K\).
+    \[
+    \mathcal{O} = \{V_{\delta_c} (c) \mid c \in K\}.
+    \]
+    Since \(K\) is compact, the Heine-Borel Theorem says there exists a finite subcover. We get \(c_1, c_2 \dots, c_n \in K\) such that \(K \subseteq \bigcup_{i = 1}^n V_{\delta_{c_i}} (c_i)\). Thus, 
+    \begin{align*}
+        f(K) &\subseteq f\left(\bigcup_{i = 1}^n V_{\delta_{c_i}} (c_i)\right) \\
+        &\subseteq \bigcup_{i = 1}^n f(V_{\delta_{c_i}} (c_i)) \\
+        &\subseteq \bigcup_{i = 1}^n (f(c_i) - 1, f(c_i) + 1) \\
+        &\subseteq [\min f(c_i) - 1, \max f(c_i) + 1].
+    \end{align*}
+    Therefore, \(f(K)\) is bounded.
+}
+
+\begin{ntheorem}
+    {Preservation of Compact Sets}If \(K\) is compact and \(f \colon K \to \R\) is continuous, then \(f(K)\) is compact.
+\end{ntheorem}
+
+\tpf{
+    Let \((y_n)\) be a sequence in \(f(K)\). We will show \((y_n)\) has a convergent subsequence with its limit in \(f(K)\).
+
+    For each \(n\) there exists \(x_n \in K\) such that \(f(x_n) = y_n\). So \((x_n)\) is a sequence in a compact set \(K\). There exists a convergent subsequence \((x_{n_j})\) with 
+    \[
+    a
+     = \lim_{j \to \infty} x_{n_j} \in K.
+    \]
+    Now consider the corresponding subsequence \((y_{n_j})\) in \(f(K)\). Since \(f\) is continuous, we have
+    \begin{align*}
+    \lim_{j \to \infty} y_{n_j} = \lim_{j \to \infty} f(x_{n_j}) \\
+    &= f(a) \in f(K).
+    \end{align*}
+    So, \(x_{n_j}\) is a convergent subsequence with limit in \(f(K)\). Therefore, \(f(K)\) is compact.
+}
+
+\begin{definition}
+    A function \(f \colon A \to \R\) is \textit{uniformly continuous} on \(A\) if for all \(\epsilon > 0\), there exists \(\delta > 0\) such that for all \(x, c \in A\), if \(\disabs{x - c} < \delta\), then \(\disabs{f(x) - f(c)} < \epsilon\).
+\end{definition}
+
+Compare this definition with \defref{4.3.1}. The difference is that the \(\delta\) is independent of \(c\). That is, we have to find one \(\delta\) that needs to work for every point \(c\).
+
+% Put a table environment here with 3x2.
+
+% 1x1: Continuous: 
+% 1x2: Uniformly Continuous:
+% 2x1: For all \(c \in A\), we can find a corresponding \(\delta\).
+% 2x2: For all \(c \in A\), we need one \(\delta\) that works at every \(c\).
+% 3x
+
