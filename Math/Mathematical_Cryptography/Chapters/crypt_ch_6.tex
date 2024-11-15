@@ -1,0 +1,129 @@
+\section{Elliptic Curves}
+\newcommand{\op}{\oplus}
+\newcommand{\fanO}{\mathcal{O}}
+\begin{definition}
+    {Elliptic Curve} An \textit{elliptic curve} \(E\) is the set of solutions to an equation of the form \(y^2 = x^3 + ax + b\), together with a point at infinity \(\mathcal{O}\), and the condition that \(4a^{3} + 27b^{2} \ne 0\). The last condition is to prevent singular points that cross. In other words, \(4a^{3} + 27b^{2} = 0 \equiv x^{3} + ax + b\) having 3 distinct roots.
+\end{definition}
+
+\begin{center}
+    \textbf{Adding Two Elliptic Curve Points} \\
+
+    We define ``\(\oplus\)'' as mapping: \(E \times E \to E\). From this, we get \(P \oplus Q = R\). 
+\end{center}
+
+Define a line through \(P \op Q\). This line will intersect the curve at a third point, \(R\). Then \(R'\) is the reflection of \(R\) over the \(y\)-axis. \(P \oplus Q = R'\).
+
+\begin{example}
+    {Adding Two Elliptic Curve Points} Given the elliptic curve \(E\colon y^{2} = x^{3} - 36x\) with \(P = (-3,9)\), \(Q = (-2,8)\). Find \(P \oplus Q\).
+\end{example}
+
+\lesol{
+    \begin{enumerate}
+        \item Find slope: \(m = \frac{y_{2} - y_{1}}{x_{2} - x_{1}} = \frac{8 - 9}{-2 - (-3)} = -1\).
+        \item Solve the equation of line: \(y = -x + b\). Plug in \(P\): \(9 = 3 + b \implies b = 6\). Thus, \(y = -x + 6\).
+        \item Plug \(y\) back into given formula: 
+        \begin{align*}
+            (-x + 6)^{2} &= x^{3} - 36x  \\
+            x^{2} - 12x + 36 &= x^{3} - 36x \\
+            (-x^{3}) + x^{2} + 24x + 36 &= 0 \\
+            x^{3} - x^{2} - 24x - 36 &= 0
+        \end{align*}
+        \item Find the roots of the equation: \(x = -3, -2, 6\). Thus, \(R = (6,0)\) and \(R' = (6,0)\). Note two important things we did here:
+        \begin{itemize}
+            \item We know that two of the roots are 3 and 2 because they are given. We got the third root, \(-6\), by solving for the cubic equation.
+            \item \(R\) and \(R'\) are the same value because to find \(R'\), we reflect \(R\) over the \(y\)-axis.  
+        \end{itemize}
+        \item Conclude: \(P \op Q = R' = (6,0)\).
+    \end{enumerate}
+}
+
+\begin{theorem}
+    {Addition Law Properties} Let \(E\) be an elliptic curve. Then, the addition law on \(E\) has the following properties:\[
+    \begin{array}{lrclll}
+        \text{(a)} & P \op \mathcal{O} &=& \mathcal{O} \op P = P & \text{for all } P \in E. & \text{(Identity)} \\
+        \text{(b)} & P \op (-P) &=& (-P) \op P = \mathcal{O} & \text{for all } P \in E. & \text{(Inverse)} \\
+        \text{(c)} & (P \op Q) \op R &=& P \op (Q \op R) & \text{for all } P, Q, R \in E. & \text{(Associative)} \\
+        \text{(d)} & P \op Q &=& Q \op P & \text{for all } P, Q \in E. & \text{(Commutative)} \\
+    \end{array}\]
+    In other words, the addition law makes the points of \(E\) into an Abelian group. 
+\end{theorem}
+
+\tpf{
+    \begin{enumerate}
+        \item \textbf{Identity:} True because \(\mathcal{O}\) lies on all vertical lines.
+        \item \textbf{Inverse:} Same reason as Identity. (Also, we defined \(\mathcal{O}\) as such.)
+        \item \textbf{Associative:} Ignoring because hard.
+        \item \textbf{Commutative:} Line through \(P \op Q\) is the same as the line through \(Q \op P\). Hence, \(P \op Q = Q \op P\).
+    \end{enumerate}
+}
+
+\subsection{Special Cases for Adding Elliptic Curve Points}
+
+\begin{theorem}
+    {Elliptic Curve Addition Algorithm} Let 
+    \[
+        E \colon y^{2} = x^{3} + ax + b
+    \]
+    be an elliptic curve, and let \(P_{1}\) and \(P_{2}\) be points on \(E\). 
+    \begin{enumerate}[label=(\alph*)]
+        \item If \(P_{1} = \mathcal{O}\), then \(P_{1} + P_{2} = P_{2}\).
+        \item Otherwise, if \(P_{2} = \mathcal{O}\), then \(P_{1} + P_{2} = P_{1}\).
+        \item Otherwise, write \(P_{1} = (x_{1}, y_{1})\) and \(P_{2} =(x_{2},y_{2})\).
+        \item If \(x_{1} = x_{2}\) and \(y_{1} = -y_{2}\), then \(P_{1} + P_{2} = \fanO\).
+        \item Otherwise, define \(\lambda\) by 
+        \[\lambda = 
+        \begin{cases}
+            \dfrac{y_{2} - y_{1}}{x_{2} - x_{1}} & \text{if } P_{1} \ne P_{2}, \\[0.5cm]
+            \dfrac{3x_{1}^{2} + A}{2y_{1}} & \text{if } P_{1} = P_{2}, 
+        \end{cases}
+        \]
+        and let 
+        \[
+        x_{3} = \lambda^{2} - x_{1} - x_{2} \qquad \text{ and } \qquad y_{3} = \lambda (x_{1} - x_{3}) - y_{1}.
+        \] 
+        Then, \(P_{1} + P_{2} = (x_{3},y_{3})\).
+    \end{enumerate}
+\end{theorem}
+
+\newcommand{\dydx}{\frac{dy}{dx}}
+
+\begin{center}
+    \textbf{Verbatim From Notes Today In Class}
+\end{center}
+
+For \(P = (x_{1}, y_{1})\), \(Q = (x_{2}, y_{2})\).
+\begin{enumerate}[label=\arabic*.]
+    \item \(P = Q\): This means \(x_{1} = x_{2}\), and there is no slope because \(x_{2} - x_{2} = 0\). Thus, this ``line,'' is actually a point tangent to the curve. Thus, to find the slope of the line, we need to differentiate. 
+    \item \(P = \mathcal{O}\) or \(Q = \mathcal{O}\): This means that the line is vertical, and the sum is the other point. In other words, \(P \op \mathcal{O} = P\). 
+\end{enumerate}
+
+For the first case, consider the following example:
+
+\begin{example}
+    {Case 1} Solve for \(R'\) with the elliptic curve \(E \colon y^{2} = x^{3} - 36x\).
+\end{example}
+
+\lesol{To solve this we first need to differentiate to get the slope for our equation:
+    \begin{align*}
+        y^{2} &= x^{3} - 36x \\
+        2y\dydx &= 3x^{2} - 36 \\
+        \dydx &= \frac{3x^{2} - 36}{2y} \\
+        \dydx &= \frac{3(-3)^{2} - 36}{2(9)} \\
+        \dydx &= \frac{-1}{2}
+    \end{align*}
+    From here, we solve \(y - y_{0} = m(x - x_{0})\):
+    \begin{align*}
+        y - 9 &= \frac{-1}{2}(x+3) \\
+        y &= \frac{-1}{2} + \frac{15}{2}
+    \end{align*}
+    Now, we can substitute our \(x\) and \(y\) values back into the original \(y^{2} = x^{3} + ax + b\): 
+    \begin{align*}
+        \left(\frac{-1}{2}x + \frac{15}{2}\right)^{2} &= x^{3} - 36x \\
+        \frac{1}{4}x^{2} - \frac{15}{2}x + \frac{225}{4} &= x^{3} - 36x \\
+        x^{3} - \frac{1}{4}x^{2} - \frac{57}{2}x - \frac{225}{4} &= 0 \\
+        (x + 3)(x+3)(x-\dfrac{25}{4}) &= 0
+    \end{align*}
+    Hence, \(x = \frac{25}{4}\) and \(y = \frac{-1}{2}(\frac{25}{4}) + \frac{15}{2} - \frac{35}{8}\).
+
+    Therefore, \(R' = P \op P = (\frac{25}{4},\frac{-35}{8})\). Note that \(\frac{35}{8}\) is negative because we flipped it along the \(y\)-axis.
+}

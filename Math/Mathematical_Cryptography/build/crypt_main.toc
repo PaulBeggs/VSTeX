@@ -60,3 +60,6 @@
 \contentsline {section}{\numberline {4.1}What Is a Digital Signature?}{74}{section.4.1}%
 \contentsline {section}{\numberline {4.2}RSA Digital Signatures}{74}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Elgamal Digital Signatures}{75}{section.4.3}%
+\contentsline {chapter}{\numberline {6}Elliptic Curves and Cryptography}{78}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Elliptic Curves}{78}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Special Cases for Adding Elliptic Curve Points}{80}{subsection.6.1.1}%
