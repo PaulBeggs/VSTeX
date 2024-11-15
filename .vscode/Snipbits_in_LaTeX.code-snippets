@@ -20,15 +20,6 @@
     //     "body": ["_{${1:}}"],
     //     "description": "Insert LaTeX subscript with braces"
     // },
-	"Begin Environment": {
-        "prefix": "\\b",
-        "body": [
-            "\\begin{${1:environment}}",
-            "$2",
-            "\\end{${1:environment}}"
-        ],
-        "description": "Insert LaTeX environment"
-    },
 
 	"Custom Table Environment": {
         "prefix": "table",
