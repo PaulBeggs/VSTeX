@@ -1,0 +1,37 @@
+# Ignore LaTeX auxiliary and intermediate files
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.out
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+*.lof
+*.lot
+*.xml
+*.docx
+*.bcf
+*.xdv
+
+
+# Ignore backup files
+*.bak
+*.sav
+
+!.bib
+!.txt
+!.tex
+!.pdf
+!.sty
+!.md
+!.py
+!.jpg
+!.cls
+!.png
+!.code-snippets
+!.~
