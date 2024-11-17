@@ -48,5 +48,30 @@
 			"\\end{tabular}",
 		],
 		"description": "Inserts a tabular environment with preset positioning "
-	}
+	},
+
+	"Brackets Wrap": {
+		"prefix": "brackwrap",
+		"body": [
+			"[$TM_SELECTED_TEXT]$0"
+		],
+		"description": "Wrap selected text in brackets and position cursor outside the closing bracket"
+	},
+
+	"Curly Brace Wrap": {
+		"prefix": "curlywrap",
+		"body": [
+			"{$TM_SELECTED_TEXT}$0"
+		],
+		"description": "Wrap selected text in curly braces and position cursor outside the closing brace"
+	},
+
+	"Parentheses Wrap": {
+		"prefix": "parenwrap",
+		"body": [
+			"($TM_SELECTED_TEXT)$0"
+		],
+		"description": "Wrap selected text in parentheses and position cursor outside the closing parenthesis"
+	},
+
 }
