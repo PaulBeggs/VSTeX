@@ -74,4 +74,20 @@
 		"description": "Wrap selected text in parentheses and position cursor outside the closing parenthesis"
 	},
 
+	"emdash": {
+		"prefix": "emdash",
+		"body": [
+			"\\textemdash"
+		],
+		"description": "Inserts an emdash"
+	},
+
+	"endash": {
+		"prefix": "endash",
+		"body": [
+			"\\textendash"
+		],
+		"description": "Inserts an endash"
+	},
+
 }

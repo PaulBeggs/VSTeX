@@ -41,3 +41,5 @@ visuospatial
 Neurophysiological
 Neuropsychologia
 bifactor
+Schramme
+Stroop
