@@ -41,10 +41,10 @@
 	"Custom Tabular Environment": {
 		"prefix": "tabular",
 		"body": [
-			"\\begin{tabular}{ccc}[htbp]",
-			"   \\toprule",
-			"    & & \\\\\\ \\midrule",
-            "    & & \\\\\\ \\bottomrule",
+			"\\begin{tabular}[htbp]{ccc}",
+			"    \\toprule",
+			"     & & \\\\\\ \\midrule",
+            "     & & \\\\\\ \\bottomrule",
 			"\\end{tabular}",
 		],
 		"description": "Inserts a tabular environment with preset positioning "

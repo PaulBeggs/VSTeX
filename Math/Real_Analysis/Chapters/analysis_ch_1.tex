@@ -211,8 +211,8 @@ Suppose the sequence \((x_n)\) is increasing. We will prove this point by using 
     \begin{enumerate}
         \item If \(x \in (A \cap B)^c\), and we know that \(A^c = \{x \in \R \ \colon x \notin A\}\), then we know \(x\) must cannot exist in \(A^c\) and \(B^c\) because \((A \cap B)^c = \{x \in \R \ \colon x \notin (A \cap B)\}\). Thus, \(x\) is in either \(A^c\) or \(B^c\). Put another way \(x \in A^c \cup B^c\). Since we have shown that an element that started in \((A \cap B)^c\) ended up in \(A^c \cup B^c\), then we know \((A \cap B)^c \subseteq A^c \cup B^c\).
         \item Assume there exists a \(y \in A^c \cup B^c\). Thus, it must be the case that \(y \notin A\) or \(y \notin B\). Hence, \(y\) cannot be exist in both sets at the same time, so \(y \in (A \cap B)^c\). Because we have taken an element that started in \(A^c \cup B^c\) and have shown that it exists in \((A \cap B)^c\), we have proven \(A^c \cup B^c \subseteq (A \cap B)^c\).
-        \item\hfill \sbseteqpf
-              {Assume there exists \(x \in (A \cap B)^c\), and we know that \(A^c = \{x \in \R \ \colon x \notin A\}\), then we know \(x\) must cannot exist in \(A^c\) and \(B^c\) because \((A \cap B)^c = \{x \in \R \ \colon x \notin (A \cap B)\}\). Thus, \(x\) is in either \(A^c\) or \(B^c\). Put another way \(x \in A^c \cup B^c\). Since we have shown that an element that started in \((A \cap B)^c\) ended up in \(A^c \cup B^c\), then we know \((A \cap B)^c \subseteq A^c \cup B^c\).}
+        \item \sbseteqpf{
+            Assume there exists \(x \in (A \cap B)^c\), and we know that \(A^c = \{x \in \R \ \colon x \notin A\}\), then we know \(x\) must cannot exist in \(A^c\) and \(B^c\) because \((A \cap B)^c = \{x \in \R \ \colon x \notin (A \cap B)\}\). Thus, \(x\) is in either \(A^c\) or \(B^c\). Put another way \(x \in A^c \cup B^c\). Since we have shown that an element that started in \((A \cap B)^c\) ended up in \(A^c \cup B^c\), then we know \((A \cap B)^c \subseteq A^c \cup B^c\).}
               {Now assume there exists a \(y \in A^c \cup B^c\). Thus, it must be the case that \(y \notin A\) or \(y \notin B\). Hence, \(y\) cannot be exist in both sets at the same time, so \(y \in (A \cap B)^c\). Because we have taken an element that started in \(A^c \cup B^c\) and have shown that it exists in \((A \cap B)^c\), we have proven \(A^c \cup B^c \subseteq (A \cap B)^c\).}
               {Therefore, we have shown through proving both sides of the implication, that these two statements are logically equivalent. In that, all elements of \(A^c \cup B^c\) are the same elements that are in \((A \cap B)^c\)}
               {xgray}
@@ -286,7 +286,7 @@ Suppose the sequence \((x_n)\) is increasing. We will prove this point by using 
 
         \item It is tempting to appeal to induction to conclude
               \[
-                  \left( \bigcup_{i=1}^{\infty} A_i \right)^c = \bigcap_{i=1}^{\infty} A_i^c,
+                  \left( \bigcup_{i=1}^{\infty} A_i \right)^c = \ \bigcap_{i=1}^{\infty} A_i^c,
               \]
               but induction does not apply here. Induction is used to prove that a particular statement holds for every value of \(n \in \mathbb{N}\), but this does not imply the validity of the infinite case. To illustrate this point, find an example of a collection of sets \(B_1, B_2, B_3, \dots\) where
               \[
@@ -302,43 +302,41 @@ Suppose the sequence \((x_n)\) is increasing. We will prove this point by using 
     \end{enumerate}
 \end{exercise}
 \newpage
-\sbseteqpf%
-%
-[In this proof, we plan to prove (c). Thus, we need to show that:
-    \[
-        \left( \bigcup_{i=1}^{\infty} A_i \right)^c \subseteq \bigcap_{i=1}^{\infty} A_i^c
-    \]
-    and
-    \[
-        \left( \bigcup_{i=1}^{\infty} A_i \right)^c \supseteq \bigcap_{i=1}^{\infty} A_i^c.
-    \]]%
-%
-{Let \(x \in \left( \bigcup_{i=1}^{\infty} A_i \right)^c\). This means \(x\) is in the union set of \(A_i\) for all \(i \in \N\). Then, because we are taking the complement of \(\left( \bigcup_{i=1}^{\infty} A_i \right)\), that means \(x \notin A_i\) for all \(i \in \mathbb{N}\). Hence, \(x\) is in the complement of each \(A_i\). Thus, we can use the definition of intersection to assert \(x \in \bigcap_{i=1}^{\infty} A_i^c\).
+\begin{customframedproof}[linecolor=horange!75]
 
-    Therefore, we have shown:
-    \[
-        \left( \bigcup_{i=1}^{\infty} A_i \right)^c \subseteq \ \bigcap_{i=1}^{\infty} A_i^c.
-    \]}%
-%
-%
-%
-{Similar to before, let \(x \in \bigcap_{i=1}^{\infty} A_i^c\). Because \(x \in A^c_i\) for all \(i \in \N\) we know \(x \notin A_i\). Hence, \(x \notin \left(\bigcup_{i=1}^{\infty} A_i\right)\), which means \(x \in \left( \bigcup_{i=1}^{\infty} A_i \right)^c\).
+    \begin{proof}
+        In this proof, we plan to prove (c). Thus, we need to show that:
+        \[
+            \left( \bigcup_{i=1}^{\infty} A_i \right)^c \subseteq \ \bigcap_{i=1}^{\infty} A_i^c
+        \]
+        and
+        \[
+            \left( \bigcup_{i=1}^{\infty} A_i \right)^c \supseteq \ \bigcap_{i=1}^{\infty} A_i^c.
+        \]
+        \begin{proofpart}[horange]{\((\subseteq)\)}
+            Let \(x \in \left( \bigcup_{i=1}^{\infty} A_i \right)^c\). This means \(x\) is in the union set of \(A_i\) for all \(i \in \N\). Then, because we are taking the complement of \(\left( \bigcup_{i=1}^{\infty} A_i \right)\), that means \(x \notin A_i\) for all \(i \in \mathbb{N}\). Hence, \(x\) is in the complement of each \(A_i\). Thus, we can use the definition of intersection to assert \(x \in \bigcap_{i=1}^{\infty} A_i^c\).
 
-    Therefore, we have shown:
-    \[
-        \left( \bigcup_{i=1}^{\infty} A_i \right)^c \supseteq \ \bigcap_{i=1}^{\infty} A_i^c.
-    \]}%
-%
-%
-{By showing both inclusions, we see that:
-    \[
-        \left( \bigcup_{i=1}^{\infty} A_i \right)^c = \bigcap_{i=1}^{\infty} A_i^c.
-    \] \qedhere
-}%
-%
-%
-{xgray}
+            Therefore, we have shown:
+            \[
+                \left( \bigcup_{i=1}^{\infty} A_i \right)^c \subseteq \ \bigcap_{i=1}^{\infty} A_i^c.
+            \]
+        \end{proofpart}
+        \vspace{2mm}
+        \begin{proofpart}[horange]{\((\supseteq)\)}
+            Similar to before, let \(x \in \bigcap_{i=1}^{\infty} A_i^c\). Because \(x \in A^c_i\) for all \(i \in \N\) we know \(x \notin A_i\). Hence, \(x \notin \left(\bigcup_{i=1}^{\infty} A_i\right)\), which means \(x \in \left( \bigcup_{i=1}^{\infty} A_i \right)^c\).
 
+            Therefore, we have shown:
+            \[
+                \left( \bigcup_{i=1}^{\infty} A_i \right)^c \supseteq \ \bigcap_{i=1}^{\infty} A_i^c.
+            \]
+        \end{proofpart}
+
+        By showing both inclusions, we see that:
+        \[
+            \left( \bigcup_{i=1}^{\infty} A_i \right)^c = \ \bigcap_{i=1}^{\infty} A_i^c. \qedhere
+        \] 
+    \end{proof}
+\end{customframedproof}
 
 
 
@@ -431,7 +429,7 @@ Note that some sets have a maximum and some sets do not. You cannot refer to a m
 
 This lemma allows us to take any positive number and take a ``step back.'' In essence, you can verify something as an upper bound if you continuously back up over and over until you cannot back up any longer.
 
-\iffpf
+\iffpfbase%
 {
     Assume \(s = \sup A\). Let \(\epsilon > 0\). Suppose there are no elements \(x\) of \(A\) such that \(s - \epsilon < x\). Then \(s - \epsilon\) would be an upper bound. This contradicts that \(s\) is the least upper bound. Therefore, there must exist an element \(x \in A\) such that \(s - \epsilon < x\).
 }{
@@ -649,7 +647,7 @@ From Theorem \ref{thm:1.5.6}, we know that \(\R\) is uncountable, but what about
     {Set and Power Set Matching}\(A = \{a,b,c\}\).
 \end{example}
 
-\sol{
+\lesol{
     \(\mathcal{P}(A) = \emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\). Note that you can map \(\{a\}\), \(\{b\}\), \(\{c\}\), to elements such as \(\emptyset\), \(\{a,b\}\), \(\{a,b,c\}\), but there are still more elements that are left unmapped. We can extrapolate from our proof a set \(B\) such that \(B = \{a,c\}\) because those elements are not mapped to.
 }
 

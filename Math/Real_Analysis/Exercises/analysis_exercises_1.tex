@@ -39,7 +39,7 @@
 
 \newpage
 \begin{exercise}
-    {1.2.5}\Gls{De Morgan's Laws}. Let \(A\) and \(B\) be subsets of \(\R\).
+    {1.2.5 (De Morgan's Laws)}Let \(A\) and \(B\) be subsets of \(\R\).
     \begin{enumerate}
         \item  If \(x \in (A \cap B)^c\), explain why \(x \in A^c \cup B^c\). This shows that \((A \cap B)^c \subseteq A^c \cup B^c\).
         \item Prove the reverse inclusion \((A \cap B)^c \supseteq A^c \cup B^c\), and conclude that \((A \cap B)^c = A^c \cup B^c\).
@@ -76,7 +76,7 @@
     \begin{enumerate}
         \item Since \(f(x) = x^2\), the intervals of \(f(A)\) would be \([0,4]\) and \(f(B)\) would be \([1,16]\). The interval of the intersection of \(A \cap B\) is \([1,2]\). Take this through our function, we get \(f(A \cap B) = [1,4]\). On the other side of the equation, we already know the intervals of \(f(A)\) and \(f(B)\), and the intersection of theirs would be \([1,4]\). So they do equal each other. We know \(f(A \cup B)\) and \(f(A) \cup f(B)\) will be equivalent because \(f(A \cup B)\) has an interval of \([0,16]\), and \(f(A) \cup f(B)\) also has an interval of \([0,16]\) because taking the union of \([0,4] \cup [1,16]\) is \([0,16]\).
         \item Two sets could be \(A = [5,6]\) and \(B = [0,0]\). Because the sets have nothing in common even after taking their function, they do not equal each other.
-        \item \hfill \expf{Let \(x \in g(A \cap B)\). Using the definition of function, we know there exists a \(y \in A \cap B\) to which that \(y\) is mapped to as \(g(y) = x\). From the definition of intersection, we know \(y \in A\) and \(y \in B\) such that \(x = g(y) \in g(A)\) and \(x = g(y) \in g(B)\) because \(y \in A \cap B\). Putting it together, we have \(x \in g(A) \cap g(B)\) thus proving \(g(A \cap B) \subseteq g(A) \cap g(B)\)}
+        \item \innerpf{Let \(x \in g(A \cap B)\). Using the definition of function, we know there exists a \(y \in A \cap B\) to which that \(y\) is mapped to as \(g(y) = x\). From the definition of intersection, we know \(y \in A\) and \(y \in B\) such that \(x = g(y) \in g(A)\) and \(x = g(y) \in g(B)\) because \(y \in A \cap B\). Putting it together, we have \(x \in g(A) \cap g(B)\) thus proving \(g(A \cap B) \subseteq g(A) \cap g(B)\)}
         \item Conjecture: For any function \(g\) defined as \(g \ \colon \R \rightarrow \R\) and for any subsets \(A,B \subseteq \R\), the following holds: \[g(A \cup B) = g(A) \cup g(B)\]
               \sbseteqpf
               {Take any element \(x \in g(A \cap B)\). By definition of function, we know there exists some \(y \in A \cup B\) such that \(g(x) = y\). From the definition of union, we know \(y \in A\) or \(y \in B\) such that \(x = g(y) \in g(A)\) or \(x = g(y) \in g(B)\) or both. Putting it together, we have \(x \in g(A) \cup g(B)\) thus proving \(g(A \cup B) \subseteq g(A) \cup g(B)\).}
@@ -87,7 +87,7 @@
 }
 
 \begin{exercise}
-    {1.2.8}Given a function \(f \ \colon A \rightarrow B\) can be defined as either \gls{one-to-one} or \gls{onto}, give an example of each or state that the request is impossible:
+    {1.2.8}Given a function \(f \ \colon A \rightarrow B\) can be defined as either \hyperref[def:1.2.5]{one-to-one} or \hyperref[def:1.2.6]{onto}, give an example of each or state that the request is impossible:
     \begin{enumerate}
         \item \(f \ \colon \N \rightarrow \N\) that is 1-1 but not onto.
         \item \(f \ \colon \N \rightarrow \N\) that is onto but not 1-1.

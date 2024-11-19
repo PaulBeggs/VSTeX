@@ -7,22 +7,25 @@
     \end{enumerate}
 \end{exercise}
 
-\expf{\hfill
+\sol{
     \begin{enumerate}
-        \setcounter{enumi}{1}
-        \item Let \(\epsilon > 0\). Choose \(N = \frac{2}{\epsilon}\). Then, for \(n > N\),
-              \begin{align*}
-                  \disabs{\frac{2n^2}{n^3 + 3} - 0} & = \disabs{\frac{2n^2}{n^3 + 3}} \\
-                                                    & = \frac{2n^2}{n^3 + 3}          \\
-                                                    & < \frac{2n^2}{n^3}              \\
-                                                    & = \frac{2}{n}                   \\
-                                                    & < \frac{2}{N}                   \\
-                                                    & = \frac{2}{2/\epsilon}          \\
-                                                    & = \epsilon.
-              \end{align*}
-              Therefore, \(\limn{\frac{2n^2}{n^3 + 3}} = 0\). \qedhere
-    \end{enumerate}
-}
+        \setcounter{enumi}{1}\item
+              \innerpf{
+
+                  Let \(\epsilon > 0\). Choose \(N = \frac{2}{\epsilon}\). Then, for \(n > N\),
+                  \begin{align*}
+                      \disabs{\frac{2n^2}{n^3 + 3} - 0} & = \disabs{\frac{2n^2}{n^3 + 3}} \\
+                                                        & = \frac{2n^2}{n^3 + 3}          \\
+                                                        & < \frac{2n^2}{n^3}              \\
+                                                        & = \frac{2}{n}                   \\
+                                                        & < \frac{2}{N}                   \\
+                                                        & = \frac{2}{2/\epsilon}          \\
+                                                        & = \epsilon.
+                  \end{align*}
+                  Therefore, \(\limn{\frac{2n^2}{n^3 + 3}} = 0\). \qedhere
+
+              }
+    \end{enumerate}}
 
 \begin{exercise}
     {2.2.3} Describe what we would have to demonstrate in order to disprove each of the following statements.
