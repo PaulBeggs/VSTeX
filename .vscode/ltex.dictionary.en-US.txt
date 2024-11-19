@@ -43,5 +43,6 @@ Neuropsychologia
 bifactor
 Schramme
 Stroop
+<<<<<<< HEAD
 Vigenère
 Kasiski
