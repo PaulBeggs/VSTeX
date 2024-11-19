@@ -641,7 +641,7 @@ If \(f\) is continuous at \(c\) and \((x_n) \to c\), then \(\limn{f(x_n)} = f(c)
     A function \(f \colon A \to \R\) is \textit{uniformly continuous} on \(A\) if for all \(\epsilon > 0\), there exists \(\delta > 0\) such that for all \(x, c \in A\), if \(\disabs{x - c} < \delta\), then \(\disabs{f(x) - f(c)} < \epsilon\).
 \end{definition}
 
-Compare this definition with \defref{4.3.1}. The difference is that the \(\delta\) is independent of \(c\). That is, we have to find one \(\delta\) that needs to work for every point \(c\).
+Compare this definition with \defref{4.3.1}. The difference is that the \(\delta\) is independent of \(x\). That is, we have to find one \(\delta\) that needs to work for every point \(x\).
 
 % Put a table environment here with 3x2.
 
@@ -651,3 +651,87 @@ Compare this definition with \defref{4.3.1}. The difference is that the \(\delta
 % 2x2: For all \(c \in A\), we need one \(\delta\) that works at every \(c\).
 % 3x
 
+\begin{definition}
+    A function \(f \colon A \to \R\) is \textit{not uniformly continuous} on \(A\) if there exists \(\epsilon_{0} > 0\) such that for all \(\delta > 0\), there exists \(x, c \in A\) such that \(\disabs{x - c} < \delta\) and \(\disabs{f(x) - f(c)} \geq \epsilon_{0}\).
+\end{definition}
+
+\begin{theorem}
+    If \(K \subseteq \R\) is compact and \(f \colon K \to \R\) is continuous, then \(f\) is uniformly continuous on \(K\).
+\end{theorem}
+
+\tpf{
+    Suppose \(f\) is not uniformly continuous on \(K\). Then, there exists \(\epsilon_{0} > 0\) such that for all \(\ninn\), there exists \(x_{n},y_{n} \in K\) such that \(\disabs{x_{n} - y_{n} < \frac{1}{n}}\) and \(\disabs{f(x_{n}) - f(y_{n})} \geq \epsilon_{0}\). 
+
+    We now have two sequences \((x_{n})\) and \((y_{n})\) in \(K\). Since \(K\) is compact, by the \namrefthm{heine-borel theorem}, there exists a convergent subsequence \((x_{n_{i}})\) which converges to a point \(x_{0} \in K\).
+    
+    Since \(K\) is compact, \((y_{n_{i}})\) has a convergent subsequence \(\left(y_{n_{i_{j}}}\right)\) which converges to a point \(y_{0} \in K\). Notice that since \(\left(x_{n_{i_{j}}}\right)\) is a subsequence of \((x_{n_{i}})\), it converges to \(x_{0}\). Since \(f\) is continuous:
+
+    \[
+        \lim_{j \to \infty} f\left(x_{n_{i_{j}}}\right) = f(x_{0}) \quad \text{and} \quad \lim_{j \to \infty} f\left(y_{n_{i_{j}}}\right) = f(y_{0}).
+    \]
+    Because 
+    \[
+        \disabs{f\left(x_{n_{i_{j}}}\right) - f\left(y_{n_{i_{j}}}\right)} < \frac{1}{n_{i_{j}}},
+    \]
+    we can see that 
+    \[
+        \lim_{j \to \infty} \disabs{x_{n_{i_{j}}} - y_{n_{i_{j}}}} = 0.
+    \]
+    It follows that \(x_{0} = y_{0}\). But this is a contradiction because \(\disabs{f(x_{0}) - f(y_{0})} \geq \epsilon_{0}\). Therefore, \(f\) is uniformly continuous on \(K\).
+}
+
+\section{The Intermediate Value Theorem}
+
+\begin{ntheorem}
+    {Intermediate Value Theorem} Let \(f \colon [a,b] \to \R\) be continuous. If \(L\) is a real number satisfying \(f(a) < L < f(b)\) or \(f(b) < L < f(a)\), then there exists \(c \in (a,b)\) such that \(f(c) = L\).
+\end{ntheorem}
+
+\textbf{Note:} IVT does not guarantee where, or how many \(c\)'s are in the interval. It only guarantees that at least one \(c\) exists.
+
+\tpf{
+    \textit{(Using \namrefthm{Nested Interval Property})} Without the loss of generality, assume \(f(a) < f(b)\) and let \(y \in (f(a),f(b))\). Let \(I_{1} = [a_{1},b_{1}]\). Bisect \(I_{1}\) into two intervals \([a_{1},d]\) and \(d,b_{1}\) where \(d = \dfrac{a_{1} + b_{1}}{2}\). 
+\begin{itemize}
+    \item If \(f(d) < y\), set \(a_{2} = d\), \(b_{2} = b_{1}\), and \(I_{2} = [a_{2},b_{2}]\). Notice that \(f(a_{2}) < y < f(b_{2})\).
+    \item If \(f(d) > y\), then set \(a_{2} = a_{1}\), \(b_{2} = d\), and \(I_{2} = [a_{2},b_{2}]\). Notice that \(f(a_{2}) < y < f(b_{2})\).
+\end{itemize}
+Repeat this process indefinitely. We end up with a sequence of nested intervals \(I_{n} = [a_{n},b_{n}]\), where 
+\begin{itemize}
+    \item \(I_{n} \subseteq I_{n-1}\)
+    \item \(f(a_{n}) < y < f(b_{n})\)
+    \item \(\disabs{a_{n} - b_{n}} = \dfrac{a_{n} - b_{n}}{2^{n-1}}\)
+\end{itemize}
+By the \namrefthm{Nested Interval Property}, there exists a point \(c\) such that \(c \in \bigcap_{n=1}^{\infty} I_{n}\). In fact, there is a unique point \(c\) in the intersection. It follows that 
+\[
+    c = \lim_{n \to \infty} a_{n} \quad \text{and} \quad c = \lim_{n \to \infty} b_{n}.
+\]
+Since \(f\) is continuous, we have
+\[
+    f(c) = \lim_{n \to \infty} f(a_{n}) \leq y
+\]
+\[
+    f(c) = \lim_{n \to \infty} f(b_{n}) \geq y.
+\]
+Therefore, \(f(c) = y\).
+}
+
+\begin{center}
+    What Is Important About Continuous Functions?
+\end{center}
+
+If \(\limn(x_{n} = x)\), then \(\limn{f(x_{n})} = f(x)\).
+
+Think about \(f(x) = 2^{x}\). Thus, \(fx\) makes sense if \(x \in \Q\):
+
+\[
+    2^{\frac{p}{q}} = \sqrt[q]{2^{p}}.
+\]
+But how do we make sense of something like \(2^{\pi}\)? 
+
+We can find \(f \colon \Q \to \R\) is continuous.
+
+We can define \(f \colon \R \to \R\) to be continuous 
+
+If \((q_{n})\) is in \(\Q\) and \((a_{n} \to \pi)\), then we define 
+\[
+    f(\pi) = \limn{f(q_{n})}.
+\]
