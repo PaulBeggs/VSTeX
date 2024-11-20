@@ -1,3 +1,4 @@
 {"rule":"TOO_LONG_PARAGRAPH","sentence":"^\\QIt was a good balance of difficulty, and required me to think differently than I was used to.\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qby Heidi Maibom.\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QRC 6: Theory Theory — Ravenscroft and Hutto.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qtheir problem, but to keep them safe until you can get them to a long-term professional.\\E$"}
