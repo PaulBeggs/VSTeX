@@ -130,18 +130,18 @@
     \par\kern\topsep
 } % new environment for the header
 
-\newcommand{\lastupdated}{Last updated in \MonthYear}
+% \newcommand{\lastupdated}{Last updated in \MonthYear}
 
-\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
-  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
-    \put(
-        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
-        \LenToUnit{\paperheight-1.0 cm}
-    ){\vtop{{\null}\makebox[0pt][c]{
-        \small\color{gray}\textit{\lastupdated}\hspace{\widthof{\lastupdated}}
-    }}}%
-  }%
-}%
+% \newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+%   \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+%     \put(
+%         \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+%         \LenToUnit{\paperheight-1.0 cm}
+%     ){\vtop{{\null}\makebox[0pt][c]{
+%         \small\color{gray}\textit{\lastupdated}\hspace{\widthof{\lastupdated}}
+%     }}}%
+%   }%
+% }%
 
 % save the original href command in a new command:
 \let\hrefWithoutArrow\href
@@ -158,7 +158,7 @@
 \newsavebox\ANDbox
 \sbox\ANDbox{}
 
-\placelastupdatedtext
+% \placelastupdatedtext
 \begin{header}
     \textbf{\fontsize{24 pt}{24 pt}\selectfont Paul Beggs}
 
@@ -181,11 +181,11 @@
     % \kern 0.25 cm%
     % \AND%
     \kern 0.25 cm%
-    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/paul-beggs-0a8395224/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}paul\_beggs}}%
+    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/paul-beggs/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}paul-beggs}}%
     \kern 0.25 cm%
-    \AND%
-    \kern 0.25 cm%
-    \mbox{\hrefWithoutArrow{https://github.com/PaulBeggs}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}PaulBeggs}}%
+    % \AND%
+    % \kern 0.25 cm%
+    % \mbox{\hrefWithoutArrow{https://github.com/PaulBeggs}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}PaulBeggs}}%
 \end{header}
 
 \vspace{0.3 cm - 0.3 cm}
@@ -228,7 +228,7 @@
 
 \section{Education}
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
 \begin{twocolentry}{
         \textbf{Conway, AR}
@@ -246,7 +246,7 @@
 \begin{onecolentry}
     \begin{highlights}
         \item GPA: 3.4/4.0
-        \item \textit{Selected Coursework:} Linear Algebra, Statistics, Brain \& Behavior, Cognitive Psychology, and Research Methods.
+        \item \textit{Relevant Coursework:} Brain \& Behavior, Cognitive Psychology, and Research Methods.
     \end{highlights}
 \end{onecolentry}
 
@@ -305,13 +305,13 @@
 \vspace{0.10 cm}
 \begin{onecolentry}
     \begin{highlights}
-        \item Participated in an intensive program specifically catered in intervening for people who are suicidal.
-        \item Practiced the \textit{Pathway for Assisting Life} (PAL) Model in depth:
-        \begin{highlightsforbulletentries}
-            \item \textbf{Connecting with Suicide:} Notice, evaluate, and act on suicidal behavior. This involved explicitly asking if the person was considering suicide. (With emphasis on using the word ``suicide.'')
-            \item \textbf{Understanding Choices:} Let them lead the conversation. Engage in empathetic listening, and ascertain the reason(s) for why they are suicidal. Do not assume or interject, always ask clarifying questions, and allow silence. Silence is crucial for self-evaluation of the current conversation.
-            \item \textbf{Assisting Life:} After listening, analyze the motivation behind their suicidal thoughts. Ask questions, and guide them to identify the factors that are contributing to an overwhelming feeling of hopelessness. Address these feelings. Make a safety plan by establishing attainable goals to work toward a resolve. The goal is not to \textit{solve} their problem, but to keep them safe until you can get them to a long-term professional.
-        \end{highlightsforbulletentries}
+        \item Participated in an intensive program specifically focused on intervening for people who are suicidal.
+        % \item Practiced the \textit{Pathway for Assisting Life} (PAL) Model in depth:
+        % \begin{highlightsforbulletentries}
+        %     \item \textbf{Connecting with Suicide:} Notice, evaluate, and act on suicidal behavior. This involved explicitly asking if the person was considering suicide. (With emphasis on using the word ``suicide.'')
+        %     \item \textbf{Understanding Choices:} Let them lead the conversation. Engage in empathetic listening, and ascertain the reason(s) for why they are suicidal. Do not assume or interject, always ask clarifying questions, and allow silence. Silence is crucial for self-evaluation of the current conversation.
+        %     \item \textbf{Assisting Life:} After listening, analyze the motivation behind their suicidal thoughts. Ask questions, and guide them to identify the factors that are contributing to an overwhelming feeling of hopelessness. Address these feelings. Make a safety plan by establishing attainable goals to work toward a resolve. The goal is not to \textit{solve} their problem, but to keep them safe until you can get them to a long-term professional.
+        % \end{highlightsforbulletentries}
     \end{highlights}
 \end{onecolentry}
 
@@ -328,14 +328,14 @@
     \textit{American Red Cross}
 \end{twocolentry}
 
-\vspace{0.10 cm}
-\begin{onecolentry}
-    \begin{highlights}
-        \item Completed training in CPR and AED for adults, children, and infants.
-        \item Proficient in recognizing and responding to life-threatening emergencies.
-        \item Learned how to provide immediate care until advanced medical personnel arrive.
-    \end{highlights}
-\end{onecolentry}
+% \vspace{0.10 cm}
+% \begin{onecolentry}
+%     \begin{highlights}
+%         \item Completed training in CPR and AED for adults, children, and infants.
+%         \item Proficient in recognizing and responding to life-threatening emergencies.
+%         \item Learned how to provide immediate care until advanced medical personnel arrive.
+%     \end{highlights}
+% \end{onecolentry}
 
 
 \vspace{0.2 cm}
@@ -351,13 +351,13 @@
     \textit{Addiction Studies at University of Central Arkansas}
 \end{twocolentry}
 
-\vspace{0.10 cm}
-\begin{onecolentry}
-    \begin{highlights}
-        \item Completed training in the administration of NARCAN\textsuperscript{\tiny\textregistered} nasal spray for opioid overdose reversal.
-        \item Learned how to recognize the signs of an opioid overdose and quickly move the person into the recovery position.
-    \end{highlights}
-\end{onecolentry}
+% \vspace{0.10 cm}
+% \begin{onecolentry}
+%     \begin{highlights}
+%         \item Completed training in the administration of NARCAN\textsuperscript{\tiny\textregistered} nasal spray for opioid overdose reversal.
+%         \item Learned how to recognize the signs of an opioid overdose and quickly move the person into the recovery position.
+%     \end{highlights}
+% \end{onecolentry}
 
 \vspace{0.2cm}
 
@@ -372,14 +372,14 @@
     \textit{\href{https://www.thenationalcouncil.org/our-work/mental-health-first-aid/}{National Council for Mental Wellbeing}}
 \end{twocolentry}
 
-\vspace{0.10cm}
-\begin{onecolentry}
-    \begin{highlights}
-        \item Trained in recognizing the signs and symptoms of mental health and substance use challenges.
-        \item Learned how to offer initial help and guide a person toward appropriate care.
-        \item Practiced the \textit{ALGEE} action plan.
-    \end{highlights}
-\end{onecolentry}
+% \vspace{0.10cm}
+% \begin{onecolentry}
+%     \begin{highlights}
+%         \item Trained in recognizing the signs and symptoms of mental health and substance use challenges.
+%         \item Learned how to offer initial help and guide a person toward appropriate care.
+%         \item Practiced the \textit{ALGEE} action plan.
+%     \end{highlights}
+% \end{onecolentry}
 
 
 
@@ -401,9 +401,9 @@
 
 \begin{onecolentry}
     \begin{highlights}
-        \item  Completed 80 hours of RAINN training on trauma-informed communication and support techniques for survivors of abuse.
-        \item Practiced active listening, crisis intervention, and de-escalation strategies.
-        \item Learned how to provide resources and referrals to survivors of sexual assault.
+        \item  Completed 80 hours of RAINN training on support techniques for survivors of abuse.
+        % \item Practiced active listening, crisis intervention, and de-escalation strategies.
+        % \item Learned how to provide resources and referrals to survivors of sexual assault.
     \end{highlights}
 \end{onecolentry}
 
@@ -451,14 +451,13 @@
     \vspace{0.10 cm}
 \end{twocolentry}
 
-\vspace{0.10 cm}
-\begin{onecolentry}
-    \begin{highlights}
-        \item Participate in discussions on current research in psychology and mental health.
-        \item Network with peers and faculty to learn about research opportunities and internships.
-    \end{highlights}
-\end{onecolentry}
-
+% \vspace{0.10 cm}
+% \begin{onecolentry}
+    % \begin{highlights}
+    %     \item Participate in discussions on current research in psychology and mental health.
+    %     \item Network with peers and faculty to learn about research opportunities and internships.
+    % \end{highlights}
+% \end{onecolentry}
 
 \vspace{0.2 cm}
 
@@ -493,7 +492,6 @@
         \item \textbf{Research:} Proficient in conducting literature reviews, data collection, and data analysis.
     \end{highlights}
 \end{onecolentry}
-
 % \section{Academic Projects}
 
 % \begin{twocolentry}
