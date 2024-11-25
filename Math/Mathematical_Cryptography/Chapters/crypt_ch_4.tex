@@ -52,8 +52,8 @@ To verify this signature, we compute:
     \centering
     \begin{tabular}{@{}p{0.9\textwidth}l@{}}
         \toprule
-        \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Samantha}}} & \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Victor}}}                       \\ \midrule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Key creation}}}                                                                                                 \\ \midrule
+        \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Samantha}}} & \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Victor}}}                       \\ \midrule
         \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{\raggedright Choose secret primes \(p\) and \(q\).                                                                                \\ Choose encryption exponent \(e\)  \\ \quad with \(\gcd(e, (p-1)(q-1)) = 1\). \\
         Publish \(N = pq\) and \(e\).}}                                              &                                                                                                  \\ \midrule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}\centering\textbf{Signing}}                                                                                                         \\ \midrule
@@ -109,8 +109,8 @@ and verifying that it agrees with
         \toprule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Public parameter creation}}}                                                                                         \\ \midrule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering A trusted party chooses and publishes a large prime \(p\) and an element \(g\) modulo \(p\) of large (prime) order.}}        \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Key creation}}}                                                                                                 \\ \midrule
         \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Samantha}}} & \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Victor}}}                            \\ \midrule
-        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Key creation}}}                                                                                                      \\ \midrule
         \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{\raggedright Choose secret signing key                                                                                                 \\ \quad \(1 \leq a \leq p - 1\). \\ compute \(A = g^{a} \pmod{p}\).  \\ Publish the verification key \(A\).}}                                              &                                                                                                  \\ \midrule
         \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}\centering\textbf{Signing}}                                                                                                              \\ \midrule
         \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{\raggedright

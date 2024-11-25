@@ -279,14 +279,14 @@ enhanced,
 \usepackage{amsmath,amsthm} 
 \usepackage{mathtools}
 \usepackage{amssymb}
-\usepackage{mdframed}
+\usepackage[framemethod=tikz]{mdframed}
 \usepackage{tabularx}
 \usepackage{mathrsfs}
 \usepackage{multicol}
 \usepackage{slashed}
 \usepackage{enumerate}
 \usepackage{enumitem}
-\usepackage{lipsum}  %This package lets us generate random text for example purposes.
+\usepackage{lipsum} 
 \usepackage{booktabs}   
 \usepackage{ragged2e}
 \usepackage{multirow}
@@ -354,14 +354,14 @@ enhanced,
         leftline=true,
         linewidth=1pt,
         linecolor=#1!40, % Custom color
-        innertopmargin=10pt,
-        innerbottommargin=10pt,
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
         innerleftmargin=10pt,
         innerrightmargin=10pt,
         leftmargin=0pt,
         rightmargin=0pt,
-        skipabove=\topsep,
-        skipbelow=\topsep%
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
     ]
     \noindent
     \begin{minipage}[t]{0.08\textwidth}%
@@ -392,21 +392,27 @@ enhanced,
     \end{customframedproof}
 }
 
-\newcommand{\iffpf}[4]{
-    \begin{customframedproof}[linecolor=#4]
+\newcommand{\iffpfbase}[5][We show this by proving both implications:]{
+    \begin{customframedproof}[linecolor=#5]
         \begin{proof}
-            We show this by proving both implications:
-            \begin{proofpart}[#4]{(\(\Rightarrow\))}
-                #1
-            \end{proofpart}
-    \vspace{2mm}
-            \begin{proofpart}[#4]{(\(\Leftarrow\))}
+            #1 % This is the optional text, with a default value
+            \begin{proofpart}[#5]{(\(\Rightarrow\))}
                 #2
             \end{proofpart}
     \vspace{2mm}
-            #3
+            \begin{proofpart}[#5]{(\(\Leftarrow\))}
+                #3
+            \end{proofpart}
+    \vspace{2mm}
+            #4
         \end{proof}
     \end{customframedproof}
+}
+
+\newcommand{\iffpf}[5][We will show this by proving both implications:]{
+    \raisebox{0.85em}{\begin{minipage}[t]{0.90\textwidth}
+        \iffpfbase[#1]{#2}{#3}{#4}{#5}
+    \end{minipage}}
 }
 
 % Command for lemma proofs with a predefined color
@@ -626,14 +632,14 @@ enhanced,
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-% \thispagestyle{plain}
-% % Table of Contents will automatically update based on included chapters
-% % You may need to compile twice for the toc to update
-% \begin{spacing}{1} %Can change spacing between entries in toc
-%     \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
-%     \tableofcontents
-%     \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
-% \end{spacing}
+\thispagestyle{plain}
+% Table of Contents will automatically update based on included chapters
+% You may need to compile twice for the toc to update
+\begin{spacing}{1} %Can change spacing between entries in toc
+    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
+    \tableofcontents
+    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+\end{spacing}
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -665,23 +671,28 @@ enhanced,
 % \vspace*{-0.25in}
 % \input{Chapters/crypt_ch_1}
 
-% \chapter{Discrete Logarithms and Diffie-Hellman}\label{discrete log}
-% \vspace*{-0.25in}
-% \input{Chapters/crypt_ch_2}
+\setcounter{chapter}{1}
+
+\chapter{Discrete Logarithms and Diffie-Hellman}\label{discrete log}
+\vspace*{-0.25in}
+\input{Chapters/crypt_ch_2}
 
 % \chapter{Integer Factorization and RSA}\label{RSA}
 % \vspace*{-0.25in}
 % \input{Chapters/crypt_ch_3}
 
-% \chapter{Digitial Signatures}\label{dig sig}
-% \vspace*{-0.25in}
-% \input{Chapters/crypt_ch_4}
+\setcounter{chapter}{3}
 
-% \setcounter{chapter}{5}
 
-% \chapter{Elliptic Curves and Cryptography}\label{elliptic curves}
-% \vspace*{-0.25in}
-% \input{Chapters/crypt_ch_6}
+\chapter{Digitial Signatures}\label{dig sig}
+\vspace*{-0.25in}
+\input{Chapters/crypt_ch_4}
+
+\setcounter{chapter}{5}
+
+\chapter{Elliptic Curves and Cryptography}\label{elliptic curves}
+\vspace*{-0.25in}
+\input{Chapters/crypt_ch_6}
 
 
 \renewcommand{\theenumi}{\alph{enumi}}
@@ -717,11 +728,18 @@ enhanced,
 % \input{Exercises/crypt_exercises_4}
 % \addcontentsline{toc}{chapter}{Exercises 4}
 
-\chapter*{Exercises pt. 5}\label{ex 5}
+% \chapter*{Exercises pt. 5}\label{ex 5}
+% \vspace*{-0.25in}
+% \fancyhead[R]{Exercises 5}
+% \input{Exercises/crypt_exercises_5}
+% \addcontentsline{toc}{chapter}{Exercises 5}
+
+
+\chapter*{Exercises pt. 6}\label{ex 6}
 \vspace*{-0.25in}
-\fancyhead[R]{Exercises 5}
-\input{Exercises/crypt_exercises_5}
-\addcontentsline{toc}{chapter}{Exercises 5}
+\fancyhead[R]{Exercises 6}
+\input{Exercises/crypt_exercises_6}
+\addcontentsline{toc}{chapter}{Exercises 6}
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}

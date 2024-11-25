@@ -84,7 +84,7 @@ Proof: Let \(\epsilon > 0\). There exists \(N \in \N\) such that \{something inv
 }
 
 \begin{example}
-    {Limit Proof 3}Claim: \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
+    {Limit Proof 3}Claim: \(\limn \frac{2n^2 + 1{n^2}} = 2\)
 \end{example}
 
 \epf{
@@ -96,11 +96,11 @@ Let \(\epsilon > 0\). By the \namrefthm{Archimedean Principle}, there exists \(N
                                       & = \frac{1}{1/\epsilon}             \\
                                       & = \epsilon
 \end{align*}
-Therefore, \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
+Therefore, \(\limn \frac{2n^2 + 1{n^2}} = 2\)
 }
 
 \begin{example}
-    {Limit Proof 4}Claim: \(\limn{\frac{7n + 8}{3n + 6}} = \frac{7}{3} \)
+    {Limit Proof 4}Claim: \(\limn \frac{7n + 8{3n + 6}} = \frac{7}{3} \)
 \end{example}
 
 \epf{
@@ -135,7 +135,7 @@ Therefore, \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
 }
 
 \begin{example}
-    {Limit Proof 5}Let \((x_n) = \displaystyle \frac{\cos(n)}{3n}\). Claim: \(\limn{(x_n)} = 0\)
+    {Limit Proof 5}Let \((x_n) = \displaystyle \frac{\cos(n)}{3n}\). Claim: \(\limn (x_n) = 0\)
 \end{example}
 
 \epf{
@@ -150,7 +150,7 @@ Therefore, \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
 }
 
 \begin{example}
-    {Limit Proof 6}Let \((y_n) = \frac{4n-1}{n^2}\). Claim: \(\limn{y_n} = 0\).
+    {Limit Proof 6}Let \((y_n) = \frac{4n-1}{n^2}\). Claim: \(\limn y_n = 0\).
 \end{example}
 
 \epf{
@@ -195,8 +195,8 @@ Therefore, \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
     {2.2.2}Verify, using \defref{2.2.3}, that
     the following sequences converge to the proposed limit.
     \begin{enumerate}
-        \item \(\limn{\frac{2n + 1}{5n + 4}} = \frac{2}{5}\).
-        \item \(\limn{\frac{2n^2}{n^3+3}} = 0\)
+        \item \(\limn \frac{2n + 1{5n + 4}} = \frac{2}{5}\).
+        \item \(\limn \frac{2n^2{n^3+3}} = 0\)
     \end{enumerate}
 \end{exercise}
 
@@ -221,7 +221,7 @@ Therefore, \(\limn{\frac{2n^2 + 1}{n^2}} = 2\)
                                                     & = \frac{2}{2/\epsilon}          \\
                                                     & = \epsilon.
               \end{align*}
-              Therefore, \(\limn{\frac{2n^2}{n^3 + 3}} = 0\). \qedhere
+              Therefore, \(\limn \frac{2n^2{n^3 + 3}} = 0\). \qedhere
     \end{enumerate}
 }
 
@@ -395,12 +395,12 @@ Thus, every term is in \([-M,M]\).
 }
 
 \begin{ntheorem}
-    {Algebraic Limit Theorem}Let \(\limn{a_n} = a\) and \(\limn{b_n} = b\). Then,
+    {Algebraic Limit Theorem}Let \(\limn a_n = a\) and \(\limn b_n = b\). Then,
     \begin{enumerate}[label=(\roman*)]
-        \item \(\limn{ca_n} = ca\) for all \(c \in \R\);
-        \item \(\limn{(a_n + b_n)} = a + b\);
-        \item \(\limn{(a_nb_n)} = ab\);
-        \item \(\limn{\frac{a_n}{b_n}} = \frac{a}{b}\) provided \(b \neq 0\).
+        \item \(\limn ca_n = ca\) for all \(c \in \R\);
+        \item \(\limn (a_n + b_n) = a + b\);
+        \item \(\limn (a_nb_n) = ab\);
+        \item \(\limn \frac{a_n{b_n}} = \frac{a}{b}\) provided \(b \neq 0\).
     \end{enumerate}
 \end{ntheorem}
 
@@ -464,7 +464,7 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
 \subsection{Limits and Order}
 
 \begin{ntheorem}
-    {Order Limit Theorem}Let \((a_n)\) and \((b_n)\) be sequences. If \(\limn{a_n} = a\) and \(\limn{b_n} = b\), then
+    {Order Limit Theorem}Let \((a_n)\) and \((b_n)\) be sequences. If \(\limn a_n = a\) and \(\limn b_n = b\), then
     \begin{enumerate}[label=(\roman*)]
         \item If \(a_n \geq c\) for all \(n \in \N\), then \(a \geq c\).
         \item If \(a_n \leq b_n\) for all \(n \in \N\), then \(a \leq b\).
@@ -568,7 +568,7 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
 \end{ntheorem}
 
 \tpf{
-    Let \((a_n)\) be an increasing and bounded sequence. Since \((a_n)\) is bounded, the set \(A = \{a_n \ |\ n \in \N\}\) is clearly also bounded. Since \(A\) is bounded, \(\sup{A}\) exists. We claim that \(\limn{a_n} = \sup{A}\). Thus, for all \(\epsilon > 0\) and by our definition of supremum, there exists \(N \in \N\) such that \(\sup{A} - \epsilon < a_N \leq \sup{A}\). Since \((a_n)\) is increasing, for all \(n \geq N\), \(\sup{A} - \epsilon < a_N \leq a_n \leq \sup{A}\). It follows that \(\disabs{a_n - \sup{A}} < \epsilon\). Therefore, \(\limn{a_n} = \sup{A}\).
+    Let \((a_n)\) be an increasing and bounded sequence. Since \((a_n)\) is bounded, the set \(A = \{a_n \ |\ n \in \N\}\) is clearly also bounded. Since \(A\) is bounded, \(\sup{A}\) exists. We claim that \(\limn a_n = \sup{A}\). Thus, for all \(\epsilon > 0\) and by our definition of supremum, there exists \(N \in \N\) such that \(\sup{A} - \epsilon < a_N \leq \sup{A}\). Since \((a_n)\) is increasing, for all \(n \geq N\), \(\sup{A} - \epsilon < a_N \leq a_n \leq \sup{A}\). It follows that \(\disabs{a_n - \sup{A}} < \epsilon\). Therefore, \(\limn a_n = \sup{A}\).
 }
 
 \begin{example}
@@ -603,7 +603,7 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
     \end{itemize}
     By the Monotone Convergence Theorem, \(x_n\) converges.
 
-    So, what is the limit? We know \((x_n)\) converges so let \(L = \limn{x_n}\). Then, \(\limn{x_{n+1}} = L\). We also know \(x_{n+1} = \frac{1}{4 - x_n}\). So \(L = \limn{x_{n+1}} = \limn{\frac{1}{4- x_n} = \frac{1}{4 - L}}\). It must be true that \(L = \frac{1}{4 - L}\). Solving for \(L\), we get \begin{align*}
+    So, what is the limit? We know \((x_n)\) converges so let \(L = \limn x_n\). Then, \(\limn x_{n+1} = L\). We also know \(x_{n+1} = \frac{1}{4 - x_n}\). So \(L = \limn x_{n+1} = \limn \frac{1}{4- x_n} = \frac{1}{4 - L}\). It must be true that \(L = \frac{1}{4 - L}\). Solving for \(L\), we get \begin{align*}
         L(4 - L)     & = 1 \\
         4L - L^2     & = 1 \\
         L^2 - 4L + 1 & = 0
@@ -838,12 +838,12 @@ Looking to the future, we are going to use functions and summations together. Fo
 \end{theorem}
 
 \tpf{
-    Let \(x_{n_k}\) be a subsequence of \(x_n\), and let \(L = \limn{x_n}\). We want to show that \(\limn{x_{n_k}} = L\). Let \(\epsilon > 0\). Since \(x_n\) converges to \(L\), there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - L} < \epsilon\). Since \(n_k\) is increasing, there exists \(M \in \N\) such that \(n_k \geq N\) for all \(k \geq M\). Thus, for all \(k \geq M\), \(\disabs{x_{n_k} - L} < \epsilon\). Therefore, \(\limn{x_{n_k}} = L\).
+    Let \(x_{n_k}\) be a subsequence of \(x_n\), and let \(L = \limn x_n\). We want to show that \(\limn x_{n_k} = L\). Let \(\epsilon > 0\). Since \(x_n\) converges to \(L\), there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - L} < \epsilon\). Since \(n_k\) is increasing, there exists \(M \in \N\) such that \(n_k \geq N\) for all \(k \geq M\). Thus, for all \(k \geq M\), \(\disabs{x_{n_k} - L} < \epsilon\). Therefore, \(\limn x_{n_k} = L\).
 
 
     Let \(x_{n_k}\) be a subsequence of \(x_n\). Let \(\epsilon > 0\). Since \((x_n) \rightarrow L\), there exists an \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - L} < \epsilon\).
 
-    Now, looking at \(x_{n_k}\), notice that \(n_k \geq k\) for all \(k\). Consider \(k = N\). For any \(n \geq N\), \(n \geq N \geq k\). Thus, \(\disabs{x_{n_k} - L} < \epsilon\). Therefore, \(\limn{x_{n_k}} = L\).
+    Now, looking at \(x_{n_k}\), notice that \(n_k \geq k\) for all \(k\). Consider \(k = N\). For any \(n \geq N\), \(n \geq N \geq k\). Thus, \(\disabs{x_{n_k} - L} < \epsilon\). Therefore, \(\limn x_{n_k} = L\).
 }
 
 \begin{ntheorem}
@@ -881,7 +881,7 @@ Let \(x_n\) be a bounded sequence. There exists an \(M > 0\) such that every ter
 
 
 
-The \namrefthm{Nested Interval Property} states that \(\bigcup_{n = 1}^\infty I_n\) is non empty. Let \(L\) be a point in \(\bigcup_{n = 1}^\infty I_n\). We claim \(\limn{x_{n_k}} = L\). Let \(\epsilon > 0\). There exists an \(N \in \N\) such that \(\frac{2M}{2^n} < \epsilon\). (Since \(\limn{\frac{2M}{2^n}} = 0\). See \numrefthm{2.5.5}) For any \(k \geq N\), recall that \(x_{n_k}\), \(L \in I_k\). Since \(I_k\) has length \(\frac{2M}{2^n}\). Thus, \(\disabs{x_{n_k} - L} < \epsilon\). Therefore, \(\limn{x_{n_k}} = L\) and \((x_n)\) has a convergence subsequence.
+The \namrefthm{Nested Interval Property} states that \(\bigcup_{n = 1}^\infty I_n\) is non empty. Let \(L\) be a point in \(\bigcup_{n = 1}^\infty I_n\). We claim \(\limn x_{n_k} = L\). Let \(\epsilon > 0\). There exists an \(N \in \N\) such that \(\frac{2M}{2^n} < \epsilon\). (Since \(\limn \frac{2M{2^n}} = 0\). See \numrefthm{2.5.5}) For any \(k \geq N\), recall that \(x_{n_k}\), \(L \in I_k\). Since \(I_k\) has length \(\frac{2M}{2^n}\). Thus, \(\disabs{x_{n_k} - L} < \epsilon\). Therefore, \(\limn x_{n_k} = L\) and \((x_n)\) has a convergence subsequence.
 }
 
 \begin{tikzpicture}
@@ -927,14 +927,14 @@ The \namrefthm{Nested Interval Property} states that \(\bigcup_{n = 1}^\infty I_
 \end{tikzpicture}
 
 \begin{theorem}
-    Let \(b \in (0,1)\). Then \(\limn{b^n = 0}\).
+    Let \(b \in (0,1)\). Then \(\limn b^n = 0\).
 \end{theorem}
 
 \tpf{
-    The sequence \((b^n)\) is monotone decreasing. This is because \(b^{n + 1} = b^nb < b^n\). This sequence is also bounded by 0. Hence, by the \namrefthm{Monotone Convergence Theorem}, \((b^n)\) converges. Now, let \(L = \limn{b^n}\). Consider the subsequence \(b^{2n}\). This sequence also converges to \(L\). Thus, \begin{align*}
-        L & = \limn{b^{2n}}        \\
-          & = \limn{b^nb^n}        \\
-          & = \limn{b^n}\limn{b^n} \\
+    The sequence \((b^n)\) is monotone decreasing. This is because \(b^{n + 1} = b^nb < b^n\). This sequence is also bounded by 0. Hence, by the \namrefthm{Monotone Convergence Theorem}, \((b^n)\) converges. Now, let \(L = \limn b^n\). Consider the subsequence \(b^{2n}\). This sequence also converges to \(L\). Thus, \begin{align*}
+        L & = \limn b^{2n}        \\
+          & = \limn b^nb^n        \\
+          & = \limn b^n\limn b^n \\
           & = L^2.
     \end{align*} Thus, \(L = 0\) or \(L = 1\). The limit cannot be 1 because \(b^n\) is decreasing away from 1. Therefore, \(L = 0\).
 }
@@ -1044,7 +1044,7 @@ How do we prove \(x_n\) converges?
 \end{enumerate}
 
 \begin{definition}
-    A sequence \(x_n\) is a \textit{Cauchy sequence} if for all \(\epsilon > 0\), there exists \(N \in \N\) such that for all \(m,n \geq N\), \(\disabs{x_m - x_n} < \epsilon\).
+    A sequence \((x_n)\) is a \textit{Cauchy sequence} if for all \(\epsilon > 0\), there exists \(N \in \N\) such that for all \(m,n \geq N\), \(\disabs{x_m - x_n} < \epsilon\).
 \end{definition}
 
 This says that as terms get close to each other and stay close together, there's some value they're all getting close to.
@@ -1099,7 +1099,7 @@ Now, conclude the proof by letting \(\epsilon > 0\). We know \((1/2^n) \rightarr
     {Cauchy Criterion}A sequence \(x_n\) converges if, and only if, it is a Cauchy sequence.
 \end{ntheorem}
 
-\iffpf{Assume \((x_n)\) is a convergent seqeuence in \(\R\). Given \(\epsilon > 0\). Let \(L = \limn{x_n}\). Since \((x_n) \rightarrow L\), there exists an \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - L} < \frac{\epsilon}{2}\). For all \(n,m \geq N\), \begin{align*}
+\iffpf{Assume \((x_n)\) is a convergent seqeuence in \(\R\). Given \(\epsilon > 0\). Let \(L = \limn x_n\). Since \((x_n) \rightarrow L\), there exists an \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - L} < \frac{\epsilon}{2}\). For all \(n,m \geq N\), \begin{align*}
         \disabs{x_m - x_n} & = \disabs{x_m - L + L - x_n}              \\
                            & \leq \disabs{x_m - L} + \disabs{L - x_n}  \\
                            & < \frac{\epsilon}{2} + \frac{\epsilon}{2} \\

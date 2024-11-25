@@ -4,7 +4,7 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \documentclass[12pt, oneside]{book}
-% \usepackage{draculatheme}
+\usepackage{draculatheme}
 
 %%% AESTHETICS %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -82,12 +82,12 @@
 
 %%% Chapter Headings %%%
 \usepackage[Glenn]{fncychap}
-% \ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
-% \ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
-% \ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
-\ChTitleVar{\bfseries\scshape\color{black}}
-\ChNumVar{\large\selectfont\color{black}}
-\ChNameVar{\large\color{black}}
+\ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
+\ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
+% \ChTitleVar{\bfseries\scshape\color{black}}
+% \ChNumVar{\large\selectfont\color{black}}
+% \ChNameVar{\large\color{black}}
 \usepackage{xpatch}
 \xpatchcmd\DOCH
 {\mghrulefill}{\color{orangehdx}\mghrulefill}
@@ -187,8 +187,8 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \fancyhead[R]{\leftmark}
 \fancyhead[L]{Hendrix College}
-\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
-% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
+% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
+\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
@@ -395,8 +395,8 @@ sharp corners=uphill,
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
-%   backgroundcolor=draculabg, % Needed for Dracula theme
-%   fontcolor=draculafg, % Needed for Dracula theme
+  backgroundcolor=draculabg, % Needed for Dracula theme
+  fontcolor=draculafg, % Needed for Dracula theme
   innertopmargin=0pt,
   innerbottommargin=5pt,
   innerrightmargin=10pt,
@@ -443,8 +443,8 @@ sharp corners=uphill,
         bottomline=false,
         rightline=false,
         leftline=false,
-        % backgroundcolor=draculabg, % Background color for Dracula theme
-        % fontcolor=draculafg,       % Font color for Dracula theme
+        backgroundcolor=draculabg, % Background color for Dracula theme
+        fontcolor=draculafg,       % Font color for Dracula theme
         innerleftmargin=-6pt,
         innertopmargin=0pt,
         leftmargin=0pt,
@@ -640,7 +640,7 @@ sharp corners=uphill,
 }
 
 \newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
-\newcommand{\limn}[1]{\ensuremath{\lim_{n \rightarrow \infty}}#1}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
 \newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
 
 \newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
@@ -684,8 +684,8 @@ sharp corners=uphill,
     \begin{center}
 
         \vspace*{-2cm}
-        \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
-        % \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
+        % \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
+        \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
         \vfill
 
         % Horizontal line above the title in 'horange' color
@@ -757,22 +757,27 @@ sharp corners=uphill,
 \chapter{The Real Numbers}\label{Real nums}
 \vspace*{-0.25in}
 \input{Chapters/analysis_ch_1}
-
 \setcounter{chapter}{1}
+
 \chapter{Sequences and Series}\label{sequences and series}
 \vspace*{-0.25in}
 \input{Chapters/analysis_ch_2}
-
 \setcounter{chapter}{2}
 
-\chapter{Basic Topology of Real Numbers}\label{topology}
-\vspace*{-0.25in}
-\input{Chapters/analysis_ch_3}
+% \chapter{Basic Topology of Real Numbers}\label{topology}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_3}
 \setcounter{chapter}{3}
 
 \chapter{Functional Limits and Continuity}\label{functional limits}
 \vspace*{-0.25in}
 \input{Chapters/analysis_ch_4}
+\setcounter{chapter}{4}
+
+
+% \chapter{The Derivative}\label{Derivative}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_5}
 
 
 
@@ -782,33 +787,38 @@ sharp corners=uphill,
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 \renewcommand{\theenumi}{\alph{enumi}}
 \renewcommand{\labelenumi}{(\theenumi)}
-\chapter*{Exercises 1}\label{Exercises 1}
-\vspace*{-0.25in}
-\input{Exercises/analysis_exercises_1}
+% \chapter*{Exercises 1}\label{Exercises 1}
+% \vspace*{-0.25in}
+% \input{Exercises/analysis_exercises_1}
 
-\chapter*{Exercises 2}\label{Exercises 2}
-\vspace*{-0.25in}
-\input{Exercises/analysis_exercises_2}
+% \chapter*{Exercises 2}\label{Exercises 2}
+% \vspace*{-0.25in}
+% \input{Exercises/analysis_exercises_2}
 
-\fancyhead[R]{Exercises 3}
+% \fancyhead[R]{Exercises 3}
 
-\chapter*{Exercises 3}\label{Exercises 3}
-\vspace*{-0.25in}
-\input{Exercises/analysis_exercises_3}
+% \chapter*{Exercises 3}\label{Exercises 3}
+% \vspace*{-0.25in}
+% \input{Exercises/analysis_exercises_3}
 
-\chapter*{Exercises 4}\label{ex 4}
-\vspace*{-0.25in}
-\input{Exercises/analysis_exercises_4}
+% \chapter*{Exercises 4}\label{ex 4}
+% \vspace*{-0.25in}
+% \input{Exercises/analysis_exercises_4}
 
-\chapter*{Exercises 5}\label{ex 5}
-\vspace*{-0.25in}
-\fancyhead[R]{Exercises 5}
-\input{Exercises/analysis_exercises_5}
+% \chapter*{Exercises 5}\label{ex 5}
+% \vspace*{-0.25in}
+% \fancyhead[R]{Exercises 5}
+% \input{Exercises/analysis_exercises_5}
 
-\chapter*{Exercises 6}\label{ex 6}
+% \chapter*{Exercises 6}\label{ex 6}
+% \vspace*{-0.25in}
+% \fancyhead[R]{Exercises 6}
+% \input{Exercises/analysis_exercises_6}
+
+\chapter*{Exercises 7}\label{ex 7}
 \vspace*{-0.25in}
-\fancyhead[R]{Exercises 6}
-\input{Exercises/analysis_exercises_6}
+\fancyhead[R]{Exercises 7}
+\input{Exercises/analysis_exercises_7}
 
 
 % \chapter*{Presentation Problem 1}\label{pres 1}

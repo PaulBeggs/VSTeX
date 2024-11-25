@@ -1,7 +1,7 @@
 \section{Discussion: Examples of Dirichlet and Thomae}
 
 \begin{definition}
-    The \textit{Dirichlet function} \(\limx{c}{g(x)}\) does not exist for any \(c \in \R\).
+    The \textit{Dirichlet function} \(\limx c{g(x)}\) does not exist for any \(c \in \R\).
     \[
         g(x) = \begin{cases}
             1 & \text{if } x \in \Q,              \\
@@ -64,7 +64,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
 
 
 \begin{example}
-    {Functional Limit (From book) 1}Let \(f(x) = 3x + 1\). Claim: \(\limx{2}{f(x)} = 7\).
+    {Functional Limit (From book) 1}Let \(f(x) = 3x + 1\). Claim: \(\limx 2{f(x)} = 7\).
 \end{example}
 
 \pfscratch{
@@ -79,7 +79,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
 
 
 \begin{example}
-    {Functional Limit (From book) 2}Let \(g(x) = x^{2}\). Claim: \(\limx{2}{g(x)} = 4\).
+    {Functional Limit (From book) 2}Let \(g(x) = x^{2}\). Claim: \(\limx 2{g(x)} = 4\).
 \end{example}
 
 \pfscratch{
@@ -120,7 +120,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
 
 
 \begin{example}
-    {Functional Limit 3}Let \(f(x) = x^{2}\). Claim: \(\limx{7}{f(x)} = 49\)
+    {Functional Limit 3}Let \(f(x) = x^{2}\). Claim: \(\limx 7{f(x)} = 49\)
 \end{example}
 
 \pfscratch{
@@ -138,7 +138,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
 {teal}
 
 \begin{example}
-    {Functional Limit 4}Claim: \(\limx{3}{\frac{1}{x + 1}} = \frac{1}{4}\).
+    {Functional Limit 4}Claim: \(\limx 3{\frac{1}{x + 1}} = \frac{1}{4}\).
 \end{example}
 
 \pfscratch{
@@ -149,7 +149,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
                                                & = \frac{12\epsilon}{12}                 \\
                                                & = \epsilon.
     \end{align*}
-    Therefore, \(\limx{3}{\frac{1}{x + 1}} = \frac{1}{4}\)
+    Therefore, \(\limx 3{\frac{1}{x + 1}} = \frac{1}{4}\)
 }{
     Goal: \(\disabs{\frac{1}{x + 1} - \frac{1}{4}}\). Hence,
     \begin{align*}
@@ -164,7 +164,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
 }{teal}
 
 \begin{example}
-    {Functional Limit 5}Claim: \(\limx{3}{(x^{2} + 7x)} = 30\).
+    {Functional Limit 5}Claim: \(\limx 3{(x^{2} + 7x)} = 30\).
 \end{example}
 
 \lepf{
@@ -178,7 +178,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
 }
 
 \begin{example}
-    {Functional Limit 6}Claim: \(\limx{3}{\frac{2x + 3}{4x - 9}} = 3\).
+    {Functional Limit 6}Claim: \(\limx 3{\frac{2x + 3}{4x - 9}} = 3\).
 \end{example}
 
 \lepfscratch{
@@ -193,7 +193,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
     \end{align*}}
 
 \begin{example}
-    {Functional Limit 7}Claim: \(\limx{4}{\sqrt{x}} = 2\).
+    {Functional Limit 7}Claim: \(\limx 4{\sqrt{x}} = 2\).
 \end{example}
 
 \lepfscratch{
@@ -217,7 +217,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
 
     \begin{enumerate}
         \item \(\lim_{x \rightarrow c} f(x) = L\).
-        \item For all sequences \((x_n)\) where \(x_n \ne c\) and \((x_n) \rightarrow c\), we have \(\limn{f(x_n)} = L\).
+        \item For all sequences \((x_n)\) where \(x_n \ne c\) and \((x_n) \rightarrow c\), we have \(\limn f(x_n) = L\).
     \end{enumerate}
 \end{ntheorem}
 
@@ -237,7 +237,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
         \item Now, for all \(n \geq N\), it follows that \(x_n - c < \delta\) and thus \(\disabs{f(x) - L} < \epsilon\).
     \end{itemize}
 
-    Thus, \(\limn{f(x_n)} = L\). \\
+    Thus, \(\limn f(x_n) = L\). \\
 
     \((2) \rightarrow (1)\) \\
 
@@ -254,7 +254,7 @@ Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \
 
     \begin{itemize}
         \item Since \(\disabs{x_n - c} < \frac{1}{n}\), we see that \((x_n) \rightarrow c\).
-        \item Since for all \(\ninn\), \(\disabs{f(x) - L} \geq \epsilon_0\). Then, \(\limn{f(x)} \ne L\).
+        \item Since for all \(\ninn\), \(\disabs{f(x) - L} \geq \epsilon_0\). Then, \(\limn f(x) \ne L\).
     \end{itemize}
     Thus, \(\neg(1) \rightarrow \neg(2)\). So \((2) \rightarrow (1)\) and \((1) \rightarrow (2)\).
 }
@@ -272,7 +272,7 @@ Assume \(\limc{f(x)} = L\) and \(\limc{g(x)} = M\). Then,
 \end{itemize}
 
 \begin{ntheorem}
-    {Divergence Criterion} Let \(f \colon A \rightarrow \R\) with \(c\) as a limit point of \(A\). If there exists two sequences \((x_n)\) and \((y_n)\) in \(A \setminus \{c\}\) (that both converge to \(c\)) such that \(\limn{f(x_n)} \ne \limn{f(y_n)}\), then \(\limc{f(x)}\) does not exist.
+    {Divergence Criterion} Let \(f \colon A \rightarrow \R\) with \(c\) as a limit point of \(A\). If there exists two sequences \((x_n)\) and \((y_n)\) in \(A \setminus \{c\}\) (that both converge to \(c\)) such that \(\limn f(x_n) \ne \limn f(y_n)\), then \(\limc{f(x)}\) does not exist.
 \end{ntheorem}
 
 \begin{example}
@@ -284,7 +284,7 @@ Assume \(\limc{f(x)} = L\) and \(\limc{g(x)} = M\). Then,
 \end{example}
 
 \lepf{
-    Let \((x_n) = (\frac{1}{n})\) and let \((y_n) = (\frac{-1}{n})\). We will see that as \(n \rightarrow \infty\), \(\limn{f(x_n)} = 1\) and \(\limn{f(y_n)} = -1\). Thus, \(\lim_{x \rightarrow 0} f(x)\) does not exist.
+    Let \((x_n) = (\frac{1}{n})\) and let \((y_n) = (\frac{-1}{n})\). We will see that as \(n \rightarrow \infty\), \(\limn f(x_n) = 1\) and \(\limn f(y_n) = -1\). Thus, \(\lim_{x \rightarrow 0} f(x)\) does not exist.
 }
 
 \begin{example}
@@ -292,12 +292,12 @@ Assume \(\limc{f(x)} = L\) and \(\limc{g(x)} = M\). Then,
 \end{example}
 
 \lepf{
-    Let \((x_n) = (\frac{1}{2\pi n})\) and let \((y_n) = (\frac{1}{2\pi n + \frac{\pi}{2}})\). We will see that as \(n \rightarrow \infty\), \(\limn{g(x_n)} = 1\) and \(\limn{g(y_n)} = -1\). Thus, \(\lim_{x \rightarrow 0} g(x)\) does not exist.
+    Let \((x_n) = (\frac{1}{2\pi n})\) and let \((y_n) = (\frac{1}{2\pi n + \frac{\pi}{2}})\). We will see that as \(n \rightarrow \infty\), \(\limn g(x_n) = 1\) and \(\limn g(y_n) = -1\). Thus, \(\lim_{x \rightarrow 0} g(x)\) does not exist.
 }
 
 
 
-We say \(\limn{x_n} = \infty\) if for all \(M > 0\), there exists \(N \in \N\) such that for all \(n \geq N\), \(x_n > M\).
+We say \(\limn x_n = \infty\) if for all \(M > 0\), there exists \(N \in \N\) such that for all \(n \geq N\), \(x_n > M\).
 
 We say \(\limc{f(x)} = \infty\) if for all \(M > 0\), there exists \(\delta > 0\) such that if \(0 < \disabs{x - c} < \delta\), then \(f(x) > M\). Think of vertical asymptotes.
 
@@ -307,58 +307,58 @@ We say \(\limc{f(x)} = \infty\) if for all \(M > 0\), there exists \(\delta > 0\
 \end{ntheorem}
 
 
-\renewcommand{\theenumi}{\alph{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
-\subsection{Exercises}
+% \renewcommand{\theenumi}{\alph{enumi}}
+% \renewcommand{\labelenumi}{(\theenumi)}
+% \subsection{Exercises}
 
-\begin{exercise}
-    {4.2.10 (Right and Left Limits)} Introductory calculus courses typically refer to the right-hand limit of a function as the limit obtained by “letting \(x\) approach \(a\) from the right-hand side.”
-    \begin{enumerate}
-        \item[(a)] Give a proper definition in the style of \defref{4.2.1} for the right-hand and left-hand limit statements:
-              \[
-                  \lim_{x \to a^+} f(x) = L \quad \text{and} \quad \lim_{x \to a^-} f(x) = M.
-              \]
+% \begin{exercise}
+%     {4.2.10 (Right and Left Limits)} Introductory calculus courses typically refer to the right-hand limit of a function as the limit obtained by “letting \(x\) approach \(a\) from the right-hand side.”
+%     \begin{enumerate}
+%         \item[(a)] Give a proper definition in the style of \defref{4.2.1} for the right-hand and left-hand limit statements:
+%               \[
+%                   \lim_{x \to a^+} f(x) = L \quad \text{and} \quad \lim_{x \to a^-} f(x) = M.
+%               \]
 
-        \item[(b)] Prove that \(\lim_{x \to a} f(x) = L\) if and only if both the right and left-hand limits equal \(L\).
-    \end{enumerate}
-\end{exercise}
+%         \item[(b)] Prove that \(\lim_{x \to a} f(x) = L\) if and only if both the right and left-hand limits equal \(L\).
+%     \end{enumerate}
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}
-        \item[(a)] \textbf{Definition of Right-Hand Limit:} \\
-        Let \(f: A \to \mathbb{R}\) and let \(c\) be a limit point of \(A\). We say that \(\lim_{x \to c^+} f(x) = L\) if for every \(\epsilon > 0\), there exists \(\delta > 0\) such that whenever \(0 < x - c < \delta\) (and \(x \in A\)), it follows that \(|f(x) - L| < \epsilon\).
+% \sol{
+%     \begin{enumerate}
+%         \item[(a)] \textbf{Definition of Right-Hand Limit:} \\
+%         Let \(f: A \to \mathbb{R}\) and let \(c\) be a limit point of \(A\). We say that \(\lim_{x \to c^+} f(x) = L\) if for every \(\epsilon > 0\), there exists \(\delta > 0\) such that whenever \(0 < x - c < \delta\) (and \(x \in A\)), it follows that \(|f(x) - L| < \epsilon\).
 
-        \textbf{Definition of Left-Hand Limit:} \\
-        Let \(f: A \to \mathbb{R}\) and let \(c\) be a limit point of \(A\). We say that \(\lim_{x \to c^-} f(x) = M\) if for every \(\epsilon > 0\), there exists \(\delta > 0\) such that whenever \(-\delta < x - c < 0\) (and \(x \in A\)), it follows that \(|f(x) - M| < \epsilon\).
+%         \textbf{Definition of Left-Hand Limit:} \\
+%         Let \(f: A \to \mathbb{R}\) and let \(c\) be a limit point of \(A\). We say that \(\lim_{x \to c^-} f(x) = M\) if for every \(\epsilon > 0\), there exists \(\delta > 0\) such that whenever \(-\delta < x - c < 0\) (and \(x \in A\)), it follows that \(|f(x) - M| < \epsilon\).
 
-        \item[(b)] 
-            \iffpf{
-                Suppose that \(\lim_{x \to c} f(x) = L\). By definition, for every \(\epsilon > 0\), there exists \(\delta > 0\) such that whenever \(0 < |x - c| < \delta\), we have \(|f(x) - L| < \epsilon\). This inequality holds for all \(x\) approaching \(c\) from both sides, so both the right-hand and left-hand limits equal \(L\).
-                }{
-                Conversely, suppose that \(\lim_{x \to c^+} f(x) = L\) and \(\lim_{x \to c^-} f(x) = L\). Then, for every \(\epsilon > 0\), there exist \(\delta_1, \delta_2 > 0\) such that:
-            \begin{itemize}
-                \item If \(0 < x - c < \delta_1\), then \(|f(x) - L| < \epsilon\).
-                \item If \(-\delta_2 < x - c < 0\), then \(|f(x) - L| < \epsilon\).
-            \end{itemize}
-            Let \(\delta = \min\{\delta_1, \delta_2\}\). Then, for all \(x\) with \(0 < |x - c| < \delta\), we have \(|f(x) - L| < \epsilon\).
-            }{
-                Therefore, \(\lim_{x \to c} f(x) = L\).
-                }
-            {xgray}
-    \end{enumerate}
-}
-% \parbox{0.90\textwidth}{
-\begin{exercise}
-    {4.2.11 (Squeeze Theorem)}Let \(f\), \(g\), and \(h\) satisfy \(f(x) \leq g(x) \leq h(x)\) for all \(x\) in some common domain \(A\). If \(\lim_{x \to c} f(x) = L\) and \(\lim_{x \to c} h(x) = L\) at some limit point \(c\) of \(A\), show \(\lim_{x \to c} g(x) = L\) as well.
-\end{exercise}
+%         \item[(b)] 
+%             \iffpf{
+%                 Suppose that \(\lim_{x \to c} f(x) = L\). By definition, for every \(\epsilon > 0\), there exists \(\delta > 0\) such that whenever \(0 < |x - c| < \delta\), we have \(|f(x) - L| < \epsilon\). This inequality holds for all \(x\) approaching \(c\) from both sides, so both the right-hand and left-hand limits equal \(L\).
+%                 }{
+%                 Conversely, suppose that \(\lim_{x \to c^+} f(x) = L\) and \(\lim_{x \to c^-} f(x) = L\). Then, for every \(\epsilon > 0\), there exist \(\delta_1, \delta_2 > 0\) such that:
+%             \begin{itemize}
+%                 \item If \(0 < x - c < \delta_1\), then \(|f(x) - L| < \epsilon\).
+%                 \item If \(-\delta_2 < x - c < 0\), then \(|f(x) - L| < \epsilon\).
+%             \end{itemize}
+%             Let \(\delta = \min\{\delta_1, \delta_2\}\). Then, for all \(x\) with \(0 < |x - c| < \delta\), we have \(|f(x) - L| < \epsilon\).
+%             }{
+%                 Therefore, \(\lim_{x \to c} f(x) = L\).
+%                 }
+%             {xgray}
+%     \end{enumerate}
+% }
+% % \parbox{0.90\textwidth}{
+% \begin{exercise}
+%     {4.2.11 (Squeeze Theorem)}Let \(f\), \(g\), and \(h\) satisfy \(f(x) \leq g(x) \leq h(x)\) for all \(x\) in some common domain \(A\). If \(\lim_{x \to c} f(x) = L\) and \(\lim_{x \to c} h(x) = L\) at some limit point \(c\) of \(A\), show \(\lim_{x \to c} g(x) = L\) as well.
+% \end{exercise}
 
-\expf{
-    Let \(\epsilon > 0\). Since \(\lim_{x \to c} f(x) = L\), there exists \(\delta_1 > 0\) such that whenever \(0 < |x - c| < \delta_1\), we have \(|f(x) - L| < \epsilon\). Similarly, there exists \(\delta_2 > 0\) such that whenever \(0 < |x - c| < \delta_2\), we have \(|h(x) - L| < \epsilon\). Let \(\delta = \min\{\delta_1, \delta_2\}\). Then, for all \(x\) with \(0 < |x - c| < \delta\), we have \(f(x) \leq g(x) \leq h(x)\). Thus, \(|g(x) - L| < \epsilon\), and \(\lim_{x \to c} g(x) = L\).
-}
+% \expf{
+%     Let \(\epsilon > 0\). Since \(\lim_{x \to c} f(x) = L\), there exists \(\delta_1 > 0\) such that whenever \(0 < |x - c| < \delta_1\), we have \(|f(x) - L| < \epsilon\). Similarly, there exists \(\delta_2 > 0\) such that whenever \(0 < |x - c| < \delta_2\), we have \(|h(x) - L| < \epsilon\). Let \(\delta = \min\{\delta_1, \delta_2\}\). Then, for all \(x\) with \(0 < |x - c| < \delta\), we have \(f(x) \leq g(x) \leq h(x)\). Thus, \(|g(x) - L| < \epsilon\), and \(\lim_{x \to c} g(x) = L\).
+% }
 
 
-\renewcommand{\theenumi}{\arabic{enumi}}
-\renewcommand{\labelenumi}{\theenumi.}
+% \renewcommand{\theenumi}{\arabic{enumi}}
+% \renewcommand{\labelenumi}{\theenumi.}
 
 \section{Continuous Functions}
 
@@ -386,7 +386,7 @@ The following are equivalent (TFAE):
 
 \begin{enumerate}
     \item \(\limc{f(x)} = L\)
-    \item For all sequences \((x_n)\) such that \((x_n) \rightarrow c\), we have \(\limn{f(x_n)} = L\).
+    \item For all sequences \((x_n)\) such that \((x_n) \rightarrow c\), we have \(\limn f(x_n) = L\).
 \end{enumerate}
 
 \begin{center}
@@ -428,7 +428,7 @@ Claim: \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
 
                   Let \(c \in [0,\infty)\). Let \(\epsilon > 0\) Set \(\delta = \epsilon^2\). If \(\disabs{x - 0} < \delta\), then \(\disabs{g(x) - g(0)} = \disabs{\sqrt{x} - 0} = \sqrt{x} < \sqrt{\delta} = \epsilon\). Thus, \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
         \end{itemize}
-
+        Therefore, \(g(x)\) is continuous for all \(c \in [0,\infty)\).\qedhere
     \end{proof}
 \end{customframedproof}
 
@@ -449,118 +449,118 @@ Claim: \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
     Is with limits.
 \end{center}
 
-If \(f\) is continuous at \(c\) and \((x_n) \to c\), then \(\limn{f(x_n)} = f(c)\). Hence.
+If \(f\) is continuous at \(c\) and \((x_n) \to c\), then \(\limn f(x_n) = f(c)\). Hence.
 \[
-    \limn{f(x_n)} = f(\limn{x_n}).
+    \limn f(x_n) = f(\limn x_n).
 \]
 
-\renewcommand{\theenumi}{\alph{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
-\subsection{Exercises}
+% \renewcommand{\theenumi}{\alph{enumi}}
+% \renewcommand{\labelenumi}{(\theenumi)}
+% \subsection{Exercises}
 
-\begin{exercise}
-    {4.3.1} Let \( g(x) = \sqrt[3]{x} \).
-    \begin{enumerate}
-        \item Prove that \( g \) is continuous at \( c = 0 \).
-        \item Prove that \( g \) is continuous at a point \( c \neq 0 \). (The identity \( a^3 - b^3 = (a - b)(a^2 + ab + b^2) \) will be helpful.)
-    \end{enumerate}
-\end{exercise}
+% \begin{exercise}
+%     {4.3.1} Let \( g(x) = \sqrt[3]{x} \).
+%     \begin{enumerate}
+%         \item Prove that \( g \) is continuous at \( c = 0 \).
+%         \item Prove that \( g \) is continuous at a point \( c \neq 0 \). (The identity \( a^3 - b^3 = (a - b)(a^2 + ab + b^2) \) will be helpful.)
+%     \end{enumerate}
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}
-        \item \innerpf{
-            To prove that \( g \) is continuous at \( c = 0 \), we need to show that
-            \[
-                \lim_{x \to 0} g(x) = g(0) = 0.
-            \]
-            Let \( \epsilon > 0 \). Choose \( \delta = \epsilon^3 \). Then, if \( |x - 0| = |x| < \delta \), we have
-            \[
-                |g(x) - g(0)| = |\sqrt[3]{x} - 0| = |\sqrt[3]{x}| = |x|^{1/3} < \delta^{1/3} = (\epsilon^3)^{1/3} = \epsilon.
-            \]
-            Therefore, \( g \) is continuous at \( c = 0 \).
-        }
-        \item \innerpf{
-            Let \( c \neq 0 \) and \( \epsilon > 0 \). We need to find \( \delta > 0 \) such that whenever \( |x - c| < \delta \), it follows that \( |g(x) - g(c)| < \epsilon \).
+% \sol{
+%     \begin{enumerate}
+%         \item \innerpf{
+%             To prove that \( g \) is continuous at \( c = 0 \), we need to show that
+%             \[
+%                 \lim_{x \to 0} g(x) = g(0) = 0.
+%             \]
+%             Let \( \epsilon > 0 \). Choose \( \delta = \epsilon^3 \). Then, if \( |x - 0| = |x| < \delta \), we have
+%             \[
+%                 |g(x) - g(0)| = |\sqrt[3]{x} - 0| = |\sqrt[3]{x}| = |x|^{1/3} < \delta^{1/3} = (\epsilon^3)^{1/3} = \epsilon.
+%             \]
+%             Therefore, \( g \) is continuous at \( c = 0 \).
+%         }
+%         \item \innerpf{
+%             Let \( c \neq 0 \) and \( \epsilon > 0 \). We need to find \( \delta > 0 \) such that whenever \( |x - c| < \delta \), it follows that \( |g(x) - g(c)| < \epsilon \).
 
-            Using the identity \( a^3 - b^3 = (a - b)(a^2 + ab + b^2) \), set \( a = \sqrt[3]{x} \) and \( b = \sqrt[3]{c} \). Then,
-            \[
-                x - c = (\sqrt[3]{x} - \sqrt[3]{c})\left( (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 \right).
-            \]
-            Therefore,
-            \[
-                \sqrt[3]{x} - \sqrt[3]{c} = \frac{x - c}{ (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 }.
-            \]
-            Since \( c \neq 0 \) and \( x \) is close to \( c \), we can choose \( \delta_1 > 0 \) such that \( |x - c| < \delta_1 \) implies \( |x| \geq \dfrac{|c|}{2} > 0 \). This ensures that \( \sqrt[3]{x} \) and \( \sqrt[3]{c} \) are bounded away from zero.
+%             Using the identity \( a^3 - b^3 = (a - b)(a^2 + ab + b^2) \), set \( a = \sqrt[3]{x} \) and \( b = \sqrt[3]{c} \). Then,
+%             \[
+%                 x - c = (\sqrt[3]{x} - \sqrt[3]{c})\left( (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 \right).
+%             \]
+%             Therefore,
+%             \[
+%                 \sqrt[3]{x} - \sqrt[3]{c} = \frac{x - c}{ (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 }.
+%             \]
+%             Since \( c \neq 0 \) and \( x \) is close to \( c \), we can choose \( \delta_1 > 0 \) such that \( |x - c| < \delta_1 \) implies \( |x| \geq \dfrac{|c|}{2} > 0 \). This ensures that \( \sqrt[3]{x} \) and \( \sqrt[3]{c} \) are bounded away from zero.
 
-            Let
-            \[
-                M = \min_{|x - c| < \delta_1} \left| (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 \right| > 0.
-            \]
-            Choose \( \delta = \min\{ \delta_1, M\epsilon \} \). Then, if \( |x - c| < \delta \), we have
-            \[
-                |g(x) - g(c)| = \left| \frac{x - c}{ (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 } \right| \leq \frac{|x - c|}{M} < \frac{M\epsilon}{M} = \epsilon.
-            \]
-            Therefore, \( g \) is continuous at \( c \neq 0 \).
-        }
-    \end{enumerate}
-}
+%             Let
+%             \[
+%                 M = \min_{|x - c| < \delta_1} \left| (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 \right| > 0.
+%             \]
+%             Choose \( \delta = \min\{ \delta_1, M\epsilon \} \). Then, if \( |x - c| < \delta \), we have
+%             \[
+%                 |g(x) - g(c)| = \left| \frac{x - c}{ (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 } \right| \leq \frac{|x - c|}{M} < \frac{M\epsilon}{M} = \epsilon.
+%             \]
+%             Therefore, \( g \) is continuous at \( c \neq 0 \).
+%         }
+%     \end{enumerate}
+% }
 
-\begin{exercise}
-    {4.3.8} Decide if the following claims are true or false, providing either a short proof or counterexample to justify each conclusion. Assume throughout that \( g \) is defined and continuous on all of \( \mathbb{R} \).
-    \begin{enumerate}
-        \item If \( g(x) \geq 0 \) for all \( x < 1 \), then \( g(1) \geq 0 \) as well.
-        \item If \( g(r) = 0 \) for all \( r \in \mathbb{Q} \), then \( g(x) = 0 \) for all \( x \in \mathbb{R} \).
-    \end{enumerate}
-\end{exercise}
+% \begin{exercise}
+%     {4.3.8} Decide if the following claims are true or false, providing either a short proof or counterexample to justify each conclusion. Assume throughout that \( g \) is defined and continuous on all of \( \mathbb{R} \).
+%     \begin{enumerate}
+%         \item If \( g(x) \geq 0 \) for all \( x < 1 \), then \( g(1) \geq 0 \) as well.
+%         \item If \( g(r) = 0 \) for all \( r \in \mathbb{Q} \), then \( g(x) = 0 \) for all \( x \in \mathbb{R} \).
+%     \end{enumerate}
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}
-        \item \textbf{True.}
+% \sol{
+%     \begin{enumerate}
+%         \item \textbf{True.}
 
-        Since \( g \) is continuous at \( x = 1 \), we have
-        \[
-            g(1) = \lim_{x \to 1} g(x).
-        \]
-        For all \( x < 1 \), \( g(x) \geq 0 \), so the left-hand limit satisfies
-        \[
-            \lim_{x \to 1^-} g(x) \geq 0.
-        \]
-        Therefore,
-        \[
-            g(1) = \lim_{x \to 1} g(x) = \lim_{x \to 1^-} g(x) \geq 0.
-        \]
-        Thus, \( g(1) \geq 0 \).
+%         Since \( g \) is continuous at \( x = 1 \), we have
+%         \[
+%             g(1) = \lim_{x \to 1} g(x).
+%         \]
+%         For all \( x < 1 \), \( g(x) \geq 0 \), so the left-hand limit satisfies
+%         \[
+%             \lim_{x \to 1^-} g(x) \geq 0.
+%         \]
+%         Therefore,
+%         \[
+%             g(1) = \lim_{x \to 1} g(x) = \lim_{x \to 1^-} g(x) \geq 0.
+%         \]
+%         Thus, \( g(1) \geq 0 \).
 
-        \item \textbf{True.}
+%         \item \textbf{True.}
 
-        Since \( g \) is continuous on \( \mathbb{R} \) and \( g(r) = 0 \) for all rational numbers \( r \), it follows that for any \( x \in \mathbb{R} \), we can find a sequence of rational numbers \( (r_n) \) converging to \( x \). By continuity,
-        \[
-            g(x) = \lim_{n \to \infty} g(r_n) = \lim_{n \to \infty} 0 = 0.
-        \]
-        Therefore, \( g(x) = 0 \) for all \( x \in \mathbb{R} \).
-    \end{enumerate}
-}
+%         Since \( g \) is continuous on \( \mathbb{R} \) and \( g(r) = 0 \) for all rational numbers \( r \), it follows that for any \( x \in \mathbb{R} \), we can find a sequence of rational numbers \( (r_n) \) converging to \( x \). By continuity,
+%         \[
+%             g(x) = \lim_{n \to \infty} g(r_n) = \lim_{n \to \infty} 0 = 0.
+%         \]
+%         Therefore, \( g(x) = 0 \) for all \( x \in \mathbb{R} \).
+%     \end{enumerate}
+% }
 
-\begin{exercise}
-    {4.3.9} Assume \( h \colon \mathbb{R} \to \mathbb{R} \) is continuous on \( \mathbb{R} \) and let \( K = \{x \colon h(x) = 0\} \). Show that \( K \) is a closed set.
-\end{exercise}
+% \begin{exercise}
+%     {4.3.9} Assume \( h \colon \mathbb{R} \to \mathbb{R} \) is continuous on \( \mathbb{R} \) and let \( K = \{x \colon h(x) = 0\} \). Show that \( K \) is a closed set.
+% \end{exercise}
 
-\expf{
-    To show that \( K \) is closed, we need to show that its complement \( \mathbb{R} \setminus K \) is open. Alternatively, we can show that \( K \) contains all its limit points.
+% \expf{
+%     To show that \( K \) is closed, we need to show that its complement \( \mathbb{R} \setminus K \) is open. Alternatively, we can show that \( K \) contains all its limit points.
 
-    Let \( (x_n) \) be a sequence in \( K \) that converges to some limit \( x \in \mathbb{R} \). Since \( h \) is continuous on \( \mathbb{R} \) and \( h(x_n) = 0 \) for all \( n \), it follows that
-    \[
-        \lim_{n \to \infty} h(x_n) = h\left( \lim_{n \to \infty} x_n \right) = h(x).
-    \]
-    Therefore, \( h(x) = 0 \), which means \( x \in K \).
+%     Let \( (x_n) \) be a sequence in \( K \) that converges to some limit \( x \in \mathbb{R} \). Since \( h \) is continuous on \( \mathbb{R} \) and \( h(x_n) = 0 \) for all \( n \), it follows that
+%     \[
+%         \lim_{n \to \infty} h(x_n) = h\left( \lim_{n \to \infty} x_n \right) = h(x).
+%     \]
+%     Therefore, \( h(x) = 0 \), which means \( x \in K \).
 
-    Since every limit point of \( K \) is contained in \( K \), the set \( K \) is closed.
-}
+%     Since every limit point of \( K \) is contained in \( K \), the set \( K \) is closed.
+% }
 
 
 
-\renewcommand{\theenumi}{\arabic{enumi}}
-\renewcommand{\labelenumi}{\theenumi.}
+% \renewcommand{\theenumi}{\arabic{enumi}}
+% \renewcommand{\labelenumi}{\theenumi.}
 
 \section{Continuous Functions on Compact Sets}
 
@@ -575,7 +575,7 @@ If \(f\) is continuous at \(c\) and \((x_n) \to c\), then \(\limn{f(x_n)} = f(c)
     \[
         S = \sup\{f(x) \mid x \in K\} \text{ exists.}
     \]
-    For every natural number, there exists an \(x_n \in K\) such that \(S - \frac{1}{n} < f(x_n) \leq S\). It follows that \(\limn{f(x_n) = S}\). So, now we have a sequence, \((x_n)\) in the compact set \(K\). Since \(K\) is compact, by the Bolzano-Weierstrass Theorem, there exists a convergent subsequence,
+    For every natural number, there exists an \(x_n \in K\) such that \(S - \frac{1}{n} < f(x_n) \leq S\). It follows that \(\limn f(x_n) = S\). So, now we have a sequence, \((x_n)\) in the compact set \(K\). Since \(K\) is compact, by the Bolzano-Weierstrass Theorem, there exists a convergent subsequence,
     \[
         (x_{n_j}) \text{ with } a = \lim_{j \to \infty} x_{n_j} \in K.
     \]
@@ -718,7 +718,7 @@ Therefore, \(f(c) = y\).
     What Is Important About Continuous Functions?
 \end{center}
 
-If \(\limn(x_{n} = x)\), then \(\limn{f(x_{n})} = f(x)\).
+If \(\limn(x_{n} = x)\), then \(\limn f(x_{n)} = f(x)\).
 
 Think about \(f(x) = 2^{x}\). Thus, \(fx\) makes sense if \(x \in \Q\):
 
@@ -733,5 +733,5 @@ We can define \(f \colon \R \to \R\) to be continuous
 
 If \((q_{n})\) is in \(\Q\) and \((a_{n} \to \pi)\), then we define 
 \[
-    f(\pi) = \limn{f(q_{n})}.
+    f(\pi) = \limn f(q_{n)}.
 \]

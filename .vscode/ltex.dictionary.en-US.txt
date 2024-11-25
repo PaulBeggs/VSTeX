@@ -48,3 +48,6 @@ Vigenère
 Kasiski
 LivingWorks
 Sturgis
+Extremum
+extremum
+Diffie-Hellman
