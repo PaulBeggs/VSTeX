@@ -201,7 +201,7 @@
     sharp corners=downhill,
     colframe=orangehdx!75,
     colback=orangehdx!10,
-    coltitle=white,
+    coltitle=black,
     label={exerc:#2},
     title={\large \textbf{Exercise #2}},
     attach boxed title to top left={xshift=0.5cm},
@@ -508,19 +508,21 @@ enhanced,
 
 % \definecolor{stringcolor}{RGB}{248, 217, 60}
 \definecolor{functioncolor}{RGB}{97, 227, 108}
-\definecolor{variablecolor}{RGB}{248, 248, 242}
+\definecolor{variablecolor}{RGB}{136,122,92}
 \definecolor{ifelsecolor}{RGB}{255, 121, 198}
 \definecolor{passedvarcolor}{RGB}{255, 184, 108}
 \definecolor{bordercolor}{RGB}{197, 31, 250}
 \definecolor{black}{RGB}{0, 0, 0}
 \definecolor{commentcolor}{RGB}{98, 114, 164}
 \definecolor{backcolor}{rgb}{0.95,0.95,0.92}
-\definecolor{stringcolor}{rgb}{0,0.6,0}
+\definecolor{stringcolor}{rgb}{0,0,0}
 
 % Define a custom style
 \lstdefinestyle{myStyle}{
     backgroundcolor=\color{backcolor},   
     commentstyle=\color{commentcolor},
+    keywordstyle=\color{functioncolor},
+    numberstyle=\tiny\color{commentcolor},
     basicstyle=\ttfamily\footnotesize,
     breakatwhitespace=false,         
     breaklines=true,       
@@ -632,14 +634,14 @@ enhanced,
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\thispagestyle{plain}
-% Table of Contents will automatically update based on included chapters
-% You may need to compile twice for the toc to update
-\begin{spacing}{1} %Can change spacing between entries in toc
-    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
-    \tableofcontents
-    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
-\end{spacing}
+% \thispagestyle{plain}
+% % Table of Contents will automatically update based on included chapters
+% % You may need to compile twice for the toc to update
+% \begin{spacing}{1} %Can change spacing between entries in toc
+%     \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
+%     \tableofcontents
+%     \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+% \end{spacing}
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -671,22 +673,22 @@ enhanced,
 % \vspace*{-0.25in}
 % \input{Chapters/crypt_ch_1}
 
-\setcounter{chapter}{1}
+% \setcounter{chapter}{1}
 
-\chapter{Discrete Logarithms and Diffie-Hellman}\label{discrete log}
-\vspace*{-0.25in}
-\input{Chapters/crypt_ch_2}
+% \chapter{Discrete Logarithms and Diffie-Hellman}\label{discrete log}
+% \vspace*{-0.25in}
+% \input{Chapters/crypt_ch_2}
 
 % \chapter{Integer Factorization and RSA}\label{RSA}
 % \vspace*{-0.25in}
 % \input{Chapters/crypt_ch_3}
 
-\setcounter{chapter}{3}
+% \setcounter{chapter}{3}
 
 
-\chapter{Digitial Signatures}\label{dig sig}
-\vspace*{-0.25in}
-\input{Chapters/crypt_ch_4}
+% \chapter{Digitial Signatures}\label{dig sig}
+% \vspace*{-0.25in}
+% \input{Chapters/crypt_ch_4}
 
 \setcounter{chapter}{5}
 
@@ -695,8 +697,8 @@ enhanced,
 \input{Chapters/crypt_ch_6}
 
 
-\renewcommand{\theenumi}{\alph{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
+% \renewcommand{\theenumi}{\alph{enumi}}
+% \renewcommand{\labelenumi}{(\theenumi)}
 
 
 % \chapter*{Exercises pt. 1} \label{ex 1}
@@ -728,11 +730,11 @@ enhanced,
 % \input{Exercises/crypt_exercises_4}
 % \addcontentsline{toc}{chapter}{Exercises 4}
 
-% \chapter*{Exercises pt. 5}\label{ex 5}
-% \vspace*{-0.25in}
-% \fancyhead[R]{Exercises 5}
-% \input{Exercises/crypt_exercises_5}
-% \addcontentsline{toc}{chapter}{Exercises 5}
+\chapter*{Exercises pt. 5}\label{ex 5}
+\vspace*{-0.25in}
+\fancyhead[R]{Exercises 5}
+\input{Exercises/crypt_exercises_5}
+\addcontentsline{toc}{chapter}{Exercises 5}
 
 
 \chapter*{Exercises pt. 6}\label{ex 6}

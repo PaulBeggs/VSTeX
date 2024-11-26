@@ -150,7 +150,7 @@
             &= kr.
         \end{align*}
         Thus, \(f(r) = kr\) for any rational number \(r\).
-        \item Since \(f\) is continuous at \(x = 0\) and additive, we will show \(f\) is continuous everywhere.
+        \item Since \(f\) is continuous at \(x = 0\), we will show \(f\) is continuous everywhere.
 
         Let \(c \in \mathbb{R}\) and let \(\epsilon > 0\). Since \(f\) is continuous at \(0\), there exists \(\delta > 0\) such that if \(|h| < \delta\), then \(|f(h)| < \epsilon\).
 
@@ -179,23 +179,22 @@
 
         Observe that for all \(x, y \in [1, \infty)\),
         \[
-        |f(x) - f(y)| = \left| \dfrac{1}{x^2} - \dfrac{1}{y^2} \right| = \left| \dfrac{y^2 - x^2}{x^2 y^2} \right| = \left| \dfrac{(y - x)(y + x)}{x^2 y^2} \right|.
+        |f(x) - f(y)| = \left| \dfrac{1}{x^2} - \dfrac{1}{y^2} \right| = \left| \dfrac{y^2 - x^2}{x^2 y^2} \right| = |y - x| \left( \dfrac{y + x}{x^2 y^2} \right).
         \]
-        Since \(x, y \geq 1\), we have \(x^2 y^2 \geq 1\) and \(y + x \leq 2 \max\{x, y\}\). Therefore,
+        Since \(x, y \geq 1\), we have \(x^2 y^2 \geq 1\). Therefore,
         \[
-        |f(x) - f(y)| \leq |x - y| \cdot \dfrac{2 \max\{x, y\}}{x^2 y^2} \leq |x - y| \cdot 2.
+        \frac{y + x}{x^2 y^2} = \frac{y}{x^{2}y^{2}} + \frac{x}{x^{2}y^{2}} \leq \frac{1}{x^{2}y} + \frac{1}{xy^{2}} \leq 1 + 1 = 2.
         \]
-        Thus,
+        Now, let \(\epsilon > 0\). Choose \(\delta = \dfrac{\epsilon}{2}\). Then, when \(|x - y| < \delta\) for \(x, y \in [1, \infty)\), we have:
         \[
-        |f(x) - f(y)| \leq 2 |x - y|.
+            |f(x) - f(y)| = |y - x| \left( \dfrac{y + x}{x^2 y^2} \right) < \delta \cdot 2 = \epsilon.
         \]
-        This inequality shows that \(f\) is Lipschitz continuous on \([1, \infty)\) with Lipschitz constant \(L = 2\), which implies uniform continuity.
 
         \item \textbf{Not Uniformly Continuous on \((0, 1]\):}
 
         We will show that \(f\) is not uniformly continuous on \((0, 1]\) by demonstrating that no matter how small we choose \(\delta > 0\), there exist \(x, y \in (0, 1]\) such that \(|x - y| < \delta\) but \(|f(x) - f(y)|\) is arbitrarily large.
 
-        Let \(\epsilon = 1\). Assume that \(f\) is uniformly continuous on \((0, 1]\); then, there exists \(\delta > 0\) such that for all \(x, y \in (0, 1]\), if \(|x - y| < \delta\), then \(|f(x) - f(y)| < \epsilon\).
+        Let \(\epsilon = 1\). For the sake of contradiction, assume that \(f\) is uniformly continuous on \((0, 1]\); then, there exists \(\delta > 0\) such that for all \(x, y \in (0, 1]\), if \(|x - y| < \delta\), then \(|f(x) - f(y)| < \epsilon\).
 
         Choose \(x = \dfrac{\delta}{2}\) and \(y = \dfrac{\delta}{2} + h\) for some \(h\) with \(0 < h < \dfrac{\delta}{2}\). Then \(|x - y| = h < \delta\).
 
@@ -213,12 +212,12 @@
         \[
         |f(x_n) - f(y_n)| = \left| n^2 - (n + 1)^2 \right| = \left| n^2 - n^2 - 2n - 1 \right| = 2n + 1.
         \]
-        As \(n \to \infty\), \(|f(x_n) - f(y_n)| \to \infty\), which contradicts the assumption of uniform continuity. Therefore, \(f\) is not uniformly continuous on \((0, 1]\).
+        Thus, as \(|x_{n} - y_{n}| \rightarrow 0\), \(|f(x_{n}) - f(y_{n}) \rightarrow \infty\). Therefore, by the \namrefthm{Sequential Criterion for Absence of Uniform Continuity} theorem, \(f\) is not uniformly continuous on \((0, 1]\).
     \end{enumerate}
 }
 
 \begin{exercise}
-    {4.4.8} Exercise 4.4.8. Give an example of each of the following, or provide a short argument for why the request is impossible.
+    {4.4.8} Give an example of each of the following, or provide a short argument for why the request is impossible.
     \begin{enumerate}
         \item A continuous function defined on \([0, 1]\) with range \((0, 1)\).
         \item A continuous function defined on \((0, 1)\) with range \([0, 1]\).
@@ -228,18 +227,13 @@
 
 \sol{
     \begin{enumerate}
-        \item \textbf{Impossible}. There does not exist a continuous function defined on \([0, 1]\) with range \((0, 1)\). This is because \([0, 1]\) is a compact set, and the continuous image of a compact set is also compact. However, \((0, 1)\) is not a compact set since it is not closed in \(\mathbb{R}\). Therefore, a continuous function cannot map \([0, 1]\) onto \((0, 1)\).
+        \item \textbf{Impossible}. There does not exist a continuous function defined on \([0, 1]\) with range \((0, 1)\). This is because \([0, 1]\) is a compact set, and the continuous image of a compact set is also compact by the \namrefthm{Preservation of Compact Sets} theorem. However, \((0, 1)\) is not a compact set since it is not closed in \(\mathbb{R}\). Therefore, a continuous function cannot map \([0, 1]\) onto \((0, 1)\).
 
-        \item \textbf{Possible}. Consider the function \(f(x) = x\) defined on \((0, 1)\). This function is continuous on \((0, 1)\) and its range is \((0, 1)\). To obtain a range of \([0, 1]\), we can define:
+        \item \textbf{Possible}. An example of a continuous function defined on \( (0, 1) \) with range \( [0, 1] \) is:
         \[
-            f(x) = \dfrac{\sin(\pi x)}{2} + \dfrac{1}{2}.
+        f(x) = \frac{1}{2}\sin(4\pi x) + \frac{1}{2}.
         \]
-        This function is continuous on \((0, 1)\), and its range is \([0, 1]\) because \(\sin(\pi x)\) oscillates between \(-1\) and \(1\), so \(f(x)\) oscillates between \(0\) and \(1\).
-
-        \item \textbf{Possible}. Consider the function:
-        \[
-            f(x) = 1 - e^{-1/x}
-        \]
-        defined on \((0, 1]\). This function is continuous on \((0, 1]\), and as \(x \to 0^{+}\), \(f(x) \to 0\), while \(f(1) = 1 - e^{-1}\). The range of \(f\) is \((0, 1)\) because \(e^{-1/x}\) approaches \(0\) as \(x \to \infty\) and approaches \(1\) as \(x \to 0^{+}\). Thus, \(f\) takes on all values in \((0, 1)\).
+        This is because \(\sin(4\pi x)\) oscillates between \(-1\) and \(1\). Therefore, \(\frac{1}{2}\sin(4\pi x)\) oscillates between \(-\frac{1}{2}\) and \(\frac{1}{2}\). Adding \(\frac{1}{2}\) shifts the range to \([0, 1]\).
+        \item \textbf{Impossible}. There does not exist a continuous function defined on \((0, 1]\) with range \((0, 1)\). Since \(x = 1\) is in the domain \((0, 1]\) and \(f\) is continuous at \(x = 1\), the value \(f(1)\) exists and must be in the range \((0, 1)\). However, because \(f\) approaches \(f(1)\) as \(x \to 1^-\), the function attains its supremum at \(x = 1\), meaning \(f(1)\) should be included in the range. But the range \((0, 1)\) excludes its endpoints, leading to a contradiction. Therefore, such a function cannot exist.
     \end{enumerate}
 }
