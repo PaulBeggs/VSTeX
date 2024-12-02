@@ -1,0 +1,223 @@
+% This is the "preamble" of the document. This is where the format options get set.
+% Pro-tip: things following the % mark will not be compiled by LaTeX. I'll be using them extensively to explain things as we go.
+% Note: not to scare you off of LaTeX, but it's normal to have problems. And ya girl has been having some. I've included the copyright info at the bottom of the document from the guy who wrote this package, because his documentation doesn't entirely match how it's actually used. So this is a combination of his working preamble along with my added commentary or explanation. 
+%% 
+
+
+\documentclass[stu,12pt,floatsintext]{apa7}
+\usepackage{marginnote}
+% Document class input explanation ________________
+% LaTeX files need to start with the document class, so it knows what it's using
+% - This file is using the apa7 document class, as it has a lot of the formatting built in
+% There are two sets of brackets in LaTeX, for each command (the things that start with the slash \ )
+% - The squiggle brackets {} are mandatory for executing the command
+% - The square brackets [] are options for that command. There can be more than one set of square brackets for some commands
+% Options used in this document (general note - for each of these, if you want to use the other options, swap it out in that spot in the square brackets):
+% - stu: this sets the `document mode' as the "student paper" version. Other options are jou (journal), man (manuscript, for journal submission), and doc (a plain document)
+% --- The student setting includes things like 'duedate', 'course', and 'professor' on the title page. If these aren't wanted/needed, use the 'man' setting. It also defaults to including the tables and figures at the end of the document. This can be changed by including the 'floatsintext' option, as I have for you. If the instructor wants those at the end, remove that from the square brackets.
+% --- The manuscript setting is roughly what you would use to submit to a journal, so uses 'date' instead of 'duedate', and doesn't include the 'course' or 'professor' info. As with 'stu', it defaults to putting the tables and figures at the end rather than in text. The same option will bump those images in text.
+% --- Journal ('jou') outputs something similar to a common journal format - double columned text and figurs in place. This can be fun, especially if you are sumbitting this as a writing sample in applications.
+% --- Document ('doc') outputs single columned, single spaced text with figures in place. Another option for producing a more polished looking document as a writing sample.
+% - 12pt: sets the font size to 12pt. Other options are 10pt or 11pt
+% - floatsintext: makes it so tables and figures will appear in text rather than at the end. Unforunately, not having this option set breaks the whole document, and I haven't been able to figure out why. IT's GREAT WHEN THINGS WORK LIKE THEY'RE SUPPOSED TO.
+
+
+\usepackage{csquotes} % One of the things you learn about LaTeX is at some level, it's like magic. The references weren't printing as they should without this line, and the guy who wrote the package included it, so here it is. Because LaTeX reasons.
+
+\usepackage[T1]{fontenc} 
+\usepackage{mathptmx} % This is the Times New Roman font, which was the norm back in my day. If you'd like to use a different font, the options are laid out here: https://www.overleaf.com/learn/latex/Font_typefaces
+% Alternately, you can comment out or delete these two commands and just use the Overleaf default font. So many choices!
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{xcolor}
+
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=gray, % default color, will be overridden in custom commands
+%   backgroundcolor=draculabg, % Needed for Dracula theme
+%   fontcolor=draculafg, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=1.2\topsep,
+  skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{solution}
+  {\textit{\textbf{Solution.}}}
+
+
+  \newcommand{\sol}[1]{
+    \begin{customframedproof}
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+    citecolor=horange
+}
+
+% Following instructions:
+% 1.
+% Submissions should be 2-3 pages and double-spaced. (2 pts)
+% 2.
+% Submissions should include good grammar and syntax. (2 pts)
+% Evaluation Questions:
+% 1.
+% Describe each task. What did you do in each? How does each represent what we have learned about decision making. (10 pts)
+% 2.
+% How did you employ attention and working memory in each of these tasks? Make sure to include specific components of working memory. What does this tell us about how decision-making, attention, and working memory work together? (16 pts)
+% 3.
+% How does the Iowa Gambling task demonstrate the impact of affect (emotion) and risk on decision-making? (8 pts)
+% 4.
+% For each task, identify and describe one bias OR heuristic described in class or in your book that impacted your ability on the task. Make sure to include how the bias or heuristic specifically impacted you on the task. (12 pts)
+
+% Title page stuff _____________________
+\title{Applying Cognitive Psychology Methods Activity 5: Decision-Making} % The big, long version of the title for the title page
+\author{Paul Beggs}
+\duedate{\today}
+% \date{January 17, 2024} The student version doesn't use the \date command, for whatever reason
+\authorsaffiliations{Department of Psychology, Hendrix College}
+\course{PSYC 319: Cognitive Psychology} % LaTeX gets annoyed (i.e., throws a grumble-error) if this is blank, so I put something here. However, if your instructor will mark you off for this being on the title page, you can leave this entry blank (delete the PSY 4321, but leave the command), and just make peace with the error that will happen. It won't break the document.
+\professor{Dr.\ Carmen Merrick}  % Same situation as for the course info. Some instructors want this, some absolutely don't and will take off points. So do what you gotta
+
+
+%\characterwords{APA style, demonstration} % If you need to have characterwords for your paper, delete the % at the start of this line
+
+\begin{document}
+
+\maketitle 
+
+\section{Evaluation Questions}
+
+\begin{enumerate}
+	\item Describe each task. What did you do in each? How does each represent what we have learned about decision-making. (10 pts)\\[0.25cm]
+
+	\sol{
+    \begin{itemize}
+      \item \textbf{For the Wisconsin Card Sorting Task,} 
+      \item \textbf{For the Iowa Gambling Task,} the goal was to choose between either cards \(A\), \(B\), \(C\), or \(D\) to maximize the amount of money earned. Cards \(A\) and \(B\) awarded \$100, and cards \(C\) and \(D\) awarded \$50. However, cards \(A\) and \(B\) also had a penalty of \$250 whereas \(C\) and \(D\) had a penalty of \$50. 
+
+      Given only the information that \(A\) and \(B\) had higher payouts, it would appear that choosing either of them would be the most advantageous. However, due to the added factor of receiving a penalty (with probability of 50\%), it turned out that choosing only \(C\) and \(D\) would generate the most money in the long run. 
+
+      This task addresses a lot of the concepts we have learned about decision-making. Such as:
+      \begin{enumerate}
+        \item \textit{Availability heuristic:} events that come easiest to mind are seen as being more probable. In this case, the higher payouts of \(A\) and \(B\) were more salient than the penalties, leading to participants being more likely to choose them.
+        \item \textit{Confirmation bias:} the tendency to search for, interpret, and remember information in a way that confirms one's preconceptions. For example, while I was playing, I did not realize that the rewards for each card were fixed. I hypothesized that choosing the cards in a specific order would reduce the chance of getting a penalty. This led me to make \textit{illusory correlations}---the appearance of a nonexistent relationship. 
+
+        My hypothesis caused me to completely ignore the fact that the rewards were fixed and that the penalties were random. 
+      \end{enumerate} 
+    \end{itemize}
+     
+	}
+
+	\item How did you employ attention and working memory in each of these tasks? Make sure to include specific components of working memory. What does this tell us about how decision-making, attention, and working memory work together? (16 pts)\\[0.25cm]
+
+	\sol{
+    \begin{itemize}
+      \item \textbf{For the Wisconsin Card Sorting Task,} 
+      \item \textbf{For the Iowa Gambling Task,} 
+    \end{itemize}
+	}
+
+	\item How does the Iowa Gambling task demonstrate the impact of affect (emotion) and risk on decision-making? (8 pts)\\[0.25cm]
+
+	\sol{
+
+	}
+
+	\item For each task, identify and describe one bias OR heuristic described in class or in your book that impacted your ability on the task. Make sure to include how the bias or heuristic specifically impacted you on the task. (12 pts)\\[0.25cm]
+
+	\sol{
+
+	}
+	
+\end{enumerate}
+
+\end{document}
+
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Daniel A. Weiss.
+%% 
+%% This work consists of the file  apa7.dtx
+%% and the derived files           apa7.ins,
+%%                                 apa7.cls,
+%%                                 apa7.pdf,
+%%                                 README,
+%%                                 APA7american.txt,
+%%                                 APA7british.txt,
+%%                                 APA7dutch.txt,
+%%                                 APA7english.txt,
+%%                                 APA7german.txt,
+%%                                 APA7ngerman.txt,
+%%                                 APA7greek.txt,
+%%                                 APA7czech.txt,
+%%                                 APA7turkish.txt,
+%%                                 APA7endfloat.cfg,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%%
+%% This is file `./samples/shortsample.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% apa7.dtx  (with options: `shortsample')
+%% ----------------------------------------------------------------------
+%% 
+%% apa7 - A LaTeX class for formatting documents in compliance with the
+%% American Psychological Association's Publication Manual, 7th edition
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% ----------------------------------------------------------------------

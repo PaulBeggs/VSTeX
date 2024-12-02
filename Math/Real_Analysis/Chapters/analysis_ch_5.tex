@@ -146,3 +146,58 @@
     \] 
     So, \(f'(c) = 0\).
 }
+\pfs
+\begin{center}
+    \underline{Big Results From This Semester}
+\end{center}
+
+\begin{enumerate}
+    \item \namrefthm{Extreme Value Theorem}
+    \begin{itemize}
+        \item If \(f\) is continuous on a compact set, then \(f\) achieves a maximum and minimum on that set.
+    \end{itemize}
+    \item \namrefthm{Intermediate Value Theorem}
+    \begin{itemize}
+        \item If \(f\) is continuous on an interval \([a, b]\) and \(y\) is between \(f(a)\) and \(f(b)\), then there exists a \(c \in [a, b]\) such that \(f(c) = y\).
+    \end{itemize}
+
+\end{enumerate}
+\pfs
+\begin{center}
+    \underline{Theorems for Today}
+\end{center}
+
+\begin{enumerate}
+    \item Rolle's Theorem
+    \item Mean Value Theorem
+    \item Maybe:
+    \begin{itemize}
+        \item Generalized MVT.
+        \item L'Hopital's Rule.
+    \end{itemize}
+    \item Darbaux's Theorem
+\end{enumerate}
+
+\begin{ntheorem}
+    {Rolle's Theorem} Let \(f\) be continuous on \([a, b]\) and differentiable on \((a, b)\). If \(f(a) = f(b)\), then there exists a \(c \in (a, b)\) such that \(f'(c) = 0\).
+\end{ntheorem}
+
+\tpf{
+    Since \(f\) is continuous on \([a,b]\), the \namrefthm{Extreme Value Theorem} says \(f\) achieves a maximum and minimum in \([a,b]\). 
+    \begin{itemize}
+    \item If either maximum or minimum is in the interior, then the \namrefthm{thm:Interior Extremum Theorem} says that \(f'(c) = 0\). 
+    \item If the maximum or minimum is at the endpoints, then \(f\) is constant and \(f'(c) = 0\) for all \([a,b]\).
+    \end{itemize}
+}
+
+\begin{ntheorem}
+    {Mean Value Theorem} Let \(f\) be continuous on \([a, b]\) and differentiable on \((a, b)\). Then there exists a \(c \in (a, b)\) such that
+    \[
+        f'(c) = \frac{f(b) - f(a)}{b - a}.
+    \]
+    This is saying that there exists a point where the slope of the tangent line is equal to the slope of the secant line. In other words, there is a point where \(f'(c)\) happens.
+\end{ntheorem}
+
+\tpf{
+    Let \(d(x) = f(x) + \frac{f(a)}{}\)
+}
