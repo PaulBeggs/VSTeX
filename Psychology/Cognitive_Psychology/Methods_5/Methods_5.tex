@@ -52,15 +52,15 @@
   skipbelow=\topsep,
 ]{customframedproof}
 
-\newenvironment{solution}
-  {\textit{\textbf{Solution.}}}
+\newenvironment{response}
+  {\textit{\textbf{Response.}}}
 
 
-  \newcommand{\sol}[1]{
+  \newcommand{\resp}[1]{
     \begin{customframedproof}
-        \begin{solution}
+        \begin{response}
         #1
-        \end{solution}
+        \end{response}
     \end{customframedproof}
 }
 
@@ -96,59 +96,78 @@
 % \date{January 17, 2024} The student version doesn't use the \date command, for whatever reason
 \authorsaffiliations{Department of Psychology, Hendrix College}
 \course{PSYC 319: Cognitive Psychology} % LaTeX gets annoyed (i.e., throws a grumble-error) if this is blank, so I put something here. However, if your instructor will mark you off for this being on the title page, you can leave this entry blank (delete the PSY 4321, but leave the command), and just make peace with the error that will happen. It won't break the document.
-\professor{Dr.\ Carmen Merrick}  % Same situation as for the course info. Some instructors want this, some absolutely don't and will take off points. So do what you gotta
+\professor{Dr.\ Carmen Merrick}  % Same situation as for the course info. Some instructors want this, some abresputely don't and will take off points. So do what you gotta
 
 
 %\characterwords{APA style, demonstration} % If you need to have characterwords for your paper, delete the % at the start of this line
 
 \begin{document}
 
-\maketitle 
+\maketitle
 
 \section{Evaluation Questions}
 
 \begin{enumerate}
-	\item Describe each task. What did you do in each? How does each represent what we have learned about decision-making. (10 pts)\\[0.25cm]
+  \item Describe each task. What did you do in each? How does each represent what we have learned about decision-making? \textbf{(10 pts)}\\[0.25cm]
 
-	\sol{
-    \begin{itemize}
-      \item \textbf{For the Wisconsin Card Sorting Task,} 
-      \item \textbf{For the Iowa Gambling Task,} the goal was to choose between either cards \(A\), \(B\), \(C\), or \(D\) to maximize the amount of money earned. Cards \(A\) and \(B\) awarded \$100, and cards \(C\) and \(D\) awarded \$50. However, cards \(A\) and \(B\) also had a penalty of \$250 whereas \(C\) and \(D\) had a penalty of \$50. 
+        \resp{
+          \begin{itemize}
+            \item \textbf{For the Wisconsin Card Sorting Task,} each card had a color, shape, and number assigned to it. We were asked to sort the cards based on one of these categories. After a certain number of correct responses, the sorting rule would change without warning. The goal was to figure out the new rule by trial and error.
+            
+            For decision-making, to derive the new rule, I used \textit{inductive reasoning}---generalizations based on specific instances. That is, after a few guesses, the program provided feedback on whether my choice was correct. I would then use this feedback to make a new hypothesis and test it. This iterative process highlights the inductive reasoning required to adapt to new sorting rules.
 
-      Given only the information that \(A\) and \(B\) had higher payouts, it would appear that choosing either of them would be the most advantageous. However, due to the added factor of receiving a penalty (with probability of 50\%), it turned out that choosing only \(C\) and \(D\) would generate the most money in the long run. 
 
-      This task addresses a lot of the concepts we have learned about decision-making. Such as:
-      \begin{enumerate}
-        \item \textit{Availability heuristic:} events that come easiest to mind are seen as being more probable. In this case, the higher payouts of \(A\) and \(B\) were more salient than the penalties, leading to participants being more likely to choose them.
-        \item \textit{Confirmation bias:} the tendency to search for, interpret, and remember information in a way that confirms one's preconceptions. For example, while I was playing, I did not realize that the rewards for each card were fixed. I hypothesized that choosing the cards in a specific order would reduce the chance of getting a penalty. This led me to make \textit{illusory correlations}---the appearance of a nonexistent relationship. 
+            \item \textbf{For the Iowa Gambling Task,} the goal was to choose between either cards \(A\), \(B\), \(C\), or \(D\) to maximize the amount of money earned. Cards \(A\) and \(B\) provided \$100 rewards, while cards \(C\) and \(D\) provided \$50 rewards. However, cards \(A\) and \(B\) also had a penalty of \$250, while cards \(C\) and \(D\) carried penalties of only \$50.
 
-        My hypothesis caused me to completely ignore the fact that the rewards were fixed and that the penalties were random. 
-      \end{enumerate} 
-    \end{itemize}
-     
-	}
+                  Given only the information that \(A\) and \(B\) had higher payouts, choosing either of them would be the most advantageous. However, due to the added factor of receiving a penalty (with the probability of 50\%), it turned out that choosing only \(C\) and \(D\) would generate the most money in the long run.
 
-	\item How did you employ attention and working memory in each of these tasks? Make sure to include specific components of working memory. What does this tell us about how decision-making, attention, and working memory work together? (16 pts)\\[0.25cm]
+                  This task illustrates several decision-making concepts, including:
+                  \begin{enumerate}
+                    \item \textit{Availability heuristic:} People see events that come easiest to mind as more probable. The higher payouts of \(A\) and \(B\) appeared more \hypertarget{word:salient}{\textit{salient}} than the penalties, making participants more likely to choose them.
+                    \item \hypertarget{response1}{\textit{Confirmation bias:}} People tend to search for, interpret, and remember information that confirms their preconceptions. For example, I failed to notice that the cards had fixed rewards. Instead, I created a hypothesis that choosing cards in a specific order would reduce penalty chances. This created \textit{illusory correlations}---where I saw relationships that did not exist.
 
-	\sol{
-    \begin{itemize}
-      \item \textbf{For the Wisconsin Card Sorting Task,} 
-      \item \textbf{For the Iowa Gambling Task,} 
-    \end{itemize}
-	}
+                          My hypothesis blinded me from seeing that the rewards remained fixed, and the penalties occurred randomly, preventing me from understanding the fixed rates.
+                  \end{enumerate}
+          \end{itemize}
 
-	\item How does the Iowa Gambling task demonstrate the impact of affect (emotion) and risk on decision-making? (8 pts)\\[0.25cm]
+        }
 
-	\sol{
+  \item How did you employ attention and working memory in each of these tasks? Make sure to include specific components of working memory. What does this tell us about how decision-making, attention, and working memory work together? \textbf{(16 pts)}\\[0.25cm]
 
-	}
+        \resp{
+          \begin{itemize}
+            \item \textbf{For the Wisconsin Card Sorting Task,} the \textit{perceptual load}---difficultly of the task---was relatively low, so I easily focused on the task. Regarding working memory, I used \textit{central executive}---the part of working memory that directs attention and processing---to switch between the various sorting rules. Once I identified the sorting rule, I maintained it in my short-term memory through \textit{rehearsal}---repeating information to keep it in working memory---until I could apply it to the next card.
 
-	\item For each task, identify and describe one bias OR heuristic described in class or in your book that impacted your ability on the task. Make sure to include how the bias or heuristic specifically impacted you on the task. (12 pts)\\[0.25cm]
+                  
+            
+            
+            \item \textbf{For the Iowa Gambling Task,} I used \textit{selective attention}---attending to one thing while ignoring others---to focus incorrectly on a self-imposed \textit{distraction}, where one stimulus interfered with processing another. As referenced \hyperlink{word:salient}{earlier}, the payouts that the participants received may have been more \textit{salient}---more noticeable or important stimuli---than the penalties.
 
-	\sol{
+                  For myself, I used working memory to \textit{rehearse} the order of the cards I chose. This was an attempt to establish a \textit{mental set}, a cognitive tendency to approach problems in a fixed way, to minimize penalties. In this sense, I was using working memory to my disadvantage.
+          \end{itemize}
 
-	}
-	
+          From both of these tasks, we can see that decision-making, attention, and working memory are closely related. In order to solve each task, you must utilize your working memory (which is directed by your attention) to problem-solve. You cannot have one without the other. 
+        }
+        
+
+  \item How does the Iowa Gambling task demonstrate the impact of affect (emotion) and risk on decision-making? \textbf{(8 pts)}\\[0.25cm]
+
+        \resp{
+          While participating in the task, I had \textit{incidental emotions}---emotions that are not specifically about the task at hand---that influenced my decision-making. For example, I was tired after getting off work, and I was not entirely focused on doing my best for the task. This caused me to partially ignore the directions and go straight into the task without fully understanding the rules.
+
+          When it comes to risk, participants could have paid more attention to \textit{risk aversion}---the tendency of avoiding risks---and found the correct response of choosing only cards \(C\) and \(D\) to maximize their overall earnings. However, they could have also disregarded risk aversion and chosen cards \(A\) and \(B\) because the payouts were more salient.
+        }
+
+  \item For each task, identify and describe one \underline{\textbf{bias}} OR \underline{\textbf{heuristic}} described in class or in your book that impacted your ability on the task. Make sure to include how the bias or heuristic specifically impacted you on the task. \textbf{(12 pts)}\\[0.25cm]
+
+        \resp{
+          \begin{itemize}
+            \item \textbf{For the Wisconsin Card Sorting Task,} while I did not experience any biases or heuristics, I can see how one may fall victim to their confirmation bias. Because of the 3 distinct categories, one may believe that color (rather than shape or number) is the correct category. For example, (in the special case of) given two blue stars, they would match with two blue circles. If they were correct, then they would attribute the rule to being color, not shape---even though both have equal probability of being the correct category.
+            \item \textbf{For the Iowa Gambling Task,} I answered this question in \hyperlink{response1}{my response} to (1) with (b).
+          \end{itemize}
+
+        }
+
 \end{enumerate}
 
 \end{document}

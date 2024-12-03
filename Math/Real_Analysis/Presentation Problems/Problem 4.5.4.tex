@@ -1,0 +1,171 @@
+\begin{exercise}
+    {4.5.4} Let \(g\) be continuous on an interval \(A\) and let \(F\) be the set of points where \(g\) fails to be one-to-one; that is,
+    \[
+        F = \{x_{1} \in A : f(x_{1}) = f(x_{2}) \text{ for some } x_{1} \ne x_{2} \text{ and } x_{2} \in A\}.
+    \]
+    Show \(F\) is either empty or uncountable.
+\end{exercise}
+
+\expf{
+    Assume \(F\) is not empty; that is, there exists distinct points \(x_{1},x_{2} \in A\) such that \(g(x_{1}) = g(x_{2})\). (Note that if \(F\) were empty, then we would be done.)
+
+    Without loss of generality, assume \(x_{1} < x_{2}\).
+
+    From here, we consider two cases. Either \(g\) is constant, or \(g\) is not constant on \([x_{1},x_{2}]\). For the first case:
+
+    \begin{center}
+        \textbf{Case 1: \(g\) is constant on \([x_{1},x_{2}]\)}.
+    \end{center}
+
+    Since \(g(x) = y\) for all \(x \in [x_{1},x_{2}]\), every point in this interval belongs to \(F\). Then, because \([x_{1},x_{2}]\) is uncountable (intervals in \(\R\) contain uncountably many points), it follows that \(F\) is uncountable.
+
+    \begin{center}
+        \textbf{Case 2: \(g\) is not constant on \([x_{1},x_{2}]\)}.
+    \end{center}
+
+    Because \(g\) is not constant, there exists some \(c \in (x_{1}, x_{2})\) such that \(g(c) \neq y\). By the continuity of \(g\), we can apply the Intermediate Value Theorem (IVT) to analyze \(g\) on the intervals \([x_{1}, c]\) and \([c, x_{2}]\):
+
+    \begin{enumerate}[label=(\roman*)]
+        \item On \([x_{1}, c]\): \(g(x_1) = y\) and \(g(c) \neq y\). By the IVT, \(g(x)\) attains every value between \(y\) and \(g(c)\) on \([x_{1}, c]\).
+        \item On \([c, x_{2}]\): \(g(c) \neq y\) and \(g(x_2) = y\). By the IVT, \(g(x)\) attains every value between \(g(c)\) and \(y\) on \([c, x_{2}]\).
+    \end{enumerate}
+
+    For any value \(k\) between \(y\) and \(g(c)\), there exist at least two points \(x_1' \in [x_1, c]\) and \(x_2' \in [c, x_2]\) such that \(g(x_1') = g(x_2') = k\). These points \(x_1'\) and \(x_2'\) are distinct because they belong to different subintervals. Thus, every such \(k\) corresponds to multiple \(x \in [x_1, x_2]\) where \(g(x) = g(x')\), and these \(x\) belong to \(F\).
+
+    Since there are uncountably many such \(k\) (as the range of \(g\) over \([x_{1}, x_{2}]\) is uncountable), it follows that there are uncountably many \(x \in [x_{1}, x_{2}]\) in \(F\).
+
+
+    Therefore, because there are uncountably many such \(x\), it follows that \(F\) is uncountable.\qedhere
+
+    % Since \(g\) is continuous on \(A\), we can use the Intermediate Value Property to state that for any \(x_{1},x_{2} \in A\) with \(x_{1} < x_{2}\) and \(y \in [g(x_{1}),g(x_{2})]\), there exists \(c \in [x_{1},x_{2}]\) such that \(g(c) = y\).
+
+    % If \(g\) fails to be injective, then there exists distinct \(x_{1},x_{2} \in A\) such that \(g(x_{1}) = g(x_{2}) = y\). Thus, the preimage of \(y\) will contain more than one point.
+
+    % For each such \(y\), the set of points \(x\) where \(g(x) = y\) must be a closed set because \(g\) is continuous, and by the IVP, 
+
+
+    % Suppose that \( F \) is nonempty. Then there exist distinct points \( x_1, x_2 \in A \) such that \( g(x_1) = g(x_2) \).
+
+    % Without loss of generality, assume \( x_1 < x_2 \).
+
+    % Consider the interval \( [x_1, x_2] \), which lies entirely within \( A \) since \( A \) is an interval.
+
+    % We will show that \( g \) is constant on \( [x_1, x_2] \).
+
+    % Suppose, for contradiction, that there exists a point \( z \in (x_1, x_2) \) such that \( g(z) \neq g(x_1) \).
+
+    % Because \( g \) is continuous on \( [x_1, x_2] \), the Intermediate Value Theorem implies that \( g \) attains every value between \( g(x_1) \) and \( g(z) \) on the interval \( [x_1, z] \).
+
+    % Since \( g(x_1) = g(x_2) \) but \( g(z) \neq g(x_1) \), it means that \( g \) takes on values both equal to and not equal to \( g(x_1) \) in \( [x_1, x_2] \).
+
+    % However, this leads to the existence of at least two distinct values \( k_1 \) and \( k_2 \) such that \( g^{-1}(k_i) \) contains more than one point in \( [x_1, x_2] \).
+
+    % By applying the same reasoning to these new values, we find that for each such value, the set where \( g \) equals that value is infinite within \( [x_1, x_2] \).
+
+    % In fact, since the interval \( [x_1, x_2] \) is uncountable and \( g \) is continuous, the set \( F \) must be uncountable.
+
+    % Therefore, \( g \) must be constant on \( [x_1, x_2] \); that is,
+    % \[
+    %     g(x) = g(x_1) \quad \text{for all } x \in [x_1, x_2].
+    % \]
+
+    % Consequently, every point \( x \in [x_1, x_2] \) belongs to \( F \) (except possibly \( x_1 \) if considering \( y = x \)), because for any \( x \neq x_1 \),
+    % \[
+    %     g(x) = g(x_1) = g(x_2), \quad \text{and } x \neq x_1.
+    % \]
+
+    % Since \( [x_1, x_2] \) is an uncountable set, it follows that \( F \) is uncountable.
+
+
+    %     Assume \( F \) is not empty.
+
+    %     This means there exist at least two distinct points \( ( x_1, x_2 \in A ) \) such that \( g(x_1) = g(x_2) \).
+
+    %     Let \( y_0 = g(x_1) = g(x_2) \).
+
+    %     Consider the set \( S = g^{-1}( y_0 ) \cap A \).
+
+    %     \( S \) contains all points in \( A \) that map to \( y_0 \) under \( g \). We already know \( x_1, x_2 \in S \).
+        
+    %     This leaves us with three cases:
+
+    %     \begin{itemize}
+
+    %     \item \textbf{Case 1}: If \( g \) is constant on an interval in \( A \), then \( S \) includes that entire interval, making \( F \) uncountable.
+
+    %     \item \textbf{Case 2}: Suppose \( g \) is not constant on any interval, but \( S \) is infinite.
+
+    %     Since \( g \) is continuous and \( S \subset A \) has accumulation points in \( A \), \( S \) must be uncountable (because a countable set in \( \mathbb{R} \) cannot have uncountably many accumulation points).
+
+    %     \item \textbf{Case 3}: Suppose \( g \) is not constant on any interval, and \( S \) is finite.
+
+    % \end{itemize}
+
+    %     But this leads to a contradiction:
+
+    %     Since \( g \) is continuous on \( A \) and \( g(x_1) = g(x_2) \), by the Intermediate Value Theorem (IVT), \( g \) must take on every value between \( g(x_1) \) and \( g(x_2) \) on the interval between \( x_1 \) and \( x_2 \).
+
+    %     However, since \( g(x_1) = g(x_2) \), this suggests that \( g \) takes the value \( y_0 \) at every point in between \( x_1 \) and \( x_2 \).
+
+    %     Therefore, \( g \) is constant on \( [x_1, x_2] \), contradicting the assumption that \( g \) is not constant on any interval.
+
+    %     This implies that \( g(x) = y_0 \) for all \( x \in [x_1, x_2] \).
+
+    %     \begin{center}
+    %         \textbf{Conclude that \( F \) is uncountable.}
+    %     \end{center}
+
+    %     Since \( [x_1, x_2] \) is an interval containing infinitely many points, and every point \( x \in [x_1, x_2] \) satisfies \( g(x) = y_0 \), all these points are in \( F \).
+
+    %     Therefore, \( F \) contains the entire interval \( [x_1, x_2] \), making it uncountable.
+
+}
+\begin{figure}[th!]
+    \centering
+
+    \begin{tikzpicture}
+        \begin{axis}[
+                scale=2,
+                axis lines=middle,
+                % axis line style={-latex},
+                xlabel={\(x\)},
+                ylabel={\(y\)},
+                xmin=-7, xmax=7,
+                ymin=-12, ymax=12,
+                samples=100,
+                % legend style={font=\color{horange!70}},
+                % legend pos=outer north east,
+                % Decorations library
+            ]
+            \addplot [horange, thick] {x^3 + x^2 - 7*x};
+            % Points x1 and x2
+            \addplot[
+                only marks,
+                mark=*,
+                mark size=3pt,
+                color=red,
+            ] coordinates { (-2.7515,6) (-0.84108,6) };
+
+            % Labels for points x_{1} and x_{2}
+            \node[above right, red] at (axis cs:-2.7515,6) {\(x_1\)};
+            \node[above right, red] at (axis cs:-0.84108,6) {\(x_2\)};
+
+            % Fails horizontal line test
+            \draw[dotted, red, thick] (axis cs:-7,6) -- (axis cs:7,6);
+
+            % Horizontal dotted lines at y = 10.05105 and y = -5.2362
+            \draw[dotted, darkgray, thick] (axis cs:-4.5,10.05105) -- (axis cs:7,10.05105);
+            \draw[dotted, darkgray, thick] (axis cs:-4.5,-5.2362) -- (axis cs:7,-5.2362);
+
+            % \addlegendentry{$g(x) = x^3 + x^2 - 7x$}
+            % Curly brace from local maximum to local minimum
+            \draw[decorate, decoration={brace, amplitude=10pt, mirror}]
+            (axis cs:-4.5,10.05105) -- (axis cs:-4.5,-5.2362)
+            node[midway, left, xshift=-10pt]{\(F\)};
+
+            % Label for g(x)
+            \node[above] at (axis cs:3.2,3.55105) {\textcolor{horange}{\(g(x)\)}};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Graph of \(g(x) = x^3 + x^2 - 7x\) (Non-empty)}
+\end{figure}

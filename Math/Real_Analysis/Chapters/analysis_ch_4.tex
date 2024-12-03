@@ -1,3 +1,4 @@
+\label{sec:Thomae}
 \section{Discussion: Examples of Dirichlet and Thomae}
 
 \begin{definition}
@@ -379,7 +380,7 @@ We say \(\limc{f(x)} = \infty\) if for all \(M > 0\), there exists \(\delta > 0\
 Idea: When \(x\) is close to \(c\), \(f(x)\) is close to \(f(c)\). Then, for the topological definition, we can say if \(x \in V_\delta(c)\) then \(f(x) \in V_\epsilon(f(c))\).
 
 \begin{definition}
-    We say function \(f\) is \textit{continuous} on a set \(D\) if \(f\) is continuous at every point in \(D\).
+    We say function \(f\) is \textit{continuous on a set} \(D\) if \(f\) is continuous at every point in \(D\).
 \end{definition}
 
 The following are equivalent (TFAE):
@@ -652,7 +653,7 @@ Compare this definition with \defref{4.3.1}. The difference is that the \(\delta
 % 3x
 
 \begin{definition}
-    A function \(f \colon A \to \R\) is \textit{not uniformly continuous} on \(A\) if there exists \(\epsilon_{0} > 0\) such that for all \(\delta > 0\), there exists \(x, c \in A\) such that \(\disabs{x - c} < \delta\) and \(\disabs{f(x) - f(c)} \geq \epsilon_{0}\).
+    A function \(f \colon A \to \R\) is \textit{\underline{not} uniformly continuous} on \(A\) if there exists \(\epsilon_{0} > 0\) such that for all \(\delta > 0\), there exists \(x, c \in A\) such that \(\disabs{x - c} < \delta\) and \(\disabs{f(x) - f(c)} \geq \epsilon_{0}\).
 \end{definition}
 
 \begin{theorem}
@@ -706,10 +707,7 @@ By the \namrefthm{Nested Interval Property}, there exists a point \(c\) such tha
 \]
 Since \(f\) is continuous, we have
 \[
-    f(c) = \lim_{n \to \infty} f(a_{n}) \leq y
-\]
-\[
-    f(c) = \lim_{n \to \infty} f(b_{n}) \geq y.
+    f(c) = \lim_{n \to \infty} f(a_{n}) \leq y \qquad \text{and} \qquad f(c) = \lim_{n \to \infty} f(b_{n}) \geq y.
 \]
 Therefore, \(f(c) = y\).
 }
@@ -720,7 +718,7 @@ Therefore, \(f(c) = y\).
 
 If \(\limn(x_{n} = x)\), then \(\limn f(x_{n)} = f(x)\).
 
-Think about \(f(x) = 2^{x}\). Thus, \(fx\) makes sense if \(x \in \Q\):
+Think about \(f(x) = 2^{x}\). Thus, \(f(x)\) makes sense if \(x \in \Q\):
 
 \[
     2^{\frac{p}{q}} = \sqrt[q]{2^{p}}.
@@ -733,5 +731,8 @@ We can define \(f \colon \R \to \R\) to be continuous
 
 If \((q_{n})\) is in \(\Q\) and \((a_{n} \to \pi)\), then we define 
 \[
-    f(\pi) = \limn f(q_{n)}.
+    f(\pi) = \limn f(q_{n}).
 \]
+
+
+
