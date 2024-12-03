@@ -4,7 +4,7 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \documentclass[12pt, oneside]{book}
-\usepackage{draculatheme}
+% \usepackage{draculatheme}
 
 %%% AESTHETICS %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -15,6 +15,9 @@
 \usepackage{setspace}
 \linespread{1}
 \usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
+\usepgflibrary{shadings}
 
 %%% Define new colors %%%
 \usepackage{xcolor}
@@ -78,26 +81,60 @@
 %------- %
 
 
-%%% Chapter Headings %%%
 
 %%% Chapter Headings %%%
+
+\newcommand{\gradientrule}{
+    \begin{tikzpicture}
+        \shade[left color=orangehdx, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+    \end{tikzpicture}
+}
+
 \usepackage[Glenn]{fncychap}
-\ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
-\ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
-\ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
-% \ChTitleVar{\bfseries\scshape\color{black}}
-% \ChNumVar{\large\selectfont\color{black}}
-% \ChNameVar{\large\color{black}}
+% \ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
+% \ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
+% \ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
+\ChTitleVar{\bfseries\scshape\color{black}}
+\ChNumVar{\large\selectfont\color{black}}
+\ChNameVar{\large\color{black}}
 \usepackage{xpatch}
-\xpatchcmd\DOCH
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
-{}{\PatchFailed}
-\xpatchcmd\DOTI
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
-{}{\PatchFailed}
+
+% \xpatchcmd{\DOCH}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTI}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTIS}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+
+% \xpatchcmd\DOCH
+% {\mghrulefill}{\color{orangehdx}\mghrulefill}
+% {}{\PatchFailed}
+% \xpatchcmd\DOTI
+% {\mghrulefill}{\color{orangehdx}\mghrulefill}
+% {}{\PatchFailed}
 \xpatchcmd\DOTIS
 {\mghrulefill}{\color{orangehdx}\mghrulefill}
 {}{\PatchFailed}
+
+
+% \usepackage[Bjornstrup]{fncychap}
+
+% \newcommand{\gradient}[1]{
+% \begin{tikzpicture}
+%     \node (rect) at (0,0) [fill=blue,,path fading=East,minimum width=\linewidth,minimum height=2.5cm] {};
+%     \node(title)[above left = 10pt and 10pt of rect.south east, anchor=south east, font=\CTV] {\textcolor{horange}{#1}};
+%     \ifnum \thechapter>0\node[left = 10pt of rect.north east,  anchor=center, font=\CNoV] {\textcolor{horange}{\thechapter}};\fi%
+% \end{tikzpicture}%
+% \vskip 40pt
+% }
+
+
+% \renewcommand{\DOCH}{}
+% \renewcommand{\DOTI}[1]{\gradient{#1}}
+% \renewcommand{\DOTIS}[1]{\gradient{#1}}
 
 %% Change Chapter Heading Placement %%
 \usepackage{etoolbox}
@@ -187,8 +224,8 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \fancyhead[R]{\leftmark}
 \fancyhead[L]{Hendrix College}
-% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
-\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
+\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
+% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
@@ -346,8 +383,6 @@ sharp corners=uphill,
 %You'll need your own packages, theorem types, and commands.
 
 \usepackage{fix-cm}
-\usepackage{tikz}
-\usetikzlibrary{shapes,backgrounds,calc,patterns}
 \usepackage{amsmath,amsthm} 
 \usepackage{mathtools}
 \usepackage{amssymb}
@@ -395,8 +430,8 @@ sharp corners=uphill,
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
-  backgroundcolor=draculabg, % Needed for Dracula theme
-  fontcolor=draculafg, % Needed for Dracula theme
+%   backgroundcolor=draculabg, % Needed for Dracula theme
+%   fontcolor=draculafg, % Needed for Dracula theme
   innertopmargin=0pt,
   innerbottommargin=5pt,
   innerrightmargin=10pt,
@@ -443,8 +478,8 @@ sharp corners=uphill,
         bottomline=false,
         rightline=false,
         leftline=false,
-        backgroundcolor=draculabg, % Background color for Dracula theme
-        fontcolor=draculafg,       % Font color for Dracula theme
+        % backgroundcolor=draculabg, % Background color for Dracula theme
+        % fontcolor=draculafg,       % Font color for Dracula theme
         innerleftmargin=-6pt,
         innertopmargin=0pt,
         leftmargin=0pt,
@@ -684,8 +719,8 @@ sharp corners=uphill,
     \begin{center}
 
         \vspace*{-2cm}
-        % \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
-        \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
+        \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
+        % \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
         \vfill
 
         % Horizontal line above the title in 'horange' color
@@ -742,37 +777,37 @@ sharp corners=uphill,
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\thispagestyle{plain}
-% Table of Contents will automatically update based on included chapters
-% You may need to compile twice for the toc to update
-\begin{spacing}{1} %Can change spacing between entries in toc
-    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
-    \tableofcontents
-    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
-\end{spacing}
+% \thispagestyle{plain}
+% % Table of Contents will automatically update based on included chapters
+% % You may need to compile twice for the toc to update
+% \begin{spacing}{1} %Can change spacing between entries in toc
+%     \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
+%     \tableofcontents
+%     \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+% \end{spacing}
 
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\chapter{The Real Numbers}\label{Real nums}
-\vspace*{-0.25in}
-\input{Chapters/analysis_ch_1}
-\setcounter{chapter}{1}
+% \chapter{The Real Numbers}\label{Real nums}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_1}
+% \setcounter{chapter}{1}
 
-\chapter{Sequences and Series}\label{sequences and series}
-\vspace*{-0.25in}
-\input{Chapters/analysis_ch_2}
-\setcounter{chapter}{2}
+% \chapter{Sequences and Series}\label{sequences and series}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_2}
+% \setcounter{chapter}{2}
 
 % \chapter{Basic Topology of Real Numbers}\label{topology}
 % \vspace*{-0.25in}
 % \input{Chapters/analysis_ch_3}
-\setcounter{chapter}{3}
+% \setcounter{chapter}{3}
 
-\chapter{Functional Limits and Continuity}\label{functional limits}
-\vspace*{-0.25in}
-\input{Chapters/analysis_ch_4}
-\setcounter{chapter}{4}
+% \chapter{Functional Limits and Continuity}\label{functional limits}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_4}
+% \setcounter{chapter}{4}
 
 
 % \chapter{The Derivative}\label{Derivative}
@@ -815,10 +850,10 @@ sharp corners=uphill,
 % \fancyhead[R]{Exercises 6}
 % \input{Exercises/analysis_exercises_6}
 
-\chapter*{Exercises 7}\label{ex 7}
-\vspace*{-0.25in}
-\fancyhead[R]{Exercises 7}
-\input{Exercises/analysis_exercises_7}
+% \chapter*{Exercises 7}\label{ex 7}
+% \vspace*{-0.25in}
+% \fancyhead[R]{Exercises 7}
+% \input{Exercises/analysis_exercises_7}
 
 
 % \chapter*{Presentation Problem 1}\label{pres 1}
@@ -830,6 +865,12 @@ sharp corners=uphill,
 % \vspace*{-0.25in}
 % \input{Presentation Problems/Problem 2.2.7}
 % \addcontentsline{toc}{chapter}{Presentation Problem 2}
+
+\chapter*{Presentation Problem 3}\label{pres 3}
+\vspace*{-0.25in}
+\fancyhead[R]{Presentation Problem 3}
+\input{Presentation Problems/Problem 4.5.4}
+\addcontentsline{toc}{chapter}{Presentation Problem 3}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 \end{document}
