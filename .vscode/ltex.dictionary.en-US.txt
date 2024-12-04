@@ -52,3 +52,5 @@ Extremum
 extremum
 Diffie-Hellman
 subintervals
+Shor
+ket
