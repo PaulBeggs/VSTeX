@@ -1,5 +1,24 @@
 \documentclass{beamer}
-\usepackage{draculatheme}
+% Option 1: Singapore theme - clean and modern
+\usetheme{Singapore}
+\usecolortheme{orchid}
+
+% Option 2: Berlin theme - clear hierarchy
+% \usetheme{Berlin}
+% \usecolortheme{beaver}
+
+% Option 3: Copenhagen theme - professional
+% \usetheme{Copenhagen}
+% \usecolortheme{rose}
+
+% Option 4: Rochester theme - minimalist
+% \usetheme{Rochester}
+% \usecolortheme{crane}
+
+% Option 5: Dresden theme - structured
+% \usetheme{Dresden}
+% \usecolortheme{spruce}
+% \usepackage{draculatheme}
 \usepackage{bold-extra}
 \usepackage{graphicx}  
 \usepackage{tcolorbox}
@@ -15,6 +34,7 @@
 \usepackage{mathrsfs}
 \usepackage{multicol}
 \usepackage{slashed}
+\usepackage{braket}
 \usepackage{enumerate}
 \usepackage{enumitem}
 \usepackage{lipsum} 
@@ -29,9 +49,9 @@
 \definecolor{horange}{HTML}{f58026}
 \hypersetup{
 	colorlinks=true,
-	linkcolor=horange,
-	filecolor=horange,      
-	urlcolor=horange,
+	linkcolor=cyan,
+	filecolor=cyan,      
+	urlcolor=cyan,
 }
 
 
@@ -133,89 +153,262 @@
 \usepackage{tikz}
 \usetikzlibrary{shadows,shapes,backgrounds,calc,patterns}
 
-\title{Quantum Cryptography}
+\title{Shor's Algorithm \& Quantum Cryptography}
 
 \author[Beggs, Hill] % (optional, use only with lots of authors)
-{P.~Beggs\inst{1} \and J.~Hill\inst{2}}
+{P.~Beggs \and J.~Hill}
 % - Give the names in the same order as the appear in the paper.
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
 
 \institute%
 {
-  \inst{1}%
-  Department of Astrology\\
-  University of Southern Liberty in South Dakota
-  \and
-  \inst{2}%
-  Department of Theoretical Physics\\
-  Washington University in St.~Louis}
+  Department of Mathematics and Computer Science\\
+  Hendrix College}
 
 
 
 \date{\today}
-\setbeamercolor{normal text}{fg=draculafg, bg=draculabg}
-\setbeamercolor{alerted text}{fg=draculared}
-\setbeamercolor{example text}{fg=draculagreen}
-\setbeamercolor{structure}{fg=draculapurple}
-\setbeamercolor{background canvas}{bg=draculabg}
-\setbeamercolor{frametitle}{fg=draculafg, bg=draculacl}
-\setbeamercolor{title}{fg=draculafg, bg=draculacl}
-\setbeamerfont{title}{size=\huge, series=\bfseries}
-\setbeamerfont{frametitle}{size=\Large, series=\bfseries}
+% \setbeamercolor{normal text}{fg=draculafg, bg=draculabg}
+% \setbeamercolor{alerted text}{fg=draculared}
+% \setbeamercolor{example text}{fg=draculagreen}
+% \setbeamercolor{structure}{fg=draculapurple}
+% \setbeamercolor{background canvas}{bg=draculabg}
+% \setbeamercolor{frametitle}{fg=draculafg, bg=draculacl}
+% \setbeamercolor{title}{fg=draculafg, bg=draculacl}
+% \setbeamerfont{title}{size=\huge, series=\bfseries}
+% \setbeamerfont{frametitle}{size=\Large, series=\bfseries}
+
+
 
 
 \begin{document}
 
-\begin{frame}[plain]
-	\begin{tikzpicture}[overlay, remember picture]
-		\node[fill=draculacl, drop shadow={fill=draculapurple}, rounded corners=5pt, inner sep=15pt, align=center] 
-		at ($(current page.north) + (0,-2cm)$) {%
-			\huge \textbf{\inserttitle} % Title inside the box
-		};
-	\end{tikzpicture}
-
-    % Author, affiliation, and date below the title box
-    \vspace{2cm} % Adjust vertical spacing as needed
-    \begin{center}
-        \large \insertauthor \\[1em]
-        \small \insertinstitute \\[1em]
-        \normalsize \insertdate
-    \end{center}
-\end{frame}
-
 \begin{frame}
-\frametitle{Introduction}
-Content of the first slide. \\
-% \begin{center}
-% 	\includegraphics[height=5.5cm]{images/quantum_computer.jpg}	
-% \end{center}
-
-\begin{figure}
-	\includegraphics[height=5.0cm]{images/quantum_computer.jpg}
-	\caption{This is a quantum computer!}
-\end{figure}
+    \titlepage
 \end{frame}
 
+%% -----------------------------------------------------------%%
+
+% Section 1: Introduction
+% Subsection 1.1: Background
+
+%% -----------------------------------------------------------%%
+\begin{frame}{Introduction}
+	\framesubtitle{Background}
+		Recall that:
+		\pause
+		\begin{itemize}
+		\item Discrete Logarithm Problem (DLP): the problem of finding \(x\) given \(g^x\mod p\).
+		\pause
+		\item Time complexity: DLP = \(\mathcal{O}(2^{n})\).
+		\pause
+		\item Order \(r\): smallest integer \(r \geq 1\) such that \(x^r \equiv 1 \mod n\)
+	\end{itemize}
+\end{frame}
+
+
+%% -----------------------------------------------------------%%
+
+% Subsection 1.2: Ovewview of Classical & Quantum Computing
+
+%% -----------------------------------------------------------%%
+\begin{frame}{Introduction}
+	\framesubtitle{Overview of Classical \& Quantum Computing}
+    \begin{itemize}
+        \item Classical bits: 0 or 1
+        \item[] [We could talk about how ``steps'' are calculated for big \(\mathcal{O}\) time complexity.]
+        \item Quantum bits (qubits): Simultaneous values between 0 and 1
+        \item[] [Add some more here about state changes and superpositioning, maybe? This overview should be broad. We can expand upon this information in the Quantum Computers section.]
+    \end{itemize}
+\end{frame}
+
+
+%% -----------------------------------------------------------%%
+
+% Section 2: Classical Computers
+% Subsection 2.1: Time Complexity
+
+%% -----------------------------------------------------------%%
 \begin{frame}
-	\frametitle{There Is No Largest Prime Number}
-	\framesubtitle{The proof uses \textit{reductio ad absurdum}.}
-
-	\begin{theorem}
-		There is no largest prime number.
-	\end{theorem}
-	\begin{proof}
-		\begin{enumerate}
-			\item[1-] Suppose $p$ were the largest prime number.
-			\item[2-] Let $q$ be the product of the first $p$ numbers.
-			\item[3-] Then $q + 1$ is not divisible by any of them.
-			\item[1-] But $q + 1$ is greater than $1$, thus divisible by some prime
-			number not in the first $p$ numbers.\qedhere
-			\end{enumerate}
-			\only[4-]{The proof used \textit{reductio ad absurdum}.}
-	\end{proof}
-	\alert{your mom smells}
+	\frametitle{Classical Computers}
+	\framesubtitle{Time Complexity}
+	The fastest known algorithm (number field sieve) has time complexity \(L_{4096}[\frac{1}{3},c]\) (where \(c < 1.923\)) to decrypt a 4096-bit key-size DLP.
+	For total steps, solve:
+	\[
+		L_{p}\left[\frac{1}{3},c\right] = e^{\left(c(\ln p)^{1/3}(\ln\ln p)^{2/3}\right)}.\footnote{Menezes, A. J., Van Oorschot, P. C., \& Vanstone, S. A. (2018). \textit{Handbook of applied cryptography.} CRC press.
+		}
+	\]
+	\pause
+	For \(c = (64/9)^{1/3} \approx 1.923\) and \(p = 4096\), the total steps would be \(10^{155}\). 
 \end{frame}
 
+
+%% -----------------------------------------------------------%%
+
+% Section 3: Quantum Computers
+% Subsection 3.1: Time Complexity
+
+%% -----------------------------------------------------------%%
+\begin{frame}{Quantum Computers}
+	\framesubtitle{Time Complexity}
+	Using Shor's Algorithm, the DLP can be solved in polynomial time using a quantum computer. For key size 4096, it would take
+	\pause
+	\[
+		\mathcal{O}\left((\log p)^{3}\right) = \mathcal{O}\left((\log 4096)^{3}\right) = 6.8 \cdot 10^{10} \text{ steps.}
+	\]
+\end{frame}
+
+
+%% -----------------------------------------------------------%%
+
+% Subsection 3.2 Understanding Qubits
+
+%% -----------------------------------------------------------%%
+\begin{frame}{Quantum Computers}
+	\framesubtitle{Understanding Qubits}
+    \begin{itemize}
+        \item Two-state representation: \(\ket{0}\) and \(\ket{1}\)
+        \item Pure states: \(\alpha \ket{0} + \beta \ket{1}\)
+        \item Constraint: \(|\alpha|^2 + |\beta|^2 = 1\)
+    \end{itemize}
+    \pause
+    \begin{block}{n-Component System}
+        \[ \sum_{i = 0}^{2^n - 1} \alpha_i \ket{s_i}, \quad \text{where } \sum |\alpha_i|^2 = 1 \]
+    \end{block}
+\end{frame}
+
+
+%% -----------------------------------------------------------%%
+
+% Section 3: Shor's Algorithm
+% Subsection 3.1: Overview
+
+%% -----------------------------------------------------------%%
+\begin{frame}{Shor's Algorithm}
+	\framesubtitle{Overview}
+    \begin{itemize}
+        \item Purpose: Find non-trivial factors \(p\) and \(q\) of \(N\)
+        \item Applications:
+            \begin{itemize}
+                \item Integer factorization
+                \item Discrete logarithm in \(\mathbb{F}_p^*\)
+                \item Elliptic curve discrete logarithm
+            \end{itemize}
+        \item Runs in polynomial time (quantum)
+    \end{itemize}
+\end{frame}
+
+
+%% -----------------------------------------------------------%%
+
+% Subsection 3.2: Overview of Algorithmic Steps
+
+%% -----------------------------------------------------------%%
+\begin{frame}{Shor's Algorithm}
+	\framesubtitle{Algorithmic Steps}
+	\begin{itemize}
+		\item[1.] Change problem of factoring into finding the order \(r\).
+		\pause
+		\item[2.] Use the Quantum Fourier Transform to extract periodicity of \(f(x) = a^x \mod N\).
+		\pause
+		\item[3.] Once \(r\) is found (and it is even), use it in the computation of \(\gcd(a^{r/2} - 1, N)\).   
+	\end{itemize}
+	
+\end{frame}
+
+
+%% -----------------------------------------------------------%%
+
+% Subsection 3.3: Quantum Fourier Transform
+
+%% -----------------------------------------------------------%%
+\begin{frame}{Shor's Algorithm}
+	\framesubtitle{Quantum Fourier Transform}
+    \begin{block}{Key Component}
+        For \(0 < a < q\):
+        \[ \frac{1}{q^{1/2}} \sum_{c = 0}^{q - 1} \ket{c} \exp(2\pi i a c /q) \]
+    \end{block}
+    \begin{itemize}
+        \item Choose \(q\): power of 2 between \(n^2\) and \(2n^2\)
+        \item Probability of state \(\ket{c}\) is high when:
+        \[ \left| c - \frac{d}{r} \right| < \frac{1}{2q} \]
+    \end{itemize}
+\end{frame}
+
+
+%% -----------------------------------------------------------%%
+
+% Subsection 3.4: The Algorithm in Detail
+
+%% -----------------------------------------------------------%%
+\begin{frame}{Shor's Algorithm}
+	\framesubtitle{Algorithmic Steps in Detail}
+	\begin{itemize}
+		\item[1.] Choose random integer \(a < N\) (to ensure \(a\) and \(N\) are co-prime).
+		\pause
+		\item[2.] Check if \(a\) is already a factor of \(N\). If so, then the problem is solved.
+		\pause
+		\item[3.] Otherwise, find the order \(r\) of \(a \mod N\) using quantum super-positioning and interference. (Remember that the order is the smallest integer such that \(a^r \equiv 1 \mod N\).)
+		\pause
+		\item[4.] Once \(r\) is found, compute the factors of \(N\) using \(r\). If \(r\) is even and 
+		\[
+			a^{r/2} \not\equiv -1 \mod N,
+		\] 
+		then the factors are 
+		\[
+			p = \gcd(a^{r/2} - 1, N) \qquad \text{ and } \qquad q = \gcd(a^{r/2} + 1, N).
+		\] 
+	\end{itemize}
+	
+\end{frame}
+
+
+%% -----------------------------------------------------------%%
+
+% Section 4: Implications
+
+%% -----------------------------------------------------------%%
+\begin{frame}{Cryptographic Implications}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \textbf{Vulnerable}
+            \begin{itemize}
+                \item RSA
+                \item Classical Elgamal
+                \item Elliptic curve Elgamal
+            \end{itemize}
+        \end{column}
+		\pause
+        \begin{column}{0.5\textwidth}
+            \textbf{Still Secure}
+            \begin{itemize}
+                \item Lattice-based cryptosystems
+                \item Shortest vector problems
+                \item Closest vector problems
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+%% -----------------------------------------------------------%%
+
+% Section 5: Future Considerations
+
+%% -----------------------------------------------------------%%
+\begin{frame}{Challenges \& Future}
+	[Right now, this slide consists of filler. I don't really know what any of this stuff does, I just grabbed some crap off the internet and threw it in here.]
+    \begin{itemize}
+        \item Building functioning quantum computers
+        \item Decoherence control
+        \item Quantum cryptography applications:
+            \begin{itemize}
+                \item Heisenberg uncertainty principle
+                \item Entanglement of quantum states
+                \item Secure key exchange
+            \end{itemize}
+    \end{itemize}
+\end{frame}
 
 \end{document}
