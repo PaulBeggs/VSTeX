@@ -1,29 +1,27 @@
 {
-    "cSpell.words": [
-        "Babystep",
-        "bijections",
-        "Borel",
-        "ciphertext",
-        "Cryptosystem",
-        "Elgamal",
-        "Extensionality",
-        "Giantstep",
-        "infimum",
-        "injective",
-        "injectivity",
-        "primality",
-        "RAINN",
-        "squarings",
-        "subcover",
-        "subcovers",
-        "suprema",
-        "surjective",
-        "Surjectivity",
-        "Totient",
-        "verconge",
-        "vercongence",
-        "vercongent",
-        "visuospatial"
+    "python.analysis.autoImportCompletions": true,
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        }
     ],
-    "python.analysis.autoImportCompletions": true
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        }
+    ]
+    
 }

@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{amsthm} % For theorem-style environments
+\usepackage{hyperref} % For cross-references
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{environ} % For capturing environments
+
+% Create a new counter for definitions
+\newcounter{BoxCounter}
+
+% Your existing tcolorbox definition for definitions
+\newtcolorbox[use counter=BoxCounter, number within=section]{definition}[1][]{%
+    rounded corners,
+    colframe=gray,
+    colback=gray!15,
+    coltitle=white,
+    title={\large \textbf{Definition \theBoxCounter}},
+    label={def:\theBoxCounter},
+    #1
+}
+
+% Define a macro to store the definitions for the appendix
+\newcommand{\storeappendix}[1]{%
+    \expandafter\def\expandafter\appendixdefs\expandafter{\appendixdefs#1\par}%
+}
+
+% Initialize the appendix storage as empty
+\newcommand{\appendixdefs}{}
+
+% Environment for storing definitions (title + content)
+\NewEnviron{storedefinition}[1][]{%
+    \begin{definition}[#1]%
+    \BODY % Display the definition in the main text
+    \end{definition}%
+    % Store the definition for the appendix
+    \storeappendix{Definition \theBoxCounter: \BODY}
+}
+
+% Command to print the appendix definitions at the end of the document
+\newcommand{\printappendixdefs}{
+    \newpage
+    \section*{Appendix: Definitions}
+    \appendixdefs
+}
+
+\begin{document}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Main Text}
+
+Here is the main discussion of functions, domains, and ranges.
+
+\begin{storedefinition}
+    Given two sets \(A\) and \(B\), a function from \(A\) to \(B\) is a rule or mapping that takes each element \(x \in A\) and associates with it a single element of \(B\).
+    The set \(A\) is called the domain of \(f\).
+    The range of \(f\) is not necessarily equal to \(B\), but refers to the subset of \(B\) given by \(\{y \in B : y = f(x) \text{ for some } x \in A\}\).
+\end{storedefinition}
+\begin{storedefinition}
+    Given two sets \(A\) and \(B\), a function from \(A\) to \(B\) is a rule or mapping that takes each element \(x \in A\) and associates with it a single element of \(B\).
+    The set \(A\) is called the domain of \(f\).
+    The range of \(f\) is not necessarily equal to \(B\), but refers to the subset of \(B\) given by \(\{y \in B : y = f(x) \text{ for some } x \in A\}\).
+\end{storedefinition}
+
+% Add appendix at the esnd of the document
+\printappendixdefs
+
+\end{document}

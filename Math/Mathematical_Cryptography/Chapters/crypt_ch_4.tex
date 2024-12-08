@@ -1,0 +1,123 @@
+\section{What Is a Digital Signature?}
+
+We used RSA and Elgamal for confidentiality, whereas we use digital signatures for authentication. A digital signature is a way to ensure that a message is authentic, has not been tampered with, and is from the person who claims to have sent it.
+
+\section{RSA Digital Signatures}
+
+Recall RSA encryption and decryption. We have public key \((N = pq, e)\) where \(N\) is the modulus, \(e\) is the public exponent, and \(p, q\) are the prime factors of \(N\). We also have private key \(p,q\) where \(e\) has the following property: \(\gcd(e, (p-1)(q-1)) = 1\). This ensures a \(d\) exists such that \(d \equiv e^{-1} \pmod{(p-1)(q-1)}\).
+
+\begin{note}
+    Note: To gain a bit of efficiency, choose a \(d\) and \(e\) to satisfy \[
+        de \equiv 1 \left(\text{mod}\frac{(p-1)(q-1)}{\gcd(p-1,q-1)}\right)
+    \]
+\end{note}
+
+To sign a document \(D\), which we assume to be an integer in the range \(1 < D < N\), we compute the signature \(S\) as follows:
+\[
+    S \equiv D^{d} \pmod{N}
+\]
+To verify this signature, we compute:
+\[
+    D \equiv S^{e} \pmod{N}
+\]
+
+\begin{example}
+    {RSA Digital Signature}Given the following \((p,q,a)\) as \((1223,1987,2430101)\) with the verification exponent \(e = 948074\), publish a document and verify its signature.
+\end{example}
+
+\lesol{
+    Samantha computers her private signing key \(d\) using secret values of \(p\) and \(q\) to compute \((p-1)(q-1) = 1222 \cdot 1986 = 2426892\) and then solving the congruence
+    \[
+        ed \equiv 1 \pmod{(p-1)(q-1)}, \quad 948074d \equiv 1 \pmod{2426892}
+    \]
+    She finds that \(d = 1051235\). Samantha selects a digital document to sign, \[
+        D = 1070777 \quad \text{with} \quad 1 \leq D < N.
+    \]
+    She computes the digital signature
+    \[
+        S \equiv D^{d}\pmod{N}, \quad S \equiv 1070777^{1051235} \equiv 153337 \pmod{2430101}.
+    \]
+    She then publishes the document and signature
+    \[
+        D = 1070777, \quad S = 153337.
+    \]
+    To verify the signature, the recipient computes
+    \[
+        S^{e} \pmod{N}, \quad 153337^{948074} \equiv 1070777 \pmod{2430101}.
+    \]
+    He verifies that the value of \(S^{e}\) modulo \(N\) is the same as the value of the digital document \(D = 1070777\).
+}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{@{}p{0.9\textwidth}l@{}}
+        \toprule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Key creation}}}                                                                                                 \\ \midrule
+        \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Samantha}}} & \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Victor}}}                       \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{\raggedright Choose secret primes \(p\) and \(q\).                                                                                \\ Choose encryption exponent \(e\)  \\ \quad with \(\gcd(e, (p-1)(q-1)) = 1\). \\
+        Publish \(N = pq\) and \(e\).}}                                              &                                                                                                  \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}\centering\textbf{Signing}}                                                                                                         \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{\raggedright
+        Compute \(d\) satisfying                                                                                                                                                        \\ \quad \(ed \equiv 1 \pmod{(p-1)(q-1)}\). \\ Sign document \(D\) by computing \\ \quad \(S \equiv D^{d} \pmod{N}\). }} &  \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering\textbf{Verification}}}                                                                                                  \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}}                               & \multicolumn{1}{r}{\parbox[t]{0.45\textwidth}{\raggedright Compute \(S^{e} \pmod{N}\) and verify \\ \quad that it equals \(D\).}}
+        \\ \bottomrule
+    \end{tabular}
+    \caption{RSA Digital Signatures}
+\end{table}
+
+
+\section{Elgamal Digital Signatures}
+
+Elgamal digital signatures are similar to RSA digital signatures. We have public key \((p, g, A)\). Where \(A\) is the public key from the expression \(A \equiv g^{a} \pmod{p}\) and private key \(a\). To sign a document \(D\), where \(1 < D < p\), choose a random \(k\) with \(\gcd(k,p-1) = k\).  Compute
+\[
+    S_{1} \equiv g^{k} \pmod{p} \quad \text{ and } \quad S_{2} \equiv (D - aS_{1})k^{-1} \pmod{p-1}.
+\]
+
+Victor verifies the signature by checking that
+\[
+    A^{S_{1}} S^{S_{2}}_{1} \pmod{p} \text{ is equal to } g^{D} \pmod{p}.
+\]
+
+\begin{example}
+    {Elgamal Digital Signature}Given the following \((p,g,a)\) as \((21739,7,15140)\), sign a document and verify its signature.
+\end{example}
+
+\lesol{
+First, we need to calculate \(A\):
+\[
+    A \equiv g^{a} \pmod{p}, \quad A \equiv 7^{15140} \pmod{21739} \equiv 17702.
+\]
+Next, we sign the digital document \(D = 5331\) using the random element \(k = 10727\) by computing
+\begin{align*}
+     & S_{1} \equiv g^{k} \equiv 7^{10727} \equiv 15775 \pmod{21739},                                          \\
+     & S_{2} \equiv (D - aS_{1})k^{-1} \equiv (5331 - 15140 \cdot 15775) \cdot 6353 \equiv 10727 \pmod{21739}.
+\end{align*}
+Verify the signature by computing
+\[
+    A^{S_{1}}S^{S_{2}} \equiv 17702^{15775} \cdot 15775^{10727} \equiv 7^{5331} \equiv 13897 \pmod{21739}
+\]
+and verifying that it agrees with
+\[
+    g^{D} \equiv 7^{5331} \equiv 13897 \pmod{21739}.
+\]
+}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{@{}p{0.9\textwidth}l@{}}
+        \toprule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Public parameter creation}}}                                                                                         \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering A trusted party chooses and publishes a large prime \(p\) and an element \(g\) modulo \(p\) of large (prime) order.}}        \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering \textbf{Key creation}}}                                                                                                 \\ \midrule
+        \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Samantha}}} & \multicolumn{1}{c}{\parbox[t]{0.45\textwidth}{\centering \textbf{Victor}}}                            \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{\raggedright Choose secret signing key                                                                                                 \\ \quad \(1 \leq a \leq p - 1\). \\ compute \(A = g^{a} \pmod{p}\).  \\ Publish the verification key \(A\).}}                                              &                                                                                                  \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}\centering\textbf{Signing}}                                                                                                              \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}{\raggedright
+        Choose document \(D \pmod{p}\).                                                                                                                                                      \\ Choose random element \(1 < k < p\) \\ \quad satisfying \(\gcd(k,p-1) = 1.\) \\ Compute signature \\ \quad \(S_{1} \equiv g^{k} \pmod{p}\) and \\ \quad \(S_{2} \equiv (D - aS_{1})k^{-1} \pmod{p - 1}\).}} &  \\ \midrule
+        \multicolumn{2}{c}{\parbox[t]{0.9\textwidth}{\centering\textbf{Verification}}}                                                                                                       \\ \midrule
+        \multicolumn{1}{l}{\parbox[t]{0.45\textwidth}}                               & \multicolumn{1}{r}{\parbox[t]{0.45\textwidth}{\raggedright Compute \(A^{S_{1}} S_1^{S_{2}} \pmod{p}\) \\ Verify that it is equal to \(g^{D} \pmod{p}\).}}
+        \\ \bottomrule
+    \end{tabular}
+    \caption{The Elgamal Digital Signature Algorithm}
+\end{table}

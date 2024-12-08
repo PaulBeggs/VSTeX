@@ -1,0 +1,293 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{batson_empathyaltruism_2015}{inbook}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=a1ce3f1ef7c058cad9ff1b8c871bbf20}{%
+           family={Batson},
+           familyi={B\bibinitperiod},
+           given={C.\bibnamedelimi Daniel},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6417050df142314301b9bbe148ac308a}{%
+           family={Lishner},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5138acd224e732d6d5366d06b5aa13ec}{%
+           family={Stocks},
+           familyi={S\bibinitperiod},
+           given={Eric\bibnamedelima L.},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ed75351b182ab65ef9ae6307bf27b84e}{%
+           family={Schroeder},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8d06e92ece879e79361281723b01a3c}{%
+           family={Graziano},
+           familyi={G\bibinitperiod},
+           given={William\bibnamedelima G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=ed75351b182ab65ef9ae6307bf27b84e}{%
+           family={Schroeder},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=e8d06e92ece879e79361281723b01a3c}{%
+           family={Graziano},
+           familyi={G\bibinitperiod},
+           given={William\bibnamedelima G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{efbfc7defbbb40fa79203a270638abe6}
+      \strng{fullhash}{812bceb9e730113e830302434b9b510c}
+      \strng{fullhashraw}{812bceb9e730113e830302434b9b510c}
+      \strng{bibnamehash}{812bceb9e730113e830302434b9b510c}
+      \strng{authorbibnamehash}{812bceb9e730113e830302434b9b510c}
+      \strng{authornamehash}{efbfc7defbbb40fa79203a270638abe6}
+      \strng{authorfullhash}{812bceb9e730113e830302434b9b510c}
+      \strng{authorfullhashraw}{812bceb9e730113e830302434b9b510c}
+      \strng{editorbibnamehash}{3e5d8ca529a89c5ecced8b64e691be52}
+      \strng{editornamehash}{3e5d8ca529a89c5ecced8b64e691be52}
+      \strng{editorfullhash}{3e5d8ca529a89c5ecced8b64e691be52}
+      \strng{editorfullhashraw}{3e5d8ca529a89c5ecced8b64e691be52}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Do we humans ever, in any degree, care about others for their sakes and not simply for our own? The empathy- altruism hypothesis offers an affirmative answer to this question. It claims that empathic concern (an other-oriented emotional response elicited by and congruent with the perceived welfare of someone in need) produces altruistic motivation (a motivational state with the ultimate goal of reducing that need). After explicating the hypothesis and the means of empirical test, the authors briefly review research over the past 35 years testing the hypothesis against egoistic alternatives and conclude that the evidence provides quite strong support. Empathy-induced altruistic motivation does seem to be within the human repertoire. They then review theory and research regarding the implications of the empathy-altruism hypothesis, emphasizing that altruism is not always good. It can hurt as well as help at both the individual and societal levels.}
+      \field{booktitle}{The Oxford Handbook of Prosocial Behavior}
+      \field{day}{1}
+      \field{isbn}{978-0-19-539981-3}
+      \field{month}{5}
+      \field{title}{The Empathy–Altruism Hypothesis}
+      \field{urlday}{18}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/oxfordhb/9780195399813.013.023
+      \endverb
+      \verb{file}
+      \verb PDF:files/117/Schroeder et al. - 2015 - The Empathy–Altruism Hypothesis.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/edited-volume/28077/chapter/212115460
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/edited-volume/28077/chapter/212115460
+      \endverb
+    \endentry
+    \entry{maibom_empathy_2020}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3c9d82a0ad0a41dcc95532893728d280}{%
+           family={Maibom},
+           familyi={M\bibinitperiod},
+           given={Heidi\bibnamedelima Lene},
+           giveni={H\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Abingdon, Oxon ; New York, {NY}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{fullhash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{fullhashraw}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{bibnamehash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{authorbibnamehash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{authornamehash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{authorfullhash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{authorfullhashraw}{3c9d82a0ad0a41dcc95532893728d280}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{"Empathy is one of the most talked about and widely studied concepts of recent years. Some argue it can help create a more just society, improve medical care and even avert global catastrophe. Others object that it is morally problematic. Who is right? And what is empathy anyway? Is it a way of feeling with others, or is it simply feeling sorry for them? Is it a form of knowledge? What is its evolutionary origin? In this thorough and clearly-written introduction to the philosophy of empathy Heidi Maibom explores these questions and more, examining the following topics: The nature of empathy and key themes in the literature Empathy as a way of understanding others, particularly 'simulation theory' and 'perspective-taking' Empathy, emotional contagion, and sympathy Empathy's role in moral understanding or motivation Empathy and art appreciation, with examples from film, music and fiction Empathy and mental disorder, such as psychopathy and autism. Including chapter summaries, annotated further reading and a glossary, Empathy is an excellent resource for students of philosophy of mind and psychology, psychology, and cognitive science, as well as for those in related subjects such as art, literature, and politics"--}
+      \field{isbn}{978-0-415-79021-5 978-0-415-79022-2}
+      \field{series}{New problems of philosophy}
+      \field{title}{Empathy}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:files/114/Maibom - 2020 - Empathy.pdf:application/pdf
+      \endverb
+      \keyw{Empathy}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{batson_empathyaltruism_2015}{inbook}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=a1ce3f1ef7c058cad9ff1b8c871bbf20}{%
+           family={Batson},
+           familyi={B\bibinitperiod},
+           given={C.\bibnamedelimi Daniel},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6417050df142314301b9bbe148ac308a}{%
+           family={Lishner},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5138acd224e732d6d5366d06b5aa13ec}{%
+           family={Stocks},
+           familyi={S\bibinitperiod},
+           given={Eric\bibnamedelima L.},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ed75351b182ab65ef9ae6307bf27b84e}{%
+           family={Schroeder},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8d06e92ece879e79361281723b01a3c}{%
+           family={Graziano},
+           familyi={G\bibinitperiod},
+           given={William\bibnamedelima G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=ed75351b182ab65ef9ae6307bf27b84e}{%
+           family={Schroeder},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=e8d06e92ece879e79361281723b01a3c}{%
+           family={Graziano},
+           familyi={G\bibinitperiod},
+           given={William\bibnamedelima G.},
+           giveni={W\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{efbfc7defbbb40fa79203a270638abe6}
+      \strng{fullhash}{812bceb9e730113e830302434b9b510c}
+      \strng{fullhashraw}{812bceb9e730113e830302434b9b510c}
+      \strng{bibnamehash}{812bceb9e730113e830302434b9b510c}
+      \strng{authorbibnamehash}{812bceb9e730113e830302434b9b510c}
+      \strng{authornamehash}{efbfc7defbbb40fa79203a270638abe6}
+      \strng{authorfullhash}{812bceb9e730113e830302434b9b510c}
+      \strng{authorfullhashraw}{812bceb9e730113e830302434b9b510c}
+      \strng{editorbibnamehash}{3e5d8ca529a89c5ecced8b64e691be52}
+      \strng{editornamehash}{3e5d8ca529a89c5ecced8b64e691be52}
+      \strng{editorfullhash}{3e5d8ca529a89c5ecced8b64e691be52}
+      \strng{editorfullhashraw}{3e5d8ca529a89c5ecced8b64e691be52}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Do we humans ever, in any degree, care about others for their sakes and not simply for our own? The empathy- altruism hypothesis offers an affirmative answer to this question. It claims that empathic concern (an other-oriented emotional response elicited by and congruent with the perceived welfare of someone in need) produces altruistic motivation (a motivational state with the ultimate goal of reducing that need). After explicating the hypothesis and the means of empirical test, the authors briefly review research over the past 35 years testing the hypothesis against egoistic alternatives and conclude that the evidence provides quite strong support. Empathy-induced altruistic motivation does seem to be within the human repertoire. They then review theory and research regarding the implications of the empathy-altruism hypothesis, emphasizing that altruism is not always good. It can hurt as well as help at both the individual and societal levels.}
+      \field{booktitle}{The Oxford Handbook of Prosocial Behavior}
+      \field{day}{1}
+      \field{isbn}{978-0-19-539981-3}
+      \field{month}{5}
+      \field{title}{The Empathy–Altruism Hypothesis}
+      \field{urlday}{18}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1093/oxfordhb/9780195399813.013.023
+      \endverb
+      \verb{file}
+      \verb PDF:files/117/Schroeder et al. - 2015 - The Empathy–Altruism Hypothesis.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/edited-volume/28077/chapter/212115460
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/edited-volume/28077/chapter/212115460
+      \endverb
+    \endentry
+    \entry{maibom_empathy_2020}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3c9d82a0ad0a41dcc95532893728d280}{%
+           family={Maibom},
+           familyi={M\bibinitperiod},
+           given={Heidi\bibnamedelima Lene},
+           giveni={H\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Abingdon, Oxon ; New York, {NY}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{fullhash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{fullhashraw}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{bibnamehash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{authorbibnamehash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{authornamehash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{authorfullhash}{3c9d82a0ad0a41dcc95532893728d280}
+      \strng{authorfullhashraw}{3c9d82a0ad0a41dcc95532893728d280}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{"Empathy is one of the most talked about and widely studied concepts of recent years. Some argue it can help create a more just society, improve medical care and even avert global catastrophe. Others object that it is morally problematic. Who is right? And what is empathy anyway? Is it a way of feeling with others, or is it simply feeling sorry for them? Is it a form of knowledge? What is its evolutionary origin? In this thorough and clearly-written introduction to the philosophy of empathy Heidi Maibom explores these questions and more, examining the following topics: The nature of empathy and key themes in the literature Empathy as a way of understanding others, particularly 'simulation theory' and 'perspective-taking' Empathy, emotional contagion, and sympathy Empathy's role in moral understanding or motivation Empathy and art appreciation, with examples from film, music and fiction Empathy and mental disorder, such as psychopathy and autism. Including chapter summaries, annotated further reading and a glossary, Empathy is an excellent resource for students of philosophy of mind and psychology, psychology, and cognitive science, as well as for those in related subjects such as art, literature, and politics"--}
+      \field{isbn}{978-0-415-79021-5 978-0-415-79022-2}
+      \field{series}{New problems of philosophy}
+      \field{title}{Empathy}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb PDF:files/114/Maibom - 2020 - Empathy.pdf:application/pdf
+      \endverb
+      \keyw{Empathy}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

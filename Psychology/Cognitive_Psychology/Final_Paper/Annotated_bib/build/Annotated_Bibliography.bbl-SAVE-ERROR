@@ -1,0 +1,2449 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{baddeley_developments_1994}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=76668dbadcd9b8d8c04da6f6c5ff6660}{%
+           family={Baddeley},
+           familyi={B\bibinitperiod},
+           given={Alan\bibnamedelima D.},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=74e147c7bc9e5b0501979cd38acae284}{%
+           family={Hitch},
+           familyi={H\bibinitperiod},
+           given={Graham\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{fullhash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{fullhashraw}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{bibnamehash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{authorbibnamehash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{authornamehash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{authorfullhash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{authorfullhashraw}{56ab2d06614ea6325403716f5f36fe58}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1931-1559, 0894-4105}
+      \field{journaltitle}{Neuropsychology}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{4}
+      \field{shortjournal}{Neuropsychology}
+      \field{title}{Developments in the concept of working memory.}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{8}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{485\bibrangedash 493}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1037/0894-4105.8.4.485
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\paulb\\Zotero\\storage\\RGMB4872\\Baddeley and Hitch - 1994 - Developments in the concept of working memory..pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.apa.org/doi/10.1037/0894-4105.8.4.485
+      \endverb
+      \verb{url}
+      \verb https://doi.apa.org/doi/10.1037/0894-4105.8.4.485
+      \endverb
+    \endentry
+    \entry{butzbach_basic_2019}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=a202fd8a5344e8552bf8781c78c25149}{%
+           family={Butzbach},
+           familyi={B\bibinitperiod},
+           given={Marah},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=435f8d8f77ccc2b5e69065256e1cf13b}{%
+           family={Fuermaier},
+           familyi={F\bibinitperiod},
+           given={Anselm\bibnamedelimb B.\bibnamedelimi M.},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5cd9f1df6cc90db6a18ffd1ed920681c}{%
+           family={Aschenbrenner},
+           familyi={A\bibinitperiod},
+           given={Steffen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=59b964a25bca4bf60c67ebb0d462500d}{%
+           family={Weisbrod},
+           familyi={W\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f254f8660bf7346a2130ab3ca47cfc43}{%
+           family={Tucha},
+           familyi={T\bibinitperiod},
+           given={Lara},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc5e7b3b30ff20d486bc691f42dee32f}{%
+           family={Tucha},
+           familyi={T\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5465d835dc092cbaaa0604de41cf263b}
+      \strng{fullhash}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \strng{fullhashraw}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \strng{bibnamehash}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \strng{authorbibnamehash}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \strng{authornamehash}{5465d835dc092cbaaa0604de41cf263b}
+      \strng{authorfullhash}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \strng{authorfullhashraw}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0300-9564, 1435-1463}
+      \field{journaltitle}{Journal of Neural Transmission}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{10}
+      \field{shortjournal}{J Neural Transm}
+      \field{title}{Basic processes as foundations of cognitive impairment in adult {ADHD}}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{126}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1347\bibrangedash 1362}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1007/s00702-019-02049-1
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\AVXAUFAJ\\Butzbach et al. - 2019 - Basic processes as foundations of cognitive impairment in adult ADHD.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s00702-019-02049-1
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s00702-019-02049-1
+      \endverb
+      \keyw{Empirical,Executive\_Functioning,Attention,Memory}
+    \endentry
+    \entry{capri_attention_2019}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=7495c125b77117bd5fc4ae4bf974c4c7}{%
+           family={Caprì},
+           familyi={C\bibinitperiod},
+           given={Tindara},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0c8973f5badd9e2cd0784c87b6b5d8e7}{%
+           family={Martino},
+           familyi={M\bibinitperiod},
+           given={Gabriella},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91bd6620f17e90505c6f7cd66e2af5d5}{%
+           family={Giannatiempo},
+           familyi={G\bibinitperiod},
+           given={Samantha},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=85a6cf17a7e6257279fd5b33301fe0b7}{%
+           family={Semino},
+           familyi={S\bibinitperiod},
+           given={Martina},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bdd58bbe7bd6de12f9c2adb9cff0b644}{%
+           family={Fabio},
+           familyi={F\bibinitperiod},
+           given={Rosa\bibnamedelima Angela},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2a4b64619c3ff760acb1199b5ed21e1a}
+      \strng{fullhash}{fd2ac99d69813f536a5c26694aa82352}
+      \strng{fullhashraw}{fd2ac99d69813f536a5c26694aa82352}
+      \strng{bibnamehash}{fd2ac99d69813f536a5c26694aa82352}
+      \strng{authorbibnamehash}{fd2ac99d69813f536a5c26694aa82352}
+      \strng{authornamehash}{2a4b64619c3ff760acb1199b5ed21e1a}
+      \strng{authorfullhash}{fd2ac99d69813f536a5c26694aa82352}
+      \strng{authorfullhashraw}{fd2ac99d69813f536a5c26694aa82352}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Although attention-deficit/hyperactivity disorder ({ADHD}) is clearly associated with executive dysfunctions, the neuropsychological profile of adults with {ADHD} is unclear. The present study aimed at examining neuropsychological performance on tasks measuring attention, problem solving and decision making, comparing adults with {ADHD} (N= 12, mean age 18.33; {SD}= 11.48) and healthy adults (N= 12, mean age 18.41; {SD}= 18.70) matched for age and gender. Results showed that adults with {ADHD} exhibit deficits in attention, problem solving and decision making. These findings warrant further examination of neuropsychological profile in adults with {ADHD} to improve the understanding of underlying neurocognitive mechanisms.}
+      \field{day}{12}
+      \field{journaltitle}{Journal of Clinical \& Developmental Psychology}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{note}{Publisher: Journal of Clinical \& Developmental Psychology}
+      \field{title}{Attention, problem solving and decision making in adult subjects with {ADHD}}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{Vol 1}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{No 1 (2019)}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.6092/2612-4033/0110-2045
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\paulb\\Zotero\\storage\\3KK9VKWQ\\Caprì et al. - 2019 - Attention, problem solving and decision making in adult subjects with ADHD.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://cab.unime.it/journals/index.php/JCDP/article/view/2045
+      \endverb
+      \verb{url}
+      \verb http://cab.unime.it/journals/index.php/JCDP/article/view/2045
+      \endverb
+      \keyw{Empirical,Problem\_Solving,Attention,Decision\_Making}
+    \endentry
+    \entry{drigas_executive_2019}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7aff90affd97cb5a4e84eee55b5013fd}{%
+           family={Drigas},
+           familyi={D\bibinitperiod},
+           given={Athanasios},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4f661f557efeeb73b47e5fd08b935bb8}{%
+           family={Karyotaki},
+           familyi={K\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{fullhash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{fullhashraw}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{bibnamehash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{authorbibnamehash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{authornamehash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{authorfullhash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{authorfullhashraw}{15e2e6c2971360cdd251429f86e0c93d}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{There is a bidirectional relation between one’s executive functioning abilities and problem solving skills as they are both based on self-control. “Hot” and “cold” executive functions account for individuals’ cognitive control and emotional regulation. In addition, problem solving is tied to metacognitive awareness processes, necessary for applying executive function skills in goal setting and decision making situations. Therefore, individuals’ overall cognitive flexibility and emotional regulation can promote the quality, quantity and speed of decision-making processes, such as adaptable and creative information processing as well as efficiency in setting and prioritizing goals. Moreover, individuals with {ADHD}, Autism Spectrum Disorder, Oppositional Defiant Disorder and individuals with other comorbid states, such as older adults, individuals with Traumatic Brain Injury ({TBI}) can counterbalance their cognitive control deficits through enhancing their problem solving skills. In addition, an advanced research in the bidirectional relation between executive function and problem solving skills could develop a comprehensive methodology for training and assessing self-regulatory processes.}
+      \field{day}{11}
+      \field{issn}{2192-4880}
+      \field{journaltitle}{International Journal of Engineering Pedagogy ({iJEP})}
+      \field{month}{6}
+      \field{number}{3}
+      \field{shortjournal}{Int. J. Eng. Ped.}
+      \field{shorttitle}{Executive Functioning and Problem Solving}
+      \field{title}{Executive Functioning and Problem Solving: A Bidirectional Relation}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{9}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{76}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3991/ijep.v9i3.10186
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\37FUB8FH\\Drigas and Karyotaki - 2019 - Executive Functioning and Problem Solving A Bidirectional Relation.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://online-journals.org/index.php/i-jep/article/view/10186
+      \endverb
+      \verb{url}
+      \verb https://online-journals.org/index.php/i-jep/article/view/10186
+      \endverb
+      \keyw{Problem\_Solving,Executive\_Functioning}
+    \endentry
+    \entry{elosua_differences_2017}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=df0cb7d0ebfc8107a1f5ff619cf6139b}{%
+           family={Elosúa},
+           familyi={E\bibinitperiod},
+           given={M.\bibnamedelimi Rosa},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=acdba51c78651e8466712078403aa3d8}{%
+           family={Del\bibnamedelima Olmo},
+           familyi={D\bibinitperiod\bibinitdelim O\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8316675a9f31babc0151812450595f7d}{%
+           family={Contreras},
+           familyi={C\bibinitperiod},
+           given={María\bibnamedelima José},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dd5e9e4ff0d104b8b956bf20cee987d7}
+      \strng{fullhash}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \strng{fullhashraw}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \strng{bibnamehash}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \strng{authorbibnamehash}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \strng{authornamehash}{dd5e9e4ff0d104b8b956bf20cee987d7}
+      \strng{authorfullhash}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \strng{authorfullhashraw}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{20}
+      \field{issn}{1664-1078}
+      \field{journaltitle}{Frontiers in Psychology}
+      \field{month}{6}
+      \field{shortjournal}{Front. Psychol.}
+      \field{title}{Differences in Executive Functioning in Children with Attention Deficit and Hyperactivity Disorder ({ADHD})}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{8}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{976}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/fpsyg.2017.00976
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\2UABPXYZ\\Elosúa et al. - 2017 - Differences in Executive Functioning in Children with Attention Deficit and Hyperactivity Disorder (.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://journal.frontiersin.org/article/10.3389/fpsyg.2017.00976/full
+      \endverb
+      \verb{url}
+      \verb http://journal.frontiersin.org/article/10.3389/fpsyg.2017.00976/full
+      \endverb
+      \keyw{Empirical,Executive\_Functioning,Attention}
+    \endentry
+    \entry{engelmann_motivation_2007}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=07c709588818e12f6cd8c7892d9f7d89}{%
+           family={Engelmann},
+           familyi={E\bibinitperiod},
+           given={Jan\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9091f9ac3929a82c651b02a265f166c}{%
+           family={Pessoa},
+           familyi={P\bibinitperiod},
+           given={Luiz},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4aae7073ed8697397beb762658376c59}
+      \strng{fullhash}{4aae7073ed8697397beb762658376c59}
+      \strng{fullhashraw}{4aae7073ed8697397beb762658376c59}
+      \strng{bibnamehash}{4aae7073ed8697397beb762658376c59}
+      \strng{authorbibnamehash}{4aae7073ed8697397beb762658376c59}
+      \strng{authornamehash}{4aae7073ed8697397beb762658376c59}
+      \strng{authorfullhash}{4aae7073ed8697397beb762658376c59}
+      \strng{authorfullhashraw}{4aae7073ed8697397beb762658376c59}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1931-1516, 1528-3542}
+      \field{journaltitle}{Emotion}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{3}
+      \field{shortjournal}{Emotion}
+      \field{title}{Motivation sharpens exogenous spatial attention.}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{7}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{668\bibrangedash 674}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1037/1528-3542.7.3.668
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\paulb\\Zotero\\storage\\DCRYWXZ3\\Engelmann and Pessoa - 2007 - Motivation sharpens exogenous spatial attention..pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.apa.org/doi/10.1037/1528-3542.7.3.668
+      \endverb
+      \verb{url}
+      \verb https://doi.apa.org/doi/10.1037/1528-3542.7.3.668
+      \endverb
+    \endentry
+    \entry{fabio_working_2020}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=bdd58bbe7bd6de12f9c2adb9cff0b644}{%
+           family={Fabio},
+           familyi={F\bibinitperiod},
+           given={Rosa\bibnamedelima Angela},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d8f0d1e5d8f1e4c8c98424db0bb9de9}{%
+           family={Bianco},
+           familyi={B\bibinitperiod},
+           given={Marilla},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7495c125b77117bd5fc4ae4bf974c4c7}{%
+           family={Caprì},
+           familyi={C\bibinitperiod},
+           given={Tindara},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f276fc071c27d81a79e8cddbbb81f163}{%
+           family={Marino},
+           familyi={M\bibinitperiod},
+           given={Flavia},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9680cd1878f97829246745c73f1f7dc1}{%
+           family={Ruta},
+           familyi={R\bibinitperiod},
+           given={Liliana},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8c08da1a0c7db4747f8c17f15565516b}{%
+           family={Vagni},
+           familyi={V\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d785104f508040d336b76c598b43e202}{%
+           family={Pioggia},
+           familyi={P\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4049d49ba3327516079e275e39284c9b}
+      \strng{fullhash}{e2cb20abcba345fa49506d332226a06b}
+      \strng{fullhashraw}{e2cb20abcba345fa49506d332226a06b}
+      \strng{bibnamehash}{e2cb20abcba345fa49506d332226a06b}
+      \strng{authorbibnamehash}{e2cb20abcba345fa49506d332226a06b}
+      \strng{authornamehash}{4049d49ba3327516079e275e39284c9b}
+      \strng{authorfullhash}{e2cb20abcba345fa49506d332226a06b}
+      \strng{authorfullhashraw}{e2cb20abcba345fa49506d332226a06b}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Abstract Background Deficits in working memory tasks have been widely documented in Attention Deficit Hyperactivity Disorder ({ADHD}) studies. The aim of this study is to evaluate the effects of working memory load in impulsivity during decision-making processes. A delayed discounting ({DD}) paradigm was used, comparing children with {ADHD} and age-matched controls. Method Thirty-two children equally divided between typically developing and {ADHD}, from 8 to 10 years of age were assigned to sessions of a dual-task paradigm. In the primary task the child has to choose between two different amounts of money at different time delays, while in the secondary task the child has to repeat a random series of digits with different lengths. The experiment was conducted in a school setting. Results Compared to peers with typical development, delayed discounting was significantly stronger in children with {ADHD} and discounting rates increased in both groups for heavier memory loads. Furthermore, the memory load impact on frequency of immediate rewards was stronger in children with {ADHD} compared to typically developing children. Discussion Results are discussed in terms of the relation between working memory load and decision-making processes, their impact on impulsive behaviour in {ADHD} and the need for future research to understand possible neurocognitive correlates and use that information to develop better inclusive policies.}
+      \field{issn}{1471-244X}
+      \field{journaltitle}{{BMC} Psychiatry}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{1}
+      \field{shortjournal}{{BMC} Psychiatry}
+      \field{shorttitle}{Working memory and decision making in children with {ADHD}}
+      \field{title}{Working memory and decision making in children with {ADHD}: an analysis of delay discounting with the use of the dual-task paradigm}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{20}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{272}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s12888-020-02677-y
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\UXV6SWHK\\Fabio et al. - 2020 - Working memory and decision making in children with ADHD an analysis of delay discounting with the.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-020-02677-y
+      \endverb
+      \verb{url}
+      \verb https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-020-02677-y
+      \endverb
+      \keyw{Empirical,Working\_Memory,Memory,Memory\_Load}
+    \endentry
+    \entry{faraone_attention-deficithyperactivity_2015}{article}{}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=d4261e3bd0fd9acedae1f6504abab822}{%
+           family={Faraone},
+           familyi={F\bibinitperiod},
+           given={Stephen\bibnamedelima V.},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb991171bdae4920d876c329d7260da5}{%
+           family={Asherson},
+           familyi={A\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4aff2da3b30b451372c8025627f08e33}{%
+           family={Banaschewski},
+           familyi={B\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f9e1cdeb28e576eb3fef559fb35c8a0}{%
+           family={Biederman},
+           familyi={B\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=606c949586ca7f43a060c1bbb5849289}{%
+           family={Buitelaar},
+           familyi={B\bibinitperiod},
+           given={Jan\bibnamedelima K.},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=321bb482ba28cca876783dd08afcf655}{%
+           family={Ramos-Quiroga},
+           familyi={R\bibinithyphendelim Q\bibinitperiod},
+           given={Josep\bibnamedelima Antoni},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f07ff76113c7f791a238bd67f5dc607a}{%
+           family={Rohde},
+           familyi={R\bibinitperiod},
+           given={Luis\bibnamedelima Augusto},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7ac143db897db7cc3a6a35da25171d5c}{%
+           family={Sonuga-Barke},
+           familyi={S\bibinithyphendelim B\bibinitperiod},
+           given={Edmund\bibnamedelimb J.\bibnamedelimi S.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=96c6d0c3237346afacdef6db62718015}{%
+           family={Tannock},
+           familyi={T\bibinitperiod},
+           given={Rosemary},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d89b62911a87f31ada07ea2654b6ef3}{%
+           family={Franke},
+           familyi={F\bibinitperiod},
+           given={Barbara},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f6a0707c27e43a87852f81be6afcd1cf}
+      \strng{fullhash}{4eac53d7b23e1accc48f25faabfe65b9}
+      \strng{fullhashraw}{4eac53d7b23e1accc48f25faabfe65b9}
+      \strng{bibnamehash}{4eac53d7b23e1accc48f25faabfe65b9}
+      \strng{authorbibnamehash}{4eac53d7b23e1accc48f25faabfe65b9}
+      \strng{authornamehash}{f6a0707c27e43a87852f81be6afcd1cf}
+      \strng{authorfullhash}{4eac53d7b23e1accc48f25faabfe65b9}
+      \strng{authorfullhashraw}{4eac53d7b23e1accc48f25faabfe65b9}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{6}
+      \field{issn}{2056-676X}
+      \field{journaltitle}{Nature Reviews Disease Primers}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{1}
+      \field{shortjournal}{Nat Rev Dis Primers}
+      \field{title}{Attention-deficit/hyperactivity disorder}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{1}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{15020}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/nrdp.2015.20
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\paulb\\Zotero\\storage\\5EDDCB8H\\Faraone et al. - 2015 - Attention-deficithyperactivity disorder.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/nrdp201520
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/nrdp201520
+      \endverb
+      \keyw{Non-Empirical,Primary,Findings\_Heavy,Cognitive}
+    \endentry
+    \entry{fried_clinical_2016}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=a87131d07232c6552d307431dcf4ad80}{%
+           family={Fried},
+           familyi={F\bibinitperiod},
+           given={Ronna},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2294b64cd371e327fb9cdb39d9d9d93b}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6f9730ded7ae3b6902120cc53381976}{%
+           family={Feinberg},
+           familyi={F\bibinitperiod},
+           given={Leah},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a9c27084cfc7e4cd2fa25d2104d00e23}{%
+           family={Pope},
+           familyi={P\bibinitperiod},
+           given={Amanda},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa8b3a907b4fa0035c5df494cfa2f21c}{%
+           family={Woodworth},
+           familyi={W\bibinitperiod},
+           given={K.\bibnamedelimi Yvonne},
+           giveni={K\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4261e3bd0fd9acedae1f6504abab822}{%
+           family={Faraone},
+           familyi={F\bibinitperiod},
+           given={Stephen\bibnamedelima V.},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f9e1cdeb28e576eb3fef559fb35c8a0}{%
+           family={Biederman},
+           familyi={B\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0799ba58a0626df09a40bedc09c71013}
+      \strng{fullhash}{320018cac0828f44b198d48eb6d30721}
+      \strng{fullhashraw}{320018cac0828f44b198d48eb6d30721}
+      \strng{bibnamehash}{320018cac0828f44b198d48eb6d30721}
+      \strng{authorbibnamehash}{320018cac0828f44b198d48eb6d30721}
+      \strng{authornamehash}{0799ba58a0626df09a40bedc09c71013}
+      \strng{authorfullhash}{320018cac0828f44b198d48eb6d30721}
+      \strng{authorfullhashraw}{320018cac0828f44b198d48eb6d30721}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{27}
+      \field{issn}{1380-3395, 1744-411X}
+      \field{journaltitle}{Journal of Clinical and Experimental Neuropsychology}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{5}
+      \field{shortjournal}{Journal of Clinical and Experimental Neuropsychology}
+      \field{shorttitle}{Clinical correlates of working memory deficits in youth with and without {ADHD}}
+      \field{title}{Clinical correlates of working memory deficits in youth with and without {ADHD}: A controlled study}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{38}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{487\bibrangedash 496}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1080/13803395.2015.1127896
+      \endverb
+      \verb{file}
+      \verb Accepted Version:C\:\\Users\\paulb\\Zotero\\storage\\XCVSHLXH\\Fried et al. - 2016 - Clinical correlates of working memory deficits in youth with and without ADHD A controlled study.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.tandfonline.com/doi/full/10.1080/13803395.2015.1127896
+      \endverb
+      \verb{url}
+      \verb https://www.tandfonline.com/doi/full/10.1080/13803395.2015.1127896
+      \endverb
+      \keyw{Empirical,Memory,With\_vs\_Without\_ADHD}
+    \endentry
+    \entry{friedman_reading_2017}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=fc28f2a7ce898f16a1e94246e255509c}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={Lauren\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b6c2698798bd1d4eb404066de99ac9e}{%
+           family={Rapport},
+           familyi={R\bibinitperiod},
+           given={Mark\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ae2a9cf0681b85832f44d50066d2e249}{%
+           family={Raiker},
+           familyi={R\bibinitperiod},
+           given={Joseph\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=53c2386db629cd7f9ae0659e13cd6b93}{%
+           family={Orban},
+           familyi={O\bibinitperiod},
+           given={Sarah\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=463014d4692d3a3d30aaa9d5e196ad1a}{%
+           family={Eckrich},
+           familyi={E\bibinitperiod},
+           given={Samuel\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{94bcbe92416117fa45cb833e741b441a}
+      \strng{fullhash}{9327187a891ae4883576cf08125b32a2}
+      \strng{fullhashraw}{9327187a891ae4883576cf08125b32a2}
+      \strng{bibnamehash}{9327187a891ae4883576cf08125b32a2}
+      \strng{authorbibnamehash}{9327187a891ae4883576cf08125b32a2}
+      \strng{authornamehash}{94bcbe92416117fa45cb833e741b441a}
+      \strng{authorfullhash}{9327187a891ae4883576cf08125b32a2}
+      \strng{authorfullhashraw}{9327187a891ae4883576cf08125b32a2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0091-0627, 1573-2835}
+      \field{journaltitle}{Journal of Abnormal Child Psychology}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{shortjournal}{J Abnorm Child Psychol}
+      \field{shorttitle}{Reading Comprehension in Boys with {ADHD}}
+      \field{title}{Reading Comprehension in Boys with {ADHD}: The Mediating Roles of Working Memory and Orthographic Conversion}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{45}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{273\bibrangedash 287}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1007/s10802-016-0171-7
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\paulb\\Zotero\\storage\\C4FES2RB\\Friedman et al. - 2017 - Reading Comprehension in Boys with ADHD The Mediating Roles of Working Memory and Orthographic Conv.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s10802-016-0171-7
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s10802-016-0171-7
+      \endverb
+    \endentry
+    \entry{kofler_are_2018}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=f06ef443cffe60363f3b383b1649f4be}{%
+           family={Kofler},
+           familyi={K\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cc299055c00b5f5b518aa1d93a9f1789}{%
+           family={Spiegel},
+           familyi={S\bibinitperiod},
+           given={Jamie\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a55236f4ab4507eec020c79c337a4e97}{%
+           family={Austin},
+           familyi={A\bibinitperiod},
+           given={Kristin\bibnamedelima E.},
+           giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7b31c21589174b9b510ad356bbc256f2}{%
+           family={Irwin},
+           familyi={I\bibinitperiod},
+           given={Lauren\bibnamedelima N.},
+           giveni={L\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7dd2a168068625717f6dbac8703962d7}{%
+           family={Soto},
+           familyi={S\bibinitperiod},
+           given={Elia\bibnamedelima F.},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a171f6f25575fae1d8df80e0bf56edc1}{%
+           family={Sarver},
+           familyi={S\bibinitperiod},
+           given={Dustin\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9a8c8f30b0af004acbcaebb806ebd061}
+      \strng{fullhash}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \strng{fullhashraw}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \strng{bibnamehash}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \strng{authorbibnamehash}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \strng{authornamehash}{9a8c8f30b0af004acbcaebb806ebd061}
+      \strng{authorfullhash}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \strng{authorfullhashraw}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \field{extraname}{1}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0091-0627, 1573-2835}
+      \field{journaltitle}{Journal of Abnormal Child Psychology}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{6}
+      \field{shortjournal}{J Abnorm Child Psychol}
+      \field{shorttitle}{Are Episodic Buffer Processes Intact in {ADHD}?}
+      \field{title}{Are Episodic Buffer Processes Intact in {ADHD}? Experimental Evidence and Linkage with Hyperactive Behavior}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{46}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1171\bibrangedash 1185}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1007/s10802-017-0346-x
+      \endverb
+      \verb{file}
+      \verb Accepted Version:C\:\\Users\\paulb\\Zotero\\storage\\LN7X6SER\\Kofler et al. - 2018 - Are Episodic Buffer Processes Intact in ADHD Experimental Evidence and Linkage with Hyperactive Beh.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s10802-017-0346-x
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s10802-017-0346-x
+      \endverb
+    \endentry
+    \entry{kofler_working_2020}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=f06ef443cffe60363f3b383b1649f4be}{%
+           family={Kofler},
+           familyi={K\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f10e6e4d706134213cab0c16f8b38f05}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Leah\bibnamedelima J.},
+           giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7dd2a168068625717f6dbac8703962d7}{%
+           family={Soto},
+           familyi={S\bibinitperiod},
+           given={Elia\bibnamedelima F.},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=70e36743d7ee2f58b96038b27a3e4314}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={Elizabeth\bibnamedelimb S.\bibnamedelimi M.},
+           giveni={E\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=932afb7aef2d8090817a70e7c5f00f0e}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Caroline\bibnamedelima E.},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c183b1bcf55429eb7ed52342e0f0d5ec}{%
+           family={Harmon},
+           familyi={H\bibinitperiod},
+           given={Sherelle\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cc299055c00b5f5b518aa1d93a9f1789}{%
+           family={Spiegel},
+           familyi={S\bibinitperiod},
+           given={Jamie\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9a8c8f30b0af004acbcaebb806ebd061}
+      \strng{fullhash}{3045ebb56cfebf562d7249f22dbd79d7}
+      \strng{fullhashraw}{3045ebb56cfebf562d7249f22dbd79d7}
+      \strng{bibnamehash}{3045ebb56cfebf562d7249f22dbd79d7}
+      \strng{authorbibnamehash}{3045ebb56cfebf562d7249f22dbd79d7}
+      \strng{authornamehash}{9a8c8f30b0af004acbcaebb806ebd061}
+      \strng{authorfullhash}{3045ebb56cfebf562d7249f22dbd79d7}
+      \strng{authorfullhashraw}{3045ebb56cfebf562d7249f22dbd79d7}
+      \field{extraname}{2}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Objective—Attention-deficit/hyperactivity disorder ({ADHD}) has been associated with large magnitude impairments in working memory, whereas short-term memory deficits, when detected, tend to be less pronounced. However, confidence in these findings is limited due to task impurity combined with methodological and statistical limitations of the current evidence base. Method—A well-characterized, clinically-evaluated sample of 172 children ages 8–13 years (M=10.30, {SD}=1.42; 72 girls; 64\% White/non-Hispanic) were administered multiple, counterbalanced working memory tests. Bifactor-(s-1) modeling was used to characterize the presence and magnitude of central executive working memory, phonological short-term memory, and visuospatial short-term memory deficits in pediatric {ADHD}. Results—{ADHD} status was associated with very large magnitude impairments in central executive working memory that are present in most pediatric cases (d=1.63–2.03; 75\%−81\% impaired), and these deficits covaried with {ADHD} inattentive and hyperactive/impulsive symptom severity based on both parent and teacher report. There was also evidence for a unique, albeit significantly smaller, impairment in visuospatial short-term memory (d=0.60; 38\% impaired); however, visuospatial short-term memory abilities did not covary with {ADHD} symptom severity. There was no evidence linking {ADHD} with phonological short-term memory deficits across either the dimensional or categorical analyses. Conclusion—These findings provide strong evidence that {ADHD} is associated with marked central executive working memory deficits that covary with their behavioral symptom presentation across settings. In contrast, visuospatial short-term memory deficits, when present, are likely epiphenomenal, and the most parsimonious conclusion appears to be that phonological short-term memory is intact in pediatric {ADHD}.}
+      \field{issn}{1931-1559, 0894-4105}
+      \field{journaltitle}{Neuropsychology}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{6}
+      \field{shortjournal}{Neuropsychology}
+      \field{shorttitle}{Working memory and short-term memory deficits in {ADHD}}
+      \field{title}{Working memory and short-term memory deficits in {ADHD}: A bifactor modeling approach.}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{34}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{686\bibrangedash 698}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1037/neu0000641
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\paulb\\Zotero\\storage\\C5WHYEYY\\Kofler et al. - 2020 - Working memory and short-term memory deficits in ADHD A bifactor modeling approach..pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.apa.org/doi/10.1037/neu0000641
+      \endverb
+      \verb{url}
+      \verb https://doi.apa.org/doi/10.1037/neu0000641
+      \endverb
+      \keyw{Empirical,Executive\_Functioning,Working\_Memory,Short\_Term\_Memory}
+    \endentry
+    \entry{mohamed_basic_2021}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=4a6c61bb7fb2825a5f64ebb15dc557f2}{%
+           family={Mohamed},
+           familyi={M\bibinitperiod},
+           given={Saleh\bibnamedelimb M.\bibnamedelimi H.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a202fd8a5344e8552bf8781c78c25149}{%
+           family={Butzbach},
+           familyi={B\bibinitperiod},
+           given={Marah},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=435f8d8f77ccc2b5e69065256e1cf13b}{%
+           family={Fuermaier},
+           familyi={F\bibinitperiod},
+           given={Anselm\bibnamedelimb B.\bibnamedelimi M},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=59b964a25bca4bf60c67ebb0d462500d}{%
+           family={Weisbrod},
+           familyi={W\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5cd9f1df6cc90db6a18ffd1ed920681c}{%
+           family={Aschenbrenner},
+           familyi={A\bibinitperiod},
+           given={Steffen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f254f8660bf7346a2130ab3ca47cfc43}{%
+           family={Tucha},
+           familyi={T\bibinitperiod},
+           given={Lara},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc5e7b3b30ff20d486bc691f42dee32f}{%
+           family={Tucha},
+           familyi={T\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=ca11ec9a28274ac4e6b9e4fe7530ee0e}{%
+           family={Garcia},
+           familyi={G\bibinitperiod},
+           given={Trinidad},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{de428ca519d1ee9dc3a2eb0afbfaf547}
+      \strng{fullhash}{cef5165213840f0b77c104488fe46d98}
+      \strng{fullhashraw}{cef5165213840f0b77c104488fe46d98}
+      \strng{bibnamehash}{cef5165213840f0b77c104488fe46d98}
+      \strng{authorbibnamehash}{cef5165213840f0b77c104488fe46d98}
+      \strng{authornamehash}{de428ca519d1ee9dc3a2eb0afbfaf547}
+      \strng{authorfullhash}{cef5165213840f0b77c104488fe46d98}
+      \strng{authorfullhashraw}{cef5165213840f0b77c104488fe46d98}
+      \strng{editorbibnamehash}{ca11ec9a28274ac4e6b9e4fe7530ee0e}
+      \strng{editornamehash}{ca11ec9a28274ac4e6b9e4fe7530ee0e}
+      \strng{editorfullhash}{ca11ec9a28274ac4e6b9e4fe7530ee0e}
+      \strng{editorfullhashraw}{ca11ec9a28274ac4e6b9e4fe7530ee0e}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Background Many clinical studies reported deficits in basic and complex cognitive functions in adults with Attention-Deficit/Hyperactivity Disorder ({ADHD}). However, the extent in which deficits in basic functions (i.e., processing speed and distractibility) contribute to complex cognitive impairments (i.e., working memory, planning, cognitive flexibility, memory functions) in adults with {ADHD} is not well-studied. So far, literature show only one study, revealing that basic functions explain 27–74\% of executive dysfunctions. Yet, the authors reported that findings could be affected by the selection of neuropsychological tests. The goal of the present research is to replicate such a finding using a different sample and a different set of neuropsychological tests. Methods Forty-eight adult patients with {ADHD} were compared with 48 healthy controls in basic cognitive functions, namely processing speed and distractibility and more complex cognitive functions, namely selective attention, cognitive flexibility, planning, working memory, verbal fluency, and verbal memory. Basic and complex cognitive functions were assessed using the Vigilance and Sustained Attention, Selective Attention, N-Back, Tower of London, Trail Making Test, Word Fluency, and Verbal Learning and Memory. Results and conclusion Logistic regression analyses showed that impairments in complex cognitive functions explained 25\% of the variance in {ADHD} diagnosis. The explained variance dropped from 25\% to 9\% after considering basic functions of processing speed and distractibility. This 64\% reduction highlights the importance of basic functions for impairments in complex functions in patients with {ADHD}.}
+      \field{day}{2}
+      \field{issn}{1932-6203}
+      \field{journaltitle}{{PLOS} {ONE}}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{shortjournal}{{PLoS} {ONE}}
+      \field{title}{Basic and complex cognitive functions in Adult {ADHD}}
+      \field{urlday}{18}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{16}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e0256228}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0256228
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\9YPT8K5W\\Mohamed et al. - 2021 - Basic and complex cognitive functions in Adult ADHD.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://dx.plos.org/10.1371/journal.pone.0256228
+      \endverb
+      \verb{url}
+      \verb https://dx.plos.org/10.1371/journal.pone.0256228
+      \endverb
+    \endentry
+    \entry{raiker_phonological_2019}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=ae2a9cf0681b85832f44d50066d2e249}{%
+           family={Raiker},
+           familyi={R\bibinitperiod},
+           given={Joseph\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc28f2a7ce898f16a1e94246e255509c}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={Lauren\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=53c2386db629cd7f9ae0659e13cd6b93}{%
+           family={Orban},
+           familyi={O\bibinitperiod},
+           given={Sarah\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f06ef443cffe60363f3b383b1649f4be}{%
+           family={Kofler},
+           familyi={K\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a171f6f25575fae1d8df80e0bf56edc1}{%
+           family={Sarver},
+           familyi={S\bibinitperiod},
+           given={Dustin\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b6c2698798bd1d4eb404066de99ac9e}{%
+           family={Rapport},
+           familyi={R\bibinitperiod},
+           given={Mark\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7e6eb9420b3927006e9c1744b52c0e61}
+      \strng{fullhash}{509b0f28ba25da46cf0ce51852f46752}
+      \strng{fullhashraw}{509b0f28ba25da46cf0ce51852f46752}
+      \strng{bibnamehash}{509b0f28ba25da46cf0ce51852f46752}
+      \strng{authorbibnamehash}{509b0f28ba25da46cf0ce51852f46752}
+      \strng{authornamehash}{7e6eb9420b3927006e9c1744b52c0e61}
+      \strng{authorfullhash}{509b0f28ba25da46cf0ce51852f46752}
+      \strng{authorfullhashraw}{509b0f28ba25da46cf0ce51852f46752}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Objective: The current study dissociates lower level information-processing abilities (visual registration/encoding, visual-to-phonological conversion, and response output) and examines their contribution to {ADHD}-related phonological working memory ({PHWM}) deficits. Method: Twenty children with {ADHD} and 15 typically developing ({TD}) children completed tasks assessing {PHWM}, visual registration/encoding, visual-to-phonological conversion, and response output. Results: Relative to {TD} children, children with {ADHD} exhibited deficient visual registration/encoding ( d = 0.60), visual-to-phonological conversion ( d = 0.56), and {PHWM} ( d = 0.72) but faster response output ( d = −0.66). Bias-corrected, bootstrapped mediation analyses revealed that visual registration/encoding, but not visual-to-phonological conversion, partially mediated {ADHD}-related {PHWM} impairments. In contrast, faster response output in children with {ADHD} served as a suppressor variable, such that greater {PHWM} deficits were observed in children with {ADHD} after controlling for their faster response output ( d = 0.72 vs. 0.85). Conclusion: Results implicate both lower level (visual registration/encoding) and higher order ({PHWM}) impairments in {ADHD}. Implications for designing educationally relevant cognitive interventions are discussed.}
+      \field{issn}{1087-0547, 1557-1246}
+      \field{journaltitle}{Journal of Attention Disorders}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{6}
+      \field{shortjournal}{J Atten Disord}
+      \field{shorttitle}{Phonological Working Memory Deficits in {ADHD} Revisited}
+      \field{title}{Phonological Working Memory Deficits in {ADHD} Revisited: The Role of Lower Level Information-Processing Deficits in Impaired Working Memory Performance}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{23}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{570\bibrangedash 583}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1177/1087054716686182
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\GE23UWKZ\\Raiker et al. - 2019 - Phonological Working Memory Deficits in ADHD Revisited The Role of Lower Level Information-Processi.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://journals.sagepub.com/doi/10.1177/1087054716686182
+      \endverb
+      \verb{url}
+      \verb https://journals.sagepub.com/doi/10.1177/1087054716686182
+      \endverb
+      \keyw{Empirical,Working\_Memory,Phonological\_Loop,Levels-of\_Processing}
+    \endentry
+    \entry{skalski_impact_2021}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3bede6ce7c485abeb6635d311eae747b}{%
+           family={Skalski},
+           familyi={S\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2e6d43017acb038a46ab5568560a61cd}{%
+           family={Pochwatko},
+           familyi={P\bibinitperiod},
+           given={Grzegorz},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=222a699973eddaea645d81a07631870d}{%
+           family={Balas},
+           familyi={B\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e5d39fc021cbaed22d3cb362ce53f7ea}
+      \strng{fullhash}{0c7e9993cb12022f24989b4fadd1b876}
+      \strng{fullhashraw}{0c7e9993cb12022f24989b4fadd1b876}
+      \strng{bibnamehash}{0c7e9993cb12022f24989b4fadd1b876}
+      \strng{authorbibnamehash}{0c7e9993cb12022f24989b4fadd1b876}
+      \strng{authornamehash}{e5d39fc021cbaed22d3cb362ce53f7ea}
+      \strng{authorfullhash}{0c7e9993cb12022f24989b4fadd1b876}
+      \strng{authorfullhashraw}{0c7e9993cb12022f24989b4fadd1b876}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Earlier reports showed the co-occurrence of a motivation deficit in children with {ADHD}. The purpose of this study was to assess the impact of extrinsic motivation on selected aspects of attention in children with {ADHD}, as well as to measure cortical activity and dimensions of motivation as per the self-determination theory. The study included 30 children with {ADHD} and 30 typically developing ({TD}) children aged 9–13 years. Children with {ADHD} exhibited a higher theta/beta power ratio ({TBR}) in the midline and a lower regional cerebral blood oxygenation ({rCBO}\_2) level in prefrontal areas measured using the {HEG} ratio compared to {TD} children. Children with {ADHD} were more likely to undertake activity under the pressure of external stimuli and exhibited attention deficits regarding vigilance, visual search and divided attention. Differences between groups regarding attention decreased in conditions of increased motivation, indicating that motivation can reduce cognitive deficits in children with {ADHD}.}
+      \field{issn}{0009-398X, 1573-3327}
+      \field{journaltitle}{Child Psychiatry \& Human Development}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{4}
+      \field{shortjournal}{Child Psychiatry Hum Dev}
+      \field{title}{Impact of Motivation on Selected Aspects of Attention in Children with {ADHD}}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{52}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{586\bibrangedash 595}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/s10578-020-01042-0
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\JV2G375W\\Skalski et al. - 2021 - Impact of Motivation on Selected Aspects of Attention in Children with ADHD.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/s10578-020-01042-0
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/s10578-020-01042-0
+      \endverb
+      \keyw{Empirical,Motivation,Attention,Cognitive\_Impairment}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{baddeley_developments_1994}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=76668dbadcd9b8d8c04da6f6c5ff6660}{%
+           family={Baddeley},
+           familyi={B\bibinitperiod},
+           given={Alan\bibnamedelima D.},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=74e147c7bc9e5b0501979cd38acae284}{%
+           family={Hitch},
+           familyi={H\bibinitperiod},
+           given={Graham\bibnamedelima J.},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{fullhash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{fullhashraw}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{bibnamehash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{authorbibnamehash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{authornamehash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{authorfullhash}{56ab2d06614ea6325403716f5f36fe58}
+      \strng{authorfullhashraw}{56ab2d06614ea6325403716f5f36fe58}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1931-1559, 0894-4105}
+      \field{journaltitle}{Neuropsychology}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{4}
+      \field{shortjournal}{Neuropsychology}
+      \field{title}{Developments in the concept of working memory.}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{8}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{485\bibrangedash 493}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1037/0894-4105.8.4.485
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\paulb\\Zotero\\storage\\RGMB4872\\Baddeley and Hitch - 1994 - Developments in the concept of working memory..pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.apa.org/doi/10.1037/0894-4105.8.4.485
+      \endverb
+      \verb{url}
+      \verb https://doi.apa.org/doi/10.1037/0894-4105.8.4.485
+      \endverb
+    \endentry
+    \entry{butzbach_basic_2019}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=a202fd8a5344e8552bf8781c78c25149}{%
+           family={Butzbach},
+           familyi={B\bibinitperiod},
+           given={Marah},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=435f8d8f77ccc2b5e69065256e1cf13b}{%
+           family={Fuermaier},
+           familyi={F\bibinitperiod},
+           given={Anselm\bibnamedelimb B.\bibnamedelimi M.},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5cd9f1df6cc90db6a18ffd1ed920681c}{%
+           family={Aschenbrenner},
+           familyi={A\bibinitperiod},
+           given={Steffen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=59b964a25bca4bf60c67ebb0d462500d}{%
+           family={Weisbrod},
+           familyi={W\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f254f8660bf7346a2130ab3ca47cfc43}{%
+           family={Tucha},
+           familyi={T\bibinitperiod},
+           given={Lara},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc5e7b3b30ff20d486bc691f42dee32f}{%
+           family={Tucha},
+           familyi={T\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5465d835dc092cbaaa0604de41cf263b}
+      \strng{fullhash}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \strng{fullhashraw}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \strng{bibnamehash}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \strng{authorbibnamehash}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \strng{authornamehash}{5465d835dc092cbaaa0604de41cf263b}
+      \strng{authorfullhash}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \strng{authorfullhashraw}{91e7b842829a8fd1cc8eb9f40e3f542e}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0300-9564, 1435-1463}
+      \field{journaltitle}{Journal of Neural Transmission}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{10}
+      \field{shortjournal}{J Neural Transm}
+      \field{title}{Basic processes as foundations of cognitive impairment in adult {ADHD}}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{126}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1347\bibrangedash 1362}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1007/s00702-019-02049-1
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\AVXAUFAJ\\Butzbach et al. - 2019 - Basic processes as foundations of cognitive impairment in adult ADHD.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s00702-019-02049-1
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s00702-019-02049-1
+      \endverb
+      \keyw{Empirical,Executive\_Functioning,Attention,Memory}
+    \endentry
+    \entry{capri_attention_2019}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=7495c125b77117bd5fc4ae4bf974c4c7}{%
+           family={Caprì},
+           familyi={C\bibinitperiod},
+           given={Tindara},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0c8973f5badd9e2cd0784c87b6b5d8e7}{%
+           family={Martino},
+           familyi={M\bibinitperiod},
+           given={Gabriella},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91bd6620f17e90505c6f7cd66e2af5d5}{%
+           family={Giannatiempo},
+           familyi={G\bibinitperiod},
+           given={Samantha},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=85a6cf17a7e6257279fd5b33301fe0b7}{%
+           family={Semino},
+           familyi={S\bibinitperiod},
+           given={Martina},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bdd58bbe7bd6de12f9c2adb9cff0b644}{%
+           family={Fabio},
+           familyi={F\bibinitperiod},
+           given={Rosa\bibnamedelima Angela},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2a4b64619c3ff760acb1199b5ed21e1a}
+      \strng{fullhash}{fd2ac99d69813f536a5c26694aa82352}
+      \strng{fullhashraw}{fd2ac99d69813f536a5c26694aa82352}
+      \strng{bibnamehash}{fd2ac99d69813f536a5c26694aa82352}
+      \strng{authorbibnamehash}{fd2ac99d69813f536a5c26694aa82352}
+      \strng{authornamehash}{2a4b64619c3ff760acb1199b5ed21e1a}
+      \strng{authorfullhash}{fd2ac99d69813f536a5c26694aa82352}
+      \strng{authorfullhashraw}{fd2ac99d69813f536a5c26694aa82352}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Although attention-deficit/hyperactivity disorder ({ADHD}) is clearly associated with executive dysfunctions, the neuropsychological profile of adults with {ADHD} is unclear. The present study aimed at examining neuropsychological performance on tasks measuring attention, problem solving and decision making, comparing adults with {ADHD} (N= 12, mean age 18.33; {SD}= 11.48) and healthy adults (N= 12, mean age 18.41; {SD}= 18.70) matched for age and gender. Results showed that adults with {ADHD} exhibit deficits in attention, problem solving and decision making. These findings warrant further examination of neuropsychological profile in adults with {ADHD} to improve the understanding of underlying neurocognitive mechanisms.}
+      \field{day}{12}
+      \field{journaltitle}{Journal of Clinical \& Developmental Psychology}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{note}{Publisher: Journal of Clinical \& Developmental Psychology}
+      \field{title}{Attention, problem solving and decision making in adult subjects with {ADHD}}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{Vol 1}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{No 1 (2019)}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.6092/2612-4033/0110-2045
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\paulb\\Zotero\\storage\\3KK9VKWQ\\Caprì et al. - 2019 - Attention, problem solving and decision making in adult subjects with ADHD.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://cab.unime.it/journals/index.php/JCDP/article/view/2045
+      \endverb
+      \verb{url}
+      \verb http://cab.unime.it/journals/index.php/JCDP/article/view/2045
+      \endverb
+      \keyw{Empirical,Problem\_Solving,Attention,Decision\_Making}
+    \endentry
+    \entry{drigas_executive_2019}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7aff90affd97cb5a4e84eee55b5013fd}{%
+           family={Drigas},
+           familyi={D\bibinitperiod},
+           given={Athanasios},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4f661f557efeeb73b47e5fd08b935bb8}{%
+           family={Karyotaki},
+           familyi={K\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{fullhash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{fullhashraw}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{bibnamehash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{authorbibnamehash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{authornamehash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{authorfullhash}{15e2e6c2971360cdd251429f86e0c93d}
+      \strng{authorfullhashraw}{15e2e6c2971360cdd251429f86e0c93d}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{There is a bidirectional relation between one’s executive functioning abilities and problem solving skills as they are both based on self-control. “Hot” and “cold” executive functions account for individuals’ cognitive control and emotional regulation. In addition, problem solving is tied to metacognitive awareness processes, necessary for applying executive function skills in goal setting and decision making situations. Therefore, individuals’ overall cognitive flexibility and emotional regulation can promote the quality, quantity and speed of decision-making processes, such as adaptable and creative information processing as well as efficiency in setting and prioritizing goals. Moreover, individuals with {ADHD}, Autism Spectrum Disorder, Oppositional Defiant Disorder and individuals with other comorbid states, such as older adults, individuals with Traumatic Brain Injury ({TBI}) can counterbalance their cognitive control deficits through enhancing their problem solving skills. In addition, an advanced research in the bidirectional relation between executive function and problem solving skills could develop a comprehensive methodology for training and assessing self-regulatory processes.}
+      \field{day}{11}
+      \field{issn}{2192-4880}
+      \field{journaltitle}{International Journal of Engineering Pedagogy ({iJEP})}
+      \field{month}{6}
+      \field{number}{3}
+      \field{shortjournal}{Int. J. Eng. Ped.}
+      \field{shorttitle}{Executive Functioning and Problem Solving}
+      \field{title}{Executive Functioning and Problem Solving: A Bidirectional Relation}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{9}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{76}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3991/ijep.v9i3.10186
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\37FUB8FH\\Drigas and Karyotaki - 2019 - Executive Functioning and Problem Solving A Bidirectional Relation.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://online-journals.org/index.php/i-jep/article/view/10186
+      \endverb
+      \verb{url}
+      \verb https://online-journals.org/index.php/i-jep/article/view/10186
+      \endverb
+      \keyw{Problem\_Solving,Executive\_Functioning}
+    \endentry
+    \entry{elosua_differences_2017}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=df0cb7d0ebfc8107a1f5ff619cf6139b}{%
+           family={Elosúa},
+           familyi={E\bibinitperiod},
+           given={M.\bibnamedelimi Rosa},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=acdba51c78651e8466712078403aa3d8}{%
+           family={Del\bibnamedelima Olmo},
+           familyi={D\bibinitperiod\bibinitdelim O\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8316675a9f31babc0151812450595f7d}{%
+           family={Contreras},
+           familyi={C\bibinitperiod},
+           given={María\bibnamedelima José},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dd5e9e4ff0d104b8b956bf20cee987d7}
+      \strng{fullhash}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \strng{fullhashraw}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \strng{bibnamehash}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \strng{authorbibnamehash}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \strng{authornamehash}{dd5e9e4ff0d104b8b956bf20cee987d7}
+      \strng{authorfullhash}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \strng{authorfullhashraw}{c91ba4e6052549c0ea98aa8b9305bafb}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{20}
+      \field{issn}{1664-1078}
+      \field{journaltitle}{Frontiers in Psychology}
+      \field{month}{6}
+      \field{shortjournal}{Front. Psychol.}
+      \field{title}{Differences in Executive Functioning in Children with Attention Deficit and Hyperactivity Disorder ({ADHD})}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{8}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{976}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/fpsyg.2017.00976
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\2UABPXYZ\\Elosúa et al. - 2017 - Differences in Executive Functioning in Children with Attention Deficit and Hyperactivity Disorder (.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://journal.frontiersin.org/article/10.3389/fpsyg.2017.00976/full
+      \endverb
+      \verb{url}
+      \verb http://journal.frontiersin.org/article/10.3389/fpsyg.2017.00976/full
+      \endverb
+      \keyw{Empirical,Executive\_Functioning,Attention}
+    \endentry
+    \entry{engelmann_motivation_2007}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=07c709588818e12f6cd8c7892d9f7d89}{%
+           family={Engelmann},
+           familyi={E\bibinitperiod},
+           given={Jan\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9091f9ac3929a82c651b02a265f166c}{%
+           family={Pessoa},
+           familyi={P\bibinitperiod},
+           given={Luiz},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4aae7073ed8697397beb762658376c59}
+      \strng{fullhash}{4aae7073ed8697397beb762658376c59}
+      \strng{fullhashraw}{4aae7073ed8697397beb762658376c59}
+      \strng{bibnamehash}{4aae7073ed8697397beb762658376c59}
+      \strng{authorbibnamehash}{4aae7073ed8697397beb762658376c59}
+      \strng{authornamehash}{4aae7073ed8697397beb762658376c59}
+      \strng{authorfullhash}{4aae7073ed8697397beb762658376c59}
+      \strng{authorfullhashraw}{4aae7073ed8697397beb762658376c59}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1931-1516, 1528-3542}
+      \field{journaltitle}{Emotion}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{3}
+      \field{shortjournal}{Emotion}
+      \field{title}{Motivation sharpens exogenous spatial attention.}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{7}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{668\bibrangedash 674}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1037/1528-3542.7.3.668
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\paulb\\Zotero\\storage\\DCRYWXZ3\\Engelmann and Pessoa - 2007 - Motivation sharpens exogenous spatial attention..pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.apa.org/doi/10.1037/1528-3542.7.3.668
+      \endverb
+      \verb{url}
+      \verb https://doi.apa.org/doi/10.1037/1528-3542.7.3.668
+      \endverb
+    \endentry
+    \entry{fabio_working_2020}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=bdd58bbe7bd6de12f9c2adb9cff0b644}{%
+           family={Fabio},
+           familyi={F\bibinitperiod},
+           given={Rosa\bibnamedelima Angela},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d8f0d1e5d8f1e4c8c98424db0bb9de9}{%
+           family={Bianco},
+           familyi={B\bibinitperiod},
+           given={Marilla},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7495c125b77117bd5fc4ae4bf974c4c7}{%
+           family={Caprì},
+           familyi={C\bibinitperiod},
+           given={Tindara},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f276fc071c27d81a79e8cddbbb81f163}{%
+           family={Marino},
+           familyi={M\bibinitperiod},
+           given={Flavia},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9680cd1878f97829246745c73f1f7dc1}{%
+           family={Ruta},
+           familyi={R\bibinitperiod},
+           given={Liliana},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8c08da1a0c7db4747f8c17f15565516b}{%
+           family={Vagni},
+           familyi={V\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d785104f508040d336b76c598b43e202}{%
+           family={Pioggia},
+           familyi={P\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4049d49ba3327516079e275e39284c9b}
+      \strng{fullhash}{e2cb20abcba345fa49506d332226a06b}
+      \strng{fullhashraw}{e2cb20abcba345fa49506d332226a06b}
+      \strng{bibnamehash}{e2cb20abcba345fa49506d332226a06b}
+      \strng{authorbibnamehash}{e2cb20abcba345fa49506d332226a06b}
+      \strng{authornamehash}{4049d49ba3327516079e275e39284c9b}
+      \strng{authorfullhash}{e2cb20abcba345fa49506d332226a06b}
+      \strng{authorfullhashraw}{e2cb20abcba345fa49506d332226a06b}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Abstract Background Deficits in working memory tasks have been widely documented in Attention Deficit Hyperactivity Disorder ({ADHD}) studies. The aim of this study is to evaluate the effects of working memory load in impulsivity during decision-making processes. A delayed discounting ({DD}) paradigm was used, comparing children with {ADHD} and age-matched controls. Method Thirty-two children equally divided between typically developing and {ADHD}, from 8 to 10 years of age were assigned to sessions of a dual-task paradigm. In the primary task the child has to choose between two different amounts of money at different time delays, while in the secondary task the child has to repeat a random series of digits with different lengths. The experiment was conducted in a school setting. Results Compared to peers with typical development, delayed discounting was significantly stronger in children with {ADHD} and discounting rates increased in both groups for heavier memory loads. Furthermore, the memory load impact on frequency of immediate rewards was stronger in children with {ADHD} compared to typically developing children. Discussion Results are discussed in terms of the relation between working memory load and decision-making processes, their impact on impulsive behaviour in {ADHD} and the need for future research to understand possible neurocognitive correlates and use that information to develop better inclusive policies.}
+      \field{issn}{1471-244X}
+      \field{journaltitle}{{BMC} Psychiatry}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{1}
+      \field{shortjournal}{{BMC} Psychiatry}
+      \field{shorttitle}{Working memory and decision making in children with {ADHD}}
+      \field{title}{Working memory and decision making in children with {ADHD}: an analysis of delay discounting with the use of the dual-task paradigm}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{20}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{272}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s12888-020-02677-y
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\UXV6SWHK\\Fabio et al. - 2020 - Working memory and decision making in children with ADHD an analysis of delay discounting with the.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-020-02677-y
+      \endverb
+      \verb{url}
+      \verb https://bmcpsychiatry.biomedcentral.com/articles/10.1186/s12888-020-02677-y
+      \endverb
+      \keyw{Empirical,Working\_Memory,Memory,Memory\_Load}
+    \endentry
+    \entry{faraone_attention-deficithyperactivity_2015}{article}{}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=d4261e3bd0fd9acedae1f6504abab822}{%
+           family={Faraone},
+           familyi={F\bibinitperiod},
+           given={Stephen\bibnamedelima V.},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb991171bdae4920d876c329d7260da5}{%
+           family={Asherson},
+           familyi={A\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4aff2da3b30b451372c8025627f08e33}{%
+           family={Banaschewski},
+           familyi={B\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f9e1cdeb28e576eb3fef559fb35c8a0}{%
+           family={Biederman},
+           familyi={B\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=606c949586ca7f43a060c1bbb5849289}{%
+           family={Buitelaar},
+           familyi={B\bibinitperiod},
+           given={Jan\bibnamedelima K.},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=321bb482ba28cca876783dd08afcf655}{%
+           family={Ramos-Quiroga},
+           familyi={R\bibinithyphendelim Q\bibinitperiod},
+           given={Josep\bibnamedelima Antoni},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f07ff76113c7f791a238bd67f5dc607a}{%
+           family={Rohde},
+           familyi={R\bibinitperiod},
+           given={Luis\bibnamedelima Augusto},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7ac143db897db7cc3a6a35da25171d5c}{%
+           family={Sonuga-Barke},
+           familyi={S\bibinithyphendelim B\bibinitperiod},
+           given={Edmund\bibnamedelimb J.\bibnamedelimi S.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=96c6d0c3237346afacdef6db62718015}{%
+           family={Tannock},
+           familyi={T\bibinitperiod},
+           given={Rosemary},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d89b62911a87f31ada07ea2654b6ef3}{%
+           family={Franke},
+           familyi={F\bibinitperiod},
+           given={Barbara},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f6a0707c27e43a87852f81be6afcd1cf}
+      \strng{fullhash}{4eac53d7b23e1accc48f25faabfe65b9}
+      \strng{fullhashraw}{4eac53d7b23e1accc48f25faabfe65b9}
+      \strng{bibnamehash}{4eac53d7b23e1accc48f25faabfe65b9}
+      \strng{authorbibnamehash}{4eac53d7b23e1accc48f25faabfe65b9}
+      \strng{authornamehash}{f6a0707c27e43a87852f81be6afcd1cf}
+      \strng{authorfullhash}{4eac53d7b23e1accc48f25faabfe65b9}
+      \strng{authorfullhashraw}{4eac53d7b23e1accc48f25faabfe65b9}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{6}
+      \field{issn}{2056-676X}
+      \field{journaltitle}{Nature Reviews Disease Primers}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{1}
+      \field{shortjournal}{Nat Rev Dis Primers}
+      \field{title}{Attention-deficit/hyperactivity disorder}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{1}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{15020}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/nrdp.2015.20
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\paulb\\Zotero\\storage\\5EDDCB8H\\Faraone et al. - 2015 - Attention-deficithyperactivity disorder.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/nrdp201520
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/nrdp201520
+      \endverb
+      \keyw{Non-Empirical,Primary,Findings\_Heavy,Cognitive}
+    \endentry
+    \entry{fried_clinical_2016}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=a87131d07232c6552d307431dcf4ad80}{%
+           family={Fried},
+           familyi={F\bibinitperiod},
+           given={Ronna},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2294b64cd371e327fb9cdb39d9d9d93b}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6f9730ded7ae3b6902120cc53381976}{%
+           family={Feinberg},
+           familyi={F\bibinitperiod},
+           given={Leah},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a9c27084cfc7e4cd2fa25d2104d00e23}{%
+           family={Pope},
+           familyi={P\bibinitperiod},
+           given={Amanda},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aa8b3a907b4fa0035c5df494cfa2f21c}{%
+           family={Woodworth},
+           familyi={W\bibinitperiod},
+           given={K.\bibnamedelimi Yvonne},
+           giveni={K\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d4261e3bd0fd9acedae1f6504abab822}{%
+           family={Faraone},
+           familyi={F\bibinitperiod},
+           given={Stephen\bibnamedelima V.},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f9e1cdeb28e576eb3fef559fb35c8a0}{%
+           family={Biederman},
+           familyi={B\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0799ba58a0626df09a40bedc09c71013}
+      \strng{fullhash}{320018cac0828f44b198d48eb6d30721}
+      \strng{fullhashraw}{320018cac0828f44b198d48eb6d30721}
+      \strng{bibnamehash}{320018cac0828f44b198d48eb6d30721}
+      \strng{authorbibnamehash}{320018cac0828f44b198d48eb6d30721}
+      \strng{authornamehash}{0799ba58a0626df09a40bedc09c71013}
+      \strng{authorfullhash}{320018cac0828f44b198d48eb6d30721}
+      \strng{authorfullhashraw}{320018cac0828f44b198d48eb6d30721}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{27}
+      \field{issn}{1380-3395, 1744-411X}
+      \field{journaltitle}{Journal of Clinical and Experimental Neuropsychology}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{5}
+      \field{shortjournal}{Journal of Clinical and Experimental Neuropsychology}
+      \field{shorttitle}{Clinical correlates of working memory deficits in youth with and without {ADHD}}
+      \field{title}{Clinical correlates of working memory deficits in youth with and without {ADHD}: A controlled study}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{38}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{487\bibrangedash 496}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1080/13803395.2015.1127896
+      \endverb
+      \verb{file}
+      \verb Accepted Version:C\:\\Users\\paulb\\Zotero\\storage\\XCVSHLXH\\Fried et al. - 2016 - Clinical correlates of working memory deficits in youth with and without ADHD A controlled study.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.tandfonline.com/doi/full/10.1080/13803395.2015.1127896
+      \endverb
+      \verb{url}
+      \verb https://www.tandfonline.com/doi/full/10.1080/13803395.2015.1127896
+      \endverb
+      \keyw{Empirical,Memory,With\_vs\_Without\_ADHD}
+    \endentry
+    \entry{friedman_reading_2017}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=fc28f2a7ce898f16a1e94246e255509c}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={Lauren\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b6c2698798bd1d4eb404066de99ac9e}{%
+           family={Rapport},
+           familyi={R\bibinitperiod},
+           given={Mark\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ae2a9cf0681b85832f44d50066d2e249}{%
+           family={Raiker},
+           familyi={R\bibinitperiod},
+           given={Joseph\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=53c2386db629cd7f9ae0659e13cd6b93}{%
+           family={Orban},
+           familyi={O\bibinitperiod},
+           given={Sarah\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=463014d4692d3a3d30aaa9d5e196ad1a}{%
+           family={Eckrich},
+           familyi={E\bibinitperiod},
+           given={Samuel\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{94bcbe92416117fa45cb833e741b441a}
+      \strng{fullhash}{9327187a891ae4883576cf08125b32a2}
+      \strng{fullhashraw}{9327187a891ae4883576cf08125b32a2}
+      \strng{bibnamehash}{9327187a891ae4883576cf08125b32a2}
+      \strng{authorbibnamehash}{9327187a891ae4883576cf08125b32a2}
+      \strng{authornamehash}{94bcbe92416117fa45cb833e741b441a}
+      \strng{authorfullhash}{9327187a891ae4883576cf08125b32a2}
+      \strng{authorfullhashraw}{9327187a891ae4883576cf08125b32a2}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0091-0627, 1573-2835}
+      \field{journaltitle}{Journal of Abnormal Child Psychology}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{shortjournal}{J Abnorm Child Psychol}
+      \field{shorttitle}{Reading Comprehension in Boys with {ADHD}}
+      \field{title}{Reading Comprehension in Boys with {ADHD}: The Mediating Roles of Working Memory and Orthographic Conversion}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{45}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{273\bibrangedash 287}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1007/s10802-016-0171-7
+      \endverb
+      \verb{file}
+      \verb PDF:C\:\\Users\\paulb\\Zotero\\storage\\C4FES2RB\\Friedman et al. - 2017 - Reading Comprehension in Boys with ADHD The Mediating Roles of Working Memory and Orthographic Conv.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s10802-016-0171-7
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s10802-016-0171-7
+      \endverb
+    \endentry
+    \entry{kofler_working_2020}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=f06ef443cffe60363f3b383b1649f4be}{%
+           family={Kofler},
+           familyi={K\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f10e6e4d706134213cab0c16f8b38f05}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Leah\bibnamedelima J.},
+           giveni={L\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7dd2a168068625717f6dbac8703962d7}{%
+           family={Soto},
+           familyi={S\bibinitperiod},
+           given={Elia\bibnamedelima F.},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=70e36743d7ee2f58b96038b27a3e4314}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={Elizabeth\bibnamedelimb S.\bibnamedelimi M.},
+           giveni={E\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=932afb7aef2d8090817a70e7c5f00f0e}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Caroline\bibnamedelima E.},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c183b1bcf55429eb7ed52342e0f0d5ec}{%
+           family={Harmon},
+           familyi={H\bibinitperiod},
+           given={Sherelle\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cc299055c00b5f5b518aa1d93a9f1789}{%
+           family={Spiegel},
+           familyi={S\bibinitperiod},
+           given={Jamie\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9a8c8f30b0af004acbcaebb806ebd061}
+      \strng{fullhash}{3045ebb56cfebf562d7249f22dbd79d7}
+      \strng{fullhashraw}{3045ebb56cfebf562d7249f22dbd79d7}
+      \strng{bibnamehash}{3045ebb56cfebf562d7249f22dbd79d7}
+      \strng{authorbibnamehash}{3045ebb56cfebf562d7249f22dbd79d7}
+      \strng{authornamehash}{9a8c8f30b0af004acbcaebb806ebd061}
+      \strng{authorfullhash}{3045ebb56cfebf562d7249f22dbd79d7}
+      \strng{authorfullhashraw}{3045ebb56cfebf562d7249f22dbd79d7}
+      \field{extraname}{1}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Objective—Attention-deficit/hyperactivity disorder ({ADHD}) has been associated with large magnitude impairments in working memory, whereas short-term memory deficits, when detected, tend to be less pronounced. However, confidence in these findings is limited due to task impurity combined with methodological and statistical limitations of the current evidence base. Method—A well-characterized, clinically-evaluated sample of 172 children ages 8–13 years (M=10.30, {SD}=1.42; 72 girls; 64\% White/non-Hispanic) were administered multiple, counterbalanced working memory tests. Bifactor-(s-1) modeling was used to characterize the presence and magnitude of central executive working memory, phonological short-term memory, and visuospatial short-term memory deficits in pediatric {ADHD}. Results—{ADHD} status was associated with very large magnitude impairments in central executive working memory that are present in most pediatric cases (d=1.63–2.03; 75\%−81\% impaired), and these deficits covaried with {ADHD} inattentive and hyperactive/impulsive symptom severity based on both parent and teacher report. There was also evidence for a unique, albeit significantly smaller, impairment in visuospatial short-term memory (d=0.60; 38\% impaired); however, visuospatial short-term memory abilities did not covary with {ADHD} symptom severity. There was no evidence linking {ADHD} with phonological short-term memory deficits across either the dimensional or categorical analyses. Conclusion—These findings provide strong evidence that {ADHD} is associated with marked central executive working memory deficits that covary with their behavioral symptom presentation across settings. In contrast, visuospatial short-term memory deficits, when present, are likely epiphenomenal, and the most parsimonious conclusion appears to be that phonological short-term memory is intact in pediatric {ADHD}.}
+      \field{issn}{1931-1559, 0894-4105}
+      \field{journaltitle}{Neuropsychology}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{6}
+      \field{shortjournal}{Neuropsychology}
+      \field{shorttitle}{Working memory and short-term memory deficits in {ADHD}}
+      \field{title}{Working memory and short-term memory deficits in {ADHD}: A bifactor modeling approach.}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{34}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{686\bibrangedash 698}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1037/neu0000641
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\paulb\\Zotero\\storage\\C5WHYEYY\\Kofler et al. - 2020 - Working memory and short-term memory deficits in ADHD A bifactor modeling approach..pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.apa.org/doi/10.1037/neu0000641
+      \endverb
+      \verb{url}
+      \verb https://doi.apa.org/doi/10.1037/neu0000641
+      \endverb
+      \keyw{Empirical,Executive\_Functioning,Working\_Memory,Short\_Term\_Memory}
+    \endentry
+    \entry{kofler_are_2018}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=f06ef443cffe60363f3b383b1649f4be}{%
+           family={Kofler},
+           familyi={K\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cc299055c00b5f5b518aa1d93a9f1789}{%
+           family={Spiegel},
+           familyi={S\bibinitperiod},
+           given={Jamie\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a55236f4ab4507eec020c79c337a4e97}{%
+           family={Austin},
+           familyi={A\bibinitperiod},
+           given={Kristin\bibnamedelima E.},
+           giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7b31c21589174b9b510ad356bbc256f2}{%
+           family={Irwin},
+           familyi={I\bibinitperiod},
+           given={Lauren\bibnamedelima N.},
+           giveni={L\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7dd2a168068625717f6dbac8703962d7}{%
+           family={Soto},
+           familyi={S\bibinitperiod},
+           given={Elia\bibnamedelima F.},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a171f6f25575fae1d8df80e0bf56edc1}{%
+           family={Sarver},
+           familyi={S\bibinitperiod},
+           given={Dustin\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9a8c8f30b0af004acbcaebb806ebd061}
+      \strng{fullhash}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \strng{fullhashraw}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \strng{bibnamehash}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \strng{authorbibnamehash}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \strng{authornamehash}{9a8c8f30b0af004acbcaebb806ebd061}
+      \strng{authorfullhash}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \strng{authorfullhashraw}{d5bc3ecdec2b3a3284cd8f8627954fd0}
+      \field{extraname}{2}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{0091-0627, 1573-2835}
+      \field{journaltitle}{Journal of Abnormal Child Psychology}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{6}
+      \field{shortjournal}{J Abnorm Child Psychol}
+      \field{shorttitle}{Are Episodic Buffer Processes Intact in {ADHD}?}
+      \field{title}{Are Episodic Buffer Processes Intact in {ADHD}? Experimental Evidence and Linkage with Hyperactive Behavior}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{volume}{46}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1171\bibrangedash 1185}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1007/s10802-017-0346-x
+      \endverb
+      \verb{file}
+      \verb Accepted Version:C\:\\Users\\paulb\\Zotero\\storage\\LN7X6SER\\Kofler et al. - 2018 - Are Episodic Buffer Processes Intact in ADHD Experimental Evidence and Linkage with Hyperactive Beh.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://link.springer.com/10.1007/s10802-017-0346-x
+      \endverb
+      \verb{url}
+      \verb http://link.springer.com/10.1007/s10802-017-0346-x
+      \endverb
+    \endentry
+    \entry{mohamed_basic_2021}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=4a6c61bb7fb2825a5f64ebb15dc557f2}{%
+           family={Mohamed},
+           familyi={M\bibinitperiod},
+           given={Saleh\bibnamedelimb M.\bibnamedelimi H.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a202fd8a5344e8552bf8781c78c25149}{%
+           family={Butzbach},
+           familyi={B\bibinitperiod},
+           given={Marah},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=435f8d8f77ccc2b5e69065256e1cf13b}{%
+           family={Fuermaier},
+           familyi={F\bibinitperiod},
+           given={Anselm\bibnamedelimb B.\bibnamedelimi M},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=59b964a25bca4bf60c67ebb0d462500d}{%
+           family={Weisbrod},
+           familyi={W\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5cd9f1df6cc90db6a18ffd1ed920681c}{%
+           family={Aschenbrenner},
+           familyi={A\bibinitperiod},
+           given={Steffen},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f254f8660bf7346a2130ab3ca47cfc43}{%
+           family={Tucha},
+           familyi={T\bibinitperiod},
+           given={Lara},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc5e7b3b30ff20d486bc691f42dee32f}{%
+           family={Tucha},
+           familyi={T\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=ca11ec9a28274ac4e6b9e4fe7530ee0e}{%
+           family={Garcia},
+           familyi={G\bibinitperiod},
+           given={Trinidad},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{de428ca519d1ee9dc3a2eb0afbfaf547}
+      \strng{fullhash}{cef5165213840f0b77c104488fe46d98}
+      \strng{fullhashraw}{cef5165213840f0b77c104488fe46d98}
+      \strng{bibnamehash}{cef5165213840f0b77c104488fe46d98}
+      \strng{authorbibnamehash}{cef5165213840f0b77c104488fe46d98}
+      \strng{authornamehash}{de428ca519d1ee9dc3a2eb0afbfaf547}
+      \strng{authorfullhash}{cef5165213840f0b77c104488fe46d98}
+      \strng{authorfullhashraw}{cef5165213840f0b77c104488fe46d98}
+      \strng{editorbibnamehash}{ca11ec9a28274ac4e6b9e4fe7530ee0e}
+      \strng{editornamehash}{ca11ec9a28274ac4e6b9e4fe7530ee0e}
+      \strng{editorfullhash}{ca11ec9a28274ac4e6b9e4fe7530ee0e}
+      \strng{editorfullhashraw}{ca11ec9a28274ac4e6b9e4fe7530ee0e}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Background Many clinical studies reported deficits in basic and complex cognitive functions in adults with Attention-Deficit/Hyperactivity Disorder ({ADHD}). However, the extent in which deficits in basic functions (i.e., processing speed and distractibility) contribute to complex cognitive impairments (i.e., working memory, planning, cognitive flexibility, memory functions) in adults with {ADHD} is not well-studied. So far, literature show only one study, revealing that basic functions explain 27–74\% of executive dysfunctions. Yet, the authors reported that findings could be affected by the selection of neuropsychological tests. The goal of the present research is to replicate such a finding using a different sample and a different set of neuropsychological tests. Methods Forty-eight adult patients with {ADHD} were compared with 48 healthy controls in basic cognitive functions, namely processing speed and distractibility and more complex cognitive functions, namely selective attention, cognitive flexibility, planning, working memory, verbal fluency, and verbal memory. Basic and complex cognitive functions were assessed using the Vigilance and Sustained Attention, Selective Attention, N-Back, Tower of London, Trail Making Test, Word Fluency, and Verbal Learning and Memory. Results and conclusion Logistic regression analyses showed that impairments in complex cognitive functions explained 25\% of the variance in {ADHD} diagnosis. The explained variance dropped from 25\% to 9\% after considering basic functions of processing speed and distractibility. This 64\% reduction highlights the importance of basic functions for impairments in complex functions in patients with {ADHD}.}
+      \field{day}{2}
+      \field{issn}{1932-6203}
+      \field{journaltitle}{{PLOS} {ONE}}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{shortjournal}{{PLoS} {ONE}}
+      \field{title}{Basic and complex cognitive functions in Adult {ADHD}}
+      \field{urlday}{18}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{16}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e0256228}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0256228
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\9YPT8K5W\\Mohamed et al. - 2021 - Basic and complex cognitive functions in Adult ADHD.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://dx.plos.org/10.1371/journal.pone.0256228
+      \endverb
+      \verb{url}
+      \verb https://dx.plos.org/10.1371/journal.pone.0256228
+      \endverb
+    \endentry
+    \entry{raiker_phonological_2019}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=ae2a9cf0681b85832f44d50066d2e249}{%
+           family={Raiker},
+           familyi={R\bibinitperiod},
+           given={Joseph\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc28f2a7ce898f16a1e94246e255509c}{%
+           family={Friedman},
+           familyi={F\bibinitperiod},
+           given={Lauren\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=53c2386db629cd7f9ae0659e13cd6b93}{%
+           family={Orban},
+           familyi={O\bibinitperiod},
+           given={Sarah\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f06ef443cffe60363f3b383b1649f4be}{%
+           family={Kofler},
+           familyi={K\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a171f6f25575fae1d8df80e0bf56edc1}{%
+           family={Sarver},
+           familyi={S\bibinitperiod},
+           given={Dustin\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b6c2698798bd1d4eb404066de99ac9e}{%
+           family={Rapport},
+           familyi={R\bibinitperiod},
+           given={Mark\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7e6eb9420b3927006e9c1744b52c0e61}
+      \strng{fullhash}{509b0f28ba25da46cf0ce51852f46752}
+      \strng{fullhashraw}{509b0f28ba25da46cf0ce51852f46752}
+      \strng{bibnamehash}{509b0f28ba25da46cf0ce51852f46752}
+      \strng{authorbibnamehash}{509b0f28ba25da46cf0ce51852f46752}
+      \strng{authornamehash}{7e6eb9420b3927006e9c1744b52c0e61}
+      \strng{authorfullhash}{509b0f28ba25da46cf0ce51852f46752}
+      \strng{authorfullhashraw}{509b0f28ba25da46cf0ce51852f46752}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Objective: The current study dissociates lower level information-processing abilities (visual registration/encoding, visual-to-phonological conversion, and response output) and examines their contribution to {ADHD}-related phonological working memory ({PHWM}) deficits. Method: Twenty children with {ADHD} and 15 typically developing ({TD}) children completed tasks assessing {PHWM}, visual registration/encoding, visual-to-phonological conversion, and response output. Results: Relative to {TD} children, children with {ADHD} exhibited deficient visual registration/encoding ( d = 0.60), visual-to-phonological conversion ( d = 0.56), and {PHWM} ( d = 0.72) but faster response output ( d = −0.66). Bias-corrected, bootstrapped mediation analyses revealed that visual registration/encoding, but not visual-to-phonological conversion, partially mediated {ADHD}-related {PHWM} impairments. In contrast, faster response output in children with {ADHD} served as a suppressor variable, such that greater {PHWM} deficits were observed in children with {ADHD} after controlling for their faster response output ( d = 0.72 vs. 0.85). Conclusion: Results implicate both lower level (visual registration/encoding) and higher order ({PHWM}) impairments in {ADHD}. Implications for designing educationally relevant cognitive interventions are discussed.}
+      \field{issn}{1087-0547, 1557-1246}
+      \field{journaltitle}{Journal of Attention Disorders}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{6}
+      \field{shortjournal}{J Atten Disord}
+      \field{shorttitle}{Phonological Working Memory Deficits in {ADHD} Revisited}
+      \field{title}{Phonological Working Memory Deficits in {ADHD} Revisited: The Role of Lower Level Information-Processing Deficits in Impaired Working Memory Performance}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{23}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{570\bibrangedash 583}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1177/1087054716686182
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\GE23UWKZ\\Raiker et al. - 2019 - Phonological Working Memory Deficits in ADHD Revisited The Role of Lower Level Information-Processi.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://journals.sagepub.com/doi/10.1177/1087054716686182
+      \endverb
+      \verb{url}
+      \verb https://journals.sagepub.com/doi/10.1177/1087054716686182
+      \endverb
+      \keyw{Empirical,Working\_Memory,Phonological\_Loop,Levels-of\_Processing}
+    \endentry
+    \entry{skalski_impact_2021}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3bede6ce7c485abeb6635d311eae747b}{%
+           family={Skalski},
+           familyi={S\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2e6d43017acb038a46ab5568560a61cd}{%
+           family={Pochwatko},
+           familyi={P\bibinitperiod},
+           given={Grzegorz},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=222a699973eddaea645d81a07631870d}{%
+           family={Balas},
+           familyi={B\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e5d39fc021cbaed22d3cb362ce53f7ea}
+      \strng{fullhash}{0c7e9993cb12022f24989b4fadd1b876}
+      \strng{fullhashraw}{0c7e9993cb12022f24989b4fadd1b876}
+      \strng{bibnamehash}{0c7e9993cb12022f24989b4fadd1b876}
+      \strng{authorbibnamehash}{0c7e9993cb12022f24989b4fadd1b876}
+      \strng{authornamehash}{e5d39fc021cbaed22d3cb362ce53f7ea}
+      \strng{authorfullhash}{0c7e9993cb12022f24989b4fadd1b876}
+      \strng{authorfullhashraw}{0c7e9993cb12022f24989b4fadd1b876}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Earlier reports showed the co-occurrence of a motivation deficit in children with {ADHD}. The purpose of this study was to assess the impact of extrinsic motivation on selected aspects of attention in children with {ADHD}, as well as to measure cortical activity and dimensions of motivation as per the self-determination theory. The study included 30 children with {ADHD} and 30 typically developing ({TD}) children aged 9–13 years. Children with {ADHD} exhibited a higher theta/beta power ratio ({TBR}) in the midline and a lower regional cerebral blood oxygenation ({rCBO}\_2) level in prefrontal areas measured using the {HEG} ratio compared to {TD} children. Children with {ADHD} were more likely to undertake activity under the pressure of external stimuli and exhibited attention deficits regarding vigilance, visual search and divided attention. Differences between groups regarding attention decreased in conditions of increased motivation, indicating that motivation can reduce cognitive deficits in children with {ADHD}.}
+      \field{issn}{0009-398X, 1573-3327}
+      \field{journaltitle}{Child Psychiatry \& Human Development}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{4}
+      \field{shortjournal}{Child Psychiatry Hum Dev}
+      \field{title}{Impact of Motivation on Selected Aspects of Attention in Children with {ADHD}}
+      \field{urlday}{17}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{volume}{52}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{586\bibrangedash 595}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/s10578-020-01042-0
+      \endverb
+      \verb{file}
+      \verb Full Text:C\:\\Users\\paulb\\Zotero\\storage\\JV2G375W\\Skalski et al. - 2021 - Impact of Motivation on Selected Aspects of Attention in Children with ADHD.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/10.1007/s10578-020-01042-0
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/10.1007/s10578-020-01042-0
+      \endverb
+      \keyw{Empirical,Motivation,Attention,Cognitive\_Impairment}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

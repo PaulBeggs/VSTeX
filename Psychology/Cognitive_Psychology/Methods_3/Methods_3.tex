@@ -1,0 +1,180 @@
+% This is the "preamble" of the document. This is where the format options get set.
+% Pro-tip: things following the % mark will not be compiled by LaTeX. I'll be using them extensively to explain things as we go.
+% Note: not to scare you off of LaTeX, but it's normal to have problems. And ya girl has been having some. I've included the copyright info at the bottom of the document from the guy who wrote this package, because his documentation doesn't entirely match how it's actually used. So this is a combination of his working preamble along with my added commentary or explanation. 
+%% 
+
+
+\documentclass[stu,12pt,floatsintext]{apa7}
+\usepackage{marginnote}
+% Document class input explanation ________________
+% LaTeX files need to start with the document class, so it knows what it's using
+% - This file is using the apa7 document class, as it has a lot of the formatting built in
+% There are two sets of brackets in LaTeX, for each command (the things that start with the slash \ )
+% - The squiggle brackets {} are mandatory for executing the command
+% - The square brackets [] are options for that command. There can be more than one set of square brackets for some commands
+% Options used in this document (general note - for each of these, if you want to use the other options, swap it out in that spot in the square brackets):
+% - stu: this sets the `document mode' as the "student paper" version. Other options are jou (journal), man (manuscript, for journal submission), and doc (a plain document)
+% --- The student setting includes things like 'duedate', 'course', and 'professor' on the title page. If these aren't wanted/needed, use the 'man' setting. It also defaults to including the tables and figures at the end of the document. This can be changed by including the 'floatsintext' option, as I have for you. If the instructor wants those at the end, remove that from the square brackets.
+% --- The manuscript setting is roughly what you would use to submit to a journal, so uses 'date' instead of 'duedate', and doesn't include the 'course' or 'professor' info. As with 'stu', it defaults to putting the tables and figures at the end rather than in text. The same option will bump those images in text.
+% --- Journal ('jou') outputs something similar to a common journal format - double columned text and figurs in place. This can be fun, especially if you are sumbitting this as a writing sample in applications.
+% --- Document ('doc') outputs single columned, single spaced text with figures in place. Another option for producing a more polished looking document as a writing sample.
+% - 12pt: sets the font size to 12pt. Other options are 10pt or 11pt
+% - floatsintext: makes it so tables and figures will appear in text rather than at the end. Unforunately, not having this option set breaks the whole document, and I haven't been able to figure out why. IT's GREAT WHEN THINGS WORK LIKE THEY'RE SUPPOSED TO.
+
+
+\usepackage{csquotes} % One of the things you learn about LaTeX is at some level, it's like magic. The references weren't printing as they should without this line, and the guy who wrote the package included it, so here it is. Because LaTeX reasons.
+
+\usepackage[T1]{fontenc} 
+\usepackage{mathptmx} % This is the Times New Roman font, which was the norm back in my day. If you'd like to use a different font, the options are laid out here: https://www.overleaf.com/learn/latex/Font_typefaces
+% Alternately, you can comment out or delete these two commands and just use the Overleaf default font. So many choices!
+
+\usepackage{hyperref}
+
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+    citecolor=horange
+}
+
+% Title page stuff _____________________
+\title{Applying Cognitive Psychology Methods Activity 3: Long-Term Memory (A)} % The big, long version of the title for the title page
+\author{Paul Beggs}
+\duedate{\today}
+% \date{January 17, 2024} The student version doesn't use the \date command, for whatever reason
+\authorsaffiliations{Department of Psychology, Hendrix College}
+\course{PSYC 319: Cognitive Psychology} % LaTeX gets annoyed (i.e., throws a grumble-error) if this is blank, so I put something here. However, if your instructor will mark you off for this being on the title page, you can leave this entry blank (delete the PSY 4321, but leave the command), and just make peace with the error that will happen. It won't break the document.
+\professor{Dr.\ Carmen Merrick}  % Same situation as for the course info. Some instructors want this, some absolutely don't and will take off points. So do what you gotta
+
+
+%\characterwords{APA style, demonstration} % If you need to have characterwords for your paper, delete the % at the start of this line
+
+\begin{document}
+
+% Questions to answer:
+
+% 1. Describe the experiment – Include: what were you studying? What were the experimental 
+% groups? What did we do? (don’t forget that we took two tests!) How did we control for
+% confounds? (6 pts)
+
+% 2. Describe the process of learning the list of words and then retrieving them for the first
+% quiz (regardless of study type – you will comment on different study types in a question
+% below). Include encoding, rehearsal, consolidation, retrieval (10 pts)
+
+% 3. Looking at the information about studying in Chapter 7 – what study techniques did you
+% implement and how do they work (name at least 2), OR (if you didn’t use any of them)
+% what study techniques could you have used and how would those have helped you retain
+% information? (You should describe at least two techniques for this question. So, if you
+% used 2, describe them; if you used 1, then describe it and add 1 that you could have used;
+% if you didn’t use any, describe 2 that you could have used) (10 pts)
+
+% 4. Why might distributed practice be hypothesized to be better than single-session studying?
+% Include encoding, consolidation, retrieval, and reconsolidation in your answer (15 pts)
+
+% 5. Evaluate our experiment. Provide one reason (potential confound) that may account for
+% us not getting the results that we expected. How could we have controlled for that
+% confound? (5 pts)
+
+\maketitle % This tells LaTeX to make the title page
+
+In our experiment, we aimed to study the effects of two conditions on exam scores: cramming, where participants studied German vocabulary the night before the exam, and distributive practice, where they studied over multiple days. Specifically, the exam consisted of recalling German words (e.g., waschb\"{a}r), the literal English translations (e.g., wash bear), and the corresponding English names (e.g., raccoon). To begin, the class was split into two separate groups. The left half of the classroom was the cramming group, and the right half was the distributive practice group. 
+
+After we had our assignments, each group was to study for their amount, which was specified on the vocabulary handout. For the cramming group, they were to study for one hour on the night before the exam. For the distributive practice group, they were to study for a total of one hour as well, but broken up into four 15-minute intervals over a span of four days. After seven days, we took the initial exam, and recorded the total time spent studying. Then, two days later we took the same exam, but were barred from studying during the intermission. For both exams, we self-graded our tests and reported the score.
+
+To control for confounding variables (unwanted interactions from unknown sources), we utilized randomization for groups selection (no one self-selected to be in a group), we kept the sample consistent---in each group, we had an even distribution of varying demographics such as age, socioeconomic status, and past education---then, we ensured that no one that participated in the present study knew how to speak German, or had taken a German class in the past.
+
+\section{Procedure}
+
+\subsection{Learning}
+
+Regardless of what group I was in, I would have studied the same way for both. In that, I initially studied by using \textit{maintenance rehearsal}---little to no \textit{encoding} (acquiring and transferring information to long term memory)---to gain a sense of familiarity with the German words.\footnote{See the \hyperlink{consolidation}{Consolidation} section for why this was not a good strategy.} This rehearsal was brief, and only lasted for a couple of minutes. After I became comfortable with the words, I started to make connections between the German words and the English translations. 
+
+For example, the German word ``Seekuh'' literally translates to ``sea cow.'' Because of the visual similarity between the words (e.g., ``see'' with ``sea'') and the phonetic similarity for the others (e.g., ``kuh'' with ``cow'') I was able to create \textit{retrieval cues}---words or other stimulus that helps a person remember information stored in memory---that would help me when I needed to retrieve the word while studying note cards.
+
+\subsection{Retrieval}
+
+When I am studying note cards I am utilizing the \textit{generation effect}---the act of generating material yourself, rather than passively receiving it. Essentially, I was \textit{generating material} by looking at the front of the card, \textit{retrieving} the cues that I had previously established during the learning phase, and then used it to remember the English translation. For the words that I was unable to associate meaning to while studying, they were much more difficult during my recall. One of these words was Eicheh\"ornchen (literally translates to ``oak croissant,'' which means ``squirrel''). While there is some associations I can make (e.g., Eicheh\"ornchen sounds like the English word ``acorn,'' and squirrels bury acorns), retrieval in general is much more difficult for this word because I cannot break it up into \textit{chunks}---smaller units (like words) can be combined into larger, meaningful units---for easier encoding. Thus, it is more difficult to \textit{consolidate} the memory.
+
+\hypertarget{consolidation}{}
+\subsection{Consolidation}
+
+Consolidation is the process that transforms new memories from a fragile state, in which they can be disrupted, to a more permanent state, in which they are resistant to disruption. This is where the difference between cramming and distributed practicing can be seen. We have two different kinds of consolidation: \textit{synaptic consolidation}---takes minutes or hours, and involves structural changes at synapses---and \textit{systems consolidation}---takes months or years, and involves the gradual reorganization of neural circuits within the brain.\footnote{After this point, the rest of this paragraph and the next paragraph is mostly speculating the function of reconsolidation.} When someone uses distributive practices to study, they engage in fresh synaptic consolidation each day they study (a process known as \textit{reconsolidation}---after retrieving a fragile memory, you can either modify eliminate the memory). Whereas, for cramming, all the synaptic consolidation occurs within a tight window. 
+
+What makes reconsolidation important lies in the significance of learning (specifically) \textit{novel} information. Remember back to when I first explained my learning experience. I used maintenance rehearsal which required little to no encoding. This could explain why, when I realized that a lot of the words contain similar roots, I was initially unable to dissociate the roots from the words because I had already encoded them as a \textit{whole word}. For example, a lot of words included the root ``schwein'' and the root ``tier.'' I knew the meaning of these words individually (pig and animal), but when I tried to retrieve them, I was unable to ``forget'' the whole word from when I first encoded it. However, when I stopped studying after 15 minutes, when I revisited the words, I was able to apply that new knowledge of the roots to the words, and re-encode them using the new chunking strategy.
+
+\section{Discussion}
+
+While we controlled many confounding variables, this experiment is far from being empirical. One possible confounding variable could be that the students were distracted while studying the words. For example, while they are studying, they could be listening to music, talking on the phone, and so on. We have seen from previous chapters that multitasking always results in worse performance for both tasks.  
+
+\end{document}
+
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% This work is "maintained" (as per LPPL maintenance status) by
+%% Daniel A. Weiss.
+%% 
+%% This work consists of the file  apa7.dtx
+%% and the derived files           apa7.ins,
+%%                                 apa7.cls,
+%%                                 apa7.pdf,
+%%                                 README,
+%%                                 APA7american.txt,
+%%                                 APA7british.txt,
+%%                                 APA7dutch.txt,
+%%                                 APA7english.txt,
+%%                                 APA7german.txt,
+%%                                 APA7ngerman.txt,
+%%                                 APA7greek.txt,
+%%                                 APA7czech.txt,
+%%                                 APA7turkish.txt,
+%%                                 APA7endfloat.cfg,
+%%                                 Figure1.pdf,
+%%                                 shortsample.tex,
+%%                                 longsample.tex, and
+%%                                 bibliography.bib.
+%% 
+%%
+%%
+%% This is file `./samples/shortsample.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% apa7.dtx  (with options: `shortsample')
+%% ----------------------------------------------------------------------
+%% 
+%% apa7 - A LaTeX class for formatting documents in compliance with the
+%% American Psychological Association's Publication Manual, 7th edition
+%% 
+%% Copyright (C) 2019 by Daniel A. Weiss <daniel.weiss.led at gmail.com>
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License (LPPL), either
+%% version 1.3c of this license or (at your option) any later
+%% version.  The latest version of this license is in the file:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% Users may freely modify these files without permission, as long as the
+%% copyright line and this statement are maintained intact.
+%% 
+%% This work is not endorsed by, affiliated with, or probably even known
+%% by, the American Psychological Association.
+%% 
+%% ----------------------------------------------------------------------

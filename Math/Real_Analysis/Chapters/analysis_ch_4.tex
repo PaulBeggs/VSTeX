@@ -1,0 +1,738 @@
+\label{sec:Thomae}
+\section{Discussion: Examples of Dirichlet and Thomae}
+
+\begin{definition}
+    The \textit{Dirichlet function} \(\limx c{g(x)}\) does not exist for any \(c \in \R\).
+    \[
+        g(x) = \begin{cases}
+            1 & \text{if } x \in \Q,              \\
+            0 & \text{if } x \in \R \setminus \Q.
+        \end{cases}
+    \]
+\end{definition}
+\begin{center}
+
+    \begin{tikzpicture}
+
+        \begin{axis}[
+                axis lines = middle,
+                xlabel = \(x\),
+                ylabel = \(g(x)\),
+                xmin = -1, xmax = 1,
+                ymin = -0.5, ymax = 1.5,
+                xtick = {-1, -0.5, 0, 0.5, 1},
+                ytick = {0, 1},
+            ]
+            \addplot [
+                domain=-1:1,
+                samples=25,
+                color=blue,
+            ]
+            {1};
+            \addplot [
+                domain=-1:1,
+                samples=50,
+                color=red,
+            ]
+            {0};
+
+        \end{axis}
+
+    \end{tikzpicture}
+\end{center}
+
+\begin{definition}
+    The \textit{Thomae function} is defined as
+    \[
+        f(x) = \begin{cases}
+            \frac{1}{q} & \text{if } x = \frac{p}{q} \text{ is in lowest terms}, \\
+            0           & \text{if } x \in \R \setminus \Q.
+        \end{cases}
+    \]
+\end{definition}
+
+\textit{Thomae's function}, \(t(x)\) is continuous at all \(x \notin \Q\). It is not continuous at any \(x \in \Q\).
+
+\newpage
+
+\section{Functional Limits}
+
+Recall from calculus I, that a function \(f(x)\) is continuous at \(x = c\) if \(\lim_{x\rightarrow c}f(x) = f(c)\).
+
+\begin{definition}
+    Let \(f \colon A \rightarrow \R\) be a function and let \(c\) be a limit point of \(A\). We say \(\lim_{x \rightarrow c}f(x) = L \), if for all \(\epsilon > 0\), there exists \(\delta > 0\) such that if \(0 < \disabs{x - c} < \delta\), then \(\disabs{f(x) - L} < \epsilon\).
+\end{definition}
+
+
+\begin{example}
+    {Functional Limit (From book) 1}Let \(f(x) = 3x + 1\). Claim: \(\limx 2{f(x)} = 7\).
+\end{example}
+
+\pfscratch{
+    Let \(\epsilon > 0\). After we have done our scratch work, we can choose \(\delta = \epsilon/ 3\), then \(0 < \disabs{x - 2} < \delta\) implies \(\disabs{f(x) - 7} < 3(\epsilon/3) = 3\).
+}%
+{
+    \defref{4.2.1} requires that we produce a \(\delta > 0\) so that \(0 < \disabs{ x - 2} < \delta\) leads to the conclusion that \(\disabs{f(x) - 7} < \epsilon\). Notice that
+    \[
+        \disabs{f(x) - 7} = \disabs{3x + 1 - 7} = \disabs{3x - 6} = 3\disabs{x - 2}.
+    \]
+}{teal}
+
+
+\begin{example}
+    {Functional Limit (From book) 2}Let \(g(x) = x^{2}\). Claim: \(\limx 2{g(x)} = 4\).
+\end{example}
+
+\pfscratch{
+    Let \(\epsilon > 0\). Choose \(\delta = \min\{1,\epsilon/5\}\). If \(0 < \disabs{x - 2} < \delta\), then
+    \begin{align*}
+        \disabs{g(x) - 4} & = \disabs{x^{2} - 4}           \\
+                          & = \disabs{x - 2}\disabs{x + 2} \\
+                          & < 5\delta                      \\
+                          & = (5)\frac{\epsilon}{5}        \\
+                          & = \epsilon.
+    \end{align*}
+}{
+    Our goal this time is to make \(\disabs{g(x) - 4} < \epsilon\) by restricting \(\disabs{x - 2}\) to be smaller than some carefully chosen \(\delta\). As in the previous example, a little algebra reveals
+    \[
+        \disabs{g(x) - 4} = \disabs{x^{2} - 4} = \disabs{x - 2}\disabs{x + 2}.
+    \]
+    We can make \(\disabs{x + 2}\) as small as we like, but we need an upper bound on \(\disabs{x + 2}\) in order to know how small to choose \(\delta\). The presence of the variable \(x\) causes some initial confusion, but keep in mind that we are discussing the limt as \(x\) approaches 2. If we agree that our \(\delta-\)neighborhood around \(c = 2\) must have radius no bigger than \(\delta = 1\), then we get the upper bound \(\disabs{x + 2} < \disabs{3 + 2} = 5\) for all \(x \in V_{\delta}(c)\).
+}{teal}
+
+
+\begin{example}
+    {Functional Limit 1}Let \(f(x) = 3x + 1\). Show that \(\lim_{x \rightarrow 2}f(x) = 7\).
+\end{example}
+
+\lepf{
+    Let \(\epsilon > 0\). Set \(\delta = \frac{\epsilon}{3}\). Assume \(0 < \disabs{x - 2} < \delta\). Since \(\delta > 0\), \(2 - \delta < x < 2 + \delta\). Then,
+    \begin{align*}
+        \disabs{x - 2}    & < \delta,             \\
+        \disabs{f(x) - 7} & = \disabs{3x + 1 - 7} \\
+                          & = \disabs{3x - 6}     \\
+                          & = 3\disabs{x - 2}     \\
+                          & < 3\delta             \\
+                          & = \epsilon.
+    \end{align*}
+    Therefore, \(\lim_{x \rightarrow 2} f(x) = 7\).
+}
+
+
+
+\begin{example}
+    {Functional Limit 3}Let \(f(x) = x^{2}\). Claim: \(\limx 7{f(x)} = 49\)
+\end{example}
+
+\pfscratch{
+    Let \(\epsilon > 0\). Set \(\delta = \min\{\frac{\epsilon}{8}, 1\}\). If \(0 < \disabs{x - 7} < \delta\), then \begin{align*}
+        \disabs{f(x) - 49} & = \disabs{x^{2} - 49}              \\
+                           & = \disabs{x - 7}\disabs{x + 7}     \\
+                           & < 8\delta                          \\
+                           & < 8\left(\frac{\epsilon}{8}\right) \\
+                           & = \epsilon.
+    \end{align*}
+}%
+{
+    Always start with the goal statement: \(\disabs{f(x) - 49} = \disabs{x^{2} - 49}\). This factors into \(\disabs{x - 7} \disabs{x + 7}\). Then, if \(\delta < 1\), \(\disabs{x - 7} < \delta\) and \(\disabs{x + 7} < 8\). All together, we have \(8\delta < \epsilon < \frac{\epsilon}{8}\).
+}%
+{teal}
+
+\begin{example}
+    {Functional Limit 4}Claim: \(\limx 3{\frac{1}{x + 1}} = \frac{1}{4}\).
+\end{example}
+
+\pfscratch{
+    Let \(\epsilon > 0\). Set \(\delta = \min\{12\epsilon,1\}\). If \(0 < \disabs{x - 3} < \delta\), then \begin{align*}
+        \disabs{\frac{1}{x + 1} - \frac{1}{4}} & = \disabs{\frac{4 - (x + 1)}{4(x + 1)}} \\
+                                               & = \disabs{\frac{3 - x}{4(x + 1)}}       \\
+                                               & < \frac{\delta}{4(3)}                   \\
+                                               & = \frac{12\epsilon}{12}                 \\
+                                               & = \epsilon.
+    \end{align*}
+    Therefore, \(\limx 3{\frac{1}{x + 1}} = \frac{1}{4}\)
+}{
+    Goal: \(\disabs{\frac{1}{x + 1} - \frac{1}{4}}\). Hence,
+    \begin{align*}
+        \disabs{\frac{1}{x + 1} - \frac{1}{4}} & = \disabs{\frac{4 - (x + 1)}{4(x + 1)}} \\
+                                               & = \disabs{\frac{3 - x}{4(x + 1)}}       \\
+                                               & < \frac{\delta}{4\disabs{x + 1}}        \\
+                                               & < \frac{\delta}{4(3)}                   \\
+                                               & = \frac{\delta}{12}                     \\
+                                               & < \epsilon.
+    \end{align*}
+    Thus, we need a \(\delta < 1\), and we can choose \(\delta = \min\{12\epsilon,1\}\). Note: When we are determining the value for \(\disabs{x + 2}\), we solve for \(\delta = 3 \pm 1 \Rightarrow x \in (2,4)\). Then, we find \(x + 1 = (3,5)\). We choose 3 rather than 5 because of division. We want to be as close as possible.
+}{teal}
+
+\begin{example}
+    {Functional Limit 5}Claim: \(\limx 3{(x^{2} + 7x)} = 30\).
+\end{example}
+
+\lepf{
+    Let \(\epsilon > 0\) and set \(\delta = \min\{\frac{\epsilon}{14}, 1\}\). If \(0 < \disabs{x - 3} < \delta\), then
+    \begin{align*}
+        \disabs{x^{2} + 7x - 30} & = \disabs{x - 3}\disabs{x + 10}      \\
+                                 & < 14\delta                           \\
+                                 & = 14\left(\frac{\epsilon}{14}\right) \\
+                                 & = \epsilon.
+    \end{align*}
+}
+
+\begin{example}
+    {Functional Limit 6}Claim: \(\limx 3{\frac{2x + 3}{4x - 9}} = 3\).
+\end{example}
+
+\lepfscratch{
+    Let \(\epsilon > 0\). Set \(\delta = \min\{\frac{\epsilon}{10}, \frac{1}{2}\}\). (Note: We are choosing \(\frac{1}{2}\) because we want to avoid having 0 anywhere in the interval.) Assume \(0 < \disabs{x - 3} < \delta\). Since \(\delta < \frac{1}{2}\), \(\frac{5}{2} < x < \frac{7}{2}\), then \(1 < \disabs{4x - 9} < 5\). (Thus, 0 can not possibly be in the denominator.)
+}{
+    \begin{align*}
+        \disabs{\frac{2x + 3}{4x + 9} - 3} & = \disabs{\frac{2x + 3 - 3(4x + 9)}{4x + 9}} \\
+                                           & = \disabs{\frac{2x + 3 - 12x - 27}{4x + 9}}  \\
+                                           & = 10\disabs{\frac{x-3}{4x - 4}}              \\
+                                           & < 10 \frac{\epsilon / 10}{1}                 \\
+                                           & = \epsilon.
+    \end{align*}}
+
+\begin{example}
+    {Functional Limit 7}Claim: \(\limx 4{\sqrt{x}} = 2\).
+\end{example}
+
+\lepfscratch{
+    Let \(\epsilon > 0\). Set \(\delta = \min\{1,3\epsilon\}\). Assume \(0 < \disabs{x - 4} < \delta\). Then (refer to scratch work).
+}{
+    \begin{align*}
+        \disabs{\sqrt{x} - 2} & = \disabs{\sqrt{x} - 2}                                             \\
+                              & = \disabs{\frac{(\sqrt{x} - 2) \cdot (\sqrt{x} + 2)}{\sqrt{x} + 2}} \\
+                              & = \disabs{\frac{x - 4}{\sqrt{x} + 2}}                               \\
+                              & < \frac{\delta}{3}                                                  \\
+                              & < \frac{3\epsilon}{3}                                               \\
+                              & = \epsilon.
+    \end{align*}
+    Notice that we picked \(\delta < 1\) such that \(3 < x < 4\) so \(1 < \sqrt{x} < 2\) and \(3 < \sqrt{x} + 2 < 4\).
+}
+
+
+\begin{ntheorem}
+    {Sequential Criterion for Functional Limits}
+    The following statements are equivalent:
+
+    \begin{enumerate}
+        \item \(\lim_{x \rightarrow c} f(x) = L\).
+        \item For all sequences \((x_n)\) where \(x_n \ne c\) and \((x_n) \rightarrow c\), we have \(\limn f(x_n) = L\).
+    \end{enumerate}
+\end{ntheorem}
+
+\tpf{
+    \((1) \rightarrow (2)\) \\
+
+    Assume \(\limc{f(x)} = L\).
+
+    Let \((x_n) \rightarrow c\) with \(x_n \ne c\)
+
+    Let \(\epsilon > 0\).
+    \begin{itemize}
+        \item Since \(\limc{f(x)} = L\), there exists \(\delta > 0\) such that if \(0 < \disabs{x - c} < \delta\), then \(\disabs{f(x) - L} < \epsilon\).
+
+        \item Since \(x_n \rightarrow c\), there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - c} < \delta\).
+
+        \item Now, for all \(n \geq N\), it follows that \(x_n - c < \delta\) and thus \(\disabs{f(x) - L} < \epsilon\).
+    \end{itemize}
+
+    Thus, \(\limn f(x_n) = L\). \\
+
+    \((2) \rightarrow (1)\) \\
+
+    Proof by contrapositive.
+
+    Assume (1) is not true. Thus,
+    \[
+        \limc{f(x)} \ne L.
+    \]
+
+    There exists \(\epsilon_0 > 0\) such that for all \(\delta > 0\), there exists an \(x\) with \(0 < \disabs{x - c} < \delta\) and \(\disabs{f(x) - L} \geq \epsilon_0\).
+
+    For each \(n \in \N\), consider \(\delta = \frac{1}{n}\). There exists \(x_n \in (c - \frac{1}{n}, c + \frac{1}{n})\) with \(x_n \ne c\) such that \(\disabs{f(x) - L} \geq \epsilon_0\).
+
+    \begin{itemize}
+        \item Since \(\disabs{x_n - c} < \frac{1}{n}\), we see that \((x_n) \rightarrow c\).
+        \item Since for all \(\ninn\), \(\disabs{f(x) - L} \geq \epsilon_0\). Then, \(\limn f(x) \ne L\).
+    \end{itemize}
+    Thus, \(\neg(1) \rightarrow \neg(2)\). So \((2) \rightarrow (1)\) and \((1) \rightarrow (2)\).
+}
+
+If functional limits and sequential limits are the same thing, then everything we know about sequential limits is also true about functional limits.
+
+Recall \namrefthm{Algebraic Limit Theorem}. From this, we can write the functional equivalent:
+
+Assume \(\limc{f(x)} = L\) and \(\limc{g(x)} = M\). Then,
+\begin{itemize}
+    \item \(\limc{(f(x) + g(x))} = L + M\)
+    \item \(\limc{(f(x) - g(x))} = L - M\)
+    \item \(\limc{(f(x)g(x))} = LM\)
+    \item \(\limc{(\frac{f(x)}{g(x)})} = \frac{L}{M}\) unless \(M = 0\).
+\end{itemize}
+
+\begin{ntheorem}
+    {Divergence Criterion} Let \(f \colon A \rightarrow \R\) with \(c\) as a limit point of \(A\). If there exists two sequences \((x_n)\) and \((y_n)\) in \(A \setminus \{c\}\) (that both converge to \(c\)) such that \(\limn f(x_n) \ne \limn f(y_n)\), then \(\limc{f(x)}\) does not exist.
+\end{ntheorem}
+
+\begin{example}
+    {Divergence Criterion 1} \(f(x) = \frac{x}{|x|} = \begin{cases}
+        1, \text{ if } x > 0 \\
+        -1, \text{ if } x < 0
+    \end{cases}\)
+    Our goal is to show that \(\lim_{x \rightarrow 0} f(x)\) does not exist.
+\end{example}
+
+\lepf{
+    Let \((x_n) = (\frac{1}{n})\) and let \((y_n) = (\frac{-1}{n})\). We will see that as \(n \rightarrow \infty\), \(\limn f(x_n) = 1\) and \(\limn f(y_n) = -1\). Thus, \(\lim_{x \rightarrow 0} f(x)\) does not exist.
+}
+
+\begin{example}
+    {Divergence Criterion 2} \(g(x) = \sin(\frac{1}{x})\). Show that \(\lim_{x \rightarrow 0} g(x)\) does not exist.
+\end{example}
+
+\lepf{
+    Let \((x_n) = (\frac{1}{2\pi n})\) and let \((y_n) = (\frac{1}{2\pi n + \frac{\pi}{2}})\). We will see that as \(n \rightarrow \infty\), \(\limn g(x_n) = 1\) and \(\limn g(y_n) = -1\). Thus, \(\lim_{x \rightarrow 0} g(x)\) does not exist.
+}
+
+
+
+We say \(\limn x_n = \infty\) if for all \(M > 0\), there exists \(N \in \N\) such that for all \(n \geq N\), \(x_n > M\).
+
+We say \(\limc{f(x)} = \infty\) if for all \(M > 0\), there exists \(\delta > 0\) such that if \(0 < \disabs{x - c} < \delta\), then \(f(x) > M\). Think of vertical asymptotes.
+
+
+\begin{ntheorem}
+    {Infinite Limits Cauchy Criterion} If \((x_n) \rightarrow \infty\), \((x_n)\) will not be Cauchy. It is possible to have \(x_{n+1} - x_n\) approach 0, but \((x_n)\) converges to \(\infty\).
+\end{ntheorem}
+
+
+% \renewcommand{\theenumi}{\alph{enumi}}
+% \renewcommand{\labelenumi}{(\theenumi)}
+% \subsection{Exercises}
+
+% \begin{exercise}
+%     {4.2.10 (Right and Left Limits)} Introductory calculus courses typically refer to the right-hand limit of a function as the limit obtained by “letting \(x\) approach \(a\) from the right-hand side.”
+%     \begin{enumerate}
+%         \item[(a)] Give a proper definition in the style of \defref{4.2.1} for the right-hand and left-hand limit statements:
+%               \[
+%                   \lim_{x \to a^+} f(x) = L \quad \text{and} \quad \lim_{x \to a^-} f(x) = M.
+%               \]
+
+%         \item[(b)] Prove that \(\lim_{x \to a} f(x) = L\) if and only if both the right and left-hand limits equal \(L\).
+%     \end{enumerate}
+% \end{exercise}
+
+% \sol{
+%     \begin{enumerate}
+%         \item[(a)] \textbf{Definition of Right-Hand Limit:} \\
+%         Let \(f: A \to \mathbb{R}\) and let \(c\) be a limit point of \(A\). We say that \(\lim_{x \to c^+} f(x) = L\) if for every \(\epsilon > 0\), there exists \(\delta > 0\) such that whenever \(0 < x - c < \delta\) (and \(x \in A\)), it follows that \(|f(x) - L| < \epsilon\).
+
+%         \textbf{Definition of Left-Hand Limit:} \\
+%         Let \(f: A \to \mathbb{R}\) and let \(c\) be a limit point of \(A\). We say that \(\lim_{x \to c^-} f(x) = M\) if for every \(\epsilon > 0\), there exists \(\delta > 0\) such that whenever \(-\delta < x - c < 0\) (and \(x \in A\)), it follows that \(|f(x) - M| < \epsilon\).
+
+%         \item[(b)] 
+%             \iffpf{
+%                 Suppose that \(\lim_{x \to c} f(x) = L\). By definition, for every \(\epsilon > 0\), there exists \(\delta > 0\) such that whenever \(0 < |x - c| < \delta\), we have \(|f(x) - L| < \epsilon\). This inequality holds for all \(x\) approaching \(c\) from both sides, so both the right-hand and left-hand limits equal \(L\).
+%                 }{
+%                 Conversely, suppose that \(\lim_{x \to c^+} f(x) = L\) and \(\lim_{x \to c^-} f(x) = L\). Then, for every \(\epsilon > 0\), there exist \(\delta_1, \delta_2 > 0\) such that:
+%             \begin{itemize}
+%                 \item If \(0 < x - c < \delta_1\), then \(|f(x) - L| < \epsilon\).
+%                 \item If \(-\delta_2 < x - c < 0\), then \(|f(x) - L| < \epsilon\).
+%             \end{itemize}
+%             Let \(\delta = \min\{\delta_1, \delta_2\}\). Then, for all \(x\) with \(0 < |x - c| < \delta\), we have \(|f(x) - L| < \epsilon\).
+%             }{
+%                 Therefore, \(\lim_{x \to c} f(x) = L\).
+%                 }
+%             {xgray}
+%     \end{enumerate}
+% }
+% % \parbox{0.90\textwidth}{
+% \begin{exercise}
+%     {4.2.11 (Squeeze Theorem)}Let \(f\), \(g\), and \(h\) satisfy \(f(x) \leq g(x) \leq h(x)\) for all \(x\) in some common domain \(A\). If \(\lim_{x \to c} f(x) = L\) and \(\lim_{x \to c} h(x) = L\) at some limit point \(c\) of \(A\), show \(\lim_{x \to c} g(x) = L\) as well.
+% \end{exercise}
+
+% \expf{
+%     Let \(\epsilon > 0\). Since \(\lim_{x \to c} f(x) = L\), there exists \(\delta_1 > 0\) such that whenever \(0 < |x - c| < \delta_1\), we have \(|f(x) - L| < \epsilon\). Similarly, there exists \(\delta_2 > 0\) such that whenever \(0 < |x - c| < \delta_2\), we have \(|h(x) - L| < \epsilon\). Let \(\delta = \min\{\delta_1, \delta_2\}\). Then, for all \(x\) with \(0 < |x - c| < \delta\), we have \(f(x) \leq g(x) \leq h(x)\). Thus, \(|g(x) - L| < \epsilon\), and \(\lim_{x \to c} g(x) = L\).
+% }
+
+
+% \renewcommand{\theenumi}{\arabic{enumi}}
+% \renewcommand{\labelenumi}{\theenumi.}
+
+\section{Continuous Functions}
+
+\begin{definition}
+    We say a function \(f\) is \textit{continuous} at \(c\) if
+    \[
+        \limc{f(x)} = f(c).
+    \]
+
+    Equivalent definition:
+
+    For all \(\epsilon > 0\), there exists \(\delta > 0\) such that if \(\disabs{x - c} < \delta\), then
+    \[
+        \disabs{f(x) - f(c)} < \epsilon.
+    \]
+\end{definition}
+
+Idea: When \(x\) is close to \(c\), \(f(x)\) is close to \(f(c)\). Then, for the topological definition, we can say if \(x \in V_\delta(c)\) then \(f(x) \in V_\epsilon(f(c))\).
+
+\begin{definition}
+    We say function \(f\) is \textit{continuous on a set} \(D\) if \(f\) is continuous at every point in \(D\).
+\end{definition}
+
+The following are equivalent (TFAE):
+
+\begin{enumerate}
+    \item \(\limc{f(x)} = L\)
+    \item For all sequences \((x_n)\) such that \((x_n) \rightarrow c\), we have \(\limn f(x_n) = L\).
+\end{enumerate}
+
+\begin{center}
+    \underline{Continuous Functions} (THM 4.3.2 in book)
+\end{center}
+
+Claim: Let \(a \in \R\). Then \(f(x) = a\) is continuous.
+
+\begin{customframedproof}[linecolor=xgray]
+    \begin{proof}
+        Let \(c \in \R\). Let \(\epsilon > 0\). Set \(\delta = 8\). Now, if \(x - c < 8\), then \(\disabs{f(x) - f(c)} = a - a = 0 < \epsilon\). Thus, constant functions are continuous.
+    \end{proof}
+\end{customframedproof}
+
+Claim: \(f(x) = x\) is continuous.
+
+\begin{customframedproof}[linecolor=xgray]
+    \begin{proof}
+        Let \(c \in \R\). Let \(\epsilon > 0\). Set \(\delta = \epsilon\). If \(\disabs{x - c} < \delta\), then \(\disabs{f(x) - f(c)} = \disabs{x - c} < \delta = \epsilon\). Thus, the identity function is continuous.
+    \end{proof}
+\end{customframedproof}
+
+% \namrefthm{Algebraic Limit Theorem} tells us that if \(f\) and \(g\) are continuous at \(c\), then \(f + g\), \(f - g\), \(fg\), and \(\frac{f}{g}\) (so long as \(g \ne 0\)) are continuous at \(c\). From this, we know that polynomials are continuous. We'll show that in the next theorem.
+
+% \begin{ntheorem}
+%     {Thm. 4.3.2 in book}
+% \end{ntheorem}
+
+Claim: \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
+
+\begin{customframedproof}[linecolor=xgray]
+    \begin{proof}
+        \begin{itemize}
+            \item \textbf{Case 1:} \(c \ne 0\) \\
+
+                  Let \(c \in [0,\infty)\). Let \(\epsilon > 0\). Set \(\delta < \epsilon\). If \(\disabs{x - c} < \delta\), then \(\disabs{g(x) - g(c)} = \disabs{\sqrt{x} - \sqrt{c}} = \frac{\disabs{x - c}}{\sqrt{x} + \sqrt{c}} < \frac{\delta}{\sqrt{c}} < \epsilon\). Thus, \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
+
+            \item \textbf{Case 2:} \(c = 0\) \\
+
+                  Let \(c \in [0,\infty)\). Let \(\epsilon > 0\) Set \(\delta = \epsilon^2\). If \(\disabs{x - 0} < \delta\), then \(\disabs{g(x) - g(0)} = \disabs{\sqrt{x} - 0} = \sqrt{x} < \sqrt{\delta} = \epsilon\). Thus, \(g(x) = \sqrt{x}\) is continuous on \([0,\infty)\).
+        \end{itemize}
+        Therefore, \(g(x)\) is continuous for all \(c \in [0,\infty)\).\qedhere
+    \end{proof}
+\end{customframedproof}
+
+\begin{ntheorem}
+    {Compositions of Continuous Functions} Let \(f\) be continuous at \(c\). Let \(g\) be continuous at \(f(x)\). Then,
+    \[
+        g \circ f(x) = g(f(x)) \text{ is continuous.}
+    \]
+\end{ntheorem}
+
+\tpf{
+    Let \(\epsilon > 0\). Since \(g\) is continuous at \(f(c)\), there exists \(\delta_1 > 0\) such that if \(\disabs{x - f(c)} < \delta_1\), then \(\disabs{g(x) - g(f(c))} < \epsilon\). Since \(f\) is continuous at \(c\), there exists \(\delta_2 > 0\) such that if \(\disabs{x - c} < \delta_2\), then \(\disabs{f(x) - f(c)} < \delta_1\). Thus, if \(\disabs{x - c} < \delta_2\), then \(\disabs{g(f(x)) - g(f(c))} < \epsilon\). Therefore, \(g \circ f(x)\) is continuous.
+}
+
+\begin{center}
+    \underline{Most Common Applications of Continuity} \\
+
+    Is with limits.
+\end{center}
+
+If \(f\) is continuous at \(c\) and \((x_n) \to c\), then \(\limn f(x_n) = f(c)\). Hence.
+\[
+    \limn f(x_n) = f(\limn x_n).
+\]
+
+% \renewcommand{\theenumi}{\alph{enumi}}
+% \renewcommand{\labelenumi}{(\theenumi)}
+% \subsection{Exercises}
+
+% \begin{exercise}
+%     {4.3.1} Let \( g(x) = \sqrt[3]{x} \).
+%     \begin{enumerate}
+%         \item Prove that \( g \) is continuous at \( c = 0 \).
+%         \item Prove that \( g \) is continuous at a point \( c \neq 0 \). (The identity \( a^3 - b^3 = (a - b)(a^2 + ab + b^2) \) will be helpful.)
+%     \end{enumerate}
+% \end{exercise}
+
+% \sol{
+%     \begin{enumerate}
+%         \item \innerpf{
+%             To prove that \( g \) is continuous at \( c = 0 \), we need to show that
+%             \[
+%                 \lim_{x \to 0} g(x) = g(0) = 0.
+%             \]
+%             Let \( \epsilon > 0 \). Choose \( \delta = \epsilon^3 \). Then, if \( |x - 0| = |x| < \delta \), we have
+%             \[
+%                 |g(x) - g(0)| = |\sqrt[3]{x} - 0| = |\sqrt[3]{x}| = |x|^{1/3} < \delta^{1/3} = (\epsilon^3)^{1/3} = \epsilon.
+%             \]
+%             Therefore, \( g \) is continuous at \( c = 0 \).
+%         }
+%         \item \innerpf{
+%             Let \( c \neq 0 \) and \( \epsilon > 0 \). We need to find \( \delta > 0 \) such that whenever \( |x - c| < \delta \), it follows that \( |g(x) - g(c)| < \epsilon \).
+
+%             Using the identity \( a^3 - b^3 = (a - b)(a^2 + ab + b^2) \), set \( a = \sqrt[3]{x} \) and \( b = \sqrt[3]{c} \). Then,
+%             \[
+%                 x - c = (\sqrt[3]{x} - \sqrt[3]{c})\left( (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 \right).
+%             \]
+%             Therefore,
+%             \[
+%                 \sqrt[3]{x} - \sqrt[3]{c} = \frac{x - c}{ (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 }.
+%             \]
+%             Since \( c \neq 0 \) and \( x \) is close to \( c \), we can choose \( \delta_1 > 0 \) such that \( |x - c| < \delta_1 \) implies \( |x| \geq \dfrac{|c|}{2} > 0 \). This ensures that \( \sqrt[3]{x} \) and \( \sqrt[3]{c} \) are bounded away from zero.
+
+%             Let
+%             \[
+%                 M = \min_{|x - c| < \delta_1} \left| (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 \right| > 0.
+%             \]
+%             Choose \( \delta = \min\{ \delta_1, M\epsilon \} \). Then, if \( |x - c| < \delta \), we have
+%             \[
+%                 |g(x) - g(c)| = \left| \frac{x - c}{ (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 } \right| \leq \frac{|x - c|}{M} < \frac{M\epsilon}{M} = \epsilon.
+%             \]
+%             Therefore, \( g \) is continuous at \( c \neq 0 \).
+%         }
+%     \end{enumerate}
+% }
+
+% \begin{exercise}
+%     {4.3.8} Decide if the following claims are true or false, providing either a short proof or counterexample to justify each conclusion. Assume throughout that \( g \) is defined and continuous on all of \( \mathbb{R} \).
+%     \begin{enumerate}
+%         \item If \( g(x) \geq 0 \) for all \( x < 1 \), then \( g(1) \geq 0 \) as well.
+%         \item If \( g(r) = 0 \) for all \( r \in \mathbb{Q} \), then \( g(x) = 0 \) for all \( x \in \mathbb{R} \).
+%     \end{enumerate}
+% \end{exercise}
+
+% \sol{
+%     \begin{enumerate}
+%         \item \textbf{True.}
+
+%         Since \( g \) is continuous at \( x = 1 \), we have
+%         \[
+%             g(1) = \lim_{x \to 1} g(x).
+%         \]
+%         For all \( x < 1 \), \( g(x) \geq 0 \), so the left-hand limit satisfies
+%         \[
+%             \lim_{x \to 1^-} g(x) \geq 0.
+%         \]
+%         Therefore,
+%         \[
+%             g(1) = \lim_{x \to 1} g(x) = \lim_{x \to 1^-} g(x) \geq 0.
+%         \]
+%         Thus, \( g(1) \geq 0 \).
+
+%         \item \textbf{True.}
+
+%         Since \( g \) is continuous on \( \mathbb{R} \) and \( g(r) = 0 \) for all rational numbers \( r \), it follows that for any \( x \in \mathbb{R} \), we can find a sequence of rational numbers \( (r_n) \) converging to \( x \). By continuity,
+%         \[
+%             g(x) = \lim_{n \to \infty} g(r_n) = \lim_{n \to \infty} 0 = 0.
+%         \]
+%         Therefore, \( g(x) = 0 \) for all \( x \in \mathbb{R} \).
+%     \end{enumerate}
+% }
+
+% \begin{exercise}
+%     {4.3.9} Assume \( h \colon \mathbb{R} \to \mathbb{R} \) is continuous on \( \mathbb{R} \) and let \( K = \{x \colon h(x) = 0\} \). Show that \( K \) is a closed set.
+% \end{exercise}
+
+% \expf{
+%     To show that \( K \) is closed, we need to show that its complement \( \mathbb{R} \setminus K \) is open. Alternatively, we can show that \( K \) contains all its limit points.
+
+%     Let \( (x_n) \) be a sequence in \( K \) that converges to some limit \( x \in \mathbb{R} \). Since \( h \) is continuous on \( \mathbb{R} \) and \( h(x_n) = 0 \) for all \( n \), it follows that
+%     \[
+%         \lim_{n \to \infty} h(x_n) = h\left( \lim_{n \to \infty} x_n \right) = h(x).
+%     \]
+%     Therefore, \( h(x) = 0 \), which means \( x \in K \).
+
+%     Since every limit point of \( K \) is contained in \( K \), the set \( K \) is closed.
+% }
+
+
+
+% \renewcommand{\theenumi}{\arabic{enumi}}
+% \renewcommand{\labelenumi}{\theenumi.}
+
+\section{Continuous Functions on Compact Sets}
+
+\begin{ntheorem}
+    {Extreme Value Theorem} If \(K\) is compact and \(f : K \to \R\) is continuous, then \(f\) attains a maximum and minimum value on \(K\).
+
+    In other words, there exists \(a \in K\) such that \(f(a) = \sup\{f(x) \mid x \in K\}\). Also, there exists \(b \in K\) such that \(f(b) = \inf\{f(x) \mid x \in K\}\).
+\end{ntheorem}
+
+\tpf{
+    We know \(f\) is bounded on \(K\) from \hyperref[lm:4.4.2]{Lemma 4.4.2} below. Hence,
+    \[
+        S = \sup\{f(x) \mid x \in K\} \text{ exists.}
+    \]
+    For every natural number, there exists an \(x_n \in K\) such that \(S - \frac{1}{n} < f(x_n) \leq S\). It follows that \(\limn f(x_n) = S\). So, now we have a sequence, \((x_n)\) in the compact set \(K\). Since \(K\) is compact, by the Bolzano-Weierstrass Theorem, there exists a convergent subsequence,
+    \[
+        (x_{n_j}) \text{ with } a = \lim_{j \to \infty} x_{n_j} \in K.
+    \]
+    Since \(f\) is continuous, we have,
+    \[
+        f(a) = \lim_{j \to \infty} f(x_{n_j}) = S.
+    \]
+    By a similar method, there exists \(b \in K\) such that \[
+        f(b) = \inf\{f(x) \mid x \in K\}.
+    \]
+    \textbf{Note:} This proof hinges on the fact that \(f\) is bounded! We need to show that \(f\) is bounded on \(K\) with a proof with subcovers.
+}
+
+\begin{lemma}
+    How do we know \(f\) is bounded on \(K\)? That is,
+    \[
+        f(K) = \{f(x) \mid x \in K\}.
+    \]
+    Show that \(f(K)\) is bounded.
+\end{lemma}
+
+
+\lemmapf{
+    Let \(c \in K\). Since \(f\) is continuous at \(c\), there exists \(\delta_c > 0\) such that if \(\disabs{x - c} < \delta_c\), then
+    \[
+        \disabs{f(x) - f(c)} < 1.
+    \]
+    Do this over every \(c \in K\).  We get an open cover of \(K\).
+    \[
+        \mathcal{O} = \{V_{\delta_c} (c) \mid c \in K\}.
+    \]
+    Since \(K\) is compact, the Heine-Borel Theorem says there exists a finite subcover. We get \(c_1, c_2 \dots, c_n \in K\) such that \(K \subseteq \bigcup_{i = 1}^n V_{\delta_{c_i}} (c_i)\). Thus,
+    \begin{align*}
+        f(K) & \subseteq f\left(\bigcup_{i = 1}^n V_{\delta_{c_i}} (c_i)\right) \\
+             & \subseteq \bigcup_{i = 1}^n f(V_{\delta_{c_i}} (c_i))            \\
+             & \subseteq \bigcup_{i = 1}^n (f(c_i) - 1, f(c_i) + 1)             \\
+             & \subseteq [\min f(c_i) - 1, \max f(c_i) + 1].
+    \end{align*}
+    Therefore, \(f(K)\) is bounded.
+}
+
+\begin{ntheorem}
+    {Preservation of Compact Sets}If \(K\) is compact and \(f \colon K \to \R\) is continuous, then \(f(K)\) is compact.
+\end{ntheorem}
+
+\tpf{
+    Let \((y_n)\) be a sequence in \(f(K)\). We will show \((y_n)\) has a convergent subsequence with its limit in \(f(K)\).
+
+    For each \(n\) there exists \(x_n \in K\) such that \(f(x_n) = y_n\). So \((x_n)\) is a sequence in a compact set \(K\). There exists a convergent subsequence \((x_{n_j})\) with
+    \[
+        a
+        = \lim_{j \to \infty} x_{n_j} \in K.
+    \]
+    Now consider the corresponding subsequence \((y_{n_j})\) in \(f(K)\). Since \(f\) is continuous, we have
+    \begin{align*}
+        \lim_{j \to \infty} y_{n_j} = \lim_{j \to \infty} f(x_{n_j}) \\
+         & = f(a) \in f(K).
+    \end{align*}
+    So, \(x_{n_j}\) is a convergent subsequence with limit in \(f(K)\). Therefore, \(f(K)\) is compact.
+}
+
+\begin{definition}
+    A function \(f \colon A \to \R\) is \textit{uniformly continuous} on \(A\) if for all \(\epsilon > 0\), there exists \(\delta > 0\) such that for all \(x, c \in A\), if \(\disabs{x - c} < \delta\), then \(\disabs{f(x) - f(c)} < \epsilon\).
+\end{definition}
+
+Compare this definition with \defref{4.3.1}. The difference is that the \(\delta\) is independent of \(x\). That is, we have to find one \(\delta\) that needs to work for every point \(x\).
+
+% Put a table environment here with 3x2.
+
+% 1x1: Continuous: 
+% 1x2: Uniformly Continuous:
+% 2x1: For all \(c \in A\), we can find a corresponding \(\delta\).
+% 2x2: For all \(c \in A\), we need one \(\delta\) that works at every \(c\).
+% 3x
+
+\begin{definition}
+    A function \(f \colon A \to \R\) is \textit{\underline{not} uniformly continuous} on \(A\) if there exists \(\epsilon_{0} > 0\) such that for all \(\delta > 0\), there exists \(x, c \in A\) such that \(\disabs{x - c} < \delta\) and \(\disabs{f(x) - f(c)} \geq \epsilon_{0}\).
+\end{definition}
+
+\begin{theorem}
+    If \(K \subseteq \R\) is compact and \(f \colon K \to \R\) is continuous, then \(f\) is uniformly continuous on \(K\).
+\end{theorem}
+
+\tpf{
+    Suppose \(f\) is not uniformly continuous on \(K\). Then, there exists \(\epsilon_{0} > 0\) such that for all \(\ninn\), there exists \(x_{n},y_{n} \in K\) such that \(\disabs{x_{n} - y_{n} < \frac{1}{n}}\) and \(\disabs{f(x_{n}) - f(y_{n})} \geq \epsilon_{0}\). 
+
+    We now have two sequences \((x_{n})\) and \((y_{n})\) in \(K\). Since \(K\) is compact, by the \namrefthm{heine-borel theorem}, there exists a convergent subsequence \((x_{n_{i}})\) which converges to a point \(x_{0} \in K\).
+    
+    Since \(K\) is compact, \((y_{n_{i}})\) has a convergent subsequence \(\left(y_{n_{i_{j}}}\right)\) which converges to a point \(y_{0} \in K\). Notice that since \(\left(x_{n_{i_{j}}}\right)\) is a subsequence of \((x_{n_{i}})\), it converges to \(x_{0}\). Since \(f\) is continuous:
+
+    \[
+        \lim_{j \to \infty} f\left(x_{n_{i_{j}}}\right) = f(x_{0}) \quad \text{and} \quad \lim_{j \to \infty} f\left(y_{n_{i_{j}}}\right) = f(y_{0}).
+    \]
+    Because 
+    \[
+        \disabs{f\left(x_{n_{i_{j}}}\right) - f\left(y_{n_{i_{j}}}\right)} < \frac{1}{n_{i_{j}}},
+    \]
+    we can see that 
+    \[
+        \lim_{j \to \infty} \disabs{x_{n_{i_{j}}} - y_{n_{i_{j}}}} = 0.
+    \]
+    It follows that \(x_{0} = y_{0}\). But this is a contradiction because \(\disabs{f(x_{0}) - f(y_{0})} \geq \epsilon_{0}\). Therefore, \(f\) is uniformly continuous on \(K\).
+}
+
+\section{The Intermediate Value Theorem}
+
+\begin{ntheorem}
+    {Intermediate Value Theorem} Let \(f \colon [a,b] \to \R\) be continuous. If \(L\) is a real number satisfying \(f(a) < L < f(b)\) or \(f(b) < L < f(a)\), then there exists \(c \in (a,b)\) such that \(f(c) = L\).
+\end{ntheorem}
+
+\textbf{Note:} IVT does not guarantee where, or how many \(c\)'s are in the interval. It only guarantees that at least one \(c\) exists.
+
+\tpf{
+    \textit{(Using \namrefthm{Nested Interval Property})} Without the loss of generality, assume \(f(a) < f(b)\) and let \(y \in (f(a),f(b))\). Let \(I_{1} = [a_{1},b_{1}]\). Bisect \(I_{1}\) into two intervals \([a_{1},d]\) and \(d,b_{1}\) where \(d = \dfrac{a_{1} + b_{1}}{2}\). 
+\begin{itemize}
+    \item If \(f(d) < y\), set \(a_{2} = d\), \(b_{2} = b_{1}\), and \(I_{2} = [a_{2},b_{2}]\). Notice that \(f(a_{2}) < y < f(b_{2})\).
+    \item If \(f(d) > y\), then set \(a_{2} = a_{1}\), \(b_{2} = d\), and \(I_{2} = [a_{2},b_{2}]\). Notice that \(f(a_{2}) < y < f(b_{2})\).
+\end{itemize}
+Repeat this process indefinitely. We end up with a sequence of nested intervals \(I_{n} = [a_{n},b_{n}]\), where 
+\begin{itemize}
+    \item \(I_{n} \subseteq I_{n-1}\)
+    \item \(f(a_{n}) < y < f(b_{n})\)
+    \item \(\disabs{a_{n} - b_{n}} = \dfrac{a_{n} - b_{n}}{2^{n-1}}\)
+\end{itemize}
+By the \namrefthm{Nested Interval Property}, there exists a point \(c\) such that \(c \in \bigcap_{n=1}^{\infty} I_{n}\). In fact, there is a unique point \(c\) in the intersection. It follows that 
+\[
+    c = \lim_{n \to \infty} a_{n} \quad \text{and} \quad c = \lim_{n \to \infty} b_{n}.
+\]
+Since \(f\) is continuous, we have
+\[
+    f(c) = \lim_{n \to \infty} f(a_{n}) \leq y \qquad \text{and} \qquad f(c) = \lim_{n \to \infty} f(b_{n}) \geq y.
+\]
+Therefore, \(f(c) = y\).
+}
+
+\begin{center}
+    What Is Important About Continuous Functions?
+\end{center}
+
+If \(\limn(x_{n} = x)\), then \(\limn f(x_{n)} = f(x)\).
+
+Think about \(f(x) = 2^{x}\). Thus, \(f(x)\) makes sense if \(x \in \Q\):
+
+\[
+    2^{\frac{p}{q}} = \sqrt[q]{2^{p}}.
+\]
+But how do we make sense of something like \(2^{\pi}\)? 
+
+We can find \(f \colon \Q \to \R\) is continuous.
+
+We can define \(f \colon \R \to \R\) to be continuous 
+
+If \((q_{n})\) is in \(\Q\) and \((a_{n} \to \pi)\), then we define 
+\[
+    f(\pi) = \limn f(q_{n}).
+\]
+
+
+

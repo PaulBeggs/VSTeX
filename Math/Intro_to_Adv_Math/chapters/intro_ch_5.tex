@@ -1,0 +1,241 @@
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+    
+    \begin{definition}
+        {Collection of Sets}Suppose \(\mathcal{C}\) is a \textit{collection of sets} and \(A\in \mathcal{C}\). By $
+        \bigcap \mathcal{C}$, we mean the set, \[\{x\in A \ | \ x\in C \text{ for all } C\in \mathcal{C}\}\]
+        If \(\mathcal{C} = \emptyset\), then \(\bigcap \mathcal{C} = \emptyset\).
+    \end{definition}   
+
+    \begin{definition}
+        {Set Difference}Suppose \(A\) and \(B\) are sets. The \textit{set difference}, denoted as \(A \setminus B\) \\ (and \(A-B\)) is the set, \[\{x\in A \ | \ x \notin B\}\]
+    \end{definition}
+
+
+
+% ------------------------------------------------------------------------------
+% Problem 28
+% ------------------------------------------------------------------------------
+
+    \begin{exercise}
+        {}Suppose \(A\) and \(B\) are sets. show each of the following: 
+        \begin{align*}
+            \begin{array}{ccccl}
+                1. & A \setminus B & \subseteq & A \\
+                2. & A \setminus A & = & \emptyset \\
+                3. & A \setminus \emptyset & = & A \\
+                4. & A \setminus B & = & \emptyset & \iff A \subseteq B \\
+            \end{array}
+        \end{align*}
+
+    \end{exercise}
+    
+% TODO
+
+    \expf{ 
+        Let \(A\) and \(B\) be sets such that:
+        \begin{enumerate}
+            \item \(A\setminus B\) \\
+            \indent Let element \(x\in A\setminus B\). By the definition of set difference, \(x \in A\) such that \(x\notin B\). Thus, because \(x \in A\setminus B\), \(x \in A\) by definition. \\
+            Therefore, by the definition of subset, \(A\setminus B \subseteq A\).
+            \item \(A\setminus A\) \\
+            \indent Let element \(x\in A\setminus A\). By the definition of set difference, if \(x\in A\), then \(x\notin A\). We also know that by Problem 11, that there are no elements in the empty set, so \(x\notin \emptyset\). Well, by Problem 4, \(A\setminus A \subseteq \emptyset\). Then, by the corollary to Problem 13, \(\emptyset \subseteq A\). And since \(A\)
+            Let element \(x\in A\setminus A\). By the definition of set difference, \(x\in A\) such that \(x\notin A\). But this is impossible because an element cannot simultaneously be both in a set, and not in a set. The only set that exists that sates these requirements is the empty set. \\
+            Therefore, by the definition of empty set, \(A\setminus A = \emptyset\).
+            \item \(A \setminus \emptyset\) \\
+            \indent Let element \(x\in A\). By the definition of set difference, \(x\in A\) such that \(x\notin \emptyset\). This is true as it abides by the definition of empty set. Hence, if \(x\in A\), and the empty set contains no elements, then \(A\setminus \emptyset\) is simply any element \(x\), \(x\in A\). Since Problem 6 shows that \(A = A\), these statements are equivalent. \\
+            Therefore, \(A \setminus \emptyset = A\).      
+            \item \(A\setminus B\) 
+            \begin{itemize}
+                \item (\(\Rightarrow\)) Assume \(A\setminus B = \emptyset\). \\
+                Let element \(x\in A\). Since there are no elements exclusively in \(A\) and not in \(B\), \(x\) must also be in \(B\).
+
+                Therefore, \(A\subseteq B\).
+                \item (\(\Leftarrow\)) Assume \(A\subseteq B\). \\
+                Let element \(x\in A\). So, \(x\in B\) by definition of subset. But, since \(A\setminus B\), \(x\) cannot be in \(B\) by definition of set difference. Hence, there is a contradiction because an element in \(A\) must be in \(B\), by the definition of subset. Thus, this contradicts the assumption \(A\subseteq B\), and there are no elements that exist inside \(A\setminus B\). \\
+                
+                Therefore, by the definition of empty set, \(A\setminus B = \emptyset\). 
+            \end{itemize}
+        \end{enumerate}
+    }
+
+        Why I did not include forward and backwards implication for statements 2 or 3:
+
+        I thought that the necessity to show forward and backward implications was redundant, as their application only arises when proving \textit{logical equivalence} (when explicitly stated, i.e., ``\(\iff\)'' or ``if, and only if''), \textit{not} equality (i.e., ``='' or ``equal to''). I believe the emphasis is on demonstrating the truth of a \textit{specific} outcome based on definitions and properties.
+    
+        Further, because I am fundamentally an English speaker, and I therefore read sentences from left to right, unless stated I should do otherwise, this is the order I will read a mathematical statement as well.
+    
+        I am going to \textit{trust} in the notation for when the statement is asking for \textit{equality} (\(=\)) and not \textit{logical equivalence} (\(\iff\)). In my opinion, if the application of the proof (i.e., the intention of the proof assigner/designer) were to show logical equivalence, then they would \textit{explicitly} show that is what they want by using the proper notation that shows their wish.
+
+    
+
+
+
+    
+
+% ------------------------------------------------------------------------------
+% Problem 29
+% ------------------------------------------------------------------------------
+
+    \begin{exercise}
+        {}Find a counterexample to the following claim: \[A\setminus B = B\setminus A\] 
+        Must use sets we know exist.
+    \end{exercise}
+
+    % Need to change this to where it is not using numbers. Must use sets that we know exist. This specifically means the sets like the emptyset, the set of the emptyset, etc.
+    \sol{
+        Let \(A = \emptyset\) and \(B = \{\emptyset \}\) \\
+        
+        Compute \(A\setminus B\) and \(B\setminus A\):
+        \begin{itemize}
+            \item \(A\setminus B = \emptyset \setminus \{\emptyset \} = \emptyset\). This is true because the difference of \(\emptyset \setminus \{ \emptyset \}\) would have no effect by definition, as there are no elements in \(A\) to begin with. 
+            \item \(B\setminus A = \{\emptyset \} \setminus \emptyset = \{\emptyset \}\). This is true because as shown in Problem 28, \(B\setminus \emptyset = B\)
+        \end{itemize}
+        Also note that by Problem 14, the empty set is not equal to the set of the empty set. \\
+        
+        \indent Therefore, \(A\setminus B \ne B \setminus A\).
+    }
+
+    \begin{definition}
+        {Complement}Suppose \(A\) and \(U\) are sets with \(A\subseteq U\). The \textit{complement} of \(A\) in \(U\) is the set, \[U\setminus A\] This is often denoted as \(\overline{A}\) or \(A^c\).  The set \(U\) is used as a way to show universality. It is denoted as a square set, where the complement is all the elements inside of the square, not including \(A\). See Figure below.
+    \end{definition}
+    \textbf{Note}: Complements must always be relative to something else.
+
+
+
+    
+
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \tikzstyle{diagonal lines}=[pattern=north east lines, pattern color=gray];
+        % Define the rectangle for the universal set U
+        \draw (0,0) rectangle (6,4) node[above left] {\(U\)};
+        
+        % Define the circle for set A without drawing it yet
+        \coordinate (A) at (3,2);
+        \coordinate (B) at (1,1);
+        
+        % Draw diagonal lines pattern in the rectangle excluding the circle
+        \begin{scope}
+            \clip (0,0) rectangle (6,4) (A) circle (1cm);
+            \fill[diagonal lines] (0,0) rectangle (6,4);
+        \end{scope}
+        
+        % Draw the circle for set A
+        \draw (A) circle (1cm) node[above left] {\(A\)};
+        \draw (B) node {\(A^c\)};
+    \end{tikzpicture}
+    \caption{Set diagram with \(U\), set \(A\), and its complement, \(A^c\) (or \(\overline{A}\)), within \(U\).}
+\end{figure}
+
+    
+
+% ------------------------------------------------------------------------------
+% Problem 30
+% ------------------------------------------------------------------------------
+
+    \begin{exercise}
+        {De Morgan's Laws pt. 1} Suppose \(A, B,\) and \(U\) are all sets with \(A, B \subseteq U\). Then, 
+        \[\overline{A\cup B} = \overline{A}\cap \overline{B}\]
+    \end{exercise}
+
+    \expf{
+        Let \(A, B,\) and \(U\) be sets such that \(A, B \subseteq U\) (where \(U\) is the universal set) such that \(\overline{A\cup B}\) \\
+        
+        \indent Let any \(x \in \overline{A\cup B}\). This means \(x\) is not in \(A\cup B\), so \(x\) is neither in \(A\) nor in \(B\). Since \(x\) is not in \(A\), \(x\in \overline{A}\), and since \(x\) is not in \(B\), \(x\in \overline{B}\). Thus, \(x\in \overline{A} \cap \overline{B}\). It is essential to understand that we are dealing with the intersection, not the union, of the sets. This distinction is critical because the union would suggest that \(x\) belongs to either \(A\) or \(B\), which contradicts our finding; as we have established that \(x\) cannot be a member of either \(A\) or \(B\). \\
+        
+        \indent Conversely, let any \(x \in \overline{A} \cap \overline{B}\). This means \(x\) is in both \(\overline{A}\) and \(\overline{B}\), so \(x\) is not in \(A\), nor in \(B\). Since \(x\) is not in \(A\) nor is it in \(B\), \(x\) is not in \(A\cup B\). Thus, \(x\in \overline{A\cup B}\) \\
+        
+        \indent Therefore, by showing that \(\overline{A\cup B} \subseteq \overline{A} \cap \overline{B}\) and \(\overline{A} \cap \overline{B} \subseteq \overline{A\cup B}\), by Theorem 1.3.3, \(\overline{A\cup B} = \overline{A}\cap \overline{B}\).
+    }
+
+% ------------------------------------------------------------------------------
+% Problem 31
+% ------------------------------------------------------------------------------
+
+    \begin{exercise}
+        {De Morgan's Laws pt. 2} Suppose \(A, B,\) and \(U\) are sets with \(A, B, \subseteq U\). Then, 
+        \[\overline{A\cap B} = \overline{A}\cup \overline{B}\]
+    \end{exercise}
+
+    \expf{
+        Let \(A, B,\) and \(U\) be sets such that \(A, B \subseteq U\)  (where \(U\) is the universal set) such that \(\overline{A\cap B}\) \\
+        
+        \indent Let any \(x \in \overline{A \cap B}\). This means \(x\) is not in \(A \cap B\). If \(x\) is not in \(A \cap B\), then \(x\) is not in both \(A\) and \(B\) simultaneously. Thus, \(x\) must be either not in \(A\) or not in \(B\) (or both), which means \(x \in \overline{A}\) or \(x \in \overline{B}\). Hence, \(x \in \overline{A} \cup \overline{B}\). Conversely, let any \(x\in \overline{A} \cup \overline{B}\). This means \(x\) is either not in \(A\) or not in \(B\) (or both). If \(x\) is not in \(A\) or \(B\), then \(x\) cannot be in \(A\cap B\). Thus, \(x\) is in the complement of \(A\cap B\), which by definition, is \(A\cap B\) \\
+        
+        \indent Therefore, by showing \(\overline{A\cap B} \subseteq \overline{A} \cup \overline{B} \subseteq \overline{A\cap B}\), it follows by Theorem 1.3.3, that \(\overline{A\cap B} = \overline{A} \cup \overline{B}\).
+    }
+
+% ------------------------------------------------------------------------------
+\newpage
+% ------------------------------------------------------------------------------
+
+    \textbf{Note}: Why I used forward and backward reasoning for these De Morgan proofs: \\
+
+    My goal was to use Theorem 1.3.3 to prove that each side of the equation were subsets of each other, and thus proving they were equal to each other. This approach does not start by assuming one side of the equality is true to prove the other; instead, it shows that each element that belongs to one side of the equality also belongs to the other side, and vice versa. This method effectively proves \textit{equality} by demonstrating mutual inclusion without the traditional structure of an "if and only if" proof where one might start with an assumption that one side is true to prove the other. \\
+
+    In the context of proving De Morgan, the focus is on element membership relative to set operations and their complements. So, by showing that for any element \(x\), being a member of \(\overline{A\cup B}\) guarantees membership in \(\overline{A} \cap \overline{B}\), and being a member of \(\overline{A} \cap \overline{B}\) guarantees membership in \(\overline{A\cup B}\). \\
+
+    This is to say, I am showing \textit{logical equivalence} is indeed different than \textit{equality}, and both types of proof structures adhere to their own requisite proving styles.
+
+    
+
+% ------------------------------------------------------------------------------
+\newpage
+% ------------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------------
+% Problem 32
+% ------------------------------------------------------------------------------
+
+    \begin{exercise}
+        {}Given sets \(A\) and \(U\) with \(A\subseteq U\). Then, 
+        \[A\cup \overline{A} = U\] \textbf{Hint}: Show \(A\cup \overline{A} \subseteq U\) and \(U \subseteq A\cup \overline{A}\) to use Theorem 1.3.3 to prove \(A\cup \overline{A} = U\).
+        \end{exercise}
+
+    Goal:  \\
+
+    \expf{
+        Let \(A\) and \(U\) be sets such that \(A \subseteq U\) (where \(U\) is the universal set), and \(A\cup \overline{A}\). \\
+        
+        \indent Let any \(x\in A\cup \overline{A}\). Then, \(x\in A\) or \(x\in \overline{A}\), by the definition of union. Therefore, \(x\in U\) because we are given that \(A\subseteq U\), and by the definition of the complement, \(\overline{A}\) must be relative to \(A\), so \(\overline{A}\) is inherently a subset of \(U\). Hence, every element of \(A\cup \overline{A}\) is in \(U\), showing that \(A\cup \overline{A}\subseteq U\). \\ 
+        \indent Now, let any \(y\in U\). We know that \(y\) must be in either (1) \(A\), or (2) \(\overline{A}\).
+        \begin{enumerate}
+            \item Let \(y\in A\). Then, \(y\in A\cup \overline{A}\) by definition of union.
+            \item Let \(y\notin A\). Then, \(y\in \overline{A}\) by definition of the complement (and thus in \(A\cup \overline{A}\) by the definition of union). 
+        \end{enumerate}
+        
+        \indent Thus, \(y\in A\cup \overline{A}\) because it cannot \textit{not} be in either \(A\) or \(\overline{A}\). Hence, every element of \(U\) is in \(A\cup \overline{A}\), showing that \(U\subseteq A\cup \overline{A}\). \\
+        
+        \indent Therefore, by Theorem 1.3.3, since \(U\subseteq A\cup \overline{A}\) and \(A\cup \overline{A}\subseteq U\), \(A\cup \overline{A} = U\).
+    }
+
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}
+            \tikzstyle{diagonal lines}=[pattern=north east lines, pattern color=gray];
+            % Define the rectangle for the universal set U
+            \draw (0,0) rectangle (6,4) node[above left] {\(U\)};
+            
+            % Define the circle for set A without drawing it yet
+            \coordinate (A) at (3,2);
+            \coordinate (B) at (1,1);
+            
+            % Draw diagonal lines pattern in the rectangle excluding the circle
+            \begin{scope}
+
+                \fill[diagonal lines] (0,0) rectangle (6,4);
+            \end{scope}
+            
+            % Draw the circle for set A
+            \draw (A) circle (1cm) node[above left] {\(A\)};
+            \draw (B) node {\(A^c\)};
+        \end{tikzpicture}
+        \caption{Universal set \(U\), set \(A\), and its complement, \(\overline{A}\), within \(U\); showing \(A\cup \overline{A} = U\) (given \(A\subseteq U\)).}
+    \end{figure}
+
+\newpage
+
+

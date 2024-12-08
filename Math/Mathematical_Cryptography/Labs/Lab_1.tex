@@ -1,0 +1,156 @@
+\documentclass[11pt]{article}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=1in]{geometry}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+
+\renewcommand{\theenumi}{\arabic{enumi}} 
+\renewcommand{\labelenumi}{\theenumi)}
+
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+% Need to add in customization for examples
+\newcommand{\sol}[1]{
+    \begin{customframedproof}
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+
+
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=black!45, % default color, will be overridden in custom commands
+  innertopmargin=0pt,
+  innerbottommargin=0pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=0.5cm,
+  skipbelow=0.5cm,
+]{customframedproof}
+
+\begin{document}
+
+d
+\begin{center}
+    \section*{Cryptography: Coding Lab 1}
+
+    \large{Due: Tuesday, Sep. 24, 2024}
+\end{center}
+Goal: Implement a computer program utilizing modular arithmetic that can encrypt and decrypt messages using a Caesar shift cipher and a transposition cipher.
+\subsection*{Part 1: Caesar Shift}
+
+\begin{enumerate}
+    \item	Below, write pseudocode for a program that will ask for a pt message and an integer key between 1 and 26 and output the appropriate cipher text. \\
+          \textbf{Python: define a function \texttt{Cencrypt} that performs the above algorithm.}
+
+          \sol{
+              \begin{enumerate}
+                  \item Ask the user for a message and key.
+                  \item Ensure the key is between 1 and 26.
+                  \item Filter out non-alphabetic characters.
+                  \item Shift each letter by adding the key to the number.
+                  \item Output the cipher text.
+              \end{enumerate}
+          }
+
+    \item	How would this program need to be changed to decrypt a cipher text given a key? \\
+          \textbf{Python: define a function \texttt{Cdecrypt} and have the user choose encrypt/decrypt upon opening the program.}
+
+          \sol{
+              The difference between decryption and encryption is that encryption uses addition, and decryption uses subtraction. Or, if the algorithm is reversed, then it would be the opposite.
+          }
+
+    \item	How would the decrypt function be changed to allow a brute force attack if we did not know the key? \\
+          \textbf{Python: Add an option to the decrypt function so if the person does not know the key, the program will perform a brute force attack.}
+
+          \sol{
+              We would need to iterate through each key in side the key space (\(|\mathcal{K}|\)). In this case, \(|\mathcal{K}| = 25\), so we would need to go through 25 different iterations.
+          }
+
+    \item	Check that your program works with the following message/ct pair
+          \texttt{e(3, `hello world') = KHOORZRUOG} \cmark
+
+\end{enumerate}
+Skip (5) because I was not in class.\\
+\begin{enumerate}
+    \setcounter{enumi}{5}
+
+    \item Write the other group's ct and your decryption of it here, along with their key.
+          \vspace*{-0.3cm}
+          \sol{ct = \texttt{OPNBFZ} \(\rightarrow\) pt = \texttt{HIGUYS}, Key = 7}
+\end{enumerate}
+
+
+\newpage
+\subsection*{Part 2: Transposition Cipher}
+\begin{enumerate}
+    \item	Below, write pseudocode for a program that will ask for a pt message and an integer key and output the appropriate cipher text. \\
+          \textbf{Python: define a function \texttt{Tencrypt} that performs the above algorithm.}
+          \sol{
+              \begin{enumerate}
+                  \item Ask the user for a message and the key.
+                  \item Set an upper bound for the key (I went with the length of the ciphertext).
+                  \item Remove any non-alphabetic characters.
+                  \item Set the key equal to the amount of columns.
+                  \item Calculate the rows by using integer division.
+                        \begin{enumerate}[label=(\roman*)]
+                            \item If there is any remainder, we need to be sure to add 1 to the total rows so we don't leave off any of the message.
+                        \end{enumerate}
+                  \item We need to take the string, and add it to a grid.
+                        \begin{enumerate}[label=(\roman*)]
+                            \item We do this by starting at the top index
+                            \item Work to the right until we hit the end of the column.
+                            \item Start at the next row
+                            \item Restart at (i) until all indices are occupied.
+                        \end{enumerate}
+                  \item If there is any remaining space, we add a dummy character, \texttt{x}.
+              \end{enumerate}
+          }
+
+    \item	How would this program need to be changed to decrypt a cipher text given a key? \\
+          \textbf{Python: define a function \texttt{Tdecrypt} and have the user choose encrypt/decrypt upon opening the program.}
+
+          \sol{
+              Similar to the relationship between encryption and decryption for the Caesar cipher, we would reverse the order of assignments. We would still start at the first index, but instead of going to the right, we would go down the row.
+          }
+
+
+    \item	How would the decrypt function be changed to allow a brute force attack if we did not know the key? \\
+          \textbf{Python: Add an option to the decrypt function so if the person does not know the key, the program will perform a brute force attack.}
+
+          \sol{
+              We would need to iterate through multiple grids that have varing column totals up to \(|\mathcal{K}|\), where \(|\mathcal{K}| = \text{len}(ct)\).
+          }
+
+    \item	Check that your program works with the following message/ct pair
+          \texttt{e(3, `hello world') = HOLEWDLOLR} \cmark
+
+          \setcounter{enumi}{5}
+
+    \item Write the other group's ct and your decryption of it here, along with their key.
+          \sol{
+              ct = \texttt{YRAOLCLK} \(\rightarrow\) pt = \texttt{Ya'll Rock}, Key = 2.
+          }
+\end{enumerate}
+
+
+\end{document}

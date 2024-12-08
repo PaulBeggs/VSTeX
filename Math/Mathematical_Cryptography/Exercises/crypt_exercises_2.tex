@@ -1,0 +1,489 @@
+\begin{exercise}
+    {1.26}Use the square-and-multiply algorithm described in \hyperref[fast powering algorithm]{Section 1.3.2}, or the more efficient version in Exercise 1.25, to compute the following powers.
+    \begin{enumerate}
+        \item \(17^{183} \ (\text{mod } 256)\)
+        \item \(2^{477} \ (\text{mod } 1000)\)
+    \end{enumerate}
+\end{exercise}
+
+
+
+
+\sol{ \hfill
+    \begin{enumerate}
+        \item \(a = 17\), \(b = 1\), \(A = 183\), and \(N = 256\). We will now begin the loop because \(A > 0\)
+              \begin{itemize}
+                  \item \(A = 183\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 256) = 1 \cdot 17 \ (\text{mod } 256) = 17\); and \(a = a^2 \ (\text{mod } 256) = 17^2 \ (\text{mod 256}) = 33\). \(A = \lfloor 182 / 2 \rfloor = 91\).
+                  \item \(A = 91\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 256) = 17 \cdot 33 \ (\text{mod } 256) = 49\); and \(a = a^2 \ (\text{mod } 256) = 33^2 \ (\text{mod 256}) = 65\). \(A = \lfloor 91 / 2 \rfloor = 45\).
+                  \item \(A = 45\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 256) = 49 \cdot 65 \ (\text{mod } 256) = 113\); and \(a = a^2 \ (\text{mod } 256) = 65^2 \ (\text{mod 256}) = 129\). \(A = \lfloor 45 / 2 \rfloor = 22\).
+                  \item \(A = 22\) is even. Therefore, \(a = a^2 \ (\text{mod } 256) = 129^2 \ (\text{mod 256}) = 1\). \(A = \lfloor 22 / 2 \rfloor = 11\).
+                  \item \(A = 11\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 256) = 113 \cdot 1 \ (\text{mod } 256) = 113\); and \(a = a^2 \ (\text{mod } 256) = 1^2 \ (\text{mod 256}) = 1\). \(A = \lfloor 11 / 2 \rfloor = 5\).
+                  \item \(A = 5\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 256) = 113 \cdot 1 \ (\text{mod } 256) = 113\); and \(a = a^2 \ (\text{mod } 256) = 1^2 \ (\text{mod 256}) = 1\). \(A = \lfloor 5 / 2 \rfloor = 2\).
+                  \item \(A = 2\) is even. Therefore, \(a = a^2 \ (\text{mod } 256) = 1^2 \ (\text{mod 256}) = 1\). \(A = \lfloor 2 / 2 \rfloor = 1\).
+                  \item \(A = 1\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 256) = 113 \cdot 1 \ (\text{mod } 256) = 113\); and \(a = a^2 \ (\text{mod } 256) = 1^2 \ (\text{mod 256}) = 1\). \(A = \lfloor 1 / 2 \rfloor = 0\).
+              \end{itemize}
+              Since \(A = 0\), we can report the value of \(b\), which is \(113\). Hence, \(17^183 \ (\text{mod }256) = 113\).
+        \item \(a = 2\), \(b = 1\), \(A = 477\), \(N = 1000\). We will now begin the loop because \(A > 0\)
+              \begin{itemize}
+                  \item \(A = 477\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 1000) = 1 \cdot 2 \ (\text{mod } 1000) = 2\); and \(a = a^2 \ (\text{mod } 1000) = 2^2 \ (\text{mod } 1000) = 4\). \(A = \lfloor 477 / 2 \rfloor = 238\).
+                  \item \(A = 238\) is even. Therefore, \(a = a^2 \ (\text{mod } 1000) = 4^2 \ (\text{mod } 1000) = 16\). \(A = \lfloor 238 / 2 \rfloor = 119\).
+                  \item \(A = 119\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 1000) = 2 \cdot 16 \ (\text{mod } 1000) = 32\); and \(a = a^2 \ (\text{mod } 1000) = 16^2 \ (\text{mod } 1000) = 256\). \(A = \lfloor 119 / 2 \rfloor = 59\).
+                  \item \(A = 59\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 1000) = 32 \cdot 256 \ (\text{mod } 1000) = 192\); and \(a = a^2 \ (\text{mod } 1000) = 256^2 \ (\text{mod } 1000) = 536\). \(A = \lfloor 59 / 2 \rfloor = 29\).
+                  \item \(A = 29\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 1000) = 192 \cdot 536 \ (\text{mod } 1000) = 912\); and \(a = a^2 \ (\text{mod } 1000) = 536^2 \ (\text{mod } 1000) = 296\). \(A = \lfloor 29 / 2 \rfloor = 14\).
+                  \item \(A = 14\) is even. Therefore, \(a = a^2 \ (\text{mod } 1000) = 296^2 \ (\text{mod } 1000) = 616\). \(A = \lfloor 14 / 2 \rfloor = 7\).
+                  \item \(A = 7\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 1000) = 912 \cdot 616 \ (\text{mod } 1000) = 792\); and \(a = a^2 \ (\text{mod } 1000) = 616^2 \ (\text{mod } 1000) = 456\). \(A = \lfloor 7 / 2 \rfloor = 3\).
+                  \item \(A = 3\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 1000) = 792 \cdot 456 \ (\text{mod } 1000) = 152\); and \(a = a^2 \ (\text{mod } 1000) = 456^2 \ (\text{mod } 1000) = 936\). \(A = \lfloor 3 / 2 \rfloor = 1\).
+                  \item \(A = 1\) is odd. Therefore, \(b = b \cdot a \ (\text{mod } 1000) = 152 \cdot 936 \ (\text{mod } 1000) = 272\); and \(a = a^2 \ (\text{mod } 1000) = 936^2 \ (\text{mod } 1000) = 96\). \(A = \lfloor 1 / 2 \rfloor = 0\).
+              \end{itemize}
+              Since \(A = 0\), we can report the value of \(b\), which is \(272\). Hence, \(2^477 \ (\text{mod }1000) = 272\).
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {1.41}A \textit{transposition cipher} is a cipher in which the letters of the plaintext remain the same, but their order is rearranged. Here is a simple example in which the message is encrypted in blocks of 25 letters at a time. Take the given 25 letters and arrange them in a 5-by-5 block by writing the message horizontally on the lines. For example, the first 25 letters of the message
+    \[\texttt{Now is the time for all good men to come to the aid...} \]
+    is written as
+    \begin{center}
+        \vspace*{-1cm}
+        \[
+            \begin{array}{ccccc}
+                \texttt{N} & \texttt{0} & \texttt{W} & \texttt{I} & \texttt{S} \\
+                \texttt{T} & \texttt{H} & \texttt{E} & \texttt{T} & \texttt{I} \\
+                \texttt{M} & \texttt{E} & \texttt{F} & \texttt{O} & \texttt{R} \\
+                \texttt{A} & \texttt{L} & \texttt{L} & \texttt{G} & \texttt{O} \\
+                \texttt{O} & \texttt{D} & \texttt{M} & \texttt{E} & \texttt{N} \\
+            \end{array}
+        \]
+    \end{center}
+    Now the ciphertext is formed by reading the letters down the columns, which gives the ciphertext
+    \[\texttt{NTMAO OHELD WEFLM ITOGE SIRON.}\]
+    \begin{enumerate}
+        \item Use this transposition cipher to encrypt the first 25 letters of the message
+              \[\texttt{Four score and seven years ago our fathers...}\]
+        \item The following message was encrypted using this transposition cipher. Decrypt it.
+              \[\texttt{WNOOA HTUFN EHRHE NESUV ICEME.}\]
+        \item There are many variations on this type of cipher. We can form the letters into a rectangle instead of a square, and we can use various patterns to place the letters into the rectangle and to read them back out. Try to decrypt the following  ciphertext, in which the letters were placed horizontally into a rectangle of some size and then read off vertically by columns.
+              \[\texttt{WHNCE STRHT TEOOH ALBAT DETET SADHE}\]
+              \vspace*{-1cm}
+              \[\texttt{LEELL QSFMU EEEAT VNLRI ATUDR HTEEA}\]
+              (For convenience, we’ve written the ciphertext in 5 letter blocks, but that doesn’t necessarily mean that the rectangle has a side of length 5.)
+    \end{enumerate}
+\end{exercise}
+
+\sol{ \hfill
+    \begin{enumerate}
+        \item The first 25 letters of the sentence given is, ``Four score and seven year ago''. Written in block form:
+              \begin{center}
+                  \vspace*{-1cm}
+                  \[
+                      \begin{array}{ccccc}
+                          \texttt{F} & \texttt{O} & \texttt{U} & \texttt{R} & \texttt{S} \\
+                          \texttt{C} & \texttt{O} & \texttt{R} & \texttt{E} & \texttt{A} \\
+                          \texttt{N} & \texttt{D} & \texttt{S} & \texttt{E} & \texttt{V} \\
+                          \texttt{E} & \texttt{N} & \texttt{Y} & \texttt{E} & \texttt{A} \\
+                          \texttt{R} & \texttt{S} & \texttt{A} & \texttt{G} & \texttt{O} \\
+                      \end{array}
+                  \]
+              \end{center}
+              Now the ciphertext is formed by reading the letters down the columns, which gives the ciphertext
+              \[\texttt{FCNER OODNS URSYA REEEG SAVAO}\]
+        \item To create a transposition cipher, we can read the sentence from the starting letter of each word from the sentence, and move inward. For example,
+              \begin{enumerate}[label=(\arabic*)]
+                  \item \boxed{W}NOOA \boxed{H}TUFN \boxed{E}HRHE \boxed{N}ESUV \boxed{I}CEME \(\Rightarrow\) ``When I...''
+                  \item W\boxed{N}OOA H\boxed{T}UFN E\boxed{H}RHE N\boxed{E}SUV I\boxed{C}EME \(\Rightarrow\) ``...N The C...''
+                  \item WN\boxed{O}OA HT\boxed{U}FN EH\boxed{R}HE NE\boxed{S}UV IC\boxed{E}ME \(\Rightarrow\) ``...ourse...''
+                  \item WNO\boxed{O}A HTU\boxed{F}N EHR\boxed{H}E NES\boxed{U}V ICE\boxed{M}E \(\Rightarrow\) ``...Of Hum...''
+                  \item WNOO\boxed{A} HTUF\boxed{N} EHRH\boxed{E} NESU\boxed{V} ICEM\boxed{E} \(\Rightarrow\) ``...an Eve.''
+              \end{enumerate}
+              Putting it all together, we get, ``\href{https://www.archives.gov/founding-docs/declaration-transcript}{When in the course of human eve...}'' (Declaration of Independence)
+        \item This cipher is going to be a little difficult as we have to go through a couple of cases to see which pattern makes the most sense. If we consider the number of letters, 60, we can start at the lowest divisor, 2, and work our way up through the other divisors (this way, we won't start with extremely long ciphers that will each take up a whole page on their lonesome). Thus,
+              \begin{itemize}
+                  \item Reading by 2s (to get a \(2\times 30\) matrix)
+                        \begin{center}
+                            \vspace*{-1cm}
+                            \[
+                                \begin{array}{cccccccccccccccc}
+                                    \texttt{W} & \texttt{N} & \texttt{E} & \texttt{T} & \texttt{H} & \texttt{T} & \texttt{O} & \texttt{H} & \texttt{L} & \texttt{A} & \texttt{D} & \texttt{T} & \texttt{A} & \texttt{H} & \texttt{L} & \texttt{E} \\
+                                    \texttt{H} & \texttt{C} & \texttt{S} & \texttt{R} & \texttt{T} & \texttt{E} & \texttt{O} & \texttt{A} & \texttt{B} & \texttt{T} & \texttt{E} & \texttt{S} & \texttt{D} & \texttt{E} & \texttt{E} & \texttt{L}
+                                \end{array}
+                            \]
+                            \vspace*{-1cm}
+                        \end{center}
+                        Clearly, even though we do not have all the letters, there are no words being formed. Let's move on.
+                  \item Reading by 3s (to get a \(3\times 20\) matrix)
+                        \begin{center}
+                            \vspace*{-1cm}
+                            \[
+                                \begin{array}{cccccccccccccccccccc}
+                                    \texttt{W} & \texttt{C} & \texttt{T} & \texttt{T} & \texttt{O} & \texttt{A} & \texttt{A} & \texttt{E} & \texttt{T} & \texttt{D} & \texttt{L} & \texttt{L} & \texttt{S} & \texttt{U} & \texttt{E} & \texttt{V} & \texttt{R} & \texttt{T} & \texttt{R} & \texttt{E} \\
+
+                                    \texttt{H} & \texttt{E} & \texttt{R} & \texttt{T} & \texttt{O} & \texttt{L} & \texttt{T} & \texttt{T} & \texttt{S} & \texttt{H} & \texttt{E} & \texttt{L} & \texttt{F} & \texttt{E} & \texttt{A} & \texttt{N} & \texttt{I} & \texttt{U} & \texttt{H} & \texttt{E} \\
+
+                                    \texttt{N} & \texttt{S} & \texttt{H} & \texttt{E} & \texttt{H} & \texttt{B} & \texttt{D} & \texttt{E} & \texttt{A} & \texttt{E} & \texttt{E} & \texttt{Q} & \texttt{M} & \texttt{E} & \texttt{T} & \texttt{L} & \texttt{A} & \texttt{D} & \texttt{T} & \texttt{A}
+                                \end{array}
+                            \]
+                            \vspace*{-1cm}
+                        \end{center}
+                        There are no words here.
+                  \item \(4 \times 15\) matrix
+              \end{itemize}
+              \begin{center}
+                  \vspace*{-1cm}
+                  \[
+                      \begin{array}{ccccccccccccccc}
+                          \texttt{W} & \texttt{E} & \texttt{H} & \texttt{O} & \texttt{L} & \texttt{D} & \texttt{T} & \texttt{H} & \texttt{E} & \texttt{S} & \texttt{E} & \texttt{T} & \texttt{R} & \texttt{U} & \texttt{T} \\
+
+                          \texttt{H} & \texttt{S} & \texttt{T} & \texttt{O} & \texttt{B} & \texttt{E} & \texttt{S} & \texttt{E} & \texttt{L} & \texttt{F} & \texttt{E} & \texttt{V} & \texttt{I} & \texttt{D} & \texttt{E} \\
+
+                          \texttt{N} & \texttt{T} & \texttt{T} & \texttt{H} & \texttt{A} & \texttt{T} & \texttt{A} & \texttt{L} & \texttt{L} & \texttt{M} & \texttt{E} & \texttt{N} & \texttt{A} & \texttt{R} & \texttt{E} \\
+
+                          \texttt{C} & \texttt{R} & \texttt{E} & \texttt{A} & \texttt{T} & \texttt{E} & \texttt{D} & \texttt{E} & \texttt{Q} & \texttt{U} & \texttt{A} & \texttt{L} & \texttt{T} & \texttt{H} & \texttt{A}
+                      \end{array}
+                  \]
+                  \vspace*{-1cm}
+              \end{center}
+              There we finally have our transcription! ``We hold these truths to be self evident that all men are created equal tha...'' (Declaration of Independence again).
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {Additional Problem}Write down the steps for an algorithm to encrypt a plaintext using a transposition/Scytale cipher using \(n\) columns. \textit{Hint: This should involve some modular arithmetic.}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}[label=(\arabic*)]
+        \item Remove all spaces from the plaintext message.
+        \item Let \(i\) be the length of the message after removing spaces.
+        \item Find the number of rows \(m\) required for the transposition cipher matrix:
+              \[
+                  m = \left\lceil \frac{i}{n} \right\rceil
+              \]
+        \item Create an \(m \times n\) matrix to hold the characters.
+        \item For each character in the message, place it into the matrix. Let the index of the current character in the message be \(k\), where \(0 \leq k < i\). Calculate the row and column for this character as follows:
+              \[
+                  \text{row} = \left\lfloor \frac{k}{n} \right\rfloor
+              \]
+              \[
+                  \text{column} = k \ (\text{mod } n)
+              \]
+        \item Once all characters are placed into the matrix, read the matrix column by column to form the ciphertext. For each column \(j\), loop through the rows and append each character to the ciphertext in the following order:
+              \[
+                  \text{character index} = j + n \times \text{row}
+              \]
+        \item If there are empty cells (i.e., \(n\) does not divide the message length \(i\)), fill these cells with random characters or leave them blank.
+        \item Concatenate the characters column by column to form the final ciphertext.
+    \end{enumerate}
+
+}
+
+\begin{exercise}
+    {1.32}For each of the following primes \( p \) and numbers \( a \), compute \( a^{-1} \mod p \) in two ways: (i) the extended Euclidean algorithm. (ii) Use the fast power algorithm and Fermat’s little theorem. (See Example 1.27.)
+    \begin{enumerate}
+        \item \( p = 47 \) and \( a = 11 \).
+        \item \( p = 587 \) and \( a = 345 \).
+    \end{enumerate}
+\end{exercise}
+
+\sol{ \hfill
+    \begin{enumerate}
+        \item \begin{enumerate}[label=(\roman*)]
+                  \item For the extended Euclidean algorithm, we can start by filling out this table:
+                        \begin{center}
+                            \begin{tabular}{c|c|c|c|c|c}
+                                \textit{i} & \textit{\(r_i\)} & \textit{\(q_i\)} & \(r_{i + 1}\) & \textit{\(u_i\)}        & \textit{\(v_i\)}          \\ \hline
+                                \textit{0} & \(47\)           & \(-\)            & \(-\)         & \(1\)                   & \(0\)                     \\ \hline
+                                \textit{1} & \(11\)           & \(4\)            & \(3\)         & \(0\)                   & \(1\)                     \\ \hline
+                                \textit{2} & \(3\)            & \(3\)            & \(2\)         & \(1\)                   & \(0 - 4 \cdot 1 = -4\)    \\ \hline
+                                \textit{3} & \(2\)            & \(1\)            & \(1\)         & \(0 - 3 \cdot 1 = -4\)  & \(1 - 3 \cdot -4 = 13\)   \\ \hline
+                                \textit{4} & \(1\)            & \(2\)            & \(0\)         & \(1 - 1 \times -4 = 4\) & \(-4 - 1 \cdot 13 = -17\)
+                            \end{tabular} \\
+                        \end{center}
+                        Thus, to find  \(a^{-1} \ (\text{mod } p)\), we need an \(x\) such that \(11x \equiv 1 \ (\text{mod } 47)\). From our table, we know that number to be \(-17\) because \(1 = 4 \times 47 - 17 \times 11\). Then, as a positive number \(\text{mod } 47\), we get \(x \equiv -17 \equiv 30 \ (\text{mod } 47)\).
+                  \item For Fermat's Little Theorem:
+                        \begin{align*}
+                            a^{p - 1} & \equiv 1 \ (\text{mod } p)      \\
+                            a^{p - 2} & \equiv a^{-1} \ (\text{mod } p) \\
+                            11^{45}   & \ (\text{mod } 47)
+                        \end{align*}
+                        By the fast power algorithm, we need to find the binary representation of 45. Thus, \(45 \ (\text{mod } 2) = 1\), \(22 \ (\text{mod } 2) = 0\), \(11 \ (\text{mod } 2) = 1\), \(5 \ (\text{mod } 2) = 1\), \(2 \ (\text{mod } 2) = 0\), \(1 \ (\text{mod } 2) = 1\). From this, we have the binary representation of \(45_{10}\) as \(101101_2\). Hence, we will need to calculate \(2^5 \cdot 2^3 \cdot 2^2 \cdot 2^1 \cdot 2^0 \Rightarrow 11^{2^5} \cdot 11^{2^3} \cdot 11^{2^0} \Rightarrow 11^{32} \cdot 11^8 \cdot 11^4 \cdot 11 \equiv 17 \cdot 14 \cdot 25 \cdot 11\). Now, lets find the values of these numbers:
+                        \begin{align*}
+                            11^1    & \equiv 11 \ (\text{mod } 47) \\
+                            11^2    & \equiv 27 \ (\text{mod } 47) \\
+                            11^4    & \equiv 25 \ (\text{mod } 47) \\
+                            11^8    & \equiv 14 \ (\text{mod } 47) \\
+                            11^{16} & \equiv 8 \ (\text{mod } 47)  \\
+                            11^{32} & \equiv 17 \ (\text{mod } 47)
+                        \end{align*}
+                        Now, we can calculate \(11^{45} = 11^{32} \cdot 11^8 \cdot 11^4 \cdot 11 \equiv 17 \cdot 14 \cdot 25 \cdot 11 \ (\text{mod } 47)\). Further multiplying we get \(17 \cdot 14 \ (\text{mod } 47) \equiv 3\). Then, \(3 \cdot 25 \ (\text{mod } 47) \equiv 28\). And finally, \(28 \cdot 11 \ (\text{mod } 47) \equiv 30\). Thus confirming our previous answer in (i).
+              \end{enumerate}
+              %
+              %
+              %
+              %
+              %   
+        \item \begin{enumerate}[label=(\roman*)]
+                  \item For the extended Euclidean algorithm:
+                        \begin{center}
+                            \begin{tabular}{c|c|c|c|c|c}
+                                \textit{i} & \textit{\(r_i\)} & \textit{\(q_i\)} & \(r_{i + 1}\) & \textit{\(u_i\)}          & \textit{\(v_i\)}           \\ \hline
+                                \textit{0} & \(587\)          & \(-\)            & \(-\)         & \(1\)                     & \(0\)                      \\ \hline
+                                \textit{1} & \(345\)          & \(1\)            & \(242\)       & \(0\)                     & \(1\)                      \\ \hline
+                                \textit{2} & \(242\)          & \(1\)            & \(103\)       & \(1\)                     & \(0 - 1 \cdot 1 = -1\)     \\ \hline
+                                \textit{3} & \(103\)          & \(2\)            & \(36\)        & \(0 - 1 \cdot 1 = -1\)    & \(1 - 1 \cdot -1 = 2\)     \\ \hline
+                                \textit{4} & \(36\)           & \(2\)            & \(31\)        & \(1 - 2 \cdot -1 = 3\)    & \(-1 - 2 \cdot 2 = -5\)    \\ \hline
+                                \textit{5} & \(31\)           & \(1\)            & \(5\)         & \(-1 - 2 \cdot 3 = -7\)   & \(2 - 2 \cdot -5 = 12\)    \\ \hline
+                                \textit{6} & \(5\)            & \(6\)            & \(1\)         & \(3 - 1 \cdot -7 = 10\)   & \(-5 - 1 \cdot 12 = -17\)  \\ \hline
+                                \textit{7} & \(1\)            & \(5\)            & \(0\)         & \(10 - 6 \cdot 10 = -67\) & \(12 - 6 \cdot -17 = 114\)
+                            \end{tabular}
+                        \end{center}
+                        Thus, the inverse of \(345 \ (\text{mod } 587)\) is 114.
+
+                  \item The binary expression for \(585_{10}\) is \(1001001001_2\) (I just used my calculator this time and kept dividing ans by 2 while keeping track of the odd vs even quotients). This leaves us with \(345^{2^9} \cdot 345^{2^6} \cdot 345^{2^3} \cdot 345^{2^0}\).
+                        \begin{align*}
+                            345^1     & \equiv 345 \ (\text{mod } 587) \\
+                            345^2     & \equiv 451 \ (\text{mod } 587) \\
+                            345^4     & \equiv 299 \ (\text{mod } 587) \\
+                            345^8     & \equiv 177 \ (\text{mod } 587) \\
+                            345^{16}  & \equiv 218 \ (\text{mod } 587) \\
+                            345^{64}  & \equiv 529 \ (\text{mod } 587) \\
+                            345^{128} & \equiv 429 \ (\text{mod } 587) \\
+                            345^{256} & \equiv 310 \ (\text{mod } 587) \\
+                            345^{512} & \equiv 419 \ (\text{mod } 587) \\
+                        \end{align*}
+                        Now we can multiply and solve: \(345^{2^9} \cdot 345^{2^6} \cdot 345^{2^3} \cdot 345^{2^0} \Rightarrow 419 \cdot 529 \cdot 177 \cdot 345 \ (\text{mod } 587) = 114\). Therefore, the inverse of \(345 \ (\text{mod } 587)\) is \(114\).
+              \end{enumerate}
+    \end{enumerate}
+}
+
+\begin{exercise}
+    {1.34}Recall that \( g \) is called a primitive root modulo \( p \) if the powers of \( g \) give all nonzero elements of \( \mathbb{F}_p \).
+    \begin{enumerate}[label=(\alph*)]
+        \item For which of the following primes is 2 a primitive root modulo \( p \)?
+              \[
+                  \begin{array}{llllllll}
+                      \text{(i)} & p = 7 & \text{(ii)} & p = 13 & \text{(iii)} & p = 19 & \text{(iv)} & p = 23
+                  \end{array}
+              \]
+        \item For which of the following primes is 3 a primitive root modulo \( p \)?
+              \[
+                  \begin{array}{llllllll}
+                      \text{(i)} & p = 5 & \text{(ii)} & p = 7 & \text{(iii)} & p = 11 & \text{(iv)} & p = 17
+                  \end{array}
+              \]
+        \item Find a primitive root for each of the following primes.
+              \[
+                  \begin{array}{llllllll}
+                      \text{(i)} & p = 23 & \text{(ii)} & p = 29 & \text{(iii)} & p = 41 & \text{(iv)} & p = 43
+                  \end{array}
+              \]
+        \item Find all primitive roots modulo 11. Verify that there are exactly \(\phi(10)\) of them, as asserted in Remark 1.32.
+    \end{enumerate}
+\end{exercise}
+
+\sol{ \hfill
+    \begin{enumerate}
+        \item \begin{enumerate}[label=(\roman*)]
+                  \item \(p = 7\): \(2^1 \equiv 2\), \(2^2 \equiv 4\), \(2^3 \equiv 1 \ (\text{mod } 7)\). Because \(2\) does not cover every nonzero elements of \( \mathbb{F}_p \), \(2\) is not a primitive root.
+                  \item \(p = 13\): \(2^1 \equiv 2\), \(2^2 \equiv 4\), \(2^3 \equiv 8\), \(2^4 \equiv 3\), \(2^5 \equiv 6\), \(2^6 \equiv 12\), \(2^7 \equiv 11\), \(2^8 \equiv 9\), \(2^9 \equiv 5\), \(2^{10} \equiv 10\), \(2^{11} \equiv 7\), \(2^{12} \equiv 1\), \(2\) is a primitive root.
+                  \item \(p = 19\): \(2^1 \equiv 2\), \(2^2 \equiv 4\), \(2^3 \equiv 8\), \(2^{4} \equiv 16\), \(2^{5} \equiv 13\), \(2^{6} \equiv 7\), \(2^{7} \equiv 14\), \(2^{8} \equiv 9\), \(2^{9} \equiv 18\), \(2^{10} \equiv 17\), \(2^{11} \equiv 15\), \(2^{12} \equiv 11\), \(2^{13} \equiv 3\), \(2^{14} \equiv 6\), \(2^{15} \equiv 12\), \(2^{16} \equiv 5\), \(2^{17} \equiv 10\), \(2^{18} \equiv 1\), 2 is a primitive root.
+                  \item \(p = 23\): \(2^1 \equiv 2\), \(2^2 \equiv 4\), \(2^3 \equiv 8\), \(2^{4} \equiv 16\), \(2^{5} \equiv 9\), \(2^{6} \equiv 18\), \(2^{7} \equiv 13\), \(2^{8} \equiv 3\), \(2^{9} \equiv 6\), \(2^{10} \equiv 12\), \(2^{11} \equiv 1\), \(2\) is not a primitive root.
+              \end{enumerate}
+        \item \begin{enumerate}[label=(\roman*)]
+                  \item \( p = 5 \): \( 3^1 \equiv 3, 3^2 \equiv 4, 3^3 \equiv 2, 3^4 \equiv 1 \), 3 is a primitive root.
+                  \item \( p = 7 \): \( 3^1 \equiv 3, 3^2 \equiv 2, \ldots, 3^6 \equiv 1 \), 3 is a primitive root.
+                  \item \( p = 11 \): \( 3^1 \equiv 3, 3^2 \equiv 9, 3^3 \equiv 5, \ldots, 3^5 \equiv 1 \), 3 is not a primitive root.
+                  \item \( p = 17 \): \( 3^1 \equiv 3, 3^2 \equiv 9, \ldots, 3^{16} \equiv 1 \), 3 is a primitive root.
+              \end{enumerate}
+        \item \begin{enumerate}[label=(\roman*)]
+                  \item \(p = 23\): \(5^1 \equiv 5\),
+                        \(5^{2} \equiv 2
+                        \), \(5^{3} \equiv 10
+                        \), \(5^{4} \equiv 4
+                        \), \(5^{5} \equiv 20
+                        \), \(5^{6} \equiv 8
+                        \), \(5^{7} \equiv 17
+                        \), \(5^{8} \equiv 16
+                        \), \(5^{9} \equiv 11
+                        \), \(5^{10} \equiv 9
+                        \), \(5^{11} \equiv 22
+                        \), \(5^{12} \equiv 18
+                        \), \(5^{13} \equiv 21
+                        \), \(5^{14} \equiv 13
+                        \), \(5^{15} \equiv 19
+                        \), \(5^{16} \equiv 3
+                        \), \(5^{17} \equiv 15
+                        \), \(5^{18} \equiv 6
+                        \), \(5^{19} \equiv 7
+                        \), \(5^{20} \equiv 12
+                        \), \(5^{21} \equiv 14\),
+                        \(5^{22} \equiv 1\), \\
+                        \(5\) is a primitive root.
+                  \item \(2^1 \equiv 2\),
+                        \(2^{2} \equiv 4\),
+                        \(2^{3} \equiv 8\),
+                        \(2^{4} \equiv 16\),
+                        \(2^{5} \equiv 3\),
+                        \(2^{6} \equiv 6\),
+                        \(2^{7} \equiv 12\),
+                        \(2^{8} \equiv 24\),
+                        \(2^{9} \equiv 19\),
+                        \(2^{10} \equiv 9\),
+                        \(2^{11} \equiv 18\),
+                        \(2^{12} \equiv 7\),
+                        \(2^{13} \equiv 14\),
+                        \(2^{14} \equiv 28\),
+                        \(2^{15} \equiv 27\),
+                        \(2^{16} \equiv 25\),
+                        \(2^{17} \equiv 21\),
+                        \(2^{18} \equiv 13\),
+                        \(2^{19} \equiv 26\),
+                        \(2^{20} \equiv 23\),
+                        \(2^{21} \equiv 17\),
+                        \(2^{22} \equiv 5\),
+                        \(2^{23} \equiv 10\),
+                        \(2^{24} \equiv 20\),
+                        \(2^{25} \equiv 11\),
+                        \(2^{26} \equiv 22\),
+                        \(2^{27} \equiv 15\),
+                        \(2^{28} \equiv 1\), \\
+                        \(2\) is a primitive root.
+                  \item \(6^{1} \equiv 6\)
+                        \(6^{2} \equiv 36\),
+                        \(6^{3} \equiv 11\),
+                        \(6^{4} \equiv 25\),
+                        \(6^{5} \equiv 27\),
+                        \(6^{6} \equiv 39\),
+                        \(6^{7} \equiv 29\),
+                        \(6^{8} \equiv 10\),
+                        \(6^{9} \equiv 19\),
+                        \(6^{10} \equiv 32\),
+                        \(6^{11} \equiv 28\),
+                        \(6^{12} \equiv 4\),
+                        \(6^{13} \equiv 24\),
+                        \(6^{14} \equiv 21\),
+                        \(6^{15} \equiv 3\),
+                        \(6^{16} \equiv 18\),
+                        \(6^{17} \equiv 26\),
+                        \(6^{18} \equiv 33\),
+                        \(6^{19} \equiv 34\),
+                        \(6^{20} \equiv 40\),
+                        \(6^{21} \equiv 35\),
+                        \(6^{22} \equiv 5\),
+                        \(6^{23} \equiv 30\),
+                        \(6^{24} \equiv 16\),
+                        \(6^{25} \equiv 14\),
+                        \(6^{26} \equiv 2\),
+                        \(6^{27} \equiv 12\),
+                        \(6^{28} \equiv 31\),
+                        \(6^{29} \equiv 22\),
+                        \(6^{30} \equiv 9\),
+                        \(6^{31} \equiv 13\),
+                        \(6^{32} \equiv 37\),
+                        \(6^{33} \equiv 17\),
+                        \(6^{34} \equiv 20\),
+                        \(6^{35} \equiv 38\),
+                        \(6^{36} \equiv 23\),
+                        \(6^{37} \equiv 15\),
+                        \(6^{38} \equiv 8\),
+                        \(6^{39} \equiv 7\),
+                        \(6^{40} \equiv 1\),\\
+                        \(6\) is a primitive root.
+                  \item \(3^{1} \equiv 3\),
+                        \(3^{2} \equiv 9\),
+                        \(3^{3} \equiv 27\),
+                        \(3^{4} \equiv 38\),
+                        \(3^{5} \equiv 28\),
+                        \(3^{6} \equiv 41\),
+                        \(3^{7} \equiv 37\),
+                        \(3^{8} \equiv 25\),
+                        \(3^{9} \equiv 32\),
+                        \(3^{10} \equiv 10\),
+                        \(3^{11} \equiv 30\),
+                        \(3^{12} \equiv 4\),
+                        \(3^{13} \equiv 12\),
+                        \(3^{14} \equiv 36\),
+                        \(3^{15} \equiv 22\),
+                        \(3^{16} \equiv 23\),
+                        \(3^{17} \equiv 26\),
+                        \(3^{18} \equiv 35\),
+                        \(3^{19} \equiv 19\),
+                        \(3^{20} \equiv 14\),
+                        \(3^{21} \equiv 42\),
+                        \(3^{22} \equiv 40\),
+                        \(3^{23} \equiv 34\),
+                        \(3^{24} \equiv 16\),
+                        \(3^{25} \equiv 5\),
+                        \(3^{26} \equiv 15\),
+                        \(3^{27} \equiv 2\),
+                        \(3^{28} \equiv 6\),
+                        \(3^{29} \equiv 18\),
+                        \(3^{30} \equiv 11\),
+                        \(3^{31} \equiv 33\),
+                        \(3^{32} \equiv 13\),
+                        \(3^{33} \equiv 39\),
+                        \(3^{34} \equiv 31\),
+                        \(3^{35} \equiv 7\),
+                        \(3^{36} \equiv 21\),
+                        \(3^{37} \equiv 20\),
+                        \(3^{38} \equiv 17\),
+                        \(3^{39} \equiv 8\),
+                        \(3^{40} \equiv 24\),
+                        \(3^{41} \equiv 29\),
+                        \(3^{42} \equiv 1\), \\
+                        \(3\) is a primitive root.
+              \end{enumerate}
+        \item The primitive roots modulo 11 are 2, 6, 7, 8. To check: \\
+              \(2^1 \equiv 11 = 2\),
+              \(2^2 \equiv 11 = 4\),
+              \(2^3 \equiv 11 = 8\),
+              \(2^4 \equiv 11 = 5\),
+              \(2^5 \equiv 11 = 10\),
+              \(2^6 \equiv 11 = 9\),
+              \(2^7 \equiv 11 = 7\),
+              \(2^8 \equiv 11 = 3\),
+              \(2^9 \equiv 11 = 6\),
+              \(2^{10} \equiv 11 = 1\),
+
+              2 is a primitive root. \\
+
+              \(6^1 \equiv 11 = 6\),
+              \(6^2 \equiv 11 = 3\),
+              \(6^3 \equiv 11 = 7\),
+              \(6^4 \equiv 11 = 9\),
+              \(6^5 \equiv 11 = 10\),
+              \(6^6 \equiv 11 = 5\),
+              \(6^7 \equiv 11 = 8\),
+              \(6^8 \equiv 11 = 4\),
+              \(6^9 \equiv 11 = 2\),
+              \(6^{10} \equiv 11 = 1\),
+
+              6 is a primitive root. \\
+
+              \(7^1 \equiv 11 = 7\),
+              \(7^2 \equiv 11 = 5\),
+              \(7^3 \equiv 11 = 2\),
+              \(7^4 \equiv 11 = 3\),
+              \(7^5 \equiv 11 = 10\),
+              \(7^6 \equiv 11 = 4\),
+              \(7^7 \equiv 11 = 6\),
+              \(7^8 \equiv 11 = 9\),
+              \(7^9 \equiv 11 = 8\),
+              \(7^{10} \equiv 11 = 1\),
+
+              7 is a primitive root. \\
+
+              \(8^1 \equiv 11 = 8\),
+              \(8^2 \equiv 11 = 9\),
+              \(8^3 \equiv 11 = 6\),
+              \(8^4 \equiv 11 = 4\),
+              \(8^5 \equiv 11 = 10\),
+              \(8^6 \equiv 11 = 3\),
+              \(8^7 \equiv 11 = 2\),
+              \(8^8 \equiv 11 = 5\),
+              \(8^9 \equiv 11 = 7\),
+              \(8^{10} \equiv 11 = 1\),
+
+              8 is a primitive root.
+    \end{enumerate}
+}
+

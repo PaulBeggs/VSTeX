@@ -1,0 +1,222 @@
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Introduction}
+
+    When we discuss \textit{Unions}, we might visualize them as combining milk with cereal. Let's define a breakfast scenario where we have a bowl with two distinct components: a set of Cheerios and a set of milk. Initially, the Cheerios and the milk exist independently in their containers.
+
+Now, consider what happens when we mix these two components. The milk, serving as a medium, begins to interact with the Cheerios. While each maintains its distinct properties---Cheerios remain solid and the milk liquid---their interaction in the bowl represents a union of both sets. This union doesn't imply that the individual characteristics of Cheerios or milk are lost; rather, it signifies that the bowl now contains elements from both the set of Cheerios and the set of milk.
+
+The bowl---now defined as the set of the union of the milk and cereal---holds all possible elements (ingredients): those belonging solely to the Cheerios, those exclusive to the milk, and all interactions between them. In mathematical terms, this union set contains:
+\begin{itemize} 
+    \item All elements of the set of Cheerios (e.g., the oat grains).
+    \item All elements of the set of milk (e.g., the milk particles).
+    \item Any combination or interaction that might occur when these sets meet (such as milk-coated Cheerios).
+\end{itemize}
+
+\indent Given that we can visualize what the union of two sets looks like in everyday life, it follows naturally that a similar union must also exist in mathematics. This intuitive understanding helps us accept and comprehend the following axiom that formally defines all possible unions:
+
+\begin{axiom}{Union}
+    Suppose that \(\mathcal{C}\) is a set, each of whose elements is itself a set. Then, there exists a set \(D\) such that if \(A \in \mathcal{C}\) and \(x \in A\), then \(x \in D\).
+\end{axiom}
+
+Let's revisit our previous analogy of a bowl with milk and cereal to help us understand this axiom. That is, think of the set ``\(\mathcal{C}\)'' as a large bowl that contains various sets: one set could be Cheerios, and another set could be milk.
+
+Now, let's define the set ``\(D\)'' as the combination of all possible ingredients (elements) from these sets that are present in the bowl. This means that \(D\) includes every item that can be found in any of the sets within the bowl.
+
+To clarify the final statement of the axiom, consider this: if there is a set of cereal (Cheerios) in the bowl, and there are oats in this cereal, then these oats must also be in \(D\), which is the combination of all ingredients from all sets in the bowl. This ensures that if an element ``\(x\)'' (like oats) is found in any set ``\(A\)'' (like Cheerios), which belongs to \(\mathcal{C}\) (the bowl), then \(x\) must be in \(D\) (all possible combinations). 
+
+As you can see from Axiom 3.1.1's broad formulation, it might inadvertently include unintended elements---like air bubbles trapped in a bowl of milk might not be considered part of the milk or cereal sets, yet they are inside the bowl. To address and prevent such ambiguities, we have the following corollary:
+
+\begin{corollary}
+    {Sets of Sets}{Axiom 3.1.1} Suppose \(\mathcal{C}\) is a set, each of whose elements is itself a set. Then there exists a set, \(D\) such that, \[x \in D \text{ if, and only if, there exists a set } A \in \mathcal{C} \text{ such that } x \in A.\]
+\end{corollary}
+
+This corollary refines Axiom 3.1.1 by explicitly restricting \(D\) to contain only those elements that are in the sets within \(\mathcal{C}\), ensuring precision and avoiding the inclusion of any extraneous elements. 
+
+The notation for the above corollary is denoted as \(\bigcup \mathcal{C}\). In the next corollary, we will see that if there is a small number of sets in \(\mathcal{C}\), then we can write things like \(A\cup B\).
+
+\begin{corollary}
+    {Union of Two Sets}{Axiom 3.1.1} Suppose \(A\) and \(B\) are sets. There exists a set \(D\) with the property that, \[x \in D \text{ if, and only if } x \in A \text{ or } x \in B.\]
+\end{corollary}
+
+Thus, each corollary constricts the concept given from Axiom 3.1.1 so we can use it in a more precise manner for future applications. Similar to a painter does not only have one large brush, but rather, they have multiple smaller brushes for fine details in their painting process.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        % Define the style for the diagonal lines pattern
+        \tikzstyle{diagonal lines}=[pattern=north east lines, pattern color=gray];
+        
+        % Define the coordinates for set A and B
+        \coordinate (A) at (1.25,1.5);
+        \coordinate (B) at (2.75,1.5);
+        
+        % Draw set A and set B with labels
+        \draw (A) circle (1.35cm) node [text=black,above, yshift=0.5cm] {\(A\)};
+        \draw (B) circle (1.35cm) node [text=black,above, yshift=0.5cm] {\(B\)};
+
+        % Fill the union with diagonal lines
+        \begin{scope}
+            \clip (A) circle (1.35cm) (B) circle (1.35cm);
+            \fill[diagonal lines] (-1,0) rectangle (6,4);
+        \end{scope}
+
+        
+        % Label the union
+        \node at (2,1.5) {\(A \cup B\)};
+    \end{tikzpicture}
+    \caption{\textit{Set Union}}
+\end{figure}
+\newpage
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\section{Properties of Unions}
+
+\vspace{0.3cm}
+
+\begin{exercise}
+    {Denial}Suppose \(A\) and \(B\) are sets. Then, \[A \cup B = B \cup A\]
+\end{exercise}
+
+\sol{
+    \dots the element \(x\notin A\) and \(x\notin B\).''
+}
+
+\begin{exercise}
+    {Union `Additive' Identity}Suppose \(A\) is a set. Then, 
+    \[
+        A \cup \emptyset = A.
+    \]
+\end{exercise}
+
+\expf{
+    Let \(A\) be a set, and \(A \cup \emptyset\). \\
+    
+    Let element \(x \in A\). By the first corollary to Axiom 3.1.1, \(x\) is also in \(A \cup \emptyset\). Then, by the second corollary to Axiom 3.1.1, \(x\in A\) or \(x\in \emptyset\). Thus, \(A \subseteq A \cup \emptyset\). Since \(\emptyset\) contains no elements by Problem 11, \(x\) cannot be in \(\emptyset\) and must be in \(A\). This demonstrates \(A \cup \emptyset \subseteq A\). Now we have both \(A \subseteq A \cup \emptyset\) and \(A \cup \emptyset \subseteq A\) \\
+
+    Therefore, by Theorem 1, \(A\cup \emptyset = A\).
+}
+
+\vspace*{\fill}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        % Define the style for the diagonal lines pattern
+        \tikzstyle{diagonal lines}=[pattern=north east lines, pattern color=gray];
+        
+        % Define the coordinates for set A
+        \coordinate (A) at (2,1.5);
+        
+        % Draw set A with label
+        \draw (A) circle (1.25cm) node [text=black,below] {\(A\)};
+        
+        % Label for the empty set, indicating it does not visually contribute to the diagram
+        \node at (4,1.5) {\(\emptyset\)};
+        
+        % Fill set A with diagonal lines to indicate the "union" with the empty set
+        \begin{scope}
+            \clip (A) circle (1.25cm);
+            \fill[diagonal lines] (0.75,0.25) rectangle (3.25,2.75);
+        \end{scope}
+        
+        % Label the concept
+        \node at (3,0) {\(A \cup \emptyset = A\)};
+    \end{tikzpicture}
+    \caption{\textit{Identity Property of Union}}
+\end{figure}
+
+\vspace*{\fill}
+
+\newpage
+
+
+\begin{exercise}
+    {Union `Multiplicative' Identity}Suppose \(A\) is a set. Then, \[A \cup A = A\]
+\end{exercise}
+
+\expf{
+    Let \(A\) be a set. \\
+
+    Let \(x\in A\). By the first corollary to Axiom 3.1.1, \(x\in A\cup A\). Then, by the second corollary to Axiom 3.1.1, \(x\in A\) or \(x\in A\). This demonstrates that every element of \(A\) is in \(A \cup A\). Now, consider the converse: let \(y\in A\cup A\), then \(y\in A\) or \(y\in A\). Thus, \(y\in A\), which proves that \(A\cup A\) cannot contain any elements not already in A. \\
+    
+    Therefore, by Axiom 1, \(A \cup A = A\).         
+}
+
+
+\begin{exercise}
+    {Union Commutativity}Suppose \(A\) and \(B\) are sets. Then, \[A \cup B = B \cup A\]
+\end{exercise}
+
+\expf{
+    Let \(A\) and \(B\) be sets. \\ 
+
+    For any element \(x \in A\cup B\), then by the first corollary to Axiom 3.1.1, \(x\in A\) or \(x\in B\). This implies \(x \in B\) or \(x\in A\), and so \(A \cup B \subseteq B\cup A\). Conversely, if \(x \in B \cup A\), the \(x \in B\) or \(x \in A\), which implies \(x \in A \cup B\), which shows that \(B \cup A \subseteq A \cup B\). \\
+
+    Therefore, by Theorem 1, \(A \cup B = B \cup A\).
+}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        % Define the style for the diagonal lines pattern
+        \tikzstyle{diagonal lines}=[pattern=north east lines, pattern color=gray];
+        
+        % First pair of circles (A and B)
+        \coordinate (A1) at (1.5,1.5);
+        \coordinate (B1) at (2.5,1.5);
+        
+        % Draw first pair of circles for A and B
+        \draw (A1) circle (1cm) node [text=black,below left] {\(A\)};
+        \draw (B1) circle (1cm) node [text=black,below right] {\(B\)};
+        
+        % Fill the intersection of the first pair
+        \begin{scope}
+            \clip (A1) circle (1cm) (B1) circle (1cm);
+            \fill[diagonal lines] (-1,0) rectangle (5,3);
+        \end{scope}
+        
+        % Equals sign
+        \node at (4,1.5) {\(=\)};
+        
+        % Second pair of circles (B and A), switched positions
+        \coordinate (B2) at (5.5,1.5);
+        \coordinate (A2) at (6.5,1.5);
+        
+        % Draw second pair of circles for B and A
+        \draw (B2) circle (1cm) node [text=black,below left] {\(B\)};
+        \draw (A2) circle (1cm) node [text=black,below right] {\(A\)};
+        
+        % Fill the intersection of the second pair
+        \begin{scope}
+            \clip (B2) circle (1cm) (A2) circle (1cm);
+            \fill[diagonal lines] (3,0) rectangle (9,3);
+        \end{scope}
+        
+    \end{tikzpicture}
+    \caption{\textit{Commutative Property of Union}}
+\end{figure}
+
+
+\begin{exercise}
+    {Union Associativity}Suppose \(A,B,\) and \(C\) are sets. Then, \[A\cup (B\cup C) = (A\cup B) \cup C\] 
+\end{exercise}
+
+\sbseteqpf
+    {Let \(A,B,\) and \(C\) be sets. Then, suppose \(x\in A\cup (B\cup C)\). By the first corollary to Axiom 3.1.1, \(x\in A\) or \(x\in (B\cup C)\). Then, using the same reasoning, \(x\in B\) or \(x \in C\). Since \(x\in A\) or \(x\in B\), it follows that \(A\cup B\). Since \(A\cup B\) or \(x\in C\), \(x\in (A\cup B) \cup C\). This means that \(A\cup (B\cup C) \subseteq (A\cup B) \cup C\).}
+    {Let \(A,B,\) and \(C\) be sets. Then, suppose \(y\in (A\cup B)\cup C\). By the first corollary to Axiom 3.1.1, \(y\in (A\cup B)\) or \(x\in C\). Then, using the same reasoning, \(y\in A\) or \(y\in B\). Since \(y\in B\) or \(y\in C\), it follows that \(B\cup C\). Since \(B\cup C\) or \(x\in A\), \(x\in A\cup (B \cup C)\). This means that \((A\cup B)\cup C \subseteq A\cup (B \cup C)\).}
+    {\(A\cup (B\cup C) = (A\cup B) \cup C\).}
+    {orangehdx}
+
+
+\begin{exercise}
+    {}Suppose \(A\) and \(B\) are sets. Then, 
+    \[A\subseteq B \iff A \cup B = B\]
+\end{exercise}
+
+\iffpf
+    {Suppose for sets \(A\), \(B\), that \(A\subseteq B\). This means by the definition of subset, for any \(x\in A\), \(x\in B\). For any element \(x \in A\cup B\), by the first corollary to Axiom 3.1.1, \(x\) is in \(A\) or \(B\). Since \(A\subseteq B\), if \(x\in A\), then \(x\in B\). Thus, \(x\in B\) shows \(A\cup B \subseteq B\). Likewise, for any element \(y \in B\), \(y\in A\cup B\). This shows \(B \subseteq A\cup B\). Therefore, since \(A\cup B\subseteq B\) and \(B\subseteq A\cup B\), by Theorem 1, \(A \cup B = B\).}
+    {Suppose for sets \(A\), \(B\), that \(A \cup B = B\). For any element \(x\in A\), by the first corollary to Axiom 3.1.1, \(x\in A\cup B\). By the assumption, this union equals \(B\). Thus, \(x\) is also in \(B\), which shows that every element of \(A\) is in \(B\). Therefore, since every element of \(A\) is also an element of \(B\), then, by definition of subset, \(A\subseteq B\).}
+    {Thus, we have proved both sides of the implication. Hence, \(A \subseteq B\) if, and only if \(A \cup B = B\).}
+    {orangehdx}

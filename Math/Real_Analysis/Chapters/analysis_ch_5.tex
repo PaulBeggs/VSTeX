@@ -1,0 +1,203 @@
+\setcounter{section}{1}
+
+\newcommand{\xtoc}{\lim_{x \to c}}
+
+\section{Derivates and the Intermediate Value Property}
+
+\begin{definition}
+    Let \(g \colon A \to \R\) be a function defined on an interval \(A\). Given \(c \in A\), we define the \textit{derivative} of \(g\) at \(c\) to be
+    \[
+        g'(c) = \lim_{x \to c} \frac{g(x) - g(c)}{x - c}
+    \]
+    provided this limit exists. In this case, we say \(g\) is \textit{differentiable} at \(c\). If \(g'\) exists for all points \(c \in A\), then we say \(g\) is \textit{differentiable on} \(A\).
+\end{definition}
+
+\begin{example}
+    {Differentiation 1}Let \(g(x) = x^{2}\). Use \defref{5.2.1} to find \(g'(c)\).
+\end{example}
+
+\lesol{
+    \begin{align*}
+        g'(c) & = \lim_{x \to c} \frac{g(x) - g(c)}{x - c}    \\
+              & = \lim_{x \to c} \frac{x^{2} - c^{2}}{x - c}  \\
+              & = \lim_{x \to c} \frac{(x - c)(x + c)}{x - c} \\
+              & = \lim_{x \to c} x + c                        \\
+              & = 2c
+    \end{align*}
+}
+
+\begin{example}
+    {Differentiation 2}Let \(g(x) = x^{3}\). Use \defref{5.2.1} to find \(g'(c)\).
+\end{example}
+
+\lesol{
+    \begin{align*}
+        g'(c) & = \lim_{x \to c} \frac{g(x) - g(c)}{x - c}                 \\
+              & = \lim_{x \to c} \frac{x^{3} - c^{3}}{x - c}               \\
+              & = \lim_{x \to c} \frac{(x - c)(x^{2} + xc + c^{2})}{x - c} \\
+              & = \lim_{x \to c} x^{2} + xc + c^{2}                        \\
+              & = 3c^{2}
+    \end{align*}
+}
+
+\begin{example}
+    {Differentiation 3}Let \(g(x) = x^{4}\). Use \defref{5.2.1} to find \(g'(c)\).
+\end{example}
+
+\lesol{
+    \begin{align*}
+        g'(c) & = \lim_{x \to c} \frac{g(x) - g(c)}{x - c}                              \\
+              & = \lim_{x \to c} \frac{x^{4} - c^{4}}{x - c}                            \\
+              & = \lim_{x \to c} \frac{(x - c)(x^{3} + x^{2}c + xc^{2} + c^{3})}{x - c} \\
+              & = \lim_{x \to c} x^{3} + x^{2}c + xc^{2} + c^{3}                        \\
+              & = 4c^{3}
+    \end{align*}
+}
+
+\begin{ntheorem}
+    {Power Rule}For any \(n \in \N\), if \(f(x) = x^{n}\), then \(f'(c) = nc^{n - 1}\).
+\end{ntheorem}
+
+\begin{example}
+    {Differentiation 4}Let \(f(x) = |x|\). Use \defref{5.2.1} to find \(f'(c)\).
+\end{example}
+
+\lesol{
+    Is this differentiable at 0?
+
+    \begin{align*}
+        \lim_{x \to 0} \frac{|x| - |0|}{x - 0} & = \lim_{x \to 0} \frac{|x|}{x}
+    \end{align*}
+    When we view this from the left and right definitions of the limit, we see that the limit does not exist:
+    \[
+        \lim_{x \to 0^{+}} \frac{|x|}{x} = 1 \quad \text{and} \quad \lim_{x \to 0^{-}} \frac{|x|}{x} = -1.
+    \]
+    Hence, because these limits are not equal, the limit does not exist, and \(f(x) = |x|\) is not differentiable at 0.
+}
+
+\begin{example}
+    {Differentiation 5}Let \(f(x) = \begin{cases}
+        1 & \text{if } x > 0    \\
+        0 & \text{if } x \leq 0 \\
+    \end{cases}\)
+\end{example}
+
+\lesol{
+    Is this differentiable at 0?
+    \[
+        \lim_{x \to 0^{+}} \frac{f(x)}{x} = \infty \quad \text{and} \quad \lim_{x \to 0^{-}} \frac{f(x)}{x} = 0.
+    \]
+    Hence, because these limits are not equal, the limit does not exist, and \(f(x)\) is not differentiable at 0.
+}
+
+\begin{ntheorem}
+    {Algebraic Differentiation Rules} Let \(f\) and \(g\) be differentiable at \(c\) with \(k \in \R\). Then the following functions are differentiable at \(c\):
+    \begin{enumerate}
+        \item \((f + g)'(c) = f'(c) + g'(c)\)
+
+              \(\Rightarrow \lim_{x \to c} \frac{f(x) + g(x) - f(c) - g(c)}{x - c}\)
+        \item \((kf)'(c) = kf'(c)\)
+        \item \((fg)'(c) = f'(c)g(c) + f(c)g'(c)\)
+        \item \((f/g)'(c) = \frac{f'(c)g(c) - f(c)g'(c)}{g^{2}(c)}\)
+    \end{enumerate}
+\end{ntheorem}
+
+\tpf{
+    For (3), we have
+    \begin{align*}
+        \lim_{x \to c} \frac{f(x)g(x) - f(c)g(c)}{x - c} & = \lim_{x \to c} \frac{f(x)g(x) - f(x)g(c) + f(x)g(c) - f(c)g(c)}{x - c}                                       \\
+                                                         & = \lim_{x \to c} \frac{f(x)(g(x) - g(c)) + g(c)(f(x) - f(c))}{x - c}                                           \\
+                                                         & = \lim_{x \to c} f(x) \lim_{x \to c} \frac{g(x) - g(c)}{x - c} + g(c) \lim_{x \to c} \frac{f(x) - f(c)}{x - c} \\
+                                                         & = f(c)g'(c) + g(c)f'(c).
+    \end{align*}
+    For (4), we have
+    \begin{align*}
+        \lim_{x \to c} \frac{\frac{f(x)}{g(x)} - \frac{f(c)}{g(c)}}{x - c} & = \lim_{x \to c} \frac{f(x)g(c) - f(c)g(x)}{g(x)g(c)(x - c)}                                                      \\
+                                                                           & = \lim_{x \to c} \frac{f(x)g(c) - f(c)g(c) + f(c)g(c) - f(c)g(x)}{g(x)g(c)(x - c)}                                \\
+                                                                           & = \lim_{x \to c} \frac{f(x) - f(c)}{g(x)g(c)(x - c)} + \lim_{x \to c} \frac{f(c)g(c) - f(c)g(x)}{g(x)g(c)(x - c)} \\
+                                                                           & = \frac{f'(c)g(c) - f(c)g'(c)}{g^{2}(c)}.
+    \end{align*}
+}
+
+\begin{ntheorem}
+    {Chain Rule} Let \(f\) and \(g\) be differentiable at \(c\). Then the composition \(g \circ f\) is differentiable at \(c\) and \((g \circ f)'(c) = g'(f(c))f'(c)\).
+\end{ntheorem}
+
+\tpf{
+    \begin{align*}
+        \lim_{x \to c} \frac{g(f(x)) - g(f(c))}{x - c} & = \lim_{x \to c} \frac{g(f(x)) - g(f(c))}{f(x) - f(c)} \cdot \frac{f(x) - f(c)}{x - c}          \\
+                                                       & = \lim_{x \to c} \frac{g(f(x)) - g(f(c))}{f(x) - f(c)} \lim_{x \to c} \frac{f(x) - f(c)}{x - c} \\
+                                                       & = g'(f(c))f'(c).
+    \end{align*}
+}
+
+\begin{ntheorem}
+    {Interior Extremum Theorem} If \(f\) is differentiable at \(c\) and \(c\) is a local maximum of \(f\), then \(f'(c) = 0\).
+\end{ntheorem}
+
+\tpf{
+    We know that \(f'(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c}\). Then, 
+    \[
+    f'(x) = \lim_{x \to c^{-}} \frac{f(x) - f(c)}{x - c} \geq 0,
+    \]
+    and
+    \[
+    f'(x) = \lim_{x \to c^{+}} \frac{f(x) - f(c)}{x - c} \leq 0,
+    \] 
+    So, \(f'(c) = 0\).
+}
+\pfs
+\begin{center}
+    \underline{Big Results From This Semester}
+\end{center}
+
+\begin{enumerate}
+    \item \namrefthm{Extreme Value Theorem}
+    \begin{itemize}
+        \item If \(f\) is continuous on a compact set, then \(f\) achieves a maximum and minimum on that set.
+    \end{itemize}
+    \item \namrefthm{Intermediate Value Theorem}
+    \begin{itemize}
+        \item If \(f\) is continuous on an interval \([a, b]\) and \(y\) is between \(f(a)\) and \(f(b)\), then there exists a \(c \in [a, b]\) such that \(f(c) = y\).
+    \end{itemize}
+
+\end{enumerate}
+\pfs
+\begin{center}
+    \underline{Theorems for Today}
+\end{center}
+
+\begin{enumerate}
+    \item Rolle's Theorem
+    \item Mean Value Theorem
+    \item Maybe:
+    \begin{itemize}
+        \item Generalized MVT.
+        \item L'Hopital's Rule.
+    \end{itemize}
+    \item Darbaux's Theorem
+\end{enumerate}
+
+\begin{ntheorem}
+    {Rolle's Theorem} Let \(f\) be continuous on \([a, b]\) and differentiable on \((a, b)\). If \(f(a) = f(b)\), then there exists a \(c \in (a, b)\) such that \(f'(c) = 0\).
+\end{ntheorem}
+
+\tpf{
+    Since \(f\) is continuous on \([a,b]\), the \namrefthm{Extreme Value Theorem} says \(f\) achieves a maximum and minimum in \([a,b]\). 
+    \begin{itemize}
+    \item If either maximum or minimum is in the interior, then the \namrefthm{thm:Interior Extremum Theorem} says that \(f'(c) = 0\). 
+    \item If the maximum or minimum is at the endpoints, then \(f\) is constant and \(f'(c) = 0\) for all \([a,b]\).
+    \end{itemize}
+}
+
+\begin{ntheorem}
+    {Mean Value Theorem} Let \(f\) be continuous on \([a, b]\) and differentiable on \((a, b)\). Then there exists a \(c \in (a, b)\) such that
+    \[
+        f'(c) = \frac{f(b) - f(a)}{b - a}.
+    \]
+    This is saying that there exists a point where the slope of the tangent line is equal to the slope of the secant line. In other words, there is a point where \(f'(c)\) happens.
+\end{ntheorem}
+
+\tpf{
+    Let \(d(x) = f(x) + \frac{f(a)}{}\)
+}

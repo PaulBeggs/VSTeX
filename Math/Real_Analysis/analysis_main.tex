@@ -1,0 +1,880 @@
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% MAIN DOCUMENT %%%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\documentclass[12pt, oneside]{book}
+% \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\linespread{1}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
+\usepgflibrary{shadings}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%------- %
+% XHFILL %
+%------- %
+
+
+
+%%% Chapter Headings %%%
+
+\newcommand{\gradientrule}{
+    \begin{tikzpicture}
+        \shade[left color=orangehdx, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+    \end{tikzpicture}
+}
+
+\usepackage[Glenn]{fncychap}
+% \ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
+% \ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
+% \ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
+\ChTitleVar{\bfseries\scshape\color{black}}
+\ChNumVar{\large\selectfont\color{black}}
+\ChNameVar{\large\color{black}}
+\usepackage{xpatch}
+
+% \xpatchcmd{\DOCH}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTI}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTIS}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+
+% \xpatchcmd\DOCH
+% {\mghrulefill}{\color{orangehdx}\mghrulefill}
+% {}{\PatchFailed}
+% \xpatchcmd\DOTI
+% {\mghrulefill}{\color{orangehdx}\mghrulefill}
+% {}{\PatchFailed}
+\xpatchcmd\DOTIS
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+
+
+% \usepackage[Bjornstrup]{fncychap}
+
+% \newcommand{\gradient}[1]{
+% \begin{tikzpicture}
+%     \node (rect) at (0,0) [fill=blue,,path fading=East,minimum width=\linewidth,minimum height=2.5cm] {};
+%     \node(title)[above left = 10pt and 10pt of rect.south east, anchor=south east, font=\CTV] {\textcolor{horange}{#1}};
+%     \ifnum \thechapter>0\node[left = 10pt of rect.north east,  anchor=center, font=\CNoV] {\textcolor{horange}{\thechapter}};\fi%
+% \end{tikzpicture}%
+% \vskip 40pt
+% }
+
+
+% \renewcommand{\DOCH}{}
+% \renewcommand{\DOTI}[1]{\gradient{#1}}
+% \renewcommand{\DOTIS}[1]{\gradient{#1}}
+
+%% Change Chapter Heading Placement %%
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
+
+% \usepackage[explicit]{titlesec}
+% \newcommand*\chapterlabel{}\pmod
+% \titleformat{\chapter}
+%   {\gdef\chapterlabel{}
+%    \normalfont\sffamily\Huge\bfseries\scshape}
+%   {\gdef\chapterlabel{\thechapter\ }}{0pt}
+%   {\begin{tikzpicture}[remember picture,overlay]
+%     \node[yshift=-3cm] at (current page.north west)
+%       {\begin{tikzpicture}[remember picture, overlay]
+%         \draw[fill=LightSkyBlue] (0,0) rectangle
+%           (\paperwidth,3cm);
+%         \node[anchor=east,xshift=.9\paperwidth,rectangle,
+%               sharp corners=downhill=20pt,inner sep=11pt,
+%               fill=MidnightBlue]
+%               {\color{white}\chapterlabel#1};
+%        \end{tikzpicture}
+%       };
+%    \end{tikzpicture}
+%   }
+% \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+
+% \usepackage[Conny]{fncychap}
+% \usepackage[Rejne]{fncychap}
+% \ChNameVar{\bfseries}  % Makes the chapter "Chapter #" bold
+% \ChNumVar{\bfseries}   % Makes the chapter number bold
+% \ChTitleVar{\bfseries} % Makes the chapter title bold
+% % Define a custom color, for example:
+% \definecolor{mycolor}{RGB}{0,128,255}
+
+% % Redefine the chapter style in Rejne to change the line colors
+% \makeatletter
+% \ChRuleWidth{2pt}   % Change the thickness of the lines
+% \renewcommand{\DOCH}{%
+%   \vspace*{-50\p@}% Moves the chapter title up/down if needed
+%   {\color{mycolor} \hrule \@chapapp{} \space \thechapter \hrule}% Customizes the chapter header with color
+% }
+% \renewcommand{\DOTI}[1]{%
+%   \vskip 20\p@ % Adjusts the space above the title
+%   \bfseries #1\par % Embolden the title
+%   \vskip 20\p@ % Adjusts the space below the title
+% }
+% \makeatother
+
+% %% Change Chapter Heading Placement %%
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+% \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+% \makeatother
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
+
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+\graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+
+%% Headers and Footers %%
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancyhead[R]{\leftmark}
+\fancyhead[L]{Hendrix College}
+\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
+% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
+\usepackage{xpatch}
+\xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
+\setlength{\footskip}{0.5in}
+\setlength{\headheight}{18.5764pt}
+
+
+%%%%% Colored Boxes %%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+\tcbuselibrary{minted}
+\newcounter{BoxCounter}
+
+
+\newtcolorbox{note}{colback=black!15!white, colframe=black, boxrule=0.5mm, arc=4mm, left=4mm, right=4mm, top=2mm, bottom=2mm}
+
+%% Numbered Theorems %%
+\newtcolorbox[use counter=BoxCounter, number within=section]{theorem}[1][]{%
+enhanced,
+sharp corners=uphill,
+    colframe=xblue, %color of frame
+    colback=xblue!15, %color of background
+    coltitle=white, %color of title text
+    label={thm:\theBoxCounter},
+    title={\large \textbf{Theorem \theBoxCounter}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xblue},
+    #1
+}
+
+
+%% Named Theorems %%
+\newtcolorbox[use counter=BoxCounter, number within=section]{ntheorem}[2][]{%
+enhanced,
+sharp corners=south,
+    colframe=xblue, %color of frame
+    colback=xblue!15, %color of background
+    coltitle=white, %color of title text
+    label={thm:#2},
+    title={\large \textbf{Theorem \theBoxCounter: #2}},
+    attach boxed title to top center,
+    boxed title style={colback=xblue},
+    #1
+}
+
+
+%% Definitions %%
+\newtcolorbox[use counter=BoxCounter, number within=section]{definition}[1][]{%
+enhanced,
+sharp corners=downhill,
+    colframe=xred,
+    colback=xred!15,
+    coltitle=white,
+    label={def:\theBoxCounter},
+    title={\large \textbf{Definition \theBoxCounter}},
+    attach boxed title to top right={xshift=-0.5cm},
+    boxed title style={colback=xred},
+    #1
+}
+
+
+%% Axioms %%
+\newtcolorbox[]{axiom}[2][]{%
+enhanced,
+sharp corners=downhill,
+    colframe=xdarkgreen,
+    colback=xdarkgreen!15,
+    coltitle=white,
+    label={ax:#2},
+    title={\large \textbf{Axiom of #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xdarkgreen},
+    #1
+}
+
+
+%% Exercises %%
+\newtcolorbox[]{exercise}[2][]{%
+    enhanced,
+    sharp corners=uphill,
+    colframe=orangehdx!75,
+    colback=orangehdx!10,
+    coltitle=black,
+    label={exerc:#2},
+    title={\large \textbf{Exercise: #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=orangehdx!75},
+    #1,
+}
+
+
+%% Examples %%
+\newcounter{ExampleCounter}
+\newtcolorbox[use counter=ExampleCounter, number within=chapter]{example}[2][]{%
+enhanced,
+sharp corners=south,
+    colframe=teal,
+    colback=teal!15,
+    coltitle=white,
+    label={ex:\theExampleCounter},
+    title={\large \textbf{Example \theExampleCounter: #2}},
+    attach boxed title to top center,
+    boxed title style={colback=teal},
+    #1,
+}
+
+
+%% Corollaries %%
+\newtcolorbox[]{corollary}[3][]{%
+enhanced,
+sharp corners=downhill,
+    colframe=xgrayblue,  
+    colback=xgrayblue!15,        
+    coltitle=white,
+    title={\large \textbf{Corollary to #3: #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xgrayblue},
+    #1
+}
+
+
+%% Lemmas %%
+\newtcolorbox[use counter=BoxCounter, number within=chapter]{lemma}[1][]{%
+enhanced,
+sharp corners=uphill,
+    colframe=xpurple,
+    colback=xpurple!15,
+    coltitle=white,
+    label={lm:\theBoxCounter},
+    title={\large \textbf{Lemma \theBoxCounter}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=xpurple},
+    #1,
+}
+
+%% Referencing Macros %%
+
+% Exercises
+\newcommand{\defex}[1]{\hyperref[ex:#1]{Exercise #1}}
+
+% Definitions
+\newcommand{\defword}[2]{\hyperref[def:#2]{#1}}
+\newcommand{\defref}[1]{\hyperref[def:#1]{Definition #1}}
+
+% Theorems
+\newcommand{\numrefthm}[1]{\hyperref[thm:#1]{Theorem #1}}
+\newcommand{\namrefthm}[1]{\hyperref[thm:#1]{#1}}
+
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%% MATH PACKAGES, ENVIRONMENTS, COMMANDS %%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%You'll need your own packages, theorem types, and commands.
+
+\usepackage{fix-cm}
+\usepackage{amsmath,amsthm} 
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+
+
+%%% Custom Commands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
+
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=black, % default color, will be overridden in custom commands
+%   backgroundcolor=draculabg, % Needed for Dracula theme
+%   fontcolor=draculafg, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+% Define a new environment 'proofscratch' for Proof and Scratch Paper
+\newenvironment{proofscratch}[2]{%
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=false,
+        % backgroundcolor=draculabg, % Background color for Dracula theme
+        % fontcolor=draculafg,       % Font color for Dracula theme
+        innerleftmargin=-6pt,
+        innertopmargin=0pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        skipabove=\topsep,
+        skipbelow=\topsep,
+    ]
+    % % Begin TikZ picture for the vertical dotted line
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     % Draw a vertical dotted line at approximately the center of the mdframed width
+    %     \draw[dotted, thick] ([xshift=0.005\linewidth]current bounding box.north west) -- ([xshift=0.005\linewidth]current bounding box.south west);
+    % \end{tikzpicture}%
+    % % Create the left minipage for Proof
+    \begin{minipage}[t]{0.47\textwidth}%
+        \noindent\textit{Proof.} #1 \hfill \(\qed\)
+    \end{minipage}%
+    \hfill
+    % Create the right minipage for Scratch Paper
+    \begin{minipage}[t]{0.47\textwidth}%
+        \textit{Scratch Paper.} #2
+    \end{minipage}%
+}{
+    \end{mdframed}
+}
+
+\newcommand{\pfscratch}[3]{%
+    \begin{customframedproof}[linecolor=#3]
+        \begin{proofscratch}
+            {#1}{#2}
+        \end{proofscratch}
+    \end{customframedproof}
+}
+
+\newcommand{\lepfscratch}[2]{\pfscratch{#1}{#2}{teal}}
+
+\newcommand{\sbseteqpfbase}[5][We need to show these expressions are subsets of each other in order to prove they are equivalent.]{%
+    \begin{customframedproof}[linecolor=#5]
+        \begin{proof}
+                #1
+            \begin{proofpart}[#5]{(\(\subseteq\))}
+                #2
+            \end{proofpart}
+    \vspace{2mm}
+            \begin{proofpart}[#5]{(\(\supseteq\))}
+                #3
+            \end{proofpart}
+    \vspace{2mm}
+            #4
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\sbseteqpf}[5][We need to show these expressions are subsets of each other in order to prove they are equivalent.]{
+    \raisebox{0.85em}{\begin{minipage}[t]{0.90\textwidth}
+        \sbseteqpfbase[#1]{#2}{#3}{#4}{#5}
+    \end{minipage}}
+}
+
+% \newcommand{\iffpf}[4]{
+%     \begin{customframedproof}[linecolor=#4]
+%         \begin{proof}
+%             We show this by proving both implications:
+%             \begin{proofpart}[#4]{(\(\Rightarrow\))}
+%                 #1
+%             \end{proofpart}
+%     \vspace{2mm}
+%             \begin{proofpart}[#4]{(\(\Leftarrow\))}
+%                 #2
+%             \end{proofpart}
+%     \vspace{2mm}
+%             #3
+%         \end{proof}
+%     \end{customframedproof}
+% }
+
+\newcommand{\iffpfbase}[5][We show this by proving both implications:]{
+    \begin{customframedproof}[linecolor=#5]
+        \begin{proof}
+            #1 % This is the optional text, with a default value
+            \begin{proofpart}[#5]{(\(\Rightarrow\))}
+                #2
+            \end{proofpart}
+    \vspace{2mm}
+            \begin{proofpart}[#5]{(\(\Leftarrow\))}
+                #3
+            \end{proofpart}
+    \vspace{2mm}
+            #4
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\iffpf}[5][We will show this by proving both implications:]{
+    \raisebox{0.85em}{\begin{minipage}[t]{0.90\textwidth}
+        \iffpfbase[#1]{#2}{#3}{#4}{#5}
+    \end{minipage}}
+}
+
+
+
+% Command for exercise proofs with a predefined color
+\newcommand{\expf}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\lemmapf}[1]{
+    \begin{customframedproof}[linecolor=xpurple!75,]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+% Command for proofs that are contained within solution environments. 
+\newcommand{\innerpfbase}[1]{%
+    \begin{customframedproof}[linecolor=xgray]
+        \begin{proof}
+            #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\innerpf}[1]{
+    \raisebox{0.85em}{
+    \begin{minipage}[t]{0.90\textwidth}
+        \innerpfbase{#1}
+    \end{minipage}}
+}
+
+
+% Command for theorems proofs with a predefined color
+\newcommand{\tpf}[1]{
+    \begin{customframedproof}[linecolor=xblue]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+% Command for corollaries proofs with a predefined color
+\newcommand{\cpf}[1]{
+    \begin{customframedproof}[linecolor=purplehdx]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\lesol}[1]{
+    \begin{customframedproof}[linecolor=teal]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\lepf}[1]{
+    \begin{customframedproof}[linecolor=teal]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\pb}[2]{
+    \begin{exercise}{#1}[label=ex:#1]
+    #2
+    \end{exercise}
+}
+
+\def \proofDistance {10pt}
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+% Command for theorems proofs with a predefined color
+\newcommand{\epf}[1]{
+    \begin{customframedproof}[linecolor=teal]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
+
+\newcommand{\ninn}{n \in \N}
+
+
+\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
+
+\renewcommand{\theenumi}{\alph{enumi}} 
+\renewcommand{\labelenumi}{(\theenumi)}
+
+
+% end of preamble
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{document}
+
+\numberwithin{BoxCounter}{section}
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% COVER PAGE %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+% Do not use all caps.
+\newcommand{\titlestandin}[0]{Real Analysis}
+\newcommand{\cussubtitle}[0]{MATH 350}
+% Date format should be like: "January 1, 2001"
+\newcommand{\startdate}[0]{August 26, 2024}
+\newcommand{\customenddate}[0]{December 2, 2024}
+% Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
+\newcommand{\professor}[0]{Prof. Christopher Camfield, Ph.D.}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+
+\begin{titlepage}
+    \begin{center}
+
+        \vspace*{-2cm}
+        \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
+        % \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
+        \vfill
+
+        % Horizontal line above the title in 'horange' color
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace{2em}
+
+        {\huge \textbf{\titlestandin}}
+
+        \vspace{1em} % Space between the title and the bottom line
+
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace*{1\baselineskip}
+
+        {\LARGE \textbf{\cussubtitle}}
+
+        \begin{large}
+            \vspace*{2\baselineskip}
+
+            \textit{Start}  \\[1ex]
+            {\scshape \startdate} \\[0.3\baselineskip] % Year published
+
+            \vspace*{1\baselineskip}
+
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+
+            \vspace*{1\baselineskip}
+
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
+
+            \vspace*{1\baselineskip}
+
+            \textit{End}\\[1ex]
+            {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
+
+            \thispagestyle{empty}
+
+        \end{large}
+    \end{center}
+\end{titlepage}
+\pagebreak
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%%% Table of Contents %%%
+
+% No need to edit.
+
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+% \thispagestyle{plain}
+% % Table of Contents will automatically update based on included chapters
+% % You may need to compile twice for the toc to update
+% \begin{spacing}{1} %Can change spacing between entries in toc
+%     \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
+%     \tableofcontents
+%     \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+% \end{spacing}
+
+
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+% \chapter{The Real Numbers}\label{Real nums}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_1}
+% \setcounter{chapter}{1}
+
+% \chapter{Sequences and Series}\label{sequences and series}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_2}
+% \setcounter{chapter}{2}
+
+% \chapter{Basic Topology of Real Numbers}\label{topology}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_3}
+% \setcounter{chapter}{3}
+
+% \chapter{Functional Limits and Continuity}\label{functional limits}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_4}
+% \setcounter{chapter}{4}
+
+
+% \chapter{The Derivative}\label{Derivative}
+% \vspace*{-0.25in}
+% \input{Chapters/analysis_ch_5}
+
+
+
+% \printglossary[title=Glossary]
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{(\theenumi)}
+% \chapter*{Exercises 1}\label{Exercises 1}
+% \vspace*{-0.25in}
+% \input{Exercises/analysis_exercises_1}
+
+% \chapter*{Exercises 2}\label{Exercises 2}
+% \vspace*{-0.25in}
+% \input{Exercises/analysis_exercises_2}
+
+% \fancyhead[R]{Exercises 3}
+
+% \chapter*{Exercises 3}\label{Exercises 3}
+% \vspace*{-0.25in}
+% \input{Exercises/analysis_exercises_3}
+
+% \chapter*{Exercises 4}\label{ex 4}
+% \vspace*{-0.25in}
+% \input{Exercises/analysis_exercises_4}
+
+% \chapter*{Exercises 5}\label{ex 5}
+% \vspace*{-0.25in}
+% \fancyhead[R]{Exercises 5}
+% \input{Exercises/analysis_exercises_5}
+
+% \chapter*{Exercises 6}\label{ex 6}
+% \vspace*{-0.25in}
+% \fancyhead[R]{Exercises 6}
+% \input{Exercises/analysis_exercises_6}
+
+% \chapter*{Exercises 7}\label{ex 7}
+% \vspace*{-0.25in}
+% \fancyhead[R]{Exercises 7}
+% \input{Exercises/analysis_exercises_7}
+
+
+% \chapter*{Presentation Problem 1}\label{pres 1}
+% \vspace*{-0.25in}
+% \input{Presentation Problems/Problem 1.2.13c}
+% \addcontentsline{toc}{chapter}{Presentation Problem 1}
+
+% \chapter*{Presentation Problem 2}\label{pres 2}
+% \vspace*{-0.25in}
+% \input{Presentation Problems/Problem 2.2.7}
+% \addcontentsline{toc}{chapter}{Presentation Problem 2}
+
+\chapter*{Presentation Problem 3}\label{pres 3}
+\vspace*{-0.25in}
+\fancyhead[R]{Presentation Problem 3}
+\input{Presentation Problems/Problem 4.5.4}
+\addcontentsline{toc}{chapter}{Presentation Problem 3}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+\end{document}
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

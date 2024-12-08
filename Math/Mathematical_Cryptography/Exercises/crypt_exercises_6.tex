@@ -1,0 +1,263 @@
+\begin{exercise}{6.1}
+    Let \( E \) be the elliptic curve \( E : Y^2 = X^3 - 2X + 4 \) and let \( P = (0, 2) \) and \( Q = (3, -5) \). (You should check that \( P \) and \( Q \) are on the curve \( E \).)
+    \begin{enumerate}
+        \item Compute \( P \oplus Q \).
+        \item Compute \( P \oplus P \) and \( Q \oplus Q \).
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    We have \(E \colon Y_{2} = X^{3} - 2X + 4\) with \(P = (0,2)\) and \(Q = (3,-5)\).
+    \begin{enumerate}
+        \item For \(P \oplus Q\), we need to find lambda: 
+        \[
+        \lambda = \frac{-5 - 2}{3 - 0} = -\frac{7}{3}.
+        \]
+        Using \(\lambda\), we can find the \(X\)-coordinate of \(P \oplus Q\):
+        \[
+        X_{3} = \left(-\frac{7}{2}\right)^{2} - 0 - 3 = \frac{22}{9},
+        \]
+        and for the \(y\)-coordinate:
+        \[
+        \left(-\frac{7}{3}\right)\left(0 - \frac{22}{9}\right) - 2 = \frac{100}{27}.
+        \]
+        Hence, \(P \oplus Q = \left(\frac{22}{9}, \frac{100}{27}\right)\).
+        \item For \(P \oplus P\), we need to find lambda:
+        \[
+        \lambda = \frac{3(0)^{2} - 2}{2 \cdot 2} = -\frac{1}{2}.
+        \]
+        For \(X_{3}\):
+        \[
+        X_{3} = \left(-\frac{1}{2}\right)^{2} - 0 - 0 = \frac{1}{4},
+        \]
+        and for \(Y_{3}\):
+        \[
+        Y_{3} = \left(-\frac{1}{2}\right)\left(0 - \frac{1}{4}\right) - 2 = -\frac{15}{8}.
+        \]
+        Hence, \(P \oplus P = \left(\dfrac{1}{4}, -\dfrac{15}{8}\right)\).
+    \end{enumerate} 
+}
+
+\begin{exercise}{6.2}
+    Check that the points \( P = (-1, 4) \) and \( Q = (2, 5) \) are points on the elliptic curve \( E : Y^2 = X^3 + 17 \).
+    \begin{enumerate}
+        \item Compute the points \( P \oplus Q \) and \( P \ominus Q \).
+        \item Compute the points \( P \oplus P \) and \( Q \oplus Q \).
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    We have \(E \colon Y^{2} = X^{3} + 17\) with \(P = (-1,4)\) and \(Q = (2,5)\).
+    \begin{enumerate}
+        \item For \(P \oplus Q\), we need to find \(\lambda\), \(X_{3}\), and \(Y_{3}\):
+        \[
+            \lambda = \frac{5 - 4}{2 - (-1)} = \frac{1}{3}, \qquad X_{3} = \left(\frac{1}{3}\right)^{2} - (-1) - 2 = -\frac{8}{9}, 
+        \]
+        \[
+            Y_{3} = \left(\frac{1}{3}\right)\left(-1 - \left(-\frac{8}{9}\right)\right) - 4 = -\frac{109}{27}.
+        \]
+        Hence, \(P \oplus Q = \left(-\dfrac{8}{9}, -\dfrac{109}{27}\right)\). 
+        
+        For \(P \ominus Q\), note \(-Q = (2,-5)\). Now, we need to find \(\lambda\), \(X_{3}\), and \(Y_{3}\):
+        \[
+            \lambda = \frac{-5 - 4}{2 - (-1)} = -3, \qquad X_{3} = (-3)^{2} - (-1) - 2 = 8, 
+        \]
+        \[
+            Y_{3} = (-3)(-1 - 8) - 4 = 23.
+        \]
+        Hence, \(P \ominus Q = (8,23)\).
+        \item For \(P \oplus P\), we need to find \(\lambda\), \(X_{3}\), and \(Y_{3}\):
+        \[
+        \lambda = \frac{3(-1)^{2} + 0}{2(4)} = \frac{3}{8}, \qquad X_{3} = \left(\frac{3}{8}\right)^{2} - (-1) - (-1) = \frac{137}{64},
+        \]
+        \[
+            Y_{3} = \frac{3}{8}\left(-1 - \frac{137}{64}\right) - 4 = -\frac{2651}{512}. 
+        \]
+        Hence, \(P \oplus P = \left(\dfrac{137}{64}, -\dfrac{2651}{512}\right)\). 
+        
+        For \(Q \oplus Q\), we need to find \(\lambda\), \(X_{3}\), and \(Y_{3}\):
+        \[
+            \lambda = \frac{3(2^{2}) + 0}{2(5)} = \frac{6}{5}, \qquad X_{3} = \left(\frac{6}{5}\right)^{2} - 2 - 2 = -\frac{64}{25}, 
+        \]
+        \[
+            Y_{3} = \frac{6}{5}\left(2 - \left(-\frac{64}{25}\right)\right) - 5 = \frac{59}{125}.
+        \]
+        Hence, \(Q \oplus Q = \left(-\dfrac{64}{25}, \dfrac{59}{125}\right)\).
+    \end{enumerate}
+}
+
+\begin{exercise}{6.3}
+    Suppose that the cubic polynomial \( X^3 + AX + B \) factors as
+    \[
+    X^3 + AX + B = (X - e_1)(X - e_2)(X - e_3).
+    \]
+    Prove that \( 4A^3 + 27B^2 = 0 \) if and only if two (or more) of \( e_1 \), \( e_2 \), and \( e_3 \) are the same. (Hint. Multiply out the right-hand side and compare coefficients to relate \( A \) and \( B \) to \( e_1 \), \( e_2 \), and \( e_3 \).)
+\end{exercise}
+
+\sol{
+    Let \(X^{3} + AX + B = (X - e_{1})(X - e_{2})(X - e_{3})\). Expanding the right-hand side, we get
+    \[
+    X^{3} - (e_{1} + e_{2} + e_{3})X^{2} + (e_{1}e_{2} + e_{1}e_{3} + e_{2}e_{3})X - e_{1}e_{2}e_{3}. 
+    \]
+    This implies \(e_{1} + e_{2} + e_{3} = 0\), \(e_{1}e_{2} + e_{1}e_{3} + e_{2}e_{3} = A\), and \(-e_{1}e_{2}e_{3} = B\).
+    
+    Suppose that \(e_{2} = e_{3}\). Then we have, 
+    \[
+    e_{1} + 2e_{2} = 0, \qquad 2e_{1}e_{2} + e_{2}^{2} = A, \qquad e_{1}e_{2}^{2} = B.
+    \]
+    So, \(e_{1} = -2e_{2}\), and substituting this into the second equation gives
+    \[
+        -3e_{2}^{2} = A, \qquad -2e_{2}^{3} = B.
+    \]
+    Hence, \(4A^{3} + 27B^{2} = 4(-3e_{2}^{2})^{3} + 27(-2e_{2}^{3})^{2} =0\). 
+
+    Conversely, suppose that \(4A^{3} + 27B^{2} = 0\). Substituting the expressions for \(A\) and \(B\) from above and multiplying it out gives:
+    \begin{align*}
+        4A^{3} + 27B^{2} = (4e_{2}^{3} + 12e_{3}e_{2}^{2} + 4e_{3}^{3})e_{1}^{3} &+ (12e_{3}e_{2}^{3} + 51e_{3}^{2}e_{2}^{3} + 12e_{3}^{3}e_{2}^{2})e_{1} \\
+        &+ (12e_{3}^{2}e_{2}^{3} + 12e_{3}^{3}e_{2}^{2})e_{1} \\
+        &+ 4e_{3}^{3}e_{2}^{3} 
+    \end{align*}
+    Substituting \(e_{1} = -e_{2} - e_{3}\), we get 
+    \[
+        4A^{3} + 27B^{2} = -4e_{2}^{6} - 12e_{3}e_{2}^{5} + 3e_{3}^{2}e_{2}^{4} + 26e_{3}^{3}e_{2}^{3} + 3e_{3}^{4}e_{2}^{2} - 12e_{3}^{5}e_{2} - 4e_{3}^{6}.
+    \]
+    Because this expression is divisible by \(e_{2} + 2e_{3}\), \((e_{2} + 2e_{3})^{2}\), and \((e_{3} + 2e_{2})^{2}\). So, we find that
+    \[
+        4A^{3} + 27B^{2} = -(e_{2} - e_{3})^{2}(e_{2} + 2e_{3})^{2}(e_{3} + 2e_{2})^{2}.
+    \]
+    Hence, using the fact that \(e_{1} + e_{2} + e_{3} = 0\), we find that
+    \[
+        4A^{3} + 27B^{2} = 0 \qquad \text{if and only if} \qquad (e_{2} - e_{3})^{2}(e_{1}-e_{3})^{2}(e_{1}-e_{2})^{2} = 0.
+    \]
+}
+
+\begin{exercise}{6.5}
+    For each of the following elliptic curves \( E \) and finite fields \( \mathbb{F}_p \), make a list of
+    the set of points \( E(\mathbb{F}_p) \).
+    \begin{enumerate}
+        \item \( E : Y^2 = X^3 + 3X + 2 \) over \( \mathbb{F}_7 \).
+        \item \( E : Y^2 = X^3 + 2X + 7 \) over \( \mathbb{F}_{11} \).
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item We have \(E \colon  Y^2 = X^3 + 3X + 2\) on \(\mathbb{F}_{7}\).
+
+        First, list of squares modulo 7: \(0^{2} = 0, 1^{2} = (-1)^{2} = (6)^{2} = 1, 2^{2} = 5^{2} = 4, 3^{2} = 4^{2} = 2\). Now, we can list the points on the curve:
+        \[
+        \begin{aligned}
+            0^{3} + 3(0) + 2 &= 2 \\
+            1^{3} + 3(1) + 2 &= 6 \\
+            2^{3} + 3(2) + 2 &= 2 \\ 
+            3^{3} + 3(3) + 2 &= 3 \\
+            4^{3} + 3(4) + 2 &= 1 \\
+            5^{3} + 3(5) + 2 &= 2 \\
+            6^{3} + 3(6) + 2 &= 5.
+        \end{aligned}
+        \]
+        Hence, the points on the curve are \(\{(0,3), (0,4); (2,3), (2,4); (4,1), (4,6); (5,3), (5,4); \mathcal{O}\}\). Therefore, there are 9 total points on the curve.
+        \item We have \(E \colon  Y^2 = X^3 + 2X + 7\) on \(\mathbb{F}_{11}\).
+
+        We list the squares modulo 11: \(0^{2} = 0, 1^{2} = (-1)^{2} = (10)^{2} = 1, 2^{2} = 9^{2} = 4, 3^{2} = 8^{2} = 9, 4^{2} =7^{2} = 5, 5^{2} = 6^{2} = 3\). Now, we can list the points on the curve:
+        \[
+        \begin{aligned}
+            0^{3} + 2(0) + 7 &= 7 \\
+            1^{3} + 2(1) + 7 &= 10 \\
+            2^{3} + 2(2) + 7 &= 8 \\ 
+            3^{3} + 2(3) + 7 &= 7 \\
+            4^{3} + 2(4) + 7 &= 2 \\
+            5^{3} + 2(5) + 7 &= 10 \\
+            6^{3} + 2(6) + 7 &= 4 \\
+            7^{3} + 2(7) + 7 &= 1 \\
+            8^{3} + 2(8) + 7 &= 7 \\
+            9^{3} + 2(9) + 7 &= 6 \\
+            10^{3} + 2(10) + 7 &= 4.
+        \end{aligned}
+        \]
+        Hence, the points on the curve are \(\{(6,2),(6,9); (7,1),(7,10);(10,2),(10,9); \mathcal{O}\}\). Therefore, there are 7 total points on the curve.
+    \end{enumerate}
+}
+
+\begin{exercise}{6.8}
+    Let \( E \) be the elliptic curve
+    \[
+    E : Y^2 = X^3 + X + 1
+    \]
+    and let \( P = (4, 2) \) and \( Q = (0, 1) \) be points on \( E \) modulo \( 5 \). Solve the elliptic curve discrete logarithm problem for \( P \) and \( Q \), that is, find a positive integer \( n \) such that \( Q = nP \).
+\end{exercise}
+
+\sol{
+    We have \(E \colon Y^{2} = X^{3} + X + 1\) with \(P = (4,2)\) and \(Q = (0,1)\) on \(\mathbb{F}_{5}\). Solve \(Q = nP\): 
+    \begin{align*}
+        1P &= (4,2) \\
+        2P &= (3,4) \\
+        3P &= (2,4) \\
+        4P &= (0,4) \\
+        5P &= (0,1). 
+    \end{align*}
+    \(n = 5\).
+}
+
+
+
+\begin{exercise}{6.11}
+    Use the double-and-add algorithm (Table 6.3) to compute \( nP \) in \( E(\mathbb{F}_p) \) for each of the following curves and points, as we did in Fig. 6.4.
+    \begin{enumerate}
+        \item \( E : Y^2 = X^3 + 23X + 13 \), \( p = 83 \), \( P = (24, 14) \), \( n = 19 \);
+        \item \( E : Y^2 = X^3 + 143X + 367 \), \( p = 613 \), \( P = (195, 9) \), \( n = 23 \);
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item We have \(E \colon Y^{2} = X^{3} + 23X + 13\) with \(p = 83\), \(P = (24,14)\), and \(n = 19\). We can compute \(nP\) using the double-and-add algorithm:
+        \begin{enumerate}[label=\arabic*.]
+            \item \(n = 19 = 16 + 2 + 1\).
+            \item \begin{align*}
+                1P &= (24,14) \\
+                2P &= (30, 8) \\
+                4P &= (24, 69) \\
+                8P &= (30, 75) \\
+                16P &= (24, 14) \\
+                \end{align*}
+            \item \(19P = (24,14) + (30,8) + (24,14) = (24,69)\).
+        \end{enumerate}
+        \item We have \(E \colon Y^{2} = X^{3} + 143X + 367\) with \(p = 613\), \(P = (195,9)\), and \(n = 23\). We can compute \(nP\) using the double-and-add algorithm:
+        \begin{enumerate}[label=\arabic*.]
+            \item \(n = 23 = 16 + 4 + 2 + 1\).
+            \item \begin{align*}
+                1P &= (195,9) \\
+                2P &= (407, 428) \\
+                4P &= (121, 332) \\
+                8P &= (408, 110) \\
+                16P &= (481, 300) \\
+                \end{align*}
+            \item \(23P = (481, 300) + (121, 332) + (407, 428) + (195,9) = (485, 573)\).
+        \end{enumerate}
+    \end{enumerate}
+}
+
+\begin{exercise}{6.14}
+    Alice and Bob agree to use elliptic Diffie-Hellman key exchange with the prime, elliptic curve, and point
+    \[
+    p = 2671, \quad E: Y^2 = X^3 + 171X + 853, \quad P = (1980, 431) \in E(\mathbb{F}_{2671}).
+    \]
+    \begin{enumerate}
+        \item Alice sends Bob the point \( Q_A = (2110, 543) \). Bob decides to use the secret multiplier \( n_B = 1943 \). What point should Bob send to Alice?
+        \item What is their secret shared value?
+        \setcounter{enumi}{3}
+        \item Alice and Bob decide to exchange a new piece of secret information using the same prime, curve, and point. This time Alice sends Bob only the \( X \)-coordinate \( X_A = 2 \) of her point \( Q_A \). Bob decides to use the secret multiplier \( n_B = 875 \). 
+        What single number modulo \(p\) should Bob send to Alice, and what is their secret shared value?
+    \end{enumerate}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item We have \(p = 2671\), \(E \colon Y^{2} = X^{3} + 171X + 853\), and \(P = (1980,431)\) on \(\mathbb{F}_{2671}\). Alice sends \(Q_{A} = (2110,543)\) to Bob. Bob uses \(n_{B} = 1943\). We calculate \(n_{B}P = Q_{B} = 1943(1980,431) = (1432, 667)\) to be sent to Alice.
+        \item \(n_{B}Q_{A} = 1943(2110,543) = (2424, 911)\) is the shared secret value.
+        \setcounter{enumi}{3}
+        \item \(n_{B}P = Q_{B} = 875(1980,431) = (161,2040) \Rightarrow X_{B} = 161\) to be sent to Alice. Now calculate \(n_{B}X_{A} = 875(2,96) = (1707, 1252)\) which gives \(X = 1708\) as the shared secret value.
+    \end{enumerate}
+}
+
