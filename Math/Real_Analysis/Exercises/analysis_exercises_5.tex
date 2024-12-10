@@ -1,64 +1,87 @@
 \begin{exercise}
-    {3.2.4}Let \(A\) be a nonempty and bounded above set so that \(s = \sup(A)\) exists. 
+    {3.2.4}Let \(A\) be a nonempty and bounded above set so that \(s = \sup(A)\) exists. (See \defref{1.3.2} and \defref{3.2.7})
     \begin{enumerate}
-        \item Show that \(s \in \overline{A}\).
+        \item Show that \(s \in \bar{A}\).
         \item Can an open set contain its supremum?
     \end{enumerate}
 \end{exercise}
 
 \sol{
     \begin{enumerate}
-        \item We will show that \(s \in \overline{A}\). \\
-        
-        \innerpf{
-            Let \(s = \sup(A)\). We know \(s\) can be in either two conditions:
-            \begin{enumerate}[label=\arabic*.]
-                \item If \(s \in A\), then \(s \in \overline{A}\) by definition of closure.
-                \item For the sake of contradiction, suppose \(s \notin A\). We will show that \(s = \sup(A)\) is a limit point so \(s \in L \subseteq \overline{A}\). By definition, \(x\) is a limit point of \(A\) if for all \(\epsilon > 0\), there exists \(a \in A\) such that \(a \in V_\epsilon(x)\) and \(a \ne x\). Pick any \(\epsilon > 0\). Since \(s = \sup(A)\), for this \(\epsilon\), \(s - \epsilon\) is not an upper bound of \(A\). Therefore, there exists \(a \in A\) such that
-                \[
-                    s - \epsilon < a \leq s.
-                \]
-                Since \(a \leq s\) and \(a > s - \epsilon\), we have \(\disabs{a - s} < \epsilon\), so \(a \in V_\epsilon(s)\) and \(a \ne s\). Therefore, \(s\) is a limit point of \(A\), and hence \(s \in \overline{A}\). \qedhere
-            \end{enumerate}
-        }
-        \item A set cannot contain its supremum if the set is open. For the sake of contradiction, assume \(A \subseteq \R\) is a non-empty open set containing its suprema \(s\). Since \(A\) is an open set, then for every \(x \in A\), there must exist an \(\epsilon > 0\) such that \(V_\epsilon(x) \subseteq A\) such that 
+        \item We need to show that \(s = \sup(A) \in \bar{A}\), where \(\bar{A} = A \cup L\), and \(L\) is the set of limit points of \(A\).
+
+        Since \(A\) is nonempty and bounded above, \(s = \sup(A)\) exists.
+
+        If \(s \in A\), then \(s \in \bar{A}\) trivially.
+
+        Suppose \(s \notin A\). We will show that \(s\) is a limit point of \(A\), so \(s \in L \subseteq \bar{A}\).
+
+        By definition, \(x\) is a limit point of \(A\) if for all \(\epsilon > 0\), there exists \(a \in A\) such that \(a \in V_\epsilon(x)\) and \(a \ne x\).
+
+        Fix any \(\epsilon > 0\). Since \(s = \sup(A)\), for this \(\epsilon\), \(s - \epsilon\) is not an upper bound of \(A\). Therefore, there exists \(a \in A\) such that
         \[
-        V_\epsilon(s) = \{x \in \R \mid \disabs{x - s} < \epsilon\} \subseteq A.
+        s - \epsilon < a \leq s.
         \]
-        However, this implies there exists point \(y \in V_\epsilon(s)\) such that \(y > s\) because \(V_\epsilon(s)\) includes values both less than and great than \(s\). This contradicts the assumption that \(s\) is an upper bound for \(A\), as it would imply that \(A\) contains points greater than \(s\). Therefore, an open set \(A\) cannot contain its supremum.
+        Since \(a \leq s\) and \(a > s - \epsilon\), we have \(|a - s| < \epsilon\), so \(a \in V_\epsilon(s)\) and \(a \ne s\).
+
+        Therefore, \(s\) is a limit point of \(A\), and hence \(s \in \bar{A}\).
+
+        \item An open set cannot contain its supremum if the supremum is finite.
+
+        Assume \(A\) is an open set containing its supremum \(s\).
+
+        Since \(A\) is open and \(s \in A\), there exists \(\epsilon > 0\) such that
+        \[
+        V_\epsilon(s) = \{ x \in \mathbb{R} \mid |x - s| < \epsilon \} \subseteq A.
+        \]
+        This means \(s + \frac{\epsilon}{2} \in A\).
+
+        However, \(s\) is an upper bound of \(A\), so no element of \(A\) can be greater than \(s\).
+
+        This is a contradiction.
+
+        Therefore, an open set cannot contain its supremum.
     \end{enumerate}
 }
 
 \begin{exercise}
-    {3.2.6}Decide whether the following statements are true or false. Provide counter examples for those that are false, and supply proofs for those that are true. (Choose 2.)
+    {3.2.6}Decide whether the following statements are true or false. Provide counterexamples for those that are false, and supply proofs for those that are true.
     \begin{enumerate}
-        \item An open set that contains every rational number must necessarily be all of \(\R\).
-        \item The \namrefthm{Nested Interval Property} remains true if the term ``closed interval'' is replaced by ``closed set.''
+        \item An \hyperref[def:3.2.2]{open set} that contains every rational number must necessarily be all of \(\R\).
+        \item The \namrefthm{Nested Interval Property} remains true if the term ``closed interval'' is replaced by ``\hyperref[def:3.2.5]{closed set}.''
         \item Every nonempty open set contains a rational number.
         \item Every bounded infinite closed set contains a rational number.
-        \item The Cantor set (\defref{3.1.1}) is closed. 
+        \item The \hyperref[def:3.1.1]{Cantor set} is closed.
     \end{enumerate}
 \end{exercise}
 
 \sol{
     \begin{enumerate}
-        \setcounter{enumi}{1}
-        \item False. Consider the counter example of a sequence of closed sets \(C_n = [n, \infty)\) for \(n \in \N\). These sets satisfy \(C_1 \supseteq C_2 \supseteq \cdots\), but their intersection is 
-        \[
-            \bigcap_{n=1}^\infty C_n = \emptyset,
-        \]
-        which contradicts the \namrefthm{Nested Interval Property}. Therefore, replacing ``closed interval'' with ``closed set'' invalidates this property.
-        \setcounter{enumi}{4}
-        \item This statement is true: \\
+        \item \textbf{False.}
 
-        \innerpf{
-            The \hyperref[def:3.1.1]{Cantor set} \(C\) is constructed as the intersection of a decreasing sequence of closed sets (finite unions of closed intervals). Since each of these sets is closed, and by \numrefthm{3.2.8}, the intersection of any collection of closed sets is closed, so \(C\) is closed.
-        }
+        \textit{Counterexample:} Consider the set \(U = \bigcup_{n=1}^\infty \left( q_n - \frac{1}{n},\ q_n + \frac{1}{n} \right)\), where \((q_n)\) is an enumeration of all rational numbers.
+
+        Each interval \(\left( q_n - \frac{1}{n},\ q_n + \frac{1}{n} \right)\) is open, and the union \(U\) is open. Since every rational number is included in some interval, \(U\) contains all rationals. However, \(U \ne \mathbb{R}\) because there are irrational numbers not covered by these intervals. Therefore, an open set can contain all rational numbers without being all of \(\mathbb{R}\).
+
+        \item \textbf{True.}
+
+        \innerpf{The Nested Interval Property holds for any nested sequence of nonempty closed and bounded sets in \(\mathbb{R}\). If \(\{F_n\}\) is such a sequence with \(F_{n+1} \subseteq F_n\) for all \(n\), then the intersection \(\bigcap_{n=1}^\infty F_n\) is nonempty. This follows from the completeness of \(\mathbb{R}\), as every decreasing sequence of nonempty closed and bounded sets has a nonempty intersection. Therefore, replacing ``closed interval'' with ``closed set'' does not invalidate the property.}
+
+        \item \textbf{True.}
+
+        \innerpf{Let \(U\) be a nonempty open set. Then there exists \(x \in U\) and \(\epsilon > 0\) such that \((x - \epsilon,\ x + \epsilon) \subseteq U\). Since the rationals are dense in \(\mathbb{R}\), there exists a rational number \(q \in (x - \epsilon,\ x + \epsilon)\). Therefore, \(U\) contains a rational number.}
+
+        \item \textbf{True.}
+
+        \innerpf{Let \(F\) be a bounded infinite closed set. Since \(F\) is infinite and bounded, it must contain limit points. As \(F\) is closed, it contains its limit points. The real numbers are densely ordered with rationals between any two real numbers. Therefore, \(F\) must contain a rational number.}
+
+        \item \textbf{True.}
+
+        \innerpf{The \hyperref[def:3.1.1]{Cantor set} \(C\) is constructed as the intersection of a decreasing sequence of closed sets (finite unions of closed intervals). Since each of these sets is closed and the intersection of closed sets is closed, \(C\) is closed.}
     \end{enumerate}
 }
-
 \begin{exercise}
-    {3.2.8} Assume \(A\) is an open set and \(B\) is a closed set. Determine if the following sets are definitely open, definitely closed, both or neither.
+    {3.2.8} Assume \(A\) is an open set and \(B\) is a closed set. Determine if the following sets are definitely \hyperref[def:3.2.2]{open}, definitely \hyperref[def:3.2.5]{closed}, both, or neither.
     \begin{enumerate}
         \item \(\overline{A \cup B}\)
         \item \(A \setminus B = \{x \in A \mid x \notin B\}\)
@@ -68,32 +91,67 @@
     \end{enumerate}
 \end{exercise}
 
-\textbf{Note:} Theorems~\ref{thm:3.2.3},~\ref{thm:3.2.6},~\ref{thm:3.2.8}, and~\ref{thm:3.2.9} are going to be needed to solve this problem.
-
 \sol{
     \begin{enumerate}
-        \item The closure of any set is closed by \numrefthm{3.2.9}. Therefore, \(\overline{A \cup B}\) is closed.
-        \item We need to find a way to transform \(A \setminus B\) into something we can work with. Thus, if \(A \setminus B = \{x \in A \mid x \notin B\}\), another way of saying \(x \notin B\) is by the complement of \(B\). Specifically, \(x \in B^c\) implies \(x \notin B\). Because we want to preserve the set that is created by \(A \setminus B\), we can take the intersection of \(A\) and \(B^c\) to include only the parts that are not in \(B\) and in \(A\). Thus, \(A \setminus B = A \cap B^c\). Since the complement of a closed set is open by \numrefthm{3.2.6}, then \(B^c\) is open. Since the intersection of two open sets is open by \numrefthm{3.2.3}, \(A \cap B^c\) is open, and so is \(A \setminus B\).
-        \item Taking the complement of \((A^c \cup B)^c\) gives \(A \cap B^c\) by De Morgan's Laws. Thus, since \(A\) is open and \(B^c\) is open because of \numrefthm{3.2.6}, \((A^c \cup B)^c\) is open by \numrefthm{3.2.3}.
-        \item Because of the shared \(B\) in the expression \((A \cap B) \cup (A^c \cap B)\), we can factor out \(B\) to get 
-        \[
-            (A \cap B) \cup (A^c \cap B) = [(A \cup A^c) \cap B] = \R \cap B = B.
-        \]
-        Therefore, the set equals \(B\), which is closed.
-        \item Since \(A\) is open, its closure \(\overline{A}\) is a closed set containing all limit points of \(A\). Therefore, the complement \(\overline{A}^c\) is open. Similarly, \(A^c\) is closed (being the complement of an open set), so its closure is \(\overline{A^c} = A^c\), which is closed.
+        \item \(\overline{A \cup B}\)
 
-        Now, consider the intersection:
+        The closure of any set is closed by definition. Therefore, \(\overline{A \cup B}\) is definitely closed.
+
+        \textbf{Conclusion: Closed.}
+
+        \item \(A \setminus B = \{x \in A \mid x \notin B\}\)
+
+        Since \(B\) is closed, its complement \(B^c\) is open. Since \(A\) is open, the intersection \(A \cap B^c = A \setminus B\) is the intersection of two open sets, which is open.
+
+        \textbf{Conclusion: Open.}
+
+        \item \((A^c \cup B)^c\)
+
+        Applying De Morgan's Law:
         \[
-        \overline{A}^c \cap \overline{A^c} = \overline{A}^c \cap A^c.
+        (A^c \cup B)^c = A \cap B^c
         \]
-        Since \(\overline{A} \supseteq A\), we have \(\overline{A}^c \subseteq A^c\). Thus, the intersection simplifies to \(\overline{A}^c\). However, any point not in \(\overline{A}\) cannot be a limit point of \(A\) or belong to \(A\). In \(\mathbb{R}\), this set is empty unless \(A\) is either \(\emptyset\) or \(\mathbb{R}\). Therefore,
+        Since \(A\) is open and \(B^c\) is open (because \(B\) is closed), their intersection \(A \cap B^c\) is open.
+
+        \textbf{Conclusion: Open.}
+
+        \item \((A \cap B) \cup (A^c \cap B)\)
+
+        Simplify the expression:
         \[
-        \overline{A}^c \cap \overline{A^c} = \emptyset.
+        (A \cap B) \cup (A^c \cap B) = [A \cup A^c] \cap B = \R \cap B = B
         \]
-        The empty set is both open and closed.
+        Thus, the set equals \(B\), which is closed.
+
+        \textbf{Conclusion: Closed.}
+
+        \item \(\overline{A}^c \cap \overline{A^c}\)
+
+        Since \(A\) is open, its closure \(\overline{A}\) is closed, so \(\overline{A}^c\) is open.
+
+        Since \(A^c\) is closed (being the complement of an open set), \(\overline{A^c} = A^c\) is closed.
+
+        Therefore, \(\overline{A}^c \cap \overline{A^c}\) is the intersection of an open set and a closed set, which is generally open but not necessarily closed.
+
+        For example, let \(A = (0,1)\). Then:
+        \[
+        \overline{A} = [0,1], \quad \overline{A}^c = (-\infty, 0) \cup (1,\infty)
+        \]
+        and
+        \[
+        \overline{A^c} = A^c = (-\infty, 0] \cup [1,\infty)
+        \]
+        Then:
+        \[
+        \overline{A}^c \cap \overline{A^c} = [(-\infty, 0) \cup (1,\infty)] \cap [(-\infty, 0] \cup [1,\infty)] = (-\infty, 0) \cup (1,\infty)
+        \]
+        Which is an open set.
+
+        \textbf{Conclusion: Open.}
+
     \end{enumerate}
 }
-\newpage
+
 \begin{exercise}
     {3.2.11} \begin{enumerate}
         \item Prove that \(\overline{A \cup B} = \overline{A} \cup \overline{B}\).
@@ -103,29 +161,50 @@
 
 \sol{
     \begin{enumerate}
-        \item We will prove that \(\overline{A \cup B} = \overline{A} \cup \overline{B}\): \\
+        \item We will prove that \(\overline{A \cup B} = \overline{A} \cup \overline{B}\).
         
-        \sbseteqpf{
-            Let \(x \in \overline{A \cup B}\). Then \(x \in A\) or \(x\) is a limit point of \(A \cup B\).
-            \begin{itemize}
-                \item If \(x \in \overline{A \cup B}\), then \(x \in A\) or \(x \in B\), so \(x \in \overline{A}\) or \(x \in \overline{B}\), thus \(x \in \overline{A} \cup \overline{B}\).
-                \item If \(x\) is a limit point of \(A \cup B\), then every \(\epsilon\)-neighborhood \(V_\epsilon(x)\) contains a point \(y \ne x\) such that \(y \in A \cup B\). Therefore, \(y \in A\) or \(y \in B\), so \(x\) is a limit point of \(A\) or \(B\). Hence, \(x \in \overline{A}\) or \(x \in \overline{B}\), so \(x \in \overline{A} \cup \overline{B}\).
-            \end{itemize}
-            Therefore, \(\overline{A \cup B} \subseteq \overline{A} \cup \overline{B}\).
+        \sbseteqpf[
+            Recall that the closure of a set \(A\) is defined as \(\overline{A} = A \cup L_A\), where \(L_A\) is the set of limit points of \(A\).
+        ]{
+            Let \(x \in \overline{A \cup B}\). Then \(x \in A \cup B\) or \(x\) is a limit point of \(A \cup B\).
+
+                \begin{itemize}
+                            \item If \(x \in A \cup B\), then \(x \in A\) or \(x \in B\), so \(x \in \overline{A}\) or \(x \in \overline{B}\), thus \(x \in \overline{A} \cup \overline{B}\).
+                
+                            \item If \(x\) is a limit point of \(A \cup B\), then every neighborhood \(V_\epsilon(x)\) contains a point \(y \ne x\) such that \(y \in A \cup B\). Therefore, \(y \in A\) or \(y \in B\), so \(x\) is a limit point of \(A\) or \(B\). Hence, \(x \in \overline{A}\) or \(x \in \overline{B}\), so \(x \in \overline{A} \cup \overline{B}\).
+                \end{itemize}
+                
+                            Therefore, \(\overline{A \cup B} \subseteq \overline{A} \cup \overline{B}\).
         }{
             Let \(x \in \overline{A} \cup \overline{B}\). Then \(x \in \overline{A}\) or \(x \in \overline{B}\).
-            \begin{itemize}
-                \item If \(x \in \overline{A}\), then \(x \in A\) or \(x\) is a limit point of \(A\). Since \(A \subseteq A \cup B\), \(x \in A \cup B\) or \(x\) is a limit point of \(A \cup B\). Thus, \(x \in \overline{A \cup B}\).
-                \item Similarly, if \(x \in \overline{B}\), then \(x \in \overline{A \cup B}\).
-            \end{itemize}
-            Therefore, \(\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}\).
-        }{Hence, \(\overline{A \cup B} = \overline{A} \cup \overline{B}\).}{xgray}
-        \item The result does not necessarily extend to infinite unions of sets.Consider the sets \(A_n = \left( \frac{1}{n}, 1 - \frac{1}{n} \right)\) for \(n \in \N\). Then \(\overline{A_n} = \left[ \frac{1}{n}, 1 - \frac{1}{n} \right]\). The infinite union is \(A = \bigcup_{n=1}^\infty A_n = (0,1)\), so \(\overline{A} = [0,1]\). The union of the closures is \(\bigcup_{n=1}^\infty \overline{A_n} = (0,1)\), since none of the closed intervals \(\left[ \frac{1}{n}, 1 - \frac{1}{n} \right]\) include the endpoints 0 or 1. Therefore, \(\overline{A} \ne \bigcup_{n=1}^\infty \overline{A_n}\). Hence, the equality does not hold for infinite unions.
+
+                \begin{itemize}
+                            \item If \(x \in \overline{A}\), then \(x \in A\) or \(x\) is a limit point of \(A\). Since \(A \subseteq A \cup B\), \(x \in A \cup B\) or \(x\) is a limit point of \(A \cup B\). Thus, \(x \in \overline{A \cup B}\).
+                
+                            \item Similarly, if \(x \in \overline{B}\), then \(x \in \overline{A \cup B}\).
+                \end{itemize}
+                
+                            Therefore, \(\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}\).
+        }{
+            Hence, \(\overline{A \cup B} = \overline{A} \cup \overline{B}\).
+        }{xgray}
+        \item The result does not necessarily extend to infinite unions of sets.
+
+        Consider the sets \(A_n = \left( \frac{1}{n}, 1 - \frac{1}{n} \right)\) for \(n \in \N\). Then \(\overline{A_n} = \left[ \frac{1}{n}, 1 - \frac{1}{n} \right]\).
+
+        The infinite union is \(A = \bigcup_{n=1}^\infty A_n = (0,1)\), so \(\overline{A} = [0,1]\).
+
+        The union of the closures is \(\bigcup_{n=1}^\infty \overline{A_n} = (0,1)\), since none of the closed intervals \(\left[ \frac{1}{n}, 1 - \frac{1}{n} \right]\) include the endpoints 0 or 1.
+
+        Therefore, \(\overline{A} \ne \bigcup_{n=1}^\infty \overline{A_n}\).
+
+        Hence, the equality does not hold for infinite unions.
+
     \end{enumerate}
 }
 
 \begin{exercise}
-    {3.3.4}Assume \(K\) is \hyperref[def:3.3.1]{compact} and \(F\) is \hyperref[def:3.2.5]{closed}. Decide if the following sets are definitely compact, definitely closed, both, or neither.  
+    {3.3.4}Assume \(K\) is \hyperref[def:3.3.1]{compact} and \(F\) is \hyperref[def:3.2.5]{closed}. Decide if the following sets are definitely compact, definitely closed, both, or neither. 
     \begin{enumerate}
         \item \(K \cap F\)
         \item \(\overline{F^c \cup K^c}\)
@@ -135,15 +214,48 @@
 \end{exercise}
 
 \sol{
-    \begin{enumerate}
-        \item The intersection of two closed sets is \hyperref[def:3.2.5]{closed}. Since \(K\) is \hyperref[def:3.3.1]{compact} (and thus closed) and \(F\) is closed, \(K \cap F\) is closed. Moreover, \(K \cap F\) is a closed subset of the compact set \(K\). Because it is a closed subset of \(K\), it must also be bounded because \(K\) is bounded. Thus, this subset is compact. Therefore, \(K \cap F\) is both compact and closed.
+\begin{enumerate}
+    \item Since \(K\) and \(F\) are closed, their intersection \(K \cap F\) is closed (\numrefthm{3.2.8}).
 
-        \item Since \(F\) is closed, its complement \(F^c\) is open. Similarly, \(K\) is compact and thus closed, so \(K^c\) is open. The union \(F^c \cup K^c\) is open, and its closure \(\overline{F^c \cup K^c}\) is closed by definition. However, this set may not be bounded and therefore not necessarily compact. Thus, \(\overline{F^c \cup K^c}\) is definitely closed but not necessarily compact.
+    To show that \(K \cap F\) is compact, let \(\mathcal{U}\) be any open cover of \(K \cap F\). Our goal is to extract a finite subcover from \(\mathcal{U}\). We can then use the \namrefthm{Bolzano-Weierstrass Theorem} (iii) to show that \(K \cap F\) is compact.
 
-        \item The set \(K \setminus F = K \cap F^c\) is the intersection of a compact set \(K\) and an open set \(F^c\). The result may not be closed or compact. Although \(K \setminus F\) is bounded (since \(K\) is bounded), it is not necessarily closed and therefore not necessarily compact. Hence, \(K \setminus F\) is neither compact nor closed.
+    Since \(F\) is closed, its complement \(F^c\) is open (\numrefthm{3.2.6}). Then \(K \setminus F = K \cap F^c\) is open as the intersection of an open set and \(K\).
 
-        (Consider the example of \(K = [0,1]\) and \(F = \{0\}\). Then \(K \setminus F = (0,1]\) which is not closed (or open).)
+    Consider the open cover \(\mathcal{U}' = \mathcal{U} \cup \{K \setminus F\}\) of \(K\). Every point in \(K\) is either in \(K \cap F\) (covered by \(\mathcal{U}\)) or in \(K \setminus F\) (covered by \(K \setminus F\)).
 
-        \item The closure \(\overline{K \cap F^c}\) is closed by definition. Since \(K\) is compact and \(\overline{K \cap F^c} \subseteq K\), the set \(\overline{K \cap F^c}\) is a closed subset of a compact set. By the same logic in (a), it is compact. Therefore, \(\overline{K \cap F^c}\) is both compact and closed.
-    \end{enumerate}
+    Since \(K\) is compact, there exists a finite subcover \(\mathcal{U}'' \subseteq \mathcal{U}'\) that covers \(K\).
+
+    If \(K \setminus F\) is in \(\mathcal{U}''\), remove it to obtain a finite subcollection of \(\mathcal{U}\) that still covers \(K \cap F\). If \(K \setminus F\) is not in \(\mathcal{U}''\), then \(\mathcal{U}'' \subseteq \mathcal{U}\) already covers \(K \cap F\).
+
+    Therefore, \(K \cap F\) is compact.
+
+    \textbf{Conclusion:} Both compact and closed.
+
+    \item Since \(F\) and \(K\) are closed, \(F^c\) and \(K^c\) are open. The union \(F^c \cup K^c\) is open (\numrefthm{3.2.3}), so its closure \(\overline{F^c \cup K^c}\) is closed by \numrefthm{3.2.9}.
+
+    This set may not be bounded, so it's not necessarily compact.
+
+    \textbf{Conclusion:} Definitely closed.
+
+    \item The set \(K \setminus F = K \cap F^c\) is the intersection of a compact set \(K\) and an open set \(F^c\). This set is open in \(K\) but not necessarily open or closed in \(\mathbb{R}\).
+
+    Since \(K \setminus F\) is not necessarily closed, it may not be compact.
+
+    \textbf{Conclusion:} Neither compact nor closed.
+
+    \item The set \(K \cap F^c\) is open in \(K\), so its closure \(\overline{K \cap F^c}\) is closed by \numrefthm{3.2.9}.
+
+    To show that \(\overline{K \cap F^c}\) is compact, let \(\mathcal{U}\) be any open cover of \(\overline{K \cap F^c}\).
+
+    Since \(\overline{K \cap F^c} \subseteq K\) and \(K\) is compact, we can consider \(\mathcal{U}\) as an open cover of a subset of \(K\).
+
+    By the definition of \hyperref[def:3.3.3]{open cover}, there exists a finite subcover of \(\mathcal{U}\) that covers \(\overline{K \cap F^c}\).
+
+    Therefore, \(\overline{K \cap F^c}\) is compact.
+
+    \textbf{Conclusion:} Both compact and closed.
+
+\end{enumerate}
 }
+
+

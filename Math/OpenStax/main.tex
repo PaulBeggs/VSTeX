@@ -1,0 +1,215 @@
+\documentclass[10pt]{book}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{amsmath, amsthm}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{mdframed} % For creating framed environments
+\usepackage{tikz}
+
+% Define cactus green color
+\definecolor{cactusgreen}{RGB}{0,150,12} % RGB for cactus green
+
+% ------------------------------------------------------------------------------
+% DEFINE THEOREM STYLE
+% ------------------------------------------------------------------------------
+
+% Theorem style
+\newtheoremstyle{boldcolor}
+  {} % Space above
+  {} % Space below
+  {} % Body font
+  {} % Indent amount
+  {\bfseries\color{cactusgreen}} % Theorem head font
+  {:} % Punctuation after theorem head
+  {0pt} % Space after theorem head
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}} % Theorem head spec
+
+\theoremstyle{boldcolor}
+\newtheorem{theorem}{Theorem}[section]
+
+% Define the style for the 'mdframed' environment that will be used for theorems
+\mdfdefinestyle{theoremstyle}{
+    linecolor=black, % Border color
+    linewidth=1pt,
+    frametitlerule=false,
+    frametitlebackgroundcolor=gray!20,
+    frametitlefont={},
+    backgroundcolor=gray!10,
+    innertopmargin=\topskip,
+    innerbottommargin=\topskip,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    skipabove=\topsep,
+    skipbelow=\topsep,
+    splittopskip=\topskip,
+}
+
+% Define a new environment 'mytheorem' which combines 'mdframed' and 'theorem'
+\newenvironment{mytheorem}[2][]
+  {\begin{mdframed}[style=theoremstyle]\begin{theorem}[{#1}]\textbf{ \color{cactusgreen}#2}\nobreak\textcolor{cactusgreen}{\hrule height 0.5pt}\nobreak\vspace{0.5em}\color{black}}
+  {\end{theorem}\end{mdframed}}
+
+\setstretch{1.2} % Set line spacing
+
+% Set margins
+\geometry{
+    margin=1in
+}
+
+% Define custom command for figure references
+\newcommand{\figref}[1]{\textbf{\textsf{\textcolor{red}{Figure #1}}}} 
+
+
+\setcounter{chapter}{2}    % Set the chapter counter
+\setcounter{section}{7}    % Set the section counter
+\setcounter{theorem}{1}    % Set the theorem counter to one less than desired number
+                           % since it increments with each new theorem.
+
+                        
+
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[outline]{contour} % glow around text
+\usepackage{xcolor}
+
+\colorlet{veccol}{red!255}
+\colorlet{projcol}{blue!70!black}
+\colorlet{myblue}{blue!80!black}
+\colorlet{myred}{red!90!black}
+\colorlet{mydarkblue}{blue!50!black}
+\tikzset{>=latex} % for LaTeX arrow head
+\tikzstyle{proj}=[projcol!80,line width=0.08] %very thin
+\tikzstyle{area}=[draw=veccol,fill=veccol!80,fill opacity=0.6]
+\tikzstyle{vector}=[-stealth,myblue,thick,line cap=round]
+\tikzstyle{unit vector}=[->,veccol,thick,line cap=round]
+\tikzstyle{dark unit vector}=[unit vector,veccol!70!black]
+\usetikzlibrary{angles,quotes} % for pic (angle labels)
+\contourlength{1.3pt}
+
+\begin{document}
+% 3D AXIS with cylindrical coordinates
+
+
+\begin{mytheorem}{Converting among Spherical, Cylindrical, and Rectangular Coordinates} % Title with cactus green coloring for both the theorem and the description.
+    Rectangular coordinates $(x, y, z)$ and spherical coordinates $(\rho, \phi, \theta)$ of a point are related as follows:
+    \begin{multicols}{3} % Environment for displaying the different formulae. Note this way of positioning cuts down on additional page space, and allows students to have a more concise table to refer to.
+
+        \centering % Center all contents in the multicols.
+        \noindent \textbf{Rectangular Coordinates $(x,y,z)$} % Title for rectangular coordinates.
+        \noindent
+        \begin{align*}
+            x          & = \rho \sin\phi \cos\theta                             \\
+            y          & = \rho \sin\phi \sin\theta                             \\
+            z          & = \rho \cos\phi                                        \\
+                       & \text{and}                                             \\
+            \rho^2     & = x^2 + y^2 + z^2                                      \\
+            \tan\theta & = \frac{y}{x}                                          \\
+            \phi       & = \arccos\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)
+        \end{align*}
+        \columnbreak % Begin new column 
+
+        \vspace*{\fill} % Fill all space above the paragraph to simulate a 'centered' feeling, and to line up with the equations per their respective sections (defined by 'and').
+        \noindent These equations are used to convert from spherical coordinates to rectangular coordinates.
+
+        \vspace{0.5cm} % Distances the two paragraphs to allow for the 'and' keyword to differenciate the two halves.
+
+        \noindent These equations are used to convert from rectangular coordinates to spherical coordinates.
+        \vspace*{\fill} % Fill space below
+
+        \columnbreak % Begin new column 
+
+        \noindent \textbf{Cylindrical Coordinates $(r,\theta,z)$} % Title for cylindrical coordinates
+        \noindent
+        \begin{align*}
+            r      & = \rho \sin\phi                                  \\
+            \theta & = \theta                                         \\
+            z      & = \rho \cos\phi                                  \\
+                   & \text{and}                                       \\
+            \rho   & = \sqrt{r^2 + z^2}                               \\
+            \theta & = \theta                                         \\
+            \phi   & = \arccos\left(\frac{z}{\sqrt{r^2 + z^2}}\right)
+        \end{align*}
+
+    \end{multicols}
+
+    \noindent If a point has cylindrical coordinates \((r, \theta, z)\), then these equations define the relationship between cylindrical and spherical coordinates.
+\end{mytheorem}
+
+\noindent The formulas to convert from spherical coordinates to rectangular coordinates may seem complex, but they are straightforward applications of trigonometry. Looking at \figref{2.98}, it is easy to see that $r = \rho \sin(\phi)$. Then, looking at the triangle in the \textit{xy}-plane with \textit{r} as the hypotenuse, we have $x = r \cos(\theta)=\rho \sin(\phi) \cos(\theta)$. The derivation of the formula for \textit{y} is similar. \figref{2.96} shows that $\rho^2 = r^2 + z^2 = x^2 + y^2 + z^2 = \rho \cos(\phi)$. Solving the last equation for $\phi$ and then substituting  $\rho = \sqrt{r^2 + z^2}$ (from the first equation) yields $$\phi = \arccos\left(\frac{z}{\sqrt{r^2 + z^2}}\right)$$ Also, note that, as before, we must be careful when using the formula $\tan(\theta) = \frac{y}{x}$ to choose the correct value of $\theta$.
+
+
+\setcounter{figure}{97}
+\begin{figure}[h!]
+    \centering
+
+    \tdplotsetmaincoords{65}{100}
+
+    \begin{tikzpicture}[scale=2.2,tdplot_main_coords]
+
+        % VARIABLES
+        \def\rtheta{0.3} % length theta arc
+        \def\rvec{1.2}
+        \def\phivec{46}
+        \def\thetavec{48}
+
+        % Define coordinates for P and its projection on the xy-plane
+        \coordinate (P) at (2,2,1.5); % Point P at (2,2,1.5)
+        \coordinate (Pxy) at (2,2,0); % Projection of P onto the xy-plane
+
+        % Right-angle marker at point Pxy
+        \draw (Pxy)++(0,0,0.12) --++(\thetavec+180:0.12) --++ (0,0,-0.12); % This creates the L-shape for the right angle
+
+        \coordinate (Pz) at (0,0,1.9);
+
+        \draw (Pz)++(0,0,-0.12) --++ (\thetavec+0:0.12) --++ (0,0,0.12);
+
+
+        % AXES
+        \coordinate (O) at (0,0,0);
+        \draw[thick,->] (0,0,0) -- (2,0,0) node[below left=-3]{$x$};
+        \draw[thick,->] (0,0,0) -- (0,2,0) node[right=-1]{$y$};
+        \draw[thick,->] (0,0,0) -- (0,0,2) node[above=-1]{$z$};
+
+        % POINT P
+        \tdplotsetcoord{P}{\rvec}{\phivec}{\thetavec}
+        \node[circle,inner sep=0.9,fill=myblue]
+        (P') at (2.0,2,1.9) {};
+
+        % Assuming P is already defined and positioned
+        \node[circle]
+        (P'') at (2.0,2.34,1.9) {};
+        \node[above=8.5mm] at (P'') {$\textsf{P}(r,\theta,z)$};
+
+        \node[circle]
+        (P''') at (2.0,2.35,1.9) {};
+        \node[above=4mm] at (P''') {$\textsf{P}(x,y,z)$};
+
+
+        % VECTORS & DASHED
+        \draw[dashed,mydarkblue] (0,0,1.9)  -- (P')
+        node[pos=0.55,above right=-6] {\contour{white}{$r$}};
+
+        % MEASURES
+        \draw[dashed,veccol] (0,0,0) -- (2.0,2.0,0)
+        node[pos=0.5,scale=0.9]{\contour{white}{$r$}};
+        \draw[dashed,veccol] (2.0,2.0,0) -- (P')
+        node[pos=0.55,scale=0.9]{\contour{white}{$z$}};
+        \draw[->] (\rtheta,0,0) arc(0:\thetavec:\rtheta)
+        node[pos=0.35,below=-2,scale=0.9] {$\theta$};
+
+        % VECTORS
+        \draw[vector] (O)  -- (P')
+        node[pos=0.5,above left=-4] {$\rho$}
+        node[right=1,above right=-3] {$\textsf{P}(\rho,\theta,z)$};
+
+    \end{tikzpicture}
+    \caption{\centering The equations that convert from one system to another are derived from right-triangle relationships.}
+    \label{fig:enter-label}
+\end{figure}
+
+
+
+\end{document}

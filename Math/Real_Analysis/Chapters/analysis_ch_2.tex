@@ -66,7 +66,7 @@ We can rearrange these terms such that we can `force' the series to converge to 
 ``To get close'' means is that we are finding a bigger and bigger \(N\) as \(\epsilon\) gets smaller. Note that the choice of \(N\) certainly depends on \(\epsilon\). This idea of ``getting close'' can be seen in the following definition:
 
 \begin{tcolorbox}%
-    [rounded corners, colframe=xred, colback=xred!15, coltitle=white, label=def:2.2.3B, title={\large \textbf{Definition 2.2.3B}}]
+    [enhanced, sharp corners=downhill, colframe=xred, colback=xred!15, coltitle=white, label=def:2.2.3B, title={\large \textbf{Definition 2.2.3B}},attach boxed title to top right={xshift=-0.5cm}, boxed title style={colback=xred}]
     A sequence \( (a_n) \) converges to \( a \) if, given any \( \epsilon \)-neighborhood \( V_\epsilon(a) \) of \( a \), there exists a point in the sequence after which all of the terms are in \( V_\epsilon(a) \). In other words, every \( \epsilon \)-neighborhood contains all but a finite number of the terms of \( (a_n) \).
 \end{tcolorbox}
 
@@ -84,42 +84,42 @@ Proof: Let \(\epsilon > 0\). There exists \(N \in \N\) such that \{something inv
 }
 
 \begin{example}
-    {Limit Proof 3}Claim: \(\limn \frac{2n^2 + 1{n^2}} = 2\)
+    {Limit Proof 3}Claim: \(\displaystyle \limn \frac{2n^2 + 1}{n^2} = 2\)
 \end{example}
 
 \epf{
 Let \(\epsilon > 0\). By the \namrefthm{Archimedean Principle}, there exists \(N \in \N\) such that [leave off] \textit{Scratch paper:} Solve for \[\disabs{\frac{2n^2 + 1}{n^2} - 2} =  \frac{2n^2}{n^2} < \epsilon \Rightarrow \frac{3}{2\epsilon} < n\] [pick up] there exists \(N \in \N\) such that \[N > \frac{1}{\sqrt{\epsilon}}.\] Assume \(n \geq N\), then
 \begin{align*}
-    \disabs{\frac{2n^2 + 1}{n^2} - 2} & = \frac{1}{n^2}                    \\
-                                      & \leq \frac{1}{N^2}                 \\
-                                      & < \frac{1}{(1/(\sqrt{\epsilon})^2} \\
-                                      & = \frac{1}{1/\epsilon}             \\
+    \disabs{\frac{2n^2 + 1}{n^2} - 2} & = \frac{1}{n^2}                                \\
+                                      & \leq \frac{1}{N^2}                             \\
+                                      & < \frac{1}{\left(1/(\sqrt{\epsilon})\right)^2} \\
+                                      & = \frac{1}{1/\epsilon}                         \\
                                       & = \epsilon
 \end{align*}
-Therefore, \(\limn \frac{2n^2 + 1{n^2}} = 2\)
+Therefore, \(\limn \frac{2n^2 + 1}{n^2} = 2\)
 }
 
 \begin{example}
-    {Limit Proof 4}Claim: \(\limn \frac{7n + 8{3n + 6}} = \frac{7}{3} \)
+    {Limit Proof 4}Claim: \(\displaystyle \limn \frac{7n + 8}{3n + 6} = \frac{7}{3} \)
 \end{example}
 
 \epf{
     \begin{align*}
         \disabs{\frac{7n+8}{3n+6} - \frac{7}{3}} & = \disabs{\frac{21n + 24}{3(3n + 6)} - \frac{21n + 42}{3(3n + 6)}} \\
-                                                 & = \disabs{\frac{-18}{9n + 18}}                                    \\
-                                                 & = \frac{18}{9n + 18} < \epsilon**                                 \\
-                                                 & = \frac{18}{3} < 9n + 18                                          \\
-                                                 & = \frac{18}{3} - 18 < 9n                                          \\
+                                                 & = \disabs{\frac{-18}{9n + 18}}                                     \\
+                                                 & = \frac{18}{9n + 18} < \epsilon**                                  \\
+                                                 & = \frac{18}{3} < 9n + 18                                           \\
+                                                 & = \frac{18}{3} - 18 < 9n                                           \\
                                                  & = \frac{18/\epsilon - 18}{9} < n
     \end{align*}
-    \(** \frac{18}{9n + 8} < \frac{18}{9n} < \epsilon \Rightarrow \frac{2}{\epsilon} < N\). \(\exists N \in \N\) such that \(N > \frac{2}{\epsilon}\). Assume \(n \geq N\), 
+    \(** \frac{18}{9n + 8} < \frac{18}{9n} < \epsilon \Rightarrow \frac{2}{\epsilon} < N\). \(\exists N \in \N\) such that \(N > \frac{2}{\epsilon}\). Assume \(n \geq N\),
     \begin{align*}
         \disabs{\frac{7n + 8}{3n + 6} - \frac{7}{3}} & = \frac{18}{9n + 18}   \\
                                                      & = \frac{2}{n+2}        \\
                                                      & < \frac{2}{n}          \\
                                                      & \leq \frac{2}{N}       \\
                                                      & < \frac{2}{\epsilon/2} \\
-                                                     & = \epsilon
+                                                     & = \epsilon. \qedhere
     \end{align*}
 }
 
@@ -135,7 +135,7 @@ Therefore, \(\limn \frac{2n^2 + 1{n^2}} = 2\)
 }
 
 \begin{example}
-    {Limit Proof 5}Let \((x_n) = \displaystyle \frac{\cos(n)}{3n}\). Claim: \(\limn (x_n) = 0\)
+    {Limit Proof 5}Let \((x_n) = \displaystyle \frac{\cos(n)}{3n}\). Claim: \(\displaystyle \limn (x_n) = 0\)
 \end{example}
 
 \epf{
@@ -150,7 +150,7 @@ Therefore, \(\limn \frac{2n^2 + 1{n^2}} = 2\)
 }
 
 \begin{example}
-    {Limit Proof 6}Let \((y_n) = \frac{4n-1}{n^2}\). Claim: \(\limn y_n = 0\).
+    {Limit Proof 6}Let \(\displaystyle (y_n) = \frac{4n-1}{n^2}\). Claim: \(\displaystyle \limn y_n = 0\).
 \end{example}
 
 \epf{
@@ -166,156 +166,156 @@ Therefore, \(\limn \frac{2n^2 + 1{n^2}} = 2\)
     \end{align*}
 }
 
-\renewcommand{\theenumi}{\alph{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
-\subsection{Exercises}
+% \renewcommand{\theenumi}{\alph{enumi}}
+% \renewcommand{\labelenumi}{(\theenumi)}
+% \subsection{Exercises}
 
-\begin{exercise}
-    {2.1.1}What happens if we reverse the order of the quantifiers in \defref{2.2.3}?
+% \begin{exercise}
+%     {2.1.1}What happens if we reverse the order of the quantifiers in \defref{2.2.3}?
 
-    \textit{Definition:} A sequence \(x_{n}\) \textit{verconges} to \(x\) if there exists an \(\epsilon >0\) such that for all \(N \in \N\) it is true that \(n \geq N\) implies \(\disabs{x-n - x} < \epsilon \).
-    \begin{enumerate}
-        \item Give an example of a vercongent sequence.
-        \item Is there an example of a vercongent sequence that is divergent?
-        \item Can a sequence verconge to two different values?
-        \item What exactly is being described in this strange definition?
-    \end{enumerate}
-\end{exercise}
+%     \textit{Definition:} A sequence \(x_{n}\) \textit{verconges} to \(x\) if there exists an \(\epsilon >0\) such that for all \(N \in \N\) it is true that \(n \geq N\) implies \(\disabs{x-n - x} < \epsilon \).
+%     \begin{enumerate}
+%         \item Give an example of a vercongent sequence.
+%         \item Is there an example of a vercongent sequence that is divergent?
+%         \item Can a sequence verconge to two different values?
+%         \item What exactly is being described in this strange definition?
+%     \end{enumerate}
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}
-        \item Pick \(\epsilon = 2\), \(x_{n} = (-1)^{n}\) and \(x = 0\). This sequence will stay within the bounds of \((-2,2)\) for all \(N \in \N\) and \(n \geq N\).
-        \item There cannot be a divergent vercongent sequence because vercongence wants us to be bounded, and divergence wants it to grow outside the bounds. These two ideas are mutually exclusive.
-        \item Yes. For example, \(x_{n} = 0\) and \(x_{n} = 1\).
-        \item This definition is describing a sequence that is bounded. It is a sequence that is not growing outside of a certain range.
-    \end{enumerate}
-}
+% \sol{
+%     \begin{enumerate}
+%         \item Pick \(\epsilon = 2\), \(x_{n} = (-1)^{n}\) and \(x = 0\). This sequence will stay within the bounds of \((-2,2)\) for all \(N \in \N\) and \(n \geq N\).
+%         \item There cannot be a divergent vercongent sequence because vercongence wants us to be bounded, and divergence wants it to grow outside the bounds. These two ideas are mutually exclusive.
+%         \item Yes. For example, \(x_{n} = 0\) and \(x_{n} = 1\).
+%         \item This definition is describing a sequence that is bounded. It is a sequence that is not growing outside of a certain range.
+%     \end{enumerate}
+% }
 
-\begin{exercise}
-    {2.2.2}Verify, using \defref{2.2.3}, that
-    the following sequences converge to the proposed limit.
-    \begin{enumerate}
-        \item \(\limn \frac{2n + 1{5n + 4}} = \frac{2}{5}\).
-        \item \(\limn \frac{2n^2{n^3+3}} = 0\)
-    \end{enumerate}
-\end{exercise}
+% \begin{exercise}
+%     {2.2.2}Verify, using \defref{2.2.3}, that
+%     the following sequences converge to the proposed limit.
+%     \begin{enumerate}
+%         \item \(\limn \frac{2n + 1}{5n + 4} = \frac{2}{5}\).
+%         \item \(\limn \frac{2n^2}{n^3+3} = 0\)
+%     \end{enumerate}
+% \end{exercise}
 
-\expf{\hfill
-    \begin{enumerate}
-        \item Let \(\epsilon > 0\). Choose \(N \in \N\) such that \(N > \dfrac{3}{25\epsilon}\). Then for all \(n \geq N\),
-              \begin{align*}
-                  \left|\frac{2n + 1}{5n + 4} - \frac{2}{5}\right| & = \left|\frac{-3}{5(5n + 4)}\right| \\
-                                                                   & = \frac{3}{25n + 20}                \\
-                                                                   & \leq \frac{3}{25n}                  \\
-                                                                   & \leq \frac{3}{25N}                  \\
-                                                                   & < \epsilon
-              \end{align*}
-              Therefore, \(\displaystyle \lim_{n \to \infty} \frac{2n + 1}{5n + 4} = \frac{2}{5}\).
-        \item Let \(\epsilon > 0\). By the \namrefthm{Archimedean Principle}, there exists an \(N \in \N\) such that \(N > \frac{2}{\epsilon}\). Then, for \(n \geq N\),
-              \begin{align*}
-                  \disabs{\frac{2n^2}{n^3 + 3} - 0} & = \disabs{\frac{2n^2}{n^3 + 3}} \\
-                                                    & = \frac{2n^2}{n^3 + 3}          \\
-                                                    & < \frac{2n^2}{n^3}              \\
-                                                    & = \frac{2}{n}                   \\
-                                                    & \leq \frac{2}{N}                \\
-                                                    & = \frac{2}{2/\epsilon}          \\
-                                                    & = \epsilon.
-              \end{align*}
-              Therefore, \(\limn \frac{2n^2{n^3 + 3}} = 0\). \qedhere
-    \end{enumerate}
-}
+% \expf{\hfill
+%     \begin{enumerate}
+%         \item Let \(\epsilon > 0\). Choose \(N \in \N\) such that \(N > \dfrac{3}{25\epsilon}\). Then for all \(n \geq N\),
+%               \begin{align*}
+%                   \left|\frac{2n + 1}{5n + 4} - \frac{2}{5}\right| & = \left|\frac{-3}{5(5n + 4)}\right| \\
+%                                                                    & = \frac{3}{25n + 20}                \\
+%                                                                    & \leq \frac{3}{25n}                  \\
+%                                                                    & \leq \frac{3}{25N}                  \\
+%                                                                    & < \epsilon
+%               \end{align*}
+%               Therefore, \(\displaystyle \lim_{n \to \infty} \frac{2n + 1}{5n + 4} = \frac{2}{5}\).
+%         \item Let \(\epsilon > 0\). By the \namrefthm{Archimedean Principle}, there exists an \(N \in \N\) such that \(N > \frac{2}{\epsilon}\). Then, for \(n \geq N\),
+%               \begin{align*}
+%                   \disabs{\frac{2n^2}{n^3 + 3} - 0} & = \disabs{\frac{2n^2}{n^3 + 3}} \\
+%                                                     & = \frac{2n^2}{n^3 + 3}          \\
+%                                                     & < \frac{2n^2}{n^3}              \\
+%                                                     & = \frac{2}{n}                   \\
+%                                                     & \leq \frac{2}{N}                \\
+%                                                     & = \frac{2}{2/\epsilon}          \\
+%                                                     & = \epsilon.
+%               \end{align*}
+%               Therefore, \(\limn \frac{2n^2}{n^3 + 3} = 0\). \qedhere
+%     \end{enumerate}
+% }
 
-\begin{exercise}
-    {2.2.3} Describe what we would have to demonstrate in order to disprove each of the following statements.
-    \begin{enumerate}
-        \item At every college in the United States, there is a student who is at least
-              seven feet tall.
-        \item For all colleges in the United States, there exists a professor who gives every student a grade of either A or B.
-        \item There exists a college in the United States where every student is at least six feet tall.
-    \end{enumerate}
-\end{exercise}
+% \begin{exercise}
+%     {2.2.3} Describe what we would have to demonstrate in order to disprove each of the following statements.
+%     \begin{enumerate}
+%         \item At every college in the United States, there is a student who is at least
+%               seven feet tall.
+%         \item For all colleges in the United States, there exists a professor who gives every student a grade of either A or B.
+%         \item There exists a college in the United States where every student is at least six feet tall.
+%     \end{enumerate}
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}
-        \item There is at least one college in the United States where all students are less than seven feet tall.
-        \item There is at least one college in the United States where all professors give at least one student a grade of C or lower.
-        \item For all colleges in the United States, there exists a student who is less than six feet tall.
-    \end{enumerate}
-}
+% \sol{
+%     \begin{enumerate}
+%         \item There is at least one college in the United States where all students are less than seven feet tall.
+%         \item There is at least one college in the United States where all professors give at least one student a grade of C or lower.
+%         \item For all colleges in the United States, there exists a student who is less than six feet tall.
+%     \end{enumerate}
+% }
 
-\begin{exercise}
-    {2.2.4} Give an example of each or state that the request is impossible.
-    For any that are impossible, give a compelling argument for why that is the case.
-    \begin{enumerate}
-        \item A sequence with an infinite number of ones that does not converge to one.
-        \item A sequence with an infinite number of ones that converges to a limit not equal to one.
-        \item A divergent sequence such that for every \(n \in \N\) it is possible to find \(n\) consecutive ones somewhere in the sequence.
-    \end{enumerate}
-\end{exercise}
+% \begin{exercise}
+%     {2.2.4} Give an example of each or state that the request is impossible.
+%     For any that are impossible, give a compelling argument for why that is the case.
+%     \begin{enumerate}
+%         \item A sequence with an infinite number of ones that does not converge to one.
+%         \item A sequence with an infinite number of ones that converges to a limit not equal to one.
+%         \item A divergent sequence such that for every \(n \in \N\) it is possible to find \(n\) consecutive ones somewhere in the sequence.
+%     \end{enumerate}
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}
-        \item Possible. Consider the sequence \(a_n = \begin{cases}
-                  1 & \text{if } n \text{ is even} \\
-                  0 & \text{if } n \text{ is odd}
-              \end{cases}\). This sequence has infinitely many ones but does not converge to one.
+% \sol{
+%     \begin{enumerate}
+%         \item Possible. Consider the sequence \(a_n = \begin{cases}
+%                   1 & \text{if } n \text{ is even} \\
+%                   0 & \text{if } n \text{ is odd}
+%               \end{cases}\). This sequence has infinitely many ones but does not converge to one.
 
-        \item Impossible. Suppose \((a_n)\) is a sequence that converges to a limit \(L \neq 1\) and has infinitely many ones. Since \((a_n)\) converges to \(L\), for any \(\epsilon > 0\), there exists \(N \in \N\) such that for all \(n \geq N\), \(|a_n - L| < \epsilon\). Choose \(\epsilon = \frac{|1 - L|}{2} > 0\). Then, for \(n \geq N\), \(|a_n - L| < \epsilon\), which implies \(a_n \neq 1\) beyond this \(N\). This contradicts the existence of infinitely many ones. Therefore, such a sequence is impossible.
+%         \item Impossible. Suppose \((a_n)\) is a sequence that converges to a limit \(L \neq 1\) and has infinitely many ones. Since \((a_n)\) converges to \(L\), for any \(\epsilon > 0\), there exists \(N \in \N\) such that for all \(n \geq N\), \(|a_n - L| < \epsilon\). Choose \(\epsilon = \frac{|1 - L|}{2} > 0\). Then, for \(n \geq N\), \(|a_n - L| < \epsilon\), which implies \(a_n \neq 1\) beyond this \(N\). This contradicts the existence of infinitely many ones. Therefore, such a sequence is impossible.
 
-        \item Possible. Define a sequence by concatenating increasing blocks of ones separated by zeros: \( (0, 1, 0, 1, 1, 0, 1, 1, 1, 0, \dots) \). Specifically, the sequence consists of \(n\) ones followed by a zero for \(n = 1, 2, 3, \dots\). For every \(n \in \N\), there is a block of \(n\) consecutive ones somewhere in the sequence. The sequence does not converge, so it is divergent.
-    \end{enumerate}
-}
+%         \item Possible. Define a sequence by concatenating increasing blocks of ones separated by zeros: \( (0, 1, 0, 1, 1, 0, 1, 1, 1, 0, \dots) \). Specifically, the sequence consists of \(n\) ones followed by a zero for \(n = 1, 2, 3, \dots\). For every \(n \in \N\), there is a block of \(n\) consecutive ones somewhere in the sequence. The sequence does not converge, so it is divergent.
+%     \end{enumerate}
+% }
 
-\begin{exercise}
-    {2.2.5} Let \([[x]]\) be the greatest integer less than or equal to \(x\). For example, \([[\pi]] = 3\) and \([[3]] = 3\). For each sequence, find \(\lim_{n \to \infty} a_{n}\) and verify it with the definition of convergence.
-    \begin{enumerate}
-        \item \(a_{n} = [[5/n]]\)
-        \item \(a_{n} = [[(12 + 4n)/3n]]\)
-    \end{enumerate}
-    Reflecting on these examples, comment on the statement following \defref{2.2.3B} that ``the smaller the \(\epsilon\)-neighborhood, the larger \(N\) may have to be.''
-\end{exercise}
+% \begin{exercise}
+%     {2.2.5} Let \([[x]]\) be the greatest integer less than or equal to \(x\). For example, \([[\pi]] = 3\) and \([[3]] = 3\). For each sequence, find \(\lim_{n \to \infty} a_{n}\) and verify it with the definition of convergence.
+%     \begin{enumerate}
+%         \item \(a_{n} = [[5/n]]\)
+%         \item \(a_{n} = [[(12 + 4n)/3n]]\)
+%     \end{enumerate}
+%     Reflecting on these examples, comment on the statement following \defref{2.2.3B} that ``the smaller the \(\epsilon\)-neighborhood, the larger \(N\) may have to be.''
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}
-        \item We will show that \(\displaystyle \lim_{n \to \infty} a_{n} = 0\).
+% \sol{
+%     \begin{enumerate}
+%         \item We will show that \(\displaystyle \lim_{n \to \infty} a_{n} = 0\).
 
-              \innerpf{
-              For \(n \geq 6\), we have \(\displaystyle \frac{5}{n} \leq \frac{5}{6} < 1\), so \(a_{n} = [[5/n]] = 0\).
+%               \innerpf{
+%               For \(n \geq 6\), we have \(\displaystyle \frac{5}{n} \leq \frac{5}{6} < 1\), so \(a_{n} = [[5/n]] = 0\).
 
-              Let \(\epsilon > 0\). Choose \(N = 6\). Then for all \(n \geq N\),
-              \[
-                  |a_{n} - 0| = |0 - 0| = 0 < \epsilon.
-              \]
-              Therefore, by the definition of convergence, \(\displaystyle \lim_{n \to \infty} a_{n} = 0\).
-              }
+%               Let \(\epsilon > 0\). Choose \(N = 6\). Then for all \(n \geq N\),
+%               \[
+%                   |a_{n} - 0| = |0 - 0| = 0 < \epsilon.
+%               \]
+%               Therefore, by the definition of convergence, \(\displaystyle \lim_{n \to \infty} a_{n} = 0\).
+%               }
 
-        \item We will show that \(\displaystyle \lim_{n \to \infty} a_{n} = 1\).
+%         \item We will show that \(\displaystyle \lim_{n \to \infty} a_{n} = 1\).
 
-              \innerpf{
-              Observe that:
-              \[
-                  a_{n} = \left[ \dfrac{12 + 4n}{3n} \right] = \left[ \dfrac{4n + 12}{3n} \right] = \left[ \dfrac{4}{3} + \dfrac{4}{n} \right].
-              \]
-              As \(n \to \infty\), \(\dfrac{4}{n} \to 0\), so \(\dfrac{4}{3} + \dfrac{4}{n} \to \dfrac{4}{3} \approx 1.333\).
+%               \innerpf{
+%               Observe that:
+%               \[
+%                   a_{n} = \left[ \dfrac{12 + 4n}{3n} \right] = \left[ \dfrac{4n + 12}{3n} \right] = \left[ \dfrac{4}{3} + \dfrac{4}{n} \right].
+%               \]
+%               As \(n \to \infty\), \(\dfrac{4}{n} \to 0\), so \(\dfrac{4}{3} + \dfrac{4}{n} \to \dfrac{4}{3} \approx 1.333\).
 
-              For \(n \geq 7\), we have:
-              \[
-                  \dfrac{4}{n} \leq \dfrac{4}{7} \approx 0.571,\quad \dfrac{4}{3} + \dfrac{4}{n} \leq 1.333 + 0.571 = 1.904.
-              \]
-              Since \(1 < \dfrac{4}{3} + \dfrac{4}{n} < 2\) for \(n \geq 7\), we have:
-              \[
-                  a_{n} = \left[ \dfrac{4}{3} + \dfrac{4}{n} \right] = 1.
-              \]
-              Let \(\epsilon > 0\). Choose \(N = 7\). Then for all \(n \geq N\),
-              \[
-                  |a_{n} - 1| = |1 - 1| = 0 < \epsilon.
-              \]
-              Therefore, by the definition of convergence, \(\displaystyle \lim_{n \to \infty} a_{n} = 1\).
-              }
-    \end{enumerate}
+%               For \(n \geq 7\), we have:
+%               \[
+%                   \dfrac{4}{n} \leq \dfrac{4}{7} \approx 0.571,\quad \dfrac{4}{3} + \dfrac{4}{n} \leq 1.333 + 0.571 = 1.904.
+%               \]
+%               Since \(1 < \dfrac{4}{3} + \dfrac{4}{n} < 2\) for \(n \geq 7\), we have:
+%               \[
+%                   a_{n} = \left[ \dfrac{4}{3} + \dfrac{4}{n} \right] = 1.
+%               \]
+%               Let \(\epsilon > 0\). Choose \(N = 7\). Then for all \(n \geq N\),
+%               \[
+%                   |a_{n} - 1| = |1 - 1| = 0 < \epsilon.
+%               \]
+%               Therefore, by the definition of convergence, \(\displaystyle \lim_{n \to \infty} a_{n} = 1\).
+%               }
+%     \end{enumerate}
 
-    \textbf{Reflection:} In these examples, we see that once the sequence reaches a certain point (i.e., \(n \geq N\)), the terms remain constant. This means that for any \(\epsilon > 0\), we can find a fixed \(N\) to satisfy the definition of convergence, regardless of how small \(\epsilon\) is. However, in general, smaller \(\epsilon\)-neighborhoods may require larger \(N\) because the sequence may not settle into its limit as neatly as it does in these cases.
-}
+%     \textbf{Reflection:} In these examples, we see that once the sequence reaches a certain point (i.e., \(n \geq N\)), the terms remain constant. This means that for any \(\epsilon > 0\), we can find a fixed \(N\) to satisfy the definition of convergence, regardless of how small \(\epsilon\) is. However, in general, smaller \(\epsilon\)-neighborhoods may require larger \(N\) because the sequence may not settle into its limit as neatly as it does in these cases.
+% }
 
 % \tcbset{highlight math style={enhanced,%<-- needed for the `remember' options
 % colframe=red,colback=red!10!white,boxsep=0pt}}
@@ -330,46 +330,46 @@ Therefore, \(\limn \frac{2n^2 + 1{n^2}} = 2\)
 % {1-\frac{1}{x}.}
 % \end{align*}
 
-\begin{exercise}
-    {2.2.6} Prove the \namrefthm{Uniqueness of Limits} theorem. To get started, assume \((a_{n}) \rightarrow a \) and \((a_{n}) \rightarrow b\). Now argue \(a = b\).
-\end{exercise}
+% \begin{exercise}
+%     {2.2.6} Prove the \namrefthm{Uniqueness of Limits} theorem. To get started, assume \((a_{n}) \rightarrow a \) and \((a_{n}) \rightarrow b\). Now argue \(a = b\).
+% \end{exercise}
 
-\expf{
-Since \((a_{n}) \rightarrow a\), this means for all \(\epsilon > 0\), there exists an \(N_{1} \in \N\) such that for all \(n \geq N\), \(\disabs{a_{n} - a} < \epsilon/2\). Similarly, since \((a_{n}) \rightarrow b\), this means for all \(\epsilon > 0\), there exists an \(N_{2} \in \N\) such that for all \(n \geq N_{2}\), \(\disabs{a_{n} - b} < \epsilon/2\).
+% \expf{
+% Since \((a_{n}) \rightarrow a\), this means for all \(\epsilon > 0\), there exists an \(N_{1} \in \N\) such that for all \(n \geq N\), \(\disabs{a_{n} - a} < \epsilon/2\). Similarly, since \((a_{n}) \rightarrow b\), this means for all \(\epsilon > 0\), there exists an \(N_{2} \in \N\) such that for all \(n \geq N_{2}\), \(\disabs{a_{n} - b} < \epsilon/2\).
 
-Now, let \(N = \max\{N_{1},N_{2}\}\) so that
-\begin{align*}
-    \disabs{a - b} & = \disabs{a - a_{n} + a_{n} - b}        \\
-                   & \leq \disabs{(a_{n} - a) + (a_{n} - b)} \\
-                   & < \epsilon/2 + \epsilon/2               \\
-                   & < \epsilon
-\end{align*}
-Then, by \numrefthm{1.2.6}, \(a = b\).
-}
+% Now, let \(N = \max\{N_{1},N_{2}\}\) so that
+% \begin{align*}
+%     \disabs{a - b} & = \disabs{a - a_{n} + a_{n} - b}        \\
+%                    & \leq \disabs{(a_{n} - a) + (a_{n} - b)} \\
+%                    & < \epsilon/2 + \epsilon/2               \\
+%                    & < \epsilon
+% \end{align*}
+% Then, by \numrefthm{1.2.6}, \(a = b\).
+% }
 
-\begin{exercise}
-    {2.2.7} {Here are two useful definitions:}
-    \begin{enumerate}[label=(\roman*)]
-        \item A sequence \((a_n)\) is \emph{eventually} in a set \(A \subseteq \mathbb{R}\) if there exists an \(N \in \mathbb{N}\) such that \(a_n \in A\) for all \(n \geq N\).
-        \item A sequence \((a_n)\) is \emph{frequently} in a set \(A \subseteq \mathbb{R}\) if, for every \(N \in \mathbb{N}\), there exists an \(n \geq N\) such that \(a_n \in A\).
-              \begin{enumerate}[label=(\alph*)]
-                  \item Is the sequence \((-1)^n\) eventually or frequently in the set \(\{1\}\)?
-                  \item Which definition is stronger? Does frequently imply eventually, or does eventually imply frequently?
-                  \item Give an alternate rephrasing of \defref{2.2.3B} using either frequently or eventually. Which is the term we want?
-                  \item Suppose an infinite number of terms of a sequence \((x_n)\) are equal to \(2\). Is \((x_n)\) necessarily eventually in the interval \((1.9, 2.1)\)? Is it frequently in \((1.9, 2.1)\)?
-              \end{enumerate}
-    \end{enumerate}
+% \begin{exercise}
+%     {2.2.7} {Here are two useful definitions:}
+%     \begin{enumerate}[label=(\roman*)]
+%         \item A sequence \((a_n)\) is \emph{eventually} in a set \(A \subseteq \mathbb{R}\) if there exists an \(N \in \mathbb{N}\) such that \(a_n \in A\) for all \(n \geq N\).
+%         \item A sequence \((a_n)\) is \emph{frequently} in a set \(A \subseteq \mathbb{R}\) if, for every \(N \in \mathbb{N}\), there exists an \(n \geq N\) such that \(a_n \in A\).
+%               \begin{enumerate}[label=(\alph*)]
+%                   \item Is the sequence \((-1)^n\) eventually or frequently in the set \(\{1\}\)?
+%                   \item Which definition is stronger? Does frequently imply eventually, or does eventually imply frequently?
+%                   \item Give an alternate rephrasing of \defref{2.2.3B} using either frequently or eventually. Which is the term we want?
+%                   \item Suppose an infinite number of terms of a sequence \((x_n)\) are equal to \(2\). Is \((x_n)\) necessarily eventually in the interval \((1.9, 2.1)\)? Is it frequently in \((1.9, 2.1)\)?
+%               \end{enumerate}
+%     \end{enumerate}
 
-\end{exercise}
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}[label=(\alph*)]
-        \item The sequence \((-1)^n\) is \textit{frequently} in the set \(\{1\}\) because for every \(N \in \mathbb{N}\), we can find an \(n \geq N\) such that \((-1)^n = 1\).
-        \item The definition of \textit{eventually} is stronger because \textit{eventually} implies \textit{frequently}, but \textit{frequently} does not imply \textit{eventually}.
-        \item An alternate rephrasing of Definition 2.2.3B using \textit{eventually} is: A sequence \((a_n)\) converges to \(a\) if, given any \(\epsilon\)-neighborhood---\(V_\epsilon(a)\) of \(a\)---\((a_n)\) is \textit{eventually} in \(V_\epsilon(a)\). The term we want is eventually.
-        \item If an infinite number of terms of a sequence \((x_n)\) are equal to \(2\),  \((x_n)\) is not \textit{eventually} in \((1.9, 2.1)\) because we can have a sequence \((a_n)\) that will not settle in \((1.9, 2.1)\). For example, \((a_n) = (0,2,0,2,\cdots)\) does not settle in \((1.9, 2.1)\). Whereas, \((x_n)\) is \textit{frequently} in the interval \((1.9, 2.1)\) because for every \(N \in \mathbb{N}\) there exists an \(n \geq N\) such that \(x_n \in (1.9, 2.1)\) for all \(n \geq N\). We can see an instance of this being true by examining the previous example.
-    \end{enumerate}
-}
+% \sol{
+%     \begin{enumerate}[label=(\alph*)]
+%         \item The sequence \((-1)^n\) is \textit{frequently} in the set \(\{1\}\) because for every \(N \in \mathbb{N}\), we can find an \(n \geq N\) such that \((-1)^n = 1\).
+%         \item The definition of \textit{eventually} is stronger because \textit{eventually} implies \textit{frequently}, but \textit{frequently} does not imply \textit{eventually}.
+%         \item An alternate rephrasing of Definition 2.2.3B using \textit{eventually} is: A sequence \((a_n)\) converges to \(a\) if, given any \(\epsilon\)-neighborhood---\(V_\epsilon(a)\) of \(a\)---\((a_n)\) is \textit{eventually} in \(V_\epsilon(a)\). The term we want is eventually.
+%         \item If an infinite number of terms of a sequence \((x_n)\) are equal to \(2\),  \((x_n)\) is not \textit{eventually} in \((1.9, 2.1)\) because we can have a sequence \((a_n)\) that will not settle in \((1.9, 2.1)\). For example, \((a_n) = (0,2,0,2,\cdots)\) does not settle in \((1.9, 2.1)\). Whereas, \((x_n)\) is \textit{frequently} in the interval \((1.9, 2.1)\) because for every \(N \in \mathbb{N}\) there exists an \(n \geq N\) such that \(x_n \in (1.9, 2.1)\) for all \(n \geq N\). We can see an instance of this being true by examining the previous example.
+%     \end{enumerate}
+% }
 
 
 
@@ -400,7 +400,7 @@ Thus, every term is in \([-M,M]\).
         \item \(\limn ca_n = ca\) for all \(c \in \R\);
         \item \(\limn (a_n + b_n) = a + b\);
         \item \(\limn (a_nb_n) = ab\);
-        \item \(\limn \frac{a_n{b_n}} = \frac{a}{b}\) provided \(b \neq 0\).
+        \item \(\limn \frac{a_n}{b_n} = \frac{a}{b}\) provided \(b \neq 0\).
     \end{enumerate}
 \end{ntheorem}
 
@@ -475,88 +475,88 @@ Let \(\epsilon > 0\). Since \((b_n)\) converges to \(b\), there exists \(N_1 \in
 
 
 
-\renewcommand{\theenumi}{\alph{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
-\subsection{Exercises}
+% \renewcommand{\theenumi}{\alph{enumi}}
+% \renewcommand{\labelenumi}{(\theenumi)}
+% \subsection{Exercises}
 
-\begin{exercise}
-    {2.3.1}
-    \begin{enumerate}
-        \item If \(\lim_{n \to \infty} x_n = 0\), show that \(\lim_{n \to \infty} \sqrt{x_n} = 0\).
-        \item If \(\lim_{n \to \infty} x_n = x\), show that \(\lim_{n \to \infty} \sqrt{x_n} = \sqrt{x}\).
-    \end{enumerate}
-\end{exercise}
+% \begin{exercise}
+%     {2.3.1}
+%     \begin{enumerate}
+%         \item If \(\lim_{n \to \infty} x_n = 0\), show that \(\lim_{n \to \infty} \sqrt{x_n} = 0\).
+%         \item If \(\lim_{n \to \infty} x_n = x\), show that \(\lim_{n \to \infty} \sqrt{x_n} = \sqrt{x}\).
+%     \end{enumerate}
+% \end{exercise}
 
-\expf{ \hfill
-    \begin{enumerate}
-        \item \textit{Solution.} Let \(\epsilon > 0\). Since \(\lim_{n \to \infty} x_n = 0\), there exists \(N \in \mathbb{N}\) such that for all \(n \geq N\),
-              \[
-                  |x_n| < \epsilon^2.
-              \]
-              Then, for all \(n \geq N\),
-              \[
-                  \left|\sqrt{x_n} - 0\right| = \sqrt{x_n} < \sqrt{\epsilon^2} = \epsilon.
-              \]
-              Therefore, \(\lim_{n \to \infty} \sqrt{x_n} = 0\).
+% \expf{ \hfill
+%     \begin{enumerate}
+%         \item \textit{Solution.} Let \(\epsilon > 0\). Since \(\lim_{n \to \infty} x_n = 0\), there exists \(N \in \mathbb{N}\) such that for all \(n \geq N\),
+%               \[
+%                   |x_n| < \epsilon^2.
+%               \]
+%               Then, for all \(n \geq N\),
+%               \[
+%                   \left|\sqrt{x_n} - 0\right| = \sqrt{x_n} < \sqrt{\epsilon^2} = \epsilon.
+%               \]
+%               Therefore, \(\lim_{n \to \infty} \sqrt{x_n} = 0\).
 
-        \item \textit{Solution.} Let \(\epsilon > 0\). Since \(\lim_{n \to \infty} x_n = x\), for any \(\delta > 0\), there exists \(N \in \mathbb{N}\) such that for all \(n \geq N\),
-              \[
-                  |x_n - x| < \delta.
-              \]
-              We consider two cases:
+%         \item \textit{Solution.} Let \(\epsilon > 0\). Since \(\lim_{n \to \infty} x_n = x\), for any \(\delta > 0\), there exists \(N \in \mathbb{N}\) such that for all \(n \geq N\),
+%               \[
+%                   |x_n - x| < \delta.
+%               \]
+%               We consider two cases:
 
-              \textbf{Case 1:} \(x > 0\).
+%               \textbf{Case 1:} \(x > 0\).
 
-              Since \(x > 0\), choose \(\delta = \min\left\{\epsilon\left(2\sqrt{x}\right),\, \dfrac{x}{2}\right\}\). Then for all \(n \geq N\), we have \(x_n > x - \dfrac{x}{2} = \dfrac{x}{2} > 0\). Thus,
-              \[
-                  \sqrt{x_n} + \sqrt{x} \geq \sqrt{\dfrac{x}{2}} + \sqrt{x} > 0.
-              \]
-              Now,
-              \[
-                  \left|\sqrt{x_n} - \sqrt{x}\right| = \dfrac{|x_n - x|}{\sqrt{x_n} + \sqrt{x}} \leq \dfrac{\delta}{\sqrt{\dfrac{x}{2}}} \leq \epsilon.
-              \]
+%               Since \(x > 0\), choose \(\delta = \min\left\{\epsilon\left(2\sqrt{x}\right),\, \dfrac{x}{2}\right\}\). Then for all \(n \geq N\), we have \(x_n > x - \dfrac{x}{2} = \dfrac{x}{2} > 0\). Thus,
+%               \[
+%                   \sqrt{x_n} + \sqrt{x} \geq \sqrt{\dfrac{x}{2}} + \sqrt{x} > 0.
+%               \]
+%               Now,
+%               \[
+%                   \left|\sqrt{x_n} - \sqrt{x}\right| = \dfrac{|x_n - x|}{\sqrt{x_n} + \sqrt{x}} \leq \dfrac{\delta}{\sqrt{\dfrac{x}{2}}} \leq \epsilon.
+%               \]
 
-              \textbf{Case 2:} \(x = 0\).
+%               \textbf{Case 2:} \(x = 0\).
 
-              From part (1), we have \(\lim_{n \to \infty} \sqrt{x_n} = 0 = \sqrt{0}\).
+%               From part (1), we have \(\lim_{n \to \infty} \sqrt{x_n} = 0 = \sqrt{0}\).
 
-              Therefore, \(\lim_{n \to \infty} \sqrt{x_n} = \sqrt{x}\).
-    \end{enumerate}
-}
+%               Therefore, \(\lim_{n \to \infty} \sqrt{x_n} = \sqrt{x}\).
+%     \end{enumerate}
+% }
 
-\begin{exercise}
-    {2.3.2}Using only \defref{2.2.3}, prove that if \((x_n) \rightarrow 2\), then
-    \begin{enumerate}
-        \item \(\displaystyle \left(\frac{2x_n - 1}{3}\right) \rightarrow 1\);
-        \item \(\displaystyle \left(1 / x_n\right) \rightarrow 1 / 2\).
-    \end{enumerate}
-    (For this exercise the Algebraic Limit Theorem is off-limits, so to speak.)
-\end{exercise}
+% \begin{exercise}
+%     {2.3.2}Using only \defref{2.2.3}, prove that if \((x_n) \rightarrow 2\), then
+%     \begin{enumerate}
+%         \item \(\displaystyle \left(\frac{2x_n - 1}{3}\right) \rightarrow 1\);
+%         \item \(\displaystyle \left(1 / x_n\right) \rightarrow 1 / 2\).
+%     \end{enumerate}
+%     (For this exercise the Algebraic Limit Theorem is off-limits, so to speak.)
+% \end{exercise}
 
-\sol{ \hfill
-    \begin{enumerate}
-        \item \textit{Proof.} Let \(\epsilon > 0\). Since \((x_n)\) converges to 2, there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - 2} < \epsilon\). Now, for any \(n \geq N\),
-              \begin{align*}
-                  \disabs{\frac{2x_n - 1}{3} - 1} & = \disabs{\frac{2x_n - 1 - 3}{3}} \\
-                                                  & = \disabs{\frac{2x_n - 4}{3}}     \\
-                                                  & = \frac{2}{3}\disabs{x_n - 2}     \\
-                                                  & < \disabs{x_n - 2}                \\
-                                                  & < \epsilon
-              \end{align*}
-              Therefore, \(\frac{2x_n - 1}{3} \rightarrow 1\) \qed
-        \item \textit{Proof.} Let \(\epsilon > 0\). Since \((x_n)\) converges to 2, there exists \(N_1 \in \N\) such that for all \(n \geq N_1\), \(x_n \geq 1\). Then, we will choose \(N_2\) so that \(|x_n - 2 | < \epsilon\) for all \(n \geq N_2\). Afterwards, we take \(N = \max\{N_1, N_2\}\). And note that for \(n \geq N\),
+% \sol{ \hfill
+%     \begin{enumerate}
+%         \item \textit{Proof.} Let \(\epsilon > 0\). Since \((x_n)\) converges to 2, there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - 2} < \epsilon\). Now, for any \(n \geq N\),
+%               \begin{align*}
+%                   \disabs{\frac{2x_n - 1}{3} - 1} & = \disabs{\frac{2x_n - 1 - 3}{3}} \\
+%                                                   & = \disabs{\frac{2x_n - 4}{3}}     \\
+%                                                   & = \frac{2}{3}\disabs{x_n - 2}     \\
+%                                                   & < \disabs{x_n - 2}                \\
+%                                                   & < \epsilon
+%               \end{align*}
+%               Therefore, \(\frac{2x_n - 1}{3} \rightarrow 1\) \qed
+%         \item \textit{Proof.} Let \(\epsilon > 0\). Since \((x_n)\) converges to 2, there exists \(N_1 \in \N\) such that for all \(n \geq N_1\), \(x_n \geq 1\). Then, we will choose \(N_2\) so that \(|x_n - 2 | < \epsilon\) for all \(n \geq N_2\). Afterwards, we take \(N = \max\{N_1, N_2\}\). And note that for \(n \geq N\),
 
-              \begin{align*}
-                  \disabs{\frac{1}{x_n} - \frac{1}{2}} & = \disabs{\frac{2 - x_n}{2x_n}} \\
-                                                       & < \frac{\disabs{2 - x_n}}{2}    \\
-                                                       & < \frac{\epsilon}{2}            \\
-                                                       & < \epsilon
-              \end{align*} \qed
-    \end{enumerate}
-}
+%               \begin{align*}
+%                   \disabs{\frac{1}{x_n} - \frac{1}{2}} & = \disabs{\frac{2 - x_n}{2x_n}} \\
+%                                                        & < \frac{\disabs{2 - x_n}}{2}    \\
+%                                                        & < \frac{\epsilon}{2}            \\
+%                                                        & < \epsilon
+%               \end{align*} \qed
+%     \end{enumerate}
+% }
 
-\renewcommand{\theenumi}{\arabic{enumi}}
-\renewcommand{\labelenumi}{\theenumi.}
+% \renewcommand{\theenumi}{\arabic{enumi}}
+% \renewcommand{\labelenumi}{\theenumi.}
 \section{The Monotone Convergence Theorem and a First Look at Infinite Series}
 
 \begin{definition}
@@ -658,175 +658,204 @@ Looking to the future, we are going to use functions and summations together. Fo
 \textbf{See Theorem 2.4.6 in the book for another view.}
 
 
-\renewcommand{\theenumi}{\alph{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
-\subsection{Exercises}
+% \renewcommand{\theenumi}{\alph{enumi}}
+% \renewcommand{\labelenumi}{(\theenumi)}
+% \subsection{Exercises}
 
-\begin{exercise}
-    {2.4.7 (Limit Superior)}Let \((a_{n})\) be a bounded sequence.
-    \begin{enumerate}
-        \item Prove that the sequence defined by \(y_{n} = \sup\{a_{k} \colon k \geq n\}\) converges.
-        \item The \textit{limit superior} of \((a_{n})\) or \(\limsupn{a_{n}}\), is defined by \[
-                  \limsupn{a_{n}} = \lim_{n \rightarrow \infty} y_{n},
-              \]
-              where \(y_{n}\) is the sequence from part (a) of this exercise. Provide a reasonable definition for \(\liminfn{a_{n}}\) and briefly explain why it always exists for any bounded sequence.
-        \item Prove that \(\liminfn{a_{n}} \leq \limsupn{a_{n}}\) for every bounded sequence, and give an example of a sequence for which the inequality is strict.
-        \item Show that \(\liminfn{a_{n}} = \limsupn{a_{n}}\) if and only if \(\lim a_{n}\) exists. In this case, all three share the same value.
-    \end{enumerate}
-\end{exercise}
+% \begin{exercise}
+%     {2.4.7 (Limit Superior)}Let \((a_{n})\) be a bounded sequence.
+%     \begin{enumerate}
+%         \item Prove that the sequence defined by \(y_{n} = \sup\{a_{k} \colon k \geq n\}\) converges.
+%         \item The \textit{limit superior} of \((a_{n})\) or \(\limsupn{a_{n}}\), is defined by \[
+%                   \limsupn{a_{n}} = \lim_{n \rightarrow \infty} y_{n},
+%               \]
+%               where \(y_{n}\) is the sequence from part (a) of this exercise. Provide a reasonable definition for \(\liminfn{a_{n}}\) and briefly explain why it always exists for any bounded sequence.
+%         \item Prove that \(\liminfn{a_{n}} \leq \limsupn{a_{n}}\) for every bounded sequence, and give an example of a sequence for which the inequality is strict.
+%         \item Show that \(\liminfn{a_{n}} = \limsupn{a_{n}}\) if and only if \(\lim a_{n}\) exists. In this case, all three share the same value.
+%     \end{enumerate}
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}
-        \item We will show that \((y_{n})\) converges.
-              \innerpf{
-                  Since \((a_n)\) is bounded, there exists \(M > 0\) such that \(|a_n| \leq M\) for all \(n\).
+% \begin{align*}
+%     \left|\frac{3n - 1}{2n + 1} - \frac{3}{2}\right| & = \left|\frac{2(3n - 1) - 3(2n + 1)}{2(2n + 1)}\right|   \\
+%                                                      & = \left|\frac{6n - 2 - 6n - 3}{4n + 2}\right|            \\
+%                                                      & = \left|\frac{-5}{4n + 2}\right|                         \\
+%                                                      & = \frac{5}{4n + 2}                                       \\
+%                                                      & = \frac{5}{4N} \quad \text{Let } N = \frac{5}{4\epsilon} \\
+%                                                      & = \epsilon
+% \end{align*}
 
-                  For each \(n\), define \(y_n = \sup\{a_k : k \geq n\}\). As \(n\) increases, the set \(\{a_k : k \geq n\}\) becomes smaller, so the supremum cannot increase. Therefore, the sequence \((y_n)\) is non-increasing:
-                  \[
-                      y_{n+1} \leq y_n \quad \text{for all } n.
-                  \]
-                  Additionally, since \((a_n)\) is bounded below, so is \((y_n)\). Therefore, \((y_n)\) is a bounded, non-increasing sequence.
+% The sequence \((x_n)\) is given by \(x_n = \frac{3n - 1}{2n + 1}\). Determine its limit and give a formal proof.
 
-                  By the Monotone Convergence Theorem, every bounded, monotonic sequence converges. Thus, \((y_n)\) converges.
-              }
+% I have:
+% Let \(\epsilon > 0\). We want
+% \[
+%     \left|\frac{3n - 1}{2n + 1} - \frac{3}{2}\right| = \frac{5}{4n + 2} < \epsilon.
+% \]
+% For large \(n\): \(\frac{1}{4n + 2} < \frac{1}{4n}\) so
+% \[
+%     \frac{5}{4n + 2} < \frac{5}{4n}.
+% \]
+% To ensure \(\frac{5}{4n} < \epsilon\), choose \(N\) such that \(N > \frac{5}{4\epsilon}\). The Archimedean Principle ensures this number.
 
-        \item A reasonable definition for \(\liminfn{a_{n}}\) is to define \(z_n = \inf\{a_k \colon k \geq n\}\) for each \(n\). Then, the \textit{limit inferior} of \((a_n)\) is defined by:
-              \[
-                  \liminfn{a_{n}} = \lim_{n\to\infty} z_n.
-              \]
-              Since \((a_n)\) is bounded, each \(z_n\) exists and the sequence \((z_n)\) is non-decreasing. As \(n\) increases, the set \(\{a_k : k \geq n\}\) becomes smaller, so the infimum cannot decrease. Therefore, \((z_n)\) is a bounded, non-decreasing sequence, which converges by the \namrefthm{Monotone Convergence Theorem}. Hence, \(\liminfn{a_{n}}\) always exists for any bounded sequence.
+% For \(n \geq N\), we have \(n > \frac{5}{4\epsilon}\), so \(\frac{5}{4n} \leq \frac{5}{4N}\). Since \(N > \frac{5}{4\epsilon}\), we know \(\frac{5}{4N} < \epsilon\). Therefore,
+% \[
+%     \left|\frac{3n - 1}{2n + 1} - \frac{3}{2}\right| = \frac{5}{4n + 2} < \epsilon.
+% \]
 
-        \item We will show that \(\liminfn{a_{n}} \leq \limsupn{a_{n}}\) for every bounded sequence.
-              \innerpf{
-                  For each \(n\), we have \(z_n = \inf\{a_k : k \geq n\} \leq a_n \leq \sup\{a_k : k \geq n\} = y_n\). This implies:
-                  \[
-                      z_n \leq y_n \quad \text{for all } n.
-                  \]
-                  Taking limits as \(n \to \infty\), we get:
-                  \[
-                      \lim_{n\to\infty} z_n \leq \lim_{n\to\infty} y_n,
-                  \]
-                  which means:
-                  \[
-                      \liminfn{a_{n}} \leq \limsupn{a_{n}}.
-                  \]
-                  For an example where the inequality is strict, consider the sequence \(a_n = (-1)^n\). Then:
-                  \[
-                      y_n = \sup\{(-1)^k : k \geq n\} = 1, \quad z_n = \inf\{(-1)^k : k \geq n\} = -1.
-                  \]
-                  Therefore:
-                  \[
-                      \limsupn{a_{n}} = 1, \quad \liminfn{a_{n}} = -1, \quad \liminfn{a_{n}} < \limsupn{a_{n}}.
-                  \]
-              }
+% \sol{
+%     \begin{enumerate}
+%         \item We will show that \((y_{n})\) converges.
 
-        \item We will show that \(\liminfn{a_{n}} = \limsupn{a_{n}}\) if and only if \(\lim a_{n}\) exists. In this case, all three share the same value.
-              \iffpf{
-                  Suppose \(\liminfn{a_{n}} = \limsupn{a_{n}} = L\). We will show that \(\lim a_n\) exists and equals \(L\).
+%               \innerpf{
+%                   Since \((a_n)\) is bounded, there exists \(M > 0\) such that \(|a_n| \leq M\) for all \(n\).
 
-                  Let \(\epsilon > 0\). Since \(\limsupn{a_{n}} = L\), there exists \(N_1\) such that for all \(n \geq N_1\):
-                  \[
-                      y_n = \sup\{a_k : k \geq n\} < L + \epsilon.
-                  \]
-                  Similarly, since \(\liminfn{a_{n}} = L\), there exists \(N_2\) such that for all \(n \geq N_2\):
-                  \[
-                      z_n = \inf\{a_k : k \geq n\} > L - \epsilon.
-                  \]
-                  Let \(N = \max\{N_1, N_2\}\). Then, for all \(n \geq N\):
-                  \[
-                      L - \epsilon < z_n \leq a_n \leq y_n < L + \epsilon,
-                  \]
-                  which implies:
-                  \[
-                      |a_n - L| < \epsilon.
-                  \]
-                  Therefore, \(\lim a_n = L\).
-              }{Conversely, suppose \(\lim a_n = L\). Then, for every \(\epsilon > 0\), there exists \(N\) such that for all \(n \geq N\):
-                  \[
-                      |a_n - L| < \epsilon.
-                  \]
-                  This implies that for all \(n \geq N\), the set \(\{a_k : k \geq n\}\) is contained in \((L - \epsilon, L + \epsilon)\). Therefore:
-                  \[
-                      y_n = \sup\{a_k : k \geq n\} \leq L + \epsilon, \quad z_n = \inf\{a_k : k \geq n\} \geq L - \epsilon.
-                  \]
-                  Taking limits, we get:
-                  \[
-                      \limsupn{a_{n}} \leq L + \epsilon, \quad \liminfn{a_{n}} \geq L - \epsilon.
-                  \]
-                  Since \(\epsilon > 0\) is arbitrary, it follows that \(\limsupn{a_{n}} = \liminfn{a_{n}} = L\). \qedhere}{}{xgray}
-    \end{enumerate}
-}
+%                   For each \(n\), define \(y_n = \sup\{a_k : k \geq n\}\). As \(n\) increases, the set \(\{a_k : k \geq n\}\) becomes smaller, so the supremum cannot increase. Therefore, the sequence \((y_n)\) is non-increasing:
+%                   \[
+%                       y_{n+1} \leq y_n \quad \text{for all } n.
+%                   \]
+%                   Additionally, since \((a_n)\) is bounded below, so is \((y_n)\). Therefore, \((y_n)\) is a bounded, non-increasing sequence.
 
-\begin{exercise}
-    {2.4.10 (Infinite Products)}
+%                   By the Monotone Convergence Theorem, every bounded, monotonic sequence converges. Thus, \((y_n)\) converges.
+%               }
 
-    A close relative of infinite series is the infinite product
-    \[
-    \prod_{n=1}^{\infty} b_n = b_1 b_2 b_3 \cdots,
-    \]
-    which is understood in terms of its sequence of partial products
-    \[
-    p_m = \prod_{n=1}^{m} b_n = b_1 b_2 b_3 \cdots b_m.
-    \]
+%         \item A reasonable definition for \(\liminfn{a_{n}}\) is to define \(z_n = \inf\{a_k \colon k \geq n\}\) for each \(n\). Then, the \textit{limit inferior} of \((a_n)\) is defined by:
+%               \[
+%                   \liminfn{a_{n}} = \lim_{n\to\infty} z_n.
+%               \]
+%               Since \((a_n)\) is bounded, each \(z_n\) exists and the sequence \((z_n)\) is non-decreasing. As \(n\) increases, the set \(\{a_k : k \geq n\}\) becomes smaller, so the infimum cannot decrease. Therefore, \((z_n)\) is a bounded, non-decreasing sequence, which converges by the \namrefthm{Monotone Convergence Theorem}. Hence, \(\liminfn{a_{n}}\) always exists for any bounded sequence.
 
-    Consider the special class of infinite products of the form
-    \[
-    \prod_{n=1}^{\infty} (1 + a_n) = (1 + a_1)(1 + a_2)(1 + a_3) \cdots, \quad \text{where} \quad a_n \geq 0.
-    \]
+%         \item We will show that \(\liminfn{a_{n}} \leq \limsupn{a_{n}}\) for every bounded sequence.
+%               \innerpf{
+%                   For each \(n\), we have \(z_n = \inf\{a_k : k \geq n\} \leq a_n \leq \sup\{a_k : k \geq n\} = y_n\). This implies:
+%                   \[
+%                       z_n \leq y_n \quad \text{for all } n.
+%                   \]
+%                   Taking limits as \(n \to \infty\), we get:
+%                   \[
+%                       \lim_{n\to\infty} z_n \leq \lim_{n\to\infty} y_n,
+%                   \]
+%                   which means:
+%                   \[
+%                       \liminfn{a_{n}} \leq \limsupn{a_{n}}.
+%                   \]
+%                   For an example where the inequality is strict, consider the sequence \(a_n = (-1)^n\). Then:
+%                   \[
+%                       y_n = \sup\{(-1)^k : k \geq n\} = 1, \quad z_n = \inf\{(-1)^k : k \geq n\} = -1.
+%                   \]
+%                   Therefore:
+%                   \[
+%                       \limsupn{a_{n}} = 1, \quad \liminfn{a_{n}} = -1, \quad \liminfn{a_{n}} < \limsupn{a_{n}}.
+%                   \]
+%               }
 
-    \begin{enumerate}
-    \item Find an explicit formula for the sequence of partial products in the case where \( a_n = \frac{1}{n} \) and decide whether the sequence converges. Write out the first few terms in the sequence of partial products in the case where \( a_n = \frac{1}{n^2} \) and make a conjecture about the convergence of this sequence.
-    \item Show, in general, the sequence of partial products converges if and only if \(\sum_{n=1}^{\infty} a_n \text{ converges.}\)
-    (The inequality \(1 + x \leq 3^{x} \text{ for positive } x\) will be useful in one direction.)
-    \end{enumerate}
-\end{exercise}
+%         \item We will show that \(\liminfn{a_{n}} = \limsupn{a_{n}}\) if and only if \(\lim a_{n}\) exists. In this case, all three share the same value.
 
-\sol{
-    \begin{enumerate}
-        \item For \( a_n = \dfrac{1}{n} \):
+%               \iffpf{
+%                   Suppose \(\liminfn{a_{n}} = \limsupn{a_{n}} = L\). We will show that \(\lim a_n\) exists and equals \(L\).
 
-        The sequence of partial products is:
-        \[
-        p_m = \prod_{n=1}^m \left(1 + \dfrac{1}{n}\right) = \prod_{n=1}^m \dfrac{n + 1}{n}
-        \]
-        This telescopes:
-        \[
-        p_m = \dfrac{2}{1} \times \dfrac{3}{2} \times \dfrac{4}{3} \times \cdots \times \dfrac{m + 1}{m} = \dfrac{m + 1}{1} = m + 1
-        \]
-        Therefore, the sequence diverges as \( m \to \infty \).
+%                   Let \(\epsilon > 0\). Since \(\limsupn{a_{n}} = L\), there exists \(N_1\) such that for all \(n \geq N_1\):
+%                   \[
+%                       y_n = \sup\{a_k : k \geq n\} < L + \epsilon.
+%                   \]
+%                   Similarly, since \(\liminfn{a_{n}} = L\), there exists \(N_2\) such that for all \(n \geq N_2\):
+%                   \[
+%                       z_n = \inf\{a_k : k \geq n\} > L - \epsilon.
+%                   \]
+%                   Let \(N = \max\{N_1, N_2\}\). Then, for all \(n \geq N\):
+%                   \[
+%                       L - \epsilon < z_n \leq a_n \leq y_n < L + \epsilon,
+%                   \]
+%                   which implies:
+%                   \[
+%                       |a_n - L| < \epsilon.
+%                   \]
+%                   Therefore, \(\lim a_n = L\).
+%               }{Conversely, suppose \(\lim a_n = L\). Then, for every \(\epsilon > 0\), there exists \(N\) such that for all \(n \geq N\):
+%                   \[
+%                       |a_n - L| < \epsilon.
+%                   \]
+%                   This implies that for all \(n \geq N\), the set \(\{a_k : k \geq n\}\) is contained in \((L - \epsilon, L + \epsilon)\). Therefore:
+%                   \[
+%                       y_n = \sup\{a_k : k \geq n\} \leq L + \epsilon, \quad z_n = \inf\{a_k : k \geq n\} \geq L - \epsilon.
+%                   \]
+%                   Taking limits, we get:
+%                   \[
+%                       \limsupn{a_{n}} \leq L + \epsilon, \quad \liminfn{a_{n}} \geq L - \epsilon.
+%                   \]
+%                   Since \(\epsilon > 0\) is arbitrary, it follows that \(\limsupn{a_{n}} = \liminfn{a_{n}} = L\). \qedhere}{}{xgray}
+%     \end{enumerate}
+% }
 
-        For \( a_n = \dfrac{1}{n^2} \):
+% \begin{exercise}
+%     {2.4.10 (Infinite Products)}
 
-        Compute the first few terms:
-        \begin{align*}
-            p_1 &= 1 + \dfrac{1}{1^2} = 2 \\
-            p_2 &= \left(1 + \dfrac{1}{1^2}\right)\left(1 + \dfrac{1}{2^2}\right) = 2 \times \dfrac{5}{4} = \dfrac{5}{2} \\
-            p_3 &= p_2 \times \left(1 + \dfrac{1}{3^2}\right) = \dfrac{5}{2} \times \dfrac{10}{9} = \dfrac{25}{9} \\
-            p_4 &= p_3 \times \left(1 + \dfrac{1}{4^2}\right) = \dfrac{25}{9} \times \dfrac{17}{16} = \dfrac{425}{144}
-        \end{align*}
-        The sequence increases slowly, suggesting that the infinite product is monotone increasing, and thus it converges.
+%     A close relative of infinite series is the infinite product
+%     \[
+%         \prod_{n=1}^{\infty} b_n = b_1 b_2 b_3 \cdots,
+%     \]
+%     which is understood in terms of its sequence of partial products
+%     \[
+%         p_m = \prod_{n=1}^{m} b_n = b_1 b_2 b_3 \cdots b_m.
+%     \]
 
-        \item We will provide an if and only if proof below.
-        
-        \iffpf[We will show that the infinite product \(\prod_{n=1}^\infty (1 + a_n)\) converges if and only if the series \(\sum_{n=1}^\infty a_n\) converges.]{If \(\sum_{n=1}^\infty a_n\) converges, then \(a_n \to 0\). For \(a_n \geq 0\), we have \(\ln(1 + a_n) \leq a_n\). Thus,
-        \[
-        \sum_{n=1}^\infty \ln(1 + a_n) \leq \sum_{n=1}^\infty a_n < \infty
-        \]
-        So the series \(\sum_{n=1}^\infty \ln(1 + a_n)\) converges, which implies that the product \(\prod_{n=1}^\infty (1 + a_n)\) converges.}{Conversely, if \(\prod_{n=1}^\infty (1 + a_n)\) converges, then the partial products are bounded. For \(a_n \geq 0\) and \(1 + x \geq e^{x/2}\) for small \(x\), we have
-        \[
-        \ln(1 + a_n) \geq \dfrac{a_n}{2}
-        \]
-        For sufficiently large \(n\), this gives
-        \[
-        \sum_{n=1}^\infty a_n \leq 2 \sum_{n=1}^\infty \ln(1 + a_n)
-        \]
-        Since \(\sum_{n=1}^\infty \ln(1 + a_n)\) converges, so does \(\sum_{n=1}^\infty a_n\).\qedhere}{}{xgray}
-    \end{enumerate}
-}
+%     Consider the special class of infinite products of the form
+%     \[
+%         \prod_{n=1}^{\infty} (1 + a_n) = (1 + a_1)(1 + a_2)(1 + a_3) \cdots, \quad \text{where} \quad a_n \geq 0.
+%     \]
+
+%     \begin{enumerate}
+%         \item Find an explicit formula for the sequence of partial products in the case where \( a_n = \frac{1}{n} \) and decide whether the sequence converges. Write out the first few terms in the sequence of partial products in the case where \( a_n = \frac{1}{n^2} \) and make a conjecture about the convergence of this sequence.
+%         \item Show, in general, the sequence of partial products converges if and only if \(\sum_{n=1}^{\infty} a_n \text{ converges.}\)
+%               (The inequality \(1 + x \leq 3^{x} \text{ for positive } x\) will be useful in one direction.)
+%     \end{enumerate}
+% \end{exercise}
+
+% \sol{
+%     \begin{enumerate}
+%         \item For \( a_n = \dfrac{1}{n} \):
+
+%               The sequence of partial products is:
+%               \[
+%                   p_m = \prod_{n=1}^m \left(1 + \dfrac{1}{n}\right) = \prod_{n=1}^m \dfrac{n + 1}{n}
+%               \]
+%               This telescopes:
+%               \[
+%                   p_m = \dfrac{2}{1} \times \dfrac{3}{2} \times \dfrac{4}{3} \times \cdots \times \dfrac{m + 1}{m} = \dfrac{m + 1}{1} = m + 1
+%               \]
+%               Therefore, the sequence diverges as \( m \to \infty \).
+
+%               For \( a_n = \dfrac{1}{n^2} \):
+
+%               Compute the first few terms:
+%               \begin{align*}
+%                   p_1 & = 1 + \dfrac{1}{1^2} = 2                                                                                \\
+%                   p_2 & = \left(1 + \dfrac{1}{1^2}\right)\left(1 + \dfrac{1}{2^2}\right) = 2 \times \dfrac{5}{4} = \dfrac{5}{2} \\
+%                   p_3 & = p_2 \times \left(1 + \dfrac{1}{3^2}\right) = \dfrac{5}{2} \times \dfrac{10}{9} = \dfrac{25}{9}        \\
+%                   p_4 & = p_3 \times \left(1 + \dfrac{1}{4^2}\right) = \dfrac{25}{9} \times \dfrac{17}{16} = \dfrac{425}{144}
+%               \end{align*}
+%               The sequence increases slowly, suggesting that the infinite product is monotone increasing, and thus it converges.
+
+%         \item We will provide an if and only if proof below.
+
+%               \iffpf[We will show that the infinite product \(\prod_{n=1}^\infty (1 + a_n)\) converges if and only if the series \(\sum_{n=1}^\infty a_n\) converges.]{If \(\sum_{n=1}^\infty a_n\) converges, then \(a_n \to 0\). For \(a_n \geq 0\), we have \(\ln(1 + a_n) \leq a_n\). Thus,
+%                   \[
+%                       \sum_{n=1}^\infty \ln(1 + a_n) \leq \sum_{n=1}^\infty a_n < \infty
+%                   \]
+%                   So the series \(\sum_{n=1}^\infty \ln(1 + a_n)\) converges, which implies that the product \(\prod_{n=1}^\infty (1 + a_n)\) converges.}{Conversely, if \(\prod_{n=1}^\infty (1 + a_n)\) converges, then the partial products are bounded. For \(a_n \geq 0\) and \(1 + x \geq e^{x/2}\) for small \(x\), we have
+%                   \[
+%                       \ln(1 + a_n) \geq \dfrac{a_n}{2}
+%                   \]
+%                   For sufficiently large \(n\), this gives
+%                   \[
+%                       \sum_{n=1}^\infty a_n \leq 2 \sum_{n=1}^\infty \ln(1 + a_n)
+%                   \]
+%                   Since \(\sum_{n=1}^\infty \ln(1 + a_n)\) converges, so does \(\sum_{n=1}^\infty a_n\).\qedhere}{}{xgray}
+%     \end{enumerate}
+% }
 
 
-\renewcommand{\theenumi}{\arabic{enumi}}
-\renewcommand{\labelenumi}{\theenumi.}
+% \renewcommand{\theenumi}{\arabic{enumi}}
+% \renewcommand{\labelenumi}{\theenumi.}
 \section{Subsequences and the Bolzano-Weierstrass Theorem}
 
 \begin{definition}
@@ -932,106 +961,106 @@ The \namrefthm{Nested Interval Property} states that \(\bigcup_{n = 1}^\infty I_
 
 \tpf{
     The sequence \((b^n)\) is monotone decreasing. This is because \(b^{n + 1} = b^nb < b^n\). This sequence is also bounded by 0. Hence, by the \namrefthm{Monotone Convergence Theorem}, \((b^n)\) converges. Now, let \(L = \limn b^n\). Consider the subsequence \(b^{2n}\). This sequence also converges to \(L\). Thus, \begin{align*}
-        L & = \limn b^{2n}        \\
-          & = \limn b^nb^n        \\
+        L & = \limn b^{2n}       \\
+          & = \limn b^nb^n       \\
           & = \limn b^n\limn b^n \\
           & = L^2.
     \end{align*} Thus, \(L = 0\) or \(L = 1\). The limit cannot be 1 because \(b^n\) is decreasing away from 1. Therefore, \(L = 0\).
 }
 
-\renewcommand{\theenumi}{\alph{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
-\subsection{Exercises}
+% \renewcommand{\theenumi}{\alph{enumi}}
+% \renewcommand{\labelenumi}{(\theenumi)}
+% \subsection{Exercises}
 
-\begin{exercise}
-    {2.5.1}Give an example of each of the following, or argue that such a request is impossible.
-    \begin{enumerate}
-        \item A sequence that has a subsequence that is bounded but contains no subsequence that converges.
-        \item A sequence that does not contain 0 or 1 as a term but contains subsequences converging to each of these values.
-    \end{enumerate}
-\end{exercise}
+% \begin{exercise}
+%     {2.5.1}Give an example of each of the following, or argue that such a request is impossible.
+%     \begin{enumerate}
+%         \item A sequence that has a subsequence that is bounded but contains no subsequence that converges.
+%         \item A sequence that does not contain 0 or 1 as a term but contains subsequences converging to each of these values.
+%     \end{enumerate}
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}
-        \item \textbf{Impossible.} This violates the \namrefthm{Bolzano-Weierstrass Theorem}. It assures us that every bounded sequence has a convergent subsequence. If a subsequence is bounded, then it must have a convergent subsequence.
-        \item Consider the sequence \((\frac{1}{2},\frac{1}{2},\frac{1}{3},\frac{2}{3},\frac{1}{4},\frac{3}{4}, \cdots \frac{1}{n}, \frac{(n-1)}{n})\). From this, you can have a subsequence \((\frac{1}{2}, \frac{1}{3}, \dots, \frac{1}{n})\) which converges to 0, and also a subsequence \((\frac{1}{2}, \frac{2}{3}, \dots \frac{n - 1}{n})\), which converges to 1.
-    \end{enumerate}
-}
+% \sol{
+%     \begin{enumerate}
+%         \item \textbf{Impossible.} This violates the \namrefthm{Bolzano-Weierstrass Theorem}. It assures us that every bounded sequence has a convergent subsequence. If a subsequence is bounded, then it must have a convergent subsequence.
+%         \item Consider the sequence \((\frac{1}{2},\frac{1}{2},\frac{1}{3},\frac{2}{3},\frac{1}{4},\frac{3}{4}, \cdots \frac{1}{n}, \frac{(n-1)}{n})\). From this, you can have a subsequence \((\frac{1}{2}, \frac{1}{3}, \dots, \frac{1}{n})\) which converges to 0, and also a subsequence \((\frac{1}{2}, \frac{2}{3}, \dots \frac{n - 1}{n})\), which converges to 1.
+%     \end{enumerate}
+% }
 
-\begin{exercise}
-    {2.5.2} Decide whether the following propositions are true or false, providing a short justification for each conclusion.
-    \begin{enumerate}
-        \item If every proper subsequence of \((x_n)\) converges, then \((x_n)\) converges as well.
-        \item If \((x_{n})\) contains a divergent subsequence, then \((x_n)\) diverges.
-        \item If \((x_n)\) is bounded and diverges, then there exist two subsequences of \((x_n)\) that converge to different limits.
-    \end{enumerate}
-\end{exercise}
+% \begin{exercise}
+%     {2.5.2} Decide whether the following propositions are true or false, providing a short justification for each conclusion.
+%     \begin{enumerate}
+%         \item If every proper subsequence of \((x_n)\) converges, then \((x_n)\) converges as well.
+%         \item If \((x_{n})\) contains a divergent subsequence, then \((x_n)\) diverges.
+%         \item If \((x_n)\) is bounded and diverges, then there exist two subsequences of \((x_n)\) that converge to different limits.
+%     \end{enumerate}
+% \end{exercise}
 
-\sol{
-    \begin{enumerate}
-        \item \textbf{True.} If every proper subsequence of \((x_n)\) converges, then \((x_n)\) must converge to the same limit. If \((x_n)\) did not converge, there would exist at least one divergent subsequence or two subsequences converging to different limits, contradicting the assumption.
+% \sol{
+%     \begin{enumerate}
+%         \item \textbf{True.} If every proper subsequence of \((x_n)\) converges, then \((x_n)\) must converge to the same limit. If \((x_n)\) did not converge, there would exist at least one divergent subsequence or two subsequences converging to different limits, contradicting the assumption.
 
-        \item \textbf{True.} If \((x_n)\) contained a divergent subsequence, then \((x_n)\) cannot converge. A convergent sequence has all its subsequences converging to the same limit, so the existence of a divergent subsequence implies that \((x_n)\) diverges (contrapositive).
+%         \item \textbf{True.} If \((x_n)\) contained a divergent subsequence, then \((x_n)\) cannot converge. A convergent sequence has all its subsequences converging to the same limit, so the existence of a divergent subsequence implies that \((x_n)\) diverges (contrapositive).
 
-        \item \textbf{True.} Since \((x_n)\) is bounded and diverges, the \namrefthm{Bolzano-Weierstrass Theorem} guarantees the existence of at least one convergent subsequence. Let this subsequence converge to \(L_1\). Because \((x_n)\) does not converge to \(L_1\), there is an \(\epsilon > 0\) and infinitely many terms of \((x_n)\) such that \(|x_n - L_1| \geq \epsilon\). Extracting a subsequence from these terms, the Bolzano-Weierstrass Theorem ensures a further subsequence converging to a limit \(L_2 \neq L_1\). Thus, \((x_n)\) has two subsequences converging to different limits.
-    \end{enumerate}
-}
-
-
-\begin{exercise}
-    {2.5.5} Assume \((a_n)\) is a bounded sequence with the property that every convergent subsequence of \((a_n)\) converges to the same limit \(a \in \mathbb{R}\). Show that \((a_n)\) must converge to \(a\).
-\end{exercise}
-
-\expf{
-Suppose that \((a_n)\) does not converge to \(a \in \R\). By the definition of convergence, this means there is a positive real number \(\epsilon_0\) such that no matter how large we choose \(N \in \N\), there will always exist some \(n > N\) where \(|a_n - a| \geq \epsilon_0\). In a formal way, this shows that \((a_n)\) does not converge to \(a\) within the \(\epsilon_0\)-neighborhood.
-
-We aim to demonstrate that this leads to a contradiction by constructing a subsequence of \((a_n)\) that stays outside this neighborhood. Begin by selecting \(n_1\) such that \(|a_{n_1} - a| \geq \epsilon_0\). Next, since the condition holds for all \(N \in \N\), we can find another index \(n_2 > n_1\) such that \(|a_{n_2} - a| \geq \epsilon_0\). Continuing this process, we generate an increasing sequence of indices \(n_1 < n_2 < n_3 < \dots\) such that for each \(i \in \N\), \(|a_{n_i} - a| \geq \epsilon_0\).
-
-Now consider the subsequence \((a_{n_i})\) we have built. Since \((a_n)\) is bounded by assumption, its subsequence \((a_{n_i})\) is also bounded. By the \namrefthm{Bolzano-Weierstrass Theorem}, every bounded sequence has a convergent subsequence. Let \((a_{n_{i_k}})\) denote a convergent subsequence of \((a_{n_i})\). According to our assumption, any convergent subsequence of \((a_n)\) must converge to \(a\).
-
-However, each term of \((a_{n_{i_k}})\) remains outside the \(\epsilon_0\)-neighborhood of \(a\). Thus, it is impossible for \((a_{n_{i_k}})\) to converge to \(a\). This contradiction implies that our initial assumption—that \((a_n)\) does not converge to \(a\)—is false. Therefore, the sequence \((a_n)\) must converge to \(a\).
-}
+%         \item \textbf{True.} Since \((x_n)\) is bounded and diverges, the \namrefthm{Bolzano-Weierstrass Theorem} guarantees the existence of at least one convergent subsequence. Let this subsequence converge to \(L_1\). Because \((x_n)\) does not converge to \(L_1\), there is an \(\epsilon > 0\) and infinitely many terms of \((x_n)\) such that \(|x_n - L_1| \geq \epsilon\). Extracting a subsequence from these terms, the Bolzano-Weierstrass Theorem ensures a further subsequence converging to a limit \(L_2 \neq L_1\). Thus, \((x_n)\) has two subsequences converging to different limits.
+%     \end{enumerate}
+% }
 
 
+% \begin{exercise}
+%     {2.5.5} Assume \((a_n)\) is a bounded sequence with the property that every convergent subsequence of \((a_n)\) converges to the same limit \(a \in \mathbb{R}\). Show that \((a_n)\) must converge to \(a\).
+% \end{exercise}
 
-\begin{exercise}
-    {2.5.6} Use a similar strategy to the one in \numrefthm{2.5.5} to show
-    \[\lim b^{1/n} \text{ exists for all } b \geq 0\] and find the value of the limit. (The results in \hyperref[ex:2.3.1]{Exercise 2.3.1} may be assumed.)
-\end{exercise}
+% \expf{
+% Suppose that \((a_n)\) does not converge to \(a \in \R\). By the definition of convergence, this means there is a positive real number \(\epsilon_0\) such that no matter how large we choose \(N \in \N\), there will always exist some \(n > N\) where \(|a_n - a| \geq \epsilon_0\). In a formal way, this shows that \((a_n)\) does not converge to \(a\) within the \(\epsilon_0\)-neighborhood.
 
-\expf{
-    We will show that \(\lim_{n \to \infty} b^{1/n}\) exists for all \(b \geq 0\) and find its value.
-    \begin{itemize}
-        \item \textbf{Case 1:} \(b = 0\).
+% We aim to demonstrate that this leads to a contradiction by constructing a subsequence of \((a_n)\) that stays outside this neighborhood. Begin by selecting \(n_1\) such that \(|a_{n_1} - a| \geq \epsilon_0\). Next, since the condition holds for all \(N \in \N\), we can find another index \(n_2 > n_1\) such that \(|a_{n_2} - a| \geq \epsilon_0\). Continuing this process, we generate an increasing sequence of indices \(n_1 < n_2 < n_3 < \dots\) such that for each \(i \in \N\), \(|a_{n_i} - a| \geq \epsilon_0\).
 
-              When \(b = 0\), the sequence becomes \(a_n = 0^{1/n} = 0\) for all \(n\). Thus, \(\lim_{n \to \infty} b^{1/n} = 0\).
+% Now consider the subsequence \((a_{n_i})\) we have built. Since \((a_n)\) is bounded by assumption, its subsequence \((a_{n_i})\) is also bounded. By the \namrefthm{Bolzano-Weierstrass Theorem}, every bounded sequence has a convergent subsequence. Let \((a_{n_{i_k}})\) denote a convergent subsequence of \((a_{n_i})\). According to our assumption, any convergent subsequence of \((a_n)\) must converge to \(a\).
 
-        \item \textbf{Case 2:} \(b > 0\).
-
-              Suppose, for contradiction, that \(\lim_{n \to \infty} b^{1/n} \ne 1\). Then there exists \(\epsilon > 0\) and infinitely many \(n\) such that \(|b^{1/n} - 1| \geq \epsilon\). Extract a subsequence \((b^{1/n_k})\) where this inequality holds for all \(k\).
-
-              Since \(b^{1/n} > 0\) and bounded, by the \namrefthm{Bolzano-Weierstrass Theorem}, the subsequence \((b^{1/n_k})\) has a further subsequence that converges to a limit \(L\). According to \hyperref[ex:2.3.1]{Exercise 2.3.1}, any convergent subsequence of \((b^{1/n})\) must have its limit equal to \(\lim_{n \to \infty} b^{1/n}\).
-
-              Consider \(\ln b^{1/n} = \frac{\ln b}{n}\). As \(n \to \infty\), \(\frac{\ln b}{n} \to 0\), so \(\ln b^{1/n} \to 0\), which implies \(b^{1/n} \to e^{0} = 1\).
-
-              This contradicts the assumption that \(|b^{1/n_k} - 1| \geq \epsilon\), so \(\lim_{n \to \infty} b^{1/n} = 1\).
-
-    \end{itemize}
-
-    \textbf{Conclusion:}
-
-    \[
-        \lim_{n \to \infty} b^{1/n} =
-        \begin{cases}
-            0, & \text{if } b = 0,                \\
-            1, & \text{if } b > 0. \hfill\qedhere
-        \end{cases}
-    \]
-}
+% However, each term of \((a_{n_{i_k}})\) remains outside the \(\epsilon_0\)-neighborhood of \(a\). Thus, it is impossible for \((a_{n_{i_k}})\) to converge to \(a\). This contradiction implies that our initial assumption—that \((a_n)\) does not converge to \(a\)—is false. Therefore, the sequence \((a_n)\) must converge to \(a\).
+% }
 
 
-\renewcommand{\theenumi}{\arabic{enumi}}
-\renewcommand{\labelenumi}{\theenumi.}
+
+% \begin{exercise}
+%     {2.5.6} Use a similar strategy to the one in \numrefthm{2.5.5} to show
+%     \[\lim b^{1/n} \text{ exists for all } b \geq 0\] and find the value of the limit. (The results in \hyperref[exerc:2.3.1]{Exercise 2.3.1} may be assumed.)
+% \end{exercise}
+
+% \expf{
+%     We will show that \(\lim_{n \to \infty} b^{1/n}\) exists for all \(b \geq 0\) and find its value.
+%     \begin{itemize}
+%         \item \textbf{Case 1:} \(b = 0\).
+
+%               When \(b = 0\), the sequence becomes \(a_n = 0^{1/n} = 0\) for all \(n\). Thus, \(\lim_{n \to \infty} b^{1/n} = 0\).
+
+%         \item \textbf{Case 2:} \(b > 0\).
+
+%               Suppose, for contradiction, that \(\lim_{n \to \infty} b^{1/n} \ne 1\). Then there exists \(\epsilon > 0\) and infinitely many \(n\) such that \(|b^{1/n} - 1| \geq \epsilon\). Extract a subsequence \((b^{1/n_k})\) where this inequality holds for all \(k\).
+
+%               Since \(b^{1/n} > 0\) and bounded, by the \namrefthm{Bolzano-Weierstrass Theorem}, the subsequence \((b^{1/n_k})\) has a further subsequence that converges to a limit \(L\). According to \hyperref[ex:2.3.1]{Exercise 2.3.1}, any convergent subsequence of \((b^{1/n})\) must have its limit equal to \(\lim_{n \to \infty} b^{1/n}\).
+
+%               Consider \(\ln b^{1/n} = \frac{\ln b}{n}\). As \(n \to \infty\), \(\frac{\ln b}{n} \to 0\), so \(\ln b^{1/n} \to 0\), which implies \(b^{1/n} \to e^{0} = 1\).
+
+%               This contradicts the assumption that \(|b^{1/n_k} - 1| \geq \epsilon\), so \(\lim_{n \to \infty} b^{1/n} = 1\).
+
+%     \end{itemize}
+
+%     \textbf{Conclusion:}
+
+%     \[
+%         \lim_{n \to \infty} b^{1/n} =
+%         \begin{cases}
+%             0, & \text{if } b = 0,                \\
+%             1, & \text{if } b > 0. \hfill\qedhere
+%         \end{cases}
+%     \]
+% }
+
+
+% \renewcommand{\theenumi}{\arabic{enumi}}
+% \renewcommand{\labelenumi}{\theenumi.}
 \section{The Cauchy Criterion}
 
 \begin{center}
