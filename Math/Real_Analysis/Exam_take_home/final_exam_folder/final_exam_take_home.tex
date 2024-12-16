@@ -1,0 +1,315 @@
+\documentclass[12pt]{article}
+
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+\usepackage{amsmath,amsthm} 
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=1.3cm}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[margin=1in]{geometry}
+% \usepackage{setspace}
+% \linespread{1}
+\usepackage{listings}
+\usepackage{minted}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+\graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}[1]{\ensuremath{\lim_{n \rightarrow \infty}}#1}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limsupn}[1]{\displaystyle\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\displaystyle\liminf_{n\rightarrow \infty}#1}
+
+
+\renewcommand{\theenumi}{\arabic{enumi}} 
+\renewcommand{\labelenumi}{(\theenumi)}
+
+\newenvironment{solution}{\textit{Solution.}}
+
+\title{Real Analysis: Exam 2}
+\author{Paul Beggs}
+\date{November 6, 2024}
+
+%%% Custom Comands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+
+\begin{document}
+
+\maketitle
+
+``All work on this take-home exam is my own.'' \hfill \textbf{Signature:} Paul Beggs
+
+\vspace{0.5cm}
+
+\noindent\textbf{Part 1.} These two problems will give results that are useful in the next part. 
+
+\noindent Throughout this test, \(f^{(j)}(x)\) denotes the \(j^{\text{th}}\) derivative of \(f\) at \(x\).
+
+\begin{enumerate}
+    \item Let \(c_{0}, c_{1}, c_{2},\dots,c_{k}\) be real numbers. Prove there exists a unique polynomial \(p(x)\) of order at most \(k\) such that for each integer \(j\) between 0 and \(k\), \(p^{(j)}(0) = c_{j}\). In other words,
+    \[
+        p(0) = c_{0}, \qquad p'(0) = c_{1}, \qquad p''(0) = c_{2}, \qquad \ldots, \qquad  p^{(k)}(0) = c_{k}.
+    \]
+
+    If \(p(x) = a_{0} + a_{1}x + a_{2}x^{2} + \cdots + a_{k}x^{k}\), give formulas for \(a_{0},\dots,a_{k}\) in terms of \(c_{0},\dots,c_{k}\).
+    \vfill
+    \item Let \(\varphi\) be a function that is differentiable \(k + 1\) times on an interval \([a,b]\). This means \(\varphi',\varphi'',\dots,\varphi^{k + 1}\) all exist on \([a,b]\). Assume that
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{@{}c@{\qquad\quad~}c@{\qquad\quad~~}c@{}}
+        \(\begin{aligned}[t]
+            \varphi(a) &= 0 \\
+            \varphi'(a) &= 0 \\
+            &\vdots \\
+            \varphi^{(k)}(a) &= 0
+        \end{aligned}\)
+        & \text{and} &
+        \(\begin{aligned}[t]
+            \varphi(b) = 0.
+        \end{aligned}\)
+    \end{tabular}
+\end{table}
+
+
+Prove there exists a point \(c \in (a,b)\) such that \(\varphi^{{k + 1}}(c) = 0\).
+
+\end{enumerate}
+\newpage
+\noindent\textbf{Part 2.} These problems will walk you through an important concept and result in Calculus.\\
+
+Let \(I\) be an interval with zero in its interior and \(f(x)\) be a function that is \(k + 1\) times differentiable on \(I\).
+
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item Construct the unique polynomial \(P_{k}(x)\) of order at most \(k\) which satisfies that for all integers \(j\) between \(0 \text{ and } k\), \(P_{k}^{(j)}(0) = f^{(j)}(0)\). \textit{This should be a direct application of Problem (1).}
+    \item Let \(x\) be a fixed nonzero point in \(I\). Define a new function \(g\) on \(I\) as follows:
+    \[
+        g(t) = f(t) - P_{k}(t) - \left(\frac{f(x) - P_{k}(x)}{x^{k + 1}}\right)t^{k + 1}.
+    \]
+    Show that 
+
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{@{}c@{\qquad\quad~}c@{\qquad\quad~~}c@{}}
+            \(\begin{aligned}[t]
+                g(0) &= 0 \\
+                g'(0) &= 0 \\
+                &\vdots \\
+                g^{(k)}(0) &= 0
+            \end{aligned}\)
+            & \text{and} &
+            \(\begin{aligned}[t]
+                g(x) = 0.
+            \end{aligned}\)
+        \end{tabular}
+    \end{table}
+
+    Conclude there exists a point \(c\) between 0 and \(x\) such that \(g^{(k + 1)}(c) = 0\).
+    \item Use the above problem to prove the existence of a point \(c\) between 0 and \(x\) for which 
+    \[
+        f(x) = P_{k}(x) + \frac{f^{(k + 1)}(c)}{(k + 1)!}x^{k + 1}.
+    \]
+    \item This polynomial \(P_{k}\) is used as an approximation of \(f\). If it is known that \(|f^{(k + 1)}|\) is bounded by some number \(M\) on the interval \(I\), prove the error bound formula 
+    \[
+        |f(x) - P_{k}(x) \leq \frac{M |x|^{k + 1}}{(k + 1)!}.
+    \]
+\end{enumerate}
+
+\noindent\textbf{Part 3.} Now you get to enjoy using your result!
+
+\begin{enumerate}
+    \setcounter{enumi}{6}
+    \item Consider the function \(f(x) = e^{x}\). Give the expression of the polynomial approximation \(P_{k}\) for an arbitrary \(k \in \N\). Use what you know about \(f\) and its derivatives on the interval \([0,1]\) to determine an integer \(k\) for which you can guarantee that \(|f(1) - P_{k}(1)| < 10^{-12}\). Use this (and a calculator) to generate an approximation of \(e\) to 12 decimal places.
+\end{enumerate}
+\newpage
+
+\begin{center}
+    \textbf{Solutions}
+\end{center}
+
+\begin{enumerate}
+    \item To ensure that we have a polynomial with at order of at most \(k\), we need to observe some behaviors of derivatives. For example, for the polynomial \(x^{j}\), 
+    \begin{align*}
+        (x^{j})' &= jx^{j - 1} \\
+        (x^{j})'' &= j(j - 1)x^{j - 2} \\
+        &~\vdots \\
+        (x^{j})^{(j)} &= j!\cdot x^{0} = j!
+    \end{align*}
+    Notice the factorial arises from the recursive application of the power rule. Thus, when we combine this with the coefficients \(a_{0},a_{1},\ldots,a_{k}\), we get, 
+    \begin{align*}
+        p(x) &= a_0 + a_1 x + a_2 x^2 + \cdots + a_k x^k \\
+        p'(x) &= a_{1} + (a_{2} \cdot 2) x + (a_{3} \cdot 3) x^{2} \cdots (a_{k} \cdot k) x^{k - 1} \\
+        &\vdots \\
+        p^{(j)}(x) &= a_{j} \cdot j! + 
+\end{align*}
+\end{enumerate}
+
+To solve this problem, we'll determine the coefficients \( a_0, a_1, \dots, a_k \) in terms of \( c_0, c_1, \dots, c_k \).
+
+
+\textbf{Step 1: Calculate the derivatives of \( p(x) \) at \( x = 0 \).}
+
+Given:
+\[
+p(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_k x^k
+\]
+
+Compute the \( j \)-th derivative of \( p(x) \):
+
+- The \( j \)-th derivative \( p^{(j)}(x) \) is:
+  \[
+  p^{(j)}(x) = a_j \cdot j! + \text{terms involving higher powers of } x
+  \]
+
+- Evaluated at \( x = 0 \):
+  \[
+  p^{(j)}(0) = a_j \cdot j!
+  \]
+
+\textbf{Step 2: Solve for \( a_j \) using \( p^{(j)}(0) = c_j \).}
+
+Since \( p^{(j)}(0) = c_j \), we have:
+\[
+c_j = a_j \cdot j!
+\]
+
+Therefore:
+\[
+a_j = \frac{c_j}{j!}
+\]
+
+for each \( j = 0, 1, 2, \dots, k \).
+
+
+\textbf{Final Result:}
+
+The coefficients are:
+- \( a_0 = c_0 \)
+- \( a_1 = \dfrac{c_1}{1!} \)
+- \( a_2 = \dfrac{c_2}{2!} \)
+- \( \vdots \)
+- \( a_k = \dfrac{c_k}{k!} \)
+
+\textbf{Conclusion:}
+
+- \textbf{Existence:} The polynomial \( p(x) \) exists with coefficients defined by \( a_j = \dfrac{c_j}{j!} \).
+- \textbf{Uniqueness:} The polynomial is unique because each \( a_j \) is uniquely determined by \( c_j \).
+
+
+This shows that there exists a unique polynomial \( p(x) \) of degree at most \( k \) satisfying the given conditions, with coefficients explicitly given in terms of \( c_j \).
+
+
+\end{document}

@@ -199,9 +199,9 @@
 	\framesubtitle{Background}
 		Recall that: 
 		\begin{itemize}
-		\item[$\bigstar$] Order \(r\): smallest integer \(r \geq 1\) such that \(x^r \equiv 1 \mod n\)
+		\item[$\bigstar$] Order \(r\): smallest integer \(r \geq 1\) such that \(x^r \equiv 1 \bmod n\)
 		\pause
-        \item[$\bigstar$] Discrete Logarithm Problem (DLP): the problem of finding \(x\) given \(g^x\mod p\).
+        \item[$\bigstar$] Discrete Logarithm Problem (DLP): the problem of finding \(x\) given \(g^x\bmod p\).
 		\pause
 		\item[$\bigstar$] Time complexity: DLP = \(\mathcal{O}(2^{n})\).
 	\end{itemize}
@@ -312,7 +312,7 @@
 	\begin{itemize}
 		\item[1.] Change problem of factoring into finding the order \(r\).
 		\pause
-		\item[2.] Use the Quantum Fourier Transform to extract periodicity of \(f(x) = a^x \mod N\).
+		\item[2.] Use the Quantum Fourier Transform to extract periodicity of \(f(x) = a^x \bmod N\).
 		\pause
 		\item[3.] Once \(r\) is found (and it is even), use it in the computation of \(\gcd(a^{r/2} - 1, N)\).   
 	\end{itemize}
@@ -351,11 +351,11 @@
 		\pause
 		\item[2.] Check if \(a\) is already a factor of \(N\). If so, then the problem is solved.
 		\pause
-		\item[3.] Otherwise, find the order \(r\) of \(a \mod N\) using quantum super-positioning and interference. (Remember that the order is the smallest integer such that \(a^r \equiv 1 \mod N\).)
+		\item[3.] Otherwise, find the order \(r\) of \(a \bmod N\) using quantum super-positioning and interference. (Remember that the order is the smallest integer such that \(a^r \equiv 1 \bmod N\).)
 		\pause
 		\item[4.] Once \(r\) is found, compute the factors of \(N\) using \(r\). If \(r\) is even and 
 		\[
-			a^{r/2} \not\equiv -1 \mod N,
+			a^{r/2} \not\equiv -1 \bmod N,
 		\] 
 		then the factors are 
 		\[
