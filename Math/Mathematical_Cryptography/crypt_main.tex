@@ -5,7 +5,8 @@
 
 \documentclass[12pt, oneside]{book}
 \usepackage{bold-extra}
-\usepackage{draculatheme}
+\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+% \usepackage[T1]{fontenc}
 
 %%% AESTHETICS %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -634,14 +635,14 @@ enhanced,
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-% \thispagestyle{plain}
-% % Table of Contents will automatically update based on included chapters
-% % You may need to compile twice for the toc to update
-% \begin{spacing}{1} %Can change spacing between entries in toc
-%     \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
-%     \tableofcontents
-%     \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
-% \end{spacing}
+\thispagestyle{plain}
+% Table of Contents will automatically update based on included chapters
+% You may need to compile twice for the toc to update
+\begin{spacing}{1} %Can change spacing between entries in toc
+    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} %Can rename here
+    \tableofcontents
+    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+\end{spacing}
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -669,26 +670,26 @@ enhanced,
 
 
 
-% \chapter{The Real Numbers}\label{Real nums}
-% \vspace*{-0.25in}
-% \input{Chapters/crypt_ch_1}
+\chapter{The Real Numbers}\label{Real nums}
+\vspace*{-0.25in}
+\input{Chapters/crypt_ch_1}
 
-% \setcounter{chapter}{1}
+\setcounter{chapter}{1}
 
-% \chapter{Discrete Logarithms and Diffie-Hellman}\label{discrete log}
-% \vspace*{-0.25in}
-% \input{Chapters/crypt_ch_2}
+\chapter{Discrete Logarithms and Diffie-Hellman}\label{discrete log}
+\vspace*{-0.25in}
+\input{Chapters/crypt_ch_2}
 
-% \chapter{Integer Factorization and RSA}\label{RSA}
-% \vspace*{-0.25in}
-% \input{Chapters/crypt_ch_3}
+\chapter{Integer Factorization and RSA}\label{RSA}
+\vspace*{-0.25in}
+\input{Chapters/crypt_ch_3}
 
-% \setcounter{chapter}{3}
+\setcounter{chapter}{3}
 
 
-% \chapter{Digitial Signatures}\label{dig sig}
-% \vspace*{-0.25in}
-% \input{Chapters/crypt_ch_4}
+\chapter{Digitial Signatures}\label{dig sig}
+\vspace*{-0.25in}
+\input{Chapters/crypt_ch_4}
 
 \setcounter{chapter}{5}
 
@@ -730,23 +731,23 @@ enhanced,
 % \input{Exercises/crypt_exercises_4}
 % \addcontentsline{toc}{chapter}{Exercises 4}
 
-\chapter*{Exercises pt. 5}\label{ex 5}
-\vspace*{-0.25in}
-\fancyhead[R]{Exercises 5}
-\input{Exercises/crypt_exercises_5}
-\addcontentsline{toc}{chapter}{Exercises 5}
+% \chapter*{Exercises pt. 5}\label{ex 5}
+% \vspace*{-0.25in}
+% \fancyhead[R]{Exercises 5}
+% \input{Exercises/crypt_exercises_5}
+% \addcontentsline{toc}{chapter}{Exercises 5}
 
 
-\chapter*{Exercises pt. 6}\label{ex 6}
-\vspace*{-0.25in}
-\fancyhead[R]{Exercises 6}
-\input{Exercises/crypt_exercises_6}
-\addcontentsline{toc}{chapter}{Exercises 6}
+% \chapter*{Exercises pt. 6}\label{ex 6}
+% \vspace*{-0.25in}
+% \fancyhead[R]{Exercises 6}
+% \input{Exercises/crypt_exercises_6}
+% \addcontentsline{toc}{chapter}{Exercises 6}
 
-\renewcommand{\theenumi}{\arabic{enumi}}
-\renewcommand{\labelenumi}{\theenumi.}
-\newpage
-\fancyhead[R]{Exam Prep}
+% \renewcommand{\theenumi}{\arabic{enumi}}
+% \renewcommand{\labelenumi}{\theenumi.}
+% \newpage
+% \fancyhead[R]{Exam Prep}
 
 
 % \chapter*{Exam Prep}\label{prep}

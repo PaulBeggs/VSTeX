@@ -613,7 +613,7 @@ If \(f\) is continuous at \(c\) and \((x_n) \to c\), then \(\limn f(x_n) = f(c)\
         f(K) & \subseteq f\left(\bigcup_{i = 1}^n V_{\delta_{c_i}} (c_i)\right) \\
              & \subseteq \bigcup_{i = 1}^n f(V_{\delta_{c_i}} (c_i))            \\
              & \subseteq \bigcup_{i = 1}^n (f(c_i) - 1, f(c_i) + 1)             \\
-             & \subseteq [\min f(c_i) - 1, \max f(c_i) + 1].
+             & \subseteq [\min \{f(c_i)\} - 1, \max \{f(c_i)\} + 1].
     \end{align*}
     Therefore, \(f(K)\) is bounded.
 }
@@ -690,7 +690,7 @@ Compare this definition with \defref{4.3.1}. The difference is that the \(\delta
 \textbf{Note:} IVT does not guarantee where, or how many \(c\)'s are in the interval. It only guarantees that at least one \(c\) exists.
 
 \tpf{
-    \textit{(Using \namrefthm{Nested Interval Property})} Without the loss of generality, assume \(f(a) < f(b)\) and let \(y \in (f(a),f(b))\). Let \(I_{1} = [a_{1},b_{1}]\). Bisect \(I_{1}\) into two intervals \([a_{1},d]\) and \(d,b_{1}\) where \(d = \dfrac{a_{1} + b_{1}}{2}\). 
+    Without the loss of generality, assume \(f(a) < f(b)\) and let \(y \in (f(a),f(b))\). Let \(I_{1} = [a_{1},b_{1}]\). Bisect \(I_{1}\) into two intervals \([a_{1},d]\) and \(d,b_{1}\) where \(d = \frac{a_{1} + b_{1}}{2}\). 
 \begin{itemize}
     \item If \(f(d) < y\), set \(a_{2} = d\), \(b_{2} = b_{1}\), and \(I_{2} = [a_{2},b_{2}]\). Notice that \(f(a_{2}) < y < f(b_{2})\).
     \item If \(f(d) > y\), then set \(a_{2} = a_{1}\), \(b_{2} = d\), and \(I_{2} = [a_{2},b_{2}]\). Notice that \(f(a_{2}) < y < f(b_{2})\).

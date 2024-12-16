@@ -147,18 +147,18 @@
                   f\left( \dfrac{p}{q} \right) & = \dfrac{1}{q} f(p)                         \\
                                                & = \dfrac{1}{q} (kp) \quad (\text{from (1)}) \\
                                                & = k \left( \dfrac{p}{q} \right)             \\
-                                               & = kr.
+                  f(r)                         & = kr.
               \end{align*}
               Thus, \(f(r) = kr\) for any rational number \(r\).
         \item Since \(f\) is continuous at \(x = 0\), we will show \(f\) is continuous everywhere.
 
               Let \(c \in \mathbb{R}\) and let \(\epsilon > 0\). Since \(f\) is continuous at \(0\), there exists \(\delta > 0\) such that if \(|h| < \delta\), then \(|f(h)| < \epsilon\).
 
-              For \(x = c + h\), we have:
+              For \(x = c + h\) with \(|h| < \delta\), we have:
               \begin{align*}
-                  |f(x) - f(c)| & = |f(c + h) - f(c)|          \\
-                                & = |f(c) + f(h) - f(c)| \quad \\
-                                & = |f(h)|                     \\
+                  |f(x) - f(c)| & = |f(c + h) - f(c)|    \\
+                                & = |f(c) + f(h) - f(c)| \\
+                                & = |f(h)|               \\
                                 & < \epsilon.
               \end{align*}
               Thus, \(f\) is continuous at \(c\).
@@ -181,7 +181,7 @@
               \[
                   |f(x) - f(y)| = \left| \dfrac{1}{x^2} - \dfrac{1}{y^2} \right| = \left| \dfrac{y^2 - x^2}{x^2 y^2} \right| = |y - x| \left( \dfrac{y + x}{x^2 y^2} \right).
               \]
-              Since \(x, y \geq 1\), we have \(x^2 y^2 \geq 1\). Therefore,
+              Since \(x, y \geq 1\), we have \(x^{2}y \geq 1\) and \(xy^{2} \geq 1\). Therefore,
               \[
                   \frac{y + x}{x^2 y^2} = \frac{y}{x^{2}y^{2}} + \frac{x}{x^{2}y^{2}} \leq \frac{1}{x^{2}y} + \frac{1}{xy^{2}} \leq 1 + 1 = 2.
               \]

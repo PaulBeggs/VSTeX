@@ -5,21 +5,16 @@
 		}
 	],
 	"settings": {
-		"cSpell.words": [
-			"Cryptosystem",
-			"Elgamal",
-			"primality",
-			"squarings",
-			"suprema",
-			"Totient",
-			"Uncountably"
-		],
 		"latex-workshop.linting.chktex.exec.args": [
-			"-wall",
-			"-n22",
-			"-n30",
-			"-e16",
-			"-n21"
-		]
+        "-wall",
+        "-n22",
+        "-n30",
+        "-e16",
+        "-q",
+        "-n12",
+        "-n13",
+        "-n46",
+        "-n38"
+    	],
 	}
 }

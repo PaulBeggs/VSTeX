@@ -687,15 +687,15 @@ Now we have our \(t = -67\), but we still need to find the modulo. Take the modu
 \renewcommand{\labelenumi}{\theenumi.}
 \section{Modular Arithmetic}
 
-\wrpdef{Modular Arithmetic}{Let \(m \geq 1\) be an integer. We say that the integers \(a\) and \(b\) are congruent modulo \(m\) if their difference is divisible by \(m\): \(m \mid (b - a)\) or \(m \mid (a - b)\). Notated as \(a = b\mod m\)}
+\wrpdef{Modular Arithmetic}{Let \(m \geq 1\) be an integer. We say that the integers \(a\) and \(b\) are congruent modulo \(m\) if their difference is divisible by \(m\): \(m \mid (b - a)\) or \(m \mid (a - b)\). Notated as \(a = b\bmod m\)}
 
-By the definition of division, we can write this as \(b - a = mk\) for some \(k \in \Z\) and \(b = mk + a\) for some \(k \in \Z\). For example, \(17\mod 4 \equiv 1\). Or for another example, \(-17\mod 4 \equiv -1 \equiv 3\). For addition, you can go in two separate directions. For the first, sequence of operations, we could add the numbers inside of the parentheses and then take the mod of the number as demonstrated \((26 + 14)\mod 5 \equiv 40 \mod 5 \equiv 0\), or we could take the mod of both numbers inside the parentheses, demonstrated as \(26\mod + 14\mod 5 = 1 + 4 = 0\). \\
+By the definition of division, we can write this as \(b - a = mk\) for some \(k \in \Z\) and \(b = mk + a\) for some \(k \in \Z\). For example, \(17\bmod 4 \equiv 1\). Or for another example, \(-17\bmod 4 \equiv -1 \equiv 3\). In addition, you can go in two separate directions. For the first, sequence of operations, we could add the numbers inside the parentheses and then take the mod of the number as demonstrated \((26 + 14)\bmod 5 \equiv 40 \bmod 5 \equiv 0\), or we could take the mod of both numbers inside the parentheses, demonstrated as \(26\bmod + 14\bmod 5 = 1 + 4 = 0\). \\
 
 \wrpprop{1.13}{Let \(m \in \Z^+\)
-\begin{enumerate}
-    \item If \(a_1 \equiv a_2 \ (\text{mod } m)\) and \(b_1 \equiv b_2 \ (\text{mod } m)\) then \(a_1 \pm b_1 \equiv a_2 \pm b_2 \ (\text{mod } m) \equiv a_2\ (\text{mod } m) + b_2\ (\text{mod } m)\). Also, \(a_1b_1 = a_2b_2\ (\text{mod } m)=a_2\ (\text{mod } m) b_2\ (\text{mod } m)\)
-    \item Let \(a \in \Z\). Then \(ab \equiv 1\ (\text{mod } m)\) for some \(b\equiv \Z \iff \gcd(a,m)=1\)
-\end{enumerate}}
+    \begin{enumerate}
+        \item If \(a_1 \equiv a_2 \ (\text{mod } m)\) and \(b_1 \equiv b_2 \ (\text{mod } m)\) then \(a_1 \pm b_1 \equiv a_2 \pm b_2 \ (\text{mod } m) \equiv a_2\ (\text{mod } m) + b_2\ (\text{mod } m)\). Also, \(a_1b_1 = a_2b_2\ (\text{mod } m)=a_2\ (\text{mod } m) b_2\ (\text{mod } m)\)
+        \item Let \(a \in \Z\). Then \(ab \equiv 1\ (\text{mod } m)\) for some \(b\equiv \Z \iff \gcd(a,m)=1\)
+    \end{enumerate}}
 
 \wrpdef{Ring}{We write \(\Z/m\Z = \{0,1,2,\dots,m-1\}\) and call \(\Z / m\Z\) the \textit{ring of integers modulo} \(m\). We add and multiplying them as integers and then dividing the result by \(m\) and taking the remainder in order to obtain an element in \(\Z/m\Z\).}
 
@@ -740,8 +740,8 @@ Note that we will be finding the more traditional rings that are brought up in A
 
 \wrpdef{Unit}{Recall from \refprop{1.13} that \(a\) has an inverse modulo \(m\) if and only if \(\gcd(a, m) = 1\). Numbers that have inverses are called \textit{units}. We denote the set of all units by
     \begin{align*}
-        {(\Z/m\Z)}^* & = \{a \in \Z/m\Z \mid \gcd(a,m) = 1\}                     \\
-                     & = \{a \in \Z/m\Z \mid \text{a has an inverse modulo } m\}
+        {(\Z/m\Z)}^* & = \{a \in \Z/m\Z \mid \gcd(a,m) = 1\}                      \\
+                     & = \{a \in \Z/m\Z \mid \text{a has an inverse modulo } m.\}
     \end{align*}}
 
 \begin{center}
@@ -754,7 +754,7 @@ Note that we will be finding the more traditional rings that are brought up in A
 \subsection{Modular Arithmetic and Shift Ciphers}
 
 \begin{example}
-    {Shift Cipher}Let's say we have a shift cipher with a key of 3. We want to encrypt the message ``HELLO''. What is the encrypted message?
+    {Shift Cipher} Let's say we have a shift cipher with a key of 3. We want to encrypt the message ``HELLO''. What is the encrypted message?
 \end{example}
 
 \lesol{
@@ -768,18 +768,18 @@ We can write the algorithm as follows: \begin{enumerate}[label=\arabic*.]
     \item Write the exponent in binary.
     \item Compute the powers of the base in binary. For example,
           \begin{align*}
-              k_0 & = a \ (\text{mod } m)                                             \\
-              k_1 & = k_0^2 \ (\text{mod } m) = a^2 \ (\text{mod } m)                 \\
-              k_2 & = k_1^2 \ (\text{mod } m) = (a^2)^{2} \ (\text{mod } m)           \\
-                  & \vdots                                                            \\
-              k_r & = k_{r-1}^2 \ (\text{mod } m) = (a^{2^{n-1}})^2 \ (\text{mod } m)
+              k_0 & = a \ (\text{mod } m)                                              \\
+              k_1 & = k_0^2 \ (\text{mod } m) = a^2 \ (\text{mod } m)                  \\
+              k_2 & = k_1^2 \ (\text{mod } m) = (a^2)^{2} \ (\text{mod } m)            \\
+                  & \vdots                                                             \\
+              k_r & = k_{r-1}^2 \ (\text{mod } m) = (a^{2^{n-1}})^2 \ (\text{mod } m).
           \end{align*}
     \item Multiply the powers of the base that correspond to the 1s in the binary representation of the exponent.
           Compute \(a_b \ (\text{mod } m)\) by using \[a^b = a^{b_0 \cdot b_{12} + \cdots + b_r2^r}\]
 \end{enumerate}
 
 \begin{example}
-    {Fast Powering Algorithm}Compute \(3^{218} \ (\text{mod } 1000)\).
+    {Fast Powering Algorithm} Compute \(3^{218} \ (\text{mod } 1000)\).
 \end{example}
 
 
@@ -895,7 +895,7 @@ Then \(p \mid a\) or \(p \mid b\). \\
 
 Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\gcd(x,p) = 1\) because of \refprop{1.13}. \\
 
-\wrpdef{Field}{If \(p\) is prime, then \(\Z/p\Z\) of integers modulo \(p\) with its addition, subtraction, multiplication, and division rules is a \textit{field}. See the definition of \hyperref[Ring]{Ring} for more information on the properties of a field. (Note that a field is a type of ring, called a communicative ring.) We often notate fields as \(\F_p\) and \(\F_p^*\) as the group of units}
+\wrpdef{Field}{If \(p\) is prime, then \(\Z/p\Z\) of integers modulo \(p\) with its addition, subtraction, multiplication, and division rules is a \textit{field}. See the definition of \hyperref[Ring]{Ring} for more information on the properties of a field. (Note that a field is a type of ring, called a communicative ring.) We often notate fields as \(\F_p\) and \(\F_p^*\) as the group of units.}
 
 \pfs%
 
@@ -905,7 +905,7 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
 \label{thm:Fermat's Little Theorem}
 
 \begin{theorem}
-    {Fermat's Little Theorem}Let \(p\) be a prime number and \(a\) be an integer. Then, \[a^{p - 1} \equiv \begin{cases}
+    {Fermat's Little Theorem} Let \(p\) be a prime number and \(a\) be an integer. Then, \[a^{p - 1} \equiv \begin{cases}
             1 \ (\text{mod } p) & \text{if } p \nmid a \\
             0 \ (\text{mod } p) & \text{if } p \mid a
         \end{cases}\]
@@ -938,7 +938,7 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
 \subsection{Exercises}
 
 \begin{exercise}
-    {1.32}For each of the following primes \( p \) and numbers \( a \), compute \( a^{-1} \mod p \) in two ways: (i) the extended Euclidean algorithm. (ii) Use the fast power algorithm and Fermat's little theorem. (See Example 1.27.)
+    {1.32}For each of the following primes \( p \) and numbers \( a \), compute \( a^{-1} \bmod p \) in two ways: (i) the extended Euclidean algorithm. (ii) Use the fast power algorithm and Fermat's little theorem. (See Example 1.27.)
     \begin{enumerate}
         \item \( p = 47 \) and \( a = 11 \).
         \item \( p = 587 \) and \( a = 345 \).
@@ -1200,12 +1200,12 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
                   \]
                   \vspace*{-1cm}
               \end{center}
-              There we finally have our transcription! ``We hold these truths to be self evident that all men are created equal tha...'' (Declaration of Independence again).
+              There we finally have our transcription! ``We hold these truths to be self-evident that all men are created equal tha\ldots'' (Declaration of Independence again).
     \end{enumerate}
 }
 
 \begin{exercise}
-    {Additional Problem}Write down the steps for an algorithm to encrypt a plaintext using a transposition/Scytale cipher using \(n\) columns. \textit{Hint: This should involve some modular arithmetic.}
+    {Additional Problem} Write down the steps for an algorithm to encrypt a plaintext using a transposition/Scytale cipher using \(n\) columns. \textit{Hint: This should involve some modular arithmetic.}
 \end{exercise}
 
 \sol{

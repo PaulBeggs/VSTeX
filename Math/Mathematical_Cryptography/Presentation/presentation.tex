@@ -19,7 +19,7 @@
 % \usetheme{Dresden}
 % \usecolortheme{spruce}
 
-\usepackage{draculatheme}
+\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
 \usepackage{bold-extra}
 \usepackage{graphicx}  
 \usepackage{tcolorbox}
@@ -199,17 +199,12 @@
 	\framesubtitle{Background}
 		Recall that: 
 		\begin{itemize}
-		\item Discrete Logarithm Problem (DLP): the problem of finding \(x\) given \(g^x\mod p\).
+		\item[$\bigstar$] Order \(r\): smallest integer \(r \geq 1\) such that \(x^r \equiv 1 \bmod n\)
 		\pause
-		\item Order \(r\): smallest integer \(r \geq 1\) such that \(x^r \equiv 1 \mod n\)
+        \item[$\bigstar$] Discrete Logarithm Problem (DLP): the problem of finding \(x\) given \(g^x\bmod p\).
 		\pause
-		\item Time complexity: DLP = \(\mathcal{O}(2^{n})\).
+		\item[$\bigstar$] Time complexity: DLP = \(\mathcal{O}(2^{n})\).
 	\end{itemize}
-\end{frame}
-
-\begin{frame}{Introduction}
-    \framesubtitle{subtitle}
-        
 \end{frame}
 
 
@@ -256,11 +251,14 @@
 %% -----------------------------------------------------------%%
 \begin{frame}{Bits}
 	\framesubtitle{Overview of Classical \& Quantum Computing}
+    Classical bits: 0 or 1
     \begin{itemize}
-        \item Classical bits: 0 or 1
-        \item[] Bits are manipulated according to \textbf{Boolean logic}, and sequences of bits are manipulated by \textbf{Boolean logic gates}.
-        \item Quantum bits (qubits): Simultaneous values between 0 and 1
-        \item[]  A quantum computer manipulates \textbf{quantum bits} (qubits) via \textbf{quantum logic gates}, which are supposed to simulate the laws of quantum mechanics \end{itemize}
+        \item[$\bigstar$] Bits are manipulated according to \textbf{Boolean logic}, and sequences of bits are manipulated by \textbf{Boolean logic gates}.
+    \end{itemize}
+    Quantum bits (qubits): Simultaneous values between 0 and 1
+    \begin{itemize}
+        \item[$\bigstar$]  A quantum computer manipulates \textbf{quantum bits} (qubits) via \textbf{quantum logic gates}, which are supposed to simulate the laws of quantum mechanics.
+    \end{itemize}
 \end{frame}
 
 
@@ -272,9 +270,9 @@
 \begin{frame}{Quantum Computers}
 	\framesubtitle{Understanding Qubits}
     \begin{itemize}
-        \item Two-state representation: \(\ket{0}\) and \(\ket{1}\)
-        \item Pure states: \(\alpha \ket{0} + \beta \ket{1}\)
-        \item Constraint: \(|\alpha|^2 + |\beta|^2 = 1\)
+        \item[$\bigstar$] Two-state representation: \(\ket{0}\) and \(\ket{1}\)
+        \item[$\bigstar$] Pure states: \(\alpha \ket{0} + \beta \ket{1}\)
+        \item[$\bigstar$] Constraint: \(|\alpha|^2 + |\beta|^2 = 1\)
     \end{itemize}
     \pause
     \begin{block}{n-Component System}
@@ -292,14 +290,14 @@
 \begin{frame}{Shor's Algorithm}
 	\framesubtitle{Overview}
     \begin{itemize}
-        \item Purpose: Find non-trivial factors \(p\) and \(q\) of \(N\)
-        \item Applications:
+        \item[$\bigstar$] Purpose: Find non-trivial factors \(p\) and \(q\) of \(N\)
+        \item[$\bigstar$] Applications:
             \begin{itemize}
                 \item Integer factorization
                 \item Discrete logarithm in \(\mathbb{F}_p^*\)
                 \item Elliptic curve discrete logarithm
             \end{itemize}
-        \item Runs in polynomial time (quantum)
+        \item[$\bigstar$] Runs in polynomial time (quantum)
     \end{itemize}
 \end{frame}
 
@@ -310,11 +308,11 @@
 
 %% -----------------------------------------------------------%%
 \begin{frame}{Shor's Algorithm}
-	\framesubtitle{Algorithmic Steps}
+	\framesubtitle{Algorithmic Steps Outline}
 	\begin{itemize}
 		\item[1.] Change problem of factoring into finding the order \(r\).
 		\pause
-		\item[2.] Use the Quantum Fourier Transform to extract periodicity of \(f(x) = a^x \mod N\).
+		\item[2.] Use the Quantum Fourier Transform to extract periodicity of \(f(x) = a^x \bmod N\).
 		\pause
 		\item[3.] Once \(r\) is found (and it is even), use it in the computation of \(\gcd(a^{r/2} - 1, N)\).   
 	\end{itemize}
@@ -328,30 +326,16 @@
 
 %% -----------------------------------------------------------%%
 \begin{frame}{Shor's Algorithm}
-	\framesubtitle{Quantum Fourier Transform 1}
+	\framesubtitle{Quantum Fourier Transform}
     \begin{block}{Quantum Superposition}
         For \(0 < a < q\):
         \[ \frac{1}{q^{1/2}} \sum_{c = 0}^{q - 1} \ket{c} \exp(2\pi i a c /q) \]
     \end{block}
     \begin{itemize}
-        \item Choose \(q\): power of 2 between \(n^2\) and \(2n^2\)
-        \item Probability of state \(\ket{c}\) is high when:
+        \item Choose \(q\): power of 2 between \(N^2\) and \(2N^2\)
+        \item Probability of observing state \(\ket{c}\) is high when:
         \[ \left| c - \frac{d}{r} \right| < \frac{1}{2q} \]
     \end{itemize}
-\end{frame}
-
-
-%% -----------------------------------------------------------%%
-
-
-%% -----------------------------------------------------------%%
-
-% Subsection 3.3: Quantum Fourier Transform
-
-%% -----------------------------------------------------------%%
-\begin{frame}{Shor's Algorithm}
-	\framesubtitle{Quantum Fourier Transform 2}
-    
 \end{frame}
 
 
@@ -367,11 +351,11 @@
 		\pause
 		\item[2.] Check if \(a\) is already a factor of \(N\). If so, then the problem is solved.
 		\pause
-		\item[3.] Otherwise, find the order \(r\) of \(a \mod N\) using quantum super-positioning and interference. (Remember that the order is the smallest integer such that \(a^r \equiv 1 \mod N\).)
+		\item[3.] Otherwise, find the order \(r\) of \(a \bmod N\) using quantum super-positioning and interference. (Remember that the order is the smallest integer such that \(a^r \equiv 1 \bmod N\).)
 		\pause
 		\item[4.] Once \(r\) is found, compute the factors of \(N\) using \(r\). If \(r\) is even and 
 		\[
-			a^{r/2} \not\equiv -1 \mod N,
+			a^{r/2} \not\equiv -1 \bmod N,
 		\] 
 		then the factors are 
 		\[
@@ -387,23 +371,37 @@
 % Section 4: Implications
 
 %% -----------------------------------------------------------%%
+\begin{frame}{Example}
+    \framesubtitle{Factoring 15 on a Quantum Computer}
+    \begin{itemize}
+        \item[$\bigstar$] Finding the factors of 15 required a seven-qubit quantum computer 
+        \item[$\bigstar$] IBM chemists designed and made a new molecule that has seven nuclear spins -- the nuclei of five fluorine and two carbon atoms
+        \item[$\bigstar$] Interact as qubits and programmed by radio frequency pulses, detected by nuclear magnetic resonance (NMR) instruments \footnote{IBM Research Division. (2001, December 20). IBM's Test-Tube Quantum Computer Makes History; First Demonstration Of Shor's Historic Factoring Algorithm. \textit{ScienceDaily.} Retrieved December 4, 2024 from \url{www.sciencedaily.com/releases/2001/12/011220081620.htm}} \end{itemize}
+\end{frame}
+
+
+%% -----------------------------------------------------------%%
+
+% Section 4: Implications
+
+%% -----------------------------------------------------------%%
 \begin{frame}{Cryptographic Implications}
     \begin{columns}
         \begin{column}{0.5\textwidth}
             \textbf{Vulnerable}
             \begin{itemize}
-                \item RSA
-                \item Classical Elgamal
-                \item Elliptic curve Elgamal
+                \item[$\bigstar$] RSA
+                \item[$\bigstar$] Classical Elgamal
+                \item[$\bigstar$] Elliptic curve Elgamal
             \end{itemize}
         \end{column}
 		\pause
         \begin{column}{0.5\textwidth}
             \textbf{Still Secure}
             \begin{itemize}
-                \item Lattice-based cryptosystems
-                \item Shortest vector problems
-                \item Closest vector problems
+                \item[$\bigstar$] Lattice-based cryptosystems
+                \item[$\bigstar$] Shortest vector problems
+                \item[$\bigstar$] Closest vector problems
             \end{itemize}
         \end{column}
     \end{columns}
@@ -417,13 +415,13 @@
 %% -----------------------------------------------------------%%
 \begin{frame}{Challenges \& Future}
     \begin{itemize}
-        \item Building functioning quantum computers
-        \item Decoherence control
-        \item Quantum cryptography applications:
+        \item[$\bigstar$] Building functioning quantum computers
+        \item[$\bigstar$] Decoherence control
+        \item[$\bigstar$] Quantum cryptography applications:
             \begin{itemize}
-                \item Heisenberg uncertainty principle
-                \item Entanglement of quantum states
-                \item Secure key exchange
+                \item[$\star$] Heisenberg uncertainty principle
+                \item[$\star$] Entanglement of quantum states
+                \item[$\star$] Secure key exchange
             \end{itemize}
     \end{itemize}
 \end{frame}

@@ -554,6 +554,7 @@ This algorithm is based on the following steps:
 \begin{center}
     \textbf{In Python:}
 \end{center}
+
 \label{pollard's p python}
 \begin{lstlisting}[language=Python, numbers=left]
 def pollards_p_minus_1(base, mod, limit):
@@ -562,7 +563,7 @@ def pollards_p_minus_1(base, mod, limit):
         lcm_val = math.lcm(lcm_val, i)
         pow_val = pow(base, lcm_val, mod) - 1
         gcd_val = math.gcd(pow_val, mod)
-        print(f"lcm({i}) = {lcm_val}, gcd: {gcd_val}")
+        print(f'lcm({i}) = {lcm_val}, gcd: {gcd_val}')
         if 1 < gcd_val < mod:
             return gcd_val
     return None

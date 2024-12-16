@@ -144,8 +144,9 @@
                 mark=*,
                 mark size=3pt,
                 color=red,
-            ] coordinates { (-2.7515,6) (-0.84108,6) };
+            ] coordinates { (-2.7515,6) (-0.84108,6) (-1.23774, 8.3)};
 
+            \node[above right, red] at (axis cs:-1.23774, 8.3) {\(c\)};
             % Labels for points x_{1} and x_{2}
             \node[above right, red] at (axis cs:-2.7515,6) {\(x_1\)};
             \node[above right, red] at (axis cs:-0.84108,6) {\(x_2\)};
@@ -154,8 +155,8 @@
             \draw[dotted, red, thick] (axis cs:-7,6) -- (axis cs:7,6);
 
             % Horizontal dotted lines at y = 10.05105 and y = -5.2362
-            \draw[dotted, darkgray, thick] (axis cs:-4.5,10.05105) -- (axis cs:7,10.05105);
-            \draw[dotted, darkgray, thick] (axis cs:-4.5,-5.2362) -- (axis cs:7,-5.2362);
+            \draw[dotted, lightgray, thick] (axis cs:-4.5,10.05105) -- (axis cs:7,10.05105);
+            \draw[dotted, lightgray, thick] (axis cs:-4.5,-5.2362) -- (axis cs:7,-5.2362);
 
             % \addlegendentry{$g(x) = x^3 + x^2 - 7x$}
             % Curly brace from local maximum to local minimum

@@ -41,7 +41,11 @@
 \end{exercise}
 
 \expf{
-    Let \(\epsilon > 0\). Since \(\lim_{x \to c} f(x) = L\), there exists \(\delta_1 > 0\) such that whenever \(0 < |x - c| < \delta_1\), we have \(|f(x) - L| < \epsilon\). Similarly, there exists \(\delta_2 > 0\) such that whenever \(0 < |x - c| < \delta_2\), we have \(|h(x) - L| < \epsilon\). Let \(\delta = \min\{\delta_1, \delta_2\}\). Then, for all \(x\) with \(0 < |x - c| < \delta\), we have \(f(x) \leq g(x) \leq h(x)\). Thus, \(|g(x) - L| < \epsilon\), and \(\lim_{x \to c} g(x) = L\).
+    Let \(\epsilon > 0\). Since \(\lim_{x \to c} f(x) = L\), there exists \(\delta_1 > 0\) such that whenever \(0 < |x - c| < \delta_1\), we have \(|f(x) - L| < \epsilon\). Similarly, there exists \(\delta_2 > 0\) such that whenever \(0 < |x - c| < \delta_2\), we have \(|h(x) - L| < \epsilon\). Let \(\delta = \min\{\delta_1, \delta_2\}\). Then, for all \(x\) with \(0 < |x - c| < \delta\), we have \(f(x) \leq g(x) \leq h(x)\). Thus, 
+    \[
+    L - \epsilon < f(x) \leq g(x) \leq h(x) < L + \epsilon.
+    \]
+    Therefore, \(|g(x) - L| < \epsilon\), and \(\lim_{x \to c} g(x) = L\).
 }
 
 
@@ -79,17 +83,33 @@ Possibily use Example 4.3.8 in the book for (b).
             \[
                 \sqrt[3]{x} - \sqrt[3]{c} = \frac{x - c}{ (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 }.
             \]
-            Since \( c \neq 0 \) and \( x \) is close to \( c \): 
-            \[
-                \frac{x - c}{ (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 } \leq \frac{\disabs{x - c}}{\sqrt[3]{c^{2}}}.
-            \]
+            Since \( c \neq 0 \), we can assume x is sufficiently close to \(c\) such that \(\sqrt[3]{x}\) is bounded away from 0. Let \(M = \max(|\sqrt[3]{c}|,1)\). If \(|x - c| < 1\), then \(|\sqrt[3]{x}| \leq M + 1\).
 
-            Similarly to (a), choose \(\delta = \epsilon\sqrt[3]{c^{2}}\). Then, if \( |x - c| < \delta \), we have:
+            Thus, the denominator can be bounded as:
             \[
-                |g(x) - g(c)| = \left| \frac{x - c}{ (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 } \right| \leq \frac{\disabs{x - c}}{\sqrt[3]{c^{2}}} < \frac{\epsilon\sqrt[3]{c^{2}}}{\sqrt[3]{c^{2}}} = \epsilon.
+                (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 \geq (\sqrt[3]{c})^{2} > 0, 
             \]
-            
-            Therefore, \( g \) is continuous at \( c \neq 0 \).
+            and for \(x\) close to \(c\), we have:
+            \[
+                (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 \leq 3(M + 1)^{2}.
+            \]
+            Now, using the rewritten expression for \(|g(x) - g(c)|\):
+            \[
+                |g(x) - g(c)| = \left| \frac{x - c}{ (\sqrt[3]{x})^2 + \sqrt[3]{x}\sqrt[3]{c} + (\sqrt[3]{c})^2 } \right|.
+            \]
+            For \(|x - c| < \delta\), we have:
+            \[
+                |g(x) - g(c)| \leq \frac{|x - c|}{(\sqrt[3]{c})^{2}}.
+            \]
+            To ensure \(|g(x) - g(c)| < \epsilon\), choose:
+            \[
+                \delta = \epsilon(\sqrt[3]{c})^{2}. 
+            \]
+            If \(|x - c| < \delta\), then 
+            \[
+                |g(x) - g(c)| \leq \frac{|x - c|}{(\sqrt[3]{c})^{2}} < \frac{\epsilon(\sqrt[3]{c})^{2}}{(\sqrt[3]{c})^{2}} = \epsilon.
+            \]
+            By choosing \(\delta = \epsilon(\sqrt[3]{c})^{2}\), we ensure that \(|x - c| < \delta\) implies \(|g(x) - g(c)| < \epsilon\). Therefore, \(g(x) = \sqrt[3]{x}\) is continuous at \(c \ne 0\).
         }
     \end{enumerate}
 }
@@ -110,9 +130,9 @@ Possibily use Example 4.3.8 in the book for (b).
         \[
             g(1) = \lim_{x \to 1} g(x).
         \]
-        Since \(g(x) \geq 0\) for all \(x < 1\), any sequence \((x_{n})\) converging to 1  will have \(g(x_{n}) \geq 0\). Then, by the \namrefthm{Sequential Criterion for Functional Limits} (Theorem 4.2.2), we have:
+        Since \(g(x) \geq 0\) for all \(x < 1\), any sequence \((x_{n})\) converging to 1 with \(x_{n} < 1\) will have \(g(x_{n}) \geq 0\). Then, by the \namrefthm{Sequential Criterion for Functional Limits} (Theorem 4.2.2), we have:
         \[
-            \lim_{x \to \infty} g(x_{n}) \geq 0.
+            \lim_{n \to \infty} g(x_{n}) \geq 0.
         \]
         By using the definition of continuity again, we have \( g(1) = \lim_{x \to 1}g(x)\) so \(g(1) \geq 0 \).
 

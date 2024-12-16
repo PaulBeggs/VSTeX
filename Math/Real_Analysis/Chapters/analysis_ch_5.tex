@@ -59,11 +59,11 @@
 \end{ntheorem}
 
 \begin{example}
-    {Differentiation 4}Let \(f(x) = |x|\). Use \defref{5.2.1} to find \(f'(c)\).
+    {Differentiation 4}Let \(f(x) = |x|\). Use \defref{5.2.1} to find \(f'(0)\).
 \end{example}
 
 \lesol{
-    Is this differentiable at 0?
+    
 
     \begin{align*}
         \lim_{x \to 0} \frac{|x| - |0|}{x - 0} & = \lim_{x \to 0} \frac{|x|}{x}
@@ -115,7 +115,7 @@
         \lim_{x \to c} \frac{\frac{f(x)}{g(x)} - \frac{f(c)}{g(c)}}{x - c} & = \lim_{x \to c} \frac{f(x)g(c) - f(c)g(x)}{g(x)g(c)(x - c)}                                                      \\
                                                                            & = \lim_{x \to c} \frac{f(x)g(c) - f(c)g(c) + f(c)g(c) - f(c)g(x)}{g(x)g(c)(x - c)}                                \\
                                                                            & = \lim_{x \to c} \frac{f(x) - f(c)}{g(x)g(c)(x - c)} + \lim_{x \to c} \frac{f(c)g(c) - f(c)g(x)}{g(x)g(c)(x - c)} \\
-                                                                           & = \frac{f'(c)g(c) - f(c)g'(c)}{g^{2}(c)}.
+                                                                           & = \frac{f'(c)g(c) - f(c)g'(c)}{g^{2}(c)}. \qedhere
     \end{align*}
 }
 
@@ -127,66 +127,37 @@
     \begin{align*}
         \lim_{x \to c} \frac{g(f(x)) - g(f(c))}{x - c} & = \lim_{x \to c} \frac{g(f(x)) - g(f(c))}{f(x) - f(c)} \cdot \frac{f(x) - f(c)}{x - c}          \\
                                                        & = \lim_{x \to c} \frac{g(f(x)) - g(f(c))}{f(x) - f(c)} \lim_{x \to c} \frac{f(x) - f(c)}{x - c} \\
-                                                       & = g'(f(c))f'(c).
+                                                       & = g'(f(c))f'(c). \qedhere
     \end{align*}
 }
 
 \begin{ntheorem}
-    {Interior Extremum Theorem} If \(f\) is differentiable at \(c\) and \(c\) is a local maximum of \(f\), then \(f'(c) = 0\).
+    {Interior Extremum Theorem} If \(f\) is differentiable at \(c\), and \(c\) is a local maximum of \(f\), then \(f'(c) = 0\).
 \end{ntheorem}
 
 \tpf{
-    We know that \(f'(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c}\). Then, 
+    We know that \(f'(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c}\). Then,
     \[
-    f'(x) = \lim_{x \to c^{-}} \frac{f(x) - f(c)}{x - c} \geq 0,
+        f'(x) = \lim_{x \to c^{-}} \frac{f(x) - f(c)}{x - c} \geq 0,
     \]
     and
     \[
-    f'(x) = \lim_{x \to c^{+}} \frac{f(x) - f(c)}{x - c} \leq 0,
-    \] 
-    So, \(f'(c) = 0\).
+        f'(x) = \lim_{x \to c^{+}} \frac{f(x) - f(c)}{x - c} \leq 0,
+    \]
+    so, \(f'(c) = 0\).
 }
-\pfs
-\begin{center}
-    \underline{Big Results From This Semester}
-\end{center}
 
-\begin{enumerate}
-    \item \namrefthm{Extreme Value Theorem}
-    \begin{itemize}
-        \item If \(f\) is continuous on a compact set, then \(f\) achieves a maximum and minimum on that set.
-    \end{itemize}
-    \item \namrefthm{Intermediate Value Theorem}
-    \begin{itemize}
-        \item If \(f\) is continuous on an interval \([a, b]\) and \(y\) is between \(f(a)\) and \(f(b)\), then there exists a \(c \in [a, b]\) such that \(f(c) = y\).
-    \end{itemize}
-
-\end{enumerate}
-\pfs
-\begin{center}
-    \underline{Theorems for Today}
-\end{center}
-
-\begin{enumerate}
-    \item Rolle's Theorem
-    \item Mean Value Theorem
-    \item Maybe:
-    \begin{itemize}
-        \item Generalized MVT.
-        \item L'Hopital's Rule.
-    \end{itemize}
-    \item Darbaux's Theorem
-\end{enumerate}
+\section{The Mean Value Theorems}
 
 \begin{ntheorem}
     {Rolle's Theorem} Let \(f\) be continuous on \([a, b]\) and differentiable on \((a, b)\). If \(f(a) = f(b)\), then there exists a \(c \in (a, b)\) such that \(f'(c) = 0\).
 \end{ntheorem}
 
 \tpf{
-    Since \(f\) is continuous on \([a,b]\), the \namrefthm{Extreme Value Theorem} says \(f\) achieves a maximum and minimum in \([a,b]\). 
+    Since \(f\) is continuous on \([a,b]\), the \namrefthm{Extreme Value Theorem} says \(f\) achieves a maximum and minimum in \([a,b]\).
     \begin{itemize}
-    \item If either maximum or minimum is in the interior, then the \namrefthm{thm:Interior Extremum Theorem} says that \(f'(c) = 0\). 
-    \item If the maximum or minimum is at the endpoints, then \(f\) is constant and \(f'(c) = 0\) for all \([a,b]\).
+        \item If either maximum or minimum is in the interior, then the \namrefthm{Interior Extremum Theorem} says that \(f'(c) = 0\).
+        \item If the maximum or minimum is at the endpoints, then \(f\) is constant and \(f'(c) = 0\) for all \([a,b]\). \qedhere
     \end{itemize}
 }
 
@@ -199,5 +170,68 @@
 \end{ntheorem}
 
 \tpf{
-    Let \(d(x) = f(x) + \frac{f(a)}{}\)
+Let \(d(x) = f(x) - [f(a) + \frac{f(b)-f(a)}{b-a} (x - a)]\). Notice \(d(x)\) is continuous on \([a,b]\) and differentiable on \((a,b)\). Thus,
+\[
+    d(a) = f(a) - (f(a) + 0) = 0 \qquad \text{and} \qquad d(b) = f(b) - (f(a) + f(b) - f(a)) = 0.
+\]
+So, \namrefthm{Rolle's Theorem} applies to \(d(x)\) and there exists a \(c \in (a,b)\) where \(d'(c) = 0\). Notice
+\[
+    d'(x) = f'(x) - \frac{f(b) - f(a)}{b - a},
+\]
+so
+\begin{align*}
+    0     & = f'(c) - \frac{f(b) - f(a)}{b - a}   \\
+    f'(c) & = \frac{f(b) - f(a)}{b - a}. \qedhere
+\end{align*}
 }
+
+\begin{ntheorem}
+    {Generalized Mean Value} Let \(f\) and \(g\) be continuous on \([a,b]\) and differentiable on \((a,b)\). There exists \(c \in (a,b)\) such that
+    \[
+        (f(b)-f(a))g(x) - (g(b) - g(a))f(x).
+    \]
+\end{ntheorem}
+
+\tpf{
+    Let \(d(x) = (f(b)-f(a))g(x) - (g(b) - g(a))f(x)\). Notice \(d(x)\) is continuous on \([a,b]\) and differentiable on \((a,b)\). Thus,
+    \begin{align*}
+        d(a) & = (f(b)-f(a))g(a) - (g(b) - g(a))f(a) \\
+        d(b) & = (f(b)-f(a))g(b) - (g(b) - g(a))f(b)
+    \end{align*}
+    We can show \(d(a) = d(b)\), so \namrefthm{Rolle's Theorem} applies to \(d(x)\) and there exists a \(c \in (a,b)\) where \(d'(c) = 0\). Therefore,
+    \[
+        0 = d'(c) = (f(b)-f(a))g'(c) - (g(b) - g(a))f'(c) \qedhere
+    \]
+}
+
+\begin{ntheorem}
+    {L'Hôspital's Rule} (\(\frac{0}{0}\) case) Let \(f\) and \(g\) be continuous on an interval around \(a \in \R\). Assume \(f\) and \(g\) are differentiable on this interval (except possibly at \(a\)). Assume \(f(a) = g(a) = 0\). Also, \(g'(x) \ne 0\). If all conditions are met, then the following conditional is valid:
+    \[
+        \text{If }\quad \lim_{x\to a}\frac{f'(x)}{g'(x)} \quad \text{ exists, then } \quad \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}.
+    \]
+\end{ntheorem}
+
+\tpf{
+    Choose a number \(b\) that is close to \(a\). The \namrefthm{Generalized Mean Value} Theorem says there exists \(c\) between \(a\) and \(b\) where:
+    \begin{align*}
+        (f(b) - f(a))g'(c) & = (g(b) - g(a))f'(c)   \\
+        f(b)g'(c)          & = g(b)f'(c)            \\
+        \frac{f(b)}{g(b)}  & = \frac{f'(c)}{g'(c)},
+    \end{align*}
+    because \(f(a) = g(a) = 0\).
+
+    Now, suppose \(\lim_{x \to a}\frac{f'(x)}{g'(x)} = L\) exists. Consider any sequence \((b_n) \to a\).
+    By the Generalized Mean Value Theorem, for each \(b_n\) there exists \(c_n\) between \(a\) and \(b_n\) such that:
+    \[\frac{f(b_n)}{g(b_n)} = \frac{f'(c_n)}{g'(c_n)}\]
+
+    Since \(a < c_n < b_n\) and \(b_n \to a\), we have \(c_n \to a\) as well.
+    Therefore:
+    \[\lim_{n \to \infty} \frac{f(b_n)}{g(b_n)} = \lim_{n \to \infty} \frac{f'(c_n)}{g'(c_n)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} = L.\]
+
+    Since this holds for any sequence \((b_n) \to a\), we conclude:
+    \[\lim_{x \to a} \frac{f(x)}{g(x)} = L. \qedhere\]
+}
+
+\begin{ntheorem}
+    {Darbaux's Theorem} If \(f\) is differentiable on \([a,b]\) and \(f'(a) < \alpha < f'(b)\), then there exists \(c \in (a,b)\) such that \(f'(c) = \alpha\).
+\end{ntheorem}

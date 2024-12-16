@@ -1,31 +1,57 @@
 \begin{exercise}
-    {2.2.2(b)}Verify, using \defref{2.2.3}, that
-    the following sequences converge to the proposed limit.
+    {2.1.1}What happens if we reverse the order of the quantifiers in \defref{2.2.3}?
+
+    \textit{Definition:} A sequence \(x_{n}\) \textit{verconges} to \(x\) if there exists an \(\epsilon >0\) such that for all \(N \in \N\) it is true that \(n \geq N\) implies \(\disabs{x-n - x} < \epsilon \).
     \begin{enumerate}
-        \setcounter{enumi}{1}
-        \item \(\limn \frac{2n^2{n^3+3}} = 0\)
+        \item Give an example of a vercongent sequence.
+        \item Is there an example of a vercongent sequence that is divergent?
+        \item Can a sequence verconge to two different values?
+        \item What exactly is being described in this strange definition?
     \end{enumerate}
 \end{exercise}
 
 \sol{
     \begin{enumerate}
-        \setcounter{enumi}{1}\item
-              \innerpf{
+        \item Pick \(\epsilon = 2\), \(x_{n} = (-1)^{n}\) and \(x = 0\). This sequence will stay within the bounds of \((-2,2)\) for all \(N \in \N\) and \(n \geq N\).
+        \item There cannot be a divergent vercongent sequence because vercongence wants us to be bounded, and divergence wants it to grow outside the bounds. These two ideas are mutually exclusive.
+        \item Yes. For example, \(x_{n} = 0\) and \(x_{n} = 1\).
+        \item This definition is describing a sequence that is bounded. It is a sequence that is not growing outside of a certain range.
+    \end{enumerate}
+}
 
-                  Let \(\epsilon > 0\). Choose \(N = \frac{2}{\epsilon}\). Then, for \(n > N\),
-                  \begin{align*}
-                      \disabs{\frac{2n^2}{n^3 + 3} - 0} & = \disabs{\frac{2n^2}{n^3 + 3}} \\
-                                                        & = \frac{2n^2}{n^3 + 3}          \\
-                                                        & < \frac{2n^2}{n^3}              \\
-                                                        & = \frac{2}{n}                   \\
-                                                        & < \frac{2}{N}                   \\
-                                                        & = \frac{2}{2/\epsilon}          \\
-                                                        & = \epsilon.
-                  \end{align*}
-                  Therefore, \(\limn \frac{2n^2{n^3 + 3}} = 0\). \qedhere
+\begin{exercise}
+    {2.2.2}Verify, using \defref{2.2.3}, that
+    the following sequences converge to the proposed limit.
+    \begin{enumerate}
+        \item \(\limn \frac{2n + 1}{5n + 4} = \frac{2}{5}\).
+        \item \(\limn \frac{2n^2}{n^3+3} = 0\)
+    \end{enumerate}
+\end{exercise}
 
-              }
-    \end{enumerate}}
+\expf{\hfill
+    \begin{enumerate}
+        \item Let \(\epsilon > 0\). Choose \(N \in \N\) such that \(N > \dfrac{3}{25\epsilon}\). Then for all \(n \geq N\),
+              \begin{align*}
+                  \left|\frac{2n + 1}{5n + 4} - \frac{2}{5}\right| & = \left|\frac{-3}{5(5n + 4)}\right| \\
+                                                                   & = \frac{3}{25n + 20}                \\
+                                                                   & \leq \frac{3}{25n}                  \\
+                                                                   & \leq \frac{3}{25N}                  \\
+                                                                   & < \epsilon
+              \end{align*}
+              Therefore, \(\displaystyle \lim_{n \to \infty} \frac{2n + 1}{5n + 4} = \frac{2}{5}\).
+        \item Let \(\epsilon > 0\). By the \namrefthm{Archimedean Principle}, there exists an \(N \in \N\) such that \(N > \frac{2}{\epsilon}\). Then, for \(n \geq N\),
+              \begin{align*}
+                  \disabs{\frac{2n^2}{n^3 + 3} - 0} & = \disabs{\frac{2n^2}{n^3 + 3}} \\
+                                                    & = \frac{2n^2}{n^3 + 3}          \\
+                                                    & < \frac{2n^2}{n^3}              \\
+                                                    & = \frac{2}{n}                   \\
+                                                    & \leq \frac{2}{N}                \\
+                                                    & = \frac{2}{2/\epsilon}          \\
+                                                    & = \epsilon.
+              \end{align*}
+              Therefore, \(\limn \frac{2n^2}{n^3 + 3} = 0\). \qedhere
+    \end{enumerate}
+}
 
 \begin{exercise}
     {2.2.3} Describe what we would have to demonstrate in order to disprove each of the following statements.
@@ -49,20 +75,162 @@
     {2.2.4} Give an example of each or state that the request is impossible.
     For any that are impossible, give a compelling argument for why that is the case.
     \begin{enumerate}
-        \item A sequence with an infinite number of ones that converges to one.
+        \item A sequence with an infinite number of ones that does not converge to one.
         \item A sequence with an infinite number of ones that converges to a limit not equal to one.
-        \item A divergent sequence such such that for every \(n \in \N\) it is possible to find \(n\) consecutive ones somewhere in the sequence.
+        \item A divergent sequence such that for every \(n \in \N\) it is possible to find \(n\) consecutive ones somewhere in the sequence.
     \end{enumerate}
 \end{exercise}
 
 \sol{
     \begin{enumerate}
-        \item Possible. Example: \(a_n = 1 \text{ for all } n \in \N\).
-        \item Impossible. We can use the \namrefthm{Uniqueness of Limits} to show that this is impossible. Essentially, because we found in (a) that the limit of an infinite number of ones converges to 1, it must be the case that if the limit is not equal to one, then the sequence cannot converge to one.
-        \item Possible. Example: \(\{2,2,2,2,4,4,4,4,1,1,1,1,1,3,3,\dots\}\)
+        \item Possible. Consider the sequence \(a_n = \begin{cases}
+                  1 & \text{if } n \text{ is even} \\
+                  0 & \text{if } n \text{ is odd}.
+              \end{cases}\) This sequence has infinitely many ones but does not converge to one.
+
+        \item Impossible. Suppose \((a_n)\) is a sequence that converges to a limit \(L \neq 1\) and has infinitely many ones. Since \((a_n)\) converges to \(L\), for any \(\epsilon > 0\), there exists \(N \in \N\) such that for all \(n \geq N\), \(|a_n - L| < \epsilon\). Choose \(\epsilon = \frac{|1 - L|}{2} > 0\). Then, for \(n \geq N\), \(|a_n - L| < \epsilon\), which implies \(a_n \neq 1\) beyond this \(N\). This contradicts the existence of infinitely many ones. Therefore, such a sequence is impossible.
+
+        \item Possible. Define a sequence by concatenating increasing blocks of ones separated by zeros: \( (0, 1, 0, 1, 1, 0, 1, 1, 1, 0, \dots) \). Specifically, the sequence consists of \(n\) ones followed by a zero for \(n = 1, 2, 3, \dots\). For every \(n \in \N\), there is a block of \(n\) consecutive ones somewhere in the sequence. The sequence does not converge, so it is divergent.
     \end{enumerate}
 }
 
+\begin{exercise}
+    {2.2.5} Let \([[x]]\) be the greatest integer less than or equal to \(x\). For example, \([[\pi]] = 3\) and \([[3]] = 3\). For each sequence, find \(\lim_{n \to \infty} a_{n}\) and verify it with the definition of convergence.
+    \begin{enumerate}
+        \item \(a_{n} = [[5/n]]\)
+        \item \(a_{n} = [[(12 + 4n)/3n]]\)
+    \end{enumerate}
+    Reflecting on these examples, comment on the statement following \defref{2.2.3B} that ``the smaller the \(\epsilon\)-neighborhood, the larger \(N\) may have to be.''
+\end{exercise}
+
+\sol{
+    \begin{enumerate}
+        \item We will show that \(\displaystyle \lim_{n \to \infty} a_{n} = 0\).
+
+              \innerpf{
+              For \(n \geq 6\), we have \(\frac{5}{n} \leq \frac{5}{6} < 1\), so \(a_{n} = [[5/n]] = 0\).
+
+              Let \(\epsilon > 0\). Choose \(N = 6\). Then for all \(n \geq N\),
+              \[
+                  |a_{n} - 0| = |0 - 0| = 0 < \epsilon.
+              \]
+              Therefore, by the definition of convergence, \(\displaystyle \lim_{n \to \infty} a_{n} = 0\).
+              }
+
+        \item We will show that \(\displaystyle \lim_{n \to \infty} a_{n} = 1\).
+
+              \innerpf{
+              Observe that:
+              \[
+                  a_{n} = \left[ \dfrac{12 + 4n}{3n} \right] = \left[ \dfrac{4n + 12}{3n} \right] = \left[ \dfrac{4}{3} + \dfrac{4}{n} \right].
+              \]
+              As \(n \to \infty\), \(\dfrac{4}{n} \to 0\), so \(\dfrac{4}{3} + \dfrac{4}{n} \to \dfrac{4}{3} \approx 1.333\).
+
+              For \(n \geq 7\), we have:
+              \[
+                  \dfrac{4}{n} \leq \dfrac{4}{7} \approx 0.571,\quad \dfrac{4}{3} + \dfrac{4}{n} \leq 1.333 + 0.571 = 1.904.
+              \]
+              Since \(1 < \dfrac{4}{3} + \dfrac{4}{n} < 2\) for \(n \geq 7\), we have:
+              \[
+                  a_{n} = \left[ \dfrac{4}{3} + \dfrac{4}{n} \right] = 1.
+              \]
+              Let \(\epsilon > 0\). Choose \(N = 7\). Then for all \(n \geq N\),
+              \[
+                  |a_{n} - 1| = |1 - 1| = 0 < \epsilon.
+              \]
+              Therefore, by the definition of convergence, \(\displaystyle \lim_{n \to \infty} a_{n} = 1\).
+              }
+    \end{enumerate}
+
+    \textbf{Reflection:} In these examples, we see that once the sequence reaches a certain point (i.e., \(n \geq N\)), the terms remain constant. This means that for any \(\epsilon > 0\), we can find a fixed \(N\) to satisfy the definition of convergence, regardless of how small \(\epsilon\) is. However, in general, smaller \(\epsilon\)-neighborhoods may require larger \(N\) because the sequence may not settle into its limit as neatly as it does in these cases.
+}
+
+\begin{exercise}
+    {2.2.6} Prove the \namrefthm{Uniqueness of Limits} theorem. To get started, assume \((a_{n}) \rightarrow a \) and \((a_{n}) \rightarrow b\). Now argue \(a = b\).
+\end{exercise}
+
+\expf{
+Since \((a_{n}) \rightarrow a\), this means for all \(\epsilon > 0\), there exists an \(N_{1} \in \N\) such that for all \(n \geq N\), \(\disabs{a_{n} - a} < \epsilon/2\). Similarly, since \((a_{n}) \rightarrow b\), this means for all \(\epsilon > 0\), there exists an \(N_{2} \in \N\) such that for all \(n \geq N_{2}\), \(\disabs{a_{n} - b} < \epsilon/2\).
+
+Now, let \(N = \max\{N_{1},N_{2}\}\) so that
+\begin{align*}
+    \disabs{a - b} & = \disabs{a - a_{n} + a_{n} - b}        \\
+                   & \leq \disabs{(a_{n} - a) + (a_{n} - b)} \\
+                   & < \epsilon/2 + \epsilon/2               \\
+                   & < \epsilon
+\end{align*}
+Then, by \numrefthm{1.2.6}, \(a = b\).
+}
+
+\begin{exercise}
+    {2.2.7} {Here are two useful definitions:}
+    \begin{enumerate}[label=(\roman*)]
+        \item A sequence \((a_n)\) is \emph{eventually} in a set \(A \subseteq \mathbb{R}\) if there exists an \(N \in \mathbb{N}\) such that \(a_n \in A\) for all \(n \geq N\).
+        \item A sequence \((a_n)\) is \emph{frequently} in a set \(A \subseteq \mathbb{R}\) if, for every \(N \in \mathbb{N}\), there exists an \(n \geq N\) such that \(a_n \in A\).
+              \begin{enumerate}[label=(\alph*)]
+                  \item Is the sequence \((-1)^n\) eventually or frequently in the set \(\{1\}\)?
+                  \item Which definition is stronger? Does frequently imply eventually, or does eventually imply frequently?
+                  \item Give an alternate rephrasing of \defref{2.2.3B} using either frequently or eventually. Which is the term we want?
+                  \item Suppose an infinite number of terms of a sequence \((x_n)\) are equal to \(2\). Is \((x_n)\) necessarily eventually in the interval \((1.9, 2.1)\)? Is it frequently in \((1.9, 2.1)\)?
+              \end{enumerate}
+    \end{enumerate}
+
+\end{exercise}
+
+\sol{
+    \begin{enumerate}[label=(\alph*)]
+        \item The sequence \((-1)^n\) is \textit{frequently} in the set \(\{1\}\) because for every \(N \in \mathbb{N}\), we can find an \(n \geq N\) such that \((-1)^n = 1\).
+        \item The definition of \textit{eventually} is stronger because \textit{eventually} implies \textit{frequently}, but \textit{frequently} does not imply \textit{eventually}.
+        \item An alternate rephrasing of Definition 2.2.3B using \textit{eventually} is: A sequence \((a_n)\) converges to \(a\) if, given any \(\epsilon\)-neighborhood---\(V_\epsilon(a)\) of \(a\)---\((a_n)\) is \textit{eventually} in \(V_\epsilon(a)\). The term we want is eventually.
+        \item If an infinite number of terms of a sequence \((x_n)\) are equal to \(2\),  \((x_n)\) is not \textit{eventually} in \((1.9, 2.1)\) because we can have a sequence \((a_n)\) that will not settle in \((1.9, 2.1)\). For example, \((a_n) = (0,2,0,2,\cdots)\) does not settle in \((1.9, 2.1)\). Whereas, \((x_n)\) is \textit{frequently} in the interval \((1.9, 2.1)\) because for every \(N \in \mathbb{N}\) there exists an \(n \geq N\) such that \(x_n \in (1.9, 2.1)\) for all \(n \geq N\). We can see an instance of this being true by examining the previous example.
+    \end{enumerate}
+}
+
+
+\begin{exercise}
+    {2.3.1}
+    \begin{enumerate}
+        \item If \(\lim_{n \to \infty} x_n = 0\), show that \(\lim_{n \to \infty} \sqrt{x_n} = 0\).
+        \item If \(\lim_{n \to \infty} x_n = x\), show that \(\lim_{n \to \infty} \sqrt{x_n} = \sqrt{x}\).
+    \end{enumerate}
+\end{exercise}
+
+\expf{ \hfill
+    \begin{enumerate}
+        \item \textit{Solution.} Let \(\epsilon > 0\). Since \(\lim_{n \to \infty} x_n = 0\), there exists \(N \in \mathbb{N}\) such that for all \(n \geq N\),
+              \[
+                  |x_n| < \epsilon^2.
+              \]
+              Then, for all \(n \geq N\),
+              \[
+                  \left|\sqrt{x_n} - 0\right| = \sqrt{x_n} < \sqrt{\epsilon^2} = \epsilon.
+              \]
+              Therefore, \(\lim_{n \to \infty} \sqrt{x_n} = 0\).
+
+        \item \textit{Solution.} Let \(\epsilon > 0\). Since \(\lim_{n \to \infty} x_n = x\), for any \(\delta > 0\), there exists \(N \in \mathbb{N}\) such that for all \(n \geq N\),
+              \[
+                  |x_n - x| < \delta.
+              \]
+              We consider two cases:
+
+              \textbf{Case 1:} \(x > 0\).
+
+              Since \(x > 0\), choose \(\delta = \min\left\{\epsilon\left(2\sqrt{x}\right),\, \dfrac{x}{2}\right\}\). Then for all \(n \geq N\), we have \(x_n > x - \dfrac{x}{2} = \dfrac{x}{2} > 0\). Thus,
+              \[
+                  \sqrt{x_n} + \sqrt{x} \geq \sqrt{\dfrac{x}{2}} + \sqrt{x} > 0.
+              \]
+              Now,
+              \[
+                  \left|\sqrt{x_n} - \sqrt{x}\right| = \dfrac{|x_n - x|}{\sqrt{x_n} + \sqrt{x}} \leq \dfrac{\delta}{\sqrt{\dfrac{x}{2}}} \leq \epsilon.
+              \]
+
+              \textbf{Case 2:} \(x = 0\).
+
+              From part (1), we have \(\lim_{n \to \infty} \sqrt{x_n} = 0 = \sqrt{0}\).
+
+              Therefore, \(\lim_{n \to \infty} \sqrt{x_n} = \sqrt{x}\).
+    \end{enumerate}
+}
 
 \begin{exercise}
     {2.3.2}Using only \defref{2.2.3}, prove that if \((x_n) \rightarrow 2\), then
@@ -84,10 +252,13 @@
                                                   & < \epsilon
               \end{align*}
               Therefore, \(\frac{2x_n - 1}{3} \rightarrow 1\) \qed
-        \item \textit{Proof.} Let \(\epsilon > 0\). Since \((x_n)\) converges to 2, there exists \(N \in \N\) such that for all \(n \geq N\), \(\disabs{x_n - 2} < \epsilon\). Now, for any \(n \geq N\),
+        \item \textit{Proof.} Let \(\epsilon > 0\). Since \((x_n)\) converges to 2, there exists \(N_1 \in \N\) such that for all \(n \geq N_1\), \(x_n \geq 1\). Then, we will choose \(N_2\) so that \(|x_n - 2 | < \epsilon\) for all \(n \geq N_2\). Afterwards, we take \(N = \max\{N_1, N_2\}\). And note that for \(n \geq N\),
+
               \begin{align*}
-                  \disabs{\frac{1}{x_n} - \frac{1}{2}} & = \disabs{\frac{2 - x_n}{2x_n}}  \\
-                                                       & = \frac{1}{2x_n}\disabs{2 - x_n} \\
+                  \disabs{\frac{1}{x_n} - \frac{1}{2}} & = \disabs{\frac{2 - x_n}{2x_n}} \\
+                                                       & < \frac{\disabs{2 - x_n}}{2}    \\
+                                                       & < \frac{\epsilon}{2}            \\
+                                                       & < \epsilon
               \end{align*} \qed
     \end{enumerate}
 }
