@@ -187,11 +187,11 @@
 \newpage
 \begin{lstlisting}[language=Python, caption=Python Code to Concatenate Strings, label={lst:5.1}]
     cipher_text = [
-        "REIBITATNINUWIPTNSAIRDEANMFUINEHMRYEEYRCYDDPLAIE",
-        "ANOYNOGHIATTAZOHESFTTISSSEWTOEREAAORMPAOEIETYNNL",
-        "DVNIVRRUTNRISENEROTSHMSATNARTDTCNCFYYTMNDOCASEIF",
-        "IIETEAEMACIOSDBGAOEBAPENRTRAUOOODOEECOIVRMRNINT",
-        "OSDSNSAAROBNEUYELNRINRDIUOBDRVTMEPVNRGTEAAYASDS",
+        'REIBITATNINUWIPTNSAIRDEANMFUINEHMRYEEYRCYDDPLAIE',
+        'ANOYNOGHIATTAZOHESFTTISSSEWTOEREAAORMPAOEIETYNNL',
+        'DVNIVRRUTNRISENEROTSHMSATNARTDTCNCFYYTMNDOCASEIF',
+        'IIETEAEMACIOSDBGAOEBAPENRTRAUOOODOEECOIVRMRNINT',
+        'OSDSNSAAROBNEUYELNRINRDIUOBDRVTMEPVNRGTEAAYASDS',
     ]
     
     # Number of rows and columns
@@ -199,20 +199,20 @@
     num_cols = min(len(row) for row in cipher_text)
     
     # Read the text column by column
-    decoded_text = ""
+    decoded_text = ''
     for col in range(num_cols):
         for row in range(num_rows):
             decoded_text += cipher_text[row][col]
     
     # Print the result
-    print("Decoded text (column-by-column):")
+    print('Decoded text (column-by-column):')
     print(decoded_text)
 \end{lstlisting}
 \vspace*{-0.5cm}
 \begin{lstlisting}[language=Python, caption=Python Code to Find Key, label={lst:5.2}]
     # Plaintext and Ciphertext have been omitted because they would not fit in the page.
-    plaintext = "..."
-    ciphertext = "..."
+    plaintext = '...'
+    ciphertext = '...'
     
     # Known key length
     key_length = 5
@@ -234,6 +234,6 @@
     
     # Join the key characters into a string
     key_word = ''.join(key)
-    print("Derived key:", key_word)
+    print('Derived key:', key_word)
     
 \end{lstlisting}

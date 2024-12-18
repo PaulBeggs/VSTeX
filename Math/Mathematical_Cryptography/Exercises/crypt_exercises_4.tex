@@ -263,7 +263,7 @@
         lcm_val = math.lcm(lcm_val, i)
         pow_val = pow(base, lcm_val, mod) - 1
         gcd_val = math.gcd(pow_val, mod)
-        print(f"lcm({i}) = {lcm_val}, gcd: {gcd_val}")
+        print(f'lcm({i}) = {lcm_val}, gcd: {gcd_val}')
         if 1 < gcd_val < mod:
             return gcd_val
     return None
