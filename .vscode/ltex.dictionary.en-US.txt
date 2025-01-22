@@ -62,3 +62,6 @@ Kofler
 Hôspital
 congruences
 Rolle
+cycloid
+Cycloid
+Leibnitz

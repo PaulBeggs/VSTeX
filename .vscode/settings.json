@@ -60,6 +60,13 @@
                 "%DOCFILE%.latexmkrc",
                 "%DOC%"
             ]
+        },
+        {
+            "name": "pythontex",
+            "command": "pythontex",
+            "args": [
+                "%DOC%"
+            ]
         }
     ],
     "latex-workshop.latex.recipes": [
@@ -83,7 +90,15 @@
             "tools": [
                 "pdflatex"
             ]
+        },
+
+    {
+            "name": "pdflatex -> pythontex -> pdflatex",
+            "tools": [
+                "pdflatex",
+                "pythontex",
+                "pdflatex"
+            ]
         }
-    ]
-    
+    ],
 }
