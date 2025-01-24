@@ -91,7 +91,7 @@ In many cases, the curve does not describe \(y\) as a function of \(x\). However
 
 \subsection{Slope for a Parametric Curve}
 
-Given a point t0, the \cynit{slope of the curve} in the \(xy\)-plane is given by
+Given a point \(t_{0}\), the \cynit{slope of the curve} in the \(xy\)-plane is given by
 \[
     \dydx\barNotationT{t_{0}} = \frac{dy/dt}{dx/dt}\barNotationT{t_{0}}. \\
 \]
@@ -140,8 +140,29 @@ We can apply each of the above to the cycloid:
 \begin{itemize}
     \item \cynit{Derivative}: \(\dydx = \frac{dy}{dx} = \frac{\sin(t)}{1 - \cos(t)}\). Note that the slope is then independent of the radius of the wheel and
     that the slope is undefined at each of \(t = \dots, -4\pi, -2\pi, 0, 2\pi, 4\pi, \dots\). 
-    \item \cynit{Concavity}: \(\dfrac{d^{2}y}{dx^{2}} = \frac{d}{dt}\left(\frac{dy}{dx}\right) = \frac{d}{dt}\left(\frac{\sin(t)}{1 - \cos(t)}\right)\). After some work, we find that \(\dfrac{d^{2}y}{dx^{2}} = -\frac{a}{y^{2}}\), which shows that the cycloid is always concave down.
-    \item \cynit{Area}: The area of one period of the cycloid \(A = 3\pi a2\), after some work. 
+    \item \cynit{Concavity}: \(\dfrac{d^{2}y}{dx^{2}} = \frac{d}{dt}\left(\frac{dy}{dx}\right) = \frac{d}{dt}\left(\frac{\sin(t)}{1 - \cos(t)}\right)\). After some work, we find that \(\frac{d^{2}y}{dx^{2}} = -\frac{a}{y^{2}}\), which shows that the cycloid is always concave down.
+    \item \cynit{Area}: The area of one period of the cycloid \(A = 3\pi a2\), after some work.
+
+    \begin{align*}
+        A &= \int_{0}^{2\pi} (a - a \cos t)(a - a\cos t) dt \\
+        &= a^{2} \int_{0}^{2\pi} (1 - 2\cos t + \cos^{2} t) dt \\
+        &= a^{2} \left(2\pi + \int_{0}^{2\pi} 1 - 2\cos t + \cos^{2} t \right) dt \\
+        &= a^{2}\left(2\pi + \left(\frac{t}{2} + \frac{1}{4}\sin(2t)\right)\right)\bigg|_{0}^{2\pi} \\
+        &= 3\pi a^{2}.
+    \end{align*}
+
     \item \cynit{Arc Length}: The arc length of one period of the cycloid is \(s = 8a\), again after some work.
+
+    \begin{align*}
+        S &= \int_{0}^{2\pi} \sqrt{(a- a \cos t)^{2} + (a \sin t)^{2}} \ dt \\
+        &= a \int_{0}^{2\pi} \sqrt{1 - 2\cos t + \cos^{2} t + \sin^{2} t} \ dt \\
+        &= a \int_{0}^{2\pi} \sqrt{2 - 2\cos t} \ dt \\
+        &= \sqrt{2}a \int_{0}^{2\pi} \sqrt{1 - cost} \ dt \\
+        &= \sqrt{2}a \int_{0}^{2\pi} \sqrt{2\sin^{2}\left(\frac{t}{2}\right)} \ dt \\
+        &= \sqrt{2}a \cdot \sqrt{2} \int_{0}^{2\pi} \sin\left(\frac{t}{2}\right) \ dt \\
+        &= 2a\left(-2 \cos\left(\frac{t}{2}\right)\right)\bigg|_{0}^{2\pi} \\ 
+        &= 8a.
+    \end{align*}
+
     \item \cynit{Surface Area}: The surface area of the solid obtained by rotating one period of the cycloid around the \(x\)-axis is \(S = \frac{64\pi a^{2}}{3}\), after a lot of tedious work.
 \end{itemize}
