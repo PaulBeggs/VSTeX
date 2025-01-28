@@ -1,0 +1,307 @@
+\documentclass[11pt]{article}
+
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+\usepackage{amsmath,amsthm} 
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum} 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.markings}
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=black, % default color, will be overridden in custom commands
+  backgroundcolor=draculabg, % Needed for Dracula theme
+  fontcolor=draculafg, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[left=0.5in,right=0.5in,top=1in,bottom=1in]{geometry}
+% \usepackage{setspace}
+% \linespread{1}
+\usepackage{listings}
+\usepackage{minted}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+\graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\proj}{\text{proj}}
+
+
+% \renewcommand{\theenumi}{\arabic{enumi}} 
+% \renewcommand{\labelenumi}{\theenumi.}
+
+\title{Multivariable Calculus Practice Set I}
+\author{Paul Beggs}
+\date{\today}
+
+%%% Custom Comands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Consider the curve defined by the parametric equations \(x(t) = \sin(2t)\), \(y(t) = \cos(t)\), for \(0 \leq t \leq 2\pi\).
+          \begin{enumerate}
+              \item (1 point) Use GeoGebra to graph this curve. Then, hand-draw what you see here, including a well-labeled start and stop and arrows to indicate the trajectory.
+              \sol{
+                \begin{tikzpicture}
+                    \begin{axis}[
+                            xlabel = $x$,
+                            ylabel = $y$,
+                            scale = 1.5,
+                            axis lines = middle,
+                            xmin = -1.5, xmax = 1.5,
+                            ymin = -1.5, ymax = 1.5,
+                            enlargelimits={abs=0.2},
+                        ]
+                        % Plot the parametric curve with arrows
+                        \addplot [
+                            domain = 0:2*pi,
+                            samples = 200,
+                            cyan,
+                            thick,
+                            decoration={
+                                    markings,
+                                    mark=between positions 0.1 and 0.9 step 0.2 with {\arrow{>}},
+                                },
+                            postaction={decorate},
+                        ] ({sin(deg(2*x))}, {cos(deg(x))});
+
+                        % Mark the start/end point
+                        \addplot [only marks, mark=*, mark size=2pt, mark options={fill=orangehdx}] coordinates {(0,1)};
+                        \node[above left] at (axis cs:0,1) {Start/End};
+                    \end{axis}
+                \end{tikzpicture}
+              }
+
+              \item (2 points) Determine the exact value of the equation of the tangent line when \(t = \pi / 3\).
+              \sol{
+
+              }
+              
+              \item (2 points) Determine the exact value of the geometric area of the region enclosed by curve define above. (Please notice that this area is certainly positive. You might need to think carefully about how to use symmetry to answer this question.) You may find the trigonometric identity \(\cos(2\theta) = 1 - 2 \sin^{2}(\theta)\) useful. You must work out any integrals completely “by-hand,” showing steps to receive credit for this problem.
+              \item (2 points) Set up -- but do not evaluate! -- the integral necessary to determine the arc length for this curve. Then, use your calculator to approximate this integral to 3 decimal places.
+          \end{enumerate}
+    \item (1 point each) Let \(\mathbf{v} = 3\mathbf{i} - \mathbf{j}\) and \(\mathbf{w} = 2\mathbf{i} + 4\mathbf{j}\).
+          \begin{enumerate}
+              \item On the axes provided, draw in both \(\mathbf{v}\) and \(\mathbf{w}\).
+              \item Find the value of \(\mathbf{v} + \mathbf{w}\) and draw it on the above axes as well.
+              \item Find \(4\mathbf{v} - 2\mathbf{w}\). (It is not necessary to draw this one.)
+              \item Find the exact value of \(\norm{v}\).
+              \item Find a unit vector which points in the same direction as \(\mathbf{v}\).
+              \item Suppose that we find scalars \(c\) and \(d\) such that \(c\mathbf{v} + d\mathbf{w} = \mathbf{0}\). Show that \(c = 0\) and \(d = 0\).
+          \end{enumerate}
+    \item (1 point each) Suppose that \(\mathbf{u} = 6\mathbf{i} + 2\mathbf{j} - 5\mathbf{k}\) and \(\mathbf{v} = -4\mathbf{i} + \mathbf{j} - 7\mathbf{k}\).
+          \begin{enumerate}
+              \item Determine \(\mathbf{u} \cdot \mathbf{v}\).
+              \item Determine \(\mathbf{u} \times \mathbf{v}\).
+              \item What is the angle between \(\mathbf{u}\) and \(\mathbf{v}\)? [An answer, in radians rounded to 3 decimal places, is appropriate here.]
+              \item Find \(\proj_{\mathbf{v}}\mathbf{u}\).
+          \end{enumerate}
+    \item (2 points) Determine a parametric equation for the line \textit{segment} that goes from the point \(P = (6,1,-2)\) to \(Q = (-2, 0, 5)\).
+    \item (2 points) Find a symmetric equation for the line which contains the points \(R = (4,-6,1)\) and \(S = (1,2,3)\).
+    \item (2 points) Find the general form of an equation of the plane which contain the three points \(P = (3,1,-4)\), \(Q = (-2,0,5)\) and \(R = (4,-6,1)\).
+    \item (2 points) Find an equation, in symmetric form, of the line of intersection between the planes \(2x + y - z + 4 = 0\) and \(x - y + 3z = 1\).
+\end{enumerate}
+
+
+\end{document}

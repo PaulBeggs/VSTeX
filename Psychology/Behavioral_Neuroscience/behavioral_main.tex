@@ -17,6 +17,7 @@
 \usepackage{setspace}
 \linespread{1}
 \usepackage{listings}
+\usepackage{pdflscape}
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
 \usepgflibrary{shadings}
@@ -24,6 +25,18 @@
 %%% Define new colors %%%
 \usepackage{xcolor}
 \definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+\colorlet{firstlevel}{orangehdx}
+\colorlet{secondlevel}{orangehdx!80!black}
+\colorlet{thirdlevel}{orangehdx!60!black}
+\colorlet{fourthlevel}{orangehdx!40!black}
+\colorlet{fifthlevel}{orangehdx!20!black}
+\colorlet{sixthlevel}{orangehdx!10!black}
+
+\newcommand{\custombullet}[1]{%
+    \tikz[baseline=-.75ex]{\node[circle, fill=#1, inner sep=1.5pt] {};}%
+}
+
+
 
 % Normal colors
 \definecolor{xred}{HTML}{BD4242}
@@ -244,6 +257,7 @@
 
 \newtcolorbox{note}{colback=black!15!white, colframe=black, boxrule=0.5mm, arc=4mm, left=4mm, right=4mm, top=2mm, bottom=2mm}
 
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
 
 
 
@@ -263,6 +277,15 @@
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+
+% Create a custom list environment
+\newlist{coloredlist}{itemize}{6}
+\setlist[coloredlist,1]{label=\custombullet{firstlevel}}
+\setlist[coloredlist,2]{label=\custombullet{secondlevel}}
+\setlist[coloredlist,3]{label=\custombullet{thirdlevel}}
+\setlist[coloredlist,4]{label=\custombullet{fourthlevel}}
+\setlist[coloredlist,5]{label=\custombullet{fifthlevel}}
+\setlist[coloredlist,6]{label=\custombullet{sixthlevel}}
 
 \newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
 
@@ -374,13 +397,15 @@
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-% \setcounter{chapter}{1}
-% \chapter*{History}
-% \vspace*{-0.25in}
-% \input{Notebook/history}
+\setcounter{chapter}{0}
+\chapter{Origins of Behavioral Neuroscience}
+\vspace*{-0.25in}
+\input{Chapters/behavioral_Ch_1}
 
-% \setcounter{chapter}{2}
-
+\setcounter{chapter}{2}
+\chapter{Structure of the Nervous System}
+\vspace*{-0.25in}
+\input{Chapters/behavioral_Ch_3}
 
 
 
