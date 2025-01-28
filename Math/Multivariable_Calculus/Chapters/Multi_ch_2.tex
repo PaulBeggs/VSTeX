@@ -1,0 +1,74 @@
+\section{Introduction}
+
+\subsection{Vectors}
+
+A \cyanit{vector} is a quantity with both \cyanit{magnitude} (size, length, strength, \dots) and \cyanit{direction}.  
+
+\subsection{Notation}
+
+In print, we write vectors in bold like: $\mathbf{v}$, $\mathbf{w}$, $\mathbf{u}$, \dots.  In handwriting, we often write vectors with an arrow over the top: $\vec{v}$, $\vec{w}$, $\vec{u}$, \dots.
+
+\section{Vectors in the Plane}
+
+Given two points in the plane \(P = (x_{1},y_{1})\) and \(Q = (x_{2},y_{2})\), the vector from \(P\) to \(Q\), denoted \(\overrightarrow{PQ} = \mathbf{PQ} = \langle x_{2}-x_{1},y_{2}-y_{1}\rangle\). \\
+
+We can also simply state components: \(\mathbf{v} = \langle x, y\rangle\). \\
+
+The \cyanit{zero vector}, denoted \(\mathbf{0}\), is \(\mathbf{0} = \langle 0,0 \rangle\). Note that \(\mathbf{0} \ne 0\). \\
+
+A \cyanit{scalar} is a real number (or a magnitude), without direction. \\
+
+If \(c\) is a scalar and \(\mathbf{v} = \langle x,y\rangle\), then
+\[
+    c\mathbf{v} = c\langle x,y\rangle = \langle cx,cy\rangle.
+\]
+This operation is called \cyanit{scalar multiplication}. Scalar multiplication changes the magnitude of a vector, but not its direction. \\
+
+Note that the individual components of a vector are themselves \cyanit{scalars}. You need to keep track of which is which. \\
+
+If \(\mathbf{v} = \langle x_{1},y_{1} \rangle\) and \(\mathbf{w} = \brackett{x_{2},y_{2}}\), then the \cyanit{vector sum} 
+\[
+    \mathbf{v} + \mathbf{w} = \langle x_{1}+x_{2},y_{1}+y_{2}\rangle.
+\] 
+That is, we add component wise. \\
+
+If \(\mathbf{v} = \langle x_{1},y_{1} \rangle\), then the \cyanit{magnitude} of \(\mathbf{v}\) is given by
+\[
+    \norm{v} = \sqrt{x_{1}^{2}+y_{1}^{2}}.
+\]
+This is really just the Pythagorean theorem. \\
+
+\section{Vectors in Space}
+
+In \(\R^{3}\), we have three axes, \(x\), \(y\), and \(z\), which follow the \cyanit{right-hand rule}: point the fingers of the right hand in the direction of the positive \(x\)-axis, curl them towards the positive \(y\)-axis, and the thumb points in the direction of the positive \(z\)-axis. \\
+
+Since the distance formula in \(\R^{3}\) is \(d = \sqrt{(x_{2} - x_{1})^{2} + (y_{2} - y_{1})^{2} + (z_{2} - z_{1})^{2}}\), then \(\mathbf{u} = \brackett{x,y,z}\) we have \(\norm{u} = \sqrt{x^{2} + y^{2} + z^{2}}\). \\
+
+To \cyanit{normalize} a vector, we divide by its magnitude: \(\mathbf{v} = \brackett{x,y,z}\), then \(\mathbf{u} = \frac{1}{\norm{v}}\mathbf{v} = \brackett{\frac{x}{\norm{v}},\frac{y}{\norm{v}},\frac{z}{\norm{v}}}\). This gives us a \cyanit{unit vector} in the direction of \(\mathbf{v}\). \\
+
+Everything else is basically the same.
+
+\subsection{Vector Properties}
+
+Suppose that each of \(\mathbf{u}\), \(\mathbf{v}\), and \(\mathbf{w}\) are vectors and \(r\) and \(s\) are scalars. Then the following properties hold:
+\begin{itemize}
+    \item \cyanit{Additive Commutativity}: \(\mathbf{v} + \mathbf{w} = \mathbf{w} + \mathbf{v}\).
+    \item \cyanit{Additive Associativity}: \(\mathbf{u} + (\mathbf{v} + \mathbf{w}) = (\mathbf{u} + \mathbf{v}) + \mathbf{w}\).
+    \item \cyanit{Additive Identity}: \(\mathbf{v} + \mathbf{0} = \mathbf{v}\).
+    \item \cyanit{Additive Inverse}: \(-\mathbf{v} = (-1)\mathbf{v}\) and \(\mathbf{v} + (-\mathbf{v}) = \mathbf{0}\).
+    \item \cyanit{Scalar Associativity}: \(r(s\mathbf{u})= (rs)\mathbf{u}\).
+    \item \cyanit{Scalars Distributive over Vectors}: \(r(\mathbf{u} + \mathbf{v}) = r\mathbf{u} + r\mathbf{v}\).
+    \item \cyanit{Vectors Distributive over Scalars}: \((r+s)\mathbf{u} = r\mathbf{u} + s\mathbf{u}\).
+    \item \cyanit{Multiplicative Identity}: \(1\mathbf{u} = \mathbf{u}\).
+    \item \cyanit{Zero Scalar}: \(0\mathbf{u} = \mathbf{0}\).
+\end{itemize}
+
+\subsection{Special Vectors}
+
+A \cyanit{unit vector} is a vector \(\mathbf{u}\) such that \(\norm{u} = 1\). \\
+
+In \(\R^{2}\) the \cyanit{standard unit vectors} are \(\hat{\imath} = \mathbf{i} = \brackett{1,0}\) and \(\hat{\jmath} = \mathbf{j} = \brackett{0,1}\). This allows us to write \(\mathbf{v} = \brackett{2,3} = 2\mathbf{i} + 3\mathbf{j}\), for example. \\
+
+In \(\R^{3}\), we have three stand unit vectors, \(\hat{\imath} = \mathbf{i} = \brackett{1,0,0}\), \(\hat{\jmath} = \mathbf{j} = \brackett{0,1,0}\), and \(\hat{k} = \mathbf{k} = \brackett{0,0,1}\).  \\
+
+It is a picky detail, but \(\mathbf{i} \in \R^{2} \ne \mathbf{i} \in \R^{3}\). 

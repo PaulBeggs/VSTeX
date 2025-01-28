@@ -12,6 +12,7 @@ Most of your calculus experience has been single variable, so that the functions
 \subsection{Parametric Equations}
 
 A \cyanit{parametric equation} (or, \cyanit{sometimes parametric function} or \cyanit{ vector-valued function}) is a function of the form \(f \colon \mathbb{R} \to \mathbb{R}^{n}\). We will typically consider \(n = 2\) or \(n = 3\) and call the input variable the parameter, usually denoted by \(t\). We write them as
+A \cyanit{parametric equation} (or, \cyanit{sometimes parametric function} or \cyanit{ vector-valued function}) is a function of the form \(f \colon \mathbb{R} \to \mathbb{R}^{n}\). We will typically consider \(n = 2\) or \(n = 3\) and call the input variable the parameter, usually denoted by \(t\). We write them as
 
 \[
     f(t) =
@@ -141,22 +142,9 @@ We can apply each of the above to the cycloid:
 \begin{itemize}
     \item \cyanit{Derivative}: \(\dydx = \frac{dy}{dx} = \frac{\sin(t)}{1 - \cos(t)}\). Note that the slope is then independent of the radius of the wheel and
     that the slope is undefined at each of \(t = \dots, -4\pi, -2\pi, 0, 2\pi, 4\pi, \dots\). 
-    \item \cyanit{Cartesian Equation}: With radius of \(3\) and when \(t = \frac{\pi}{3}\), the point is found by solving for \(x(\frac{\pi}{3})\) and \(y(\frac{\pi}{3})\):
-    \begin{align*}
-        x\left(\frac{\pi}{3}\right) &= 3\left(\frac{\pi}{3} - \sin\left(\frac{\pi}{3}\right)\right) = \pi - \frac{3\mysqrt{3}}{2} \\
-        y\left(\frac{\pi}{3}\right) &= 3\left(1 - \cos\left(\frac{\pi}{3}\right)\right) = \frac{3}{2} \\
-        (x,y) &= \left(\pi - \frac{3\mysqrt{3}}{2},\frac{3}{2}\right)
-    \end{align*} Plugging in our \(t\) value into our derivative, we get a slope of 
-    \[
-        \frac{\sin(\pi/3)}{1 - \cos(\pi/3)} = \frac{\mysqrt{3}/2}{1/2} = \mysqrt{3}.
-    \]
-    Now, we can write the equation of the tangent line as
-    \[
-        y = \mysqrt{3}\left(x - \pi + \frac{3\mysqrt{3}}{2}\right) + \frac{3}{2}.
-    \]
-\newpage
-    \item \cyanit{Concavity}: \(\frac{d^{2}y}{dx^{2}} = \frac{d}{dt}\left(\frac{dy}{dx}\right) = \frac{d}{dt}\left(\frac{\sin(t)}{1 - \cos(t)}\right)\). 
-    
+    \item \cynit{Concavity}: \(\dfrac{d^{2}y}{dx^{2}} = \frac{d}{dt}\left(\frac{dy}{dx}\right) = \frac{d}{dt}\left(\frac{\sin(t)}{1 - \cos(t)}\right)\). After some work, we find that \(\frac{d^{2}y}{dx^{2}} = -\frac{a}{y^{2}}\), which shows that the cycloid is always concave down.
+    \item \cynit{Area}: The area of one period of the cycloid \(A = 3\pi a2\), after some work.
+
     \begin{align*}
         \frac{d^{2}y}{dx^{2}} &= \frac{d/dt(dy/dx)}{dx/dt} \\
         &= \frac{\frac{d}{dt}\left(\frac{\sin(t)}{1 - \cos(t)}\right)}{a - a \cos(t)} \\
@@ -180,8 +168,8 @@ We can apply each of the above to the cycloid:
         &= a^{2} [2\pi + \pi] \\
         &= 3\pi a^{2}.
     \end{align*}
-\newpage
-    \item \cyanit{Arc Length}: The arc length of one period of the cycloid is \(s = 8a\), again after some work:
+
+    \item \cynit{Arc Length}: The arc length of one period of the cycloid is \(s = 8a\), again after some work.
 
     \begin{align*}
         s &= \int_{t_{1}}^{t_{2}} \dmysqrt{\left(\frac{dx}{dt}\right)^{2} + \left(\frac{dy}{dt}\right)^{2}} \ dt \\
@@ -195,10 +183,5 @@ We can apply each of the above to the cycloid:
         &= 8a.
     \end{align*}
 
-    \item \cyanit{Surface Area}: The surface area of the solid obtained by rotating one period of the cycloid around the \(x\)-axis is \(S = \frac{64\pi a^{2}}{3}\), after a lot of tedious work.
-    
-    \begin{align*}
-        S &= \int_{0}^{2\pi} 2\pi y(t) \dmysqrt{\left(\frac{dx}{dt}\right)^{2} + \left(\frac{dy}{dt}\right)^{2}} \ dt \\ 
-    \end{align*}
-
+    \item \cynit{Surface Area}: The surface area of the solid obtained by rotating one period of the cycloid around the \(x\)-axis is \(S = \frac{64\pi a^{2}}{3}\), after a lot of tedious work.
 \end{itemize}
