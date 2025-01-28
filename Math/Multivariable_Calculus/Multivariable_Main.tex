@@ -382,10 +382,15 @@ sharp corners=uphill,
 \newcommand{\dxdt}{\frac{dx}{dt}}
 \newcommand{\dzdt}{\frac{dz}{dt}}
 
+
+\newcommand{\cost}{\cos(t)}
+\newcommand{\sint}{\sin(t)}
+\newcommand{\tant}{\tan(t)}
+
 % 
 \newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
 
-\newcommand{\cynit}[1]{\textit{\textcolor{cyan}{#1}}}
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
 
 
 
@@ -433,6 +438,33 @@ sharp corners=uphill,
 \newcommand{\I}{\mathbb{I}}
 
 \newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
 
 % \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
 

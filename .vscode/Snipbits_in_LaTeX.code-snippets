@@ -21,6 +21,16 @@
     //     "description": "Insert LaTeX subscript with braces"
     // },
 
+	"Quick Itemize": {
+		"prefix": "itemize",
+		"body": [
+			"\\begin{itemize}",
+			"    \\item $1",
+			"\\end{itemize}"
+		],
+		"description": "Inserts an itemize environment with a single item"
+	},
+
 	"Custom Table Environment": {
         "prefix": "table",
         "body": [

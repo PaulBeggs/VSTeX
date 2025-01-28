@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+\usepackage{multicol}
+\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage[left=0.5in, right=0.5in, top=1in, bottom=1in]{geometry}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+
+\usepackage{titlesec}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+% Adjust spacing before and after section headers
+\titlespacing*{\section}{0pt}{0.5ex}{0.5ex}
+
+% Optionally, adjust section spacing similarly
+\titlespacing*{\section}{0pt}{0.5ex}{0.5ex}
+\titlespacing*{\subsection}{0pt}{0.5ex}{0.5ex}
+
+\begin{document}
+
+\begin{multicols}{2}
+
+  \section*{Basic Derivatives}
+
+  \begin{align*}
+     & \frac{d}{dx} e^{f(x)} =            & f'(x)e^{f(x)}                    \\
+     & \frac{d}{dx} \sin f(x) =           & \cos f(x) \cdot f'(x)            \\
+     & \frac{d}{dx} \cos f(x) =           & -\sin f(x) \cdot f'(x)           \\
+     & \frac{d}{dx} \tan f(x) =           & \sec^2 f(x) \cdot f'(x)          \\
+     & \frac{d}{dx} \cot f(x) =           & -\csc^2 f(x) \cdot f'(x)         \\
+     & \frac{d}{dx} \sec f(x) =           & \sec f(x) \tan f(x) \cdot f'(x)  \\
+     & \frac{d}{dx} \csc f(x) =           & -\csc f(x) \cot f(x) \cdot f'(x) \\
+     & \frac{d}{dx} \ln f(x) =            & \frac{f'(x)}{f(x)}               \\
+     & \frac{d}{dx} \log_a f(x) =         & \frac{f'(x)}{f(x) \ln a}         \\
+     & \frac{d}{dx} \left(f(x)\right)^n = & n \left(f(x)\right)^{n-1} f'(x)  \\
+     & \frac{d}{dx} \dmysqrt{f(x)} =      & \frac{f'(x)}{2\dmysqrt{f(x)}}    \\
+     & \frac{d}{dx} a^x =                 & a^x \ln a                        \\
+     & \frac{d}{dx} b^{g(x)} =            & b^{g(x)} \ln b \cdot g'(x)       \\
+  \end{align*}
+
+  \vfill
+
+  \section*{Chain Rule}
+
+  \begin{align*}
+     & \frac{d}{dx} f(g(x)) = & f'(g(x)) \cdot g'(x) \\
+  \end{align*}
+
+  \section*{Higher-Order Derivatives}
+
+  \begin{align*}
+     & \frac{d^2}{dx^2} e^x =    & e^x     \\
+     & \frac{d^3}{dx^3} \sin x = & -\cos x \\
+     & \frac{d^4}{dx^4} \cos x = & \cos x  \\
+  \end{align*}
+
+  \section*{Inverse Trigonometric}
+
+  \begin{align*}
+     & \frac{d}{dx} \arcsin f(x) = & \frac{f'(x)}{\dmysqrt{1 - \left(f(x)\right)^2}}        \\
+     & \frac{d}{dx} \arccos f(x) = & -\frac{f'(x)}{\dmysqrt{1 - \left(f(x)\right)^2}}       \\
+     & \frac{d}{dx} \arctan f(x) = & \frac{f'(x)}{1 + \left(f(x)\right)^2}                  \\
+     & \frac{d}{dx} \arccot f(x) = & -\frac{f'(x)}{1 + \left(f(x)\right)^2}                 \\
+     & \frac{d}{dx} \arcsec f(x) = & \frac{f'(x)}{|f(x)|\dmysqrt{\left(f(x)\right)^2 - 1}}  \\
+     & \frac{d}{dx} \arccsc f(x) = & -\frac{f'(x)}{|f(x)|\dmysqrt{\left(f(x)\right)^2 - 1}} \\
+  \end{align*}
+
+  \section*{Hyperbolic Function}
+
+  \begin{align*}
+     & \frac{d}{dx} \sinh f(x) =         & \cosh f(x) \cdot f'(x)                     \\
+     & \frac{d}{dx} \cosh f(x) =         & \sinh f(x) \cdot f'(x)                     \\
+     & \frac{d}{dx} \tanh f(x) =         & \text{sech}^2 f(x) \cdot f'(x)             \\
+     & \frac{d}{dx} \coth f(x) =         & -\text{csch}^2 f(x) \cdot f'(x)            \\
+     & \frac{d}{dx} \text{sech}\, f(x) = & -\text{sech}\, f(x) \tanh f(x) \cdot f'(x) \\
+     & \frac{d}{dx} \text{csch}\, f(x) = & -\text{csch}\, f(x) \coth f(x) \cdot f'(x) \\
+  \end{align*}
+
+  \section*{Product and Quotient}
+
+  \begin{align*}
+     & \frac{d}{dx} [u \cdot v] =                & u' \cdot v + u \cdot v'             \\
+     & \frac{d}{dx} \left( \frac{u}{v} \right) = & \frac{u' \cdot v - u \cdot v'}{v^2} \\
+  \end{align*}
+
+\end{multicols}
+
+\newpage
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{ccccc}
+    \toprule
+    \(\theta\)      & Radians    & \(\sin(\theta)\) & \(\cos(\theta)\) & \(\tan(\theta)\) \\  \midrule
+    \(0^{\circ}\)   & \(0\)      & \(0\)            & \(1\)            & \(0\)            \\  \midrule
+    \(30^{\circ}\)  & \(\pi/6\)  & \(1/2\)          & \(\mysqrt{3}/2\) & \(\mysqrt{3}/3\) \\  \midrule
+    \(45^{\circ}\)  & \(\pi/4\)  & \(\mysqrt{2}/2\) & \(\mysqrt{2}/2\) & \(1\)            \\  \midrule
+    \(60^{\circ}\)  & \(\pi/3\)  & \(\mysqrt{3}/2\) & \(1/2\)          & \(\mysqrt{3}\)   \\  \midrule
+    \(90^{\circ}\)  & \(\pi/2\)  & \(1\)            & \(0\)            & \(-\)       \\  \midrule
+    \(180^{\circ}\) & \(\pi\)    & \(0\)            & \(-1\)           & \(0\)            \\  \midrule
+    \(270^{\circ}\) & \(3\pi/2\) & \(-1\)           & \(0\)            & \(-\)       \\  \midrule
+    \(360^{\circ}\) & \(2\pi\)   & \(0\)            & \(1\)            & \(0\)            \\
+    \bottomrule
+  \end{tabular}
+  \caption{Important Trigonometric Angles}\label{tab:angles}
+\end{table}
+
+\end{document}
