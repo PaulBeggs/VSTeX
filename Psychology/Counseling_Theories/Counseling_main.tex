@@ -24,6 +24,18 @@
 %%% Define new colors %%%
 \usepackage{xcolor}
 \definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+\colorlet{firstlevel}{orangehdx}
+\colorlet{secondlevel}{orangehdx!80!black}
+\colorlet{thirdlevel}{orangehdx!60!black}
+\colorlet{fourthlevel}{orangehdx!40!black}
+\colorlet{fifthlevel}{orangehdx!20!black}
+\colorlet{sixthlevel}{orangehdx!10!black}
+
+\newcommand{\custombullet}[1]{%
+    \tikz[baseline=-.75ex]{\node[circle, fill=#1, inner sep=1.5pt] {};}%
+}
+
+
 
 % Normal colors
 \definecolor{xred}{HTML}{BD4242}
@@ -268,6 +280,14 @@
 
 % \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
 
+% Create a custom list environment
+\newlist{coloredlist}{itemize}{6}
+\setlist[coloredlist,1]{label=\custombullet{firstlevel}}
+\setlist[coloredlist,2]{label=\custombullet{secondlevel}}
+\setlist[coloredlist,3]{label=\custombullet{thirdlevel}}
+\setlist[coloredlist,4]{label=\custombullet{fourthlevel}}
+\setlist[coloredlist,5]{label=\custombullet{fifthlevel}}
+\setlist[coloredlist,6]{label=\custombullet{sixthlevel}}
 
 % end of preamble
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -382,6 +402,11 @@
 \chapter{The Counselor: Person and Professional}
 \vspace*{-0.25in}
 \input{Chapters/Counseling_ch_2}
+
+\chapter{Ethical issues in Counseling Practice}
+\vspace*{-0.25in}
+\input{Chapters/Counseling_ch_3}
+
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
