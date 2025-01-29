@@ -65,3 +65,4 @@ Rolle
 cycloid
 Cycloid
 Leibnitz
+intergrand

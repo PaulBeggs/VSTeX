@@ -49,7 +49,7 @@
 
 \begin{multicols}{2}
 
-  \section*{Basic Derivatives}
+  \subsection*{Basic Derivatives}
 
   \begin{align*}
      & \frac{d}{dx} e^{f(x)} =            & f'(x)e^{f(x)}                    \\
@@ -69,13 +69,13 @@
 
   \vfill
 
-  \section*{Chain Rule}
+  \subsection*{Chain Rule}
 
   \begin{align*}
      & \frac{d}{dx} f(g(x)) = & f'(g(x)) \cdot g'(x) \\
   \end{align*}
 
-  \section*{Higher-Order Derivatives}
+  \subsection*{Higher-Order Derivatives}
 
   \begin{align*}
      & \frac{d^2}{dx^2} e^x =    & e^x     \\
@@ -83,7 +83,7 @@
      & \frac{d^4}{dx^4} \cos x = & \cos x  \\
   \end{align*}
 
-  \section*{Inverse Trigonometric}
+  \subsection*{Inverse Trigonometric}
 
   \begin{align*}
      & \frac{d}{dx} \arcsin f(x) = & \frac{f'(x)}{\dmysqrt{1 - \left(f(x)\right)^2}}        \\
@@ -94,7 +94,7 @@
      & \frac{d}{dx} \arccsc f(x) = & -\frac{f'(x)}{|f(x)|\dmysqrt{\left(f(x)\right)^2 - 1}} \\
   \end{align*}
 
-  \section*{Hyperbolic Function}
+  \subsection*{Hyperbolic Function}
 
   \begin{align*}
      & \frac{d}{dx} \sinh f(x) =         & \cosh f(x) \cdot f'(x)                     \\
@@ -105,7 +105,7 @@
      & \frac{d}{dx} \text{csch}\, f(x) = & -\text{csch}\, f(x) \coth f(x) \cdot f'(x) \\
   \end{align*}
 
-  \section*{Product and Quotient}
+  \subsection*{Product and Quotient}
 
   \begin{align*}
      & \frac{d}{dx} [u \cdot v] =                & u' \cdot v + u \cdot v'             \\
@@ -125,13 +125,50 @@
     \(30^{\circ}\)  & \(\pi/6\)  & \(1/2\)          & \(\mysqrt{3}/2\) & \(\mysqrt{3}/3\) \\  \midrule
     \(45^{\circ}\)  & \(\pi/4\)  & \(\mysqrt{2}/2\) & \(\mysqrt{2}/2\) & \(1\)            \\  \midrule
     \(60^{\circ}\)  & \(\pi/3\)  & \(\mysqrt{3}/2\) & \(1/2\)          & \(\mysqrt{3}\)   \\  \midrule
-    \(90^{\circ}\)  & \(\pi/2\)  & \(1\)            & \(0\)            & \(-\)       \\  \midrule
+    \(90^{\circ}\)  & \(\pi/2\)  & \(1\)            & \(0\)            & \(-\)            \\  \midrule
     \(180^{\circ}\) & \(\pi\)    & \(0\)            & \(-1\)           & \(0\)            \\  \midrule
-    \(270^{\circ}\) & \(3\pi/2\) & \(-1\)           & \(0\)            & \(-\)       \\  \midrule
-    \(360^{\circ}\) & \(2\pi\)   & \(0\)            & \(1\)            & \(0\)            \\
+    \(270^{\circ}\) & \(3\pi/2\) & \(-1\)           & \(0\)            & \(-\)            \\
     \bottomrule
   \end{tabular}
   \caption{Important Trigonometric Angles}\label{tab:angles}
 \end{table}
+
+\section*{Trigonometric Identities}
+
+\begin{multicols}{2}
+  \subsection*{Pythagorean}
+  \begin{align*}
+    & \sin^{2}\theta + \cos^{2}\theta = & 1 \\
+    & \tan^{2}\theta + 1 = & \sec^{2}\theta \\
+    & 1 + \cot^{2}\theta = & \csc^{2}\theta
+  \end{align*}
+  \subsection*{Reciprocal}
+  \begin{align*}
+    & \csc x = & \frac{1}{\sin x} \\
+    & \sec x = & \frac{1}{\cos x} \\
+    & \cot x = & \frac{1}{\tan x}
+  \end{align*}
+  \subsection*{Even and Odd}
+  \begin{align*}
+    & \sin(-x) = & -\sin x \\
+    & \cos(-x) = & \cos x \\
+    & \tan(-x) = & -\tan x
+  \end{align*}
+  \subsection*{Product to Sum}
+  \begin{align*}
+    & \sin x \sin y = & \frac{1}{2}[\cos(x-y) - \cos(x+y)] \\
+    & \cos x \cos y = & \frac{1}{2}[\cos(x-y) + \cos(x+y)] \\
+    & \sin x \cos y = & \frac{1}{2}[\sin(x+y) + \sin(x-y)] \\
+    & \cos x \sin y = & \frac{1}{2}[\sin(x+y) - \sin(x-y)]
+  \end{align*}
+  \subsection*{Sum to Product}
+  \begin{align*}
+    & \sin x + \sin y = & 2\sin\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right) \\
+    & \sin x - \sin y = & 2\cos\left(\frac{x+y}{2}\right)\sin\left(\frac{x-y}{2}\right) \\
+    & \cos x + \cos y = & 2\cos\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right) \\
+    & \cos x - \cos y = & -2\sin\left(\frac{x+y}{2}\right)\sin\left(\frac{x-y}{2}\right)
+  \end{align*}
+  \subsection*{Double Angle}
+\end{multicols}
 
 \end{document}

@@ -58,16 +58,16 @@ A wheel of radius \(a\) is rolling along a flat road at a constant velocity. The
 Then, relative to the center, our point along the edge has equations
 \[
     f(t) = \begin{cases}
-        x(t) = -a \sin(t) \\
-        y(t) = -a \cos(t)
+        x(t) = -a \sin t \\
+        y(t) = -a \cos t
     \end{cases}
 \]
 
 Thus, our point has parametric equations
 \[
     f(t) = \begin{cases}
-        x(t) = a(t - \sin(t)) \\
-        y(t) = a(1 - \cos(t))
+        x(t) = a(t - \sin t) \\
+        y(t) = a(1 - \cos t)
     \end{cases}
 \]
 
@@ -116,7 +116,7 @@ Note the benefit of Leibnitz notation for each of these two derivatives!
 Suppose that a parametric curve is non-self intersecting. Then, the signed area of the region between the curve and the \(x\)-axis on the \(t\) interval \([t_{a},t_{b}]\) is given by 
 
 \[
-    A = \int_{t_{a}}^{t_{b}} y(t) \frac{dx}{dt} \, dt = \int_{t_{a}}^{t_{b}} y(t) \frac{dx}{dt} \, dt.
+    A = \int_{t_{a}}^{t_{b}} y(t) \frac{dx}{dt} \, dt.
 \]
 
 \subsection{Arc Length}
@@ -139,7 +139,7 @@ The \cyanit{surface area} of the region obtained by rotating a non-self intersec
 
 We can apply each of the above to the cycloid:
 \begin{itemize}
-    \item \cyanit{Derivative}: \(\dydx = \frac{dy}{dx} = \frac{\sin(t)}{1 - \cos(t)}\). Note that the slope is then independent of the radius of the wheel and
+    \item \cyanit{Derivative}: \(\dydx = \frac{dy}{dx} = \frac{\sin t}{1 - \cos t}\). Note that the slope is then independent of the radius of the wheel and
     that the slope is undefined at each of \(t = \dots, -4\pi, -2\pi, 0, 2\pi, 4\pi, \dots\). 
     \item \cyanit{Cartesian Equation}: With radius of \(3\) and when \(t = \frac{\pi}{3}\), the point is found by solving for \(x(\frac{\pi}{3})\) and \(y(\frac{\pi}{3})\):
     \begin{align*}
@@ -155,25 +155,24 @@ We can apply each of the above to the cycloid:
         y = \mysqrt{3}\left(x - \pi + \frac{3\mysqrt{3}}{2}\right) + \frac{3}{2}.
     \]
 \newpage
-    \item \cyanit{Concavity}: \(\frac{d^{2}y}{dx^{2}} = \frac{d}{dt}\left(\frac{dy}{dx}\right) = \frac{d}{dt}\left(\frac{\sin(t)}{1 - \cos(t)}\right)\). 
+    \item \cyanit{Concavity}: \(\frac{d^{2}y}{dx^{2}} = \frac{d}{dt}\left(\frac{dy}{dx}\right) = \frac{d}{dt}\left(\frac{\sin t}{1 - \cos t}\right)\). 
     
     \begin{align*}
         \frac{d^{2}y}{dx^{2}} &= \frac{d/dt(dy/dx)}{dx/dt} \\
-        &= \frac{\frac{d}{dt}\left(\frac{\sin(t)}{1 - \cos(t)}\right)}{a - a \cos(t)} \\
-        &= \frac{\frac{\cos(t)(1 - \cos(t)) - \sin(t) \sin(t)}{(1 - \cos t)^{2}}}{a - a \cos(t)} \\
-        &= \frac{\cos(t) - \cos^{2} - \sin^{2}(t)}{(1 - \cos(t))^{2}a(1 - \cos(t))} \\
-        &= \frac{\cos(t) - 1}{a(1 - \cos(t))^{2}} \\
-        &= -\frac{1}{a(1 - \cos(t))^{2}} \\
-        &= -\frac{a}{a^{2}(1 - \cos(t))^{2}} \\
+        &= \frac{\frac{d}{dt}\left(\frac{\sin t}{1 - \cos t}\right)}{a - a \cos t} \\
+        &= \frac{\frac{\cos t(1 - \cos t) - \sin t \sin t}{(1 - \cos t)^{2}}}{a - a \cos t} \\
+        &= \frac{\cos t - \cos^{2} - \sin^{2}(t)}{(1 - \cos t)^{2}a(1 - \cos t)} \\
+        &= \frac{\cos t - 1}{a(1 - \cos t)^{2}} \\
+        &= -\frac{1}{a(1 - \cos t)^{2}} \\
+        &= -\frac{a}{a^{2}(1 - \cos t)^{2}} \\
         &= -\frac{a}{y^{2}}
     \end{align*}
     
     After some work, we find that \(\frac{d^{2}y}{dx^{2}} = -\frac{a}{y^{2}}\), which shows that the cycloid is always concave down.
     \item \cyanit{Area}: The area of one period of the cycloid \(A = 3\pi a^{2}\), after some work:
     \begin{align*}
-        A &= \int_{0}^{2\pi} y(t)x'(t) dt \\
+        A &= \int_{t_{a}}^{t_{b}} y(t)x'(t) dt \\
         &= \int_{0}^{2\pi} (a - a \cos t)(a - a\cos t) dt \\
-        &= a^{2} \int_{0}^{2\pi} (1 - 2\cos t + \cos^{2} t) dt \\
         &= a^{2} \int_{0}^{2\pi} (1 - 2\cos t + \cos^{2} t) dt \\
         &= a^{2} \left(t + \frac{t}{2} + \frac{1}{4}\sin(2t)\right)\bigg|_{0}^{2\pi} \\
         &= a^{2} \left[\left(2\pi + \frac{2\pi}{2} + \frac{1}{4}\sin(2\pi)\right) - \left(0 + \frac{0}{2} + \frac{1}{4}\sin(0)\right)\right] \\

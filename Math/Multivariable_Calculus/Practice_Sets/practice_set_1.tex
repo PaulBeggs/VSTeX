@@ -22,6 +22,8 @@
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{decorations.markings}
 
+\setlength{\parindent}{0pt}
+
 \newmdenv[
   topline=false,
   bottomline=true,
@@ -241,45 +243,105 @@
 \begin{enumerate}
     \item Consider the curve defined by the parametric equations \(x(t) = \sin(2t)\), \(y(t) = \cos(t)\), for \(0 \leq t \leq 2\pi\).
           \begin{enumerate}
-              \item (1 point) Use GeoGebra to graph this curve. Then, hand-draw what you see here, including a well-labeled start and stop and arrows to indicate the trajectory.
-              \sol{
-                \begin{tikzpicture}
-                    \begin{axis}[
-                            xlabel = $x$,
-                            ylabel = $y$,
-                            scale = 1.5,
-                            axis lines = middle,
-                            xmin = -1.5, xmax = 1.5,
-                            ymin = -1.5, ymax = 1.5,
-                            enlargelimits={abs=0.2},
-                        ]
-                        % Plot the parametric curve with arrows
-                        \addplot [
-                            domain = 0:2*pi,
-                            samples = 200,
-                            cyan,
-                            thick,
-                            decoration={
-                                    markings,
-                                    mark=between positions 0.1 and 0.9 step 0.2 with {\arrow{>}},
-                                },
-                            postaction={decorate},
-                        ] ({sin(deg(2*x))}, {cos(deg(x))});
+              \item (1 point) Use GeoGebra to graph this curve. Then, hand-draw what you see here, including a well-labeled start and stop and arrows to indicate the trajectory. \\
 
-                        % Mark the start/end point
-                        \addplot [only marks, mark=*, mark size=2pt, mark options={fill=orangehdx}] coordinates {(0,1)};
-                        \node[above left] at (axis cs:0,1) {Start/End};
-                    \end{axis}
-                \end{tikzpicture}
-              }
+                    \sol{
+                        \begin{tikzpicture}
+                            \begin{axis}[
+                                    xlabel = $x$,
+                                    ylabel = $y$,
+                                    scale = 1.5,
+                                    axis lines = middle,
+                                    xmin = -1.5, xmax = 1.5,
+                                    ymin = -1.5, ymax = 1.5,
+                                    enlargelimits={abs=0.2},
+                                ]
+                                % Plot the parametric curve with arrows
+                                \addplot [
+                                    domain = 0:2*pi,
+                                    samples = 200,
+                                    cyan,
+                                    thick,
+                                    decoration={
+                                            markings,
+                                            mark=between positions 0.1 and 0.9 step 0.2 with {\arrow[scale=2.5]{>}},
+                                        },
+                                    postaction={decorate},
+                                ] ({sin(deg(2*x))}, {cos(deg(x))});
 
-              \item (2 points) Determine the exact value of the equation of the tangent line when \(t = \pi / 3\).
-              \sol{
+                                % Mark the start/end point
+                                \addplot [only marks, mark=*, mark size=3pt, mark options={fill=orangehdx}] coordinates {(0,1)};
+                                \node[above left] at (axis cs:0,1) {Start/End};
+                            \end{axis}
+                        \end{tikzpicture}
+                    }
 
-              }
-              
-              \item (2 points) Determine the exact value of the geometric area of the region enclosed by curve define above. (Please notice that this area is certainly positive. You might need to think carefully about how to use symmetry to answer this question.) You may find the trigonometric identity \(\cos(2\theta) = 1 - 2 \sin^{2}(\theta)\) useful. You must work out any integrals completely “by-hand,” showing steps to receive credit for this problem.
-              \item (2 points) Set up -- but do not evaluate! -- the integral necessary to determine the arc length for this curve. Then, use your calculator to approximate this integral to 3 decimal places.
+              \item (2 points) Determine the exact value of the equation of the tangent line when \(t = \pi / 3\). \\
+
+                    \sol{
+                        To get the equation of the tangent line, we need to solve for \(\frac{dx}{dt}\) and \(\frac{dy}{dt}\). Solving for \(\frac{dx}{dt}\):
+                        \begin{align*}
+                            y(t)          & = \cos t   \\
+                            \frac{dy}{dt} & = -\sin t.
+                        \end{align*}
+                        Then, for \(\frac{dy}{dt}\):
+                        \begin{align*}
+                            x(t)          & = \sin 2t   \\
+                            \frac{dx}{dt} & = 2\cos 2t.
+                        \end{align*}
+                        Now, we have our slope:
+                        \[
+                            \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{-\sin t}{2\cos 2t}.
+                        \]
+                        Evaluated at \(t = \pi / 3\):
+                        \[
+                            \frac{-\sin t}{2\cos 2t} = \frac{-\mysqrt{3}/2}{-1} = \frac{\mysqrt{3}}{2}.
+                        \]
+                        Now that we have our slope, we need our points:
+                        \[
+                            x(\pi / 3) = \sin(2(\pi / 3)) = \sin(\pi / 3) = \mysqrt{3}/2 \qquad \text{and} \qquad y(\pi / 3) = \cos(\pi / 3) = 1/2.
+                        \]
+                        Putting it all together, we have:
+                        \begin{align*}
+                            y & = \frac{\mysqrt{3}}{2}(x - \mysqrt{3}/2) + 1/2      \\
+                            y & = \frac{\mysqrt{3}}{2}x - \frac{3}{4} + \frac{1}{2} \\
+                            y & = \frac{\mysqrt{3}}{2}x - \frac{1}{4}.
+                        \end{align*}
+                    }
+
+              \item (2 points) Determine the exact value of the geometric area of the region enclosed by curve define above. (Please notice that this area is certainly positive. You might need to think carefully about how to use symmetry to answer this question.) You may find the trigonometric identity \(\cos(2\theta) = 1 - 2 \sin^{2}(\theta)\) useful. You must work out any integrals completely “by-hand,” showing steps to receive credit for this problem. \\
+
+                    \sol{
+                        Our set of parametric equations maps out an hourglass shape that has 4 quadrants: 2 positive and 2 negative. Therefore, if we can map one quadrant and multiply it by 4, we can get the total geometric area for the whole shape. Thus, we can restrict our interval such that \(t \in [0, \pi / 2]\).
+                        \begin{align*}
+                            4\int_{0}^{\pi / 2} y(t)\frac{dx}{dt} \ dt & = 4\int_{0}^{\pi / 2}\cos t(2\cos 2t) \ dt                                                   \\
+                                                                       & = 8\int_{0}^{\pi / 2}\cos t(1 - 2 \sin^{2}t) \ dt                                            \\
+                                                                       & = 8\int_{0}^{\pi / 2}\cos t - 2\cos t \sin^{2}t \ dt                                         \\
+                                                                       & = 8\left[\int_{0}^{\pi / 2} \cos t \ dt - 2\int_{0}^{\pi / 2} \cos t \sin^{2}t \ dt \right]. \\
+                        \end{align*}
+
+                        \begin{center}
+                            \textsc{Continued on next page.}
+                        \end{center}
+                        \newpage
+                        Now, we can employ \(u\)-substitution to further simplify the intergrand. Thus, let \(u = \sin t\) such that \(\dfrac{du}{\cos t} = dt\). Hence,
+                        \begin{align*}
+                            8\left[\int_{0}^{\pi / 2} \cos t \ dt - 2\int_{0}^{\pi / 2} \cos t \sin^{2}t \ dt \right] & = 8\left[\int_{0}^{\pi / 2} \cos t \ dt - 2\int_{0}^{\pi / 2} u^{2} \ du \right] \\
+                                                                                                                      & = 8\left[\sin t - \frac{2}{3}\sin^{3}t\right]_{0}^{\pi/2}                        \\
+                                                                                                                      & = 8\left[1 - \frac{2}{3}\right]                                                  \\
+                                                                                                                      & = \frac{8}{3}.
+                        \end{align*}
+                    }
+              \item (2 points) Set up -- but do not evaluate! -- the integral necessary to determine the arc length for this curve. Then, use your calculator to approximate this integral to 3 decimal places. \\
+
+                    \sol{
+                        The integral necessary to determine the arc length would be,
+                        \[
+                            s = \int_{t_{1}}^{t_{2}} \mysqrt{\left(\frac{dx}{dt}\right)^{2} + \left(\frac{dy}{dt}\right)^{2}} \ dt = \int_{0}^{2\pi} \mysqrt{\left(2\cos 2t\right)^{2} + \left(-\sin t\right)^{2}} \ dt = \boxed{\pi}
+                        \]
+                        If we approximate \(\pi\) to 3 decimal places, we have 3.142.
+                    }
+
           \end{enumerate}
     \item (1 point each) Let \(\mathbf{v} = 3\mathbf{i} - \mathbf{j}\) and \(\mathbf{w} = 2\mathbf{i} + 4\mathbf{j}\).
           \begin{enumerate}
