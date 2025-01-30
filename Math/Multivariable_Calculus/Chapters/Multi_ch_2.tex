@@ -70,3 +70,119 @@ In \(\R^{2}\) the \cyanit{standard unit vectors} are \(\hat{\imath} = \mathbf{i}
 In \(\R^{3}\), we have three stand unit vectors, \(\hat{\imath} = \mathbf{i} = \brackett{1,0,0}\), \(\hat{\jmath} = \mathbf{j} = \brackett{0,1,0}\), and \(\hat{k} = \mathbf{k} = \brackett{0,0,1}\).  \\
 
 It is a picky detail, but \(\mathbf{i} \in \R^{2} \ne \mathbf{i} \in \R^{3}\). 
+
+\section{The Dot Product}
+
+Suppose \(\mathbf{u} = \brackett{u_{1},u_{2},\dots u_{n}}\) and \(\mathbf{v} = \brackett{v_{1},v_{2},\dots v_{n}}\) are vectors in \(\R^{n}\). Then the \cyanit{dot product} of \(\mathbf{u}\) and \(\mathbf{v}\) is given by
+\[
+    \mathbf{u} \cdot \mathbf{v} = u_{1}v_{1} + u_{2}v_{2} + \cdots + u_{n}v_{n}.
+\]
+That is, we multiply the corresponding components and sum the results. \\
+
+It should be clear that \(\mathbf{u} \cdot \mathbf{v}\) results in a scalar. The dot product is a special type of inner product. \\
+
+Think of the dot product as a way to measure how much of one vector points in the same direction as another.
+
+\subsection{Properties of the Dot Product}
+
+Let \(\mathbf{u}, \mathbf{v}, \mathbf{w} \in \R^{n}\) and \(c\) be a scalar. Then the following properties hold:
+\begin{itemize}
+    \item \cyanit{Commutativity}: \(\mathbf{u} \cdot \mathbf{v} = \mathbf{v} \cdot \mathbf{u}\).
+    \item \cyanit{Distributive Property}: \(\mathbf{u} \cdot (\mathbf{v} + \mathbf{w}) = \mathbf{u} \cdot \mathbf{v} + \mathbf{u} \cdot \mathbf{w}\).
+    \item \cyanit{Scalar Associativity}: \((c\mathbf{u}) \cdot \mathbf{v} = c(\mathbf{u} \cdot \mathbf{v}) = \mathbf{u} \cdot (c\mathbf{v})\).
+    \item \cyanit{Self-Product}: \(\mathbf{u} \cdot \mathbf{u} = \norm{u}^{2}\).
+    \item \cyanit{Magnitude}: \(\norm{v} = \mysqrt{v} \cdot v\)
+    \item \cyanit{Angle}: \(\mathbf{u} \cdot \mathbf{v} = \norm{u}\norm{v}\cos(\theta)\), where \(0 \leq \theta \leq \pi\) is the angle between \(\mathbf{u}\) and \(\mathbf{v}\). (Law of Cosines.)
+    \item \cyanit{Orthogonality}: \(\mathbf{u} \cdot \mathbf{v} = 0\) if and only if \(\mathbf{u}\) and \(\mathbf{v}\) are orthogonal.
+\end{itemize}
+
+\subsection{Projections}
+
+The \cyanit{projection} of \(\mathbf{u}\) onto \(\mathbf{v}\) is given by
+\[
+    \text{proj}_{\mathbf{v}}\mathbf{u} = \left(\frac{\mathbf{u} \cdot \mathbf{v}}{\norm{v}^{2}}\right)\mathbf{v}.
+\]
+This is a vector parallel to \(\mathbf{v}\), which has length equal to the amount of \(\mathbf{u}\) which points in the same direction as \(\mathbf{v}\). \\
+
+Think of a projection as a measure of how much of one vector points in the same direction as another. 
+
+\subsection{Work}
+
+If a constant force \(\mathbf{F}\) moved an object from \(P\) to \(Q\), the \cyanit{work} done is given by
+\[
+    W = \mathbf{F} \cdot \overrightarrow{PQ}.
+\]
+Thus, if that force acts at an angle \(\theta\) to the line of motion, the work is:
+\[
+    W = (\norm{F})\norm{PQ}\cos(\theta).
+\]
+Later this semester, we will learn how to compensate for a non-constant force, and over a non-linear path.
+
+\section{The Cross Product}
+
+Suppose that \(\mathbf{u},\mathbf{v} \in \R^{3}\). Then, the \cyanit{cross product} of \(\mathbf{u}\) and \(\mathbf{v}\), denoted by \(\mathbf{u} \times \mathbf{v}\), is the unique right-hand rule vector orthogonal to each of \(\mathbf{u}\) and \(v\) whose magnitude is equal to the area of the parallelogram spanned by \(\mathbf{u}\) and \(\mathbf{v}\). \\
+
+Let \(\mathbf{u} = \brackett{u_{1},u_{2},u_{3}}\) and \(\mathbf{v} = \brackett{v_{1},v_{2},v_{3}}\). Then,
+\[
+    \mathbf{u} \times \mathbf{v} = \brackett{u_{2}v_{3} - u_{3}v_{2}, \ u_{3}v_{1} - u_{1}v_{3}, \ u_{1}v_{2} - u_{2}v_{1}}.
+\]
+
+\begin{center}
+    \textsc{Note:} You will never multiply an \(v_{1}\)-coordinate by an \(u_{1}\)-coordinate. This is true for all \(v_{n}\) and \(u_{n}\) coordinates.
+\end{center}
+
+You can show by working the algebra that \(\mathbf{u} \cdot (\mb{u} \times \mb{v}) = 0 \) and \(\mb{v} \cdot (\mb{u} \times \mb{v}) = 0\). \\
+
+With determinants, you can do this in one step:
+\[
+    \mb{u} \times \mb{v} = \begin{vmatrix}
+        \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+        u_{1} & u_{2} & u_{3} \\
+        v_{1} & v_{2} & v_{3}
+    \end{vmatrix}
+\]
+Oddly, we can only define a cross-product in \(\R\), \(\R^{3}\), and \(\R^{7}\), while the dot product is \textit{always} defined.
+
+\subsubsection{Example}
+
+\begin{align*}
+    \mathbf{u} \times \mathbf{v} &= \brackett{2,1,4} \cdot \brackett{1,-3,1} \\
+    &= \brackett{(1)(1) - 4(-3), 4(1) - 2(1), 2(-3) - 1(1)} \\
+    &= \brackett{13,2,-7}.
+\end{align*}
+
+\subsection{Properties of the Cross Product}
+
+Let \(\mathbf{u}, \mathbf{v}, \mathbf{w} \in \R^{3}\) and \(c\) be a scalar. Then the following properties hold:
+\begin{itemize}
+    \item \cyanit{Anticommutativity}: \(\mathbf{u} \times \mathbf{v} = -\mathbf{v} \times \mathbf{u}\).
+    \item \cyanit{Distributive Property}: \(\mathbf{u} \times (\mathbf{v} + \mathbf{w}) = \mathbf{u} \times \mathbf{v} + \mathbf{u} \times \mathbf{w}\).
+    \item \cyanit{Scalar Associativity}: \((c\mathbf{u}) \times \mathbf{v} = c(\mathbf{u} \times \mathbf{v}) = \mathbf{u} \times (c\mathbf{v})\).
+    \item \cyanit{Zero}: \(\mathbf{u} \times \mathbf{u} = \mathbf{0}\).
+    \item \cyanit{Nilpotence}: \(\mathbf{u} \times \mathbf{v} = \mathbf{0}\) if and only if \(\mathbf{u}\) and \(\mathbf{v}\) are parallel.
+    \item \cyanit{Scalar Triple Product}: \(\mb{u} \cdot (\mb{v} \times \mb{w}) = (\mb{u} \times \mb{v}) \cdot \mb{w}\).
+    \item \cyanit{Angle}: \(\norm{u \times v} = \norm{u}\norm{v}\sin(\theta)\), where \(0 \leq \theta \leq \pi\) is the angle between \(\mathbf{u}\) and \(\mathbf{v}\).
+\end{itemize}
+
+\subsection{Standard Unit Vectors and the Cross Product}
+
+\(\mb{i} \times \mb{i} = \mb{j} \times \mb{j} = \mb{k} \times \mb{k} = \mb{0}\).
+\begin{multicols}{2}
+    \begin{itemize}
+        \item \(\mb{i} \times \mb{j} = \mb{k}\) 
+        \item \(\mb{j} \times \mb{i} = -\mb{k}\)
+        \item \(\mb{j} \times \mb{k} = \mb{i}\) 
+        \item \(\mb{k} \times \mb{j} = -\mb{i}\)
+        \item \(\mb{k} \times \mb{i} = \mb{j}\) 
+        \item \(\mb{i} \times \mb{k} = -\mb{j}\)
+    \end{itemize}
+\end{multicols}
+
+\subsection{Torque}
+
+\cyanit{Torque}, denoted by \(\mb{\tau}\), measures the tendency to produce a rotation about an axis. \\
+
+If \(\mb{r}\) is a radial vector from an axis to a force and \(\mb{F}\) is the force, then the torque induced on the axis by the force is given by:
+\[
+    \mb{\tau} = \mb{r} \times \mb{F} \qquad \text{or} \qquad \norm{\mb{\tau}} = \norm{r}\norm{F}\sin(\theta),
+\]
