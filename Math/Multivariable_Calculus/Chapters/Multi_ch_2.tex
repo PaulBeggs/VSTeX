@@ -186,3 +186,155 @@ If \(\mb{r}\) is a radial vector from an axis to a force and \(\mb{F}\) is the f
 \[
     \mb{\tau} = \mb{r} \times \mb{F} \qquad \text{or} \qquad \norm{\mb{\tau}} = \norm{r}\norm{F}\sin(\theta),
 \]
+
+\section{Equations of Lines and Planes}
+
+For the vector equation, parametric equation, and the symmetric equation, use these points for the examples: \((3,5,1) + (9,1,2)\).
+
+\subsection{Lines}
+
+\subsubsection{Lines in Two Dimensions}
+
+A line in \(\R^{2}\) which contains the point \((x_{0},y_{0})\) and is parallel to the vector \(\mb{v} = \langle a,b \rangle\) has parametric form
+
+\[
+    f(t) = \begin{cases}
+        x(t) = x_{0} + ta \\
+        y(t) = y_{0} + tb
+    \end{cases}.
+\]
+
+\subsubsection{Lines in Three Dimensions}
+
+In \(\R^{3}\), we have more options for the form of a line. Suppose that our line contains the point \(\mb{r}_{0} = \langle x_{0},y_{0},z_{0} \rangle\) and is parallel to the vector \(\mb{v} = \langle a,b,c \rangle\). Then:
+
+\subsubsection{Vector Equation}
+
+The \cyanit{vector equation} of a line is given by \(\mathbf{r}(t) = \mb{r}_{0} + t \mb{v}\). \\
+
+\textbf{Example}: Find all 3 equations of lines  \\
+
+From our example, \(\mb{v} = \brackett{6,-4,1}\) and \(\mb{r}_{0} = \brackett{3,5,1}\). \\
+
+Vector equation: \(\mb{r}(t) = \brackett{3,5,1} + t\brackett{6,-4,1}\).
+
+\subsubsection{Parametric Equation}
+
+The \cyanit{parametric equation} of a line is given by
+
+\[
+    f(t) = \begin{cases}
+        x(t) = x_{0} + ta \\
+        y(t) = y_{0} + tb \\
+        z(t) = z_{0} + tc
+    \end{cases}.
+\]
+
+From our example, we would get \(x(t) = 3 + 6t\), \(y(t) = 5 - 4t\), and \(z(t) = 1 + t\).
+
+\subsubsection{Symmetric Equation}
+
+As long as each of \(a\), \(b\), \(c \neq 0\), the symmetric equation is
+
+\[
+    \frac{x - x_{0}}{a} = \frac{y - y_{0}}{b} = \frac{z - z_{0}}{c}.
+\]
+
+(Notice that in two dimensions, this is just the equation of the line: \((\frac{b}{a})(x - x_{0}) + y_{0} = y\), when solved for \(y\).)
+
+From our example, we would get \(\frac{x - 3}{6} = \frac{y - 5}{-4} = \frac{z - 1}{1}\).
+
+\subsubsection{Line Segment}
+
+Suppose that \(P = (x_{0},y_{0},z_{0})\) and \(Q = (x_{1},y_{1},z_{1})\). The line segment from \(P\) to \(Q\) is given by
+
+\[
+    \mathbf{r}(t) = (1 - t)\mathbf{p} + t\mathbf{q},
+\]
+
+where \(\mathbf{p} = \langle x_{0},y_{0},z_{0} \rangle\), \(\mathbf{q} = \langle x_{1},y_{1},z_{1} \rangle\), and \(0 \leq t \leq 1\). \\
+
+The parametric equations for this segment are 
+
+\[
+    f(t) = \begin{cases}
+        x(t) = x_{0} + t(x_{1} - x_{0}) \\
+        y(t) = y_{0} + t(y_{1} - y_{0}) \\
+        z(t) = z_{0} + t(z_{1} - z_{0})
+    \end{cases}.
+\]
+
+\subsubsection{Distance Between Point and Line}
+
+The distance from a point \(M\) to a line which contains the point \(P\) and has direction vector \(\mb{v}\) is given by
+
+\[
+    d = \left| \frac{\overrightarrow{PM} \times \mb{v}}{\norm{v}} \right|.
+\]
+
+Notice that you are free to choose any point on the line you'd like!
+
+\subsubsection{Relationships Between Lines}
+
+\begin{itemize}
+    \item \cyanit{Equal}: Same direction vector, share a point.
+    \item \cyanit{Parallel}: Same direction vector, do not share a point.
+    \item \cyanit{Intersecting}: Different direction vectors, share a point.
+    \item \cyanit{Skew}: Different direction vectors, do not share a point.
+\end{itemize}
+
+\subsection{Planes}
+A plane can be defined by:
+\begin{itemize}
+    \item any three non-colinear points,
+    \item any two intersection points,
+    \item a line and a point not on the line, or
+    \item given two orthogonal vectors with a common starting point: ``spin''  one vector in place; notice the other sweeps out a circle, which can be extended to a plane. * In notes *
+\end{itemize}
+Of particular importance for a plane is a \cyanit{normal vector}. A vector \(\mathbf{n}\) is a normal vector provided it is orthogonal to \(\overrightarrow{PQ}\) for any two points \(P\) and \(Q\) which are in the plane.
+
+\subsection{Equations of a Plane}
+
+Like lines, we have three equations of a plane. Let \(P\) and \(Q\) be points in the plane and \(n = \langle a,b,c \rangle\).
+
+\subsubsection{Vector Equation}
+
+The \cyanit{vector equation} of a plane is \(n \cdot \overrightarrow{PQ} = 0\). Note that this is an implicit definition (i.e. it is not useful for directly writing down an equation, but is the fundamental idea of why this all works)!
+
+\subsubsection{Scalar Equation}
+
+If \((x_{0},y_{0},z_{0})\) is any point in the plane, the \cyanit{scalar equation} of the plane is given by
+\begin{align*}
+    \brackett{x - x_{0}, y - y_{0}, z - z_{0}} \cdot \brackett{a,b,c} &= 0 \\
+    a(x - x_{0}) + b(y - y_{0}) + c(z - z_{0}) &= 0
+\end{align*}
+
+\subsubsection{General Form}
+
+The \cyanit{general form} of the equation of a plane is given by \(ax + by + cz + d = 0\), where \(d = -ax_{0} - by_{0} - cz_{0}\).
+
+\subsubsection{Distance Between Point and Plane}
+
+\begin{itemize}
+    \item Equal: Share a common point, have parallel normal vectors
+    \item Parallel: Do not share a common point, do have parallel normal vectors
+    \item Intersecting: If their normal vectors are not parallel, the two planes intersect in a line.
+    \begin{itemize}
+        \item You can use algebra to find a point in common -- i.e. solve both equations for the planes
+        \item Find the line's direction vector by taking the cross product of the planes' normal vectors.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Examples}
+
+Use the points \(P(3,5,1)\), \(Q(9,1,2)\), and \(R(0,2,5)\).
+
+\subsubsection{Example 1}
+
+Find the scalar equation of the plane containing \(P\), \(Q\), and \(R\). \\
+
+We know \(\mb{PQ} = \brackett{6,-4,1}\) and \(\mb{PR} = \brackett{-3,-3,4}\). Then, \(\mb{n} = \mb{PQ} \times \mb{PR} = \brackett{13,-27,-30}\). \\
+
+Thus, the equation of the plane is \(13(x - 3) - 27(y - 5) - 30(z - 1) = 0\). \\
+
+To check, plug in the points: \(13(3) - 27(5) - 30(1) = 0\), \(13(9) - 27(1) - 30(2) = 0\), and \(13(0) - 27(2) - 30(5) = 0\).

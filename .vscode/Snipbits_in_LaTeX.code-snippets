@@ -30,6 +30,15 @@
 		],
 		"description": "Inserts an itemize environment with a single item"
 	},
+	"Colored List": {
+		"prefix": "coloredlist",
+		"body": [
+			"\\begin{coloredlist}",
+			"    \\item $1",
+			"\\end{coloredlist}"
+		],
+		"description": "Inserts a colored list environment with a single item"
+	},
 
 	"Custom Table Environment": {
         "prefix": "table",
