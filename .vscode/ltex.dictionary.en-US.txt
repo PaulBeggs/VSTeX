@@ -87,3 +87,5 @@ Bois-Reymond
 Trephination
 Magendie
 Bell-Magendie
+Unmylinated
+Introjection

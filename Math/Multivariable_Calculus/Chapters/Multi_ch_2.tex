@@ -118,6 +118,8 @@ Thus, if that force acts at an angle \(\theta\) to the line of motion, the work 
 \]
 Later this semester, we will learn how to compensate for a non-constant force, and over a non-linear path.
 
+% -------------------------------------------------------------------- %
+
 \section{The Cross Product}
 
 Suppose that \(\mathbf{u},\mathbf{v} \in \R^{3}\). Then, the \cyanit{cross product} of \(\mathbf{u}\) and \(\mathbf{v}\), denoted by \(\mathbf{u} \times \mathbf{v}\), is the unique right-hand rule vector orthogonal to each of \(\mathbf{u}\) and \(v\) whose magnitude is equal to the area of the parallelogram spanned by \(\mathbf{u}\) and \(\mathbf{v}\). \\
@@ -186,6 +188,10 @@ If \(\mb{r}\) is a radial vector from an axis to a force and \(\mb{F}\) is the f
 \[
     \mb{\tau} = \mb{r} \times \mb{F} \qquad \text{or} \qquad \norm{\mb{\tau}} = \norm{r}\norm{F}\sin(\theta),
 \]
+
+% -------------------------------------------------------------------- %
+% Section 4
+% -------------------------------------------------------------------- %
 
 \section{Equations of Lines and Planes}
 
@@ -342,7 +348,23 @@ We know \(\mb{PQ} = \brackett{6,-4,1}\) and \(\mb{PR} = \brackett{-3,-3,4}\). Th
 
 Thus, the equation of the plane is \(13(x - 3) - 27(y - 5) - 30(z - 1) = 0\). \\
 
-To check, plug in the points: \(13(3) - 27(5) - 30(1) = 0\), \(13(9) - 27(1) - 30(2) = 0\), and \(13(0) - 27(2) - 30(5) = 0\).
+To check, plug in the points: \(13(3) - 27(5) - 30(1) = 0\), \(13(9) - 27(1) - 30(2) = 0\), and \(13(0) - 27(2) - 30(5) = 0\). \\
+
+\textbf{Distance from point to line:} \\
+
+Suppose \(M\) is a point and \(P\) is any point on some line \(l\). Refer to notes for graph. Let \(d = \norm{PM}\sin \theta\). Let \(\mb{v}\) be a directional vector of \(l\). \\ 
+
+\(\norm{PM \times v} = \norm{PM}\norm{v}\sin \theta\). This gives us \(d = \frac{\norm{PM \times v}}{\norm{v}}\). \\
+
+\textbf{Distance from point to plane:} \\
+
+Let \(P\) be the point with \(\mb{n}\) as the norm vector. We start with \(d = \norm{\proj_{n}PQ}\). Then, \(d = \frac{\norm{PQ \times n}}{\norm{n}\cdot \norm{n}}\norm{n}\). Look in the book for the rest of this.
+
+
+% -------------------------------------------------------------------- %
+% Section 6
+% -------------------------------------------------------------------- %
+
 
 \section{Quadratic Surfaces}
 
