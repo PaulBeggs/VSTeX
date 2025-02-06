@@ -1,0 +1,38 @@
+\section{Vector Valued Functions and Space Curves}
+
+\subsection{Vector-Valued Functions}
+
+Recall that a \cyanit{function} \(f\) from a domain \(D\) to codomain \(E\) is a rule which assigns a single element of \(E\) to each element of \(D\). \\
+
+If each of \(f_{1},f_{2},\ldots,f_{n} \colon \R \to \R\) is a function we can then define the \cyanit{vector-valued function} \(\mathbf{r} \colon \R \to \R^{n}\) by
+\[
+    \mathbf{r}(t) = \langle f_{1}(t),f_{2}(t),\ldots,f_{n}(t) \rangle
+\]\
+\begin{itemize}
+    \item When \(n = 2\), we might write \(\mb{r} = \brackett{f(t),g(t)} = f(t)\hat{\imath} + g(t)\hat{\jmath}\),
+    \item and when \(n = 3\), we might write \(\mb{r} = \brackett{f(t),g(t),h(t)} = f(t)\hat{\imath} + g(t)\hat{\jmath} + h(t)\hat{k}\).
+\end{itemize}
+
+\subsection{Curves}
+
+A \cyanit{plane curve} is the set of points satisfying the parameterized curve \(\mb{r} \colon \R \to \R^{2}\) over a given domain and for a given function \(\mb{r}\). \\
+
+A \cyanit{space curve} is the set of points satisfying the parameterized curve \(\mb{r} \colon \R \to \R^{3}\) over a given domain and for a given function \(\mb{r}\). \\
+
+We will call these \cyanit{vector parameterizations} of the curve.
+
+\subsection{Limits}
+
+\subsubsection{Formal Definition of a Limit}
+
+Suppose that \(\mb{r} \colon \R \to \R^{n}\) is a vector-valued function and that \(a \in \R\), though perhaps nto in the domain of \(\mb{r}\). \\
+
+If there exists a vector \(\mb{L} \in \R^{n}\) such that for each choice of \(\epsilon > 0\) there exists \(\delta >0\) such that whenever \(t \in \R\), \(t \ne a\) and \(|t - a| < \delta\), then 
+\[
+    |\mb{r}(t) - \mb{L}| < \epsilon,
+\]
+then we say that \(\mb{r}\) has \cyanit{limit} \(\mb{L}\) as \(t\) approaches \(a\), and we write
+\[
+    \lim_{t \to a} \mb{r}(t) = \mb{L}.
+\]
+That is, if we want the output from \(\mb{r}\) to be close to \(\mb{L}\), we can always choose inputs close to \(a\) to make that occur.
