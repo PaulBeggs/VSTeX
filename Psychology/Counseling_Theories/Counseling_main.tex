@@ -24,16 +24,7 @@
 %%% Define new colors %%%
 \usepackage{xcolor}
 \definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
-\colorlet{firstlevel}{orangehdx}
-\colorlet{secondlevel}{orangehdx!80!black}
-\colorlet{thirdlevel}{orangehdx!60!black}
-\colorlet{fourthlevel}{orangehdx!40!black}
-\colorlet{fifthlevel}{orangehdx!20!black}
-\colorlet{sixthlevel}{orangehdx!10!black}
 
-\newcommand{\custombullet}[1]{%
-    \tikz[baseline=-.75ex]{\node[circle, fill=#1, inner sep=1.5pt] {};}%
-}
 
 
 
@@ -89,6 +80,19 @@
 \definecolor{xrainbow9}{HTML}{c4625d}
 \definecolor{xrainbow10}{HTML}{eb751f}
 \definecolor{xrainbow11}{HTML}{ff9709}
+
+\colorlet{firstlevel}{xrainbow1}
+\colorlet{secondlevel}{xrainbow2}
+\colorlet{thirdlevel}{xrainbow3}
+\colorlet{fourthlevel}{xrainbow4}
+\colorlet{fifthlevel}{xrainbow5}
+\colorlet{seventhlevel}{xrainbow7}
+\colorlet{eighthlevel}{xrainbow8}
+\colorlet{ninthlevel}{xrainbow9}
+
+\newcommand{\custombullet}[1]{%
+    \tikz[baseline=-.75ex]{\node[circle, fill=#1, inner sep=1.5pt] {};}%
+}
 
 %------- %
 % XHFILL %
