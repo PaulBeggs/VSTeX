@@ -1,0 +1,260 @@
+
+\documentclass{article}
+\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage{tcolorbox}
+\usepackage{comment}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{multirow, bigdelim}
+\usepackage{marginnote}
+\usepackage{lipsum}
+\usepackage{neuralnetwork}
+\usepackage{subfigure}
+\usepackage{slashed}
+
+
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+
+\title{Writing Assignment 1}
+\author{Paul Beggs \& Thomas Sebring}
+\date{\today}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.markings}
+
+\newenvironment{solution}{\textit{Solution}.}
+
+\titleformat{\subsection}[block]{\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalfont\bfseries}{}{1em}{}
+
+\def \proofDistance {5pt}
+\def \subheaderSpace {10pt}
+
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{margin=1in} % for example, change the margins to 1 inches all round
+
+\newcommand{\proofseparator}{\par\noindent\rule{\textwidth}{0.4pt}}
+\newcommand{\caution}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+% Command for problem statement
+\newcommand{\pb}[1]{
+    \begin{problem}
+    #1
+    \end{problem}
+}
+
+% Define a command for custom proofs with separator
+\newcommand{\pf}[1]{
+    \vspace{\proofDistance}
+    \begin{proof}
+    #1
+    \end{proof}
+    \proofseparator
+}
+
+\newcommand{\sol}[1]{
+    \vspace{\proofDistance}
+    \begin{solution}
+    #1
+    \end{solution}
+    \proofseparator
+}
+
+\setlength{\parindent}{0pt}
+
+
+\newcommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{\proj}{\text{proj}}
+\newcommand{\magn}[1]{||\mbf{#1}||}
+\newcommand{\makespace}[1]{\vspace{\subheaderSpace}}
+
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+Projection and orthogonality are key concepts in understanding how vectors relate to each other. By examining the following cases, the goal is to develop an intuition for how we can achieve orthogonal unit vectors with given by any two non-zero vectors.  
+
+\section{Vector Projection and Orthogonality}
+
+We begin by considering the case where one vector is a scalar multiple of another. This shows that with projection in this case, we preserve the original vector. Thus, consider the following case: suppose that there exists a nonzero scalar \(c\) such that \(\mbf{u} = c \mbf{v}\), our goal is to show that \(\text{proj}_{\mbf{v}} \mbf{u} = \mbf{u}\). \\
+
+We know the formula for the projection of \(\mbf{u}\) onto \(\mbf{v}\) is:
+
+\[
+\text{proj}_{\mbf{v}} \mbf{u} = \frac{\mbf{u} \cdot \mbf{v}}{||\mbf{v}||^2} \mbf{v}
+\]
+
+Substituting \(\mbf{u} = c \mbf{v}\):
+
+\[
+\text{proj}_{\mbf{v}} \mbf{u} = \frac{(c \mbf{v}) \cdot \mbf{v}}{||\mbf{v}||^2} \mbf{v}
+\]
+
+Since the dot product is distributive,
+
+\[
+\text{proj}_{\mbf{v}} \mbf{u} = \frac{c (\mbf{v} \cdot \mbf{v})}{||\mbf{v}||^2} \mbf{v}
+\]
+
+Then, from the self-product property, we know \(\mbf{v} \cdot \mbf{v} = ||\mbf{v}||^2\). So:
+
+\[
+\text{proj}_{\mbf{v}} \mbf{u} = \frac{c ||\mbf{v}||^2}{||\mbf{v}||^2} \mbf{v} = c \mbf{v} = \mbf{u}
+\]
+
+Thus, \(\text{proj}_{\mbf{v}} \mbf{u} = \mbf{u}\), and the original vector is preserved. \\
+
+This confirms that projecting a vector onto a line in its own direction leaves it unchanged, as demonstrated in \hyperref[fig1]{Figure 1}.
+
+\begin{figure}[htb]
+    \label{fig1}
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+            xlabel = $x$,
+            ylabel = $y$,
+            scale = 1,
+            axis lines = middle,
+            xmin = 0, xmax = 5,
+            ymin = 0, ymax = 5,
+            enlargelimits={abs=0.5},
+            step=1,
+        ]
+        % Plot the vectors
+        \addplot [->, thick] coordinates {(0,0) (2,1)};
+        \addplot [->, thick] coordinates {(0,0) (4,2)};
+
+        \node[above left] at (axis cs:2,0.3) {\(\mbf{u}\)};
+        \node[above left] at (axis cs:2,1.2) {\(\mbf{\text{proj}_{\mbf{v}} \mbf{u} }\)};
+        \node[above left] at (axis cs:4,2) {\(\mbf{v}\)};
+    \end{axis}
+\end{tikzpicture}
+    \caption{Projection of \(\mbf{u} \text{ Onto } \mbf{v}\)}
+\end{figure}
+\newpage
+\subsection{Orthogonality Condition}
+Next, we consider the case where two vectors are orthogonal. If we can show that the projection of \(\mbf{u}\) onto \(\mbf{v}\) results in \(\mbf{0}\), it will show that \(\mbf{u}\) does not cast a ``shadow'' in the direction of \(\mbf{v}\). In other words, there is no component of the first vector along the line determined by the second. \\
+
+Thus, suppose \(\mbf{u}\) and \(\mbf{v}\) are orthogonal. We will show that \(\text{proj}_{\mbf{v}} \mbf{u} = \mbf{0}\). \\
+
+Using the projection formula again:
+
+\[
+\text{proj}_{\mbf{v}} \mbf{u} = \frac{\mbf{u} \cdot \mbf{v}}{||\mbf{v}||^2} \mbf{v}
+\]
+
+Since \(\mbf{u}\) and \(\mbf{v}\) are orthogonal, we know \(\mbf{u} \cdot \mbf{v} = 0\) and we substitute:
+
+\[
+\text{proj}_{\mbf{v}} \mbf{u} = \frac{0}{||\mbf{v}||^2} \mbf{v} = \mbf{0}
+\]
+
+Therefore, \(\text{proj}_{\mbf{v}} \mbf{u} = \mbf{0}\). 
+
+\subsection{Deriving Orthogonality From Projection}
+Finally, we'll examine what happens when we have two vectors \(\mbf{u}\) and \(\mbf{v}\) that are neither parallel nor orthogonal with each other. We will show that \(\mbf{u}\) and \(\mbf{w}\) are orthogonal. \\ 
+
+Define \(\mbf{w}\) as:
+
+\[
+ \mbf{w} = \mbf{v} - \text{proj}_{\mbf{u}} \mbf{v}
+\]
+
+Knowing that if two vectors are orthogonal, then their dot product is 0, we use the dot product with \(\mbf{u}\) on both sides:
+
+\[
+ \mbf{w} \cdot \mbf{u} = (\mbf{v} - \text{proj}_{\mbf{u}} \mbf{v}) \cdot \mbf{u}
+\]
+
+Distributing the dot product of \(\mbf{u}\):
+
+\[
+ \mbf{w} \cdot \mbf{u} = \mbf{v} \cdot \mbf{u} - (\text{proj}_{\mbf{u}} \mbf{v}) \cdot \mbf{u}
+\]
+
+Substituting the equation for \(\text{proj}_{\mbf{u}} \mbf{v} = \frac{(\mbf{v} \cdot \mbf{u})}{||\mbf{u}||^2} \mbf{u}\) we get:
+
+\[
+ \mbf{w} \cdot \mbf{u} = \mbf{v} \cdot \mbf{u} - \left( \frac{(\mbf{v} \cdot \mbf{u})}{||\mbf{u}||^2} \mbf{u} \right) \cdot \mbf{u}
+\]
+
+Since \(\mbf{u} \cdot \mbf{u} = ||\mbf{u}||^2\),
+
+\[
+ \mbf{w} \cdot \mbf{u} = \mbf{v} \cdot \mbf{u} - \frac{(\mbf{v} \cdot \mbf{u})}{||\mbf{u}||^2} ||\mbf{u}||^2
+\]
+
+Simplifying:
+
+\[
+ \mbf{w} \cdot \mbf{u} = \mbf{v} \cdot \mbf{u} - \mbf{v} \cdot \mbf{u} = 0
+\]
+
+Since \(\mbf{w} \cdot \mbf{v} = 0\), we conclude that \(\mbf{w}\) is orthogonal to \(\mbf{v}\).
+
+\section{Constructing Orthogonal Unit Vectors in $\R^3$}
+
+Given two vectors \(\mbf{u}\) and \(\mbf{v}\) that are not parallel, we can construct a unit vector \(\mbf{a}\) parallel to \(\mbf{u}\) using what we know from the first problem:
+
+\[
+ \mbf{a} = \frac{\mbf{u}}{\magn{u}}
+\]
+
+In order to construct a unit vector orthogonal to \(\mbf{a}\), we construct a normal vector orthogonal to \(\mbf{u}\) using what we know from the second problem:
+
+\[
+ \mbf{b} = \frac{\mbf{v} - \text{proj}_{\mbf{u}} \mbf{v}}{\magn{\mbf{v} - \text{proj}_{\mbf{u}} \mbf{v}}}
+\]
+
+In order to construct a unit vector orthogonal to \(\mbf{u}\) and \(\mbf{v}\), we use the cross product of \(\mbf{u}\) and \(\mbf{v}\):
+
+\[
+ \mbf{c} = \frac{\mbf{u} \times \mbf{v}}{\magn{\mbf{u} \times \mbf{v}}}
+\]
+
+Since we know \(\mbf{a}\) is parallel to \(\mbf{u}\), and \(\mbf{b}\) is parallel to the vector orthogonal to \(\mbf{u}\), the vectors \(\mbf{a}\) and \(\mbf{b}\) must also be orthogonal. Since we know \(\mbf{c}\) is orthogonal to \(\mbf{u}\), and \(\mbf{a}\) is parallel to \(\mbf{u}\), \(\mbf{c}\) must also be orthogonal to \(\mbf{a}\). Additionally, since \(\mbf{b}\) is parallel to the vector that is the result of vector subtraction of \(\mbf{v}\) and \(\text{proj}_{\mbf{u}} \mbf{v}\), it is in the same plane as \(\mbf{u}\) and \(\mbf{v}\), thus \(\mbf{c}\) must also be orthogonal to \(\mbf{b}\).
+
+\end{document}
