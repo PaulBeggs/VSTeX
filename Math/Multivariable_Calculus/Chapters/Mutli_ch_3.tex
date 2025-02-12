@@ -241,3 +241,65 @@ after some algebra.
 In general, of course, curvature is not constant. At a particular point of interest, the curvature finds the reciprocal of the radius of the \cyanit{osculating circle}. That is, the ``tangent circle''--the circle that best matches the curve at the point of interest.
 
 \newpage
+
+\section{Motion in Space}
+
+\subsection{Motion}
+
+\newcommand{\rt}{\mb{r}(t)}
+
+Let \(\mb{r}(t)\) represent the position of some object as a function of time in \(\R^{3}\). Then, as in Calculus I:
+\begin{itemize}
+    \item Velocity vector: \(\mb{v}(t) = \dvecfuc{r}{t}\)
+    \item Speed: \(||\mb{v}(t)|| = ||\dvecfuc{r}{t}||\)
+    \item Acceleration vector: \(\mb{a}(t) = \dvecfuc{v}{t} = \mb{r}''(t)\)
+\end{itemize}
+Note that \(\vecfuc{v}{t} \ne \vecfuc{T}{t}\), though they do point in the same direction. More importantly, the relationship between \(\vecfuc{a}{t}\) and \(\vecfuc{N}{t}\) is complicated. \(\vecfuc{N}{t}\) is not acceleration, or even the direction of acceleration, but is the direction of ``turning.''
+
+\subsubsection{Acceleration}
+
+In fact, \(\vecfuc{a}{t} = v'(t)\vecfuc{T}{t} + (v(t))^{2}\kappa\vecfuc{N}{t}\).
+
+\begin{proof}
+    Notice that \(\vecfuc{v}{t} = v(t)\vecfuc{T}{t}\). Then,
+    \begin{align*}
+        \vecfuc{a}{t} &= v'(t)\vecfuc{T}{t} + v(t)\dvecfuc{T}{t} \\
+        &= v'(t)\vecfuc{T}{t} + v(t)||\dvecfuc{T}{t}||\vecfuc{N}{t} \\
+        &= v'(t)\vecfuc{T}{t} + v(t)\kappa||\dvecfuc{r}{t}||\vecfuc{N}{t} \\
+        &= v'(t)\vecfuc{T}{t} + (v(t))^{2}\kappa\vecfuc{N}{t}.
+    \end{align*}
+    Since \(\mb{T}\) and \(\mb{T}'\) are orthogonal, this decomposes \(\mb{a}\) into two pieces -- the first is the change in speed, and the second the change in direction.
+\end{proof}
+
+\subsection{Projectile Motion}
+
+The motion of an object -- in 2-dimensions, typically, acted on only by gravity \(\mb{F}_{g} = -mg\mb{j}\), where \(g \approx 9.8\) m/s\(^{2}\) and \(m\) is the mass of the object. By Newton's second law, \(\mb{F} = m\mb{a}\), so we have 
+\[
+    \vecfuc{a}{t} = - g\mb{j}.
+\]
+Thus, \(\vecfuc{v}{t} = -gt\mb{j} + \mb{v}_{0}\), where \(\mb{v}_{0}\) is the initial velocity vector, and
+\[
+    \vecfuc{s}{t} = -\frac{1}{2}gt^{2}\mb{j} + \mb{v}_{0}t + \mb{s}_{0},
+\]
+where \(\mb{s}\) is the position, and \(\mb{s}_{0}\) is the initial position vector. \\
+
+Often, we have an object starting at the origin (so \(\mb{s}_{0} = \mb{0}\)) and fired at a velocity of \(v_{0}\) at an angle \(\theta\) above the horizon. Then,
+\[  
+    \vecfuc{s}{t} = v_{0}t\cos(\theta)\mb{i} + \left(v_{0}t\sin(\theta) - \frac{1}{2}gt^{2}\right)\mb{j}.
+\]
+What is the horizontal distance travelled by the object before it hits the ground again? \\
+
+Solving \((v_{0}t\sin(\theta) - \frac{1}{2}gt^{2}) = 0\) gives \(t_{1} = \slashed{0}, \ \frac{2v_{0}\sin(\theta)}{g}\). We plug this time into the horizontal component and find 
+\[
+    s(t_{1}) = \frac{v_{0}^{2}}{g}\sin(2\theta).
+\]
+We note the unsurprising result that this is maximized when \(\theta = \frac{\pi}{4}\).
+
+\subsection{Planetary Motion}
+
+There is a handout (on teams) that works through the mathematics of planetary motion --specifically:
+\begin{itemize}
+    \item Starting from Newton's Law of Gravity and Newton's Second Law, we determine the position of a planet circling a (fixed) star.
+    \item Describe the conditions under which the planet is bound to the star, or separately, flung off into space!
+\end{itemize}
+These are not exam questions, but are the sort of things that this material is used for in the ``real world.'' \\
