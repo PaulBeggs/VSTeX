@@ -16,7 +16,7 @@
 \usepackage[dvipsnames]{xcolor} % for coloring text
 \definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
 \usepackage{enumitem} % for customizing lists
-\usepackage{fontawesome5} % for using icons
+% \usepackage{fontawesome5} % for using icons
 \usepackage{amsmath} % for math
 \usepackage[
     pdftitle={Paul Beggs's CV},
@@ -147,7 +147,7 @@
 \let\hrefWithoutArrow\href
 
 % new command for external links:
-\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }}}
 
 
 \begin{document}
@@ -165,15 +165,15 @@
     \vspace{0.3 cm}
 
     \normalsize
-    \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}1600 Washington Ave., Conway, AR}%
+    \mbox{1600 Washington Ave., Conway, AR}%
     \kern 0.25 cm%
     \AND%
     \kern 0.25 cm%
-    \mbox{\hrefWithoutArrow{mailto:paulbeggs03@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}paulbeggs03@gmail.com}}%
+    \mbox{\hrefWithoutArrow{mailto:paulbeggs03@gmail.com}{paulbeggs03@gmail.com}}%
     \kern 0.25 cm%
     \AND%
     \kern 0.25 cm%
-    \mbox{\hrefWithoutArrow{tel:(573)587-9258}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}(573)587-9258}}%
+    \mbox{\hrefWithoutArrow{tel:(573)587-9258}{(573)587-9258}}%
     \kern 0.25 cm%
     \AND%
     \kern 0.25 cm%
@@ -181,7 +181,7 @@
     % \kern 0.25 cm%
     % \AND%
     \kern 0.25 cm%
-    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/paul-beggs/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}paul-beggs}}%
+    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/paul-beggs/}{paul-beggs}}%
     \kern 0.25 cm%
     % \AND%
     % \kern 0.25 cm%
@@ -480,6 +480,11 @@
 \end{highlights}
 \end{onecolentry}
 
+% Type the job description in this tiny environment. It will be hidden in the final document.
+
+\begin{tiny}
+    \textcolor{white}{}
+\end{tiny}
 
 
 \section{Technical Skills}
