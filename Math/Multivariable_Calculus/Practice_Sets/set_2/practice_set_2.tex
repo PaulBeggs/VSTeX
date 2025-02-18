@@ -4,14 +4,13 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds,calc,patterns}
 \usepackage{amsmath,amsthm} 
-\usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
-
 \usepackage{mathrsfs}
 \usepackage{changepage}
 \usepackage{multicol}
+\usepackage{mathtools}
 \usepackage{hyperref}
 \usepackage{slashed}
 \usepackage{enumerate}
@@ -253,38 +252,250 @@
 
 \begin{enumerate}
   \item (2 points) Write, in general equation form, an equation of the plane which contains the three points \(P = (2,7,3)\), \(Q = (-5,0,1)\), and \(R = (-3,1,2)\).
-  \item (2 points) Write, in scalar form, an equation of the plane which contains the point \(5,2,1\) and the line given by \(x + 2 = \dfrac{y}{4} = \dfrac{z - 5}{2}\).
+
+  \sol{
+    First, we find \(\mb{PQ}\) and \(\mb{PR}\):
+    \[
+      \mb{PQ} = \brackett{-7,-7,-2} \qquad \text{and} \qquad \mb{PR} = \brackett{-5,-6,-1}.
+    \]  
+    With \(\mb{PQ}\) and \(\mb{PR}\), we can find \(\mb{n}\) by solving for the cross product:
+    \[
+      \mb{n} =  \mb{PQ} \times \mb{PR} = \begin{vmatrix}
+        \mb{i} & \mb{j} & \mb{k} \\
+        -7 & -7 & -2 \\
+        -5 & -6, & -1 
+      \end{vmatrix} = (7 -12)\mb{i} - (7 - 10)\mb{j} + (42 - 35)\mb{k} = -5\mb{i} + 3\mb{j} + 7\mb{k}.
+    \]
+    With \(\mb{n}\), we get the general formula:
+    \[
+      \boxed{-5(x - 2) + 3(y - 7) + 7(z - 3) = 0.}
+    \]
+  }
+
+  \item (2 points) Write, in scalar form, an equation of the plane which contains the point \((5,2,1)\) and the line given by \(x + 2 = \dfrac{y}{4} = \dfrac{z - 5}{2}\).
+
+  \sol{
+    We start by parametrizing the line with common parameter \(t\): 
+    \begin{itemize}
+      \item \(x + 2 = t \quad\Rightarrow \quad x = t - 2\),
+      \item \(\frac{y}{4} = t \quad\Rightarrow \quad y = 4t\), and
+      \item \(\frac{z - 5}{2} = t \quad \Rightarrow \quad z = 2t + 5\).
+    \end{itemize}
+    This gives us the parametric form:
+    \[
+      (x,y,z) = (-2,0,5) + t(1,4,2)
+    \]
+    Thus, the line passes through the point \((-2,0,5)\) and has the direction vector
+    \[
+      \mb{v}_{1} = \brackett{1,4,2}.
+    \]
+    Since the plane is two-dimensional, we need 2 independent directions within it. We got the first through our line, but we need another because there are infinitely many planes that contain the same line. Thus, we can form a second vector \(\mb{v}_{2}\) by taking the difference between the given point and a point on the line:
+    \[
+      \mb{v}_{2} = (5,2,1) - (-2,0,5) = \brackett{7,2,-4}.
+    \]
+    With \(\mb{v}_{1}\) and \(\mb{v}_{2}\), we find the normal vector:
+    \[
+      \mb{n} = \mb{v}_{1} \times \mb{v}_{2} = \begin{vmatrix}
+        \mb{i} & \mb{j} & \mb{k} \\
+        1 & 4 & 2 \\
+        7 & 2 & -4
+      \end{vmatrix} = (-16 - 4)\mb{i} - (-4 - 14)\mb{j} + (2 - 28)\mb{k} = -20\mb{i} + 20\mb{j} - 26\mb{k}
+    \]
+    Therefore, we find the scalar form to be:
+    \[
+      \boxed{-20(x + 2) + 18y - 26(z - 5) = 0.}
+    \]
+  }
 
   \newpage
   \item (3 points) Determine the arc length parametrization for the curve \(\vecfuc{r}{t} = 3e^{t} \sin(t)\imb + 3e^{t}\cos(t)\jmb\), where you start from \(t = 0\). 
+
+  \sol{
+    From equation 3.11 from Theorem 3.4 in the book, (and \href{https://calcworkshop.com/vector-functions/arc-length-parameterization/}{this website}) we know that we can rewrite the arc length parametrization as:
+    \[
+      s = \int_{0}^{t} ||\dvecfuc{r}{\tau}||\,d\tau = \int_{0}^{t} \mysqrt{\left[f'(\tau)\right]^{2} + \left[g'(\tau)\right]^{2}}\,d\tau,
+    \]
+    where \(f(\tau) = 3e^{\tau}\sin(\tau)\) and \(g(\tau) = 3e^{\tau}\cos(\tau)\). Thus, we find:
+    \begin{align*}
+      f'(\tau) &= 3e^{\tau}(\sin(\tau) + \cos(\tau)) \\
+      g'(\tau) &= 3e^{\tau}(\cos(\tau) - \sin(\tau)).
+    \end{align*}
+    Thus, we have:
+    \begin{align*}
+      s &= \int_{0}^{t} \mysqrt{\left[3e^{\tau}\bigl(\sin(\tau) + \cos(\tau)\bigr)\right]^{2} + \left[3e^{\tau}\bigl(\cos(\tau) - \sin(\tau)\bigr)\right]^{2}}\,d\tau \\
+      &= \int_{0}^{t} \mysqrt{9e^{2\tau}\bigl(\sin^{2}(\tau) + 2\sin(\tau)\cos(\tau) + \cos^{2}(\tau)\bigr) + 9e^{2\tau}\bigl(\cos^{2}(\tau) - 2\sin(\tau)\cos(\tau) + \sin^{2}(\tau)\bigr)}\,d\tau \\
+      &= \int_{0}^{t} \mysqrt{9e^{2\tau} \left[2\bigl(\sin^{2}(\tau) + \cos^{2}(\tau)\bigr) + \bigl(2\sin(\tau)\cos(\tau) - 2\sin(\tau)\cos(\tau)\bigr) \right]} \\
+      &= \int_{0}^{t} \mysqrt{9e^{2\tau} \cdot \left[2(1 + 0)\right]} \\
+      &= \int_{0}^{t} 3e^{\tau}\mysqrt{2}\,d\tau \\
+      &= 3\mysqrt{2}\int_{0}^{t} e^{\tau}\,d\tau \\
+    \end{align*}
+    With our integral in the form \(3e^{\tau}\int_{0}^{t} \mysqrt{2}\,d\tau\), we can solve it to get:
+    \[
+      s = 3\mysqrt{2}(e^{t} - 1).
+    \]
+    With \(s\), we know that \(\mb{r}(t) = \mb{r}(t(s)) = \mb{r}\), so we need to find \(t\) in terms of \(s\): 
+    \begin{align*}
+      s = 3\mysqrt{2}(e^{t} - 1) \\
+      e^{t} = \dfrac{s}{3\mysqrt{2}} + 1 \\
+      t = \ln\left(\dfrac{s}{3\mysqrt{2}} + 1\right).
+    \end{align*}
+    Finally, by replacing \(t\) with \(t(s)\) in the original equation, we can get the arc length parametrization:
+    \[
+      \boxed{\vecfuc{r}{s} = \left(\dfrac{s}{\mysqrt{2}} + 3\right)\sin\left(\ln\left(\dfrac{s}{\mysqrt{2}} + 3\right)\right)\imb + \left(\dfrac{s}{\mysqrt{2}} + 3\right)\cos\left(\ln\left(\dfrac{s}{\mysqrt{2}} + 3\right)\right)\jmb.}
+    \]
+  }
+
   \newpage
   \item (3 points) Use curvature to find the equation of the osculating circle at the planar curve \(y = x^{3} - 4x + 1\) at \(x = 1\). Then, check your answer by graphing both the curve and its circle on the same axes. [you do not need to include the graph in your work turned in -- but you should be able to tell if your work is correct.]
+
+  \sol{
+    First, we need to find the curvature of the curve at \(x = 1\). We start by finding the first and second derivatives of the function:
+    \begin{align*}
+      y(x) &= x^{3} - 4x + 1 \\
+      y'(x) &= 3x^{2} - 4 \\
+      y''(x) &= 6x.
+    \end{align*}
+    Then, we evaluate the point and the first and second derivatives at \(x = 1\):
+    \begin{align*}
+      y(1) &= 1 - 4 + 1 = -2 \\
+      y'(1) &= 3(1)^{2} - 4 = -1 \\
+      y''(1) &= 6(1) = 6.
+    \end{align*}
+    With these values, we can find the curvature:
+    \[
+      \kappa = \dfrac{|y''(x)|}{\bigl(1 + y'(x)^{2}\bigr)^{3/2}} = \dfrac{6}{\bigl(1 + (-1)^{2}\bigr)^{3/2}} = \dfrac{6}{2^{3/2}} = \frac{3\mysqrt{2}}{2}.
+    \]
+    With the curvature, we can find the radius of the osculating circle:
+    \[
+      R = \dfrac{1}{\kappa} = \dfrac{1}{\frac{3\mysqrt{2}}{2}} = \dfrac{2\mysqrt{2}}{6} = \dfrac{\mysqrt{2}}{3}.
+    \]
+    To find the center, we need the unit normal vector at \(x = 1\):
+    \[
+      \mb{N} = \frac{(-y,1)}{\mysqrt{1 + (y')^{2}}} = \frac{\bigl(-(-1),1\bigr)}{\mysqrt{1 + (-1)^{2}}} = \frac{(1,1)}{\mysqrt{2}}
+    \]
+    The center \(C\) can be found by moving our point \(P(1,-2)\) the distance \(R\) along the unit normal vector:
+    \begin{align*}
+      C &= P + R\mb{N} \\
+      &= (1,-2) + \frac{\mysqrt{2}}{3}\frac{(1,1)}{\mysqrt{2}} \\
+      &= (1,-2) + \left(\frac{1}{3},\frac{1}{3}\right) \\
+      &= \left(\frac{4}{3},-\frac{5}{3}\right).
+    \end{align*}
+    This gives the equation for the osculating circle:
+    \[
+      \boxed{\left(x - \frac{4}{3}\right)^{2} + \left(y + \frac{5}{3}\right)^{2} = \frac{2}{9}.}
+    \]
+  }
   \newpage
   \item (3 points each) Suppose the position of some particle is given by \(\vecfuc{r}{t} = \sin(t)\imb + t\jmb + 3t\kmb\).
   \begin{enumerate}
-    \item Find the velocity vector, \(\vecfuc{v}{t}\).
+    \item Find the velocity vector, \(\vecfuc{v}{t}\).\\
 
     \sol{
       \begin{align*}
         \vecfuc{v}{t} &= \dvecfuc{r}{t} = \cos(t)\imb + \jmb + 3\kmb
-      \end{align*} CHECK THIS WORK
+      \end{align*}
     }
-    \item What total distance is travelled by the particle over the time period \([0, 3\pi]\)? (You can set up the necessary internal, and calculate it using your calculator up to 3 decimal places.)
+    \item What total distance is travelled by the particle over the time period \([0, 3\pi]\)? (You can set up the necessary internal, and calculate it using your calculator up to 3 decimal places.)\\
 
     \sol{
-      This is just the arc length
+      \[
+        \int_{0}^{3\pi} ||\dvecfuc{r}{t}||\,dt = \int_{0}^{3\pi} \mysqrt{\cos^{2}(t) + 1 + 9}\,dt = 9.709 
+      \]
     }
-    \item Find the unit tangent vector \(\vecfuc{T}{t}\).
+    \item Find the unit tangent vector \(\vecfuc{T}{t}\).\\
     
     \sol{
       \begin{align*}
-        \vecfuc{T}{t} &= \dfrac{\vecfuc{v}{t}}{||\vecfuc{v}{t}||} = \dfrac{\cos(t)\imb + \jmb + 3\kmb}{\mysqrt{\cos^{2}(t) + 1 + 9}}
+        \vecfuc{T}{t} &= \dfrac{\vecfuc{v}{t}}{||\vecfuc{v}{t}||} = \dfrac{\cos(t)\imb + \jmb + 3\kmb}{\mysqrt{\cos^{2}(t) + 10}}
       \end{align*}
     }
+    \item Find unit normal vector \(\vecfuc{N}{t}\).\\
+    
+    \sol{
+      To find the unit normal vector, we need to find the derivative of the unit tangent vector. To avoid making mistakes (and making differentiating easier), lets break \(\vecfuc{T}{t}\) into separate functions \(u(t)\) and \(v(t)\):
+      \[
+        \vecfuc{T}{t} = \underbrace{\bigl(\cos(t)\imb + \jmb + 3\kmb\bigr)}_{u(t)} \cdot \underbrace{\left(\cos^{2}(t) + 10\right)^{-1/2}}_{v(t)}
+      \]
+      Differentiating \(u(t)\):
+      \[
+        u'(t) = -\sin(t)\imb,
+      \]
+      and differentiating \(v(t)\) with the chain rule:
+      \[
+        v'(t) = -\frac{1}{2}(\cos^{2} + 10)^{-3/2} \cdot 2\cos(t)(-\sin(t)) = \cos(t)\sin(t)(\cos^{2}(t) + 10)^{-3/2}.
+      \]
+      Thus, we apply the product rule for \(\dvecfuc{T}{t}\):
+      \[
+        \dvecfuc{T}{t} = \Bigl[-\sin(t)\,\mathbf{i}\Bigr]\bigl(\cos^2(t)+10\bigr)^{-1/2} + \Bigl[\cos(t)\,\mathbf{i} + \mathbf{j} + 3\,\mathbf{k}\Bigr] \Bigl[\cos(t)\sin(t)\,\bigl(\cos^2(t)+10\bigr)^{-3/2}\Bigr].
+      \]
+      Notice that both terms contain a factor of \(\sin(t)\) and a power of \(\cos^{2}(t) + 10\), so we can factor them out:
+      \[
+        \dvecfuc{T}{t} = \sin(t)\,\bigl(\cos^2(t)+10\bigr)^{-3/2}\left\{ -\Bigl[\cos^2(t)+10\Bigr]\mathbf{i} + \cos(t)\Bigl[\cos(t)\,\mathbf{i} + \mathbf{j} + 3\,\mathbf{k}\Bigr]\right\}.
+      \]
+      Inside the braces, multiply out the terms:
+      \begin{align*}
+        \{...\} &= -\cos^2(t)\,\mathbf{i} - 10\,\mathbf{i} + \cos^2(t)\,\mathbf{i} + \cos(t)\,\mathbf{j} + 3\cos(t)\,\mathbf{k} \\
+        &= -\cos^{2}(t)\imb - 10\imb + \cos^{2}(t)\imb + \cos(t)\jmb + 3\cos(t)\kmb \\
+        &= -10\imb + \cos(t)\jmb + 3\cos(t)\kmb.
+      \end{align*}
+      This gives us:
+      \[
+        \dvecfuc{T}{t} = \frac{\sin(t)}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \Bigl[-10\,\mathbf{i} + \cos(t)\,\mathbf{j} + 3\cos(t)\,\mathbf{k}\Bigr].
+      \]
+      Now we need to find the magnitude of \(\dvecfuc{T}{t}\):
+      \[
+        ||\dvecfuc{T}{t}|| = \frac{|\sin(t)|}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \mysqrt{(-10)^2 + \bigl(\cos(t)\bigr)^2 + \bigl(3\cos(t)\bigr)^2}.
+      \]
+      Simplify inside the square root and factor:
+      \[
+        ||\dvecfuc{T}{t}|| = \frac{|\sin(t)|}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \cdot \mysqrt{10}\,\mysqrt{\cos^2(t)+10}.
+      \]
+      This simplifies to:
+      \[
+        ||\dvecfuc{T}{t}|| = \frac{|\sin(t)|\,\mysqrt{10}}{\cos^2(t)+10}.
+      \]
+      Finally, we can find the unit normal vector:
+      \[
+        \mb{N}(t) = \frac{\frac{\sin(t)}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \Bigl[-10\,\mathbf{i} + \cos(t)\,\mathbf{j} + 3\cos(t)\,\mathbf{k}\Bigr]}{\frac{|\sin(t)|\,\mysqrt{10}}{\cos^2(t)+10}}.
+      \]
+      Notice that \(\sin(t)\) cancels out with the top-most numerator and numerator in the bottom-most denominator, and we can move the \((\cos^2(t)+10)\) term from the top numerator in the denominator to the bottom-most denominator (I hope you were able to follow that). This gives us:
+      \[
+        \boxed{\mb{N}(t) = \frac{-10\mb{i} + \cos(t)\jmb + 3\cos(t)\kmb}{\mysqrt{10}\mysqrt{\cos^{2}(t) + 10}}}
+      \]
+    }
     \newpage
-    \item Find unit normal vector \(\vecfuc{N}{t}\).
-    \newpage
-    \item Find binormal vector, \(\vecfuc{B}{t}\).
+    \item Find binormal vector, \(\vecfuc{B}{t}\).\\
+
+    \sol{
+      The binomial vector is the cross product of the unit tangent and unit normal vectors:
+      \[
+        \vecfuc{T}{t} \times \vecfuc{N}{t} = \begin{vmatrix}
+          \imb & \jmb & \kmb \\
+          \dfrac{\cos(t)}{\mysqrt{\cos^{2}(t) + 10}} & \dfrac{1}{\mysqrt{\cos^{2}(t) + 10}} & \dfrac{3}{\mysqrt{\cos^{2}(t) + 10}} \\
+          \frac{-10}{\mysqrt{10}\mysqrt{\cos^{2}(t) + 10}} & \frac{\cos(t)}{\mysqrt{10}\mysqrt{\cos^{2}(t) + 10}} & \frac{3\cos(t)}{\mysqrt{10}\mysqrt{\cos^{2}(t) + 10}}
+        \end{vmatrix}
+      \]
+      Thankfully, we can factor out the common term \(\frac{1}{\mysqrt{\cos^{2}(t) + 10}}\) from each vector in the cross product:
+      \[
+        \vecfuc{T}{t} \times \vecfuc{N}{t} = \frac{1}{\mysqrt{\cos^{2}(t) + 10}} \cdot \frac{1}{\mysqrt{\cos^{2}(t) + 10}} \begin{vmatrix}
+          \imb & \jmb & \kmb \\
+          \cos(t) & 1 & 3 \\
+          \frac{-10}{\mysqrt{10}} & \frac{\cos(t)}{\mysqrt{10}} & \frac{3\cos(t)}{\mysqrt{10}}
+        \end{vmatrix}
+      \]
+      Now we can find the cross product:
+      \[
+      \begin{aligned}
+        \frac{1}{\cos^{2}(t) + 10}\bigg[&\left(1 \cdot \frac{3\cos(t)}{\mysqrt{10}}\right) - \left(\frac{\cos(t)}{\mysqrt{10}} \cdot 3\right), \\
+        &\left(3 \cdot \frac{-10}{\mysqrt{10}}\right) - \left(\cos(t) \cdot \frac{3\cos(t)}{\mysqrt{10}}\right), \  \cos(t) \cdot \frac{\cos(t)}{\mysqrt{10}} - \left(1 \cdot \frac{-10}{\mysqrt{10}}\right) \bigg] 
+      \end{aligned}
+      \]
+      We can further simply this expression to:
+      \[
+        \boxed{\frac{1}{\cos^{2}(t) + 10}\brackett{0, \ \frac{-30 - 3\cos^{2}(t)}{\mysqrt{10}}, \ \frac{\cos^{2}(t) + 10}{\mysqrt{10}}}}
+      \]
+
+    }
   \end{enumerate}
 \end{enumerate}
 
