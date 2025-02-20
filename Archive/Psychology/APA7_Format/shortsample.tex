@@ -22,6 +22,8 @@
 
 \usepackage[american]{babel}
 
+\usepackage{booktabs}
+
 \usepackage{csquotes} % One of the things you learn about LaTeX is at some level, it's like magic. The references weren't printing as they should without this line, and the guy who wrote the package included it, so here it is. Because LaTeX reasons.
 \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
 % biblatex: loads the package that will handle the bibliographic info. Other option is natbib, which allows for more customization
@@ -37,11 +39,11 @@
 % Title page stuff _____________________
 \title{APA Format Starter Paper, Tailored to Lab Reports But Adaptable to Other Writing Assignments} % The big, long version of the title for the title page
 \shorttitle{APA Starter} % The short title for the header
-\author{Your Name Here}
-\duedate{April 20, 2024}
+\author{Paul Beggs}
+\duedate{\today}
 % \date{January 17, 2024} The student version doesn't use the \date command, for whatever reason
-\affiliation{Your School}
-\course{PSY 4321} % LaTeX gets annoyed (i.e., throws a grumble-error) if this is blank, so I put something here. However, if your instructor will mark you off for this being on the title page, you can leave this entry blank (delete the PSY 4321, but leave the command), and just make peace with the error that will happen. It won't break the document.
+\affiliation{Hendrix College}
+\course{PSYC ddd} % LaTeX gets annoyed (i.e., throws a grumble-error) if this is blank, so I put something here. However, if your instructor will mark you off for this being on the title page, you can leave this entry blank (delete the PSY 4321, but leave the command), and just make peace with the error that will happen. It won't break the document.
 \professor{Dr. Professor}  % Same situation as for the course info. Some instructors want this, some absolutely don't and will take off points. So do what you gotta.
 
 \abstract{This is the abstract for this paper, wherein the main points of the introduction, method, results, and discussion are quickly talked about. Probably in more than one sentence, though. Dare I guess, more than two? There is a page break before starting the Introduction.}
@@ -66,7 +68,7 @@ For whatever reason, it does not seem like the multi-author work \parencite[e.g.
 
 As a formatting note, the References page needs to start on a new page. This \textit{should be} handled automatically by \LaTeX{}, but it's still useful to know the format.
 
-While I have your attention before diving into the sections, something that may slip by unnoticed is the \LaTeX{} quirk about quotation marks. If you were to include a quote using the regular quotation marks, ``it will look like this.'' However, the \LaTeX{} specific way of doing it, that just gives it that little bit extra flair, is to use a double tick mark (on the tilde key up on the number row) to start the quote, and a double apostrophe to close it. That will make the quote ``look like this instead.'' They are ``fun little guys'' hugging your quote, instead of the ``more bland marks'' you get from the regular quotation marks.
+While I have your attention before diving into the sections, something that may slip by unnoticed is the \LaTeX{} quirk about quotation marks. If you were to include a quote using the regular quotation marks, "it will look like this." However, the \LaTeX{} specific way of doing it, that just gives it that little bit extra flair, is to use a double tick mark (on the tilde key up on the number row) to start the quote, and a double apostrophe to close it. That will make the quote ``look like this instead.'' They are ``fun little guys'' hugging your quote, instead of the ``more bland marks'' you get from the regular quotation marks.
 
 To close out this section, I will finally talk about the contents of the Introduction. In these sorts of papers, think of the information process in the shape of an hourglass (stay with me, it'll make sense). The general idea is that you start at the broadest point, work your way into more and more specific, until you are at the point of this paper - the theory its testing and the hypothesis. Then you stay in that specific level of detail through the Methods and Results. The Discussion starts specific (i.e., what you did or did not find), then work your way back out to the broader meaning or implications.
 
@@ -98,12 +100,12 @@ Sometimes it can be helpful to include the stimuli used in the experiment. For e
     \caption{Sample words from this hypothetical experiment.}
     \centering
     \begin{tabular}{cc} %The c's here indicate the columns will be centered
-        \hline
+        \toprule
         First word & Second word \\
-        \hline
+        \midrule
         Yeet       & Yoink       \\
         Hot        & Lit         \\
-        \hline
+        \bottomrule
     \end{tabular}
     \label{tab:table_words}
 \end{table}

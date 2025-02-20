@@ -328,16 +328,13 @@
       &= \int_{0}^{t} \mysqrt{9e^{2\tau} \cdot \left[2(1 + 0)\right]} \\
       &= \int_{0}^{t} 3e^{\tau}\mysqrt{2}\,d\tau \\
       &= 3\mysqrt{2}\int_{0}^{t} e^{\tau}\,d\tau \\
+      &= 3\mysqrt{2}(e^{t} - 1).
     \end{align*}
-    With our integral in the form \(3e^{\tau}\int_{0}^{t} \mysqrt{2}\,d\tau\), we can solve it to get:
-    \[
-      s = 3\mysqrt{2}(e^{t} - 1).
-    \]
     With \(s\), we know that \(\mb{r}(t) = \mb{r}(t(s)) = \mb{r}\), so we need to find \(t\) in terms of \(s\): 
     \begin{align*}
-      s = 3\mysqrt{2}(e^{t} - 1) \\
-      e^{t} = \dfrac{s}{3\mysqrt{2}} + 1 \\
-      t = \ln\left(\dfrac{s}{3\mysqrt{2}} + 1\right).
+      s &= 3\mysqrt{2}(e^{t} - 1) \\
+      e^{t} &= \dfrac{s}{3\mysqrt{2}} + 1 \\
+      t &= \ln\left(\dfrac{s}{3\mysqrt{2}} + 1\right).
     \end{align*}
     Finally, by replacing \(t\) with \(t(s)\) in the original equation, we can get the arc length parametrization:
     \[
@@ -432,10 +429,9 @@
       \[
         \dvecfuc{T}{t} = \sin(t)\,\bigl(\cos^2(t)+10\bigr)^{-3/2}\left\{ -\Bigl[\cos^2(t)+10\Bigr]\mathbf{i} + \cos(t)\Bigl[\cos(t)\,\mathbf{i} + \mathbf{j} + 3\,\mathbf{k}\Bigr]\right\}.
       \]
-      Inside the braces, multiply out the terms:
+      Inside the braces, multiply and combine terms:
       \begin{align*}
         \{...\} &= -\cos^2(t)\,\mathbf{i} - 10\,\mathbf{i} + \cos^2(t)\,\mathbf{i} + \cos(t)\,\mathbf{j} + 3\cos(t)\,\mathbf{k} \\
-        &= -\cos^{2}(t)\imb - 10\imb + \cos^{2}(t)\imb + \cos(t)\jmb + 3\cos(t)\kmb \\
         &= -10\imb + \cos(t)\jmb + 3\cos(t)\kmb.
       \end{align*}
       This gives us:
@@ -448,7 +444,7 @@
       \]
       Simplify inside the square root and factor:
       \[
-        ||\dvecfuc{T}{t}|| = \frac{|\sin(t)|}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \cdot \mysqrt{10}\,\mysqrt{\cos^2(t)+10}.
+        ||\dvecfuc{T}{t}|| = \frac{|\sin(t)|}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \cdot \mysqrt{10}\,(\cos^2(t)+10)^{1/2}.
       \]
       This simplifies to:
       \[
@@ -458,9 +454,9 @@
       \[
         \mb{N}(t) = \frac{\frac{\sin(t)}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \Bigl[-10\,\mathbf{i} + \cos(t)\,\mathbf{j} + 3\cos(t)\,\mathbf{k}\Bigr]}{\frac{|\sin(t)|\,\mysqrt{10}}{\cos^2(t)+10}}.
       \]
-      Notice that \(\sin(t)\) cancels out with the top-most numerator and numerator in the bottom-most denominator, and we can move the \((\cos^2(t)+10)\) term from the top numerator in the denominator to the bottom-most denominator (I hope you were able to follow that). This gives us:
+      After further simplification, we see:
       \[
-        \boxed{\mb{N}(t) = \frac{-10\mb{i} + \cos(t)\jmb + 3\cos(t)\kmb}{\mysqrt{10}\mysqrt{\cos^{2}(t) + 10}}}
+        \boxed{\mb{N}(t) = \frac{-10\mb{i} + \cos(t)\jmb + 3\cos(t)\kmb}{\mysqrt{10}\mysqrt{\cos^{2}(t) + 10}}}.
       \]
     }
     \newpage
@@ -473,7 +469,7 @@
           \imb & \jmb & \kmb \\
           \dfrac{\cos(t)}{\mysqrt{\cos^{2}(t) + 10}} & \dfrac{1}{\mysqrt{\cos^{2}(t) + 10}} & \dfrac{3}{\mysqrt{\cos^{2}(t) + 10}} \\
           \frac{-10}{\mysqrt{10}\mysqrt{\cos^{2}(t) + 10}} & \frac{\cos(t)}{\mysqrt{10}\mysqrt{\cos^{2}(t) + 10}} & \frac{3\cos(t)}{\mysqrt{10}\mysqrt{\cos^{2}(t) + 10}}
-        \end{vmatrix}
+        \end{vmatrix}.
       \]
       Thankfully, we can factor out the common term \(\frac{1}{\mysqrt{\cos^{2}(t) + 10}}\) from each vector in the cross product:
       \[
@@ -481,20 +477,23 @@
           \imb & \jmb & \kmb \\
           \cos(t) & 1 & 3 \\
           \frac{-10}{\mysqrt{10}} & \frac{\cos(t)}{\mysqrt{10}} & \frac{3\cos(t)}{\mysqrt{10}}
-        \end{vmatrix}
+        \end{vmatrix}.
       \]
       Now we can find the cross product:
       \[
       \begin{aligned}
         \frac{1}{\cos^{2}(t) + 10}\bigg[&\left(1 \cdot \frac{3\cos(t)}{\mysqrt{10}}\right) - \left(\frac{\cos(t)}{\mysqrt{10}} \cdot 3\right), \\
-        &\left(3 \cdot \frac{-10}{\mysqrt{10}}\right) - \left(\cos(t) \cdot \frac{3\cos(t)}{\mysqrt{10}}\right), \  \cos(t) \cdot \frac{\cos(t)}{\mysqrt{10}} - \left(1 \cdot \frac{-10}{\mysqrt{10}}\right) \bigg] 
+        &\left(3 \cdot \frac{-10}{\mysqrt{10}}\right) - \left(\cos(t) \cdot \frac{3\cos(t)}{\mysqrt{10}}\right), \  \left(\cos(t) \cdot \frac{\cos(t)}{\mysqrt{10}}\right) - \left(1 \cdot \frac{-10}{\mysqrt{10}}\right) \bigg].
       \end{aligned}
       \]
-      We can further simply this expression to:
+      Multiplying, we see that:
       \[
-        \boxed{\frac{1}{\cos^{2}(t) + 10}\brackett{0, \ \frac{-30 - 3\cos^{2}(t)}{\mysqrt{10}}, \ \frac{\cos^{2}(t) + 10}{\mysqrt{10}}}}
+        \frac{1}{\cos^{2}(t) + 10}\brackett{0, \ \frac{-3\bigl(\cos^{2}(t) + 10\bigr)}{\mysqrt{10}}, \ \frac{\cos^{2}(t) + 10}{\mysqrt{10}}}.
       \]
-
+      Notice \(\frac{1}{\cos^{2}(t) + 10}\) cancels with the \(\mb{j}^{\text{th}}\) and \(\mb{k}^{\text{th}}\) terms. Thus, we can further simply this expression to:
+      \[
+        \boxed{\brackett{0, \ \frac{-3}{\mysqrt{10}}, \ \frac{1}{\mysqrt{10}}}.}
+      \]
     }
   \end{enumerate}
 \end{enumerate}
