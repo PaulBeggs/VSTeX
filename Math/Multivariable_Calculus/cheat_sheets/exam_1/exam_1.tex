@@ -430,12 +430,12 @@
                     \item \cyanit{Symmetric Equation:} \(\frac{x - x_{0}}{a} = \frac{y - y_{0}}{b} = \frac{z - z_{0}}{c}\).
                     \item The \cyanit{Line Segment} from \(P\) to \(Q\): \(\mb{r}(t) = (1 - t)\mb{p} + t\mb{q}\) (where \(\mb{p},\mb{q}\) are the vector forms of \(P,Q\) and \(0 \leq t \leq 1\)).
                     \item \cyanit{Direction Vector:} \(d = \left|\frac{\mb{PM} \times \mb{v}}{\norm{v}}\right|\).
-                    \begin{itemize}
-                        \item \cyanit{Equal}: Same direction vector, share a point.
-                        \item \cyanit{Parallel}: Same direction vector, do not share a point.
-                        \item \cyanit{Intersecting}: Different direction vectors, share a point.
-                        \item \cyanit{Skew}: Different direction vectors, do not share a point.
-                    \end{itemize}
+                          \begin{itemize}
+                              \item \cyanit{Equal}: Same direction vector, share a point.
+                              \item \cyanit{Parallel}: Same direction vector, do not share a point.
+                              \item \cyanit{Intersecting}: Different direction vectors, share a point.
+                              \item \cyanit{Skew}: Different direction vectors, do not share a point.
+                          \end{itemize}
                     \item If \((x_{0},y_{0},z_{0})\) is a point on a plane, the \cyanit{Scalar Equation} would be: \(\brackett{x - x_{0}, y - y_{0}, z - z_{0}} \cdot \brackett{a,b,c} = 0 \Longrightarrow a(x - x_{0}) + b(y - y_{0}) + c(z - z_{0}) = 0\).
                 \end{itemize}
             \end{minipage}
@@ -449,42 +449,43 @@
     \begin{tikzpicture}
         \node [mybox] (box){%
             \begin{minipage}{0.46\textwidth}
-                \underline{\textbf{Definitions:}} \\
-
-                \begin{tabular}{lp{8.7cm} l}
-                    \textit{Relation:}
-                     & Defined as \(r \colon X \rightarrow Y\) if \(R \subseteq X \times Y\).                                                                                                                                                                                                                   \\
-                    \textit{Reflexive:}
-                     & If for each \(x\in X\), \(x \ R \ x\).                                                                                                                                                                                                                                                   \\
-                    \textit{Symmetric:}
-                     & If when \(a \ R \ b\), then \(a\ R \ b\).                                                                                                                                                                                                                                                \\
-                    \textit{Transitive:}
-                     & If when \(a \ R \ b\), and \(b \ R \ c\), then \(a \ R \ c\).                                                                                                                                                                                                                            \\
-                    \textit{Equivalence relation:}
-                     & Has all three above traits.                                                                                                                                                                                                                                                              \\
-                    \textit{Equivalence class:}
-                     & Because equivalence relations allow us to partition the domain, each partition is then labeled as \([a]\).                                                                                                                                                                               \\
-                    \textit{Modulo (\%):}
-                     & For two integers, \textit{a} and \textit{b}, \textit{a} is said to be equivalent to \textit{b} modulo \textit{n} if the difference between \textit{a} and \textit{b} (that is, \(a-b\) is divisible by \textit{n}. This means there exists an integer \textit{k} such that \(a-b = kn\).
-                \end{tabular} \\
-
-                \textbf{Note:} All functions are relations, but not all relations are functions. Abiding by the definition of a function, if \(x\) can be mapped to more than one \(y\)-value, the statement is not a function. Also note for the relation traits, those items are true on the basis that \(R\colon X \rightarrow X\) is a relation.
-
-                \begin{center}\textbf{Prove Modulo Is an Equivalence Class}
-                \end{center}
-                Let \(n\in \mathbb{N}\), and let \(a,b,c\in \mathbb{Z}\).
+                If each of \(f_{1},f_{2},\ldots,f_{n} \colon \R \to \R\) is a function we can then define the \cyanit{vector-valued function} \(\mathbf{r} \colon \R \to \R^{n}\) by \(\mathbf{r}(t) = \langle f_{1}(t),f_{2}(t),\ldots,f_{n}(t) \rangle\)
                 \begin{itemize}
-                    \item Is \(a\equiv a \bmod{n}\) reflexive? \(a-a = 0\), which is divisible by \textit{n}. So, Yes.
-                    \item Is \(a\equiv a \bmod{n}\) symmetric? Well, we must find out if \(a\equiv b \bmod {n}\) is equivalent to \(b\equiv a \bmod{n}\). We know that \((a-b)\) is divisible by \textit{n}, and there are no restrictions to also include that \(b- a\) is also divisible by \(n\). Yes.
-                    \item Is \(a\equiv a \bmod{n}\) transitive? Let \(a \equiv b \bmod{n}\) and \(b \equiv c \bmod{n}\). This means that \(a = b + kn\) and \(b = c + ln\) for some integers \textit{k} and \textit{l}. Substituting the second equation into the first, we find that \(a = (c + ln) + kn = c + (l + k)n\). So, \(a\equiv c \bmod{n}\), as required for transitivity.
+                    \item When \(n = 2\), we might write \(\mb{r} = \brackett{f(t),g(t)} = f(t)\hat{\imath} + g(t)\hat{\jmath}\),
+                    \item and when \(n = 3\), we might write \(\mb{r} = \brackett{f(t),g(t),h(t)} = f(t)\hat{\imath} + g(t)\hat{\jmath} + h(t)\hat{k}\).
                 \end{itemize}
-                \begin{center}\textbf{Integers Modulo \textit{n}}
-                \end{center}
-                The set of equivalence classes form by this equivalence relation is called the \textit{integers modulo n}, and is denoted as \(\mathbb{Z} /n\). We use \([k]\) to denote the equivalence class of \([k]\). For example, elements of \(\mathbb{Z} \ 3\) are \([0] = \{\dots, -9, -8, -6, -3, 0, 3, 6, 9,\dots \}, \text{ and } [1] = \{\dots, -8,-5,-2,1,4,7,10, \dots \}\).
+                \textbf{Note:} Deriving and integrating vector-valued functions follow the same rules as regular derivates.
+                \begin{itemize}
+                    \item \cyanit{Principle unit tangent vector} \(\mb{T}(t)\): \(\mb{T}(t) = \frac{\mb{r}'(t)}{||\dvecfuc{r}{t}||}\).
+                          \begin{itemize}
+                              \item This vector, of length 1, points in the tangent direction of the curve.
+                          \end{itemize}
+                    \item \cyanit{Unit Normal Vector} \(\mb{N}\): \(\vecfuc{N}{t} = \frac{\dvecfuc{T}{t}}{||\dvecfuc{T}{t}||}.\)
+                          \begin{itemize}
+                              \item This vector points in the direction the curve is turning.
+                          \end{itemize}
+                    \item \cyanit{Binormal Vector} \(\mb{B}\): \(\vecfuc{B}{t} = \vecfuc{T}{t} \times \vecfuc{N}{t}.\)
+                \end{itemize}
+                \subsubsection*{Arc Length Parameterization}
+                We can define the \cyanit{arc length parameterization} of a curve \(C\) by:
+                \begin{itemize}
+                    \item Define the arc length \(s(t) = \int_{0}^{t} ||\dvecfuc{r}{\tau}||\,d\tau = \int_{0}^{t} \mysqrt{\left[f'(\tau)\right]^{2} + \left[g'(\tau)\right]^{2}}\,d\tau.\) (Where \(f(\tau), g(\tau)\) correspond to the \(x,y\) components of \(\mb{r}(t)\)).
+                    \item Solving, if possible, the resulting expression for \(t\) as a function of \(s\).
+                    \item Rewriting \(\mb{r}(t) = \mb{r}(t(s)) = \mb{r}\), so that the curve is written as a function of its length, from a given starting point.
+                \end{itemize}
+                \subsubsection*{Curvature (\& Oscillating Circle)}
+                \textbf{Steps for Finding Oscillating Circle Equation}
+                \begin{enumerate}
+                    \item Get values for your curvature formulas.
+                    \item Find the radius (\(R = \frac{1}{\kappa}\)).
+                    \item Find the center by first finding the normal vector at \(x = \ldots\).  
+                \end{enumerate}
+                For all \(\mb{r} \colon \ \kappa = \frac{||\mb{T}'(t)||}{||\mb{r}'(t)||}\); for \(\R^{3}\): \(\kappa = \frac{||\mb{r}'(t) \times \mb{r}''(t)||}{||\mb{r}'(t)||^{3}}\); if \(y = f(x)\): \(\kappa = \frac{|y''(x)|}{[1 + (y'(x)^{2})]^{3/2}}\) \\
+
             \end{minipage}
         };
         %------------ Sum and Average of Independent Random Variables ---------------------
-        \node[fancytitle, right=10pt] at (box.north west) {2.4 Relations};
+        \node[fancytitle, right=10pt] at (box.north west) {Chapter 3: Vector-Valued Functions};
     \end{tikzpicture}
 
 
