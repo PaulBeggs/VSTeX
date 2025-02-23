@@ -1,0 +1,426 @@
+\documentclass[11pt]{article}
+
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+\usepackage{amsmath,amsthm} 
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum} 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.markings}
+
+\setlength{\parindent}{0pt}
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=black, % default color, will be overridden in custom commands
+  backgroundcolor=draculabg, % Needed for Dracula theme
+  fontcolor=draculafg, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[left=0.5in,right=0.5in,top=1in,bottom=1in]{geometry}
+% \usepackage{setspace}
+% \linespread{1}
+\usepackage{listings}
+\usepackage{minted}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+\graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+% \renewcommand{\theenumi}{\arabic{enumi}} 
+% \renewcommand{\labelenumi}{\theenumi.}
+
+\title{Multivariable Calculus Take Home Exam I}
+\author{Paul Beggs}
+\date{\today}
+
+%%% Custom Comands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item (6 points) Consider the parametric curve defined by \(x(t) = t^{2} + 3t\), \(y(t) = \sin(\pi t)\), for \(0 \leq t \leq 1\). Determine the area between this curve and the \(x\)-axis. Give your answer as exact, and it might be useful to use Integration by Parts for some of this!
+
+        \sol{
+          To find the area between the curve and the \(x\)-axis, we can use:
+          \[
+            \text{Area} = \int_{0}^{1} y(t)\,x'(t)\,dt
+            = \int_{0}^{1} \sin(\pi t)\,\bigl(2t + 3\bigr)\,dt.
+          \]
+          Split this into two integrals:
+          \[
+            \int_{0}^{1} \sin(\pi t)\,(2t)\,dt \quad+\quad \int_{0}^{1} 3\,\sin(\pi t)\,dt.
+          \]
+          For \(\int_{0}^{1} 3\,\sin(\pi t)\,dt\), we get:
+          \[
+            3 \int_{0}^{1} \sin(\pi t)\,dt
+            = \frac{3}{\pi} \Bigl[ -\cos(\pi t) \Bigr]_{0}^{1}
+            = \frac{3}{\pi} \bigl( -\cos(\pi) - (-\cos(0)) \bigr)
+            = \frac{3}{\pi} \bigl( -(-1) - (-1) \bigr)
+            = \frac{3}{\pi} (1 + 1)
+            = \frac{6}{\pi}.
+          \]
+          For \(\int_{0}^{1} 2t\,\sin(\pi t)\,dt\), use integration by parts with \(u=2t\) and \(dv=\sin(\pi t)dt\). We get \(du=2\,dt\) and \(v=-\tfrac{1}{\pi}\cos(\pi t)\). Then:
+          \[
+            \int u\,dv = uv \biggr|_{0}^{1} - \int v\,du.
+          \]
+          Evaluating,
+          \[
+            2t \cdot \Bigl(-\tfrac{1}{\pi}\cos(\pi t)\Bigr) \Biggr|_{0}^{1}
+            = -\tfrac{2}{\pi} \bigl( 1 \cdot \cos(\pi) - 0 \bigr)
+            = -\tfrac{2}{\pi} \bigl( -1 \bigr)
+            = \tfrac{2}{\pi},
+          \]
+          and
+          \[
+            -\int_{0}^{1} \Bigl(-\tfrac{1}{\pi}\cos(\pi t)\Bigr) \cdot 2\,dt
+            = \tfrac{2}{\pi} \int_{0}^{1} \cos(\pi t)\,dt
+            = \tfrac{2}{\pi} \times \frac{1}{\pi} \Bigl[ \sin(\pi t) \Bigr]_{0}^{1}
+            = \tfrac{2}{\pi^2} \bigl( \sin(\pi) - \sin(0) \bigr)
+            = 0.
+          \]
+          Summing up, \(\int_{0}^{1} 2t\,\sin(\pi t)\,dt = \tfrac{2}{\pi}\). Therefore, the total area is:
+          \[
+            \frac{2}{\pi} + \frac{6}{\pi}
+            = \frac{8}{\pi}.
+          \]
+        
+        }
+
+  \item (6 points) Determine an equation, in symmetric form, for the line of intersection of the two planes with equations \(4x + 2y - z + 5 = 0\) and \(3x - y + z + 1 = 0\).
+
+        \sol{
+          The direction vector for the line is found by taking the cross product of the normals:
+          \[
+            \langle 4,2,-1\rangle \times \langle 3,-1,1\rangle = \langle 1, -7, -10\rangle.
+          \]
+          Next, we find a point on the line by solving the system. Setting \(x=0\) gives
+          \[
+            2y - z + 5 = 0,\quad -y + z + 1 = 0.
+          \]
+          From the second equation \(z=y-1\). Substitute into the first to get \(2y - (y-1) + 5=0\). This yields \(y=-6\) and \(z=-7\). So a point on the line is \((0, -6, -7)\).
+
+          Parametric form:
+          \[
+            (x,y,z) = (0,-6,-7) + t\,\langle 1, -7, -10\rangle.
+          \]
+          Symmetric form:
+          \[
+            \frac{x-0}{1} \;=\; \frac{y+6}{-7} \;=\; \frac{z+7}{-10}.
+          \]
+        }
+  \item (4 points each) Let \(\mb{r}(t) = \sin(t)\mb{i} + 7t\mb{j} - \cos(t)\mb{k}\) represent the position of a particle at time \(t\).
+        \begin{enumerate}
+          \item Find the velocity vector, \(\mb{v}(t) = \dvecfuc{r}{t}\).
+
+                \sol{
+                  \[
+                    \mb{v}(t) = \frac{d}{dt}\bigl(\sin(t)\bigr)\,\mb{i}
+                                + \frac{d}{dt}\bigl(7t\bigr)\,\mb{j}
+                                - \frac{d}{dt}\bigl(\cos(t)\bigr)\,\mb{k}
+                              = \cos(t)\,\mb{i} + 7\,\mb{j} + \sin(t)\,\mb{k}.
+                  \]
+                }
+          \item What total distance is travelled by the particle over the time interval \([0,\,4]\)? Find this as an exact value -- though, you are welcome to check the integral with your calculator.
+
+                \sol{
+                  The speed is \(\|\mb{v}(t)\| = \sqrt{\cos^2(t)+7^2+\sin^2(t)} = \sqrt{49 + (\cos^2(t)+\sin^2(t))} = \sqrt{50} = 5\sqrt{2}.\)
+
+                  Hence, the distance travelled over \([0,4]\) is
+                  \[
+                    \int_{0}^{4} \|\mb{v}(t)\|\,dt \;=\; \int_{0}^{4} 5\sqrt{2}\,dt 
+                    = 5\sqrt{2} \times 4 = 20\sqrt{2}.
+                  \]
+                }
+          \item Find the unit tangent vector, \(\mb{T}(t)\).
+
+                \sol{
+                  \[
+                    \mb{T}(t) = \frac{\mb{v}(t)}{\|\mb{v}(t)\|}
+                              = \frac{\langle \cos(t),\,7,\,\sin(t)\rangle}{5\sqrt{2}}
+                              = \Bigl(\,\frac{\cos(t)}{5\sqrt{2}},\,\frac{7}{5\sqrt{2}},\,\frac{\sin(t)}{5\sqrt{2}} \Bigr).
+                  \]
+                }
+          \item Find the unit normal vector, \(\mb{N}(t)\).
+
+                \sol{
+                  We can compute \(\mb{N}(t)\) by taking \(\mb{T}'(t)\) and dividing by its magnitude. In practice, you would differentiate each component of \(\mb{T}(t)\), then normalize. The detailed expression for \(\mb{T}'(t)\) has terms involving \(\sin(t)\) and \(\cos(t)\), and care must be taken in simplification:
+
+                  \[
+                    \mb{T}'(t) = \Bigl(\,-\frac{\sin(t)}{5\sqrt{2}},\,0,\,\frac{\cos(t)}{5\sqrt{2}}\Bigr), 
+                  \]
+                  and 
+                  \(\|\mb{T}'(t)\| = \frac{1}{5\sqrt{2}}\sqrt{\sin^2(t)+\cos^2(t)} = \frac{1}{5\sqrt{2}}.\)
+
+                  Thus,
+                  \[
+                    \mb{N}(t) = \frac{\mb{T}'(t)}{\|\mb{T}'(t)\|}
+                              = \bigl(-\sin(t),\;0,\;\cos(t)\bigr).
+                  \]
+                }
+        \end{enumerate}
+  \item (4 points each) Consider the vector valued function \(\vecfuc{r}{t} = \brackett{f(t),g(t)}\). Let \(\alpha\) be a fixed number and define
+        \[
+          \mb{r}_{\alpha}(t) = \brackett{f(t)\cos(\alpha) - g(t)\sin(\alpha),\, f(t)\sin(\alpha) + g(t)\cos(\alpha)}.
+        \]
+        \begin{enumerate}
+          \item Show that for any \(t\), \(||\mb{r}(t)|| = ||\mb{r}_{\alpha}(t)||\).
+
+                \sol{
+
+                }
+          \item Show that for any \(t\), \(||\mb{r}'(t)|| = ||\mb{r}_{\alpha}'(t)||\). [Hint: Remember that \(\alpha\) is a constant!]
+
+                \sol{
+
+                }
+          \item Determine \(\vecfuc{T}{t}\) and \(\mb{T}_{\alpha}(t)\), the unit tangent vectors for \(\mb{r}\) and \(\mb{r}_{\alpha}\), respectively.
+
+                \sol{
+
+                }
+          \item Find the angle \(\theta\) between the unit tangent vectors for \(\vecfuc{r}{t}\) and \(\mb{r}_{\alpha}(t)\).
+
+                \sol{
+
+                }
+        \end{enumerate}
+  \item (3 points each) Suppose that each of \(\mb{u}\) and \(\mb{v}\) are unit vectors and are orthogonal. Let \(r\) be a fixed positive number and define the vector-valued function \(\mb{r}(t) = r \cos(t)\mb{u} + r \sin(t)\mb{v}\).
+        \begin{enumerate}
+          \item Explain why there is a single plane that contains \(\vecfuc{r}{t}\) for each choice of \(t\).
+
+                \sol{
+
+                }
+          \item Determine \(||\vecfuc{r}{t}||\).
+
+                \sol{
+
+                }
+          \item Determine each of \(\proj_{\mb{u}}\mb{r}(t)\) and \(\proj_{\mb{v}}\mb{r}(t)\).
+
+                \sol{
+
+                }
+          \item What does this tell you about the curve generated by \(\mb{r}(t)\)?
+     
+    \sol{
+      
+    }
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{document}

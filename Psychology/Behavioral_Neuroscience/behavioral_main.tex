@@ -113,14 +113,19 @@
     \tikz[baseline=-.75ex]{\node[circle, fill=#1, inner sep=1.5pt] {};}%
 }
 
+\setlistdepth{9}
+
 % Create a custom list environment
-\newlist{coloredlist}{itemize}{6}
+\newlist{coloredlist}{itemize}{9}
 \setlist[coloredlist,1]{label=\custombullet{firstlevel}}
 \setlist[coloredlist,2]{label=\custombullet{secondlevel}}
 \setlist[coloredlist,3]{label=\custombullet{thirdlevel}}
 \setlist[coloredlist,4]{label=\custombullet{fourthlevel}}
 \setlist[coloredlist,5]{label=\custombullet{fifthlevel}}
 \setlist[coloredlist,6]{label=\custombullet{sixthlevel}}
+\setlist[coloredlist,7]{label=\custombullet{seventhlevel}}
+\setlist[coloredlist,8]{label=\custombullet{eighthlevel}}
+\setlist[coloredlist,9]{label=\custombullet{ninthlevel}}
 
 
 %------- %

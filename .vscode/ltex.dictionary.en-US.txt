@@ -106,3 +106,4 @@ aloneness
 Zygomatic
 zygomatic
 Electrooculogram
+hyperorality
