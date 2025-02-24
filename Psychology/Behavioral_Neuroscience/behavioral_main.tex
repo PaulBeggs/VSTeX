@@ -4,7 +4,7 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \documentclass[12pt, oneside]{book}
-\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+% \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
 % \usepackage[T1]{fontenc}
 
 
@@ -19,17 +19,22 @@
 \usepackage{listings}
 \usepackage{pdflscape}
 \usepackage{tikz}
-\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning,decorations.pathmorphing}
 \usepgflibrary{shadings}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{mathrsfs}
 \usepackage{changepage}
 \usepackage{multicol}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multirow}
 \usepackage{slashed}
 \usepackage{enumerate}
 \usepackage{booktabs}
+\usepackage{tasks}
 \usepackage{enumitem}
 \usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+
 
 
 %%% Define new colors %%%
@@ -143,12 +148,12 @@
 }
 
 \usepackage[Glenn]{fncychap}
-\ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
-\ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
-\ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
-% \ChTitleVar{\bfseries\scshape\color{black}}
-% \ChNumVar{\large\selectfont\color{black}}
-% \ChNameVar{\large\color{black}}
+% \ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
+% \ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
+% \ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
+\ChTitleVar{\bfseries\scshape\color{black}}
+\ChNumVar{\large\selectfont\color{black}}
+\ChNameVar{\large\color{black}}
 \usepackage{xpatch}
 
 % \xpatchcmd{\DOCH}
@@ -269,6 +274,14 @@
 	urlcolor=horange,
 }
 
+\newcommand{\squigglyline}{%
+  \noindent
+  \tikz[baseline=-0.5ex]{
+    \draw[decorate, decoration={snake, amplitude=0.5mm, segment length=3mm}] 
+      (0,0) -- (\dimexpr\linewidth-.46in\relax,0);
+  }%
+}
+
 
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
@@ -276,8 +289,8 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \fancyhead[R]{\leftmark}
 \fancyhead[L]{Hendrix College}
-% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
-\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
+\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
+% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
@@ -296,7 +309,18 @@
 
 \newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
 
-
+%% Definitions %%
+\newtcolorbox{wordbox}[1][]{%
+enhanced,
+sharp corners=downhill,
+    colframe=black,
+    colback=gray!15,
+    coltitle=black,
+    title={\large \textbf{Choices}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=white},
+    #1
+}
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -338,58 +362,58 @@
 
 
 
-\begin{titlepage}
-    \begin{center}
+% \begin{titlepage}
+%     \begin{center}
 
-        \vspace*{-2cm}
-        % \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
-        \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
-        \vfill
+%         \vspace*{-2cm}
+%         \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
+%         % \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
+%         \vfill
 
-        % Horizontal line above the title in 'horange' color
-        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+%         % Horizontal line above the title in 'horange' color
+%         \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
-        \vspace{2em}
+%         \vspace{2em}
 
-        {\huge \textbf{\titlestandin}}
+%         {\huge \textbf{\titlestandin}}
 
-        \vspace{1em} % Space between the title and the bottom line
+%         \vspace{1em} % Space between the title and the bottom line
 
-        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+%         \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
-        \vspace*{1\baselineskip}
+%         \vspace*{1\baselineskip}
 
-        {\LARGE \textbf{\cussubtitle}}
+%         {\LARGE \textbf{\cussubtitle}}
 
-        \begin{large}
-            \vspace*{2\baselineskip}
+%         \begin{large}
+%             \vspace*{2\baselineskip}
 
-            \textit{Start}  \\[1ex]
-            {\scshape \startdate} \\[0.3\baselineskip] % Year published
+%             \textit{Start}  \\[1ex]
+%             {\scshape \startdate} \\[0.3\baselineskip] % Year published
 
-            \vspace*{1\baselineskip}
+%             \vspace*{1\baselineskip}
 
-            \emph{Author} \\[1ex]
-            %Submitted by \\[\baselineskip]
-            {\Large Paul Beggs \\ \par} % Editor list
-            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+%             \emph{Author} \\[1ex]
+%             %Submitted by \\[\baselineskip]
+%             {\Large Paul Beggs \\ \par} % Editor list
+%             {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
 
-            \vspace*{1\baselineskip}
+%             \vspace*{1\baselineskip}
 
-            \textit{Instructor} \\[1ex] % Tagline(s) or further description
-            \professor
+%             \textit{Instructor} \\[1ex] % Tagline(s) or further description
+%             \professor
 
-            \vspace*{1\baselineskip}
+%             \vspace*{1\baselineskip}
 
-            \textit{End}\\[1ex]
-            {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
+%             \textit{End}\\[1ex]
+%             {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
 
-            \thispagestyle{empty}
+%             \thispagestyle{empty}
 
-        \end{large}
-    \end{center}
-\end{titlepage}
-\pagebreak
+%         \end{large}
+%     \end{center}
+% \end{titlepage}
+% \pagebreak
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -399,44 +423,53 @@
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-% Helper command to fix header for double paged ToC.
-% Temporarily adjust section marks for Table of Contents
-\begin{spacing}{1} % Can change spacing between entries in TOC
-    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} % Can rename here
-    \markboth{}{} % Clear the header marks for TOC
-    \pagestyle{fancy} % Ensure fancy style is active
-    \fancyhead[R]{Table of Contents} % Set TOC-specific header manually
-    \tableofcontents
-    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
-\end{spacing}
+% % Helper command to fix header for double paged ToC.
+% % Temporarily adjust section marks for Table of Contents
+% \begin{spacing}{1} % Can change spacing between entries in TOC
+%     \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} % Can rename here
+%     \markboth{}{} % Clear the header marks for TOC
+%     \pagestyle{fancy} % Ensure fancy style is active
+%     \fancyhead[R]{Table of Contents} % Set TOC-specific header manually
+%     \tableofcontents
+%     \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+% \end{spacing}
 
-% Reset the headers to default for the rest of the document
-\fancyhead[R]{\leftmark}
+% % Reset the headers to default for the rest of the document
+% \fancyhead[R]{\leftmark}
 
 
 
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\setcounter{chapter}{0}
-\chapter{Origins of Behavioral Neuroscience}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_1}
+% \setcounter{chapter}{0}
+% \chapter{Origins of Behavioral Neuroscience}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_1}
 
-\setcounter{chapter}{1}
-\chapter{Structure and Functions of Cells of the Nervous System}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_2}
+% \setcounter{chapter}{1}
+% \chapter{Structure and Functions of Cells of the Nervous System}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_2}
 
-\setcounter{chapter}{2}
-\chapter{Structure of the Nervous System}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_3}
+% \setcounter{chapter}{2}
+% \chapter{Structure of the Nervous System}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_3}
 
-\chapter*{Lab Practical 1}
-\addcontentsline{toc}{chapter}{Lab Practical 1}
+% \chapter*{Lab Practical 1}
+% \addcontentsline{toc}{chapter}{Lab Practical 1}
+% \vspace*{-0.25in}
+% \input{Lab/lab_practical_1}
+
+
+\chapter*{Exam 1b}
+\fancyhead[R]{Exam 1b}
+\addcontentsline{toc}{chapter}{Exam 1b}
 \vspace*{-0.25in}
-\input{Lab/lab_practical_1}
+\input{Chapters/behavioral_quiz_1b}
+
+
 
 
 
