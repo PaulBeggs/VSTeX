@@ -102,6 +102,8 @@
 \definecolor{xrainbow10}{HTML}{eb751f}
 \definecolor{xrainbow11}{HTML}{ff9709}
 
+\definecolor{brainbackground}{HTML}{0d1f47}
+
 
 \colorlet{firstlevel}{xrainbow1}
 \colorlet{secondlevel}{xrainbow2}
@@ -322,6 +324,8 @@ sharp corners=downhill,
     #1
 }
 
+\let\cleardoublepage\clearpage
+
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -442,32 +446,45 @@ sharp corners=downhill,
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-% \setcounter{chapter}{0}
-% \chapter{Origins of Behavioral Neuroscience}
-% \vspace*{-0.25in}
-% \input{Chapters/behavioral_Ch_1}
+\setcounter{chapter}{0}
+\chapter{Origins of Behavioral Neuroscience}
+\vspace*{-0.25in}
+\input{Chapters/behavioral_Ch_1}
 
 % \setcounter{chapter}{1}
 % \chapter{Structure and Functions of Cells of the Nervous System}
 % \vspace*{-0.25in}
 % \input{Chapters/behavioral_Ch_2}
+\newpage
+\vspace*{\stretch{1}}
+\fancyhead[R]{}
 
-% \setcounter{chapter}{2}
-% \chapter{Structure of the Nervous System}
-% \vspace*{-0.25in}
-% \input{Chapters/behavioral_Ch_3}
+\begin{center}
+    \textsc{SKIP CHAPTER 2} \\
+    Most of the content from Chapter 2 has been blended with Chapter 3. \\
+\end{center}
+\vspace*{\stretch{1}}
+\newpage
 
-% \chapter*{Lab Practical 1}
-% \addcontentsline{toc}{chapter}{Lab Practical 1}
-% \vspace*{-0.25in}
-% \input{Lab/lab_practical_1}
-
-
-\chapter*{Exam 1b}
-\fancyhead[R]{Exam 1b}
-\addcontentsline{toc}{chapter}{Exam 1b}
+\setcounter{chapter}{2}
+\chapter{Structure of the Nervous System}
 \vspace*{-0.25in}
-\input{Chapters/behavioral_quiz_1b}
+\input{Chapters/behavioral_Ch_3}
+
+\chapter*{Lab Practical 1}
+\addcontentsline{toc}{chapter}{Lab Practical 1}
+\vspace*{-0.25in}
+\input{Lab/lab_practical_1}
+
+
+
+% \chapter*{Exam 1b}
+% \fancyhead[R]{Exam 1b}
+% \addcontentsline{toc}{chapter}{Exam 1b}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_quiz_1b}
+
+
 
 
 
