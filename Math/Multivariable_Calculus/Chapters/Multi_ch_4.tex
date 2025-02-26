@@ -1,0 +1,130 @@
+\section*{4.1-4.3 Functions of Several Variables}
+\setcounter{section}{1}
+A \textit{scalar function} is a function \(f \colon \R^{n} \to \R\). This is in some sense a reverse of a parametric function. Parametric functions take in a single real variable \(t\) and output an answer of multiple variable (which we typically interpreted as a vector). A scalar function takes in multiple independent variables (typically interpreted as a point in \(\R^{n}\)) and outputs a single real variable.
+
+\subsubsection{Notation and Graphs}
+
+When \(f \colon \R^{2} \to \R\), we can write \(z = f(x, y)\). For each point \((x, y)\) in the domain of \(f\), we can interpret \(z\) as a height, so that the set of points \((x, y, z)\) which satisfy \(z = f(x, y)\) form a surface in \(\R^{3}\). You can graph this in GeoGebra using \url{geogebra.com/3d}. \\
+
+When \(f \colon \R^{3} \to \R\), we often write \(w = f(x, y, z)\). Then, the point \((x, y, z)\) is in the domain and \(w\) is still a height, though since the graph lives we are in \(\R^{4}\), we cannot draw it in a simple way.
+
+\subsubsection{Contour Plots}
+
+Let \(f \colon \R^{2} \to \R\) be a function. The graph is a surface in \(\R^{3}\), but often it can be difficult to show this on paper. For a given \(z_{0} \in \R\) a \textit{level curve} consists of all points \((x, y) \in \R^{2}\) for which \(f(x, y) = z_{0}\). If we think of the function \(f\) as describing a height at a function of two-dimension position, a level curve is the set of all points with a particular given height. \\
+
+A \textit{contour plot} consists of a collection of level curves – typically, we select some number of equally spaced \(\{z_{1}, z_{2}, \ldots, z_{n}\}\) and build the level curves for each. This gives a “topographical map” of the function \(f\).
+
+\subsection{Limits}
+
+\subsubsection{Formal Definition of \(\lim_{(x, y) \to (a, b)} f(x, y)\)}
+
+Let \(f \colon \R^{2} \to \R\), \((a, b) \in \R^{2}\), and \(L \in \R\). The statement that \(f\) has limit \(L\) as \((x, y)\) approaches \((a, b)\) means that for each choice of \(\epsilon > 0\), there exists \(\delta > 0\) such that for all \((x, y) \neq (a, b)\) within a disk of radius \(\delta\), centered at \((a, b)\), then
+
+\[
+|f(x, y) - L| < \epsilon.
+\]
+
+Essentially, this says that the limit exists whenever we can make the output from \(f\) as close to \(L\) as we’d like by choosing \((x, y)\) sufficiently close to \((a, b)\). \\
+
+In Calculus I, you showed that a limit \(\lim_{x \to a} f(x)\) exists if and only if the left and right hand limits both exist and match. Basically, you showed that no matter if you approach \(a\) from the left or from the right, you always get the same answer. The same idea applies here, but there is an important complication: We need to check every possible path into the point \((a, b)\) – and rather than just two, there are infinitely many paths! \\
+
+In general, there is not a simple recipe that will work. You can try various combinations of paths until something goes wrong. For practice set/exam purposes, I will always tell you that the limit does not exist, and ask you to prove it. Showing that a limit does exist is a completely different procedure – just because two paths happen to produce the same answer does not prove that all do. \\
+
+Problem \#4 on Practice Set \#3 will ask you to show a limit exists. It provides step-by-step instructions and this is the only time I will ask you to do this.
+
+\subsubsection{Limit Laws}
+
+The basic rules are all the same. Suppose that \(a, b, c \in \R\) and \(f, g \colon \R^{2} \to \R\) and that \(\lim_{(x, y) \to (a, b)} f(x, y) = L\) and \(\lim_{(x, y) \to (a, b)} g(x, y) = M\).
+
+\begin{multicols}{2}
+    \begin{itemize}
+        \item \(\lim_{(x, y) \to (a, b)} c = c\)
+        \item \(\lim_{(x, y) \to (a, b)} x = a\)
+        \item \(\lim_{(x, y) \to (a, b)} y = b\)
+        \item \(\lim_{(x, y) \to (a, b)} [f(x, y) + g(x, y)] = L + M\)
+        \item \(\lim_{(x, y) \to (a, b)} [cf(x, y)] = cL\)
+    \end{itemize}
+\end{multicols}
+\vspace*{-0.5cm}
+\begin{itemize}
+    \item if \(f\) has a single, simple algebraic definition and \((a, b)\) is in the domain, then\\ 
+    \(\lim_{(x, y) \to (a, b)} f(x, y) = f(a, b)\).
+\end{itemize}
+
+\subsection{Continuity}
+
+A function \(f \colon \R^{2} \to \R\) is continuous at \((a, b) \in \R^{2}\) provided that \(\lim_{(x, y) \to (a, b)} f(x, y)\) exists and is equal in value to \(f(a, b)\). This is exactly our usual definition of continuity from Calculus I again – and there is nothing special here about being in two dimensions. \\
+
+All of the usual algebraic functions (polynomials, root functions, trig functions, exponentials, and logarithms) and their combinations by addition, subtraction, multiplication, division, exponentiation, and composition are continuous everywhere in their domains.
+
+\subsection{Partial Derivatives}
+
+Suppose \(f \colon \R^{n} \to \R\) is a scalar function. Then, the \cyanit{partial derivative} of \(f\) with respect to \(x_{i}\) is
+\[
+\dfrac{\partial f}{\partial x_{i}} = \lim_{h \to 0} \dfrac{f(x_{1}, x_{2}, \ldots, x_{i} + h, \ldots, x_{n}) - f(x_{1}, x_{2}, \ldots, x_{i}, \ldots, x_{n})}{h},
+\]
+if this limit exists. \\
+
+That is, we hold all other variables constant and take the derivative as though \(x_{i}\) is the only variable. Just like in Calculus I, the partial derivative is a rate of change – it measures the ratio of how much the output of \(f\) changes relative to a small change in \(x_{i}\).
+
+\subsubsection{Notation}
+
+Suppose that \(f\) is a function and \(x\) is one of its variables. Then, we denote the partial derivative of \(f\) with respect to \(x\) by any of:
+\begin{itemize}
+    \item Leibnitz/Condorcet Notation: \(\dfrac{\partial f}{\partial x}\)
+    \item Jacobi Notation: \(f_{x}\)
+    \item Euler Operation Notation: \(D_{x}f\)
+\end{itemize}
+Higher order derivatives are notated as:
+\begin{itemize}
+    \item Leibnitz/Condorcet Notation: \(\dfrac{\partial^{n} f}{\partial x^{n}}\)
+    \item Jacobi Notation: \(f_{xxx\ldots x}\)
+    \item Euler Operation Notation: \(D_{n}f\)
+\end{itemize}
+
+\subsection{Mixed Partials}
+
+Given a function \(f \colon \R^{2} \to \R\) we can determine the \cyanit{mixed partial derivative} of \(f\) with respect to \(x\) and then \(y\). In Leibnitz notation, this would be
+\[
+\dfrac{\partial}{\partial y} \left( \dfrac{\partial f}{\partial x} \right) \quad \text{or in Jacobi notation} \quad f_{xy}.
+\]
+
+\subsubsection{Clairaut’s Theorem}
+
+Suppose that \(f \colon \R^{2} \to \R\) is defined on an open disk \(D\) containing the point \((a, b)\). If each of \(f_{xy}\) and \(f_{yx}\) are continuous on \(D\), then \(f_{xy}(a, b) = f_{yx}(a, b)\). \\
+
+That is, for pretty much any function you’ll even encounter, order does not matter for the mixed partial derivatives! This is especially nice, since notationally, \(\dfrac{\partial^{2} f}{\partial x \partial y} = f_{yx}\) and \(\dfrac{\partial^{2} f}{\partial y \partial x} = f_{xy}\), and who wants to worry about keeping up with that!
+
+\newpage
+
+\setcounter{section}{3}
+
+\section{Tangent Planes}
+
+\subsection{Tangent Lines}
+
+For a single-variable differentiable function \(f \colon \R \to \R\), in Calculus I we defined the \cyanit{tangent line} at \(x = x_{0}\) as the unique line
+\[
+y = f'(x_{0})(x - x_{0}) + f(x_{0}).
+\]
+This is the line which most closely matches the graph of \(y = f(x)\) at the desired point. Functions which have tangent lines are said to be “smooth” or “locally linear.”
+
+\subsection{Tangent Planes}
+
+For functions \(f \colon \R^{2} \to \R\) we have a similar idea. If the surface generated by such a function has no sharp corners or edges, you might see that as you zoom in, the surface becomes flatter and flatter – and will eventually resemble a plane. In fact, we define the \cyanit{tangent plane} as the unique plane at \((x, y) = (x_{0}, y_{0})\) which satisfies
+\[
+z = f(x_{0}, y_{0}) + f_{x}(x_{0}, y_{0})(x - x_{0}) + f_{y}(x_{0}, y_{0})(y - y_{0}).
+\]
+
+\subsection{Linearizations}
+
+Recall from Calculus I that if \(f\) is differentiable at \(x_{0}\) and \(x\) is close to \(x_{0}\) then
+\[
+f(x) \approx f(x_{0}) + f'(x_{0})(x - x_{0}).
+\]
+
+This is the \cyanit{linear approximation} of \(f\) at \(x_{0}\). In the same way, if \(f \colon \R^{2} \to \R\) is differentiable at \((x_{0}, y_{0})\) and \((x, y)\) is near \((x_{0}, y_{0})\), then
+\[
+f(x, y) \approx f(x_{0}, y_{0}) + f_{x}(x_{0}, y_{0})(x - x_{0}) + f_{y}(x_{0}, y_{0})(y - y_{0}).
+\]
+This is the \cyanit{linearization} of \(f\) at \((x_{0}, y_{0})\).
