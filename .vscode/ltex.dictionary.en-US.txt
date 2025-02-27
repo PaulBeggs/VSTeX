@@ -108,3 +108,7 @@ zygomatic
 Electrooculogram
 hyperorality
 pachymenginges
+Oligodendrocytes
+Astrocytes
+Ependymal
+Glia

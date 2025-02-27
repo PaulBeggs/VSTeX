@@ -291,8 +291,8 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \fancyhead[R]{\leftmark}
 \fancyhead[L]{Hendrix College}
-\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
-% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
+% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
+\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
@@ -475,20 +475,31 @@ sharp corners=downhill,
 \vspace*{-0.25in}
 \input{Chapters/behavioral_Ch_3}
 
-\chapter*{Lab Practical 1}
-\addcontentsline{toc}{chapter}{Lab Practical 1}
+\setcounter{chapter}{5}
+\chapter{How Neurons Process Information}
 \vspace*{-0.25in}
-\input{Lab/lab_practical_1}
+\input{Chapters/behavioral_Ch_6}
 
-\chapter*{Exam 1b}
-\fancyhead[R]{Exam 1b}
-\addcontentsline{toc}{chapter}{Exam 1b}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_quiz_1b}
+% \chapter*{Lab Practical 1}
+% \addcontentsline{toc}{chapter}{Lab Practical 1}
+% \vspace*{-0.25in}
+% \input{Lab/lab_practical_1}
 
-\chapter*{Behavioral Lab}
+% \chapter*{Exam 1b}
+% \fancyhead[R]{Exam 1b}
+% \addcontentsline{toc}{chapter}{Exam 1b}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_quiz_1b}
+
+\chapter*{Exam 2}
+\fancyhead[R]{Exam 2}
+\addcontentsline{toc}{chapter}{Exam 2}
 \vspace*{-0.25in}
-\input{Chapters/Behavioral_Lab}
+\input{Chapters/behavioral_quiz_2}
+
+% \chapter*{Behavioral Lab}
+% \vspace*{-0.25in}
+% \input{Chapters/Behavioral_Lab}
 
 
 
