@@ -112,3 +112,4 @@ Oligodendrocytes
 Astrocytes
 Ependymal
 Glia
+Electrodermal
