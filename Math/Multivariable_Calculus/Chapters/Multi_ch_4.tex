@@ -209,3 +209,174 @@ z = 0, \text{ defines a curve for } x, y
 \dfrac{dy}{dx} = -\dfrac{\partial f}{\partial x} \cdot \dfrac{\partial f}{\partial y}.
 \]
 This gives the same answer as the Calculus I \cyanit{implicit differentiation} procedure.    
+
+\newpage
+
+\section{Directional Derivatives and the Gradient}
+
+The function \(z = f(x, y)\) defines a 2-dimensional surface in \(\R^{3}\). The values of \(\dfrac{\partial z}{\partial x}\) and \(\dfrac{\partial z}{\partial y}\) tell us about the rate of change of \(z\) relative to the two independent (and orthogonal) directions \(x\) and \(y\). What if we want to know about the rate of change in some other direction? \\
+
+Let \(v\) be a vector in the direction we are interested in. Then, the \cyanit{directional derivative} at the point \((x_{1}, x_{2}, \ldots, x_{n})\) of the function \(f\) in the direction of a vector \(v\) is given by
+\[
+D_{v} = \dfrac{\partial f_{x_{1}}(x_{1}, x_{2}, \ldots, x_{n})}{||v||}v_{1} + \dfrac{\partial f_{x_{2}}(x_{1}, x_{2}, \ldots, x_{n})}{||v||}v_{2} + \cdots + \dfrac{\partial f_{x_{n}}(x_{1}, x_{2}, \ldots, x_{n})}{||v||}v_{n}.
+\]
+\subsection{The Gradient, \(\nabla f\)}
+
+Suppose that \(f \colon \R^{2} \to \R\). We define the \cyanit{gradient} of \(f\), denoted by \(\nabla f(x, y)\), as
+\[
+\nabla f(x, y) = \dfrac{\partial f}{\partial x}(x, y)\mathbf{i} + \dfrac{\partial f}{\partial y}(x, y)\mathbf{j}.
+\]
+We can extend this: If \(g \colon \R^{3} \to \R\), then
+\[
+\nabla g(x, y, z) = \dfrac{\partial g}{\partial x}(x, y, z)\mathbf{i} + \dfrac{\partial g}{\partial y}(x, y, z)\mathbf{j} + \dfrac{\partial g}{\partial z}(x, y, z)\mathbf{k},
+\]
+and so on to higher dimensions. \\
+
+The symbol \(\nabla\) is called “nabla” or “del.” Sometimes the gradient is written as \(\text{grad } f\). The gradient is a vector which points in the direction of largest increase in the value of the function – if interpreted as height, it points in the direction that is the steepest uphill. \\
+
+Note that the \(\nabla\) lives in the domain of the function. That is, if \(f \colon \R^{2} \to \R\), then \(\nabla f \colon \R^{2} \to \R^{2}\). The gradient is a vector field – it assigns a vector to each point in the domain of the function. \\
+
+The gradient on a contour plot is the vector which is orthogonal to the level curve at that point. This is because the gradient points in the direction of the greatest increase, and the level curve is the set of points where the function does not change.
+
+\subsubsection{Properties of the Gradient}
+
+\begin{itemize}
+    \item If \(\nabla f(x_{0}, y_{0}) = 0\), then \(D_{u}f(x_{0}, y_{0}) = 0\) for all \(u\).
+    \item If \(\nabla f(x_{0}, y_{0}) \neq 0\), then \(D_{u}f(x_{0}, y_{0})\) is maximized when \(u\) and \(\nabla f(x_{0}, y_{0})\) point in the same direction.
+    \item This maximum value is \(||\nabla f(x_{0}, y_{0})||\).
+    \item The gradient vector is always orthogonal to any level curve.
+\end{itemize}
+
+\subsubsection{Del – Vector Definition}
+
+We can think of \(\nabla\) as the vector
+\[
+\nabla = \left\langle \dfrac{\partial}{\partial x}, \dfrac{\partial}{\partial y}, \dfrac{\partial}{\partial z} \right\rangle.
+\]
+From chapter 2, we know that when we multiply a vector (like \(\nabla\)) by a scalar (like \(f\)), we simply multiply each coordinate of the vector by the scalar. Thus, we can think of \(\nabla f\) as a “simple” vector operation. Later, when we have functions which have vector-values themselves, we will talk about the meaning of \(\nabla \cdot \mathbf{F}\) and \(\nabla \times \mathbf{F}\). \\ 
+
+As a final note, we will start to blur a bit the distinction between \(\R^{2}\) and \(\R^{3}\) here. We can think of always working within \(\R^{3}\), and that \(\R^{2}\) is the special case when the \(k\) component is 0.
+
+\subsection{Example}
+
+Let \(f(x,y) = x^{2} + y^{2} - 2x - 6y + 14\). Find the direction derivative of \(f\) at \((4,1)\), in the \(\brackett{1,3}\) direction. \\
+
+\sol{
+    We first find the partial derivative of \(f\) with respect to \(x\) and \(y\):
+    \[
+    f_{x}(x,y) = 2x - 2 \quad \text{and} \quad f_{y}(x,y) = 2y - 6.
+    \]
+    Then, at the point \((4,1)\):
+    \[
+    f_{x}(4,1) = 6 \quad \text{and} \quad f_{y}(4,1) = -4.
+    \]
+    Then, we find the unit vector in the direction of \(\brackett{1,3}\):
+    \[
+        \frac{\brackett{6,-4} \cdot \brackett{1,3}}{\mysqrt{10}} = \frac{-6}{\mysqrt{10}}.
+    \]
+}
+
+\newpage
+
+\section{Maxima and Minima}
+
+For this section, we will be considering the specific case \(f \colon \R^{2} \to \R\).
+
+\subsection{Critical Points}
+
+The statement that \((x_{0}, y_{0})\) is a \cyanit{critical point} of \(f\) means that either:
+\begin{itemize}
+    \item both \(f_{x}(x_{0}, y_{0}) = 0\) and \(f_{y}(x_{0}, y_{0}) = 0\), or
+    \item one or both partials does not exist.
+\end{itemize}
+
+\subsection{Maxima and Minima}
+
+\subsubsection{Local Extrema}
+
+The function \(f\) has a \cyanit{local maximum} at \((x_{0}, y_{0})\) provided that \(f(x_{0}, y_{0}) \geq f(x, y)\) for all choices of \((x, y)\) in some disk centered at \((x_{0}, y_{0})\) – that is, in some neighborhood of \((x_{0}, y_{0})\). \\
+
+In a similar manner, we can define a local minimum. \\
+
+
+We will use the term \cyanit{extremum} to refer to something that is either a maximum or minimum; the plural is \cyanit{extrema}. \\
+
+Note that if there is a local extrema, \(\nabla f = \mb{0}\). This is because the gradient points in the direction of greatest increase, and if we are at a maximum or minimum, the function does not change. \\
+
+\textbf{Fermat's Theorem for Extrema:} Suppose that \(z = f(x, y)\) and that \((x_{0}, y_{0})\) is a local extremum. Then, \((x_{0}, y_{0})\) is also a critical point.
+
+\subsubsection{Second Derivative Test}
+
+\textbf{Calculus I Version:} In Calculus I, the sign of the second derivative tells you whether a critical point is a local max/min, or inconclusive: Suppose that \(g \colon \R \to \R\) is a function of one variable, and \(x_{0}\) is a critical point.
+
+\begin{itemize}
+    \item if \(g''(x_{0}) > 0\), then \(x_{0}\) is a local minimum
+    \item if \(g''(x_{0}) < 0\), then \(x_{0}\) is a local maximum
+    \item if \(g''(x_{0}) = 0\), this test is inconclusive – it could be a max, min, or neither.
+\end{itemize}
+
+\newpage
+
+\textbf{Multivariable Calculus Version:} We have a similar test for \(f \colon \R^{2} \to \R\), where \((x_{0}, y_{0})\) is a critical point. Define
+\[
+D = f_{xx}(x_{0}, y_{0})f_{yy}(x_{0}, y_{0}) - (f_{xy}\bigl(x_{0}, y_{0})\bigr)^{2}.
+\]
+
+\begin{itemize}
+    \item if \(D > 0\) and \(f_{xx}(x_{0}, y_{0}) > 0\), then \(f\) has a local minimum
+    \item if \(D > 0\) and \(f_{xx}(x_{0}, y_{0}) < 0\), then \(f\) has a local maximum
+    \item if \(D < 0\), then \(f\) has a saddle point
+    \item if \(D = 0\), then the test is inconclusive
+\end{itemize}
+
+\subsubsection{Absolute Extrema}
+
+The function \(f\) has an \cyanit{absolute maximum} at \((x_{0}, y_{0})\) provided that \(f(x_{0}, y_{0}) \geq f(x, y)\) for all choices of \((x, y)\) in the domain of \(f\). Likewise, we can define an \cyanit{absolute minimum}. \\
+
+\textbf{Extreme Value Theorem:} Suppose that \(f\) is continuous on a closed, bounded domain \(D\). Then \(f\) has both an absolute maximum and absolute minimum. \\
+
+In Calculus I, we saw that a continuous function, defined on a closed interval, has its absolute extrema either at interior critical points or at the endpoints of the domain interval. This idea transfers over here – but is somewhat more complicated. \\
+
+If \(f \colon \R^{2} \to \R\) is continuous on a closed and bounded domain, then by the Extreme Value Theorem, it has absolute extrema. These occur either at interior critical points of the domain or somewhere along the edge of the domain. The interior critical points are fairly straightforward. However, the edge of the domain is more complicated.
+
+\subsubsection{Extrema Finding Algorithm}
+
+\begin{itemize}
+    \item Find all critical points inside the region of interest by setting the two first partials equal to zero
+    \item For each boundary, use the relationship between \(x\) and \(y\) to convert \(f(x, y)\) to a new function, say \(g(x)\), of a single variable
+    \item This function will have an interval \([a, b]\) as its domain
+    \item Work the Calculus I problem of finding absolute extrema for \(g\) on \([a, b]\). This will generate additional points of interests.
+    \item Find the value of \(f(x, y)\) for each point of interest – the largest value is the absolute maximum, the smallest is the absolute minimum.
+\end{itemize}
+
+\subsection{Examples}
+
+Let \(f(x,y) = x^{2} + y^{2} - 2x - 6y + 14\).  \\
+
+\sol{
+    We know that the critical points are \((1,3)\). We can use the second derivative test to determine that this is a local minimum.
+\[
+    f_{xx} = 2 \quad f_{yy} = 2 \quad f_{xy} = 0 \quad D = 4 > 0.
+\]
+}
+
+Let \(f(x,y) = x^{4} + y^{4} -4xy + 1\). \\
+
+\sol{
+    Find critical points:
+    \[
+        f_{x} = 4x^{3} - 4y \quad f_{y} = 4y^{3} - 4x,
+    \]
+    and set to 0:
+    \[
+        x^{3} = y \quad y^{3} = x.
+    \]
+    Substituting, we see:
+    \begin{align*}
+        x^{9} - x &= 0 \\
+        x(x^{8} - 1) &= 0 \\
+        x(x^{4} + 1)(x^{2} + 1)(x + 1)(x - 1) &= 0.= \\
+        x &= 0, \pm 1 \\ 
+        \therefore y &= 0, \pm 1.
+    \end{align*}
+}

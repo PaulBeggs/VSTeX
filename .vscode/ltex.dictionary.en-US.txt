@@ -113,3 +113,4 @@ Astrocytes
 Ependymal
 Glia
 Electrodermal
+Semipermeability
