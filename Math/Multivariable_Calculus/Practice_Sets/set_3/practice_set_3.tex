@@ -1,0 +1,307 @@
+\documentclass[11pt]{article}
+
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+\usepackage{amsmath,amsthm} 
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+% \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum} 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.markings}
+
+\setlength{\parindent}{0pt}
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=black, % default color, will be overridden in custom commands
+%   backgroundcolor=draculabg, % Needed for Dracula theme
+%   fontcolor=draculafg, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[left=0.5in,right=0.5in,top=1in,bottom=1in]{geometry}
+% \usepackage{setspace}
+% \linespread{1}
+\usepackage{listings}
+\usepackage{minted}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+% \graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+% \renewcommand{\theenumi}{\arabic{enumi}} 
+% \renewcommand{\labelenumi}{\theenumi.}
+
+\title{Multivariable Calculus Practice Set II}
+\author{Paul Beggs}
+\date{\today}
+
+%%% Custom Comands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+\newcommand{\p}{\partial}
+
+\begin{document}
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+    \item (2 points) Show that \(\displaystyle \lim_{(x,y) \to (0,0)} \frac{xy^{2}}{x^{2}+y^{4}}\) does not exist.
+
+    \sol{
+        \vspace*{-1.5em}
+        \begin{multicols}{2}
+            \begin{itemize}
+                \item \(x = 0 \) path: \(\displaystyle \lim_{(x,y) \to (0,0)} \frac{0 \cdot y^{2}}{0 + y^{4}} = \frac{0}{y^{2}} = 0\).
+                \item \(y = 0 \) path: \(\displaystyle \lim_{(x,y) \to (0,0)} \frac{x \cdot 0}{x^{2} + 0} = \frac{0}{x^{2}} = 0\).
+            \end{itemize}
+        \end{multicols}
+        \begin{itemize}
+            \item \(x = y^{2}\) path: \(\displaystyle \lim_{(x,y) \to (0,0)} \frac{y^{2} \cdot y^{2}}{y^{4} + y^{4}} = \frac{y^{4}}{2y^{4}} = \frac{1}{2}\).
+        \end{itemize}
+        Since the limit is not the same along all paths, the limit does not exist.
+    }
+    \item (2 points each) Find each indicated partial derivative:
+    \begin{enumerate}
+        \item \(\dfrac{\partial}{\partial x} \bigl(xy^{2}\cos(x + y^{3}) - e^{xy}\bigr)\)
+
+        \sol{
+            \begin{align*}
+                \dfrac{\partial}{\partial x} \bigl(xy^{2}\cos(x + y^{3}) - e^{xy}\bigr) &=
+            \end{align*}
+        }
+        \item \(\dfrac{\partial}{\partial y} \bigl(\ln(x + y + z) - y^{2}z^{3} + x\bigr)\)
+        \item \(\dfrac{\p^{2}}{\p x \p y}\) \(\bigl(x^{3}y + y^{3}\tan(xy)\bigr)\)
+    \end{enumerate}
+    \item (3 points) Complete each of the following steps to prove that \(\displaystyle \lim_{(x,y) \to (0,0)} \frac{3x^{2}y}{x^{2} + y^{2}} = 0\). \\
+    Let \(\epsilon > 0\). Choose \(\delta = \epsilon / 3\). Suppose that \((x,y)\) is chosen so that \(||(x,y) - (0,0)|| < \delta\) and \((x,y) \neq (0,0)\).
+    \begin{enumerate}
+        \item Explain why \(\mysqrt{x^{2} + y^{2} < \delta}\).
+        \item Explain why \(x^{2} \leq x^{2} + y^{2}\), and thus \(\dfrac{x^{2}}{(x^{2} + y^{2})} \leq 1\).
+        \item Explain why \(\dfrac{3x^{2}}{(x^{2} + y^{2})} \leq 3\).
+        \item Explain why \(\dfrac{3x^{2}|y|}{(x^{2} + y^{2})} \leq 3|y|\).
+        \item Now, show that \(\left|\dfrac{3x^{2}y}{x^{2} + y^{2}} - 0\right| \leq 3\mysqrt{x^{2} + y^{2}}\).
+        \item Conclude that whenever \((x,y)\) is in the \(\delta\)-disk centered at \((0,0)\), then \(\left|\dfrac{3x^{2}y}{x^{2} + y^{2}} - 0\right| < \epsilon\).
+    \end{enumerate}
+    \newpage
+    \item (1 point each) Consider the counter plot of the function \(f(x,y)\) shown below. \\[0.5em]
+    \includegraphics{contour_plot.png} \\[1cm]
+    Determine the sign (+, \(-\), \text{or} 0) of each of the following partial derivatives, including a \textit{brief} justification.
+    \begin{enumerate}
+        \item \(f_{x}(0,0)\)
+        \item \(f_{y}(0,0)\)
+        \item \(f_{xx}(0,0)\)
+        \item \(f_{yy}(0,0)\)
+        \item \(f_{xy}(0,0)\)
+    \end{enumerate}
+    \item (2 points) Find an equation of the tangent plane to \(f(x,y) = x^{2}y - \sqrt{x} + y\) at the point \((3,1)\).
+    \item (2 points) For the function \(f(x,y,z) = \dfrac{x + \sin(xy)}{x^{2} + y^{2} + z^{2} + 1}\), find \(\nabla f(x,y,z)\).
+    \item (2 points) Consider the function \(f(x,y) = x^{2}y - y^{3}\). Find the directional derivative for \(f\), at \((3,4)\), in the direction of \(\mb{u} = 5\imb - 2\jmb\).
+\end{enumerate}
+
+\end{document}

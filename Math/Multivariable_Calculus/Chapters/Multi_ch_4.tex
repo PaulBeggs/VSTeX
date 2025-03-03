@@ -159,3 +159,53 @@ Now we can fill out our equation:
 \[
 z = \frac{1}{6} + \left(\frac{1}{2} - \frac{\pi\mysqrt{3}}{3}\right)\left(x - \frac{1}{3}\right) + 0\left(y - \frac{1}{2}\right).
 \]
+
+\newpage
+
+\section{The Chain Rule}
+
+\subsection{One Dimensional Chain Rule}
+
+Suppose that \(f(x)\) and \(g(x)\) are both single variable, differentiable functions. Then, if \(h(x) = f(g(x))\), \(h\) is also differentiable and
+\[
+h'(x) = f'(g(x))g'(x).
+\]
+Alternatively, if we write \(u = g(x)\), then
+\[
+h'(x) = f'(u)g'(x) \quad \text{or} \quad \dfrac{dh}{dx} = \dfrac{df}{du}\dfrac{du}{dx}.
+\]
+\subsection{Higher Dimensional Chain Rules}
+
+\subsubsection{The Chain Rule – One Independent Variable}
+
+Suppose that \(x = f(t)\), \(y = h(t)\), and \(z = f(x, y)\) are all differentiable functions. Notice that \(z\) is “really” a function of the single independent variable \(t\). Then,
+\[
+\dfrac{dz}{dt} = \dfrac{\partial z}{\partial x} \cdot \dfrac{dx}{dt} + \dfrac{\partial z}{\partial y} \cdot \dfrac{dy}{dt}.
+\]
+\subsubsection{The Chain Rule – Two Independent Variables}
+
+Suppose that \(x = g(u, v)\), \(y = h(u, v)\), and \(z = f(x, y)\). Then,
+\[
+\dfrac{\partial z}{\partial u} = \dfrac{\partial z}{\partial x} \cdot \dfrac{\partial x}{\partial u} + \dfrac{\partial z}{\partial y} \cdot \dfrac{\partial y}{\partial u},
+\]
+and
+\[
+\dfrac{\partial z}{\partial v} = \dfrac{\partial z}{\partial x} \cdot \dfrac{\partial x}{\partial v} + \dfrac{\partial z}{\partial y} \cdot \dfrac{\partial y}{\partial u}.
+\]
+\subsubsection{The Generalized Chain Rule}
+
+Let \(w = f(x_{1}, x_{2}, \ldots, x_{m})\) be a function of \(m\) independent variables and each \(x_{i} = x_{i}(t_{1}, t_{2}, \ldots, t_{n})\) has \(n\) independent variables. Then,
+\[
+\dfrac{\partial w}{\partial t_{j}} = \dfrac{\partial w}{\partial x_{1}} \cdot \dfrac{\partial x_{1}}{\partial t_{j}} + \dfrac{\partial w}{\partial x_{2}} \cdot \dfrac{\partial x_{2}}{\partial t_{j}} + \cdots + \dfrac{\partial w}{\partial x_{m}} \cdot \dfrac{\partial x_{m}}{\partial t_{j}} = \sum_{i=1}^{m} \dfrac{\partial w}{\partial x_{i}} \cdot \dfrac{\partial x_{i}}{\partial t_{j}}.
+\]
+
+\subsection{Implicit Differentiation}
+
+Suppose we have an equation involving \(x\) and \(y\). We can rewrite this as an equation of the form \(z = f(x, y)\), where we let \(z = 0\). Then,
+\[
+z = 0, \text{ defines a curve for } x, y
+\]
+\[
+\dfrac{dy}{dx} = -\dfrac{\partial f}{\partial x} \cdot \dfrac{\partial f}{\partial y}.
+\]
+This gives the same answer as the Calculus I \cyanit{implicit differentiation} procedure.    
