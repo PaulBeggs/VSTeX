@@ -1,0 +1,259 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{comment}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{multirow, bigdelim}
+\usepackage{marginnote}
+\usepackage{lipsum}
+\usepackage{listings}
+
+\titleformat{\subsection}[block]{\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalfont\bfseries}{}{1em}{}
+
+% Set indentation for the body text
+\setlength{\leftskip}{2em}
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+% Set indentation for the body text
+\setlength{\leftskip}{2em}
+
+\def \proofDistance {5pt}
+\def \subheaderSpace {10pt}
+
+\newcommand{\proofseparator}{\par\noindent\rule{\textwidth}{0.4pt}}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+% Command for problem statement
+\newcommand{\customproblem}[1]{
+    \begin{problem}
+    #1
+    \end{problem}
+}
+
+% Define a command for custom proofs with separator
+\newcommand{\customproof}[1]{
+    \vspace{\proofDistance}
+    \begin{proof}
+    #1
+    \end{proof}
+    \proofseparator
+}
+
+% ------------------------------------------------------------------------------
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Cover Page and ToC
+% ------------------------------------------------------------------------------
+
+\title{ \normalsize \textsc{}
+		\\ [2.0cm]
+        \HRule{1.5pt} \\
+		\LARGE \textbf{\uppercase{DISCRETE MATHEMATICS}
+		\HRule{2.0pt} \\ [0.6cm] \LARGE{Writing Assignment 1} \vspace*{10\baselineskip}}
+		}
+\date{2nd Semester, 2024}
+\author{\textbf{Authors} \\ 
+		Paul Beggs, Thomas Sebring}
+
+\maketitle
+\newpage
+
+% ------------------------------------------------------------------------------
+% Introduction
+% ------------------------------------------------------------------------------
+\section{Overview}
+Logical expressions, formed from atomic propositions (a basic, indivisible statement that expresses a single fact or condition and can be either true or false, but not both) and logical connectives ($\lor, \land, \ \& \ \neg$), represent statements that can be either true or false. Truth tables serve as a systematic method to explore all possible truth values of atomic propositions and their impact on the overall expression.
+
+% ------------------------------------------------------------------------------
+% Body
+% ------------------------------------------------------------------------------
+
+\section{Logical Expressions Evaluated Through Truth Tables}
+
+    \subsection{Truth Table Analysis}
+
+        \vspace{\subheaderSpace}
+
+    
+        \subsubsection{Constructing and Analyzing Truth Tables}
+            Constructing a truth table involves listing all possible combinations of truth values for the given atomic propositions and calculating the truth value of the compound expression under each combination. This method is crucial for understanding the behavior of logical expressions inferent scenarios.
+        
+        \subsubsection{Exploration of Satisfiability in Logical Expressions}
+            Satisfiability refers to the condition in which a logical expression can be true for at least one combination of the truth values of its atomic propositions. Truth tables provide a clear framework to identify whether an expression is satisfiable by revealing if there exists at least one row where the expression evaluates to true. \\
+            
+            \noindent For example, consider the logical expression $(\neg p\iff q) \land (p\land q)$. We can use truth tables to determine if this statement is satisfiable or not (refer to Table 1). As it turns out, this statement is \textit{not} satisfiable, as there is no possible combination of truth values for which the entire statement is true.
+
+
+            \vspace{2cm}
+
+
+            \begin{table}[h!]
+                \centering
+                \begin{tabular}{c|c||c|c|c}
+                    $p$ & $q$ & $\neg p\iff q$ & $p\land q$ & $(\neg p\iff q) \land (p\land q)$ \\
+                    \hline
+                    T & T & F & T & F \\
+                    T & F & F & F & F \\
+                    F & T & T & F & F \\
+                    F & F & T & F & F \\
+                \end{tabular}
+                \caption{Truth Table For $(\neg p\iff q) \land (p\land q)$}
+            \end{table}
+            
+
+
+            
+% ------------------------------------------------------------------------------
+\newpage
+% ------------------------------------------------------------------------------
+
+
+
+
+
+            \noindent Now, consider the logical expression $(\neg(p \lor q) \Rightarrow r) \land (\neg r \land q)$. Using a truth table, it is clear that this expression is satisfiable, as there is \textit{at least} one row that is true given the truth values for $p, q,$ and $r$ (see Table 2).
+            
+            \vspace{0.5cm}
+    
+            \begin{table}[htbp]
+                \centering
+                \begin{tabular}{c|c|c||c|c|c|c}
+                    $p$ & $q$ & $r$ & $\neg(p \lor q)$ & $\neg(p \lor q) \Rightarrow r$ & $\neg r \land q$ & $(\neg(p \lor q) \Rightarrow r) \land (\neg r \land q)$ \\
+                    \hline
+                    T & T & T & F & T & F & F \\
+                    T & T & F & F & T & T & T \\
+                    T & F & T & F & T & F & F \\
+                    T & F & F & F & T & F & F \\
+                    F & T & T & F & T & F & F \\
+                    F & T & F & F & T & T & T \\
+                    F & F & T & T & T & F & F \\
+                    F & F & F & T & F & F & F \\
+                \end{tabular}
+                \caption{Truth Table For $(\neg(p \lor q) \Rightarrow r) \land (\neg r \land q)$}
+            \end{table}
+
+        \subsubsection{Satisfiability with Truth Table Complexity}
+
+            As you can see in Table 1 and Table 2, given more and more atomic propositions ($p, q, r$), the truth table becomes more complex with each addition. In fact, we can calculate the increase in rows using the formula $2^n$ (where $n$ is the number of propositions that are present in the table). \\ 
+
+            \noindent Thus, given any set of atomic propositions $(p_1, p_2\dots p_n$), we must examine the effect of each proposition on the whole expression to determine satisfiability. However, although we must check each proposition, determining satisfiability is not as cumbersome as it may seem. Recall that we only need to find \textit{one} instance of truth among the propositions to verify a claim of satisfiability; conversely, if there are no instances of truth in the possible combinations, then the statement is false.    
+
+
+
+% ------------------------------------------------------------------------------
+\newpage
+% ------------------------------------------------------------------------------
+
+
+
+\section{Conjunctive Normal Form (CNF)}
+
+
+        \subsection{CNF \& Satisfiability}
+
+            \vspace{\subheaderSpace}
+        
+            It turns out that one way to determine whether a particular expression is or is not satisfiable is to turn it into its CNF. An expression and the atomic propositions $p_1,p_2.\dots,p_n$ are in CNF provided that it is a conjunction (``and'' ``$\land$'') of dis-junctions (``or,'' ``$\lor$''), where each atomic proposition can be listed as either itself or its negation (``$\neg$''). For example, each of the following is in CNF: 
+            
+            $$(p_1 \lor \neg p_2) \land (p_2 \lor \neg p_2)$$
+            $$(p_1 \lor \neg p_3 \lor p_2) \land (p_1 \lor p_2) \land (p_4 \lor \neg p_5)$$ 
+
+            \noindent You may ask ``Why would we want to put these expressions in CNF? Why go through the trouble of transforming expressions into an equivalent form of a conjunction of conjunctions?'' \\
+            
+            \noindent Transformationa statement into its CNF is particularly advantageous for computational processes. While it might not always enhance readability, CNF aligns with the binary logic that underpins computing systems, facilitating the use of efficient algorithms. The CNF structure, consisting of AND and OR operations, corresponds directly to the binary values that computers inherently process. This compatibility reduces the complexity of algorithmic decision-making, leading to a decrease in the computational resources required. As a result, CNF is invaluable for optimizing logic-based computations, which are integral to the vast array of technologies that define our modern environment.
+
+            \subsubsection{Applications}
+
+            \begin{enumerate}
+                
+            \item Returning to the first expression in Section 2, we can use the rules of logical equivalences to turn, $$(\neg p \iff q) \land (p \land q)$$ into its CNF for ease of determining its satisfiability.
+
+            \begin{enumerate}
+                \item To begin, we know that $\neg p \iff q$ can be expressed as $(\neg p \Rightarrow q) \land (q\Rightarrow \neg p)$, as these two statements adhere to the requirement of having the same truth value through the use of conditional statements. By using ``and,'' we ensure that both conditions must be met simultaneously, which is the requirement imposed by the bi-conditional, $\neg p \iff q$.
+            
+                \item Furthermore, by implication, $\neg p\Rightarrow q$ and $q\Rightarrow \neg p$ can be expressed as $\neg(\neg p) \lor q$ (which can be represented as $p\lor q$ using the rule of double negation) and $\neg q \lor \neg p$, respectively.
+            
+                \item Integrating with the rest of the expression, we get $((p \lor q) \land (\neg q \lor \neg p)) \land (p) \land (q)$.
+            
+                \item Thus, by putting the expression, $(\neg p \iff q) \land (p \land q)$, into a conjunction of disjunctions, we have shown that it is in its CNF by definition.
+
+            \end{enumerate}
+
+\newpage
+            
+            \item Similarly, we can do the same thing for the second expression in Section 2: $$(\neg(p\lor q) \Rightarrow r) \land (\neg r \land q)$$
+
+            \begin{enumerate}
+                \item To put this expression into its CNF, we must transform the expression into a conjunction of dis-junctions. Thus, we must transform the implication $\neg(p \lor q) \Rightarrow r$ into a disjunctive. \\
+                
+                \item Further, $\neg(p \lor q) \Rightarrow r$ can be put into form $\neg(\neg(p \lor q)) \lor r$ (because of the implication equivalence rule: $A\Rightarrow B \iff \neg A\lor B$). \\
+    
+                \item Clearly, you can use double negation to remove the negation symbols, and you can use associativity to remove the parentheses to end up with $p\lor q\lor r$. \\
+    
+                \item Integrating with the rest of the expression, we end up with $(p\lor q\lor r) \land (\neg r \land q)$, but can be further simplified to meet the requirements of CNF by changing $\neg r \land q$ into $(\neg r) \land (q)$, where $(p\lor q \lor r), (\neg r)$, and $(q)$ are individual clauses connected by conjunctions. \\
+            \end{enumerate}
+
+            \end{enumerate}
+
+            \subsubsection{Universal Application}
+
+            Because of the imperative function of CNF, determining if this process is universally applicable to all logical expressions is inherently important. \\
+            
+            \noindent CNF relies on fundamental properties of logical operations that are invariant to the specific content of the propositions involved, we can see that every step in the process is supported by an equivalence transformation that guarantees the logical equivalence of the initial and transformed expressions. \\
+
+            \noindent Simply put, this means we can use systematic conversion processes to convert \textit{any} compound proposition into the desired form by employing any or all of the following: 
+            \begin{enumerate}
+                \item \textbf{Eliminating Equivalence and Implications}: \\
+                Replace bi-conditionals $(p\iff q)$ and implications $(p\Rightarrow q)$ with their equivalent expressions, $\land, \lor,$ and $\neg$. 
+                \item \textbf{Migrate Negations Inward}: \\
+                Apply De Morgan's laws to move negations inward until they apply direction to atomic propositions only. In practice, this applies to expressions like $\neg(p \lor q)$ being expressed as $\neg p \lor \neg q$. 
+                \item \textbf{Distribute $\land$ over $\lor$}: \\
+                Use the distributive laws to ensure that the expression becomes a conjunction of dis-junctions. This may involve expanding the expression significantly, especially when distributing a conjunction inside a disjunction.
+            \end{enumerate}
+        
+
+% ------------------------------------------------------------------------------
+% Conclusion
+% ------------------------------------------------------------------------------
+    
+
+\section{Synthesis of Findings in Logical Analysis}
+
+Throughout this discussion, we have explored the practical utility of transforming logical expressions into \textit{Conjunctive Normal Form} (CNF). While the readability of CNF may not always be straightforward, especially as the complexity of expressions grows, its true value lies in computational logic. CNF's alignment with the fundamental binary operations of digital computers streamlines the processing of logical expressions. This streamlined form is crucial for the efficient operation of algorithmic tools that underpin much of modern computing, from automated theorem proving to optimization in artificial intelligence and beyond. \\
+
+\noindent By reducing logical expressions to a standard form, CNF facilitates a reduction in computational complexity and resource consumption. In summary, the adoption of CNF in computer science reflects a harmonization between the abstract world of logic and the binary reality of computer processing, enabling advanced computation and problem-solving in various domains that are foundational to technological advancement.
+        
+\newpage
+
+% ------------------------------------------------------------------------------
+% End
+% ------------------------------------------------------------------------------
+
+\end{document}

@@ -19,7 +19,16 @@
 \usepackage{listings}
 \usepackage{pdflscape}
 \usepackage{tikz}
-\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning,decorations.pathmorphing}
+\usetikzlibrary{
+    shapes,
+    backgrounds,
+    calc,
+    patterns,
+    positioning,
+    decorations.pathmorphing,
+    arrows.meta,
+    decorations.pathreplacing
+    }
 \usepgflibrary{shadings}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{mathrsfs}
@@ -469,11 +478,19 @@ sharp corners=downhill,
 \end{center}
 \vspace*{\stretch{1}}
 \newpage
+\fancyhead[R]{\leftmark}
 
 \setcounter{chapter}{2}
 \chapter{Structure of the Nervous System}
 \vspace*{-0.25in}
 \input{Chapters/behavioral_Ch_3}
+
+\setcounter{chapter}{4}
+\chapter{Methods and Strategies of Research}
+\vspace*{-0.25in}
+\input{Chapters/behavioral_Ch_5}
+
+
 
 \setcounter{chapter}{5}
 \chapter{How Neurons Process Information}

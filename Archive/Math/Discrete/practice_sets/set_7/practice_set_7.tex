@@ -1,0 +1,305 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage{tcolorbox}
+\usepackage{comment}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{multirow, bigdelim}
+\usepackage{marginnote}
+\usepackage{lipsum}
+\usepackage{neuralnetwork}
+\usepackage{subfigure}
+\usepackage{slashed}
+\usepackage{listings}
+\usepackage{multicol}
+
+
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+
+\newenvironment{solution}{\textit{Solution}.}
+
+\titleformat{\subsection}[block]{\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalfont\bfseries}{}{1em}{}
+
+\colorlet{LightGray}{black!30}
+\colorlet{LightOrange}{orange!15}
+\colorlet{LightGreen}{green!15}
+\colorlet{Orange}{orange!5}
+\colorlet{LightRed}{red!50}
+\colorlet{LightBlue}{blue!15}
+\colorlet{Yellow}{yellow!50}
+\colorlet{Red}{red!5}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+
+\lstdefinestyle{mystyle}{
+    basicstyle=\ttfamily\upshape, % upshape for non-italic
+    keywordstyle=\color{blue},
+    language=Python,
+    breaklines=true,
+    mathescape=true,
+}
+
+\lstset{style=mystyle}
+
+
+%%% Problem Numbering and Formatting
+
+% Define a new style
+\newtheoremstyle{upright}% name of the style
+  {3pt}% Space above
+  {3pt}% Space below
+  {\upshape}% Body font: upright text
+  {}% Indent amount
+  {\bfseries}% Theorem head font: bold
+  {.}% Punctuation after theorem head
+  {.5em}% Space after theorem head
+  {}% Theorem head spec (can be left empty, meaning ‘normal’)
+
+% Apply the style to the 'problem' environment
+\theoremstyle{upright}
+\newtheorem{problem}{Problem}
+
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+\def \proofDistance {5pt}
+\def \subheaderSpace {10pt}
+
+\newcommand{\proofseparator}{\par\noindent\rule{\textwidth}{0.4pt}}
+\newcommand{\caution}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+% Command for problem statement
+\newcommand{\customproblem}[1]{
+    \begin{problem}
+    #1
+    \end{problem}
+}
+
+% Define a command for custom proofs with separator
+\newcommand{\pf}[1]{
+    \vspace{\proofDistance}
+    \begin{proof}
+    #1
+    \end{proof}
+    \proofseparator
+}
+
+\newcommand{\sol}[1]{
+    \vspace{\proofDistance}
+    \begin{solution}
+    #1
+    \end{solution}
+    \proofseparator
+}
+
+\newcommand{\solex}[1]{
+    \vspace{\proofDistance}
+    \begin{solution}
+    #1
+    \end{solution}
+}
+
+
+
+\begin{document}
+
+\begin{center}
+    \textbf{Practice Set VII} \\
+    
+    \textbf{Name}: Paul Beggs \\
+\end{center}
+
+\begin{problem}
+    (2 points) the current standard Arkansas Car License plate has the form: three letters, two digits, one letter. How many total license plates are possible?
+\end{problem}
+
+\sol{
+    So, there are 4 total sets of letters, and 2 sets of numbers. And since we are dealing with combinations and not permutations, that would be $26^4 \times 10^2$, which equals $45,697,600$.
+}
+
+\begin{problem}
+    (2 points) Stoby’s is a long-time well-known Conway restaurant. Their eponymous sandwich, the Stoby, is their best seller. You have 6 choices of meat and 7 choices of cheese. You get to choose three meats and two cheese. Assuming that you are not allowed to repeat a choice (i.e. you cannot have 2 Hams or 2 cheddars), how many distinct Stoby sandwiches are possible?
+\end{problem}
+
+\sol{
+    $$\binom{6}{3} \times \binom{7}{2} = 420$$ 
+}
+
+\begin{problem}
+    (2 points) How many distinct rearrangements of the string STARTREK are possible?
+\end{problem}
+
+\sol{
+    Using the formula: $\displaystyle \frac{n!}{p_1! \times p_2! \times \dots \times p_k!}$ where $n$ is the total number of letters in STARTREK, and the $p$'s are the repeated elements. Since `r' is the only repeated letter, we only have one $p$, $2$. Hence, $$\frac{8!}{2!} = 20160$$
+}
+
+\begin{problem}
+    (2 points) What is the coefficient of $x^4$ is the expansion of $(5x + 2)^7$
+\end{problem}
+
+\sol{
+    We must use the Binomial Theorem: $$(a+b)^n = \sum_{r=0}^{n}\binom{n}{r}a^{r}b^{n-r}.$$ Simply substitute for $a,b,n,$ and $r$: $$\binom{7}{3}(5x)^4\cdot 2^{7-4} = 175,000x^4.$$ Hence, $175,000$ is the coefficient for $x^4$.
+}
+
+\begin{problem}
+    (2 points) What is the coefficient of $x^3$ is the expansion of $(8x - 5)^8$?
+\end{problem}
+
+\solex{
+$$\binom{8}{5}(8x)^3\cdot (-5)^{8-3} = -89,600,000.$$
+}
+
+\begin{problem}
+    (2 points) You have three colors of socks – white, black, and brown. If you pull single socks out in the dark (so you cannot see the colors), how many do you need to pull to be certain you have at least one matching pair of socks?
+\end{problem}
+
+\sol{
+    You need only pull 4 socks. Consider the following situation: you pull a white, then black, then brown sock (worst case scenario). To be certain that you have a pair, you would need to pull one more sock, and of course, that sock would correspond to one of the others that you have already pulled. 
+}
+
+\begin{problem}
+    (2 points) Hendrix offers 400 distinct sections of classes each semester. Hendrix also has 12 different class periods. What is the minimum number of classrooms Hendrix should have?
+\end{problem}
+
+\sol{
+    The minimum number of classrooms can be calculated using The Pigeonhole Principle: $$\left\lceil \frac{\text{Total sections}}{\text{Class periods}} \right\rceil = \left\lceil \frac{400}{12} \right\rceil = \left\lceil 33\frac{1}{3} \right\rceil = 34.$$
+}
+
+\begin{problem}
+    (2 points) Suppose a room contains 20 people, some of whom are friends of each other. Show that there are at least two people in the room with the same number of friends in the room. [Assume the friendship is symmetric, so that if A is a friend of B, then B is also a friend of A.]
+\end{problem}
+
+\sol{
+    If one person has 0 friends, then they interact with nobody else, which immediately limits the highest possible friend count anyone can have to 18 (since they can’t be friends with the person who has no friends). \\
+    \indent Hence, the possible friend counts range only from 0 to 18, which are 19 possible counts. Then, we know by The Pigeonhole Principle that since $20 > 19$, it must be the case that at least two people have the same number of friends.
+}
+
+\begin{problem}
+    For each function given, determine a $\text{big-}\Theta$ estimate:
+    \begin{enumerate}[label=(\alph*)] % This changes the labels to (a), (b), etc.
+        \item $8n^2 + 7n + \log_n(n)$
+        \item $(n^2 + 3n - 1)(\log_2(n^3))$
+        \item $n^9 + 2^n + n!$
+    \end{enumerate}
+\end{problem}
+
+\solex{
+    \begin{enumerate}[label=(\alph*)]
+        \item Find the fastest growing term: $8n^2$. Hence, $8n^2 + 7n + \log_n(n) \in \Theta(n^2)$.
+        \item Distribute terms: $(n^2 + 3n - 1)(3\log_2(n)) \Rightarrow 3n^2\cdot 3\log_2(n) + 3n\cdot 3\log_2(n) - 3\log_2(n)$. We can see that since the logarithm is distributed among all terms, the fastest growing among the terms is still $n^2$. Hence, $(n^2 + 3n - 1)(\log_2(n^3)) \in \Theta(n^2\log_2(n))$.
+        \item Factorials grow faster than exponential terms, so $n!$ is the fastest growing. Hence, $n^9 + 2^n + n! \in \Theta(n!)$.
+    \end{enumerate}
+}
+
+\begin{problem}
+    Give a big-$\Theta$ estimate for the number of additions in the algorithm:
+    \begin{lstlisting}
+    x = 4
+    for i in [1, 2, ..., n]:
+        x = x + n
+        for j in [i, i + 1, ..., n]:
+            x = x + 1 + j
+    \end{lstlisting}
+\end{problem}
+
+\sol{
+    I don't know if this is an oversimplification, but it seems like you can just count the number of nested loops. Therefore, because there are 2 nested loops, we would say that this requires $\Theta(n^2)$ addition.
+}
+
+\newpage
+
+\begin{problem}
+    Prove that $$\displaystyle \binom{n}{k} = \binom{n - 1}{k} + \binom{n - 1}{k - 1}$$
+    
+\end{problem}
+
+\pf{
+    Start by expanding the given terms (this is done by substituting values): $$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$ $$\binom{n-1}{k} = \frac{(n-1)!}{k!(n-1-k)!}$$ $$\binom{n-1}{k-1} = \frac{(n-1)!}{(k-1)!(n-k)!}$$ Thus, we need to show that the left hand side is equivalent to the right hand side. We will do this by utilizing the various forms that a factorial can be represented as: 
+    \begin{align*}
+        \frac{n!}{k!(n-k)!} &= \frac{(n-1)!}{k!(n-1-k)!} + \frac{(n-1)!}{(k-1)!(n-k)!} \\
+        &= \frac{(n-1)!}{k!(n-1-k)!} + \frac{(n-1)!}{(k-1)!(n-k)!} \\
+        &= \frac{(n-1)!}{k!\frac{(n-k)!}{(n-k)}} + \frac{(n-1)!}{\frac{k!}{k}(n-k)!} \\
+        &= \frac{k(n-1)! + (n-k)(n-1)!}{k!(n-k)!} \\
+        &= \frac{(n-1)!(k + (n - k))}{k!(n-k)!} \\
+        &= \frac{(n-1)!(n)}{k!(n-k)!} \\
+        &= \frac{\frac{n!}{n}\cdot n}{k!(n-k)!} \\
+        &= \frac{n!}{k!(n-k)!}
+    \end{align*}
+    Therefore, because both sides are equal to each other, their binomial forms must also be equal.
+}
+
+\newpage 
+
+\begin{problem}
+    Prove, using induction on n, that $\displaystyle \binom{n}{k}$ is always an integer. [Hint: use the result of the previous problem.] 
+\end{problem}
+
+\pf{ \hfill \\
+
+    \indent \textbf{Base Cases}: \\
+    for $k = 0$: \\
+    $$\binom{n}{0} = 1 \text{ by definition.}$$
+    for $k = 1$: \\
+    $$\binom{n}{1} = n \text{ by definition.}$$
+    Clearly, since $n$ is an integer, and 1 is also an integer, both results are integers. \\
+    
+    \textbf{Inductive Hypothesis}: \\
+    For some $n > 1$, suppose $\binom{n-1}{k}$ is an integer for all $0 \leq k \leq n -1$. \\
+
+    \textbf{Inductive Step}: \\
+    Since we know that $\binom{n-1}{k}$ is an integer by the inductive hypothesis and $\binom{n - 1}{k - 1}$ is also an integer (because $0 \leq k \leq n$, then $-1 \leq k - 1\leq n - 1$ must also be true. Thus $\binom{n-1}{k-1}$ must be an integer by the inductive hypothesis because it falls within the range assumed by it), then we know that adding two integers together will result in an integer. Then, as shown in the previous problem, we know that this sum is equal to $\binom{n}{k}$, so $\binom{n}{k}$ must also be an integer.
+}
+
+
+
+
+
+
+
+\end{document}

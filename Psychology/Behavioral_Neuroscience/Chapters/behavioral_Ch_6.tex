@@ -144,11 +144,19 @@
     \end{coloredlist}
 \end{coloredlist}
 
+\begin{center}
+    \textbf{NEW NOTES FOR 03/03/25 (kinda)} \\
+    We added a lot to the notes that we already had, so there is new material springled throughout this section. \\
+    \hrulefill
+\end{center}
+
 \subsection{Binary System (``Off'' and ``On'')}
 
 \begin{coloredlist}
     \item \cyanit{The Resting Membrane Potential (RMP)}: ``OFF'' 
     \begin{coloredlist}
+        \item \hyperref[resting potential]{Click here for a diagram.}
+        \item \textit{Note:} Where the arrows land on either side of the cell membrane is supposed to represent the relative permeability of the cell membrane to different ions.
         \item -70 mV (relative to the outside).
         \item Understand the cell membrane.
         \begin{coloredlist}
@@ -183,51 +191,192 @@
                 \end{coloredlist}
             \end{coloredlist}
         \end{coloredlist}
+        \item \textbf{3 Determinants of the RMP}
+        \begin{coloredlist}
+            \item \cyanit{Differential Permeability} -- The cell membrane is more permeable to some ions than others.
+            \begin{coloredlist}
+                \item For sodium, the membrane only allows a trickle of \(\text{Na}^{+}\) into the cell.
+                \item Conversely, the membrane is more permeable to \(\text{K}^{+}\) and \(\text{CL}^{-}\). (\(\text{K}^{+}\) is the most permeable.)
+            \end{coloredlist}
+            \item \textbf{Driving Forces}:
+            \begin{coloredlist}
+                \item \cyanit{Diffusion} -- Ions move from high to low concentration (Concentration Gradient).
+                \begin{coloredlist}
+                    \item \textit{Note:} The cell membrane is more permeable to potassium ions than sodium ions.
+                \end{coloredlist}
+                \item \cyanit{Electrostatic Pressure} -- Ions move towards the opposite charge (Electrical Gradient).
+                \item \cyanit{Equilibrium Potential} -- The charge the ion ``perfers'' if it were the only one and could pass freely through the membrane.
+                \begin{coloredlist}
+                    \item This answers the question: ``Why doesn't the cell get more and more negative?''
+                    \item Driving force in (influx) = Driving force out (efflux).
+                    \item \(\text{K}^+ = -80 \text{ mV}\) and \(\text{Na}^+ = +55 \text{ mV}\).
+                \end{coloredlist}
+            \end{coloredlist}
+            \item \cyanit{Sodium-Potassium Pump} (\(\text{Na}^{+}\)/\(\text{K}^{+}\) Pump)
+            \begin{coloredlist}
+                \item 3 \(\text{Na}^{+}\) out for every 2 \(\text{K}^{+}\) in.
+                \item Costs 1 ATP.
+            \end{coloredlist}
+        \end{coloredlist}
     \end{coloredlist}
-    \item \cyanit{The Action Potential (AP)}: ``ON''
+    \item \cyanit{The Action Potential (AP)}: ``ON'' 
     \begin{coloredlist}
+        \item \hyperref[action potential]{Click here for a diagram.}
+        \begin{coloredlist}
+            \item \textit{Note:} The above diagram neglects to show that there can be \textit{failed} attempts at an action potential wherein the threshold is not reached. In these cases, the charge of the cell can increase or decrease, but if it does not reach -55 mV, it will quickly settle back to its resting potential of -70 mV.
+        \end{coloredlist}
         \item +40 mV (relative to the outside).
         \item Thus, during an action potential, there is a total of 110 mV difference between the inside and outside the cell.
         \item \textbf{Electrical Current}
         \begin{coloredlist}
-            \item 
+            \item \ldots
         \end{coloredlist}
     \end{coloredlist}
 \end{coloredlist}
 
-\begin{center}
-    \textbf{NEW NOTES FOR 03/03/25} \\
-    \hrulefill
-\end{center}
+\begin{figure}[htbp]
+    \centering
+    \label{resting potential}
+\begin{tikzpicture}
+  % Labels for compartments
+  \node at (-2,4.3) {\large \textbf{\underline{In}}};
+  \node at (2,4.3) {\large \textbf{\underline{Out}}};
+  \node at (-5.9,4.3) {\large \textbf{\underline{Permeability}}};
 
-\section{Resting Membrane Potential}
+%   % Draw compartments as boxes
+%   \draw (-5,-4) rectangle (-1,4); % Inside compartment
+%   \draw (1,-4) rectangle (5,4);   % Outside compartment
 
-\subsection{3 Determinants of the RMP}
+  % Draw the membrane as a double line:
+  % Left (solid) side denotes the negative (inside) and right (dotted) side the positive (outside)
+  \draw[line width=1pt] (0.1,-4) -- (0.1,4);  
+  \draw[dotted, line width=1pt] (-0.1,-4) -- (-0.1,4);
 
-\begin{coloredlist}
-    \item \cyanit{Differential Permeability} -- The cell membrane is more permeable to some ions than others.
-    \begin{coloredlist}
-        \item For sodium, the membrane only allows a trickle of \(\text{Na}^{+}\) into the cell.
-        \item Conversely, the membrane is more permeable to \(\text{K}^{+}\) and \(\text{CL}^{-}\). (\(\text{K}^{+}\) is the most permeable.)
-    \end{coloredlist}
-    \item Driving Forces:
-    \begin{coloredlist}
-        \item \cyanit{Diffusion} -- Ions move from high to low concentration (Concentration Gradient).
-        \begin{coloredlist}
-            \item \textit{Note:} The cell membrane is more permeable to potassium ions than sodium ions.
-        \end{coloredlist}
-        \item \cyanit{Electrostatic Pressure} -- Ions move towards the opposite charge (Electrical Gradient).
-        \item \cyanit{Equilibrium Potential} -- The charge the ion ``perfers'' if it were the only one and could pass freely through the membrane.
-        \begin{coloredlist}
-            \item This answers the question: ``Why doesn't the cell get more and more negative?''
-            \item Driving force in (influx) = Driving force out (efflux).
-            \item \(\text{K}^+ = -80 \text{ mV}\) and \(\text{Na}^+ = +55 \text{ mV}\).
-        \end{coloredlist}
-    \end{coloredlist}
-    \item Sodium-Potassium Pump (\(\text{Na}^{+}\)/\(\text{K}^{+}\) Pump)
-    \begin{coloredlist}
-        \item 3 \(\text{Na}^{+}\) out for every 2 \(\text{K}^{+}\) in.
-        \item Costs 1 ATP.
-    \end{coloredlist}
+  % Place ion symbols on the "in" side (left) with relative sizes.
+  % Here, potassium is large since it is more prevalent on the inside.
+  \node (K_in) at (-3,2.5) {\huge \(\text{K}^{+}\)};
+  \node (Na_in) at (-3,0) {\normalsize \(\text{Na}^{+}\)};
+  \node (Cl_in) at (-3,-2.5) {\normalsize \(\text{Cl}^{-}\)};
+
+  \node (P_K) at (-4.8,2.5) {\huge \(\text{P}\phantom{^{+}}\)};
+  \node (P_K) at (-4.8,0) {\tiny \(\text{P}\phantom{^{+}}\)};
+  \node (P_K) at (-4.8,-2.5) {\Large \(\text{P}\phantom{^{-}}\)};
+
+  % Place ion symbols on the "out" side (right)
+  % Here, sodium is made larger, etc.
+  \node (K_out) at (3,2.5) {\normalsize \(\text{K}^{+}\)};
+  \node (Na_out) at (3,0) {\huge \(\text{Na}^{+}\)};
+  \node (Cl_out) at (3,-2.5) {\Large \(\text{Cl}^{-}\)};
+
+  % Create nodes on the membrane for arrow connections
+  \node (mem2_left) at (-0.5,0) {};
+  \node (mem3_left) at (1.5,-2.5) {};
+  \node (mem3_right) at (-1.5,-2.5) {};
+
+  % Define arrow styles:
+  \tikzset{
+    diffusion/.style={->, >=Stealth, line width = 2pt, red},
+    electric/.style={->, >=Stealth, line width = 2pt, blue}
+  };
+
+  % For each ion on the inside, draw two arrows (curved differently) going from the ion to the membrane.
+  % The differences in the bending (and thus length) illustrate different magnitudes.
+  % --- For K_in:
+  \draw[electric, bend right=15] (K_in) to (K_out);
+  \draw[diffusion, bend right=15, line width = 6pt] (K_out) to (K_in);
+  % --- For Na_in:
+  \draw[electric, bend left=15] (Na_out) to (mem2_left);
+  \draw[diffusion, bend right=15] (Na_out) to (mem2_left);
+  % --- For Cl_in:
+  \draw[electric, bend right=15] (Cl_in) to (mem3_left);
+  \draw[diffusion, bend right=15] (Cl_out) to (mem3_right);
+
+  % Add a legend (key) to denote arrow styles.
+  \node[draw, rectangle, right=1cm of K_out] (legend) {
+    \begin{tabular}{ll}
+      \textbf{Key:} & \\
+      \tikz{\draw[diffusion, ->, >=Stealth, thick, red] (0,0) -- (1,0);} & Diffusion \\
+      \tikz{\draw[electric, ->, >=Stealth, thick, blue] (0,0) -- (1,0);} & Electric \\
+    \end{tabular}
+  };
+\end{tikzpicture}
+\caption{The Resting Membrane Potential (RMP) of a Neuron}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \label{action potential}
+\begin{tikzpicture}[scale=1.2]
+
+    % Draw axes
+    \draw[->, thick] (0,-4) -- (7,-4) node[right] {Time (ms)};
+    \draw[->, thick] (0,-4) -- (0,3) node[above] {Voltage (mV)};
+
+    % Draw threshold line at -55 mV and resting potential at -70 mV
+    \draw[dashed] (0,-2.5) -- (7,-2.5) node[right] {Threshold (-55 mV)};
+    \draw[dashed] (0,-3.5) -- (7,-3.5) node[right] {RMP (-70 mV)};
+  
+    % y-axis ticks and labels (scaling: 1 unit = 20 mV)
+    \foreach \y/\label in {-3.5/{-70},-2.5/{-55}, -2/{-40}, -1/{-20}, 0/{0}, 1/{20}, 2/{40}} {
+        \draw (0,\y) -- (-0.2,\y) node[left] {\label};
+    }
     
-\end{coloredlist}
+    % x-axis ticks
+    \foreach \x in {0,1,2,3,4,5,6} {
+        \draw (\x,-4) -- (\x,-4.15) node[below] {\x};
+    }
+    
+    % Draw action potential waveform using coordinates:
+    % Points (x, y) where y = mV/20:
+    % (0,-3.5):   Rest (-70 mV)
+    % (1,-3.5):   Rest
+    % (2,-2.75):  Threshold (-55 mV, since -55/20 = -2.75)
+    % (3,2):      Peak depolarization (+40 mV, 40/20 = 2)
+    % (4,-0.5):   Repolarization (-10 mV, -10/20 = -0.5)
+    % (5,-4):     Hyperpolarization (-80 mV, -80/20 = -4)
+    % (6,-3.5):   Return to rest (-70 mV)
+    \draw[thick, horange] plot coordinates {
+        (0,-3.5)
+        (1,-3.5)
+        (1.5,-3.5)
+    };
+    \draw[thick, horange, smooth] plot coordinates {
+        (1.5,-3.5)
+        (1.90,-2.55)
+    };
+    \draw[thick, horange] plot coordinates {
+        (1.90,-2.55)
+        (2,-2.5)
+    };
+    \draw[thick, horange, smooth] plot coordinates {
+      (2,-2.5)
+      (3,2)
+      (4,-0.5)
+      (5,-3.7)
+      (6,-3.5)
+    };
+
+    % Add phase labels near the waveform
+    \tikzset{
+        circ/.style = {draw, circle, scale=0.7}
+    };
+
+    \node[circ] at (1.3,-3.2) {1};
+    \node[circ] at (1.75,-2.2) {2};
+    \node[circ] at (3.2,2.3) {3};
+    \node[circ] at (4.8,-2.2) {4};
+    
+    \draw[decorate, decoration={brace, amplitude=6pt}]
+    (4.9,-3.5) -- (6,-3.5);
+    % Add text labels for phases
+    \node at (2.2, 0) [rotate=78] {\textbf{Depolarization}};
+    \node at (4.2, 0) [rotate=287] {\textbf{Repolarization}};
+    \node at (5.4, -3.1) {\textbf{Hyperpolarization}};
+
+    % Arrow pointing hyperpolarization to -80 mv
+    % \draw[->, thick] (7, -2) -- (4.93,-3.9) node[below] {};
+  
+  \end{tikzpicture}
+    \caption{Action Potential Waveform}
+\end{figure}
+

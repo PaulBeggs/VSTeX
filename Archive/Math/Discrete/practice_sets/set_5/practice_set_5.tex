@@ -1,0 +1,396 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage{tcolorbox}
+\usepackage{comment}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{multirow, bigdelim}
+\usepackage{marginnote}
+\usepackage{lipsum}
+\usepackage{neuralnetwork}
+\usepackage{subfigure}
+\usepackage{slashed}
+\usepackage{multicol}
+
+
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+
+\newenvironment{solution}{\textit{Solution}.}
+
+\titleformat{\subsection}[block]{\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalfont\bfseries}{}{1em}{}
+
+\colorlet{LightGray}{black!30}
+\colorlet{LightOrange}{orange!15}
+\colorlet{LightGreen}{green!15}
+\colorlet{Orange}{orange!5}
+\colorlet{LightRed}{red!50}
+\colorlet{LightBlue}{blue!15}
+\colorlet{Yellow}{yellow!50}
+\colorlet{Red}{red!5}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+% Define theorem style
+\declaretheoremstyle[name=Theorem]{thmsty}
+\declaretheorem[style=thmsty]{theorem}
+\tcolorboxenvironment{theorem}{colback=LightGray}
+
+% Define definition style
+\declaretheoremstyle[name=Definition,numbered=no]{defsty}
+\declaretheorem[style=defsty]{definition}
+\tcolorboxenvironment{definition}{colback=LightOrange}
+
+% Define problem style
+\declaretheoremstyle[name=Problem]{pblsty}
+\declaretheorem[style=pblsty]{problem}
+\tcolorboxenvironment{problem}{colback=LightGreen}
+
+% Define axiom style
+\declaretheoremstyle[name=Axiom]{axisty}
+\declaretheorem[style=axisty]{axiom}
+\tcolorboxenvironment{axiom}{colback=Orange}
+
+% Define terminology style
+\declaretheoremstyle[name=Terminology]{tersty}
+\declaretheorem[style=tersty]{terminology}
+\tcolorboxenvironment{terminology}{colback=Red}
+
+% Define lemma style
+\declaretheoremstyle[name=Lemma,numbered=no]{lemsty}
+\declaretheorem[style=lemsty]{lemma}
+\tcolorboxenvironment{lemma}{colback=LightBlue}
+
+% Define example style
+\declaretheoremstyle[name=Example]{exasty}
+\declaretheorem[style=exasty,numberlike=theorem]{example}
+\tcolorboxenvironment{example}{colback=LightGreen}
+
+% Define corollary style
+\declaretheoremstyle[name=Corollary]{corsty}
+\declaretheorem[style=corsty]{corollary}
+\tcolorboxenvironment{corollary}{colback=Red}
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+\def \proofDistance {5pt}
+\def \subheaderSpace {10pt}
+
+\newcommand{\proofseparator}{\par\noindent\rule{\textwidth}{0.4pt}}
+\newcommand{\caution}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+% Command for problem statement
+\newcommand{\customproblem}[1]{
+    \begin{problem}
+    #1
+    \end{problem}
+}
+
+% Define a command for custom proofs with separator
+\newcommand{\pf}[1]{
+    \vspace{\proofDistance}
+    \begin{proof}
+    #1
+    \end{proof}
+    \proofseparator
+}
+
+\begin{document}
+
+
+\textbf{Name}: Paul Beggs
+
+\begin{enumerate}
+    \item (3 points) Complete the table below for the recurrence relation,         $A(n) = \begin{cases}
+        1, &\text{ if } n = 0 \\
+        3A(n-1), &\text { if } n \geq 1
+    \end{cases}$
+\end{enumerate}
+
+\vspace{0.3cm}
+\begin{center}
+    
+    \begin{tabular}{c|c}
+        \textit{n} & \(A(n)\) \\
+        \hline
+        0 & 1 \\
+        1 & 3 \\
+        2 & 9 \\
+        3 & 27 \\
+        4 & 81 \\
+        5 & 243 \\
+        6 & 729 \\
+    \end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
+    \item (2 points) Complete the table below for the recurrence relation, \\
+    $B(n) = \begin{cases}
+        1, &\text{ if } n = 0 \\
+        2, &\text { if } n = 1 \\
+        B(n-1) + B(n-2) + n, &\text{ if } n > 1
+    \end{cases}$
+\end{enumerate}
+
+\vspace{0.3cm}
+
+
+\begin{center}
+    
+\begin{tabular}{c|c}
+\textit{n} & \(B(n)\) \\
+\hline
+0 & 1 \\
+1 & 2 \\
+2 & 5 \\
+3 & 10 \\
+4 & 19 \\
+5 & 34 \\
+6 & 59 \\
+\end{tabular}
+
+\end{center}
+
+\vfill
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item (4 points) Consider the sequence $p(n)$, whose first few terms are listed below. Find a polynomial that reproduces this sequence.
+\end{enumerate}
+\begin{multicols}{2}
+    \begin{center}
+        
+    \begin{tabular}{c|c}
+        \textit{n} & \(p(n)\) \\
+        \hline
+        0 & 1 \\
+        1 & 0 \\
+        2 & 5 \\
+        3 & 16 \\
+        4 & 33 \\
+        5 & 56 \\
+        6 & 85 \\
+    \end{tabular}
+    \end{center}
+
+\columnbreak
+
+\noindent $p(n) = 3n^2 - 4n + 1$. Found by just putting the system of linear equations into a matrix form, and utilizing RREF to find the values of $a,b,c$. Note that the matrix was made up of 7 rows, with 8 columns; therefore, it would be impractical to print the matrix here. Just note that the matrix had a diagonal of 1s, with $3, -4, 1$ in the final column (corresponding to the $5^{\text{th}}, 6^{\text{th}}$, and $7^{\text{th}}$ columns).
+
+\end{multicols}
+
+\newpage
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+    \item Consider the recurrence relation, $F(n) = \begin{cases}
+        1, &\text{ if } n = 0 \\
+        2, &\text { if } n = 1 \\
+        F(n-1) + 2\cdot F(n-2), &\text{ if } n > 1
+    \end{cases}$
+    \begin{enumerate}
+        \item (3 points) Complete the table below: \\
+        
+        \begin{tabular}{c|c}
+            \textit{n} & \(F(n)\) \\
+            \hline
+            0 & 1 \\
+            1 & 2 \\
+            2 & 4 \\
+            3 & 8 \\
+            4 & 16 \\
+            5 & 32 \\
+            6 & 64 \\
+        \end{tabular} \\
+        
+        \item (2 points) Guess a closed form solution for $F(n).$ \\
+
+        Appears to be $F(n) = 2^n$ \\
+
+        \item (3 points) Use induction to show how your solution works. \\
+
+        \begin{itemize}
+            \item \textbf{Base Case}: \\
+            For $n = 0, F(0) = 1 = 2^0$. \\
+            For $n = 1, F(1) = 2 = 2^1$. \\
+            \item \textbf{Inductive Hypothesis}: \\
+            Assume $F(k) = 2^k$ and $F(k - 1) = 2^{k - 1}$ are true for some integer, $k \geq 1$. We need to show that $F(k+1) = 2^{k + 1}$ is also true. \\
+            
+            Given that $F(n) = F(n -1) + 2F(k - 1)$, substitute $n = k + 1$: $F(k + 1) = F(k) + 2F(k - 1)$. \\
+            \item \textbf{Inductive Step}:
+            \begin{align*}
+                F(k + 1) &= 2^k + 2^1 \cdot 2^{k-1} \\
+                &= 2^k + 2^k \\
+                &= 2 \cdot 2^k \\
+                &= 2^{k+1}
+            \end{align*}
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{enumerate}
+    \setcounter{enumi}{4}
+    \item (4 points) Consider the recurrence relation $G(n) = \begin{cases}
+        0, &\text{ if } n = 0 \\
+        5\cdot G(n-1) + 1, &\text { if } n \geq 1 \\
+    \end{cases}$ \\
+    Use induction to show that $G(n) = \displaystyle \frac{5^n - 1}{4}$ for all $n \geq 0$.
+
+    \begin{itemize}
+        \item \textbf{Base Case}: \\
+            For $n = 0, \ G(n) = \displaystyle \frac{5^0 - 1}{4} = \displaystyle \frac{1-1}{4} = 0$ \\
+        \item \textbf{Inductive Hypothesis}: \\
+            Assume for some $k \geq 0$, that $G(k) = \displaystyle \frac{5^k - 1}{4}$ is true. \\
+        \item \textbf{Inductive Step}: \\
+        We must show that $G(k+1) = \frac{5^{k+1} - 1}{4}$ follows from the hypothesis. Given that $G(k +1) = 5\cdot G(k) + 1$, substituting for $G(k)$, we get:
+        \begin{align*}
+            G(k +1) &= 5 \displaystyle \cdot (\frac{5^k - 1}{4}) + 1 \\
+            &= \displaystyle \frac{5^{k+1} - 5}{4} + 1 \\
+            &= \displaystyle \frac{5^{k+1} - 5}{4} + \displaystyle \frac{4}{4} \\
+            &= \displaystyle \frac{5^{k+1} - 5 + 4}{4} \\
+            &= \displaystyle \frac{5^{k+1} - 1}{4}
+        \end{align*}
+    \end{itemize}
+\end{enumerate}
+
+\newpage
+
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item (4 points) Consider the recurrence relation $H(n) = \begin{cases}
+        1, &\text{ if } n = 0 \\
+        H(n-1) + n^2, &\text { if } n \geq 1 \\
+    \end{cases}$ \\
+    Use the sequence of differences to determine a polynomial which appears to satisfy this relation, then prove your answer works using induction. \\
+
+    \begin{enumerate}
+        \item \textbf{Sequence of Differences}:
+            \begin{multicols}{3}
+                \begin{center}
+                    \begin{tabular}{c|c}
+                        \textit{n} & \(H(n)\) \\
+                        \hline
+                        0 & 1 \\
+                        1 & 2 \\
+                        2 & 6 \\
+                        3 & 15 \\
+                        4 & 31 \\
+                        5 & 56 \\
+                        6 & 92 \\
+                    \end{tabular}
+                \end{center}
+            
+                \columnbreak
+
+                \begin{center}
+
+                    \begin{tabular}{c|c|c}
+                        $n$ & $n-1$ & \(\Delta H(n)\) \\
+                        \hline
+                        0 & $1-0$ & $1$ \\
+                        1 & $2-1$ & $4$ \\
+                        2 & $3-2$ & $9$ \\
+                        3 & $4-3$ & $16$ \\
+                        4 & $5-4$ & $25$ \\
+                        5 & $6-5$ & $36$ \\
+                    \end{tabular}
+                \end{center}
+            
+                \columnbreak
+                \begin{center}
+                    \begin{tabular}{c|c|c}
+                        $n$ & $n-1$ & \(\Delta^2 H(n)\) \\
+                        \hline
+                        0 & $1-0$ & $3$ \\
+                        1 & $2-1$ & $5$ \\
+                        2 & $3-2$ & $7$ \\
+                        3 & $4-3$ & $9$ \\
+                        4 & $5-4$ & $11$ \\
+                    \end{tabular} \\
+                \end{center}
+                
+            \end{multicols}
+
+            Given that the difference between the sequences results in numbers equating to a linear relationship, this implies that we have found what degree to define the polynomial as. In other words, because we know the first sequence of differences (SoD), is quadratic, we can hypothesize that the next SoDs are going to be linear, and constant, respectively. As we have shown with the second SoD, it is linear, and by intuition, we can see that the third SoD will be constant. Hence, our hypothesis is correct. \\
+            
+            Therefore, $H(n)$ can be represented by a polynomial of degree 3: \\ 
+            $H(n) = an^3 + bn^2 + cn + d$. \\
+
+            Now, we can make a guess for what the actual equation may be. Seeing that this equation is literally summing squares, a reasonable guess would be that $H(n)$ is the sum of squares formula (i.e., $H(n) = \frac{n(n+1)(2n+1)}{6}$). However, because $H(0) =1$, we must account for that with the addition of $+1$ to our equation. Thus, $H(n) = \frac{n(n+1)(2n+1)}{6} + 1$. \\
+
+\newpage
+            
+        \item \textbf{Proof by Induction}: 
+        \begin{itemize}
+            \item \textbf{Base Case}: \\
+            For $n = 0$, $H(0) = 1 = \frac{1}{6}(0)(0+1)(2\cdot 0 + 1) + 1$ \\
+            \item \textbf{Inductive Hypothesis}: \\
+            Assume $H(k) = \frac{1}{6}k(k+1)(2k+1) +1$ for some $k \geq 0$.\\
+            \item \textbf{Inductive Step}: \\
+            We must show that $H(k + 1) = \frac{1}{6}\Big[(k+1)\big[(k+1) + 1\big]\big(2(k+1) + 1\big)\Big] + 1$. \\
+            
+            Which, for clarity, simplifies to $H(k+1) = \frac{1}{6}\big[(k+1)(k+2)(2k+3)\big] + 1$. \\
+
+            Thus, we can prove prove this equation is correct by beginning with the recurrence relation:
+            \begin{align*}
+                H(k+1) &= H(k) + (k + 1)^2 \\
+                &= \frac{1}{6}\big[k(k + 1)(2k + 1)\big] + (k + 1)^2 + 1 \\
+                &= \frac{1}{6}\big[k(k + 1)(2k + 1) + 6(k + 1)^2\big] + 1 \\
+                &= \frac{1}{6}\big[k(2k^2 + 3k + 1) + 6(k^2 + 2k + 1)\big] + 1 \\
+                &= \frac{1}{6}[2k^3 + 3k^2 + k + 6k^2 + 12k + 6] + 1 \\
+                &= \frac{1}{6}[2k^3 + 9k^2 + 13k + 6] + 1 \\
+                &= \frac{1}{6}\big[(k+1)(k+2)(2k+3)\big] + 1
+            \end{align*}
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

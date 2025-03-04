@@ -1,0 +1,281 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage{tcolorbox}
+\usepackage{comment}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{multirow, bigdelim}
+\usepackage{marginnote}
+\usepackage{lipsum}
+\usepackage{neuralnetwork}
+\usepackage{subfigure}
+\usepackage{slashed}
+
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+
+\newenvironment{solution}{\textit{Solution}.}
+
+\titleformat{\subsection}[block]{\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalfont\bfseries}{}{1em}{}
+
+\colorlet{LightGray}{black!30}
+\colorlet{LightOrange}{orange!15}
+\colorlet{LightGreen}{green!15}
+\colorlet{Orange}{orange!5}
+\colorlet{LightRed}{red!50}
+\colorlet{LightBlue}{blue!15}
+\colorlet{Yellow}{yellow!50}
+\colorlet{Red}{red!5}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+% Define theorem style
+\declaretheoremstyle[name=Theorem]{thmsty}
+\declaretheorem[style=thmsty]{theorem}
+\tcolorboxenvironment{theorem}{colback=LightGray}
+
+% Define definition style
+\declaretheoremstyle[name=Definition,numbered=no]{defsty}
+\declaretheorem[style=defsty]{definition}
+\tcolorboxenvironment{definition}{colback=LightOrange}
+
+% Define problem style
+\declaretheoremstyle[name=Problem]{pblsty}
+\declaretheorem[style=pblsty]{problem}
+\tcolorboxenvironment{problem}{colback=LightGreen}
+
+% Define axiom style
+\declaretheoremstyle[name=Axiom]{axisty}
+\declaretheorem[style=axisty]{axiom}
+\tcolorboxenvironment{axiom}{colback=Orange}
+
+% Define terminology style
+\declaretheoremstyle[name=Terminology]{tersty}
+\declaretheorem[style=tersty]{terminology}
+\tcolorboxenvironment{terminology}{colback=Red}
+
+% Define lemma style
+\declaretheoremstyle[name=Lemma,numbered=no]{lemsty}
+\declaretheorem[style=lemsty]{lemma}
+\tcolorboxenvironment{lemma}{colback=LightBlue}
+
+% Define example style
+\declaretheoremstyle[name=Example]{exasty}
+\declaretheorem[style=exasty,numberlike=theorem]{example}
+\tcolorboxenvironment{example}{colback=LightGreen}
+
+% Define corollary style
+\declaretheoremstyle[name=Corollary]{corsty}
+\declaretheorem[style=corsty]{corollary}
+\tcolorboxenvironment{corollary}{colback=Red}
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+\def \proofDistance {5pt}
+\def \subheaderSpace {10pt}
+
+\newcommand{\proofseparator}{\par\noindent\rule{\textwidth}{0.4pt}}
+\newcommand{\caution}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+% Command for problem statement
+\newcommand{\customproblem}[1]{
+    \begin{problem}
+    #1
+    \end{problem}
+}
+
+% Define a command for custom proofs with separator
+\newcommand{\customproof}[1]{
+    \vspace{\proofDistance}
+    \begin{proof}
+    #1
+    \end{proof}
+    \proofseparator
+}
+
+% ------------------------------------------------------------------------------
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+
+
+
+% ------------------------------------------------------------------------------
+% Basic Logic Summary
+% ------------------------------------------------------------------------------
+
+\setcounter{section}{0}
+\section{Basic Logic Summary}
+
+    \subsection{Basic Operations}
+        \begin{itemize}
+            \item \textbf{Negation}, the ``not" operation, denoted $\neg$ 
+            \hspace{0.5em}
+            
+            \begin{tabular}{c||c}
+                $p$ & $\neg{p}$ \\
+                \cline{1-2}
+                T & F \\
+                F & T \\
+                
+            \end{tabular}
+            
+            \item \textbf{And}, sometimes called ``conjunction," denoted $\land$ 
+            \hspace{0.5em}
+        
+            \begin{tabular}{c|c||c}
+                $p$ & $q$ & $p \land q$ \\
+                \cline{1-3}
+                T & T & T \\
+                T & F & F \\
+                F & T & F \\
+                F & F & F \\
+            \end{tabular}
+        
+            \item \textbf{Or}, sometimes called ``disjunction," denoted $\lor$
+            \hspace{0.5em}
+        
+            \begin{tabular}{c|c||c}
+                $p$ & $q$ & $p \lor q$ \\
+                \cline{1-3}
+                T & T & T \\
+                T & F & T \\
+                F & T & T \\
+                F & F & F \\
+            \end{tabular}
+        
+            \item \textbf{Implication}, sometimes called ``material implication" or ``if \dots then," denoted $\Rightarrow$
+            \hspace{0.5em}
+        
+            \begin{tabular}{c|c||c}
+                $p$ & $q$ & $p \Rightarrow q$ \\
+                \cline{1-3}
+                T & T & T \\
+                T & F & F \\
+                F & T & T \\
+                F & F & T \\
+            \end{tabular}
+        
+            \item \textbf{Equivalence}, sometimes called ``material equivalence" or ``iff" denoted $\iff$
+            \hspace{0.5em}
+            
+            \begin{tabular}{c|c||c}
+                $p$ & $q$ & $p \iff q$ \\
+                \cline{1-3}
+                T & T & T \\
+                T & F & F \\
+                F & T & T \\
+                F & F & T \\
+            \end{tabular}
+        
+        \end{itemize}
+
+\newpage
+
+% ------------------------------------------------------------------------------
+% Derivation Rules & Quantifiers
+% ------------------------------------------------------------------------------
+\section{Derivation \& Inference Rules}
+    \subsection{Derivation Rules}
+        \begin{itemize}
+            \item \textbf{Equivalence Rules}
+            \hspace{0.5em}
+        
+            \begin{table}[htb]
+                \begin{tabular}{rcl|l}
+                    {Equivalence} & & & {Name} \\
+                    \hline\hline
+                    $p$ & $\iff$ & $\neg\neg{p}$ & Double Negation \\
+                    \hline
+                    $p \Rightarrow q$ & $\iff$ & $\neg{p} \lor q$ & Implication \\
+                    \hline
+                    $\neg(p \land q)$ & $\iff$ & $\neg{p} \lor \neg{q}$ & De Morgan's Laws \\
+                    $\neg(p \lor q)$ & $\iff$ & $\neg{p} \land \neg{q}$ \\
+                    \hline
+                    $p \lor q$ & $\iff$ & $q \lor p$ & Commutativity \\
+                    $p \land q$ & $\iff$ & $q \land p$ \\
+                    \hline
+                    $p \land (q \land r)$ & $\iff$ & $(p \land q) \land r$ & Associativity \\
+                    $p \lor (q \lor r)$ & $\iff$ & $(p \lor q) \lor r$ \\
+                \end{tabular}
+            \end{table}
+            \item \textbf{Inference Rules} \\
+            \hspace{0.5em}
+            Note: Curly braces indicate ``$\land$"
+        
+            \begin{table}[htb]
+                \begin{tabular}{rcc|l}
+                    \textbf{Inference} & & & \textbf{Name} \\
+                    \hline \hline
+                    $\left.\begin{array}{l}
+                    p \\
+                    q
+                    \end{array}\right\}$ & $\Rightarrow$ & $p \land q$ & Conjunction \\
+                    \hline
+                    $\left.\begin{array}{l}
+                    \ \ \neg q \\
+                    p \Rightarrow q
+                    \end{array}\right\}$ & $\Rightarrow$ & $q$ & \textit{modus ponens} \\
+                    \hline
+                    $\left.\begin{array}{l}
+                    p \Rightarrow q \\
+                    \ \ \neg q 
+                    \end{array}\right\}$ & $\Rightarrow$ & $\neg p$ & \textit{modus tollens} \\
+                    \hline
+                    $p \land q$ & $\Rightarrow$ & $p$ & Simplification \\
+                    \hline
+                    $p$ & $\Rightarrow$ & $p \lor q$ & Addition \\
+                \end{tabular}
+            \end{table}
+            \end{itemize}
+
+        \subsection{Quantifiers}
+        \begin{itemize}
+            \item \textbf{Universal }- ``for all," denoted by $\forall$
+            \item \textbf{Existential }- ``exists," denoted by $\exists$
+        \end{itemize}
+
+        \begin{tabular}{lcl|l}
+             \textbf{Equivalence} &&& \textbf{Name} \\
+             \hline \hline
+             $\neg [(\forall x)P(x)]$ & $\iff$ & $(\exists x)(\neg P(x))$ & Universal Negation \\
+             \hline
+             $\neg [(\exists x)P(x)]$ & $\iff$ & $(\forall x)(\neg P(x))$ & Existential Negation \\
+        \end{tabular}
+
+\newpage
+
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\end{document}

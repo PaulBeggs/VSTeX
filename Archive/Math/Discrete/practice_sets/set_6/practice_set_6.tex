@@ -1,0 +1,372 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage{tcolorbox}
+\usepackage{comment}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{multirow, bigdelim}
+\usepackage{marginnote}
+\usepackage{lipsum}
+\usepackage{neuralnetwork}
+\usepackage{subfigure}
+\usepackage{slashed}
+\usepackage{multicol}
+
+
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+
+\newenvironment{solution}{\textit{Solution}.}
+
+\titleformat{\subsection}[block]{\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalfont\bfseries}{}{1em}{}
+
+\colorlet{LightGray}{black!30}
+\colorlet{LightOrange}{orange!15}
+\colorlet{LightGreen}{green!15}
+\colorlet{Orange}{orange!5}
+\colorlet{LightRed}{red!50}
+\colorlet{LightBlue}{blue!15}
+\colorlet{Yellow}{yellow!50}
+\colorlet{Red}{red!5}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+% Define theorem style
+\declaretheoremstyle[name=Theorem]{thmsty}
+\declaretheorem[style=thmsty]{theorem}
+\tcolorboxenvironment{theorem}{colback=LightGray}
+
+% Define definition style
+\declaretheoremstyle[name=Definition,numbered=no]{defsty}
+\declaretheorem[style=defsty]{definition}
+\tcolorboxenvironment{definition}{colback=LightOrange}
+
+% Define problem style
+\declaretheoremstyle[name=Problem]{pblsty}
+\declaretheorem[style=pblsty]{problem}
+\tcolorboxenvironment{problem}{colback=LightGreen}
+
+% Define axiom style
+\declaretheoremstyle[name=Axiom]{axisty}
+\declaretheorem[style=axisty]{axiom}
+\tcolorboxenvironment{axiom}{colback=Orange}
+
+% Define terminology style
+\declaretheoremstyle[name=Terminology]{tersty}
+\declaretheorem[style=tersty]{terminology}
+\tcolorboxenvironment{terminology}{colback=Red}
+
+% Define lemma style
+\declaretheoremstyle[name=Lemma,numbered=no]{lemsty}
+\declaretheorem[style=lemsty]{lemma}
+\tcolorboxenvironment{lemma}{colback=LightBlue}
+
+% Define example style
+\declaretheoremstyle[name=Example]{exasty}
+\declaretheorem[style=exasty,numberlike=theorem]{example}
+\tcolorboxenvironment{example}{colback=LightGreen}
+
+% Define corollary style
+\declaretheoremstyle[name=Corollary]{corsty}
+\declaretheorem[style=corsty]{corollary}
+\tcolorboxenvironment{corollary}{colback=Red}
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+\def \proofDistance {5pt}
+\def \subheaderSpace {10pt}
+
+\newcommand{\proofseparator}{\par\noindent\rule{\textwidth}{0.4pt}}
+\newcommand{\caution}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+% Command for problem statement
+\newcommand{\customproblem}[1]{
+    \begin{problem}
+    #1
+    \end{problem}
+}
+
+% Define a command for custom proofs with separator
+\newcommand{\pf}[1]{
+    \vspace{\proofDistance}
+    \begin{proof}
+    #1
+    \end{proof}
+    \proofseparator
+}
+
+\newcommand{\solse}[1]{
+    \vspace{\proofDistance}
+    \begin{solution}
+    #1
+    \end{solution}
+    \proofseparator
+}
+
+\newcommand{\sol}[1]{
+    \vspace{\proofDistance}
+    \begin{solution}
+    #1
+    \end{solution}
+}
+
+
+\begin{document}
+
+\begin{center}
+    \textbf{Practice Set VI} \\
+    
+    \textbf{Name}: Paul Beggs \\
+\end{center}
+
+\begin{enumerate}
+    \item (3 points) Suppose you have an unlimited number of 3-cent and 5-cent stamps. You can then make a total of 3 cents, 5 cents, 6 cents, and each value from 8-cents and above. Use either regular or strong induction to show that each of 8-cents, 9-cents, 10-cents, \dots can be made. 
+    \pf{\hfill
+        \begin{enumerate}
+            \item \textbf{Base Cases}: \\
+            $n = 8\text{\textcent}\colon 3\text{\textcent} + 5\text{\textcent}$ \\
+            $n = 9\text{\textcent}\colon 3 \cdot 3\text{\textcent}$ \\
+            $n = 10\text{\textcent}\colon 2 \cdot 5\text{\textcent}$ \\
+    
+            \item \textbf{Inductive Hypothesis}: \\
+            Suppose $n > 10\text{\textcent}$, and $8\text{\textcent} \leq k < n$, we can make $k$ cents. \\
+    
+            \item \textbf{Inductive Step}: \\
+            Our goal is to make $n$ cent stamps. To do that, consider $n - 3$ cent stamps. Since $n$ is greater than $10$, $n - 3$ is at least $8$ cent stamps. \\
+    
+            By the inductive hypothesis, we can make $n - 3$ cent stamps because this amount is within the range of our assumption. To make $n$ cent stamps, simply add one $3$ cent stamp to $n - 3$. We have made $n$ stamps.
+        \end{enumerate}
+    }
+
+\vspace*{\fill}
+
+    \item (3 points) Write a recursive definition for the set of positive numbers which are multiples of either 3 or 5: $\{3,5,6,9, 10, 12, 15, 18, 20, 21,\dots \}$. \\
+    
+    Skip. \\
+
+    \vspace{3cm}
+
+\newpage
+
+    \item (3 points) Write a recursive definition for the set of positive powers of $3: \{3,9,27,81,\dots\}$. \\
+
+    \sol{Let $X$ be recursively defined as:
+        \begin{itemize}
+            \item \textbf{B}: \\
+            $3\in X$
+            \item \textbf{R}: \\
+            If $3^n \in X$, then $3^{n+1}\in X$. \\
+        \end{itemize}
+    }
+
+
+\vspace*{\fill}
+
+
+    \item (3 points) Use structural induction and the definition that you wrote in Problem 3 above to show that each element in this set is odd.
+    \pf{ \hfill
+        \begin{itemize}
+            \item \textbf{Base Case}: \\
+            For $n = 1$: $3^1 = 3$, which is clearly odd (i.e., has the form of $2m + 1$ where $m$ is just $1$). \\
+
+            \item \textbf{Inductive Hypothesis}: \\
+            Suppose that $3^n$ is odd for some $n\in \N$. This means there must exist an integer $k$ such that $3^n = 2k + 1$. \\
+
+            \item \textbf{Inductive Step}: \\
+            We need to show that $3^{n+1}$ is also odd under the assumption that $3^n$ is odd. \\
+
+            Rewriting $3^{n+1}$ as $3 \cdot 3^n$, we can use the inductive hypothesis to substitute and expand the expression: 
+            \begin{align*}
+                3^{n+1} &= 3\cdot (2k+1) \\
+                &= 6k + 3 \\
+                &= 6k + 2 + 1 \\
+                &= 2\cdot (3k + 1) + 1 
+            \end{align*}
+            Because $(3k + 1)$ must be an integer by definition, $3^{n+1}$ must be odd by definition of odd numbers. In other words, $3^{n-1}$ is equivalent to some form $2m + 1$ (or in this case, $3m + 1$) for some $m \in \Z$.
+        \end{itemize}
+    }
+
+
+\newpage
+
+
+    \item (3 points) Use induction to prove that $5^n - 1$ is divisible by $4$ for each integer $n \geq 0$.
+    \pf{\hfill
+        \begin{itemize}
+            \item \textbf{Base Case}: \\
+            For $n = 0$: $5^0 - 1 = 0$; which is divisible by $4$ because $0 = 0 \times 4$. \\
+
+            \item \textbf{Inductive Hypothesis}: \\
+            Suppose for some integer $n \geq 0$, $5^n - 1$ is divisible by $4$. \\ 
+
+            \item \textbf{Inductive Step}: \\
+            We need to show that $5^{n + 1} - 1$ is also divisible by $4$ under the assumption that $5^n - 1$ is divisible by $4$. \\
+
+            Rewriting $5^{n + 1} - 1$ as $5\cdot 5^n - 1$, we can use the inductive hypothesis to substitute and expand the expression: 
+            \begin{align*}
+                5\cdot 5^n - 1 &= (4+1)\cdot 5^n - 1 \\
+                &= (4 \cdot 5^n) + (1 \cdot 5^n) - 1 \\
+                &= (4\cdot 5^n) + (5^n - 1)
+            \end{align*}
+            Now, we know that $4\cdot 5^n$ is divisible by $4$, because itself is a multiple of $4$. Additionally, we know that $5^n - 1$ is also divisible by $4$ by the inductive hypothesis. Hence, when we add these two expressions together, we will get a number that is also a multiple of $4$ by definition. Therefore, $5^{n+1} - 1$ is divisible by $4$.
+        \end{itemize}
+    }
+    
+
+\newpage
+
+    \item (3 points) Suppose that $f \colon \N \rightarrow \N$ is a function with two properties: 
+    \begin{itemize}
+        \item $f(1) = 2$
+        \item $f(a + b) = f(a)\cdot f(b)$ for all $a,b\in \N$.
+    \end{itemize}
+    Show, by inducting on $n$, that $f(n) = 2^n$. \\
+
+    \pf{\hfill
+        \begin{itemize}
+            \item \textbf{Base Case}: \\
+            For $n = 1$: $2^1 = 2$, so our base case for $f(n) = 2^n$ is satisfied. \\
+
+            \item \textbf{Inductive Hypothesis}: \\
+            Suppose for some $n\in \N$, the statement, $f(n) = 2^n$. \\
+
+            \item \textbf{Inductive Step}: \\
+            We need to show that the properties of $f(n)$ hold for $f(n + 1) = 2^{n+1}$. \\
+
+            Given that $f(a+b) = f(a) \cdot f(b)$, for all $a,b\in \N$, we can rewrite $f(n+1)$ as $f(n) \cdot f(1)$. Then, by the inductive hypothesis, we know that: 
+            \begin{align*}
+                f(n) + f(1) &= 2^n + 2 \\
+                &= 2^{n + 1}
+            \end{align*}
+            Hence, this means that $f(n+1)$ upholds the specified characteristics of $f$.
+            
+        \end{itemize}
+    }
+
+\newpage
+
+    \item We have previously used that, given a set of numbers $s(n)$ for integers $n \geq 0$ if the $k^\text{th}$ sequence of differences is constant (and not 0) then $s(n)$ is generated by a polynomial of degree $k$. We will justify that here. Suppose that $s(n)$ can be written as a polynomial $a_kn^k + a_{k-1}n^{k-1}+ \cdots + a_1n+a_0$. We wish to show that the $k^\text{th}$ sequence of differences from $s$ is constant. If we write that constant as $c$, then $a_k = c/k!$. We will show this by induction on $k$.
+
+    \begin{enumerate}
+        \item \textbf{Base Case}: Our base case is when $k = 1$ Suppose that $s(n) = a_1n + a_0$. We need to show two related facts: 
+        \begin{enumerate}
+            \item (2 points) $s(n) - s(n - 1)$ is constant. \\
+            
+            \sol{
+                \begin{align*}
+                    s(n) - s(n-1) &= (a_1n + a_0) - (a_1(n-1)+ a_0) \\
+                    &= a_1n + a_0 - a_1n + a_1 - a_0 \\
+                    &= (a_1n - a_1n) + (a_0 - a_0) + a_1 \\ 
+                    &= a_1
+                \end{align*}
+                Thus, $s(n) - s(n-1)$ yields a constant answer, $a_1$.\\ 
+            }
+            
+            \item (2 points) Let us call that constant number $c$. Show that $s(n) = (c/1!)\cdot n$ plus another smaller powered term. \\
+
+            \sol{
+                Start with $s(n) = c\cdot n + a_0$ from part (i). Considering the factorial of $1$ is $1$, the substituted expression fits the expression $(c/1!)\cdot n + a_0$. This is the case because we can divide any number by $1$, as it is the multiplication and division identity. \\
+            }
+        \end{enumerate}
+        
+        \item \textbf{Inductive Hypothesis}: Let $k > 1$ and suppose that for any $f(n) = b_{k-1}n^{k-1}+b_{k-2}+\cdots + b_1n + b_0$ the following are true:
+        \begin{enumerate}
+            \item the $(k - 1)^\text{st}$ sequence of differences for $f$ is constant. 
+            \item if we denote this constant $c$, then $f(n) = \displaystyle \frac{c}{(k-1)!}\cdot n^{k-1} +$ other smaller terms. \\
+        \end{enumerate} 
+        
+        \item \textbf{Inductive Step}: Suppose that $s(n) = a_kn^k +$ other smaller terms. 
+        \begin{enumerate}
+            \item (2 points) Show that $s$ has a constant $k^\text{th}$ sequence of differences. [Hint: Define $g(n) = s(n) - s(n-1)$ and explain how we know that $g$ has a constant $(k - 1)^\text{st}$ sequence of differences] \\
+
+            \sol{
+                Define $g(n) = s(n) - s(n-1)$. To show that $g(n)$ has a constant $(k - 1)^\text{st}$ sequence of differences, consider: 
+                $$s(n) = a_kn^k + \text{lower terms} $$
+                $$s(n-1) = a_k(n-1)^k + \text{lower terms}$$
+                
+                Now, we must calculate $g(n)$. First, we will substitute: $g(n) = [a_kn^k + \text{lower terms}] - [a_k(n-1)^k + \text{lower terms}]$. We will focus on the highest-order term. \\
+
+                To determine the value of $a_k(n-1)^k$, we can use the Binomial Theorem\footnote{Huge thanks to Tanvi Kiran for this hint she provided. If it wasn't for her, I would have never figured this problem out.}. Thus, 
+                
+                $$a_k(n-1)^k = a_k\left[\displaystyle \sum_{i=0}^{k}\binom{k}{i}n^{k-i}(-1)^i\right]$$ \\
+                
+                Now, when we subtract $a_kn^k$ from the summation expression when $i = 0$, we will end up with:
+                
+                $$g(n) = a_kn^k - a_kn^k - a_k\left[\displaystyle \sum_{i=1}^{k}\binom{k}{i}n^{k-i}(-1)^i\right]$$ \\
+                Which simplifies to:
+                $$g(n) = - a_k\left[\displaystyle \sum_{i=1}^{k}\binom{k}{i}n^{k-i}(-1)^i\right]$$ \\
+
+                Finally, we can conclude that since $g(n)$ is a polynomial of degree $k - 1$, taking the $(k-1)^\text{st}$ difference of $g(n)$ will yield a constant by the inductive hypothesis. This is the case because a polynomial of degree $d$ has a $d^\text{th}$ sequence of differences that is constant. \\
+            } 
+
+            \item (2 points) Show that if this constant is $c$, then $a_k = c/k!$. \\
+
+            We know that the $k^\text{th}$ difference of $n^k$, multiplied by the coefficient $a_k$ simplifies to $a_k \cdot k!$. Therefore, if that difference is the constant $c$, we have $c = a_k \cdot k!$, and by solving for $a_k$, we get $a_k = c/k!$. 
+
+            
+        \end{enumerate}
+    \end{enumerate}
+
+    
+
+\end{enumerate}
+
+\newpage
+
+
+\textbf{The Last Part of 7 (in class)}:
+
+$g(n) = s(n) - s(n-1) + \cdots \Rightarrow s(n) = \slashed{a_kn^k} + \slashed{a_{k-1}n^{k-1}} + \cdots \Rightarrow s(n-1) = a_k(\slashed{n^k} - kn^n{k-1} + \cdots) + a_{k-1}(\slashed{num} % some number goes here.
+\Rightarrow a_kn^{k-1} + \text{smaller terms}$. By the inductive hypothesis and since this is a $(k-1^\text{st})$ degree polynomial, it has a constant $(k-1^\text{st})$ sequence of differences. \\
+
+This implies $s$ has a constant $k^\text{th}$ sequence of difference. \\
+
+Let $c$ be that constant. By the inductive hypothesis, $g(n) = \displaystyle \frac{c}{(k-1)!}\cdot n^{k-1} + \cdots$. But we proved just earlier, that this expression is equal to $a_kkn^{k-1}+\cdots$. Hence, because they are the same polynomial, it must be the case that $\displaystyle \frac{c}{(k-1)!}$ is equal to $a_kkn^{k-1}$. \\
+
+Solving for $a_k$, we get $\displaystyle \frac{c}{(k-1)!} = a_kk \Rightarrow \displaystyle \frac{c}{k(k-1)!} = a_k \Rightarrow \displaystyle \frac{c}{k!} = a_k$. 
+
+\end{document}
