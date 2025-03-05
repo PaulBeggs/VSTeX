@@ -1,0 +1,322 @@
+\documentclass[11pt]{article}
+
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+\usepackage{amsmath,amsthm} 
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+% \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum} 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.markings}
+
+\setlength{\parindent}{0pt}
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=black, % default color, will be overridden in custom commands
+  % backgroundcolor=draculabg, % Needed for Dracula theme
+  % fontcolor=draculafg, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[left=0.5in,right=0.5in,top=1in,bottom=1in]{geometry}
+% \usepackage{setspace}
+% \linespread{1}
+\usepackage{listings}
+\usepackage{minted}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+\graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+\allowdisplaybreaks
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\mbi}{\mb{i}}
+\newcommand{\mbj}{\mb{j}}
+\newcommand{\mbk}{\mb{k}}
+\newcommand{\mbr}{\mb{r}}
+\newcommand{\mbu}{\mb{u}}
+\newcommand{\mbv}{\mb{v}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+
+% \renewcommand{\theenumi}{\arabic{enumi}} 
+% \renewcommand{\labelenumi}{\theenumi.}
+
+\title{Multivariable Calculus Exam I Corrections}
+\author{Paul Beggs}
+\date{\today}
+
+%%% Custom Comands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{In Class Portion}
+
+\begin{enumerate}
+    \item Consider the parametric curve defined by \(x(t) = 3t^{2} - 8t + 1\), \(y(t) = e^{-t^{2}}\), for \(0 \leq t \leq 2\).
+    \begin{enumerate}
+        \item (4 points) Find the equation, in regular Cartesian coordinates, of the tangent line to this curve at \(t = 1\). Please use exact values here!
+        \sol{
+            First, we compute the derivatives of \(x(t)\) and \(y(t)\) with respect to \(t\):
+            \[
+                \tfrac{dx}{dt} = 6t - 8 \quad \text{and} \quad \tfrac{dy}{dt} = -2te^{-t^{2}}.
+            \]
+            Plugging this into the formula for slope, we see that:
+            \[
+                \frac{dx}{dy} = \frac{dy/dt}{dx/dt} = \frac{-2te^{-t^{2}}}{6t - 8}.
+            \]
+            To get our points, we plug in \(t = 1\):
+            \[
+                x(1) = 3(1)^{2} - 8(1) + 1 = -4 \quad \text{and} \quad y(1) = e^{-1}.
+            \]
+            Thus, our point is \((-4, e^{-1})\). Plugging in \(t = 1\) into the slope formula, we get:
+            \[
+                \frac{dy}{dx}\Bigg|_{t = 1} = \frac{-2e^{-1}}{6 - 8} = e^{-1}.
+            \]
+            Thus, the equation of the tangent line is:
+            \[
+                y = e^{-1}(x + 4) + e^{-1}.
+            \]
+        }
+        \item (4 points) Is this curve concave up, down, or neither when \(t = 1\)? Justify this answer.
+        \sol{
+            To determine concavity, we must solve the following equation:
+            \[
+                \dfrac{d^{2}y}{dx^{2}} = \frac{\frac{d}{dt}(dy/dx)}{dx/dt} = \frac{\frac{d}{dt}(-2te^{-t^{2}})}{6t - 8} = \frac{-2e^{-t^{2}} + 4t^{2}e^{-t^{2}}}{6t - 8} \Rightarrow t = 1 \Rightarrow -e^{-1}.
+            \]
+            Since \(-e^{-1} < 0\), the curve is concave down at \(t = 1\). (\textit{Correction}: My equation for concavity was incorrect on my test sheet.)
+        }
+    \end{enumerate}
+    \item (4 points each) Let \(\mb{u} = 5\mbi + 2\mbj - 3\mbk\) and \(\mbv = - \mbj + 2\mbk\).
+    \begin{enumerate}
+        \setcounter{enumii}{2}
+        \item Determine \(\proj_{\mbv}\mb{u}\). Leave all components as exact values.
+        \sol{
+            We know that \(\proj_{\mbv}\mb{u} = \frac{\mbu \cdot \mbv}{\norm{\mbv}^{2}}\mbv\). Thus, we compute:
+            \[
+                \mbu \cdot \mbv = 5(0) + 2(-1) + (-3)(2) = -8 \quad \text{and} \quad \norm{\mbv}^{2} = \bigl(\mysqrt{5}\bigr)^{2} = 5.
+            \]
+            Thus, \(\proj_{\mbv}\mb{u} = \frac{-8}{5}(-\mbj + 2\mbk) = \frac{8}{5}\mbj - \frac{16}{5}\mbk\).
+        }
+    \end{enumerate}
+    \item (4 points) Let \(\mbu = \brackett{5,-1,2}\) and \(\mbv = \brackett{-2,y,z}\). What is the relationship between \(y\) and \(z\) which makes \(\mbu\) orthogonal to \(\mbv\)?
+    \sol{
+
+    }
+    \setcounter{enumi}{4}
+    \item (6 points) Find an equation in scalar form of the plane which passes through \((-2,7,1)\) and is perpendicular to the planes \(3x + y - z = 0 \) and \(-2x - y + 5z + 1 = 0\) [Hint: Think about what the relationship among the various normal vectors must be.]
+    \sol{
+
+    }
+    \item (6 points) Find the exact value of curvature \(\kappa\) for the curve defined by \(\vecfuc{r}{t} = (t^{2} - t)\mbi + (t^{3} - 7t + 1)\mbj + t^{3}\mbk\) at the point \(t = 1\). [Hint: Since this is defined in \(\R^{3}\), it is \textit{significantly} easier to use the version of \(\kappa\) which uses a cross product!] Numerical approximations, rounded to 4 decimal places, are appropriate here.
+    \sol{
+
+    }
+\end{enumerate}
+
+
+
+\end{document}
