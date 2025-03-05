@@ -274,11 +274,11 @@
             \]
             Thus, our point is \((-4, e^{-1})\). Plugging in \(t = 1\) into the slope formula, we get:
             \[
-                \frac{dy}{dx}\Bigg|_{t = 1} = \frac{-2e^{-1}}{6 - 8} = e^{-1}.
+                \frac{dy}{dx}\bigg|_{t = 1} = \frac{-2e^{-1}}{6 - 8} = e^{-1}.
             \]
             Thus, the equation of the tangent line is:
             \[
-                y = e^{-1}(x + 4) + e^{-1}.
+                \boxed{y = e^{-1}(x + 4) + e^{-1}.}
             \]
         }
         \item (4 points) Is this curve concave up, down, or neither when \(t = 1\)? Justify this answer.
@@ -287,7 +287,7 @@
             \[
                 \dfrac{d^{2}y}{dx^{2}} = \frac{\frac{d}{dt}(dy/dx)}{dx/dt} = \frac{\frac{d}{dt}(-2te^{-t^{2}})}{6t - 8} = \frac{-2e^{-t^{2}} + 4t^{2}e^{-t^{2}}}{6t - 8} \Rightarrow t = 1 \Rightarrow -e^{-1}.
             \]
-            Since \(-e^{-1} < 0\), the curve is concave down at \(t = 1\). (\textit{Correction}: My equation for concavity was incorrect on my test sheet.)
+            Since \(-e^{-1} < 0\), the curve is concave down at \(t = 1\). (\textit{Correction Explained}: My equation for concavity was incorrect on my test sheet.)
         }
     \end{enumerate}
     \item (4 points each) Let \(\mb{u} = 5\mbi + 2\mbj - 3\mbk\) and \(\mbv = - \mbj + 2\mbk\).
@@ -299,21 +299,70 @@
             \[
                 \mbu \cdot \mbv = 5(0) + 2(-1) + (-3)(2) = -8 \quad \text{and} \quad \norm{\mbv}^{2} = \bigl(\mysqrt{5}\bigr)^{2} = 5.
             \]
-            Thus, \(\proj_{\mbv}\mb{u} = \frac{-8}{5}(-\mbj + 2\mbk) = \frac{8}{5}\mbj - \frac{16}{5}\mbk\).
+            Thus, \(\proj_{\mbv}\mb{u} = \frac{-8}{5}(-\mbj + 2\mbk) = \boxed{\frac{8}{5}\mbj - \frac{16}{5}\mbk.}\)
         }
     \end{enumerate}
     \item (4 points) Let \(\mbu = \brackett{5,-1,2}\) and \(\mbv = \brackett{-2,y,z}\). What is the relationship between \(y\) and \(z\) which makes \(\mbu\) orthogonal to \(\mbv\)?
     \sol{
-
+        We know that two vectors are orthogonal if their dot product is zero. Thus:
+        \[
+            \mbu \cdot \mbv = 5(-2) + (-1)y + 2z = -10 - y + 2z.
+        \]
+        Therefore, the relationship between \(y\) and \(z\) which makes \(\mbu\) orthogonal to \(\mbv\) is:
+        \[
+            \boxed{-10 - y + 2z = 0 \quad \Rightarrow \quad y = 2z - 10.}
+        \]
     }
     \setcounter{enumi}{4}
     \item (6 points) Find an equation in scalar form of the plane which passes through \((-2,7,1)\) and is perpendicular to the planes \(3x + y - z = 0 \) and \(-2x - y + 5z + 1 = 0\) [Hint: Think about what the relationship among the various normal vectors must be.]
     \sol{
-
+        For the plane to be perpendicular to a given plane, its normal vector must lie in that given plane. Hence, our normal vector must be orthogonal to both \(\brackett{3,1,-1}\) and \(\brackett{-2,-1,5}\). Thus, we can take the cross product of these two vectors to get our normal vector:
+        \[
+            \brackett{3,1,-1} \times \brackett{-2,-1,5} = \begin{vmatrix}
+                \mbi & \mbj & \mbk \\
+                3 & 1 & -1 \\
+                -2 & -1 & 5
+            \end{vmatrix} = \brackett{4,-13,-1}.
+        \]
+        With our normal vector found, we can plug in our point to get our scalar equation:
+        \[
+            \boxed{4(x + 2) - 13(y - 7) - (z - 1) = 0 \quad \Rightarrow \quad 4x - 13y - z + 100 = 0}
+        \]
     }
     \item (6 points) Find the exact value of curvature \(\kappa\) for the curve defined by \(\vecfuc{r}{t} = (t^{2} - t)\mbi + (t^{3} - 7t + 1)\mbj + t^{3}\mbk\) at the point \(t = 1\). [Hint: Since this is defined in \(\R^{3}\), it is \textit{significantly} easier to use the version of \(\kappa\) which uses a cross product!] Numerical approximations, rounded to 4 decimal places, are appropriate here.
     \sol{
-
+        For this problem, we will use the following formula for \(\kappa\):
+        \[
+            \frac{||\dvecfuc{r}{t} \times \mb{r}''(t)||}{||\dvecfuc{r}{t}||^{3}}.
+        \]
+        Thus, we need to find \(\dvecfuc{r}{t}\) and \(\mb{r}''(t)\). We find:
+        \[
+            \dvecfuc{r}{t} = (2t - 1)\mbi + (3t^{2} - 7)\mbj + 3t^{2}\mbk \quad \text{and} \quad \mb{r}''(t) = 2\mbi + 6t\mbj + 6t\mbk.
+        \]
+        Plugging in \(t = 1\), we get:
+        \[
+            \dvecfuc{r}{1} = \mbi - 4\mbj + 3\mbk \quad \text{and} \quad \mb{r}''(1) = 2\mbi + 6\mbj + 6\mbk.
+        \]
+        Next, we need to find \(||\mb{r}'(t)||^{3}\):
+        \[
+            ||\dvecfuc{r}{t}||^{3} = \bigl(\mysqrt{1 + 16 + 9}\bigr)^{3} = \frac{\left(\mysqrt{\mysqrt{\mysqrt{\left({\sum_{n = 0}^{\infty}\frac{\left(\tfrac{3}{2}\ln 26\right)^{n}}{n!}}\right)^{5}}}}\right)^{\frac{729}{8}}}{\int_{0}^{2\pi} \dmysqrt{(\tfrac{1}{8} - \tfrac{1}{8} \cos \beta)^{2} + (\tfrac{1}{8} \sin \beta)^{2}} \ d\beta}.
+        \]
+        Taking the cross product of \(\dvecfuc{r}{1}\) and \(\mb{r}''(1)\), we get:
+        \[
+            \dvecfuc{r}{1} \times \mb{r}''(1) = \begin{vmatrix}
+                \mbi & \mbj & \mbk \\
+                1 & -4 & 3 \\
+                2 & 6 & 6
+            \end{vmatrix} =  \bigl((-24) - 18\bigr)\mbi - (6 - 6)\mbj + \bigl(6 - (-8)\bigr)\mbk = -42\mbi + 14\mbk.
+        \]
+        Then, we calculate the magnitude of this cross product:
+        \[
+            ||\dvecfuc{r}{1} \times \mb{r}''(1)|| = \mysqrt{42^{2} + 0 + 14^{2}} = \mysqrt{42^{2} + 14^{2}} = \mysqrt{1764 + 196} = 14\mysqrt{10}.
+        \]
+        Putting everything together:
+        \[
+            \kappa = \frac{14\mysqrt{10}}{26^{3/2}} = \boxed{0.3339.}
+        \]
     }
 \end{enumerate}
 

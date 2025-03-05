@@ -1,0 +1,141 @@
+
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage{tcolorbox}
+\usepackage{comment}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{multirow, bigdelim}
+\usepackage{marginnote}
+\usepackage{lipsum}
+\usepackage{neuralnetwork}
+\usepackage{subfigure}
+\usepackage{slashed}
+
+
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+
+\title{Writing Assignment 2}
+\author{Thomas Sebring \& Paul Beggs}
+\date{\today}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.markings}
+
+\newenvironment{solution}{\textit{Solution}.}
+
+\titleformat{\subsection}[block]{\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalfont\bfseries}{}{1em}{}
+
+\def \proofDistance {5pt}
+\def \subheaderSpace {10pt}
+
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{margin=1in} % for example, change the margins to 1 inches all round
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+\allowdisplaybreaks
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\mbi}{\mb{i}}
+\newcommand{\mbj}{\mb{j}}
+\newcommand{\mbk}{\mb{k}}
+\newcommand{\mbr}{\mb{r}}
+\newcommand{\mbu}{\mb{u}}
+\newcommand{\mbv}{\mb{v}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+
+% Command for problem statement
+\newcommand{\pb}[1]{
+    \begin{problem}
+    #1
+    \end{problem}
+}
+
+% Define a command for custom proofs with separator
+\newcommand{\pf}[1]{
+    \vspace{\proofDistance}
+    \begin{proof}
+    #1
+    \end{proof}
+    \proofseparator
+}
+
+\setlength{\parindent}{0pt}
+
+
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\section{Conclusion}
+
+\end{document}
