@@ -76,7 +76,7 @@
         \item \cyanit{Phagocytosis} -- When an injury occurs, the glial cells divide and eat the dead cells. (Done by Microglia and Schwann Cells.)
         \item Maintenance of Internal Consistency.
         \begin{coloredlist}
-            \item When neurons undergo rapid firing, they release potassium ions. Astrocytes absorb these ions to maintain the internal consistency of the neuron.
+            \item When neurons undergo rapid firing, they release potassium ions. Astrocytes absorb these ions to maintain the internal consistency of the neuron, and dump them into the blood stream.
         \end{coloredlist}
     \end{coloredlist}
 \end{coloredlist}
@@ -229,11 +229,74 @@
         \item Thus, during an action potential, there is a total of 110 mV difference between the inside and outside the cell.
         \item \textbf{Electrical Current}
         \begin{coloredlist}
-            \item \ldots
+            \item \cyanit{Depolarization}
+            \begin{coloredlist}
+                \item A little 
+                \item A lot
+                \begin{coloredlist}
+                    \item \cyanit{Threshold of Excitation} = +15 mV.
+                    \item Action potential
+                \end{coloredlist}
+                \item Even more.
+            \end{coloredlist}
+            \item \cyanit{Repolarization}
+            \begin{coloredlist}
+                \item A little
+                \item A lot
+                \item Even more.
+            \end{coloredlist}
+        \end{coloredlist}
+        \item \cyanit{Refractory Period}
+        \begin{coloredlist}
+            \item Cell is resistant to reexciation for a period after the AP peak.
+            \begin{coloredlist}
+                \item \cyanit{Absolute Refractory Period} -- No amount of stimulation will cause another AP.
+                \item \cyanit{Relative Refractory Period} -- A stronger than normal stimulus is required to cause another AP. (This is because of hyperpolarization.)
+            \end{coloredlist}
+        \end{coloredlist}
+        \item \textbf{Three Questions:}
+        \begin{coloredlist}
+            \item Why don't the \(\text{Na}^{+}\) channels reopen during repolarization?
+            \begin{coloredlist}
+                \item \textit{Answer:} Because of the refractory period.
+            \end{coloredlist}
+            \item How can an all or none signal convey analog information?
+            \begin{coloredlist}
+                \item \textit{Answer:} The frequency of the APs can convey the intensity of the stimulus.
+                \item \cyanit{Rate Law} -- Variations in the intensity of a stimulus are represented by variations in the rate of firing.
+            \end{coloredlist}
+            \item Where does that signal come from that meets the threshold of excitation?
+            \begin{coloredlist}
+                \item Refer to \hyperlink{sec:electrical activity}{Conduction of Electrical Activity}.
+            \end{coloredlist}
         \end{coloredlist}
     \end{coloredlist}
 \end{coloredlist}
 
+\hypertarget{sec:electrical activity}{}
+\section{Conduction of Electrical Activity}
+
+\subsection{Conduction of Hyper and (subthreshold) Depolarizations}
+
+\begin{coloredlist}
+    \item \cyanit{Decremental Conduction} -- The further the signal travels, the weaker it gets. (cable properties)
+    \begin{coloredlist}
+        \item Analogue communication.
+        \begin{coloredlist}
+            \item Degrading because for resistance and leakage.
+        \end{coloredlist}
+        \item \cyanit{Passive Conduction} -- No energy is expended.
+    \end{coloredlist}
+\end{coloredlist}
+
+\subsection{Conduction of Action Potential in Unmyelinated Axons}
+
+\begin{coloredlist}
+    \item \cyanit{All or Nothing Law} -- AP occurs or not once triggered, always the same size.
+    \item \cyanit{Active Regeneration} -- The AP is regenerated at each point along the axon.
+\end{coloredlist}
+
+\newpage
 \begin{figure}[htbp]
     \centering
     \label{resting potential}
@@ -352,7 +415,7 @@
       (2,-2.5)
       (3,2)
       (4,-0.5)
-      (5,-3.7)
+      (5,-3.55)
       (6,-3.5)
     };
 
@@ -360,16 +423,22 @@
     \tikzset{
         circ/.style = {draw, circle, scale=0.7}
     };
-
+    % Resting potential.
     \node[circ] at (1.3,-3.2) {1};
+    % Opens sodium channels.
     \node[circ] at (1.75,-2.2) {2};
-    \node[circ] at (3.2,2.3) {3};
-    \node[circ] at (4.8,-2.2) {4};
+    % Potassium channels open.
+    \node[circ] at (2.5,1.5) {3};
+    % Sodium channels close.
+    \node[circ] at (3.2,2.3) {4};
+    % Potassium channels close.
+    % \node[circ] at (6.1,-3.75) {5};
     
-    \draw[decorate, decoration={brace, amplitude=6pt}]
-    (4.9,-3.5) -- (6,-3.5);
+    \draw[decorate, decoration={brace, amplitude=5.5pt}]
+    (5,-3.5) -- (6,-3.5);
     % Add text labels for phases
     \node at (2.2, 0) [rotate=78] {\textbf{Depolarization}};
+    % The potassium is leaving the cell.
     \node at (4.2, 0) [rotate=287] {\textbf{Repolarization}};
     \node at (5.4, -3.1) {\textbf{Hyperpolarization}};
 

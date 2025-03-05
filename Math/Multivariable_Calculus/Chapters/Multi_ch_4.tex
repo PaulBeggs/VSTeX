@@ -346,6 +346,13 @@ If \(f \colon \R^{2} \to \R\) is continuous on a closed and bounded domain, then
     \item For each boundary, use the relationship between \(x\) and \(y\) to convert \(f(x, y)\) to a new function, say \(g(x)\), of a single variable
     \item This function will have an interval \([a, b]\) as its domain
     \item Work the Calculus I problem of finding absolute extrema for \(g\) on \([a, b]\). This will generate additional points of interests.
+    \begin{itemize}
+        \item Absolute extrema occur at:
+        \begin{enumerate}[label=\arabic*.]
+            \item Interior critical points.
+            \item Along the boundary.
+        \end{enumerate}
+    \end{itemize}
     \item Find the value of \(f(x, y)\) for each point of interest – the largest value is the absolute maximum, the smallest is the absolute minimum.
 \end{itemize}
 
@@ -379,4 +386,32 @@ Let \(f(x,y) = x^{4} + y^{4} -4xy + 1\). \\
         x &= 0, \pm 1 \\ 
         \therefore y &= 0, \pm 1.
     \end{align*}
+    Now we have our critical points \((0,0),(1,1),(-1,-1)\). We can use the second derivative test to determine the maximum or minimums. But, to use this formula, we need the second partials for the formula:
+    \[
+        f_{xx} = 12x^{2} \quad f_{yy} = 12y^{2} \quad f_{xy} = -4.
+    \]
+    For \((0,0)\):
+    \[
+        0 \cdot 0 - (4)^{2} = - 16 < 0.
+    \]
+    Therefore, \((0,0)\) is a saddle point. For \((1,1)\):
+    \[
+        12 \cdot 12 - 16 = 128 > 0.
+    \]
+    Therefore, \((1,1)\) is a local minimum. For the same reasons, \((-1,-1)\) is also a local minimum.
+}
+\newpage
+From Calculus I, remember we found the absolute extrema. Thus, let \(g(x) = x^{2} - 6x + 1\), on \([0,4]\). 
+\sol{
+    To find the absolute extrema of this function, get the critical points from the function, and also evaluate the function at the endpoints of the interval. 
+    \[
+        g'(x) = 2x - 6 = 0 \implies x = 3.
+    \]
+    Then, \(g(0) = 1\), \(g(3) = -8\), and \(g(4) = -7\). Thus, the absolute minimum is \((-8)\) and the absolute maximum is 1.
+}
+
+With that refresher, lets return to our \(f(x,y)\) function and find the absolute extrema. Specifically, find absolute extreme on the triangle with vertices \((0,0),(0,1),(\frac{1}{2},1)\). 
+
+\sol{
+
 }
