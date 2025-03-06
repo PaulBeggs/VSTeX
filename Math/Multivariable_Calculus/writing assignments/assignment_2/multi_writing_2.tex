@@ -136,6 +136,37 @@
 
 \section{Introduction}
 
+\begin{tikzpicture}
+  \begin{axis}[
+    xlabel={Eastward distance (ft)},
+    ylabel={Northward displacement (ft)},
+    axis equal image,
+    grid,
+    width=10cm,
+    height=6cm,
+    xmin=0, xmax=220,
+    ymin=-50, ymax=100,
+    ]
+    % Boat trajectory: parametric plot with t in [0,63.1] seconds.
+    % x(t)= 3.1716*t, y(t)= 5.0928*t - (8/0.0498)*(1 - cos(0.0498*t))
+    \addplot[
+      domain=0:63.1,
+      samples=200,
+      thick,
+      blue,
+    ]
+    ({3.1716*x}, {5.0928*x - (8/0.0498)*(1 - cos(deg(0.0498*x)))});
+    
+    % Marking the start and target points:
+    \addplot[only marks, mark=*, mark size=2pt, red] coordinates {(0,0) (200,0)};
+    
+    \node[below left] at (axis cs:0,0) {$(0,0)$};
+    \node[above left] at (axis cs:200,0) {$(200,0)$};
+  \end{axis}
+\end{tikzpicture}
+\end{document}
+
+
 \section{Conclusion}
 
 \end{document}
