@@ -115,3 +115,4 @@ Glia
 Electrodermal
 Semipermeability
 Depolarizations
+Horney
