@@ -136,35 +136,61 @@
 
 \section{Introduction}
 
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel={Eastward distance (ft)},
-    ylabel={Northward displacement (ft)},
-    axis equal image,
-    grid,
-    width=10cm,
-    height=6cm,
-    xmin=0, xmax=220,
-    ymin=-50, ymax=100,
-    ]
-    % Boat trajectory: parametric plot with t in [0,63.1] seconds.
-    % x(t)= 3.1716*t, y(t)= 5.0928*t - (8/0.0498)*(1 - cos(0.0498*t))
-    \addplot[
-      domain=0:63.1,
-      samples=200,
-      thick,
-      blue,
-    ]
-    ({3.1716*x}, {5.0928*x - (8/0.0498)*(1 - cos(deg(0.0498*x)))});
-    
-    % Marking the start and target points:
-    \addplot[only marks, mark=*, mark size=2pt, red] coordinates {(0,0) (200,0)};
-    
-    \node[below left] at (axis cs:0,0) {$(0,0)$};
-    \node[above left] at (axis cs:200,0) {$(200,0)$};
-  \end{axis}
-\end{tikzpicture}
-\end{document}
+This paper will explore the mathematical calculations of crossing a river with a non-uniform current (that is, the closer the boat gets to the middle, the faster the current is). Specifically, we will first investigate a river with width of 200 feet that flows at a rate of \(8\sin(\frac{\pi}{200}x)\). Our goal is to determine the optimal angle at which to steer a boat---one that moves at a constant speed of 6 feet per second but can only travel in a fixed direction once launched---to reach the opposite shore directly across from the starting point. Beyond this specific case, we will also consider a more general version of the problem by determining the maximum possible current speed that still allows for successful crossing.
+
+\section{Trajectory}
+
+The first step in solving this problem is deriving a vector-valued function for velocity of the boat, this will allow us to create a position function. 
+since the boat travels 6 feet per second, it can be decomposed into two velocity vectors:
+\[
+  \mb{v}(x) = 6\cos(\theta) \quad \text{and} \quad \mb{v}(y) = 6\sin(\theta).
+\] 
+Since the river only flows in the negative \(y\) direction, we can subtract the speed from our \(\mb{v}(y)\) velocity vector giving us a velocity function of:
+\[
+  \mb{v}(x) = 6\cos(\theta) \quad \text{and} \quad \mb{v}(y) = 6\sin(\theta) - 8\sin(\tfrac{\pi}{200}x).
+\]
+In order to calculate the position vector function of the boat we integrate our velocity functions with respect to time. This gives us:
+\[
+    x(t) = 6\cos(\theta) t,
+\]
+and 
+\[
+    y(t) = \int_0^{t} \left(\underbrace{\bigl(6 \sin(\theta)\bigr)}_{a} - \underbrace{\left(8 \sin \left(\frac{\pi 6\cos(\theta)t}{200}\right)\right)}_{b}\right) \, dt.
+\]
+Splitting these integrals into two integrals, \(a\) and \(b\), we can integrate each separately:
+\[
+    \int_0^{t} a \, dt = 6\sin(\theta) t,
+\]
+and 
+\[
+    -\int_0^{t} b \, dt = -8\left(\frac{100}{3\pi\cos(\theta)} - \frac{100\cos\left(\frac{3\pi\cos(\theta)t}{100}\right)}{3\pi\cos(\theta)}\right) \quad \implies \quad \frac{800\cos\left(\frac{3\pi\cos(\theta)t}{100}\right) - 800}{3\pi\cos(\theta)}.
+\]
+Adding our two integrals together, we get:
+\[
+    y(t) = 6\sin(\theta) t + \frac{800\cos\left(\frac{3\pi\cos(\theta)t}{100}\right) - 800}{3\pi\cos(\theta)}. 
+\]
+Setting \(y(t) = 0\) (directly east of the starting point), we can solve for \(t\):
+\begin{align*}
+  0 &= 6 \sin(\theta) t + \frac{800\cos\left(\frac{3\pi\cos(\theta)t}{100}\right) - 800}{3\pi\cos(\theta)} \\ 
+  &= 6 \sin(\theta) \frac{200}{6 \cos(\theta)} + \frac{800\cos\left(\frac{3\pi\cos(\theta)\frac{200}{6 \cos(\theta)}}{100}\right) - 800}{3\pi\cos(\theta)} \\ 
+  &= \frac{200 \sin(\theta)}{\cos(\theta)} + \frac{800\cos(\pi) - 800}{3\pi\cos(\theta)} \\
+  &= \frac{1}{\cos(\theta)} \left(200 \sin(\theta) + \frac{800\cos(\pi) - 800}{3\pi}\right) \\
+  &= 200 \sin(\theta) + \frac{800\cos(\pi) - 800}{3\pi} \\
+  &= \sin(\theta) + \frac{(-4 - 4)}{3 \pi} \\
+  \sin(\theta) &= \frac{8}{3 \pi} \\
+  \theta &= \arcsin \left(\frac{8}{3 \pi}\right) \\
+  \theta &\approx 1.014.
+\end{align*}
+Using this calculated \(\theta\), we can plug it back into \(t = \frac{200}{6 \cos(\theta)}\):
+\begin{align*}
+    t &=  \frac{200}{6 \cos(\theta)} \\
+    t &\approx \frac{200}{6 \cos(1.014)} \\
+    t &\approx 63.075.
+\end{align*}
+We see that it would take approximately 63 seconds to reach the point exactly across from the starting point.
+
+
+
 
 
 \section{Conclusion}
