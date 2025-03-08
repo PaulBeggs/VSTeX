@@ -1,0 +1,93 @@
+\section{Double Integrals}
+
+\subsection{Integration in \(\R\)}
+
+Recall that for a continuous function \(f : \R \to \R\), the \cyanit{signed area} between the graph of \(y = f(x)\) and the
+\(x\)-axis on the interval \([a, b]\) is given by 
+\[
+\int_a^b f(x) \, dx.
+\]
+Recall also that
+\[
+\int_a^b f(x) \, dx \approx \sum_{i=1}^n f(x^*_i) \Delta x,
+\]
+where \(\Delta x = \frac{b-a}{n}\) and \(x^*_i\) is any convenient point in the \(i\)th subinterval. The sum above is called a \cyanit{Riemann Sum}.
+
+\subsection{Integration in \(\R^2\)}
+
+Let \(R\) be a rectangle defined by
+
+\[
+R = [a, b] \times [c, d] = \{(x, y) \in \R^2 : a \leq x \leq b, \, c \leq y \leq d\}.
+\]
+Suppose that \(f : R \to \R\) be continuous. If we interpret \(f(x, y)\) as a height above or below the \(xy\)-plane, we can find the \cyanit{signed volume} of the solid
+\[
+S = \{(x, y, z) \in \R^3 : (x, y) \in R, z \text{ lives between } 0 \text{ and } f(x, y)\}.
+\]
+We can divide \(R\) into \(m \cdot n\) rectangles by
+\[
+\Delta x = \frac{b-a}{m} \quad \text{and} \quad \Delta y = \frac{d-c}{n}
+\]
+and then write 
+\[
+\Delta A = \Delta x \Delta y.
+\]
+Then,
+\[
+V \approx \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A,
+\]
+where \((x^*_{ij}, y^*_{ij})\) is a point selected from the \(ij\)th rectangle.
+\newpage
+If \(f\) is continuous, then
+\[
+\lim_{m,n \to \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A
+\]
+exists thus we define the \cyanit{double integral} of \(f\) over the rectangle \(R\) as
+\[
+\iint_R f(x, y) \, dA = \lim_{m,n \to \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A.
+\]
+\subsubsection{Double Integral – Properties}
+Basically, the properties are exactly what you’d expect – we’ll assume \(R\) is a rectangle, \(c\) is constant, and \(f, g\) are continuous:
+\begin{itemize}
+    \item \(\iint_R (f + g) \, dA = \iint_R f \, dA + \iint_R g \, dA\)
+    \item \(\iint_R cf \, dA = c \iint_R f \, dA\)
+    \item \(\iint_R f \, dA = \iint_S f \, dA + \iint_T f \, dA\), if \(S\) and \(T\) are rectangles, \(R = S \cup T\) and \(S \cap T\) is one-dimensional
+    \item if \(f \geq g\) on \(R\), then \(\iint_R f \, dA \geq \iint_R g \, dA\)
+    \item if \(m \leq f(x, y) \leq M\) on \(R\) then \(m \cdot \text{area}(R) \leq \iint_R f \, dA \leq M \cdot \text{area}(R)\)
+\end{itemize}
+\subsubsection{Factorization Property}  
+Suppose that \(f(x, y) = g(x) \cdot h(y)\) – that is, suppose we can factor \(f\) into a product of one function involving only \(x\) and another involving only \(y\). Then,
+\[
+\iint_R f(x, y) \, dA = \left( \int_a^b g(x) \, dx \right) \left( \int_c^d h(y) \, dy \right).
+\]
+\subsubsection{Iterated Integrals}
+For a fixed \(x\), define
+\[
+A(x) = \int_c^d f(x, y) \, dy.
+\]
+This can be called a \cyanit{partial integral}, and is a function of \(x\). It is the area of one slice of the solid. Then,
+\[
+\int_a^b A(x) \, dx = \int_a^b \left( \int_c^d f(x, y) \, dy \right) dx = \int_a^b \int_c^d f(x, y) \, dy dx,
+\]
+
+where we call this an \cyanit{iterated integral}. (There is, of course, nothing special about doing \(y\) first and then \(x\) here\ldots.)
+
+\subsubsection{Fubini’s Theorem}
+
+If \(f\) is continuous on \(R = [a, b] \times [c, d]\) then
+\[
+\iint_R f(x, y) \, dA = \int_b^a \int_d^c f(x, y) \, dy dx = \int_d^c \int_b^a f(x, y) \, dx dy.
+\]
+This is just like Clariaut’s Theorem, but for integrals, rather than partial derivatives. You can work the integral in whatever order is most convenient.
+\subsubsection{Area}
+Suppose that \(R\) is a rectangle. Then, the area of \(R\) is given by
+\[
+\text{area}(R) = \iint_R 1 \, dA.
+\]
+
+\subsubsection{Average Value}
+
+The \cyanit{average value} of \(f\) over \(R\) is given by
+\[
+\text{ave}(f) = \frac{1}{\text{area}(R)} \iint_R f(x, y) \, dA.
+\]
