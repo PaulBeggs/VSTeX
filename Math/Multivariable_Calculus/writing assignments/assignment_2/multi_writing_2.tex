@@ -1,4 +1,3 @@
-
 \documentclass{article}
 
 \usepackage{amsmath, amssymb, amsfonts}
@@ -47,7 +46,6 @@
 
 
 %%% PAGE DIMENSIONS
-\usepackage{geometry} % to change the page dimensions
 \geometry{margin=1in} % for example, change the margins to 1 inches all round
 
 \newcommand{\mysqrt}[1]{%
@@ -136,12 +134,11 @@
 
 \section{Introduction}
 
-This paper will explore the mathematical calculations of crossing a river with a non-uniform current (that is, the closer the boat gets to the middle, the faster the current is). Specifically, we will first investigate a river with width of 200 feet that flows at a rate of \(8\sin(\frac{\pi}{200}x)\). Our goal is to determine the optimal angle at which to steer a boat---one that moves at a constant speed of 6 feet per second but can only travel in a fixed direction once launched---to reach the opposite shore directly across from the starting point. Beyond this specific case, we will also consider a more general version of the problem by determining the maximum possible current speed that still allows for successful crossing.
+This paper explores the mathematical calculations involved in crossing a river with a non-uniform current (i.e., the closer the boat gets to the middle, the faster the current becomes). Specifically, we first investigate a river 200 feet wide that flows at a rate of \(8\sin\Bigl(\frac{\pi}{200}x\Bigr)\). Our goal is to determine the optimal steering angle for a boat moving at a constant speed of 6 feet per second (but restricted to a fixed direction once launched) so that it arrives directly across from the starting point. Furthermore, we generalize the problem by determining the maximum allowable current speed for a successful crossing.
 
 \section{Trajectory}
 
-The first step in solving this problem is deriving a vector-valued function for velocity of the boat, this will allow us to create a position function. 
-since the boat travels 6 feet per second, it can be decomposed into two velocity vectors:
+The first step in solving this problem is to derive a vector-valued function for the boat's velocity, which allows us to obtain its position function. Since the boat travels 6 feet per second, its velocity can be decomposed into two velocity vectors:
 \[
   \mb{v}(x) = 6\cos(\theta) \quad \text{and} \quad \mb{v}(y) = 6\sin(\theta).
 \] 
@@ -169,19 +166,41 @@ Adding our two integrals together, we get:
 \[
     y(t) = 6\sin(\theta) t + \frac{800\cos\left(\frac{3\pi\cos(\theta)t}{100}\right) - 800}{3\pi\cos(\theta)}. 
 \]
-Setting \(y(t) = 0\) (directly east of the starting point), we can solve for \(t\):
+Now that we have a position vector, we need to solve for \(t\) when the boat reaches the other bank (\(x = 200\)):
 \begin{align*}
-  0 &= 6 \sin(\theta) t + \frac{800\cos\left(\frac{3\pi\cos(\theta)t}{100}\right) - 800}{3\pi\cos(\theta)} \\ 
-  &= 6 \sin(\theta) \frac{200}{6 \cos(\theta)} + \frac{800\cos\left(\frac{3\pi\cos(\theta)\frac{200}{6 \cos(\theta)}}{100}\right) - 800}{3\pi\cos(\theta)} \\ 
-  &= \frac{200 \sin(\theta)}{\cos(\theta)} + \frac{800\cos(\pi) - 800}{3\pi\cos(\theta)} \\
-  &= \frac{1}{\cos(\theta)} \left(200 \sin(\theta) + \frac{800\cos(\pi) - 800}{3\pi}\right) \\
-  &= 200 \sin(\theta) + \frac{800\cos(\pi) - 800}{3\pi} \\
-  &= \sin(\theta) + \frac{(-4 - 4)}{3 \pi} \\
-  \sin(\theta) &= \frac{8}{3 \pi} \\
-  \theta &= \arcsin \left(\frac{8}{3 \pi}\right) \\
+    x(t) &= 6 \cos(\theta) t \\
+    200 &= 6 \cos(\theta) t \\
+    t &= \frac{200}{6 \cos(\theta)}.
+\end{align*}
+
+Setting \(y(t) = 0\) (directly east of the starting point), we solve for \(t\):
+\begin{align*}
+  0 &= 6 \sin(\theta)\,t + \frac{800\cos\Bigl(\frac{3\pi\cos(\theta)t}{100}\Bigr)-800}{3\pi\cos(\theta)} \\
+\intertext{Substitute \(t=\frac{200}{6\cos(\theta)}\) from \(x(t)=200\):}
+  &= 6 \sin(\theta)\,\frac{200}{6\cos(\theta)} + \frac{800\cos\Bigl(\frac{3\pi\cos(\theta)\frac{200}{6\cos(\theta)}}{100}\Bigr)-800}{3\pi\cos(\theta)} \\
+\intertext{Simplify the first term and simplify the cosine argument (noting \(\frac{200}{6\cos(\theta)}\) cancels):}
+  &= \frac{200\sin(\theta)}{\cos(\theta)} + \frac{800\cos(\pi)-800}{3\pi\cos(\theta)} \\
+\intertext{Factor out \(\frac{1}{\cos(\theta)}\) from both terms:}
+  &= \frac{1}{\cos(\theta)}\left(200\sin(\theta)+ \frac{800\cos(\pi)-800}{3\pi}\right) \\
+\intertext{Multiply through by \(\cos(\theta)\) to remove the denominator:}
+  0 &= 200\sin(\theta)+ \frac{800\cos(\pi)-800}{3\pi} \\
+\intertext{Evaluate the constant term noting that \(\cos(\pi)=-1\):}
+  0 &= 200\sin(\theta)+ \frac{800(-1)-800}{3\pi} \\
+\intertext{Simplify the fraction:}
+  0 &= 200\sin(\theta)- \frac{1600}{3\pi} \\
+\intertext{Solve for \(\sin(\theta)\):}
+  200\sin(\theta) &= \frac{1600}{3\pi} \\
+\intertext{Divide by 200:}
+  \sin(\theta) &= \frac{8}{3\pi} \\
+\intertext{Finally, solve for \(\theta\):}
+  \theta &= \arcsin\Bigl(\frac{8}{3\pi}\Bigr) \\
+\intertext{Numerically,}
   \theta &\approx 1.014.
 \end{align*}
-Using this calculated \(\theta\), we can plug it back into \(t = \frac{200}{6 \cos(\theta)}\):
+
+\subsection{Time to Reach Opposite Bank}
+
+Using the calculated \(\theta\), we can plug it back into \(t = \frac{200}{6 \cos(\theta)}\):
 \begin{align*}
     t &=  \frac{200}{6 \cos(\theta)} \\
     t &\approx \frac{200}{6 \cos(1.014)} \\
@@ -189,10 +208,20 @@ Using this calculated \(\theta\), we can plug it back into \(t = \frac{200}{6 \c
 \end{align*}
 We see that it would take approximately 63 seconds to reach the point exactly across from the starting point.
 
+\section{Generalization}
 
-
-
+Now, consider the more general case of the river with a current of \(a\sin(\frac{\pi x}{200})\), with \(a\) being any constant. We can use the same process as above to find the maximum value of \(a\) that still allows for a successful crossing. If we modify our \(y(t)\) function from the previous steps---and still keeping in mind that \(x(t)\) is not affected by the speed of the current---we are left with:
+\[
+  \sin(\theta) = \frac{a}{3\pi}.
+\]
+Since \(a\) replaces the constant 8 that we had before, in order for \(x\) to still be positive, \(\sin(\theta)\) must be less than 1. Hence, if \(\sin(\theta)\) were 1, then our \(v_x\) component would be zero and the boat would not be able to cross. So we can further modify our \(y(t)\) function to see that:
+\[
+  1 > \frac{a}{3\pi} \quad \implies \quad 3\pi > a. 
+\]
+Thus, the maximum value of \(a\) that still allows a successful crossing is less than \(3\pi\).
 
 \section{Conclusion}
+
+In this paper, we derived the trajectory of a boat crossing a river with a non-uniform current. By decomposing the boat's velocity and integrating to obtain the position function, we determined the optimal steering angle that ensures the boat arrives directly across its starting point. Furthermore, we generalized the problem by analyzing the maximum allowable current speed for a successful crossing. These findings highlight the utility of vector functions and integration in analyzing real-world motion under varying conditions.
 
 \end{document}
