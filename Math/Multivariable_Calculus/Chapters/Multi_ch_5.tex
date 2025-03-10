@@ -3,13 +3,13 @@
 \subsection{Integration in \(\R\)}
 
 Recall that for a continuous function \(f : \R \to \R\), the \cyanit{signed area} between the graph of \(y = f(x)\) and the
-\(x\)-axis on the interval \([a, b]\) is given by 
+\(x\)-axis on the interval \([a, b]\) is given by
 \[
-\int_a^b f(x) \, dx.
+  \int_a^b f(x) \, dx.
 \]
 Recall also that
 \[
-\int_a^b f(x) \, dx \approx \sum_{i=1}^n f(x^*_i) \Delta x,
+  \int_a^b f(x) \, dx \approx \sum_{i=1}^n f(x^*_i) \Delta x,
 \]
 where \(\Delta x = \frac{b-a}{n}\) and \(x^*_i\) is any convenient point in the \(i\)th subinterval. The sum above is called a \cyanit{Riemann Sum}.
 
@@ -18,56 +18,56 @@ where \(\Delta x = \frac{b-a}{n}\) and \(x^*_i\) is any convenient point in the 
 Let \(R\) be a rectangle defined by
 
 \[
-R = [a, b] \times [c, d] = \{(x, y) \in \R^2 : a \leq x \leq b, \, c \leq y \leq d\}.
+  R = [a, b] \times [c, d] = \{(x, y) \in \R^2 : a \leq x \leq b, \, c \leq y \leq d\}.
 \]
 Suppose that \(f : R \to \R\) be continuous. If we interpret \(f(x, y)\) as a height above or below the \(xy\)-plane, we can find the \cyanit{signed volume} of the solid
 \[
-S = \{(x, y, z) \in \R^3 : (x, y) \in R, z \text{ lives between } 0 \text{ and } f(x, y)\}.
+  S = \{(x, y, z) \in \R^3 : (x, y) \in R, z \text{ lives between } 0 \text{ and } f(x, y)\}.
 \]
 We can divide \(R\) into \(m \cdot n\) rectangles by
 \[
-\Delta x = \frac{b-a}{m} \quad \text{and} \quad \Delta y = \frac{d-c}{n}
+  \Delta x = \frac{b-a}{m} \quad \text{and} \quad \Delta y = \frac{d-c}{n}
 \]
-and then write 
+and then write
 \[
-\Delta A = \Delta x \Delta y.
+  \Delta A = \Delta x \Delta y.
 \]
 Then,
 \[
-V \approx \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A,
+  V \approx \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A,
 \]
 where \((x^*_{ij}, y^*_{ij})\) is a point selected from the \(ij\)th rectangle.
 \newpage
 If \(f\) is continuous, then
 \[
-\lim_{m,n \to \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A
+  \lim_{m,n \to \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A
 \]
 exists thus we define the \cyanit{double integral} of \(f\) over the rectangle \(R\) as
 \[
-\iint_R f(x, y) \, dA = \lim_{m,n \to \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A.
+  \iint_R f(x, y) \, dA = \lim_{m,n \to \infty} \sum_{i=1}^m \sum_{j=1}^n f(x^*_{ij}, y^*_{ij}) \Delta A.
 \]
 \subsubsection{Double Integral – Properties}
 Basically, the properties are exactly what you’d expect – we’ll assume \(R\) is a rectangle, \(c\) is constant, and \(f, g\) are continuous:
 \begin{itemize}
-    \item \(\iint_R (f + g) \, dA = \iint_R f \, dA + \iint_R g \, dA\)
-    \item \(\iint_R cf \, dA = c \iint_R f \, dA\)
-    \item \(\iint_R f \, dA = \iint_S f \, dA + \iint_T f \, dA\), if \(S\) and \(T\) are rectangles, \(R = S \cup T\) and \(S \cap T\) is one-dimensional
-    \item if \(f \geq g\) on \(R\), then \(\iint_R f \, dA \geq \iint_R g \, dA\)
-    \item if \(m \leq f(x, y) \leq M\) on \(R\) then \(m \cdot \text{area}(R) \leq \iint_R f \, dA \leq M \cdot \text{area}(R)\)
+  \item \(\iint_R (f + g) \, dA = \iint_R f \, dA + \iint_R g \, dA\)
+  \item \(\iint_R cf \, dA = c \iint_R f \, dA\)
+  \item \(\iint_R f \, dA = \iint_S f \, dA + \iint_T f \, dA\), if \(S\) and \(T\) are rectangles, \(R = S \cup T\) and \(S \cap T\) is one-dimensional
+  \item if \(f \geq g\) on \(R\), then \(\iint_R f \, dA \geq \iint_R g \, dA\)
+  \item if \(m \leq f(x, y) \leq M\) on \(R\) then \(m \cdot \text{area}(R) \leq \iint_R f \, dA \leq M \cdot \text{area}(R)\)
 \end{itemize}
-\subsubsection{Factorization Property}  
+\subsubsection{Factorization Property}
 Suppose that \(f(x, y) = g(x) \cdot h(y)\) – that is, suppose we can factor \(f\) into a product of one function involving only \(x\) and another involving only \(y\). Then,
 \[
-\iint_R f(x, y) \, dA = \left( \int_a^b g(x) \, dx \right) \left( \int_c^d h(y) \, dy \right).
+  \iint_R f(x, y) \, dA = \left( \int_a^b g(x) \, dx \right) \left( \int_c^d h(y) \, dy \right).
 \]
 \subsubsection{Iterated Integrals}
 For a fixed \(x\), define
 \[
-A(x) = \int_c^d f(x, y) \, dy.
+  A(x) = \int_c^d f(x, y) \, dy.
 \]
 This can be called a \cyanit{partial integral}, and is a function of \(x\). It is the area of one slice of the solid. Then,
 \[
-\int_a^b A(x) \, dx = \int_a^b \left( \int_c^d f(x, y) \, dy \right) dx = \int_a^b \int_c^d f(x, y) \, dy dx,
+  \int_a^b A(x) \, dx = \int_a^b \left( \int_c^d f(x, y) \, dy \right) dx = \int_a^b \int_c^d f(x, y) \, dy dx,
 \]
 
 where we call this an \cyanit{iterated integral}. (There is, of course, nothing special about doing \(y\) first and then \(x\) here\ldots.)
@@ -76,27 +76,139 @@ where we call this an \cyanit{iterated integral}. (There is, of course, nothing 
 
 If \(f\) is continuous on \(R = [a, b] \times [c, d]\) then
 \[
-\iint_R f(x, y) \, dA = \int_b^a \int_d^c f(x, y) \, dy dx = \int_d^c \int_b^a f(x, y) \, dx dy.
+  \iint_R f(x, y) \, dA = \int_b^a \int_d^c f(x, y) \, dy dx = \int_d^c \int_b^a f(x, y) \, dx dy.
 \]
 This is just like Clariaut’s Theorem, but for integrals, rather than partial derivatives. You can work the integral in whatever order is most convenient.
-\subsubsection{Area}
-Suppose that \(R\) is a rectangle. Then, the area of \(R\) is given by
+
+\newpage
+
+\section{Double Integrals Over General Regions}
+
+\subsection{General Regions}
+
+Suppose that \(D\) is a general region of finite size in \(\R^2\). Then, there exists some rectangle \(R\) which contains \(D\). We can take a function \(f(x, y)\) and define
 \[
-\text{area}(R) = \iint_R 1 \, dA.
+  F(x, y) =
+  \begin{cases}
+    f(x, y), & \text{if } (x, y) \in D, \\ 0, & \text{if otherwise}.
+  \end{cases}
+\]
+This does likely introduce discontinuities into our function, but is not a problem – trust me. Then,
+\[
+  \iint_R F(x, y) \, dA = \iint_D f(x, y) \, dA.
+\]
+So, we can always actually integrate over a rectangle!
+
+\subsubsection{Two Special Cases}
+
+Suppose we have a general region \(D\). Then,
+\begin{itemize}
+  \item \textbf{Type I Region} – we say that \(D\) is a Type I region provided there exists constants \(a\), \(b\) and continuous functions \(g_1\), \(g_2 : \R \to \R\) so that
+        \[
+          D = \{(x, y) : a \leq x \leq b, \text{ and } g_1(x) \leq y \leq g_2(x)\}.
+        \]
+  \item \textbf{Type II Region} – we say that \(D\) is a Type II region provided there exists constants \(c\), \(d\) and continuous functions \(h_1\), \(h_2 : \R \to \R\) so that
+        \[
+          D = \{(x, y) : h_1(y) \leq x \leq h_2(y), \text{ and } c \leq y \leq d\}.
+        \]
+\end{itemize}
+\subsubsection{Type I Regions}
+
+Suppose that \(D\) is a type I region:
+\begin{align*}
+  \iint_D f(x, y) \, dA & = \iint_R F(x, y) \, dA                             \\
+                        & = \int_b^a \int_{g_1(x)}^{g_2(x)} f(x, y) \, dy dx.
+\end{align*}
+The ``see below'' line is true since \(F(x, y) = 0\) if \(y > g_2(x)\) or \(y < g_1(x)\).
+
+\subsubsection{Type II Regions}
+
+In the same way, if \(D\) is type II, we have
+\[
+  \iint_D f(x, y) \, dA = \int_d^c \int_{h_1(y)}^{h_2(y)} f(x, y) \, dx dy.
+\]
+How do you tell? DRAW A PICTURE! (In practice, you don’t typically explicitly note what type an integral is.)
+
+\subsubsection{Area}
+
+Suppose that \(D\) is a region. Then, the \cyanit{area} of \(D\) is given by
+\[
+  \text{area}(D) = \iint_D 1 \, dA.
 \]
 
 \subsubsection{Average Value}
 
-The \cyanit{average value} of \(f\) over \(R\) is given by
+The \cyanit{average value} of \(f\) over \(D\) is given by
 \[
-\text{ave}(f) = \frac{1}{\text{area}(R)} \iint_R f(x, y) \, dA.
+  \text{ave}(f) = \frac{1}{\text{area}(D)} \iint_D f(x, y) \, dA.
 \]
 
-\begin{tikzcd}
-    Y \arrow[r] \arrow[d] 
-      & X \arrow[d] \\
-    T \arrow[r]
-      & S
-\end{tikzcd}
+\newpage
 
-\(\frac{d}{dx}(x^{3} + x^{2} + 1)\)
+\section{Double Integrals and Polar Coordinates}
+
+\subsection{Polar Coordinates}
+
+Let \((x, y) \in \R^2\). Then, in polar coordinates
+\begin{align*}
+  x & = r \cos(\theta) \\
+  y & = r \sin(\theta)  \\
+  r & = \sqrt{x^2 + y^2} \\
+  \theta & = \arctan\left(\frac{y}{x}\right),
+\end{align*}
+and recall that \(\theta\) is not uniquely determined by the last identity.
+
+\subsection{Polar Rectangle}
+
+A region \(R \subseteq \R^2\) is called a polar rectangle provided it can be written as
+\[
+  R = \{(r, \theta) : a \leq r \leq b, \alpha \leq \theta \leq \beta\},
+\]
+for choices of \(a\), \(b\), \(\alpha\), \(\beta\). \\
+
+We can divide each polar rectangle into smaller ones by
+\[
+  \Delta r = \frac{b-a}{m} \quad \text{and} \quad \Delta \theta = \frac{\beta-\alpha}{n}.
+\]
+(This should look very familiar!!) Then, a little polar rectangle \(R_{ij} = \{(r, \theta) : r_{i-1} \leq r \leq r_i, \theta_{j-1} \leq \theta \leq \theta_j\}\) has its center at
+\begin{align*}
+  r^*_i & = \frac{1}{2}(r_{i-1} + r_i) \\
+  \theta^*_i & = \frac{1}{2}(\theta_{j-1} + \theta_j)
+\end{align*}
+
+The area of this polar rectangle is
+\begin{align*}
+  \Delta A & = \frac{1}{2}r_i^2 \Delta \theta - \frac{1}{2}r_{i-1}^2 \Delta \theta \\
+           & = \frac{1}{2}\left(r_i^2 - r_{i-1}^2\right) \Delta \theta \\
+           & = \frac{1}{2}(r_i + r_{i-1})(r_i - r_{i-1}) \Delta \theta \\
+           & = r^*_i \Delta r \Delta \theta
+\end{align*}
+
+\subsection{Polar Integrals}
+
+\begin{align*}
+  \iint_{R}f(x,y) \, dA & = \lim_{m,n \to \infty} \sum_{i=1}^{m} \sum_{j=1}^{n} f(x^*_{ij}, y^*_{ij}) \Delta A \\
+                        & = \lim_{m,n \to \infty} \sum_{i=1}^{m} \sum_{j=1}^{n} f\bigl(r^*_i \cos\left(\theta^*_j\right), r^*_i \sin\left(\theta^*_j\right)\bigr) r^*_i \Delta r \Delta \theta \\
+                        & = \int_{\alpha}^{\beta} \int_{a}^{b} f\bigl(r \cos(\theta), r \sin(\theta \bigr) r \, dr \, d\theta
+\end{align*}
+
+Thus, we can convert each \(x\) to \(r \cos(\theta)\), each \(y\) to \(r \sin(\theta)\) and replace \(dA = dxdy\) with \(dA = r \, dr d\theta\). You have made a change in coordinates and are now integrating over a polar region, so the results of sections 5.1 \& 5.2 now apply.
+
+\subsection{Change of Coordinates}
+
+Suppose that we wish to change from one two-dimensional coordinate system to another.
+
+\begin{itemize}
+  \item Initial: \((x, y)\)
+  \item New: \((\alpha, \beta)\): That is, we have \(x(\alpha, \beta)\) and \(y(\alpha, \beta)\).
+  \item Then, 
+  \[
+    dA = dxdy = \left(\frac{\p x}{\p \alpha} \cdot \frac{\p y}{\p \beta} - \frac{\p y}{\p \alpha} \cdot \frac{\p y}{\p \beta}\right) d\alpha d\beta
+  \]
+\end{itemize}
+
+This idea is called the \cyanit{Jacobian}. We can think of this as being the determinant of the Jacobian Matrix:
+
+\[
+  J = \begin{bmatrix} \frac{\partial x}{\partial \alpha} & \frac{\partial x}{\partial \beta} \\ \frac{\partial y}{\partial \alpha} & \frac{\partial y}{\partial \beta} \end{bmatrix}
+\]
