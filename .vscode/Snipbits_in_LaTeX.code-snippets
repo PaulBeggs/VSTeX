@@ -109,4 +109,12 @@
 		"description": "Inserts an endash"
 	},
 
+	"Boxed": {
+		"prefix": "boxed",
+		"body": [
+			"\\boxed{$TM_SELECTED_TEXT}$0"
+		],
+		"description": "Wrap selected text in a box and position cursor outside the closing brace"
+	},
+
 }

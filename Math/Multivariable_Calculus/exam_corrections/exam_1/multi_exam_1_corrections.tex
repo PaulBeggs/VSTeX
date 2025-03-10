@@ -285,11 +285,12 @@
         \sol{
             To determine concavity, we must solve the following equation:
             \[
-                \dfrac{d^{2}y}{dx^{2}} = \frac{\frac{d}{dt}(dy/dx)}{dx/dt} = \frac{\frac{d}{dt}(-2te^{-t^{2}})}{6t - 8} = \frac{-2e^{-t^{2}} + 4t^{2}e^{-t^{2}}}{6t - 8} \Rightarrow t = 1 \Rightarrow -e^{-1}.
+                \dfrac{d^{2}y}{dx^{2}} = \frac{\frac{d}{dt}(dy/dx)}{dx/dt} = \frac{\frac{d}{dt}(-2te^{-t^{2}})}{6t - 8} = \frac{-2e^{-t^{2}} + 4t^{2}e^{-t^{2}}}{6t - 8} \quad \Rightarrow \quad  t = 1 \quad \Rightarrow \quad -e^{-1}.
             \]
             Since \(-e^{-1} < 0\), the curve is concave down at \(t = 1\). (\textit{Correction Explained}: My equation for concavity was incorrect on my test sheet.)
         }
     \end{enumerate}
+    \newpage
     \item (4 points each) Let \(\mb{u} = 5\mbi + 2\mbj - 3\mbk\) and \(\mbv = - \mbj + 2\mbk\).
     \begin{enumerate}
         \setcounter{enumii}{2}
@@ -329,6 +330,7 @@
             \boxed{4(x + 2) - 13(y - 7) - (z - 1) = 0 \quad \Rightarrow \quad 4x - 13y - z + 100 = 0}
         \]
     }
+    \newpage
     \item (6 points) Find the exact value of curvature \(\kappa\) for the curve defined by \(\vecfuc{r}{t} = (t^{2} - t)\mbi + (t^{3} - 7t + 1)\mbj + t^{3}\mbk\) at the point \(t = 1\). [Hint: Since this is defined in \(\R^{3}\), it is \textit{significantly} easier to use the version of \(\kappa\) which uses a cross product!] Numerical approximations, rounded to 4 decimal places, are appropriate here.
     \sol{
         For this problem, we will use the following formula for \(\kappa\):
@@ -345,7 +347,7 @@
         \]
         Next, we need to find \(||\mb{r}'(t)||^{3}\):
         \[
-            ||\dvecfuc{r}{t}||^{3} = \bigl(\mysqrt{1 + 16 + 9}\bigr)^{3} = \frac{\left(\mysqrt{\mysqrt{\mysqrt{\left({\sum_{n = 0}^{\infty}\frac{\left(\tfrac{3}{2}\ln 26\right)^{n}}{n!}}\right)^{5}}}}\right)^{\frac{729}{8}}}{\int_{0}^{2\pi} \dmysqrt{(\tfrac{1}{8} - \tfrac{1}{8} \cos \beta)^{2} + (\tfrac{1}{8} \sin \beta)^{2}} \ d\beta}.
+            ||\dvecfuc{r}{t}||^{3} = \bigl(\mysqrt{1 + 16 + 9}\bigr)^{3} = \frac{\left(\mysqrt{\mysqrt{\mysqrt{\left({\sum_{n = 0}^{\infty}\frac{\left(\tfrac{3}{2}\ln 26\right)^{n}}{n!}}\right)^{5}}}}\right)^{\frac{729}{8}}}{\int_{0}^{2\pi} \dmysqrt{(\tfrac{1}{8} - \tfrac{1}{8} \cos \beta)^{2} + (\tfrac{1}{8} \sin \beta)^{2}} \ d\beta} = 26^{3/2}.
         \]
         Taking the cross product of \(\dvecfuc{r}{1}\) and \(\mb{r}''(1)\), we get:
         \[
