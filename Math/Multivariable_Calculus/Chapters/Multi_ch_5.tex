@@ -212,3 +212,137 @@ This idea is called the \cyanit{Jacobian}. We can think of this as being the det
 \[
   J = \begin{bmatrix} \frac{\partial x}{\partial \alpha} & \frac{\partial x}{\partial \beta} \\ \frac{\partial y}{\partial \alpha} & \frac{\partial y}{\partial \beta} \end{bmatrix}
 \]
+
+\newpage
+
+\section{Triple Integrals}
+
+\subsection{Triple Integrals}
+
+\subsubsection{Triple Integrals over a Rectangular Box}
+
+Suppose that \(B \subseteq \R^3\) is a solid box, so that
+\[
+  B = \{(x, y, z) \in \R^3 : a \leq x \leq b, c \leq y \leq d, e \leq z \leq f\}.
+\]
+Suppose \(f : B \to \R\) is continuous. We define the \cyanit{triple integral} of \(f\) over \(B\) as
+\[
+  \iiint_B f(x, y, z) \, dV = \lim_{\ell, m, n \to \infty} \sum_{i=1}^{\ell} \sum_{j=1}^{m} \sum_{k=1}^{n} f(x^*_{ijk}, y^*_{ijk}, z^*_{ijk}) \Delta x \Delta y \Delta z,
+\]
+if this limit exists.
+
+\subsubsection{Fubini’s Theorem}
+
+Given a box \(B\) as defined above and a continuous function \(f\), we each of the following gives the same answer:
+\begin{align*}
+  \iiint_B f(x, y, z) \, dV & = \int_a^b \int_c^d \int_e^f f(x, y, z) \, dz dy dx \\
+                            & = \int_a^b \int_e^f \int_c^d f(x, y, z) \, dy dz dx \\
+                            & = \int_c^d \int_a^b \int_e^f f(x, y, z) \, dz dx dy \\
+                            & = \int_c^d \int_e^f \int_a^b f(x, y, z) \, dx dz dy \\
+                            & = \int_e^f \int_a^b \int_c^d f(x, y, z) \, dy dx dz \\
+                            & = \int_e^f \int_c^d \int_a^b f(x, y, z) \, dx dy dz
+\end{align*}
+In other words, we can integrate over a \textit{box} in whatever order is most convenient.
+
+\newpage
+
+\subsubsection{General Regions}
+
+Suppose that \(D \subseteq \R^2\) is a region in the plane and \(u_1\), \(u_2 : \R^2 \to \R\) are defined so that \(u_1(x, y) \leq u_2(x, y)\). Then, if the general region
+\[
+  E = \{(x, y, z) \in \R^3 : (x, y) \in D, u_1(x, y) \leq z \leq u_2(x, y)\},
+\]
+we have
+\[
+  \iiint_E f(x, y, z) \, dV = \iint_D \left( \int_{u_1(x, y)}^{u_2(x, y)} f(x, y, z) \, dz \right) dA.
+\]
+There is nothing special about the \(z\)-axis, of course. \\
+
+Now, if \(D\) is a Type I region with \(g_1(x) \leq y \leq g_2(x)\), we have
+\[
+  \iiint_E f(x, y, z) \, dV = \int_b^a \int_{g_1(x)}^{g_2(x)} \int_{u_1(x, y)}^{u_2(x, y)} f(x, y, z) \, dz dy dx.
+\]
+Likewise, if \(D\) happens to be Type II, we have
+\[
+  \iiint_E f(x, y, z) \, dV = \int_d^c \int_{h_1(y)}^{h_2(y)} \int_{u_1(x, y)}^{u_2(x, y)} f(x, y, z) \, dz dx dy.
+\]
+
+\subsubsection{Volume}
+
+The \cyanit{volume} of the solid region \(E \subseteq \R^3\) is given by
+\[
+  \text{vol}(E) = \iiint_E 1 \, dV.
+\]
+
+\subsubsection{Average Value}
+
+The \cyanit{average value} of the continuous function \(f\) over the solid region \(E \subseteq \R^3\) is given by
+\[
+  \text{ave}(f) = \frac{1}{\text{vol}(E)} \iiint_E f(x, y, z) \, dV.
+\]
+
+\newpage
+
+\section{Triple Integrals -- Cylindrical and Spherical Coordinates}
+
+\subsection{Cylindrical Coordinates}
+
+\subsubsection{Cylindrical Coordinate System}
+
+This is a straightforward extension of polar coordinates in \(\R^2\) to \(\R^3\). In cylindrical coordinates,
+\begin{align*}
+  x & = r \cos(\theta) \\
+  y & = r \sin(\theta) \\
+  z & = z
+\end{align*}
+
+\subsubsection{Cylindrical Triple Integrals}
+
+If you have a solid general region \(E \subseteq \R^3\) such that you can describe \(E\) as
+\[
+  E = \{(r, \theta, z) : (r, \theta) \in D, u_1(r, \theta) \leq z \leq u_2(r, \theta)\},
+\]
+for some \(D \subseteq \R^2\) such that
+\[
+  D = \{(r, \theta) : \alpha \leq \theta \leq \beta, g_1(\theta) \leq r \leq g_2(\theta)\}
+\]
+then
+\[
+  \iiint_E f(x, y, z) \, dV = \int_{\beta}^{\alpha} \int_{g_1(\theta)}^{g_2(\theta)} \int_{u_1(r, \theta)}^{u_2(r, \theta)} f(r \cos(\theta), r \sin(\theta), z) r \, dz dr d\theta.
+\]
+
+\subsection{Spherical Coordinates}
+
+We can also describe a point in \(\R^3\) by use of spherical coordinates. We let \(\rho\) be the distance from the origin to the point, \(\theta\) remains the angle the point makes in the \(xy\) plane, and \(\phi\) is the polar angle, the angle made between the point and the positive \(z\) axis. \\
+
+\textbf{Important.} In physics, typically, the notation is reversed – \(\theta\) is commonly the polar angle and \(\phi\) is the planar angle. This is admittedly stupid that we cannot agree on this – it is just arbitrary notation. However, I maintain that the math way is better: \(\theta\) looks like a planar angle, and \(\phi\) looks like a polar angle.
+
+\newpage
+
+\subsubsection{Spherical Coordinate System}
+
+Using \(\rho\) as the radius (in 3 dimensions, from the origin), \(\theta\) as the angle in the \(xy\) plane and \(\phi\) as the polar angle (letting \(\phi = 0\) mean the positive \(z\) axis), we have:
+
+\begin{align*}
+  x & = \rho \sin(\phi) \cos(\theta) \\
+  y & = \rho \sin(\phi) \sin(\theta) \\
+  z & = \rho \cos(\phi) \\
+  \rho & = \sqrt{x^2 + y^2 + z^2} \\
+  \theta & = \arctan\left(\frac{y}{x}\right) \\
+  \phi & = \arccos\left(\frac{z}{\rho}\right)
+\end{align*}
+
+\subsubsection{Spherical Triple Integrals}
+
+In spherical coordinates, a \cyanit{spherical wedge} is a region
+\[
+  E = \{(p, \theta, \phi) : a \leq \rho \leq b, \alpha \leq \theta \leq \beta, \gamma \leq \phi \leq \psi\}.
+\]
+Using an analysis similar to what we did for a polar rectangle, you can show that
+\[
+  \Delta V = \rho^2 \sin(\phi) \Delta \rho \Delta \theta \Delta \phi.
+\]
+Thus,
+\[
+  \iiint_E f(x, y, z) \, dV = \int_{\psi}^{\gamma} \int_{\beta}^{\alpha} \int_{b}^{a} f(\rho \sin(\phi) \cos(\theta), \rho \sin(\phi) \sin(\theta), \rho \cos(\phi)) \rho^2 \sin(\phi) \, d\rho d\theta d\phi.
+\]

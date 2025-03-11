@@ -4,7 +4,7 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \documentclass[12pt, oneside]{book}
-% \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
 % \usepackage[T1]{fontenc}
 
 
@@ -19,6 +19,7 @@
 \usepackage{listings}
 \usepackage{pdflscape}
 \usepackage{tikz}
+\usepackage{tikz-cd}
 \usetikzlibrary{
     shapes,
     backgrounds,
@@ -29,6 +30,7 @@
     arrows.meta,
     decorations.pathreplacing
     }
+\usepackage{pgfplots}
 \usepgflibrary{shadings}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{mathrsfs}
@@ -112,6 +114,7 @@
 \definecolor{xrainbow11}{HTML}{ff9709}
 
 \definecolor{brainbackground}{HTML}{0d1f47}
+\definecolor{synapsebackground}{HTML}{181812}
 
 
 \colorlet{firstlevel}{xrainbow1}
@@ -159,12 +162,12 @@
 }
 
 \usepackage[Glenn]{fncychap}
-% \ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
-% \ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
-% \ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
-\ChTitleVar{\bfseries\scshape\color{black}}
-\ChNumVar{\large\selectfont\color{black}}
-\ChNameVar{\large\color{black}}
+\ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
+\ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
+% \ChTitleVar{\bfseries\scshape\color{black}}
+% \ChNumVar{\large\selectfont\color{black}}
+% \ChNameVar{\large\color{black}}
 \usepackage{xpatch}
 
 % \xpatchcmd{\DOCH}
@@ -375,58 +378,58 @@ sharp corners=downhill,
 
 
 
-% \begin{titlepage}
-%     \begin{center}
+\begin{titlepage}
+    \begin{center}
 
-%         \vspace*{-2cm}
-%         \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
-%         % \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
-%         \vfill
+        \vspace*{-2cm}
+        % \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
+        \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
+        \vfill
 
-%         % Horizontal line above the title in 'horange' color
-%         \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+        % Horizontal line above the title in 'horange' color
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
-%         \vspace{2em}
+        \vspace{2em}
 
-%         {\huge \textbf{\titlestandin}}
+        {\huge \textbf{\titlestandin}}
 
-%         \vspace{1em} % Space between the title and the bottom line
+        \vspace{1em} % Space between the title and the bottom line
 
-%         \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
-%         \vspace*{1\baselineskip}
+        \vspace*{1\baselineskip}
 
-%         {\LARGE \textbf{\cussubtitle}}
+        {\LARGE \textbf{\cussubtitle}}
 
-%         \begin{large}
-%             \vspace*{2\baselineskip}
+        \begin{large}
+            \vspace*{2\baselineskip}
 
-%             \textit{Start}  \\[1ex]
-%             {\scshape \startdate} \\[0.3\baselineskip] % Year published
+            \textit{Start}  \\[1ex]
+            {\scshape \startdate} \\[0.3\baselineskip] % Year published
 
-%             \vspace*{1\baselineskip}
+            \vspace*{1\baselineskip}
 
-%             \emph{Author} \\[1ex]
-%             %Submitted by \\[\baselineskip]
-%             {\Large Paul Beggs \\ \par} % Editor list
-%             {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
 
-%             \vspace*{1\baselineskip}
+            \vspace*{1\baselineskip}
 
-%             \textit{Instructor} \\[1ex] % Tagline(s) or further description
-%             \professor
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
 
-%             \vspace*{1\baselineskip}
+            \vspace*{1\baselineskip}
 
-%             \textit{End}\\[1ex]
-%             {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
+            \textit{End}\\[1ex]
+            {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
 
-%             \thispagestyle{empty}
+            \thispagestyle{empty}
 
-%         \end{large}
-%     \end{center}
-% \end{titlepage}
-% \pagebreak
+        \end{large}
+    \end{center}
+\end{titlepage}
+\pagebreak
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -436,19 +439,19 @@ sharp corners=downhill,
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-% % Helper command to fix header for double paged ToC.
-% % Temporarily adjust section marks for Table of Contents
-% \begin{spacing}{1} % Can change spacing between entries in TOC
-%     \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} % Can rename here
-%     \markboth{}{} % Clear the header marks for TOC
-%     \pagestyle{fancy} % Ensure fancy style is active
-%     \fancyhead[R]{Table of Contents} % Set TOC-specific header manually
-%     \tableofcontents
-%     \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
-% \end{spacing}
+% Helper command to fix header for double paged ToC.
+% Temporarily adjust section marks for Table of Contents
+\begin{spacing}{1} % Can change spacing between entries in TOC
+    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} % Can rename here
+    \markboth{}{} % Clear the header marks for TOC
+    \pagestyle{fancy} % Ensure fancy style is active
+    \fancyhead[R]{Table of Contents} % Set TOC-specific header manually
+    \tableofcontents
+    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+\end{spacing}
 
-% % Reset the headers to default for the rest of the document
-% \fancyhead[R]{\leftmark}
+% Reset the headers to default for the rest of the document
+\fancyhead[R]{\leftmark}
 
 
 
