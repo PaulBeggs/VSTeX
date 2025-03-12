@@ -4,8 +4,16 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \documentclass[12pt, oneside]{book}
-\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
 % \usepackage[T1]{fontenc}
+
+% \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+% \newcommand{\documentTheme}{draculafg}
+% \newcommand{\documentLogo}{images/small logo_white.png}
+% \newcommand{\documentBigLogo}{images/logo_white_text.png}
+
+\newcommand{\documentBigLogo}{images/Hendrix Logo.png}
+\newcommand{\documentLogo}{images/small logo.png}
+\newcommand{\documentTheme}{black}
 
 
 %%% AESTHETICS %%%
@@ -29,7 +37,7 @@
     decorations.pathmorphing,
     arrows.meta,
     decorations.pathreplacing
-    }
+}
 \usepackage{pgfplots}
 \usepgflibrary{shadings}
 \usepackage[framemethod=tikz]{mdframed}
@@ -162,12 +170,9 @@
 }
 
 \usepackage[Glenn]{fncychap}
-\ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
-\ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
-\ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
-% \ChTitleVar{\bfseries\scshape\color{black}}
-% \ChNumVar{\large\selectfont\color{black}}
-% \ChNameVar{\large\color{black}}
+\ChTitleVar{\bfseries\scshape\color{\documentTheme}}
+\ChNumVar{\large\selectfont\color{\documentTheme}}
+\ChNameVar{\large\color{\documentTheme}} 
 \usepackage{xpatch}
 
 % \xpatchcmd{\DOCH}
@@ -303,8 +308,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \fancyhead[R]{\leftmark}
 \fancyhead[L]{Hendrix College}
-% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
-\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
+\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}}
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
@@ -350,7 +354,6 @@ sharp corners=downhill,
 
 \newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
 
-% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
 
 
 % end of preamble
@@ -382,8 +385,7 @@ sharp corners=downhill,
     \begin{center}
 
         \vspace*{-2cm}
-        % \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
-        \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\ 
         \vfill
 
         % Horizontal line above the title in 'horange' color
