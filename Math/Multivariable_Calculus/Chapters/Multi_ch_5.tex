@@ -189,7 +189,7 @@ The area of this polar rectangle is
 \begin{align*}
   \iint_{R}f(x,y) \, dA & = \lim_{m,n \to \infty} \sum_{i=1}^{m} \sum_{j=1}^{n} f(x^*_{ij}, y^*_{ij}) \Delta A \\
                         & = \lim_{m,n \to \infty} \sum_{i=1}^{m} \sum_{j=1}^{n} f\bigl(r^*_i \cos\left(\theta^*_j\right), r^*_i \sin\left(\theta^*_j\right)\bigr) r^*_i \Delta r \Delta \theta \\
-                        & = \int_{\alpha}^{\beta} \int_{a}^{b} f\bigl(r \cos(\theta), r \sin(\theta \bigr) r \, dr \, d\theta
+                        & = \int_{\alpha}^{\beta} \int_{a}^{b} f\bigl(r \cos(\theta), r \sin(\theta) \bigr) r \, dr \, d\theta
 \end{align*}
 
 Thus, we can convert each \(x\) to \(r \cos(\theta)\), each \(y\) to \(r \sin(\theta)\) and replace \(dA = dxdy\) with \(dA = r \, dr d\theta\). You have made a change in coordinates and are now integrating over a polar region, so the results of sections 5.1 \& 5.2 now apply.
