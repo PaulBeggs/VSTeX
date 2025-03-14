@@ -31,7 +31,7 @@
 		"description": "Inserts an itemize environment with a single item"
 	},
 	"Colored List": {
-		"prefix": "coloredlist",
+		"prefix": "cl",
 		"body": [
 			"\\begin{coloredlist}",
 			"    \\item $1",

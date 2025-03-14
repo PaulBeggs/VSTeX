@@ -11,7 +11,7 @@
     \begin{coloredlist}
         \item \cyanit{Cell membrane}: Separates the inside of the cell from the outside environment.
         \item \cyanit{Nucleus}: Contains the genetic material of the cell.
-        \item \cyanit{Organells}: Carry out the basic functions of the cell.
+        \item \cyanit{Organelles}: Carry out the basic functions of the cell.
         \begin{coloredlist}
             \item \cyanit{Mitochondria}: Produce energy for the cell.
             \item \cyanit{Endoplasmic Reticulum}: Synthesizes proteins.
@@ -261,36 +261,27 @@
         \end{coloredlist}
         \item \textbf{Three Questions:}
         \begin{coloredlist}
-            \item Why don't the \(\text{Na}^{+}\) channels reopen during repolarization?
+            \item Why don't the \(\text{Na}^{+}\) channels reopen during repolarization? \checkmark
             \begin{coloredlist}
                 \item \textit{Answer:} Because of the refractory period.
             \end{coloredlist}
-            \item How can an all or none signal convey analog information?
+            \item How can an all or none signal convey analog information? \checkmark
             \begin{coloredlist}
                 \item \textit{Answer:} The frequency of the APs can convey the intensity of the stimulus.
                 \item \cyanit{Rate Law} -- Variations in the intensity of a stimulus are represented by variations in the rate of firing.
             \end{coloredlist}
             \item Where does that signal come from that meets the threshold of excitation?
             \begin{coloredlist}
-                \item Refer to \hyperlink{sec:electrical activity}{Conduction of Electrical Activity}.
+                \item \cyanit{Decremental Conduction} -- The further the signal travels, the weaker it gets. (cable properties)
+                \begin{coloredlist}
+                    \item Analogue communication.
+                    \begin{coloredlist}
+                        \item Degrading because for resistance and leakage.
+                    \end{coloredlist}
+                    \item \cyanit{Passive Conduction} -- No energy is expended.
+                \end{coloredlist}
             \end{coloredlist}
         \end{coloredlist}
-    \end{coloredlist}
-\end{coloredlist}
-
-\hypertarget{sec:electrical activity}{}
-\section{Conduction of Electrical Activity}
-
-\subsection{Conduction of Hyper and (subthreshold) Depolarizations}
-
-\begin{coloredlist}
-    \item \cyanit{Decremental Conduction} -- The further the signal travels, the weaker it gets. (cable properties)
-    \begin{coloredlist}
-        \item Analogue communication.
-        \begin{coloredlist}
-            \item Degrading because for resistance and leakage.
-        \end{coloredlist}
-        \item \cyanit{Passive Conduction} -- No energy is expended.
     \end{coloredlist}
 \end{coloredlist}
 
@@ -305,7 +296,7 @@
     \item \cyanit{All or Nothing Law} -- AP occurs or not once triggered, always the same size.
     \item \cyanit{Active Regeneration} -- The AP is regenerated at each point along the axon.
     \begin{coloredlist}
-        \item Takes a lot of time (\(<\) 1 - 10 meters/second).
+        \item Takes a lot of time (\(<\) 1--10 meters/second).
         \item Takes a lot of energy.
     \end{coloredlist}
 \end{coloredlist}
@@ -349,7 +340,7 @@
 \begin{coloredlist}
     \item Occurs at the synapse (Greek: ``syn'' = together, ``haptein'' = to clasp).
     \begin{coloredlist}
-        \item Synaptic cleft (200 angstroms (\(\mathring{\text{A}}\)) across). \textit{Note:} 10\(^7\) \(\mathring{\text{A}}\) = 1 mm.
+        \item Synaptic cleft (20 angstroms (\AA) across). \textit{Note:} 10\(^7\) \AA = 1 mm.
         \item Pre-synaptic membrane
         \begin{coloredlist}
             \item \cyanit{Golgi bodies} -- Synthesize neurotransmitters and package them into vesicles.
@@ -376,7 +367,7 @@
     \hrulefill
 \end{center}
 
-\section{Conversion from Chemical Back to Electrical Signal}
+\section{Conversion from Chemical to Electrical Signal}
 
 \subsection{Two Kinds of Post Synaptic Potentials}
 
@@ -491,7 +482,7 @@
     \item No facilitation or inhibition is possible.
 \end{coloredlist}
 
-\section{Somatic vs. Autonomic (Revisted)}
+\section{Somatic vs. Autonomic (Revisited)}
 
 \begin{coloredlist}
     \item \cyanit{Somatic Nervous System} 
@@ -570,8 +561,8 @@
     \label{resting potential}
 \begin{tikzpicture}
   % Labels for compartments
-  \node at (-2,4.3) {\large \textbf{\underline{In}}};
-  \node at (2,4.3) {\large \textbf{\underline{Out}}};
+  \node at (-3,4.3) {\large \textbf{\underline{In}}};
+  \node at (3,4.3) {\large \textbf{\underline{Out}}};
   \node at (-5.9,4.3) {\large \textbf{\underline{Permeability}}};
 
 %   % Draw compartments as boxes
@@ -589,9 +580,9 @@
   \node (Na_in) at (-3,0) {\normalsize \(\text{Na}^{+}\)};
   \node (Cl_in) at (-3,-2.5) {\normalsize \(\text{Cl}^{-}\)};
 
-  \node (P_K) at (-4.8,2.5) {\huge \(\text{P}\phantom{^{+}}\)};
-  \node (P_K) at (-4.8,0) {\tiny \(\text{P}\phantom{^{+}}\)};
-  \node (P_K) at (-4.8,-2.5) {\Large \(\text{P}\phantom{^{-}}\)};
+  \node (P_K) at (-5.9,2.5) {\huge \(\text{P}\phantom{^{+}}\)};
+  \node (P_K) at (-5.9,0) {\tiny \(\text{P}\phantom{^{+}}\)};
+  \node (P_K) at (-5.9,-2.5) {\Large \(\text{P}\phantom{^{-}}\)};
 
   % Place ion symbols on the "out" side (right)
   % Here, sodium is made larger, etc.

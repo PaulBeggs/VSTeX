@@ -137,3 +137,12 @@ IPSPs
 Autoreceptors
 autoreceptors
 psychoticism
+coloredlist
+colback
+colframe
+boxrule
+wordbox
+coltitle
+xshift
+reexciation
+saltatory

@@ -4,10 +4,17 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \documentclass[12pt, oneside]{book}
-\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
 \usepackage{tikz-cd}
 % \usepackage[T1]{fontenc}
 
+\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+\newcommand{\documentTheme}{draculafg}
+\newcommand{\documentLogo}{images/small logo_white.png}
+\newcommand{\documentBigLogo}{images/logo_white_text.png}
+
+% \newcommand{\documentBigLogo}{images/Hendrix Logo.png}
+% \newcommand{\documentLogo}{images/small logo.png}
+% \newcommand{\documentTheme}{black}
 
 %%% AESTHETICS %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -96,12 +103,9 @@
 }
 
 \usepackage[Glenn]{fncychap}
-\ChTitleVar{\bfseries\scshape\color{draculafg}} % Needed for Dracula theme
-\ChNumVar{\large\selectfont\color{draculafg}} % Needed for Dracula theme
-\ChNameVar{\large\color{draculafg}} % Needed for Dracula theme
-% \ChTitleVar{\bfseries\scshape\color{black}}
-% \ChNumVar{\large\selectfont\color{black}}
-% \ChNameVar{\large\color{black}}
+\ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
+\ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
 \usepackage{xpatch}
 
 % \xpatchcmd{\DOCH}
@@ -207,7 +211,6 @@
 
 %%% FIGURES %%%
 \usepackage{graphicx}  
-\graphicspath{ {images/} }  
 % \numberwithin{figure}{section}
 \usepackage{float}
 \usepackage{caption}
@@ -229,8 +232,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \fancyhead[R]{\leftmark}
 \fancyhead[L]{Hendrix College}
-% \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
-\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
+\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
@@ -243,171 +245,6 @@
 \tcbuselibrary{theorems}
 % \tcbuselibrary{minted}
 \newcounter{BoxCounter}
-
-
-\newtcolorbox{note}{colback=black!15!white, colframe=black, boxrule=0.5mm, arc=4mm, left=4mm, right=4mm, top=2mm, bottom=2mm}
-
-%% Numbered Theorems %%
-\newtcolorbox[use counter=BoxCounter, number within=section]{theorem}[1][]{%
-enhanced,
-sharp corners=uphill,
-    colframe=xblue, %color of frame
-    colback=xblue!15, %color of background
-    coltitle=white, %color of title text
-    label={thm:\theBoxCounter},
-    title={\large \textbf{Theorem \theBoxCounter}},
-    attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=xblue},
-    #1
-}
-
-
-%% Named Theorems %%
-\newtcolorbox[use counter=BoxCounter, number within=section]{ntheorem}[2][]{%
-enhanced,
-sharp corners=south,
-    colframe=xblue, %color of frame
-    colback=xblue!15, %color of background
-    coltitle=white, %color of title text
-    label={thm:#2},
-    title={\large \textbf{Theorem \theBoxCounter: #2}},
-    attach boxed title to top center,
-    boxed title style={colback=xblue},
-    #1
-}
-
-
-%% Definitions %%
-\newtcolorbox[use counter=BoxCounter, number within=section]{definition}[1][]{%
-enhanced,
-sharp corners=downhill,
-    colframe=xred,
-    colback=xred!15,
-    coltitle=white,
-    label={def:\theBoxCounter},
-    title={\large \textbf{Definition \theBoxCounter}},
-    attach boxed title to top right={xshift=-0.5cm},
-    boxed title style={colback=xred},
-    #1
-}
-
-
-%% Axioms %%
-\newtcolorbox[]{axiom}[2][]{%
-enhanced,
-sharp corners=downhill,
-    colframe=xdarkgreen,
-    colback=xdarkgreen!15,
-    coltitle=white,
-    label={ax:#2},
-    title={\large \textbf{Axiom of #2}},
-    attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=xdarkgreen},
-    #1
-}
-
-
-%% Exercises %%
-\newtcolorbox[]{exercise}[2][]{%
-    enhanced,
-    sharp corners=uphill,
-    colframe=orangehdx!75,
-    colback=orangehdx!10,
-    coltitle=black,
-    label={exerc:#2},
-    title={\large \textbf{Exercise: #2}},
-    attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=orangehdx!75},
-    #1,
-}
-
-
-%% Examples %%
-\newcounter{ExampleCounter}
-\newtcolorbox[use counter=ExampleCounter, number within=chapter]{example}[2][]{%
-enhanced,
-sharp corners=south,
-    colframe=teal,
-    colback=teal!15,
-    coltitle=white,
-    label={ex:\theExampleCounter},
-    title={\large \textbf{Example \theExampleCounter: #2}},
-    attach boxed title to top center,
-    boxed title style={colback=teal},
-    #1,
-}
-
-
-%% Corollaries %%
-\newtcolorbox[]{corollary}[3][]{%
-enhanced,
-sharp corners=downhill,
-    colframe=xgrayblue,  
-    colback=xgrayblue!15,        
-    coltitle=white,
-    title={\large \textbf{Corollary to #3: #2}},
-    attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=xgrayblue},
-    #1
-}
-
-
-%% Lemmas %%
-\newtcolorbox[use counter=BoxCounter, number within=chapter]{lemma}[1][]{%
-enhanced,
-sharp corners=uphill,
-    colframe=xpurple,
-    colback=xpurple!15,
-    coltitle=white,
-    label={lm:\theBoxCounter},
-    title={\large \textbf{Lemma \theBoxCounter}},
-    attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=xpurple},
-    #1,
-}
-
-%% Referencing Macros %%
-
-% Exercises
-\newcommand{\defex}[1]{\hyperref[ex:#1]{Exercise #1}}
-
-% Definitions
-\newcommand{\defword}[2]{\hyperref[def:#2]{#1}}
-\newcommand{\defref}[1]{\hyperref[def:#1]{Definition #1}}
-
-% Theorems
-\newcommand{\numrefthm}[1]{\hyperref[thm:#1]{Theorem #1}}
-\newcommand{\namrefthm}[1]{\hyperref[thm:#1]{#1}}
-
-\newcommand{\dydx}{\frac{dy}{dx}}
-\newcommand{\dxdy}{\frac{dx}{dy}}
-\newcommand{\dydt}{\frac{dy}{dt}}
-\newcommand{\dxdt}{\frac{dx}{dt}}
-\newcommand{\dzdt}{\frac{dz}{dt}}
-
-
-\newcommand{\cost}{\cos(t)}
-\newcommand{\sint}{\sin(t)}
-\newcommand{\tant}{\tan(t)}
-
-% 
-\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
-
-\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
-
-\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
-
-\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
-
-\newcommand{\imb}{\mb{i}}
-\newcommand{\jmb}{\mb{j}}
-\newcommand{\kmb}{\mb{k}}
-\newcommand{\rmb}{\mb{r}}
-\newcommand{\umb}{\mb{u}}
-
-\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
-\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
-\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -492,7 +329,7 @@ sharp corners=uphill,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
   backgroundcolor=draculabg, % Needed for Dracula theme
-  fontcolor=draculafg, % Needed for Dracula theme
+  fontcolor=\documentTheme, % Needed for Dracula theme
   innertopmargin=0pt,
   innerbottommargin=5pt,
   innerrightmargin=10pt,
@@ -540,7 +377,7 @@ sharp corners=uphill,
         rightline=false,
         leftline=false,
         backgroundcolor=draculabg, % Background color for Dracula theme
-        fontcolor=draculafg,       % Font color for Dracula theme
+        fontcolor=\documentTheme,       % Font color for Dracula theme
         innerleftmargin=-6pt,
         innertopmargin=0pt,
         leftmargin=0pt,
@@ -566,131 +403,7 @@ sharp corners=uphill,
     \end{mdframed}
 }
 
-\newcommand{\pfscratch}[3]{%
-    \begin{customframedproof}[linecolor=#3]
-        \begin{proofscratch}
-            {#1}{#2}
-        \end{proofscratch}
-    \end{customframedproof}
-}
 
-\newcommand{\lepfscratch}[2]{\pfscratch{#1}{#2}{teal}}
-
-\newcommand{\sbseteqpfbase}[5][We need to show these expressions are subsets of each other in order to prove they are equivalent.]{%
-    \begin{customframedproof}[linecolor=#5]
-        \begin{proof}
-                #1
-            \begin{proofpart}[#5]{(\(\subseteq\))}
-                #2
-            \end{proofpart}
-    \vspace{2mm}
-            \begin{proofpart}[#5]{(\(\supseteq\))}
-                #3
-            \end{proofpart}
-    \vspace{2mm}
-            #4
-        \end{proof}
-    \end{customframedproof}
-}
-
-\newcommand{\sbseteqpf}[5][We need to show these expressions are subsets of each other in order to prove they are equivalent.]{
-    \raisebox{0.85em}{\begin{minipage}[t]{0.90\textwidth}
-        \sbseteqpfbase[#1]{#2}{#3}{#4}{#5}
-    \end{minipage}}
-}
-
-% \newcommand{\iffpf}[4]{
-%     \begin{customframedproof}[linecolor=#4]
-%         \begin{proof}
-%             We show this by proving both implications:
-%             \begin{proofpart}[#4]{(\(\Rightarrow\))}
-%                 #1
-%             \end{proofpart}
-%     \vspace{2mm}
-%             \begin{proofpart}[#4]{(\(\Leftarrow\))}
-%                 #2
-%             \end{proofpart}
-%     \vspace{2mm}
-%             #3
-%         \end{proof}
-%     \end{customframedproof}
-% }
-
-\newcommand{\iffpfbase}[5][We show this by proving both implications:]{
-    \begin{customframedproof}[linecolor=#5]
-        \begin{proof}
-            #1 % This is the optional text, with a default value
-            \begin{proofpart}[#5]{(\(\Rightarrow\))}
-                #2
-            \end{proofpart}
-    \vspace{2mm}
-            \begin{proofpart}[#5]{(\(\Leftarrow\))}
-                #3
-            \end{proofpart}
-    \vspace{2mm}
-            #4
-        \end{proof}
-    \end{customframedproof}
-}
-
-\newcommand{\iffpf}[5][We will show this by proving both implications:]{
-    \raisebox{0.85em}{\begin{minipage}[t]{0.90\textwidth}
-        \iffpfbase[#1]{#2}{#3}{#4}{#5}
-    \end{minipage}}
-}
-
-
-
-% Command for exercise proofs with a predefined color
-\newcommand{\expf}[1]{
-    \begin{customframedproof}[linecolor=orangehdx!75,]
-        \begin{proof}
-        #1
-        \end{proof}
-    \end{customframedproof}
-}
-
-\newcommand{\lemmapf}[1]{
-    \begin{customframedproof}[linecolor=xpurple!75,]
-        \begin{proof}
-        #1
-        \end{proof}
-    \end{customframedproof}
-}
-
-% Command for proofs that are contained within solution environments. 
-\newcommand{\innerpfbase}[1]{%
-    \begin{customframedproof}[linecolor=xgray]
-        \begin{proof}
-            #1
-        \end{proof}
-    \end{customframedproof}
-}
-
-\newcommand{\innerpf}[1]{
-    \raisebox{0.85em}{
-    \begin{minipage}[t]{0.90\textwidth}
-        \innerpfbase{#1}
-    \end{minipage}}
-}
-
-
-% Command for theorems proofs with a predefined color
-\newcommand{\tpf}[1]{
-    \begin{customframedproof}[linecolor=xblue]
-        \begin{proof}
-        #1
-        \end{proof}
-    \end{customframedproof}
-}
-% Command for corollaries proofs with a predefined color
-\newcommand{\cpf}[1]{
-    \begin{customframedproof}[linecolor=purplehdx]
-        \begin{proof}
-        #1
-        \end{proof}
-    \end{customframedproof}
-}
 
 \newcommand{\sol}[1]{
     \begin{customframedproof}[linecolor=orangehdx!75,]
@@ -700,40 +413,9 @@ sharp corners=uphill,
     \end{customframedproof}
 }
 
-\newcommand{\lesol}[1]{
-    \begin{customframedproof}[linecolor=teal]
-        \begin{solution}
-        #1
-        \end{solution}
-    \end{customframedproof}
-}
-
-\newcommand{\lepf}[1]{
-    \begin{customframedproof}[linecolor=teal]
-        \begin{proof}
-        #1
-        \end{proof}
-    \end{customframedproof}
-}
-
-\newcommand{\pb}[2]{
-    \begin{exercise}{#1}[label=ex:#1]
-    #2
-    \end{exercise}
-}
-
 \def \proofDistance {10pt}
 \newenvironment{solution}
   {\textit{Solution.}}
-
-% Command for theorems proofs with a predefined color
-\newcommand{\epf}[1]{
-    \begin{customframedproof}[linecolor=teal]
-        \begin{proof}
-        #1
-        \end{proof}
-    \end{customframedproof}
-}
 
 \newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
 \newcommand{\limn}{\lim_{n \rightarrow \infty}}
@@ -755,6 +437,30 @@ sharp corners=uphill,
 
 \newcommand{\p}{\partial}
 
+\newcommand{\dydx}{\frac{dy}{dx}}
+\newcommand{\dxdy}{\frac{dx}{dy}}
+\newcommand{\dydt}{\frac{dy}{dt}}
+\newcommand{\dxdt}{\frac{dx}{dt}}
+\newcommand{\dzdt}{\frac{dz}{dt}}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
 
 % end of preamble
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -769,13 +475,13 @@ sharp corners=uphill,
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 % Do not use all caps.
-\newcommand{\titlestandin}[0]{Multivariable Calculus Notes}
-\newcommand{\cussubtitle}[0]{MATH 230}
+\newcommand{\titlestandin}{Multivariable Calculus Notes}
+\newcommand{\cussubtitle}{MATH 230}
 % Date format should be like: "January 1, 2001"
-\newcommand{\startdate}[0]{January 22, 2025}
-\newcommand{\customenddate}[0]{May 13, 2025}
+\newcommand{\startdate}{January 22, 2025}
+\newcommand{\customenddate}{May 13, 2025}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
-\newcommand{\professor}[0]{Prof. Lars Seme, M.S.}
+\newcommand{\professor}{Prof. Lars Seme, M.S.}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -785,8 +491,7 @@ sharp corners=uphill,
     \begin{center}
 
         \vspace*{-2cm}
-        % \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
-        \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\ % Use for Dracula. Its the all white version of the logo.
         \vfill
 
         % Horizontal line above the title in 'horange' color

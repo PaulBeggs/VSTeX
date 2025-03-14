@@ -369,69 +369,69 @@ sharp corners=downhill,
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 % Do not use all caps.
-\newcommand{\titlestandin}[0]{Behavioral Neuroscience Notes}
-\newcommand{\cussubtitle}[0]{PSYC 360}
+\newcommand{\titlestandin}{Behavioral Neuroscience Notes}
+\newcommand{\cussubtitle}{PSYC 360}
 % Date format should be like: "January 1, 2001"
-\newcommand{\startdate}[0]{January 21, 2025}
-\newcommand{\customenddate}[0]{May 14, 2025}
+\newcommand{\startdate}{January 21, 2025}
+\newcommand{\customenddate}{May 14, 2025}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
-\newcommand{\professor}[0]{Prof. Jennifer Peszka, Ph.D.}
+\newcommand{\professor}{Prof. Jennifer Peszka, Ph.D.}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 
 
-\begin{titlepage}
-    \begin{center}
+% \begin{titlepage}
+%     \begin{center}
 
-        \vspace*{-2cm}
-        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\ 
-        \vfill
+%         \vspace*{-2cm}
+%         \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\ 
+%         \vfill
 
-        % Horizontal line above the title in 'horange' color
-        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+%         % Horizontal line above the title in 'horange' color
+%         \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
-        \vspace{2em}
+%         \vspace{2em}
 
-        {\huge \textbf{\titlestandin}}
+%         {\huge \textbf{\titlestandin}}
 
-        \vspace{1em} % Space between the title and the bottom line
+%         \vspace{1em} % Space between the title and the bottom line
 
-        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+%         \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
-        \vspace*{1\baselineskip}
+%         \vspace*{1\baselineskip}
 
-        {\LARGE \textbf{\cussubtitle}}
+%         {\LARGE \textbf{\cussubtitle}}
 
-        \begin{large}
-            \vspace*{2\baselineskip}
+%         \begin{large}
+%             \vspace*{2\baselineskip}
 
-            \textit{Start}  \\[1ex]
-            {\scshape \startdate} \\[0.3\baselineskip] % Year published
+%             \textit{Start}  \\[1ex]
+%             {\scshape \startdate} \\[0.3\baselineskip] % Year published
 
-            \vspace*{1\baselineskip}
+%             \vspace*{1\baselineskip}
 
-            \emph{Author} \\[1ex]
-            %Submitted by \\[\baselineskip]
-            {\Large Paul Beggs \\ \par} % Editor list
-            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+%             \emph{Author} \\[1ex]
+%             %Submitted by \\[\baselineskip]
+%             {\Large Paul Beggs \\ \par} % Editor list
+%             {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
 
-            \vspace*{1\baselineskip}
+%             \vspace*{1\baselineskip}
 
-            \textit{Instructor} \\[1ex] % Tagline(s) or further description
-            \professor
+%             \textit{Instructor} \\[1ex] % Tagline(s) or further description
+%             \professor
 
-            \vspace*{1\baselineskip}
+%             \vspace*{1\baselineskip}
 
-            \textit{End}\\[1ex]
-            {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
+%             \textit{End}\\[1ex]
+%             {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
 
-            \thispagestyle{empty}
+%             \thispagestyle{empty}
 
-        \end{large}
-    \end{center}
-\end{titlepage}
-\pagebreak
+%         \end{large}
+%     \end{center}
+% \end{titlepage}
+% \pagebreak
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -441,64 +441,64 @@ sharp corners=downhill,
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-% Helper command to fix header for double paged ToC.
-% Temporarily adjust section marks for Table of Contents
-\begin{spacing}{1} % Can change spacing between entries in TOC
-    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} % Can rename here
-    \markboth{}{} % Clear the header marks for TOC
-    \pagestyle{fancy} % Ensure fancy style is active
-    \fancyhead[R]{Table of Contents} % Set TOC-specific header manually
-    \tableofcontents
-    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
-\end{spacing}
+% % Helper command to fix header for double paged ToC.
+% % Temporarily adjust section marks for Table of Contents
+% \begin{spacing}{1} % Can change spacing between entries in TOC
+%     \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} % Can rename here
+%     \markboth{}{} % Clear the header marks for TOC
+%     \pagestyle{fancy} % Ensure fancy style is active
+%     \fancyhead[R]{Table of Contents} % Set TOC-specific header manually
+%     \tableofcontents
+%     \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+% \end{spacing}
 
-% Reset the headers to default for the rest of the document
-\fancyhead[R]{\leftmark}
+% % Reset the headers to default for the rest of the document
+% \fancyhead[R]{\leftmark}
 
 
 
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\setcounter{chapter}{0}
-\chapter{Origins of Behavioral Neuroscience}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_1}
-\setcounter{chapter}{0}
-\chapter{Origins of Behavioral Neuroscience}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_1}
+% \setcounter{chapter}{0}
+% \chapter{Origins of Behavioral Neuroscience}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_1}
+% \setcounter{chapter}{0}
+% \chapter{Origins of Behavioral Neuroscience}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_1}
 
 % \setcounter{chapter}{1}
 % \chapter{Structure and Functions of Cells of the Nervous System}
 % \vspace*{-0.25in}
 % \input{Chapters/behavioral_Ch_2}
-\newpage
-\vspace*{\stretch{1}}
-\fancyhead[R]{}
+% \newpage
+% \vspace*{\stretch{1}}
+% \fancyhead[R]{}
 
-\begin{center}
-    \textsc{SKIP CHAPTER 2} \\
-    Most of the content from Chapter 2 has been blended with Chapter 3. \\
-\end{center}
-\vspace*{\stretch{1}}
-\newpage
-\fancyhead[R]{\leftmark}
+% \begin{center}
+%     \textsc{SKIP CHAPTER 2} \\
+%     Most of the content from Chapter 2 has been blended with Chapter 3. \\
+% \end{center}
+% \vspace*{\stretch{1}}
+% \newpage
+% \fancyhead[R]{\leftmark}
 
-\setcounter{chapter}{2}
-\chapter{Structure of the Nervous System}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_3}
+% \setcounter{chapter}{2}
+% \chapter{Structure of the Nervous System}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_3}
 
-\setcounter{chapter}{4}
-\chapter{Methods and Strategies of Research}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_5}
+% \setcounter{chapter}{4}
+% \chapter{Methods and Strategies of Research}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_5}
 
-\setcounter{chapter}{5}
-\chapter{How Neurons Process Information}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_6}
+% \setcounter{chapter}{5}
+% \chapter{How Neurons Process Information}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_6}
 
 % \chapter*{Lab Practical 1}
 % \addcontentsline{toc}{chapter}{Lab Practical 1}
@@ -511,11 +511,11 @@ sharp corners=downhill,
 % \vspace*{-0.25in}
 % \input{Chapters/behavioral_quiz_1b}
 
-% \chapter*{Exam 2}
-% \fancyhead[R]{Exam 2}
-% \addcontentsline{toc}{chapter}{Exam 2}
-% \vspace*{-0.25in}
-% \input{Chapters/behavioral_quiz_2}
+\chapter*{Exam 2}
+\fancyhead[R]{Exam 2}
+\addcontentsline{toc}{chapter}{Exam 2}
+\vspace*{-0.25in}
+\input{Chapters/behavioral_quiz_2}
 
 % \chapter*{Behavioral Lab}
 % \vspace*{-0.25in}
