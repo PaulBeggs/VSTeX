@@ -311,26 +311,31 @@ then
   \iiint_E f(x, y, z) \, dV = \int_{\beta}^{\alpha} \int_{g_1(\theta)}^{g_2(\theta)} \int_{u_1(r, \theta)}^{u_2(r, \theta)} f(r \cos(\theta), r \sin(\theta), z) r \, dz dr d\theta.
 \]
 
+\newpage
+
 \subsection{Spherical Coordinates}
 
 We can also describe a point in \(\R^3\) by use of spherical coordinates. We let \(\rho\) be the distance from the origin to the point, \(\theta\) remains the angle the point makes in the \(xy\) plane, and \(\phi\) is the polar angle, the angle made between the point and the positive \(z\) axis. \\
 
 \textbf{Important.} In physics, typically, the notation is reversed – \(\theta\) is commonly the polar angle and \(\phi\) is the planar angle. This is admittedly stupid that we cannot agree on this – it is just arbitrary notation. However, I maintain that the math way is better: \(\theta\) looks like a planar angle, and \(\phi\) looks like a polar angle.
 
-\newpage
-
 \subsubsection{Spherical Coordinate System}
 
 Using \(\rho\) as the radius (in 3 dimensions, from the origin), \(\theta\) as the angle in the \(xy\) plane and \(\phi\) as the polar angle (letting \(\phi = 0\) mean the positive \(z\) axis), we have:
 
-\begin{align*}
-  x & = \rho \sin(\phi) \cos(\theta) \\
-  y & = \rho \sin(\phi) \sin(\theta) \\
-  z & = \rho \cos(\phi) \\
-  \rho & = \sqrt{x^2 + y^2 + z^2} \\
-  \theta & = \arctan\left(\frac{y}{x}\right) \\
-  \phi & = \arccos\left(\frac{z}{\rho}\right)
-\end{align*}
+\begin{multicols}{2}
+  \noindent
+  \begin{align*}
+    x & = \rho \sin(\phi) \cos(\theta) \\
+    y & = \rho \sin(\phi) \sin(\theta) \\
+    z & = \rho \cos(\phi)
+  \end{align*}
+  \begin{align*}
+    \rho & = \sqrt{x^2 + y^2 + z^2} \\
+    \theta & = \arctan(\tfrac{y}{x}) \\
+    \phi & = \arccos(\tfrac{z}{\rho})
+  \end{align*}
+\end{multicols}
 
 \subsubsection{Spherical Triple Integrals}
 
@@ -346,3 +351,38 @@ Thus,
 \[
   \iiint_E f(x, y, z) \, dV = \int_{\psi}^{\gamma} \int_{\beta}^{\alpha} \int_{b}^{a} f(\rho \sin(\phi) \cos(\theta), \rho \sin(\phi) \sin(\theta), \rho \cos(\phi)) \rho^2 \sin(\phi) \, d\rho d\theta d\phi.
 \]
+We can also describe a point in \(\R^3\) by use of spherical coordinates. We let \(\rho\) be the distance from the origin to the point, \(\theta\) remains the angle the point makes in the \(xy\) plane, and \(\phi\) is the polar angle, the angle made between the point and the positive \(z\) axis.
+
+\newpage
+
+\subsection{Jacobian}
+
+\subsubsection{Cylindrical}
+
+We have
+\begin{align*}
+  x(r, \theta, z) & = r \cos(\theta) \\
+  y(r, \theta, z) & = r \sin(\theta) \\
+  z(r, \theta, z) & = z
+\end{align*}
+so that
+\begin{align*}
+  J &= \begin{bmatrix} \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial z} \\ \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial z} \\ \frac{\partial z}{\partial r} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial z} \end{bmatrix} \\
+    &= \begin{bmatrix} \cos(\theta) & -r \sin(\theta) & 0 \\ \sin(\theta) & r \cos(\theta) & 0 \\ 0 & 0 & 1 \end{bmatrix} \\
+  |J|  &= r
+\end{align*}
+
+\subsubsection{Spherical}
+
+We have
+\begin{align*}
+  x(\rho, \theta, \phi) & = \rho \sin(\phi) \cos(\theta) \\
+  y(\rho, \theta, \phi) & = \rho \sin(\phi) \sin(\theta) \\
+  z(\rho, \theta, \phi) & = \rho \cos(\phi)
+\end{align*}
+so that
+\begin{align*}
+  J &= \begin{bmatrix} \frac{\partial x}{\partial \rho} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial \phi} \\ \frac{\partial y}{\partial \rho} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial \phi} \\ \frac{\partial z}{\partial \rho} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial \phi} \end{bmatrix} \\
+    &= \begin{bmatrix} \sin(\phi) \cos(\theta) & -\rho \sin(\phi) \sin(\theta) & \rho \cos(\phi) \cos(\theta) \\ \sin(\phi) \sin(\theta) & \rho \sin(\phi) \cos(\theta) & \rho \cos(\phi) \sin(\theta) \\ \cos(\phi) & 0 & -\rho \sin(\phi) \end{bmatrix} \\
+  |J| &= \rho^2 \sin(\phi)
+\end{align*}
