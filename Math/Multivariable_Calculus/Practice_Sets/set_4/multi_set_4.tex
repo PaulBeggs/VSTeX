@@ -253,12 +253,59 @@
 \begin{enumerate}
     \item (3 points) Determine the absolute extrema for the function \(f(x,y) = x^{2} + 3y^{2} - 2x - y - xy\) on the triangular region with vertices \((0,0)\), \((2,0)\), and \((0,1)\). \\
     \sol{
-        We first find the critical points of the function. We have that
+        We first find the critical points of the function:
         \begin{align*}
-            \nabla f(x,y) &= \langle 2x - 2 - y, 6y - 1 - x \rangle = \mathbf{0} \\
-            \implies y &= 2x - 2 \quad \text{and} \quad x = 6(2x - 2) - 1 - x = 0 \\
-            \implies y &= 
+            \nabla f(x,y) &= \langle 2x - 2 - y, \, 6y - 1 - x \rangle = \mathbf{0} \\
+            \implies y &= 2x - 2 \quad \text{and} \quad x = 6(2x - 2) - 1 - x \\
+            \implies y &= \tfrac{4}{11} \quad \text{and} \quad x = \tfrac{13}{11} 
         \end{align*}
+        This gives the critical point \(\boxed{\left(\frac{13}{11}, \frac{4}{11}\right)}\). We also need to check the boundary of the region. Thus:
+        \begin{enumerate}[label=(\(\ell_{\arabic*}\)):]
+          \item \(y = 0, \, 0 \leq x \leq 2 \implies f(x,y) = g(x) = x^{2} + 3(0)^{2} - 2x - (0) - x(0) = x^{2} - 2x \implies g'(x) = 2x - 2\). Therefore, the critical points are \(\boxed{(1,0)}\). \\
+          \item \(x = 0, \, 0 \leq y \leq 1 \implies f(x,y) = h(y) = (0)^{2} + 3y^{2} - (0) - y - 0 = 3y^{2} - y \implies h'(y) = 6y - 1\). Hence, the critical points are \(\boxed{\left(0, \frac{1}{6}\right)}\). \\
+          \item  \(y = 1 - \tfrac{1}{2}x, \, 0 \leq x \leq 2 \implies f(x,y) = k(x) = x^{2} + 3\left(1 - \tfrac{1}{2}x\right)^{2} - 2x - \left(1 -\tfrac{1}{2}x\right) - x\left(1 - \frac{1}{2}x\right).\)
+          Solving this equation for \(x\):
+          \begin{align*}
+            k(x) &= x^{2} + 3\left(1 - \tfrac{1}{2}x - \tfrac{1}{2}x + \tfrac{1}{4}x^{2}\right) - 2x - 1 + \tfrac{1}{2}x - x + \tfrac{1}{2}x^{2} \\
+            &= x^{2} + 3\left(1 - x + \tfrac{1}{4}x^{2}\right) - 2x - 1 + \tfrac{1}{2}x - x + \tfrac{1}{2}x^{2} \\
+            &= \left[x^{2} + \tfrac{3}{4}x^{2} + \tfrac{1}{2}x^{2}\right] + \left[-3x - 2x - \tfrac{1}{2}x\right] + \left[3 - 1\right] \\ 
+            &= \tfrac{9}{4}x^{2} - \tfrac{7}{2}x + 2 \\
+            &= \tfrac{1}{4}(9x^{2} - 22x + 8) \\
+            \implies k'(x) &= \tfrac{1}{4} \cdot \tfrac{d}{dx}[9x^{2} - 22x + 8] \\
+            0 &= \tfrac{1}{2}(9x - 11) \\
+            x &= \tfrac{11}{9} 
+          \end{align*}
+          Using this \(x\)-value, we plug it back into our equation for \(y\) to get the critical point \(\boxed{\left(\frac{11}{9}, \frac{7}{18}\right)}\).
+        \end{enumerate}
+        Now that we have our critical points, we can evaluate the function at each of these points to determine the absolute extrema: 
+    \begin{multicols}{2}
+        \begin{tabular}[htbp]{cccc}
+            \toprule
+            \textbf{Critical Point} & \textbf{Evaluation} & & \textbf{Solution} \\ \midrule
+            \(\left(\frac{13}{11},\frac{4}{11}\right)\) & \(\frac{169}{121} + \frac{48}{121} - \frac{26}{11} - \frac{4}{11} - \frac{52}{121}\) & \(=\) & \(-\frac{15}{11} \approx -1.363\ldots\) \\ \midrule
+            \(\left(1,0\right)\) & \(1 + 0 - 2 - 0 - 0\) & \(=\) & \(-1\) \\ \midrule
+            \(\left(0, \frac{1}{6}\right)\) & \(0 + \frac{1}{12} - 0 - \frac{1}{6} - 0 \) & \(=\) & \(-\frac{1}{12} \approx - 0.083\ldots\) \\ \midrule
+            \(\left(\frac{11}{9}, \frac{7}{18}\right)\) & \(\frac{121}{81} + \frac{49}{108} - \frac{22}{9} - \frac{7}{18} - \frac{77}{162}\) & \(=\) & \(-\frac{49}{36} \approx -1.361\ldots\) \\ \bottomrule
+        \end{tabular}
+
+        \flushright
+        \begin{tikzpicture}[scale=1.5]
+          \draw[->] (-0.5,0) -- (2.5,0) node[right] {\(x\)};
+          \draw[->] (0,-0.5) -- (0,1.5) node[above] {\(y\)};
+          \draw[color=horange, thick] (0,0) -- (2,0) -- (0,1) -- cycle;
+          \node[below left] at (0,0) {\(0\)};
+          \node[below] at (2,0) {\(2\)};
+          \node[left] at (0,1) {\(1\)};
+          \node[below] at (1,0) {\(\ell_{1}\)};
+          \node[left] at (0,0.5) {\(\ell_{2}\)};
+          \node at (1,0.9) {\(\ell_{3}\)};
+          \node[scale=0.5] at (13/11, 4/11) {\(\bullet\)};
+          \node[above right] at (13/11, 4/11) {\(\left(\tfrac{13}{11}, \tfrac{4}{11}\right)\)};
+          \node[scale=0.5] at (11/9, 7/18) {\(\bullet\)};
+      \end{tikzpicture}
+    \end{multicols}
+    With these values, we can see that the absolute maximum is \(\boxed{-0.083}\) at the point \(\boxed{\left(0, \frac{1}{6}\right)}\) and the absolute minimum is \(\boxed{-1.363}\) at the point \(\boxed{\left(\frac{13}{11}, \frac{4}{11}\right)}\).
+
     }
     \item (1 point each) Convert each as indicated; leave each answer as exact:
     \begin{enumerate}
@@ -268,7 +315,13 @@
         \item Convert the spherical point \((4, \frac{11\pi}{6}, \frac{3\pi}{4})\) to cylindrical.
     \end{enumerate}
     \item (3 points) Determine the value of each given integral. You need to do the work here by hand, but of course can check any answers with technology.
-    \item (3 points) Find the volume of the solid described by \(x^{2} + y^{2} \leq 1\), \(x \geq 0\), \(0 \leq z \leq 4 - y\).
+    \begin{enumerate}
+      \item \(\displaystyle\iint_{D}(x^{2} + 6xy) \, dA\) where \(D\) is the triangle with vertices \((0,0)\), \((4,0)\), and \((0,12)\).
+      \item \(\displaystyle\int_{0}^{2}\int_{x^{2}}^{4} 4x^{3}\cos(y^{3}) \,dy\,dx\)
+      \item \(\displaystyle\int_{-3}^{3}\int_{0}^{\mysqrt{9-x^{2}}} \sin(5x^{2} + 5y^{2}) \,dy\,dx\)
+      \item \(\displaystyle\int_{0}^{1}\int_{0}^{\mysqrt{1-x}}\int_{0}^{\mysqrt{1-x^{2}-y^{2}}} \mysqrt{x^{2} + y^{2} + z^{2}} \,dz\,dy\,dx\)
+    \end{enumerate}
+    \item (3 points) Find the volume of the solid described by \(x^{2} + y^{2} \leq 1, \quad x \geq 0, \quad 0 \leq z \leq 4 - y\).
     \item (3 points) Find the average value of the function \(f(x,y) = x\sin(y)\) over the region enclosed by \(y = 0\), \(y = x^{2}\), and \(x = 1\).
     \item (3 points) Find the volume of the solid that lives within both the cylinder \(x^{2} + y^{2} = 1\) and sphere \(x^{2} + y^{2} + z^{2} = 9\). \\
     \sol{
