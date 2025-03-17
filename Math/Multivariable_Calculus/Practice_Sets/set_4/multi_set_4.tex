@@ -6,7 +6,7 @@
 \usepackage{amsmath,amsthm} 
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
-% \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
 \usepackage{mathrsfs}
 \usepackage{changepage}
 \usepackage{multicol}
@@ -30,8 +30,8 @@
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
-  % backgroundcolor=draculabg, % Needed for Dracula theme
-  % fontcolor=draculafg, % Needed for Dracula theme
+  backgroundcolor=draculabg, % Needed for Dracula theme
+  fontcolor=draculafg, % Needed for Dracula theme
   innertopmargin=0pt,
   innerbottommargin=5pt,
   innerrightmargin=10pt,
@@ -85,7 +85,6 @@
 % \usepackage{setspace}
 % \linespread{1}
 \usepackage{listings}
-\usepackage{minted}
 
 %%% Define new colors %%%
 \usepackage{xcolor}
@@ -252,7 +251,15 @@
 \maketitle
 
 \begin{enumerate}
-    \item (3 points) Determine the absolute extrema for the function \(f(x,y) = x^{2} + 3y^{2} - 2x - y - xy\) on the triangular region with vertices \((0,0)\), \((2,0)\), and \((0,1)\).
+    \item (3 points) Determine the absolute extrema for the function \(f(x,y) = x^{2} + 3y^{2} - 2x - y - xy\) on the triangular region with vertices \((0,0)\), \((2,0)\), and \((0,1)\). \\
+    \sol{
+        We first find the critical points of the function. We have that
+        \begin{align*}
+            \nabla f(x,y) &= \langle 2x - 2 - y, 6y - 1 - x \rangle = \mathbf{0} \\
+            \implies y &= 2x - 2 \quad \text{and} \quad x = 6(2x - 2) - 1 - x = 0 \\
+            \implies y &= 
+        \end{align*}
+    }
     \item (1 point each) Convert each as indicated; leave each answer as exact:
     \begin{enumerate}
         \item Convert the rectangular point \((-5,1)\) to polar coordinates.
@@ -263,7 +270,10 @@
     \item (3 points) Determine the value of each given integral. You need to do the work here by hand, but of course can check any answers with technology.
     \item (3 points) Find the volume of the solid described by \(x^{2} + y^{2} \leq 1\), \(x \geq 0\), \(0 \leq z \leq 4 - y\).
     \item (3 points) Find the average value of the function \(f(x,y) = x\sin(y)\) over the region enclosed by \(y = 0\), \(y = x^{2}\), and \(x = 1\).
-    \item (3 points) Find the volume of the solid that lives within both the cylinder \(x^{2} + y^{2} = 1\) and sphere \(x^{2} + y^{2} + z^{2} = 9\).
+    \item (3 points) Find the volume of the solid that lives within both the cylinder \(x^{2} + y^{2} = 1\) and sphere \(x^{2} + y^{2} + z^{2} = 9\). \\
+    \sol{
+        Use cylindrical coordinates. 
+    }
 \end{enumerate}
 
 
