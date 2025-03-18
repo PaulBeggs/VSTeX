@@ -172,15 +172,15 @@ We can divide each polar rectangle into smaller ones by
 \]
 (This should look very familiar!!) Then, a little polar rectangle \(R_{ij} = \{(r, \theta) : r_{i-1} \leq r \leq r_i, \theta_{j-1} \leq \theta \leq \theta_j\}\) has its center at
 \begin{align*}
-  r^*_i & = \frac{1}{2}(r_{i-1} + r_i) \\
-  \theta^*_i & = \frac{1}{2}(\theta_{j-1} + \theta_j)
+  r^*_i & = \tfrac{1}{2}(r_{i-1} + r_i) \\
+  \theta^*_i & = \tfrac{1}{2}(\theta_{j-1} + \theta_j)
 \end{align*}
 
 The area of this polar rectangle is
 \begin{align*}
-  \Delta A & = \frac{1}{2}r_i^2 \Delta \theta - \frac{1}{2}r_{i-1}^2 \Delta \theta \\
-           & = \frac{1}{2}\left(r_i^2 - r_{i-1}^2\right) \Delta \theta \\
-           & = \frac{1}{2}(r_i + r_{i-1})(r_i - r_{i-1}) \Delta \theta \\
+  \Delta A & = \tfrac{1}{2}r_i^2 \Delta \theta - \frac{1}{2}r_{i-1}^2 \Delta \theta \\
+           & = \tfrac{1}{2}\left(r_i^2 - r_{i-1}^2\right) \Delta \theta \\
+           & = \tfrac{1}{2}(r_i + r_{i-1})(r_i - r_{i-1}) \Delta \theta \\
            & = r^*_i \Delta r \Delta \theta
 \end{align*}
 
@@ -223,7 +223,7 @@ This idea is called the \cyanit{Jacobian}. We can think of this as being the det
 
 Suppose that \(B \subseteq \R^3\) is a solid box, so that
 \[
-  B = \{(x, y, z) \in \R^3 : a \leq x \leq b, c \leq y \leq d, e \leq z \leq f\}.
+  B = \{(x, y, z) \in \R^3 : a \leq x \leq b, \, c \leq y \leq d, \, e \leq z \leq f\}.
 \]
 Suppose \(f : B \to \R\) is continuous. We define the \cyanit{triple integral} of \(f\) over \(B\) as
 \[
@@ -283,7 +283,7 @@ The \cyanit{average value} of the continuous function \(f\) over the solid regio
 
 \newpage
 
-\section{Triple Integrals -- Cylindrical and Spherical Coordinates}
+\section{Triple Integrals in Cylindrical and Spherical Coordinates}
 
 \subsection{Cylindrical Coordinates}
 
@@ -311,13 +311,11 @@ then
   \iiint_E f(x, y, z) \, dV = \int_{\beta}^{\alpha} \int_{g_1(\theta)}^{g_2(\theta)} \int_{u_1(r, \theta)}^{u_2(r, \theta)} f(r \cos(\theta), r \sin(\theta), z) r \, dz dr d\theta.
 \]
 
-\newpage
-
 \subsection{Spherical Coordinates}
 
 We can also describe a point in \(\R^3\) by use of spherical coordinates. We let \(\rho\) be the distance from the origin to the point, \(\theta\) remains the angle the point makes in the \(xy\) plane, and \(\phi\) is the polar angle, the angle made between the point and the positive \(z\) axis. \\
 
-\textbf{Important.} In physics, typically, the notation is reversed – \(\theta\) is commonly the polar angle and \(\phi\) is the planar angle. This is admittedly stupid that we cannot agree on this – it is just arbitrary notation. However, I maintain that the math way is better: \(\theta\) looks like a planar angle, and \(\phi\) looks like a polar angle.
+\textbf{Important.} In physics, typically, the notation is reversed – \(\theta\) is commonly the polar angle and \(\phi\) is the planar angle. This is admittedly stupid that we cannot agree on this – it is just arbitrary notation.
 
 \subsubsection{Spherical Coordinate System}
 
@@ -352,6 +350,15 @@ Thus,
   \iiint_E f(x, y, z) \, dV = \int_{\psi}^{\gamma} \int_{\beta}^{\alpha} \int_{b}^{a} f(\rho \sin(\phi) \cos(\theta), \rho \sin(\phi) \sin(\theta), \rho \cos(\phi)) \rho^2 \sin(\phi) \, d\rho d\theta d\phi.
 \]
 We can also describe a point in \(\R^3\) by use of spherical coordinates. We let \(\rho\) be the distance from the origin to the point, \(\theta\) remains the angle the point makes in the \(xy\) plane, and \(\phi\) is the polar angle, the angle made between the point and the positive \(z\) axis.
+
+\subsubsection{Conversion from Spherical to Cylindrical}
+
+We have spherical coordinates \((\rho, \theta, \phi)\) and cylindrical coordinates \((r, \theta, z)\). Converting spherical to cylindrical, we have
+\begin{align*}
+  r & = \rho \sin(\phi) \\
+  \theta & = \theta \\
+  z & = \rho \cos(\phi).
+\end{align*}
 
 \newpage
 

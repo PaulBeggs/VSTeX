@@ -17,6 +17,9 @@
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{kantlipsum} 
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{makecell}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{decorations.markings}
@@ -251,82 +254,169 @@
 \maketitle
 
 \begin{enumerate}
-    \item (3 points) Determine the absolute extrema for the function \(f(x,y) = x^{2} + 3y^{2} - 2x - y - xy\) on the triangular region with vertices \((0,0)\), \((2,0)\), and \((0,1)\). \\
-    \sol{
-        We first find the critical points of the function:
-        \begin{align*}
-            \nabla f(x,y) &= \langle 2x - 2 - y, \, 6y - 1 - x \rangle = \mathbf{0} \\
-            \implies y &= 2x - 2 \quad \text{and} \quad x = 6(2x - 2) - 1 - x \\
-            \implies y &= \tfrac{4}{11} \quad \text{and} \quad x = \tfrac{13}{11} 
-        \end{align*}
-        This gives the critical point \(\boxed{\left(\frac{13}{11}, \frac{4}{11}\right)}\). We also need to check the boundary of the region. Thus:
-        \begin{enumerate}[label=(\(\ell_{\arabic*}\)):]
-          \item \(y = 0, \, 0 \leq x \leq 2 \implies f(x,y) = g(x) = x^{2} + 3(0)^{2} - 2x - (0) - x(0) = x^{2} - 2x \implies g'(x) = 2x - 2\). Therefore, the critical points are \(\boxed{(1,0)}\). \\
-          \item \(x = 0, \, 0 \leq y \leq 1 \implies f(x,y) = h(y) = (0)^{2} + 3y^{2} - (0) - y - 0 = 3y^{2} - y \implies h'(y) = 6y - 1\). Hence, the critical points are \(\boxed{\left(0, \frac{1}{6}\right)}\). \\
-          \item  \(y = 1 - \tfrac{1}{2}x, \, 0 \leq x \leq 2 \implies f(x,y) = k(x) = x^{2} + 3\left(1 - \tfrac{1}{2}x\right)^{2} - 2x - \left(1 -\tfrac{1}{2}x\right) - x\left(1 - \frac{1}{2}x\right).\)
-          Solving this equation for \(x\):
+  \item (3 points) Determine the absolute extrema for the function \(f(x,y) = x^{2} + 3y^{2} - 2x - y - xy\) on the triangular region with vertices \((0,0)\), \((2,0)\), and \((0,1)\). \\
+        \sol{
+          We first find the critical points of the function:
           \begin{align*}
-            k(x) &= x^{2} + 3\left(1 - \tfrac{1}{2}x - \tfrac{1}{2}x + \tfrac{1}{4}x^{2}\right) - 2x - 1 + \tfrac{1}{2}x - x + \tfrac{1}{2}x^{2} \\
-            &= x^{2} + 3\left(1 - x + \tfrac{1}{4}x^{2}\right) - 2x - 1 + \tfrac{1}{2}x - x + \tfrac{1}{2}x^{2} \\
-            &= \left[x^{2} + \tfrac{3}{4}x^{2} + \tfrac{1}{2}x^{2}\right] + \left[-3x - 2x - \tfrac{1}{2}x\right] + \left[3 - 1\right] \\ 
-            &= \tfrac{9}{4}x^{2} - \tfrac{7}{2}x + 2 \\
-            &= \tfrac{1}{4}(9x^{2} - 22x + 8) \\
-            \implies k'(x) &= \tfrac{1}{4} \cdot \tfrac{d}{dx}[9x^{2} - 22x + 8] \\
-            0 &= \tfrac{1}{2}(9x - 11) \\
-            x &= \tfrac{11}{9} 
+            \nabla f(x,y) & = \langle 2x - 2 - y, \, 6y - 1 - x \rangle = \mathbf{0}  \\
+            \implies y    & = 2x - 2 \quad \text{and} \quad x = 6(2x - 2) - 1 - x     \\
+            \implies y    & = \tfrac{4}{11} \quad \text{and} \quad x = \tfrac{13}{11}
           \end{align*}
-          Using this \(x\)-value, we plug it back into our equation for \(y\) to get the critical point \(\boxed{\left(\frac{11}{9}, \frac{7}{18}\right)}\).
+          This gives the critical point \(\boxed{\left(\frac{13}{11}, \frac{4}{11}\right)}\). We also need to check the boundary of the region. Thus:
+          \begin{enumerate}[label=(\(\ell_{\arabic*}\)):]
+            \item \(y = 0, \, 0 \leq x \leq 2 \implies f(x,y) = g(x) = x^{2} + 3(0)^{2} - 2x - (0) - x(0) = x^{2} - 2x \implies g'(x) = 2x - 2\). Therefore, the critical points are \(\boxed{(1,0)}\). \\
+            \item \(x = 0, \, 0 \leq y \leq 1 \implies f(x,y) = h(y) = (0)^{2} + 3y^{2} - (0) - y - 0 = 3y^{2} - y \implies h'(y) = 6y - 1\). Hence, the critical points are \(\boxed{\left(0, \frac{1}{6}\right)}\). \\
+            \item  \(y = 1 - \tfrac{1}{2}x, \, 0 \leq x \leq 2 \implies f(x,y) = k(x) = x^{2} + 3\left(1 - \tfrac{1}{2}x\right)^{2} - 2x - \left(1 -\tfrac{1}{2}x\right) - x\left(1 - \frac{1}{2}x\right).\)
+                  Solving this equation for \(x\):
+                  \begin{align*}
+                    k(x)           & = x^{2} + 3\left(1 - \tfrac{1}{2}x - \tfrac{1}{2}x + \tfrac{1}{4}x^{2}\right) - 2x - 1 + \tfrac{1}{2}x - x + \tfrac{1}{2}x^{2} \\
+                                   & = x^{2} + 3\left(1 - x + \tfrac{1}{4}x^{2}\right) - 2x - 1 + \tfrac{1}{2}x - x + \tfrac{1}{2}x^{2}                             \\
+                                   & = \left[x^{2} + \tfrac{3}{4}x^{2} + \tfrac{1}{2}x^{2}\right] + \left[-3x - 2x - \tfrac{1}{2}x\right] + \left[3 - 1\right]      \\
+                                   & = \tfrac{9}{4}x^{2} - \tfrac{7}{2}x + 2                                                                                        \\
+                                   & = \tfrac{1}{4}(9x^{2} - 22x + 8)                                                                                               \\
+                    \implies k'(x) & = \tfrac{1}{4} \cdot \tfrac{d}{dx}[9x^{2} - 22x + 8]                                                                           \\
+                    0              & = \tfrac{1}{2}(9x - 11)                                                                                                        \\
+                    x              & = \tfrac{11}{9}
+                  \end{align*}
+                  Using this \(x\)-value, we plug it back into our equation for \(y\) to get the critical point \(\boxed{\left(\frac{11}{9}, \frac{7}{18}\right)}\).
+          \end{enumerate}
+          With our function's and lines' critical points found, we also need to find the vertices of the triangle:
+          \begin{align*}
+            f(0,0) & = 0^{2} + 3(0)^{2} - 2(0) - 0 - 0(0) = 0 \\
+            f(2,0) & = 2^{2} + 3(0)^{2} - 2(2) - 0 - 2(0) = 0 \\
+            f(0,1) & = 0^{2} + 3(1)^{2} - 2(0) - 1 - 0(1) = 2
+          \end{align*}          
+          Now that we have our critical points, we can evaluate the function at each of these points to determine the absolute extrema:
+          \begin{align*}
+            f\left(\tfrac{13}{11}, \tfrac{4}{11}\right) & = \left(\tfrac{13}{11}\right)^{2} + 3\left(\tfrac{4}{11}\right)^{2} - 2\left(\tfrac{13}{11}\right) - \tfrac{4}{11} - \tfrac{13}{11} \\
+            &\approx -1.363\ldots \\
+            f(1,0) & = 1^{2} + 3(0)^{2} - 2(1) - 0 - 1(0) \\
+            &= -1 \\
+            f\left(0, \tfrac{1}{6}\right)              & = 0^{2} + 3\left(\tfrac{1}{6}\right)^{2} - 2(0) - \tfrac{1}{6} - 0\\
+            &\approx -0.083\ldots \\
+            f\left(\tfrac{11}{9}, \tfrac{7}{18}\right)  & = \left(\tfrac{11}{9}\right)^{2} + 3\left(\tfrac{7}{18}\right)^{2} - 2\left(\tfrac{11}{9}\right) - \tfrac{7}{18} - \tfrac{11}{9} \\
+            &\approx -1.361\ldots
+          \end{align*}
+          Thus, this gives us 7 critical points:
+          \begin{multicols}{2}
+            \begin{center}
+            \begin{tabular}{ccc}
+              \toprule
+              \textbf{Point} & \(f(x,y)\) & \textbf{Type} \\ \midrule
+              \(\left(\tfrac{13}{11}, \tfrac{4}{11}\right)\) & \(-1.364\) & Interior CP \\ \midrule
+              \((1,0)\) & \(-1\) & \(\ell_{1}\) \\ \midrule
+              \(\left(0, \tfrac{1}{6}\right)\) & \(-0.083\) & \(\ell_{2}\) \\ \midrule
+              \(\left(\tfrac{11}{9}, \tfrac{7}{18}\right)\) & \(-1.361\) & \(\ell_{3}\) \\ \midrule
+              \((0,0)\) & \(0\) & Vertex 1 \\ \midrule
+              \((2,0)\) & \(-2\) & Vertex 2 \\ \midrule
+              \((0,1)\) & \(2\) & Vertex 3 \\ \bottomrule
+            \end{tabular}
+            \end{center}
+
+            \flushright
+            \begin{tikzpicture}[scale=2.45]
+              \draw[->] (-0.5,0) -- (2.5,0) node[right] {\(x\)};
+              \draw[->] (0,-0.5) -- (0,1.5) node[above] {\(y\)};
+              \draw[color=horange, thick] (0,0) -- (2,0) -- (0,1) -- cycle;
+              \node[below left] at (0,0) {\(0\)};
+              \node[below] at (2,0) {\(2\)};
+              \node[left] at (0,1) {\(1\)};
+              \node[below] at (1,0) {\(\ell_{1}\)};
+              \node[left] at (0,0.5) {\(\ell_{2}\)};
+              \node[below] at (1,0.8) {\(\ell_{3}\)};
+              \node[scale=0.7] at (13/11, 4/11) {\(\bullet\)};
+              \node[scale=0.7] at (11/9, 7/18) {\(\bullet\)};
+              \node[scale=0.7] at (0,1) {\(\bullet\)};
+              \node[scale=0.7] at (0,0) {\(\bullet\)};
+              \node[scale=0.7] at (2,0) {\(\bullet\)};
+              \node[scale=0.7] at (0,1/6) {\(\bullet\)};
+            \end{tikzpicture}
+          \end{multicols}
+          With these values, we can see that the absolute maximum is \(\boxed{2}\), which occurs at the vertex \((0,1)\), and the absolute minimum is \(\boxed{-1.364}\), which occurs at the critical point \(\left(\tfrac{13}{11}, \tfrac{4}{11}\right)\).
+
+        }
+\newpage
+  \item (1 point each) Convert each as indicated; leave each answer as exact:
+        \begin{enumerate}
+          \item Convert the rectangular point \((-5,1)\) to polar coordinates. \\
+          \sol{
+            \begin{align*}
+              r & = \mysqrt{(-5)^{2} + 1^{2}} = \mysqrt{26} \\
+              \theta & = \arctan\left(\tfrac{1}{-5}\right) = \arctan\left(-\tfrac{1}{5}\right) = \tfrac{7\pi}{6}
+            \end{align*}
+            Thus, the polar coordinates are \(\boxed{\left(\mysqrt{26}, \tfrac{7\pi}{6}\right)}\).
+          }
+          \item Convert the cylindrical point \((5, \tfrac{7\pi}{6}, 2)\) to rectangular. \\
+          \sol{
+            \begin{align*}
+              x & = 5\cos\left(\tfrac{7\pi}{6}\right) = 5\left(-\tfrac{\mysqrt{3}}{2}\right) = -\tfrac{5\mysqrt{3}}{2} \\
+              y & = 5\sin\left(\tfrac{7\pi}{6}\right) = 5\left(-\tfrac{1}{2}\right) = -\tfrac{5}{2} \\
+              z & = 2
+            \end{align*}
+            Thus, the rectangular coordinates are \(\boxed{\left(-\tfrac{5\mysqrt{3}}{2}, -\tfrac{5}{2}, 2\right)}\).
+          }
+          \item Convert the rectangular point \((-2,4,-1)\) to spherical. \\
+          \sol{
+            \begin{align*}
+              \rho & = \mysqrt{(-2)^{2} + 4^{2} + (-1)^{2}} = \mysqrt{4 + 16 + 1} = \mysqrt{21} \\
+              \theta & = \arctan\left(\tfrac{4}{-2}\right) = \arctan\left(-2\right) \\
+              \phi & = \arccos\left(\tfrac{-1}{\mysqrt{21}}\right) = \arccos\left(-\tfrac{1}{\mysqrt{21}}\right)
+            \end{align*}
+            Since the point \((-2,4)\) is in the second quadrant, we add \(\pi\) to the arctan value. Thus, the spherical coordinates are \(\boxed{\left(\mysqrt{21}, \pi + \arctan\left(-2\right), \arccos\left(-\tfrac{1}{\mysqrt{21}}\right)\right)}\).
+          }
+          \item Convert the spherical point \((4, \frac{11\pi}{6}, \frac{3\pi}{4})\) to cylindrical. \\
+          \sol{
+            The conversion from spherical to cylindrical follows the following equations:
+            \[
+              r = \rho \sin\phi, \quad \theta = \theta, \quad \text{and} \quad z = \rho \cos\phi.
+            \]
+            Thus, we have:
+            \begin{align*}
+              r & = 4\sin\left(\tfrac{3\pi}{4}\right) = 4\left(\tfrac{\mysqrt{2}}{2}\right) = 2\mysqrt{2} \\
+              \theta & = \tfrac{11\pi}{6} \\
+              z & = 4\cos\left(\tfrac{3\pi}{4}\right) = 4\left(-\tfrac{\mysqrt{2}}{2}\right) = -2\mysqrt{2}
+            \end{align*}
+            Therefore, we get the cylindrical coordinates \(\boxed{\left(2\mysqrt{2}, \tfrac{11\pi}{6}, -2\mysqrt{2}\right)}\).
+          }
         \end{enumerate}
-        Now that we have our critical points, we can evaluate the function at each of these points to determine the absolute extrema: 
-    \begin{multicols}{2}
-        \begin{tabular}[htbp]{cccc}
-            \toprule
-            \textbf{Critical Point} & \textbf{Evaluation} & & \textbf{Solution} \\ \midrule
-            \(\left(\frac{13}{11},\frac{4}{11}\right)\) & \(\frac{169}{121} + \frac{48}{121} - \frac{26}{11} - \frac{4}{11} - \frac{52}{121}\) & \(=\) & \(-\frac{15}{11} \approx -1.363\ldots\) \\ \midrule
-            \(\left(1,0\right)\) & \(1 + 0 - 2 - 0 - 0\) & \(=\) & \(-1\) \\ \midrule
-            \(\left(0, \frac{1}{6}\right)\) & \(0 + \frac{1}{12} - 0 - \frac{1}{6} - 0 \) & \(=\) & \(-\frac{1}{12} \approx - 0.083\ldots\) \\ \midrule
-            \(\left(\frac{11}{9}, \frac{7}{18}\right)\) & \(\frac{121}{81} + \frac{49}{108} - \frac{22}{9} - \frac{7}{18} - \frac{77}{162}\) & \(=\) & \(-\frac{49}{36} \approx -1.361\ldots\) \\ \bottomrule
-        \end{tabular}
+  \item (3 points) Determine the value of each given integral. You need to do the work here by hand, but of course can check any answers with technology.
+        \begin{enumerate}
+          \item \(\displaystyle\iint_{D}(x^{2} + 6xy) \, dA\) where \(D\) is the triangle with vertices \((0,0)\), \((4,0)\), and \((0,12)\). \\
 
-        \flushright
-        \begin{tikzpicture}[scale=1.5]
-          \draw[->] (-0.5,0) -- (2.5,0) node[right] {\(x\)};
-          \draw[->] (0,-0.5) -- (0,1.5) node[above] {\(y\)};
-          \draw[color=horange, thick] (0,0) -- (2,0) -- (0,1) -- cycle;
-          \node[below left] at (0,0) {\(0\)};
-          \node[below] at (2,0) {\(2\)};
-          \node[left] at (0,1) {\(1\)};
-          \node[below] at (1,0) {\(\ell_{1}\)};
-          \node[left] at (0,0.5) {\(\ell_{2}\)};
-          \node at (1,0.9) {\(\ell_{3}\)};
-          \node[scale=0.5] at (13/11, 4/11) {\(\bullet\)};
-          \node[above right] at (13/11, 4/11) {\(\left(\tfrac{13}{11}, \tfrac{4}{11}\right)\)};
-          \node[scale=0.5] at (11/9, 7/18) {\(\bullet\)};
-      \end{tikzpicture}
-    \end{multicols}
-    With these values, we can see that the absolute maximum is \(\boxed{-0.083}\) at the point \(\boxed{\left(0, \frac{1}{6}\right)}\) and the absolute minimum is \(\boxed{-1.363}\) at the point \(\boxed{\left(\frac{13}{11}, \frac{4}{11}\right)}\).
+          \sol{
 
-    }
-    \item (1 point each) Convert each as indicated; leave each answer as exact:
-    \begin{enumerate}
-        \item Convert the rectangular point \((-5,1)\) to polar coordinates.
-        \item Convert the cylindrical point \((5, \frac{7\pi}{6}, 2)\) to rectangular.
-        \item Convert the rectangular point \((-2,4,-1)\) to spherical.
-        \item Convert the spherical point \((4, \frac{11\pi}{6}, \frac{3\pi}{4})\) to cylindrical.
-    \end{enumerate}
-    \item (3 points) Determine the value of each given integral. You need to do the work here by hand, but of course can check any answers with technology.
-    \begin{enumerate}
-      \item \(\displaystyle\iint_{D}(x^{2} + 6xy) \, dA\) where \(D\) is the triangle with vertices \((0,0)\), \((4,0)\), and \((0,12)\).
-      \item \(\displaystyle\int_{0}^{2}\int_{x^{2}}^{4} 4x^{3}\cos(y^{3}) \,dy\,dx\)
-      \item \(\displaystyle\int_{-3}^{3}\int_{0}^{\mysqrt{9-x^{2}}} \sin(5x^{2} + 5y^{2}) \,dy\,dx\)
-      \item \(\displaystyle\int_{0}^{1}\int_{0}^{\mysqrt{1-x}}\int_{0}^{\mysqrt{1-x^{2}-y^{2}}} \mysqrt{x^{2} + y^{2} + z^{2}} \,dz\,dy\,dx\)
-    \end{enumerate}
-    \item (3 points) Find the volume of the solid described by \(x^{2} + y^{2} \leq 1, \quad x \geq 0, \quad 0 \leq z \leq 4 - y\).
-    \item (3 points) Find the average value of the function \(f(x,y) = x\sin(y)\) over the region enclosed by \(y = 0\), \(y = x^{2}\), and \(x = 1\).
-    \item (3 points) Find the volume of the solid that lives within both the cylinder \(x^{2} + y^{2} = 1\) and sphere \(x^{2} + y^{2} + z^{2} = 9\). \\
-    \sol{
-        Use cylindrical coordinates. 
-    }
+          }
+          \item \(\displaystyle\int_{0}^{2}\int_{x^{2}}^{4} 4x^{3}\cos(y^{3}) \,dy\,dx\). \\
+
+          \sol{
+
+          }
+          \item \(\displaystyle\int_{-3}^{3}\int_{0}^{\mysqrt{9-x^{2}}} \sin(5x^{2} + 5y^{2}) \,dy\,dx\). \\
+
+          \sol{
+
+          }
+          \item \(\displaystyle\int_{0}^{1}\int_{0}^{\mysqrt{1-x}}\int_{0}^{\mysqrt{1-x^{2}-y^{2}}} \mysqrt{x^{2} + y^{2} + z^{2}} \,dz\,dy\,dx\). \\
+          
+          \sol{
+
+          }
+        \end{enumerate}
+  \item (3 points) Find the volume of the solid described by \(x^{2} + y^{2} \leq 1, \quad x \geq 0, \quad 0 \leq z \leq 4 - y\). \\
+
+  \sol{
+
+  }
+  \item (3 points) Find the average value of the function \(f(x,y) = x\sin(y)\) over the region enclosed by \(y = 0\), \(y = x^{2}\), and \(x = 1\). \\
+
+  \sol{
+
+  }
+  \item (3 points) Find the volume of the solid that lives within both the cylinder \(x^{2} + y^{2} = 1\) and sphere \(x^{2} + y^{2} + z^{2} = 9\). \\
+  
+        \sol{
+          Use cylindrical coordinates.
+        }
 \end{enumerate}
 
 

@@ -5,6 +5,15 @@
 
 \documentclass[12pt, oneside]{book}
 \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+\newcommand{\documentTheme}{draculabg}
+\newcommand{\documentFont}{draculafg}
+\newcommand{\documentLogo}{images/small logo_white.png}
+\newcommand{\documentBigLogo}{images/logo_white_text.png}
+
+% \newcommand{\documentBigLogo}{images/Hendrix Logo.png}
+% \newcommand{\documentLogo}{images/small logo.png}
+% \newcommand{\documentFont}{black}
+% \newcommand{\documentTheme}{white}
 
 
 %%% AESTHETICS %%%
@@ -81,61 +90,42 @@
 
 %%% Chapter Headings %%%
 
-% \usepackage[explicit]{titlesec}
-% \newcommand*\chapterlabel{}
-% \titleformat{\chapter}
-%   {\gdef\chapterlabel{}
-%    \normalfont\sffamily\Huge\bfseries\scshape}
-%   {\gdef\chapterlabel{\thechapter\ }}{0pt}
-%   {\begin{tikzpicture}[remember picture,overlay]
-%     \node[yshift=-3cm] at (current page.north west)
-%       {\begin{tikzpicture}[remember picture, overlay]
-%         \draw[fill=LightSkyBlue] (0,0) rectangle
-%           (\paperwidth,3cm);
-%         \node[anchor=east,xshift=.9\paperwidth,rectangle,
-%               enhanced,
-% sharp corners=20pt,inner sep=11pt,
-%               fill=MidnightBlue]
-%               {\color{white}\chapterlabel#1};
-%        \end{tikzpicture}
-%       };
-%    \end{tikzpicture}
-%   }
-% \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+\usepackage[Glenn]{fncychap}
+\ChTitleVar{\bfseries\scshape\color{\documentFont}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{\documentFont}} % Needed for Dracula theme
+\ChNameVar{\large\color{\documentFont}} % Needed for Dracula theme
+\usepackage{xpatch}
 
-% \usepackage[Conny]{fncychap}
-% \usepackage[Rejne]{fncychap}
-% \ChNameVar{\bfseries}  % Makes the chapter "Chapter #" bold
-% \ChNumVar{\bfseries}   % Makes the chapter number bold
-% \ChTitleVar{\bfseries} % Makes the chapter title bold
-% % Define a custom color, for example:
-% \definecolor{mycolor}{RGB}{0,128,255}
+% \xpatchcmd{\DOCH}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTI}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTIS}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
 
-% % Redefine the chapter style in Rejne to change the line colors
-% \makeatletter
-% \ChRuleWidth{2pt}   % Change the thickness of the lines
-% \renewcommand{\DOCH}{%
-%   \vspace*{-50\p@}% Moves the chapter title up/down if needed
-%   {\color{mycolor} \hrule \@chapapp{} \space \thechapter \hrule}% Customizes the chapter header with color
-% }
-% \renewcommand{\DOTI}[1]{%
-%   \vskip 20\p@ % Adjusts the space above the title
-%   \bfseries #1\par % Embolden the title
-%   \vskip 20\p@ % Adjusts the space below the title
-% }
-% \makeatother
-
-% %% Change Chapter Heading Placement %%
-% \usepackage{etoolbox}
-% \makeatletter
-% \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
-% \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
-% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
-% \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
-% \makeatother
+\xpatchcmd\DOCH
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTI
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTIS
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
 
 \renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
 
+%% Change Chapter Heading Placement %%
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
 
 %%% FIGURES %%%
 \usepackage{graphicx}  
@@ -161,7 +151,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \fancyhead[R]{\leftmark}
 \fancyhead[L]{Hendrix College}
-\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
+\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}}
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
@@ -376,8 +366,8 @@ sharp corners=uphill,
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
-  backgroundcolor=draculabg, % Needed for Dracula theme
-  fontcolor=draculafg, % Needed for Dracula theme
+  backgroundcolor=\documentTheme, % Needed for Dracula theme
+  fontcolor=\documentFont, % Needed for Dracula theme
   innertopmargin=0pt,
   innerbottommargin=5pt,
   innerrightmargin=10pt,
@@ -589,7 +579,7 @@ sharp corners=uphill,
     \begin{center}
 
         \vspace*{-2cm}
-        \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\
         \vfill
 
         % Horizontal line above the title in 'horange' color
