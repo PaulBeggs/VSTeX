@@ -6,7 +6,7 @@
 \usepackage{amsmath,amsthm} 
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
-\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+% \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
 \usepackage{mathrsfs}
 \usepackage{changepage}
 \usepackage{multicol}
@@ -33,8 +33,8 @@
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
-  backgroundcolor=draculabg, % Needed for Dracula theme
-  fontcolor=draculafg, % Needed for Dracula theme
+  % backgroundcolor=draculabg, % Needed for Dracula theme
+  % fontcolor=draculafg, % Needed for Dracula theme
   innertopmargin=0pt,
   innerbottommargin=5pt,
   innerrightmargin=10pt,
@@ -344,7 +344,7 @@
               r & = \mysqrt{(-5)^{2} + 1^{2}} = \mysqrt{26} \\
               \theta & = \arctan\left(\tfrac{1}{-5}\right) = \arctan\left(-\tfrac{1}{5}\right) = \tfrac{7\pi}{6}
             \end{align*}
-            Thus, the polar coordinates are \(\boxed{\left(\mysqrt{26}, \tfrac{7\pi}{6}\right)}\).
+            The polar coordinates are \(\boxed{\left(\mysqrt{26}, \tfrac{7\pi}{6}\right)}\).
           }
           \item Convert the cylindrical point \((5, \tfrac{7\pi}{6}, 2)\) to rectangular. \\
           \sol{
@@ -353,16 +353,16 @@
               y & = 5\sin\left(\tfrac{7\pi}{6}\right) = 5\left(-\tfrac{1}{2}\right) = -\tfrac{5}{2} \\
               z & = 2
             \end{align*}
-            Thus, the rectangular coordinates are \(\boxed{\left(-\tfrac{5\mysqrt{3}}{2}, -\tfrac{5}{2}, 2\right)}\).
+            The rectangular coordinates are \(\boxed{\left(-\tfrac{5\mysqrt{3}}{2}, -\tfrac{5}{2}, 2\right)}\).
           }
           \item Convert the rectangular point \((-2,4,-1)\) to spherical. \\
           \sol{
             \begin{align*}
-              \rho & = \mysqrt{(-2)^{2} + 4^{2} + (-1)^{2}} = \mysqrt{4 + 16 + 1} = \mysqrt{21} \\
+              \rho & = \mysqrt{(-2)^{2} + 4^{2} + (-1)^{2}} = \mysqrt{21} \\
               \theta & = \arctan\left(\tfrac{4}{-2}\right) = \arctan\left(-2\right) \\
               \phi & = \arccos\left(\tfrac{-1}{\mysqrt{21}}\right) = \arccos\left(-\tfrac{1}{\mysqrt{21}}\right)
             \end{align*}
-            Since the point \((-2,4)\) is in the second quadrant, we add \(\pi\) to the arctan value. Thus, the spherical coordinates are \(\boxed{\left(\mysqrt{21}, \pi + \arctan\left(-2\right), \arccos\left(-\tfrac{1}{\mysqrt{21}}\right)\right)}\).
+            Since the point \((-2,4)\) is in the second quadrant, we add \(\pi\) to the arctan value. Hence, the spherical coordinates are \(\boxed{\left(\mysqrt{21}, \pi + \arctan\left(-2\right), \arccos\left(-\tfrac{1}{\mysqrt{21}}\right)\right)}\).
           }
           \item Convert the spherical point \((4, \frac{11\pi}{6}, \frac{3\pi}{4})\) to cylindrical. \\
           \sol{
@@ -411,7 +411,7 @@
 
             This gives us the limits of integration as follows:
             \[
-              0 \leq x \leq 4, \quad 0 \leq y \leq -3x + 12.
+              \{(x,y) \colon 0 \leq x \leq 4, \quad 0 \leq y \leq -3x + 12\}.
             \]
             Thus, we can write the double integral as:
             \begin{align*}
@@ -429,55 +429,74 @@
           \item \(\displaystyle\int_{0}^{2}\int_{x^{2}}^{4} 4x^{3}\cos(y^{3}) \,dy\,dx\) \\
 
           \sol{
-            Our function 
-            \begin{tikzpicture}
-              \begin{axis}[
-                scale=1,
-                axis lines=middle,
-                xlabel=\(x\),
-                ylabel=\(y\),
-                xmin=-6, xmax=6,
-                ymin=-1, ymax=6,
-                xtick={-6,-5,...,6},
-                ytick={-1,0,...,6},
-                samples=100
-              ]
-              \addplot[horange, thick] {x^{2}};
-              \addplot[horange, thick] {4};
-              \addplot
-                
-              \end{axis}
-              
-              
-            \end{tikzpicture}
+            To evaluate this integral, we must change the order of integration. The original region is:
+            \[
+              \{(x,y) \colon 0 \leq x \leq 2, \quad x^{2} \leq y \leq 4\}.
+            \]
+            The new region is:
+            \[
+              \{(x,y) \colon 0 \leq y \leq 4, \quad 0 \leq x \leq \mysqrt{y}\}.
+            \]
+            Thus, we can rewrite and solve the double integral:
+            \begin{align*}
+              \int_{0}^{2}\int_{x^{2}}^{4} 4x^{3}\cos(y^{3}) \,dy\,dx & = \int_{0}^{4}\int_{0}^{\mysqrt{y}} 4x^{3}\cos(y^{3}) \,dx\,dy \\
+              & = \int_{0}^{4}\left[ x^{4}\cos(y^{3})\right]_{0}^{\mysqrt{y}} \,dy \\
+              & = \int_{0}^{4}y^{2}\cos(y^{3}) \,dy \\
+              & = \left[\tfrac{1}{3}\sin(y^{3})\right]_{0}^{4} \\
+              & = \tfrac{1}{3}\left[\sin(64) - 0\right] \\
+              & = \boxed{\tfrac{1}{3}\sin(64)}.
+            \end{align*}
           }
-          \item \(\displaystyle\int_{-3}^{3}\int_{0}^{\mysqrt{9-x^{2}}} \sin(5x^{2} + 5y^{2}) \,dy\,dx\) \\
+  %         \item \(\displaystyle\int_{-3}^{3}\int_{0}^{\mysqrt{9-x^{2}}} \sin(5x^{2} + 5y^{2}) \,dy\,dx\) \\
 
-          \sol{
-            
-          }
-          \item \(\displaystyle\int_{0}^{1}\int_{0}^{\mysqrt{1-x}}\int_{0}^{\mysqrt{1-x^{2}-y^{2}}} \mysqrt{x^{2} + y^{2} + z^{2}} \,dz\,dy\,dx\) \\
+  %         \sol{
+  %           We again must change the order of integration for this integral. First, we know the original region is:
+  %           \[
+  %             \left\{(x,y) \colon -3 \leq x \leq 3, \quad 0 \leq y \leq \mysqrt{9 - x^{2}}\right\},
+  %           \]
+  %           which is the upper half of the disk \(x^{2} + y^{2} \leq 9\). Hence, we should write the coordinates in polar form:
+  %           \[
+  %             x = r \cos(\theta), \quad y = r \sin(\theta), \quad \text{and} \quad dx \, dy = r \, dr \, d\theta.
+  %           \]
+  %           Since \(y \geq 0\), the angle \(\theta\) must be between \(0\) and \(\pi\) and \(r\) is between \(0\) and \(3\). In addition, we can make our equation of the integrand simpler:
+  %           \[
+  %             \sin(5x^{2} + 5y^{2}) = \sin\Big(5r^{2}\big(\cos^{2}(\theta) + \sin^{2}(\theta)\big)\Big) = \sin(5r^{2}).
+  %           \]
+  %           Now we can solve the integral:
+  %           \begin{align*}
+  %             \int_{0}^{\pi}\int_{0}^{3} \sin(5r^{2}) r \, dr \, d\theta & = \int_{0}^{\pi} d\theta \cdot \left[-\tfrac{1}{10}\cos(5r^{2})\right]_{0}^{3} \\              
+  %             & = \left[-\tfrac{1}{10}\cos(45) + \tfrac{1}{10}\cos(0)\right] \\
+  %             & = -\tfrac{1}{10}\left(\tfrac{\mysqrt{2}}{2} - 1\right) \\
+  %             & = -\tfrac{1}{20}\left(\mysqrt{2} - 2\right) \\
+  %             & = \boxed{-\tfrac{\mysqrt{2}}{20} + \tfrac{1}{10}}.
+  %           \end{align*}
+  %         }
+  %         \item \(\displaystyle\int_{0}^{1}\int_{0}^{\mysqrt{1-x}}\int_{0}^{\mysqrt{1-x^{2}-y^{2}}} \mysqrt{x^{2} + y^{2} + z^{2}} \,dz\,dy\,dx\) \\
           
-          \sol{
-
-          }
+  %         \sol{
+            
+  %         }
         \end{enumerate}
-  \item (3 points) Find the volume of the solid described by \(x^{2} + y^{2} \leq 1, \quad x \geq 0, \quad 0 \leq z \leq 4 - y\). \\
+  % \item (3 points) Find the volume of the solid described by \(x^{2} + y^{2} \leq 1, \quad x \geq 0, \quad 0 \leq z \leq 4 - y\). \\
 
-  \sol{
+  % \sol{
 
-  }
-  \item (3 points) Find the average value of the function \(f(x,y) = x\sin(y)\) over the region enclosed by \(y = 0\), \(y = x^{2}\), and \(x = 1\). \\
+  % }
+  % \item (3 points) Find the average value of the function \(f(x,y) = x\sin(y)\) over the region enclosed by \(y = 0\), \(y = x^{2}\), and \(x = 1\). \\
 
-  \sol{
+  % \sol{
 
-  }
-  \item (3 points) Find the volume of the solid that lives within both the cylinder \(x^{2} + y^{2} = 1\) and sphere \(x^{2} + y^{2} + z^{2} = 9\). \\
+  % }
+  % \item (3 points) Find the volume of the solid that lives within both the cylinder \(x^{2} + y^{2} = 1\) and sphere \(x^{2} + y^{2} + z^{2} = 9\). \\
   
-        \sol{
-          Use cylindrical coordinates.
-        }
+  %       \sol{
+  %         Use cylindrical coordinates.
+  %       }
 \end{enumerate}
+\vspace{2cm}
+\begin{center}
+\textsc{REST ON PAPER}
+\end{center}
 
 
 \end{document}
