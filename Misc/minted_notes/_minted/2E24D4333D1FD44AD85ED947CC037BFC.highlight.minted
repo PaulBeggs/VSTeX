@@ -1,0 +1,5 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{c+c1}{\PYGZsh{} $\sum_{i = 1}^{\infty}i + 1$}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{foo}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{l+m+mi}{0}
+\end{MintedVerbatim}

@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\begin{document}
+\tikzset{every tree node/.style={minimum width=2em,draw,circle},
+         blank/.style={draw=none},
+         edge from parent/.style=
+         {draw,edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+         level distance=1cm}
+\begin{tikzpicture}
+    \Tree
+    [.\(a\)     
+    [.\(b\) ]
+    [.\(d\) 
+        [.\(f\) 
+            [.\(g\) ]
+            [.\(h\) ]
+        ]
+        [.\(x\)
+            [.\(x_{1}\) ]
+            [.\(x_{2}\) 
+                [.\(x_{3}\) ]
+                [.\(x_{4}\) 
+                    \edge[blank]; \node[blank]{};
+                    [.\(x_{5}\) 
+                        \edge[blank]; \node[blank]{};
+                        [.\(x_{6}\) ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+    [.\(h\) 
+        \edge[blank]; \node[blank]{};
+        [.\(g\) ]
+    [.\(c\) ]
+    [.\(c_{1}\) ]
+    ]
+]
+\end{tikzpicture}
+\end{document}

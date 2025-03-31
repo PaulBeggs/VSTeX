@@ -4,6 +4,8 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \documentclass[12pt, oneside]{book}
+\usepackage{xcolor}
+\usepackage{minted}
 \usepackage{tikz-cd}
 % \usepackage[T1]{fontenc}
 
@@ -11,6 +13,7 @@
 \newcommand{\documentTheme}{draculafg}
 \newcommand{\documentLogo}{images/small logo_white.png}
 \newcommand{\documentBigLogo}{images/logo_white_text.png}
+\usemintedstyle{dracula}
 
 % \newcommand{\documentBigLogo}{images/Hendrix Logo.png}
 % \newcommand{\documentLogo}{images/small logo.png}
@@ -30,9 +33,11 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
 \usepgflibrary{shadings}
-
+\usepackage{pgfkeys}
+\usepackage{pdftexcmds}
+\usepackage{shellesc}
+\usepackage{algorithm, algorithmic, xspace}
 %%% Define new colors %%%
-\usepackage{xcolor}
 \definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
 
 % Normal colors
@@ -245,6 +250,7 @@
 \tcbuselibrary{theorems}
 % \tcbuselibrary{minted}
 \newcounter{BoxCounter}
+\usepackage{dingbat}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -583,9 +589,13 @@
 \vspace*{-0.25in}
 \input{Chapters/Multi_ch_4.tex}
 
-\chapter{Diff. of Fun. of Several Variables}\label{diff of fun of several variables}
+\chapter{Multiple Integration}\label{multiple integration}
 \vspace*{-0.25in}
 \input{Chapters/Multi_ch_5.tex}
+
+\chapter{Vector Calculus}\label{vector calculus}
+\vspace*{-0.25in}
+\input{Chapters/Multi_ch_6.tex}
 
 
 

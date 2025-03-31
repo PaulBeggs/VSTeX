@@ -1,0 +1,252 @@
+\documentclass{article}
+
+\usepackage[svgnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
+\usepackage[most]{tcolorbox}
+\usepgflibrary{shadings}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+\usepackage{dingbat}
+\usepackage{etoolbox}
+\usepackage{pgfkeys}
+\usepackage{pdftexcmds}
+\usepackage{shellesc}
+\usepackage{geometry}
+
+% Load necessary libraries for tcolorbox
+\tcbuselibrary{minted, breakable}
+\usepackage{minted}
+\setminted{escapeinside=||}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{fancyvrb}
+% \usepackage{listings}
+% \usemintedstyle{dracula}
+
+\newtcblisting{coolminted}{
+    listing engine=minted,
+    colback=black!5,                  % background color
+    colframe=blue!75!black,            % frame color
+    listing only,                     % do not display the box content in two ways
+    minted language=python,           % default language; change as needed
+    enhanced,                         % enable enhanced features
+    frame hidden,                     % hide default frame
+    interior hidden,                  % hide default interior
+    breakable,                        % allow breaking over pages
+    overlay={
+      % Draw a custom frame using the overlay feature
+      \draw[blue!75!black, line width=2pt]
+        ([xshift=5pt,yshift=-5pt]frame.south west)
+        rectangle
+        ([xshift=-5pt,yshift=5pt]frame.north east);
+    },
+    minted options={
+        mathescape=true,           % enable math escape in minted
+        linenos=true,              % show line numbers
+        numbersep=5pt,             % space between line numbers and code
+        gobble=2,                  % number of spaces to remove from the beginning of each line
+        frame=lines,               % frame style (lines, none, leftline, rightline, topline, bottomline)
+        framesep=2mm,              % space between frame and content
+        fontsize=\Large,           % font size for the code
+        breaklines=true,           % enable line breaking
+        breakautoindent=true,      % auto indent after line breaks
+    },
+}
+
+
+% Define Dracula colors
+\definecolor{draculaBackground}{HTML}{282a36}
+\definecolor{draculaForeground}{HTML}{F8F8F2}
+\definecolor{draculaCurrentLine}{HTML}{44475A}
+\definecolor{draculaComment}{HTML}{6272A4}
+\definecolor{draculaRed}{HTML}{FF5555}
+\definecolor{draculaOrange}{HTML}{FFB86C}
+\definecolor{draculaYellow}{HTML}{F1FA8C}
+\definecolor{draculaGreen}{HTML}{50FA7B}
+\definecolor{draculaPurple}{HTML}{BD93F9}
+\definecolor{draculaPink}{HTML}{FF79C6}
+\definecolor{draculaCyan}{HTML}{8BE9FD}
+
+\newtcblisting{dracpython}{
+    listing engine=minted,
+    minted language=python,
+    listing only,
+    minted options={
+        linenos, 
+        breaklines, 
+        fontsize=\small
+    },
+    enhanced,
+    breakable,
+    colback=draculaBackground, % Box background matching Dracula theme
+    coltext=draculaForeground, % Text color matching Dracula theme
+    frame hidden,
+    % interior hidden,
+    overlay={
+      % Draw a custom frame with a Dracula accent color
+      \draw[draculaPurple, line width=2pt]
+        ([xshift=5pt,yshift=-5pt]frame.south west)
+        rectangle
+        ([xshift=-5pt,yshift=5pt]frame.north east);
+    },
+}
+
+\begin{document}
+
+\begin{minted}{python}
+def foo():
+    return 0
+\end{minted}
+
+\begin{minted}[mathescape, linenos, numbersep=5pt, gobble=2, frame=lines, framesep=2mm]{csharp}
+  string title = "This is a Unicode pi in the sky"
+  /*
+  Defined as $\pi=\lim_{n\to\infty}\frac{P_n}{d}$ where $P$ is the perimeter
+  of an $n$-sided regular polygon circumscribing a
+  circle of diameter $d$.
+  */
+  const double pi = 3.1415926535
+\end{minted}
+  
+\begin{minted}[mathescape, breaklines]{py}
+# $\sum_{i = 1}^{\infty}i + 1$
+def foo():
+    return 0
+\end{minted}
+  
+\begin{minted}[breaklines, breakautoindent=false, breaksymbolleft=\raisebox{0.8ex}{\small\reflectbox{\carriagereturn}}, breaksymbolindentleft=0pt, breaksymbolsepleft=0pt, breaksymbolright=\small\carriagereturn, breaksymbolindentright=0pt, breaksymbolsepright=0pt]{python}
+def f(x):
+    return 'Some text ' + str(x) + 
+    ' some more text ' + str(x) + 
+        ' even more text that goes on for a while and a while longer, and so on forever and ever.'
+\end{minted}
+  
+\begin{minted}{py}
+def f(x):
+    y = x|\colorbox{green}{**}|2
+return y
+\end{minted}
+
+\begin{minted}[breaklines, breakbefore=A]{python}
+    some_string = 'SomeTextThatGoesOnAndOnForSoLongThatItCouldNeverFitOnOneLine'
+\end{minted}
+
+
+\begin{minted}[showspaces]{py}
+    def boring(args = None):
+        pass
+\end{minted}
+
+\begin{minted}[gobble=4, showspaces]{py}
+    def boring(args = None):
+        pass
+\end{minted}
+
+\begin{minted}[autogobble, showspaces]{py}
+            def boring(args = None):
+                pass
+\end{minted}
+
+\mint[linenos]{perl}|x=~/foo/|
+
+
+\begin{minted}[linenos]{python}
+    def f(x):
+        return x**2
+\end{minted}
+\begin{minted}[linenos]{ruby}
+    def func
+        puts "message"
+    end
+    sike = "sike"
+\end{minted}
+\begin{minted}[linenos, firstnumber=last]{python}
+    def g(x):
+        return 2*x
+\end{minted}
+
+% Other frames options are: none, leftline, rightline, topline, bottomline, lines
+\begin{minted}[highlightlines={1,3}, highlightcolor=blue, linenos, frame=lines, framerule=1.5pt, framesep=5mm]{python} 
+    def f(x):
+        return x**2
+    def g(x):
+        return 2*x    
+\end{minted}
+
+\begin{coolminted}
+    def hello():
+        print("Hello, world!")
+\end{coolminted}
+
+\begin{coolminted}
+    def foo():
+    # This is a comment that contains math: $\sum_{i=1}^{n} i$.     
+       return 0
+\end{coolminted}
+
+
+\renewcommand{\theFancyVerbLine}{
+    \sffamily
+    \textcolor[rgb]{0.5,0.5,1.0}{
+        \scriptsize\oldstylenums{
+            \arabic{FancyVerbLine}}}}
+\begin{minted}[linenos, firstnumber=11]{python}
+    def all(iterable):
+        for i in iterable:
+            if not i:
+                return False
+        return True
+\end{minted}
+
+% Other options for numbers are: left, right, none, both
+\begin{minted}[numbers=both, breaklines=true, samepage=true]{java}
+    public boolean isRowValid(TextField textField, int numRows) {
+        try {
+            int row = Integer.parseInt(textField.getText()) - 1;
+            if (row >= 0 && row < numRows) {
+                return false;
+            } else {
+                System.out.println("Invalid row selection. Please choose a valid row.");
+                Platform.runLater(textField::clear);
+                return true;
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a valid integer.");
+            Platform.runLater(textField::clear);
+            return true;
+        }
+    }
+\end{minted}
+
+\begin{minted}[breaklines=true, samepage=true]{java}
+    public static Matrix convertBackToOriginalForm(String[][] matrix) {
+        String[][] originalFormMatrix = new String[matrix.length][];
+        System.out.println("Matrix length: " + matrix.length);
+//        System.out.println("OG Matrix: \n");
+        printStringMatrix(matrix);
+        for (int i = 0; i < matrix.length; i++) {
+            originalFormMatrix[i] = new String[matrix[i].length];
+            for (int j = 0; j < matrix[i].length; j++) {
+                originalFormMatrix[i][j] = MatrixApp.isFractionMode() ? convertDecimalToFraction(matrix[i][j]) : convertFractionToDecimalString(matrix[i][j]);
+            }
+        }
+        System.out.println("Original Form Matrix: \n");
+        return new Matrix(originalFormMatrix);
+    }
+\end{minted}
+
+
+\begin{minted}[breaklines=true, numbersep=32pt, numbers=left]{java}
+    public static void printStringMatrix(String[][] matrix) {
+        for (String[] row : matrix) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
+\end{minted}
+
+\begin{dracpython}
+    def helloworld():
+        print("Hello, Dracula!")
+\end{dracpython}
+
+\end{document}

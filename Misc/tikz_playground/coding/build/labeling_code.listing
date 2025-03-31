@@ -1,0 +1,10 @@
+ i|\nodeanchortop{a}{}|nt puis|\nodeanchortop{b}{}|sance (int x,|\nodeanchortop{c}{}| int n) {
+
+    int i, p = 1; |\nodeanchor{d}{}|
+
+    for (i = 1; i <= n; i++) {|\boxanchor{top}{}|
+        p = p * x; |\nodeanchor{e}{}|
+  |\boxanchor{bottom}{}|}
+
+    return p; |\nodeanchor{f}{}|
+ }
