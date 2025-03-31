@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Some text }\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+}
+    \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ some more text }\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+}
+        \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{ even more text that goes on for a while and a while longer, and so on forever and ever.}\PYG{l+s+s1}{\PYGZsq{}}
+\end{MintedVerbatim}
