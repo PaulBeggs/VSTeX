@@ -4,17 +4,17 @@
 So far, we have talked about:
 
 \begin{itemize}
-    \item Parametric Functions: \( \mb{F} \colon \mathbb{R} \to \mathbb{R}^n \) (also called vector-valued functions)
-    \item Scalar Functions: \( \mb{F} \colon \mathbb{R}^n \to \mathbb{R} \)
+    \item Parametric Functions: \( f \colon \mathbb{R} \to \mathbb{R}^n \) (also called vector-valued functions)
+    \item Scalar Functions: \( f \colon \mathbb{R}^n \to \mathbb{R} \)
 \end{itemize}
 
 We conclude the course by considering:
 
 \begin{itemize}
-    \item \( \mb{F} \colon \mathbb{R}^n \to \mathbb{R}^n \), specifically:
+    \item \( f \colon \mathbb{R}^n \to \mathbb{R}^n \), specifically:
     \begin{itemize}
-        \item \( \mb{F} \colon \mathbb{R}^2 \to \mathbb{R}^2 \)
-        \item \( \mb{F} \colon \mathbb{R}^3 \to \mathbb{R}^3 \)
+        \item \( f \colon \mathbb{R}^2 \to \mathbb{R}^2 \)
+        \item \( f \colon \mathbb{R}^3 \to \mathbb{R}^3 \)
     \end{itemize}
 \end{itemize}
 
@@ -33,7 +33,7 @@ Formally, a vector field is a function \( \mathbf{F} : \mathbb{R}^n \to \mathbb{
 \textbf{Common notation:}
 \[ \mathbf{F}(x, y) = \langle P(x, y), Q(x, y) \rangle = P(x, y) \mathbf{i} + Q(x, y) \mathbf{j} \]
 and
-\[ \mathbf{F}(x, y, z) = \langle P(x, y, z), Q(x, y, z), \mb{r}(x, y, z) \rangle = P(x, y, z) \mathbf{i} + Q(x, y, z) \mathbf{j} + \mb{r}(x, y, z) \mathbf{k} \]
+\[ \mathbf{F}(x, y, z) = \langle P(x, y, z), Q(x, y, z), \mb{R}(x, y, z) \rangle = P(x, y, z) \mathbf{i} + Q(x, y, z) \mathbf{j} + \mb{R}(x, y, z) \mathbf{k} \]
 
 \subsection{Graph}
 To truly graph a vector field, you need 4 or 6 dimensions, which is somewhat inconvenient. Instead, we plot representative vectors in either \( \mathbb{R}^2 \) or \( \mathbb{R}^3 \).
@@ -46,6 +46,9 @@ There are a few commonly seen special types of vector fields:
 \begin{itemize}
     \item \textbf{Radial} – each vector points either directly toward or away from the origin. For example, \( \langle x, y \rangle \).
     \item \textbf{Rotational} – each vector points tangent to a circle centered at the origin. For example, \( \langle -y, x \rangle \).
+    \begin{itemize}
+        \item \textbf{Think:} At the point \((2,1)\), we have the vector \(\langle -1, 2 \rangle\). This vector is tangent to the circle of radius \(\sqrt{5}\) centered at the origin. The vector is perpendicular to the radius of the circle at that point.
+    \end{itemize}
     \item \textbf{Unit} – each output vector has magnitude 1. For example, \( \langle \sin(x + y), \cos(x + y) \rangle \).
     \item \textbf{Velocity} – the vectors represent the velocity of some particle.
     \item \textbf{Gradient} – the vectors are the gradient of some function \( \mb{F} \colon \mathbb{R}^n \to \mathbb{R} \).
@@ -55,7 +58,7 @@ There are a few commonly seen special types of vector fields:
 A vector field \( \mathbf{F} \) is called a gradient vector field if there exists some scalar function \( \mb{F} \colon \mathbb{R}^n \to \mathbb{R} \) such that \( \nabla f = \mathbf{F} \). That is, if \( \mathbf{F} \) is the gradient of some scalar function \( f \).
 
 \subsection{Conservative Vector Fields}
-A vector field \( \mathbf{F} \) is a conservative vector field when it is the gradient field for some scalar function \( f \). We will call \( f \) the \textbf{potential function} of \( \mathbf{F} \).
+A vector field \( \mathbf{F} \) is a conservative vector field when it is the gradient field for some scalar function \( f \). We will call \( f \) the \textbf{potential function} of \( \mathbf{F} \). \\
 
 \textbf{Theorem.} Potential functions are unique, except for a constant. That is, if \( f \) and \( g \) are each potential functions for \( \mathbf{F} \), then there exists some constant \( c \) such that \( f - g = c \).
 
@@ -71,6 +74,14 @@ A vector field \( \mathbf{F} \) is a conservative vector field when it is the gr
         \item \( \frac{\partial R}{\partial x} = \frac{\partial P}{\partial z} \)
     \end{itemize}
 \end{itemize}
+
+\subsection{Examples}
+
+\subsubsection{Example 1: Gradient Field}
+
+\(f(x,y) = x^{2}y + y^{3}\) is a potential function for the vector field \(\nabla f = \mathbf{F}(x,y) = \langle 2xy, x^{2} + 3y^{2} \rangle = \langle P, Q \rangle\). \\
+
+If we find the second derivative of these functions, we see that \(\frac{\p P}{\p y} = 2x; \, \frac{\p Q}{\p x} = 2x\). Thus, the cross partial property holds. \\
 
 \newpage
 
