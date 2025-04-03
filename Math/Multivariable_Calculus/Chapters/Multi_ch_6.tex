@@ -184,13 +184,36 @@ Evaluate \(\int_C (x^2 + y^2) ds\) where \(C\) is the quarter-circle \(\mb{r}(t)
     \int_C (x^2 + y^2) ds &= \int_0^{\pi/2} 1 \, dt = \frac{\pi}{2}.
 \end{align*}
 
-\subsubsection{Example 2: Vector Line Integral}
-Evaluate \(\int_C \mb{F} \cdot dr\) where \(\mb{F} = \langle y, x \rangle\) and \(C\) is the line from \((0,0)\) to \((1,1)\).
+\subsubsection{Example 2: Scalar Line Integral}
+Let \(f(x,y) = x^{2}y\) and \(C\) by the curve from \((0,0)\) to \((2,4)\) to \((0,4)\). Call lines \(C_1\) and \(C_2\). Find the value of \(\int_C f(x,y) ds\).
+
+\textbf{Solution:}
+
+First, we find \(C_{1}\): \(\mb{r}(t) = \langle t,2t\rangle, \, 0 \leq t \leq 2\). This turns into the first integral:
+\begin{align*}
+    \int_{C_{1}} f(x,y) \, ds &= \int_{0}^{2} t^{2}(2t) \sqrt{(1)^{2} + (2)^{2}} \, dt \\
+    &= 2\sqrt{5} \int_{0}^{2} t^{3}  \, dt \\
+    &= 2\sqrt{5} \left[ \tfrac{t^{4}}{4} \right]_{0}^{2} \\
+    &= 2\sqrt{5} \left[ \tfrac{16}{4} - 0 \right] \\
+    &= 8\sqrt{5}.
+\end{align*}
+
+Now, for \(C_{2}\): \(\mb{r}(t) = \langle 2 - t, 4\rangle, \, 0 \leq t \leq 2\). This turns into the second integral:
+\begin{align*}
+    \int_{C_{2}} f(x,y) \, ds &= \int_{0}^{2} (2 - t)^{2}(4) \sqrt{(-1)^{2} + (0)^{2}} \, dt \\
+    &= 4\int_{0}^{2} (2 - t)^{2} \, dt \\
+    &= \tfrac{-4}{3}\left[ (2 - t)^{3} \right]_{0}^{2} \\
+    &= \tfrac{-4}{3}\left[ 0 - \tfrac{8}{3} \right] \\
+    &= \tfrac{32}{3}.
+\end{align*}
+
+\subsubsection{Example 3: Vector Line Integral}
+Evaluate \( \int_C \mb{F} \cdot dr \) where \( \mb{F} = \langle y, x \rangle \) and \( C \) is the line from \( (0,0) \) to \( (1,1) \).
 
 \textbf{Solution:}
 \begin{align*}
     \mb{r}(t) &= (t, t), \quad 0 \leq t \leq 1. \\
     \mb{r}'(t) &= (1,1). \\
     F(\mb{r}(t)) &= \langle t, t \rangle. \\
-    \int_C \mb{F} \cdot dr &= \int_0^1 \langle t, t \rangle \cdot \langle 1, 1 \rangle \, dt = \int_0^1 (t + t) \, dt = \int_0^1 2t \, dt = 1.
+    \int_C \mb{F} \cdot dr &= \int_0^1 \langle t, t \rangle \cdot \langle 1, 1 \rangle \, dt = \int_0^1 (t + t) \, dt = \int_0^1 2t \, dt = 2.
 \end{align*}
