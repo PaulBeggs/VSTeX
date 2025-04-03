@@ -177,10 +177,11 @@ With a polygraph, we're looking at all the components of the peripheral nervous 
 \newpage
 
 \begin{center}
-    \textbf{NEW NOTES FOR 03/20/25}
+    \textbf{NEW NOTES FOR 03/20/25} \\
+    \hrulefill
 \end{center}
 
-\section{Physiological Psychology Experiment}
+\section{Physiological Psychology (Video Lab) Experiment}
 
 Research Question: \cyanit{Do opioids play a role in social behavior?}
 
@@ -363,10 +364,110 @@ Research Question: \cyanit{Do opioids play a role in social behavior?}
 
 \begin{coloredlist}
     \item Acupuncture
-    \begin{coloredlist}
-        \item 
-    \end{coloredlist}
     \item The placebo effect activates the opioid system.
     \item For example, if I were to give you a pill, and said it was going to relieve your pain, but it was actually just a sugar pill, you would still feel relief from the pain. However, if I gave you a pill, such as Nalaxone (which is an opioid antagonist), you would not feel relief from the pain. 
 \end{coloredlist}
 
+\begin{center}
+    \textbf{New Notes for 04/03/25} \\
+    \hrulefill
+\end{center}
+
+\section{Carefully Plan Some Hypotheses}
+
+\begin{coloredlist}
+    \item \cyanit{Conceptual Hypothesis} -- A statement of the expected relationship between the IV and DV.
+    \item \cyanit{Statistical Hypothesis} -- A statement of the expected relationship between the IV and DV in statistical terms.
+    \item Consider the example ``Does technology use disrupt sleep quality.''
+    \begin{coloredlist}
+        \item Conceptual: 
+        \begin{coloredlist}
+            \item Null: TU (tech users) do NOT have lower sleep quality than NTU (non-tech users).
+            \item Alternative: TU have lower sleep quality than NTU.
+        \end{coloredlist} 
+        \item Statistical:
+        \begin{coloredlist}
+            \item Null: \(\mu_{TU} \geq \mu_{NTU}\)
+            \item Alternative: \(\mu_{TU} < \mu_{NTU}\)
+        \end{coloredlist}
+        \item For the test that we would use to test this hypothesis, we would use a paired t-test.
+    \end{coloredlist}
+    \item Consider another example ``Does too little vitamin D lead to depressed mood?''
+    \begin{coloredlist}
+        \item Conceptual:
+        \begin{coloredlist}
+            \item Null: Adequate VD (vitamin D) participants do NOT have lower mood than inadequate IVD (inadequate vitamin D) participants.
+            \item Alternative: Adequate VD participants have lower mood than IVD participants.  
+        \end{coloredlist}
+        \item Alternative:
+        \begin{coloredlist}
+            \item Null: \(\mu_{VD} \leq \mu_{IVD}\)
+            \item Alternative: \(\mu_{VD} > \mu_{IVD}\)
+        \end{coloredlist}
+    \end{coloredlist}
+    \item For our question, ``Does nalaxone increase play?'' we need to be careful how we operationalize play.
+    \item For rats, they play by:
+    \begin{coloredlist}
+        \item Boxing, chasing, dorsal contact, PINNING, and social proximity. But these are not sufficient enough.
+    \end{coloredlist}
+\end{coloredlist}
+
+\subsection{Nonspecific Effects}
+
+\begin{coloredlist}
+    \item The IV produces changes in the DV by acting on a system not directly related to the system in question.
+    \item For example, I sleep deprive people and they have less sex. Thus, does sleep deprivation interfere with sex OR maybe, sleep deprivation reduces motivation and that leads to sex declines along with lots of other things indirectly.
+    \item \textbf{Could the effect we see on play be due to something else?}
+    \begin{coloredlist}
+        \item Level of behavior
+        \begin{coloredlist}
+            \item Spontaneous activity
+            \item Crossing
+        \end{coloredlist}
+        \item Motivation
+        \begin{coloredlist}
+            \item Exploratory behavior
+            \item Rearing
+        \end{coloredlist}
+        \item Fear of emotionality
+        \begin{coloredlist}
+            \item If no food is available, grooming
+        \end{coloredlist}
+    \end{coloredlist}
+\end{coloredlist}
+
+\subsection{Results}
+
+\begin{coloredlist}
+    \item IRR
+    \begin{coloredlist}
+        \item For play and nonspecific effect (crossing)
+        \item Descriptive (includes graph)
+    \end{coloredlist}
+    \item Play
+    \begin{coloredlist}
+        \item Descriptive (includes graph)
+        \item Inferential
+    \end{coloredlist}
+    \item Nonspecific effect
+    \begin{coloredlist}
+        \item Descriptive (includes graph)
+        \item Inferential
+    \end{coloredlist}
+    \item Play and nonspecific effect separately
+    \item How can I show the relationship between rater 1 and rater 2's ratings?
+    \begin{coloredlist}
+        \item Graph?
+        \begin{coloredlist}
+            \item Scatterplot
+        \end{coloredlist}
+        \item Statistic?
+        \begin{coloredlist}
+            \item Perason's Correlation coefficient (r)
+        \end{coloredlist}
+        \item Jamovi Variables?
+        \begin{coloredlist}
+            \item Rater1\_pins, Rater2\_pins, Rater1\_ns, Rater2\_ns
+        \end{coloredlist}
+    \end{coloredlist}
+\end{coloredlist}
