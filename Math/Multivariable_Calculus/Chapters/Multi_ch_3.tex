@@ -97,7 +97,7 @@ Suppose that \(\vecfuc{r}{t}\) is a differentiable vector-valued function and \(
 
 Of importance is the \cyanit{principle unit tangent vector}, \(\mb{T}\), which is defined by
 \[
-    \vecfuc{T}{t} = \frac{\dvecfuc{r}{t}}{||\dvecfuc{r}{t}||}.
+    \vecfuc{T}{t} = \frac{\dvecfuc{r}{t}}{\|\dvecfuc{r}{t}\|}.
 \]
 Note that this is only defined when \(\dvecfuc{r}{t} \ne \mb{0}\). \\
 
@@ -124,18 +124,18 @@ where since these are indefinite, each produce a constant \(C = \brackett{C_{1},
 
 For a curve \(C\) defined by \(\mb{r}\) in \(\R^{3}\), we have the \cyanit{unit normal vector}, \(\mb{N}(t)\), which is defined by 
 \[
-    \vecfuc{N}{t} = \frac{\dvecfuc{T}{t}}{||\dvecfuc{T}{t}||}.
+    \vecfuc{N}{t} = \frac{\dvecfuc{T}{t}}{\|\dvecfuc{T}{t}\|}.
 \]
 The normal vector points orthogonally to the tangent vector; it points in the direction the curve is turning. \\
 
 We show that \(\mb{T}\) and \(\mb{N}\) are orthogonal:
 \begin{align*}
-    \mb{T} \cdot \mb{N} &= \vecfuc{T}{t} \cdot \frac{\dvecfuc{T}{t}}{||\dvecfuc{T}{t}||} \\
+    \mb{T} \cdot \mb{N} &= \vecfuc{T}{t} \cdot \frac{\dvecfuc{T}{t}}{\|\dvecfuc{T}{t}\|} \\
     &= \frac{1}{\normdvecfuc{T}{t}} \vecfuc{T}{t} \cdot \dvecfuc{T}{t} \\
     &= \frac{1}{\normdvecfuc{T}{t}} \cdot 0 \\
     &= 0.
 \end{align*}
-The last step is true since \(\mb{T}\) is a \textit{unit} vector, and so that \(||\mb{T}||\), and from our rules for differentiation, if a vector \(\mb{T}\) has a constant magnitude, then \(\mb{T} \cdot \mb{T}' = 0\).
+The last step is true since \(\mb{T}\) is a \textit{unit} vector, and so that \(\|\mb{T}\|\), and from our rules for differentiation, if a vector \(\mb{T}\) has a constant magnitude, then \(\mb{T} \cdot \mb{T}' = 0\).
 
 \subsection{The Binormal Vector}
 
@@ -151,7 +151,7 @@ You can think of \(\mb{T}\) and \(\mb{N}\) as defining the instantaneous plane o
 
 If \(\mb{r}(t)\) defines a smooth curve in \(\R^{n}\), then the \cyanit{arc length} of the curve from \(t = a\) to \(t = b\) is given by
 \[
-    \int_{a}^{b} ||\mb{r}'(t)|| \, dt.
+    \int_{a}^{b}\|\mb{r}'(t)\|\, dt.
 \]
 That is, we are just adding up the ``speed'' of the curve to find its length (i.e., its distance).
 
@@ -159,7 +159,7 @@ That is, we are just adding up the ``speed'' of the curve to find its length (i.
 
 We can define the \cyanit{arc length parameterization} of a curve \(C\) by:
 \begin{itemize}
-    \item Define the arc length \(s(t) = \int_{a}^{t}||\mb{r}'(t)|| \ dt\).
+    \item Define the arc length \(s(t) = \int_{a}^{t}\|\mb{r}'(t)\|\ dt\).
     \item Solving, if possible, the resulting expression for \(t\) as a function of \(s\).
     \item Rewriting \(\mb{r}(t) = \mb{r}(t(s)) = \mb{r}\), so that the curve is written as a function of its length, from a given starting point.
     \item This is useful since there are many possible parameterizations of a given curve, but only a single arc length parameterization.
@@ -179,8 +179,8 @@ However, though this formula is the easiest to reason with, it is in practice no
 \subsection{Calculating Curvature}
 
 \begin{itemize}
-    \item For all \(\mb{r} \colon \ \kappa = \frac{||\mb{T}'(t)||}{||\mb{r}'(t)||}\).
-    \item For \(\R^{3}\): \(\kappa = \frac{||\mb{r}'(t) \times \mb{r}''(t)||}{||\mb{r}'(t)||^{3}}\).
+    \item For all \(\mb{r} \colon \ \kappa = \frac{\|\mb{T}'(t)\|}{\|\mb{r}'(t)\|}\).
+    \item For \(\R^{3}\): \(\kappa = \frac{\|\mb{r}'(t) \times \mb{r}''(t)\|}{\|\mb{r}'(t)\|^{3}}\).
     \item If \(y = f(x)\): \(\kappa = \frac{|y''(x)|}{[1 + (y'(x)^{2})]^{3/2}}\)
 \end{itemize}
 
@@ -190,23 +190,23 @@ We use each of the three equations to determine the curvature of a circle of rad
 
 \subsubsection{Parameterized Circle}
 
-A circle of radius \(a\) is parameterized by \(\mb{r}(t) = a \cos(t)\mb{i} + a \sin(t)\mb{j}\). Thus, \(\mb{r}'(5) = -a \sin(t)\mb{i} + a \sin(t)\mb{j}\), so that \(||\mb{r}'(t)|| = a\). So, using the definition above, we get:
+A circle of radius \(a\) is parameterized by \(\mb{r}(t) = a \cos(t)\mb{i} + a \sin(t)\mb{j}\). Thus, \(\mb{r}'(5) = -a \sin(t)\mb{i} + a \sin(t)\mb{j}\), so that \(\|\mb{r}'(t)\|= a\). So, using the definition above, we get:
 \[
-    \mb{T}(t) = \frac{\mb{r}'(t)}{||\mb{r}'(t)||} = \frac{-a \sin(t)\mb{i} + a \sin(t)\mb{j}}{a} = -\sin(t)\mb{i} + \cos(t)\mb{j}
+    \mb{T}(t) = \frac{\mb{r}'(t)}{\|\mb{r}'(t)\|} = \frac{-a \sin(t)\mb{i} + a \sin(t)\mb{j}}{a} = -\sin(t)\mb{i} + \cos(t)\mb{j}
 \]
 and therefore
 \[
     \mb{T}'(t) = -\cos(t)\mb{i} - \sin(t)\mb{j}
 \]
-so that \(||\mb{T}(t)|| = 1\). Finally, we see that 
+so that \(\|\mb{T}(t)\|= 1\). Finally, we see that 
 \[
-    \kappa = \frac{||\mb{T}'(t)||}{||\mb{r}'(t)||} = \frac{1}{a}.
+    \kappa = \frac{\|\mb{T}'(t)\|}{\|\mb{r}'(t)\|} = \frac{1}{a}.
 \]
 Therefore, a circle has constant curvature, and in fact the curvature is just the reciprocal of the radius. This should make some intuitive sense, as the radius gets smaller, the curvature will increase and vice-versa. Notice also that the curvature of a line is 0 -- in some sense, a line is a circle, but with infinite radius!
 
 \subsubsection{Curvature of a Circle in Three Dimensions}
 
-We can also use the second formula, again with a circle, noting that a circle of radius \(a\) is parameterized by \(\mb{r} = a \cos(t)\mb{i} + a \sin(t)\mb{j} + 0\mb{k}\) so that \(\mb{r}'(t) = -a \sin(t)\mb{i} + a \cos(t)\mb{j} + 0\mb{k}\) so that \(||\mb{r}'(t)|| = a\). Thus, \(\mb{r}'' = -a \cos(t)\mb{i} - a \sin(t)\mb{j}\), so that 
+We can also use the second formula, again with a circle, noting that a circle of radius \(a\) is parameterized by \(\mb{r} = a \cos(t)\mb{i} + a \sin(t)\mb{j} + 0\mb{k}\) so that \(\mb{r}'(t) = -a \sin(t)\mb{i} + a \cos(t)\mb{j} + 0\mb{k}\) so that \(\|\mb{r}'(t)\|= a\). Thus, \(\mb{r}'' = -a \cos(t)\mb{i} - a \sin(t)\mb{j}\), so that 
 \[
     \mb{r}'(t) \times \mb{r}''(t) = \begin{vmatrix}
         \mb{i} & \mb{j} & \mb{k} \\
@@ -216,7 +216,7 @@ We can also use the second formula, again with a circle, noting that a circle of
 \] 
 Then, 
 \[
-    \kappa = \frac{||\mb{r}'(t) \times \mb{r}''(t)||}{||\mb{r}'(t)||^{3}} = \frac{a^{2}}{a^{3}} = \frac{1}{a}.
+    \kappa = \frac{\|\mb{r}'(t) \times \mb{r}''(t)\|}{\|\mb{r}'(t)\|^{3}} = \frac{a^{2}}{a^{3}} = \frac{1}{a}.
 \]
 
 \subsubsection{Curvature as a Function}
@@ -249,7 +249,7 @@ In general, of course, curvature is not constant. At a particular point of inter
 Let \(\mb{r}(t)\) represent the position of some object as a function of time in \(\R^{3}\). Then, as in Calculus I:
 \begin{itemize}
     \item Velocity vector: \(\mb{v}(t) = \dvecfuc{r}{t}\)
-    \item Speed: \(||\mb{v}(t)|| = ||\dvecfuc{r}{t}||\)
+    \item Speed: \(\|\mb{v}(t)\|=\|\dvecfuc{r}{t}\|\)
     \item Acceleration vector: \(\mb{a}(t) = \dvecfuc{v}{t} = \mb{r}''(t)\)
 \end{itemize}
 Note that \(\vecfuc{v}{t} \ne \vecfuc{T}{t}\), though they do point in the same direction. More importantly, the relationship between \(\vecfuc{a}{t}\) and \(\vecfuc{N}{t}\) is complicated. \(\vecfuc{N}{t}\) is not acceleration, or even the direction of acceleration, but is the direction of ``turning.''
@@ -262,8 +262,8 @@ In fact, \(\vecfuc{a}{t} = v'(t)\vecfuc{T}{t} + (v(t))^{2}\kappa\vecfuc{N}{t}\).
     Notice that \(\vecfuc{v}{t} = v(t)\vecfuc{T}{t}\). Then,
     \begin{align*}
         \vecfuc{a}{t} &= v'(t)\vecfuc{T}{t} + v(t)\dvecfuc{T}{t} \\
-        &= v'(t)\vecfuc{T}{t} + v(t)||\dvecfuc{T}{t}||\vecfuc{N}{t} \\
-        &= v'(t)\vecfuc{T}{t} + v(t)\kappa||\dvecfuc{r}{t}||\vecfuc{N}{t} \\
+        &= v'(t)\vecfuc{T}{t} + v(t)\|\dvecfuc{T}{t}\|\vecfuc{N}{t} \\
+        &= v'(t)\vecfuc{T}{t} + v(t)\kappa\|\dvecfuc{r}{t}\|\vecfuc{N}{t} \\
         &= v'(t)\vecfuc{T}{t} + (v(t))^{2}\kappa\vecfuc{N}{t}.
     \end{align*}
     Since \(\mb{T}\) and \(\mb{T}'\) are orthogonal, this decomposes \(\mb{a}\) into two pieces -- the first is the change in speed, and the second the change in direction.
@@ -287,9 +287,9 @@ Often, we have an object starting at the origin (so \(\mb{s}_{0} = \mb{0}\)) and
 \]
 What is the horizontal distance travelled by the object before it hits the ground again? \\
 
-Solving \((v_{0}t\sin(\theta) - \frac{1}{2}gt^{2}) = 0\) gives \(t_{1} = \slashed{0}, \ \frac{2v_{0}\sin(\theta)}{g}\). We plug this time into the horizontal component and find 
+Solving \(\bigl(v_{0}t\sin(\theta) - \frac{1}{2}gt^{2}\bigr) = 0\) gives \(t_{1} = \slashed{0}, \ \frac{2v_{0}\sin(\theta)}{g}\). We plug this time into the horizontal component and find 
 \[
-    s(t_{1}) = \frac{v_{0}^{2}}{g}\sin(2\theta).
+    s(t_{1}) = \tfrac{v_{0}^{2}}{g}\sin(2\theta).
 \]
 We note the unsurprising result that this is maximized when \(\theta = \frac{\pi}{4}\).
 

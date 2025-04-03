@@ -375,16 +375,16 @@
           \mb{r}_{\alpha}(t) = \brackett{f(t)\cos(\alpha) - g(t)\sin(\alpha),\, f(t)\sin(\alpha) + g(t)\cos(\alpha)}.
         \]
         \begin{enumerate}
-          \item Show that for any \(t\), \(||\mb{r}(t)|| = ||\mb{r}_{\alpha}(t)||\).
+          \item Show that for any \(t\), \(\| \mb{r}(t) \| = \| \mb{r}_{\alpha}(t) \|\).
 
                 \sol{
-                  We know that \(||\mb{r}(t)|| = \mysqrt{f(t)^{2} + g(t)^{2}}\), so our goal is to show that \(||\mb{r}_{\alpha}(t)|| = \mysqrt{f(t)^{2} + g(t)^{2}}\). Thus, we have:
+                  We know that \(\| \mb{r}(t) \| = \mysqrt{f(t)^{2} + g(t)^{2}}\), so our goal is to show that \(\| \mb{r}_{\alpha}(t) \| = \mysqrt{f(t)^{2} + g(t)^{2}}\). Thus, we have:
                   \[
-                    ||\mb{r}_{\alpha}(t)|| = \mysqrt{\bigl(f(t)\cos(\alpha) - g(t)\sin(\alpha)\bigr)^{2} + \bigl(f(t)\sin(\alpha) + g(t)\cos(\alpha)\bigr)^{2}}
+                    \| \mb{r}_{\alpha}(t) \| = \mysqrt{\bigl(f(t)\cos(\alpha) - g(t)\sin(\alpha)\bigr)^{2} + \bigl(f(t)\sin(\alpha) + g(t)\cos(\alpha)\bigr)^{2}}
                   \]
                   From here, we can expand and simplify:
                   \begin{equation*}
-                    ||\mb{r}_{\alpha}(t)|| = \mysqrt{
+                    \| \mb{r}_{\alpha}(t) \| = \mysqrt{
                       \begin{aligned}
                           & f(t)^{2}\cos^{2}(\alpha) - 2f(t)g(t)\cos(\alpha)\sin(\alpha) + g(t)^{2}\sin^{2}(\alpha) \\
                         + & f(t)^{2}\sin^{2}(\alpha) + 2f(t)g(t)\sin(\alpha)\cos(\alpha) + g(t)^{2}\cos^{2}(\alpha) \\
@@ -393,23 +393,23 @@
                   \end{equation*}
                   Simplifying, we get:
                   \[
-                    ||\mb{r}_{\alpha}(t)|| = \mysqrt{f(t)^{2} + g(t)^{2}}.
+                    \| \mb{r}_{\alpha}(t) \| = \mysqrt{f(t)^{2} + g(t)^{2}}.
                   \]
-                  Therefore, we have shown that for any \(t\), \(||\mb{r}(t)|| = ||\mb{r}_{\alpha}(t)||\).
+                  Therefore, we have shown that for any \(t\), \(\| \mb{r}(t) \| = \| \mb{r}_{\alpha}(t) \|\).
                 }
                 \newpage
-          \item Show that for any \(t\), \(||\mb{r}'(t)|| = ||\mb{r}_{\alpha}'(t)||\). [Hint: Remember that \(\alpha\) is a constant!]
+          \item Show that for any \(t\), \(\| \mb{r}'(t) \| = \| \mb{r}_{\alpha}'(t) \|\). [Hint: Remember that \(\alpha\) is a constant!]
 
                 \sol{
                   Because we know that \(\alpha\) is a constant, when we take the derivative of \(f(t)\cos(\alpha) - g(t)\sin(\alpha)\), for instance, we will simply get \(f'(t)\cos(\alpha) - g'(t)\sin(\alpha)\). With this revelation, we see that this problem is essentially the same as the last one, except with the derivative of the function. Thus, we have:
                   \[
-                    \boxed{||\mb{r}'(t)|| = \mysqrt{f'(t)^{2} + g'(t)^{2}} = ||\mb{r}_{\alpha}'(t)||.}
+                    \boxed{||\mb{r}'(t)\|  = \mysqrt{f'(t)^{2} + g'(t)^{2}} =  \|\mb{r}_{\alpha}'(t)||.}
                   \]
                 }
           \item Determine \(\vecfuc{T}{t}\) and \(\mb{T}_{\alpha}(t)\), the unit tangent vectors for \(\mb{r}\) and \(\mb{r}_{\alpha}\), respectively.
 
                 \sol{
-                The tangent vector for \(\mb{r}(t)\) is \(\vecfuc{T}{t} = \frac{\mb{r}'(t)}{||\mb{r}'(t)||}\). We have already found \(\mb{r}'(t)\) and \(||\mb{r}'(t)||\), so we can plug these values in to find \(\vecfuc{T}{t}\):
+                The tangent vector for \(\mb{r}(t)\) is \(\vecfuc{T}{t} = \frac{\mb{r}'(t)}{||\mb{r}'(t)\| }\). We have already found \(\mb{r}'(t)\) and \( \|\mb{r}'(t)||\), so we can plug these values in to find \(\vecfuc{T}{t}\):
                 \[
                   \vecfuc{T}{t} = \left\langle\frac{\mb{r}'(t)}{||\mb{r}'(t)||} = \frac{f'(t)}{\mysqrt{f'(t)^{2} + g'(t)^{2}}},\,\frac{g'(t)}{\mysqrt{f'(t)^{2} + g'(t)^{2}}}\right\rangle.\footnotemark[1]
                 \]
@@ -452,11 +452,11 @@
                 \sol{
                   Because \(\mb{u}\) and \(\mb{v}\) are orthogonal unit vectors, that means they span a plane. Thus, for any \(t\), the vector \(\mb{r}(t)\) is a linear combination of \(\mb{u}\) and \(\mb{v}\), and therefore lies in the plane spanned by \(\mb{u}\) and \(\mb{v}\).
                 }
-          \item Determine \(||\vecfuc{r}{t}||\).
+          \item Determine \(\| \vecfuc{r}{t} \|\).
 
                 \sol{
                   \[
-                    ||\vecfuc{r}{t}|| = ||r \cos(t)\mb{u} + r \sin(t)\mb{v}|| = \mysqrt{r^{2}\cos^{2}(t) + r^{2}\sin^{2}(t)} = \mysqrt{r^{2}} = r,
+                    \| \vecfuc{r}{t} \| = \| r \cos(t)\mb{u} + r \sin(t)\mb{v} \| = \mysqrt{r^{2}\cos^{2}(t) + r^{2}\sin^{2}(t)} = \mysqrt{r^{2}} = r,
                   \]
                   where we used the fact that \(\mb{u}\) and \(\mb{v}\) are unit vectors and their magnitude is equal to 1.
                 }

@@ -1,0 +1,1677 @@
+\documentclass[parskip]{scrartcl}
+\usepackage{tikz}
+\usetikzlibrary{3d, calc, shapes.geometric, positioning, arrows.meta, shadows.blur, decorations.pathreplacing, shapes.multipart}
+\usepackage{pgfplots}
+\usepackage[margin=40mm]{geometry}
+\pgfplotsset{compat=1.18}
+\usepackage{xcolor}
+\usepackage{tikz-3dplot}
+\pagecolor{black}
+
+\tdplotsetmaincoords{60}{135}
+
+\begin{document}
+\begin{tikzpicture}[scale=0.3, tdplot_main_coords]
+\begin{scope}
+    % \foreach \x in{0,...,16}%
+    % {   
+    %     \path (0,\x ,16) -- (16,\x ,16);
+    %     \path (\x ,0,16) -- (\x ,16,16);
+    %     \path (16,\x ,16) -- (16,\x ,0);
+    %     \path (\x ,16,16) -- (\x ,16,0);
+    %     \path (16,0,\x ) -- (16,16,\x );
+    %     \path (0,16,\x ) -- (16,16,\x );
+    % }
+
+    % top face
+        % Define color commands
+        \definecolor{fVhyVS}{RGB}{77, 99, 48}
+        \definecolor{CugfwD}{RGB}{79, 104, 50}
+        \definecolor{FuZhWv}{RGB}{95, 123, 59}
+        \definecolor{vGdQBM}{RGB}{75, 99, 46}
+        \definecolor{zXxcRo}{RGB}{78, 102, 49}
+        \definecolor{WHGkLH}{RGB}{82, 107, 51}
+        \definecolor{MasWYH}{RGB}{82, 108, 50}
+        \definecolor{tpCxpp}{RGB}{90, 117, 55}
+        \definecolor{dEUMaa}{RGB}{74, 97, 45}
+        \definecolor{AZWgHy}{RGB}{73, 95, 44}
+        \definecolor{hyqmHg}{RGB}{80, 105, 48}
+        \definecolor{GMLQBc}{RGB}{78, 101, 48}
+        \definecolor{QoihXH}{RGB}{84, 109, 51}
+        \definecolor{sNkIev}{RGB}{94, 122, 58}
+        \definecolor{eYVrag}{RGB}{73, 95, 44}
+        \definecolor{aiXcPg}{RGB}{85, 112, 51}
+        \definecolor{HoDBwz}{RGB}{69, 90, 43}
+        \definecolor{fuqBZE}{RGB}{75, 98, 46}
+        \definecolor{oojNCI}{RGB}{76, 99, 47}
+        \definecolor{lBtUVm}{RGB}{88, 114, 54}
+        \definecolor{xfmqOG}{RGB}{77, 101, 47}
+        \definecolor{vgBVeZ}{RGB}{80, 104, 49}
+        \definecolor{mZsIdF}{RGB}{84, 110, 52}
+        \definecolor{zkfBzj}{RGB}{77, 100, 47}
+        \definecolor{hGLHHz}{RGB}{85, 112, 52}
+        \definecolor{RLWTNi}{RGB}{83, 109, 51}
+        \definecolor{SAurKF}{RGB}{83, 108, 50}
+        \definecolor{ZcKFrL}{RGB}{71, 94, 44}
+        \definecolor{CldaSM}{RGB}{74, 96, 45}
+        \definecolor{PJLijb}{RGB}{89, 116, 55}
+        \definecolor{ephHvI}{RGB}{80, 104, 49}
+        \definecolor{SAajPO}{RGB}{78, 102, 48}
+        \definecolor{bPUUlZ}{RGB}{90, 117, 55}
+        \definecolor{IJSBRA}{RGB}{81, 106, 50}
+        \definecolor{wHpBdX}{RGB}{70, 91, 43}
+        \definecolor{VOKvfI}{RGB}{78, 102, 48}
+        \definecolor{BHdDIq}{RGB}{74, 96, 45}
+        \definecolor{gtYAIr}{RGB}{76, 100, 47}
+        \definecolor{ZNQwqX}{RGB}{90, 118, 56}
+        \definecolor{rfovRu}{RGB}{88, 115, 54}
+        \definecolor{GMAcWN}{RGB}{85, 110, 52}
+        \definecolor{SNuqnx}{RGB}{95, 124, 58}
+        \definecolor{PCEnBF}{RGB}{79, 103, 48}
+        \definecolor{KWqhOw}{RGB}{76, 99, 47}
+        \definecolor{FpMfaR}{RGB}{89, 116, 55}
+        \definecolor{jHBDvs}{RGB}{81, 106, 50}
+        \definecolor{lvLsiR}{RGB}{87, 114, 53}
+        \definecolor{ZphvPG}{RGB}{81, 105, 50}
+        \definecolor{CVumtw}{RGB}{82, 106, 49}
+        \definecolor{CxjHsz}{RGB}{101, 131, 62}
+        \definecolor{MtfpLH}{RGB}{80, 104, 49}
+        \definecolor{nnmIDe}{RGB}{81, 106, 50}
+        \definecolor{cGJNsL}{RGB}{91, 117, 55}
+        \definecolor{CyCtqW}{RGB}{71, 94, 44}
+        \definecolor{sQDKpj}{RGB}{82, 107, 50}
+        \definecolor{LrYifA}{RGB}{80, 105, 49}
+        \definecolor{GFikEc}{RGB}{78, 100, 48}
+        \definecolor{LeRHXA}{RGB}{82, 107, 51}
+        \definecolor{wfwWcM}{RGB}{81, 105, 49}
+        \definecolor{DfRXCl}{RGB}{93, 121, 57}
+        \definecolor{RYxVJi}{RGB}{88, 115, 55}
+        \definecolor{SMZORO}{RGB}{88, 116, 54}
+        \definecolor{wEWryq}{RGB}{91, 118, 56}
+        \definecolor{ApbrUu}{RGB}{79, 103, 49}
+        \definecolor{jHUhFl}{RGB}{77, 100, 47}
+        \definecolor{jgBLUN}{RGB}{86, 112, 53}
+        \definecolor{gNXqLY}{RGB}{94, 123, 58}
+        \definecolor{oVIDxQ}{RGB}{86, 113, 53}
+        \definecolor{iefPDg}{RGB}{90, 116, 55}
+        \definecolor{FkDvME}{RGB}{77, 101, 47}
+        \definecolor{KsHryT}{RGB}{92, 120, 56}
+        \definecolor{pEMuRS}{RGB}{74, 97, 45}
+        \definecolor{mNaRAQ}{RGB}{81, 106, 49}
+        \definecolor{PoTPze}{RGB}{91, 119, 56}
+        \definecolor{LDiJjT}{RGB}{78, 101, 47}
+        \definecolor{yXMaQn}{RGB}{72, 94, 44}
+        \definecolor{aEjsqy}{RGB}{73, 95, 45}
+        \definecolor{aURJJi}{RGB}{85, 112, 52}
+        \definecolor{hYYsZK}{RGB}{80, 104, 49}
+        \definecolor{WxKJqF}{RGB}{90, 117, 55}
+        \definecolor{oyWDUX}{RGB}{80, 104, 49}
+        \definecolor{sjEVZt}{RGB}{92, 120, 57}
+        \definecolor{EyJcqe}{RGB}{93, 121, 57}
+        \definecolor{XJgOqC}{RGB}{79, 103, 49}
+        \definecolor{nGVjUZ}{RGB}{73, 96, 44}
+        \definecolor{zBkwkj}{RGB}{79, 103, 48}
+        \definecolor{wLXEyd}{RGB}{95, 124, 58}
+        \definecolor{liuEXD}{RGB}{80, 103, 49}
+        \definecolor{fMUuMg}{RGB}{77, 100, 47}
+        \definecolor{yvbawF}{RGB}{84, 109, 51}
+        \definecolor{aAtIdW}{RGB}{88, 115, 54}
+        \definecolor{DAOKdn}{RGB}{79, 103, 48}
+        \definecolor{okPvTV}{RGB}{78, 102, 49}
+        \definecolor{QwsuXo}{RGB}{90, 118, 56}
+        \definecolor{rTGrJb}{RGB}{84, 109, 51}
+        \definecolor{InvrrK}{RGB}{77, 100, 47}
+        \definecolor{rkiziQ}{RGB}{85, 112, 53}
+        \definecolor{MUQbRO}{RGB}{92, 121, 56}
+        \definecolor{IxdKQG}{RGB}{88, 114, 54}
+        \definecolor{mTrkeJ}{RGB}{74, 96, 45}
+        \definecolor{mEMyuO}{RGB}{71, 92, 43}
+        \definecolor{mFeWtf}{RGB}{81, 105, 50}
+        \definecolor{SdTLIe}{RGB}{80, 104, 49}
+        \definecolor{kHkooi}{RGB}{94, 123, 58}
+        \definecolor{gaBmVu}{RGB}{94, 123, 57}
+        \definecolor{rxhkGo}{RGB}{81, 106, 50}
+        \definecolor{oJhOjV}{RGB}{75, 97, 46}
+        \definecolor{UFPFCj}{RGB}{81, 106, 50}
+        \definecolor{Luyumf}{RGB}{81, 106, 50}
+        \definecolor{LUlPsb}{RGB}{84, 109, 51}
+        \definecolor{ltwzBd}{RGB}{85, 109, 51}
+        \definecolor{sZfnKP}{RGB}{100, 131, 61}
+        \definecolor{oFHtCS}{RGB}{86, 112, 53}
+        \definecolor{GHzqSj}{RGB}{75, 98, 46}
+        \definecolor{tiiXPF}{RGB}{81, 105, 49}
+        \definecolor{OFDXDe}{RGB}{76, 99, 46}
+        \definecolor{dNOaQT}{RGB}{96, 126, 59}
+        \definecolor{kJfUTc}{RGB}{79, 103, 49}
+        \definecolor{MMOjml}{RGB}{75, 98, 46}
+        \definecolor{mpFpps}{RGB}{86, 112, 53}
+        \definecolor{ZciXnA}{RGB}{96, 124, 59}
+        \definecolor{daGRek}{RGB}{80, 104, 49}
+        \definecolor{EAsYyy}{RGB}{99, 129, 60}
+        \definecolor{HXKEgy}{RGB}{85, 112, 52}
+        \definecolor{jLxeBS}{RGB}{78, 102, 49}
+        \definecolor{ZgTJRX}{RGB}{89, 116, 54}
+        \definecolor{jItGZj}{RGB}{75, 98, 46}
+        \definecolor{uFlaUg}{RGB}{82, 106, 50}
+        \definecolor{XhxcqM}{RGB}{78, 102, 48}
+        \definecolor{SQDJES}{RGB}{75, 97, 46}
+        \definecolor{LKwgmQ}{RGB}{80, 104, 49}
+        \definecolor{PXyOAs}{RGB}{81, 107, 50}
+        \definecolor{ZAoodP}{RGB}{94, 122, 57}
+        \definecolor{QWCTAO}{RGB}{85, 111, 52}
+        \definecolor{JqpWfe}{RGB}{73, 96, 45}
+        \definecolor{hroBgC}{RGB}{77, 101, 48}
+        \definecolor{fLOhwb}{RGB}{87, 113, 53}
+        \definecolor{LFjztH}{RGB}{76, 100, 46}
+        \definecolor{BHArcD}{RGB}{83, 108, 51}
+        \definecolor{dcQGGP}{RGB}{78, 102, 48}
+        \definecolor{XTkceF}{RGB}{73, 95, 44}
+        \definecolor{iVJwLh}{RGB}{100, 130, 61}
+        \definecolor{XpTOFH}{RGB}{85, 110, 52}
+        \definecolor{loSMwf}{RGB}{82, 107, 51}
+        \definecolor{UjuDFJ}{RGB}{74, 96, 45}
+        \definecolor{XbnTYC}{RGB}{83, 107, 51}
+        \definecolor{WXwkCy}{RGB}{80, 104, 50}
+        \definecolor{tBAgyr}{RGB}{74, 96, 46}
+        \definecolor{PNdJAA}{RGB}{79, 104, 49}
+        \definecolor{lARZkA}{RGB}{84, 109, 51}
+        \definecolor{jAmciV}{RGB}{79, 102, 48}
+        \definecolor{LEEQrA}{RGB}{87, 114, 55}
+        \definecolor{fybvqD}{RGB}{93, 122, 58}
+        \definecolor{ihDjNn}{RGB}{92, 120, 56}
+        \definecolor{mHkgwW}{RGB}{83, 108, 51}
+        \definecolor{sADGsJ}{RGB}{80, 105, 49}
+        \definecolor{hgQeLH}{RGB}{75, 97, 46}
+        \definecolor{DLCHCf}{RGB}{77, 100, 47}
+        \definecolor{DgCwbr}{RGB}{84, 109, 51}
+        \definecolor{AzKxQm}{RGB}{83, 108, 51}
+        \definecolor{bnJTWc}{RGB}{78, 103, 48}
+        \definecolor{JKEfpD}{RGB}{75, 97, 46}
+        \definecolor{KrKDZr}{RGB}{76, 100, 47}
+        \definecolor{IoBvIm}{RGB}{85, 111, 52}
+        \definecolor{DIixmp}{RGB}{94, 122, 58}
+        \definecolor{vJdwcE}{RGB}{83, 109, 51}
+        \definecolor{VnobZU}{RGB}{75, 97, 46}
+        \definecolor{VgeNUz}{RGB}{73, 94, 45}
+        \definecolor{sKkDSU}{RGB}{76, 99, 47}
+        \definecolor{fOiefA}{RGB}{86, 112, 53}
+        \definecolor{FTmKzx}{RGB}{96, 125, 59}
+        \definecolor{mTWkop}{RGB}{79, 103, 48}
+        \definecolor{AafYLV}{RGB}{80, 105, 50}
+        \definecolor{WeCFir}{RGB}{85, 110, 52}
+        \definecolor{ODSFWg}{RGB}{94, 123, 58}
+        \definecolor{qWaPSC}{RGB}{86, 114, 53}
+        \definecolor{zYfROM}{RGB}{76, 100, 47}
+        \definecolor{lFZJmg}{RGB}{83, 108, 51}
+        \definecolor{bFbIFy}{RGB}{78, 101, 48}
+        \definecolor{TZSZpp}{RGB}{83, 109, 51}
+        \definecolor{ROPFZG}{RGB}{92, 120, 57}
+        \definecolor{hzmSSK}{RGB}{77, 100, 47}
+        \definecolor{mgGETD}{RGB}{80, 104, 49}
+        \definecolor{touIxA}{RGB}{81, 105, 50}
+        \definecolor{FOyoHJ}{RGB}{92, 119, 56}
+        \definecolor{UhdMRB}{RGB}{80, 104, 48}
+        \definecolor{utTDZX}{RGB}{77, 100, 48}
+        \definecolor{cGTXSf}{RGB}{84, 110, 51}
+        \definecolor{toqozF}{RGB}{84, 109, 52}
+        \definecolor{PmBgQt}{RGB}{76, 99, 47}
+        \definecolor{MBFTKR}{RGB}{96, 124, 59}
+        \definecolor{sIGXaC}{RGB}{91, 120, 57}
+        \definecolor{NztxiQ}{RGB}{76, 100, 47}
+        \definecolor{aXMDYf}{RGB}{84, 110, 51}
+        \definecolor{bxevoq}{RGB}{76, 100, 47}
+        \definecolor{wquTYQ}{RGB}{83, 108, 51}
+        \definecolor{FtFGBR}{RGB}{80, 104, 49}
+        \definecolor{zNLzYK}{RGB}{88, 114, 54}
+        \definecolor{MYaKXH}{RGB}{83, 107, 50}
+        \definecolor{bCYPPQ}{RGB}{81, 106, 50}
+        \definecolor{leZssD}{RGB}{94, 122, 58}
+        \definecolor{IeIqDR}{RGB}{83, 108, 51}
+        \definecolor{JSXhvp}{RGB}{89, 115, 54}
+        \definecolor{KImTaI}{RGB}{89, 116, 55}
+        \definecolor{SsMuws}{RGB}{80, 103, 49}
+        \definecolor{gPyhBi}{RGB}{78, 103, 48}
+        \definecolor{xSfqbk}{RGB}{76, 99, 46}
+        \definecolor{nHYkOS}{RGB}{78, 102, 48}
+        \definecolor{eKZuqn}{RGB}{85, 110, 52}
+        \definecolor{RMVdDU}{RGB}{87, 113, 53}
+        \definecolor{Gtnwqh}{RGB}{73, 96, 44}
+        \definecolor{HyjsnK}{RGB}{79, 103, 49}
+        \definecolor{okHefp}{RGB}{89, 117, 55}
+        \definecolor{WnUPTw}{RGB}{74, 97, 46}
+        \definecolor{HUVpNa}{RGB}{89, 116, 55}
+        \definecolor{vQoKtL}{RGB}{88, 115, 54}
+        \definecolor{pVIjoo}{RGB}{99, 130, 61}
+        \definecolor{yZjMvM}{RGB}{99, 128, 60}
+        \definecolor{SfcfgY}{RGB}{87, 113, 54}
+        \definecolor{webyuG}{RGB}{79, 102, 48}
+        \definecolor{aYMoKt}{RGB}{72, 95, 45}
+        \definecolor{KRiUIB}{RGB}{72, 95, 44}
+        \definecolor{XbbwRO}{RGB}{98, 128, 60}
+        \definecolor{TdwyAz}{RGB}{80, 104, 49}
+        \definecolor{ZnMmmR}{RGB}{103, 133, 63}
+        \definecolor{FtKcWx}{RGB}{82, 107, 51}
+        \definecolor{HXEDNX}{RGB}{78, 102, 48}
+        \definecolor{lXaghO}{RGB}{75, 97, 46}
+        \definecolor{eotYVa}{RGB}{78, 102, 48}
+        \definecolor{rIfRiZ}{RGB}{83, 109, 51}
+        \definecolor{cpeCGF}{RGB}{86, 111, 53}
+        \definecolor{mjascv}{RGB}{80, 103, 49}
+        \definecolor{bDRmkr}{RGB}{87, 113, 54}
+        \definecolor{WlytRJ}{RGB}{79, 103, 49}
+        \definecolor{KBuwQl}{RGB}{88, 114, 54}
+        \definecolor{xhhnZh}{RGB}{91, 120, 57}
+        \definecolor{PDvGha}{RGB}{86, 112, 52}
+        \definecolor{rVzeCV}{RGB}{89, 116, 55}
+        \definecolor{YTdlAO}{RGB}{92, 120, 56}
+        \definecolor{yHttld}{RGB}{84, 110, 51}
+        \definecolor{DKeRck}{RGB}{86, 112, 53}
+        \definecolor{eMzjgh}{RGB}{84, 109, 52}
+        \definecolor{HPpEJf}{RGB}{87, 113, 53}
+        \definecolor{ColKkU}{RGB}{70, 92, 43}
+        \definecolor{okSycu}{RGB}{86, 114, 53}
+        \definecolor{AtflZG}{RGB}{85, 111, 52}
+        \definecolor{wTklmV}{RGB}{74, 97, 45}
+        \definecolor{ONcoPT}{RGB}{80, 104, 49}
+        \definecolor{mtktFb}{RGB}{91, 119, 56}
+        \definecolor{lGGkGJ}{RGB}{84, 110, 52}
+        \definecolor{eBhoff}{RGB}{86, 111, 52}
+        \definecolor{nIJGOc}{RGB}{80, 105, 49}
+        \definecolor{rzDXir}{RGB}{98, 129, 60}
+        \definecolor{YgHNuY}{RGB}{79, 104, 48}
+        \definecolor{LFZWRB}{RGB}{89, 115, 54}
+        \definecolor{BlExfZ}{RGB}{78, 101, 48}
+
+        % Draw commands
+
+        % Row 1
+        \path[fill=fVhyVS] (0, 16, 16) -- (1, 16, 16) -- (1, 15, 16) -- (0, 15, 16) -- cycle;
+        \path[fill=CugfwD] (1, 16, 16) -- (2, 16, 16) -- (2, 15, 16) -- (1, 15, 16) -- cycle;
+        \path[fill=FuZhWv] (2, 16, 16) -- (3, 16, 16) -- (3, 15, 16) -- (2, 15, 16) -- cycle;
+        \path[fill=vGdQBM] (3, 16, 16) -- (4, 16, 16) -- (4, 15, 16) -- (3, 15, 16) -- cycle;
+        \path[fill=zXxcRo] (4, 16, 16) -- (5, 16, 16) -- (5, 15, 16) -- (4, 15, 16) -- cycle;
+        \path[fill=WHGkLH] (5, 16, 16) -- (6, 16, 16) -- (6, 15, 16) -- (5, 15, 16) -- cycle;
+        \path[fill=MasWYH] (6, 16, 16) -- (7, 16, 16) -- (7, 15, 16) -- (6, 15, 16) -- cycle;
+        \path[fill=tpCxpp] (7, 16, 16) -- (8, 16, 16) -- (8, 15, 16) -- (7, 15, 16) -- cycle;
+        \path[fill=dEUMaa] (8, 16, 16) -- (9, 16, 16) -- (9, 15, 16) -- (8, 15, 16) -- cycle;
+        \path[fill=AZWgHy] (9, 16, 16) -- (10, 16, 16) -- (10, 15, 16) -- (9, 15, 16) -- cycle;
+        \path[fill=hyqmHg] (10, 16, 16) -- (11, 16, 16) -- (11, 15, 16) -- (10, 15, 16) -- cycle;
+        \path[fill=GMLQBc] (11, 16, 16) -- (12, 16, 16) -- (12, 15, 16) -- (11, 15, 16) -- cycle;
+        \path[fill=QoihXH] (12, 16, 16) -- (13, 16, 16) -- (13, 15, 16) -- (12, 15, 16) -- cycle;
+        \path[fill=sNkIev] (13, 16, 16) -- (14, 16, 16) -- (14, 15, 16) -- (13, 15, 16) -- cycle;
+        \path[fill=eYVrag] (14, 16, 16) -- (15, 16, 16) -- (15, 15, 16) -- (14, 15, 16) -- cycle;
+        \path[fill=aiXcPg] (15, 16, 16) -- (16, 16, 16) -- (16, 15, 16) -- (15, 15, 16) -- cycle;
+
+        % Row 2
+        \path[fill=HoDBwz] (0, 15, 16) -- (1, 15, 16) -- (1, 14, 16) -- (0, 14, 16) -- cycle;
+        \path[fill=fuqBZE] (1, 15, 16) -- (2, 15, 16) -- (2, 14, 16) -- (1, 14, 16) -- cycle;
+        \path[fill=oojNCI] (2, 15, 16) -- (3, 15, 16) -- (3, 14, 16) -- (2, 14, 16) -- cycle;
+        \path[fill=lBtUVm] (3, 15, 16) -- (4, 15, 16) -- (4, 14, 16) -- (3, 14, 16) -- cycle;
+        \path[fill=xfmqOG] (4, 15, 16) -- (5, 15, 16) -- (5, 14, 16) -- (4, 14, 16) -- cycle;
+        \path[fill=vgBVeZ] (5, 15, 16) -- (6, 15, 16) -- (6, 14, 16) -- (5, 14, 16) -- cycle;
+        \path[fill=mZsIdF] (6, 15, 16) -- (7, 15, 16) -- (7, 14, 16) -- (6, 14, 16) -- cycle;
+        \path[fill=zkfBzj] (7, 15, 16) -- (8, 15, 16) -- (8, 14, 16) -- (7, 14, 16) -- cycle;
+        \path[fill=hGLHHz] (8, 15, 16) -- (9, 15, 16) -- (9, 14, 16) -- (8, 14, 16) -- cycle;
+        \path[fill=RLWTNi] (9, 15, 16) -- (10, 15, 16) -- (10, 14, 16) -- (9, 14, 16) -- cycle;
+        \path[fill=SAurKF] (10, 15, 16) -- (11, 15, 16) -- (11, 14, 16) -- (10, 14, 16) -- cycle;
+        \path[fill=ZcKFrL] (11, 15, 16) -- (12, 15, 16) -- (12, 14, 16) -- (11, 14, 16) -- cycle;
+        \path[fill=CldaSM] (12, 15, 16) -- (13, 15, 16) -- (13, 14, 16) -- (12, 14, 16) -- cycle;
+        \path[fill=PJLijb] (13, 15, 16) -- (14, 15, 16) -- (14, 14, 16) -- (13, 14, 16) -- cycle;
+        \path[fill=ephHvI] (14, 15, 16) -- (15, 15, 16) -- (15, 14, 16) -- (14, 14, 16) -- cycle;
+        \path[fill=SAajPO] (15, 15, 16) -- (16, 15, 16) -- (16, 14, 16) -- (15, 14, 16) -- cycle;
+
+        % Row 3
+        \path[fill=bPUUlZ] (0, 14, 16) -- (1, 14, 16) -- (1, 13, 16) -- (0, 13, 16) -- cycle;
+        \path[fill=IJSBRA] (1, 14, 16) -- (2, 14, 16) -- (2, 13, 16) -- (1, 13, 16) -- cycle;
+        \path[fill=wHpBdX] (2, 14, 16) -- (3, 14, 16) -- (3, 13, 16) -- (2, 13, 16) -- cycle;
+        \path[fill=VOKvfI] (3, 14, 16) -- (4, 14, 16) -- (4, 13, 16) -- (3, 13, 16) -- cycle;
+        \path[fill=BHdDIq] (4, 14, 16) -- (5, 14, 16) -- (5, 13, 16) -- (4, 13, 16) -- cycle;
+        \path[fill=gtYAIr] (5, 14, 16) -- (6, 14, 16) -- (6, 13, 16) -- (5, 13, 16) -- cycle;
+        \path[fill=ZNQwqX] (6, 14, 16) -- (7, 14, 16) -- (7, 13, 16) -- (6, 13, 16) -- cycle;
+        \path[fill=rfovRu] (7, 14, 16) -- (8, 14, 16) -- (8, 13, 16) -- (7, 13, 16) -- cycle;
+        \path[fill=GMAcWN] (8, 14, 16) -- (9, 14, 16) -- (9, 13, 16) -- (8, 13, 16) -- cycle;
+        \path[fill=SNuqnx] (9, 14, 16) -- (10, 14, 16) -- (10, 13, 16) -- (9, 13, 16) -- cycle;
+        \path[fill=PCEnBF] (10, 14, 16) -- (11, 14, 16) -- (11, 13, 16) -- (10, 13, 16) -- cycle;
+        \path[fill=KWqhOw] (11, 14, 16) -- (12, 14, 16) -- (12, 13, 16) -- (11, 13, 16) -- cycle;
+        \path[fill=FpMfaR] (12, 14, 16) -- (13, 14, 16) -- (13, 13, 16) -- (12, 13, 16) -- cycle;
+        \path[fill=jHBDvs] (13, 14, 16) -- (14, 14, 16) -- (14, 13, 16) -- (13, 13, 16) -- cycle;
+        \path[fill=lvLsiR] (14, 14, 16) -- (15, 14, 16) -- (15, 13, 16) -- (14, 13, 16) -- cycle;
+        \path[fill=ZphvPG] (15, 14, 16) -- (16, 14, 16) -- (16, 13, 16) -- (15, 13, 16) -- cycle;
+
+        % Row 4
+        \path[fill=CVumtw] (0, 13, 16) -- (1, 13, 16) -- (1, 12, 16) -- (0, 12, 16) -- cycle;
+        \path[fill=CxjHsz] (1, 13, 16) -- (2, 13, 16) -- (2, 12, 16) -- (1, 12, 16) -- cycle;
+        \path[fill=MtfpLH] (2, 13, 16) -- (3, 13, 16) -- (3, 12, 16) -- (2, 12, 16) -- cycle;
+        \path[fill=nnmIDe] (3, 13, 16) -- (4, 13, 16) -- (4, 12, 16) -- (3, 12, 16) -- cycle;
+        \path[fill=cGJNsL] (4, 13, 16) -- (5, 13, 16) -- (5, 12, 16) -- (4, 12, 16) -- cycle;
+        \path[fill=CyCtqW] (5, 13, 16) -- (6, 13, 16) -- (6, 12, 16) -- (5, 12, 16) -- cycle;
+        \path[fill=sQDKpj] (6, 13, 16) -- (7, 13, 16) -- (7, 12, 16) -- (6, 12, 16) -- cycle;
+        \path[fill=LrYifA] (7, 13, 16) -- (8, 13, 16) -- (8, 12, 16) -- (7, 12, 16) -- cycle;
+        \path[fill=GFikEc] (8, 13, 16) -- (9, 13, 16) -- (9, 12, 16) -- (8, 12, 16) -- cycle;
+        \path[fill=LeRHXA] (9, 13, 16) -- (10, 13, 16) -- (10, 12, 16) -- (9, 12, 16) -- cycle;
+        \path[fill=wfwWcM] (10, 13, 16) -- (11, 13, 16) -- (11, 12, 16) -- (10, 12, 16) -- cycle;
+        \path[fill=DfRXCl] (11, 13, 16) -- (12, 13, 16) -- (12, 12, 16) -- (11, 12, 16) -- cycle;
+        \path[fill=RYxVJi] (12, 13, 16) -- (13, 13, 16) -- (13, 12, 16) -- (12, 12, 16) -- cycle;
+        \path[fill=SMZORO] (13, 13, 16) -- (14, 13, 16) -- (14, 12, 16) -- (13, 12, 16) -- cycle;
+        \path[fill=wEWryq] (14, 13, 16) -- (15, 13, 16) -- (15, 12, 16) -- (14, 12, 16) -- cycle;
+        \path[fill=ApbrUu] (15, 13, 16) -- (16, 13, 16) -- (16, 12, 16) -- (15, 12, 16) -- cycle;
+
+        % Row 5
+        \path[fill=jHUhFl] (0, 12, 16) -- (1, 12, 16) -- (1, 11, 16) -- (0, 11, 16) -- cycle;
+        \path[fill=jgBLUN] (1, 12, 16) -- (2, 12, 16) -- (2, 11, 16) -- (1, 11, 16) -- cycle;
+        \path[fill=gNXqLY] (2, 12, 16) -- (3, 12, 16) -- (3, 11, 16) -- (2, 11, 16) -- cycle;
+        \path[fill=oVIDxQ] (3, 12, 16) -- (4, 12, 16) -- (4, 11, 16) -- (3, 11, 16) -- cycle;
+        \path[fill=iefPDg] (4, 12, 16) -- (5, 12, 16) -- (5, 11, 16) -- (4, 11, 16) -- cycle;
+        \path[fill=FkDvME] (5, 12, 16) -- (6, 12, 16) -- (6, 11, 16) -- (5, 11, 16) -- cycle;
+        \path[fill=KsHryT] (6, 12, 16) -- (7, 12, 16) -- (7, 11, 16) -- (6, 11, 16) -- cycle;
+        \path[fill=pEMuRS] (7, 12, 16) -- (8, 12, 16) -- (8, 11, 16) -- (7, 11, 16) -- cycle;
+        \path[fill=mNaRAQ] (8, 12, 16) -- (9, 12, 16) -- (9, 11, 16) -- (8, 11, 16) -- cycle;
+        \path[fill=PoTPze] (9, 12, 16) -- (10, 12, 16) -- (10, 11, 16) -- (9, 11, 16) -- cycle;
+        \path[fill=LDiJjT] (10, 12, 16) -- (11, 12, 16) -- (11, 11, 16) -- (10, 11, 16) -- cycle;
+        \path[fill=yXMaQn] (11, 12, 16) -- (12, 12, 16) -- (12, 11, 16) -- (11, 11, 16) -- cycle;
+        \path[fill=aEjsqy] (12, 12, 16) -- (13, 12, 16) -- (13, 11, 16) -- (12, 11, 16) -- cycle;
+        \path[fill=aURJJi] (13, 12, 16) -- (14, 12, 16) -- (14, 11, 16) -- (13, 11, 16) -- cycle;
+        \path[fill=hYYsZK] (14, 12, 16) -- (15, 12, 16) -- (15, 11, 16) -- (14, 11, 16) -- cycle;
+        \path[fill=WxKJqF] (15, 12, 16) -- (16, 12, 16) -- (16, 11, 16) -- (15, 11, 16) -- cycle;
+
+        % Row 6
+        \path[fill=oyWDUX] (0, 11, 16) -- (1, 11, 16) -- (1, 10, 16) -- (0, 10, 16) -- cycle;
+        \path[fill=sjEVZt] (1, 11, 16) -- (2, 11, 16) -- (2, 10, 16) -- (1, 10, 16) -- cycle;
+        \path[fill=EyJcqe] (2, 11, 16) -- (3, 11, 16) -- (3, 10, 16) -- (2, 10, 16) -- cycle;
+        \path[fill=XJgOqC] (3, 11, 16) -- (4, 11, 16) -- (4, 10, 16) -- (3, 10, 16) -- cycle;
+        \path[fill=nGVjUZ] (4, 11, 16) -- (5, 11, 16) -- (5, 10, 16) -- (4, 10, 16) -- cycle;
+        \path[fill=zBkwkj] (5, 11, 16) -- (6, 11, 16) -- (6, 10, 16) -- (5, 10, 16) -- cycle;
+        \path[fill=wLXEyd] (6, 11, 16) -- (7, 11, 16) -- (7, 10, 16) -- (6, 10, 16) -- cycle;
+        \path[fill=liuEXD] (7, 11, 16) -- (8, 11, 16) -- (8, 10, 16) -- (7, 10, 16) -- cycle;
+        \path[fill=fMUuMg] (8, 11, 16) -- (9, 11, 16) -- (9, 10, 16) -- (8, 10, 16) -- cycle;
+        \path[fill=yvbawF] (9, 11, 16) -- (10, 11, 16) -- (10, 10, 16) -- (9, 10, 16) -- cycle;
+        \path[fill=aAtIdW] (10, 11, 16) -- (11, 11, 16) -- (11, 10, 16) -- (10, 10, 16) -- cycle;
+        \path[fill=DAOKdn] (11, 11, 16) -- (12, 11, 16) -- (12, 10, 16) -- (11, 10, 16) -- cycle;
+        \path[fill=okPvTV] (12, 11, 16) -- (13, 11, 16) -- (13, 10, 16) -- (12, 10, 16) -- cycle;
+        \path[fill=QwsuXo] (13, 11, 16) -- (14, 11, 16) -- (14, 10, 16) -- (13, 10, 16) -- cycle;
+        \path[fill=rTGrJb] (14, 11, 16) -- (15, 11, 16) -- (15, 10, 16) -- (14, 10, 16) -- cycle;
+        \path[fill=InvrrK] (15, 11, 16) -- (16, 11, 16) -- (16, 10, 16) -- (15, 10, 16) -- cycle;
+
+        % Row 7
+        \path[fill=rkiziQ] (0, 10, 16) -- (1, 10, 16) -- (1, 9, 16) -- (0, 9, 16) -- cycle;
+        \path[fill=MUQbRO] (1, 10, 16) -- (2, 10, 16) -- (2, 9, 16) -- (1, 9, 16) -- cycle;
+        \path[fill=IxdKQG] (2, 10, 16) -- (3, 10, 16) -- (3, 9, 16) -- (2, 9, 16) -- cycle;
+        \path[fill=mTrkeJ] (3, 10, 16) -- (4, 10, 16) -- (4, 9, 16) -- (3, 9, 16) -- cycle;
+        \path[fill=mEMyuO] (4, 10, 16) -- (5, 10, 16) -- (5, 9, 16) -- (4, 9, 16) -- cycle;
+        \path[fill=mFeWtf] (5, 10, 16) -- (6, 10, 16) -- (6, 9, 16) -- (5, 9, 16) -- cycle;
+        \path[fill=SdTLIe] (6, 10, 16) -- (7, 10, 16) -- (7, 9, 16) -- (6, 9, 16) -- cycle;
+        \path[fill=kHkooi] (7, 10, 16) -- (8, 10, 16) -- (8, 9, 16) -- (7, 9, 16) -- cycle;
+        \path[fill=gaBmVu] (8, 10, 16) -- (9, 10, 16) -- (9, 9, 16) -- (8, 9, 16) -- cycle;
+        \path[fill=rxhkGo] (9, 10, 16) -- (10, 10, 16) -- (10, 9, 16) -- (9, 9, 16) -- cycle;
+        \path[fill=oJhOjV] (10, 10, 16) -- (11, 10, 16) -- (11, 9, 16) -- (10, 9, 16) -- cycle;
+        \path[fill=UFPFCj] (11, 10, 16) -- (12, 10, 16) -- (12, 9, 16) -- (11, 9, 16) -- cycle;
+        \path[fill=Luyumf] (12, 10, 16) -- (13, 10, 16) -- (13, 9, 16) -- (12, 9, 16) -- cycle;
+        \path[fill=LUlPsb] (13, 10, 16) -- (14, 10, 16) -- (14, 9, 16) -- (13, 9, 16) -- cycle;
+        \path[fill=ltwzBd] (14, 10, 16) -- (15, 10, 16) -- (15, 9, 16) -- (14, 9, 16) -- cycle;
+        \path[fill=sZfnKP] (15, 10, 16) -- (16, 10, 16) -- (16, 9, 16) -- (15, 9, 16) -- cycle;
+
+        % Row 8
+        \path[fill=oFHtCS] (0, 9, 16) -- (1, 9, 16) -- (1, 8, 16) -- (0, 8, 16) -- cycle;
+        \path[fill=GHzqSj] (1, 9, 16) -- (2, 9, 16) -- (2, 8, 16) -- (1, 8, 16) -- cycle;
+        \path[fill=tiiXPF] (2, 9, 16) -- (3, 9, 16) -- (3, 8, 16) -- (2, 8, 16) -- cycle;
+        \path[fill=OFDXDe] (3, 9, 16) -- (4, 9, 16) -- (4, 8, 16) -- (3, 8, 16) -- cycle;
+        \path[fill=dNOaQT] (4, 9, 16) -- (5, 9, 16) -- (5, 8, 16) -- (4, 8, 16) -- cycle;
+        \path[fill=kJfUTc] (5, 9, 16) -- (6, 9, 16) -- (6, 8, 16) -- (5, 8, 16) -- cycle;
+        \path[fill=MMOjml] (6, 9, 16) -- (7, 9, 16) -- (7, 8, 16) -- (6, 8, 16) -- cycle;
+        \path[fill=mpFpps] (7, 9, 16) -- (8, 9, 16) -- (8, 8, 16) -- (7, 8, 16) -- cycle;
+        \path[fill=ZciXnA] (8, 9, 16) -- (9, 9, 16) -- (9, 8, 16) -- (8, 8, 16) -- cycle;
+        \path[fill=daGRek] (9, 9, 16) -- (10, 9, 16) -- (10, 8, 16) -- (9, 8, 16) -- cycle;
+        \path[fill=EAsYyy] (10, 9, 16) -- (11, 9, 16) -- (11, 8, 16) -- (10, 8, 16) -- cycle;
+        \path[fill=HXKEgy] (11, 9, 16) -- (12, 9, 16) -- (12, 8, 16) -- (11, 8, 16) -- cycle;
+        \path[fill=jLxeBS] (12, 9, 16) -- (13, 9, 16) -- (13, 8, 16) -- (12, 8, 16) -- cycle;
+        \path[fill=ZgTJRX] (13, 9, 16) -- (14, 9, 16) -- (14, 8, 16) -- (13, 8, 16) -- cycle;
+        \path[fill=jItGZj] (14, 9, 16) -- (15, 9, 16) -- (15, 8, 16) -- (14, 8, 16) -- cycle;
+        \path[fill=uFlaUg] (15, 9, 16) -- (16, 9, 16) -- (16, 8, 16) -- (15, 8, 16) -- cycle;
+
+        % Row 9
+        \path[fill=XhxcqM] (0, 8, 16) -- (1, 8, 16) -- (1, 7, 16) -- (0, 7, 16) -- cycle;
+        \path[fill=SQDJES] (1, 8, 16) -- (2, 8, 16) -- (2, 7, 16) -- (1, 7, 16) -- cycle;
+        \path[fill=LKwgmQ] (2, 8, 16) -- (3, 8, 16) -- (3, 7, 16) -- (2, 7, 16) -- cycle;
+        \path[fill=PXyOAs] (3, 8, 16) -- (4, 8, 16) -- (4, 7, 16) -- (3, 7, 16) -- cycle;
+        \path[fill=ZAoodP] (4, 8, 16) -- (5, 8, 16) -- (5, 7, 16) -- (4, 7, 16) -- cycle;
+        \path[fill=QWCTAO] (5, 8, 16) -- (6, 8, 16) -- (6, 7, 16) -- (5, 7, 16) -- cycle;
+        \path[fill=JqpWfe] (6, 8, 16) -- (7, 8, 16) -- (7, 7, 16) -- (6, 7, 16) -- cycle;
+        \path[fill=hroBgC] (7, 8, 16) -- (8, 8, 16) -- (8, 7, 16) -- (7, 7, 16) -- cycle;
+        \path[fill=fLOhwb] (8, 8, 16) -- (9, 8, 16) -- (9, 7, 16) -- (8, 7, 16) -- cycle;
+        \path[fill=LFjztH] (9, 8, 16) -- (10, 8, 16) -- (10, 7, 16) -- (9, 7, 16) -- cycle;
+        \path[fill=BHArcD] (10, 8, 16) -- (11, 8, 16) -- (11, 7, 16) -- (10, 7, 16) -- cycle;
+        \path[fill=dcQGGP] (11, 8, 16) -- (12, 8, 16) -- (12, 7, 16) -- (11, 7, 16) -- cycle;
+        \path[fill=XTkceF] (12, 8, 16) -- (13, 8, 16) -- (13, 7, 16) -- (12, 7, 16) -- cycle;
+        \path[fill=iVJwLh] (13, 8, 16) -- (14, 8, 16) -- (14, 7, 16) -- (13, 7, 16) -- cycle;
+        \path[fill=XpTOFH] (14, 8, 16) -- (15, 8, 16) -- (15, 7, 16) -- (14, 7, 16) -- cycle;
+        \path[fill=loSMwf] (15, 8, 16) -- (16, 8, 16) -- (16, 7, 16) -- (15, 7, 16) -- cycle;
+
+        % Row 10
+        \path[fill=UjuDFJ] (0, 7, 16) -- (1, 7, 16) -- (1, 6, 16) -- (0, 6, 16) -- cycle;
+        \path[fill=XbnTYC] (1, 7, 16) -- (2, 7, 16) -- (2, 6, 16) -- (1, 6, 16) -- cycle;
+        \path[fill=WXwkCy] (2, 7, 16) -- (3, 7, 16) -- (3, 6, 16) -- (2, 6, 16) -- cycle;
+        \path[fill=tBAgyr] (3, 7, 16) -- (4, 7, 16) -- (4, 6, 16) -- (3, 6, 16) -- cycle;
+        \path[fill=PNdJAA] (4, 7, 16) -- (5, 7, 16) -- (5, 6, 16) -- (4, 6, 16) -- cycle;
+        \path[fill=lARZkA] (5, 7, 16) -- (6, 7, 16) -- (6, 6, 16) -- (5, 6, 16) -- cycle;
+        \path[fill=jAmciV] (6, 7, 16) -- (7, 7, 16) -- (7, 6, 16) -- (6, 6, 16) -- cycle;
+        \path[fill=LEEQrA] (7, 7, 16) -- (8, 7, 16) -- (8, 6, 16) -- (7, 6, 16) -- cycle;
+        \path[fill=fybvqD] (8, 7, 16) -- (9, 7, 16) -- (9, 6, 16) -- (8, 6, 16) -- cycle;
+        \path[fill=ihDjNn] (9, 7, 16) -- (10, 7, 16) -- (10, 6, 16) -- (9, 6, 16) -- cycle;
+        \path[fill=mHkgwW] (10, 7, 16) -- (11, 7, 16) -- (11, 6, 16) -- (10, 6, 16) -- cycle;
+        \path[fill=sADGsJ] (11, 7, 16) -- (12, 7, 16) -- (12, 6, 16) -- (11, 6, 16) -- cycle;
+        \path[fill=hgQeLH] (12, 7, 16) -- (13, 7, 16) -- (13, 6, 16) -- (12, 6, 16) -- cycle;
+        \path[fill=DLCHCf] (13, 7, 16) -- (14, 7, 16) -- (14, 6, 16) -- (13, 6, 16) -- cycle;
+        \path[fill=DgCwbr] (14, 7, 16) -- (15, 7, 16) -- (15, 6, 16) -- (14, 6, 16) -- cycle;
+        \path[fill=AzKxQm] (15, 7, 16) -- (16, 7, 16) -- (16, 6, 16) -- (15, 6, 16) -- cycle;
+
+        % Row 11
+        \path[fill=bnJTWc] (0, 6, 16) -- (1, 6, 16) -- (1, 5, 16) -- (0, 5, 16) -- cycle;
+        \path[fill=JKEfpD] (1, 6, 16) -- (2, 6, 16) -- (2, 5, 16) -- (1, 5, 16) -- cycle;
+        \path[fill=KrKDZr] (2, 6, 16) -- (3, 6, 16) -- (3, 5, 16) -- (2, 5, 16) -- cycle;
+        \path[fill=IoBvIm] (3, 6, 16) -- (4, 6, 16) -- (4, 5, 16) -- (3, 5, 16) -- cycle;
+        \path[fill=DIixmp] (4, 6, 16) -- (5, 6, 16) -- (5, 5, 16) -- (4, 5, 16) -- cycle;
+        \path[fill=vJdwcE] (5, 6, 16) -- (6, 6, 16) -- (6, 5, 16) -- (5, 5, 16) -- cycle;
+        \path[fill=VnobZU] (6, 6, 16) -- (7, 6, 16) -- (7, 5, 16) -- (6, 5, 16) -- cycle;
+        \path[fill=VgeNUz] (7, 6, 16) -- (8, 6, 16) -- (8, 5, 16) -- (7, 5, 16) -- cycle;
+        \path[fill=sKkDSU] (8, 6, 16) -- (9, 6, 16) -- (9, 5, 16) -- (8, 5, 16) -- cycle;
+        \path[fill=fOiefA] (9, 6, 16) -- (10, 6, 16) -- (10, 5, 16) -- (9, 5, 16) -- cycle;
+        \path[fill=FTmKzx] (10, 6, 16) -- (11, 6, 16) -- (11, 5, 16) -- (10, 5, 16) -- cycle;
+        \path[fill=mTWkop] (11, 6, 16) -- (12, 6, 16) -- (12, 5, 16) -- (11, 5, 16) -- cycle;
+        \path[fill=AafYLV] (12, 6, 16) -- (13, 6, 16) -- (13, 5, 16) -- (12, 5, 16) -- cycle;
+        \path[fill=WeCFir] (13, 6, 16) -- (14, 6, 16) -- (14, 5, 16) -- (13, 5, 16) -- cycle;
+        \path[fill=ODSFWg] (14, 6, 16) -- (15, 6, 16) -- (15, 5, 16) -- (14, 5, 16) -- cycle;
+        \path[fill=qWaPSC] (15, 6, 16) -- (16, 6, 16) -- (16, 5, 16) -- (15, 5, 16) -- cycle;
+
+        % Row 12
+        \path[fill=zYfROM] (0, 5, 16) -- (1, 5, 16) -- (1, 4, 16) -- (0, 4, 16) -- cycle;
+        \path[fill=lFZJmg] (1, 5, 16) -- (2, 5, 16) -- (2, 4, 16) -- (1, 4, 16) -- cycle;
+        \path[fill=bFbIFy] (2, 5, 16) -- (3, 5, 16) -- (3, 4, 16) -- (2, 4, 16) -- cycle;
+        \path[fill=TZSZpp] (3, 5, 16) -- (4, 5, 16) -- (4, 4, 16) -- (3, 4, 16) -- cycle;
+        \path[fill=ROPFZG] (4, 5, 16) -- (5, 5, 16) -- (5, 4, 16) -- (4, 4, 16) -- cycle;
+        \path[fill=hzmSSK] (5, 5, 16) -- (6, 5, 16) -- (6, 4, 16) -- (5, 4, 16) -- cycle;
+        \path[fill=mgGETD] (6, 5, 16) -- (7, 5, 16) -- (7, 4, 16) -- (6, 4, 16) -- cycle;
+        \path[fill=touIxA] (7, 5, 16) -- (8, 5, 16) -- (8, 4, 16) -- (7, 4, 16) -- cycle;
+        \path[fill=FOyoHJ] (8, 5, 16) -- (9, 5, 16) -- (9, 4, 16) -- (8, 4, 16) -- cycle;
+        \path[fill=UhdMRB] (9, 5, 16) -- (10, 5, 16) -- (10, 4, 16) -- (9, 4, 16) -- cycle;
+        \path[fill=utTDZX] (10, 5, 16) -- (11, 5, 16) -- (11, 4, 16) -- (10, 4, 16) -- cycle;
+        \path[fill=cGTXSf] (11, 5, 16) -- (12, 5, 16) -- (12, 4, 16) -- (11, 4, 16) -- cycle;
+        \path[fill=toqozF] (12, 5, 16) -- (13, 5, 16) -- (13, 4, 16) -- (12, 4, 16) -- cycle;
+        \path[fill=PmBgQt] (13, 5, 16) -- (14, 5, 16) -- (14, 4, 16) -- (13, 4, 16) -- cycle;
+        \path[fill=MBFTKR] (14, 5, 16) -- (15, 5, 16) -- (15, 4, 16) -- (14, 4, 16) -- cycle;
+        \path[fill=sIGXaC] (15, 5, 16) -- (16, 5, 16) -- (16, 4, 16) -- (15, 4, 16) -- cycle;
+
+        % Row 13
+        \path[fill=NztxiQ] (0, 4, 16) -- (1, 4, 16) -- (1, 3, 16) -- (0, 3, 16) -- cycle;
+        \path[fill=aXMDYf] (1, 4, 16) -- (2, 4, 16) -- (2, 3, 16) -- (1, 3, 16) -- cycle;
+        \path[fill=bxevoq] (2, 4, 16) -- (3, 4, 16) -- (3, 3, 16) -- (2, 3, 16) -- cycle;
+        \path[fill=wquTYQ] (3, 4, 16) -- (4, 4, 16) -- (4, 3, 16) -- (3, 3, 16) -- cycle;
+        \path[fill=FtFGBR] (4, 4, 16) -- (5, 4, 16) -- (5, 3, 16) -- (4, 3, 16) -- cycle;
+        \path[fill=zNLzYK] (5, 4, 16) -- (6, 4, 16) -- (6, 3, 16) -- (5, 3, 16) -- cycle;
+        \path[fill=MYaKXH] (6, 4, 16) -- (7, 4, 16) -- (7, 3, 16) -- (6, 3, 16) -- cycle;
+        \path[fill=bCYPPQ] (7, 4, 16) -- (8, 4, 16) -- (8, 3, 16) -- (7, 3, 16) -- cycle;
+        \path[fill=leZssD] (8, 4, 16) -- (9, 4, 16) -- (9, 3, 16) -- (8, 3, 16) -- cycle;
+        \path[fill=IeIqDR] (9, 4, 16) -- (10, 4, 16) -- (10, 3, 16) -- (9, 3, 16) -- cycle;
+        \path[fill=JSXhvp] (10, 4, 16) -- (11, 4, 16) -- (11, 3, 16) -- (10, 3, 16) -- cycle;
+        \path[fill=KImTaI] (11, 4, 16) -- (12, 4, 16) -- (12, 3, 16) -- (11, 3, 16) -- cycle;
+        \path[fill=SsMuws] (12, 4, 16) -- (13, 4, 16) -- (13, 3, 16) -- (12, 3, 16) -- cycle;
+        \path[fill=gPyhBi] (13, 4, 16) -- (14, 4, 16) -- (14, 3, 16) -- (13, 3, 16) -- cycle;
+        \path[fill=xSfqbk] (14, 4, 16) -- (15, 4, 16) -- (15, 3, 16) -- (14, 3, 16) -- cycle;
+        \path[fill=nHYkOS] (15, 4, 16) -- (16, 4, 16) -- (16, 3, 16) -- (15, 3, 16) -- cycle;
+
+        % Row 14
+        \path[fill=eKZuqn] (0, 3, 16) -- (1, 3, 16) -- (1, 2, 16) -- (0, 2, 16) -- cycle;
+        \path[fill=RMVdDU] (1, 3, 16) -- (2, 3, 16) -- (2, 2, 16) -- (1, 2, 16) -- cycle;
+        \path[fill=Gtnwqh] (2, 3, 16) -- (3, 3, 16) -- (3, 2, 16) -- (2, 2, 16) -- cycle;
+        \path[fill=HyjsnK] (3, 3, 16) -- (4, 3, 16) -- (4, 2, 16) -- (3, 2, 16) -- cycle;
+        \path[fill=okHefp] (4, 3, 16) -- (5, 3, 16) -- (5, 2, 16) -- (4, 2, 16) -- cycle;
+        \path[fill=WnUPTw] (5, 3, 16) -- (6, 3, 16) -- (6, 2, 16) -- (5, 2, 16) -- cycle;
+        \path[fill=HUVpNa] (6, 3, 16) -- (7, 3, 16) -- (7, 2, 16) -- (6, 2, 16) -- cycle;
+        \path[fill=vQoKtL] (7, 3, 16) -- (8, 3, 16) -- (8, 2, 16) -- (7, 2, 16) -- cycle;
+        \path[fill=pVIjoo] (8, 3, 16) -- (9, 3, 16) -- (9, 2, 16) -- (8, 2, 16) -- cycle;
+        \path[fill=yZjMvM] (9, 3, 16) -- (10, 3, 16) -- (10, 2, 16) -- (9, 2, 16) -- cycle;
+        \path[fill=SfcfgY] (10, 3, 16) -- (11, 3, 16) -- (11, 2, 16) -- (10, 2, 16) -- cycle;
+        \path[fill=webyuG] (11, 3, 16) -- (12, 3, 16) -- (12, 2, 16) -- (11, 2, 16) -- cycle;
+        \path[fill=aYMoKt] (12, 3, 16) -- (13, 3, 16) -- (13, 2, 16) -- (12, 2, 16) -- cycle;
+        \path[fill=KRiUIB] (13, 3, 16) -- (14, 3, 16) -- (14, 2, 16) -- (13, 2, 16) -- cycle;
+        \path[fill=XbbwRO] (14, 3, 16) -- (15, 3, 16) -- (15, 2, 16) -- (14, 2, 16) -- cycle;
+        \path[fill=TdwyAz] (15, 3, 16) -- (16, 3, 16) -- (16, 2, 16) -- (15, 2, 16) -- cycle;
+
+        % Row 15
+        \path[fill=ZnMmmR] (0, 2, 16) -- (1, 2, 16) -- (1, 1, 16) -- (0, 1, 16) -- cycle;
+        \path[fill=FtKcWx] (1, 2, 16) -- (2, 2, 16) -- (2, 1, 16) -- (1, 1, 16) -- cycle;
+        \path[fill=HXEDNX] (2, 2, 16) -- (3, 2, 16) -- (3, 1, 16) -- (2, 1, 16) -- cycle;
+        \path[fill=lXaghO] (3, 2, 16) -- (4, 2, 16) -- (4, 1, 16) -- (3, 1, 16) -- cycle;
+        \path[fill=eotYVa] (4, 2, 16) -- (5, 2, 16) -- (5, 1, 16) -- (4, 1, 16) -- cycle;
+        \path[fill=rIfRiZ] (5, 2, 16) -- (6, 2, 16) -- (6, 1, 16) -- (5, 1, 16) -- cycle;
+        \path[fill=cpeCGF] (6, 2, 16) -- (7, 2, 16) -- (7, 1, 16) -- (6, 1, 16) -- cycle;
+        \path[fill=mjascv] (7, 2, 16) -- (8, 2, 16) -- (8, 1, 16) -- (7, 1, 16) -- cycle;
+        \path[fill=bDRmkr] (8, 2, 16) -- (9, 2, 16) -- (9, 1, 16) -- (8, 1, 16) -- cycle;
+        \path[fill=WlytRJ] (9, 2, 16) -- (10, 2, 16) -- (10, 1, 16) -- (9, 1, 16) -- cycle;
+        \path[fill=KBuwQl] (10, 2, 16) -- (11, 2, 16) -- (11, 1, 16) -- (10, 1, 16) -- cycle;
+        \path[fill=xhhnZh] (11, 2, 16) -- (12, 2, 16) -- (12, 1, 16) -- (11, 1, 16) -- cycle;
+        \path[fill=PDvGha] (12, 2, 16) -- (13, 2, 16) -- (13, 1, 16) -- (12, 1, 16) -- cycle;
+        \path[fill=rVzeCV] (13, 2, 16) -- (14, 2, 16) -- (14, 1, 16) -- (13, 1, 16) -- cycle;
+        \path[fill=YTdlAO] (14, 2, 16) -- (15, 2, 16) -- (15, 1, 16) -- (14, 1, 16) -- cycle;
+        \path[fill=yHttld] (15, 2, 16) -- (16, 2, 16) -- (16, 1, 16) -- (15, 1, 16) -- cycle;
+
+        % Row 16
+        \path[fill=DKeRck] (0, 1, 16) -- (1, 1, 16) -- (1, 0, 16) -- (0, 0, 16) -- cycle;
+        \path[fill=eMzjgh] (1, 1, 16) -- (2, 1, 16) -- (2, 0, 16) -- (1, 0, 16) -- cycle;
+        \path[fill=HPpEJf] (2, 1, 16) -- (3, 1, 16) -- (3, 0, 16) -- (2, 0, 16) -- cycle;
+        \path[fill=ColKkU] (3, 1, 16) -- (4, 1, 16) -- (4, 0, 16) -- (3, 0, 16) -- cycle;
+        \path[fill=okSycu] (4, 1, 16) -- (5, 1, 16) -- (5, 0, 16) -- (4, 0, 16) -- cycle;
+        \path[fill=AtflZG] (5, 1, 16) -- (6, 1, 16) -- (6, 0, 16) -- (5, 0, 16) -- cycle;
+        \path[fill=wTklmV] (6, 1, 16) -- (7, 1, 16) -- (7, 0, 16) -- (6, 0, 16) -- cycle;
+        \path[fill=ONcoPT] (7, 1, 16) -- (8, 1, 16) -- (8, 0, 16) -- (7, 0, 16) -- cycle;
+        \path[fill=mtktFb] (8, 1, 16) -- (9, 1, 16) -- (9, 0, 16) -- (8, 0, 16) -- cycle;
+        \path[fill=lGGkGJ] (9, 1, 16) -- (10, 1, 16) -- (10, 0, 16) -- (9, 0, 16) -- cycle;
+        \path[fill=eBhoff] (10, 1, 16) -- (11, 1, 16) -- (11, 0, 16) -- (10, 0, 16) -- cycle;
+        \path[fill=nIJGOc] (11, 1, 16) -- (12, 1, 16) -- (12, 0, 16) -- (11, 0, 16) -- cycle;
+        \path[fill=rzDXir] (12, 1, 16) -- (13, 1, 16) -- (13, 0, 16) -- (12, 0, 16) -- cycle;
+        \path[fill=YgHNuY] (13, 1, 16) -- (14, 1, 16) -- (14, 0, 16) -- (13, 0, 16) -- cycle;
+        \path[fill=LFZWRB] (14, 1, 16) -- (15, 1, 16) -- (15, 0, 16) -- (14, 0, 16) -- cycle;
+        \path[fill=BlExfZ] (15, 1, 16) -- (16, 1, 16) -- (16, 0, 16) -- (15, 0, 16) -- cycle;
+
+
+    % right face
+        % Define color commands
+        \definecolor{HKYiSpi}{RGB}{44, 57, 27}
+        \definecolor{SrUwFlP}{RGB}{38, 49, 23}
+        \definecolor{wRXZMhQ}{RGB}{37, 48, 22}
+        \definecolor{NCNniYA}{RGB}{35, 45, 21}
+        \definecolor{QtVZInP}{RGB}{38, 50, 23}
+        \definecolor{bvkIluK}{RGB}{33, 42, 20}
+        \definecolor{NfutxvI}{RGB}{35, 46, 21}
+        \definecolor{dUTeWca}{RGB}{31, 41, 19}
+        \definecolor{gUkmmYl}{RGB}{30, 39, 18}
+        \definecolor{vMkJorv}{RGB}{30, 39, 18}
+        \definecolor{fdAMeQq}{RGB}{30, 40, 18}
+        \definecolor{MSMlvxq}{RGB}{28, 36, 17}
+        \definecolor{QrPLNMy}{RGB}{28, 37, 17}
+        \definecolor{KxZNIwy}{RGB}{21, 28, 13}
+        \definecolor{mSySdDq}{RGB}{23, 30, 14}
+        \definecolor{nxnWkVz}{RGB}{21, 28, 13}
+        \definecolor{drjoXxH}{RGB}{43, 56, 26}
+        \definecolor{zyeuJYu}{RGB}{38, 48, 22}
+        \definecolor{YEDoPuI}{RGB}{41, 54, 25}
+        \definecolor{QVovpBF}{RGB}{36, 48, 22}
+        \definecolor{RuWkzbl}{RGB}{41, 51, 24}
+        \definecolor{mIeFxCt}{RGB}{36, 30, 18}
+        \definecolor{sWiaqmE}{RGB}{35, 45, 21}
+        \definecolor{aJXszMr}{RGB}{30, 37, 18}
+        \definecolor{LxrsKba}{RGB}{34, 44, 21}
+        \definecolor{TJANfTZ}{RGB}{30, 39, 18}
+        \definecolor{PCQgQIO}{RGB}{30, 40, 19}
+        \definecolor{xsxqqxM}{RGB}{27, 36, 16}
+        \definecolor{CCChNAp}{RGB}{28, 35, 17}
+        \definecolor{JNCRutj}{RGB}{22, 30, 14}
+        \definecolor{XLUKhjK}{RGB}{24, 32, 15}
+        \definecolor{frurVRb}{RGB}{20, 26, 12}
+        \definecolor{HdHNAPJ}{RGB}{39, 46, 23}
+        \definecolor{XInyKul}{RGB}{41, 35, 22}
+        \definecolor{DRHvhgH}{RGB}{43, 53, 25}
+        \definecolor{fBWyWHC}{RGB}{34, 44, 21}
+        \definecolor{CDFLtOX}{RGB}{40, 50, 24}
+        \definecolor{BBtAnyT}{RGB}{36, 28, 18}
+        \definecolor{RcTbDUw}{RGB}{33, 38, 19}
+        \definecolor{AAwbqGC}{RGB}{33, 28, 16}
+        \definecolor{yjavhsq}{RGB}{34, 43, 20}
+        \definecolor{WanYtMz}{RGB}{31, 40, 19}
+        \definecolor{DWupbVZ}{RGB}{29, 38, 18}
+        \definecolor{fMglPFU}{RGB}{30, 37, 17}
+        \definecolor{aUSBwmp}{RGB}{28, 22, 14}
+        \definecolor{ugzsAEF}{RGB}{21, 25, 12}
+        \definecolor{eEgDeMB}{RGB}{23, 28, 14}
+        \definecolor{SmvwDbT}{RGB}{23, 19, 11}
+        \definecolor{AeyWgVA}{RGB}{43, 33, 23}
+        \definecolor{NDaUHSB}{RGB}{47, 43, 40}
+        \definecolor{EREcBzC}{RGB}{43, 32, 22}
+        \definecolor{VdPQHnH}{RGB}{42, 33, 20}
+        \definecolor{IIRCePK}{RGB}{37, 43, 21}
+        \definecolor{AiAyDpe}{RGB}{39, 28, 18}
+        \definecolor{YmLYeXW}{RGB}{37, 26, 17}
+        \definecolor{IcjVHHL}{RGB}{35, 26, 17}
+        \definecolor{aNuaUXD}{RGB}{29, 33, 16}
+        \definecolor{RUlvhfR}{RGB}{31, 25, 15}
+        \definecolor{hNyrOGr}{RGB}{28, 32, 16}
+        \definecolor{HuIwNPP}{RGB}{30, 25, 16}
+        \definecolor{wENmwna}{RGB}{36, 25, 17}
+        \definecolor{ZzlqgyR}{RGB}{28, 20, 14}
+        \definecolor{crDbIja}{RGB}{25, 18, 12}
+        \definecolor{lfkCSYc}{RGB}{30, 21, 15}
+        \definecolor{YRvzQos}{RGB}{60, 43, 30}
+        \definecolor{LhJsEth}{RGB}{53, 39, 27}
+        \definecolor{soeYOpG}{RGB}{65, 46, 32}
+        \definecolor{WpniZqc}{RGB}{72, 51, 35}
+        \definecolor{NIXIiXg}{RGB}{44, 32, 20}
+        \definecolor{NvmJbGt}{RGB}{58, 42, 28}
+        \definecolor{xyqEGLJ}{RGB}{49, 34, 23}
+        \definecolor{QSLoysP}{RGB}{44, 31, 21}
+        \definecolor{wyNgkTI}{RGB}{34, 24, 16}
+        \definecolor{iuNgxXf}{RGB}{33, 23, 15}
+        \definecolor{kWrqjPK}{RGB}{32, 24, 16}
+        \definecolor{kWqshgT}{RGB}{35, 32, 30}
+        \definecolor{WyaGnes}{RGB}{39, 28, 20}
+        \definecolor{hbLRHTN}{RGB}{42, 29, 20}
+        \definecolor{qmXqyvC}{RGB}{29, 20, 13}
+        \definecolor{LsLaMyv}{RGB}{33, 23, 16}
+        \definecolor{wLFqgdZ}{RGB}{54, 38, 26}
+        \definecolor{jXOSHTG}{RGB}{44, 30, 21}
+        \definecolor{ADVdZQt}{RGB}{63, 45, 31}
+        \definecolor{EVVbFlv}{RGB}{64, 46, 32}
+        \definecolor{OWqkHvR}{RGB}{53, 39, 28}
+        \definecolor{QLSpjyJ}{RGB}{60, 44, 30}
+        \definecolor{vSYDERd}{RGB}{41, 29, 19}
+        \definecolor{senirQc}{RGB}{39, 27, 18}
+        \definecolor{LoHSfZv}{RGB}{38, 26, 18}
+        \definecolor{oPYywpG}{RGB}{44, 31, 21}
+        \definecolor{gieSGMr}{RGB}{43, 31, 21}
+        \definecolor{YRnVcQm}{RGB}{35, 25, 18}
+        \definecolor{lRYrePf}{RGB}{39, 27, 18}
+        \definecolor{cOcMgWC}{RGB}{39, 27, 19}
+        \definecolor{RCMPVDD}{RGB}{36, 26, 18}
+        \definecolor{HmkeoUQ}{RGB}{48, 34, 24}
+        \definecolor{imawXAt}{RGB}{72, 51, 35}
+        \definecolor{BcElxDu}{RGB}{52, 36, 25}
+        \definecolor{dAZCSSn}{RGB}{54, 37, 25}
+        \definecolor{bUZImik}{RGB}{54, 40, 29}
+        \definecolor{GCQacKF}{RGB}{57, 53, 50}
+        \definecolor{YfymIZI}{RGB}{52, 39, 28}
+        \definecolor{OKzkedc}{RGB}{52, 36, 24}
+        \definecolor{IMUCfhu}{RGB}{69, 50, 34}
+        \definecolor{oCZQVFb}{RGB}{67, 48, 33}
+        \definecolor{OFThHfz}{RGB}{49, 34, 23}
+        \definecolor{sCwKnSo}{RGB}{63, 45, 31}
+        \definecolor{DBVEYdR}{RGB}{60, 43, 29}
+        \definecolor{wdPUrDg}{RGB}{42, 30, 20}
+        \definecolor{HtBSzRt}{RGB}{45, 32, 22}
+        \definecolor{UdveTbn}{RGB}{39, 27, 19}
+        \definecolor{aoTHYxa}{RGB}{43, 31, 21}
+        \definecolor{GUxWJSb}{RGB}{54, 38, 26}
+        \definecolor{ERDhkOM}{RGB}{53, 37, 26}
+        \definecolor{VhCmkbM}{RGB}{72, 51, 35}
+        \definecolor{LDOXGjy}{RGB}{72, 52, 36}
+        \definecolor{BvMLmLH}{RGB}{62, 47, 34}
+        \definecolor{SEaUBbw}{RGB}{60, 43, 30}
+        \definecolor{dolAffc}{RGB}{52, 36, 24}
+        \definecolor{etbEDxv}{RGB}{53, 38, 26}
+        \definecolor{PmfeCsn}{RGB}{59, 42, 29}
+        \definecolor{zrRPmuB}{RGB}{41, 28, 19}
+        \definecolor{PoprvdS}{RGB}{55, 40, 27}
+        \definecolor{FNeSuMs}{RGB}{54, 39, 27}
+        \definecolor{TPbKCOM}{RGB}{42, 29, 20}
+        \definecolor{nJYrWsp}{RGB}{40, 28, 19}
+        \definecolor{PMZHGiv}{RGB}{44, 31, 21}
+        \definecolor{MCGbpSM}{RGB}{44, 31, 22}
+        \definecolor{gplDSQo}{RGB}{58, 41, 28}
+        \definecolor{VlzeVPU}{RGB}{51, 35, 24}
+        \definecolor{gEgQBCE}{RGB}{53, 38, 26}
+        \definecolor{VwUDkfF}{RGB}{61, 43, 30}
+        \definecolor{OjIvWGU}{RGB}{52, 37, 25}
+        \definecolor{dhlZrzq}{RGB}{58, 42, 28}
+        \definecolor{ZlHwgvw}{RGB}{48, 34, 23}
+        \definecolor{fNHJdGX}{RGB}{40, 27, 19}
+        \definecolor{GWwRigD}{RGB}{50, 35, 24}
+        \definecolor{EIEGLsm}{RGB}{55, 40, 27}
+        \definecolor{jCZMsYw}{RGB}{55, 39, 27}
+        \definecolor{KhzGerB}{RGB}{46, 32, 22}
+        \definecolor{yEqDSVb}{RGB}{43, 31, 21}
+        \definecolor{VuixoiN}{RGB}{41, 29, 20}
+        \definecolor{bYuGQmZ}{RGB}{33, 23, 15}
+        \definecolor{BEYQEpJ}{RGB}{37, 26, 18}
+        \definecolor{NXEZbcr}{RGB}{52, 36, 25}
+        \definecolor{NrEwZOj}{RGB}{55, 40, 27}
+        \definecolor{kwhdxpm}{RGB}{40, 28, 19}
+        \definecolor{aQCPcbD}{RGB}{50, 35, 24}
+        \definecolor{ULfrMPw}{RGB}{49, 34, 24}
+        \definecolor{ATBpJzP}{RGB}{40, 28, 18}
+        \definecolor{opJOPBq}{RGB}{40, 28, 18}
+        \definecolor{dRYRtJg}{RGB}{47, 33, 22}
+        \definecolor{crFlSBU}{RGB}{48, 33, 23}
+        \definecolor{tPxgFcK}{RGB}{51, 36, 25}
+        \definecolor{lufAcXn}{RGB}{49, 34, 23}
+        \definecolor{suNyYjF}{RGB}{46, 32, 22}
+        \definecolor{ywbpEam}{RGB}{61, 44, 30}
+        \definecolor{skCCkAU}{RGB}{59, 42, 29}
+        \definecolor{eJSDEfv}{RGB}{41, 30, 21}
+        \definecolor{iLDlYxL}{RGB}{44, 31, 21}
+        \definecolor{bJtYyeq}{RGB}{50, 35, 24}
+        \definecolor{eUKmAcC}{RGB}{56, 40, 28}
+        \definecolor{GJmEvDY}{RGB}{50, 35, 24}
+        \definecolor{zPtadNQ}{RGB}{68, 49, 33}
+        \definecolor{JRFSPxC}{RGB}{67, 48, 33}
+        \definecolor{JCkEgQv}{RGB}{50, 35, 24}
+        \definecolor{kHuGDsh}{RGB}{64, 46, 31}
+        \definecolor{wUvdFZf}{RGB}{57, 41, 27}
+        \definecolor{xUYkTyA}{RGB}{41, 30, 21}
+        \definecolor{dLSxnFT}{RGB}{66, 48, 33}
+        \definecolor{HuXvhAc}{RGB}{66, 48, 33}
+        \definecolor{Psjitpw}{RGB}{40, 28, 19}
+        \definecolor{eJnevpI}{RGB}{53, 38, 26}
+        \definecolor{iOqKMEC}{RGB}{54, 39, 28}
+        \definecolor{dUHzfox}{RGB}{45, 41, 38}
+        \definecolor{IPWZeiN}{RGB}{39, 29, 22}
+        \definecolor{ClgTtiX}{RGB}{55, 39, 27}
+        \definecolor{hAIoVqd}{RGB}{48, 33, 22}
+        \definecolor{ksWQxtY}{RGB}{49, 35, 24}
+        \definecolor{ZnQOUGc}{RGB}{58, 42, 29}
+        \definecolor{HKJatJn}{RGB}{61, 44, 30}
+        \definecolor{VffjTfW}{RGB}{66, 48, 32}
+        \definecolor{lTrBPta}{RGB}{53, 38, 26}
+        \definecolor{QBGYnZZ}{RGB}{55, 40, 29}
+        \definecolor{tzWgRek}{RGB}{44, 39, 36}
+        \definecolor{IPrYGqh}{RGB}{58, 42, 30}
+        \definecolor{kWBOwLZ}{RGB}{58, 41, 28}
+        \definecolor{tSLNWsl}{RGB}{45, 31, 22}
+        \definecolor{KifjvRR}{RGB}{37, 26, 17}
+        \definecolor{nPNbByy}{RGB}{50, 36, 25}
+        \definecolor{xWomOPl}{RGB}{43, 32, 23}
+        \definecolor{wQHFkrN}{RGB}{33, 23, 16}
+        \definecolor{MJPwqsW}{RGB}{45, 32, 22}
+        \definecolor{GAEnxuk}{RGB}{39, 27, 18}
+        \definecolor{eTSPdPY}{RGB}{53, 38, 26}
+        \definecolor{ISsxbms}{RGB}{48, 34, 23}
+        \definecolor{TrluJYq}{RGB}{55, 40, 28}
+        \definecolor{IMZaSrZ}{RGB}{59, 43, 29}
+        \definecolor{PllSbKx}{RGB}{64, 46, 31}
+        \definecolor{GYnYjga}{RGB}{49, 35, 24}
+        \definecolor{YYmZECR}{RGB}{45, 33, 24}
+        \definecolor{sbuZFag}{RGB}{46, 32, 22}
+        \definecolor{zeNTBqa}{RGB}{48, 34, 23}
+        \definecolor{ZObqGJD}{RGB}{45, 32, 22}
+        \definecolor{JpNPOHH}{RGB}{44, 31, 21}
+        \definecolor{DEyPWVg}{RGB}{47, 33, 23}
+        \definecolor{CPLIzOv}{RGB}{59, 42, 29}
+        \definecolor{XMHFCCH}{RGB}{57, 41, 29}
+        \definecolor{ideRWHX}{RGB}{46, 32, 22}
+        \definecolor{VCslZiM}{RGB}{51, 36, 25}
+        \definecolor{RMJyGqV}{RGB}{46, 32, 22}
+        \definecolor{gjYrVjw}{RGB}{46, 32, 22}
+        \definecolor{vtvXUkY}{RGB}{44, 33, 24}
+        \definecolor{bUerINw}{RGB}{46, 33, 23}
+        \definecolor{ZjdlHCr}{RGB}{55, 40, 27}
+        \definecolor{drWqdfT}{RGB}{52, 38, 26}
+        \definecolor{FLpzmOE}{RGB}{45, 32, 22}
+        \definecolor{NoVwiHw}{RGB}{39, 27, 18}
+        \definecolor{tZToMWd}{RGB}{59, 42, 30}
+        \definecolor{SMFlcjj}{RGB}{39, 27, 18}
+        \definecolor{HxGunTZ}{RGB}{45, 31, 21}
+        \definecolor{TwpZxwz}{RGB}{61, 44, 30}
+        \definecolor{RSZybSt}{RGB}{56, 40, 28}
+        \definecolor{CzcFufs}{RGB}{53, 38, 26}
+        \definecolor{sGuIZMI}{RGB}{53, 37, 26}
+        \definecolor{UJpflSt}{RGB}{44, 31, 21}
+        \definecolor{GqPwotV}{RGB}{40, 28, 19}
+        \definecolor{YFxQhwE}{RGB}{60, 43, 30}
+        \definecolor{BhuDPmS}{RGB}{44, 31, 22}
+        \definecolor{NQLjPIG}{RGB}{36, 24, 17}
+        \definecolor{rdvHrSZ}{RGB}{43, 31, 22}
+        \definecolor{ihKOXNT}{RGB}{39, 27, 19}
+        \definecolor{fupJGni}{RGB}{61, 44, 30}
+        \definecolor{tesOxRH}{RGB}{61, 44, 30}
+        \definecolor{HkkfDvm}{RGB}{49, 34, 24}
+        \definecolor{kWQgjnM}{RGB}{50, 35, 25}
+        \definecolor{oMtpjtJ}{RGB}{45, 32, 22}
+        \definecolor{prjeSUG}{RGB}{47, 33, 23}
+        \definecolor{srEumHm}{RGB}{52, 38, 26}
+        \definecolor{hoxmTZh}{RGB}{51, 36, 25}
+        \definecolor{ILDZoFF}{RGB}{52, 37, 25}
+        \definecolor{SIYWTOQ}{RGB}{45, 32, 22}
+        \definecolor{CVjEtna}{RGB}{59, 43, 30}
+        \definecolor{heuvBdU}{RGB}{56, 40, 28}
+        \definecolor{ZMBbxTe}{RGB}{51, 36, 24}
+        \definecolor{OYSjfdZ}{RGB}{43, 31, 23}
+        \definecolor{WbLFDgl}{RGB}{46, 43, 40}
+        \definecolor{vicVvob}{RGB}{43, 31, 23}
+        \definecolor{QRNEmvm}{RGB}{54, 39, 26}
+        \definecolor{qGopPcR}{RGB}{54, 39, 27}
+        \definecolor{fQejRrn}{RGB}{44, 31, 21}
+        \definecolor{ePAXuZU}{RGB}{45, 32, 21}
+        \definecolor{wPqyrAH}{RGB}{51, 36, 25}
+        \definecolor{yfARFQk}{RGB}{51, 37, 25}
+        \definecolor{OqPIybX}{RGB}{44, 31, 21}
+        \definecolor{sWHBqgx}{RGB}{35, 24, 16}
+
+        % Draw commands
+
+        % Row 1
+        \path[fill=HKYiSpi] (15, 16, 16) -- (16, 16, 16) -- (16, 16, 15) -- (15, 16, 15) -- cycle;
+        \path[fill=SrUwFlP] (14, 16, 16) -- (15, 16, 16) -- (15, 16, 15) -- (14, 16, 15) -- cycle;
+        \path[fill=wRXZMhQ] (13, 16, 16) -- (14, 16, 16) -- (14, 16, 15) -- (13, 16, 15) -- cycle;
+        \path[fill=NCNniYA] (12, 16, 16) -- (13, 16, 16) -- (13, 16, 15) -- (12, 16, 15) -- cycle;
+        \path[fill=QtVZInP] (11, 16, 16) -- (12, 16, 16) -- (12, 16, 15) -- (11, 16, 15) -- cycle;
+        \path[fill=bvkIluK] (10, 16, 16) -- (11, 16, 16) -- (11, 16, 15) -- (10, 16, 15) -- cycle;
+        \path[fill=NfutxvI] (9, 16, 16) -- (10, 16, 16) -- (10, 16, 15) -- (9, 16, 15) -- cycle;
+        \path[fill=dUTeWca] (8, 16, 16) -- (9, 16, 16) -- (9, 16, 15) -- (8, 16, 15) -- cycle;
+        \path[fill=gUkmmYl] (7, 16, 16) -- (8, 16, 16) -- (8, 16, 15) -- (7, 16, 15) -- cycle;
+        \path[fill=vMkJorv] (6, 16, 16) -- (7, 16, 16) -- (7, 16, 15) -- (6, 16, 15) -- cycle;
+        \path[fill=fdAMeQq] (5, 16, 16) -- (6, 16, 16) -- (6, 16, 15) -- (5, 16, 15) -- cycle;
+        \path[fill=MSMlvxq] (4, 16, 16) -- (5, 16, 16) -- (5, 16, 15) -- (4, 16, 15) -- cycle;
+        \path[fill=QrPLNMy] (3, 16, 16) -- (4, 16, 16) -- (4, 16, 15) -- (3, 16, 15) -- cycle;
+        \path[fill=KxZNIwy] (2, 16, 16) -- (3, 16, 16) -- (3, 16, 15) -- (2, 16, 15) -- cycle;
+        \path[fill=mSySdDq] (1, 16, 16) -- (2, 16, 16) -- (2, 16, 15) -- (1, 16, 15) -- cycle;
+        \path[fill=nxnWkVz] (0, 16, 16) -- (1, 16, 16) -- (1, 16, 15) -- (0, 16, 15) -- cycle;
+
+        % Row 2
+        \path[fill=drjoXxH] (15, 16, 15) -- (16, 16, 15) -- (16, 16, 14) -- (15, 16, 14) -- cycle;
+        \path[fill=zyeuJYu] (14, 16, 15) -- (15, 16, 15) -- (15, 16, 14) -- (14, 16, 14) -- cycle;
+        \path[fill=YEDoPuI] (13, 16, 15) -- (14, 16, 15) -- (14, 16, 14) -- (13, 16, 14) -- cycle;
+        \path[fill=QVovpBF] (12, 16, 15) -- (13, 16, 15) -- (13, 16, 14) -- (12, 16, 14) -- cycle;
+        \path[fill=RuWkzbl] (11, 16, 15) -- (12, 16, 15) -- (12, 16, 14) -- (11, 16, 14) -- cycle;
+        \path[fill=mIeFxCt] (10, 16, 15) -- (11, 16, 15) -- (11, 16, 14) -- (10, 16, 14) -- cycle;
+        \path[fill=sWiaqmE] (9, 16, 15) -- (10, 16, 15) -- (10, 16, 14) -- (9, 16, 14) -- cycle;
+        \path[fill=aJXszMr] (8, 16, 15) -- (9, 16, 15) -- (9, 16, 14) -- (8, 16, 14) -- cycle;
+        \path[fill=LxrsKba] (7, 16, 15) -- (8, 16, 15) -- (8, 16, 14) -- (7, 16, 14) -- cycle;
+        \path[fill=TJANfTZ] (6, 16, 15) -- (7, 16, 15) -- (7, 16, 14) -- (6, 16, 14) -- cycle;
+        \path[fill=PCQgQIO] (5, 16, 15) -- (6, 16, 15) -- (6, 16, 14) -- (5, 16, 14) -- cycle;
+        \path[fill=xsxqqxM] (4, 16, 15) -- (5, 16, 15) -- (5, 16, 14) -- (4, 16, 14) -- cycle;
+        \path[fill=CCChNAp] (3, 16, 15) -- (4, 16, 15) -- (4, 16, 14) -- (3, 16, 14) -- cycle;
+        \path[fill=JNCRutj] (2, 16, 15) -- (3, 16, 15) -- (3, 16, 14) -- (2, 16, 14) -- cycle;
+        \path[fill=XLUKhjK] (1, 16, 15) -- (2, 16, 15) -- (2, 16, 14) -- (1, 16, 14) -- cycle;
+        \path[fill=frurVRb] (0, 16, 15) -- (1, 16, 15) -- (1, 16, 14) -- (0, 16, 14) -- cycle;
+
+        % Row 3
+        \path[fill=HdHNAPJ] (15, 16, 14) -- (16, 16, 14) -- (16, 16, 13) -- (15, 16, 13) -- cycle;
+        \path[fill=XInyKul] (14, 16, 14) -- (15, 16, 14) -- (15, 16, 13) -- (14, 16, 13) -- cycle;
+        \path[fill=DRHvhgH] (13, 16, 14) -- (14, 16, 14) -- (14, 16, 13) -- (13, 16, 13) -- cycle;
+        \path[fill=fBWyWHC] (12, 16, 14) -- (13, 16, 14) -- (13, 16, 13) -- (12, 16, 13) -- cycle;
+        \path[fill=CDFLtOX] (11, 16, 14) -- (12, 16, 14) -- (12, 16, 13) -- (11, 16, 13) -- cycle;
+        \path[fill=BBtAnyT] (10, 16, 14) -- (11, 16, 14) -- (11, 16, 13) -- (10, 16, 13) -- cycle;
+        \path[fill=RcTbDUw] (9, 16, 14) -- (10, 16, 14) -- (10, 16, 13) -- (9, 16, 13) -- cycle;
+        \path[fill=AAwbqGC] (8, 16, 14) -- (9, 16, 14) -- (9, 16, 13) -- (8, 16, 13) -- cycle;
+        \path[fill=yjavhsq] (7, 16, 14) -- (8, 16, 14) -- (8, 16, 13) -- (7, 16, 13) -- cycle;
+        \path[fill=WanYtMz] (6, 16, 14) -- (7, 16, 14) -- (7, 16, 13) -- (6, 16, 13) -- cycle;
+        \path[fill=DWupbVZ] (5, 16, 14) -- (6, 16, 14) -- (6, 16, 13) -- (5, 16, 13) -- cycle;
+        \path[fill=fMglPFU] (4, 16, 14) -- (5, 16, 14) -- (5, 16, 13) -- (4, 16, 13) -- cycle;
+        \path[fill=aUSBwmp] (3, 16, 14) -- (4, 16, 14) -- (4, 16, 13) -- (3, 16, 13) -- cycle;
+        \path[fill=ugzsAEF] (2, 16, 14) -- (3, 16, 14) -- (3, 16, 13) -- (2, 16, 13) -- cycle;
+        \path[fill=eEgDeMB] (1, 16, 14) -- (2, 16, 14) -- (2, 16, 13) -- (1, 16, 13) -- cycle;
+        \path[fill=SmvwDbT] (0, 16, 14) -- (1, 16, 14) -- (1, 16, 13) -- (0, 16, 13) -- cycle;
+
+        % Row 4
+        \path[fill=AeyWgVA] (15, 16, 13) -- (16, 16, 13) -- (16, 16, 12) -- (15, 16, 12) -- cycle;
+        \path[fill=NDaUHSB] (14, 16, 13) -- (15, 16, 13) -- (15, 16, 12) -- (14, 16, 12) -- cycle;
+        \path[fill=EREcBzC] (13, 16, 13) -- (14, 16, 13) -- (14, 16, 12) -- (13, 16, 12) -- cycle;
+        \path[fill=VdPQHnH] (12, 16, 13) -- (13, 16, 13) -- (13, 16, 12) -- (12, 16, 12) -- cycle;
+        \path[fill=IIRCePK] (11, 16, 13) -- (12, 16, 13) -- (12, 16, 12) -- (11, 16, 12) -- cycle;
+        \path[fill=AiAyDpe] (10, 16, 13) -- (11, 16, 13) -- (11, 16, 12) -- (10, 16, 12) -- cycle;
+        \path[fill=YmLYeXW] (9, 16, 13) -- (10, 16, 13) -- (10, 16, 12) -- (9, 16, 12) -- cycle;
+        \path[fill=IcjVHHL] (8, 16, 13) -- (9, 16, 13) -- (9, 16, 12) -- (8, 16, 12) -- cycle;
+        \path[fill=aNuaUXD] (7, 16, 13) -- (8, 16, 13) -- (8, 16, 12) -- (7, 16, 12) -- cycle;
+        \path[fill=RUlvhfR] (6, 16, 13) -- (7, 16, 13) -- (7, 16, 12) -- (6, 16, 12) -- cycle;
+        \path[fill=hNyrOGr] (5, 16, 13) -- (6, 16, 13) -- (6, 16, 12) -- (5, 16, 12) -- cycle;
+        \path[fill=HuIwNPP] (4, 16, 13) -- (5, 16, 13) -- (5, 16, 12) -- (4, 16, 12) -- cycle;
+        \path[fill=wENmwna] (3, 16, 13) -- (4, 16, 13) -- (4, 16, 12) -- (3, 16, 12) -- cycle;
+        \path[fill=ZzlqgyR] (2, 16, 13) -- (3, 16, 13) -- (3, 16, 12) -- (2, 16, 12) -- cycle;
+        \path[fill=crDbIja] (1, 16, 13) -- (2, 16, 13) -- (2, 16, 12) -- (1, 16, 12) -- cycle;
+        \path[fill=lfkCSYc] (0, 16, 13) -- (1, 16, 13) -- (1, 16, 12) -- (0, 16, 12) -- cycle;
+
+        % Row 5
+        \path[fill=YRvzQos] (15, 16, 12) -- (16, 16, 12) -- (16, 16, 11) -- (15, 16, 11) -- cycle;
+        \path[fill=LhJsEth] (14, 16, 12) -- (15, 16, 12) -- (15, 16, 11) -- (14, 16, 11) -- cycle;
+        \path[fill=soeYOpG] (13, 16, 12) -- (14, 16, 12) -- (14, 16, 11) -- (13, 16, 11) -- cycle;
+        \path[fill=WpniZqc] (12, 16, 12) -- (13, 16, 12) -- (13, 16, 11) -- (12, 16, 11) -- cycle;
+        \path[fill=NIXIiXg] (11, 16, 12) -- (12, 16, 12) -- (12, 16, 11) -- (11, 16, 11) -- cycle;
+        \path[fill=NvmJbGt] (10, 16, 12) -- (11, 16, 12) -- (11, 16, 11) -- (10, 16, 11) -- cycle;
+        \path[fill=xyqEGLJ] (9, 16, 12) -- (10, 16, 12) -- (10, 16, 11) -- (9, 16, 11) -- cycle;
+        \path[fill=QSLoysP] (8, 16, 12) -- (9, 16, 12) -- (9, 16, 11) -- (8, 16, 11) -- cycle;
+        \path[fill=wyNgkTI] (7, 16, 12) -- (8, 16, 12) -- (8, 16, 11) -- (7, 16, 11) -- cycle;
+        \path[fill=iuNgxXf] (6, 16, 12) -- (7, 16, 12) -- (7, 16, 11) -- (6, 16, 11) -- cycle;
+        \path[fill=kWrqjPK] (5, 16, 12) -- (6, 16, 12) -- (6, 16, 11) -- (5, 16, 11) -- cycle;
+        \path[fill=kWqshgT] (4, 16, 12) -- (5, 16, 12) -- (5, 16, 11) -- (4, 16, 11) -- cycle;
+        \path[fill=WyaGnes] (3, 16, 12) -- (4, 16, 12) -- (4, 16, 11) -- (3, 16, 11) -- cycle;
+        \path[fill=hbLRHTN] (2, 16, 12) -- (3, 16, 12) -- (3, 16, 11) -- (2, 16, 11) -- cycle;
+        \path[fill=qmXqyvC] (1, 16, 12) -- (2, 16, 12) -- (2, 16, 11) -- (1, 16, 11) -- cycle;
+        \path[fill=LsLaMyv] (0, 16, 12) -- (1, 16, 12) -- (1, 16, 11) -- (0, 16, 11) -- cycle;
+
+        % Row 6
+        \path[fill=wLFqgdZ] (15, 16, 11) -- (16, 16, 11) -- (16, 16, 10) -- (15, 16, 10) -- cycle;
+        \path[fill=jXOSHTG] (14, 16, 11) -- (15, 16, 11) -- (15, 16, 10) -- (14, 16, 10) -- cycle;
+        \path[fill=ADVdZQt] (13, 16, 11) -- (14, 16, 11) -- (14, 16, 10) -- (13, 16, 10) -- cycle;
+        \path[fill=EVVbFlv] (12, 16, 11) -- (13, 16, 11) -- (13, 16, 10) -- (12, 16, 10) -- cycle;
+        \path[fill=OWqkHvR] (11, 16, 11) -- (12, 16, 11) -- (12, 16, 10) -- (11, 16, 10) -- cycle;
+        \path[fill=QLSpjyJ] (10, 16, 11) -- (11, 16, 11) -- (11, 16, 10) -- (10, 16, 10) -- cycle;
+        \path[fill=vSYDERd] (9, 16, 11) -- (10, 16, 11) -- (10, 16, 10) -- (9, 16, 10) -- cycle;
+        \path[fill=senirQc] (8, 16, 11) -- (9, 16, 11) -- (9, 16, 10) -- (8, 16, 10) -- cycle;
+        \path[fill=LoHSfZv] (7, 16, 11) -- (8, 16, 11) -- (8, 16, 10) -- (7, 16, 10) -- cycle;
+        \path[fill=oPYywpG] (6, 16, 11) -- (7, 16, 11) -- (7, 16, 10) -- (6, 16, 10) -- cycle;
+        \path[fill=gieSGMr] (5, 16, 11) -- (6, 16, 11) -- (6, 16, 10) -- (5, 16, 10) -- cycle;
+        \path[fill=YRnVcQm] (4, 16, 11) -- (5, 16, 11) -- (5, 16, 10) -- (4, 16, 10) -- cycle;
+        \path[fill=lRYrePf] (3, 16, 11) -- (4, 16, 11) -- (4, 16, 10) -- (3, 16, 10) -- cycle;
+        \path[fill=cOcMgWC] (2, 16, 11) -- (3, 16, 11) -- (3, 16, 10) -- (2, 16, 10) -- cycle;
+        \path[fill=RCMPVDD] (1, 16, 11) -- (2, 16, 11) -- (2, 16, 10) -- (1, 16, 10) -- cycle;
+        \path[fill=HmkeoUQ] (0, 16, 11) -- (1, 16, 11) -- (1, 16, 10) -- (0, 16, 10) -- cycle;
+
+        % Row 7
+        \path[fill=imawXAt] (15, 16, 10) -- (16, 16, 10) -- (16, 16, 9) -- (15, 16, 9) -- cycle;
+        \path[fill=BcElxDu] (14, 16, 10) -- (15, 16, 10) -- (15, 16, 9) -- (14, 16, 9) -- cycle;
+        \path[fill=dAZCSSn] (13, 16, 10) -- (14, 16, 10) -- (14, 16, 9) -- (13, 16, 9) -- cycle;
+        \path[fill=bUZImik] (12, 16, 10) -- (13, 16, 10) -- (13, 16, 9) -- (12, 16, 9) -- cycle;
+        \path[fill=GCQacKF] (11, 16, 10) -- (12, 16, 10) -- (12, 16, 9) -- (11, 16, 9) -- cycle;
+        \path[fill=YfymIZI] (10, 16, 10) -- (11, 16, 10) -- (11, 16, 9) -- (10, 16, 9) -- cycle;
+        \path[fill=OKzkedc] (9, 16, 10) -- (10, 16, 10) -- (10, 16, 9) -- (9, 16, 9) -- cycle;
+        \path[fill=IMUCfhu] (8, 16, 10) -- (9, 16, 10) -- (9, 16, 9) -- (8, 16, 9) -- cycle;
+        \path[fill=oCZQVFb] (7, 16, 10) -- (8, 16, 10) -- (8, 16, 9) -- (7, 16, 9) -- cycle;
+        \path[fill=OFThHfz] (6, 16, 10) -- (7, 16, 10) -- (7, 16, 9) -- (6, 16, 9) -- cycle;
+        \path[fill=sCwKnSo] (5, 16, 10) -- (6, 16, 10) -- (6, 16, 9) -- (5, 16, 9) -- cycle;
+        \path[fill=DBVEYdR] (4, 16, 10) -- (5, 16, 10) -- (5, 16, 9) -- (4, 16, 9) -- cycle;
+        \path[fill=wdPUrDg] (3, 16, 10) -- (4, 16, 10) -- (4, 16, 9) -- (3, 16, 9) -- cycle;
+        \path[fill=HtBSzRt] (2, 16, 10) -- (3, 16, 10) -- (3, 16, 9) -- (2, 16, 9) -- cycle;
+        \path[fill=UdveTbn] (1, 16, 10) -- (2, 16, 10) -- (2, 16, 9) -- (1, 16, 9) -- cycle;
+        \path[fill=aoTHYxa] (0, 16, 10) -- (1, 16, 10) -- (1, 16, 9) -- (0, 16, 9) -- cycle;
+
+        % Row 8
+        \path[fill=GUxWJSb] (15, 16, 9) -- (16, 16, 9) -- (16, 16, 8) -- (15, 16, 8) -- cycle;
+        \path[fill=ERDhkOM] (14, 16, 9) -- (15, 16, 9) -- (15, 16, 8) -- (14, 16, 8) -- cycle;
+        \path[fill=VhCmkbM] (13, 16, 9) -- (14, 16, 9) -- (14, 16, 8) -- (13, 16, 8) -- cycle;
+        \path[fill=LDOXGjy] (12, 16, 9) -- (13, 16, 9) -- (13, 16, 8) -- (12, 16, 8) -- cycle;
+        \path[fill=BvMLmLH] (11, 16, 9) -- (12, 16, 9) -- (12, 16, 8) -- (11, 16, 8) -- cycle;
+        \path[fill=SEaUBbw] (10, 16, 9) -- (11, 16, 9) -- (11, 16, 8) -- (10, 16, 8) -- cycle;
+        \path[fill=dolAffc] (9, 16, 9) -- (10, 16, 9) -- (10, 16, 8) -- (9, 16, 8) -- cycle;
+        \path[fill=etbEDxv] (8, 16, 9) -- (9, 16, 9) -- (9, 16, 8) -- (8, 16, 8) -- cycle;
+        \path[fill=PmfeCsn] (7, 16, 9) -- (8, 16, 9) -- (8, 16, 8) -- (7, 16, 8) -- cycle;
+        \path[fill=zrRPmuB] (6, 16, 9) -- (7, 16, 9) -- (7, 16, 8) -- (6, 16, 8) -- cycle;
+        \path[fill=PoprvdS] (5, 16, 9) -- (6, 16, 9) -- (6, 16, 8) -- (5, 16, 8) -- cycle;
+        \path[fill=FNeSuMs] (4, 16, 9) -- (5, 16, 9) -- (5, 16, 8) -- (4, 16, 8) -- cycle;
+        \path[fill=TPbKCOM] (3, 16, 9) -- (4, 16, 9) -- (4, 16, 8) -- (3, 16, 8) -- cycle;
+        \path[fill=nJYrWsp] (2, 16, 9) -- (3, 16, 9) -- (3, 16, 8) -- (2, 16, 8) -- cycle;
+        \path[fill=PMZHGiv] (1, 16, 9) -- (2, 16, 9) -- (2, 16, 8) -- (1, 16, 8) -- cycle;
+        \path[fill=MCGbpSM] (0, 16, 9) -- (1, 16, 9) -- (1, 16, 8) -- (0, 16, 8) -- cycle;
+
+        % Row 9
+        \path[fill=gplDSQo] (15, 16, 8) -- (16, 16, 8) -- (16, 16, 7) -- (15, 16, 7) -- cycle;
+        \path[fill=VlzeVPU] (14, 16, 8) -- (15, 16, 8) -- (15, 16, 7) -- (14, 16, 7) -- cycle;
+        \path[fill=gEgQBCE] (13, 16, 8) -- (14, 16, 8) -- (14, 16, 7) -- (13, 16, 7) -- cycle;
+        \path[fill=VwUDkfF] (12, 16, 8) -- (13, 16, 8) -- (13, 16, 7) -- (12, 16, 7) -- cycle;
+        \path[fill=OjIvWGU] (11, 16, 8) -- (12, 16, 8) -- (12, 16, 7) -- (11, 16, 7) -- cycle;
+        \path[fill=dhlZrzq] (10, 16, 8) -- (11, 16, 8) -- (11, 16, 7) -- (10, 16, 7) -- cycle;
+        \path[fill=ZlHwgvw] (9, 16, 8) -- (10, 16, 8) -- (10, 16, 7) -- (9, 16, 7) -- cycle;
+        \path[fill=fNHJdGX] (8, 16, 8) -- (9, 16, 8) -- (9, 16, 7) -- (8, 16, 7) -- cycle;
+        \path[fill=GWwRigD] (7, 16, 8) -- (8, 16, 8) -- (8, 16, 7) -- (7, 16, 7) -- cycle;
+        \path[fill=EIEGLsm] (6, 16, 8) -- (7, 16, 8) -- (7, 16, 7) -- (6, 16, 7) -- cycle;
+        \path[fill=jCZMsYw] (5, 16, 8) -- (6, 16, 8) -- (6, 16, 7) -- (5, 16, 7) -- cycle;
+        \path[fill=KhzGerB] (4, 16, 8) -- (5, 16, 8) -- (5, 16, 7) -- (4, 16, 7) -- cycle;
+        \path[fill=yEqDSVb] (3, 16, 8) -- (4, 16, 8) -- (4, 16, 7) -- (3, 16, 7) -- cycle;
+        \path[fill=VuixoiN] (2, 16, 8) -- (3, 16, 8) -- (3, 16, 7) -- (2, 16, 7) -- cycle;
+        \path[fill=bYuGQmZ] (1, 16, 8) -- (2, 16, 8) -- (2, 16, 7) -- (1, 16, 7) -- cycle;
+        \path[fill=BEYQEpJ] (0, 16, 8) -- (1, 16, 8) -- (1, 16, 7) -- (0, 16, 7) -- cycle;
+
+        % Row 10
+        \path[fill=NXEZbcr] (15, 16, 7) -- (16, 16, 7) -- (16, 16, 6) -- (15, 16, 6) -- cycle;
+        \path[fill=NrEwZOj] (14, 16, 7) -- (15, 16, 7) -- (15, 16, 6) -- (14, 16, 6) -- cycle;
+        \path[fill=kwhdxpm] (13, 16, 7) -- (14, 16, 7) -- (14, 16, 6) -- (13, 16, 6) -- cycle;
+        \path[fill=aQCPcbD] (12, 16, 7) -- (13, 16, 7) -- (13, 16, 6) -- (12, 16, 6) -- cycle;
+        \path[fill=ULfrMPw] (11, 16, 7) -- (12, 16, 7) -- (12, 16, 6) -- (11, 16, 6) -- cycle;
+        \path[fill=ATBpJzP] (10, 16, 7) -- (11, 16, 7) -- (11, 16, 6) -- (10, 16, 6) -- cycle;
+        \path[fill=opJOPBq] (9, 16, 7) -- (10, 16, 7) -- (10, 16, 6) -- (9, 16, 6) -- cycle;
+        \path[fill=dRYRtJg] (8, 16, 7) -- (9, 16, 7) -- (9, 16, 6) -- (8, 16, 6) -- cycle;
+        \path[fill=crFlSBU] (7, 16, 7) -- (8, 16, 7) -- (8, 16, 6) -- (7, 16, 6) -- cycle;
+        \path[fill=tPxgFcK] (6, 16, 7) -- (7, 16, 7) -- (7, 16, 6) -- (6, 16, 6) -- cycle;
+        \path[fill=lufAcXn] (5, 16, 7) -- (6, 16, 7) -- (6, 16, 6) -- (5, 16, 6) -- cycle;
+        \path[fill=suNyYjF] (4, 16, 7) -- (5, 16, 7) -- (5, 16, 6) -- (4, 16, 6) -- cycle;
+        \path[fill=ywbpEam] (3, 16, 7) -- (4, 16, 7) -- (4, 16, 6) -- (3, 16, 6) -- cycle;
+        \path[fill=skCCkAU] (2, 16, 7) -- (3, 16, 7) -- (3, 16, 6) -- (2, 16, 6) -- cycle;
+        \path[fill=eJSDEfv] (1, 16, 7) -- (2, 16, 7) -- (2, 16, 6) -- (1, 16, 6) -- cycle;
+        \path[fill=iLDlYxL] (0, 16, 7) -- (1, 16, 7) -- (1, 16, 6) -- (0, 16, 6) -- cycle;
+
+        % Row 11
+        \path[fill=bJtYyeq] (15, 16, 6) -- (16, 16, 6) -- (16, 16, 5) -- (15, 16, 5) -- cycle;
+        \path[fill=eUKmAcC] (14, 16, 6) -- (15, 16, 6) -- (15, 16, 5) -- (14, 16, 5) -- cycle;
+        \path[fill=GJmEvDY] (13, 16, 6) -- (14, 16, 6) -- (14, 16, 5) -- (13, 16, 5) -- cycle;
+        \path[fill=zPtadNQ] (12, 16, 6) -- (13, 16, 6) -- (13, 16, 5) -- (12, 16, 5) -- cycle;
+        \path[fill=JRFSPxC] (11, 16, 6) -- (12, 16, 6) -- (12, 16, 5) -- (11, 16, 5) -- cycle;
+        \path[fill=JCkEgQv] (10, 16, 6) -- (11, 16, 6) -- (11, 16, 5) -- (10, 16, 5) -- cycle;
+        \path[fill=kHuGDsh] (9, 16, 6) -- (10, 16, 6) -- (10, 16, 5) -- (9, 16, 5) -- cycle;
+        \path[fill=wUvdFZf] (8, 16, 6) -- (9, 16, 6) -- (9, 16, 5) -- (8, 16, 5) -- cycle;
+        \path[fill=xUYkTyA] (7, 16, 6) -- (8, 16, 6) -- (8, 16, 5) -- (7, 16, 5) -- cycle;
+        \path[fill=dLSxnFT] (6, 16, 6) -- (7, 16, 6) -- (7, 16, 5) -- (6, 16, 5) -- cycle;
+        \path[fill=HuXvhAc] (5, 16, 6) -- (6, 16, 6) -- (6, 16, 5) -- (5, 16, 5) -- cycle;
+        \path[fill=Psjitpw] (4, 16, 6) -- (5, 16, 6) -- (5, 16, 5) -- (4, 16, 5) -- cycle;
+        \path[fill=eJnevpI] (3, 16, 6) -- (4, 16, 6) -- (4, 16, 5) -- (3, 16, 5) -- cycle;
+        \path[fill=iOqKMEC] (2, 16, 6) -- (3, 16, 6) -- (3, 16, 5) -- (2, 16, 5) -- cycle;
+        \path[fill=dUHzfox] (1, 16, 6) -- (2, 16, 6) -- (2, 16, 5) -- (1, 16, 5) -- cycle;
+        \path[fill=IPWZeiN] (0, 16, 6) -- (1, 16, 6) -- (1, 16, 5) -- (0, 16, 5) -- cycle;
+
+        % Row 12
+        \path[fill=ClgTtiX] (15, 16, 5) -- (16, 16, 5) -- (16, 16, 4) -- (15, 16, 4) -- cycle;
+        \path[fill=hAIoVqd] (14, 16, 5) -- (15, 16, 5) -- (15, 16, 4) -- (14, 16, 4) -- cycle;
+        \path[fill=ksWQxtY] (13, 16, 5) -- (14, 16, 5) -- (14, 16, 4) -- (13, 16, 4) -- cycle;
+        \path[fill=ZnQOUGc] (12, 16, 5) -- (13, 16, 5) -- (13, 16, 4) -- (12, 16, 4) -- cycle;
+        \path[fill=HKJatJn] (11, 16, 5) -- (12, 16, 5) -- (12, 16, 4) -- (11, 16, 4) -- cycle;
+        \path[fill=VffjTfW] (10, 16, 5) -- (11, 16, 5) -- (11, 16, 4) -- (10, 16, 4) -- cycle;
+        \path[fill=lTrBPta] (9, 16, 5) -- (10, 16, 5) -- (10, 16, 4) -- (9, 16, 4) -- cycle;
+        \path[fill=QBGYnZZ] (8, 16, 5) -- (9, 16, 5) -- (9, 16, 4) -- (8, 16, 4) -- cycle;
+        \path[fill=tzWgRek] (7, 16, 5) -- (8, 16, 5) -- (8, 16, 4) -- (7, 16, 4) -- cycle;
+        \path[fill=IPrYGqh] (6, 16, 5) -- (7, 16, 5) -- (7, 16, 4) -- (6, 16, 4) -- cycle;
+        \path[fill=kWBOwLZ] (5, 16, 5) -- (6, 16, 5) -- (6, 16, 4) -- (5, 16, 4) -- cycle;
+        \path[fill=tSLNWsl] (4, 16, 5) -- (5, 16, 5) -- (5, 16, 4) -- (4, 16, 4) -- cycle;
+        \path[fill=KifjvRR] (3, 16, 5) -- (4, 16, 5) -- (4, 16, 4) -- (3, 16, 4) -- cycle;
+        \path[fill=nPNbByy] (2, 16, 5) -- (3, 16, 5) -- (3, 16, 4) -- (2, 16, 4) -- cycle;
+        \path[fill=xWomOPl] (1, 16, 5) -- (2, 16, 5) -- (2, 16, 4) -- (1, 16, 4) -- cycle;
+        \path[fill=wQHFkrN] (0, 16, 5) -- (1, 16, 5) -- (1, 16, 4) -- (0, 16, 4) -- cycle;
+
+        % Row 13
+        \path[fill=MJPwqsW] (15, 16, 4) -- (16, 16, 4) -- (16, 16, 3) -- (15, 16, 3) -- cycle;
+        \path[fill=GAEnxuk] (14, 16, 4) -- (15, 16, 4) -- (15, 16, 3) -- (14, 16, 3) -- cycle;
+        \path[fill=eTSPdPY] (13, 16, 4) -- (14, 16, 4) -- (14, 16, 3) -- (13, 16, 3) -- cycle;
+        \path[fill=ISsxbms] (12, 16, 4) -- (13, 16, 4) -- (13, 16, 3) -- (12, 16, 3) -- cycle;
+        \path[fill=TrluJYq] (11, 16, 4) -- (12, 16, 4) -- (12, 16, 3) -- (11, 16, 3) -- cycle;
+        \path[fill=IMZaSrZ] (10, 16, 4) -- (11, 16, 4) -- (11, 16, 3) -- (10, 16, 3) -- cycle;
+        \path[fill=PllSbKx] (9, 16, 4) -- (10, 16, 4) -- (10, 16, 3) -- (9, 16, 3) -- cycle;
+        \path[fill=GYnYjga] (8, 16, 4) -- (9, 16, 4) -- (9, 16, 3) -- (8, 16, 3) -- cycle;
+        \path[fill=YYmZECR] (7, 16, 4) -- (8, 16, 4) -- (8, 16, 3) -- (7, 16, 3) -- cycle;
+        \path[fill=sbuZFag] (6, 16, 4) -- (7, 16, 4) -- (7, 16, 3) -- (6, 16, 3) -- cycle;
+        \path[fill=zeNTBqa] (5, 16, 4) -- (6, 16, 4) -- (6, 16, 3) -- (5, 16, 3) -- cycle;
+        \path[fill=ZObqGJD] (4, 16, 4) -- (5, 16, 4) -- (5, 16, 3) -- (4, 16, 3) -- cycle;
+        \path[fill=JpNPOHH] (3, 16, 4) -- (4, 16, 4) -- (4, 16, 3) -- (3, 16, 3) -- cycle;
+        \path[fill=DEyPWVg] (2, 16, 4) -- (3, 16, 4) -- (3, 16, 3) -- (2, 16, 3) -- cycle;
+        \path[fill=CPLIzOv] (1, 16, 4) -- (2, 16, 4) -- (2, 16, 3) -- (1, 16, 3) -- cycle;
+        \path[fill=XMHFCCH] (0, 16, 4) -- (1, 16, 4) -- (1, 16, 3) -- (0, 16, 3) -- cycle;
+
+        % Row 14
+        \path[fill=ideRWHX] (15, 16, 3) -- (16, 16, 3) -- (16, 16, 2) -- (15, 16, 2) -- cycle;
+        \path[fill=VCslZiM] (14, 16, 3) -- (15, 16, 3) -- (15, 16, 2) -- (14, 16, 2) -- cycle;
+        \path[fill=RMJyGqV] (13, 16, 3) -- (14, 16, 3) -- (14, 16, 2) -- (13, 16, 2) -- cycle;
+        \path[fill=gjYrVjw] (12, 16, 3) -- (13, 16, 3) -- (13, 16, 2) -- (12, 16, 2) -- cycle;
+        \path[fill=vtvXUkY] (11, 16, 3) -- (12, 16, 3) -- (12, 16, 2) -- (11, 16, 2) -- cycle;
+        \path[fill=bUerINw] (10, 16, 3) -- (11, 16, 3) -- (11, 16, 2) -- (10, 16, 2) -- cycle;
+        \path[fill=ZjdlHCr] (9, 16, 3) -- (10, 16, 3) -- (10, 16, 2) -- (9, 16, 2) -- cycle;
+        \path[fill=drWqdfT] (8, 16, 3) -- (9, 16, 3) -- (9, 16, 2) -- (8, 16, 2) -- cycle;
+        \path[fill=FLpzmOE] (7, 16, 3) -- (8, 16, 3) -- (8, 16, 2) -- (7, 16, 2) -- cycle;
+        \path[fill=NoVwiHw] (6, 16, 3) -- (7, 16, 3) -- (7, 16, 2) -- (6, 16, 2) -- cycle;
+        \path[fill=tZToMWd] (5, 16, 3) -- (6, 16, 3) -- (6, 16, 2) -- (5, 16, 2) -- cycle;
+        \path[fill=SMFlcjj] (4, 16, 3) -- (5, 16, 3) -- (5, 16, 2) -- (4, 16, 2) -- cycle;
+        \path[fill=HxGunTZ] (3, 16, 3) -- (4, 16, 3) -- (4, 16, 2) -- (3, 16, 2) -- cycle;
+        \path[fill=TwpZxwz] (2, 16, 3) -- (3, 16, 3) -- (3, 16, 2) -- (2, 16, 2) -- cycle;
+        \path[fill=RSZybSt] (1, 16, 3) -- (2, 16, 3) -- (2, 16, 2) -- (1, 16, 2) -- cycle;
+        \path[fill=CzcFufs] (0, 16, 3) -- (1, 16, 3) -- (1, 16, 2) -- (0, 16, 2) -- cycle;
+
+        % Row 15
+        \path[fill=sGuIZMI] (15, 16, 2) -- (16, 16, 2) -- (16, 16, 1) -- (15, 16, 1) -- cycle;
+        \path[fill=UJpflSt] (14, 16, 2) -- (15, 16, 2) -- (15, 16, 1) -- (14, 16, 1) -- cycle;
+        \path[fill=GqPwotV] (13, 16, 2) -- (14, 16, 2) -- (14, 16, 1) -- (13, 16, 1) -- cycle;
+        \path[fill=YFxQhwE] (12, 16, 2) -- (13, 16, 2) -- (13, 16, 1) -- (12, 16, 1) -- cycle;
+        \path[fill=BhuDPmS] (11, 16, 2) -- (12, 16, 2) -- (12, 16, 1) -- (11, 16, 1) -- cycle;
+        \path[fill=NQLjPIG] (10, 16, 2) -- (11, 16, 2) -- (11, 16, 1) -- (10, 16, 1) -- cycle;
+        \path[fill=rdvHrSZ] (9, 16, 2) -- (10, 16, 2) -- (10, 16, 1) -- (9, 16, 1) -- cycle;
+        \path[fill=ihKOXNT] (8, 16, 2) -- (9, 16, 2) -- (9, 16, 1) -- (8, 16, 1) -- cycle;
+        \path[fill=fupJGni] (7, 16, 2) -- (8, 16, 2) -- (8, 16, 1) -- (7, 16, 1) -- cycle;
+        \path[fill=tesOxRH] (6, 16, 2) -- (7, 16, 2) -- (7, 16, 1) -- (6, 16, 1) -- cycle;
+        \path[fill=HkkfDvm] (5, 16, 2) -- (6, 16, 2) -- (6, 16, 1) -- (5, 16, 1) -- cycle;
+        \path[fill=kWQgjnM] (4, 16, 2) -- (5, 16, 2) -- (5, 16, 1) -- (4, 16, 1) -- cycle;
+        \path[fill=oMtpjtJ] (3, 16, 2) -- (4, 16, 2) -- (4, 16, 1) -- (3, 16, 1) -- cycle;
+        \path[fill=prjeSUG] (2, 16, 2) -- (3, 16, 2) -- (3, 16, 1) -- (2, 16, 1) -- cycle;
+        \path[fill=srEumHm] (1, 16, 2) -- (2, 16, 2) -- (2, 16, 1) -- (1, 16, 1) -- cycle;
+        \path[fill=hoxmTZh] (0, 16, 2) -- (1, 16, 2) -- (1, 16, 1) -- (0, 16, 1) -- cycle;
+
+        % Row 16
+        \path[fill=ILDZoFF] (15, 16, 1) -- (16, 16, 1) -- (16, 16, 0) -- (15, 16, 0) -- cycle;
+        \path[fill=SIYWTOQ] (14, 16, 1) -- (15, 16, 1) -- (15, 16, 0) -- (14, 16, 0) -- cycle;
+        \path[fill=CVjEtna] (13, 16, 1) -- (14, 16, 1) -- (14, 16, 0) -- (13, 16, 0) -- cycle;
+        \path[fill=heuvBdU] (12, 16, 1) -- (13, 16, 1) -- (13, 16, 0) -- (12, 16, 0) -- cycle;
+        \path[fill=ZMBbxTe] (11, 16, 1) -- (12, 16, 1) -- (12, 16, 0) -- (11, 16, 0) -- cycle;
+        \path[fill=OYSjfdZ] (10, 16, 1) -- (11, 16, 1) -- (11, 16, 0) -- (10, 16, 0) -- cycle;
+        \path[fill=WbLFDgl] (9, 16, 1) -- (10, 16, 1) -- (10, 16, 0) -- (9, 16, 0) -- cycle;
+        \path[fill=vicVvob] (8, 16, 1) -- (9, 16, 1) -- (9, 16, 0) -- (8, 16, 0) -- cycle;
+        \path[fill=QRNEmvm] (7, 16, 1) -- (8, 16, 1) -- (8, 16, 0) -- (7, 16, 0) -- cycle;
+        \path[fill=qGopPcR] (6, 16, 1) -- (7, 16, 1) -- (7, 16, 0) -- (6, 16, 0) -- cycle;
+        \path[fill=fQejRrn] (5, 16, 1) -- (6, 16, 1) -- (6, 16, 0) -- (5, 16, 0) -- cycle;
+        \path[fill=ePAXuZU] (4, 16, 1) -- (5, 16, 1) -- (5, 16, 0) -- (4, 16, 0) -- cycle;
+        \path[fill=wPqyrAH] (3, 16, 1) -- (4, 16, 1) -- (4, 16, 0) -- (3, 16, 0) -- cycle;
+        \path[fill=yfARFQk] (2, 16, 1) -- (3, 16, 1) -- (3, 16, 0) -- (2, 16, 0) -- cycle;
+        \path[fill=OqPIybX] (1, 16, 1) -- (2, 16, 1) -- (2, 16, 0) -- (1, 16, 0) -- cycle;
+        \path[fill=sWHBqgx] (0, 16, 1) -- (1, 16, 1) -- (1, 16, 0) -- (0, 16, 0) -- cycle;
+
+
+    % left face
+        % Define color commands
+        \definecolor{WpxwkNmI}{RGB}{75, 97, 45}
+        \definecolor{aXQSveEE}{RGB}{66, 86, 41}
+        \definecolor{USLelodd}{RGB}{67, 88, 41}
+        \definecolor{JLjDlboH}{RGB}{65, 85, 40}
+        \definecolor{kCOYHYND}{RGB}{75, 96, 45}
+        \definecolor{EHvjOdTY}{RGB}{68, 83, 40}
+        \definecolor{XijxWueq}{RGB}{74, 97, 45}
+        \definecolor{tzIoTXqX}{RGB}{67, 88, 41}
+        \definecolor{QejnsVOE}{RGB}{69, 90, 42}
+        \definecolor{SJymQZqg}{RGB}{71, 93, 44}
+        \definecolor{vWLEbvjD}{RGB}{75, 98, 46}
+        \definecolor{OTILqgbv}{RGB}{71, 94, 44}
+        \definecolor{AnfzSziI}{RGB}{77, 101, 47}
+        \definecolor{AghVqqYw}{RGB}{62, 80, 37}
+        \definecolor{OnBGenQg}{RGB}{70, 92, 43}
+        \definecolor{JfrWGbhg}{RGB}{67, 89, 41}
+        \definecolor{HCSbGWsn}{RGB}{73, 96, 44}
+        \definecolor{tSliCodu}{RGB}{66, 81, 38}
+        \definecolor{jBAdtvCi}{RGB}{74, 96, 45}
+        \definecolor{OIflOyJV}{RGB}{66, 88, 41}
+        \definecolor{XHouIFyo}{RGB}{77, 96, 46}
+        \definecolor{iraLZvOW}{RGB}{72, 58, 35}
+        \definecolor{CiAMijMn}{RGB}{73, 92, 43}
+        \definecolor{WYFKREBT}{RGB}{63, 78, 38}
+        \definecolor{HIqnYDvs}{RGB}{77, 99, 47}
+        \definecolor{KnAIUros}{RGB}{69, 92, 43}
+        \definecolor{RNVTnzGD}{RGB}{73, 96, 45}
+        \definecolor{VtcnSAUn}{RGB}{69, 90, 42}
+        \definecolor{XoNxegen}{RGB}{73, 91, 43}
+        \definecolor{slGsXBqp}{RGB}{63, 83, 38}
+        \definecolor{MuDMwMFC}{RGB}{73, 95, 44}
+        \definecolor{kyibZTKW}{RGB}{65, 79, 38}
+        \definecolor{DGjKphSp}{RGB}{67, 79, 40}
+        \definecolor{TeiIlJPS}{RGB}{72, 61, 41}
+        \definecolor{HnILVTGP}{RGB}{75, 91, 44}
+        \definecolor{IryDQVfb}{RGB}{62, 78, 37}
+        \definecolor{dvbmSHhF}{RGB}{73, 91, 44}
+        \definecolor{yVQmUtTg}{RGB}{69, 54, 34}
+        \definecolor{pkNdYZfZ}{RGB}{66, 74, 37}
+        \definecolor{dmEFtnaK}{RGB}{69, 56, 34}
+        \definecolor{ixpSUoQc}{RGB}{73, 92, 44}
+        \definecolor{pkzxmWKW}{RGB}{71, 88, 43}
+        \definecolor{dJFQsLCv}{RGB}{68, 89, 42}
+        \definecolor{dYeEoTOO}{RGB}{76, 90, 44}
+        \definecolor{mXcvAOyr}{RGB}{72, 57, 35}
+        \definecolor{ROfvjcNc}{RGB}{57, 67, 33}
+        \definecolor{aZwUJfco}{RGB}{67, 80, 39}
+        \definecolor{ZlVxfLSV}{RGB}{73, 55, 35}
+        \definecolor{KUKLKLzg}{RGB}{77, 58, 42}
+        \definecolor{brckslLi}{RGB}{84, 77, 71}
+        \definecolor{JSzeqqih}{RGB}{77, 56, 38}
+        \definecolor{lwTwBaXt}{RGB}{77, 59, 37}
+        \definecolor{rHddbfRQ}{RGB}{68, 77, 39}
+        \definecolor{oEPbvvuV}{RGB}{75, 55, 36}
+        \definecolor{SpzcUibZ}{RGB}{73, 51, 34}
+        \definecolor{qgZNtLkU}{RGB}{72, 53, 34}
+        \definecolor{PYoSUgRY}{RGB}{61, 68, 34}
+        \definecolor{jeoSnMIH}{RGB}{68, 55, 33}
+        \definecolor{QIjTZTjH}{RGB}{65, 73, 38}
+        \definecolor{QzPejvtd}{RGB}{74, 59, 40}
+        \definecolor{PRXiuxvL}{RGB}{92, 64, 44}
+        \definecolor{ZGqMeWGe}{RGB}{76, 54, 35}
+        \definecolor{TGrKvxFM}{RGB}{72, 51, 33}
+        \definecolor{mPcQNdLa}{RGB}{91, 63, 44}
+        \definecolor{DCfVkoEH}{RGB}{110, 78, 53}
+        \definecolor{DpEbiBbN}{RGB}{96, 69, 48}
+        \definecolor{qtHRMakt}{RGB}{119, 85, 58}
+        \definecolor{LBbwwEyc}{RGB}{131, 94, 65}
+        \definecolor{kAJQMtdJ}{RGB}{81, 58, 37}
+        \definecolor{zbYSfTih}{RGB}{111, 79, 54}
+        \definecolor{ZPooaUxG}{RGB}{93, 65, 45}
+        \definecolor{aQqxcJKn}{RGB}{88, 61, 42}
+        \definecolor{UHOEEWJM}{RGB}{70, 49, 32}
+        \definecolor{TJWIWXVQ}{RGB}{71, 49, 32}
+        \definecolor{qZuWBHmp}{RGB}{72, 53, 37}
+        \definecolor{OdNGGwEm}{RGB}{81, 74, 70}
+        \definecolor{wgzHVBBr}{RGB}{97, 70, 50}
+        \definecolor{RdniNpCC}{RGB}{109, 77, 52}
+        \definecolor{dpSHpwHO}{RGB}{79, 54, 37}
+        \definecolor{fOqJmTzY}{RGB}{99, 68, 47}
+        \definecolor{yNqHYsSB}{RGB}{99, 69, 48}
+        \definecolor{FnGuYqJi}{RGB}{81, 55, 38}
+        \definecolor{IsEsfCMo}{RGB}{115, 81, 56}
+        \definecolor{RacixJvL}{RGB}{116, 83, 57}
+        \definecolor{yatJORzY}{RGB}{99, 72, 53}
+        \definecolor{wzuwIYsr}{RGB}{111, 79, 55}
+        \definecolor{UujAvKSe}{RGB}{78, 54, 36}
+        \definecolor{MuYJxDrP}{RGB}{79, 54, 37}
+        \definecolor{yIhYiSFs}{RGB}{80, 55, 37}
+        \definecolor{PvViJGXg}{RGB}{94, 66, 45}
+        \definecolor{HMWzfFMe}{RGB}{98, 68, 47}
+        \definecolor{GKuylhet}{RGB}{82, 58, 41}
+        \definecolor{YnTmRbbU}{RGB}{94, 66, 46}
+        \definecolor{IlpdiwQj}{RGB}{99, 70, 48}
+        \definecolor{qTwFXuZb}{RGB}{99, 69, 47}
+        \definecolor{hGquMqRp}{RGB}{136, 97, 67}
+        \definecolor{xhPDyryn}{RGB}{132, 94, 66}
+        \definecolor{nLXqrVib}{RGB}{98, 68, 47}
+        \definecolor{JKoBckqN}{RGB}{102, 71, 49}
+        \definecolor{xyjeCuqV}{RGB}{103, 76, 55}
+        \definecolor{LSqidDkE}{RGB}{107, 98, 91}
+        \definecolor{oPevRcrh}{RGB}{99, 71, 51}
+        \definecolor{ZopFrXUk}{RGB}{99, 68, 47}
+        \definecolor{aHSAeWSP}{RGB}{134, 96, 67}
+        \definecolor{QAzPfqRj}{RGB}{135, 97, 67}
+        \definecolor{GWirlsXO}{RGB}{101, 71, 48}
+        \definecolor{KZZXpYTg}{RGB}{137, 98, 68}
+        \definecolor{hwwpzKow}{RGB}{137, 97, 67}
+        \definecolor{iPJcFAAe}{RGB}{101, 71, 49}
+        \definecolor{BoeccnNS}{RGB}{111, 79, 54}
+        \definecolor{LdQzDhSS}{RGB}{102, 72, 49}
+        \definecolor{PzgLPzhr}{RGB}{119, 85, 58}
+        \definecolor{gXlmSiey}{RGB}{101, 70, 49}
+        \definecolor{KSDQPPBS}{RGB}{101, 71, 49}
+        \definecolor{nVBhDOGS}{RGB}{137, 98, 68}
+        \definecolor{yEcnNiWt}{RGB}{138, 99, 69}
+        \definecolor{wNEsSJzC}{RGB}{118, 86, 61}
+        \definecolor{MWoHPYQn}{RGB}{115, 82, 57}
+        \definecolor{rxctPhpd}{RGB}{98, 68, 47}
+        \definecolor{UqWyeNPB}{RGB}{99, 70, 48}
+        \definecolor{jZmzKoQa}{RGB}{113, 81, 56}
+        \definecolor{hUHNRJNy}{RGB}{84, 58, 39}
+        \definecolor{tZMBzmct}{RGB}{118, 84, 58}
+        \definecolor{gliwlfXa}{RGB}{119, 84, 57}
+        \definecolor{amRGywbw}{RGB}{98, 68, 47}
+        \definecolor{kJEPRkAQ}{RGB}{97, 68, 47}
+        \definecolor{GBTIpXaJ}{RGB}{112, 79, 54}
+        \definecolor{saBydddL}{RGB}{116, 83, 56}
+        \definecolor{SwxJAFtB}{RGB}{113, 80, 54}
+        \definecolor{QrmSVjKp}{RGB}{99, 69, 48}
+        \definecolor{XURYEDer}{RGB}{101, 70, 48}
+        \definecolor{QDbXqDTR}{RGB}{115, 82, 56}
+        \definecolor{bdlRmTBn}{RGB}{101, 70, 48}
+        \definecolor{EuXyWPCL}{RGB}{111, 79, 54}
+        \definecolor{DQwBlFlW}{RGB}{92, 64, 44}
+        \definecolor{sDlPwJGz}{RGB}{77, 53, 35}
+        \definecolor{KVTpAQZA}{RGB}{97, 68, 47}
+        \definecolor{hBHthoMQ}{RGB}{112, 80, 54}
+        \definecolor{UQkTbAnY}{RGB}{114, 82, 56}
+        \definecolor{SAaYHZZH}{RGB}{100, 69, 48}
+        \definecolor{cFZQvJVz}{RGB}{100, 70, 48}
+        \definecolor{AopYGetS}{RGB}{98, 68, 47}
+        \definecolor{yvqsDXtb}{RGB}{80, 55, 36}
+        \definecolor{YOkzhpMR}{RGB}{97, 68, 46}
+        \definecolor{herRHibJ}{RGB}{101, 71, 49}
+        \definecolor{IXMgholi}{RGB}{111, 78, 54}
+        \definecolor{KHpPrvKx}{RGB}{79, 55, 37}
+        \definecolor{RRqemCSY}{RGB}{100, 70, 48}
+        \definecolor{FsYyTWsm}{RGB}{98, 68, 47}
+        \definecolor{NjgsLANU}{RGB}{77, 53, 36}
+        \definecolor{aRWJPKsU}{RGB}{80, 56, 37}
+        \definecolor{bAGPDQbM}{RGB}{94, 66, 45}
+        \definecolor{sbeOCgCk}{RGB}{94, 66, 45}
+        \definecolor{iSXpBluE}{RGB}{102, 72, 49}
+        \definecolor{yhhYlRPw}{RGB}{101, 71, 49}
+        \definecolor{tcctCDhE}{RGB}{98, 68, 47}
+        \definecolor{KqAQajIo}{RGB}{137, 98, 68}
+        \definecolor{JaLJhHcJ}{RGB}{137, 99, 68}
+        \definecolor{wLEhRYTz}{RGB}{100, 73, 52}
+        \definecolor{mGszbgpZ}{RGB}{113, 81, 55}
+        \definecolor{inlnLzgN}{RGB}{100, 71, 49}
+        \definecolor{UodRoIsh}{RGB}{113, 80, 55}
+        \definecolor{NwbnHORs}{RGB}{100, 70, 48}
+        \definecolor{MTuxWlBn}{RGB}{138, 99, 69}
+        \definecolor{wTsjbAEj}{RGB}{136, 97, 67}
+        \definecolor{ASEqzJMG}{RGB}{103, 73, 51}
+        \definecolor{xIKlPNza}{RGB}{131, 94, 65}
+        \definecolor{NotKnkEi}{RGB}{114, 82, 56}
+        \definecolor{KYOltRRu}{RGB}{82, 58, 41}
+        \definecolor{pfcSqoru}{RGB}{135, 97, 67}
+        \definecolor{HYCWKers}{RGB}{135, 97, 67}
+        \definecolor{QUZVJHXp}{RGB}{83, 57, 39}
+        \definecolor{LLfOqSVc}{RGB}{114, 81, 55}
+        \definecolor{GduKXivy}{RGB}{121, 88, 63}
+        \definecolor{BpGGJMYW}{RGB}{106, 97, 90}
+        \definecolor{HOnrcQrJ}{RGB}{96, 71, 51}
+        \definecolor{HrxHrXXQ}{RGB}{113, 81, 54}
+        \definecolor{bKHOMnvc}{RGB}{97, 68, 47}
+        \definecolor{aVPwvker}{RGB}{100, 70, 48}
+        \definecolor{VJlfCeZD}{RGB}{119, 85, 58}
+        \definecolor{SoGEjKwj}{RGB}{125, 89, 61}
+        \definecolor{aCxQnuQH}{RGB}{136, 97, 67}
+        \definecolor{Hlzohooq}{RGB}{109, 76, 53}
+        \definecolor{TjTTpklr}{RGB}{112, 82, 59}
+        \definecolor{LvrCaKyf}{RGB}{90, 81, 75}
+        \definecolor{tQqWgbOj}{RGB}{118, 86, 61}
+        \definecolor{DEDWsdJF}{RGB}{119, 84, 58}
+        \definecolor{aaYLbKHX}{RGB}{94, 66, 45}
+        \definecolor{jCMxgrps}{RGB}{80, 55, 37}
+        \definecolor{yXXxxeLJ}{RGB}{112, 79, 55}
+        \definecolor{KNLZlnLG}{RGB}{101, 74, 53}
+        \definecolor{kKKjufvU}{RGB}{79, 56, 38}
+        \definecolor{NGlLERRL}{RGB}{95, 66, 45}
+        \definecolor{oEkeBTaG}{RGB}{81, 57, 38}
+        \definecolor{ouktfKNe}{RGB}{111, 79, 54}
+        \definecolor{xtqLaXsl}{RGB}{100, 71, 48}
+        \definecolor{EceMsRpS}{RGB}{116, 82, 57}
+        \definecolor{zdSEqGaA}{RGB}{124, 89, 61}
+        \definecolor{FSrhEIGO}{RGB}{135, 96, 66}
+        \definecolor{rdtORIxt}{RGB}{103, 72, 50}
+        \definecolor{KfDkAQVq}{RGB}{94, 69, 50}
+        \definecolor{fPqGDbbV}{RGB}{96, 67, 46}
+        \definecolor{IrRufWjq}{RGB}{100, 70, 48}
+        \definecolor{XIUaKzeQ}{RGB}{95, 66, 45}
+        \definecolor{ZRPACLiv}{RGB}{93, 65, 45}
+        \definecolor{RhzSDyuM}{RGB}{103, 73, 50}
+        \definecolor{arelAAhD}{RGB}{136, 97, 67}
+        \definecolor{uQlqxomJ}{RGB}{138, 99, 68}
+        \definecolor{ppdwEEPg}{RGB}{99, 70, 48}
+        \definecolor{ldruZUzK}{RGB}{110, 78, 53}
+        \definecolor{uRWYuuFR}{RGB}{97, 68, 47}
+        \definecolor{iStFtuth}{RGB}{98, 69, 48}
+        \definecolor{SsTnPHRv}{RGB}{95, 70, 53}
+        \definecolor{OhcVelok}{RGB}{99, 70, 48}
+        \definecolor{KRfokBbL}{RGB}{119, 84, 57}
+        \definecolor{mOGhrLAO}{RGB}{114, 81, 55}
+        \definecolor{HiGiTLSZ}{RGB}{97, 68, 46}
+        \definecolor{OTnllgqA}{RGB}{84, 59, 40}
+        \definecolor{OUXhCAHq}{RGB}{127, 91, 63}
+        \definecolor{ZLnonfOc}{RGB}{83, 57, 39}
+        \definecolor{IilTqyVb}{RGB}{97, 68, 46}
+        \definecolor{txRWuZGQ}{RGB}{133, 95, 66}
+        \definecolor{FcBDGLvy}{RGB}{124, 89, 61}
+        \definecolor{rzSjvFwt}{RGB}{123, 88, 60}
+        \definecolor{NOfyQgkI}{RGB}{115, 82, 56}
+        \definecolor{cXumCcvd}{RGB}{97, 68, 47}
+        \definecolor{kzxLiLgV}{RGB}{85, 60, 40}
+        \definecolor{KWfxBTEL}{RGB}{131, 94, 65}
+        \definecolor{DnxwAWrj}{RGB}{97, 69, 47}
+        \definecolor{LmZgGRPL}{RGB}{78, 54, 37}
+        \definecolor{AbHUpbQG}{RGB}{94, 67, 48}
+        \definecolor{CYYzpbMT}{RGB}{85, 59, 40}
+        \definecolor{CIfDPdgX}{RGB}{135, 96, 67}
+        \definecolor{aDliHUxN}{RGB}{133, 96, 66}
+        \definecolor{RHzCqLnt}{RGB}{106, 75, 51}
+        \definecolor{eoENidXg}{RGB}{110, 78, 53}
+        \definecolor{KTavFnpH}{RGB}{99, 70, 48}
+        \definecolor{QTgtaoWG}{RGB}{104, 73, 50}
+        \definecolor{UUygOtqG}{RGB}{116, 82, 56}
+        \definecolor{nZdUYlyL}{RGB}{116, 82, 56}
+        \definecolor{alLlIdCR}{RGB}{116, 82, 56}
+        \definecolor{geSUINKL}{RGB}{101, 72, 49}
+        \definecolor{fMXYZBMb}{RGB}{132, 95, 66}
+        \definecolor{OavsSKvJ}{RGB}{124, 89, 60}
+        \definecolor{QmmxHoak}{RGB}{114, 80, 55}
+        \definecolor{vTCOBRvl}{RGB}{95, 70, 51}
+        \definecolor{zFqNBqtf}{RGB}{103, 95, 90}
+        \definecolor{gIhQzHkW}{RGB}{96, 69, 50}
+        \definecolor{TYbnXWmb}{RGB}{122, 86, 59}
+        \definecolor{sXaUMCEj}{RGB}{121, 87, 59}
+        \definecolor{TZLzaDJA}{RGB}{98, 68, 47}
+        \definecolor{MVhSWlKa}{RGB}{100, 70, 48}
+        \definecolor{oNmcMoAB}{RGB}{115, 82, 56}
+        \definecolor{VIMEMZeG}{RGB}{115, 81, 55}
+        \definecolor{AstgqTKY}{RGB}{99, 69, 47}
+        \definecolor{daCmYatA}{RGB}{78, 54, 36}
+
+        % Draw commands
+
+        % Row 1
+        \path[fill=WpxwkNmI] (16, 0, 16) -- (16, 1, 16) -- (16, 1, 15) -- (16, 0, 15) -- cycle;
+        \path[fill=aXQSveEE] (16, 1, 16) -- (16, 2, 16) -- (16, 2, 15) -- (16, 1, 15) -- cycle;
+        \path[fill=USLelodd] (16, 2, 16) -- (16, 3, 16) -- (16, 3, 15) -- (16, 2, 15) -- cycle;
+        \path[fill=JLjDlboH] (16, 3, 16) -- (16, 4, 16) -- (16, 4, 15) -- (16, 3, 15) -- cycle;
+        \path[fill=kCOYHYND] (16, 4, 16) -- (16, 5, 16) -- (16, 5, 15) -- (16, 4, 15) -- cycle;
+        \path[fill=EHvjOdTY] (16, 5, 16) -- (16, 6, 16) -- (16, 6, 15) -- (16, 5, 15) -- cycle;
+        \path[fill=XijxWueq] (16, 6, 16) -- (16, 7, 16) -- (16, 7, 15) -- (16, 6, 15) -- cycle;
+        \path[fill=tzIoTXqX] (16, 7, 16) -- (16, 8, 16) -- (16, 8, 15) -- (16, 7, 15) -- cycle;
+        \path[fill=QejnsVOE] (16, 8, 16) -- (16, 9, 16) -- (16, 9, 15) -- (16, 8, 15) -- cycle;
+        \path[fill=SJymQZqg] (16, 9, 16) -- (16, 10, 16) -- (16, 10, 15) -- (16, 9, 15) -- cycle;
+        \path[fill=vWLEbvjD] (16, 10, 16) -- (16, 11, 16) -- (16, 11, 15) -- (16, 10, 15) -- cycle;
+        \path[fill=OTILqgbv] (16, 11, 16) -- (16, 12, 16) -- (16, 12, 15) -- (16, 11, 15) -- cycle;
+        \path[fill=AnfzSziI] (16, 12, 16) -- (16, 13, 16) -- (16, 13, 15) -- (16, 12, 15) -- cycle;
+        \path[fill=AghVqqYw] (16, 13, 16) -- (16, 14, 16) -- (16, 14, 15) -- (16, 13, 15) -- cycle;
+        \path[fill=OnBGenQg] (16, 14, 16) -- (16, 15, 16) -- (16, 15, 15) -- (16, 14, 15) -- cycle;
+        \path[fill=JfrWGbhg] (16, 15, 16) -- (16, 16, 16) -- (16, 16, 15) -- (16, 15, 15) -- cycle;
+
+        % Row 2
+        \path[fill=HCSbGWsn] (16, 0, 15) -- (16, 1, 15) -- (16, 1, 14) -- (16, 0, 14) -- cycle;
+        \path[fill=tSliCodu] (16, 1, 15) -- (16, 2, 15) -- (16, 2, 14) -- (16, 1, 14) -- cycle;
+        \path[fill=jBAdtvCi] (16, 2, 15) -- (16, 3, 15) -- (16, 3, 14) -- (16, 2, 14) -- cycle;
+        \path[fill=OIflOyJV] (16, 3, 15) -- (16, 4, 15) -- (16, 4, 14) -- (16, 3, 14) -- cycle;
+        \path[fill=XHouIFyo] (16, 4, 15) -- (16, 5, 15) -- (16, 5, 14) -- (16, 4, 14) -- cycle;
+        \path[fill=iraLZvOW] (16, 5, 15) -- (16, 6, 15) -- (16, 6, 14) -- (16, 5, 14) -- cycle;
+        \path[fill=CiAMijMn] (16, 6, 15) -- (16, 7, 15) -- (16, 7, 14) -- (16, 6, 14) -- cycle;
+        \path[fill=WYFKREBT] (16, 7, 15) -- (16, 8, 15) -- (16, 8, 14) -- (16, 7, 14) -- cycle;
+        \path[fill=HIqnYDvs] (16, 8, 15) -- (16, 9, 15) -- (16, 9, 14) -- (16, 8, 14) -- cycle;
+        \path[fill=KnAIUros] (16, 9, 15) -- (16, 10, 15) -- (16, 10, 14) -- (16, 9, 14) -- cycle;
+        \path[fill=RNVTnzGD] (16, 10, 15) -- (16, 11, 15) -- (16, 11, 14) -- (16, 10, 14) -- cycle;
+        \path[fill=VtcnSAUn] (16, 11, 15) -- (16, 12, 15) -- (16, 12, 14) -- (16, 11, 14) -- cycle;
+        \path[fill=XoNxegen] (16, 12, 15) -- (16, 13, 15) -- (16, 13, 14) -- (16, 12, 14) -- cycle;
+        \path[fill=slGsXBqp] (16, 13, 15) -- (16, 14, 15) -- (16, 14, 14) -- (16, 13, 14) -- cycle;
+        \path[fill=MuDMwMFC] (16, 14, 15) -- (16, 15, 15) -- (16, 15, 14) -- (16, 14, 14) -- cycle;
+        \path[fill=kyibZTKW] (16, 15, 15) -- (16, 16, 15) -- (16, 16, 14) -- (16, 15, 14) -- cycle;
+
+        % Row 3
+        \path[fill=DGjKphSp] (16, 0, 14) -- (16, 1, 14) -- (16, 1, 13) -- (16, 0, 13) -- cycle;
+        \path[fill=TeiIlJPS] (16, 1, 14) -- (16, 2, 14) -- (16, 2, 13) -- (16, 1, 13) -- cycle;
+        \path[fill=HnILVTGP] (16, 2, 14) -- (16, 3, 14) -- (16, 3, 13) -- (16, 2, 13) -- cycle;
+        \path[fill=IryDQVfb] (16, 3, 14) -- (16, 4, 14) -- (16, 4, 13) -- (16, 3, 13) -- cycle;
+        \path[fill=dvbmSHhF] (16, 4, 14) -- (16, 5, 14) -- (16, 5, 13) -- (16, 4, 13) -- cycle;
+        \path[fill=yVQmUtTg] (16, 5, 14) -- (16, 6, 14) -- (16, 6, 13) -- (16, 5, 13) -- cycle;
+        \path[fill=pkNdYZfZ] (16, 6, 14) -- (16, 7, 14) -- (16, 7, 13) -- (16, 6, 13) -- cycle;
+        \path[fill=dmEFtnaK] (16, 7, 14) -- (16, 8, 14) -- (16, 8, 13) -- (16, 7, 13) -- cycle;
+        \path[fill=ixpSUoQc] (16, 8, 14) -- (16, 9, 14) -- (16, 9, 13) -- (16, 8, 13) -- cycle;
+        \path[fill=pkzxmWKW] (16, 9, 14) -- (16, 10, 14) -- (16, 10, 13) -- (16, 9, 13) -- cycle;
+        \path[fill=dJFQsLCv] (16, 10, 14) -- (16, 11, 14) -- (16, 11, 13) -- (16, 10, 13) -- cycle;
+        \path[fill=dYeEoTOO] (16, 11, 14) -- (16, 12, 14) -- (16, 12, 13) -- (16, 11, 13) -- cycle;
+        \path[fill=mXcvAOyr] (16, 12, 14) -- (16, 13, 14) -- (16, 13, 13) -- (16, 12, 13) -- cycle;
+        \path[fill=ROfvjcNc] (16, 13, 14) -- (16, 14, 14) -- (16, 14, 13) -- (16, 13, 13) -- cycle;
+        \path[fill=aZwUJfco] (16, 14, 14) -- (16, 15, 14) -- (16, 15, 13) -- (16, 14, 13) -- cycle;
+        \path[fill=ZlVxfLSV] (16, 15, 14) -- (16, 16, 14) -- (16, 16, 13) -- (16, 15, 13) -- cycle;
+
+        % Row 4
+        \path[fill=KUKLKLzg] (16, 0, 13) -- (16, 1, 13) -- (16, 1, 12) -- (16, 0, 12) -- cycle;
+        \path[fill=brckslLi] (16, 1, 13) -- (16, 2, 13) -- (16, 2, 12) -- (16, 1, 12) -- cycle;
+        \path[fill=JSzeqqih] (16, 2, 13) -- (16, 3, 13) -- (16, 3, 12) -- (16, 2, 12) -- cycle;
+        \path[fill=lwTwBaXt] (16, 3, 13) -- (16, 4, 13) -- (16, 4, 12) -- (16, 3, 12) -- cycle;
+        \path[fill=rHddbfRQ] (16, 4, 13) -- (16, 5, 13) -- (16, 5, 12) -- (16, 4, 12) -- cycle;
+        \path[fill=oEPbvvuV] (16, 5, 13) -- (16, 6, 13) -- (16, 6, 12) -- (16, 5, 12) -- cycle;
+        \path[fill=SpzcUibZ] (16, 6, 13) -- (16, 7, 13) -- (16, 7, 12) -- (16, 6, 12) -- cycle;
+        \path[fill=qgZNtLkU] (16, 7, 13) -- (16, 8, 13) -- (16, 8, 12) -- (16, 7, 12) -- cycle;
+        \path[fill=PYoSUgRY] (16, 8, 13) -- (16, 9, 13) -- (16, 9, 12) -- (16, 8, 12) -- cycle;
+        \path[fill=jeoSnMIH] (16, 9, 13) -- (16, 10, 13) -- (16, 10, 12) -- (16, 9, 12) -- cycle;
+        \path[fill=QIjTZTjH] (16, 10, 13) -- (16, 11, 13) -- (16, 11, 12) -- (16, 10, 12) -- cycle;
+        \path[fill=QzPejvtd] (16, 11, 13) -- (16, 12, 13) -- (16, 12, 12) -- (16, 11, 12) -- cycle;
+        \path[fill=PRXiuxvL] (16, 12, 13) -- (16, 13, 13) -- (16, 13, 12) -- (16, 12, 12) -- cycle;
+        \path[fill=ZGqMeWGe] (16, 13, 13) -- (16, 14, 13) -- (16, 14, 12) -- (16, 13, 12) -- cycle;
+        \path[fill=TGrKvxFM] (16, 14, 13) -- (16, 15, 13) -- (16, 15, 12) -- (16, 14, 12) -- cycle;
+        \path[fill=mPcQNdLa] (16, 15, 13) -- (16, 16, 13) -- (16, 16, 12) -- (16, 15, 12) -- cycle;
+
+        % Row 5
+        \path[fill=DCfVkoEH] (16, 0, 12) -- (16, 1, 12) -- (16, 1, 11) -- (16, 0, 11) -- cycle;
+        \path[fill=DpEbiBbN] (16, 1, 12) -- (16, 2, 12) -- (16, 2, 11) -- (16, 1, 11) -- cycle;
+        \path[fill=qtHRMakt] (16, 2, 12) -- (16, 3, 12) -- (16, 3, 11) -- (16, 2, 11) -- cycle;
+        \path[fill=LBbwwEyc] (16, 3, 12) -- (16, 4, 12) -- (16, 4, 11) -- (16, 3, 11) -- cycle;
+        \path[fill=kAJQMtdJ] (16, 4, 12) -- (16, 5, 12) -- (16, 5, 11) -- (16, 4, 11) -- cycle;
+        \path[fill=zbYSfTih] (16, 5, 12) -- (16, 6, 12) -- (16, 6, 11) -- (16, 5, 11) -- cycle;
+        \path[fill=ZPooaUxG] (16, 6, 12) -- (16, 7, 12) -- (16, 7, 11) -- (16, 6, 11) -- cycle;
+        \path[fill=aQqxcJKn] (16, 7, 12) -- (16, 8, 12) -- (16, 8, 11) -- (16, 7, 11) -- cycle;
+        \path[fill=UHOEEWJM] (16, 8, 12) -- (16, 9, 12) -- (16, 9, 11) -- (16, 8, 11) -- cycle;
+        \path[fill=TJWIWXVQ] (16, 9, 12) -- (16, 10, 12) -- (16, 10, 11) -- (16, 9, 11) -- cycle;
+        \path[fill=qZuWBHmp] (16, 10, 12) -- (16, 11, 12) -- (16, 11, 11) -- (16, 10, 11) -- cycle;
+        \path[fill=OdNGGwEm] (16, 11, 12) -- (16, 12, 12) -- (16, 12, 11) -- (16, 11, 11) -- cycle;
+        \path[fill=wgzHVBBr] (16, 12, 12) -- (16, 13, 12) -- (16, 13, 11) -- (16, 12, 11) -- cycle;
+        \path[fill=RdniNpCC] (16, 13, 12) -- (16, 14, 12) -- (16, 14, 11) -- (16, 13, 11) -- cycle;
+        \path[fill=dpSHpwHO] (16, 14, 12) -- (16, 15, 12) -- (16, 15, 11) -- (16, 14, 11) -- cycle;
+        \path[fill=fOqJmTzY] (16, 15, 12) -- (16, 16, 12) -- (16, 16, 11) -- (16, 15, 11) -- cycle;
+
+        % Row 6
+        \path[fill=yNqHYsSB] (16, 0, 11) -- (16, 1, 11) -- (16, 1, 10) -- (16, 0, 10) -- cycle;
+        \path[fill=FnGuYqJi] (16, 1, 11) -- (16, 2, 11) -- (16, 2, 10) -- (16, 1, 10) -- cycle;
+        \path[fill=IsEsfCMo] (16, 2, 11) -- (16, 3, 11) -- (16, 3, 10) -- (16, 2, 10) -- cycle;
+        \path[fill=RacixJvL] (16, 3, 11) -- (16, 4, 11) -- (16, 4, 10) -- (16, 3, 10) -- cycle;
+        \path[fill=yatJORzY] (16, 4, 11) -- (16, 5, 11) -- (16, 5, 10) -- (16, 4, 10) -- cycle;
+        \path[fill=wzuwIYsr] (16, 5, 11) -- (16, 6, 11) -- (16, 6, 10) -- (16, 5, 10) -- cycle;
+        \path[fill=UujAvKSe] (16, 6, 11) -- (16, 7, 11) -- (16, 7, 10) -- (16, 6, 10) -- cycle;
+        \path[fill=MuYJxDrP] (16, 7, 11) -- (16, 8, 11) -- (16, 8, 10) -- (16, 7, 10) -- cycle;
+        \path[fill=yIhYiSFs] (16, 8, 11) -- (16, 9, 11) -- (16, 9, 10) -- (16, 8, 10) -- cycle;
+        \path[fill=PvViJGXg] (16, 9, 11) -- (16, 10, 11) -- (16, 10, 10) -- (16, 9, 10) -- cycle;
+        \path[fill=HMWzfFMe] (16, 10, 11) -- (16, 11, 11) -- (16, 11, 10) -- (16, 10, 10) -- cycle;
+        \path[fill=GKuylhet] (16, 11, 11) -- (16, 12, 11) -- (16, 12, 10) -- (16, 11, 10) -- cycle;
+        \path[fill=YnTmRbbU] (16, 12, 11) -- (16, 13, 11) -- (16, 13, 10) -- (16, 12, 10) -- cycle;
+        \path[fill=IlpdiwQj] (16, 13, 11) -- (16, 14, 11) -- (16, 14, 10) -- (16, 13, 10) -- cycle;
+        \path[fill=qTwFXuZb] (16, 14, 11) -- (16, 15, 11) -- (16, 15, 10) -- (16, 14, 10) -- cycle;
+        \path[fill=hGquMqRp] (16, 15, 11) -- (16, 16, 11) -- (16, 16, 10) -- (16, 15, 10) -- cycle;
+
+        % Row 7
+        \path[fill=xhPDyryn] (16, 0, 10) -- (16, 1, 10) -- (16, 1, 9) -- (16, 0, 9) -- cycle;
+        \path[fill=nLXqrVib] (16, 1, 10) -- (16, 2, 10) -- (16, 2, 9) -- (16, 1, 9) -- cycle;
+        \path[fill=JKoBckqN] (16, 2, 10) -- (16, 3, 10) -- (16, 3, 9) -- (16, 2, 9) -- cycle;
+        \path[fill=xyjeCuqV] (16, 3, 10) -- (16, 4, 10) -- (16, 4, 9) -- (16, 3, 9) -- cycle;
+        \path[fill=LSqidDkE] (16, 4, 10) -- (16, 5, 10) -- (16, 5, 9) -- (16, 4, 9) -- cycle;
+        \path[fill=oPevRcrh] (16, 5, 10) -- (16, 6, 10) -- (16, 6, 9) -- (16, 5, 9) -- cycle;
+        \path[fill=ZopFrXUk] (16, 6, 10) -- (16, 7, 10) -- (16, 7, 9) -- (16, 6, 9) -- cycle;
+        \path[fill=aHSAeWSP] (16, 7, 10) -- (16, 8, 10) -- (16, 8, 9) -- (16, 7, 9) -- cycle;
+        \path[fill=QAzPfqRj] (16, 8, 10) -- (16, 9, 10) -- (16, 9, 9) -- (16, 8, 9) -- cycle;
+        \path[fill=GWirlsXO] (16, 9, 10) -- (16, 10, 10) -- (16, 10, 9) -- (16, 9, 9) -- cycle;
+        \path[fill=KZZXpYTg] (16, 10, 10) -- (16, 11, 10) -- (16, 11, 9) -- (16, 10, 9) -- cycle;
+        \path[fill=hwwpzKow] (16, 11, 10) -- (16, 12, 10) -- (16, 12, 9) -- (16, 11, 9) -- cycle;
+        \path[fill=iPJcFAAe] (16, 12, 10) -- (16, 13, 10) -- (16, 13, 9) -- (16, 12, 9) -- cycle;
+        \path[fill=BoeccnNS] (16, 13, 10) -- (16, 14, 10) -- (16, 14, 9) -- (16, 13, 9) -- cycle;
+        \path[fill=LdQzDhSS] (16, 14, 10) -- (16, 15, 10) -- (16, 15, 9) -- (16, 14, 9) -- cycle;
+        \path[fill=PzgLPzhr] (16, 15, 10) -- (16, 16, 10) -- (16, 16, 9) -- (16, 15, 9) -- cycle;
+
+        % Row 8
+        \path[fill=gXlmSiey] (16, 0, 9) -- (16, 1, 9) -- (16, 1, 8) -- (16, 0, 8) -- cycle;
+        \path[fill=KSDQPPBS] (16, 1, 9) -- (16, 2, 9) -- (16, 2, 8) -- (16, 1, 8) -- cycle;
+        \path[fill=nVBhDOGS] (16, 2, 9) -- (16, 3, 9) -- (16, 3, 8) -- (16, 2, 8) -- cycle;
+        \path[fill=yEcnNiWt] (16, 3, 9) -- (16, 4, 9) -- (16, 4, 8) -- (16, 3, 8) -- cycle;
+        \path[fill=wNEsSJzC] (16, 4, 9) -- (16, 5, 9) -- (16, 5, 8) -- (16, 4, 8) -- cycle;
+        \path[fill=MWoHPYQn] (16, 5, 9) -- (16, 6, 9) -- (16, 6, 8) -- (16, 5, 8) -- cycle;
+        \path[fill=rxctPhpd] (16, 6, 9) -- (16, 7, 9) -- (16, 7, 8) -- (16, 6, 8) -- cycle;
+        \path[fill=UqWyeNPB] (16, 7, 9) -- (16, 8, 9) -- (16, 8, 8) -- (16, 7, 8) -- cycle;
+        \path[fill=jZmzKoQa] (16, 8, 9) -- (16, 9, 9) -- (16, 9, 8) -- (16, 8, 8) -- cycle;
+        \path[fill=hUHNRJNy] (16, 9, 9) -- (16, 10, 9) -- (16, 10, 8) -- (16, 9, 8) -- cycle;
+        \path[fill=tZMBzmct] (16, 10, 9) -- (16, 11, 9) -- (16, 11, 8) -- (16, 10, 8) -- cycle;
+        \path[fill=gliwlfXa] (16, 11, 9) -- (16, 12, 9) -- (16, 12, 8) -- (16, 11, 8) -- cycle;
+        \path[fill=amRGywbw] (16, 12, 9) -- (16, 13, 9) -- (16, 13, 8) -- (16, 12, 8) -- cycle;
+        \path[fill=kJEPRkAQ] (16, 13, 9) -- (16, 14, 9) -- (16, 14, 8) -- (16, 13, 8) -- cycle;
+        \path[fill=GBTIpXaJ] (16, 14, 9) -- (16, 15, 9) -- (16, 15, 8) -- (16, 14, 8) -- cycle;
+        \path[fill=saBydddL] (16, 15, 9) -- (16, 16, 9) -- (16, 16, 8) -- (16, 15, 8) -- cycle;
+
+        % Row 9
+        \path[fill=SwxJAFtB] (16, 0, 8) -- (16, 1, 8) -- (16, 1, 7) -- (16, 0, 7) -- cycle;
+        \path[fill=QrmSVjKp] (16, 1, 8) -- (16, 2, 8) -- (16, 2, 7) -- (16, 1, 7) -- cycle;
+        \path[fill=XURYEDer] (16, 2, 8) -- (16, 3, 8) -- (16, 3, 7) -- (16, 2, 7) -- cycle;
+        \path[fill=QDbXqDTR] (16, 3, 8) -- (16, 4, 8) -- (16, 4, 7) -- (16, 3, 7) -- cycle;
+        \path[fill=bdlRmTBn] (16, 4, 8) -- (16, 5, 8) -- (16, 5, 7) -- (16, 4, 7) -- cycle;
+        \path[fill=EuXyWPCL] (16, 5, 8) -- (16, 6, 8) -- (16, 6, 7) -- (16, 5, 7) -- cycle;
+        \path[fill=DQwBlFlW] (16, 6, 8) -- (16, 7, 8) -- (16, 7, 7) -- (16, 6, 7) -- cycle;
+        \path[fill=sDlPwJGz] (16, 7, 8) -- (16, 8, 8) -- (16, 8, 7) -- (16, 7, 7) -- cycle;
+        \path[fill=KVTpAQZA] (16, 8, 8) -- (16, 9, 8) -- (16, 9, 7) -- (16, 8, 7) -- cycle;
+        \path[fill=hBHthoMQ] (16, 9, 8) -- (16, 10, 8) -- (16, 10, 7) -- (16, 9, 7) -- cycle;
+        \path[fill=UQkTbAnY] (16, 10, 8) -- (16, 11, 8) -- (16, 11, 7) -- (16, 10, 7) -- cycle;
+        \path[fill=SAaYHZZH] (16, 11, 8) -- (16, 12, 8) -- (16, 12, 7) -- (16, 11, 7) -- cycle;
+        \path[fill=cFZQvJVz] (16, 12, 8) -- (16, 13, 8) -- (16, 13, 7) -- (16, 12, 7) -- cycle;
+        \path[fill=AopYGetS] (16, 13, 8) -- (16, 14, 8) -- (16, 14, 7) -- (16, 13, 7) -- cycle;
+        \path[fill=yvqsDXtb] (16, 14, 8) -- (16, 15, 8) -- (16, 15, 7) -- (16, 14, 7) -- cycle;
+        \path[fill=YOkzhpMR] (16, 15, 8) -- (16, 16, 8) -- (16, 16, 7) -- (16, 15, 7) -- cycle;
+
+        % Row 10
+        \path[fill=herRHibJ] (16, 0, 7) -- (16, 1, 7) -- (16, 1, 6) -- (16, 0, 6) -- cycle;
+        \path[fill=IXMgholi] (16, 1, 7) -- (16, 2, 7) -- (16, 2, 6) -- (16, 1, 6) -- cycle;
+        \path[fill=KHpPrvKx] (16, 2, 7) -- (16, 3, 7) -- (16, 3, 6) -- (16, 2, 6) -- cycle;
+        \path[fill=RRqemCSY] (16, 3, 7) -- (16, 4, 7) -- (16, 4, 6) -- (16, 3, 6) -- cycle;
+        \path[fill=FsYyTWsm] (16, 4, 7) -- (16, 5, 7) -- (16, 5, 6) -- (16, 4, 6) -- cycle;
+        \path[fill=NjgsLANU] (16, 5, 7) -- (16, 6, 7) -- (16, 6, 6) -- (16, 5, 6) -- cycle;
+        \path[fill=aRWJPKsU] (16, 6, 7) -- (16, 7, 7) -- (16, 7, 6) -- (16, 6, 6) -- cycle;
+        \path[fill=bAGPDQbM] (16, 7, 7) -- (16, 8, 7) -- (16, 8, 6) -- (16, 7, 6) -- cycle;
+        \path[fill=sbeOCgCk] (16, 8, 7) -- (16, 9, 7) -- (16, 9, 6) -- (16, 8, 6) -- cycle;
+        \path[fill=iSXpBluE] (16, 9, 7) -- (16, 10, 7) -- (16, 10, 6) -- (16, 9, 6) -- cycle;
+        \path[fill=yhhYlRPw] (16, 10, 7) -- (16, 11, 7) -- (16, 11, 6) -- (16, 10, 6) -- cycle;
+        \path[fill=tcctCDhE] (16, 11, 7) -- (16, 12, 7) -- (16, 12, 6) -- (16, 11, 6) -- cycle;
+        \path[fill=KqAQajIo] (16, 12, 7) -- (16, 13, 7) -- (16, 13, 6) -- (16, 12, 6) -- cycle;
+        \path[fill=JaLJhHcJ] (16, 13, 7) -- (16, 14, 7) -- (16, 14, 6) -- (16, 13, 6) -- cycle;
+        \path[fill=wLEhRYTz] (16, 14, 7) -- (16, 15, 7) -- (16, 15, 6) -- (16, 14, 6) -- cycle;
+        \path[fill=mGszbgpZ] (16, 15, 7) -- (16, 16, 7) -- (16, 16, 6) -- (16, 15, 6) -- cycle;
+
+        % Row 11
+        \path[fill=inlnLzgN] (16, 0, 6) -- (16, 1, 6) -- (16, 1, 5) -- (16, 0, 5) -- cycle;
+        \path[fill=UodRoIsh] (16, 1, 6) -- (16, 2, 6) -- (16, 2, 5) -- (16, 1, 5) -- cycle;
+        \path[fill=NwbnHORs] (16, 2, 6) -- (16, 3, 6) -- (16, 3, 5) -- (16, 2, 5) -- cycle;
+        \path[fill=MTuxWlBn] (16, 3, 6) -- (16, 4, 6) -- (16, 4, 5) -- (16, 3, 5) -- cycle;
+        \path[fill=wTsjbAEj] (16, 4, 6) -- (16, 5, 6) -- (16, 5, 5) -- (16, 4, 5) -- cycle;
+        \path[fill=ASEqzJMG] (16, 5, 6) -- (16, 6, 6) -- (16, 6, 5) -- (16, 5, 5) -- cycle;
+        \path[fill=xIKlPNza] (16, 6, 6) -- (16, 7, 6) -- (16, 7, 5) -- (16, 6, 5) -- cycle;
+        \path[fill=NotKnkEi] (16, 7, 6) -- (16, 8, 6) -- (16, 8, 5) -- (16, 7, 5) -- cycle;
+        \path[fill=KYOltRRu] (16, 8, 6) -- (16, 9, 6) -- (16, 9, 5) -- (16, 8, 5) -- cycle;
+        \path[fill=pfcSqoru] (16, 9, 6) -- (16, 10, 6) -- (16, 10, 5) -- (16, 9, 5) -- cycle;
+        \path[fill=HYCWKers] (16, 10, 6) -- (16, 11, 6) -- (16, 11, 5) -- (16, 10, 5) -- cycle;
+        \path[fill=QUZVJHXp] (16, 11, 6) -- (16, 12, 6) -- (16, 12, 5) -- (16, 11, 5) -- cycle;
+        \path[fill=LLfOqSVc] (16, 12, 6) -- (16, 13, 6) -- (16, 13, 5) -- (16, 12, 5) -- cycle;
+        \path[fill=GduKXivy] (16, 13, 6) -- (16, 14, 6) -- (16, 14, 5) -- (16, 13, 5) -- cycle;
+        \path[fill=BpGGJMYW] (16, 14, 6) -- (16, 15, 6) -- (16, 15, 5) -- (16, 14, 5) -- cycle;
+        \path[fill=HOnrcQrJ] (16, 15, 6) -- (16, 16, 6) -- (16, 16, 5) -- (16, 15, 5) -- cycle;
+
+        % Row 12
+        \path[fill=HrxHrXXQ] (16, 0, 5) -- (16, 1, 5) -- (16, 1, 4) -- (16, 0, 4) -- cycle;
+        \path[fill=bKHOMnvc] (16, 1, 5) -- (16, 2, 5) -- (16, 2, 4) -- (16, 1, 4) -- cycle;
+        \path[fill=aVPwvker] (16, 2, 5) -- (16, 3, 5) -- (16, 3, 4) -- (16, 2, 4) -- cycle;
+        \path[fill=VJlfCeZD] (16, 3, 5) -- (16, 4, 5) -- (16, 4, 4) -- (16, 3, 4) -- cycle;
+        \path[fill=SoGEjKwj] (16, 4, 5) -- (16, 5, 5) -- (16, 5, 4) -- (16, 4, 4) -- cycle;
+        \path[fill=aCxQnuQH] (16, 5, 5) -- (16, 6, 5) -- (16, 6, 4) -- (16, 5, 4) -- cycle;
+        \path[fill=Hlzohooq] (16, 6, 5) -- (16, 7, 5) -- (16, 7, 4) -- (16, 6, 4) -- cycle;
+        \path[fill=TjTTpklr] (16, 7, 5) -- (16, 8, 5) -- (16, 8, 4) -- (16, 7, 4) -- cycle;
+        \path[fill=LvrCaKyf] (16, 8, 5) -- (16, 9, 5) -- (16, 9, 4) -- (16, 8, 4) -- cycle;
+        \path[fill=tQqWgbOj] (16, 9, 5) -- (16, 10, 5) -- (16, 10, 4) -- (16, 9, 4) -- cycle;
+        \path[fill=DEDWsdJF] (16, 10, 5) -- (16, 11, 5) -- (16, 11, 4) -- (16, 10, 4) -- cycle;
+        \path[fill=aaYLbKHX] (16, 11, 5) -- (16, 12, 5) -- (16, 12, 4) -- (16, 11, 4) -- cycle;
+        \path[fill=jCMxgrps] (16, 12, 5) -- (16, 13, 5) -- (16, 13, 4) -- (16, 12, 4) -- cycle;
+        \path[fill=yXXxxeLJ] (16, 13, 5) -- (16, 14, 5) -- (16, 14, 4) -- (16, 13, 4) -- cycle;
+        \path[fill=KNLZlnLG] (16, 14, 5) -- (16, 15, 5) -- (16, 15, 4) -- (16, 14, 4) -- cycle;
+        \path[fill=kKKjufvU] (16, 15, 5) -- (16, 16, 5) -- (16, 16, 4) -- (16, 15, 4) -- cycle;
+
+        % Row 13
+        \path[fill=NGlLERRL] (16, 0, 4) -- (16, 1, 4) -- (16, 1, 3) -- (16, 0, 3) -- cycle;
+        \path[fill=oEkeBTaG] (16, 1, 4) -- (16, 2, 4) -- (16, 2, 3) -- (16, 1, 3) -- cycle;
+        \path[fill=ouktfKNe] (16, 2, 4) -- (16, 3, 4) -- (16, 3, 3) -- (16, 2, 3) -- cycle;
+        \path[fill=xtqLaXsl] (16, 3, 4) -- (16, 4, 4) -- (16, 4, 3) -- (16, 3, 3) -- cycle;
+        \path[fill=EceMsRpS] (16, 4, 4) -- (16, 5, 4) -- (16, 5, 3) -- (16, 4, 3) -- cycle;
+        \path[fill=zdSEqGaA] (16, 5, 4) -- (16, 6, 4) -- (16, 6, 3) -- (16, 5, 3) -- cycle;
+        \path[fill=FSrhEIGO] (16, 6, 4) -- (16, 7, 4) -- (16, 7, 3) -- (16, 6, 3) -- cycle;
+        \path[fill=rdtORIxt] (16, 7, 4) -- (16, 8, 4) -- (16, 8, 3) -- (16, 7, 3) -- cycle;
+        \path[fill=KfDkAQVq] (16, 8, 4) -- (16, 9, 4) -- (16, 9, 3) -- (16, 8, 3) -- cycle;
+        \path[fill=fPqGDbbV] (16, 9, 4) -- (16, 10, 4) -- (16, 10, 3) -- (16, 9, 3) -- cycle;
+        \path[fill=IrRufWjq] (16, 10, 4) -- (16, 11, 4) -- (16, 11, 3) -- (16, 10, 3) -- cycle;
+        \path[fill=XIUaKzeQ] (16, 11, 4) -- (16, 12, 4) -- (16, 12, 3) -- (16, 11, 3) -- cycle;
+        \path[fill=ZRPACLiv] (16, 12, 4) -- (16, 13, 4) -- (16, 13, 3) -- (16, 12, 3) -- cycle;
+        \path[fill=RhzSDyuM] (16, 13, 4) -- (16, 14, 4) -- (16, 14, 3) -- (16, 13, 3) -- cycle;
+        \path[fill=arelAAhD] (16, 14, 4) -- (16, 15, 4) -- (16, 15, 3) -- (16, 14, 3) -- cycle;
+        \path[fill=uQlqxomJ] (16, 15, 4) -- (16, 16, 4) -- (16, 16, 3) -- (16, 15, 3) -- cycle;
+
+        % Row 14
+        \path[fill=ppdwEEPg] (16, 0, 3) -- (16, 1, 3) -- (16, 1, 2) -- (16, 0, 2) -- cycle;
+        \path[fill=ldruZUzK] (16, 1, 3) -- (16, 2, 3) -- (16, 2, 2) -- (16, 1, 2) -- cycle;
+        \path[fill=uRWYuuFR] (16, 2, 3) -- (16, 3, 3) -- (16, 3, 2) -- (16, 2, 2) -- cycle;
+        \path[fill=iStFtuth] (16, 3, 3) -- (16, 4, 3) -- (16, 4, 2) -- (16, 3, 2) -- cycle;
+        \path[fill=SsTnPHRv] (16, 4, 3) -- (16, 5, 3) -- (16, 5, 2) -- (16, 4, 2) -- cycle;
+        \path[fill=OhcVelok] (16, 5, 3) -- (16, 6, 3) -- (16, 6, 2) -- (16, 5, 2) -- cycle;
+        \path[fill=KRfokBbL] (16, 6, 3) -- (16, 7, 3) -- (16, 7, 2) -- (16, 6, 2) -- cycle;
+        \path[fill=mOGhrLAO] (16, 7, 3) -- (16, 8, 3) -- (16, 8, 2) -- (16, 7, 2) -- cycle;
+        \path[fill=HiGiTLSZ] (16, 8, 3) -- (16, 9, 3) -- (16, 9, 2) -- (16, 8, 2) -- cycle;
+        \path[fill=OTnllgqA] (16, 9, 3) -- (16, 10, 3) -- (16, 10, 2) -- (16, 9, 2) -- cycle;
+        \path[fill=OUXhCAHq] (16, 10, 3) -- (16, 11, 3) -- (16, 11, 2) -- (16, 10, 2) -- cycle;
+        \path[fill=ZLnonfOc] (16, 11, 3) -- (16, 12, 3) -- (16, 12, 2) -- (16, 11, 2) -- cycle;
+        \path[fill=IilTqyVb] (16, 12, 3) -- (16, 13, 3) -- (16, 13, 2) -- (16, 12, 2) -- cycle;
+        \path[fill=txRWuZGQ] (16, 13, 3) -- (16, 14, 3) -- (16, 14, 2) -- (16, 13, 2) -- cycle;
+        \path[fill=FcBDGLvy] (16, 14, 3) -- (16, 15, 3) -- (16, 15, 2) -- (16, 14, 2) -- cycle;
+        \path[fill=rzSjvFwt] (16, 15, 3) -- (16, 16, 3) -- (16, 16, 2) -- (16, 15, 2) -- cycle;
+
+        % Row 15
+        \path[fill=NOfyQgkI] (16, 0, 2) -- (16, 1, 2) -- (16, 1, 1) -- (16, 0, 1) -- cycle;
+        \path[fill=cXumCcvd] (16, 1, 2) -- (16, 2, 2) -- (16, 2, 1) -- (16, 1, 1) -- cycle;
+        \path[fill=kzxLiLgV] (16, 2, 2) -- (16, 3, 2) -- (16, 3, 1) -- (16, 2, 1) -- cycle;
+        \path[fill=KWfxBTEL] (16, 3, 2) -- (16, 4, 2) -- (16, 4, 1) -- (16, 3, 1) -- cycle;
+        \path[fill=DnxwAWrj] (16, 4, 2) -- (16, 5, 2) -- (16, 5, 1) -- (16, 4, 1) -- cycle;
+        \path[fill=LmZgGRPL] (16, 5, 2) -- (16, 6, 2) -- (16, 6, 1) -- (16, 5, 1) -- cycle;
+        \path[fill=AbHUpbQG] (16, 6, 2) -- (16, 7, 2) -- (16, 7, 1) -- (16, 6, 1) -- cycle;
+        \path[fill=CYYzpbMT] (16, 7, 2) -- (16, 8, 2) -- (16, 8, 1) -- (16, 7, 1) -- cycle;
+        \path[fill=CIfDPdgX] (16, 8, 2) -- (16, 9, 2) -- (16, 9, 1) -- (16, 8, 1) -- cycle;
+        \path[fill=aDliHUxN] (16, 9, 2) -- (16, 10, 2) -- (16, 10, 1) -- (16, 9, 1) -- cycle;
+        \path[fill=RHzCqLnt] (16, 10, 2) -- (16, 11, 2) -- (16, 11, 1) -- (16, 10, 1) -- cycle;
+        \path[fill=eoENidXg] (16, 11, 2) -- (16, 12, 2) -- (16, 12, 1) -- (16, 11, 1) -- cycle;
+        \path[fill=KTavFnpH] (16, 12, 2) -- (16, 13, 2) -- (16, 13, 1) -- (16, 12, 1) -- cycle;
+        \path[fill=QTgtaoWG] (16, 13, 2) -- (16, 14, 2) -- (16, 14, 1) -- (16, 13, 1) -- cycle;
+        \path[fill=UUygOtqG] (16, 14, 2) -- (16, 15, 2) -- (16, 15, 1) -- (16, 14, 1) -- cycle;
+        \path[fill=nZdUYlyL] (16, 15, 2) -- (16, 16, 2) -- (16, 16, 1) -- (16, 15, 1) -- cycle;
+
+        % Row 16
+        \path[fill=alLlIdCR] (16, 0, 1) -- (16, 1, 1) -- (16, 1, 0) -- (16, 0, 0) -- cycle;
+        \path[fill=geSUINKL] (16, 1, 1) -- (16, 2, 1) -- (16, 2, 0) -- (16, 1, 0) -- cycle;
+        \path[fill=fMXYZBMb] (16, 2, 1) -- (16, 3, 1) -- (16, 3, 0) -- (16, 2, 0) -- cycle;
+        \path[fill=OavsSKvJ] (16, 3, 1) -- (16, 4, 1) -- (16, 4, 0) -- (16, 3, 0) -- cycle;
+        \path[fill=QmmxHoak] (16, 4, 1) -- (16, 5, 1) -- (16, 5, 0) -- (16, 4, 0) -- cycle;
+        \path[fill=vTCOBRvl] (16, 5, 1) -- (16, 6, 1) -- (16, 6, 0) -- (16, 5, 0) -- cycle;
+        \path[fill=zFqNBqtf] (16, 6, 1) -- (16, 7, 1) -- (16, 7, 0) -- (16, 6, 0) -- cycle;
+        \path[fill=gIhQzHkW] (16, 7, 1) -- (16, 8, 1) -- (16, 8, 0) -- (16, 7, 0) -- cycle;
+        \path[fill=TYbnXWmb] (16, 8, 1) -- (16, 9, 1) -- (16, 9, 0) -- (16, 8, 0) -- cycle;
+        \path[fill=sXaUMCEj] (16, 9, 1) -- (16, 10, 1) -- (16, 10, 0) -- (16, 9, 0) -- cycle;
+        \path[fill=TZLzaDJA] (16, 10, 1) -- (16, 11, 1) -- (16, 11, 0) -- (16, 10, 0) -- cycle;
+        \path[fill=MVhSWlKa] (16, 11, 1) -- (16, 12, 1) -- (16, 12, 0) -- (16, 11, 0) -- cycle;
+        \path[fill=oNmcMoAB] (16, 12, 1) -- (16, 13, 1) -- (16, 13, 0) -- (16, 12, 0) -- cycle;
+        \path[fill=VIMEMZeG] (16, 13, 1) -- (16, 14, 1) -- (16, 14, 0) -- (16, 13, 0) -- cycle;
+        \path[fill=AstgqTKY] (16, 14, 1) -- (16, 15, 1) -- (16, 15, 0) -- (16, 14, 0) -- cycle;
+        \path[fill=daCmYatA] (16, 15, 1) -- (16, 16, 1) -- (16, 16, 0) -- (16, 15, 0) -- cycle;
+
+\end{scope}
+\end{tikzpicture}
+\end{document}

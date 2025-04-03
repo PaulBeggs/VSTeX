@@ -317,11 +317,11 @@
         }
     \end{enumerate}
     \item (3 points) Complete each of the following steps to prove that \(\displaystyle \lim_{(x,y) \to (0,0)} \frac{3x^{2}y}{x^{2} + y^{2}} = 0\). \\
-    Let \(\epsilon > 0\). Choose \(\delta = \epsilon / 3\). Suppose that \((x,y)\) is chosen so that \(||(x,y) - (0,0)|| < \delta\) and \((x,y) \neq (0,0)\).
+    Let \(\epsilon > 0\). Choose \(\delta = \epsilon / 3\). Suppose that \((x,y)\) is chosen so that \(\| (x,y) - (0,0) \| < \delta\) and \((x,y) \neq (0,0)\).
     \begin{enumerate}
         \item Explain why \(\mysqrt{x^{2} + y^{2}} < \delta\). \\
         \sol{
-           Since we have that \(||(x,y) - (0,0)|| < \delta\), when we find the magnitude of this difference, we get:
+           Since we have that \(\| (x,y) - (0,0) \| < \delta\), when we find the magnitude of this difference, we get:
            \[
                 \boxed{\mysqrt{x^{2} + y^{2}} < \delta.}
            \]
@@ -354,11 +354,11 @@
         }
         \item Conclude that whenever \((x,y)\) is in the \(\delta\)-disk centered at \((0,0)\), then \(\left|\dfrac{3x^{2}y}{x^{2} + y^{2}} - 0\right| < \epsilon\). \\
         \sol{
-            Combining the previous steps, we have shown that when \((x,y)\) is in the \(\delta\)-disk centered at \((0,0)\) (i.e., \(||(x,y) - (0,0)||\)), we have:
+            Combining the previous steps, we have shown that when \((x,y)\) is in the \(\delta\)-disk centered at \((0,0)\) (i.e., \(\| (x,y) - (0,0) \|\)), we have:
             \[
               \left|\dfrac{3x^{2}y}{x^{2} + y^{2}} - 0\right| < \epsilon.
             \]
-            This shows that for every \(\epsilon > 0\), we can choose a \(\delta = \frac{\epsilon}{3}\) so that whenever \(||(x,y) - (0,0)|| < \delta\), the inequality holds. Hence, this proves that:
+            This shows that for every \(\epsilon > 0\), we can choose a \(\delta = \frac{\epsilon}{3}\) so that whenever \(\| (x,y) - (0,0) \| < \delta\), the inequality holds. Hence, this proves that:
             \[
               \boxed{\lim_{(x,y) \to (0,0)} \dfrac{3x^{2}y}{x^{2} + y^{2}} = 0.} 
             \]

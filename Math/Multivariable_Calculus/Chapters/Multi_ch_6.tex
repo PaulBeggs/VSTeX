@@ -4,22 +4,22 @@
 So far, we have talked about:
 
 \begin{itemize}
-    \item Parametric Functions: \( f \colon \mathbb{R} \to \mathbb{R}^n \) (also called vector-valued functions)
-    \item Scalar Functions: \( f \colon \mathbb{R}^n \to \mathbb{R} \)
+    \item Parametric Functions: \(f \colon \mathbb{R} \to \mathbb{R}^n\) (also called vector-valued functions)
+    \item Scalar Functions: \(f \colon \mathbb{R}^n \to \mathbb{R}\)
 \end{itemize}
 
 We conclude the course by considering:
 
 \begin{itemize}
-    \item \( f \colon \mathbb{R}^n \to \mathbb{R}^n \), specifically:
+    \item \(f \colon \mathbb{R}^n \to \mathbb{R}^n\), specifically:
     \begin{itemize}
-        \item \( f \colon \mathbb{R}^2 \to \mathbb{R}^2 \)
-        \item \( f \colon \mathbb{R}^3 \to \mathbb{R}^3 \)
+        \item \(f \colon \mathbb{R}^2 \to \mathbb{R}^2\)
+        \item \(f \colon \mathbb{R}^3 \to \mathbb{R}^3\)
     \end{itemize}
 \end{itemize}
 
 \subsection{Vector Field}
-A vector field is an assignment to each point in \( \mathbb{R}^n \) a vector in \( \mathbb{R}^n \). For example:
+A vector field is an assignment to each point in \(\mathbb{R}^n\) a vector in \(\mathbb{R}^n\). For example:
 
 \begin{itemize}
     \item At each point on the Earth's surface, assign the current wind speed and direction.
@@ -28,15 +28,19 @@ A vector field is an assignment to each point in \( \mathbb{R}^n \) a vector in 
     \item A gradient field – given a surface, its gradient at each point.
 \end{itemize}
 
-Formally, a vector field is a function \( \mathbf{F} : \mathbb{R}^n \to \mathbb{R}^n \) with some domain \( D \subseteq \mathbb{R}^n \). We will only be concerned with \( n = 2 \) and \( n = 3 \). \\
+Formally, a vector field is a function \(\mathbf{F} : \mathbb{R}^n \to \mathbb{R}^n\) with some domain \(D \subseteq \mathbb{R}^n\). We will only be concerned with \(n = 2\) and \(n = 3\). \\
 
 \textbf{Common notation:}
-\[ \mathbf{F}(x, y) = \langle P(x, y), Q(x, y) \rangle = P(x, y) \mathbf{i} + Q(x, y) \mathbf{j} \]
+\[
+    \mathbf{F}(x, y) = \langle P(x, y), Q(x, y) \rangle = P(x, y) \mathbf{i} + Q(x, y) \mathbf{j} 
+\]
 and
-\[ \mathbf{F}(x, y, z) = \langle P(x, y, z), Q(x, y, z), \mb{R}(x, y, z) \rangle = P(x, y, z) \mathbf{i} + Q(x, y, z) \mathbf{j} + \mb{R}(x, y, z) \mathbf{k} \]
+\[
+    \mathbf{F}(x, y, z) = \langle P(x, y, z), Q(x, y, z), \mb{R}(x, y, z) \rangle = P(x, y, z) \mathbf{i} + Q(x, y, z) \mathbf{j} + \mb{R}(x, y, z) \mathbf{k} 
+\]
 
 \subsection{Graph}
-To truly graph a vector field, you need 4 or 6 dimensions, which is somewhat inconvenient. Instead, we plot representative vectors in either \( \mathbb{R}^2 \) or \( \mathbb{R}^3 \).
+To truly graph a vector field, you need 4 or 6 dimensions, which is somewhat inconvenient. Instead, we plot representative vectors in either \(\mathbb{R}^2\) or \(\mathbb{R}^3\).
 
 The applet at \url{https://www.geogebra.org/m/QPE4PaDZ} is one way to graph a 2-D vector field.
 
@@ -44,34 +48,34 @@ The applet at \url{https://www.geogebra.org/m/QPE4PaDZ} is one way to graph a 2-
 There are a few commonly seen special types of vector fields:
 
 \begin{itemize}
-    \item \textbf{Radial} – each vector points either directly toward or away from the origin. For example, \( \langle x, y \rangle \).
-    \item \textbf{Rotational} – each vector points tangent to a circle centered at the origin. For example, \( \langle -y, x \rangle \).
+    \item \textbf{Radial} – each vector points either directly toward or away from the origin. For example, \(\langle x, y \rangle\).
+    \item \textbf{Rotational} – each vector points tangent to a circle centered at the origin. For example, \(\langle -y, x \rangle\).
     \begin{itemize}
-        \item \textbf{Think:} At the point \((2,1)\), we have the vector \(\langle -1, 2 \rangle\). This vector is tangent to the circle of radius \(\sqrt{5}\) centered at the origin. The vector is perpendicular to the radius of the circle at that point.
+        \item \textbf{Think:} At the point \((2,1)\), we have the vector \(\langle -1, 2 \rangle\). This vector is tangent to the circle of radius \(\mysqrt{5}\) centered at the origin. The vector is perpendicular to the radius of the circle at that point.
     \end{itemize}
-    \item \textbf{Unit} – each output vector has magnitude 1. For example, \( \langle \sin(x + y), \cos(x + y) \rangle \).
+    \item \textbf{Unit} – each output vector has magnitude 1. For example, \(\langle \sin(x + y), \cos(x + y) \rangle\).
     \item \textbf{Velocity} – the vectors represent the velocity of some particle.
-    \item \textbf{Gradient} – the vectors are the gradient of some function \( \mb{F} \colon \mathbb{R}^n \to \mathbb{R} \).
+    \item \textbf{Gradient} – the vectors are the gradient of some function \(\mb{F} \colon \mathbb{R}^n \to \mathbb{R}\).
 \end{itemize}
 
 \subsection{Gradient Field}
-A vector field \( \mathbf{F} \) is called a gradient vector field if there exists some scalar function \( \mb{F} \colon \mathbb{R}^n \to \mathbb{R} \) such that \( \nabla f = \mathbf{F} \). That is, if \( \mathbf{F} \) is the gradient of some scalar function \( f \).
+A vector field \(\mathbf{F}\) is called a gradient vector field if there exists some scalar function \(\mb{F} \colon \mathbb{R}^n \to \mathbb{R}\) such that \(\nabla f = \mathbf{F}\). That is, if \(\mathbf{F}\) is the gradient of some scalar function \(f\).
 
 \subsection{Conservative Vector Fields}
-A vector field \( \mathbf{F} \) is a conservative vector field when it is the gradient field for some scalar function \( f \). We will call \( f \) the \textbf{potential function} of \( \mathbf{F} \). \\
+A vector field \(\mathbf{F}\) is a conservative vector field when it is the gradient field for some scalar function \(f\). We will call \(f\) the \textbf{potential function} of \(\mathbf{F}\). \\
 
-\textbf{Theorem.} Potential functions are unique, except for a constant. That is, if \( f \) and \( g \) are each potential functions for \( \mathbf{F} \), then there exists some constant \( c \) such that \( f - g = c \).
+\textbf{Theorem.} Potential functions are unique, except for a constant. That is, if \(f\) and \(g\) are each potential functions for \(\mathbf{F}\), then there exists some constant \(c\) such that \(f - g = c\).
 
 \subsection{Cross Partial Property}
-\textbf{Theorem.} Suppose that \( \mathbf{F} \) is a conservative vector field with continuous mixed second partials. Then:
+\textbf{Theorem.} Suppose that \(\mathbf{F}\) is a conservative vector field with continuous mixed second partials. Then:
 
 \begin{itemize}
-    \item In two dimensions, if \( \mathbf{F} = \langle P,Q \rangle \), then \( \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \).
-    \item In three dimensions, if \( \mathbf{F} = \langle P, Q, R \rangle \), then:
+    \item In two dimensions, if \(\mathbf{F} = \langle P,Q \rangle\), then \(\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}\).
+    \item In three dimensions, if \(\mathbf{F} = \langle P, Q, R \rangle\), then:
     \begin{itemize}
-        \item \( \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \)
-        \item \( \frac{\partial Q}{\partial z} = \frac{\partial R}{\partial y} \)
-        \item \( \frac{\partial R}{\partial x} = \frac{\partial P}{\partial z} \)
+        \item \(\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}\)
+        \item \(\frac{\partial Q}{\partial z} = \frac{\partial R}{\partial y}\)
+        \item \(\frac{\partial R}{\partial x} = \frac{\partial P}{\partial z}\)
     \end{itemize}
 \end{itemize}
 
@@ -88,74 +92,100 @@ If we find the second derivative of these functions, we see that \(\frac{\p P}{\
 \section{Line Integrals}
 
 \subsection{Scalar Line Integral}
-Suppose that \( \mb{F} \colon \mathbb{R}^n \to \mathbb{R} \) is a continuous scalar function and that \( C \) is a continuous curve in \( \mathbb{R}^n \) included in the domain of \( f \). We want to find the area of the sheet which extends down from \( f \) to the domain along the curve \( C \). We parameterize \( C \) as \( \mb{r}(t) \), \( a \leq t \leq b \) and break \( C \) into small subintervals of length \( \Delta t = \frac{b-a}{n} \). Then, we have:
+Suppose that \(\mb{F} \colon \mathbb{R}^n \to \mathbb{R}\) is a continuous scalar function and that \(C\) is a continuous curve in \(\mathbb{R}^n\) included in the domain of \(f\). We want to find the area of the sheet which extends down from \(f\) to the domain along the curve \(C\). We parameterize \(C\) as \(\mb{r}(t)\), \(a \leq t \leq b\) and break \(C\) into small subintervals of length \(\Delta t = \frac{b-a}{n}\). Then, we have:
 \begin{align*}
     \Delta s_1 &= [\mb{r}(a), \mb{r}(a + \Delta t)] \\
     \Delta s_2 &= [\mb{r}(a + \Delta t), \mb{r}(a + 2\Delta t)] \\
     &\vdots \\
     \Delta s_n &= [\mb{r}(a + (n - 1)\Delta t), \mb{r}(a + n\Delta t)]
 \end{align*}
-In each \( \Delta s_i \), choose \( t^*_i \) and find \( f(\mb{r}(t^*_i )) \). Then, we have a Riemann sum:
-\[ \sum_{i=1}^{n} f(\mb{r}(t^*_i ))\Delta s_i, \]
-which, if the limit as \( n \to \infty \) exists, we will write as one of:
-\[ \int_C f(x, y) \, ds \quad \text{or} \quad \int_C f(x, y, z) \, ds. \]
+In each \(\Delta s_i\), choose \(t^*_i\) and find \(f(\mb{r}(t^*_i ))\). Then, we have a Riemann sum:
+\[
+    \sum_{i=1}^{n} f(\mb{r}(t^*_i ))\Delta s_i, 
+\]
+which, if the limit as \(n \to \infty\) exists, we will write as one of:
+\[
+    \int_C f(x, y) \, ds \quad \text{or} \quad \int_C f(x, y, z) \, ds. 
+\]
 
-The term \( ds \) represents the infinitesimal step taken along the path \( C \), analogous to \( dx \) in single-variable integration. Since working with \( ds \) directly is cumbersome, we use:
-\[ \int_C f(x, y) \, ds = \int_C f(x(t), y(t)) \sqrt{(x'(t))^2 + (y'(t))^2} \, dt = \int_a^b f(\mb{r}(t)) \| \mb{r}'(t) \| \, dt, \]
-which simplifies computations and ensures that parametrization does not affect the integral's value, though orientation does. If \( C \) and \( D \) are the same curve with opposite orientations:
-\[ \int_C f \, ds = - \int_D f \, ds, \]
+The term \(ds\) represents the infinitesimal step taken along the path \(C\), analogous to \(dx\) in single-variable integration. Since working with \(ds\) directly is cumbersome, we use:
+\[
+    \int_C f(x, y) \, ds = \int_C f(x(t), y(t)) \mysqrt{(x'(t))^2 + (y'(t))^2} \, dt = \int_a^b f(\mb{r}(t)) \| \mb{r}'(t) \| \, dt, \| \mb{r} \|
+\]
+which simplifies computations and ensures that parametrization does not affect the integral's value, though orientation does. If \(C\) and \(D\) are the same curve with opposite orientations:
+\[
+    \int_C f \, ds = - \int_D f \, ds, 
+\]
 analogous to:
-\[ \int_a^b f(x) \, dx = - \int_b^a f(x) \, dx. \]
+\[
+    \int_a^b f(x) \, dx = - \int_b^a f(x) \, dx. 
+\]
 
 \subsection{Line Integrals over Vector Fields}
-Suppose that \( \mb{F} \colon \mathbb{R}^n \to \mathbb{R}^n \) is a vector field, and \( C \) is a continuous curve in \( \mathbb{R}^n \) within the domain of \( \mb{F} \). We wish to evaluate:
-\[ \int_C \mb{F} \cdot d\mb{s}, \]
+Suppose that \(\mb{F} \colon \mathbb{R}^n \to \mathbb{R}^n\) is a vector field, and \(C\) is a continuous curve in \(\mathbb{R}^n\) within the domain of \(\mb{F}\). We wish to evaluate:
+\[
+    \int_C \mb{F} \cdot d\mb{s}, 
+\]
 which essentially ``multiplies'' \(\mb{F}\) by a small infinitesimal along the curve \(C\) (denoted by \(d\mb{s}\)). \\
 
 We choose the points \(P_{0}, P_{1}, P_{2}, \ldots, P_{i},\ldots, P_{n}\) to divide up our curve \(C\) and then approximate our line integral as a Riemann sum. We can write the line integral as:
-\[ \int_C \mb{F} \cdot d\mb{s} = \lim_{n\to\infty} \sum_{i=1}^{n} F(P^*_i) \cdot \Delta \mb{s}_i. \]
-Since \( d\mb{s} = \mb{r}'(t) dt \), the integral simplifies to:
-\[ \int_C \mb{F} \cdot d\mb{s} = \int_a^b F(\mb{r}(t)) \cdot \mb{r}'(t) \, dt, \]
+\[
+    \int_C \mb{F} \cdot d\mb{s} = \lim_{n\to\infty} \sum_{i=1}^{n} F(P^*_i) \cdot \Delta \mb{s}_i. 
+\]
+Since \(d\mb{s} = \mb{r}'(t) dt\), the integral simplifies to:
+\[
+    \int_C \mb{F} \cdot d\mb{s} = \int_a^b F(\mb{r}(t)) \cdot \mb{r}'(t) \, dt, 
+\]
 
-Where \( \mb{r}(t) \), \(a \leq t \leq b\) is any parametrization of \(C\). \\ 
+Where \(\mb{r}(t)\), \(a \leq t \leq b\) is any parametrization of \(C\). \\ 
 
 Equivalent notations include:
-\[ \int_C \mb{F} \cdot d\mb{r}, \quad \int P \, dx + Q \, dy, \quad \text{or} \quad \int P \, dx + Q \, dy + R \, dz. \]
+\[
+    \int_C \mb{F} \cdot d\mb{r}, \quad \int P \, dx + Q \, dy, \quad \text{or} \quad \int P \, dx + Q \, dy + R \, dz. 
+\]
 
 \subsection{Properties of Line Integrals over Vector Fields}
 \begin{itemize}
-    \item \( \int_C (\mb{F} + G) \cdot d\mb{r} = \int_C \mb{F} \cdot d\mb{r} + \int_C G \cdot d\mb{r} \)
-    \item \( \int_C k\mb{F} \cdot d\mb{r} = k \int_C \mb{F} \cdot d\mb{r} \), for constant \( k \)
-    \item \( \int_C \mb{F} \cdot d\mb{r} = - \int_{-C} \mb{F} \cdot d\mb{r} \), where \( -C \) denotes \( C \) with reversed orientation
-    \item If \( C = C_1 + C_2 \) with intersection only at endpoints, then:
-    \[ \int_C \mb{F} \cdot d\mb{r} = \int_{C_1} \mb{F} \cdot d\mb{r} + \int_{C_2} \mb{F} \cdot d\mb{r}. \]
+    \item \(\int_C (\mb{F} + G) \cdot d\mb{r} = \int_C \mb{F} \cdot d\mb{r} + \int_C G \cdot d\mb{r}\)
+    \item \(\int_C k\mb{F} \cdot d\mb{r} = k \int_C \mb{F} \cdot d\mb{r}\), for constant \(k\)
+    \item \(\int_C \mb{F} \cdot d\mb{r} = - \int_{-C} \mb{F} \cdot d\mb{r}\), where \(-C\) denotes \(C\) with reversed orientation
+    \item If \(C = C_1 + C_2\) with intersection only at endpoints, then:
+    \[
+    \int_C \mb{F} \cdot d\mb{r} = \int_{C_1} \mb{F} \cdot d\mb{r} + \int_{C_2} \mb{F} \cdot d\mb{r}. 
+\]
 \end{itemize}
 
 \subsection{Circulation Along a Curve}
-The circulation of \( \mb{F} \) along \( C \) is defined as:
-\[ \int_C \mb{F} \cdot dr. \]
-If \( \mb{F} \) represents a force field, this integral gives the total work done by \( \mb{F} \) in moving an object along \( C \).
+The circulation of \(\mb{F}\) along \(C\) is defined as:
+\[
+    \int_C \mb{F} \cdot dr. 
+\]
+If \(\mb{F}\) represents a force field, this integral gives the total work done by \(\mb{F}\) in moving an object along \(C\).
 
 \subsection{Flux Across a Curve}
 Given a vector field \(\mb{F}\) and curve \(C\) in \(R^{2}\), the \cyanit{flux} of \(\mb{F}\) across \(C\) is the total amount of \(\mb{F}\) that crosses orthogonally across \(C\). We note that there is an orientation issue here. We define positive flux as moving from left to right across the curve where forward is the direction of the curve’s orientation. In two dimensions, this is actually opposite of \(N\) from chapter 2, but we’ll fix that easily by defining \(n\) to be the unit vector which points left-to-right across the curve. We can see that \(n(t) = \langle y'(t), -x'(t) \rangle\).
 Thus, the flux integral is given by:
-\[ \int_C \mb{F} \cdot N \, ds = \int_a^b \mb{F}(\mb{r}(t)) \cdot \langle y'(t), -x'(t) \rangle \, dt, \]
+\[
+    \int_C \mb{F} \cdot N \, ds = \int_a^b \mb{F}(\mb{r}(t)) \cdot \langle y'(t), -x'(t) \rangle \, dt, 
+\]
 or equivalently:
-\[ \int_C -Q \, dx + P \, dy. \]
+\[
+    \int_C -Q \, dx + P \, dy. 
+\]
 
-\section{Examples}
-\subsection{Example 1: Scalar Line Integral}
-Evaluate \( \int_C (x^2 + y^2) ds \) where \( C \) is the quarter-circle \( \mb{r}(t) = (\cos t, \sin t) \), \( 0 \leq t \leq \frac{\pi}{2} \).
+\subsection{Examples}
+\subsubsection{Example 1: Scalar Line Integral}
+Evaluate \(\int_C (x^2 + y^2) ds\) where \(C\) is the quarter-circle \(\mb{r}(t) = (\cos t, \sin t)\), \(0 \leq t \leq \frac{\pi}{2}\).
 
 \textbf{Solution:}
 \begin{align*}
-    ds &= \|\mb{r}'(t)\| dt = \sqrt{(-\sin t)^2 + (\cos t)^2} dt = dt. \\
+    ds &= \|\mb{r}'(t)\| dt = \mysqrt{(-\sin t)^2 + (\cos t)^2} dt = dt. \\
     f(\mb{r}(t)) &= \cos^2 t + \sin^2 t = 1. \\
     \int_C (x^2 + y^2) ds &= \int_0^{\pi/2} 1 \, dt = \frac{\pi}{2}.
 \end{align*}
 
-\subsection{Example 2: Vector Line Integral}
-Evaluate \( \int_C \mb{F} \cdot dr \) where \( \mb{F} = \langle y, x \rangle \) and \( C \) is the line from \( (0,0) \) to \( (1,1) \).
+\subsubsection{Example 2: Vector Line Integral}
+Evaluate \(\int_C \mb{F} \cdot dr\) where \(\mb{F} = \langle y, x \rangle\) and \(C\) is the line from \((0,0)\) to \((1,1)\).
 
 \textbf{Solution:}
 \begin{align*}

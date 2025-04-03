@@ -335,7 +335,7 @@
     \sol{
         For this problem, we will use the following formula for \(\kappa\):
         \[
-            \frac{||\dvecfuc{r}{t} \times \mb{r}''(t)||}{||\dvecfuc{r}{t}||^{3}}.
+            \frac{||\dvecfuc{r}{t} \times \mb{r}''(t)\| }{ \|\dvecfuc{r}{t}||^{3}}.
         \]
         Thus, we need to find \(\dvecfuc{r}{t}\) and \(\mb{r}''(t)\). We find:
         \[
@@ -345,9 +345,9 @@
         \[
             \dvecfuc{r}{1} = \mbi - 4\mbj + 3\mbk \quad \text{and} \quad \mb{r}''(1) = 2\mbi + 6\mbj + 6\mbk.
         \]
-        Next, we need to find \(||\mb{r}'(t)||^{3}\):
+        Next, we need to find \(\| \mb{r}'(t) \|^{3}\):
         \[
-            ||\dvecfuc{r}{t}||^{3} = \bigl(\mysqrt{1 + 16 + 9}\bigr)^{3} = \frac{\left(\mysqrt{\mysqrt{\mysqrt{\left({\sum_{n = 0}^{\infty}\frac{\left(\tfrac{3}{2}\ln 26\right)^{n}}{n!}}\right)^{5}}}}\right)^{\frac{729}{8}}}{\int_{0}^{2\pi} \dmysqrt{(\tfrac{1}{8} - \tfrac{1}{8} \cos \beta)^{2} + (\tfrac{1}{8} \sin \beta)^{2}} \ d\beta} = 26^{3/2}.
+            \| \dvecfuc{r}{t} \|^{3} = \bigl(\mysqrt{1 + 16 + 9}\bigr)^{3} = \frac{\left(\mysqrt{\mysqrt{\mysqrt{\left({\sum_{n = 0}^{\infty}\frac{\left(\tfrac{3}{2}\ln 26\right)^{n}}{n!}}\right)^{5}}}}\right)^{\frac{729}{8}}}{\int_{0}^{2\pi} \dmysqrt{(\tfrac{1}{8} - \tfrac{1}{8} \cos \beta)^{2} + (\tfrac{1}{8} \sin \beta)^{2}} \ d\beta} = 26^{3/2}.
         \]
         Taking the cross product of \(\dvecfuc{r}{1}\) and \(\mb{r}''(1)\), we get:
         \[
@@ -359,7 +359,7 @@
         \]
         Then, we calculate the magnitude of this cross product:
         \[
-            ||\dvecfuc{r}{1} \times \mb{r}''(1)|| = \mysqrt{42^{2} + 0 + 14^{2}} = \mysqrt{42^{2} + 14^{2}} = \mysqrt{1764 + 196} = 14\mysqrt{10}.
+            \| \dvecfuc{r}{1} \times \mb{r}''(1) \| = \mysqrt{42^{2} + 0 + 14^{2}} = \mysqrt{42^{2} + 14^{2}} = \mysqrt{1764 + 196} = 14\mysqrt{10}.
         \]
         Putting everything together:
         \[

@@ -480,19 +480,19 @@
                 \subsubsection*{Arc Length Parameterization}
                 We can define the \cyanit{arc length parameterization} of a curve \(C\) by:
                 \begin{itemize}
-                    \item Define the arc length \(s(t) = \int_{0}^{t} ||\dvecfuc{r}{\tau}||\,d\tau = \int_{0}^{t} \mysqrt{\left[f'(\tau)\right]^{2} + \left[g'(\tau)\right]^{2}}\,d\tau.\) (Where \(f(\tau), g(\tau)\) correspond to the \(x,y\) components of \(\mb{r}(t)\)).
+                    \item Define the arc length \(s(t) = \int_{0}^{t} \| \dvecfuc{r}{\tau} \|\,d\tau = \int_{0}^{t} \mysqrt{\left[f'(\tau)\right]^{2} + \left[g'(\tau)\right]^{2}}\,d\tau.\) (Where \(f(\tau), g(\tau)\) correspond to the \(x,y\) components of \(\mb{r}(t)\)).
                     \item Solving, if possible, the resulting expression for \(t\) as a function of \(s\).
                     \item Rewriting \(\mb{r}(t) = \mb{r}(t(s)) = \mb{r}\), so that the curve is written as a function of its length, from a given starting point.
                 \end{itemize}
                 \vspace*{-0.5cm}
                 \subsubsection*{Curvature}
-                For all \(\mb{r} \colon \ \kappa = \frac{||\mb{T}'(t)||}{||\mb{r}'(t)||}\); for \(\R^{3}\): \(\kappa = \frac{||\mb{r}'(t) \times \mb{r}''(t)||}{||\mb{r}'(t)||^{3}}\); if \(y = f(x)\): \(\kappa = \frac{|y''(x)|}{[1 + (y'(x)^{2})]^{3/2}}\)
+                For all \(\mb{r} \colon \ \kappa = \frac{||\mb{T}'(t)\| }{ \|\mb{r}'(t)\| }\); for \(\R^{3}\): \(\kappa = \frac{ \|\mb{r}'(t) \times \mb{r}''(t)\| }{ \|\mb{r}'(t)||^{3}}\); if \(y = f(x)\): \(\kappa = \frac{|y''(x)|}{[1 + (y'(x)^{2})]^{3/2}}\)
                 \vspace*{-0.25cm}
                 \subsubsection*{Motion}
 
                 \begin{itemize}
                     \item \cyanit{Velocity:} \(\mb{v}(t) = \dvecfuc{r}{t}\).
-                    \item \cyanit{Speed:} \(||\mb{v}(t)|| = ||\dvecfuc{r}{t}||\).
+                    \item \cyanit{Speed:} \(\| \mb{v}(t) \| = \| \dvecfuc{r}{t} \|\).
                     \item \cyanit{Acceleration:} \(\mb{a}(t) = \dvecfuc{v}{t} = \mb{r}''(t)\).
                 \end{itemize}
                 The motion of an object -- in 2-dimensions, typically, acted on only by gravity \(\mb{F}_{g} = -mg\mb{j}\), where \(g \approx 9.8\) m/s\(^{2}\) and \(m\) is the mass of the object. By Newton's second law, \(\mb{F} = m\mb{a}\), so we have \(\vecfuc{a}{t} = - g\mb{j}.\)
@@ -666,7 +666,7 @@ Thus, \(\vecfuc{v}{t} = -gt\mb{j} + \mb{v}_{0}\), where \(\mb{v}_{0}\) is the in
 
                     \sol{
                       Rewrite the arc length parametrization as:
-                        \(s = \int_{0}^{t} ||\dvecfuc{r}{\tau}||\,d\tau = \int_{0}^{t} \mysqrt{\left[f'(\tau)\right]^{2} + \left[g'(\tau)\right]^{2}}\,d\tau.\) Thus, 
+                        \(s = \int_{0}^{t} \| \dvecfuc{r}{\tau} \|\,d\tau = \int_{0}^{t} \mysqrt{\left[f'(\tau)\right]^{2} + \left[g'(\tau)\right]^{2}}\,d\tau.\) Thus, 
                         \(f'(\tau) = 3e^{\tau}(\sin(\tau) + \cos(\tau)) \quad \text{and} \quad
                         g'(\tau) = 3e^{\tau}(\cos(\tau) - \sin(\tau)).\)
                       Thus, we have:

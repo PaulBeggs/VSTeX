@@ -5,18 +5,16 @@
 
 \documentclass[12pt, oneside]{book}
 \usepackage{xcolor}
-% \usepackage{minted}
+\usepackage{minted}
 \usepackage{tikz-cd}
 % \usepackage[T1]{fontenc}
 
 \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
 \newcommand{\documentTheme}{draculafg}
-\newcommand{\documentLogo}{images/small logo_white.png}
-\newcommand{\documentBigLogo}{images/logo_white_text.png}
-% \usemintedstyle{dracula}
+\newcommand{\documentLogo}{images/output_image_transparent_bg.png}
+\newcommand{\documentBigLogo}{images/output_image_transparent_bg.png}
+\usemintedstyle{dracula}
 
-% \newcommand{\documentBigLogo}{images/Hendrix Logo.png}
-% \newcommand{\documentLogo}{images/small logo.png}
 % \newcommand{\documentTheme}{black}
 
 %%% AESTHETICS %%%
@@ -25,7 +23,7 @@
 
 %%% Dimensions and Spacing %%%
 \usepackage[margin=1in]{geometry}
-\setlength{\parindent}{0pt}
+% \setlength{\parindent}{0pt}
 \usepackage{setspace}
 \usepackage{mathtools}
 \linespread{1}
@@ -236,8 +234,8 @@
 \pagestyle{fancy} % options: empty , plain , fancy
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \fancyhead[R]{\leftmark}
-\fancyhead[L]{Hendrix College}
-\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
+\fancyhead[L]{Paul Beggs}
+\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}}
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
@@ -481,11 +479,11 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 % Do not use all caps.
-\newcommand{\titlestandin}{Multivariable Calculus Notes}
-\newcommand{\cussubtitle}{MATH 230}
+\newcommand{\titlestandin}{Minecraft Data Packs}
+\newcommand{\cussubtitle}{Notes \& Code Snippets}
 % Date format should be like: "January 1, 2001"
-\newcommand{\startdate}{January 22, 2025}
-\newcommand{\customenddate}{May 13, 2025}
+\newcommand{\startdate}{April 2, 2025}
+\newcommand{\customenddate}{TBD}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
 \newcommand{\professor}{Prof. Lars Seme, M.S.}
 
@@ -497,7 +495,8 @@
     \begin{center}
 
         \vspace*{-2cm}
-        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\ % Use for Dracula. Its the all white version of the logo.
+        % TikZ image goes here.
+        \includegraphics[width=0.6\textwidth]{\documentBigLogo}\\ % Use for Dracula. Its the all white version of the logo.
         \vfill
 
         % Horizontal line above the title in 'horange' color
@@ -526,12 +525,7 @@
             \emph{Author} \\[1ex]
             %Submitted by \\[\baselineskip]
             {\Large Paul Beggs \\ \par} % Editor list
-            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
-
-            \vspace*{1\baselineskip}
-
-            \textit{Instructor} \\[1ex] % Tagline(s) or further description
-            \professor
+            {\href{mailto:PaulBeggs03@gmail.com}{{PaulBeggs03@gmail.com}}}\\ % Editor affiliation
 
             \vspace*{1\baselineskip}
 
@@ -571,31 +565,16 @@
 
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-\chapter{Parametric Eqs and Polar Coords}\label{para eqs and polar coords}
+\setcounter{chapter}{0}
+\chapter{The Basics}\label{ch:the_basics}
 \vspace*{-0.25in}
-\input{Chapters/Multi_ch_1.tex}
+\input{chapters/the_basics.tex}
+
+
 \setcounter{chapter}{1}
-
-\chapter{Vectors in Space}\label{vectors}
+\chapter{Armor Stand Coding}\label{ch:armor_stand_coding}
 \vspace*{-0.25in}
-\input{Chapters/Multi_ch_2.tex}
-\setcounter{chapter}{2}
-
-\chapter{Vector-Valued Functions}\label{vector-valued functions}
-\vspace*{-0.25in}
-\input{Chapters/Multi_ch_3.tex}
-
-\chapter{Diff. of Fun. of Several Variables}\label{diff of fun of several variables}
-\vspace*{-0.25in}
-\input{Chapters/Multi_ch_4.tex}
-
-\chapter{Multiple Integration}\label{multiple integration}
-\vspace*{-0.25in}
-\input{Chapters/Multi_ch_5.tex}
-
-\chapter{Vector Calculus}\label{vector calculus}
-\vspace*{-0.25in}
-\input{Chapters/Multi_ch_6.tex}
+\input{chapters/armor_stand_coding.tex}
 
 
 

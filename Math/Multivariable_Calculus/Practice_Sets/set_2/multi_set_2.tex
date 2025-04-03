@@ -313,7 +313,7 @@
   \sol{
     From equation 3.11 from Theorem 3.4 in the book, (and \href{https://calcworkshop.com/vector-functions/arc-length-parameterization/}{this website}) we know that we can rewrite the arc length parametrization as:
     \[
-      s = \int_{0}^{t} ||\dvecfuc{r}{\tau}||\,d\tau = \int_{0}^{t} \mysqrt{\left[f'(\tau)\right]^{2} + \left[g'(\tau)\right]^{2}}\,d\tau,
+      s = \int_{0}^{t} \| \dvecfuc{r}{\tau} \|\,d\tau = \int_{0}^{t} \mysqrt{\left[f'(\tau)\right]^{2} + \left[g'(\tau)\right]^{2}}\,d\tau,
     \]
     where \(f(\tau) = 3e^{\tau}\sin(\tau)\) and \(g(\tau) = 3e^{\tau}\cos(\tau)\). Thus, we find:
     \begin{align*}
@@ -396,7 +396,7 @@
 
     \sol{
       \[
-        \int_{0}^{3\pi} ||\dvecfuc{r}{t}||\,dt = \int_{0}^{3\pi} \mysqrt{\cos^{2}(t) + 1 + 9}\,dt = 9.709 
+        \int_{0}^{3\pi} \| \dvecfuc{r}{t} \|\,dt = \int_{0}^{3\pi} \mysqrt{\cos^{2}(t) + 1 + 9}\,dt = 9.709 
       \]
     }
     \item Find the unit tangent vector \(\vecfuc{T}{t}\).\\
@@ -440,15 +440,15 @@
       \]
       Now we need to find the magnitude of \(\dvecfuc{T}{t}\):
       \[
-        ||\dvecfuc{T}{t}|| = \frac{|\sin(t)|}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \mysqrt{(-10)^2 + \bigl(\cos(t)\bigr)^2 + \bigl(3\cos(t)\bigr)^2}.
+        \| \dvecfuc{T}{t} \| = \frac{|\sin(t)|}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \mysqrt{(-10)^2 + \bigl(\cos(t)\bigr)^2 + \bigl(3\cos(t)\bigr)^2}.
       \]
       Simplify inside the square root and factor:
       \[
-        ||\dvecfuc{T}{t}|| = \frac{|\sin(t)|}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \cdot \mysqrt{10}\,(\cos^2(t)+10)^{1/2}.
+        \| \dvecfuc{T}{t} \| = \frac{|\sin(t)|}{\bigl(\cos^2(t)+10\bigr)^{3/2}} \cdot \mysqrt{10}\,(\cos^2(t)+10)^{1/2}.
       \]
       This simplifies to:
       \[
-        ||\dvecfuc{T}{t}|| = \frac{|\sin(t)|\,\mysqrt{10}}{\cos^2(t)+10}.
+        \| \dvecfuc{T}{t} \| = \frac{|\sin(t)|\,\mysqrt{10}}{\cos^2(t)+10}.
       \]
       Finally, we can find the unit normal vector:
       \[

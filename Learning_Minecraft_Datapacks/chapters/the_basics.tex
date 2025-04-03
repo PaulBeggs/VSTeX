@@ -1,0 +1,69 @@
+\section{Commands}
+\label{sec:commands}
+Commands are the primary way to interact with the Minecraft game world. They allow players to perform various actions, such as changing the time of day, teleporting, or modifying the properties of entities. Commands can be executed in the game chat or through command blocks. They are typically prefixed with a forward slash (/) and can take various arguments to specify the action to be performed.
+
+For each command, it is likely that you will have to use \textit{target selectors}. These include \mintinline{mcfunction}|@a| (all players), \mintinline{mcfunction}|@e| (all entities), and \mintinline{mcfunction}|@r| (random player). As stated, these selectors are used with most commands. Other common syntax to use with other commands includes:
+\begin{itemize}
+    \item \mintinline{mcfunction}|<target selector>| is used to specify the target of the command. This can be a player, entity, or location.
+    \item \mintinline{mcfunction}|<item>| is used to specify the item or block to be affected by the command. This can be a specific item ID or a block name.
+    \begin{itemize}
+        \item You will always want to prefix the item you are using with \mintinline{mcfunction}|minecraft:|. For custom items, you will want to prefix the item with \mintinline{mcfunction}|namespace:item_name|.
+    \end{itemize}
+    \item \mintinline{mcfunction}|[nbt]| is used to specify the NBT (Named Binary Tag) data for the item or block. This can be used to specify custom properties for the item or block. We will touch on this in more detail in \autoref{subsec:filters_and_nbts}.
+\end{itemize}
+Notice the use of square brackets. This indicates that the argument is optional. The other commands that have angled brackets are required arguments. For the following commands, each will be notated with either \texttt{<...>} or \texttt{[...]} to indicate whether the argument is required or optional.
+
+\subsection{Common Commands}
+\label{subsec:common_commands}
+
+\subsubsection{The /give Command}
+\label{subsubsec:give}
+
+The \mintinline{mcfunction}|/give| command is used to give an item to a player. It can be used to give any item in the game, including blocks, tools, and food. The syntax for the command is as follows:
+\begin{minted}[frame=lines, framesep=2mm]{mcfunction}
+/give <player> <item> [amount] [nbt]
+\end{minted}
+For this command, the \mintinline{mcfunction}|<player>| argument is required, while the \mintinline{mcfunction}|<item>| argument is also required. Notice that the command specifies a \textit{player}, and not a \textit{target selector}. The other argument, \mintinline{mcfunction}|[amount]|, is optional and specifies the number of items to give. It defaults to \mintinline{mcfunction}|1| if not specified. It used to be the case that to get a specific type of wood (for example, Spruce), you would have to specify the data value of the item. However, this is no longer the case. The command now looks like this:
+\begin{minted}[frame=lines, framesep=2mm]{mcfunction}
+/give @p minecraft:spruce_planks 64
+\end{minted}
+
+\subsubsection{The /summon Command}
+\label{subsubsec:summon}
+
+The \mintinline{mcfunction}|/summon| command is used to summon an entity in the game world. This can be used to create mobs, items, and other entities. The syntax for the command is as follows:
+\begin{minted}[frame=lines, framesep=2mm]{mcfunction}
+/summon <entity> [x] [y] [z] [nbt]
+\end{minted}
+The \mintinline{mcfunction}|[x]|, \mintinline{mcfunction}|[y]|, and \mintinline{mcfunction}|[z]| arguments specify the coordinates where the entity will be summoned. If not specified, the entity will be summoned at the player's location. You can use tildas \((\sim)\) to specify relative coordinates. For example, \mintinline{mcfunction}|/summon minecraft:creeper ~ ~1 ~| will summon a creeper one block above the player's location. 
+
+In a nutshell, here is a list of some of the most common commands you will use in Minecraft:
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cp{6cm}p{6cm}}
+        \toprule
+        \textbf{Command} & \multicolumn{1}{c}{\textbf{Description}} & \multicolumn{1}{c}{\textbf{Example}} \\ \midrule
+        \mintinline{mcfunction}{/execute} & Allows one command to be run \textit{as} or \textit{at} another entity, enabling complex logic and event-driven interactions.  \\
+        \bottomrule
+    \end{tabular}
+    \caption{}\label{tab:}
+\end{table} 
+
+\subsection{Filters and NBTs}
+\label{subsec:filters_and_nbts}
+
+Notice from the previous section, we were talking about the entity selectors. The \mintinline{mcfunction}|@e| selector is used to target all entities in the game world. It would be quite annoying if for every time you wanted to remove a single entity, it removed all of them. Thus, this is where \textit{filters} come in. Filters are used to narrow down the selection of entities based on specific criteria. For example, you can use filters to target entities based on their type, name, or other properties. This allows for more precise control over which entities are affected by a command.
+
+A very common application of filters is to target entities based on their NBT (Named Binary Tag) data. NBT data is a way to store complex data structures in Minecraft, and it is used to define the properties of entities, items, and blocks. For example, you can use NBT data to specify the health of a mob, the enchantments on an item, or the custom name of an entity.
+
+NBT data is typically represented in a JSON-like format, and it can be used in commands to filter entities based on their properties. For example, you can use the command \mintinline{mcfunction}|/kill @e[type=minecraft:pig, nbt={CustomName:"My Pig"}]| to kill only pigs with a custom name of ``My Pig''. This allows for very specific interactions with entities in the game.
+
+\section{Entities and Properties}
+\label{sec:entities_and_properties}
+
+\subsection{Entities}
+\label{subsec:entities}
+
+Entities are objects that exist in the game world. They can be anything from players, mobs, and items to projectiles and vehicles. Each entity has its own set of properties that define its behavior and appearance. For example, a player entity has properties like health, position, and inventory, while a mob entity has properties like AI behavior, health, and drops. 
+
+These entities can be manipulated using commands and functions in Minecraft. For example, you can summon an entity using the \mintinline{mcfunction}|/summon| command, or you can modify an entity's properties using the \mintinline{mcfunction}|/data| command. Probably the most important entity for data pack coding is the armor stand (see \autoref{sec:floating_text}), which can be used to create floating text and other visual effects in the game.
