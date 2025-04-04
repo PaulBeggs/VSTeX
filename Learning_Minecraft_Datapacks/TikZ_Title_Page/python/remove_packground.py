@@ -67,7 +67,7 @@ def remove_white_background(input_path, output_path, white_threshold=235):
 # --- How to use it ---
 
 # 1. Define input and output file paths
-input_image_file = 'Learning_Minecraft_Datapacks\\TikZ_Title_Page\\images\\ML_logo.png' # Or .png, .jpeg, etc.
+input_image_file = 'Learning_Minecraft_Datapacks\\TikZ_Title_Page\\images\\ML_logo_v2.png' # Or .png, .jpeg, etc.
 output_image_file = 'output_image_transparent_bg_w.png' # Must be .png
 
 # 2. Set the white threshold (adjust as needed)
