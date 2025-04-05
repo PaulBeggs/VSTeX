@@ -18,7 +18,7 @@ def remove_white_background(input_path, output_path, white_threshold=235):
     if not (0 <= white_threshold <= 255):
         print("Error: white_threshold must be between 0 and 255.")
         return
-
+# rgb(40, 42, 54)
     try:
         # Open the image
         img = Image.open(input_path)
@@ -34,18 +34,7 @@ def remove_white_background(input_path, output_path, white_threshold=235):
             # Check if the pixel is close to white based on the threshold
             # item[0] = Red, item[1] = Green, item[2] = Blue
             # Check if R, G, AND B are ALL >= white_threshold
-            if item[0] == range(210,215) and item[1] == range(218,223) and item[2] == range(217,224):
-                # If it's close to white, make it fully transparent
-                newData.append((255, 255, 255, 0)) # Transparent pixel
-            elif item[0] == 82 and item[1] == 103 and item[2] == 115:
-                newData.append((255, 255, 255, 0)) # Transparent pixel
-            elif item[0] == 82 and item[1] == 103 and item[2] == 120:
-                newData.append((255, 255, 255, 0)) # Transparent pixel
-            elif item[0] == 134 and item[1] == 150 and item[2] == 160:
-                newData.append((255, 255, 255, 0)) # Transparent pixel
-            elif item[0] == 204 and item[1] == 204 and item[2] == 207:
-                newData.append((255, 255, 255, 0)) # Transparent pixel
-            elif item[0] >= white_threshold and item[1] >= white_threshold and item[2] >= white_threshold:
+            if item[0] == 40 and item[1] == 42 and item[2] == 54:
                 # If it's close to white, make it fully transparent
                 newData.append((255, 255, 255, 0)) # Transparent pixel
             else:
@@ -67,7 +56,7 @@ def remove_white_background(input_path, output_path, white_threshold=235):
 # --- How to use it ---
 
 # 1. Define input and output file paths
-input_image_file = 'Learning_Minecraft_Datapacks\\TikZ_Title_Page\\images\\ML_logo_v2.png' # Or .png, .jpeg, etc.
+input_image_file = 'Learning_Minecraft_Datapacks\\TikZ_Title_Page\\images\\ml_logo_main.png' # Or .png, .jpeg, etc.
 output_image_file = 'output_image_transparent_bg_w.png' # Must be .png
 
 # 2. Set the white threshold (adjust as needed)

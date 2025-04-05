@@ -38,7 +38,7 @@
 \usepackage{shellesc}
 \usepackage{algorithm, algorithmic, xspace}
 %%% Define new colors %%%
-\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+% \definecolor{draculapink}{rgb}{0.96, 0.51, 0.16}
 
 % Normal colors
 \definecolor{xred}{HTML}{BD4242}
@@ -103,7 +103,7 @@
 
 \newcommand{\gradientrule}{
     \begin{tikzpicture}
-        \shade[left color=orangehdx, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+        \shade[left color=draculapink, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
     \end{tikzpicture}
 }
 
@@ -124,13 +124,13 @@
 %   {}{\PatchFailed}
 
 \xpatchcmd\DOCH
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{\mghrulefill}{\color{draculapink}\mghrulefill}
 {}{\PatchFailed}
 \xpatchcmd\DOTI
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{\mghrulefill}{\color{draculapink}\mghrulefill}
 {}{\PatchFailed}
 \xpatchcmd\DOTIS
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{\mghrulefill}{\color{draculapink}\mghrulefill}
 {}{\PatchFailed}
 
 
@@ -158,6 +158,8 @@
 \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
 \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
 \makeatother
+
+\usepackage{titlesec}
 
 % \usepackage[explicit]{titlesec}
 % \newcommand*\chapterlabel{}\pmod
@@ -213,6 +215,20 @@
 
 \renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
 
+% Section title: 90% opacity
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{draculapink!100}}
+  {\thesection}{1em}{}
+
+% Subsection title: 80% opacity
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{draculapink!75}}
+  {\thesubsection}{1em}{}
+
+% Subsubsection title: 70% opacity
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\color{draculapink!50}}
+  {\thesubsubsection}{1em}{}
 
 %%% FIGURES %%%
 \usepackage{graphicx}  
@@ -222,12 +238,12 @@
 
 %%% Hyperlinks %%%
 \usepackage{hyperref}
-\definecolor{horange}{HTML}{f58026}
+% \definecolor{draculacyan}{HTML}{f58026}
 \hypersetup{
 	colorlinks=true,
-	linkcolor=horange,
-	filecolor=horange,      
-	urlcolor=horange,
+	linkcolor=draculacyan,
+	filecolor=draculacyan,      
+	urlcolor=draculacyan,
 }
 
 
@@ -236,10 +252,10 @@
 \pagestyle{fancy} % options: empty , plain , fancy
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \fancyhead[R]{\leftmark}
-\fancyhead[L]{Hendrix College}
-\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
+\fancyhead[L]{Paul Beggs}
+% \fancyhead[C]{\includegraphics[height=1cm]{\documentLogo}} % Use for Dracula
 \usepackage{xpatch}
-\xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
+\xpretocmd\headrule{\color{draculapink}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
 \setlength{\headheight}{18.5764pt}
 
@@ -265,6 +281,7 @@
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{mathrsfs}
 \usepackage{changepage}
+\usepackage{footmisc}
 \usepackage{multicol}
 \usepackage{slashed}
 \usepackage{enumerate}
@@ -409,10 +426,66 @@
     \end{mdframed}
 }
 
+\newcommand{\nobulletitem}[1]{\item {\itshape #1}}
+
+\newlist{nobullet}{itemize}{10}
+\setlist[nobullet,1]{label=}
+\setlist[nobullet,2]{label=}
+\setlist[nobullet,3]{label=}
+\setlist[nobullet,4]{label=}
+
+\newenvironment{tipbox}
+  {%
+    \par\noindent%
+    % Top dashed line (using \textwidth)
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.65em}%
+    \noindent\textbf{\textcolor{draculapurple}{TIP:}}\quad%
+  }
+  {%
+    \par%
+    % Bottom dashed line
+    \noindent%
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.35em}
+  }
+
+\newenvironment{notebox}
+  {%
+    \par\noindent%
+    % Top dashed line (using \textwidth)
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.65em}%
+    \noindent\textbf{\textcolor{draculagreen}{NOTE:}}\quad%
+  }
+  {%
+    \par%
+    % Bottom dashed line
+    \noindent%
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.35em}
+  }
+
+\newenvironment{warningbox}
+  {%
+    \par\noindent%
+    % Top dashed line (using \textwidth)
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.65em}%
+    \noindent\textbf{\textcolor{draculared}{WARNING:}}\quad%
+  }
+  {%
+    \par%
+    % Bottom dashed line
+    \noindent%
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.35em}
+  }
+
 
 
 \newcommand{\sol}[1]{
-    \begin{customframedproof}[linecolor=orangehdx!75,]
+    \begin{customframedproof}[linecolor=draculapink!75,]
         \begin{solution}
         #1
         \end{solution}
@@ -467,6 +540,8 @@
 \newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
 \newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
 
+\newcommand{\quoteAuthor}[1]{\hspace*{9cm} \textemdash #1}
+
 
 % end of preamble
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -481,13 +556,9 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 % Do not use all caps.
-\newcommand{\titlestandin}{Machine Learning}
-\newcommand{\cussubtitle}{Notes, Math, and Examples}
+\newcommand{\titlestandin}{Machine Learning Notes}
+\newcommand{\cussubtitle}{``Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow''}
 % Date format should be like: "January 1, 2001"
-\newcommand{\startdate}{April 2, 2025}
-\newcommand{\customenddate}{TBD}
-% Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
-\newcommand{\professor}{}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -497,11 +568,14 @@
     \begin{center}
 
         \vspace*{-2cm}
-        \includegraphics[width=0.7\textwidth]{\documentBigLogo}\\ 
-        \vfill
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/ML_logo_v3.png}\\
+            \caption{``The Transformer'' Recreated in TikZ from \href{https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf}{``Attention Is All You Need''}}
+        \end{figure}
 
         % Horizontal line above the title in 'horange' color
-        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+        \textcolor{draculapink}{\rule{\textwidth}{1.0pt}}
 
         \vspace{2em}
 
@@ -509,7 +583,7 @@
 
         \vspace{1em} % Space between the title and the bottom line
 
-        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+        \textcolor{draculapink}{\rule{\textwidth}{1.0pt}}
 
         \vspace*{1\baselineskip}
 
@@ -518,29 +592,47 @@
         \begin{large}
             \vspace*{2\baselineskip}
 
-            \textit{Start}  \\[1ex]
-            {\scshape \startdate} \\[0.3\baselineskip] % Year published
-
-            \vspace*{1\baselineskip}
-
             \emph{Author} \\[1ex]
             %Submitted by \\[\baselineskip]
             {\Large Paul Beggs \\ \par} % Editor list
             {\href{mailto:PaulBeggs03@gmail.com}{{PaulBeggs03@gmail.com}}}\\ % Editor affiliation
 
-            \vspace*{1\baselineskip}
-
-            \vspace*{1\baselineskip}
-
-            \textit{End}\\[1ex]
-            {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
-
-            \thispagestyle{empty}
-
         \end{large}
     \end{center}
 \end{titlepage}
 \pagebreak
+
+\chapter*{Acknowledgements and Roadmap}
+
+Thank you to \textit{Aurélien Géron} for writing the book \textit{Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow}. This document is a compilation of notes taken while reading the book. The notes are not exhaustive and are meant to be a reference for myself. \\
+
+Attribution: “\textit{Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow} by Aurélien Géron. Copyright 2023 Aurélien Géron, 978-1-098-12597-4.” \\
+
+This book is organized in two parts. Part I, “The Fundamentals of Machine Learning”, covers the following topics:
+\begin{itemize}
+    \item What machine learning is, what problems it tries to solve, and the main categories and fundamental concepts of its systems
+    \item The steps in a typical machine learning project
+    \item Learning by fitting a model to data
+    \item Optimizing a cost function
+    \item Handling, cleaning, and preparing data
+    \item Selecting and engineering features
+    \item Selecting a model and tuning hyperparameters using cross-validation
+    \item The challenges of machine learning, in particular underfitting and overfitting (the bias/variance trade-off)
+    \item The most common learning algorithms: linear and polynomial regression, logistic regression, k-nearest neighbors, support vector machines, decision trees, random forests, and ensemble methods
+    \item Reducing the dimensionality of the training data to fight the “curse of dimensionality”
+    \item Other unsupervised learning techniques, including clustering, density estimation, and anomaly detection
+\end{itemize}
+Part II, “Neural Networks and Deep Learning”, covers the following topics:
+\begin{itemize}
+    \item What neural nets are and what they’re good for
+    \item Building and training neural nets using TensorFlow and Keras
+    \item The most important neural net architectures: feedforward neural nets for tabular data, convolutional nets for computer vision, recurrent nets and long short-term memory (LSTM) nets for sequence processing, encoder–decoders and transformers for natural language processing (and more!), autoencoders, generative adversarial networks (GANs), and diffusion models for generative learning
+    \item Techniques for training deep neural nets
+    \item How to build an agent (e.g., a bot in a game) that can learn good strategies through trial and error, using reinforcement learning
+    \item Loading and preprocessing large amounts of data efficiently
+    \item Training and deploying TensorFlow models at scale
+\end{itemize}
+The first part is based mostly on Scikit-Learn, while the second part uses TensorFlow and Keras.
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -568,9 +660,12 @@
 
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-\chapter{Latent Spaces}\label{ch:latent_spaces}
+
+\part{The Fundamentals of Machine Learning}
+
+\chapter{The Machine Learning Landscape}
 \vspace*{-0.25in}
-\input{Chapters/Latent_Spaces.tex}
+\input{parts/Chapters/The_Machine_Learning_Landscape.tex}
 
 \setcounter{chapter}{1}
 

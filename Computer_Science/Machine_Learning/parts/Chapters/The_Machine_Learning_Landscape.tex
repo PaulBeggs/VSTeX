@@ -1,0 +1,142 @@
+\section{Introduction}
+\label{sec:intro}
+
+We will start by defining machine learning and why one would want to use it. Then, we will look at supervised versus unsupervised learning and their variants, online versus batch learning, and instance-based versus model-based learning. Then, we will look at the workflow of a typical ML project and discuss the main challenges and how to evaluate and fine-tune a machine learning system. \\
+
+\cyanit{Machine Learning} is the science (and art) of programming computers, so they can \textit{learn} from data. \\
+
+A more engineering based definition:
+\begin{quote}
+    \textit{A computer program is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, if its performance at tasks in $T$, as measured by $P$, improves with experience $E$.} \\
+    \quoteAuthor{Tom Mitchell, 1997}
+\end{quote}
+
+\section{Why Use Machine Learning?}
+\label{sec:why_use_ml}
+
+Machine learning is good for the following main points:
+\begin{itemize}
+    \item Problems for which existing solutions require a lot of fine-tuning or long lists of rules (a machine learning model can often simplify code and perform better than the traditional approach)
+    \item Complex problems for which using a traditional approach yields no good solution (the best machine learning techniques can perhaps find a solution)
+    \item Fluctuating environments (a machine learning system can easily be retrained on new data, always keeping it up to date)
+    \item Getting insights about complex problems and large amounts of data
+\end{itemize}
+
+\subsection{Application Examples}
+\label{subsec:application_examples}
+
+Machine learning is used in many applications, including:
+\begin{nobullet}
+\nobulletitem{Analyzing images of products on a production line to automatically classify them}
+    \begin{nobullet}
+        \item This is image classification, typically performed using convolutional neural networks (CNNs; see Chapter 14) or sometimes transformers (see Chapter 16).
+    \end{nobullet}
+\nobulletitem{Detecting tumors in brain scans}
+    \begin{nobullet}
+        \item This is semantic image segmentation, where each pixel in the image is classified (as we want to determine the exact location and shape of tumors), typically using CNNs or transformers.
+    \end{nobullet}
+\nobulletitem{Automatically classifying news articles}
+    \begin{nobullet}
+        \item This is natural language processing (NLP), and more specifically text classification, which can be tackled using recurrent neural networks (RNN), but transformers work even better (see Chapter 16).
+    \end{nobullet}
+\nobulletitem{Automatically flagging offensive comments on discussion forums}
+    \begin{nobullet}
+        \item This is also text classification, using the same NLP tools.
+    \end{nobullet}
+\nobulletitem{Summarizing long documents automatically}
+    \begin{nobullet}
+        \item This is a branch of NLP called text summarization, again using the same tools.
+    \end{nobullet}
+\nobulletitem{Creating a chatbot or personal assistant}
+    \begin{nobullet}
+        \item This involves many NLP components, including natural language understanding (NLU) and question-answering modules.
+    \end{nobullet}
+\nobulletitem{Forecasting your company's revenue next year, based on many performance metrics}
+    \begin{nobullet}
+        \item This is a regression task (i.e., predicting values) that may be tackled using any regression model, such as a linear regression or polynomial regression model (see Chapter 4), a regression support vector machine (see Chapter 5), a regression random forest (see Chapter 7), or an artificial neural network (see Chapter 10). If you want to take into account sequences of past performance metrics, you may want to use RNNs, CNNs, or transformers (see Chapters 15 and 16).
+    \end{nobullet}
+\nobulletitem{Marking your app react to voice commands}
+    \begin{nobullet}
+        \item This is speech recognition, which requires processing audio samples: since they are long and complex sequences, they are typically pocessed using RNNs, CNNs, or transformers (see Chapters 15 and 16).
+    \end{nobullet}
+\nobulletitem{Detecting credit card fraud}
+    \begin{nobullet}
+        \item This is anomaly detection, which can be tackled using isolation forests, Gaussian mixture models (see Chapter 9), or autoencoders (see Chapter 17).
+    \end{nobullet}
+\nobulletitem{Segmenting clients based on their purchases so that you can design a different marketing strategy for each segment}
+    \begin{nobullet}
+        \item This is clustering, which can be achieved using \textit{k}-means, DBSCAN, and more (see Chapter 9).
+    \end{nobullet}
+\nobulletitem{Recommending a product that a client may be interested in, based on past purchases}
+    \begin{nobullet}
+        \item This is a recommender system. One approach is to feed past purchases (and other information about the client) to an artificial neural network (see Chapter 10), and get it to output the most likely next purchase. This neural net would typically be trained on past sequences of purchases across all clients. 
+    \end{nobullet}
+\nobulletitem{Building an intelligent bot for a game}
+    \begin{nobullet}
+        \item This is often tackled using reinforcement learning (RL; see Chapter 18), which is a branch of machine learning that trains agents (Such as bots) to pick the actions that will maximize their rewards over time (e.g., a bot may get a reward every time the player loses some life points), within a given environment (such as the game). The famous AlphaGo program that beat the world champion at the game of Go was built using RL.
+    \end{nobullet}
+\end{nobullet}
+
+\section{Types of Machine Learning Systems}
+\label{sec:types_of_ml_systems}
+
+Machine learning systems can be classified into several categories, depending on the type of data they are trained on and the type of tasks they are designed to perform. The main categories are:
+\begin{itemize}
+    \item How they are supervised during training (supervised, unsupervised, or semi-supervised, self-supervised, and others)
+    \item Whether or not they can learn incrementally on the fly (online versus batch learning)
+    \item Whether they work by simply comparing new data points to known data points, or instead by detecting patterns in the training data and building a predictive model, much like scientists do (instance-based versus model-based learning)
+\end{itemize}
+
+\subsection{Training Supervision}
+\label{subsec:training_supervision}
+
+This subsection goes over the main types of supervision used in machine learning: supervised, unsupervised, semi-supervised, self-supervised, and reinforcement learning. 
+
+\subsubsection{Supervised Learning}
+\label{subsubsec:supervised_learning}
+
+\cyanit{Supervised Learning} is when you feed an algorithm a training set of labeled examples, and the algorithm learns to predict the labels for new instances. \\
+
+\cyanit{Classification} a spam filter is a good example of this: it is trained with many example emails along with their \textit{class} (spam or ham), and it must learn how to classify new emails. \\
+
+\cyanit{Regression} is when the labels are continuous values (e.g., predicting the price of a house). Training involves giving the model many examples of cars, including both their features and their targets (i.e., their prices).
+\newpage
+\begin{notebox}
+    The words \textit{target} and \textit{label}  are often used interchangeably, but \textit{target} is more common in regression tasks, while \textit{label} is more common in classification tasks. Moreover, \textit{features} are sometimes called \textit{predictors} or \textit{attributes}. These terms may refer to individual samples (e.g., ``this car's mileage feature is equal to 15,000''), or to all samples (e.g., ``the mileage feature is strongly correlated with price.'').
+\end{notebox}
+
+\subsubsection{Unsupervised Learning}
+\label{subsubsec:unsupervised_learning}
+
+\cyanit{Unsupervised Learning} is when you only feed the algorithm a training set of unlabeled examples, and the algorithm tries to learn the structure of the data. \\
+
+Consider the example of running a website that collects data from shoppers. You can run a \cyanit{clustering} algorithm on the data to group similar shoppers together. The algorithm will find connections between the shoppers without your assistance. For example, it might notice that 40\% of shoppers are teenagers who buy candy on weekdays after school, and 20\% are adults who only buy vegetables on the weekend. If you use \cyanit{hierarchical clustering} you can subdivide these groups into smaller groups, such as ``teenagers who buy candy on weekdays after school'' and ``teenagers who buy candy on weekends''. \\
+
+\cyanit{Visualization} algorithms take complex, unlabeled data, and output a 2D or 3D representation that can easily be plotted. They preserve as much structure as possible (e.g., trying to keep separate clusters in the input space from overlapping in the visualization) so that you can perhaps identify unsuspected patterns. \\
+
+A related task is \cyanit{dimensionality reduction}, in which the goal is to simplify the data without losing too much information. You could merge several correlated features into one. For example, you could combine the features ``height'' and ``weight'' into a single feature called ``body mass index (BMI)''. This is called \cyanit{feature extraction}.
+
+\begin{tipbox}
+    Reducing the number of dimensions in training data by utilizing these dimensionality reduction algorithms will make the later machine learning algorithm run much faster, take up less memory and disk space, and in some cases, improve the performance of the algorithm.
+\end{tipbox}
+
+\cyanit{Anomaly detection} is a special case of unsupervised learning, where the goal is to identify rare items, events, or observations that raise suspicions by differing significantly from the majority of the data. For example, you could use anomaly detection to identify fraudulent credit card transactions. \\
+
+Similarly, \cyanit{novelty detection} is used to detect new instances that look different from all other instances in the training set. The caveat for using this method, is that your training set must be ``clean'' (i.e., devoid of any instance that you would like the algorithm to detect). For example, if you have thousands of images of different dogs and 1\% of these are Chihuahuas, then a novelty detection algorithm should not treat new pictures of Chihuahuas as novelties. On the other hand, anomaly detection algorithms may consider these dogs as so rare and different from other dogs that they would likely classify them as anomalies. \\
+
+The final unsupervised task is \cyanit{association rule learning}, which is used to discover interesting relations between variables in large databases. For example, suppose you own a supermarket. Running an association rule on your sales logs may reveal that people who purchase barbecue sauce and potato chips also tend to buy steak. Thus, you may want to place these items close to each other in your store.
+
+\subsubsection{Semi-Supervised Learning}
+\label{subsubsec:semi_supervised_learning}
+
+Since labeling is often time-consuming and costly, some algorithms can deal with data that's partially labeled. This is called \cyanit{semi-supervised learning}. \\
+
+Google Photos uses semi-supervised learning to identify people in your photos. Once all your family photos are uploaded to the service, it automatically recognizes that the same person A shows up in photos 1, 5, and 11, while another person B shows up in photos 2, 5, and 7. This is the \textit{unsupervised} part of the algorithm that utilizes clustering. \\
+
+Most semi-supervised learning algorithms are combinations of unsupervised and supervised learning algorithms. For example, a clustering algorithm may group similar instances together, and then every unlabeled instance can be labeled with the most common label in its cluster. Once the whole dataset is labeled, a supervised learning algorithm can be trained on it.
+
+\subsubsection{Self-Supervised Learning}
+\label{subsubsec:self_supervised_learning}
+
+
+
