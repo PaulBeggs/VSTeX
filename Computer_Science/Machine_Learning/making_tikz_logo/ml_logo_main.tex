@@ -219,25 +219,25 @@
         % Add Nx labels
         \node[anchor= west, font=\fontfamily{phv}\selectfont, left=0.2cm of encoder_block.west] {N$\times$};
         \node[anchor = east, font=\fontfamily{phv}\selectfont, right=0.2cm of decoder_block.east] (Nx) {N$\times$};
-    % 1) Define some coordinates to guide the arrow path
-\coordinate (exit_left_box)    at ($(addnorm3.north)+(0,0.7cm)$);   % go up out of left Nx box
-\coordinate (between_boxes)    at ($(exit_left_box)+(2.285cm,0)$);     % travel left-to-right in between
-\coordinate (enter_right_box)  at ($(between_boxes)+(0,-2.12cm)$);    % move down near the right Nx box
 
-% 2) Draw the arrow with multiple turns and rounded corners
-\draw[pointers, rounded corners=7pt]
-    (addnorm3.north)
-    -- (exit_left_box)
-    -- (between_boxes)
-    -- (enter_right_box)
-    -| (rlthird2);
+        
+        \coordinate (exit_left_box)    at ($(addnorm3.north)+(0,0.7cm)$); % go up out of left Nx box
+        \coordinate (between_boxes)    at ($(exit_left_box)+(2.285cm,0)$); % travel left-to-right in between
+        \coordinate (enter_right_box)  at ($(between_boxes)+(0,-2.12cm)$); % move down near the right Nx box
 
-    \draw[pointers, rounded corners=7pt]
-    (addnorm3.north)
-    -- (exit_left_box)
-    -- (between_boxes)
-    -- (enter_right_box)
-    -| (multihead3.south);
+        \draw[pointers, rounded corners=7pt]
+            (addnorm3.north)
+            -- (exit_left_box)
+            -- (between_boxes)
+            -- (enter_right_box)
+            -| (rlthird2);
+
+        \draw[pointers, rounded corners=7pt]
+        (addnorm3.north)
+        -- (exit_left_box)
+        -- (between_boxes)
+        -- (enter_right_box)
+        -| (multihead3.south);
 
     
     \end{tikzpicture}
