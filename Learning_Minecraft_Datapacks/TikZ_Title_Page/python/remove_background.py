@@ -34,7 +34,7 @@ def remove_white_background(input_path, output_path, white_threshold=235):
             # Check if the pixel is close to white based on the threshold
             # item[0] = Red, item[1] = Green, item[2] = Blue
             # Check if R, G, AND B are ALL >= white_threshold
-            if item[0] == 40 and item[1] == 42 and item[2] == 54:
+            if item[0] >= white_threshold and item[1] >= white_threshold and item[2] >= white_threshold:
                 # If it's close to white, make it fully transparent
                 newData.append((255, 255, 255, 0)) # Transparent pixel
             else:
