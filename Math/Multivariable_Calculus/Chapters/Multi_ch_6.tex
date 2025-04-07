@@ -228,7 +228,7 @@ Evaluate \( \int_C \mb{F} \cdot dr \) where \( \mb{F} = \langle y, x \rangle \) 
 Previously, we saw that a conservative vector field, \(\mathbf{F}\), is one for which there exists a scalar potential function \(f\) such that \(\nabla f = \mathbf{F}\). That is, \(\mathbf{F}\) is the gradient of some potential function \(f\).
 
 \subsection{Fundamental Theorem of Line Integrals}
-Suppose that \(C\) is piecewise smooth, parameterized by \(\mathbf{r}\) on \(a \leq t \leq b\), and \(f\) is differentiable in two or three variables. If \(\mathbf{F} = \nabla f\) is continuous on \(C\), then
+Suppose that \(C\) is piecewise smooth, parameterized by \(\mathbf{r}\) on \(a \leq t \leq b\), and \(f\) is differentiable in two or three variables. If \(\mathbf{F} = \nabla f\) (i.e., \(f\) is conservative) is continuous on \(C\), then
 \[
     \int_C \mathbf{F} \cdot d\mathbf{r} = \int_C \nabla f \cdot d\mathbf{r} = f(\mathbf{r}(b)) - f(\mathbf{r}(a)).
 \]
@@ -251,8 +251,10 @@ Thus, when \(\mathbf{F}\) is the gradient of some potential function – i.e., w
 
 The line integral of a conservative vector field \(\mathbf{F}\) is just the change in potential between the ending and starting points on the curve. \\
 
-Therefore, for a conservative vector field, the circulation along a curve from the point \(P\) to \(Q\) is independent of the path to get from \(P\) to \(Q\). In fact, we call this the path independence property of \(\mathbf{F}\). \\
-
+Therefore, for a conservative vector field, the circulation along a curve from the point \(P\) to \(Q\) is independent of the path to get from \(P\) to \(Q\). In fact, we call this the \cyanit{path independence property} of \(\mathbf{F}\). Moreover, if you have 2 curves \(C_{1}\) and \(C_{2}\), and \(\mb{F}\) is conservative, then
+\[
+    \int_{C_{1}} \mb{F} \cdot d\mb{r} = \int_{C_{2}} \mb{F} \cdot d\mb{r}.
+\]
 This is very much like the Calculus I version of the Fundamental Theorem of Calculus – in that case, to determine \(\int_a^b f(x) \, dx\), we find an antiderivative, \(F(x)\), for \(f\) and evaluate that antiderivative at each of \(x = a\) and \(x = b\) and subtract. We did not notice ``path independence'' since there is (essentially) only one path in \(\mathbb{R}\) to go from \(x = a\) to \(x = b\).
 
 \subsubsection{Line Integrals on a Closed Curve}
@@ -289,3 +291,33 @@ Given a conservative vector field \(\mathbf{F}(x,y) = P(x,y)\mathbf{i} + Q(x,y)\
     \item Then, \(h(y) = \int h'(y) \, dy\).
     \item Finally, \(f(x,y) = g(x,y) + h(y) + K\), where \(K\) is a constant of integration.
 \end{itemize}
+
+\subsection{Examples}
+
+\subsubsection{Example 1}
+
+Let \(\mb{F} = \langle y^{2}, 2xy + 2 \rangle\) and \(C\) be the curve parameterized by \(\mb{r}(t) = \langle t\cos(t), t^{2} + e^{t} - \sin(t) \rangle\), \(0 \leq t \leq 2\). Find \(\int_C \mb{F} \cdot d\mb{r}\). \\
+
+\textbf{Solution:} \\
+We first check if \(\mb{F}\) is conservative. We find the cross partials:
+\begin{align*}
+    \frac{\partial P}{\partial y} = 2y, \quad \text{and} \quad 
+    \frac{\partial Q}{\partial x} = 2y.
+\end{align*}
+Since these are equal, we know that \(\mb{F}\) is conservative. \\
+
+We can find a potential function for \(\mb{F}\) by using the algorithm above. We have:
+\begin{align*}
+    \int P(x,y) \, dx &= \int y^{2} \, dx = xy^{2} + h(y), \\
+    \frac{\partial}{\partial y} (xy^{2} + h(y)) &= 2xy + h'(y) = Q(x,y) = 2xy + 2. \\
+    h'(y) &= 2, \\
+    h(y) &= 2y + K. \\
+    f(x,y) &= xy^{2} + 2y + K.
+\end{align*}
+Now, we can evaluate the line integral:
+\begin{align*}
+    \int_C \mb{F} \cdot d\mb{r} &= f(\mb{r}(2)) - f(\mb{r}(0)) \\
+    &= f(2\cos(2), 4 + e^{2} - \sin(2)) - f(0, e^{2}) \\
+    &= (2\cos(2))(4 + e^{2} - \sin(2)) + 2(4 + e^{2} - \sin(2)) - (0) - (e^{2}) \\ 
+    &= 8\cos(2) + 3e^{2} - 2\sin(2).
+\end{align*}

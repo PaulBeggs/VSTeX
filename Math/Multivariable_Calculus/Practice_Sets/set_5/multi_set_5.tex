@@ -262,19 +262,36 @@
     \item (3 points) Determine \(\displaystyle \int_{C} y^{2} \, dx + z \, dy + x \, dz\), where \(C\) is the line segment which connects \((2,0,0)\) to \((3,4,5)\).  
 
     \sol{
-        
+        \begin{align*}
+            \rmb(t) &= (2 + t)\mbi + (4t)\mbj + (5t)\mbk, \quad 0 \leq t \leq 1 \\
+            \dvecfuc{\rmb}{t} &= \mbi + 4\mbj + 5\mbk \\
+            dx &= dt, \quad dy = 4dt, \quad dz = 5dt \\
+            y^{2} &= (4t)^{2} = 16t^{2}, \quad z = 5t, \quad x = 2 + t \\
+            \int_{C} y^{2} \, dx + z \, dy + x \, dz &= \int_{0}^{1} (16t^{2})dt + (5t)(4dt) + (2+t)(5dt) \\
+            &= \int_{0}^{1} (16t^{2} + 20t + 10) dt \\
+            &= [\frac{16}{3}t^{3} + 10t^{2} + 10t]_{0}^{1} \\
+            &= \frac{16}{3} + 10 + 10 = \frac{56}{3}
+        \end{align*}
     }
 
     \item (3 points) Determine \(\displaystyle \int_{C} \frac{1}{x^{2} + y^{2} + z^{2}} \, ds\), where \(C\) is given by \(\langle \cos t, \sin t, t \rangle\), \(0 \leq t \leq \pi\).  
 
     \sol{
-        
+        \begin{align*}
+            \rmb(t) &= \cos t \mbi + \sin t \mbj + t \mbk, \quad 0 \leq t \leq \pi \\
+            ds &= ||\dvecfuc{\rmb}{t}|| dt = ||-\sin t \mbi + \cos t \mbj + \mbk|| dt \\
+            &= \sqrt{1 + (\sin^{2}t + \cos^{2}t)} dt = \sqrt{2} dt \\
+            x^{2} + y^{2} + z^{2} &= (\cos^{2}t + \sin^{2}t + t^{2}) = 1 + t^{2} \\
+            &= \int_{0}^{\pi} \frac{\sqrt{2}}{1+t^{2}} dt \\
+            &= [\sqrt{2}\tan^{-1}(t)]_{0}^{\pi} = \sqrt{2}\left(\tan^{-1}(\pi) - 0\right) \\
+            &= \sqrt{2}\tan^{-1}(\pi)
+        \end{align*}
     }
 
     \item (3 points) Let \(\mb{F}(x,y) = 3x^{2}y^{2}\mbi + (2x^{3}y + 5)\mbj\). Find a scalar function \(f\) such that \(\nabla f = \mb{F}\) and use this to determine \(\displaystyle \int_{C} \mb{F} \cdot d\mb{r}\) where \(C\) is given by \(\mb{r}(t) = (t^{3} - 2t)\mbi + (t^{3} + 2t)\mbj\) for \(0 \leq t \leq 1\).  
 
     \sol{
-        
+        (Note this is conservative, so we can use the Fundamental Theorem of Line Integrals.)
     }
 
     \item (2 points) Set up, but do not evaluate the ``direct'' integral for the previous problem. Then, use your calculator to determine a numerical approximation for the integral. Did you get the same answer?  
