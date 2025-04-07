@@ -219,3 +219,73 @@ Evaluate \( \int_C \mb{F} \cdot dr \) where \( \mb{F} = \langle y, x \rangle \) 
     F(\mb{r}(t)) &= \langle t, t \rangle. \\
     \int_C \mb{F} \cdot dr &= \int_0^1 \langle t, t \rangle \cdot \langle 1, 1 \rangle \, dt = \int_0^1 (t + t) \, dt = \int_0^1 2t \, dt = 2.
 \end{align*}
+
+\newpage
+
+\section{Conservative Vector Fields}
+
+\subsection{Conservative Vector Fields}
+Previously, we saw that a conservative vector field, \(\mathbf{F}\), is one for which there exists a scalar potential function \(f\) such that \(\nabla f = \mathbf{F}\). That is, \(\mathbf{F}\) is the gradient of some potential function \(f\).
+
+\subsection{Fundamental Theorem of Line Integrals}
+Suppose that \(C\) is piecewise smooth, parameterized by \(\mathbf{r}\) on \(a \leq t \leq b\), and \(f\) is differentiable in two or three variables. If \(\mathbf{F} = \nabla f\) is continuous on \(C\), then
+\[
+    \int_C \mathbf{F} \cdot d\mathbf{r} = \int_C \nabla f \cdot d\mathbf{r} = f(\mathbf{r}(b)) - f(\mathbf{r}(a)).
+\]
+
+\begin{proof}
+    This is an immediate result of the chain rule and the ``regular'' Fundamental Theorem of Calculus:
+\begin{align*}
+    \int_C \nabla f \cdot d\mathbf{r} &= \int_a^b \nabla f(\mathbf{r}(t)) \cdot \mathbf{r}'(t) \, dt \\
+    &= \int_a^b \frac{d}{dt}f(\mathbf{r}(t)) \, dt \\
+    &= f(\mathbf{r}(b)) - f(\mathbf{r}(a)). \qedhere
+\end{align*}
+\end{proof} 
+
+
+Thus, when \(\mathbf{F}\) is the gradient of some potential function – i.e., when \(\mathbf{F}\) is conservative – we can evaluate a line integral by:
+\begin{itemize}
+    \item determining a potential function for \(\mathbf{F}\)
+    \item evaluating the potential function at each of \(t = a\) and \(t = b\) and finding the difference.
+\end{itemize}
+
+The line integral of a conservative vector field \(\mathbf{F}\) is just the change in potential between the ending and starting points on the curve. \\
+
+Therefore, for a conservative vector field, the circulation along a curve from the point \(P\) to \(Q\) is independent of the path to get from \(P\) to \(Q\). In fact, we call this the path independence property of \(\mathbf{F}\). \\
+
+This is very much like the Calculus I version of the Fundamental Theorem of Calculus – in that case, to determine \(\int_a^b f(x) \, dx\), we find an antiderivative, \(F(x)\), for \(f\) and evaluate that antiderivative at each of \(x = a\) and \(x = b\) and subtract. We did not notice ``path independence'' since there is (essentially) only one path in \(\mathbb{R}\) to go from \(x = a\) to \(x = b\).
+
+\subsubsection{Line Integrals on a Closed Curve}
+
+If \(C\) is a closed curve, we often emphasize this for a line integral by writing 
+\[
+    \oint_C \mathbf{F} \cdot d\mathbf{r}.
+\]
+Notice that the Fundamental Theorem of Line Integrals implies that whenever \(\mathbf{F}\) is conservative, then
+\[
+    \oint_C \mathbf{F} \cdot d\mathbf{r} = 0.
+\]
+
+\subsubsection{Path Independence}
+
+The Fundamental Theorem of Line Integral implies that any \(\int_C \mathbf{F} \cdot d\mathbf{r}\) is path independent whenever \(\mathbf{F}\) is conservative. The reverse is almost true: \\
+
+\textbf{Theorem.} If \(\mathbf{F}\) is a continuous vector field that is path independent with open, connected domain, then \(\mathbf{F}\) is conservative.
+
+\subsubsection{Cross Partial Property}
+
+\textbf{Theorem.} Suppose that \(\mathbf{F}\) is a continuous vector field on an open, simply connected region \(D\) in \(\mathbb{R}^2\) or \(\mathbb{R}^3\). If the cross partial property holds in \(D\), then \(\mathbf{F}\) is conservative.
+
+\subsection{Finding a Potential Function}
+
+To find a potential function for a conservative vector field, we can use the following algorithm: \\
+
+Given a conservative vector field \(\mathbf{F}(x,y) = P(x,y)\mathbf{i} + Q(x,y)\mathbf{j}\), we can find a potential function \(f\) such that \(\nabla f = \mathbf{F}\). The algorithm is as follows:
+
+\begin{itemize}
+    \item We can find \(\int P(x,y) \, dx\) (i.e. hold \(y\) constant) = \(g(x,y) + h(y)\), for some currently unknown function \(h\) – that is, \(g\) is “just” the antiderivative of \(P\), only with respect to \(x\).
+    \item Then \(\frac{\partial}{\partial y} (g(x,y) + h(y)) = g_y(x,y) + h'(y)\).
+    \item This should be \(Q(x,y) = g_y(x,y) + h'(y)\), so we know \(h'(y)\).
+    \item Then, \(h(y) = \int h'(y) \, dy\).
+    \item Finally, \(f(x,y) = g(x,y) + h(y) + K\), where \(K\) is a constant of integration.
+\end{itemize}

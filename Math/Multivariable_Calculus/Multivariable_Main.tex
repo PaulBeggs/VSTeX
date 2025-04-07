@@ -159,7 +159,24 @@
 \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
 \makeatother
 
-% \usepackage[explicit]{titlesec}
+\usepackage{titlesec}
+
+% Section title: 90% opacity
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{draculapink!100}}
+  {\thesection}{1em}{}
+
+% Subsection title: 80% opacity
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{draculapink!75}}
+  {\thesubsection}{1em}{}
+
+% Subsubsection title: 70% opacity
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\color{draculapink!50}}
+  {\thesubsubsection}{1em}{}
+
+
 % \newcommand*\chapterlabel{}\pmod
 % \titleformat{\chapter}
 %   {\gdef\chapterlabel{}
@@ -234,9 +251,9 @@
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
 \pagestyle{fancy} % options: empty , plain , fancy
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
-\fancyhead[R]{\leftmark}
-\fancyhead[L]{Hendrix College}
+\renewcommand{\chaptermark}[1]{\markboth{\textcolor{draculafg}{\thechapter.\ #1}}{}}
+\fancyhead[R]{\textcolor{draculafg}{\leftmark}}
+\fancyhead[L]{\textcolor{draculafg}{Hendrix College}}
 \fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
