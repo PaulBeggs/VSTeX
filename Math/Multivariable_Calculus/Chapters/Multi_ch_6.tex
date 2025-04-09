@@ -321,3 +321,66 @@ Now, we can evaluate the line integral:
     &= (2\cos(2))(4 + e^{2} - \sin(2)) + 2(4 + e^{2} - \sin(2)) - (0) - (e^{2}) \\ 
     &= 8\cos(2) + 3e^{2} - 2\sin(2).
 \end{align*}
+
+\newpage
+
+\section{Green's Theorem}
+
+\subsection{Circulation over Closed Curves}
+
+Let \(C\) be a closed curve and \(\mathbf{F} : \mathbb{R}^2 \to \mathbb{R}^2\) be a vector field. Then, the circulation of \(\mathbf{F}\) along \(C\) is given by:
+\[
+    \oint_C \mathbf{F} \cdot \mb{T} \, ds = \oint_C \mathbf{F} \cdot d\mb{r} = \oint P \, dx + Q \, dy.
+\]
+You can think of this as measuring the total amount that \(\mathbf{F}\) pushes along the curve \(C\). \\
+
+We will define the closed curve \(C\) to have positive orientation if the interior of the region enclosed by the curve is always to the left as you traverse the curve – we often call this counter-clockwise orientation. \\
+
+Notice that if \(\mathbf{F}\) happens to be conservative, then \(P_y = Q_x\) by the cross partial property. Thus, \(Q_x - P_y = 0\). Then, if \(D\) is the region defined by the interior of the curve \(C\), we have:
+\[
+    \iint_D (Q_x - P_y) \, dA = 0,
+\]
+which happens to match:
+\[
+    \oint_C \mathbf{F} \cdot d\mb{r}.
+\]
+But what if \(\mathbf{F}\) is not conservative?
+
+\subsection{Green's Theorem – Circulation Form}
+
+Suppose that \(C\) is a positively oriented closed curve and that \(D\) is the region bounded by \(C\). If \(\mathbf{F} = \langle P,Q \rangle\) is any vector field with continuous partial derivatives, then:
+\[
+    \oint_C \mathbf{F} \cdot d\mb{r} = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA.
+\]
+We can write each of these as:
+\[
+    \oint_C \mathbf{F} \cdot d\mb{r} = \oint_C P \, dx + Q \, dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA = \iint_D (Q_x - P_y) dA.
+\]
+Thus, the total circulation of \(\mathbf{F}\) along the closed curve \(C\) is equal to the sum (i.e. integral) of the difference between the cross partials over the entire region \(D\). The difference of the partials measures how non-conservative the vector field is – and measures the total microscopic circulation at each point in \(D\). But, in the interior all of the microscopic circulations cancel out, leaving only the circulation along the boundary. \\
+
+\subsection{Interpretation as a Fundamental Theorem}
+
+We can interpret the quantity \(Q_x - P_y\) as a type of derivative of \(\mathbf{F}\). The total double sum of the quantity \(Q_x - P_y\) over some region matches the sum of the original function \(\mathbf{F}\) over the boundary of that region. \\
+
+\subsection{Flux over Closed Curves}
+
+The flux of \(\mathbf{F} : \mathbb{R}^2 \to \mathbb{R}^2\), where we write \(\mathbf{F} = \langle P,Q \rangle\) over a closed curve \(C\) is given by:
+\[
+    \oint_C \mathbf{F} \cdot \mb{N} \, ds = \oint_C \mathbf{F} \cdot \mb{n} \, dt = \oint_C \mathbf{F} \cdot \langle y'(t), -x'(t) \rangle \, dt = \oint_C -Q \, dx + P \, dy.
+\]
+
+\subsubsection{Green's Theorem – Flux Form}
+
+Suppose that \(C\) is a positively oriented closed curve and that \(D\) is the region bounded by \(C\). If \(\mathbf{F} = \langle P,Q \rangle\) is any vector field with continuous partial derivatives, then:
+\[
+    \oint_C \mathbf{F} \cdot \mb{n} \, dt = \iint_D \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} \right) dA.
+\]
+We can write each of these as:
+\[
+    \oint_C \mathbf{F} \cdot \mb{n} \, dt = \oint_C -Q \, dx + P \, dy = \iint_D \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} \right) dA = \iint_D (P_x + Q_y) dA.
+\]
+Thus, the total flux of \(\mathbf{F}\) across the closed curve \(C\) is equal to the sum (i.e. integral) of the sum of the regular partials over the entire region \(D\). The sum of the partials measures how much the vector field is running away (expanding away) from a point. But, as the animations in the slides show, in the interior all of the expansions cancel out, leaving only the expansion (i.e. flux) across the boundary.
+
+\subsection{Interpretation as a Fundamental Theorem}
+
+We can interpret the quantity \(P_x + Q_y\) as a type of derivative of \(\mathbf{F}\). The total double sum of the quantity \(P_x + Q_y\) over some region matches the sum of the original function \(\mathbf{F}\) across the boundary of that region.

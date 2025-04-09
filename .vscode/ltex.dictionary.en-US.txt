@@ -173,3 +173,6 @@ mcfunction
 UMAP
 AlphaGo
 oculi
+Nigrostriatal
+globus
+pallidus
