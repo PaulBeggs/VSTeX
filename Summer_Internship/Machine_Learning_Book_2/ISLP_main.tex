@@ -1,0 +1,647 @@
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% MAIN DOCUMENT %%%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\documentclass[12pt, oneside]{book}
+\usepackage{xcolor}
+\usepackage{minted}
+\usepackage{tikz-cd}
+% \usepackage[T1]{fontenc}
+
+\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+\newcommand{\documentTheme}{draculafg}
+\newcommand{\documentLogo}{images/ML_logo_v2.png}
+\newcommand{\documentBigLogo}{images/ML_logo_v2.png}
+% \usemintedstyle{dracula}
+
+% \newcommand{\documentBigLogo}{images/Hendrix Logo.png}
+% \newcommand{\documentLogo}{images/small logo.png}
+% \newcommand{\documentTheme}{black}
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[margin=1in]{geometry}
+% \setlength{\parindent}{0pt}
+\usepackage{setspace}
+\usepackage{mathtools}
+\linespread{1}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
+\usepgflibrary{shadings}
+\usepackage{pgfkeys}
+\usepackage{pdftexcmds}
+\usepackage{shellesc}
+\usepackage{algorithm, algorithmic, xspace}
+%%% Define new colors %%%
+% \definecolor{draculapink}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%------- %
+% XHFILL %
+%------- %
+
+
+
+%%% Chapter Headings %%%
+
+\newcommand{\gradientrule}{
+    \begin{tikzpicture}
+        \shade[left color=draculapink, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+    \end{tikzpicture}
+}
+
+\usepackage[Glenn]{fncychap}
+\ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
+\ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
+\usepackage{xpatch}
+
+% \xpatchcmd{\DOCH}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTI}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTIS}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+
+\xpatchcmd\DOCH
+{\mghrulefill}{\color{draculapink}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTI
+{\mghrulefill}{\color{draculapink}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTIS
+{\mghrulefill}{\color{draculapink}\mghrulefill}
+{}{\PatchFailed}
+
+
+% \usepackage[Bjornstrup]{fncychap}
+
+% \newcommand{\gradient}[1]{
+% \begin{tikzpicture}
+%     \node (rect) at (0,0) [fill=blue,,path fading=East,minimum width=\linewidth,minimum height=2.5cm] {};
+%     \node(title)[above left = 10pt and 10pt of rect.south east, anchor=south east, font=\CTV] {\textcolor{horange}{#1}};
+%     \ifnum \thechapter>0\node[left = 10pt of rect.north east,  anchor=center, font=\CNoV] {\textcolor{horange}{\thechapter}};\fi%
+% \end{tikzpicture}%
+% \vskip 40pt
+% }
+
+
+% \renewcommand{\DOCH}{}
+% \renewcommand{\DOTI}[1]{\gradient{#1}}
+% \renewcommand{\DOTIS}[1]{\gradient{#1}}
+
+%% Change Chapter Heading Placement %%
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
+
+\usepackage{titlesec}
+
+% \usepackage[explicit]{titlesec}
+% \newcommand*\chapterlabel{}\pmod
+% \titleformat{\chapter}
+%   {\gdef\chapterlabel{}
+%    \normalfont\sffamily\Huge\bfseries\scshape}
+%   {\gdef\chapterlabel{\thechapter\ }}{0pt}
+%   {\begin{tikzpicture}[remember picture,overlay]
+%     \node[yshift=-3cm] at (current page.north west)
+%       {\begin{tikzpicture}[remember picture, overlay]
+%         \draw[fill=LightSkyBlue] (0,0) rectangle
+%           (\paperwidth,3cm);
+%         \node[anchor=east,xshift=.9\paperwidth,rectangle,
+%               sharp corners=downhill=20pt,inner sep=11pt,
+%               fill=MidnightBlue]
+%               {\color{white}\chapterlabel#1};
+%        \end{tikzpicture}
+%       };
+%    \end{tikzpicture}
+%   }
+% \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+
+% \usepackage[Conny]{fncychap}
+% \usepackage[Rejne]{fncychap}
+% \ChNameVar{\bfseries}  % Makes the chapter "Chapter #" bold
+% \ChNumVar{\bfseries}   % Makes the chapter number bold
+% \ChTitleVar{\bfseries} % Makes the chapter title bold
+% % Define a custom color, for example:
+% \definecolor{mycolor}{RGB}{0,128,255}
+
+% % Redefine the chapter style in Rejne to change the line colors
+% \makeatletter
+% \ChRuleWidth{2pt}   % Change the thickness of the lines
+% \renewcommand{\DOCH}{%
+%   \vspace*{-50\p@}% Moves the chapter title up/down if needed
+%   {\color{mycolor} \hrule \@chapapp{} \space \thechapter \hrule}% Customizes the chapter header with color
+% }
+% \renewcommand{\DOTI}[1]{%
+%   \vskip 20\p@ % Adjusts the space above the title
+%   \bfseries #1\par % Embolden the title
+%   \vskip 20\p@ % Adjusts the space below the title
+% }
+% \makeatother
+
+% %% Change Chapter Heading Placement %%
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+% \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+% \makeatother
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
+
+% Section title: 90% opacity
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{draculapink!100}}
+  {\thesection}{1em}{}
+
+% Subsection title: 80% opacity
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{draculapink!75}}
+  {\thesubsection}{1em}{}
+
+% Subsubsection title: 70% opacity
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\color{draculapink!50}}
+  {\thesubsubsection}{1em}{}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+% \definecolor{draculacyan}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=draculacyan,
+	filecolor=draculacyan,      
+	urlcolor=draculacyan,
+}
+
+
+%% Headers and Footers %%
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\fancyhead[R]{\leftmark}
+\fancyhead[L]{Paul Beggs}
+% \fancyhead[C]{\includegraphics[height=1cm]{\documentLogo}} % Use for Dracula
+\usepackage{xpatch}
+\xpretocmd\headrule{\color{draculapink}}{}{\PatchFailed}
+\setlength{\footskip}{0.5in}
+\setlength{\headheight}{18.5764pt}
+
+
+%%%%% Colored Boxes %%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+% \tcbuselibrary{minted}
+\newcounter{BoxCounter}
+\usepackage{dingbat}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%% MATH PACKAGES, ENVIRONMENTS, COMMANDS %%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%You'll need your own packages, theorem types, and commands.
+
+\usepackage{fix-cm}
+\usepackage{amsmath,amsthm} 
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{footmisc}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+
+
+%%% Custom Commands %%%
+% Natural Numbers 
+\newcommand{\N}{\mathbb{N}}
+
+% Whole Numbers
+\newcommand{\W}{\mathbb{W}}
+
+% Integers
+\newcommand{\Z}{\mathbb{Z}}
+
+% Rational Numbers
+\newcommand{\Q}{\mathbb{Q}}
+
+% Real Numbers
+\newcommand{\R}{\mathbb{R}}
+
+% Complex Numbers
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\I}{\mathbb{I}}
+
+\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=black, % default color, will be overridden in custom commands
+  backgroundcolor=draculabg, % Needed for Dracula theme
+  fontcolor=\documentTheme, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+% Define a new environment 'proofscratch' for Proof and Scratch Paper
+\newenvironment{proofscratch}[2]{%
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=false,
+        backgroundcolor=draculabg, % Background color for Dracula theme
+        fontcolor=\documentTheme,       % Font color for Dracula theme
+        innerleftmargin=-6pt,
+        innertopmargin=0pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        skipabove=\topsep,
+        skipbelow=\topsep,
+    ]
+    % % Begin TikZ picture for the vertical dotted line
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     % Draw a vertical dotted line at approximately the center of the mdframed width
+    %     \draw[dotted, thick] ([xshift=0.005\linewidth]current bounding box.north west) -- ([xshift=0.005\linewidth]current bounding box.south west);
+    % \end{tikzpicture}%
+    % % Create the left minipage for Proof
+    \begin{minipage}[t]{0.47\textwidth}%
+        \noindent\textit{Proof.} #1 \hfill \(\qed\)
+    \end{minipage}%
+    \hfill
+    % Create the right minipage for Scratch Paper
+    \begin{minipage}[t]{0.47\textwidth}%
+        \textit{Scratch Paper.} #2
+    \end{minipage}%
+}{
+    \end{mdframed}
+}
+
+\newcommand{\nobulletitem}[1]{\item {\itshape #1}}
+
+\newlist{nobullet}{itemize}{10}
+\setlist[nobullet,1]{label=}
+\setlist[nobullet,2]{label=}
+\setlist[nobullet,3]{label=}
+\setlist[nobullet,4]{label=}
+
+\newenvironment{tipbox}
+  {%
+    \par\noindent%
+    % Top dashed line (using \textwidth)
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.65em}%
+    \noindent\textbf{\textcolor{draculapurple}{TIP:}}\quad%
+  }
+  {%
+    \par%
+    % Bottom dashed line
+    \noindent%
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.35em}
+  }
+
+\newenvironment{notebox}
+  {%
+    \par\noindent%
+    % Top dashed line (using \textwidth)
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.65em}%
+    \noindent\textbf{\textcolor{draculagreen}{NOTE:}}\quad%
+  }
+  {%
+    \par%
+    % Bottom dashed line
+    \noindent%
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.35em}
+  }
+
+\newenvironment{warningbox}
+  {%
+    \par\noindent%
+    % Top dashed line (using \textwidth)
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.65em}%
+    \noindent\textbf{\textcolor{draculared}{WARNING:}}\quad%
+  }
+  {%
+    \par%
+    % Bottom dashed line
+    \noindent%
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.35em}
+  }
+
+
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=draculapink!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\def \proofDistance {10pt}
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
+
+\newcommand{\ninn}{n \in \N}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
+
+\renewcommand{\theenumi}{\alph{enumi}} 
+\renewcommand{\labelenumi}{(\theenumi)}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\dydx}{\frac{dy}{dx}}
+\newcommand{\dxdy}{\frac{dx}{dy}}
+\newcommand{\dydt}{\frac{dy}{dt}}
+\newcommand{\dxdt}{\frac{dx}{dt}}
+\newcommand{\dzdt}{\frac{dz}{dt}}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
+
+\newcommand{\quoteAuthor}[1]{\hspace*{9cm} \textemdash #1}
+
+\newcommand{\variablename}[1]{\textcolor{draculacyan}{\texttt{#1}}}
+
+
+% end of preamble
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{document}
+
+\numberwithin{BoxCounter}{section}
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% COVER PAGE %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+% Do not use all caps.
+\newcommand{\titlestandin}{Machine Learning Notes (Book 2)}
+\newcommand{\cussubtitle}{``An Introduction To Statistical Learning''}
+% Date format should be like: "January 1, 2001"
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+
+\begin{titlepage}
+    \begin{center}
+
+        \vspace*{-2cm}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.6\textwidth]{images/ML_logo_v3.png}\\
+            \caption{``The Transformer'' Recreated in TikZ from \href{https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf}{``Attention Is All You Need''}}
+        \end{figure}
+
+        % Horizontal line above the title in 'horange' color
+        \textcolor{draculapink}{\rule{\textwidth}{1.0pt}}
+
+        \vspace{2em}
+
+        {\huge \textbf{\titlestandin}}
+
+        \vspace{1em} % Space between the title and the bottom line
+
+        \textcolor{draculapink}{\rule{\textwidth}{1.0pt}}
+
+        \vspace*{1\baselineskip}
+
+        {\LARGE \textbf{\cussubtitle}}
+
+        \begin{large}
+            \vspace*{2\baselineskip}
+
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:PaulBeggs03@gmail.com}{{PaulBeggs03@gmail.com}}}\\ % Editor affiliation
+
+        \end{large}
+    \end{center}
+\end{titlepage}
+\pagebreak
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%%% Table of Contents %%%
+
+
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+% Helper command to fix header for double paged ToC.
+% Temporarily adjust section marks for Table of Contents
+\begin{spacing}{1} % Can change spacing between entries in TOC
+    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} % Can rename here
+    \markboth{}{} % Clear the header marks for TOC
+    \pagestyle{fancy} % Ensure fancy style is active
+    \fancyhead[R]{Table of Contents} % Set TOC-specific header manually
+    \tableofcontents
+    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+\end{spacing}
+
+% Reset the headers to default for the rest of the document
+\fancyhead[R]{\leftmark}
+
+
+
+
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\chapter{Introduction}
+\vspace*{-0.25in}
+\input{Chapters/1_Introduction.tex}
+
+\setcounter{chapter}{1}
+
+
+
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+\end{document}
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

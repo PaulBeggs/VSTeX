@@ -1,0 +1,267 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage{tcolorbox}
+\usepackage{comment}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{multirow, bigdelim}
+\usepackage{marginnote}
+\usepackage{lipsum}
+\usepackage{neuralnetwork}
+\usepackage{subfigure}
+\usepackage{slashed}
+
+
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+
+\title{Writing Assignment 3}
+\author{Paul Beggs \& Thomas Sebring}
+\date{April 9, 2025}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.markings}
+
+\newenvironment{solution}{\textit{Solution}.}
+
+\titleformat{\subsection}[block]{\normalfont\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalfont\bfseries}{}{1em}{}
+
+\def \proofDistance {5pt}
+\def \subheaderSpace {10pt}
+
+
+%%% PAGE DIMENSIONS
+\geometry{margin=1in} % for example, change the margins to 1 inches all round
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+\allowdisplaybreaks
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {\(#1\sqrt{#2}\)}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {\(\displaystyle\sqrt{#2}\)}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\mbi}{\mb{i}}
+\newcommand{\mbj}{\mb{j}}
+\newcommand{\mbk}{\mb{k}}
+\newcommand{\mbr}{\mb{r}}
+\newcommand{\mbu}{\mb{u}}
+\newcommand{\mbv}{\mb{v}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+
+% Command for problem statement
+\newcommand{\pb}[1]{
+    \begin{problem}
+    #1
+    \end{problem}
+}
+
+% Define a command for custom proofs with separator
+\newcommand{\pf}[1]{
+    \vspace{\proofDistance}
+    \begin{proof}
+    #1
+    \end{proof}
+    \proofseparator
+}
+
+\setlength{\parindent}{0pt}
+
+
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+
+% Problem. The normal curve (or the Gaussian), defined as g(x) =
+% 1
+% √
+% 2π
+% e−x2/2 plays an important role in probability
+% and statistics. It is useful to know that
+% Z +∞
+% −∞
+% g(x) dx = 1, which we will now show.
+% 1. Briefly, in your own words, explain why we can’t expect to just work this integral directly. [Note: The formal
+% proof of this fact is way beyond the scope of this course. I am just asking you to explain why you’d not expect
+% u-substitution or integration by parts to work.]
+% 2. Instead, we will pivot to looking a a two-dimensional equivalent integral. Let Da be a disk, centered at the
+% origin, of radius a. Use polar coordinates to evaluate
+% ZZ
+% Da
+% e−(x2+y2)/2 dA.
+% 3. Let a → +∞ and determine what happens to your answer from the previous part.
+% 4. Explain why this is the same as
+% Z +∞
+% −∞
+% Z +∞
+% −∞
+% e−(x2+y2)/2 dx dy.
+% 5. Explain why
+% Z +∞
+% −∞
+% Z +∞
+% −∞
+% e−(x2+y2)/2 dA =
+% Z +∞
+% −∞
+% e−x2/2 dx
+% Z +∞
+% −∞
+% e−y2/2 dy
+% 
+% .
+% 6. Conclude that
+% Z +∞
+% −∞
+% e−x2/2 dx =
+% √
+% 2π, so that
+% Z +∞
+% ∞
+% g(x) dx = 1, as we hoped.
+% Note: The individual calculations in this project are relatively straightforward. Your job is to convince me that you
+% understand how all of the parts fit together and tell a coherent story. The best write-ups will flow nicely on their
+% own, without reading like a class assignment or “Next, we are asked to ...” but instead take the reader through the
+% solution narratively.
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+In statistics and probability, one of the most important mathematical equations is known as the normal curve (or the Gaussian), defined as \(g(x) = \frac{1}{\mysqrt{2\pi}}e^{-x^2/2}\). Because this curve is used notably for probability, an important characteristic of it is that the area under it must be equal to 1 over the entire real line. In other words, we want to show that:
+\[
+    \int_{-\infty}^{+\infty} g(x) \, dx = 1.
+\]
+However, we cannot expect to work this integral directly. The reason for this is that the function \(g(x)\) is not easily integrable using standard techniques such as u-substitution or integration by parts. The exponential function in the integrand does not lend itself to these methods, and thus we need to pivot to a different approach.
+
+\section{Integral in Polar Coordinates}
+
+To overcome this difficulty, we consider the square of the one-dimensional integral by looking at a related two-dimensional integral. Let \(D_{a}\) be a disk centered at the origin with radius \(a\). We can use polar coordinates to evaluate the integral:
+\[
+    \iint_{D_{a}} e^{-(x^2 + y^2) / 2} \, dA.
+\]
+In polar coordinates, we have \(x = r\cos(\theta)\) and \(y = r\sin(\theta)\), where \(dA = r \, dr \, d\theta\). The limits of integration for \(r\) will be from 0 to \(a\), and for \(\theta\) from 0 to \(2\pi\) because we are integrating over the entire disk \(D_a\). This ensures that every point on the disk is accounted for exactly once in the integration. Thus, we can rewrite the integral as:
+\begin{align*}
+    \iint_{D_{a}} e^{-(x^2 + y^2) / 2} \, dA &= \int_0^{2\pi} \int_0^{a} e^{-r^2 / 2} r \, dr \, d\theta \\
+    &= \int_0^{2\pi} d\theta \int_0^{a} r e^{-r^2 / 2} \, dr.
+\end{align*}
+When we go to solve the inner integral, we see that it can be solved using the substitution \(u = -\frac{r^2}{2}\), which gives us \(du = -r \, dr\). Thus, the limits changed from \(r = 0\) to \(r = a\) (which gives \(u = 0\) and \(u = -\frac{a^2}{2}\) as our upper and lower bounds, respectively). Hence, the inner integral becomes:
+\begin{align*}
+    \int_0^{a} r e^{-r^2 / 2} \, dr &= -\int_{-\frac{a^2}{2}}^{0} e^{u} \, du \\
+    &= -\left[e^{u}\right]_{-\frac{a^2}{2}}^{0} \\
+    &= 1 - e^{-a^2 / 2}.
+\end{align*}
+\newpage
+Then, solving for the outer integral, we have:
+\begin{align*}
+    \iint_{D_{a}} e^{-(x^2 + y^2) / 2} \, dA &= \int_0^{2\pi} d\theta \left(1 - e^{-a^2 / 2}\right) \\
+    &= 2\pi \left(1 - e^{-a^2 / 2}\right).
+\end{align*}
+This result shows that the area under the curve of the normal distribution over the disk \(D_{a}\) is equal to \(2\pi\left(1 - e^{-a^2 / 2}\right)\).
+
+\section{Limit as \(a \to +\infty\)}
+
+With this expression, we must take the limit as \(a\) approaches infinity because we want to find the area under the curve of the normal distribution over the entire real line. Taking the limit, we can evaluate the integral as \(a\) approaches infinity, which gives us the total area under the curve. Thus, we have:
+\[
+    \lim_{a \to +\infty} \iint_{D_{a}} e^{-(x^2 + y^2) / 2} \, dA = \lim_{a \to +\infty} 2\pi \left(1 - e^{-a^2 / 2}\right) = 2\pi \left(1 - 0\right) = 2\pi.
+\]
+This result above shows that integrating over the whole plane in polar coordinates is equivalent to the iterated integral:
+\[
+    \iint_{\mathbb{R}^2} e^{-(x^2 + y^2) / 2} \, dx \, dy.
+\]
+Then, because the integrand separates in Cartesian coordinates as \((e^{-x^2/2}) (e^{-y^2/2})\), we can write the double integral as a product of two single integrals:
+\[
+    \iint_{\mathbb{R}^2} e^{-(x^2 + y^2) / 2} \, dx \, dy = \left(\int_{-\infty}^{+\infty} e^{-x^2/2} \, dx\right) \left(\int_{-\infty}^{+\infty} e^{-y^2/2} \, dy\right).
+\]
+
+This equality follows from the fact that both \(x\) and \(y\) are independent variables ranging over the same domain (the entire real line), and both integrals have the same form. The variables \(x\) and \(y\) are essentially interchangeable in this context, since they both represent coordinates in our two-dimensional plane, and the exponential function treats them symmetrically. \\
+
+Furthermore, since the form of both integrals is identical, with each being an integral of \(e^{-t^2/2}\) for a variable \(t\) over the entire real line from \(-\infty\) to \(+\infty\), they must evaluate to the same value. Therefore, we can simplify by writing:
+\[
+    \iint_{\mathbb{R}^2} e^{-(x^2 + y^2) / 2} \, dx \, dy = \left(\int_{-\infty}^{+\infty} e^{-x^2/2} \, dx\right)^2.
+\]
+
+This allows us to relate our two-dimensional integral, which we calculated to be equal to \(2\pi\), to the square of the one-dimensional integral in which we are interested. Thus, we can write:
+\[
+    \left(\int_{-\infty}^{+\infty} e^{-x^2/2} \, dx\right)^2 = 2\pi.
+\]
+
+Taking the square root of both sides, we find that:
+\[
+    \int_{-\infty}^{+\infty} e^{-x^2/2} \, dx = \mysqrt{2\pi}.
+\]
+
+Finally, when we substitute back into the definition of the normal curve, we see:
+\[
+    \int_{-\infty}^{+\infty} g(x) \, dx = \frac{1}{\mysqrt{2\pi}} \int_{-\infty}^{+\infty} e^{-x^2/2} \, dx = \frac{1}{\mysqrt{2\pi}} \cdot \mysqrt{2\pi} = 1.
+\]
+This shows that the area under the normal curve is equal to 1, as we hoped.
+
+\section{Conclusion}
+
+Through this process, we have shown that the area under the normal curve is equal to 1 by using polar coordinates and the properties of the Gaussian function. By evaluating the integral over a disk and taking the limit as the radius approaches infinity, we were able to relate the two-dimensional integral to the one-dimensional integral, ultimately leading us to the conclusion that \(\int_{-\infty}^{+\infty} g(x) \, dx = 1\). \\
+
+This paper demonstrates the power of changing variables and using polar coordinates to simplify complex integrals when integration techniques, such as u-substitution or integration by parts, are not applicable. By transforming the problem into a more manageable form, we can derive important results in mathematics and statistics.
+
+
+
+\end{document}
