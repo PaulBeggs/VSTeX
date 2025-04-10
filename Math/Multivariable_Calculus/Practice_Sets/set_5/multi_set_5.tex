@@ -252,6 +252,7 @@
 \newcommand{\mbi}{\mathbf{i}}
 \newcommand{\mbj}{\mathbf{j}}
 \newcommand{\mbk}{\mathbf{k}}
+\newcommand{\mbr}{\mathbf{r}}
 
 \begin{document}
 
@@ -262,41 +263,88 @@
     \item (3 points) Determine \(\displaystyle \int_{C} y^{2} \, dx + z \, dy + x \, dz\), where \(C\) is the line segment which connects \((2,0,0)\) to \((3,4,5)\).  
 
     \sol{
+        We can parameterize this line segment as follows:
+        \[
+            \rmb(t) = (2+t)\mbi + (4t)\mbj + (5t)\mbk, \quad 0 \leq t \leq 1
+        \]
+        We get this from taking each component of the vector function and setting \(t = 0\), to get the point \((2,0,0)\). Then, by setting \(t = 1\), we get the point \((3,4,5)\). Now, we can differentiate \(\mbr(t)\) to get \(\dvecfuc{\rmb}{t}\):
+        \[
+            \dvecfuc{\rmb}{t} = \left\langle \tfrac{d}{dt}\left[(2+t)\right] + \tfrac{d}{dt}\left[(4t)\right] + \tfrac{d}{dt}\left[(5t)\right] \right\rangle = \left\langle 1, 4, 5 \right\rangle.
+        \]
+        This gives us the following:
+        \[
+          dx = dt, \quad dy = 4dt, \quad dz = 5dt.
+        \]
+        Expressing the integral in terms of \(t\), we can solve the integral as follows:
         \begin{align*}
-            \rmb(t) &= (2 + t)\mbi + (4t)\mbj + (5t)\mbk, \quad 0 \leq t \leq 1 \\
-            \dvecfuc{\rmb}{t} &= \mbi + 4\mbj + 5\mbk \\
-            dx &= dt, \quad dy = 4dt, \quad dz = 5dt \\
-            y^{2} &= (4t)^{2} = 16t^{2}, \quad z = 5t, \quad x = 2 + t \\
-            \int_{C} y^{2} \, dx + z \, dy + x \, dz &= \int_{0}^{1} (16t^{2})dt + (5t)(4dt) + (2+t)(5dt) \\
-            &= \int_{0}^{1} (16t^{2} + 20t + 10) dt \\
-            &= [\frac{16}{3}t^{3} + 10t^{2} + 10t]_{0}^{1} \\
-            &= \frac{16}{3} + 10 + 10 = \frac{56}{3}
+            \int_{C} y^{2} \, dx + z \, dy + x \, dz &= \int_{0}^{1} (4t)^{2} dt + (5t)(4dt) + (2+t)(5dt) \\
+            &= \int_{0}^{1} (16t^{2} + 20t + 10 + 5t) dt \\
+            &= \int_{0}^{1} (16t^{2} + 25t + 10) dt \\
+            &= \left[\frac{16}{3}t^{3} + \frac{25}{2}t^{2} + 10t\right]_{0}^{1} \\
+            &= \boxed{\frac{167}{6}}.
         \end{align*}
     }
 
     \item (3 points) Determine \(\displaystyle \int_{C} \frac{1}{x^{2} + y^{2} + z^{2}} \, ds\), where \(C\) is given by \(\langle \cos t, \sin t, t \rangle\), \(0 \leq t \leq \pi\).  
 
     \sol{
+        First, we need to find \(ds\), which is given by finding the derivative of the vector function and taking the norm:
+        \[
+            ds = \normdvecfuc{\rmb}{t} \, dt = \sqrt{(-\sin t)^{2} + (\cos t)^{2} + 1^{2}} \, dt = \sqrt{1 + 1} \, dt = \sqrt{2} dt.
+        \]
+        Rewriting the integral in terms of \(t\), we have:
+        \[
+            \int_{C} \frac{1}{x^{2} + y^{2} + z^{2}} \, ds = \int_{0}^{\pi} \frac{1}{\cos^{2} t + \sin^{2} t + t^{2}} \sqrt{2} \, dt = \sqrt{2} \int_{0}^{\pi} \frac{1}{1 + t^{2}} \, dt.
+        \]
+        We know that \(\int \frac{1}{1 + t^{2}} dt = \tan^{-1}(t)\), so we can evaluate the integral as follows:
         \begin{align*}
-            \rmb(t) &= \cos t \mbi + \sin t \mbj + t \mbk, \quad 0 \leq t \leq \pi \\
-            ds &= ||\dvecfuc{\rmb}{t}|| dt = ||-\sin t \mbi + \cos t \mbj + \mbk|| dt \\
-            &= \sqrt{1 + (\sin^{2}t + \cos^{2}t)} dt = \sqrt{2} dt \\
-            x^{2} + y^{2} + z^{2} &= (\cos^{2}t + \sin^{2}t + t^{2}) = 1 + t^{2} \\
-            &= \int_{0}^{\pi} \frac{\sqrt{2}}{1+t^{2}} dt \\
-            &= [\sqrt{2}\tan^{-1}(t)]_{0}^{\pi} = \sqrt{2}\left(\tan^{-1}(\pi) - 0\right) \\
-            &= \sqrt{2}\tan^{-1}(\pi)
+            \sqrt{2} \int_{0}^{\pi} \frac{1}{1 + t^{2}} \, dt &= \sqrt{2} \left[\tan^{-1}(t)\right]_{0}^{\pi} \\
+            &= \sqrt{2} \left(\tan^{-1}(\pi) - \tan^{-1}(0)\right) \\
+            &= \boxed{\sqrt{2} \tan^{-1}(\pi).}
         \end{align*}
     }
+    \newpage
 
     \item (3 points) Let \(\mb{F}(x,y) = 3x^{2}y^{2}\mbi + (2x^{3}y + 5)\mbj\). Find a scalar function \(f\) such that \(\nabla f = \mb{F}\) and use this to determine \(\displaystyle \int_{C} \mb{F} \cdot d\mb{r}\) where \(C\) is given by \(\mb{r}(t) = (t^{3} - 2t)\mbi + (t^{3} + 2t)\mbj\) for \(0 \leq t \leq 1\).  
 
     \sol{
-        (Note this is conservative, so we can use the Fundamental Theorem of Line Integrals.)
+        First, we need to check if \(\mb{F}\) is conservative. We can do this by checking if the mixed partials are equal:
+        \[
+            \frac{\partial}{\partial y}(3x^{2}y^{2}) = 6x^{2}y, \quad \frac{\partial}{\partial x}(2x^{3}y + 5) = 6x^{2}y.
+        \]
+        Since these are equal, we can conclude that \(\mb{F}\) is conservative. Now, we need to find a scalar function \(f\) such that \(\nabla f = \mb{F}\). We can do this by integrating the components of \(\mb{F}\):
+        \begin{align*}
+            f(x,y) &= \int 3x^{2}y^{2} \, dx + h(y) \\
+            &= x^{3}y^{2} + h(y).
+        \end{align*}
+        Now, we can differentiate \(f\) with respect to \(y\) and set it equal to the second component of \(\mb{F}\):
+        \begin{align*}
+            \frac{\partial}{\partial y}(x^{3}y^{2} + h(y)) &= 2x^{3}y + h'(y) \\
+            &= 2x^{3}y + 5.
+        \end{align*}
+        This gives us \(h'(y) = 5\), so we can integrate to find \(h(y)\):
+        \[
+            h(y) = 5y + K.
+        \]
+        Thus, we have:
+        \[
+            f(x,y) = x^{3}y^{2} + 5y + K.
+        \]
+        Now, we can use the Fundamental Theorem of Line Integrals to evaluate the integral:
+        \begin{align*}
+            \int_{C} \mb{F} \cdot d\mb{r} &= f(\mb{r}(1)) - f(\mb{r}(0)) \\
+            &= f(-1,3) - f(0,0) \\
+            &= \left[(-1)^{3}(3)^{2} + 5(3) + K\right] - \left[(0)^{3}(0)^{2} + 5(0) + K\right] \\
+            &= \left[-9 + 15 + K\right] - \left[0 + 0 + K\right] \\
+            &= -9 + 15 + K - K \\
+            &= \boxed{6}.
+        \end{align*}
     }
 
     \item (2 points) Set up, but do not evaluate the ``direct'' integral for the previous problem. Then, use your calculator to determine a numerical approximation for the integral. Did you get the same answer?  
 
     \sol{
+        We can set up the integral as follows:
         
     }
 

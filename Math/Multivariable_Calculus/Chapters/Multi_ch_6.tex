@@ -285,7 +285,7 @@ To find a potential function for a conservative vector field, we can use the fol
 Given a conservative vector field \(\mathbf{F}(x,y) = P(x,y)\mathbf{i} + Q(x,y)\mathbf{j}\), we can find a potential function \(f\) such that \(\nabla f = \mathbf{F}\). The algorithm is as follows:
 
 \begin{itemize}
-    \item We can find \(\int P(x,y) \, dx\) (i.e. hold \(y\) constant) = \(g(x,y) + h(y)\), for some currently unknown function \(h\) – that is, \(g\) is “just” the antiderivative of \(P\), only with respect to \(x\).
+    \item We can find \(\int P(x,y) \, dx\) (i.e., hold \(y\) constant) = \(g(x,y) + h(y)\), for some currently unknown function \(h\) – that is, \(g\) is “just” the antiderivative of \(P\), only with respect to \(x\).
     \item Then \(\frac{\partial}{\partial y} (g(x,y) + h(y)) = g_y(x,y) + h'(y)\).
     \item This should be \(Q(x,y) = g_y(x,y) + h'(y)\), so we know \(h'(y)\).
     \item Then, \(h(y) = \int h'(y) \, dy\).
