@@ -176,3 +176,7 @@ oculi
 Nigrostriatal
 globus
 pallidus
+Hypocretine
+hypocretine
+hypocretin-producing
+preprohypocretin
