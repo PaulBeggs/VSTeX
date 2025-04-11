@@ -6,7 +6,7 @@
 \usepackage{amsmath,amsthm} 
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
-\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+% \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
 \usepackage{mathrsfs}
 \usepackage{changepage}
 \usepackage{multicol}
@@ -33,8 +33,8 @@
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
-  backgroundcolor=draculabg, % Needed for Dracula theme
-  fontcolor=draculafg, % Needed for Dracula theme
+%   backgroundcolor=draculabg, % Needed for Dracula theme
+%   fontcolor=draculafg, % Needed for Dracula theme
   innertopmargin=0pt,
   innerbottommargin=5pt,
   innerrightmargin=10pt,
@@ -257,7 +257,7 @@
 \begin{document}
 
 % \maketitle
-
+\setcounter{page}{2}
 \begin{enumerate}
     \setcounter{enumi}{1}
     \item (3 points) Determine \(\displaystyle \int_{C} y^{2} \, dx + z \, dy + x \, dz\), where \(C\) is the line segment which connects \((2,0,0)\) to \((3,4,5)\).  
@@ -285,7 +285,7 @@
         \end{align*}
     }
 
-    \item (3 points) Determine \(\displaystyle \int_{C} \frac{1}{x^{2} + y^{2} + z^{2}} \, ds\), where \(C\) is given by \(\langle \cos t, \sin t, t \rangle\), \(0 \leq t \leq \pi\).  
+    \item (3 points) Determine \(\displaystyle \int_{C} \frac{1}{x^{2} + y^{2} + z^{2}} \, ds\), where \(C\) is given by \(\left \langle \cos t, \sin t, t \right \rangle\), \(0 \leq t \leq \pi\).  
 
     \sol{
         First, we need to find \(ds\), which is given by finding the derivative of the vector function and taking the norm:
@@ -317,11 +317,10 @@
             f(x,y) &= \int 3x^{2}y^{2} \, dx + h(y) \\
             &= x^{3}y^{2} + h(y).
         \end{align*}
-        Now, we can differentiate \(f\) with respect to \(y\) and set it equal to the second component of \(\mb{F}\):
-        \begin{align*}
-            \frac{\partial}{\partial y}(x^{3}y^{2} + h(y)) &= 2x^{3}y + h'(y) \\
-            &= 2x^{3}y + 5.
-        \end{align*}
+        Then, we can differentiate \(f\) with respect to \(y\) and set it equal to the second component of \(\mb{F}\):
+        \[
+            \tfrac{\partial}{\partial y}(x^{3}y^{2} + h(y)) = 2x^{3}y + h'(y) \quad \Rightarrow \quad 2x^{3}y + h'(y) = 2x^{3}y + 5 \quad \Rightarrow \quad h'(y) = 5. 
+        \]
         This gives us \(h'(y) = 5\), so we can integrate to find \(h(y)\):
         \[
             h(y) = 5y + K.
@@ -330,7 +329,7 @@
         \[
             f(x,y) = x^{3}y^{2} + 5y + K.
         \]
-        Now, we can use the Fundamental Theorem of Line Integrals to evaluate the integral:
+        Finally, we can use the Fundamental Theorem of Line Integrals to evaluate the integral:
         \begin{align*}
             \int_{C} \mb{F} \cdot d\mb{r} &= f(\mb{r}(1)) - f(\mb{r}(0)) \\
             &= f(-1,3) - f(0,0) \\
@@ -344,32 +343,216 @@
     \item (2 points) Set up, but do not evaluate the ``direct'' integral for the previous problem. Then, use your calculator to determine a numerical approximation for the integral. Did you get the same answer?  
 
     \sol{
-        We can set up the integral as follows:
-        
+        To set up the integral, we must find 2 values: \(\mb{r}'(t)\) and \(\mb{F}(\mb{r}(t))\). First, we can find \(\mb{r}'(t)\):
+        \[
+            \mb{r}'(t) = \tfrac{d}{dt}\left\langle t^{3} - 2t, t^{3} + 2t \right\rangle = \left\langle 3t^{2} - 2, 3t^{2} + 2 \right\rangle.
+        \]
+        Then, we can find \(\mb{F}(\mb{r}(t))\): 
+        \[
+            \mb{F}(\mb{r}(t)) = \mb{F}(t^{3} - 2t, t^{3} + 2t) = \left( 3(t^{3} - 2t)^{2}(t^{3} + 2t)^{2}, \, 2(t^{3} - 2t)^{3}(t^{3} + 2t) \right).
+        \]
+        Taking the dot product of \(\mb{F}(\mb{r}(t))\) and \(\mb{r}'(t)\), and integrating from \(0\) to \(1\), we have:
+        \[
+            \int_{0}^{1} \mb{F}(\mb{r}(t)) \cdot \mb{r}'(t) \, dt = \int_{0}^{1} \bigl[ 3(t^{3} - 2t)^{2}(t^{3} + 2t)^{2} \bigr](3t^{2} - 2) + \bigl[ 2(t^{3} - 2t)^{3}(t^{3} + 2t) \bigr](3t^{2} + 2) \, dt = \boxed{6},
+        \]
+        which is the same answer we got in the previous problem. Thus, we can conclude that the two methods yield the same result.
     }
 
     \item (3 points) Find the work done by the force field \(\mb{F} = x^{2}\mbi + y^{3}\mbj\) in moving an object from \((1,0)\) to \((2,2)\).   
 
     \sol{
-        
+        From \((1,0)\) to \((2,2)\), we can parameterize and find its derivative for the line segment as follows:
+        \[
+            \mb{r}(t) = \langle 1 + t, 2t \rangle \quad 0 \leq t \leq 1 \quad \Rightarrow \quad \mb{r}'(t) = \langle 1, 2 \rangle.
+        \]
+        Now, we can find \(\mb{F}(\mb{r}(t))\) and its dot product with \(\mb{r}'(t)\) as follows:
+        \[
+            \mb{F}(\mb{r}(t)) = \mb{F}(1 + t, 2t) = \langle (1 + t)^{2}, 8t^{3} \rangle \quad \Rightarrow \quad \mb{F}(\mb{r}(t)) \cdot \mb{r}'(t) = (1 + t)^{2} + 16t^{3}.
+        \]
+        Integrating, we have:
+        \begin{align*}
+            W &= \int_{0}^{1} \mb{F}(\mb{r}(t)) \cdot \mb{r}'(t) \, dt \\
+            &= \int_{0}^{1} ((1 + t)^{2} + 16t^{3}) \, dt \\
+            &= \left[ \tfrac{1}{3}(1 + t)^{3} + 4t^{4} \right]_{0}^{1} \\
+            &= \boxed{\frac{19}{3}}.
+        \end{align*}
     }
 
     \item (3 points) For what value(s), if any, of \(a\) is \((3x^{2}y + az)\mbi + x^{3}j + (3x + 3z^{2})\mbk\) conservative?  
 
     \sol{
-        
+        From Section 1, we know that for a 3-dimensional vector field to be conservative, the mixed partials must be equal. Thus, we must find each of the following:
+        \[
+            \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}, \quad \frac{\partial Q}{\partial z} = \frac{\partial R}{\partial y}, \quad \frac{\partial R}{\partial x} = \frac{\partial P}{\partial z},
+        \]
+        where \(P = 3x^{2}y + az\), \(Q = x^{3}\), and \(R = 3x + 3z^{2}\). Starting with the first equality, we have:
+        \[
+            \tfrac{\partial}{\partial y}(3x^{2}y + az) = 3x^{2}, \quad \tfrac{\partial}{\partial x}(x^{3}) = 3x^{2}.
+        \]
+        Since these are equal, we can move on to the second equality:
+        \[
+            \tfrac{\partial}{\partial z}(x^{3}) = 0, \quad \tfrac{\partial}{\partial y}(3x + 3z^{2}) = 0.
+        \]
+        Since these are equal, we can move on to the last equality:
+        \[
+            \tfrac{\partial}{\partial x}(3x + 3z^{2}) = 3, \quad \tfrac{\partial}{\partial z}(3x^{2}y + az) = a.
+        \]
+        Thus, the only value of \(a\) for which the vector field is conservative is \(\boxed{a = 3}\).
     }
-
+\newpage
     \item (3 points) Find the circulation of \(\mb{F} = xy\mbi + x^{2}y^{3}\mbj\) along \(C\), where \(C\) is the counter-clockwise oriented triangle with vertices \((0,0)\), \((1,0)\), and \((1,2)\). Determine the value of this integral by working three separate line integrals.
 
     \sol{
+        \begin{center}
         
-    }
+          \begin{tikzpicture}
+            \begin{axis}
+                [
+                    axis lines=middle, 
+                    xlabel=$x$,
+                    ylabel=$y$, 
+                    xmin=-0.5, 
+                    xmax=1.5, 
+                    ymin=-0.5, 
+                    ymax=2.5, 
+                    xtick={0,1}, 
+                    ytick={0,1,2}, 
+                    minor tick num=1, 
+                    every axis label/.style={font=\small}, 
+                    every axis label/.append style={font=\normalsize}
+                ]
+                \node[below] at (axis cs:0.5,0) {\(C_{1}\)};
+                \node[right] at (axis cs:1,1) {\(C_{2}\)};
+                \node[above] at (axis cs:0.4,1) {\(C_{3}\)};
 
+                % Arrows
+                \plot[
+                    smooth,
+                    color=horange,
+                    thick,
+                    decoration={
+                        markings,
+                        mark=at position 0.5 with {\arrow[scale=1.5,horange]{stealth}},
+                    },
+                    postaction=decorate
+                ] coordinates {(0,0) (1,0)};
+                \plot[
+                    smooth,
+                    color=horange,
+                    thick,
+                    decoration={
+                        markings,
+                        mark=at position 0.5 with {\arrow[scale=1.5,horange]{stealth}},
+                    },
+                    postaction=decorate
+                ] coordinates {(1,0) (1,2)};
+                \plot[
+                    color=horange,
+                    thick,
+                    decoration={
+                        markings,
+                        mark=at position 0.5 with {\arrow[scale=1.5,horange]{stealth}},
+                    },
+                    postaction=decorate
+                ] coordinates {(1,2) (0,0)};
+            \end{axis}
+          \end{tikzpicture}
+        \end{center}
+
+        We can parameterize the three line segments of the triangle as follows:
+        \begin{align*}
+            C_{1} &: \mb{r}_{1}(t) = \left \langle t, 0 \right \rangle, \quad 0 \leq t \leq 1 \\
+            C_{2} &: \mb{r}_{2}(t) = \left \langle 1, 2t \right \rangle, \quad 0 \leq t \leq 1 \\
+            C_{3} &: \mb{r}_{3}(t) = \left \langle 1 - t, 2 - 2t \right \rangle, \quad 0 \leq t \leq 1.
+        \end{align*}
+        Now that we have our segments parameterized, we can find the line integrals for each segment. Remember from Problem 5 that for each integral, we need to find \(\mb{F}(\mb{r}(t))\) and \(\mb{r}'(t)\). We can do this as follows:
+        \begin{itemize}
+            \item \textbf{For \(\displaystyle \int_{C_{3}} \mb{F} \cdot d\mb{r}\):}
+            \[
+                \mb{F}(\mb{r}_{1}(t)) = \mb{F}(t,0) = \left \langle 0, 0 \right \rangle \quad \text{and} \quad \mb{r}'_{1}(t) = \left \langle 1, 0 \right \rangle.
+            \]
+            Thus, we have:
+            \[
+                \int_{C_{1}} \mb{F} \cdot d\mb{r} = \int_{0}^{1} \mb{F}(\mb{r}_{1}(t)) \cdot \mb{r}'_{1}(t) = \int_{0}^{1} \left \langle 0, 0 \right \rangle \cdot \left \langle 1, 0 \right \rangle \, dt = 0.
+            \]
+            \item \textbf{For \(\displaystyle \int_{C_{2}} \mb{F} \cdot d\mb{r}\):}
+            \[
+                \mb{F}(\mb{r}_{2}(t)) = \mb{F}(1,2t) = \left \langle 2t, 8t^{3} \right \rangle \quad \text{and} \quad \mb{r}'_{2}(t) = \left \langle 0, 2 \right \rangle.
+            \]
+            Substituting these into the integral, we have:
+            \begin{align*}
+                \int_{C_{2}} \mb{F} \cdot d\mb{r} &= \int_{0}^{1} (2t, 8t^{3}) \cdot \langle 0, 2 \rangle \, dt \\
+                &= \int_{0}^{1} 16t^{3} \, dt \\
+                &= \left[4t^{4}\right]_{0}^{1} \\
+                &= 4.
+            \end{align*}
+            \item \textbf{For \(\displaystyle \int_{C_{1}} \mb{F} \cdot d\mb{r}\):} \\
+            
+            First, for \(\mb{F}(\mb{r}_{3}(t))\), we could find \(\left \langle (1 - t)(2 - 2t), \, (1 - t)^{2}(2 - 2t)^{3} \right \rangle\) by expanding the polynomial, but that would be a bit tedious. Instead, notice that we can factor out a 2 from the first component and an \(8\) from the second component. This gives us \(2(1 - t)^{2}\) and \((1 - t)^{2}8(1 - t)^{3} = 8(1 - t)^{5}\). Thus, we can continue below:
+            \[
+                \mb{F}(\mb{r}_{3}(t)) = \left \langle 2(1 - t)^{2}, 8(1 - t)^{5} \right \rangle \quad \text{and} \quad \mb{r}'_{3}(t) = \left \langle -1, -2 \right \rangle.
+            \]
+            Now, substituting these into the integral, we have:
+            \begin{align*}
+                \int_{C_{3}} \mb{F} \cdot d\mb{r} &= \int_{0}^{1} \left \langle 2(1 - t)^{2}, 8(1 - t)^{5} \right \rangle \cdot \langle -1, -2 \rangle \, dt \\
+                &= \int_{0}^{1} \left[-2(1 - t)^{2} - 16(1 - t)^{5}\right] \, dt. 
+            \intertext{Using the substitution \(u = 1 - t\) (so that \(u = -dt\) and our bounds change to the interval 1 to 0), we get:}
+                &= \int_{1}^{0} \left[-2u^{2} - 16u^{5}\right] (-du) \\
+                &= \int_{1}^{0} \left[2u^{2} + 16u^{5}\right] \, du. 
+            \intertext{By splitting this into two integrals, we have:}
+                &= \int_{1}^{0} 2u^{2} \, du + \int_{1}^{0} 16u^{5} \, du \\
+                &= \left[\frac{2}{3}u^{3}\right]_{1}^{0} + \left[\frac{16}{6}u^{6}\right]_{1}^{0} \\
+                &= \left(0 - \frac{2}{3}\right) + \left(0 - \frac{8}{3}\right) \\
+                &= -\frac{10}{3}.
+            \end{align*}
+            \item \textbf{Putting it all together:} \\
+            Now that we have all three integrals, we can add them together to find the total circulation:
+            \begin{align*}
+                \oint_{C} \mb{F} \cdot d\mb{r} &= \int_{C_{1}} \mb{F} \cdot d\mb{r} + \int_{C_{2}} \mb{F} \cdot d\mb{r} + \int_{C_{3}} \mb{F} \cdot d\mb{r} \\
+                &= \boxed{\frac{2}{3}}.
+            \end{align*}
+        \end{itemize}
+    }
+\newpage
     \item (3 points) Find the flux of \(\mb{F} = xy\mbi + x^{2}y^{3}\mbj\) over \(C\), the same counter-clockwise oriented triangle with vertices \((0,0)\), \((1,0)\), and \((1,2)\) as in the previous problem (notice that the vector field is the same as well). Determine this by working three separate line integrals.  
 
     \sol{
-        
+        To find the flux of \(\mb{F}\) over \(C\), we can use the following formula:
+        \[
+            \int_{C} \mb{F} \cdot \mb{N} \, ds = \int_{C} \mb{F} \cdot \mb{n}(t) \, dt = \int_{a}^{b} \mb{F}(\mb{r}(t)) \cdot \langle y'(t), -x'(t) \rangle \, dt.
+        \]
+        We can reuse the parameterizations from the previous problem, but we need to find \(\mb{n}(t)\) for each segment and then integrate each one. Thus:
+        \begin{itemize}
+            \item \textbf{For \(C_{1}\):}
+            Our tangent vector is \(\mb{r}'_{1}(t) = \left \langle 1, 0 \right \rangle\). Using the formula above, we see that \(\mb{n}_{1}(t) = \left \langle 0, -1 \right \rangle\).
+            Thus, we can evaluate the integral:
+            \[
+                \int_{C_{1}} \mb{F}(\mb{r}_{1}(t)) \cdot \mb{n}_{1}(t) \, dt = \int_{0}^{1} \left \langle 0, 0 \right \rangle \cdot \left \langle 0, -1 \right \rangle \, dt = 0.
+            \]            
+            \item \textbf{For \(C_{2}\):}
+            The tangent vector is \(\mb{r}'_{2}(t) = \left \langle 0, 2 \right \rangle\). Hence, the normal vector is \(\mb{n}_{2}(t) = \left \langle 2, 0 \right \rangle\).
+            Now, we can evaluate the integral as follows:
+            \[
+                \int_{C_{2}} \mb{F}(\mb{r}_{2}(t)) \cdot \mb{n}_{2}(t) \, dt = \int_{0}^{1} \left \langle 2t, 8t^{3} \right \rangle \cdot \left \langle 2, 0 \right \rangle \, dt = \int_{0}^{1} 4t \, dt = \left[2t^{2}\right]_{0}^{1} = 2.
+            \]
+            \item \textbf{For \(C_{3}\):}
+            From the tangent vector, we know the normal vector is \(\mb{n}_{3}(t) = \left \langle -2, 1 \right \rangle\).
+            Evaluating the integral, we see:
+            \begin{align*}
+                \int_{C_{3}} \mb{F}(\mb{r}_{3}(t)) \cdot \mb{n}_{3}(t) \, dt &= \int_{0}^{1} \left \langle 2(1 - t)^{2}, 8(1 - t)^{5} \right \rangle \cdot \left \langle -2, 1 \right \rangle \\
+                &= \int_{0}^{1} (-4(1 - t)^{2} + 8(1 - t)^{5}) \, dt \\
+                &= -4\int_{0}^{1} (1 - t)^{2} \, dt + 8\int_{0}^{1} (1 - t)^{5} \, dt \\
+                &= -4\left[\frac{(1 - t)^{3}}{3}\right]_{0}^{1} + 8\left[\frac{(1 - t)^{6}}{6}\right]_{0}^{1} \\
+                &= -4\left[0 - \frac{1}{3}\right] + 8\left[0 - \frac{1}{6}\right] \\
+                &= \frac{4}{3} - \frac{4}{3} = 0.
+            \end{align*}
+            \item \textbf{Putting it all together:} \\
+            Now that we have all three integrals, we can add them together to find the total flux:
+            \begin{align*}
+                \oint_{C} \mb{F} \cdot \mb{N} \, ds &= \int_{C_{1}} \mb{F}(\mb{r}_{1}(t)) \cdot \mb{n}_{1}(t) \, dt + \int_{C_{2}} \mb{F}(\mb{r}_{2}(t)) \cdot \mb{n}_{2}(t) \, dt + \int_{C_{3}} \mb{F}(\mb{r}_{3}(t)) \cdot \mb{n}_{3}(t) \, dt \\
+                &= \boxed{2}.
+            \end{align*}
+        \end{itemize}
     }
 \end{enumerate}
 \end{document}

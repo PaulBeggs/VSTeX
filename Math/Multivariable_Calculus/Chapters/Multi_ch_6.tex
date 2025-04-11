@@ -131,11 +131,11 @@ which essentially ``multiplies'' \(\mb{F}\) by a small infinitesimal along the c
 
 We choose the points \(P_{0}, P_{1}, P_{2}, \ldots, P_{i},\ldots, P_{n}\) to divide up our curve \(C\) and then approximate our line integral as a Riemann sum. We can write the line integral as:
 \[
-    \int_C \mb{F} \cdot d\mb{s} = \lim_{n\to\infty} \sum_{i=1}^{n} F(P^*_i) \cdot \Delta \mb{s}_i. 
+    \int_C \mb{F} \cdot d\mb{s} = \lim_{n\to\infty} \sum_{i=1}^{n} \mb{F}(P^*_i) \cdot \Delta \mb{s}_i. 
 \]
 Since \(d\mb{s} = \mb{r}'(t) dt\), the integral simplifies to:
 \[
-    \int_C \mb{F} \cdot d\mb{s} = \int_a^b F(\mb{r}(t)) \cdot \mb{r}'(t) \, dt, 
+    \int_C \mb{F} \cdot d\mb{s} = \int_a^b \mb{F}(\mb{r}(t)) \cdot \mb{r}'(t) \, dt, 
 \]
 
 Where \(\mb{r}(t)\), \(a \leq t \leq b\) is any parametrization of \(C\). \\ 
@@ -160,7 +160,7 @@ These alternate notations come from expanding the dot product: \(\int\langle P,Q
 \subsection{Circulation Along a Curve}
 The circulation of \(\mb{F}\) along \(C\) is defined as:
 \[
-    \int_C \mb{F} \cdot dr. 
+    \int_C \mb{F} \cdot d\mb{r}. 
 \]
 If \(\mb{F}\) represents a force field, this integral gives the total work done by \(\mb{F}\) in moving an object along \(C\).
 
@@ -210,14 +210,14 @@ Now, for \(C_{2}\): \(\mb{r}(t) = \langle 2 - t, 4\rangle, \, 0 \leq t \leq 2\).
 \end{align*}
 
 \subsubsection{Example 3: Vector Line Integral}
-Evaluate \( \int_C \mb{F} \cdot dr \) where \( \mb{F} = \langle y, x \rangle \) and \( C \) is the line from \( (0,0) \) to \( (1,1) \).
+Evaluate \( \int_C \mb{F} \cdot d\mb{r} \) where \( \mb{F} = \langle y, x \rangle \) and \( C \) is the line from \( (0,0) \) to \( (1,1) \).
 
 \textbf{Solution:}
 \begin{align*}
     \mb{r}(t) &= (t, t), \quad 0 \leq t \leq 1. \\
     \mb{r}'(t) &= (1,1). \\
     F(\mb{r}(t)) &= \langle t, t \rangle. \\
-    \int_C \mb{F} \cdot dr &= \int_0^1 \langle t, t \rangle \cdot \langle 1, 1 \rangle \, dt = \int_0^1 (t + t) \, dt = \int_0^1 2t \, dt = 2.
+    \int_C \mb{F} \cdot d\mb{r} &= \int_0^1 \langle t, t \rangle \cdot \langle 1, 1 \rangle \, dt = \int_0^1 (t + t) \, dt = \int_0^1 2t \, dt = 2.
 \end{align*}
 
 \newpage
