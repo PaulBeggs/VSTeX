@@ -51,14 +51,20 @@
 
 \begin{table}[htbp]
     \centering
-    \begin{tabular}{cp{2cm}p{2.5cm}p{3cm}p{4cm}}
+    \begin{tabularx}{\linewidth}{l 
+                                >{\raggedright\arraybackslash}X 
+                                >{\raggedright\arraybackslash}X 
+                                >{\raggedright\arraybackslash}X 
+                                >{\raggedright\arraybackslash}X}
         \toprule
-         & \textbf{Frequency} & \textbf{Amplitude} & \textbf{Description} & \textbf{State} \\ \midrule
-        \textbf{Beta \(\beta\)} & 12 - 50 Hz (variable) & Lower and Variable & Desynchronous & Awake and Paying Attention \\ \midrule
-        \textbf{Alpha \(\alpha\)} & 8 - 12 Hz & 50 Microvolts & Synchronous & Relaxed Wakefulness (Eye closed, not fully attending, and usually using biggest occipitally). \\ \midrule
-        \textbf{Theta \(\theta\)} & 3.5 - 7.5 Hz & Low in voltage Microvolts & Synchronous & Drowsy, Light Sleep (Stage 1) \\ \midrule
-        \textbf{Delta \(\delta\)} & 1 - 3.5 Hz & 20 - 200 Microvolts & Synchronous & Deep Sleep (Stage 3 and 4) \\
+        \textbf{Name} & \textbf{Frequency} & \textbf{Amplitude} & \textbf{Description} & \textbf{State} \\
+        \midrule
+        \textbf{Beta \(\beta\)}  & 12 -- 50 Hz (variable) & Lower and Variable & Desynchronous  & Awake and Paying Attention\\[25pt]
+        \textbf{Alpha \(\alpha\)} & 8 -- 12 Hz & 50 Microvolts & Synchronous & Relaxed Wakefulness (eye closed, not fully attending, and usually largest occipitally)\\[80pt]
+        \textbf{Theta \(\theta\)} & 3.5 -- 7.5 Hz & Low in voltage Microvolts & Synchronous & Drowsy, Light Sleep (Stage 1)\\[25pt]
+        \textbf{Delta \(\delta\)} & 1 -- 3.5 Hz  & 20 -- 200 Microvolts & Synchronous & Deep Sleep (Stages 3 and 4)\\
         \bottomrule
-    \end{tabular}
-    \caption{}\label{tab:}
+    \end{tabularx}
+    \caption{Summary of EEG Wave Characteristics}
+    \label{tab:EEGwaves}
 \end{table}

@@ -6,14 +6,14 @@
 \documentclass[12pt, oneside]{book}
 % \usepackage[T1]{fontenc}
 
-\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
-\newcommand{\documentTheme}{draculafg}
-\newcommand{\documentLogo}{images/small logo_white.png}
-\newcommand{\documentBigLogo}{images/logo_white_text.png}
+% \usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+% \newcommand{\documentTheme}{draculafg}
+% \newcommand{\documentLogo}{images/small logo_white.png}
+% \newcommand{\documentBigLogo}{images/logo_white_text.png}
 
-% \newcommand{\documentBigLogo}{images/Hendrix Logo.png}
-% \newcommand{\documentLogo}{images/small logo.png}
-% \newcommand{\documentTheme}{black}
+\newcommand{\documentBigLogo}{images/Hendrix Logo.png}
+\newcommand{\documentLogo}{images/small logo.png}
+\newcommand{\documentTheme}{black}
 
 
 %%% AESTHETICS %%%
@@ -26,6 +26,7 @@
 \linespread{1}
 \usepackage{listings}
 \usepackage{pdflscape}
+\usepackage{tabularx}
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usetikzlibrary{
@@ -333,12 +334,12 @@
   enhanced,
   sharp corners=downhill,
   colframe=white,          % lighter frame for contrast
-  colback=black!80,        % dark background
-  coltitle=draculafg,          % title in white
-  coltext=draculafg,           % main text in white
+  colback=black!20,        % dark background
+  coltitle=\documentTheme,          % title in white
+  coltext=\documentTheme,           % main text in white
   title={\large \textbf{Choices}},
   attach boxed title to top left={xshift=0.5cm},
-  boxed title style={colback=black!60}, % slightly lighter background for the title box
+  boxed title style={colback=black!30}, % slightly lighter background for the title box
   #1
 }
 
@@ -490,20 +491,20 @@
 % \newpage
 % \fancyhead[R]{\leftmark}
 
-\setcounter{chapter}{2}
-\chapter{Structure of the Nervous System}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_3}
+% \setcounter{chapter}{2}
+% \chapter{Structure of the Nervous System}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_3}
 
-\setcounter{chapter}{4}
-\chapter{Methods and Strategies of Research}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_5}
+% \setcounter{chapter}{4}
+% \chapter{Methods and Strategies of Research}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_5}
 
-\setcounter{chapter}{5}
-\chapter{How Neurons Process Information}
-\vspace*{-0.25in}
-\input{Chapters/behavioral_Ch_6}
+% \setcounter{chapter}{5}
+% \chapter{How Neurons Process Information}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_Ch_6}
 
 \setcounter{chapter}{6}
 \chapter{Psychopharmacology}
@@ -526,6 +527,7 @@
 
 % \part{Behavioral Neuroscience Practice Exams}
 
+\renewcommand{\cyanit}[1]{\textit{#1}}
 
 % \chapter*{Lab Practical 1}
 % \addcontentsline{toc}{chapter}{Lab Practical 1}
@@ -543,6 +545,12 @@
 % \addcontentsline{toc}{chapter}{Exam 2}
 % \vspace*{-0.25in}
 % \input{Chapters/behavioral_quiz_2_ANSWER_KEY}
+
+\chapter*{Exam 3}
+\fancyhead[R]{Exam 3}
+\addcontentsline{toc}{chapter}{Exam 3}
+\vspace*{-0.25in}
+\input{Chapters/behavioral_quiz_3.tex}
 
 
 
