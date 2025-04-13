@@ -181,3 +181,7 @@ hypocretine
 hypocretin-producing
 preprohypocretin
 anandamide
+nicotinic
+krait
+Nicotinic
+tyre

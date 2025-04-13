@@ -353,7 +353,22 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 %You'll need your own packages, theorem types, and commands.
 
+\usepackage{titlesec}
 
+% Section title: 90% opacity
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{orangehdx!100}}
+  {\thesection}{1em}{}
+
+% Subsection title: 80% opacity
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{orangehdx!75}}
+  {\thesubsection}{1em}{}
+
+% Subsubsection title: 70% opacity
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\color{orangehdx!50}}
+  {\thesubsubsection}{1em}{}
 
 
 \newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
@@ -466,23 +481,6 @@
 
 \part{Behavioral Neuroscience Lecture Notes}
 
-% \setcounter{chapter}{0}
-% \chapter{Origins of Behavioral Neuroscience}
-% \vspace*{-0.25in}
-% \input{Chapters/behavioral_Ch_1}
-% \setcounter{chapter}{0}
-% \chapter{Origins of Behavioral Neuroscience}
-% \vspace*{-0.25in}
-% \input{Chapters/behavioral_Ch_1}
-
-% \setcounter{chapter}{1}
-% \chapter{Structure and Functions of Cells of the Nervous System}
-% \vspace*{-0.25in}
-% \input{Chapters/behavioral_Ch_2}
-% \newpage
-% \vspace*{\stretch{1}}
-% \fancyhead[R]{}
-
 % \begin{center}
 %     \textsc{SKIP CHAPTER 2} \\
 %     Most of the content from Chapter 2 has been blended with Chapter 3. \\
@@ -517,15 +515,15 @@
 % \vspace{-0.25in}
 % \input{Chapters/behavioral_history_lab}
 
-% \chapter{Lab 2: Psychophysiology}
-% \vspace*{-0.25in}
-% \input{Chapters/behavioral_psychophis_video_lab}
-
-\chapter{Lab 3: Sleep Lab}
+\chapter{Lab 2: Psychophysiology}
 \vspace*{-0.25in}
-\input{Chapters/behavioral_sleep_lab}
+\input{Chapters/behavioral_psychophis_video_lab}
 
-% \part{Behavioral Neuroscience Practice Exams}
+% \chapter{Lab 3: Sleep Lab}
+% \vspace*{-0.25in}
+% \input{Chapters/behavioral_sleep_lab}
+
+\part{Behavioral Neuroscience Practice Exams}
 
 \renewcommand{\cyanit}[1]{\textit{#1}}
 
