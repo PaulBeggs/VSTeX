@@ -384,3 +384,68 @@ Thus, the total flux of \(\mathbf{F}\) across the closed curve \(C\) is equal to
 \subsection{Interpretation as a Fundamental Theorem}
 
 We can interpret the quantity \(P_x + Q_y\) as a type of derivative of \(\mathbf{F}\). The total double sum of the quantity \(P_x + Q_y\) over some region matches the sum of the original function \(\mathbf{F}\) across the boundary of that region.
+
+
+\newpage
+
+\section{Divergence and Curl}
+
+\subsection{Divergence}
+
+If \(\mb{F} = \langle P, Q, R \rangle\) is a vector field in \(\mathbb{R}^3\), then we can find the divergence of \(\mb{F}\) as follows:
+\[
+    \text{div} \, \mb{F} = \nabla \cdot \mb{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}.
+\]
+The divergence of a vector field is a scalar quantity that measures the rate at which the vector field diverges from a point. A large positive divergence at a point indicates that the vector field is “running away” from that point, on average more than it is coming into that point. See the slides from today for an animated example. \\
+
+Let \(C\) be a closed curve in \(\mathbb{R}^2\) and \(D\) the region it contains and \(\mb{F}\) a vector field. Then, by the flux form of Green’s Theorem:
+\[
+    \oint_C \mb{F} \cdot \mb{n} \, dt = \iint_D \nabla \cdot \mb{F} \, dA.
+\]
+We will see a version of this in \(\mathbb{R}^3\) in section 6.8.
+
+\subsubsection{Interpretation of Divergence}
+
+The divergence at a point find the microscopic net flux through that point. \\
+
+Suppose that \(D\) is a region and that the sum of the divergence over that region is positive. Then, \(D\) contains at least one \textit{source}. If that sum is negative, we say that \(D\) contains a \cyanit{sink}. \\
+
+A vector field for which \(\nabla \cdot \mb{F} = 0\) is called \cyanit{source free} or \cyanit{solenoidal}. A rotational field is the stereotypical source free vector field.
+
+\subsection{Curl}
+
+Here, it does matter that we are in \(\R^{3}\). Define the \cyanit{curl} of the vector field \(\mb{F} : \mathbb{R}^3 \to \mathbb{R}^3\) as:
+\begin{align*}
+    \text{curl} \, \mb{F} &= \nabla \times \mb{F} \\
+    &= (R_y - Q_z) \mathbf{i} + (P_z - R_x) \mathbf{j} + (Q_x - P_y) \mathbf{k} \\
+    &= \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) \mathbf{i} + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right) \mathbf{j} + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \mathbf{k}.
+\end{align*} 
+Notice a few things: The divergence is a scalar quantity, while the curl is a vector quantity. Also, the curl is exactly the difference of the various cross partials – so it is a vector quantity which measures how non-conservative a vector field is.
+
+\subsubsection{Interpretation of Curl}
+
+For a point \(P\) in the domain, the curl of \(\mb{F}\) at \(P\) measures the microscopic circulation at that point – since it is a vector quantity, it follows the right-hand rule, with the vector’s magnitude measuring the strength of the circulation and direction the right-hand rule of that circulation. \\
+
+We see immediately that any conservative vector field has \(\nabla \times \mb{F} = 0\).
+
+\subsubsection{Curl in Two Dimensions}
+
+We cannot define the curl for \(\mb{F} : \mathbb{R}^2 \to \mathbb{R}^2\), since the cross product is not defined in two dimensions. However, we can extend \(\mb{F} = \langle P,Q \rangle\) in this case to the three dimensional vector field \(\mb{F} = \langle P, Q, 0 \rangle\). In this case:
+\[
+    \text{curl} \, \mb{F} = (Q_x - P_y) \mathbf{k}.
+\]
+This should look familiar! \\
+
+The circulation form of Green’s Theorem says that – with the extension noted above:
+\[
+    \oint_C \mb{F} \cdot d\mb{r} = \iint_D (\nabla \times \mb{F}) \cdot \mathbf{k} \, dA.
+\]
+
+\subsection{Curl and Divergence}
+
+Since curl itself is a vector field, we can find \(\nabla \cdot (\nabla \times \mb{F})\):
+\begin{align*}
+    \nabla \cdot (\nabla \times \mb{F}) &= \frac{\partial}{\partial x} (R_y - Q_z) + \frac{\partial}{\partial y} (P_z - R_x) + \frac{\partial}{\partial z} (Q_x - P_y) \\
+    &= R_{yx} - Q_{zx} + P_{zy} - R_{xy} + Q_{xz} - P_{yz} \\
+    &= 0, \text{ by Clairaut's Theorem.}
+\end{align*}
