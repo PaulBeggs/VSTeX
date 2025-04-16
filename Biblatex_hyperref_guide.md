@@ -239,7 +239,7 @@ Here's how you might incorporate some of these citation commands into your LaTeX
 	urlcolor=horange,
     citecolor=horange
 }
-\usepackage{C:/Users/paulb/VSTeX/local/draculatheme}
+\usepackage{draculatheme}
 \addbibresource{references.bib}
 
 \title{Annotated Bibliography: The Effect of ADHD on Cognition}
