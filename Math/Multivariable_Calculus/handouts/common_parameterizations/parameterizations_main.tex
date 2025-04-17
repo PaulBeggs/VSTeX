@@ -1,0 +1,461 @@
+\documentclass[10pt]{article}
+\usepackage{fix-cm}
+\usepackage{amsmath,amsthm} 
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{braket}
+\usepackage{draculatheme}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+\usepackage[left=0.5in, right=0.5in, top=1in, bottom=1in]{geometry}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
+
+\newcommand{\ninn}{n \in \N}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
+
+\renewcommand{\theenumi}{\alph{enumi}} 
+\renewcommand{\labelenumi}{(\theenumi)}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{\| \mb{#1}'(#2) \|}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\N}{\mathbb{N}}
+
+% Whole Numbers
+\newcommand{\W}{\mathbb{W}}
+
+% Integers
+\newcommand{\Z}{\mathbb{Z}}
+
+% Rational Numbers
+\newcommand{\Q}{\mathbb{Q}}
+
+% Real Numbers
+\newcommand{\R}{\mathbb{R}}
+
+% Complex Numbers
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\I}{\mathbb{I}}
+
+\newcommand{\mbi}{\mb{i}}
+\newcommand{\mbj}{\mb{j}}
+\newcommand{\mbk}{\mb{k}}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+\begin{document}
+\begin{center}
+    \section*{Some Common Parameterizations and Integrals}
+\end{center}
+
+\section*{Shapes in the \(xy\)-plane, \(\R^{2}\)}
+
+\subsection*{Curves}
+
+Each curve is one-dimensional, which means it can be parameterized by a single variable, \(t\). In general, we have:
+\begin{itemize}
+    \item the parameterization, \(\vecfuc{r}{t} = \brackett{x(t),y(t)}\),
+    \item the tangent vector, \(\dvecfuc{r}{t} = \brackett{x'(t),y'(t)}\),
+    \item the magnitude of the tangent vector, \(\normdvecfuc{r}{t} = \mysqrt{(x'(t))^{2} + (y'(t))^{2}}\), and
+    \item the normal vector, \(\vecfuc{n}{t} = \brackett{y'(t),-x'(t)}\), where we adopt the convention that this vector points left to right as we move along the curve.
+\end{itemize}
+For scalar integrals, \(ds = \normdvecfuc{r}{t} dt\) and for vector integrals, \(\mb{T} \, ds = d\mb{r} = \dvecfuc{r}{t} \, dt\) and \(\mb{N} \, ds = \vecfuc{n}{t} \, dt\).
+
+\subsubsection*{Line Segments}
+
+The line segment which goes from \(\mb{a} = \brackett{a_{x},a_{y}}\) to \(\mb{b} = \brackett{b_{x},b_{y}}\) is parameterized by:
+\begin{itemize}
+    \item \(\vecfuc{r}{t} = \brackett{a_{x} + t(b_{x} - a_{x}), a_{y} + t(b_{y} - a_{y})}\), \(0 \leq t \leq 1\),
+    \item \(\dvecfuc{r}{t} = \brackett{b_{x} - a_{x}, b_{y} - a_{y}}\),
+    \item \(\normdvecfuc{r}{t} = \mysqrt{(b_{x} - a_{x})^{2} + (b_{y} - a_{y})^{2}}\) (which we note is always constant for any given segment!), and
+    \item \(\vecfuc{n}{t} = \brackett{b_{y} - a_{y}, a_{x} - b_{x}}\).
+\end{itemize}
+
+\subsubsection*{Circle}
+
+The circle of constant radius \(r\) and whose center is at \((h,k)\) is parameterized by:
+\begin{itemize}
+    \item \(\vecfuc{r}{t} = \brackett{h + r \cos(t), k + r \sin(t)}\), \(0 \leq t \leq 2\pi\),
+    \item \(\dvecfuc{r}{t} = \brackett{-r \sin(t), r \cos(t)}\),
+    \item \(\normdvecfuc{r}{t} = r\), and
+    \item \(\vecfuc{n}{t} = \brackett{r \cos(t), r \sin(t)}\).
+\end{itemize}
+
+\subsubsection*{Ellipse}
+
+The ellipse with center at \((h,k)\) and ``radius'' \(a\) along the \(x\)-axis and \(b\) along the \(y\)-axis is parameterized by: 
+\begin{itemize}
+    \item \(\vecfuc{r}{t} = \brackett{h + a \cos(t), k + b \sin(t)}\), \(0 \leq t \leq 2\pi\),
+    \item \(\dvecfuc{r}{t} = \brackett{-a \sin(t), b \cos(t)}\),
+    \item \(\normdvecfuc{r}{t} = \mysqrt{a^{2} \sin^{2}(t) + b^{2} \cos^{2}(t)}\), and
+    \item \(\vecfuc{n}{t} = \brackett{b \cos(t), a \sin(t)}\).
+\end{itemize}
+
+\newpage
+
+\subsection*{Regions}
+
+\subsubsection*{Disk}
+
+The disk centered at \((h,k)\) with radius \(a\) is parameterized by:
+\begin{itemize}
+    \item \(\vecfuc{r}{t,\theta} = \brackett{h + r \cos(\theta), k + r \sin(\theta)}\), \(0 \leq r \leq b\), \(0 \leq \theta \leq 2\pi\).
+\end{itemize}
+We then have
+\begin{itemize}
+    \item \(\mb{t}_{r} = \brackett{\cos(\theta), \sin(\theta)}\),
+    \item \(\mb{t}_{\theta} = \brackett{-r \sin(\theta), r \cos(\theta)}\),
+\end{itemize}
+and thus
+\begin{itemize}
+    \item \(\| \mb{t}_{r} \times \mb{t}_{\theta} \| = r\), 
+\end{itemize}
+where it is understood that we are doing the two-dimensional analog to the cross product. Note that this is not defined without its magnitude, since it would need to be a vector in the \(k\) direction. Further, we see that \(dS = dA = dx \, dy = r \, dr \, d\theta\), not too much of a surprise.
+
+\section*{Shapes in the \(xyz\)-plane, \(\R^{3}\)}
+
+\subsection*{Curves}
+
+Much of the earlier material can be easily raised to three dimensions. However, note that our normal vector is missing. We can still define \(\vecfuc{N}{t}\) in many cases, but its main use in the previous section was flux. Flux is not well-defined over a single curve in \(\R^{3}\), and so we will not consider it here. In general, we have:
+\begin{itemize}
+    \item the parameterization, \(\vecfuc{r}{t} = \brackett{x(t), y(t), z(t)}\),
+    \item the tangent vector, \(\dvecfuc{r}{t} = \brackett{x'(t), y'(t), z'(t)}\),
+    \item the magnitude of the tangent vector, \(\normdvecfuc{r}{t} = \mysqrt{(x'(t))^{2} + (y'(t))^{2} + (z'(t))^{2}}\),
+    \item for scalar integrals, \(ds = \normdvecfuc{r}{t} \, dt\), and 
+    \item for vector integrals, \(\mb{T} \, ds = d\mb{r} = \dvecfuc{r}{t} \, dt\).
+\end{itemize}
+
+
+\subsubsection*{Line Segments}
+
+The line segment which goes from \(\mb{a} = \brackett{a_{x}, a_{y}, a_{z}}\) to \(\mb{b} = \brackett{b_{x}, b_{y}, b_{z}}\) is parameterized by:
+\begin{itemize}
+    \item \(\vecfuc{r}{t} = \brackett{a_{x} + t(b_{x} - a_{x}), a_{y} + t(b_{y} - a_{y}), a_{z} + t(b_{z} - a_{z})}\), for \(0 \leq t \leq 1\),
+    \item \(\dvecfuc{r}{t} = \brackett{(b_{x} - a_{x}), (b_{y} - a_{y}), (b_{z} - a_{z})}\), and
+    \item \(\normdvecfuc{r}{t} = \mysqrt{(b_{x} - a_{x})^{2} + (b_{y} - a_{y})^{2} + (b_{z} - a_{z})^{2}}\), which we note is always constant for any given segment!
+\end{itemize}
+
+\subsubsection*{Circle}
+
+The circle with center \((h,k,\ell)\), constant radius \(r\), and whose plane is parallel to the orthogonal unit vectors \(\mb{a} = \brackett{a_{x}, a_{y}, a_{z}}\) and \(\mb{b} = \brackett{b_{x}, b_{y}, b_{z}}\) is parameterized by:
+\begin{itemize}
+    \item \(\vecfuc{r}{t} = \brackett{h + r (a_{x} \cos(t) + b_{x} \sin(t)), k + r (a_{y} \cos(t) + b_{y} \sin(t)), \ell + r (a_{z} \cos(t) + b_{z} \sin(t))}\), \(0 \leq t \leq 2\pi\),
+    \item \(\dvecfuc{r}{t} = r\brackett{-a_{x} \sin(t) + b_{x} \cos(t), -a_{y} \sin(t) + b_{y} \cos(t), -a_{z} \sin(t) + b_{z} \cos(t)}\), and
+    \item \(\normdvecfuc{r}{t} = r\), after some work!
+\end{itemize}
+
+\subsubsection*{Helix}
+
+A circular helix with constant radius \(r\) and \(z\)-coordinate at for constant \(a\) is parameterized by:
+\begin{itemize}
+    \item \(\vecfuc{r}{t} = \brackett{r \cos(t), r \sin(t), at}\),
+    \item \(\dvecfuc{r}{t} = \brackett{-r \sin(t), r \cos(t), a}\), and
+    \item \(\normdvecfuc{r}{t} = \mysqrt{r^{2} + a^{2}}\), which is constant for any given helix.
+\end{itemize}
+
+\subsection*{Surfaces}
+
+We finally turn to the truly new idea, that of a surface \(S \subseteq \R^{3}\). As these are two dimensional, we will parameterize with two independent variables, \(u\) and \(v\):
+\begin{itemize}
+    \item \(\vecfuc{r}{u,v} = \brackett{x(u,v), y(u,v), z(u,v)}\).
+\end{itemize}
+We then have
+\begin{itemize}
+    \item \(\mb{t}_{u} = \displaystyle\brackett{\frac{\partial x}{\partial u}, \frac{\partial y}{\partial u}, \frac{\partial z}{\partial u}}\),
+    \item \(\mb{t}_{v} = \displaystyle\brackett{\frac{\partial x}{\partial v}, \frac{\partial y}{\partial v}, \frac{\partial z}{\partial v}}\),
+\end{itemize}
+and thus, 
+\begin{itemize}
+    \item \(dS = \| \mb{t}_{u} \times \mb{t}_{v} \| \, du \, dv\), and
+    \item \(\mb{N} \, dS = dS = \mb{t}_{u} \times \mb{t}_{v} \, du \, dv\).
+\end{itemize}
+where we have an orientation of the surface. We can choose to use \(\mb{t}_{v} \times \mb{t}_{u}\) to flip the orientation. When the surface of interest is closed (i.e., is the boundary of a solid) we will always want the normal to point ``outward.'' When the surface is \(z = f(x,y)\), we typically want the normal to point ``up.'' In other cases, the orientation will be given.
+
+\subsubsection*{Scalar Surface}
+
+Consider the scalar surface defined by \(z = f(x,y)\). We can use \(x\) and \(y\) themselves as the parameters to find
+\begin{itemize}
+    \item \(\vecfuc{r}{x,y} = \brackett{x, y, f(x,y)}\),
+    \item \(\mb{t}_{x} = \brackett{1, 0, f_{x}(x,y)}\),
+    \item \(\mb{t}_{y} = \brackett{0, 1, f_{y}(x,y)}\),
+    \item \(\mb{t}_{x} \times \mb{t}_{y} = \brackett{-f_{x}(x,y), -f_{y}(x,y), 1}\), which points upward, since the \(z\)-component is \(+1\), and
+    \item \(\| \mb{t}_{x} \times \mb{t}_{y} \| = \mysqrt{1 + (f_{x}(x,y))^{2} + (f_{y}(x,y))^{2}}\).
+\end{itemize}
+
+\subsubsection*{Scalar Surface -- Polar}
+
+We can also write the scalar surface \(z = f(x,y)\) where we think of \(x = r \cos(\theta)\) and \(y = r \sin(\theta)\). This is useful if the projection of the surface into the \(xy\)-plane is easier to think of in polar coordinates:
+\begin{itemize}
+    \item \(\vecfuc{r}{r,\theta} = \brackett{r \cos(\theta), r \sin(\theta), f(r,\theta)}\),
+    \item \(\mb{t}_{r} = \brackett{\cos(\theta), \sin(\theta), f_{r}(r, \theta)(r,\theta)}\),
+    \item \(\mb{t}_{\theta} = \brackett{-r \sin(\theta), r \cos(\theta), f_{\theta}(r, \theta)(r,\theta)}\),
+    \item \(\mb{t}_{r} \times \mb{t}_{\theta} = \brackett{\sin(\theta)f_{\theta}(r, \theta) - r \cos(\theta)f_{r}(r, \theta), -\cos(\theta)f_{\theta}(r, \theta) - r \sin(\theta)f_{r}(r, \theta), r}\), which points upward, since the \(z\)-component is \(+r\), and
+    \item \(\normdvecfuc{t}{r} \times \mb{t}_{\theta} = \mysqrt{(f_{\theta}(r, \theta))^{2} + r^{2} + r^{2} (f_{r}(r, \theta))^{2}}\).
+\end{itemize}
+
+\subsubsection*{Plane -- Cartesian}
+
+Consider the plane \(z = ax + by + d\), which is parameterized with variables \(x\) and \(y\):
+\begin{itemize}
+    \item \(\vecfuc{r}{x,y} = \brackett{x, y, ax + by + d}\),
+    \item \(\mb{t}_{x} = \brackett{1, 0, a}\),
+    \item \(\mb{t}_{y} = \brackett{0, 1, b}\),
+    \item \(\mb{t}_{x} \times \mb{t}_{y} = \brackett{-a, -b, 1}\), which points upward, since the \(z\)-component is \(+1\), and
+    \item \(\| \mb{t}_{x} \times \mb{t}_{y} \| = \mysqrt{1 + a^{2} + b^{2}}\).
+\end{itemize}
+
+\subsubsection*{Plane -- Polar}
+
+Consider the plane \(z = ax + by + d\) where the projection of the region of interest is more easily expressed in polar coordinates:
+\begin{itemize}
+    \item \(\vecfuc{r}{r,\theta} = \brackett{r \cos(\theta), r \sin(\theta), ar \cos(\theta) + br \sin(\theta) + d}\),
+    \item \(\mb{t}_{r} = \brackett{\cos(\theta), \sin(\theta), a \cos(\theta) + b \sin(\theta)}\),
+    \item \(\mb{t}_{\theta} = \brackett{-r \sin(\theta), r \cos(\theta), -ar \sin(\theta) + br \cos(\theta)}\),
+    \item \(\mb{t}_{r} \times \mb{t}_{\theta} = \brackett{-ar, -br, r}\), which points upward, since the \(z\)-component is \(+1\), and
+    \item \(\| \mb{t}_{r} \times \mb{t}_{\theta} \| = r\mysqrt{1 + a^{2} + b^{2}}\).
+\end{itemize}
+
+\subsubsection*{Cylinder}
+
+A cylinder, with constant radius \(r\) and axis matching the \(z\)-axis, is parameterized by \(\theta\) and \(z\) as:
+\begin{itemize}
+    \item \(\vecfuc{r}{\theta,z} = \brackett{r \cos(\theta), r \sin(\theta), z}\),
+    \item \(\mb{t}_{\theta} = \brackett{-r \sin(\theta), r \cos(\theta), 0}\),
+    \item \(\mb{t}_{z} = \brackett{0, 0, 1}\),
+    \item \(\mb{t}_{\theta} \times \mb{t}_{z} = \brackett{r \cos(\theta), r \sin(\theta), 0}\), which points outward, and
+    \item \(\| \mb{t}_{\theta} \times \mb{t}_{z} \| = r\), also hopefully not a surprise.
+\end{itemize}
+
+\subsubsection*{Cone -- Polar}
+
+The cone, with axis aligned with the \(z\)-axis and ``slope'' a constant \(a\) is parameterized by \(r\) and \(\theta\) so that:
+\begin{itemize}
+    \item \(\vecfuc{r}{r,\theta} = \brackett{r \cos(\theta), r \sin(\theta), ar}\),
+    \item \(\mb{t}_{r} = \brackett{\cos(\theta), \sin(\theta), a}\),
+    \item \(\mb{t}_{\theta} = \brackett{-r \sin(\theta), r \cos(\theta), 0}\),
+    \item \(\mb{t}_{\theta} \times \mb{t}_{r} = \brackett{ar \cos(\theta), ar \sin(\theta), -r}\), where we need \(\mb{t}_{\theta} \times \mb{t}_{r}\), so our normal points out of the cone, and
+    \item \(\| \mb{t}_{\theta} \times \mb{t}_{r} \| = r\mysqrt{a^{2} + 1}\).
+\end{itemize}
+
+\subsubsection*{Cone -- Spherical}
+
+The cone, with axis aligned with the \(z\)-axis and ``slope'' given by the constant polar angle \(\phi\) is parameterized by \(\rho\) and \(\theta\) so that:
+\begin{itemize}
+    \item \(\vecfuc{r}{\rho,\theta} = \brackett{\rho \sin(\phi) \cos(\theta), \rho \sin(\phi) \sin(\theta), \rho \cos(\phi)}\),
+    \item \(\mb{t}_{\rho} = \brackett{\sin(\phi) \cos(\theta), \sin(\phi) \sin(\theta), \cos(\phi)}\),
+    \item \(\mb{t}_{\theta} = \brackett{-\rho \sin(\phi) \sin(\theta), \rho \sin(\phi) \cos(\theta), 0}\), and
+    \item \(\mb{t}_{\theta} \times \mb{t}_{\rho} = \brackett{\rho \sin(\phi) \cos(\theta), \rho \sin(\phi) \sin(\theta), -\rho \sin^{2}(\phi)}\), where we need to flip around the order so our normal points out of the cone.
+    % \begin{itemize}
+    %     \item NOTE: 
+    %             \begin{align*}
+    %                 \mb{t}_{\theta} \times \mb{t}_{\rho} &= \begin{bmatrix}
+    %                     \mbi & \mbj & \mbk \\
+    %                     - \rho \sin \phi \sin \theta & \rho \sin \phi \cos \theta & 0  \\
+    %                      \sin \phi \cos \theta & \sin \phi \sin \theta & \cos \phi
+    %                 \end{bmatrix} \\
+    %                 &= \bigl\langle [\rho \sin \phi \cos \theta \cos \phi], - [-\rho \sin \phi \sin \theta \cos \phi], [-\rho \sin \phi \sin \theta \sin \phi \sin \theta - \sin \phi \cos \theta \rho \sin \phi \cos \theta] \bigr\rangle \\
+    %                 &= \bigl\langle \rho \sin \phi \cos \theta \cos \phi, \rho \sin \phi \sin \theta \cos \phi, -\rho \sin^{2}(\phi) \bigr\rangle \\ 
+    %             \end{align*}
+
+    % \end{itemize}
+    \item \(\| \mb{t}_{\theta} \times t_{\rho} \| = \rho \sin(\phi)\)
+\end{itemize}
+
+\subsubsection*{Paraboloid -- Cartesian}
+
+This is a special case of the general surface where \(z = a(x^{2} + y^{2})\); this is useful if we have simple Cartesian bounds for \(x\) and \(y\):
+\begin{itemize}
+    \item \(\vecfuc{r}{x,y} = \brackett{x, y, a(x^{2} + y^{2})}\),
+    \item \(\mb{t}_{x} = \brackett{1, 0, 2ax}\),
+    \item \(\mb{t}_{y} = \brackett{0, 1, 2ay}\),
+    \item \(\mb{t}_{x} \times \mb{t}_{y} = \brackett{-2ax, -2ay, 1}\), and
+    \item \(\| \mb{t}_{x} \times t_{y} \| = \mysqrt{1 + 4a^{2}x^{2} + 4a^{2}y^{2}}\).
+\end{itemize}
+
+\subsubsection*{Paraboloid -- Polar}
+
+This is the special case of the general polar surface where \(z = ar^{2}\); this version is more useful if our projection down into the \(xy\)-plane is circular:
+\begin{itemize}
+    \item \(\vecfuc{r}{r,\theta} = \brackett{r \cos(\theta), r \sin(\theta), ar^{2}}\),
+    \item \(\mb{t}_{r} = \brackett{\cos(\theta), \sin(\theta), 2ar}\),
+    \item \(\mb{t}_{\theta} = \brackett{-r \sin(\theta), r \cos(\theta), 0}\),
+    \item \(\mb{t}_{\theta} \times t_{r} = \brackett{2ar^{2} \cos(\theta), 2ar^{2} \sin(\theta), -r}\), where we again flip around the order so the normal points outward, and
+    \item \(\| \mb{t}_{\theta} \times t_{r} \| = r\mysqrt{1 + 4a^{2}r^{2}}\).
+\end{itemize}
+
+\subsubsection*{Sphere}
+
+The sphere of constant radius \(\rho\) centered at the origin is parameterized by \(\theta\) and \(\phi\), where \(\theta\) is the planar angle and \(\phi\) is the polar angle:
+\begin{itemize}
+    \item \(\vecfuc{r}{\theta,\phi} = \brackett{\rho \sin(\phi) \cos(\theta), \rho \sin(\phi) \sin(\theta), \rho \cos(\phi)}\),
+    \item \(\mb{t}_{\phi} = \brackett{\rho \cos(\phi) \cos(\theta), \rho \cos(\phi) \sin(\theta), -\rho \sin(\phi)}\),
+    \item \(\mb{t}_{\theta} = \brackett{-\rho \sin(\phi) \sin(\theta), \rho \sin(\phi) \cos(\theta), 0}\),
+    \item \(\mb{t}_{\phi} \times t_{\theta} = \brackett{\rho^{2} \sin^{2}(\phi) \cos(\theta), \rho^{2} \sin^{2}(\phi) \sin(\theta), \rho^{2} \sin(\phi)\cos(\phi)}\), where we again flip around the order so the normal points outward, and
+    \item \(\| \mb{t}_{\phi} \times t_{\theta} \| = \rho^{2} \sin(\phi)\), as expected.
+\end{itemize}
+
+\newpage
+
+\section*{Integrals}
+
+\subsection*{Curves and Regions in 2-D}
+
+Let \(C\) be a curve in \(\R^{2}\) which is not necessarily closed, parameterized by \(\vecfuc{r}{t}\), \(a \leq t \leq b\).
+\begin{itemize}
+    \item The arc length of \(C\) is given by: 
+    \[
+        s = \displaystyle\int_{C} ds = \int_{a}^{b} \normdvecfuc{r}{t} \, dt.
+    \]
+    \item If \(f(x,y)\) is a continuous scalar function, then the signed area of the curtain from \(z = f(x,y)\) back down to the \(xy\)-axis which lies above \(C\) is given by:
+    \[
+        \int_{C} f(x(t), y(t)) \, ds = \int_{a}^{b} f(\vecfuc{r}{t}) \normdvecfuc{r}{t} \, dt.
+    \]
+    \item If \(\mb{F}\) is a vector field, the circulation along \(C\) is given by:
+    \[
+        \int_{C} \mb{F} \cdot d\mb{r} = \int_{C} \mb{F} \cdot \mb{T} \, ds = \int_{a}^{b} \mb{F} \cdot \dvecfuc{r}{t} \, dt.
+    \]
+    \begin{itemize}
+        \item In the special case where \(C\) is closed, by Green’s Theorem
+        \[
+            \oint_{C} \mb{F} \cdot \mb{T} \, ds = \iint_{D} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)  \, dA,
+        \]
+        where \(D\) is the region enclosed by \(C\).
+    \end{itemize}
+    \item If \(\mb{F}\) is a vector field, the flux across \(C\) is given by:
+    \[
+        \int_{C} \mb{F} \cdot \mb{N} \, ds = \int_{C} \mb{F} \cdot \mb{n}(t) \, dt.
+    \]
+    \begin{itemize}
+        \item In the special case where \(C\) is closed, by Green’s Theorem
+        \[
+            \oint_{C} \mb{F} \cdot \mb{N} \, ds = \iint_{D} \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} \right)  \, dA, 
+        \]
+        where \(D\) is the region enclosed by \(C\).
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Curves in 3-D}
+
+Now, let \(C\) be a curve in \(\R^{3}\), again not necessarily closed, parameterized by \(\vecfuc{r}{t}\), \(a \leq t \leq b\).
+\begin{itemize}
+    \item The arc length of \(C\) is given by:
+    \[
+        s = \displaystyle\int_{C} ds = \int_{a}^{b} \normdvecfuc{r}{t} \, dt.
+    \]
+    \item If \(f(x,y,z)\) is a continuous scalar function, then the following integral calculates the average value of \(f\) along \(C\), multiplied by the arc length of \(C\):
+    \[
+        \int_{C} f(x(t), y(t), z(t)) \, ds = \int_{a}^{b} f(\vecfuc{r}{t}) \normdvecfuc{r}{t} \, dt.
+    \]
+    \item If \(\mb{F}\) is a vector field, the circulation along \(C\) is given by:
+    \[
+        \int_{C} \mb{F} \cdot d\mb{r} = \int_{C} \mb{F} \cdot \mb{T} \, ds = \int_{a}^{b} \mb{F} \cdot \dvecfuc{r}{t} \, dt.
+    \]
+    \begin{itemize}
+        \item In the special case where \(C\) is closed, by Stokes’ Theorem:
+        \[
+            \oint_{C} \mb{F} \cdot \mb{T} \, ds = \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S},
+        \]
+        where \(S\) is any positively oriented surface with \(C\) as its boundary.
+    \end{itemize}
+\end{itemize}
+(We will not worry about flux over a curve in \(\R^{3}\).)
+
+\subsection*{Surfaces in 3-D}
+
+Let \(S\) be a surface in \(\R^{3}\), not necessarily closed, parameterized by \(\vecfuc{r}{u,v}\).
+\begin{itemize}
+    \item If \(f(x,y,z)\) is a scalar function, we can find the average value of \(f\) over \(S\) multiplied by the area of \(S\) by finding:
+    \[
+        \iint_{S} f(x,y,z) \normdvecfuc{t}{u} \times \mb{t}_{v} \, dS.
+    \]
+    \begin{itemize}
+        \item For example, if \(f\) is the density of some object, this integral finds the mass, that is the average density times the area.
+    \end{itemize}
+    \item If \(\mb{F}\) is a vector field, then
+    \[
+        \iint_{S} \mb{F} \cdot d\mb{S} = \iint_{S} \mb{F} \cdot \mb{N} \, dS = \iint_{S} \mb{F} \cdot (\mb{t}_{u} \times \mb{t}_{v}) \, du \, dv
+    \]
+    measures the flux of \(\mb{F}\) through \(S\) – that is the amount of \(\mb{F}\) which passes orthogonally through \(S\), where positive flux matches the direction of the normal.
+    \begin{itemize}
+        \item If \(\mb{G} = \nabla \times \mb{F}\), then 
+        \[
+            \iint_{S} \mb{G} \cdot d\mb{S} = \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S}
+        \]
+        measures the flux of the curl of \(\mb{F}\) across \(S\) – that is the total amount of circulation (or torque) that \(\mb{F}\) induces in \(S\).
+        \item by Stokes’ Theorem, if \(C\) is the positively oriented boundary curve of \(S\):
+        \[
+            \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S} = \oint_{C} \mb{F} \cdot \mb{T} \, ds.
+        \]
+    \end{itemize}
+    \item In the special case when \(S\) is closed with positive orientation – that is, \(S\) encloses a solid region \(E \subseteq \R^{3}\) with outward pointing normal – then \(\displaystyle \iint_{S} \mb{F} \cdot d\mb{S}\) measures the total flux of \(\mb{F}\) out of \(E\). by the Divergence Theorem,
+    \[
+        \iint_{S} \mb{F} \cdot d\mb{S} = \iiint_{E} (\nabla \cdot \mb{F}) \, dV,
+    \]
+    since the second integral adds up all the ``outflow'' of \(\mb{F}\) at each point inside the solid region \(E\).
+    \begin{itemize}
+        \item In this special case when \(S\) is closed, it does not have a boundary curve, and therefore the total circulation, or total flux of the curl of any vector field \(\mb{F}\) across \(S\) is therefore 0. We can also see this since we know that for any vector field, \(\nabla \cdot (\nabla \times \mb{F}) = 0\).
+    \end{itemize}
+\end{itemize}
+\end{document}
