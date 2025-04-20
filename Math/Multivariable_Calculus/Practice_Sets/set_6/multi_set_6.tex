@@ -6,7 +6,7 @@
 \usepackage{amsmath,amsthm} 
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
-% \usepackage{draculatheme}
+\usepackage{draculatheme}
 \usepackage{mathrsfs}
 \usepackage{changepage}
 \usepackage{multicol}
@@ -33,8 +33,8 @@
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
-%   backgroundcolor=draculabg, % Needed for Dracula theme
-%   fontcolor=draculafg, % Needed for Dracula theme
+  backgroundcolor=draculabg, % Needed for Dracula theme
+  fontcolor=draculafg, % Needed for Dracula theme
   innertopmargin=0pt,
   innerbottommargin=5pt,
   innerrightmargin=10pt,
@@ -53,8 +53,8 @@
         leftline=true,
         linewidth=1pt,
         linecolor=#1!40, % Custom color
-        % innertopmargin=10pt,
-        % innerbottommargin=10pt,
+        innertopmargin=10pt,
+        innerbottommargin=10pt,
         innerleftmargin=10pt,
         innerrightmargin=10pt,
         leftmargin=0pt,
@@ -259,6 +259,51 @@
 \maketitle
 % \setcounter{page}{2}
 \begin{enumerate}
-    \item 
+  \item (3 points each) Let \(\mb{F}(x,y,z) = \langle xy^{2},y + xe^{x},x^{2}\sin(yz) \rangle\), and consider the point \((3,2,0)\).
+        \begin{enumerate}
+          \item Find \(\nabla \cdot \mb{F}\) at the given point.
+                \sol{
+                  Note this answer will be a scalar.
+                }
+          \item Find \(\nabla \times \mb{F}\) at the given point.
+                \sol{
+                  Note this answer will be a vector.
+                }
+        \end{enumerate}
+  \item On Practice Set V, you found the circulation of \(\mb{F} = \left\langle xy, \, x^{2}y^{3} \right\rangle\) along \(C\), where \(C\) is the counter-clockwise oriented triangle with vertices \((0,0)\), \((1,0)\), and \((1,2)\) by directing finding the three separate line integrals. Now,
+        \begin{enumerate}
+          \item (3 points) Evaluate this integral using Green's Theorem.
+                \sol{
+
+                }
+          \item \mbox{(1 point) Does this match the answer that you (or Prof. Seme, on the Key for Practice Set V) got?}
+                \sol{
+                  The answer I got on Practice Set V was \(\frac{2}{3}\), so these answers 
+                }
+          \item (1 point) Does one method feel easier or more intuitive to you? Why? (There are not really wrong answers -- just write something coherent.)
+                \sol{
+
+                }
+        \end{enumerate}
+  \item (3 points) On Practice Set V, you found the flux of \(\mb{F} = \left\langle xy, \, x^{2}y^{3} \right\rangle\) along \(C\), where \(C\) is the counter-clockwise oriented triangle with vertices \((0,0)\), \((1,0)\), and \((1,2)\) by directing finding the three separate line integrals. Now, use Green's Theorem again. You are encouraged to compare your answer to \#9 on Practice Set V (or the key for that assignment).
+        \sol{
+          (I got the answer of 2 on Practice Set V)
+        }
+  \item (3 points) Find \(\displaystyle \iint_{S}x^{2} \, dS\), where \(S\) is the triangle with vertices \((1,0,0)\), \((0,-2,0)\), and \((0,0,4)\).
+        \sol{
+
+        }
+  \item \mbox{(3 points) Let \(\mb{F}(x,y,z) = \left\langle x, y, z^{2} \right\rangle\) and \(S\) be the unit sphere with positive orientation. Find \(\displaystyle \iint_{S} \mb{F} \cdot d\mb{S}\).}
+        \sol{
+
+        }
+  \item (3 points) Use Stokes' Theorem to find \(\displaystyle \int_{C} \mb{F} \cdot d\mb{r}\), where \(\mb{F}(x,y,z) = \left\langle x^{2}z, \, xy^{2}, \, z^{2} \right\rangle\) and \(C\) is the curve of intersection between the plane \(x + y + z = 1\) and the cylinder \(x^{2} + y^{2} = 9\), oriented counter-clockwise when viewed from above.
+        \sol{
+
+        }
+  \item (3 points) Let \(C\) be a simple closed smooth curve that lies in the plane \(x + y + z = 1\). (This is the same plane as on the pervious problem, so you can use some of that work if you'd like.) Use Stokes' Theorem to show that the value of the line integral \(\displaystyle \int_{C} z \, dx - 2x \, dy + 3y \, dz\) has a value which only depends on the area of the region enclosed by \(C\), and does therefore not depend on the particular shape of \(C\) or its actual location within the plane. [Hint: Set up and work the integral given by usings Stokes' -- you'll see that the integral will eventually look like \(\iint_{S} dS\). Think about why that might be useful.]
+        \sol{
+
+        }
 \end{enumerate}
 \end{document}

@@ -186,3 +186,5 @@ krait
 Nicotinic
 tyre
 Hypnopompic
+sulci
+Cytoarchitectual
