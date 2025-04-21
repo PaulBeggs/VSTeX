@@ -551,3 +551,53 @@ We can now solve our integral:
     &= 32 \cdot 2\pi \cdot \left[ \frac{1}{4}u^{4}\right]_{0}^{1} \\
     &= 16\pi.
 \end{align*}
+
+\newpage
+
+\section{Surface Integrals of the Curl}
+
+What does 
+\[
+    \iint_S (\nabla \times \mb{F}) \cdot dS = \iint_S (\nabla \times \mb{F}) \cdot \mb{N} \, dS
+\]
+measure? The curl is a vector, whose magnitude is the amount of circulation \(\mb{F}\) creates. Imagine a spinning disk – the size of the curl is how fast the disk is spinning. \\
+
+But since it is a vector, it has direction as well! The curl points normally (orthogonally) to the plane of circulation – it is like torque. So, to find the circulation in a two dimensional surface, we want to dot the curl into the surface’s normal vector! 
+
+\subsection{Green's Theorem – Flat Surfaces}
+
+Green’s Theorem for circulation tells us that for \(\mb{F}\) defined on a two dimensional planar region \(D\) with positively oriented closed boundary \(C\), the
+\[
+    \oint_C \mb{F} \cdot d\mb{r} = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) dA.
+\]
+Look at the integrand in the last integral – this is just the two-dimensional curl, so we can rewrite Green’s Theorem (Circulation Form) as
+\[
+    \oint_C \mb{F} \cdot d\mb{r} = \iint_D (\nabla \times \mb{F}) \cdot k \, dA,
+\]    
+where we understand that the \(k\) component of \(\mb{F}\) has value 0, so that our unit normal is always \(k\). \\
+
+\subsection{Stokes' Theorem}
+
+Suppose that \(S \subseteq \mathbb{R}^3\) is a positively oriented piecewise smooth surface with closed simple boundary \(C\). Then,
+\[
+    \oint_C \mb{F} \cdot d\mb{r} = \iint_S (\nabla \times \mb{F}) \cdot dS.
+\]
+This is just the extension for Green’s Theorem (Circulation Form) from a flat, planar region to a more general two dimensional surface embedded in \(\mathbb{R}^3\). It tells us that the total circulation of \(\mb{F}\) along the surface \(S\) can be found by finding the circulation of \(\mb{F}\) along the boundary curve \(C\).
+
+\subsubsection{Closed Surfaces}
+
+Suppose that \(S\) is a closed surface – that it, it contains some volume. Then, since \(S\) has no boundary curve,
+\[
+    \iint_S (\nabla \times \mb{F}) \cdot dS = 0.
+\]
+That is, the integral of the curl of any vector field over a closed surface is always zero. \\
+
+But be careful: This is only true when you have a surface integral of a curl, and when the surface itself is closed. This is sort of the equivalent of conservative vector fields, but at one more dimension:
+\begin{itemize}
+    \item A conservative vector field is one which is the gradient of some scalar function – and its line integral over a closed curve is always 0.
+    \item A vector field which is the curl of some other vector field is sometimes called \cyanit{solenoidal} – the flux surface integral of a solenoidal field over a closed surface is always 0.
+    \item Formally, a solenoidal field is one for which \(\nabla \cdot \mb{F} = 0\), but if \(\mb{G} = \nabla \times \mb{H}\), we know that
+    \[
+        \nabla \cdot \mb{G} = \nabla \cdot (\nabla \times \mb{H}) = 0.
+    \]
+\end{itemize}
