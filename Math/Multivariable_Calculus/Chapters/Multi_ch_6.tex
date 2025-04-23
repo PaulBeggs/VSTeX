@@ -601,3 +601,140 @@ But be careful: This is only true when you have a surface integral of a curl, an
         \nabla \cdot \mb{G} = \nabla \cdot (\nabla \times \mb{H}) = 0.
     \]
 \end{itemize}
+
+\newpage
+
+\section{The Divergence Theorem}
+
+Suppose that \(E \subseteq \R^{3}\) is a simple solid region and \(S\) is the closed boundary surface with positive orientation – that is, \(N\) points outward. Let \(\mb{F}\) be a vector field defined on \(E\) with continuous partials. Then,
+\[
+    \iint_S \mb{F} \cdot dS = \iiint_E (\nabla \cdot \mb{F}) \, dV.
+\]
+Recall that the left side of this measures the flux of \(\mb{F}\) through \(S\) – that is how much of the vector field passes through (in a positive way) \(S\). The right side adds up the divergence throughout \(E\) – but for all interior points, the divergence cancels out.
+
+\subsection{Interpretation}
+
+Suppose that \(\mb{v}(x,y,z)\) is the velocity of a fluid with constant density \(\rho\), so that \(\mb{F} = \rho\mb{v}\) is the rate of flow per unit volume. Consider a point \(P_0\) and place a small ball of radius \(a\), \(B_a\), with \(P_0\) as its center. For any point \(P\) in the ball, \(\text{div} \, \mb{F}(P) \approx \text{div} \, \mb{F}(P_0)\), and this approximation gets better as \(a \to 0\). Thus, in the ball, we can treat the divergences of \(\mb{F}\) as a constant, \(\text{div} \, \mb{F}(P_0)\). \\
+
+Let \(S_{a}\) be the boundary of \(B_a\), and then the flux across \(S\) is
+\begin{align*}
+    \iint_{S_a} \mb{F} \cdot dS &= \iiint_{B_a} (\nabla \cdot \mb{F}) \, dV \\
+    &\approx \iiint_{B_a} \text{div} \, \mb{F}(P_0) \, dV \\
+    &= \text{div} \, \mb{F}(P_0) \cdot \text{volume}(B_a).
+    \intertext{Rearranging and taking a limit as \(a \to 0\), we find}
+    \text{div} \, \mb{F}(P_0) &= \lim_{a \to 0} \frac{1}{\text{volume}(B_a)} \iint_{S_a} \mb{F} \cdot dS \\
+\end{align*}
+
+\subsection{Vector Calculus – Summary}
+
+Each of the following can be interpreted as a version of the Fundamental Theorem of Calculus:
+\begin{itemize}
+    \item The Fundamental Theorem of Calculus:
+    \[
+        \int_a^b F'(x) \, dx = F(b) - F(a)
+    \]
+    \begin{itemize}
+        \item That is, the integral of the rate of change of some continuous function over an interval is just the total net change of the function over that interval.
+    \end{itemize}
+    \item The Fundamental Theorem of Line Integrals:
+    \[
+        \int_C \nabla f \cdot dr = f(r(b)) - f(r(a))
+    \]
+    \begin{itemize}
+        \item That is, the integral of a conservative vector field over a curve is the change in the potential function from the beginning to the end of the curve.
+    \end{itemize}
+    \item Green’s Theorem (circulation form): 
+    \[
+        \oint_C \mb{F} \cdot T \, ds = \oint_C \mb{F} \cdot dr = \oint_C P \, dx + Q \, dy = \iint_D (Q_x - P_y) \, dA
+    \]
+    \begin{itemize}
+        \item That is, the integral of a vector field over the positively oriented boundary \(C\) (i.e. the circulation of \(\mb{F}\) with \(C\)) of a region \(D \subseteq \mathbb{R}^2\) finds the sum of the microscopic circulation throughout all of \(D\).
+        \item The reason that \(Q_x - P_y\) measures microscopic circulation (in a counter-clockwise direction): As you move a small amount to the right, if \(Q\) has increased and/or if you move a small amount up \(P\) has decreased both mean that a small loop will tend to rotate counter-clockwise.
+        \item This is the 2-D, planar version of Stokes’ Theorem. (Notice that \(Q_x - P_y\) is the 2-D version of curl.)
+    \end{itemize}
+    \item Green’s Theorem (flux form):
+    \[
+        \oint_C \mb{F} \cdot N \, ds = \oint_C -Q \, dx + P \, dy = \iint_D (P_x + Q_y) \, dA
+    \]
+    \begin{itemize}
+        \item That is, the flux integral of a vector field over the positively oriented boundary \(C\) (i.e. the flux of \(\mb{F}\) across \(C\)) of a region \(D \subseteq \mathbb{R}^2\) finds the sum of the microscopic flux throughout all of \(D\).
+        \item The reason that \(P_x + Q_y\) measures microscopic flux over a small loop: if \(P\) is increasing, there is more flux on the right (positive) then on the left (negative, since inward pointing).
+        \item This is the 2-D, planar version of the Divergence Theorem. (Notice that \(P_x + Q_y\) is the 2-D version of divergence.)
+    \end{itemize}
+    \item Stokes’ Theorem:
+    \[
+        \oint_C \mb{F} \cdot T \, ds = \oint_C \mb{F} \cdot dr = \iint_S (\nabla \times \mb{F}) \cdot N \, dS = \iint_S \nabla \times \mb{F} \cdot dS
+    \]
+    \begin{itemize}
+        \item This is the generalization of Green’s Theorem (circulation form) to space, rather than just the plane.
+        \item The integral of a vector field over the boundary \(C\) (i.e. the circulation of \(\mb{F}\) with \(C\)) of a region \(S \subseteq \mathbb{R}^3\) finds the sum of the microscopic circulation throughout all of \(S\).
+        \item The reason is that \(\nabla \times \mb{F}\) is the microscopic circulation in an infinitesimal loop embedded in \(S\). You are summing these all up, and except for those along the boundary, the circulations all cancel out.
+    \end{itemize}
+    \item The Divergence Theorem:
+    \[
+        \iint_S \mb{F} \cdot dS = \iiint_E (\nabla \cdot \mb{F}) \, dV
+    \]
+    \begin{itemize}
+        \item This is the generalization of Green’s Theorem (flux form) to space, rather than just the plane.
+        \item The flux integral of a vector field over the positively oriented boundary \(C\) (i.e. the flux of \(\mb{F}\) across \(C\)) of a region \(E \subseteq \mathbb{R}^3\) finds the sum of the microscopic flux throughout all of \(E\).
+        \item The reason is that \(\nabla \cdot \mb{F}\) is the microscopic flux in an infinitesimal loop embedded in \(E\). You are summing these all up, and except for those along the boundary, the divergences all cancel out.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Maxwell's Equations}
+
+Many of the ideas of vector calculus come from understanding the laws that govern electricity and magnetism. Though credit goes to a lot of folks, the three names that are often highlighted are:
+\begin{itemize}
+    \item Michael Faraday (1791-1867), who built the first electromagnetic motor and experimentally showed that changing magnetic fields induce electric fields and vice-versa.
+    \item James Clerk Maxwell (1831-1879), who first collated the equations that describe the electric and magnetic fields.
+    \item Oliver Heaviside (1850-1925), who gave Maxwell’s equations their modern form, and (along with others), formally developed vector calculus.
+\end{itemize}
+\textbf{Notation.} We will use \(E\) for the electric field, \(B\) for the magnetic field, \(\rho\) for the electric charge density, \(J\) the current density, \(\epsilon_0\) the electric permittivity, and \(\mu_0\) the magnetic permittivity. \\
+
+We will let \(C\) be a boundary curve for a surface \(S\), and \(S\) the boundary surface for a volume \(\Sigma\). 
+
+\newpage
+
+\begin{footnotesize}
+\begin{tabular}[htbp]{lll}
+    \toprule
+    \textbf{Name} & \textbf{General Form} & \textbf{Differential Form} \\ \midrule
+    Gauss's Law & \(\displaystyle \oiint_{S} \mb{E} \cdot d\mb{S} = \frac{1}{\epsilon_{0}} \iiint_{\Sigma} \rho dV\) & \(\nabla \cdot \mb{E} = \frac{\rho}{\epsilon_{0}}\) \\ \midrule
+    Gauss's Law for Magnetism & \(\displaystyle \oiint_{S} \mb{B} \cdot d\mb{S} = 0\) & \(\nabla \cdot \mb{B} = 0\) \\ \midrule
+    Faraday's Law of Induction & \(\displaystyle \oint_{C} \mb{E} \cdot d\mb{r} = -\frac{d}{dt} \oiint_{S} \mb{B} \cdot d\mb{S}\) & \(\displaystyle \nabla \times \mb{E} = -\frac{\partial \mb{B}}{\partial t}\) \\ \midrule
+    Ampere's Law & \(\displaystyle \oint_{C} \mb{B} \cdot d\mb{r} = \mu_{0}\left(\iint_{S}\mb{J} \cdot d\mb{S} + \epsilon_{0} \frac{d}{dt} \iint_{S} \mb{E} \cdot d\mb{S}\right)\) & \(\displaystyle \nabla \times \mb{B} = \mu_{0} \left(J + \epsilon_{0} \frac{\partial \mb{E}}{\partial t}\right)\) \\ \bottomrule
+\end{tabular}
+\end{footnotesize}
+
+\subsubsection{Interpretations}
+
+\textbf{Gauss' Law} \\
+
+The flux of the electric field over any closed surface is the integral of the charge density over the volume enclosed by that surface, divided by the electric permittivity; the divergence of the electric field is the charge density divided by the permittivity. This can be used to show that the electric force follows an inverse square law. \\
+
+\textbf{Gauss' Law for Magnetism} \\
+
+The divergence of the magnetic field is zero, which says that magnetic monopoles do not exist! The net flux of the magnetic field through any closed surface is 0, and so there is no free magnetic “charge.” \\
+
+\textbf{Faraday's Law of Induction} \\
+
+The circulation (the “electromotive force”) around a closed loop matches the time-changing flux of the magnetic field through any surface bounded by that loop. Or, a changing magnetic field will induce a current along a closed loop. A time-varying magnetic field will always create a non-conservative electric field, and so work can be performed in on charges in a closed loop. \\
+
+\textbf{Ampere's Law} \\
+
+The flux of the current density and the time-varying change of the flux in the electric field each produce magnetic circulation in a closed loop. This explains why the total current in a surface enclosed by the loop is proportional to the magnetic circulation.
+
+
+
+% Gauss’ Law for Magnetism
+% The divergence of the magnetic field is zero, which says that magnetic monopoles do not exist! The net flux
+% of the magnetic field through any closed surface is 0, and so there is no free magnetic “charge.”
+% Faraday’s Law of Induction
+% The circulation (the “electromotive force”) around a closed loop matches the time-changing flux of the
+% magnetic field through any surface bounded by that loop. Or, a changing magnetic field will induce a
+% current along a closed loop. A time-varying magnetic field will always create a non-conservative electric
+% field, and so work can be performed in on charges in a closed loop.
+% Ampere’s Law
+% The flux of the current density and the time-varying change of the flux in the electric field each produce
+% magnetic circulation in a closed loop. This explains why the total current in a surface enclosed by the loop
+% is proportional to the magnetic circulation.
