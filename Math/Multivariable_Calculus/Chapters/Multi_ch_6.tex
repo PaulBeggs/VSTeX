@@ -558,7 +558,7 @@ We can now solve our integral:
 
 What does 
 \[
-    \iint_S (\nabla \times \mb{F}) \cdot dS = \iint_S (\nabla \times \mb{F}) \cdot \mb{N} \, dS
+    \iint_S (\nabla \times \mb{F}) \cdot d\mb{S} = \iint_S (\nabla \times \mb{F}) \cdot \mb{N} \, dS
 \]
 measure? The curl is a vector, whose magnitude is the amount of circulation \(\mb{F}\) creates. Imagine a spinning disk – the size of the curl is how fast the disk is spinning. \\
 
@@ -622,7 +622,7 @@ Let \(S_{a}\) be the boundary of \(B_a\), and then the flux across \(S\) is
     &\approx \iiint_{B_a} \text{div} \, \mb{F}(P_0) \, dV \\
     &= \text{div} \, \mb{F}(P_0) \cdot \text{volume}(B_a).
     \intertext{Rearranging and taking a limit as \(a \to 0\), we find}
-    \text{div} \, \mb{F}(P_0) &= \lim_{a \to 0} \frac{1}{\text{volume}(B_a)} \iint_{S_a} \mb{F} \cdot dS \\
+    \text{div} \, \mb{F}(P_0) &= \lim_{a \to 0} \frac{1}{\text{volume}(B_a)} \iint_{S_a} \mb{F} \cdot d\mb{S}
 \end{align*}
 
 \subsection{Vector Calculus – Summary}
@@ -638,14 +638,14 @@ Each of the following can be interpreted as a version of the Fundamental Theorem
     \end{itemize}
     \item The Fundamental Theorem of Line Integrals:
     \[
-        \int_C \nabla f \cdot dr = f(r(b)) - f(r(a))
+        \int_C \nabla f \cdot d\mb{r} = f(r(b)) - f(r(a))
     \]
     \begin{itemize}
         \item That is, the integral of a conservative vector field over a curve is the change in the potential function from the beginning to the end of the curve.
     \end{itemize}
     \item Green’s Theorem (circulation form): 
     \[
-        \oint_C \mb{F} \cdot T \, ds = \oint_C \mb{F} \cdot dr = \oint_C P \, dx + Q \, dy = \iint_D (Q_x - P_y) \, dA
+        \oint_C \mb{F} \cdot \mb{T} \, ds = \oint_C \mb{F} \cdot d\mb{r} = \oint_C P \, dx + Q \, dy = \iint_D (Q_x - P_y) \, dA
     \]
     \begin{itemize}
         \item That is, the integral of a vector field over the positively oriented boundary \(C\) (i.e. the circulation of \(\mb{F}\) with \(C\)) of a region \(D \subseteq \mathbb{R}^2\) finds the sum of the microscopic circulation throughout all of \(D\).
@@ -654,7 +654,7 @@ Each of the following can be interpreted as a version of the Fundamental Theorem
     \end{itemize}
     \item Green’s Theorem (flux form):
     \[
-        \oint_C \mb{F} \cdot N \, ds = \oint_C -Q \, dx + P \, dy = \iint_D (P_x + Q_y) \, dA
+        \oint_C \mb{F} \cdot \mb{N} \, ds = \oint_C -Q \, dx + P \, dy = \iint_D (P_x + Q_y) \, dA
     \]
     \begin{itemize}
         \item That is, the flux integral of a vector field over the positively oriented boundary \(C\) (i.e. the flux of \(\mb{F}\) across \(C\)) of a region \(D \subseteq \mathbb{R}^2\) finds the sum of the microscopic flux throughout all of \(D\).
@@ -663,7 +663,7 @@ Each of the following can be interpreted as a version of the Fundamental Theorem
     \end{itemize}
     \item Stokes’ Theorem:
     \[
-        \oint_C \mb{F} \cdot T \, ds = \oint_C \mb{F} \cdot dr = \iint_S (\nabla \times \mb{F}) \cdot N \, dS = \iint_S \nabla \times \mb{F} \cdot dS
+        \oint_C \mb{F} \cdot \mb{T} \, ds = \oint_C \mb{F} \cdot d\mb{r} = \iint_S (\nabla \times \mb{F}) \cdot \mb{N} \, dS = \iint_S \nabla \times \mb{F} \cdot d\mb{S}
     \]
     \begin{itemize}
         \item This is the generalization of Green’s Theorem (circulation form) to space, rather than just the plane.
@@ -689,22 +689,25 @@ Many of the ideas of vector calculus come from understanding the laws that gover
     \item James Clerk Maxwell (1831-1879), who first collated the equations that describe the electric and magnetic fields.
     \item Oliver Heaviside (1850-1925), who gave Maxwell’s equations their modern form, and (along with others), formally developed vector calculus.
 \end{itemize}
-\textbf{Notation.} We will use \(E\) for the electric field, \(B\) for the magnetic field, \(\rho\) for the electric charge density, \(J\) the current density, \(\epsilon_0\) the electric permittivity, and \(\mu_0\) the magnetic permittivity. \\
-
-We will let \(C\) be a boundary curve for a surface \(S\), and \(S\) the boundary surface for a volume \(\Sigma\). 
 
 \newpage
 
+\textbf{Notation.} We will use \(E\) for the electric field, \(B\) for the magnetic field, \(\rho\) for the electric charge density, \(J\) the current density, \(\epsilon_0\) the electric permittivity, and \(\mu_0\) the magnetic permittivity. \\
+
+We will let \(C\) be a boundary curve for a surface \(S\), and \(S\) the boundary surface for a volume \(\Sigma\). \\
+
+\begin{center}
 \begin{footnotesize}
 \begin{tabular}[htbp]{lll}
     \toprule
     \textbf{Name} & \textbf{General Form} & \textbf{Differential Form} \\ \midrule
     Gauss's Law & \(\displaystyle \oiint_{S} \mb{E} \cdot d\mb{S} = \frac{1}{\epsilon_{0}} \iiint_{\Sigma} \rho dV\) & \(\nabla \cdot \mb{E} = \frac{\rho}{\epsilon_{0}}\) \\ \midrule
     Gauss's Law for Magnetism & \(\displaystyle \oiint_{S} \mb{B} \cdot d\mb{S} = 0\) & \(\nabla \cdot \mb{B} = 0\) \\ \midrule
-    Faraday's Law of Induction & \(\displaystyle \oint_{C} \mb{E} \cdot d\mb{r} = -\frac{d}{dt} \oiint_{S} \mb{B} \cdot d\mb{S}\) & \(\displaystyle \nabla \times \mb{E} = -\frac{\partial \mb{B}}{\partial t}\) \\ \midrule
+    Faraday's Law of Induction & \(\displaystyle \oint_{C} \mb{E} \cdot d\mb{r} = -\frac{d}{dt} \iint_{S} \mb{B} \cdot d\mb{S}\) & \(\displaystyle \nabla \times \mb{E} = -\frac{\partial \mb{B}}{\partial t}\) \\ \midrule
     Ampere's Law & \(\displaystyle \oint_{C} \mb{B} \cdot d\mb{r} = \mu_{0}\left(\iint_{S}\mb{J} \cdot d\mb{S} + \epsilon_{0} \frac{d}{dt} \iint_{S} \mb{E} \cdot d\mb{S}\right)\) & \(\displaystyle \nabla \times \mb{B} = \mu_{0} \left(J + \epsilon_{0} \frac{\partial \mb{E}}{\partial t}\right)\) \\ \bottomrule
 \end{tabular}
 \end{footnotesize}
+\end{center}
 
 \subsubsection{Interpretations}
 
