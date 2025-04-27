@@ -17,6 +17,7 @@
 *.bcf
 *.xdv
 *.synctex(busy)
+*.synctex.gz
 
 
 # Ignore backup files

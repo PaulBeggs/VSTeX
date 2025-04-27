@@ -6,7 +6,7 @@
 \usepackage{amsmath,amsthm} 
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
-\usepackage{draculatheme}
+% \usepackage{draculatheme}
 \usepackage{mathrsfs}
 \usepackage{changepage}
 \usepackage{multicol}
@@ -33,8 +33,8 @@
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
-  backgroundcolor=draculabg, % Needed for Dracula theme
-  fontcolor=draculafg, % Needed for Dracula theme
+  % backgroundcolor=draculabg, % Needed for Dracula theme
+  % fontcolor=draculafg, % Needed for Dracula theme
   innertopmargin=0pt,
   innerbottommargin=5pt,
   innerrightmargin=10pt,
@@ -181,18 +181,18 @@
 % !TeX spellcheck = off
 \newcommand{\foo}[2]{%
   % #1: math style, #2: content
-  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
   \begin{tikzpicture}[baseline=(sqrt.base)]
-    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \node[inner sep=0, outer sep=0] (sqrt) {\(#1\sqrt{#2}\)}; % Use the current math style
     \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
   \end{tikzpicture}%
 }
 % !TeX spellcheck = off
 \newcommand{\foodisplay}[2]{%
   % #1: math style, #2: content
-  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
   \begin{tikzpicture}[baseline=(sqrt.base)]
-    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \node[inner sep=0, outer sep=0] (sqrt) {\(\displaystyle\sqrt{#2}\)}; % Force displaystyle
     \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
   \end{tikzpicture}%
 }
@@ -261,49 +261,192 @@
 \begin{enumerate}
   \item (3 points each) Let \(\mb{F}(x,y,z) = \langle xy^{2},y + xe^{x},x^{2}\sin(yz) \rangle\), and consider the point \((3,2,0)\).
         \begin{enumerate}
-          \item Find \(\nabla \cdot \mb{F}\) at the given point.
+          \item Find \(\nabla \cdot \mb{F}\) at the given point. \\
                 \sol{
-                  Note this answer will be a scalar.
+                  We use the formula:
+                  \[
+                    \nabla \cdot \mb{F} = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}.
+                  \]
+                  This is fairly straightforward:
+                  \[
+                    \frac{\partial}{\partial x}(xy^{2}) + \frac{\partial}{\partial y}(y + xe^{x}) + \frac{\partial}{\partial z}(x^{2}\sin(yz)) \quad = \quad 2y + e^{x} + xy\cos(yz).
+                  \]
+                  Evaluated at the point \((3,2,0)\), we have:
+                  \[
+                    4 + 1 + 0 = \boxed{5}.
+                  \]
                 }
-          \item Find \(\nabla \times \mb{F}\) at the given point.
+          \item Find \(\nabla \times \mb{F}\) at the given point. \\
                 \sol{
-                  Note this answer will be a vector.
+                Using the formula:
+                \[
+                  \nabla \times \mb{F} = \left\langle \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}, \, \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}, \, \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right\rangle,
+                \]
+                Evaluating at the point \((3,2,0)\), we have:
+                \[
+                  \left\langle -3e^{0}, -6\sin(0), 1 - 12\right\rangle = \boxed{\left\langle -3, 0, -11 \right\rangle}.
+                \]
+
                 }
         \end{enumerate}
+
+        \newpage
   \item On Practice Set V, you found the circulation of \(\mb{F} = \left\langle xy, \, x^{2}y^{3} \right\rangle\) along \(C\), where \(C\) is the counter-clockwise oriented triangle with vertices \((0,0)\), \((1,0)\), and \((1,2)\) by directing finding the three separate line integrals. Now,
         \begin{enumerate}
-          \item (3 points) Evaluate this integral using Green's Theorem.
+          \item (3 points) Evaluate this integral using Green's Theorem. \\
                 \sol{
-
+                  Using Green's Theorem for circulation, we get:
+                  \[
+                    \iint_{C} \left(\frac{\p Q}{\p x} - \frac{\p p}{\p y}\right) \, dA = \int_{0}^{1} \int_{0}^{2x} \left(3x^{2}y^{2} - 2xy\right) \, dy \, dx.
+                  \]
+                  Solving, we get:
+                  \begin{align*}
+                    \int_{0}^{1} \left[ x \left(\frac{1}{2}y^{4} - y\right) \right]_{0}^{2x} \, dx & = \int_{0}^{1} \left[ x \left(\frac{1}{2}(2x)^{4} - 2x\right) \right] \, dx \\
+                                                                                                   & = \int_{0}^{1} \left(8x^{5} - 2x^{2}\right) \, dx                           \\
+                                                                                                   & = \left[ \frac{8}{6}x^{6} - \frac{2}{3}x^{3} \right]_{0}^{1}                \\
+                                                                                                   & = \boxed{\frac{2}{3}}.
+                  \end{align*}
                 }
-          \item \mbox{(1 point) Does this match the answer that you (or Prof. Seme, on the Key for Practice Set V) got?}
+          \item \mbox{(1 point) Does this match the answer that you (or Prof. Seme, on the Key for Practice Set V) got?} \\
                 \sol{
-                  The answer I got on Practice Set V was \(\frac{2}{3}\), so these answers 
+                  The answer I got on Practice Set V was \(\frac{2}{3}\), so these answers match.
                 }
-          \item (1 point) Does one method feel easier or more intuitive to you? Why? (There are not really wrong answers -- just write something coherent.)
+          \item (1 point) Does one method feel easier or more intuitive to you? Why? (There are not really wrong answers -- just write something coherent.) \\
                 \sol{
-
+                  I think that Green's Theorem is a bit easier to use, since it allows us to evaluate the integral over the entire region rather than having to break it up into three separate line integrals. However, I can see how the line integral method would be more intuitive for some people, since it is more direct and doesn't require any extra steps.
                 }
         \end{enumerate}
+
+        \newpage
   \item (3 points) On Practice Set V, you found the flux of \(\mb{F} = \left\langle xy, \, x^{2}y^{3} \right\rangle\) along \(C\), where \(C\) is the counter-clockwise oriented triangle with vertices \((0,0)\), \((1,0)\), and \((1,2)\) by directing finding the three separate line integrals. Now, use Green's Theorem again. You are encouraged to compare your answer to \#9 on Practice Set V (or the key for that assignment).
         \sol{
-          (I got the answer of 2 on Practice Set V)
+          Using Green's Theorem for flux, we get:
+          \begin{align*}
+            \oint_{C} \mb{F} \cdot d\mb{r} & = \iint_{C} \left(\frac{\p Q}{\p x} + \frac{\p P}{\p y}\right) \, dA       \\
+                                           & = \int_{0}^{1} \int_{0}^{2x} \left( y + 3x^{2}y^{2} \right) \, dy \, dx    \\
+                                           & = \int_{0}^{1} \left[ \frac{1}{2}y^{2} + x^{2}y^{3} \right]_{0}^{2x} \, dx \\
+                                           & = \int_{0}^{1} \left[ 2x^{2} + 8x^{5} \right] \, dx                        \\
+                                           & = \left[ \frac{2}{3}x^{3} + \frac{8}{6}x^{6} \right]_{0}^{1}               \\
+                                           & = \boxed{2}.
+          \end{align*}
         }
+        \newpage
   \item (3 points) Find \(\displaystyle \iint_{S}x^{2} \, dS\), where \(S\) is the triangle with vertices \((1,0,0)\), \((0,-2,0)\), and \((0,0,4)\).
         \sol{
+        Parameterize the triangular surface:
+        \[
+          \mb{r}(u,v) = (1,0,0)(1-u-v) + (0,-2,0)u + (0,0,4)v = (1-u-v, -2u, 4v)
+        \]
+        where \(0 \leq u,v\) and \(u+v \leq 1\).
 
+        Computing the tangent vectors:
+        \[
+          \mb{t}_u = (-1,-2,0) \quad \text{and} \quad \mb{t}_v = (-1,0,4)
+        \]
+
+        The normal vector is:
+        \[
+          \mb{n} = \mb{t}_u \times \mb{t}_v = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ -1 & -2 & 0 \\ -1 & 0 & 4 \end{vmatrix} = (-8,4,-2)
+        \]
+
+        The magnitude of this normal vector gives the area element:
+        \[
+          \|\mb{t}_u \times \mb{t}_v\| = \mysqrt{64+16+4} = \mysqrt{84} = 2\mysqrt{21}
+        \]
+
+        Now we can evaluate the surface integral:
+        \[
+          \iint_{S}x^{2} \, dS = \iint_{D}(1-u-v)^2 \cdot 2\mysqrt{21} \, du \, dv
+        \]
+
+        Computing this double integral:
+        \begin{align*}
+          2\mysqrt{21}\int_{0}^{1}\int_{0}^{1-u}(1-u-v)^2 \, dv \, du & = 2\mysqrt{21}\int_{0}^{1}\left[\frac{-(1-u-v)^3}{3}\right]_{0}^{1-u} \, du       \\
+                                                                      & = 2\mysqrt{21}\int_{0}^{1}\left[\frac{-(0)^3}{3} + \frac{(1-u)^3}{3}\right] \, du \\
+                                                                      & = \frac{2\mysqrt{21}}{3}\int_{0}^{1}(1-u)^3 \, du                                 \\
+                                                                      \intertext{We make the substitution \(v = 1 - u\) to get \(dv = - du\). Note this flips the limits of integration, but the negative sign cancels that out, so we can keep the limits as they are.}
+                                                                      & = \frac{2\mysqrt{21}}{3}\int_{0}^{1}v^3 \, dv                                   \\
+                                                                      & = \frac{2\mysqrt{21}}{3}\left[\frac{v}{4}\right]_{0}^{1}                                        \\
+                                                                      & = \boxed{\frac{\mysqrt{21}}{6}}.
+        \end{align*}
         }
+        \newpage
   \item \mbox{(3 points) Let \(\mb{F}(x,y,z) = \left\langle x, y, z^{2} \right\rangle\) and \(S\) be the unit sphere with positive orientation. Find \(\displaystyle \iint_{S} \mb{F} \cdot d\mb{S}\).}
         \sol{
+          Apply the Divergence Theorem since \(S\) is a closed surface:
+          \[
+            \iint_{S} \mb{F} \cdot d\mb{S} = \iiint_{V} \nabla \cdot \mb{F} \, dV.
+          \]
+          First, compute the divergence of \(\mb{F}\):
+          \[
+            \nabla \cdot \mb{F} = \frac{\partial}{\partial x}(x) + \frac{\partial}{\partial y}(y) + \frac{\partial}{\partial z}(z^2) = 1 + 1 + 2z = 2 + 2z
+          \]
+          Now, integrate this using spherical coordinates:
+          \[
+            \iiint_{V} (2 + 2z) \, dV = 2\iiint_{V} \, dV + 2\iiint_{V} z \, dV
+          \]
 
+          The first term is simply \(2\) times the volume of the unit sphere: \(2 \cdot \frac{4\pi}{3}(1)^{3} = \frac{8\pi}{3}\)
+
+          For the second term, \(\iiint_{V} z \, dV = 0\) because the sphere is symmetric about the \(xy\)-plane, and the positive and negative contributions to the integral cancel out.
+
+          Therefore: \(\displaystyle \iint_{S} \mb{F} \cdot d\mb{S} = \boxed{\frac{8\pi}{3}}\)
         }
+        \newpage
   \item (3 points) Use Stokes' Theorem to find \(\displaystyle \int_{C} \mb{F} \cdot d\mb{r}\), where \(\mb{F}(x,y,z) = \left\langle x^{2}z, \, xy^{2}, \, z^{2} \right\rangle\) and \(C\) is the curve of intersection between the plane \(x + y + z = 1\) and the cylinder \(x^{2} + y^{2} = 9\), oriented counter-clockwise when viewed from above.
         \sol{
+          By Stokes' Theorem:
+          \[
+            \int_{C} \mb{F} \cdot d\mb{r} = \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S}.
+          \]
 
+          Compute the curl of \(\mb{F}\):
+          \[
+            \nabla \times \mb{F} = \begin{vmatrix} \mb{i} & \mb{j} & \mb{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ x^2z & xy^2 & z^2 \end{vmatrix}
+          \]
+
+          Hence, we have:
+          \begin{align*}
+            (\nabla \times \mb{F})_x & = \frac{\partial}{\partial y} (z^2) - \frac{\partial }{\partial z} (xy^2) = 0 - 0 = 0       \\
+            (\nabla \times \mb{F})_y & = \frac{\partial }{\partial z} (x^2z) - \frac{\partial }{\partial x} (z^2) = x^2 - 0 = x^2  \\
+            (\nabla \times \mb{F})_z & = \frac{\partial }{\partial x} (xy^2) - \frac{\partial }{\partial y} (x^2z) = y^2 - 0 = y^2
+          \end{align*}
+
+          Thus, \(\nabla \times \mb{F} = \langle 0, x^2, y^2 \rangle\).
+
+          We can parameterize the surface \(S\) using the plane equation \(x + y + z = 1\) and the cylinder equation \(x^2 + y^2 = 9\):
+          \[
+            \mb{r} (u,v) = \langle u, v, 1 - u - v \rangle.
+          \]
+          Finding the normal vector, we see that:
+          \[
+            \mb{n} = \| \mb{t}_u \times \mb{t}_v \| = \left\langle 1, 1, 1 \right\rangle.
+          \]
+          Setting up the flux integral, we see that:
+          \[
+            \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S} = \iint_{S} (0, x^2, y^2) \cdot (1, 1, 1) \, dS = \iint_{S} (0 + x^2 + y^2) \, dS = \iint_{S} (x^2 + y^2) \, dS.
+          \]
+          Switching to polar coordinates, we get:
+          \[
+            \iint_{D} (x^2 + y^2) \, dS = \iint_{D} (r^2) \, r \, dr \, d\theta = 2\pi \cdot \left[\frac{r^4}{4}\right]_{0}^{3} = \boxed{\frac{81\pi}{2}}.
+          \]
         }
-  \item (3 points) Let \(C\) be a simple closed smooth curve that lies in the plane \(x + y + z = 1\). (This is the same plane as on the pervious problem, so you can use some of that work if you'd like.) Use Stokes' Theorem to show that the value of the line integral \(\displaystyle \int_{C} z \, dx - 2x \, dy + 3y \, dz\) has a value which only depends on the area of the region enclosed by \(C\), and does therefore not depend on the particular shape of \(C\) or its actual location within the plane. [Hint: Set up and work the integral given by usings Stokes' -- you'll see that the integral will eventually look like \(\iint_{S} dS\). Think about why that might be useful.]
+        \newpage
+  \item (3 points) Let \(C\) be a simple closed smooth curve that lies in the plane \(x + y + z = 1\). (This is the same plane as on the previous problem, so you can use some of that work if you'd like.) Use Stokes' Theorem to show that the value of the line integral \(\displaystyle \int_{C} z \, dx - 2x \, dy + 3y \, dz\) has a value which only depends on the area of the region enclosed by \(C\), and does therefore not depend on the particular shape of \(C\) or its actual location within the plane. [Hint: Set up and work the integral given by usings Stokes' -- you'll see that the integral will eventually look like \(\iint_{S} dS\). Think about why that might be useful.]
         \sol{
-
+          For Stokes' Theorem, we need to compute the curl of \(\mb{F} = \langle z, -2x, 3y \rangle\):
+          \[
+            \nabla \times \mb{F} = \begin{vmatrix} \mb{i} & \mb{j} & \mb{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ z & -2x & 3y \end{vmatrix} = \left\langle 3, 1, -2 \right\rangle.
+          \]
+          From here, we can set up the integral:
+          \[
+            \int_{C} z \, dx - 2x \, dy + 3y \, dz = \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S} = \iint_{S} (3, 1, -2) \cdot (1, 1, 1) \, dS = \iint_{S} (3 + 1 - 2) \, dS = \iint_{S} 2 \, dS.
+          \]
+          This is \(2\) times the area of the region enclosed by \(C\). Since the area of a region does not depend on the shape of the region, we have shown that the value of the line integral does not depend on the shape of \(C\) or its location within the plane. Thus, we have:
+          \[
+            \int_{C} z \, dx - 2x \, dy + 3y \, dz = 2A,
+          \]
+          where \(A\) is the area of the region enclosed by \(C\).
         }
 \end{enumerate}
 \end{document}
