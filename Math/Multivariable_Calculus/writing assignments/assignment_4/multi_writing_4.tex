@@ -8,7 +8,7 @@
 \usepackage{setspace}
 \usepackage{geometry}
 \usepackage{float}
-\usepackage{draculatheme}
+% \usepackage{draculatheme}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -21,6 +21,7 @@
 \usepackage{multirow, bigdelim}
 \usepackage{marginnote}
 \usepackage{lipsum}
+\usepackage{multicol}
 \usepackage{neuralnetwork}
 \usepackage{subfigure}
 \usepackage{slashed}
@@ -57,31 +58,31 @@
 }
 
 \newcommand{\sol}[1]{
-    \begin{customframedproof}[linecolor=orangehdx!75,]
-        \begin{solution}
-        #1
-        \end{solution}
-    \end{customframedproof}
+	\begin{customframedproof}[linecolor=orangehdx!75,]
+		\begin{solution}
+		#1
+		\end{solution}
+	\end{customframedproof}
 }
 \allowdisplaybreaks
 
 % !TeX spellcheck = off
 \newcommand{\foo}[2]{%
-  % #1: math style, #2: content
-  \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
-  \begin{tikzpicture}[baseline=(sqrt.base)]
-    \node[inner sep=0, outer sep=0] (sqrt) {\(#1\sqrt{#2}\)}; % Use the current math style
-    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
-  \end{tikzpicture}%
+	% #1: math style, #2: content
+	\sbox0{\( #1\sqrt{#2} \)}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {\( #1\sqrt{#2} \)}; % Use the current math style
+		\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  	\end{tikzpicture}%
 }
 % !TeX spellcheck = off
 \newcommand{\foodisplay}[2]{%
-  % #1: math style, #2: content
-  \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
-  \begin{tikzpicture}[baseline=(sqrt.base)]
-    \node[inner sep=0, outer sep=0] (sqrt) {\(\displaystyle\sqrt{#2}\)}; % Force displaystyle
-    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
-  \end{tikzpicture}%
+	% #1: math style, #2: content
+	\sbox0{\( #1\sqrt{#2} \)}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {\( \displaystyle\sqrt{#2} \)}; % Force displaystyle
+		\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
 }
 
 \newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
@@ -106,13 +107,17 @@
 
 \newcommand{\mb}[1]{\mathbf{#1}}
 
+\newcommand{\p}{\partial}
+\newcommand{\mpfrac}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\bpfrac}[2]{\frac{\partial #1}{\partial #2}}
+
 % Define a command for custom proofs with separator
 \newcommand{\pf}[1]{
-    \vspace{\proofDistance}
-    \begin{proof}
-    #1
-    \end{proof}
-    \proofseparator
+	\vspace{\proofDistance}
+	\begin{proof}
+	#1
+	\end{proof}
+	\proofseparator
 }
 
 \setlength{\parindent}{0pt}
@@ -121,151 +126,392 @@
 \titleformat*{\section}{\Large\bfseries}
 \titleformat*{\subsection}{\large\bfseries}
 
-% Problem. We saw previously in class the second derivative test for determining whether a critical point of the scalar
-% function f(x, y) is a local maximum, local minimum, or neither. This assignment will explain why the test looks like
-% it does. We will accomplish this by the following:
-%  Show that the second derivative test works in the particular case when the function is a quadratic, with critical
-% point at the origin
-%  For a given function f, build a new function g which shifts it critical point to the origin.
-%  Make connection back to Taylor Polynomials from Calculus II to generate, for any twice-differentiable scalar
-% function, the second-order Taylor polynomial at a critical point
-%  Show that the Taylor Polynomial behaves according to the second derivative test – and argue that its “parent”
-% function must do so as well.
-% 1. Consider the paraboloid q(x, y) = ax2 + bxy + cy2, where we will assume that a, c ̸= 0. We will investigate the
-% behavior of q at its critical point.
-% (a) Assume that b2 − 4ac ̸= 0. Show that (0, 0) is the only critical point.
-% (b) By completing the square, show that
-% q(x, y) = a
-% "
-% x +
-% b
-% 2a
-% y
-% 2
-% +
-% 
-% 4ac − b2
-% 4a2
-% 
-% y2
-% #
-% .
-% (c) Suppose that D = 4ac − b2. Without using the second derivative test:
-% i. Suppose that D > 0 and a > 0. Show that q has a local minimum at (0, 0). [Hint: Show that
-% q(0, 0) = 0. Use the fact that a and D are both positive to conclude that when x, y ̸= 0, q(x, y) > 0.]
-% ii. Suppose that D > 0 and a < 0. Show that q has a local maximum at (0, 0).
-% iii. Finally, suppose that D < 0. Show that q has a saddle point. [Hint: Explain why the tangent plane
-% at (0, 0) has equation z = 0. We wish to show that q crosses this tangent plane, by showing there
-% exist different paths for which q has opposite signs along those paths. I am happy to help here, but
-% please do not wait until two hours before this is due!]
-% (d) Point out that the value D as described above is exactly the function D(x, y) involved in the second
-% derivative test, and that the results match that test for the particular function q.
-% [The above takes care of the first bullet point – shows that the second derivative test works in the special case
-% of a quadratic, with critical point at the origin.]
-% 2. Suppose that f(x, y) is any continuous function of two variables such that each of the first and second order
-% partial derivatives are also continuous at the point (x0, y0).
-% (a) Suppose that (x0, y0) is a critical point of f and let g(x, y) = f(x + x0, y + y0) − f(x0, y0). [This just
-% makes g a “shift” of f.] Show:
-% i. g(0, 0) = 0
-% ii. gx(0, 0) = 0 = gy(0, 0), so that g has a critical point at (0, 0) and has value 0 at (0, 0) as well.
-% iii. Show that the three second-order partial derivatives of g, evaluated at (0, 0) give the same answer as
-% the second partials of f, evaluated at (x0, y0).
-% (b) Explain why the behavior of f at (x0, y0) is the same as the behavior of g at (0, 0) – that is, both have
-% a local minimum, both have a local maximum, or both have a saddle point. [Hint: Remember that g is
-% really just a shift of f.]
-% [This allows us to shift any general function f to a new function g with a critical point at the origin – though,
-% unfortunately, there is no guarantee that g is quadratic.]
-% 3. For the function g(x, y), build the quadratic polynomial Q(x, y), defined by
-% Q(x, y) = g(0, 0) + gx(0, 0)x + gy(0, 0)y +
-% 1
-% 2
-% gxx(0, 0)x2 + gxy(0, 0)xy +
-% 1
-% 2
-% gyy(0, 0)y2
-% =
-% 1
-% 2
-% gxx(0, 0)x2 + gxy(0, 0)xy +
-% 1
-% 2
-% gyy(0, 0)y2,
-% since for g, the value of the function and both first-order partials vanish at (0, 0).
-% (a) Show that g and Q have the same values, same first derivatives, and same second derivatives at the point
-% (0, 0) – and note that (0, 0) is a critical point for Q as well as g.
-% (b) Briefly explain – maybe using the Calculus II idea of a Taylor polynomial? – why we might expect that
-% g(x, y) ≈ Q(x, y) for (x, y) ≈ (0, 0).
-% (c) Then, explain why if the critical point is a local maximum for Q, it should be for g, if it is a local minimum
-% for Q, it should be for g, and so on.
-% (d) Notice that Q(x, y) = ax2 + bxy + cy2 – where you should find values for a, b, c in terms of second-order
-% partial derivatives of g.
-% (e) What does part 1 say about when Q has a max, a min, or neither?
-% (f) Turn this into an equivalent statement about when g has a max, min, or neither.
-% 4. Finally, summarize the result of this problem, as it relates to classifying the critical point (x0, y0) for f.
-
-% --- Hints ---
-
-% For #1c(iii) – you need to find a pair of paths that leads to values of q(x,y) with different signs. Try: y = 0 (so that only x changes) and x = -b/(2a) y.
-% The first path, except at (0,0) takes on the sign of a – since the (4ac-b)^2/(4a^2)y^2 term is zero, due to y = 0.
-% On the second path, since D = 4ac-b^2 < 0, we know that, except again at (0,0), we have a negative inside the square brackets, and so we get the opposite of the sign of a
-% Thus, we have two paths, one of which looks like a U shaped curve and one like an upside down U. This makes (0,0) a saddle.
- 
-% For #2: Remember that while x and y are variables, x_0 and y_0 are not! They are constant
-% For 2a(ii):  g_x(x,y) = f_x(x+x_0,y+y_0) and similarly for g_y For iii, just be really careful as you take each partial making sure you know which thing is the variable at which time.
- 
-% For #3:
-% a. Again, just take derivatives, making sure you know what is a variable and what is constant.
-% For the rest, just think about Taylor Polys:  For a function of one variable, its second order Taylor poly, at x = 0, is just f(0) + f ‘ (0)*x + ½ * f ‘’ (0) x^2.  This is all that is happening here, except we make every possible first and every possible second order derivative.
-
 \begin{document}
 
 \maketitle
 
 \section{Introduction}
 
-In this paper, our goal is to analyze the second derivative test for functions of two variables. We will start with a quadratic function and show that the second derivative test works in this case. Then, we will generalize this to any twice-differentiable scalar function using Taylor polynomials. Finally, we will summarize the results and their implications for classifying critical points.
+In multivariable calculus, the second derivative test provides a powerful tool for classifying critical points of a function of two variables, telling us whether a critical point corresponds to a local maximum, a local minimum, or a saddle point. While applying the test itself can be straightforward, understanding \textit{why} it works requires delving into the underlying mathematical principles. The goal of this paper is not merely to state the second derivative test, but to provide a clear and justified derivation of its conditions. We will accomplish this by building our understanding from a simple case and progressively generalizing the results. \\
+
+We will begin in Section 2 by investigating the behavior of a basic quadratic function of two variables at its critical point at the origin. By analyzing this fundamental case without relying on the second derivative test itself. This will lay the groundwork for understanding the key quantities that determine the nature of a critical point. \\
+
+In Section 3, we will show how to transform any general twice-differentiable function with a critical point at \( (x_0, y_0) \) into a new function that has its critical point conveniently located at the origin. This transformation allows us to focus our analysis on the behavior near the origin, which simplifies the problem. \\
+
+Section 4 will connect our work to the concept of Taylor polynomials from Calculus II. We will use the second-order Taylor polynomial to create a quadratic approximation of our transformed function near its critical point at the origin. By leveraging the results from Section 2, we will show how the behavior of this quadratic approximation dictates the behavior of the original function near the critical point. \\
+
+Finally, in Section 5, we will synthesize the results from the preceding sections to formally state and justify the conditions of the second derivative test for a general function \( f(x,y) \) at a critical point \( (x_0, y_0) \). Through this process, we aim to provide a thorough explanation that illuminates the \textit{why} behind this essential classification tool. \\
 
 \section{Investigating the Quadratic Function}
 
-Let's start by looking at a quadratic function of the form \( q(x, y) = ax^2 + bxy + cy^2 \), where we assume that \( a, c \neq 0 \) and \(b^{2} - 4ac \ne 0\). We want to look into how \( q \) behaves at its critical point. Remember that a critical point for a function of two variables can be found by finding the points where the gradient is zero. Thus, to find the critical points, we need to find the partial derivatives of \( q \) with respect to \( x \) and \( y \) and set them equal to zero:
-\[
-    \frac{\partial q}{\partial x} = 2ax + by = 0, \quad \frac{\partial q}{\partial y} = bx + 2cy = 0.
-\]
-This leaves us with the system of equations:
+Let's start by looking at a quadratic function of the form \( q(x, y) = ax^2 + bxy + cy^2 \), where we assume that \( a, c \neq 0 \) and \( b^{2} - 4ac \ne 0 \). We want to look into how \( q \) behaves at its critical point. Remember that a critical point for a function of two variables can be found by finding the points where the gradient is zero. Thus, to find the critical points, we need to find the partial derivatives of \( q \) with respect to \( x \) and \( y \) and set them equal to zero:
 \begin{align*}
-    2ax + by &= 0 \\
-    bx + 2cy &= 0
+	\frac{\partial q}{\partial x} &= \mpfrac{x} [ax^2 + bxy + cy^2] = 2ax + by = 0 \\
+	\frac{\partial q}{\partial y} &= \frac{\partial}{\partial y} [ax^2 + bxy + cy^2] = bx + 2cy = 0
 \end{align*}
+This leaves us with the system of equations:
+\[
+	\begin{cases}
+		2ax + by = 0 \\
+		bx + 2cy = 0
+	\end{cases}
+\]
 We can rewrite the first equation as \( y = -\frac{2a}{b}x \) and substitute this into the second equation to get:
 \[
-    bx + 2c\left(-\frac{2a}{b}x\right) = 0 \implies \left(b - \frac{4ac}{b}\right)x = 0.
+	bx + 2c\left(-\frac{2a}{b}x\right) = 0 \implies \left(b - \frac{4ac}{b}\right)x = 0.
 \]
 This gives us two cases: either \( x = 0 \) or \( b - \frac{4ac}{b} = 0 \). If \( x = 0 \), then substituting back into the first equation gives us \( y = 0 \). Thus, we have one critical point at \( (0, 0) \). If \( b - \frac{4ac}{b} = 0 \), then we have \( b^2 - 4ac = 0 \), which is not allowed by our assumption. Therefore, the only critical point is at \( (0, 0) \). \\
 
-Now that we've identified the critical point, our next step is to understand the nature of this point – specifically, whether it corresponds to a local minimum, local maximum, or a saddle point. To analyze the function's behavior, particularly its sign, around this critical point, we will rewrite the expression for \( q(x, y) \) by completing the square with respect to the \(x\) terms and treating \(y\) as a constant:
+Now that we have identified the critical point, our next step is to understand the nature of this point – specifically, whether it corresponds to a local minimum, local maximum, or a saddle point. To analyze the function's behavior---particularly its sign---around this critical point, we will rewrite the expression for \( q(x, y) \) by completing the square with respect to the \( x \) terms and treating \( y \) as a constant:
 \begin{align*}
-    q(x, y) &= ax^2 + bxy + cy^2 \\
-    \intertext{Factor out \(a\) from the terms involving \(x\):}
-    &= a\left(x^2 + \frac{b}{a}xy\right) + cy^2 \\
-    \intertext{Now, we need to complete the square for the expression in parentheses. Remember that we need to calculate \((\frac{b}{2})^{2}\) for our function of the form \(ax^{2} + bx + c = 0\).} 
-    &= a
+	q(x, y) &= ax^2 + bxy + cy^2 \\
+	\intertext{Factor out \( a \) from the terms involving \( x \):}
+	q(x, y) &= a\left(x^2 + \frac{b}{a}xy\right) + cy^2 \\
+	\intertext{The term needed to complete the square for \( x^{2} + \frac{b}{a}xy \) is \( \left(\frac{b}{2a}y\right)^{2} = \frac{b^{2}}{4a^{2}y^{2}} \). Thus, we add and subtract this term:} 
+	q(x, y) &= a\left[x^2 + \frac{b}{a}xy + \frac{b^{2}}{4a^{2}y^{2}} - \frac{b^{2}}{4a^{2}y^{2}}\right] + cy^2 \\
+	\intertext{Now, the first three terms inside the parentheses can be factored as a perfect square:}
+	q(x, y) &= a\left[\left(x + \frac{b}{2a}y\right)^2 - \frac{b^{2}}{4a^{2}}y^{2}\right] + cy^2 \\
+	\intertext{Distributing \( a \) so we can add the \( y \)-terms together gives:}
+	q(x, y) &= a\left(x + \frac{b}{2a}y\right)^2 - \frac{b^2}{4a}y^2 + cy^2 \\
+	\intertext{Now, we can combine the \( y^2 \) terms:}
+	q(x, y) &= a\left(x + \frac{b}{2a}y\right)^2 + \left( c - \frac{b^{2}}{4a} \right)y^2 \\
+	\intertext{Find common denominator for the \( y^2 \) terms:}
+	q(x, y) &= a\left(x + \frac{b}{2a}y\right)^2 + \left( \frac{4ac - b^{2}}{4a} \right)y^{2} \\
+	\intertext{Finally, we factor out \( a \) from the entire expression:}
+	q(x, y) &= a\left[\left(x + \frac{b}{2a}y\right)^2 + \left(\frac{4ac - b^2}{4a^{2}}\right)y^2\right].
 \end{align*}
+This process of completing the square allows us to rewrite the quadratic function in a form where the signs of the critical components (\( a \) and \( 4ac - b^2 \)) can be analyzed more easily. The expression now clearly shows how the function behaves around the critical point \( (0, 0) \). In short, it directly showed \textit{why} \( a \) and \( 4ac - b^{2} \) are the quantities that matter for determining the nature of the critical point. \\
 
+% \newpage
+For sake of simplicity and notation, we will let \( D = 4ac - b^{2} \). Our goal now is to go through the three cases for \( D \) and \( a \) to determine the nature of the critical point at \( (0, 0) \). These cases are outlined on the next page.
 
+\subsection{Case 1: \( D > 0 \) and \( a > 0 \)}
+
+For this case, we know the following: 
+\begin{itemize}
+	\item \( q(x,y) = a \Bigl[\bigl( x + \frac{b}{2a}y \bigr)^{2} + \frac{D}{4a^{2}}y^{2}\Bigr] \);
+	\item \( q(0,0) = 0 \);
+	\item for any \( (x,y) \neq (0,0) \);
+	\item the term \( (x + \frac{b}{2a}y)^{2} \) is always non-negative;
+	\item since \( D > 0 \) and \( a > 0 \), the term \( \frac{D}{4a^{2}}y^{2} \) is also non-negative;
+	\item the sum of two non-negative terms \( (x + \frac{b}{2a}y)^{2} + \frac{D}{4a^{2}}y^{2} \) is zero if and only if both terms are zero, which occurs only at \( (0, 0) \); and
+	\item since \( a > 0 \), when we multiply the positive sum by \( a \), we get a positive result.
+\end{itemize}
+This leads us to conclude that for \( (x,y) \ne (0,0), q(x,y) = a \Bigl[\bigl( x + \frac{b}{2a}y \bigr)^{2} + \frac{D}{4a^{2}}y^{2}\Bigr] > 0 \). Thus, since \( q(x,y) > q(0,0) \) for all \( (x,y) \ne (0,0) \), we conclude that \( q \) has a local minimum at \( (0, 0) \). 
+
+\subsection{Case 2: \( D > 0 \) and \( a < 0 \)}
+
+We share a lot of the same reasoning as the previous case. The only difference is that \( a < 0 \). This change in sign will affect our outcome when we multiply the positive value of the sum \( (x + \frac{b}{2a}y)^{2} + \frac{D}{4a^{2}}y^{2} \) by \( a \). That is, for all \( (x,y) \ne (0,0) \), \( q(x,y) = a\Bigl[\bigl( x + \frac{b}{2a}y \bigr)^{2} + \frac{D}{4a^{2}}y^{2}\Bigr] < 0 \). Predictably, this results leads us to the conclusion that \( q \) has a local maximum at \( (0, 0) \).
+
+\subsection{Case 3: \( D < 0 \)}
+
+It's important to note that when \( D < 0 \) (and \( y \ne 0 \)), the term \( \frac{D}{4a^{2}}y^{2} \) is negative (since \( 4a^{2} \) is always positive). This means that the expression \( (x + \frac{b}{2a}y)^{2} + \frac{D}{4a^{2}}y^{2} \) can take on both positive and negative values depending on the values of \( x \) and \( y \). Since \( (0,0) \) is a critical point and \( q(0,0) = 0 \), the tangent plane to the surface \( z = q(x,y) \) at \( (0,0) \) is the plane \( z = 0 \). A saddle point occurs when the surface crosses this tangent plane, meaning \( q(x,y) \) takes on both positive and negative values arbitrarily close to \( (0,0) \). To show this, we can analyze two different paths through the critical point \( (0, 0) \):
+\begin{itemize}
+	\item Consider the path where \( y = 0 \). Along this path,
+	\[
+		q(x, 0) = a\left(x + \frac{b}{2a}(0)\right)^{2} + \left( c - \frac{b^{2}}{4a} \right)(0)^{2} = ax^{2} > 0 \text{ for } x \ne 0.
+	\]
+	Thus, \( q(x,0) \) has the same sign as \( a \). Therefore, if \( a > 0 \), then \( q(x,0) > 0 \) for \( x \ne 0 \), or if \( a < 0 \), then \( q(x,0) < 0 \) for \( x \ne 0 \).
+	\item Now, consider the path \( x = -\frac{b}{2a}y \). Along this path, we have:
+	\[
+		q\left(-\frac{b}{2a}y, y\right) = a\left[\left(-\frac{b}{2a}y + \frac{b}{2a}y\right)^{2} + \frac{D}{4a^{2}}y^{2}\right] = a\left[0 + \frac{D}{4a^{2}}y^{2}\right] = \frac{D}{4a}y^{2} < 0 \text{ for } y \ne 0.
+	\]
+	From this equation, we can see that for \( y \ne 0 \), the sign of \( q(-\frac{b}{2a},y) \) is determined by the sign of \( \frac{D}{4a} \). Since \( D < 0 \) and \( 4a > 0 \), the sign of \( \frac{D}{4a} \) is the opposite of the sign of \( a \). Thus, if \( a > 0 \), then \( q(-\frac{b}{2a},y) < 0 \) for \( y \ne 0 \), or if \( a < 0 \), then \( q(-\frac{b}{2a},y) > 0 \) for \( y \ne 0 \).
+\end{itemize}
+So, along the path \( y = 0 \) (except at the origin), \( q(x,y) \) has the sign of \( a \). Along the path \( x + \frac{b}{2a}y = 0 \) (except at the origin), \( q(x,y) \) has the sign of \( -a \). Since \( a \) and \( -a \) have opposite signs, we can conclude the function takes both positive and negative values around the origin. This confirms that the critical point \( (0, 0) \) is a saddle point when \( D < 0 \). 
+
+\subsection{Conclusion of Quadratic Analysis}
+
+In summary, we have shown that the value \( D = 4ac - b^{2} \) is the determinant of the nature of the critical point \( (0, 0) \) for the quadratic function \( q(x,y) = ax^{2} + bxy + cy^{2} \). The results match the second derivative test for classifying critical points. We can show this by computing the second partial derivatives of \( q \) at \( (0, 0) \):
+\begin{itemize}
+	\item \( q_{x} = 2ax + by \Rightarrow q_{xx} = \frac{\partial}{\partial x} (2ax + by) = 2a \),
+	\item \( q_{y} = bx + 2cy \Rightarrow q_{yy} = \frac{\partial}{\partial y} (bx + 2cy) = 2c \), and
+	\item \( q_{xy} = \frac{\partial}{\partial y} (2ax + by) = b \).
+\end{itemize}
+Then, since none of these partial derivatives depend on \( x \) or \( y \), when we evaluate them at \( (0, 0) \), we get the same values. Now, we can compute the discriminant \( D \) for \( q(0,0) \) using the second partial derivatives:
+\[
+	D(0, 0) = q_{xx}(0, 0)q_{yy}(0, 0) - (q_{xy}(0, 0))^{2} = (2a)(2c) - b^{2} = 4ac - b^{2}.
+\]
+This is exactly the value of \( D \) that we used for analysis in the previous section. \\
+
+Now, we can check our previous work by using the second derivative test. Remember that the second derivative test tells us that for critical points \( (x_{0},y_{0}) \):
+\begin{itemize}
+	\item if \( D > 0 \) and \( f_{xx}(x_{0},y_{0}) > 0 \), then \( (x_{0},y_{0}) \) is a local minimum,
+	\item if \( D > 0 \) and \( f_{xx}(x_{0},y_{0}) < 0 \), then \( (x_{0},y_{0}) \) is a local maximum, or
+	\item if \( D < 0 \), then \( (x_{0},y_{0}) \) is a saddle point.
+\end{itemize}
+For our function \( q(x,y) \) at the critical point \( (0, 0) \), we have:
+\begin{itemize}
+	\item \( D = 4ac - b^{2} > 0 \) and \( q_{xx}(0,0) = 2a > 0 \), our analysis in Case 1 showed a local minimum.
+	\item \( D = 4ac - b^{2} > 0 \) and \( q_{xx}(0,0) = 2a < 0 \), our analysis in Case 2 showed a local maximum.
+	\item \( D = 4ac - b^{2} < 0 \), our analysis in Case 3 showed a saddle point.
+\end{itemize}
+These results match our previous analysis of the quadratic function \( q(x,y) \). Thus, we have shown that the second derivative test works in the special case of a quadratic function with a critical point at the origin.
+
+\section{Investigating Any Twice-Differentiable Function}
+
+We have seen how the second derivative test works for a specific type of quadratic function centered at the origin. Now, we want to extend this understanding to any general twice-differentiable function \( f(x,y) \) near one of its critical points. The challenge is that a general function is not as simple as our quadratic example. However, we can use a clever transformation and the idea of a Taylor polynomial to connect the general case back to the simple quadratic one. \\
+
+Let's consider a general continuous function \( f(x,y) \) with continuous first and second partial derivatives around a critical point \( (x_{0},y_{0}) \). Since \( (x_{0},y_{0}) \) is a critical point, we know that the first partial derivatives of \( f \) are zero at this point:
+\[
+	f_{x}(x_{0},y_{0}) = 0, \quad f_{y}(x_{0},y_{0}) = 0.
+\]
+To simplify our analysis and relate it to the quadratic case we just studied, we want to define a new function that has its critical point at the origin \( (0,0) \) and has a value of zero at that point. We can achieve this by defining the function \( g(x,y) \) as a shifted version of \( f \):
+\[
+	g(x,y) = f(x + x_{0}, y + y_{0}) - f(x_{0}, y_{0}).
+\]
+This definition effectively shifts the domain so that the point \( (x_{0},y_{0}) \) in the context of \( f \) corresponds to the point \( (0,0) \) in the context of \( g \). Subtracting the constant value \( f(x_{0}, y_{0}) \) ensures that the function value at this shifted critical point is zero.
+
+\subsection{Analyzing the Shifted Function \( g \) at the Origin}
+
+Let's verify the properties of our new function \( g(x,y) \) at the origin \( (0,0) \). First, let's check the function value at the origin. By plugging in \( x=0 \) and \( y=0 \) into the definition of \( g \), we get:
+\[
+	g(0, 0) = f(0 + x_{0}, 0 + y_{0}) - f(x_{0}, y_{0}) = f(x_{0}, y_{0}) - f(x_{0}, y_{0}) = 0.
+\]
+So, \( g(0,0) = 0 \) as intended. \\
+
+Next, we need to confirm that the origin \( (0,0) \) is indeed a critical point for \( g \). To do this, we must find the partial derivatives of \( g \) and evaluate them at \( (0,0) \). Since the inputs to \( f \) in the expression for \( g \) are functions of \( x \) and \( y \), we will use the chain rule. For clarity in applying the chain rule, let's consider the intermediate variables \( u = x + x_{0} \) and \( v = y + y_{0} \), so \( g(x,y) = f(u(x,y), v(x,y)) - f(x_{0},y_{0}) \). \\
+
+To find the partial derivative of \( g \) with respect to \( x \), we can differentiate \( f(u,v) \) with respect to \( x \). Remember from Section 4.5 (in the book) that the chain rule for two independent variables is defined as 
+\[
+	\bpfrac{f}{u} \bpfrac{u}{x} + \bpfrac{f}{v} \bpfrac{v}{x}.
+\]
+Where the constant term \( f(x_0, y_0) \) differentiates to zero, so it is not included. Thus, we have:
+\[
+	\bpfrac{u}{x} = \mpfrac{x}(x + x_{0}) = 1, \quad \text{and} \quad \bpfrac{v}{x} = \mpfrac{x}(y + y_{0}) = 0.
+\]
+Thus,
+\[
+	g_{x}(x,y) = \bpfrac{f}{u}(u,v) \cdot 1 + \bpfrac{f}{v}(u,v) \cdot 0 = \bpfrac{f}{u}(u,v).
+\]
+The notation \( \bpfrac{f}{u}(u,v) \) represents the partial derivative of \( f \) with respect to its first variable, evaluated at \( (u,v) \). This is precisely \( f_{x}(u,v) \) in our standard notation for \( f \). Substituting back \( u = x + x_{0} \) and \( v = y + y_{0} \), we find:
+\[
+	g_{x}(x,y) = f_{x}(x + x_{0}, y + y_{0}).
+\]
+Now, we evaluate this at the origin \( (0,0) \):
+\[
+	g_{x}(0,0) = f_{x}(0 + x_{0}, 0 + y_{0}) = f_{x}(x_{0},y_{0}).
+\]
+Since \( (x_{0},y_{0}) \) is a critical point of \( f \), we know that \( f_{x}(x_{0},y_{0}) = 0 \). Therefore, \( g_{x}(0,0) = 0 \). An analogous argument applies to differentiating \( g \) with respect to \( y \) using \( \bpfrac{u}{y} = \mpfrac{y}(x + x_{0}) = 0 \) and \( \bpfrac{v}{y} = \mpfrac{y}(y + y_{0}) = 1 \). This shows that \( g_{y}(0,0) = f_{y}(x_{0},y_{0}) = 0 \). \\
+
+Because \( g_{x}(0,0) = 0 \) and \( g_{y}(0,0) = 0 \), the origin \( (0,0) \) we have identified a critical point for the function \( g(x,y) \).
+
+\subsection{Connecting the Behavior of \( f \) and \( g \)}
+
+Before we proceed, let's explore the relationship between analyzing \( g \) at \( (0,0) \) and analyzing \( f \) at \( (x_{0},y_{0}) \). The function \( g(x,y) = f(x + x_{0}, y + y_{0}) - f(x_{0}, y_{0}) \) represents the transformation of the surface \( z=f(x,y) \). Essentially, we have shifted the surface horizontally so that the point \( (x_0, y_0) \) is now located above \( (0,0) \), and we have shifted it vertically so the function value at this point is 0. It's important to note that this transformation does not change the shape of the surface around the critical point. That is, if \( f \) had a local minimum at \( (x_0, y_0) \), \( g \) will have a corresponding minimum at \( (0,0) \). The same follows for if \( f \) had a local maximum or saddle point at \( (0,0) \). Therefore, classifying the critical point of \( g \) at \( (0,0) \) will directly tell us the classification of the critical point of \( f \) at \( (x_{0},y_{0}) \).
+
+\subsection{Second Partial Derivatives of \( g \) at the Origin}
+
+To classify the critical point \( (0,0) \) for \( g \), we will eventually use a test similar to the second derivative test we saw for quadratics. This requires evaluating the second-order partial derivatives of \( g \) at the critical point \( (0,0) \). \\
+
+We already found the first partial derivatives: \( g_{x}(x,y) = f_{x}(x + x_{0}, y + y_{0}) \) and \( g_{y}(x,y) = f_{y}(x + x_{0}, y + y_{0}) \). We need to differentiate these expressions again with respect to \( x \) or \( y \). Thus, we will use the chain rule once more, with the same intermediate variables \( u = x + x_{0} \) and \( v = y + y_{0} \). \\
+
+Let's find \( g_{xx}(x,y) \), the partial derivative of \( g_{x} \) with respect to \( x \). Applying the chain rule to \( f_{x}(u(x,y), v(x,y)) \):
+\[
+	g_{xx} (x,y) = \mpfrac{x}[f_{x}(u,v)] = \bpfrac{f_{x}}{u} \bpfrac{u}{x} + \bpfrac{f_{x}}{v} \bpfrac{v}{x}.
+\]
+Since \( \bpfrac{u}{x} = 1 \) and \( \bpfrac{v}{x} = 0 \), and using Jacobi \( (f_{xu}) \) for the Leibnitz \( \left(\bpfrac{f_{x}}{u}\right) \) notation:
+\[
+	g_{xx}(x,y) = f_{xu}(u,v) \cdot 1 + f_{xv}(u,v) \cdot 0 = f_{xu}(u,v).
+\]
+Then, because \( u \) is just \( x \) shifted by a constant, \( f_{xu} = f_{xx} \). Substituting back \( u = x + x_{0} \) and \( v = y + y_{0} \):
+\[
+	g_{xx}(x,y) = f_{xx}(x + x_{0}, y + y_{0}).
+\]
+Evaluating at the critical point \( (0,0) \):
+\[
+	g_{xx}(0,0) = f_{xx}(0 + x_{0}, 0 + y_{0}) = f_{xx}(x_{0},y_{0}).
+\]
+Next, let's find the mixed partial \( g_{xy}(x,y) \). Applying the chain rule to \( f_{x}(u(x,y), v(x,y)) \):
+\[
+	g_{xy}(x,y) = \mpfrac{y}[f_{x}(u,v)] = \bpfrac{f_{x}}{u} \bpfrac{u}{y} + \bpfrac{f_{x}}{v} \bpfrac{v}{y}.
+\]
+Since \( \bpfrac{u}{y} = \mpfrac{y}(x + x_{0}) = 0 \) and \( \bpfrac{v}{y} = \mpfrac{y}(y + y_{0}) = 1 \):
+\[
+	g_{xy}(x,y) = f_{xu}(u,v) \cdot 0 + f_{xv}(u,v) \cdot 1 = f_{xv}(u,v).
+\]
+Using the same idea from before, \( f_{xv} = f_{xy} \). Substituting back \( u = x + x_{0} \) and \( v = y + y_{0} \):
+\[
+	g_{xy}(x,y) = f_{xy}(x + x_{0}, y + y_{0}).
+\]
+Evaluating at \( (0,0) \):
+\[
+	g_{xy}(0,0) = f_{xy}(0 + x_{0}, 0 + y_{0}) = f_{xy}(x_{0}, y_{0}).
+\]
+Note that Clairaut's Theorem ensures \( g_{yx}(0,0) = f_{yx}(x_0, y_0) = f_{xy}(x_0, y_0) = g_{xy}(0,0) \), so we only need to calculate this value once. \\
+
+Finally, let's find \( g_{yy}(x,y) \). Starting off in the same way as before by applying the chain rule to \( f_{y}(u(x,y), v(x,y)) \):
+\[
+	g_{yy}(x,y) = \mpfrac{y}[f_{y}(u,v)] = \bpfrac{f_{y}}{u} \bpfrac{u}{y} + \bpfrac{f_{y}}{v} \bpfrac{v}{y}.
+\]
+Since \( \bpfrac{u}{y} = 0 \) and \( \bpfrac{v}{y} = 1 \):
+\[
+	g_{yy}(x,y) = f_{yu}(u,v) \cdot 0 + f_{yv}(u,v) \cdot 1 = f_{yv}(u,v).
+\]
+Making the substitutions \( u = x + x_{0} \), \( v = y + y_{0} \), and \( f_{yv} = f_{yy} \):
+\[
+	g_{yy}(x,y) = f_{yy}(x + x_{0}, y + y_{0}).
+\]
+Evaluating at \( (0,0) \):
+\[
+	g_{yy}(0,0) = f_{yy}(0 + x_{0}, 0 + y_{0}) = f_{yy}(x_{0},y_{0}).
+\]
+
+So, we have successfully shown that the values of the second-order partial derivatives of \( g \) evaluated at its critical point \( (0,0) \) are exactly the same as the values of the second-order partial derivatives of the original function \( f \) evaluated at its critical point \( (x_{0},y_{0}) \):
 \begin{align*}
-    q(x, y) &= ax^2 + bxy + cy^2 \\
-    &= a\left(x^2 + \frac{b}{a}xy + \frac{c}{a}y^2\right) \\
-    &= a\left(x^2 + \frac{b}{a}xy + \frac{b^2}{4a^2}y^2 - \frac{b^2}{4a^2}y^2 + \frac{c}{a}y^2\right) \\
-    &= a\left(\left(x + \frac{b}{2a}y\right)^2 - \frac{b^2 - 4ac}{4a^2}y^2\right).
+	g_{xx}(0,0) &= f_{xx}(x_0, y_0), \\
+	g_{xy}(0,0) &= f_{xy}(x_0, y_0), \text{ and}\\
+	g_{yy}(0,0) &= f_{yy}(x_0, y_0).
 \end{align*}
-This shows that we can express \( q(x, y) \) in the form:
+This connection between the second partial derivatives of \( f \) at \( (x_0, y_0) \) and \( g \) at \( (0,0) \) will be crucial in Section 4 when we use the Taylor polynomial to approximate \( g \).
+
+\subsection{Review and Conclusion}
+
+We have found that the function \( g(x,y) = f(x + x_0, y + y_0) - f(x_0, y_0) \) is a shifted version of the function \( f(x,y) \). The term \( f(x_0, y_0) \) is a constant subtraction, which shifts the entire graph vertically. The change of variables \( (x,y) \to (x+x_0, y+y_0) \) is a horizontal shift of the coordinate system. Specifically, the point \( (x,y) \) in the domain of \( g \) corresponds to the point \( (x+x_0, y+y_0) \) in the domain of \( f \). \\
+
+If \( f \) has a local minimum at \( (x_0, y_0) \), this means that for points \( (x,y) \) near \( (x_0, y_0) \), \( f(x,y) \geq f(x_0, y_0) \). Let's consider points near \( (0,0) \) for \( g \). These points are of the form \( (x,y) \) where \( x \) and \( y \) are small. The corresponding points for \( f \) are \( (x+x_0, y+y_0) \), which are near \( (x_0, y_0) \). \\
+
+If \( f \) has a local minimum at \( (x_0, y_0) \), then for small \( x,y \):
+\[
+	f(x+x_0, y+y_0) \geq f(x_0, y_0).
+\]
+Subtracting \( f(x_0, y_0) \) from both sides:
+\[
+	f(x+x_0, y+y_0) - f(x_0, y_0) \geq 0.
+\]
+This means \( g(x,y) \geq g(0,0) = 0 \) for small \( x,y \). Thus, \( g \) has a local minimum at \( (0,0) \). \\
+
+Similarly, if \( f \) has a local maximum at \( (x_0, y_0) \), then for small \( x,y \):
+\[
+	f(x+x_0, y+y_0) \leq f(x_0, y_0).
+\]
+Subtracting \( f(x_0, y_0) \):
+\[
+	f(x+x_0, y+y_0) - f(x_0, y_0) \leq 0.
+\]
+This means \( g(x,y) \leq g(0,0) = 0 \) for small \( x,y \). Thus, \( g \) has a local maximum at \( (0,0) \). \\
+
+If \( f \) has a saddle point at \( (x_0, y_0) \), it means \( f \) takes values both greater than and less than \( f(x_0, y_0) \) in any neighborhood of \( (x_0, y_0) \). This translates directly to \( g(x,y) = f(x+x_0, y+y_0) - f(x_0, y_0) \) taking values both greater than and less than \( g(0,0) = 0 \) in any neighborhood of \( (0,0) \). Thus, \( g \) has a saddle point at \( (0,0) \). \\
+
+In summary, the shape of the graph of \( f \) near \( (x_0, y_0) \) is identical to the shape of the graph of \( g \) near \( (0,0) \), just shifted. Therefore, the type of critical point (minimum, maximum, or saddle) is preserved by this transformation. Classifying the critical point of \( g \) at \( (0,0) \) is equivalent to classifying the critical point of \( f \) at \( (x_0,y_0) \). 
+
+\section{Approximations with Taylor Polynomials}
+
+In the previous section, we transformed the problem of classifying the critical point of \( f \) at \( (x_0, y_0) \) into the equivalent problem of classifying the critical point of \( g \) at \( (0,0) \), where \( g(0,0)=0 \) and the second partial derivatives of \( g \) at \( (0,0) \) match those of \( f \) at \( (x_0, y_0) \). Now, we need a way to analyze the behavior of a general function like \( g \) near its critical point at the origin. \\
+
+Recall from Calculus II the idea of using Taylor polynomials to approximate a function near a specific point. A Taylor polynomial is a polynomial that matches the function's value and the values of its derivatives up to a certain order at that point. For points very close to the point of approximation, the Taylor polynomial provides a good approximation of the function's behavior. \\
+
+For our function \( g(x,y) \), which has a critical point at \( (0,0) \) and \( g(0,0)=0 \), we can construct its second-order Taylor polynomial centered at the origin. We choose the second-order polynomial because the second derivative test relies on information from the second partial derivatives, which capture the concavity or curvature of the function at the critical point. \\
+
+The general formula for the second-order Taylor polynomial of \( g(x,y) \) centered at \( (0,0) \) is:
+\[
+	Q(x,y) = g(0,0) + g_{x}(0,0)x + g_{y}(0,0)y + \tfrac{1}{2}g_{xx}(0,0)x^{2} + g_{xy}(0,0)xy + \tfrac{1}{2}g_{yy}(0,0)y^{2}.
+\]
+From our work in the previous section, we know that \( g(0,0) = 0 \), \( g_{x}(0,0) = 0 \), and \( g_{y}(0,0) = 0 \). Substituting these values into the formula, the constant and linear terms vanish, and the Taylor polynomial simplifies to:
+\[
+	Q(x,y) = \tfrac{1}{2}g_{xx}(0,0)x^{2} + g_{xy}(0,0)xy + \tfrac{1}{2}g_{yy}(0,0)y^{2}.
+\]
+This simplified second-order Taylor polynomial \( Q(x,y) \) is a quadratic function, very similar in form to the quadratic function \( q(x,y) \) we analyzed in Section 2. Let's confirm that \( Q(x,y) \) matches \( g(x,y) \) in value and its first and second derivatives at the origin. \\
+
+Evaluating \( Q(x,y) \) at \( (0,0) \):
+\[
+	Q(0,0) = \tfrac{1}{2}g_{xx}(0,0)(0)^{2} + g_{xy}(0,0)(0)(0) + \tfrac{1}{2}g_{yy}(0,0)(0)^{2} = 0.
+\]
+This shows that \( Q(0,0) = g(0,0) = 0 \). \\
+
+Now, let's find the first partial derivatives of \( Q(x,y) \):
+\[
+	Q_{x}(x,y) = \mpfrac{x}\left[\tfrac{1}{2}g_{xx}(0,0)x^{2} + g_{xy}(0,0)xy + \tfrac{1}{2}g_{yy}(0,0)y^{2}\right] = g_{xx}(0,0)x + g_{xy}(0,0)y
+\]
+Evaluating \( Q_x \) at \( (0,0) \):
+\[
+	Q_{x}(0,0) = g_{xx}(0,0)(0) + g_{xy}(0,0)(0) = 0.
+\]
+Since \( g_x(0,0) = 0 \), we have \( Q_x(0,0) = g_x(0,0) \). Similarly, for \( Q_{y}(x,y) \):
+\[
+	Q_{y}(x,y) = \mpfrac{y}\left[\tfrac{1}{2}g_{xx}(0,0)x^{2} + g_{xy}(0,0)xy + \tfrac{1}{2}g_{yy}(0,0)y^{2}\right].
+\]
+Treating the partials of \( g \) as constants:
+\[
+	Q_{y}(x,y) = 0 + g_{xy}(0,0)(x) + \tfrac{1}{2}g_{yy}(0,0)(2y) = g_{xy}(0,0)x + g_{yy}(0,0)y.
+\]
+Evaluating \( Q_y \) at \( (0,0) \):
+\[
+	Q_{y}(0,0) = g_{xy}(0,0)(0) + g_{yy}(0,0)(0) = 0.
+\]
+Since \( g_y(0,0) = 0 \), we have \( Q_y(0,0) = g_y(0,0) \). Thus, the origin \( (0,0) \) is a critical point for \( Q(x,y) \), just as it is for \( g(x,y) \), and their first derivatives match at this point. Now, when we find the second partial derivatives of \( Q \), because 
+\[
+	Q(x,y) = \tfrac{1}{2} g_{xx}(0,0)x^{2} + g_{xy}(0,0)xy + \tfrac{1}{2}g_{yy}(0,0)y^{2},
+\]
+its second derivatives are constant:
+\[
+	Q_{xx}(x,y) = g_{xx}(0,0), \quad Q_{xy}(x,y) = g_{xy}(0,0), \quad Q_{yy}(x,y) = g_{yy}(0,0).
+\]
+Evaluating each at \( (0,0) \) agrees with the corresponding second partial of \( g \). \\
+
+So, we have shown that \( g \) and its second-order Taylor polynomial \( Q \) have the same function value, the same first partial derivatives, and the same second partial derivatives when evaluated at the origin \( (0,0) \). This confirms that \( Q(x,y) \) is an excellent approximation of \( g(x,y) \) in the immediate neighborhood of the origin.
+
+\subsection{Classifying the Critical Point of \( g \) using \( Q \)}
+
+Since \( Q(x,y) \) is a good approximation of \( g(x,y) \) for points \( (x,y) \) near \( (0,0) \), the behavior of \( g \) at its critical point \( (0,0) \) is expected to be the same as the behavior of \( Q \) at its critical point \( (0,0) \). If \( Q \) has a local minimum, maximum, or saddle point at \( (0,0) \), we expect \( g \) to have one too. \\
+
+Now, notice our quadratic approximation \( Q(x,y) \) has the form \( ax^2 + bxy + cy^2 \), where the coefficients are given by:
+\[
+	a = \tfrac{1}{2}g_{xx}(0,0), \quad b = g_{xy}(0,0), \quad c = \tfrac{1}{2}g_{yy}(0,0).
+\]
+This is extremely important because in Section 2, we rigorously classified the critical point of a quadratic function \( q(x,y) = ax^2 + bxy + cy^2 \) based on the sign of \( a \) and the sign of the discriminant \( D = 4ac - b^2 \). Let's apply those results to our Taylor polynomial \( Q(x,y) \). \\
+
+The discriminant for \( Q(x,y) \) is:
 \begin{align*}
-    q(x, y) &= a\left(\left(x + \frac{b}{2a}y\right)^2 + \frac{4ac - b^2}{4a^2}y^2\right) \\
-    &= a\left(\left(x + \frac{b}{2a}y\right)^2 + \frac{D}{4a^2}y^2\right),
+	4ac - b^2 &= 4 \left( \tfrac{1}{2}g_{xx}(0,0) \right) \left( \tfrac{1}{2}g_{yy}(0,0) \right) - (g_{xy}(0,0))^2 \\
+	& = g_{xx}(0,0)g_{yy}(0,0) - (g_{xy}(0,0))^2.
 \end{align*}
-where \( D = 4ac - b^2 \). This expression allows us to analyze the behavior of \( q(x, y) \) at the critical point \( (0, 0) \).
+Let's call this discriminant \( D_g = g_{xx}(0,0)g_{yy}(0,0) - (g_{xy}(0,0))^2 \). \\
 
+Based on our analysis of quadratics in Section 2:
+\begin{itemize}
+	\item If \( D_g > 0 \) and \( a = \tfrac{1}{2}g_{xx}(0,0) > 0 \) (which means \( g_{xx}(0,0) > 0 \)), the quadratic \( Q \) has a local minimum at \( (0,0) \).
+	\item If \( D_g > 0 \) and \( a = \tfrac{1}{2}g_{xx}(0,0) < 0 \) (which means \( g_{xx}(0,0) < 0 \)), the quadratic \( Q \) has a local maximum at \( (0,0) \).
+	\item If \( D_g < 0 \), the quadratic \( Q \) has a saddle point at \( (0,0) \).
+\end{itemize}
 
+Since the behavior of \( g \) at \( (0,0) \) is predicted by the behavior of \( Q \) at \( (0,0) \), these same conditions classify the critical point of \( g \):
+\begin{itemize}
+	\item If \( D_g > 0 \) and \( g_{xx}(0,0) > 0 \), then \( g \) has a local minimum at \( (0,0) \).
+	\item If \( D_g > 0 \) and \( g_{xx}(0,0) < 0 \), then \( g \) has a local maximum at \( (0,0) \).
+	\item If \( D_g < 0 \), then \( g \) has a saddle point at \( (0,0) \).
+\end{itemize}
 
+\newpage
 
+\section{Conclusion: The Second Derivative Test}
+
+We began this investigation aiming to understand the second derivative test for classifying critical points of a function \( f(x,y) \) at a point \( (x_0, y_0) \). We accomplished this by following a series of logical steps:
+\begin{enumerate}
+	\item We first analyzed a simple quadratic function \( q(x,y) \) centered at the origin and rigorously showed that its critical point classification depends on the signs of the coefficient of \( x^2 \) and the discriminant \( 4ac - b^2 \).
+	\item We then showed how to transform any general function \( f(x,y) \) with a critical point at \( (x_0, y_0) \) into a new function \( g(x,y) \) that has a critical point at the origin \( (0,0) \) with \( g(0,0)=0 \). Crucially, we proved that the second partial derivatives of \( g \) at \( (0,0) \) are identical to those of \( f \) at \( (x_0, y_0) \). We also established that the type of critical point for \( f \) at \( (x_0, y_0) \) is the same as the type of critical point for \( g \) at \( (0,0) \).
+	\item Next, we constructed the second-order Taylor polynomial \( Q(x,y) \) for \( g(x,y) \) centered at the origin. We showed that \( Q(x,y) \) matches \( g(x,y) \) in value, first derivatives, and second derivatives at \( (0,0) \).
+	\item Finally, we argued that because \( Q(x,y) \) closely approximates \( g(x,y) \) near \( (0,0) \), the behavior of \( g \) at its critical point should be the same as the behavior of \( Q \) at its critical point. By applying the classification rules from our initial quadratic analysis (Step 1) to \( Q(x,y) \), we derived conditions based on the second partial derivatives of \( g \) at \( (0,0) \) that classify the critical point of \( g \).
+\end{enumerate}
+
+Now, we can bring this all back to the original function \( f(x,y) \) at its critical point \( (x_0, y_0) \). The classification of \( f \) at \( (x_0, y_0) \) is the same as the classification of \( g \) at \( (0,0) \). The classification of \( g \) at \( (0,0) \) is based on the discriminant 
+\[
+	D_g = g_{xx}(0,0)g_{yy}(0,0) - (g_{xy}(0,0))^2,
+\]
+and the value \( g_{xx}(0,0) \). From Step 2, we know that 
+\[
+	g_{xx}(0,0) = f_{xx}(x_0, y_0), \quad g_{xy}(0,0) = f_{xy}(x_0, y_0), \quad g_{yy}(0,0) = f_{yy}(x_0, y_0).
+\]
+Substituting these into the discriminant for \( g \), we get the discriminant for \( f \) at \( (x_0, y_0) \):
+\[
+	D(x_0, y_0) = f_{xx}(x_0, y_0)f_{yy}(x_0, y_0) - (f_{xy}(x_0, y_0))^2.
+\]
+The classification rules for the critical point \( (x_0, y_0) \) of \( f \) are therefore determined by the signs of \( D(x_0, y_0) \) and \( f_{xx}(x_0, y_0) \). This gives us the second derivative test:
+
+\begin{itemize}
+	\item If \( D(x_0, y_0) > 0 \) and \( f_{xx}(x_0, y_0) > 0 \), then \( f \) has a local minimum at \( (x_0, y_0) \). This occurs because the quadratic approximation of \( f \) around \( (x_0, y_0) \) (which is \( Q(x-x_0, y-y_0) \) shifted back and up by \( f(x_0, y_0) \)) is a paraboloid opening upwards.
+	\item If \( D(x_0, y_0) > 0 \) and \( f_{xx}(x_0, y_0) < 0 \), then \( f \) has a local maximum at \( (x_0, y_0) \). This occurs because the quadratic approximation is a paraboloid opening downwards.
+	\item If \( D(x_0, y_0) < 0 \), then \( f \) has a saddle point at \( (x_0, y_0) \). This occurs because the quadratic approximation is a hyperbolic paraboloid (saddle shape).
+\end{itemize}
+By breaking down the problem into analyzing a simple quadratic, shifting the critical point of a general function, and using the quadratic Taylor approximation, we have explained the mathematical justification for the second derivative test, showing why the signs of \( D \) and \( f_{xx} \) at a critical point are the key to classifying it.
 \end{document}

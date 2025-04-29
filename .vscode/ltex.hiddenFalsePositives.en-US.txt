@@ -13,3 +13,4 @@
 {"rule":"WHITESPACE_RULE","sentence":"^\\Qcoloredlist itemize 9\\E$"}
 {"rule":"WHITESPACE_RULE","sentence":"^\\Q80 40   40 0\\E$"}
 {"rule":"WHITESPACE_RULE","sentence":"^\\Q[R] [L]Hendrix College [C]\\E$"}
+{"rule":"TOO_LONG_PARAGRAPH","sentence":"^\\QThis confirms that the critical point \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a saddle point when \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

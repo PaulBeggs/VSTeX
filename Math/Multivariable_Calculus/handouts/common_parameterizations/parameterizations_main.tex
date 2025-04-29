@@ -10,7 +10,7 @@
 \usepackage{slashed}
 \usepackage{enumerate}
 \usepackage{braket}
-\usepackage{draculatheme}
+% \usepackage{draculatheme}
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
@@ -104,11 +104,27 @@
     \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
   \end{tikzpicture}%
 }
+\definecolor{horange}{HTML}{f58026}
+
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{horange!100}}
+  {\thesection}{1em}{}
+
+% Subsection title: 80% opacity
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{horange!90}}
+  {\thesubsection}{1em}{}
+
+% Subsubsection title: 70% opacity
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\color{horange!80}}
+  {\thesubsubsection}{1em}{}
+
 
 \begin{document}
-\begin{center}
     \section*{Some Common Parameterizations and Integrals}
-\end{center}
 
 \section*{Shapes in the \(xy\)-plane, \(\R^{2}\)}
 
@@ -364,31 +380,31 @@ The sphere of constant radius \(\rho\) centered at the origin is parameterized b
 
 Let \(C\) be a curve in \(\R^{2}\) which is not necessarily closed, parameterized by \(\vecfuc{r}{t}\), \(a \leq t \leq b\).
 \begin{itemize}
-    \item The arc length of \(C\) is given by: 
+    \item The \textcolor{horange!80}{\textbf{arc length}} of \(C\) is given by: 
     \[
         s = \displaystyle\int_{C} ds = \int_{a}^{b} \normdvecfuc{r}{t} \, dt.
     \]
-    \item If \(f(x,y)\) is a continuous scalar function, then the signed area of the curtain from \(z = f(x,y)\) back down to the \(xy\)-axis which lies above \(C\) is given by:
+    \item If \(f(x,y)\) is a continuous \textcolor{horange!80}{\textbf{scalar function}} (e.g., \(f(x,y) = x^{2} + y^{2}\)), then the signed area of the curtain from \(z = f(x,y)\) back down to the \(xy\)-axis which lies above \(C\) is given by:
     \[
         \int_{C} f(x(t), y(t)) \, ds = \int_{a}^{b} f(\vecfuc{r}{t}) \normdvecfuc{r}{t} \, dt.
     \]
-    \item If \(\mb{F}\) is a vector field, the circulation along \(C\) is given by:
+    \item If \(\mb{F}\) is a \textcolor{horange!80}{\textbf{vector field}}, the \textcolor{horange!80}{\textbf{circulation}} along \(C\) is given by:
     \[
         \int_{C} \mb{F} \cdot d\mb{r} = \int_{C} \mb{F} \cdot \mb{T} \, ds = \int_{a}^{b} \mb{F} \cdot \dvecfuc{r}{t} \, dt.
     \]
     \begin{itemize}
-        \item In the special case where \(C\) is closed, by Green’s Theorem
+        \item In the special case where \(C\) is closed, by \textcolor{horange!80}{\textbf{Green’s Theorem}}
         \[
             \oint_{C} \mb{F} \cdot \mb{T} \, ds = \iint_{D} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)  \, dA,
         \]
         where \(D\) is the region enclosed by \(C\).
     \end{itemize}
-    \item If \(\mb{F}\) is a vector field, the flux across \(C\) is given by:
+    \item If \(\mb{F}\) is a \textcolor{horange!80}{\textbf{vector field}}, the \textcolor{horange!80}{\textbf{flux}} across \(C\) is given by:
     \[
         \int_{C} \mb{F} \cdot \mb{N} \, ds = \int_{C} \mb{F} \cdot \mb{n}(t) \, dt.
     \]
     \begin{itemize}
-        \item In the special case where \(C\) is closed, by Green’s Theorem
+        \item In the special case where \(C\) is closed, by \textcolor{horange!80}{\textbf{Green’s Theorem}}
         \[
             \oint_{C} \mb{F} \cdot \mb{N} \, ds = \iint_{D} \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} \right)  \, dA, 
         \]
@@ -400,20 +416,20 @@ Let \(C\) be a curve in \(\R^{2}\) which is not necessarily closed, parameterize
 
 Now, let \(C\) be a curve in \(\R^{3}\), again not necessarily closed, parameterized by \(\vecfuc{r}{t}\), \(a \leq t \leq b\).
 \begin{itemize}
-    \item The arc length of \(C\) is given by:
+    \item The \textcolor{horange!80}{\textbf{arc length}} of \(C\) is given by:
     \[
         s = \displaystyle\int_{C} ds = \int_{a}^{b} \normdvecfuc{r}{t} \, dt.
     \]
-    \item If \(f(x,y,z)\) is a continuous scalar function, then the following integral calculates the average value of \(f\) along \(C\), multiplied by the arc length of \(C\):
+    \item If \(f(x,y,z)\) is a continuous \textcolor{horange!80}{\textbf{scalar function}}, then the following integral calculates the average value of \(f\) along \(C\), multiplied by the arc length of \(C\):
     \[
         \int_{C} f(x(t), y(t), z(t)) \, ds = \int_{a}^{b} f(\vecfuc{r}{t}) \normdvecfuc{r}{t} \, dt.
     \]
-    \item If \(\mb{F}\) is a vector field, the circulation along \(C\) is given by:
+    \item If \(\mb{F}\) is a \textcolor{horange!80}{\textbf{vector field}}, the \textcolor{horange!80}{\textbf{circulation}} along \(C\) is given by:
     \[
         \int_{C} \mb{F} \cdot d\mb{r} = \int_{C} \mb{F} \cdot \mb{T} \, ds = \int_{a}^{b} \mb{F} \cdot \dvecfuc{r}{t} \, dt.
     \]
     \begin{itemize}
-        \item In the special case where \(C\) is closed, by Stokes’ Theorem:
+        \item In the special case where \(C\) is closed, by \textcolor{horange!80}{\textbf{Stokes’ Theorem}}:
         \[
             \oint_{C} \mb{F} \cdot \mb{T} \, ds = \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S},
         \]
@@ -426,36 +442,48 @@ Now, let \(C\) be a curve in \(\R^{3}\), again not necessarily closed, parameter
 
 Let \(S\) be a surface in \(\R^{3}\), not necessarily closed, parameterized by \(\vecfuc{r}{u,v}\).
 \begin{itemize}
-    \item If \(f(x,y,z)\) is a scalar function, we can find the average value of \(f\) over \(S\) multiplied by the area of \(S\) by finding:
+    \item If \(f(x,y,z)\) is a \textcolor{horange!80}{\textbf{scalar function}}, we can find the average value of \(f\) over \(S\) multiplied by the area of \(S\) by finding:
     \[
         \iint_{S} f(x,y,z) \normdvecfuc{t}{u} \times \mb{t}_{v} \, dS.
     \]
     \begin{itemize}
-        \item For example, if \(f\) is the density of some object, this integral finds the mass, that is the average density times the area.
+        \item For example, if \(f\) is the \textcolor{horange!80}{\textbf{density}} of some object, this integral finds the \textcolor{horange!80}{\textbf{mass}}, that is the average density times the area.
     \end{itemize}
-    \item If \(\mb{F}\) is a vector field, then
+    \item If \(\mb{F}\) is a \textcolor{horange!80}{\textbf{vector field}}, then
     \[
         \iint_{S} \mb{F} \cdot d\mb{S} = \iint_{S} \mb{F} \cdot \mb{N} \, dS = \iint_{S} \mb{F} \cdot (\mb{t}_{u} \times \mb{t}_{v}) \, du \, dv
     \]
-    measures the flux of \(\mb{F}\) through \(S\) – that is the amount of \(\mb{F}\) which passes orthogonally through \(S\), where positive flux matches the direction of the normal.
+    measures the \textcolor{horange!80}{\textbf{flux}} of \(\mb{F}\) through \(S\) – that is the amount of \(\mb{F}\) which passes orthogonally through \(S\), where positive flux matches the direction of the normal.
     \begin{itemize}
         \item If \(\mb{G} = \nabla \times \mb{F}\), then 
-        \[
-            \iint_{S} \mb{G} \cdot d\mb{S} = \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S}
-        \]
-        measures the flux of the curl of \(\mb{F}\) across \(S\) – that is the total amount of circulation (or torque) that \(\mb{F}\) induces in \(S\).
-        \item by Stokes’ Theorem, if \(C\) is the positively oriented boundary curve of \(S\):
+        \begin{align*}
+            \iint_{S} \mb{G} \cdot d\mb{S} &= \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S} \\
+            &= \iint_{S} \left\langle \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}, \, \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}, \, \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right\rangle \, d\mb{S},
+        \end{align*}
+        measures the \textcolor{horange!80}{\textbf{flux}} of the \textcolor{horange!80}{\textbf{curl}} of \(\mb{F}\) across \(S\) – that is the total amount of \textcolor{horange!80}{\textbf{circulation}} (or torque) that \(\mb{F}\) induces in \(S\).
+        \item by \textcolor{horange!80}{\textbf{Stokes’ Theorem}}, if \(C\) is the \textcolor{horange!80}{\textbf{positively oriented boundary curve}} of \(S\):
         \[
             \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S} = \oint_{C} \mb{F} \cdot \mb{T} \, ds.
         \]
     \end{itemize}
     \item In the special case when \(S\) is closed with positive orientation – that is, \(S\) encloses a solid region \(E \subseteq \R^{3}\) with outward pointing normal – then \(\displaystyle \iint_{S} \mb{F} \cdot d\mb{S}\) measures the total flux of \(\mb{F}\) out of \(E\). by the Divergence Theorem,
-    \[
-        \iint_{S} \mb{F} \cdot d\mb{S} = \iiint_{E} (\nabla \cdot \mb{F}) \, dV,
-    \]
+    \begin{align*}
+        \iint_{S} \mb{F} \cdot d\mb{S} &= \iiint_{E} \nabla \cdot \mb{F} \, dV \\
+        &= \iiint_{E} \left\langle \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z} \right\rangle \, dV,
+    \end{align*}
     since the second integral adds up all the ``outflow'' of \(\mb{F}\) at each point inside the solid region \(E\).
     \begin{itemize}
         \item In this special case when \(S\) is closed, it does not have a boundary curve, and therefore the total circulation, or total flux of the curl of any vector field \(\mb{F}\) across \(S\) is therefore 0. We can also see this since we know that for any vector field, \(\nabla \cdot (\nabla \times \mb{F}) = 0\).
+        \item Example: \(\mb{F} = \brackett{x + y, y + z, z + x}\) where \(S\) is the unit sphere. \\
+
+        First, we find the divergence:
+        \[
+            \nabla \cdot \mb{F} = \frac{\partial}{\partial x}(x + y) + \frac{\partial}{\partial y}(y + z) + \frac{\partial}{\partial z}(z + x) = 1 + 1 + 1 = 3.
+        \]
+        Then we integrate:
+        \[
+            \iiint_{E} 3 \, dV = 3 \cdot \text{Volume of the unit sphere} = 3 \cdot \frac{4}{3} \pi (1)^{3} = 4\pi.
+        \]
     \end{itemize}
 \end{itemize}
 \end{document}

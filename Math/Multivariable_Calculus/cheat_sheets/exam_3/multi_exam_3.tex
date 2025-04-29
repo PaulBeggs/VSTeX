@@ -1,0 +1,481 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
+\usepackage{pgfplots}
+\usepgflibrary{shadings}
+\usepackage{amsmath,amssymb}
+\usepackage{subcaption}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usetikzlibrary{decorations.markings}
+
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\makeatletter
+
+\definecolor{horange}{HTML}{f58026}
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{\(\m@th#1\bullet\)}}}}}
+\makeatother
+
+\newenvironment{solution}%
+    {\textit{Solution.}}
+
+    \newcommand{\sol}[1]{
+        \begin{solution}
+            #1
+        \end{solution}
+    }
+
+\title{Discrete Exam 2 Note Sheets}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight
+3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.40in
+\advance\evensidemargin-1.45in
+\parindent0pt
+\parskip1pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\cyanit}[1]{\textbf{\textit{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\dydx}{\tfrac{dy}{dx}}
+\newcommand{\dxdy}{\tfrac{dx}{dy}}
+\newcommand{\dydt}{\tfrac{dy}{dt}}
+\newcommand{\dxdt}{\tfrac{dx}{dt}}
+\newcommand{\dzdt}{\tfrac{dz}{dt}}
+
+
+\newcommand{\cost}{\cos(t)}
+\newcommand{\sint}{\sin(t)}
+\newcommand{\tant}{\tan(t)}
+\newcommand{\p}{\partial}
+
+% 
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\mbi}{\mathbf{i}}
+\newcommand{\mbj}{\mathbf{j}}
+\newcommand{\mbk}{\mathbf{k}}
+\newcommand{\mbr}{\mathbf{r}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccsc}{arccsc}
+
+\usepackage{titlesec}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+\setlist[enumerate,1]{left=0pt}
+\setlist[enumerate,2]{left=-10pt}
+
+
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{center}{\huge{\textbf{Multivariable Calculus Exam 3}}}\\
+\end{center}
+\begin{multicols*}{2}
+
+    \tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+    \tikzstyle{innerbox} = [draw=black, fill=gray!20, thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+    \tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+    %------------ Measures of Center ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+                \begin{enumerate}
+                    \item Determine \(\displaystyle \int_{C} y^{2} \, dx + z \, dy + x \, dz\), where \(C\) is the line segment which connects \((2,0,0)\) to \((3,4,5)\). 
+
+                    \sol{
+                        We can parameterize this line segment as follows: \(\langle 2 + t, 4t, 5t \rangle,\; 0 \leq t \leq 1\). We get this from taking each component of the vector function and setting \(t = 0\), to get the point \((2,0,0)\). Then, by setting \(t = 1\), we get the point \((3,4,5)\). Now, we can differentiate \(\mbr(t)\) to get \(\dvecfuc{\rmb}{t}\):
+                        \[
+                            \dvecfuc{\rmb}{t} = \left\langle \tfrac{d}{dt}\left[(2+t)\right] + \tfrac{d}{dt}\left[(4t)\right] + \tfrac{d}{dt}\left[(5t)\right] \right\rangle = \left\langle 1, 4, 5 \right\rangle.
+                        \]
+                        This gives us the following: \(dx = dt, \quad dy = 4dt, dz = 5dt.\). Expressing the integral in terms of \(t\), we can solve the integral as follows:
+                        \begin{align*}
+                            \int_{C} y^{2} \, dx + z \, dy + x \, dz &= \int_{0}^{1} (16t^{2} + 20t + 10 + 5t) dt \\
+                            &= \left[\frac{16}{3}t^{3} + \frac{25}{2}t^{2} + 10t\right]_{0}^{1} = \frac{167}{6}
+                        \end{align*}
+                    }
+                    \item Determine \(\displaystyle \int_{C} \frac{1}{x^{2} + y^{2} + z^{2}} \, ds\), where \(C\) is given by \(\left \langle \cos t, \sin t, t \right \rangle\), \(0 \leq t \leq \pi\).
+
+                    \sol{
+                        First, we need to find \(ds\), which is given by finding the derivative of the vector function and taking the norm:
+                        \[
+                            ds = \normdvecfuc{\rmb}{t} \, dt = \sqrt{(-\sin t)^{2} + (\cos t)^{2} + 1^{2}} \, dt = \sqrt{1 + 1} \, dt = \sqrt{2} dt.
+                        \]
+                        Rewriting the integral in terms of \(t\), we have:
+                        \[
+                            \int_{C} \frac{1}{x^{2} + y^{2} + z^{2}} \, ds = \int_{0}^{\pi} \frac{1}{\cos^{2} t + \sin^{2} t + t^{2}} \sqrt{2} \, dt = \sqrt{2} \int_{0}^{\pi} \frac{1}{1 + t^{2}} \, dt.
+                        \]
+                        We know that \(\int \frac{1}{1 + t^{2}} dt = \tan^{-1}(t)\), so we can evaluate the integral as follows:
+                        \begin{align*}
+                            \sqrt{2} \int_{0}^{\pi} \frac{1}{1 + t^{2}} \, dt &= \sqrt{2} \left[\tan^{-1}(t)\right]_{0}^{\pi} \\
+                            &= \sqrt{2} \left(\tan^{-1}(\pi) - \tan^{-1}(0)\right) \\
+                            &= \boxed{\sqrt{2} \tan^{-1}(\pi).}
+                        \end{align*}
+                    }
+                \end{enumerate}
+            \end{minipage}
+        };
+        %------------ Measures of Center Header ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {Practice Set \# 5};
+    \end{tikzpicture}
+
+    %------------ Normal Distribution ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+                \begin{enumerate}
+                    \setcounter{enumi}{2}
+                    \item Let \(\mb{F}(x,y) = 3x^{2}y^{2}\mbi + (2x^{3}y + 5)\mbj\). Find a scalar function \(f\) such that \(\nabla f = \mb{F}\) and use this to determine \(\displaystyle \int_{C} \mb{F} \cdot d\mb{r}\) where \(C\) is given by \(\mb{r}(t) = (t^{3} - 2t)\mbi + (t^{3} + 2t)\mbj\) for \(0 \leq t \leq 1\).  
+
+                    \sol{
+                        First, we need to check if \(\mb{F}\) is conservative. We can do this by checking if the mixed partials are equal:
+                        \[
+                            \frac{\partial}{\partial y}(3x^{2}y^{2}) = 6x^{2}y, \quad \frac{\partial}{\partial x}(2x^{3}y + 5) = 6x^{2}y.
+                        \]
+                        Since these are equal, we can conclude that \(\mb{F}\) is conservative. Now, we need to find a scalar function \(f\) such that \(\nabla f = \mb{F}\). We can do this by integrating the components of \(\mb{F}\):
+                        \begin{align*}
+                            f(x,y) &= \int 3x^{2}y^{2} \, dx + h(y) \\
+                            &= x^{3}y^{2} + h(y).
+                        \end{align*}
+                        Then, we can differentiate \(f\) with respect to \(y\) and set it equal to the second component of \(\mb{F}\):
+                        \[
+                            \tfrac{\partial}{\partial y}(x^{3}y^{2} + h(y)) = 2x^{3}y + h'(y) \quad \Rightarrow \quad 2x^{3}y + h'(y) = 2x^{3}y + 5 \quad \Rightarrow \quad h'(y) = 5. 
+                        \]
+                        This gives us \(h'(y) = 5\), so we can integrate to find \(h(y)\):
+                        \[
+                            h(y) = 5y + K.
+                        \]
+                        Thus, we have:
+                        \[
+                            f(x,y) = x^{3}y^{2} + 5y + K.
+                        \]
+                        Finally, we can use the Fundamental Theorem of Line Integrals to evaluate the integral:
+                        \begin{align*}
+                            \int_{C} \mb{F} \cdot d\mb{r} &= f(\mb{r}(1)) - f(\mb{r}(0)) \\
+                            &= f(-1,3) - f(0,0) \\
+                            &= \left[(-1)^{3}(3)^{2} + 5(3) + K\right] - \left[(0)^{3}(0)^{2} + 5(0) + K\right] \\
+                            &= \left[-9 + 15 + K\right] - \left[0 + 0 + K\right] \\
+                            &= -9 + 15 + K - K \\
+                            &= \boxed{6}.
+                        \end{align*}
+                    }
+                \end{enumerate}
+            \end{minipage}
+        };
+
+        %------------ Normal Distribution Header ---------------------
+        % \node[fancytitle, right=10pt] at (box.north west) {Practice Set \# 5 (cont.)};
+    \end{tikzpicture}
+
+
+    %------------ Normal Distribution ---------------
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+                \begin{enumerate}
+                    \setcounter{enumi}{3}
+                    \item For what value(s), if any, of \(a\) is \((3x^{2}y + az)\mbi + x^{3}j + (3x + 3z^{2})\mbk\) conservative?  
+
+                    \sol{
+                        From Section 1, we know that for a 3-dimensional vector field to be conservative, the mixed partials must be equal. Thus, we must find each of the following:
+                        \[
+                            \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}, \quad \frac{\partial Q}{\partial z} = \frac{\partial R}{\partial y}, \quad \frac{\partial R}{\partial x} = \frac{\partial P}{\partial z},
+                        \]
+                        where \(P = 3x^{2}y + az\), \(Q = x^{3}\), and \(R = 3x + 3z^{2}\). Starting with the first equality. (Skipping a lot) Since these are equal, we can move on to the last equality:
+                        \[
+                            \tfrac{\partial}{\partial x}(3x + 3z^{2}) = 3, \quad \tfrac{\partial}{\partial z}(3x^{2}y + az) = a.
+                        \]
+                        Thus, the only value of \(a\) for which the vector field is conservative is \(\boxed{a = 3}\).
+                    }
+                    \item Find the work done by the force field \(\mb{F} = x^{2}\mbi + y^{3}\mbj\) in moving an object from \((1,0)\) to \((2,2)\).   
+
+                    \sol{
+                        From \((1,0)\) to \((2,2)\), we can parameterize and find its derivative for the line segment as follows: \(\mb{r}(t) = \langle 1 + t, 2t \rangle, \; 0 \leq t \leq 1 \; \Rightarrow \; \mb{r}'(t) = \langle 1, 2 \rangle.\) Now, we can find \(\mb{F}(\mb{r}(t))\) and its dot product with \(\mb{r}'(t)\) as follows (then integrate):
+                        \[
+                            \mb{F}(\mb{r}(t)) = \langle (1 + t)^{2}, 8t^{3} \rangle \Rightarrow \int_{0}^{1}(\mb{F}(\mb{r}(t)) \cdot \mb{r}'(t))dt = \int_{0}^{1}((1 + t)^{2} + 16t^{3})dt.
+                        \]
+                    }
+                    \item Find the circulation of \(\mb{F} = xy\mbi + x^{2}y^{3}\mbj\) along \(C\), where \(C\) is the counter-clockwise oriented triangle with vertices \((0,0)\), \((1,0)\), and \((1,2)\). Determine the value of this integral by working three separate line integrals.
+
+                    \sol{
+                         Parameterize each line segment, find \(\int_{C_{1}\ldots C_{3}}\mb{F}(\mb{r}(t)) \cdot d\mb{r}\), and add.
+                    }
+                    \item Find the Flux of the same equation as above. \\
+                    Use: \(\int_{a}^{b}\mb{F}(\mb{r}(t)) \cdot \langle y'(t), -x'(t)\, dt\)
+                    
+                \end{enumerate}
+            \end{minipage}
+        };
+
+        %------------ Normal Distribution Header ---------------------
+        % \node[fancytitle, right=10pt] at (box.north west) {Practice Set \# 5 (cont.)};
+    \end{tikzpicture}
+
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+                \begin{enumerate}
+                    \item Find the circulation of \(\mb{F} = \left\langle xy, \, x^{2}y^{3} \right\rangle\) along \(C\), where \(C\) is the counter-clockwise oriented triangle with vertices \((0,0)\), \((1,0)\), and \((1,2)\) using Green's Theorem. \\
+                    \sol{
+                        Use formula: \(\iint_{C}(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})dA = \int_{0}^{1}\int_{0}^{2x}(2xy^{3} - x)dydx\).
+                    }
+                    \item Find the flux of the same vector field as above across the boundary of the triangle. \\
+                    \sol{
+                        Use formula: \(\iint_{C}(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y})dA = \int_{0}^{1}\int_{0}^{2x}(y + 3x^{2}y^{2})dydx\).
+                    }
+
+                \end{enumerate}
+            \end{minipage}
+        };
+
+        %------------ Normal Distribution Header ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {Practice Set \# 6};
+    \end{tikzpicture}
+
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+                \begin{enumerate}
+                    \setcounter{enumi}{2}
+                    \item Find \(\displaystyle \iint_{S}x^{2} \, dS\), where \(S\) is the triangle with vertices \((1,0,0)\), \((0,-2,0)\), and \((0,0,4)\).
+
+                    \sol{
+                    Parameterize the triangular surface:
+                    \[
+                      \mb{r}(u,v) = (1,0,0)(1-u-v) + (0,-2,0)u + (0,0,4)v = (1-u-v, -2u, 4v)
+                    \]
+                    where \(0 \leq u,v\) and \(u+v \leq 1\).
+            
+                    Computing the tangent vectors:
+                    \[
+                      \mb{t}_u = (-1,-2,0) \quad \text{and} \quad \mb{t}_v = (-1,0,4)
+                    \]
+            
+                    The normal vector is:
+                    \[
+                      \mb{n} = \mb{t}_u \times \mb{t}_v = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ -1 & -2 & 0 \\ -1 & 0 & 4 \end{vmatrix} = (-8,4,-2)
+                    \]
+            
+                    The magnitude of this normal vector gives the area element:
+                    \[
+                      \|\mb{t}_u \times \mb{t}_v\| = \mysqrt{64+16+4} = \mysqrt{84} = 2\mysqrt{21}
+                    \]
+            
+                    Now we can evaluate the surface integral:
+                    \[
+                      \iint_{S}x^{2} \, dS = \iint_{D}(1-u-v)^2 \cdot 2\mysqrt{21} \, du \, dv
+                    \]
+            
+                    Computing this double integral:
+                    \begin{align*}
+                      2\mysqrt{21}\int_{0}^{1}\int_{0}^{1-u}(1-u-v)^2 \, dv \, du & = 2\mysqrt{21}\int_{0}^{1}\left[\frac{-(1-u-v)^3}{3}\right]_{0}^{1-u} \, du       \\
+                                                                                  & = 2\mysqrt{21}\int_{0}^{1}\left[\frac{-(0)^3}{3} + \frac{(1-u)^3}{3}\right] \, du \\
+                                                                                  & = \frac{2\mysqrt{21}}{3}\int_{0}^{1}(1-u)^3 \, du                                 \\
+                                                                                  \intertext{We make the substitution \(v = 1 - u\) to get \(dv = - du\). Note this flips the limits of integration, but the negative sign cancels that out, so we can keep the limits as they are.}
+                                                                                  & = \frac{2\mysqrt{21}}{3}\int_{0}^{1}v^3 \, dv                                   \\
+                                                                                  & = \frac{2\mysqrt{21}}{3}\left[\frac{v}{4}\right]_{0}^{1}                                        \\
+                                                                                  & = \boxed{\frac{\mysqrt{21}}{6}}.
+                    \end{align*}
+                    
+                    }
+                \end{enumerate}
+            \end{minipage}
+        };
+
+        %------------ Normal Distribution Header ---------------------
+        % \node[fancytitle, right=10pt] at (box.north west) {Practice Set \# 6 (cont.)};
+    \end{tikzpicture}
+
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+                \begin{enumerate}
+                    \setcounter{enumi}{3}
+                    \item Let \(C\) be a simple closed smooth curve that lies in the plane \(x + y + z = 1\). (This is the same plane as on the previous problem, so you can use some of that work if you'd like.) Use Stokes' Theorem to show that the value of the line integral \(\displaystyle \int_{C} z \, dx - 2x \, dy + 3y \, dz\) has a value which only depends on the area of the region enclosed by \(C\), and does therefore not depend on the particular shape of \(C\) or its actual location within the plane. [Hint: Set up and work the integral given by usings Stokes' -- you'll see that the integral will eventually look like \(\iint_{S} dS\). Think about why that might be useful.]
+                    \sol{
+                      For Stokes' Theorem, we need to compute the curl of \(\mb{F} = \langle z, -2x, 3y \rangle\):
+                      \[
+                        \nabla \times \mb{F} = \begin{vmatrix} \mb{i} & \mb{j} & \mb{k} \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\ z & -2x & 3y \end{vmatrix} = \left\langle 3, 1, -2 \right\rangle.
+                      \]
+                      From here, we can set up the integral:
+                      \[
+                        \int_{C} z \, dx - 2x \, dy + 3y \, dz = \iint_{S} (\nabla \times \mb{F}) \cdot d\mb{S} = \iint_{S} (3, 1, -2) \cdot (1, 1, 1) \, dS.
+                      \]
+                      This is \(2\) times the area of the region enclosed by \(C\). Since the area of a region does not depend on the shape of the region, we have shown that the value of the line integral does not depend on the shape of \(C\) or its location within the plane. Thus, we have:
+                      \[
+                        \int_{C} z \, dx - 2x \, dy + 3y \, dz = 2A,
+                      \]
+                      where \(A\) is the area of the region enclosed by \(C\).
+                    }
+                    \item Let \(\mb{F}(x,y,z) = \left\langle x, y, z^{2} \right\rangle\) and \(S\) be the unit sphere with positive orientation. Find \( \iint_{S} \mb{F} \cdot d\mb{S}\).
+
+                    \sol{
+                        Since \(S\) is closed, we can use the Divergence Theorem. That is:
+                        \begin{align*}
+                            \iint_{S} \mb{F} \cdot d\mb{S} &= \iiint_{V} \nabla \cdot \mb{F} \, dV \\
+                            &= \iiint_{V} (1 + 1 + 2z) \, dV \\
+                            \intertext{Using spherical coordinates, we have:}
+                            &= \int_{0}^{\pi} \int_{0}^{2\pi} \int_{0}^{1} (2 + 2\rho\cos\phi) \rho^{2}\sin\phi \, d\rho \, d\theta \, d\phi
+                        \end{align*}
+                        Factor out 2, and do \(\theta\) integral because none depend on it. Then do \(\rho\) and \(\phi\). 
+                    }
+                \end{enumerate}
+            \end{minipage}
+        };
+
+        %------------ Normal Distribution Header ---------------------
+        % \node[fancytitle, right=10pt] at (box.north west) {Practice Set \# 6 (cont.)};
+    \end{tikzpicture}
+
+
+    \begin{tikzpicture}
+        \node [mybox] (box){%
+            \begin{minipage}{0.46\textwidth}
+                \textbf{Algorithm for Finding a Potential Function for \(\mb{F}(x,y) = \brackett{P(x,y),Q(x,y)}\):}
+                \begin{enumerate}
+                    \item Integrate \(P\) with respect to \(x\). This results in a function of the form \(g(x,y) + h(y)\).
+                    \item Take the partial derivative of \(g(x,y) + h(y)\) with respect to \(y\), which results in function \(g_{y}(x,y) + h'(y)\).
+                    \item Use the equation \(g_{y}(x,y) + h'(y) = Q(x,y)\) to find \(h(y)\). 
+                    \item Integrate \(h'(y)\) to find \(h(y)\).
+                    \item Any function of the form \(g(x,y) + h(y) + C\) is a potential function for \(\mb{F}\).                    
+                \end{enumerate}
+
+
+                \textbf{Example:} Solve \(\iint_{S}(x^{2}z + y^{z}) \, dS\), \(S\) is the upperhemisphere of \(x^{2} + y^{2} +z^{2} = 4\).
+
+                \sol{First, it's clear that we are going to need to use spherical coordinates. From page 5 in the handout, we know that:
+                \[
+                    \mb{r}(\theta,\phi) = \langle 2\sin(\theta)\cos(\phi), 2\sin(\theta)\sin(\phi), 2\cos(\phi) \rangle, \quad 0 \leq \theta \leq \tfrac{\pi}{2}, \quad 0 \leq \phi < 2\pi.
+                \]
+                Thus, we know this is also equal to \(\| \mb{t}_{\theta} \times \mb{t}_{\phi} \| = 4\sin(\phi)\). \\
+
+                We can now solve the integral \(\iint_{S} (x^{2}z + y^{z}) \, dS \):
+                \begin{align*}
+                    &= \int_{0}^{2\pi} \int_{0}^{\frac{\pi}{2}} \bigl((2\cos\theta \sin\phi)^{2}2\cos\phi + (2\sin\theta\sin\phi)^{2}2\cos\phi\bigr) \cdot 4\sin\phi \, d\phi \, d\theta \\
+                    &= \int_{0}^{2\pi} \int_{0}^{\frac{\pi}{2}} \bigl((8\cos^{2}\theta\sin^{2}\phi)\cos\phi + (8\sin^{2}\theta\sin^{2}\phi)\cos\phi\bigr) \cdot 4 \sin\phi \, d\phi \, d\theta \\
+                    &= \int_{0}^{2\pi} \int_{0}^{\frac{\pi}{2}} 32\sin^{3}\phi\cos\phi\underbrace{(\cos^{2}\theta + \sin^{2}\theta)}_{= 1} \, d\phi \, d\theta \\
+                    \intertext{With the u-substitution \(u = \sin\phi\), we have \(du = \cos\phi \, d\phi\).}
+                    &= 32 \cdot 2\pi \cdot \left[ \frac{1}{4}u^{4}\right]_{0}^{1} \\
+                    &= 16\pi.
+                \end{align*}
+                }
+                \textbf{Converting Coordinates:}
+                \begin{itemize}
+                    \item \textbf{Spherical:} \(x = \rho \sin(\phi)\cos(\theta), \; y = \rho\sin(\phi)\sin(\theta), \; z = \rho\cos(\phi)\).
+                    \item \textbf{S. to Cartesian:} \(\rho = \mysqrt{x^{2} + y^{2} + z^{2}}, \; \theta = \arctan(\frac{x}{y}), \; \phi = \arccos(\frac{z}{\rho})\)
+                    \item \textbf{Cylindrical:} \(x = r\cos(\theta), \; y = r\sin(\theta), \; z = z\).
+                    \item \textbf{C. to Cartesian:} \(r = \mysqrt{x^{2} + y^{2}}, \; \theta = \arctan(\frac{y}{x}), \; z = z\).
+                \end{itemize}
+
+            \end{minipage}
+        };
+
+        %------------ Normal Distribution Header ---------------------
+        \node[fancytitle, right=10pt] at (box.north west) {From Notes};
+    \end{tikzpicture}
+\end{multicols*}
+
+
+
+\end{document}
