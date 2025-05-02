@@ -6,7 +6,7 @@
 \usepackage{amsmath,amsthm} 
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
-\usepackage{draculatheme}
+% \usepackage{draculatheme}
 \usepackage{mathrsfs}
 \usepackage{changepage}
 \usepackage{multicol}
@@ -30,8 +30,8 @@
   leftline=true,
   linewidth=1.5pt,
   linecolor=black, % default color, will be overridden in custom commands
-  backgroundcolor=draculabg, % Needed for Dracula theme
-  fontcolor=draculafg, % Needed for Dracula theme
+%   backgroundcolor=draculabg, % Needed for Dracula theme
+%   fontcolor=draculafg, % Needed for Dracula theme
   innertopmargin=0pt,
   innerbottommargin=5pt,
   innerrightmargin=10pt,
@@ -179,21 +179,21 @@
 
 % !TeX spellcheck = off
 \newcommand{\foo}[2]{%
-  % #1: math style, #2: content
-  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
-  \begin{tikzpicture}[baseline=(sqrt.base)]
-    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
-    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+		\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
   \end{tikzpicture}%
 }
 % !TeX spellcheck = off
 \newcommand{\foodisplay}[2]{%
-  % #1: math style, #2: content
-  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
-  \begin{tikzpicture}[baseline=(sqrt.base)]
-    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
-    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
-  \end{tikzpicture}%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+		\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
 }
 
 \newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
@@ -215,7 +215,7 @@
 \newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
 
 \newcommand{\proj}{\text{proj}}
-
+\newcommand{\p}{\partial}
 \newcommand{\mb}[1]{\mathbf{#1}}
 
 % \renewcommand{\theenumi}{\arabic{enumi}} 
@@ -248,61 +248,224 @@
 \begin{enumerate}
     \item Consider the vector field \(\mb{F} = \brackett{2x - 2y, \, 2x + 2y, \, 0}\)
     \begin{enumerate}
-        \item (2 points) Show that \(\mb{F}\) is not conservative.
+        \item (2 points) Show that \(\mb{F}\) is not conservative. \\
 
         \sol{
-
+            For a vector field to be conservative, its curl must be zero. Computing the curl of \(\mb{F}\):
+            \begin{align*}
+              \nabla \times \mb{F} &= \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) \mathbf{i} + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right) \mathbf{j} + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \mathbf{k} \\
+              &= (0 - 0)\mb{i} + (0 - 0)\mb{j} + (2 - (-2))\mb{k} \\
+              &= 4\mb{k}.
+            \end{align*}
+            Since \(\nabla \times \mb{F} = \brackett{0,0,4} \neq \brackett{0,0,0}\), \(\mb{F}\) is not conservative.
         }
-        \item (2 points) Show that \(\mb{F}\) is not solenoidal.
+        \item (2 points) Show that \(\mb{F}\) is not solenoidal. \\
 
         \sol{
-
+            A vector field is solenoidal if its divergence is zero. Thus:
+            \begin{align*}
+                \nabla \cdot \mb{F} &= \frac{\partial}{\partial x}(2x - 2y) + \frac{\partial}{\partial y}(2x + 2y) + \frac{\partial}{\partial z}(0) \\
+                &= 2 + 2 + 0 \\
+                &= 4.
+            \end{align*}
+            
+            Since \(\nabla \cdot \mb{F} = 4 \neq 0\), \(\mb{F}\) is not solenoidal.
         }
         \item (2 points each) Let \(\mb{G} = \brackett{2x, \, 2y, \, 0}\) and \(\mb{H} = \brackett{-2y, \, 2x, \, 0}\). Notice that \(\mb{F} = \mb{G} + \mb{H}\).
         \begin{enumerate}
-            \item Show that \(\mb{G}\) \textit{is} conservative, and find a potential function \(g\).
+            \item Show that \(\mb{G}\) \textit{is} conservative, and find a potential function \(g\). \\
 
             \sol{
+                \begin{align*}
+					\nabla \times \mb{G} &= (0 - 0)\imb - (0 - 0)\jmb + \left(\frac{\partial}{\partial x}(2y) - \frac{\partial}{\partial y}(2x)\right)\kmb.
+                \end{align*}
+                
+                Since \(\nabla \times \mb{G} = \brackett{0,0,0}\), \(\mb{G}\) is conservative. \\
 
+				A potential function is one where \(\nabla g = \mb{G}\). Thus, since we have a (relatively) straightforward vector field, the following will work for a potential function:
+				\[
+					g(x,y,z) = x^{2} + y^{2} + K. \quad (\text{Setting } K = 0 \text{ for simplicity.})
+				\]
+				We can check this by finding \(\nabla g\):
+				\[
+					\nabla g(x,y,z) = \left\langle\frac{\p}{\p x}(x^{2} + y^{2}), \frac{\p}{\p y}(x^{2} + y^{2}), \frac{\p}{\p z}(x^{2} + y^{2})  \right\rangle = \langle 2x, 2y, 0\rangle = \mb{G}.
+				\]
             }
-            \item Show that \(\mb{H}\) \textit{is} solenoidal -- so that it is the curl of some other vector field \(\mb{C}\). Find such a \(\mb{C}\). [Hint: You might want to choose the \(z\)-component to be 0.]
+			\newpage
+            \item Show that \(\mb{H}\) \textit{is} solenoidal -- so that it is the curl of some other vector field \(\mb{C}\). Find such a \(\mb{C}\). [Hint: You might want to choose the \(z\)-component to be 0.] \\
             
             \sol{
+                \begin{align*}
+                    \nabla \cdot \mb{H} &= \frac{\partial}{\partial x}(-2y) + \frac{\partial}{\partial y}(2x) + \frac{\partial}{\partial z}(0) \\
+                    &= 0 + 0 + 0 \\
+                    &= 0.
+                \end{align*}
+                Since \(\nabla \cdot \mb{H} = 0\), the vector field \(\mb{H}\) is solenoidal. \\
 
+				For finding the vector field \(\mb{C}\), we can look at the formula for the curl of a vector field from (a). We see that we need to have our \(x\)-component and \(y\)-component to be equal to \(\mb{H}\). Thus, for the \(x\)-component, we need to get \(-2y\). The only part of the formula that allows us that is the \(\frac{\p R}{\p y}\) part. The same argument can be said for the \(y\)-component. We need to get a positive \(2x\), and we can get that through \((-\frac{\p R}{\p x})\). Thus, this leads me to believe that we need to keep our function in \(R\) of \(\mb{C}\), and ensure \(P\) and \(Q\) are both 0. This leaves us with:
+				\[
+					\mb{C} = \langle 0, 0, -x^{2} - y^{2} \rangle.
+				\]
+				Taking the curl of this vector field, we can confirm our choice:
+				\begin{align*}
+					\nabla \times \mb{C} &= \left\langle \frac{\p}{\p y}(-x^{2} - y^{2}) - 0, 0 - \frac{\p}{\p x} (-x^{2} - y^{2}), 0 - 0 \right\rangle \\
+					&= \langle -2y, -(-2x), 0 \rangle \\
+					&= \langle -2y, 2x, 0 \rangle.
+				\end{align*}
             }
         \end{enumerate}
-        \item (2 points) Conclude that we have decomposed \(\mb{F}\) into a purely conservative (i.e., irrotational) part and a purely solenoidal (i.e., divergence-free) part, so that \(\mb{F} = \nabla g + \nabla \times \mb{C}\). [This can always be done, so long as everything is continuous enough.]
+        \item (2 points) Conclude that we have decomposed \(\mb{F}\) into a purely conservative (i.e., irrotational) part and a purely solenoidal (i.e., divergence-free) part, so that \(\mb{F} = \nabla g + \nabla \times \mb{C}\). [This can always be done, so long as everything is continuous enough.] \\
 
         \sol{
-
+            We have shown that:
+            \begin{itemize}
+                \item \(\mb{G} = \brackett{2x, 2y, 0}\) is conservative with potential function \(g(x,y,z) = x^2 + y^2\), so \(\mb{G} = \nabla g\).
+                \item \(\mb{H} = \brackett{-2y, 2x, 0}\) is solenoidal and can be expressed as \(\mb{H} = \nabla \times \mb{C}\) where \(\mb{C} = \brackett{0,0,-x^2-y^2}\).
+                \item \(\mb{F} = \mb{G} + \mb{H}\).
+            \end{itemize}
+            Therefore, we have successfully decomposed \(\mb{F}\) as follows:
+            \begin{align*}
+                \mb{F} &= \mb{G} + \mb{H} \\
+                &= \nabla g + \nabla \times \mb{C} \\
+                &= \nabla(x^2 + y^2) + \nabla \times \brackett{0,0,-x^2-y^2} \\
+				&= \brackett{2x, 2y, 0} + \brackett{-2y, 2x, 0} \\
+				&= \brackett{2x - 2y, \, 2x + 2y, \, 0}.
+            \end{align*}
         }
     \end{enumerate}
     \newpage
     \item (8 points) Let \(\mb{F} = \brackett{6x^{2}y, \, -6x - 4y}\). Let \(C\) be the rectangle with endpoints \((0, 0)\), \((4,0)\), \((4,1)\), and \((0,1)\), with positive orientation. Determine the exact value of the flux of \(\mb{F}\) over \(C\): \(\displaystyle \oint \mb{F} \cdot \mb{N} \, ds\).
 
     \sol{
-
+		Since the rectangle is closed, we can use Green's Theorem for flux:
+		\[
+			\oint \mb{F} \cdot \mb{N} \, ds = \iint_{D} (\nabla \cdot \mb{F}) \, dA = \iint_{D} \left(\frac{\p P}{\p x} + \frac{\p Q}{\p y}\right) \, dA.
+		\]
+		Finding the integrand:
+		\[
+			\frac{\p P}{\p x} = \frac{\p}{\p x} (6x^{2}y) = 12xy, \quad \frac{\p Q}{\p y} = \frac{\p}{\p y} (-6x - 4y) = -4 \quad \Rightarrow \quad  \frac{\p P}{\p x} + \frac{\p Q}{\p y} = 12xy - 4.
+		\]
+		Leaving us with:
+		\[
+			\int_{0}^{4} \int_{0}^{1} (12xy - 4) \, dy \, dx.
+		\]
+		Integrating with respect to \(y\):
+		\[
+			\int_{0}^{1} (12xy - 4) \, dy = \left[6xy^{2} - 4y\right]_{0}^{1} = 6x - 4.
+		\]
+		Then, integrating with respect to \(x\):
+		\[
+			\int_{0}^{4} (6x - 4) \, dx = \left[3x^{2} - 4x\right]_{0}^{4} = (3 \cdot 16 - 4 \cdot 4) = \boxed{32}.
+		\]
     }
     \newpage
     \item (8 points) Determine \(\displaystyle \iint_{S}z \, dS\) where \(S\) is the surface \(y = 3x + z^{2}\), where \(0 \leq x \leq 1\) and \(0 \leq z \leq 2\).
 
     \sol{
-
+		Parameterize \(S\) with:
+		\[
+			r(x,z) = (x, \, 3x + z^{2}, \, z), \quad  0 \leq x \leq 1, \quad 0 \leq z \leq 2.
+		\]
+		Then, we need to find \(dS\):
+		\[
+			dS = \| r_{x} \times r_{z} \| \, dx\, dy,
+		\]
+		where
+		\[
+			r_{x} = (1,3,0) \quad \text{and} \quad r_{z} = (0,2z,1)
+		\]
+		gives
+		\[
+			r_{x} \times r_{z} = 
+			\begin{vmatrix}
+				\mb{i} & \mb{j} & \mb{k} \\
+				1 & 3 & 0 \\
+				0 & 2z & 1 
+			\end{vmatrix} = \brackett{3, -1, 2z} \quad \Rightarrow \quad \|r_{x} \times r_{z} \| = \mysqrt{10 + 4z^{2}}.
+		\]
+		Setting up the integral:
+		\[
+			\iint_{S} z \, dS = \int_{0}^{1}\int_{0}^{2}z \mysqrt{10 + 4z^{2}} \, dz \, dx.
+		\]
+		Since the integrand does not depend on \(x\), we simply find:
+		\[
+			\int_{0}^{1} dx = 1.
+		\]
+		This leaves us with the \(z\)-integral:
+		\begin{align*}
+			\int_{0}^{2} z \mysqrt{10 + 4z^{2}} \, dz.
+		\end{align*}
+		Using \(u\)-substitution:
+		\[
+			u = 10 + 4z^{2} \quad \Rightarrow \quad du = 8z \, dz,
+		\]
+		with new bounds 10 and 26:
+		\[
+			\int_{10}^{26} \frac{1}{8}\mysqrt{u} \, du = \frac{1}{8}\left[ \frac{2}{3} u^{3/2} \right]_{10}^{26} = \boxed{\frac{1}{12}(26^{3/2} - 10^{3/2})}.
+		\]
     }
     \newpage
     \item (8 points) Let \(\mb{F}(x,y,z) = \brackett{y, \, x, \, xz}\) and the surface \(S\) be the part of the paraboloid \(z = 4 - x^{2} - y^{2}\) that lies above \(0 \leq x \leq 1\) and \(0 \leq y \leq 1\), where positive orientation is directed upward. Determine
     \[
-        \iint_{S} \mb{F} \cdot d\mb{s}
+        \iint_{S} \mb{F} \cdot d\mb{S}
     \]
     [Hint: The surface, projected into the \(xy\)-plane, is \textit{not} a quarter of the unit circle, and therefore, it is likely easiest to parameterize \(S\) in Cartesian coordinates.]
 
     \sol{
-
+		Parameterize \(S\) with:
+		\[
+			\mb{r}(x,y) = (x,y, 4 - x^{2} - y^{2}), \quad 0 \leq x \leq 1, \quad 0 \leq y \leq 1.
+		\]
+		Then, finding \(d\mb{S}\):
+		\[
+			d\mb{S} = r_{x} \times r_{y} \, dx \, dy,
+		\]
+		where 
+		\[
+			r_{x} = (1,0,-2x) \quad \text{and} \quad r_{y} = (0,1,-2y)
+		\]
+		gives 
+		\[
+			r_{x} \times r_{y} = (2x, 2y, 1).
+		\]
+		Therefore:
+		\[
+			d\mb{S} = (2x, 2y, 1) \, dx \, dy.
+		\]
+		This leaves us with the following:
+		\begin{align*}
+			\iint_{S} \mb{F}(\mb{r}(x,y)) \cdot (r_{x} \times r_{y}) \, dx \, dy &= \int_{0}^{1} \int_{0}^{1} (y, x, x(4 - x^{2} - y^{2})) \cdot (2x, 2y, 1) \, dx \, dy \\
+			&= \int_{0}^{1} \int_{0}^{1} (4xy + 4x - x^{3} - xy^{2}) \, dx \, dy \\
+			&= \int_{0}^{1} \left[ 2xy^{2} + 4xy - x^{3}y - \frac{1}{3}xy^{3} \right]_{0}^{1} \, dx \\
+			&= \int_{0}^{1} \left( 2x + 4x - \frac{1}{3}x - x^{3} \right) \, dx \\
+			&= \left[ x^{2} + 2x^{2} - \frac{1}{6}x^{2} - \frac{1}{4}x^{4} \right]_{0}^{1} \\
+			&= \boxed{\frac{31}{12}}.
+		\end{align*}
     }
     \newpage
-    \item (8 points) Calculate the flux of \(mb{F}(x,y,z) = \brackett{x^{3} + y, \, y^{3} + z^{2}, \, z^{3} + x^{3}}\) across the surface of the sphere centered at the origin with radius 2, with positive orientation. [Since the surface is closed, there are two distinct ways to do this -- though both are things you can work out, one is \textit{significantly} easier than the other.]
+    \item (8 points) Calculate the flux of \(\mb{F}(x,y,z) = \brackett{x^{3} + y, \, y^{3} + z^{2}, \, z^{3} + x^{3}}\) across the surface of the sphere centered at the origin with radius 2, with positive orientation. [Since the surface is closed, there are two distinct ways to do this -- though both are things you can work out, one is \textit{significantly} easier than the other.]
 
     \sol{
+		The equation of a sphere with radius 2 gives:
+		\[
+			x^{2} + y^{2} + z^{2} = 4.
+		\]
+		Then, by the divergence theorem:
+		\[
+			\iint_{S} \mb{F} \cdot d\mb{S} = \iiint_{V} (\nabla \cdot \mb{F}) \, dV, \quad \text{where} \quad V = \{x^{2} + y^{2} + z^{2} \leq 4\}. 
+		\]
+		Solving for \(\nabla \cdot \mb{F}\):
+		\[
+			\frac{\p}{\p x}(x^{3} + y) + \frac{\p}{\p y}(y^{3} + z^{2}) + \frac{\p}{\p z}(z^{3} + x^{3}) = 3x^{2} + 3y^{2} + 3z^{2} = 3(x^{2} + y^{2} + z^{2}).
+		\]
+		Switching to spherical coordinates:
+		\[
+			3(x^{2} + y^{2} + z^{2}) = 3r^{2}, \quad \text{with} \quad dV = r^{2}\sin(\phi)\, dr \, d\phi \, d\theta.
+		\]
+		This leaves us with the integral:
+		\[
+			\iiint_{V} 3r^{2} \, dV = 3 \int_{0}^{2}\int_{0}^{\pi}\int_{0}^{2\pi}r^{2} (r^{2} \sin(\phi)) \, d\theta \, d\phi \, dr = 3(2\pi)(2) \int_{0}^{2}r^{4} \, dr = 12\pi\left[ \frac{1}{5}r^{5} \right]_{0}^{2} = \boxed{\frac{384\pi}{5}}.
+		\]
 
     }
 \end{enumerate}
