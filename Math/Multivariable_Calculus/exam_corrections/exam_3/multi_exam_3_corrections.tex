@@ -1,0 +1,395 @@
+\documentclass[11pt]{article}
+
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+\usepackage{amsmath,amsthm} 
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+% \usepackage{draculatheme}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum} 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.markings}
+
+\setlength{\parindent}{0pt}
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=black, % default color, will be overridden in custom commands
+  % backgroundcolor=draculabg, % Needed for Dracula theme
+  % fontcolor=draculafg, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[left=0.5in,right=0.5in,top=1in,bottom=1in]{geometry}
+% \usepackage{setspace}
+% \linespread{1}
+\usepackage{listings}
+% \usepackage{minted}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+\graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+\allowdisplaybreaks
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+  % #1: math style, #2: content
+  \sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\mbi}{\mb{i}}
+\newcommand{\mbj}{\mb{j}}
+\newcommand{\mbk}{\mb{k}}
+\newcommand{\mbr}{\mb{r}}
+\newcommand{\mbu}{\mb{u}}
+\newcommand{\mbv}{\mb{v}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+
+% \renewcommand{\theenumi}{\arabic{enumi}} 
+% \renewcommand{\labelenumi}{\theenumi.}
+
+\title{Multivariable Calculus Exam III Corrections}
+\author{Paul Beggs}
+\date{\today}
+
+%%% Custom Comands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+\newcommand{\p}{\partial}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{In-Class Portion}
+
+\begin{enumerate}
+    \item (6 points) Set up, but do not evaluate the integral, including appropriate limits, to find the circulation of the vector field \(\mb{F} = \cos(x\mb{i}) + xe^{y}\mb{j}\) along the curve \(\mb{r}(t) = t^{2}\mb{i} + \mysqrt{t}\mb{j}\), for \(0 \leq t \leq 4\). [You should write down a definite integral with only \(t\) as a variable and with \(dt\) as the differential.]
+
+    \sol{
+        Given the formula:
+        \[
+            \int_{C} \mb{F}(\mb{r}(t)) \cdot d\mb{r},
+        \]
+        we can write the integral as:
+        \[
+            \int_{0}^{4} \brackett{\cos(t^{2}), t^{2}e^{\mysqrt{t}}} \cdot \brackett{2t, \frac{1}{2\mysqrt{t}}} dt = \int_{0}^{4} \left(2t\cos(t^{2}) + t^{2}e^{\mysqrt{t}}\frac{1}{2\mysqrt{t}}\right) dt.
+        \]
+    }
+
+    \item (6 points) Set up, but do not evaluate the integral, including appropriate limits, to find the flux of the vector field \(\mb{F} = \cos(x\mb{i}) + xe^{y}\mb{j}\) across the curve \(\mb{r}(t) = t^{2}\mb{i} + \mysqrt{t}\mb{j}\), for \(0 \leq t \leq 4\). [You should write down a definite integral with only \(t\) as a variable and with \(dt\) as the differential.] \\
+    
+    \sol{
+        Given the formula:
+        \[
+            \int_{C} \mb{F}(\mb{r}(t)) \cdot \brackett{y'(t), -x'(t)} dt,
+        \]
+        we can write the integral as:
+        \[
+            \int_{0}^{4} \brackett{\cos(t^{2}), t^{2}e^{\mysqrt{t}}} \cdot \brackett{\frac{1}{2\mysqrt{t}}, -2t} dt = \int_{0}^{4} \left(\cos(t^{2})\frac{1}{2\mysqrt{t}} - t^{2}e^{\mysqrt{t}}(2t)\right) dt 
+        \]
+    }
+    \newpage
+    \setcounter{enumi}{5}
+    \item (10 points) Set up the \textbf{line integral} that Stokes' Theorem would use to evaluate 
+    \[
+        \iint_{S} \nabla \times (x^{2}z\mb{i} + xy^{2}\mb{j} + xy\mb{k}) \cdot d\mb{S},
+    \]
+    where \(S\) is the part of the paraboloid \(z = 1 - x^{2} - y^{2}\) that lies above the \(xy\)-plane, oriented upward. \textbf{DO NOT} worry about working the integral - but you should write the eventual integral as a \(dt\) (or maybe \(d\theta\)) integral.
+
+    \sol{
+        This paraboloid is bounded by the circle \(x^{2} + y^{2} = 1\) in the \(xy\)-plane. This leaves us with the following bounding circle:
+        \[
+            z = 0, \quad x^{2} + y^{2} = 1,
+        \]
+        parameterized using polar coordinates:
+        \[
+            \mb{r}(\theta) = \brackett{\cos(\theta),\sin(\theta), 0} \quad \text{for } 0 \leq \theta \leq 2\pi.
+        \]
+        Then, for our integral, we need to find:
+        \[
+            d\mb{r} = \brackett{-\sin(\theta),\cos(\theta), 0} \, d\theta.
+        \]
+        We can then write the integral as:
+        \begin{align*}
+            \oint_{S} \mb{F}(\mb{r}(\theta)) \cdot d\mb{r} &= \int_{0}^{2\pi} \brackett{0,\cos(\theta) \sin^{2}(\theta), \cos(\theta) \sin(\theta)} \cdot \brackett{(-\sin(\theta),\cos(\theta), 0)} \, d\theta \\
+            &= \int_{0}^{2\pi} \cos^{2}(\theta)\sin^{2}(\theta) \, d\theta.
+        \end{align*}
+    }
+\end{enumerate}
+
+\newpage
+
+\section*{Half-Point Redo}
+
+\begin{enumerate}
+    \setcounter{enumi}{4}
+    \item (6 points) Consider the vector field \(\mb{F}(x,y) = (2x + y\cos(xy))\mb{i} + (-3 + x\cos(xy))\mb{j}\).
+    \begin{enumerate}
+        \item Show that \(\mb{F}\) is conservative.  \\
+
+        \sol{
+            A vector field is conservative if the mixed partial derivatives are equal. That is:
+            \[
+                \frac{\p}{\p y}(2x + y\cos(xy)) = \cos(xy) - xy\sin(xy) = \frac{\p}{\p x}(-3 + x\cos(xy)).
+            \]
+            Therefore, \(\mb{F}\) is conservative.
+        }
+        \item Find a potential function \(f\) for \(\mb{F}\). \\
+
+        \sol{
+            We can find a potential function by following the following algorithm:
+            \begin{itemize}
+                \item Integrate \(P\) with respect to \(x\) to get \(g(x,y) + h(y)\):
+                \begin{align*}
+                    g(x,y) &= \int (2x + y\cos(xy)) \, dx \\
+                    &= \int 2x \, dx + \int y\cos(xy) \, dx \\
+                    \intertext{Make a substitution \(u = xy\), then \(du = y \, dx\) and \(dx = \frac{du}{y}\):}
+                    g(x,y) &= x^{2} + y\int \cos(u) \, \frac{du}{y} \\
+                    \intertext{The \(y\)'s cancel out, and we substitute back \(u = xy\):}
+                    g(x,y) &= x^{2} + \sin(xy) \\
+                    \intertext{Therefore,}
+                    g(x,y) + h(y) &= x^{2} + \sin(xy) + h(y).
+                \end{align*}
+                \item Take the partial derivative of \(g(x,y) + h(y)\) with respect to \(y\), which results in function \(g_{y}(x,y) + h'(y)\):
+                \[
+                    g_{y}(x,y) = \frac{\p}{\p y}\left(x^{2} + \sin(xy) + h(y)\right) = x\cos(xy) + h'(y).
+                \]
+                \item Use the equation \(g_{y}(x,y) = Q\) to find \(h'(y)\):
+                \[
+                    x\cos(xy) + h'(y) = -3 + x\cos(xy) \implies h'(y) = -3.
+                \]
+                \item Integrate \(h'(y)\) with respect to \(y\) to find \(h(y)\):
+                \[
+                    h(y) = \int -3 \, dy = -3y + C.
+                \]
+                \item Substitute \(h(y)\) back into \(g(x,y)\) to find the potential function:
+                \[
+                    f(x,y) = g(x,y) + h(y) = x^{2} + \sin(xy) - 3y + C.
+                \]
+            \end{itemize}
+            Therefore, the potential function is:
+            \[
+                f(x,y) = x^{2} + \sin(xy) - 3y + C.
+            \]
+            We can check this work by taking the gradient of \(f\) and checking that it is equal to \(\mb{F}\):
+            \[
+                \nabla f(x,y) = \brackett{\frac{\p}{\p x}f(x,y), \frac{\p}{\p y}f(x,y)} = \brackett{2x + y\cos(xy), -3 + x\cos(xy)} = \mb{F}(x,y).
+            \]
+        }
+        \item Determine the value of \(\displaystyle \int_{C} \mb{F} \cdot d\mb{r}\), where \(C\) is a plane curve which starts at \((0,0)\) and ends at \((2,1)\).
+
+        \sol{
+            Since \(\mb{F}\) is conservative, we can use the Fundamental Theorem of Line Integrals to evaluate the integral:
+            \[
+                \int_{C} \mb{F} \cdot d\mb{r} = f(2,1) - f(0,0).
+            \]
+            We can find \(f(2,1)\) and \(f(0,0)\):
+            \begin{align*}
+                f(2,1) &= 2^{2} + \sin(2) - 3(1) + C = 4 + \sin(2) - 3 + C = 1 + \sin(2) + C \\
+                f(0,0) &= 0^{2} + \sin(0) - 3(0) + C = 0 + 0 - 0 + C = C.
+            \end{align*}
+            Therefore:
+            \[
+                \int_{C} \mb{F} \cdot d\mb{r} = (1 + \sin(2) + C) - C = 1 + \sin(2).
+            \]
+        }
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{document}

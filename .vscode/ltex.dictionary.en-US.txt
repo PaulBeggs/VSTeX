@@ -190,3 +190,5 @@ sulci
 Cytoarchitectual
 Clariaut
 Clairaut
+extrema
+Dorsolateral
