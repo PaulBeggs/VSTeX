@@ -11,8 +11,8 @@
 
 \usepackage{draculatheme}
 \newcommand{\documentTheme}{draculafg}
-\newcommand{\documentLogo}{images/small logo_white.png}
-\newcommand{\documentBigLogo}{images/logo_white_text.png}
+\newcommand{\documentLogo}{../images/small logo_white.png}
+\newcommand{\documentBigLogo}{../images/logo_white_text.png}
 \usemintedstyle{dracula}
 
 % \newcommand{\documentBigLogo}{images/Hendrix Logo.png}
@@ -161,22 +161,6 @@
 \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
 \makeatother
 
-\usepackage{titlesec}
-
-% Section title: 90% opacity
-\titleformat{\section}
-  	{\normalfont\Large\bfseries\color{draculapink!100}}
-  	{\thesection}{1em}{}
-
-% Subsection title: 80% opacity
-\titleformat{\subsection}
-  	{\normalfont\large\bfseries\color{draculapink!75}}
-  	{\thesubsection}{1em}{}
-
-% Subsubsection title: 70% opacity
-\titleformat{\subsubsection}
-  	{\normalfont\normalsize\bfseries\color{draculapink!50}}
-  	{\thesubsubsection}{1em}{}
 
 
 % \newcommand*\chapterlabel{}\pmod
@@ -249,12 +233,12 @@
 	urlcolor=horange,
 }
 
+\newcommand{\assignmentname}{Homework 1: Section 2}
 
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
 \pagestyle{fancy} % options: empty , plain , fancy
-\renewcommand{\chaptermark}[1]{\markboth{\textcolor{draculafg}{\thechapter.\ #1}}{}}
-\fancyhead[R]{\textcolor{draculafg}{\leftmark}}
+\fancyhead[R]{\textcolor{draculafg}{\assignmentname}}
 \fancyhead[L]{\textcolor{draculafg}{Hendrix College}}
 \fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
 \usepackage{xpatch}
@@ -279,6 +263,12 @@
 
 \usepackage{fix-cm}
 \usepackage{amsmath,amsthm} 
+\usepackage{array, makecell}
+\usepackage{colortbl}
+\newcommand{\thickvrule}{\vrule width 1pt}
+
+\newcommand{\thickhrule}{\Xhline{1pt}}
+
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
@@ -343,6 +333,8 @@
   \end{tikzpicture}%
 }
 
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi}.}
 
 % \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
 
@@ -428,6 +420,53 @@
     \end{mdframed}
 }
 
+\newenvironment{tipbox}
+  {%
+    \par\noindent%
+    % Top dashed line (using \textwidth)
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.65em}%
+    \noindent\textbf{\textcolor{draculapurple}{TIP:}}\quad%
+  }
+  {%
+    \par%
+    % Bottom dashed line
+    \noindent%
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.35em}
+  }
+
+\newenvironment{notebox}
+  {%
+    \par\noindent%
+    % Top dashed line (using \textwidth)
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.65em}%
+    \noindent\textbf{\textcolor{draculagreen}{NOTE:}}\quad%
+  }
+  {%
+    \par%
+    % Bottom dashed line
+    \noindent%
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.35em}
+  }
+
+\newenvironment{warningbox}
+  {%
+    \par\noindent%
+    % Top dashed line (using \textwidth)
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.65em}%
+    \noindent\textbf{\textcolor{draculared}{WARNING:}}\quad%
+  }
+  {%
+    \par%
+    % Bottom dashed line
+    \noindent%
+    \tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+    \par\vspace{0.35em}
+  }
 
 
 \newcommand{\sol}[1]{
@@ -455,8 +494,6 @@
 \newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
 \newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
 
-\renewcommand{\theenumi}{\alph{enumi}} 
-\renewcommand{\labelenumi}{(\theenumi)}
 
 \newcommand{\proj}{\text{proj}}
 
@@ -486,6 +523,14 @@
 \newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
 \newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
 
+\newcommand{\squigglyline}{%
+  \noindent
+  \tikz[baseline=-0.5ex]{
+    \draw[decorate, decoration={snake, amplitude=0.5mm, segment length=3mm}] 
+      (0,0) -- (\dimexpr\linewidth\relax,0);
+  }%
+}
+
 
 % end of preamble
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -500,11 +545,9 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 % Do not use all caps.
-\newcommand{\titlestandin}{Algebra Notes}
-\newcommand{\cussubtitle}{MATH 320}
+\newcommand{\cussubtitle}{Algebra}
 % Date format should be like: "January 1, 2001"
-\newcommand{\startdate}{August 27, 2025}
-\newcommand{\finaldate}{Decemeber 8, 2025}
+\newcommand{\finaldate}{Septemeber 4, 2025}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
 \newcommand{\professor}{Dr. Christopher Camfield, Ph.D.}
 
@@ -524,7 +567,7 @@
 
         \vspace{2em}
 
-        {\huge \textbf{\titlestandin}}
+        {\huge \textbf{\assignmentname}}
 
         \vspace{1em} % Space between the title and the bottom line
 
@@ -535,10 +578,7 @@
         {\LARGE \textbf{\cussubtitle}}
 
         \begin{large}
-            \vspace*{2\baselineskip}
-
-            \textit{Start}  \\[1ex]
-            {\scshape \startdate} \\[0.3\baselineskip] % Year published
+            \vspace*{5\baselineskip}
 
             \vspace*{1\baselineskip}
 
@@ -562,43 +602,105 @@
         \end{large}
     \end{center}
 \end{titlepage}
-\pagebreak
-
-
-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-
-%%% Table of Contents %%%
-
-
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-% Helper command to fix header for double paged ToC.
-% Temporarily adjust section marks for Table of Contents
-\begin{spacing}{1} % Can change spacing between entries in TOC
-    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} % Can rename here
-    \markboth{}{} % Clear the header marks for TOC
-    \pagestyle{fancy} % Ensure fancy style is active
-    \fancyhead[R]{Table of Contents} % Set TOC-specific header manually
-    \tableofcontents
-    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
-\end{spacing}
 
-% Reset the headers to default for the rest of the document
-\fancyhead[R]{\leftmark}
+Exercises \textbf{1} through \textbf{4} concern the binary operation \(*\) defined on \(S = \{a, b, c, d, e\}\) by means of Table 2.26.
 
 
+\begin{center}
+    \textbf{Table 2.26}*%
+     \[ \renewcommand\arraystretch{1.2}
+        \begin{array}{r!{\thickvrule}c|c|c|c|c}
+            * & a & b & c & b & d \\
+    \thickhrule
+            a & a & b & a & e & c \\
+    \hline
+            b & c & a & b & b & a \\
+    \hline
+            c & c & a & b & b & a \\
+    \hline
+            d & b & e & b & e & d \\
+    \hline
+            e & d & b & a & d & c \\
+        \end{array}\]%
+        *(Code partially from \href{https://tex.stackexchange.com/questions/198282/table-for-binary-operations}{Tex StackExchange})
+\end{center}
 
+\vspace{1em}
 
-% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-% \chapter{Parametric Eqs and Polar Coords}\label{para eqs and polar coords}
-% \vspace*{-0.25in}
-% \input{Chapters/Multi_ch_1.tex}
-% \setcounter{chapter}{1}
+\begin{enumerate}
+    \item Compute \(b * d, c * c\), and \([(a * c) * e] * a\).
+    \sol{
+        
+    }
+    \item Compute \((a * b) * c\) and \(a * (b * c)\). Can you say on the basis of this [sic] computations whether \(*\) is associative?
+        \sol{
+        
+    }
+    \item Compute \((b * d) * c\) and \(b * (d * c)\). Can you say on the basis of this computation whether \(*\) is associative?
+    \sol{
+        
+    }
+    \item Is \(*\) commutative? Why?
+    \sol{
+        
+    }
+\end{enumerate}
+    \squigglyline \\
 
-\begin{minted}{python}
-def my_function():
-\end{minted}
+In exercises \textbf{7} through \textbf{10}, determine whether the binary operation \(*\) defined is commutative and whether \(*\) is associative.
+\begin{enumerate}
+    \setcounter{enumi}{6}
+    \item \(*\) defined on \(\Z\) by letting \(a * b = a - b\).
+    \sol{
+        
+    }
+    \item \(*\) defined on \(\Q\) by letting \(a * b = ab + 1\).
+    \sol{
+        
+    }
+    
+\end{enumerate}
+    \squigglyline \\
+\begin{enumerate}
+    \setcounter{enumi}{9}
+    \item \(*\) defined on \(\Z^{+}\) by letting \(a * b = 2^{ab}\).
+    \sol{
+        
+    }
 
+\end{enumerate}
+    \squigglyline \\
+\begin{enumerate}
+    \setcounter{enumi}{22}
+    \item On \(\Z^{+}\), define \(*\) by letting \(a * b = c\), where \(c\) is the largest integer less than the product of \(a\) and \(b\). 
+    \sol{
+        
+    }
+
+\end{enumerate}
+    \squigglyline \\
+\begin{enumerate}
+    \setcounter{enumi}{25}
+    \item Give a set different from any of those described in the examples of the text and not a set of numbers. Define two different binary operations \(*\) and \(*'\) on this set. Be sure that your set is \textit{well defined}.
+    \sol{
+        
+    }
+
+\end{enumerate}
+    \squigglyline \\
+\begin{enumerate}
+    \setcounter{enumi}{36}
+    \item Suppose that \(*\) is an \textit{associative binary} operation on a set \(S\). Let 
+    \[
+        H = \{a \in S  \mid a * x = x * a \text{ for all } x \in S\}.
+    \] 
+    Show that \(H\) is closed under \(*\). (We think of \(H\) as consisting of all elements of \(S\) that \textit{commute} with every element of \(S\).)  
+    \sol{
+        
+    }
+\end{enumerate}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 \end{document}

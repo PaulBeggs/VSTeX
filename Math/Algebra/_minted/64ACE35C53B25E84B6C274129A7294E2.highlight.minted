@@ -1,3 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{my\PYGZus{}function}\PYG{p}{():}
-\end{MintedVerbatim}
