@@ -189,12 +189,12 @@
 }
 % !TeX spellcheck = off
 \newcommand{\foodisplay}[2]{%
-  % #1: math style, #2: content
-  \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
-  \begin{tikzpicture}[baseline=(sqrt.base)]
-    \node[inner sep=0, outer sep=0] (sqrt) {\(\displaystyle\sqrt{#2}\)}; % Force displaystyle
-    \draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
-  \end{tikzpicture}%
+    % #1: math style, #2: content
+    \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
+    \begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {\(\displaystyle\sqrt{#2}\)}; % Force displaystyle
+    	\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
 }
 
 \newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
@@ -258,6 +258,82 @@
 
 \maketitle
 
+\begin{enumerate}
+  	\item (2 points) Four people are choosing an integer from \(\{1,2,\dots,10\}\) at random\textemdash assume that each choice is equally likely. What is the probability that all four choose different numbers?
+  	\sol{
 
+  	}
+
+	\item (2 points) A pair of fair, 6-sided dice are thrown. Find the probability that the sum has a total above 9.
+  	\sol{
+
+  	}
+
+	\item (2 points each) Equals-sign-itis is a (very real and dangerous) disease where some people's face break out into little red equals signs if they take too many mathematics courses. Currently, 2.1\% of Hendrix students are infected. A test can be taken before the break to determine if you are infected\textemdash it is 94\% reliable.
+	\begin{enumerate}[label=(\alph*)]
+		\item What is the probability that you have the disease if your test comes back positive?
+		\sol{
+
+		}
+
+		\item Determine the probability that you have the disease if you test comes back negative.
+		\sol{
+
+		}
+
+
+	\end{enumerate}
+	\item An urn contains 5 Red, 7 Blue, and 1 White marbles. Two balls will be selected, without replacement.
+	\begin{enumerate}
+		\item (2 points) Assuming that order matters, write the sample space for this experiment, and each outcome's probability. [Hint: If you draw a Red, followed by a White, you might write \((R,W),0.12345\). A probability tree might be useful here.]
+		\sol{
+
+		}
+
+		\item (2 points) Let event \(A\) be getting at least one Red marble. Find \(P(A)\).
+		\sol{
+
+		}
+
+		\item (2 points) Let event \(B\) be getting at a White marble on the second draw. Find \(P(B)\).
+		\sol{
+
+		}
+
+		\item (2 points) Find \(P(A \mid B)\), using the events in the previous two parts.
+		\sol{
+
+		}
+	\end{enumerate}
+	\item (2 points) An urn contains 10 marbles: 4 Red and 6 Blue. A second urn contains 16 Red marbles and an unknown number of Blue marbles. A single marble is drawn from each urn. The probability that both marbles are the same color is \(0.44\). How many blue marbles are there in the second urn?
+	\sol{
+
+	}
+
+	\item (2 points) A fair coin is flipped three times. Given that you have at least one Head, find the probability that you have at least two Heads.
+	\sol{
+
+	}
+
+	\item (2 points) In a certain state, car license plates have the format of three letters followed by three numbers. How many possible license plates are there?
+	\sol{
+
+	}
+
+	\item (2 points) Three cards are drawn from a standard 52-card deck. Find the probability that at least one card is an Ace.
+	\sol{
+
+	}
+
+	\item (3 points) Show that \(\displaystyle\binom{n}{r} = \binom{n - 1}{r - 1} + \binom{n - 1}{r}\).
+	\sol{
+		
+	}
+
+	\item (3 points) Show that \(\displaystyle\sum_{r=0}^{n}\binom{n}{r} = 2^{n}\).
+	\sol{
+
+	}
+\end{enumerate}
 
 \end{document}
