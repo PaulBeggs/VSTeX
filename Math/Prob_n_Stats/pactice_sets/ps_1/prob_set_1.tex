@@ -2,7 +2,7 @@
 
 \usepackage{fix-cm}
 \usepackage{tikz}
-\usetikzlibrary{shapes,backgrounds,calc,patterns}
+\usepackage{forest}
 \usepackage{amsmath,amsthm} 
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
@@ -22,7 +22,16 @@
 \usepackage{makecell}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
-\usetikzlibrary{decorations.markings}
+\usetikzlibrary{
+	decorations.markings,
+	trees,
+	arrows,
+	automata,
+	shapes,
+	backgrounds,
+	calc,
+	patterns
+}
 
 \setlength{\parindent}{0pt}
 
@@ -254,31 +263,82 @@
 \newcommand{\mbk}{\mathbf{k}}
 \newcommand{\mbr}{\mathbf{r}}
 
+\tikzset{
+  treenode/.style = {align=center, inner sep=0pt, text centered},
+  arn/.style = {treenode, circle, draw, fill=white, text width=4.75ex},
+  rectnode/.style = {treenode, rectangle, draw, fill=white, inner sep=4pt, text width=8.4ex}
+}
+
 \begin{document}
 
 \maketitle
-
 \begin{enumerate}
+\vspace*{-0.25in}
   	\item (2 points) Four people are choosing an integer from \(\{1,2,\dots,10\}\) at random\textemdash assume that each choice is equally likely. What is the probability that all four choose different numbers?
   	\sol{
-
+        For all 4 people, each integer has a \(\frac{1}{10}\) chance of being picked. That means there are \(10^{4} = 10000\) possible combinations. To find how many permutations, we calculate \(_{10}P_{4} = 5040\). Using this number, we find a \(\frac{5040}{10000} = 50.4\%\) chance that all four choose different numbers.
   	}
 
 	\item (2 points) A pair of fair, 6-sided dice are thrown. Find the probability that the sum has a total above 9.
   	\sol{
-
+		Each two pair outcome has a \(\frac{1}{36}\) chance of being picked. There are one, two, and three ways to get a 12, 11, and 10, respectively. Therefore, there is a \(\frac{1 + 2 + 3}{36} = \frac{1}{6}\) chance of getting a sum above 9.
   	}
-
-	\item (2 points each) Equals-sign-itis is a (very real and dangerous) disease where some people's face break out into little red equals signs if they take too many mathematics courses. Currently, 2.1\% of Hendrix students are infected. A test can be taken before the break to determine if you are infected\textemdash it is 94\% reliable.
+	\item (2 points each) Equals-sign-itis is a disease where some people's face break out into little red equals signs if they take too many mathematics courses. Currently, 2.1\% of Hendrix students are infected. A test can be taken before the break to determine if you are infected\textemdash it is 94\% reliable.
 	\begin{enumerate}[label=(\alph*)]
 		\item What is the probability that you have the disease if your test comes back positive?
+		\begin{customframedproof}[linecolor=orangehdx!75]
+			\vspace*{-.8em}
+			\begin{multicols}{2}
+				\begin{minipage}[t]{\linewidth}
+					\textit{Solution.}\ \ The probability of having the disease and testing positive can be calculated by finding the following:
+					\begin{align*}
+						P(\text{sick} \mid +) &= \frac{P(\text{sick} \cap +)}{P(+)} \\
+						&= \frac{0.01974}{0.01974 + 0.05874} = .2515.
+					\end{align*}
+					Therefore, you have a \(\boxed{25.15\%}\) chance of having the disease if your test comes back positive.
+				\end{minipage}
+
+				\begin{forest}
+					my x/.style n args=2{
+						edge label={node [midway, #2, font=\sffamily, text=black] {$#1$}},
+					},
+					for tree={
+						l sep+=3.5mm,
+						% s sep+=9mm
+					}
+					[ , circle, for descendants={arn}
+						[Sick, my x={2.1\%}{left}
+							[+, my x={94\%}{left}
+								[ , rectnode, content={1.974\%}
+								]
+							]
+							[-, my x={6\%}{right}
+								[ , rectnode, content={0.126\%}
+								]
+							]
+							]
+							[Not, my x={97.9\%}{right}
+							[+, my x={6\%}{left}
+								[ , rectnode, content={5.874\%}
+								]
+							]
+							[-, my x={94\%}{right}
+								[ , rectnode, content={92.026\%}
+								]
+							]
+						]
+					]
+				\end{forest}
+			\end{multicols}
+		\end{customframedproof}
+
+		\item Determine the probability that you have the disease if you test comes back negative?
 		\sol{
-
-		}
-
-		\item Determine the probability that you have the disease if you test comes back negative.
-		\sol{
-
+			Similarly to the previous problem:
+			\[
+				P(\text{sick} \mid -) = \frac{P(\text{sick} \cap -)}{P(-)} = \frac{0.00126}{.00126 + 0.92026} = .00137.
+			\]
+			Therefore, you have a \boxed{0.14\%} chance of having the disease if your test comes back negative.
 		}
 
 
@@ -287,52 +347,166 @@
 	\begin{enumerate}
 		\item (2 points) Assuming that order matters, write the sample space for this experiment, and each outcome's probability. [Hint: If you draw a Red, followed by a White, you might write \((R,W),0.12345\). A probability tree might be useful here.]
 		\sol{
+			For the top level, there are \(\frac{1}{13}\), \(\frac{5}{13}\), and \(\frac{7}{13}\) chances for White, Red, and Blue, respectively. After we remove a marble, then the next layer has 12 total marbles, and 1 less colored marble respective to the color in the above layer, as we can see below:
 
+			\begin{center}
+				\begin{forest}
+					my x/.style n args=2{
+						edge label={node [midway, #2, font=\sffamily, text=black] {\(#1\)}},
+					},
+					for tree={
+						l sep+=4mm,
+						% s sep+=9mm
+					}
+					[ , circle, for descendants={arn}
+						[W, my x={\frac{1}{13}}{fill=white}
+							[R, my x={\frac{5}{12}}{fill=white}
+								[ , rectnode, content={5/156}
+								]
+							]
+							[B, my x={\frac{7}{12}}{fill=white}
+								[ , rectnode, content={7/156}
+								]
+							]
+						]
+						[R, my x={\frac{5}{13}}{right}
+							[R, my x={\frac{4}{12}}{fill=white}
+								[ , rectnode, content={5/39}
+								]
+							]
+							[B, my x={\frac{7}{12}}{fill=white}
+								[ , rectnode, content={35/156}
+								]
+							]
+							[W, my x={\frac{1}{12}}{fill=white}
+								[ , rectnode, content={5/156}
+								]
+							]
+						]
+						[B, my x={\frac{7}{13}}{fill=white}
+							[R, my x={\frac{5}{12}}{fill=white}
+								[ , rectnode, content={35/156}
+								]
+							]
+							[B, my x={\frac{6}{12}}{fill=white}
+								[ , rectnode, content={7/26}
+								]
+							]
+							[W, my x={\frac{1}{12}}{fill=white}
+								[ , rectnode, content={7/156}
+								]
+							]
+						]
+					]
+				\end{forest}
+			\end{center}
+
+			Thus, the sample space is 
+			\[
+				S = \left\{RW = \frac{5}{156}, WB = \frac{7}{156}, RR = \frac{5}{39}, RB = \frac{35}{156}, RW = \frac{5}{156}, BR = \frac{35}{156}, BB = \frac{7}{26}, BW = \frac{7}{156} \right\}
+			\]
 		}
 
 		\item (2 points) Let event \(A\) be getting at least one Red marble. Find \(P(A)\).
 		\sol{
-
+			The probability of getting at least one marble entails adding each combination of Red and another marble. Given the values from the tree, we can calculate the following equation:
+			\[
+				P(A) = \frac{5}{156} + \frac{5}{39} + \frac{35}{156} + \frac{5}{156} + \frac{35}{156} = \frac{25}{39}.
+			\]
 		}
 
 		\item (2 points) Let event \(B\) be getting at a White marble on the second draw. Find \(P(B)\).
 		\sol{
-
+			Since it's only possible to get a White marble on the second draw after pulling a Red or Blue, we have to take that into account with our calculation:
+			\[
+				P(B) = P(R \cap W) + P(B \cap W) = \frac{5}{156} + \frac{7}{156} = \frac{1}{13}.
+			\]
 		}
-
 		\item (2 points) Find \(P(A \mid B)\), using the events in the previous two parts.
 		\sol{
-
+			\(\boxed{P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{5/156}{1/13} = \frac{5}{12}}\)
 		}
 	\end{enumerate}
+
+\newpage
 	\item (2 points) An urn contains 10 marbles: 4 Red and 6 Blue. A second urn contains 16 Red marbles and an unknown number of Blue marbles. A single marble is drawn from each urn. The probability that both marbles are the same color is \(0.44\). How many blue marbles are there in the second urn?
 	\sol{
-
+		We have two urns: Urn\(_{1}\): 4 Red, 6 Blue: 10 total, and Urn\(_{2}\): 16 Red, \(b\) Blue: \(16 + b\) total. Let event \(A\) be getting both red. Thus, we find the probability to be:
+		\[
+			P(A) = \frac{4}{10} \cdot \frac{16}{16 + b}.
+		\]
+		Similarly, let event \(B\) be getting both blue. Hence:
+		\[
+			P(B) = \frac{6}{10} \cdot \frac{b}{16 + b}.
+		\]
+		Thus, the total probability is
+		\[
+			P(A \cup B) = \frac{4}{10} \cdot \frac{16}{16 + b} + \frac{6}{10} \cdot \frac{b}{16 + b} = \frac{(64 + 6b)}{10(16 + b)}.
+		\]
+		Setting this equal to \(0.44\), we can solve for \(b\):
+		\begin{align*}
+			\frac{(64 + 6b)}{10(16 + b)} &= 0.44 \\
+			64 + 6b &= 4.4(16 + b) \\
+			64 + 6b &= 70.4 + 4.4b \\
+			1.6b &= 6.4 \\
+			b &= 4.
+		\end{align*}
+		Therefore, the total amount of Blue marbles in Urn\(_{2}\) is \(\boxed{4}\).
 	}
 
 	\item (2 points) A fair coin is flipped three times. Given that you have at least one Head, find the probability that you have at least two Heads.
 	\sol{
-
+		Let event \(A\) be the probability of getting at least 2 Heads, and event \(B\) being at least 1 Head. The sample space consists of 8 outcomes, only one of which does not contain at least one head: \(\{TTT\}\). Hence, \(P(B) = \frac{7}{8}\). Then, there are 4 outcomes that contain at least one head, so \(P(A) = \frac{4}{8} = \frac{1}{2}\). It follows that \(P(A \cap B) = P(A)\) given that having at least two heads implies having at least one. Hence:
+		\[
+			P(\text{At least } 2 H\mid \text{At least }1 H) = \frac{P(A \cap B)}{P(B)} = \frac{1/2}{7/8} = \frac{4}{7}.
+		\]
+		Therefore, the probability of at least 2 Heads given 1 Head is \(\boxed{\tfrac{4}{7}}\).
 	}
 
 	\item (2 points) In a certain state, car license plates have the format of three letters followed by three numbers. How many possible license plates are there?
 	\sol{
-
+		Since we can use duplicate letters and numbers in the license plates, we find the total possible license plates with the following equation: \(\boxed{26^{3} \cdot 10^{3} = 17576000}\).
 	}
 
 	\item (2 points) Three cards are drawn from a standard 52-card deck. Find the probability that at least one card is an Ace.
 	\sol{
-
+		The probability of getting 3 cards that have no Aces in them is
+		\[
+			P(OOO) = \frac{48}{52} \cdot \frac{47}{51} \cdot \frac{46}{50} = \frac{4324}{5525}.
+		\]
+		We can find the probability of at least one Ace by finding the complement of this probability:
+		\[
+			P(\text{at least 1 Ace}) = P'(OOO) = 1 - \frac{4324}{5525} = \frac{1201}{5525}.
+		\]
+		Therefore, we have approximately a \(\boxed{21.73\%}\) chance of getting at least one Ace.
 	}
 
 	\item (3 points) Show that \(\displaystyle\binom{n}{r} = \binom{n - 1}{r - 1} + \binom{n - 1}{r}\).
 	\sol{
-		
+		Expanding the right side we get the following:
+		\begin{align*}
+			\binom{n - 1}{r - 1} + \binom{n - 1}{r} &= \frac{(n - 1)!}{(r - 1)!(n - 1 - (r - 1))!} + \frac{(n - 1)!}{r!(n - 1 - r)!} \\
+			&= \frac{(n - 1)!}{(r - 1)!(n - r)!} + \frac{(n - 1)!}{r!(n - r - 1)!}. \\
+			\intertext{To continue, we need to find a common denominator, and to do so, we need to adjust two denominator terms \((r - 1)!\) and \((n - r - 1)!\). Multiplying these terms by a common term \(r(n - r)\), we get the following:}
+			&= \frac{r \cdot (n - 1)!}{r \cdot (r - 1)!(n - r)!} + \frac{(n - r)(n - 1)!}{r!(n - r) \cdot (n - r - 1)!}. \\
+			\intertext{Now, when we multiply those terms \(r \cdot (r - 1)! = r!\) and \((n - r) \cdot (n - r - 1) = (n - r)!\), we are ``going back'' one term to get matching denominators.}
+			&= \frac{r(n - 1)! + (n - r)(n - 1)!}{r!(n- r)!} \\
+			&= \frac{(n - 1)!(r + (n - r))}{r!(n- r)!} \\
+			&= \frac{(n - 1)!n}{r!(n- r)!} \\
+			&= \frac{n!}{r!(n - r)!}.
+		\end{align*}
+		Therefore, by definition of the binomial coefficient, the two sides of the equation are equal.
 	}
 
+\newpage
 	\item (3 points) Show that \(\displaystyle\sum_{r=0}^{n}\binom{n}{r} = 2^{n}\).
 	\sol{
-
+		Starting with the right side, we can factor \(2^{n}\), use the Binomial Theorem, and then simplify to show the specified property:
+		\begin{align*}
+			2^{n} &= (1 + 1)^{n} \\
+			(1 + 1)^{n} &= \sum_{r = 0}^{n} \binom{n}{r}(1)^{n - r}(1)^{r} \\
+			2^{n} &= \sum_{r = 0}^{n} \binom{n}{r}.
+		\end{align*}
 	}
 \end{enumerate}
 
