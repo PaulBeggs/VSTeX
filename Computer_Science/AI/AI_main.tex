@@ -1,6 +1,21 @@
 \documentclass[12pt]{article}
 
+\usepackage[margin=1in]{geometry}
 \usepackage{minted}
+\setminted{linenos, breaklines=true}
+
+\usepackage{hyperref}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\setlength{\parindent}{0pt}
 
 \title{Project 1: Solving Mazes with A*}
 \author{Paul Beggs}
@@ -8,7 +23,103 @@
 
 
 \begin{document}
+\maketitle
 
+
+
+
+This heuristic calculates the Manhattan distance between the current location of the \mintinline{java}{MazeExplorer} and the end location of the maze. Since \(n_{1}\) and \(n_{2}\) are the coordinates of the current location and \(e_{1}\) and \(e_{2}\) are the coordinates of the end location, the Manhattan distance is calculated as \(|n_{1} - e_{1}| + |n_{2} - e_{2}|\). This
+
+This is the start to my paper, and \href{https://github.com/PaulBeggs/A_Star}{here is the link to the repository}.
+
+\begin{figure}[h!]
+\begin{minted}{java}
+public class Manhattan implements ToIntFunction<MazeExplorer> {
+    @Override
+    public int applyAsInt(MazeExplorer value) {
+        return value.getLocation().getManhattanDist(value.getM().getEnd());
+    }
+}
+\end{minted}
+    \caption{Manhattan-Only Heuristic}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minted}{java}
+public class CombinedDist implements ToIntFunction<MazeExplorer> {
+    @Override
+    public int applyAsInt(MazeExplorer value) {
+        Pos currentLocation = value.getLocation();
+        Pos endLocation = value.getM().getEnd();
+
+        Set<Pos> allTreasures = value.getAllTreasureFromMaze();
+        Set<Pos> foundTreasures = value.getAllTreasureFound();
+
+        Set<Pos> remainingTreasures = new HashSet<>(allTreasures);
+        remainingTreasures.removeAll(foundTreasures);
+
+        if (remainingTreasures.isEmpty()) {
+            return currentLocation.getManhattanDist(endLocation);
+        }
+
+        int minDistFromCurrent = Integer.MAX_VALUE;
+        int minDistToEnd = Integer.MAX_VALUE;
+
+        for (Pos treasure : remainingTreasures) {
+            minDistFromCurrent = Math.min(minDistFromCurrent, currentLocation.getManhattanDist(treasure));
+            minDistToEnd = Math.min(minDistToEnd, treasure.getManhattanDist(endLocation));
+        }
+        return minDistFromCurrent + minDistToEnd;
+    }
+}
+\end{minted}
+    \caption{Combined Distance Heuristic}
+\end{figure}
+
+
+\begin{figure}[h!]
+
+\begin{minted}{java}
+public class MaxDist implements ToIntFunction<MazeExplorer> {
+    @Override
+    public int applyAsInt(MazeExplorer value) {
+        Pos currentLocation = value.getLocation();
+
+        Set<Pos> allTreasures = value.getAllTreasureFromMaze();
+        Set<Pos> foundTreasures = value.getAllTreasureFound();
+
+        Set<Pos> remainingTreasures = new HashSet<>(allTreasures);
+        remainingTreasures.removeAll(foundTreasures);
+
+        int maxDist = currentLocation.getManhattanDist(value.getM().getEnd());
+
+        for (Pos treasure : remainingTreasures) {
+            int distToTreasure = currentLocation.getManhattanDist(treasure);
+            if (distToTreasure > maxDist) {
+                maxDist = distToTreasure;
+            }
+        }
+        return maxDist;
+    }
+}
+\end{minted}
+\caption{Max Distance Heuristic}
+\end{figure}
+
+\begin{figure}[h!]
+    
+\begin{minted}{java}
+public class OverlyConfident implements ToIntFunction<MazeExplorer> {
+    @Override
+    public int applyAsInt(MazeExplorer value) {
+        int manhattanDistance = value.getLocation().getManhattanDist(value.getM().getEnd());
+        return manhattanDistance * 3;
+    }
+}
+
+\end{minted}
+\caption{Overly Confident Heuristic}
+\end{figure}
 
 
 \end{document}

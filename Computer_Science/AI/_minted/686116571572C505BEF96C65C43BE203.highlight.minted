@@ -1,0 +1,24 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{class} \PYG{n+nc}{MaxDist}\PYG{+w}{ }\PYG{k+kd}{implements}\PYG{+w}{ }\PYG{n}{ToIntFunction}\PYG{o}{\PYGZlt{}}\PYG{n}{MazeExplorer}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nd}{@Override}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{applyAsInt}\PYG{p}{(}\PYG{n}{MazeExplorer}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{Pos}\PYG{+w}{ }\PYG{n}{currentLocation}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{.}\PYG{n+na}{getLocation}\PYG{p}{();}
+
+\PYG{+w}{        }\PYG{n}{Set}\PYG{o}{\PYGZlt{}}\PYG{n}{Pos}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{allTreasures}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{.}\PYG{n+na}{getAllTreasureFromMaze}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{Set}\PYG{o}{\PYGZlt{}}\PYG{n}{Pos}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{foundTreasures}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{.}\PYG{n+na}{getAllTreasureFound}\PYG{p}{();}
+
+\PYG{+w}{        }\PYG{n}{Set}\PYG{o}{\PYGZlt{}}\PYG{n}{Pos}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{remainingTreasures}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{HashSet}\PYG{o}{\PYGZlt{}\PYGZgt{}}\PYG{p}{(}\PYG{n}{allTreasures}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{remainingTreasures}\PYG{p}{.}\PYG{n+na}{removeAll}\PYG{p}{(}\PYG{n}{foundTreasures}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{maxDist}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{currentLocation}\PYG{p}{.}\PYG{n+na}{getManhattanDist}\PYG{p}{(}\PYG{n}{value}\PYG{p}{.}\PYG{n+na}{getM}\PYG{p}{().}\PYG{n+na}{getEnd}\PYG{p}{());}
+
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Pos}\PYG{+w}{ }\PYG{n}{treasure}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{remainingTreasures}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{distToTreasure}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{currentLocation}\PYG{p}{.}\PYG{n+na}{getManhattanDist}\PYG{p}{(}\PYG{n}{treasure}\PYG{p}{);}
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{distToTreasure}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{maxDist}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{maxDist}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{distToTreasure}\PYG{p}{;}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{maxDist}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

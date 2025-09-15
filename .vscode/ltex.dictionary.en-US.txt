@@ -192,3 +192,4 @@ Clariaut
 Clairaut
 extrema
 Dorsolateral
+MazeExplorer
