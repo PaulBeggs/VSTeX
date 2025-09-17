@@ -631,14 +631,14 @@ To find the statistics that we are after for each distribution, we heavily rely 
 
 \subsection{Comparing Distributions}
 
-Each distribution had different corresponding frequencies for each value of \(x\). This led to different shapes and characteristics for each distribution. For example, Distribution A had consisted only of values 1 and 0, so the most frequently appearing value was 1, hence the mode was a range of \(x\)-values that included 1. On the other hand, Distribution E had a very tight clustering of values around 4, leading to a very small variance of 0.2.
+Each distribution had different corresponding frequencies for each value of \(x\). This led to different shapes and characteristics for each distribution. For example, \hyperref[fig:distA]{Distribution A} had consisted only of values 1 and 0, so the most frequently appearing value was 1, hence the mode was a range of \(x\)-values associated with a 1 in the distribution. On the other hand, \hyperref[fig:distE]{Distribution E} had a very tight clustering of values around 4, leading to a very small variance of 0.2. This distribution also had a normal shape, with the mean, median, and mode all being equal to 4.0. In contrast, \hyperref[fig:distC]{Distribution C} had a wider spread of values, evidenced with a high variance of 7.8. Additionally, this distribution had a tail that was similar to \hyperref[fig:distB]{Distribution B}, but included a spike of values around 9.0.
 
 
 \section{Results}
 
 \begin{multicols}{2}
     \begin{itemize}
-        \item \textbf{Distribution A}
+        \item \hyperref[fig:distA]{\textbf{Distribution A}}
         \begin{itemize}
             \item Mean: 4.1
             \item Median: 3.9
@@ -647,7 +647,7 @@ Each distribution had different corresponding frequencies for each value of \(x\
             \item 50\% Interval: [2.0, 6.0]
             \item 90\% Interval: [0.4, 7.6]
         \end{itemize}
-        \item \textbf{Distribution B}
+        \item \hyperref[fig:distB]{\textbf{Distribution B}}
         \begin{itemize}
             \item Mean: 4.0
             \item Median: 3.5
@@ -656,7 +656,7 @@ Each distribution had different corresponding frequencies for each value of \(x\
             \item 50\% Interval: [1.6, 6.1]
             \item 90\% Interval: [0.3, 9.1]
         \end{itemize}
-        \item \textbf{Distribution C}
+        \item \hyperref[fig:distC]{\textbf{Distribution C}}
         \begin{itemize}
             \item Mean: 4.0
             \item Median: 3.4
@@ -665,7 +665,7 @@ Each distribution had different corresponding frequencies for each value of \(x\
             \item 50\% Interval: [1.5, 5.9]
             \item 90\% Interval: [0.3, 9.0]
         \end{itemize}
-        \item \textbf{Distribution D}
+        \item \hyperref[fig:distD]{\textbf{Distribution D}}
         \begin{itemize}
             \item Mean: 4.0
             \item Median: 3.9
@@ -674,7 +674,7 @@ Each distribution had different corresponding frequencies for each value of \(x\
             \item 50\% Interval: [2.4, 5.3]
             \item 90\% Interval: [0.8, 7.5]
         \end{itemize}
-        \item \textbf{Distribution E}
+        \item \hyperref[fig:distE]{\textbf{Distribution E}}
         \begin{itemize}
             \item Mean: 4.0
             \item Median: 4.0
@@ -697,6 +697,10 @@ Each distribution had different corresponding frequencies for each value of \(x\
 
 
 \newpage
+
+\section{Conclusion}
+
+Through this investigation of distributions and their properties, we have found that by calculating the relative frequency and cumulative frequency, and plot them against \(x\), we can visualize the pdf and cdf of a distribution. This allows us to extract statistics such as the mean, median, mode, variance, and intervals that contain the middle 50\% and 90\% of the data. Each distribution had its own unique characteristics, which were reflected in these statistics. In some cases (such as \hyperref[fig:distC]{Distribution C}), the mean, median, and mode did not inform us about the spike around 9.0, which was only visible when looking at the graphs. This highlights the importance of visualizing data in addition to calculating summary statistics, as it can reveal patterns and features that may not be immediately apparent from the numbers alone.
 
 \section{Graphs of Distributions A through E}
 
