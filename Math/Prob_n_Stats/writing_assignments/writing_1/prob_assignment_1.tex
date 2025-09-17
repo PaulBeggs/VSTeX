@@ -3,7 +3,7 @@
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\documentclass[12pt, oneside]{book}
+\documentclass[12pt]{article}
 \usepackage{xcolor}
 \usepackage{minted}
 
@@ -39,6 +39,8 @@
 \usepackage{pdftexcmds}
 \usepackage{shellesc}
 \usepackage{algorithm, algorithmic, xspace}
+\usepackage{caption}
+\usepackage{subcaption}
 %%% Define new colors %%%
 \definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
 
@@ -110,9 +112,9 @@
 }
 
 \usepackage[Glenn]{fncychap}
-\ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
-\ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
-\ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
+% \ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
+% \ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
+% \ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
 \usepackage{xpatch}
 
 % \xpatchcmd{\DOCH}
@@ -154,12 +156,12 @@
 
 %% Change Chapter Heading Placement %%
 \usepackage{etoolbox}
-\makeatletter
-\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
-\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
-\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
-\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
-\makeatother
+% \makeatletter
+% \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+% \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+% \makeatother
 
 
 
@@ -214,7 +216,7 @@
 % \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
 % \makeatother
 
-\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
+% \renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
 
 
 %%% FIGURES %%%
@@ -332,8 +334,8 @@
 	\end{tikzpicture}%
 }
 
-\renewcommand{\theenumi}{\arabic{enumi}}
-\renewcommand{\labelenumi}{\textbf{\theenumi}.}
+% \renewcommand{\theenumi}{\arabic{enumi}}
+% \renewcommand{\labelenumi}{\textbf{\theenumi}.}
 
 % \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
 
@@ -550,12 +552,12 @@
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\newcommand{\assignmentname}{Writing Assignment 1}
+\newcommand{\assignmentname}{Writing Assignment 1: Distributions}
 
 % Do not use all caps.
 \newcommand{\cussubtitle}{Probability and Statistics}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{September 16, 2025}
+\newcommand{\finaldate}{September 17, 2025}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
 \newcommand{\professor}{Prof.\ Lars Seme, M.S.}
 
@@ -609,7 +611,168 @@
     \end{center}
 \end{titlepage}
 
+\section{Introduction}
+
+Probability and statistics rely on the concept of a distribution, which describes how the values of a random variable are spread across possible outcomes. Understanding a distribution's characteristics and properties are key to interpret data. Therein, the goal of this paper is to look into the relationship between relative frequency and the probability distribution function (pdf), the connection between cumulative frequency and the cumulative distribution function (cdf), and to explore five different distributions to investigate their properties.
+
+\section{Relative Frequency \& the PDF}
+
+The relative frequency of a value in a dataset is the number of times that value occurs divided by the total number of observations. Similarly, the pdf describes the likelihood of each possible outcome of a random variable. Thus, when we plot the relative frequency against the values of \(x\), we are essentially visualizing the pdf of the distribution.
+
+\section{Cumulative Frequency \& the CDF}
+
+In a similar fashion, when we measure the cumulative frequency, we are looking at the total number of observations that fall below or at a certain value of \(x\). So, when we take the cumulative frequency and plot it against \(x\), we are visualizing the cdf of the distribution. We can utilize the cdf to look at an entire distribution at once, rather than just individual points.
+
+\section{Analysis of Distributions A through E}
+
+The following figures illustrate the relative frequency and cumulative frequency for each of the five distributions, A through E. Each distribution is represented by two graphs: one for the relative frequency (pdf) and one for the cumulative frequency (cdf). Each distribution contains 100 data points, with each point having an associated frequency. Because of this setup, we can find important statistics such as the mean, median, mode, variance, and intervals that contain the middle 50\% and 90\% frequency intervals of the data. These are presented in the Results section. \\
+
+To find the statistics that we are after for each distribution, we heavily rely upon the relative and cumulative frequency data. That is, for the mean, we multiply each value of \(x\) by its relative frequency and sum the results. For the median, we look for the value of \(x\) where the cumulative frequency reaches 50\%. The mode is determined by identifying the value of \(x\) with the highest relative frequency. The variance is calculated by finding the average of the squared differences from the mean, weighted by the relative frequencies. Finally, to find the intervals that contain the middle 50\% and 90\% of the data, we look for the values of \(x\) that correspond to cumulative frequencies of 25\% and 75\% for the 50\% interval, and 5\% and 95\% for the 90\% interval.  
+
+\subsection{Comparing Distributions}
+
+Each distribution had different corresponding frequencies for each value of \(x\). This led to different shapes and characteristics for each distribution. For example, Distribution A had consisted only of values 1 and 0, so the most frequently appearing value was 1, hence the mode was a range of \(x\)-values that included 1. On the other hand, Distribution E had a very tight clustering of values around 4, leading to a very small variance of 0.2.
 
 
+\section{Results}
+
+\begin{multicols}{2}
+    \begin{itemize}
+        \item \textbf{Distribution A}
+        \begin{itemize}
+            \item Mean: 4.1
+            \item Median: 3.9
+            \item Mode: [0.1, 8.0]
+            \item Variance: \(5.3\)
+            \item 50\% Interval: [2.0, 6.0]
+            \item 90\% Interval: [0.4, 7.6]
+        \end{itemize}
+        \item \textbf{Distribution B}
+        \begin{itemize}
+            \item Mean: 4.0
+            \item Median: 3.5
+            \item Mode: 0.1
+            \item Variance: 7.7
+            \item 50\% Interval: [1.6, 6.1]
+            \item 90\% Interval: [0.3, 9.1]
+        \end{itemize}
+        \item \textbf{Distribution C}
+        \begin{itemize}
+            \item Mean: 4.0
+            \item Median: 3.4
+            \item Mode: 0.1
+            \item Variance: 7.8
+            \item 50\% Interval: [1.5, 5.9]
+            \item 90\% Interval: [0.3, 9.0]
+        \end{itemize}
+        \item \textbf{Distribution D}
+        \begin{itemize}
+            \item Mean: 4.0
+            \item Median: 3.9
+            \item Mode: 3.8
+            \item Variance: 4.1
+            \item 50\% Interval: [2.4, 5.3]
+            \item 90\% Interval: [0.8, 7.5]
+        \end{itemize}
+        \item \textbf{Distribution E}
+        \begin{itemize}
+            \item Mean: 4.0
+            \item Median: 4.0
+            \item Mode: 4.0
+            \item Variance: 0.2
+            \item 50\% Interval: [3.7, 4.2]
+            \item 90\% Interval: [3.3, 4.6]
+        \end{itemize}
+        \item[\(\phantom{bullet}\)] \(\phantom{\textbf{Distribution E}}\)
+        \begin{itemize}[label=\(\phantom{\bullet}\)]
+            \item \(\phantom{Mean: 4.0}\)
+            \item \(\phantom{Median: 4.0}\)
+            \item \(\phantom{Mode: 4.0}\)
+            \item \(\phantom{2}\)
+            \item \(\phantom{3}\)
+            \item \(\phantom{3}\)
+        \end{itemize}
+    \end{itemize}
+\end{multicols}
+
+
+\newpage
+
+\section{Graphs of Distributions A through E}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphs/DistA_Rel.png}
+        \caption{Relative Frequency vs.\ \(x\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphs/DistA_Cumul.png}
+        \caption{Cumulative Frequency vs.\ \(x\)}
+    \end{subfigure}
+    \label{fig:distA}
+    \caption{Distribution A}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphs/DistB_Rel.png}
+        \caption{Relative Frequency vs.\ \(x\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphs/DistB_Cumul.png}
+        \caption{Cumulative Frequency vs.\ \(x\)}
+    \end{subfigure}
+    \label{fig:distB}
+    \caption{Distribution B}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphs/DistC_Rel.png}
+        \caption{Relative Frequency vs.\ \(x\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphs/DistC_Cumul.png}
+        \caption{Cumulative Frequency vs.\ \(x\)}
+    \end{subfigure}
+    \label{fig:distC}
+    \caption{Distribution C}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphs/DistD_Rel.png}
+        \caption{Relative Frequency vs.\ \(x\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphs/DistD_Cumul.png}
+        \caption{Cumulative Frequency vs.\ \(x\)}
+    \end{subfigure}
+    \label{fig:distD}
+    \caption{Distribution D}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphs/DistE_Rel.png}
+        \caption{Relative Frequency vs.\ \(x\)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{graphs/DistE_Cumul.png}
+        \caption{Cumulative Frequency vs.\ \(x\)}
+    \end{subfigure}
+    \label{fig:distE}
+    \caption{Distribution E}
+\end{figure}
 
 \end{document}
