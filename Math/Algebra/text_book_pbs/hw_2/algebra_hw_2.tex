@@ -11,12 +11,12 @@
 
 \usepackage{draculatheme}
 \newcommand{\documentTheme}{draculafg}
-\newcommand{\documentLogo}{../images/small logo_white.png}
-\newcommand{\documentBigLogo}{../images/logo_white_text.png}
+\newcommand{\documentLogo}{../../images/small logo_white.png}
+\newcommand{\documentBigLogo}{../../images/logo_white_text.png}
 \usemintedstyle{dracula}
 
-% \newcommand{\documentBigLogo}{images/Hendrix Logo.png}
-% \newcommand{\documentLogo}{images/small logo.png}
+% \newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
+% \newcommand{\documentLogo}{../../images/small logo.png}
 % \newcommand{\documentTheme}{black}
 
 %%% AESTHETICS %%%
@@ -617,7 +617,7 @@
     \setcounter{enumi}{5}
     \item \(\langle \Q, \cdot \rangle\) with \(\langle \Q, \cdot \rangle\) where \(\phi(x) = x^{2}\) for \(x \in \Q\).
           \sol{
-              The binary operation \(\phi\) is not an isomorphism because it is not onto. A counterexample is that there is no rational number \(a\) such that \(\phi(a) = -1\).
+              The binary operation \(\phi\) is not an isomorphism because it is not onto. A counterexample is that \(\phi\) is not one-to-one because \(\phi(1) = 1\) and \(\phi(-1) = 1\).
           }
 
     \item \(\langle \R, \cdot \rangle\) with \(\langle \R, \cdot \rangle\) where \(\phi(x) = x^{3}\) for \(x \in \R\).
@@ -645,7 +645,7 @@
               The binary operation \(\phi\) is not an isomorphism because it is not one-to-one. A counterexample is that \(\phi(f) = \phi(g)\) for \(f(x) = x^{2}\) and \(g(x) = x^{2} + 1\), but \(f \ne g\).
           }
 
-    \item \(\langle F, + \rangle\) with \(\langle F, + \rangle\) where \(\phi(f) = f'(0)\).
+    \item \(\langle F, + \rangle\) with \(\langle \R, + \rangle\) where \(\phi(f) = f'(0)\).
           \sol{
               Similarly to the previous problem, the binary operation \(\phi\) is not an isomorphism because it is not one-to-one. A counterexample is that \(\phi(f) = \phi(g)\) for \(f(x) = \frac{x}{2}\) and \(g(x) = x^{2} + \frac{x}{2}\), but \(f \ne g\).
           }
@@ -780,10 +780,10 @@
                         \]
                         Thus, we can expand the right side:
                         \begin{align*}
-                            x &= \left[\left(-\frac{2}{3}\right) + 7 + \left(-\frac{2}{3}\right)(7)\right] * \left(-\frac{3}{4}\right) \\
-                              &= \frac{5}{3} * \left(-\frac{3}{4}\right) \\
-                              &= \frac{5}{3} + \left(-\frac{3}{4}\right) + \left(\frac{5}{3}\right)\left(-\frac{3}{4}\right) \\
-                              &= -\frac{1}{3}.
+                            x & = \left[\left(-\frac{2}{3}\right) + 7 + \left(-\frac{2}{3}\right)(7)\right] * \left(-\frac{3}{4}\right) \\
+                              & = \frac{5}{3} * \left(-\frac{3}{4}\right)                                                               \\
+                              & = \frac{5}{3} + \left(-\frac{3}{4}\right) + \left(\frac{5}{3}\right)\left(-\frac{3}{4}\right)           \\
+                              & = -\frac{1}{3}.
                         \end{align*}
 
                     }
@@ -796,7 +796,39 @@
     \setcounter{enumi}{40}
     \item Let \(G\) be a group and let \(g\) be one fixed element of \(G\). Show that the map \(i_g\), such that \(i_g(x) = gxg^{-1}\) for \(x \in G\), is an isomorphism of \(G\) with itself.
           \sol{
+              We will verify that \(i_g\) satisfies the properties of an isomorphism:
+              \begin{itemize}
+                  \item \textbf{One-to-one:} Assume \(i_g(x) = i_g(y)\) for some \(x, y \in G\). Then,
+                        \[
+                            gxg^{-1} = gyg^{-1}.
+                        \]
+                        Utilizing Theorem 4.15, we can multiply both sides on the left by \(g^{-1}\) and on the right by \(g\), revealing:
+                        \[
+                            g^{-1}(gxg^{-1})g = g^{-1}(gyg^{-1})g,
+                        \]
+                        which we can rearrange using the associative property to get:
+                        \[
+                            (g^{-1}g)x(g^{-1}g) = (g^{-1}g)y(g^{-1}g).
+                        \]
+                        Since \(g^{-1}g = e\), the identity element of \(G\), we have:
+                        \[
+                            x = y.
+                        \]
+                        Thus, \(i_g\) is one-to-one.
 
+                  \item \textbf{Onto:} Let $y \in G$. We need to find an $x \in G$ such that $i_g(x) = y$. Consider the element $x = g^{-1}yg$. Since $g, y \in G$, it follows that $g^{-1} \in G$, and by the closure property of the group, $x = g^{-1}yg \in G$. Now we can verify that this choice of $x$ maps to $y$:
+                        \[
+                            i_g(x) = i_g(g^{-1}yg) = g(g^{-1}yg)g^{-1} = (gg^{-1})y(gg^{-1}) = y.
+                        \]
+                        Therefore, \(i_g\) is onto.
+
+                  \item \textbf{Homomorphism:} Let \(x, y \in G\). Then,
+                        \begin{align*}
+                            i_{g}(x)i_{g}(y) = gxg^{-1}gyg^{-1} = gx(g^{-1}g)yg^{-1} = gxyg^{-1} = i_{g}(xy).
+                        \end{align*}
+                        Therefore, \(i_g\) preserves the group operation.
+              \end{itemize}
+              Since \(i_g\) is a bijection and a homomorphism, it is an isomorphism of \(G\) with itself.
           }
 
 \end{enumerate}

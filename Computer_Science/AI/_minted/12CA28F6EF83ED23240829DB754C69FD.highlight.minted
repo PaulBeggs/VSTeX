@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{class} \PYG{n+nc}{OverlyConfident}\PYG{+w}{ }\PYG{k+kd}{implements}\PYG{+w}{ }\PYG{n}{ToIntFunction}\PYG{o}{\PYGZlt{}}\PYG{n}{MazeExplorer}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nd}{@Override}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{applyAsInt}\PYG{p}{(}\PYG{n}{MazeExplorer}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{manhattanDistance}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{.}\PYG{n+na}{getLocation}\PYG{p}{().}\PYG{n+na}{getManhattanDist}\PYG{p}{(}\PYG{n}{value}\PYG{p}{.}\PYG{n+na}{getM}\PYG{p}{().}\PYG{n+na}{getEnd}\PYG{p}{());}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{manhattanDistance}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\end{MintedVerbatim}
