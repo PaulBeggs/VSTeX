@@ -252,6 +252,7 @@
 \tcbuselibrary{theorems}
 % \tcbuselibrary{minted}
 \newcounter{BoxCounter}
+% \usepackage{dingbat}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -260,7 +261,7 @@
 %You'll need your own packages, theorem types, and commands.
 
 \usepackage{fix-cm}
-\usepackage{amsmath,amsthm} 
+\usepackage{amsmath,amsthm, amsfonts, amssymb} 
 \usepackage{array, makecell}
 \usepackage{colortbl}
 \newcommand{\thickvrule}{\vrule width 1pt}
@@ -268,7 +269,6 @@
 \newcommand{\thickhrule}{\Xhline{1pt}}
 
 \usepackage{mathtools}
-\usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{mathrsfs}
 \usepackage{changepage}
@@ -549,12 +549,12 @@
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\newcommand{\assignmentname}{Homework 2: Sections 3 \& 4}
+\newcommand{\assignmentname}{Homework 3: Sections 5 \& 6}
 
 % Do not use all caps.
 \newcommand{\cussubtitle}{Algebra}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{Septemeber 11, 2025}
+\newcommand{\finaldate}{Septemeber 25, 2025}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
 \newcommand{\professor}{Dr. Christopher Camfield, Ph.D.}
 
@@ -610,226 +610,111 @@
     \end{center}
 \end{titlepage}
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-\section*{Section 3}
-% In Exercises 6 and 7, determine whether the given map is an isomorphism of the first binary structure with the second. If it is not an isomorphism, why not?
-\begin{enumerate}
-    \setcounter{enumi}{5}
-    \item \(\langle \Q, \cdot \rangle\) with \(\langle \Q, \cdot \rangle\) where \(\phi(x) = x^{2}\) for \(x \in \Q\).
-          \sol{
-              The binary operation \(\phi\) is not an isomorphism because it is not one-to-one. A counterexample is that \(\phi\) is not one-to-one because \(\phi(1) = 1\) and \(\phi(-1) = 1\).
-          }
+\section*{Section 5}
 
-    \item \(\langle \R, \cdot \rangle\) with \(\langle \R, \cdot \rangle\) where \(\phi(x) = x^{3}\) for \(x \in \R\).
-          \sol{
-              The binary operation \(\phi\) is an isomorphism because it has the following properties:
-              \begin{itemize}
-                  \item \textbf{One-to-one:} If \(\phi(x) = \phi(y)\), then \(x^{3} = y^{3}\). Taking the cube root of both sides, we have \(x = y\). Thus, \(\phi\) is one-to-one.
-                  \item \textbf{Onto:} For any \(z \in \R\), we can find an \(x \in \R\) such that \(\phi(x) = z\). Specifically, we can choose \(x = \sqrt[3]{z}\). Therefore, \(\phi\) is onto.
-                  \item \textbf{Homomorphism:} For any \(x, y \in \R\), we have
-                        \[
-                            \phi(x \cdot y) = (x \cdot y)^{3} = x^{3} \cdot y^{3} = \phi(x) \cdot \phi(y).
-                        \]
-                        Therefore, \(\phi\) preserves the binary operation.
-              \end{itemize}
-          }
+% Section 5
+% Exercises 12, 13, 34, 39, 53
 
-\end{enumerate}
-\squigglyline \\
+In Exercises 12 and 13, determine whether the given set of invertible \(n \times n\) matrices with real number entries is a subgroup of \(GL(n, \mathbb{R})\).
 
-% In Exercise 11 and 12, let \(F\) be the set of all functions mapping \(\R\) into \(\R\) that have derivatives of all orders. Follow the instructions for Exercises 6 and 7.
-\begin{enumerate}
-    \setcounter{enumi}{10}
-    \item \(\langle F, + \rangle\) with \(\langle F, + \rangle\) where \(\phi(f) = f'\), the derivative of \(f\).
-          \sol{
-              The binary operation \(\phi\) is not an isomorphism because it is not one-to-one. A counterexample is that \(\phi(f) = \phi(g)\) for \(f(x) = x^{2}\) and \(g(x) = x^{2} + 1\), but \(f \ne g\).
-          }
-
-    \item \(\langle F, + \rangle\) with \(\langle \R, + \rangle\) where \(\phi(f) = f'(0)\).
-          \sol{
-              Similarly to the previous problem, the binary operation \(\phi\) is not an isomorphism because it is not one-to-one. A counterexample is that \(\phi(f) = \phi(g)\) for \(f(x) = \frac{x}{2}\) and \(g(x) = x^{2} + \frac{x}{2}\), but \(f \ne g\).
-          }
-\end{enumerate}
-
-\newpage
-\section*{Section 4}
-
-% In Exercise 3, determine whether the binary operation \(*\) gives a group structure on the given set. If no group results, give the first axiom in the order \(\mathcal{G}_{1},\ \mathcal{G}_{2},\ \mathcal{G}_{3}\) from Definition 4.1 that does not hold.
-
-\begin{enumerate}
-    \setcounter{enumi}{2}
-    \item Let \(*\) be defined on \(\R^{+}\) by letting \(a * b = \mysqrt{ab}\).
-          \sol{
-              The binary operation \(*\) does not give a group structure on \(\R^{+}\) because it fails \(\mathcal{G}_{1}\). A counterexample is that \((1 * 2) * 3 = \sqrt{2} * 3 = \sqrt{3\sqrt{2}}\), but \(1 * (2 * 3) = 1 * \mysqrt{6} = \sqrt{\sqrt{6}}\). Since \(\sqrt{3\sqrt{2}} \ne \sqrt{\sqrt{6}}\), the operation is not associative.
-          }
-
-\end{enumerate}
-\squigglyline \\
-
-% In Exercise 12, determine whether the given set of matrices under matrix multiplication is a group. Recall that a \textbf{diagonal matrix} is a square matrix whose only nonzero entries lie on the \textbf{main diagonal}, from the upper left to the lower right comer. Associated with each \(n \times n\) matrix \(A\) is a number called the determinant of \(A\), denoted by \(\det(A)\). If \(A\) and \(B\) are both \(n \times n\) matrices, then \(\det(AB) = \det(A) \det(B)\). Also, \(\det(I_{n}) = 1\) and \(A\) is invertible if and only if \(\det(A) \ne 0\).
+[Hint: Make use of Exercise 44. What must be the image of a generator under an automorphism?]
 
 \begin{enumerate}
     \setcounter{enumi}{11}
-    \item All \(n \times n\) diagonal matrices under matrix multiplication.
-          \sol{
-              The set of all \(n \times n\) diagonal matrices under matrix multiplication does not form a group because it fails \(\mathcal{G}_{3}\). A counterexample is the diagonal matrix
-              \[
-                  A = \begin{bmatrix}
-                      1 & 0 \\
-                      0 & 0
-                  \end{bmatrix},
-              \]
-              which is not invertible since \(\det(A) = 0\).
-          }
+    \item The \(n \times n\) matrices with determinant \(-1\) or 1
+    \sol{
+
+    }
+
+    \item The set of all \(n \times n\) matrices \(A\) such that \((A^T)A = I_n\) [These matrices are called \textbf{orthogonal}. Recall that \(A^T\), the \textit{transpose} of \(A\), is the matrix whose \(j\)th column is the \(j\)th row of \(A\) for \(1 \leq j \leq n\), and that the transpose operation has the property \((AB)^T = (B^T)(A^T)\)].
+    \sol{
+
+    }
 
 \end{enumerate}
 \squigglyline \\
+
+In Exercise 34, find the order of the cyclic subgroup of the given group generated by the indicated element.
 \begin{enumerate}
-    \setcounter{enumi}{18}
-    \item Let \(S\) be the set of all real numbers except -1. Define \(*\) on \(S\) by \(a * b = a + b + ab\).
-          \begin{enumerate}[label=\textbf{\alph*.}]
-              \item Show that \(*\) gives a binary operation on \(S\).
-                    \sol{
-                        Let \(a, b \in S\). Assume, for the sake of contradiction, that \(a * b = -1\). Then,
-                        \begin{align*}
-                            a * b          & = -1 \\
-                            a + b + ab     & = -1 \\
-                            ab + a + b + 1 & = 0  \\
-                            (a + 1)(b + 1) & = 0.
-                        \end{align*}
-                        Notice this equation is only true if \(a = -1\) and \(b = -1\), which contradicts our assumption that \(a, b \in S\). Thus, \(a * b \ne -1\) and so \(a * b \in S\). Therefore, \(*\) is a binary operation on \(S\).
-                    }
-              \item Show that \((S, *)\) is a group.
-                    \sol{
-                        We will verify that \((S, *)\) satisfies the group axioms:
-                        \begin{itemize}
-                            \item \(\mathcal{G}_{1}\) (Associativity): Let \(a, b, c \in S\). Then,
-                                  \begin{align*}
-                                      (a * b) * c & = (a + b + ab) * c                 \\
-                                                  & = (a + b + ab) + c + (a + b + ab)c \\
-                                                  & = a + b + ab + c + ac + bc + abc.
-                                  \end{align*}
-                                  Similarly,
-                                  \begin{align*}
-                                      a * (b * c) & = a * (b + c + bc)                 \\
-                                                  & = a + (b + c + bc) + a(b + c + bc) \\
-                                                  & = a + b + c + bc + ab + ac + abc.
-                                  \end{align*}
-                                  Since both expressions are equal, we have \((a * b) * c = a * (b * c)\), confirming associativity.
+    \setcounter{enumi}{33}
+    \item The subgroup of the multiplicative group \(G\) of invertible \(4 \times 4\) matrices generated by
+    
+    \[
+        \begin{bmatrix}
+            0 & 0 & 0 & 1 \\
+            0 & 0 & 1 & 0 \\
+            1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0
+        \end{bmatrix}
+    \]
+    \sol{
 
-                            \item \(\mathcal{G}_{2}\) (Identity Element): We need to find an element \(e \in S\) such that for all \(a \in S\), \(a * e = e * a = a\). Let \(e = 0\). Then,
-                                  \[
-                                      a * 0 = a + 0 + a(0) = a,
-                                  \]
-                                  and
-                                  \[
-                                      0 * a = 0 + a + 0(a) = a.
-                                  \]
-                                  Since \(0 \in S\), it serves as the identity element.
-
-                            \item \(\mathcal{G}_{3}\) (Inverse Element): For each \(a \in S\), we need to find an element \(a'\in S\) such that \(a * a'= a'* a = e\), where \(e\) is the identity element found above. We want to solve for \(a'\) in the equation:
-                                  \begin{align*}
-                                      a * a'      & = 0   \\
-                                      \intertext{This gives us:}
-                                      a + a'+ aa' & = 0.
-                                      \intertext{Rearranging, we have:}
-                                      aa'+ a'     & = -a,
-                                      \intertext{or}
-                                      a'(a + 1)   & = -a.
-                                  \end{align*}
-                                  Since \(a \in S\), we have \(a + 1 \ne 0\), and thus we can divide by \(a + 1\) to find:
-                                  \[
-                                      a'= \frac{-a}{a + 1}.
-                                  \]
-                                  With candidate \(a'\) identified, we can plug in to verify:
-                                  \[
-                                      a * a' = a + \frac{-a}{a + 1} + a\left(\frac{-a}{a + 1}\right) = 0,
-                                  \]
-                                  and
-                                  \[
-                                      a' * a = \frac{-a}{a + 1} + a + \left(\frac{-a}{a + 1}\right)a = 0.
-                                  \]
-                                  Since \(a' \ne -1\), we have \(a' \in S\). Therefore, every element in \(S\) has an inverse in \(S\).
-                        \end{itemize}
-                    }
-              \item Find the solution of the equation \(2* x* 3 = 7\) in \(S\).
-                    \sol{
-                        Since we are working with an expression in \(S\), we have to be mindful of the order of operations. Since we don't have a nice way to ``decouple'' \(x\) from its coefficient, we'll have to work from the outside in. First, we must use the inverses (and Theorem 4.15) to get rid of the 2 and 3 from the left side:
-                        \[
-                            2 * (x * 3) = 7 \quad \Rightarrow \quad 2' * (2 * x * 3) * 3' = 2' * 7 * 3'.
-                        \]
-                        Using the associative property, we can rewrite the left side as:
-                        \[
-                            (2' * 2) * x * (3 * 3') = 2' * 7 * 3'.
-                        \]
-                        Since \(2' * 2 = 0\) and \(3 * 3' = 0\):
-                        \[
-                            0 * x * 0 = 2' * 7 * 3'.
-                        \]
-                        The identity property tells us that \(0 * x = x\) and \(x * 0 = x\), so:
-                        \[
-                            x = 2' * 7 * 3'.
-                        \]
-                        Using the formula for inverses found in part (b), we have:
-                        \[
-                            2' = \frac{-2}{2 + 1} = -\frac{2}{3}, \quad 3' = \frac{-3}{3 + 1} = -\frac{3}{4}.
-                        \]
-                        Substituting these values back into our equation for \(x\), we have:
-                        \[
-                            x = \left(-\frac{2}{3}\right) * 7 * \left(-\frac{3}{4}\right).
-                        \]
-                        Thus, we can expand the right side:
-                        \begin{align*}
-                            x & = \left[\left(-\frac{2}{3}\right) + 7 + \left(-\frac{2}{3}\right)(7)\right] * \left(-\frac{3}{4}\right) \\
-                              & = \frac{5}{3} * \left(-\frac{3}{4}\right)                                                               \\
-                              & = \frac{5}{3} + \left(-\frac{3}{4}\right) + \left(\frac{5}{3}\right)\left(-\frac{3}{4}\right)           \\
-                              & = -\frac{1}{3}.
-                        \end{align*}
-
-                    }
-          \end{enumerate}
-
-
+    }
 \end{enumerate}
 \squigglyline \\
 \begin{enumerate}
-    \setcounter{enumi}{40}
-    \item Let \(G\) be a group and let \(g\) be one fixed element of \(G\). Show that the map \(i_g\), such that \(i_g(x) = gxg^{-1}\) for \(x \in G\), is an isomorphism of \(G\) with itself.
-          \sol{
-              We will verify that \(i_g\) satisfies the properties of an isomorphism:
-              \begin{itemize}
-                  \item \textbf{One-to-one:} Assume \(i_g(x) = i_g(y)\) for some \(x, y \in G\). Then,
-                        \[
-                            gxg^{-1} = gyg^{-1}.
-                        \]
-                        Utilizing Theorem 4.15, we can multiply both sides on the left by \(g^{-1}\) and on the right by \(g\), revealing:
-                        \[
-                            g^{-1}(gxg^{-1})g = g^{-1}(gyg^{-1})g,
-                        \]
-                        which we can rearrange using the associative property to get:
-                        \[
-                            (g^{-1}g)x(g^{-1}g) = (g^{-1}g)y(g^{-1}g).
-                        \]
-                        Since \(g^{-1}g = e\), the identity element of \(G\), we have:
-                        \[
-                            x = y.
-                        \]
-                        Thus, \(i_g\) is one-to-one.
+    \setcounter{enumi}{38}
+    \item Mark each of the following true or false. \\ 
+    $\overset{\checkmark}{\underline{\hspace{0.5in}}}$ \textbf{a.} The associative law holds in every group. \\
+    $\overset{\checkmark}{\underline{\hspace{0.5in}}}$ \textbf{b.} There may be a group in which the cancellation law fails. \\
+    $\overset{\checkmark}{\underline{\hspace{0.5in}}}$ \textbf{c.} Every group is a subgroup of itself. \\
+    $\overset{\checkmark}{\underline{\hspace{0.5in}}}$ \textbf{d.} Every group has exactly two improper subgroups. \\
+    $\overset{\checkmark}{\underline{\hspace{0.5in}}}$ \textbf{e.} In every cyclic group, every element has a generator. \\
+    $\overset{\checkmark}{\underline{\hspace{0.5in}}}$ \textbf{f.} A cyclic group has a unique generator. \\
+    $\overset{\checkmark}{\underline{\hspace{0.5in}}}$ \textbf{g.} Every set of numbers that is a group under addition is also a group under multiplication. \\
+    $\overset{\checkmark}{\underline{\hspace{0.5in}}}$ \textbf{h.} A subgroup may be defined as a subset of a group. \\
+    $\overset{\checkmark}{\underline{\hspace{0.5in}}}$ \textbf{i.} \(\mathbb{Z}_4\) is a cyclic group. \\
+    $\overset{\checkmark}{\underline{\hspace{0.5in}}}$ \textbf{j.} Every subset of every group is a subgroup under the induced operation. \\  
+\end{enumerate}
+\squigglyline \\
+\begin{enumerate}
+    \setcounter{enumi}{52}
+    \item Let \(H\) be a subgroup of a group \(G\). For \(a,b \in G\), let \(a \sim b\) if and only if \(ab^{-1} \in H\). Show that \(\sim\) is an equivalence relation on \(G\).
+    \sol{
 
-                  \item \textbf{Onto:} Let $y \in G$. We need to find an $x \in G$ such that $i_g(x) = y$. Consider the element $x = g^{-1}yg$. Since $g, y \in G$, it follows that $g^{-1} \in G$, and by the closure property of the group, $x = g^{-1}yg \in G$. Now we can verify that this choice of $x$ maps to $y$:
-                        \[
-                            i_g(x) = i_g(g^{-1}yg) = g(g^{-1}yg)g^{-1} = (gg^{-1})y(gg^{-1}) = y.
-                        \]
-                        Therefore, \(i_g\) is onto.
+    }
+\end{enumerate}
 
-                  \item \textbf{Homomorphism:} Let \(x, y \in G\). Then,
-                        \begin{align*}
-                            i_{g}(x)i_{g}(y) = gxg^{-1}gyg^{-1} = gx(g^{-1}g)yg^{-1} = gxyg^{-1} = i_{g}(xy).
-                        \end{align*}
-                        Therefore, \(i_g\) preserves the group operation.
-              \end{itemize}
-              Since \(i_g\) is a bijection and a homomorphism, it is an isomorphism of \(G\) with itself.
-          }
+\newpage
 
+\section*{Section 6}
+
+% Section 6
+% Exercises 17, 18, 19, 23, 46
+In Exercises 17, 18 and 19, find the number of elements in the indicated cyclic group.
+\begin{enumerate}
+    \setcounter{enumi}{16}
+    \item The cyclic subgroup of \(\mathbb{Z}_{30}\) generated by 25
+    \sol{
+        
+    }
+
+    \item The cyclic subgroup of \(\mathbb{Z}_{42}\) generated by 30
+    \sol{
+
+    }
+
+    \item The cyclic subgroup \(\langle i \rangle\) of \(\C^*\) of nonzero complex numbers under multiplication
+    \sol{
+
+    }
+\end{enumerate}
+\squigglyline \\
+In Exercise 23, find all subgroups of the given group, and draw the subgroup diagram for the subgroups.
+\begin{enumerate}
+    \setcounter{enumi}{22}
+    \item \(\Z_{36}\)
+    \sol{
+
+    }
+\end{enumerate}
+\squigglyline \\
+\begin{enumerate}
+    \setcounter{enumi}{45}
+    \item Let \(a\) and \(b\) be elements of a group \(G\). Show that if \(ab\) has finite order \(n\), then \(ba\) also has order \(n\).
+    \sol{
+        
+    }
 \end{enumerate}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

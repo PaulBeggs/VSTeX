@@ -117,4 +117,12 @@
 		"description": "Wrap selected text in a box and position cursor outside the closing brace"
 	},
 
+	"Display brackets": {
+		"prefix": "dbrackets",
+		"body": [
+			"\\left[ {$TM_SELECTED_TEXT} \\right]$0"
+		],
+		"description": "Highlight selected text and surround it with display brackets."
+	}
+
 }

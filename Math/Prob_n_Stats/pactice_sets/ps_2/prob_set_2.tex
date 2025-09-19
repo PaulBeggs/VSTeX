@@ -231,7 +231,7 @@
 % \renewcommand{\theenumi}{\arabic{enumi}} 
 % \renewcommand{\labelenumi}{\theenumi.}
 
-\title{Probability and Statistics: Practice Set 1}
+\title{Probability and Statistics: Practice Set 2}
 \author{Paul Beggs}
 \date{\today}
 
@@ -268,9 +268,8 @@
 \maketitle
 
 \begin{enumerate}
-    \item (2 points each) A discrete random variable \(X\) has its pmf as given in the table below: \\
-    \begin{tabular}{c|c}
-        \hline
+    \item (2 points each) A discrete random variable \(X\) has its pmf as given in the table below: \\[0.5em]
+    \begin{tabular}{c|l}
         \(x\) & \(P(X = x)\) \\
         \hline
         1 & 0.2 \\
@@ -281,71 +280,230 @@
     \begin{enumerate}
         \item Find (as a piecewise-defined function) the CDF for \(X\).
         \sol{
-
+            The CDF for \(X\) can be defined as 
+			\[
+				F(x) = \begin{cases}
+					0, & \text{if } x < 1, \\
+					0.2, & \text{if } 1 \leq x < 3, \\
+					0.3, & \text{if } 3 \leq x < 4, \\
+					0.7, & \text{if } 4 \leq x < 7, \\
+					1, & \text{if } x \geq 7.
+				\end{cases}
+			\]
         }
         \item Find the mean \(\mu = E(X)\).
-        
         \sol{
-
+			The mean can be calculated with the following:
+			\[
+				\mu = \sum_{x \in \{1,3,4,7\}} x f(x) = 1(0.2) + 3(0.1) + 4(0.4) + 7(0.3) = 4.2.
+			\]
         }
 
         \item Find the variance, \(\sigma^2 = \text{Var}(X)\).
         \sol{
-
+			Similarly to the previous problem:
+			\[
+				\sigma^{2} = \sum_{x \in \{1,3,4,7\}} (x - 4.2)^{2} f(x) = 4.56.
+			\]
         }
         \item Find the Moment Generating Function, \(M(t) = E(e^{tX})\) for \(X\).
         \sol{
-
+			The mgf can be found by computing the following:
+			\[
+				M(t) = \sum_{x \in \{1,3,4,7\}} e^{tx}f(x) = 0.2e^{t1} + 0.1e^{t3} + 0.4e^{t4} + 0.3e^{t7}.
+			\]
         }
+
+\newpage
+
     \end{enumerate}
     \item (2 points each) Suppose that \(Y = aX + b\) and let \(M_{Y}(t)\) and \(M_{X}(t)\) be the moment generating functions for \(Y\) and \(X\) respectively. 
     \begin{enumerate}
         \item Show that \(M_{Y}(t) = e^{tb}M_{X}(at)\).
         \sol{
-
+            We will expand the moment generating function for \(Y\):
+			\[
+				M_{Y}(t) = E\left( e^{tY} \right) = E\left( e^{t(aX + b)} \right) = E\left( e^{taX}e^{tb} \right) = E\left( e^{tb} \cdot e^{taX} \right) = e^{tb} \cdot E\left( e^{taX} \right) = e^{tb} M_{X}(at).
+			\]
+            Therefore, \(M_{Y}(t) = e^{tb}M_{X}(at)\).
         }
         \item Use the previous result to show that \(E(Y) = aE(X) + b\).
         \sol{
-
+			To use the previous result, we can find the first derivative of \(M_{Y}(t)\). Then, we can evaluate it at 0 since \(M_{Y}'(0) = E(Y)\). Hence, we will find the derivative first:
+			\begin{align*}
+				M_{Y}'(t) &= \frac{d}{dt}\left[ e^{tb}M_{X}(at) \right] \\
+				&= \frac{d}{dt} \left[ e^{tb} \right] M_{X}(at) + e^{tb} \cdot \frac{d}{dt} \left[ M_{X}(at) \right] \\
+				&= be^{tb} M_{X}(at) + ae^{tb}M_{X}'(at) . \tag{1}\label{eq:1}
+				\intertext{Evaluating at \(t = 0\):}
+				E(Y) = M_{Y}'(0) &= be^{0b} M_{X}(a0) + ae^{0b} M_{X}'(a0) \\
+				&= bM_{X}(0) + a M_{X}'(0) \\
+				&= b \cdot (1) + aE(X) \\
+				&= aE(X) + b.
+			\end{align*}
+			Therefore, \(E(Y) = aE(X) + b\).
         }
 
         \item Use the previous two results to show that \(\text{Var}(Y) = a^2\text{Var}(X)\).
-        \sol{
+        % \sol{
+		% 	Similarly to the previous problem, we know that \(M_{Y}''(0) = \text{Var}(Y)\), so we can take the derivative of (\ref{eq:1}), and evaluate it at 0. Again, we will find the derivative first:
+		% 	\begin{align*}
+		% 		M_{Y}''(t) &= \frac{d}{dt} \left[ {be^{tb} M_{X}(at)} \right] + \frac{d}{dt} \left[ {ae^{tb}M_{X}'(at)} \right] \\
+		% 		&= b^{2}e^{tb}M_{X}(at) + abe^{tb} M_{X}'(at)  + abe^{tb} M_{X}'(at) + a^{2}e^{tb} M_{X}''(at) \\
+		% 		\intertext{Evaluating at \(t = 0\):}
+		% 		\text{Var} (Y) = \frac{d^{2}}{d^{2}t} \left[ {M_{Y}(0)} \right] &= \left( b^{2}e^{0b}M_{X}(a0) \right) + \left( abe^{0b}M_{X}'(a0) \right) + \left( abe^{0b}M'_{X}(a0) \right) + \left( a^{2}e^{0b}M''_{X}(a0) \right) \\
+		% 		&= \left( b^{2} \cdot 1 \cdot M_{X}(0) \right) + (ab \cdot 1 \cdot E(X)) + (ab \cdot 1 \cdot E(X)) + (a^{2} \cdot 1 \cdot \text{Var}(X)) 
+		% 	\end{align*}
+        % }
+		\sol{
+            We know that \(\text{Var}(Y) = E(Y^2) - [E(Y)]^2\). From part (b), we have \(E(Y) = aE(X) + b\). We need to find \(E(Y^2)\) using \(M_Y''(0) = E(Y^2)\).
+            
+            Taking the second derivative of equation (\ref{eq:1}):
+            \begin{align*}
+                M_Y''(t) &= \frac{d}{dt}\left[be^{tb}M_X(at) + ae^{tb}M_X'(at)\right] \\
+                &= b^2e^{tb}M_X(at) + abe^{tb}M_X'(at) + abe^{tb}M_X'(at) + a^2e^{tb}M_X''(at) \\
+                &= b^2e^{tb}M_X(at) + 2abe^{tb}M_X'(at) + a^2e^{tb}M_X''(at).
+            \end{align*}
+            
+            Evaluating at \(t = 0\):
+            \begin{align*}
+                E(Y^2) = M_Y''(0) &= b^2M_X(0) + 2abM_X'(0) + a^2M_X''(0) \\
+                &= b^2 \cdot 1 + 2ab \cdot E(X) + a^2 \cdot E(X^2) \\
+                &= b^2 + 2abE(X) + a^2E(X^2).
+            \end{align*}
 
+			\begin{center}
+				\textsc{(Solution continued on the next page)}
+			\end{center}
+            Therefore:
+            \begin{align*}
+                \text{Var}(Y) &= E(Y^2) - [E(Y)]^2 \\
+                &= [b^2 + 2abE(X) + a^2E(X^2)] - [aE(X) + b]^2 \\
+                &= b^2 + 2abE(X) + a^2E(X^2) - [a^2E(X)^2 + 2abE(X) + b^2] \\
+                &= a^2E(X^2) - a^2E(X)^2 \\
+                &= a^2[E(X^2) - E(X)^2] \\
+                &= a^2\text{Var}(X).
+            \end{align*}
         }
+
     \end{enumerate}
+
     \item (2 points each) A basketball player makes \(82\%\) of their free-throws. Suppose they take 12 total shots and let \(X\) be the number of shots they make. Assume each shot is independent of the others.
     \begin{enumerate}
         \item Find \(P(X = 7)\).
         \sol{
-
+			If \(X\) is the number of shots that they make, then \(X \sim \texttt{Binomialpdf}(12,.82,7)\). Thus, 
+			\[
+				P(X = 7) = f(7) = \binom{12}{7}(.82)^{7}(.18)^{5} \approx  3.73\%.
+			\]
         }
         \item Find \(P(4 \leq X \leq 10)\).
         \sol{
-
+			This question can be rearranged and solved like the following:
+			\[
+				P(4 \leq X \leq 10) = P(X \leq 10) - P(X \leq 3) \approx  66.41\%.
+			\]	
         }
-        \item Find \(P(X \geq 7|4 \leq X \leq 10)\).
+        \item Find \(P(X \geq 7 \mid 4 \leq X \leq 10)\).
         \sol{
-
+			This problem relies upon a conditional probability:
+			\[
+				P(A \mid B) = \frac{P(A \cap B)}{P(B)},
+			\]
+			where event \(A\) is the probability of the basketball player making more than 7 shots, given event \(B\) where the total successful shots is between 4 and 10 inclusively. Thus, we need to find the following values with the \(\texttt{Binomialcdf}\) function:
+			\begin{itemize}
+				\item \(P(A \cap B) = P(7 \leq X \leq 10) = P(X \leq 10) - P(X \leq 6) \approx 0.6525\), and
+				\item \(P(B) = P(4 \leq X \leq 10) \approx 0.6641\) (from (b)).
+			\end{itemize}
+			This allows us to solve the conditional probability:
+			\[	
+				P(A \mid B) = \frac{P(A \cap B)}{P(B)} \approx \frac{0.6525}{0.6641} \approx 98.25\%.
+			\]
         }
     \end{enumerate}
+
+	\newpage
+
     \item (2 points) A multiple choice exam has 4 choices for each question and 10 total questions. Find the probability that a student guessing at random scores at least a \(50\%\) on the exam.
     \sol{
-
+		For this problem, we will be using a binomial distribution. We let \(X\) count the number of successes, and set \(p = .25\) to be the probability of getting a question correct. Thus, our goal is to find the following:
+		\[
+			P(X \geq 5) = \sum_{k=5}^{10}\binom{10}{k}(.25)^{k}(.75)^{10 - k} \approx 7.81\%.
+		\]
+		(Or, we could have equivalently calculated \(1 - \texttt{binomcdf(10,.25,4)}\). I just wanted to experiment with this summation route on my calculator.)
     }
-    \item (2 points) Prof.\ Seme has a shelf with 25 books. of these, 8 are Agatha Christie Hercule Poirot novels. If he selects 7, without replacement, what is the probability that exactly 3 are Poirot novels?
+    \item (2 points) Prof.\ Seme has a shelf with 25 books. Of these, 8 are Agatha Christie Hercule Poirot novels. If he selects 7, without replacement, what is the probability that exactly 3 are Poirot novels?
     \sol{
-
+		This question requires the use of the hypergeometric distribution. We'll let \(N\) be the population of 25 books, \(N_{1} = 8\) being the Agatha Christie Hercule Poirot novels, and \(N_{2} = 17\) be the rest of them. We will let \(X\) be the number of Poirot novels picked. Hence, our goal is to calculate the following:
+		\[
+			P(X = 3) = f(3) = \left[ {\binom{8}{3}\binom{17}{4}} \right] \bigg/ \binom{25}{7} \approx 27.73\%.
+		\]
     }
 
-    \item (3 points) An insurance company offers a product which will payout to a business that needs to close for snow. They will pay nothing for the first snow storm. For each additional storm which causes a closure, they will pay \(\$10,000\), up to a maximum total payment of \(\$45,000\) in a year. The number of snow storms in a given year follows a geometric distribution, with mean \(\mu = 2.5\) storms per year. What should their premium (i.e., what should they charge per year) so that they bring in \(110\%\) of their expected payout?
+\newpage
+
+    \item (3 points) An insurance company offers a product which will payout to a business that needs to close for snow. They will pay nothing for the first snow storm. For each additional storm which causes a closure, they will pay \$10,000, up to a maximum total payment of \$45,000 in a year. The number of snow storms in a given year follows a geometric distribution, with mean \(\mu = 2.5\) storms per year. What should their premium (i.e., what should they charge per year) so that they bring in \(110\%\) of their expected payout?
     \sol{
-
+        Let $X$ count the number of snow storms that occur in one year. The insurance company's payout, $Y$, is defined by the piecewise function:
+        \[
+            Y(X) = \begin{cases}
+                0, & X \leq 1, \\
+                10,000 \cdot (X - 1), & 2 \leq X \leq 5, \\
+                45,000, & X \geq 6.
+            \end{cases}
+        \]
+        The formula for the mean of the geometric distribution depends on its definition. Since the random variable $X$ represents the number of storms in a year, it can take the value of zero. This requires the version of the geometric distribution that counts the number of \textbf{failures before the first success}, which has a support of $S = \{0, 1, 2, \ldots\}$. The mean for this definition is $\mu = \frac{1-p}{p}$.
+        \[
+            \mu = \frac{1 - p}{p} \quad \implies \quad 2.5 = \frac{1 - p}{p} \quad \implies \quad 2.5p = 1 - p \quad \implies \quad p = \frac{2}{7}.
+        \]
+        The expected payout is the sum of each possible payout multiplied by its probability: 
+        \[
+            E[Y] = \sum_{x = 2}^{5} Y(x) P(X = x) + Y(6) P(X \geq 6).
+        \]
+        We can compute this expected value using a table:
+        \begin{center}
+            \begin{tabular}[htbp]{llll}
+                \toprule
+                Storms ($x$) & Payout ($Y$) & Probability \(P(X = x) = \left( \frac{5}{7} \right)^{x}(\frac{2}{7})\) & Payout $\cdot$ Probability \\ \midrule
+                0 or 1 & \$0 & - & \$0 \\ \midrule
+                2 & \$10,000 & $(\frac{5}{7})^2(\frac{2}{7}) \approx 0.1458$ & \$1,457.73 \\ \midrule
+                3 & \$20,000 & $(\frac{5}{7})^3(\frac{2}{7}) \approx 0.1041$ & \$2,082.47 \\ \midrule
+                4 & \$30,000 & $(\frac{5}{7})^4(\frac{2}{7}) \approx 0.0744$ & \$2,231.21 \\ \midrule
+                5 & \$40,000 & $(\frac{5}{7})^5(\frac{2}{7}) \approx 0.0531$ & \$2,124.99 \\ \midrule
+                $\geq 6$ & \$45,000 & $P(X \geq 6) = (\frac{5}{7})^6 \approx 0.1328$ & \$5,976.48 \\ \midrule
+                \textbf{Total} & & & \textbf{\$13,872.88} \\ \bottomrule
+            \end{tabular}
+        \end{center}
+        Finally, the premium is 110\% of the expected payout:
+        \[
+            \boxed{\text{Premium} = E[Y] \cdot 1.10 = \$\text{13,872.88} \cdot 1.10 \approx \$\text{15,260.17}.}
+        \]
     }
+
+\newpage
 
     \item (3 points) Suppose that \(X \sim b(m,p)\) and \(Y \sim b(n,p)\) are two independent random variables. Let \(Z = X + Y\). Explain why \(Z \sim b(m+n,p)\).
     \sol{
-
+        Since \(Z = X + Y\), for \(Z\) to equal some value \(z\), it could be that \(X\) is 0 and \(Y\) could be \(z\), or \(X\) is \(1\), and \(Y\) is \(z - 1\), and so on. Thus, we can write this as a sum:
+        \[
+            P(Z=z) = \sum_{k = 0}^{z} P((X = k) \cap (Y = z - k)). 
+        \]
+        Because \(X\) and \(Y\) are independent events, we can rewrite this as the following:
+        \[
+            P(Z=z) = \sum_{k = 0}^{z} P(X = k)P(Y = z - k).
+        \]
+        Thus, from here, we can show that \(Z \sim b(m + n, p)\):
+        \begin{align*}
+            P(Z=z) &= \sum_{k=0}^{z} P(X=k)P(Y=z-k) \\
+            &= \sum_{k=0}^{z} \left[ \binom{m}{k}p^{k} (1 - p)^{m - k} \right] \left[ \binom{n}{z - k}p^{z - k} (1 - p)^{n - (z - k)} \right] \\
+            &= \sum_{k=0}^{z} \binom{m}{k} \binom{n}{z - k} p^{k + (z-k)} (1-p)^{(m-k) + (n-(z-k))} \\
+            &= \sum_{k=0}^{z} \binom{m}{k} \binom{n}{z - k} p^{z} (1-p)^{m+n-z}. \\
+            \intertext{Now, factor the terms that don't depend on \(k\) outside the sum:}
+            &= p^{z} (1-p)^{m+n-z} \sum_{k=0}^{z} \binom{m}{k} \binom{n}{z - k}. \\
+            \intertext{By Vandermonde's Identity, the entire sum simplifies to \(\binom{m + n}{z}\):}
+            &= p^{z} (1-p)^{m+n-z} \left[ \binom{m+n}{z} \right] \\
+            &= \binom{m+n}{z} p^{z} (1-p)^{(m+n)-z}.
+        \end{align*}
+        which is corresponds exactly to the pmf formula for the binomial distribution with \(m + n\) trials and a success probability of \(p\). Therefore, we have shown that \(Z \sim b(m + n, p)\).
     }
 \end{enumerate}
 

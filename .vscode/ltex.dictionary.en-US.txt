@@ -193,3 +193,4 @@ Clairaut
 extrema
 Dorsolateral
 MazeExplorer
+piecewise
