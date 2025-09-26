@@ -1,0 +1,169 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{minted}
+\setminted{linenos, breaklines=true}
+\usepackage{listings}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{amsmath}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\usepackage{float}
+\usepackage{caption}
+
+\setlength{\parindent}{0pt}
+
+\title{Project 2: Checkers}
+\author{Paul Beggs \\ \href{https://github.com/PaulBeggs/A_Star}{GitHub Link}}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\section{Evaluation Function}
+
+This basic evaluation function works by simply counting how many pieces each player has on the board, and then returning the difference between the current player's piece count and the opponent's piece count. Hence, it returns either a positive or negative integer, including zero if the counts are equal. The code snippet is provided in \hyperref[list:basic_eval]{Listing 1}. \\
+
+\label{list:basic_eval}
+\begin{minted}{java}
+public class BasicEval implements ToIntFunction<Checkerboard> {
+    @Override
+    public int applyAsInt(Checkerboard value) {
+        PlayerColor current = value.getCurrentPlayer();
+        PlayerColor opponent = current.opponent();
+        int currentCount = value.numPiecesOf(current);
+        int opponentCount = value.numPiecesOf(opponent);
+        return currentCount - opponentCount;
+    }
+}
+\end{minted}
+\captionof{listing}{Basic Evaluation Function}
+\vspace{2em}
+
+I've found that this evaluation function does not work well in practice. Since it does not give enough value to extraneous factors that can influence the outcome, such as piece positioning and potential future moves, it often leads to suboptimal play. For example, consider the board states from \hyperref[fig:board_states]{Figure 1}: Here, black can move any piece, but decides to move the piece at h6 to g5, causing an immediate capture by red on the next turn. I'm not sure what may be causing this behavior, but I suspect it may be due to the fact that the evaluation function does not account for potential captures or threats, leading to poor decision-making in certain scenarios.
+
+
+\begin{figure}[h!]
+    \label{fig:board_states}
+    \centering
+        \begin{tabular}{c|cccccccc|}
+          \multicolumn{1}{c}{} & a & b & c & d & e & f & g & \multicolumn{1}{c}{h} \\
+            \cline{2-9}
+          8 & . & r & . & r & . & r & . & r \\
+          7 & b & . & r & . & . & . & r & . \\
+          6 & . & . & . & r & . & r & . & b \\
+          5 & . & . & . & . & . & . & . & . \\
+          4 & . & . & . & . & . & . & . & b \\
+          3 & b & . & . & . & . & . & . & . \\
+          2 & . & b & . & b & . & b & . & . \\
+          1 & b & . & b & . & b & . & b & . \\
+            \cline{2-9}
+            \multicolumn{9}{c}{\ \ Black to move}
+        \end{tabular} \\[0.5em]
+        \begin{tabular}{|cccccccc|}
+            \hline
+            . & r & . & r & . & r & . & r \\
+            b & . & r & . & . & . & r & . \\
+            . & . & . & r & . & r & . & b \\
+            . & . & . & . & . & . & b & . \\
+            . & . & . & . & . & . & . & . \\
+            b & . & . & . & . & . & . & . \\
+            . & b & . & b & . & b & . & . \\
+            b & . & b & . & b & . & b & . \\
+            \hline
+            \multicolumn{8}{c}{\text{Black moves to g5}}
+        \end{tabular}
+        \(\leftarrow\) Possible moves 
+        \(\rightarrow\)
+        \begin{tabular}{|cccccccc|}
+            \hline
+            . & r & . & r & . & r & . & r \\
+            b & . & r & . & . & . & r & . \\
+            . & . & . & r & . & r & . & b \\
+            . & . & . & . & . & . & . & . \\
+            . & . & . & . & . & . & . & b \\
+            b & . & . & . & . & . & . & . \\
+            . & b & . & b & . & b & . & b \\
+            b & . & b & . & b & . & . & . \\
+            \hline
+            \multicolumn{8}{c}{\text{Black moves to h8}}
+        \end{tabular}
+        \caption{Board States}
+\end{figure}
+
+\newpage
+
+\section{Searcher Implementation}
+
+Due to the lack of foresight in our evaluation function, our searcher implementation is also prone to errors. As they say, trash in, trash out. However, I believe that with a more sophisticated evaluation function, the \mintinline{java}{NegaMax} searcher would perform significantly better. The code for the \mintinline{java}{NegaMax} searcher is provided in \hyperref[list:negamax]{Listing 2}. \\
+
+When running \mintinline{java}{AutoCheckers} with both players running \mintinline{java}{NegaMax} with depth limits 2 and 7 for \mintinline{java}{Player1} and \mintinline{java}{Player2} respectively, I found that \mintinline{java}{Player2} tended to lose more often than not (5 game difference between the two players over 32 games). \\
+
+\label{list:negamax}
+\begin{minted}{java}
+public class NegaMax extends CheckersSearcher {
+    private int numNodes;
+
+    public NegaMax(ToIntFunction<Checkerboard> e) {
+        super(e);
+    }
+
+    @Override
+    public int numNodesExpanded() {
+        return numNodes;
+    }
+
+    @Override
+    public Optional<Duple<Integer, Move>> selectMove(Checkerboard board) {
+        numNodes = 0;
+        int bestScore = -Integer.MAX_VALUE;
+        Move bestMove = null;
+        for (Move move : board.getCurrentPlayerMoves()) {
+            Checkerboard alternative = board.duplicate();
+            alternative.move(move);
+
+            int score = -maxScore(alternative, getDepthLimit() - 1);
+            if (score > bestScore) {
+                bestScore = score;
+                bestMove = move;
+            }
+        }
+
+        if (bestMove == null) {
+            return Optional.empty();
+        }
+
+        return Optional.of(new Duple<>(bestScore, bestMove));
+    }
+
+    private int maxScore(Checkerboard board, int depth) {
+        numNodes += 1;
+        if (depth == 0 || board.gameOver()) {
+            return getEvaluator().applyAsInt(board);
+        }
+        int maxScore = -Integer.MAX_VALUE;
+        for (Checkerboard alternative : board.getNextBoards()) {
+            int score = -maxScore(alternative, depth - 1);
+            maxScore = Math.max(maxScore, score);
+        }
+        return maxScore;
+    }
+}
+\end{minted}
+\captionof{listing}{NegaMax Searcher}
+\vspace{2em}
+
+
+\end{document}

@@ -1,0 +1,12 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{class} \PYG{n+nc}{BasicEval}\PYG{+w}{ }\PYG{k+kd}{implements}\PYG{+w}{ }\PYG{n}{ToIntFunction}\PYG{o}{\PYGZlt{}}\PYG{n}{Checkerboard}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nd}{@Override}
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{applyAsInt}\PYG{p}{(}\PYG{n}{Checkerboard}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{PlayerColor}\PYG{+w}{ }\PYG{n}{current}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{.}\PYG{n+na}{getCurrentPlayer}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{PlayerColor}\PYG{+w}{ }\PYG{n}{opponent}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{current}\PYG{p}{.}\PYG{n+na}{opponent}\PYG{p}{();}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{currentCount}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{.}\PYG{n+na}{numPiecesOf}\PYG{p}{(}\PYG{n}{current}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{opponentCount}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{value}\PYG{p}{.}\PYG{n+na}{numPiecesOf}\PYG{p}{(}\PYG{n}{opponent}\PYG{p}{);}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{currentCount}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{opponentCount}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

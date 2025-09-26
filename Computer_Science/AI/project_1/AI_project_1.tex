@@ -15,24 +15,24 @@
 	urlcolor=horange,
 }
 
+\usepackage{float}
+\usepackage{caption}
+
 \setlength{\parindent}{0pt}
 
 \title{Project 1: Solving Mazes with A*}
-\author{Paul Beggs}
+\author{Paul Beggs \\ \href{https://github.com/PaulBeggs/A_Star}{GitHub Link}}
 \date{\today}
 
 
 \begin{document}
 \maketitle
 
+\section{Heuristic Descriptions \& Implementations}
 
+The Manhattan heuristic (\hyperref[list:manhattan]{Listing 1}) calculates the Manhattan distance between the current location of the \mintinline{java}{MazeExplorer} and the end location of the maze. If we let \(n_{1}\) and \(n_{2}\) be the coordinates of the current location and \(e_{1}\) and \(e_{2}\) be the coordinates of the end location, then the Manhattan distance is calculated as \(|n_{1} - e_{1}| + |n_{2} - e_{2}|\). This implementation is admissible because it never overestimates the true cost to reach the goal. Thus, the shortest path will never be larger than the Manhattan distance, as the shortest path may involve moving diagonally or taking a more direct route that is not captured by the Manhattan distance.
 
-
-This heuristic calculates the Manhattan distance between the current location of the \mintinline{java}{MazeExplorer} and the end location of the maze. Since \(n_{1}\) and \(n_{2}\) are the coordinates of the current location and \(e_{1}\) and \(e_{2}\) are the coordinates of the end location, the Manhattan distance is calculated as \(|n_{1} - e_{1}| + |n_{2} - e_{2}|\). This
-
-This is the start to my paper, and \href{https://github.com/PaulBeggs/A_Star}{here is the link to the repository}.
-
-\begin{figure}[h!]
+\label{list:manhattan}
 \begin{minted}{java}
 public class Manhattan implements ToIntFunction<MazeExplorer> {
     @Override
@@ -41,10 +41,13 @@ public class Manhattan implements ToIntFunction<MazeExplorer> {
     }
 }
 \end{minted}
-    \caption{Manhattan-Only Heuristic}
-\end{figure}
+\captionof{listing}{Manhattan-Only Heuristic}
+\vspace{2em}
 
-\begin{figure}[h!]
+The Combined Distance heuristic (\hyperref[list:combined]{Listing 2}) works by starting with the current location of the \mintinline{java}{MazeExplorer}, the end location, and also initializes 3 sets of treasures: all treasures in the maze, treasures that have been found, and treasures that have not yet been found. Then, it begins by checking if there are any remaining treasures. If there are no remaining treasures, it returns the Manhattan distance to the end location. If there are remaining treasures, it calculates the minimum distance from the current location to any of the remaining treasures and the minimum distance from any of those treasures to the end location. Finally, it returns the sum of these two minimum distances. 
+
+
+\label{list:combined}
 \begin{minted}{java}
 public class CombinedDist implements ToIntFunction<MazeExplorer> {
     @Override
@@ -73,11 +76,11 @@ public class CombinedDist implements ToIntFunction<MazeExplorer> {
     }
 }
 \end{minted}
-    \caption{Combined Distance Heuristic}
-\end{figure}
+\captionof{listing}{Combined Distance Heuristic}
+\vspace{2em}
 
 
-\begin{figure}[h!]
+\begin{listing}[h!]
 
 \begin{minted}{java}
 public class MaxDist implements ToIntFunction<MazeExplorer> {
@@ -103,23 +106,32 @@ public class MaxDist implements ToIntFunction<MazeExplorer> {
     }
 }
 \end{minted}
-\caption{Max Distance Heuristic}
-\end{figure}
+\caption{Max Distance Heuristic}\label{list:max}
+\end{listing}
 
-\begin{figure}[h!]
+\begin{listing}[h!]
     
 \begin{minted}{java}
 public class OverlyConfident implements ToIntFunction<MazeExplorer> {
     @Override
     public int applyAsInt(MazeExplorer value) {
         int manhattanDistance = value.getLocation().getManhattanDist(value.getM().getEnd());
-        return manhattanDistance * 3;
+        return manhattanDistance * 3 + 1;
     }
 }
 
 \end{minted}
-\caption{Overly Confident Heuristic}
-\end{figure}
+\caption{Overly Confident Heuristic}\label{list:overly}
+\end{listing}
+
+\section{Experimentation and Analysis}
+
+
+% A discussion of the relative merits of the heuristics relative to breadth-first search and each other, and
+% A discussion as to how varying the size, treasure, and perfection affects the general difficulty of solving a maze by computer
+% Discuss the degree to which the results matched your expectations
+
+
 
 
 \end{document}

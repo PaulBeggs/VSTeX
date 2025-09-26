@@ -1,0 +1,466 @@
+\documentclass[11pt]{article}
+
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usepackage{forest}
+\usepackage{amsmath,amsthm} 
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+% \usepackage{draculatheme}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum} 
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{
+	decorations.markings,
+	trees,
+	arrows,
+	automata,
+	shapes,
+	backgrounds,
+	calc,
+	patterns
+}
+
+\setlength{\parindent}{0pt}
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=black, % default color, will be overridden in custom commands
+  % backgroundcolor=draculabg, % Needed for Dracula theme
+  % fontcolor=draculafg, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+  skipabove=\topsep,
+  skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        innertopmargin=10pt,
+        innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[left=0.5in,right=0.5in,top=1in,bottom=1in]{geometry}
+% \usepackage{setspace}
+% \linespread{1}
+\usepackage{listings}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+% \graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+  % #1: math style, #2: content
+  \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
+  \begin{tikzpicture}[baseline=(sqrt.base)]
+    \node[inner sep=0, outer sep=0] (sqrt) {\(#1\sqrt{#2}\)}; % Use the current math style
+    \draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  \end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+    % #1: math style, #2: content
+    \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
+    \begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {\(\displaystyle\sqrt{#2}\)}; % Force displaystyle
+    	\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+% \renewcommand{\theenumi}{\arabic{enumi}} 
+% \renewcommand{\labelenumi}{\theenumi.}
+
+\title{Probability and Statistics: Practice Set 2}
+\author{Paul Beggs}
+\date{\today}
+
+%%% Custom Comands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\mbi}{\mathbf{i}}
+\newcommand{\mbj}{\mathbf{j}}
+\newcommand{\mbk}{\mathbf{k}}
+\newcommand{\mbr}{\mathbf{r}}
+
+\begin{document}
+
+\begin{enumerate}
+    \item (4 points) A grocer sells an average of \(\lambda = 2.8\) pineapples per day, and we will model the demand using a Poisson process. Suppose that the grocer sells them for \$1.00 each. To be safe, the grocer orders 6 pineapples each day, and that each pineapple costs the grocer \$0.40 - and that any unsold pineapples are thrown away at the end of each day. What is the expected profit (or loss) per day for the grocer from the pineapples?
+    \sol{
+        Let \(X\) correspond to the demand for pineapples in a day. Then, \(X \sim Poisson(2.8)\). The cost of ordering 6 pineapples is \(6 \cdot 0.40 = 2.40\). The demand for pineapples can be broken up with the following table:
+        \begin{center}
+            \begin{tabular}[htbp]{llll}
+                \toprule
+                Demand ($x$) & Revenue & Probability & Revenue $\cdot$ Probability \\ \midrule
+                0 & \$0 & \(0.608\) & \$0 \\ \midrule
+                1 & \$1 & \(0.1703\) & \$0.17 \\ \midrule
+                2 & \$2 & \(0.2384\) & \$0.48 \\ \midrule
+                3 & \$3 & \(0.2225\) & \$0.67 \\ \midrule
+                4 & \$4 & \(0.1557\) & \$0.62 \\ \midrule
+                5 & \$5 & \(0.0872\) & \$0.44 \\ \midrule
+                $\geq 6$ & \$6 & \(0.0651\) & \$0.39 \\ \midrule
+                \textbf{Total} & & & \textbf{\$2.77} \\ \bottomrule
+            \end{tabular}
+        \end{center}
+        Accounting for the upfront cost of ordering, we get an expected profit of 
+        \[
+            \boxed{2.77 - 2.40 = \$0.37}.
+        \]
+    }
+\newpage
+
+    \item Suppose an average of 3 people enter a store over an hour. We will use a Poisson process to determine the probability that exactly 2 customers enter during a two-hour long period:
+    \begin{enumerate}
+        \item (2 points) First, if we set out Poisson time interval to the full two hours, explain why we should use \(\lambda = 6\).
+        \sol{
+            The problem says that over the course of an hour, an average of 3 people enter the store. Since each occurrence is independent of the previous, then we can just add the averages together.  
+        }
+        \item (2 points) Use this to determine \(P(\text{exactly 2 customers})\).
+        \sol{
+            If we let \(X\) count the number of customers, then \(X \sim Poisson(6)\). Hence, 
+            \[
+                P(X = 2) = 0.0446.
+            \]
+        }
+        
+        \item (1 point each) But, we can also model this as two separate and independent one-hour periods, now with \(\lambda = 3\). For a time interval of a single hour, determine:
+        \begin{enumerate}
+            \item \(P(\text{0 customers})\)
+            \sol{
+                \(P(X = 0) = 0.0498\)
+            }
+            \item \(P(\text{1 customer})\)
+            \sol{
+                \(P(X = 1) = 0.1494\)
+            }
+            \item \(P(\text{2 customers})\)
+            \sol{
+                \(P(X = 2) = 0.2240\)
+            }
+        \end{enumerate}
+        \item (2 points) Briefly, explain why in our pair of one-hour time frames, there are three distinct ways for 2 people to come over two total hours. [Hint: What if no customers come in the first hour? What if one does?]
+        \sol{
+            The three distinct time frames are as follows:
+            \begin{enumerate}
+                \item No one comes in the first hour, and two come in the second hour.
+                \item One comes in the first hour, and one comes in the second hour.
+                \item Two come in the first hour, and no one comes in the second hour.
+            \end{enumerate}
+            These outcomes are possible because of the independent nature of how the hour intervals interact with each other.
+        }
+        \item (2 points) For each of these possibilities, determine their probability, and then sum of their probabilities. What do you notice, relative to your answer from part (b) above?
+        \sol{
+            Let each item in the following list correspond to the previous part's time frames (just so I don't have to write them twice). Since the two trials are independent, we multiply the probabilities together.
+            \begin{enumerate}
+                \item \(P(X = 0) \cdot P(X = 2) = 0.0498 \cdot 0.2240 = 0.0112\).
+                \item \(P(X = 1) \cdot P(X = 1) = 0.1494 \cdot 0.1494 = 0.0223\).
+                \item \(P(X = 2) \cdot P(X = 0) = 0.2240 \cdot 0.0498 = 0.0112\).
+            \end{enumerate}
+            Summing these probabilities, \((0.0112 \cdot 2) + 0.0223 = 0.0446\), we get the exact answer from part (b). 
+        }
+    \end{enumerate}
+\newpage
+
+    \item (2 points each) Suppose that \(X \sim Binomial(500, 0.02)\).
+    \begin{enumerate}
+        \item Determine \(E[X]\) and \(\text{Var}[X]\).
+        \sol{
+            For the mean:
+            \[
+                E[X] = np = 500 \cdot 0.02 = 10.
+            \]
+            For the variance:
+            \[
+                \text{Var}[X] = np(1-p) = 500 \cdot 0.02 \cdot 0.98 = 9.8.
+            \]
+        }
+        \item Determine \(P(X \leq 9)\).
+        \sol{
+            \(P(X \leq 9) = 0.4567.\)
+        }
+    \end{enumerate}
+    \item (2 points each?) Let \(Y \sim Poisson(10)\).
+    \begin{enumerate}
+        \item Determine \(E[Y]\) and \(\text{Var}[Y]\).
+        \sol{
+            The mean and variance are both equal to \(\lambda\):
+            \[
+                E[Y] = \lambda = 10 = \text{Var}[Y].
+            \]
+        }
+        \item Determine \(P(Y \leq 9)\).
+        \sol{
+            \(P(Y \leq 9) = 0.4579.\)
+        }
+    \end{enumerate}
+    \item (2 points) Compare the previous two problems. [Just write a sentence or two here.]
+    \sol{
+        For both distributions, we get around the same expected value, variance, and cumulative probability for \(X, Y \leq 9\). Maybe there is a connection when \(\lambda = np\)?
+    }
+\newpage
+
+
+    \item (4 points) We will now justify the result of the previous page. Suppose that \(n\) is very large and \(p\) is very small. Let \(\lambda = np\). We want to explain why, if \(B\) and \(L\) are random variables so that \(B \sim Binomial(n,p)\) and \(L \sim Poisson(\lambda)\), then \(P(B = x) \approx P(L = x)\) for small \(x\). \\[0.5em]
+    You have two options - you only need to do one, but are welcome to do both; if both are well done, I might give some bonus points.
+
+    \begin{enumerate}
+        \item Make an intuitive argument - talk about how, while Poisson has an infinite support, when \(\lambda\) is smallish, the effective support (i.e., the set of values that \(L\) could take on with reasonable probabilities) is finite. Think about how this might relate to having a fixed number of trials in a binomial-type experiment.
+        \sol{
+            I think it's easier to think about this problem from the binomial perspective first. When we have a very large \(n\) with a very small \(p\), we are essentially breaking up a large interval into many partitions and attributing a small probability to each partition. For example, consider the probability of winning the lottery. For many people, say \(n\) of them, they each have a small probability of winning, \(p\). That is why we only have a couple of winners, even though so many people are playing. \\
+            
+            Now, for the perspective of the Poisson distribution, we can look at the problem from a similar lens. However, instead of treating each person as a trial, we can instead look at the relative amount of winners, \(\lambda\). This hits at the main point of having an infinite support. While the count of winners could theoretically consist of any non-negative integer, it is more probable that this count will be a very small number. \\
+
+            Therefore, since both the binomial (with very large \(n\) and small \(p\)) and the Poisson (with small \(\lambda\)) concentrate nearly all their probability mass on the same small set of outcomes \(\{0,1,2,\dots\}\), the calculations for \(P(X = x)\) for those small values of \(x\) are nearly identical. 
+        }
+        \item Explain - using calculations and at least pointing at the limits - why the pmfs for \(B\) and \(L\) are approximately equal for smallish \(x\). Two hints: You might rewrite the pmf for \(B\) replacing any \(p\) with \(\lambda/n\) and should recall from Calculus I that \(\lim_{n \to \infty} (1 - \frac{\lambda}{n})^n = e^{-\lambda}\).
+        \sol{
+            I'm skipping this one.
+        }
+    \end{enumerate}
+\newpage
+
+    \item (3 points each) Suppose that \(X\) is a random variable which is geometrically distributed, with probability of success \(p\) and failure \(q = 1 - p\). 
+    \begin{enumerate}
+        \item Suppose that \(a\) is a positive integer. Show that \(P(X > a) = q^a\).
+        \sol{
+            From the CDF, we know:
+            \[
+                F(a) = P(X \leq a) = 1 - (1 - p)^{a} = 1 - q^{a}.
+            \]
+            Hence,
+            \[
+                P(X > a) = 1 - P(X \leq a) = 1 - (1 - q^{a}) = q^{a}.
+            \]
+        }
+        \item Now, let \(b\) be another positive integer. Show that \(P(X > a + b \mid X > a) = P(X > b)\). That is, show that the probability of needing more than \(b\) failures before a success is equal to the probability that, given we have already seen at least \(a\) failures that we'll see at least \(b\) more.
+        \sol{
+            The conditional probability can be written as
+            \[
+                P(X > a + b \mid X > a) = \frac{P((X > a + b) \cap (X > a))}{P(X > a)}.
+            \]
+            Now, we need to find \(P((X > a + b) \cap (X > a))\). If the first success occurs after trial \(a + b\), then it has certainly occurred after trial \(a\). This means that any outcome in set \(\{X > a + b\}\) is also in set \(\{X > a\}\). Therefore, \(\{X > a + b\} \subseteq \{X > a\}\). Then, we know that when we take the intersection of a set with one of its subset, it results the subset itself: \(\{X > a + b\} \cap \{X > a\} = \{X > a + b\}\). \\
+
+            Now we can use the result from part (a) and solve the equation:
+            \[
+                P (X > a + b \mid X > a) = \frac{P((X > a + b) \cap (X > a))}{P(X > a)} = \frac{P(X > a + b)}{P(X > a)} = \frac{q^{a + b}}{q^{a}} = q^{b} = P(X > b).
+            \]
+        }
+    \end{enumerate}
+\newpage
+
+    \item Suppose that \(X\) is a discrete random variable. Define the value \(m(X)\) to be the smallest \(x\) so that 
+    \[
+        P(X \leq x) \geq 0.5.
+    \]
+    \begin{enumerate}
+        \item (3 points) Briefly, explain why \(m(X)\) must exist, and must be in the support of \(X\) - i.e., \(f(x) > 0\). [Hint: You can assume that there is a smallest \(x\) in the support overall.]
+        \sol{
+            The CDF of \(X\) must increase from 0 to 1 over its support. To do so, the CDF must past the \(0.5\) mark. The first point where it crosses is the value \(m(X)\) by definiton. Since the CDF only increases in regions of non-zero probability, \(m(X)\) must also have non-zero probability. Therefore, \(m(X)\) is in the support of \(X\). 
+        }
+        \item (2 points) Briefly, explain how you can use trial and error to find \(m(X)\) for any random variable whose CDF the calculator has built in.
+        \sol{
+            Start with \(x = 1\), and keep inputting larger integer values for \(x\) in the formula \(\texttt{geometcdf}(p,x)\) until you find a value that is closest to \(0.5\). 
+        }
+
+        \item (5 points) Fill in the following table:
+        \begin{center}
+            \begin{tabular}[htbp]{|l||c|c|}
+                \hline
+                \(X\) is distributed & \(E(X) = 1/p\) & \(m(X)\) \\ \hline
+                \(X \sim geometric(0.6)\) & \(1.67\) & 1 \\ \hline
+                \(X \sim geometric(0.3)\) & \(3.33\) & 2 \\ \hline
+                \(X \sim geometric(0.1)\) & \(10\) & 7 \\ \hline
+                \(X \sim geometric(0.05)\) & \(20\) & 14 \\ \hline
+            \end{tabular}
+        \end{center}
+        \item (3 points) As \(p\) gets smaller, what can you say about the values of \(E(x), m(X)\), and their relative positions?
+        \sol{
+            As \(p\) gets smaller, both \(E(X)\) and \(m(X)\) get larger, and both values tend to double when \(p\) halves. In terms of their relative positions, \(E(X)\) will always be larger than \(m(X)\). 
+        }
+    \end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
