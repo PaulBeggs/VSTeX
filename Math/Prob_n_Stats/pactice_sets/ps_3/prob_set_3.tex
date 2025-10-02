@@ -1,0 +1,379 @@
+\documentclass[11pt]{article}
+
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usepackage{forest}
+\usepackage{amsmath,amsthm} 
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+% \usepackage{draculatheme}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum} 
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{
+	decorations.markings,
+	trees,
+	arrows,
+	automata,
+	shapes,
+	backgrounds,
+	calc,
+	patterns
+}
+
+\setlength{\parindent}{0pt}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	% backgroundcolor=draculabg, % Needed for Dracula theme
+	% fontcolor=draculafg, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        innertopmargin=10pt,
+        innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[left=0.5in,right=0.5in,top=1in,bottom=1in]{geometry}
+% \usepackage{setspace}
+% \linespread{1}
+\usepackage{listings}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+% \graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+	% #1: math style, #2: content
+	\sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+    	\node[inner sep=0, outer sep=0] (sqrt) {\(#1\sqrt{#2}\)}; % Use the current math style
+    	\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  	\end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+    % #1: math style, #2: content
+    \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
+    \begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {\(\displaystyle\sqrt{#2}\)}; % Force displaystyle
+    	\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+% \renewcommand{\theenumi}{\arabic{enumi}} 
+% \renewcommand{\labelenumi}{\theenumi.}
+
+\title{Probability and Statistics: Practice Set 3}
+\author{Paul Beggs}
+\date{\today}
+
+%%% Custom Comands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\mbi}{\mathbf{i}}
+\newcommand{\mbj}{\mathbf{j}}
+\newcommand{\mbk}{\mathbf{k}}
+\newcommand{\mbr}{\mathbf{r}}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item (2 points each) Consider the function \(f(x) = cx^{5}\) on \([0,1]\).
+    \begin{enumerate}
+        \item Find the value of \(c\) for which this is a probability density function.
+        \sol{
+            \[
+                \int_{0}^{1} cx^{5} \, dx = 1 \implies c \int_{0}^{1} x^{5} \, dx = 1 \implies c \left[ \frac{x^{6}}{6} \right]_{0}^{1} = 1 \implies c \cdot \frac{1}{6} = 1 \implies c = 6.
+            \]
+        }
+        \item Using this value of \(c\), determine \(E(X)\).
+        \sol{
+            \[
+                E(X) = \int_{0}^{1} x \cdot 6x^{5} \, dx = 6 \left[ \frac{x^{7}}{7} \right]_{0}^{1} = \frac{6}{7}.
+            \]  
+        }
+        \item Again, using this \(c\), determine \(\text{Var}(X)\).
+        \sol{
+            \begin{align*}
+                \text{Var}(X) &= \int_{0}^{1} \left(x - \frac{6}{7}\right)^{2}6x^{5} \, dx \\
+                &= \int_{0}^{1} \left(x^{2} - \frac{12}{7}x + \frac{36}{49}\right) 6x^{5} \, dx \\
+                &= \int_{0}^{1} 6x^{7} - \frac{72}{7}x^{6} + \frac{216}{49}x^{5} \, dx \\
+                &= \frac{6}{8} - \frac{72}{49} + \frac{36}{49} \\
+                &= \frac{3}{196}.
+            \end{align*}
+        }
+        \item Find \(\pi_{0.25}\).
+        \sol{
+            \[
+                \int_{0}^{b} 6x^{5} \, dx = 0.25 \implies 6 \left[ \frac{x^{6}}{6} \right]_{0}^{b} = 0.25 \implies b^{6} = 0.25 \implies b = 0.25^{\frac{1}{6}} \implies b \approx 0.7937.
+            \]
+            Therefore, \(\pi_{0.25} \approx 0.7937\).
+        }
+    \end{enumerate}
+\newpage
+    \item (2 points) Consider the function \(\displaystyle f(x) = \frac{\ln(x)}{x^{2}}\) on the interval \([1, \infty)\).
+    \begin{enumerate}
+        \item Show that this is a probability distribution. [Hint: You will likely need integration by parts here.]
+        \sol{
+            We choose \(u = \ln(x)\) so that \(du = \frac{1}{x}\), and \(dv = \frac{1}{x^{2}}\) so that \(v = -\frac{1}{x}\). This leaves us with the following:
+            \begin{align*}
+                \left[ {uv} \right]_{1}^{\infty} - \int_{1}^{\infty} vdu &= \left[ {-\frac{\ln(x)}{x}} \right]_{1}^{\infty} + \int_{1}^{\infty} \frac{1}{x^{2}} \, dx \\
+                &= \left( \frac{\ln(1)}{1} - \lim_{x \to \infty} \frac{\ln(x)}{x} \right) - \left( \lim_{x \to \infty} \frac{1}{x} - \frac{1}{1} \right)\\
+                &= (0 - 0) - (0 - 1) \\
+                &= 1
+            \end{align*}
+            Since \(f(x) \geq 0\) for all \(x \in [1, \infty)\) and the integral over this interval is 1, this is a valid probability density function.
+        }
+        \item Show that \(E(X)\) is undefined.
+        \sol{
+            \[
+                E(X) = \int_{1}^{\infty} x \cdot \frac{\ln(x)}{x^{2}} \, dx = \int_{1}^{\infty} \frac{\ln(x)}{x} \, dx.
+            \]
+            For this problem, we can use \(u\)-substitution. Let \(u = \ln(x)\), then \(du = \frac{1}{x} \, dx\), which transforms the limits from \(1\) to \(\infty\) into \(0\) to \(\infty\):
+            \[
+                E(X) = \int_{0}^{\infty} u \, du = \left[ \frac{u^{2}}{2} \right]_{0}^{\infty} = \infty.
+            \]
+            Therefore, \(E(X)\) is undefined.
+
+        }
+    \end{enumerate}
+\newpage
+    \item (2 points) A pdf is given by \(\displaystyle f(x) = \frac{1}{2}\) for \(x \in [0,1] \cup [2,3]\), and 0 otherwise. [i.e., this is like a uniform distribution, but with a ``gap'' from 1 to 2.] Determine \(E(X)\) and \(\text{Var}(X)\).
+    \sol{
+
+    }
+    \item (2 points each) We have shown in class that the gamma function \(\Gamma\) has the two properties:
+    \begin{itemize}
+        \item \(\displaystyle \Gamma \left( \frac{1}{2} \right) = \mysqrt{\pi}\).
+        \item \(\Gamma(x) = (x - 1)\Gamma(x - 1)\).
+    \end{itemize}
+    Use these to find the exact values of:
+    \begin{enumerate}
+        \item \(\Gamma \left( \dfrac{5}{2} \right)\).
+        \item \(\Gamma \left( -\dfrac{7}{2} \right)\).
+    \end{enumerate}
+\newpage
+	\item (2 points each) Customers arrive at a certain bank according to an approximate Poisson process at a mean rate of 15 per hour.
+	\begin{enumerate}
+		\item What is the probability that between 10 and 13 customers come in a particular hour?
+		\sol{
+
+		}
+		\item What is the probability that the first customer comes between 5 and 10 minutes into the bank's opening?
+		\sol{
+
+		}
+		\item What is the probability that the \textit{third} customer arrives between 5 and 10 minutes into the bank's opening?
+		\sol{
+
+		}
+	\end{enumerate}
+\newpage
+	\item (1 point each) The mean airspeed of an unladen swallow is 30 ft/s, with a standard deviation of \(4.3\) ft/s. Assuming the distribution of speed is normal:
+	\begin{enumerate}
+		\item What is the probability that a randomly selected swallow will have a speed between 28 and 38 ft/s?
+		\sol{
+
+		}
+		\item Suppose that 12 swallows are selected at random. What is the probability that exactly 8 have their speed between 28 and 38 ft/s?
+		\sol{
+
+		}
+		\item Determine \(\pi_{0.90}\) for the swallow speed.
+		\sol{
+
+		}
+	\end{enumerate}
+\end{enumerate}
+
+\end{document}
