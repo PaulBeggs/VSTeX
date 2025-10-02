@@ -2,7 +2,7 @@
 
 \usepackage{fix-cm}
 \usepackage{tikz}
-\usepackage{forest}
+\usepackage{forest} 
 \usepackage{amsmath,amsthm} 
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
@@ -263,6 +263,10 @@
 \newcommand{\mbk}{\mathbf{k}}
 \newcommand{\mbr}{\mathbf{r}}
 
+\newcommand{\bigpfrac}[2]{\left( \frac{#1}{#2} \right)}
+\newcommand{\negbigpfrac}[2]{\left(- \frac{#1}{#2} \right)}
+
+
 \begin{document}
 
 \maketitle
@@ -324,13 +328,17 @@
                 E(X) = \int_{0}^{\infty} u \, du = \left[ \frac{u^{2}}{2} \right]_{0}^{\infty} = \infty.
             \]
             Therefore, \(E(X)\) is undefined.
-
         }
     \end{enumerate}
 \newpage
     \item (2 points) A pdf is given by \(\displaystyle f(x) = \frac{1}{2}\) for \(x \in [0,1] \cup [2,3]\), and 0 otherwise. [i.e., this is like a uniform distribution, but with a ``gap'' from 1 to 2.] Determine \(E(X)\) and \(\text{Var}(X)\).
     \sol{
-
+        \[
+            E(X) = \int_{0}^{1} x \frac{1}{2} \, dx + \int_{2}^{3} x \frac{1}{2} \, dx = \left[ \frac{x^{2}}{4} \right]_{0}^{1} + \left[ \frac{x^{2}}{4} \right]_{2}^{3} = \left[ \frac{1}{4} - 0 \right] + \left[ \frac{9}{4} - 1 \right] = \frac{3}{2}
+        \]
+        \[
+            \text{Var}(x) =  \int_{0}^{1} x^{2} \frac{1}{2} \, dx + \int_{2}^{3} x^{2} \frac{1}{2} \, dx - \frac{9}{4} =  \left[ \frac{x^{3}}{6} \right]_{0}^{1} + \left[ \frac{x^{3}}{6} \right]_{2}^{3} - \frac{9}{4} = \left[ \frac{1}{6} - 0 \right] + \left[ \frac{27}{6} - \frac{8}{6} \right] - \frac{9}{4} = \frac{13}{12}
+        \]
     }
     \item (2 points each) We have shown in class that the gamma function \(\Gamma\) has the two properties:
     \begin{itemize}
@@ -340,22 +348,55 @@
     Use these to find the exact values of:
     \begin{enumerate}
         \item \(\Gamma \left( \dfrac{5}{2} \right)\).
+        \sol{
+            \[
+                \Gamma\left( \frac{5}{2} \right) = \bigpfrac{3}{2} \Gamma\bigpfrac{3}{2} = \bigpfrac{3}{2}\bigpfrac{1}{2}\mysqrt{\pi} = \frac{3\mysqrt{\pi}}{4}
+            \]
+        }
         \item \(\Gamma \left( -\dfrac{7}{2} \right)\).
+        \sol{
+            \begin{align*}
+                \Gamma(x) &= (x - 1)\Gamma(x - 1) \\
+                \frac{\Gamma(x)}{(x - 1)} &= \Gamma(x - 1) \\
+                \intertext{Let \(z = x - 1\):}
+                \frac{\Gamma(z + 1)}{z} &= \Gamma(z)
+            \end{align*}
+            With this formula:
+            \[
+                \Gamma\negbigpfrac{2}{7} = \negbigpfrac{2}{7}\negbigpfrac{2}{5}\negbigpfrac{2}{3}\negbigpfrac{2}{1} \mysqrt{\pi} = \frac{16\mysqrt{\pi}}{105}
+            \]
+        }
     \end{enumerate}
 \newpage
 	\item (2 points each) Customers arrive at a certain bank according to an approximate Poisson process at a mean rate of 15 per hour.
 	\begin{enumerate}
 		\item What is the probability that between 10 and 13 customers come in a particular hour?
 		\sol{
-
+            Let \(X\) count the number of customers in 1 particular hour. Then,
+            \[
+                P(10 \le X \le 13) = P(X \le 13) - P(X \le 9) = 0.2934.
+            \]
+            Therefore, there is a 29.3\% chance that between 10 and 13 customers come in a particular hour.
 		}
 		\item What is the probability that the first customer comes between 5 and 10 minutes into the bank's opening?
 		\sol{
-
+            Let \(X\) be the waiting time for the first customer to arrive. Using the following theta:
+            \[
+                \theta = \frac{1 \text{ hour}}{15 \text{ customers}} \cdot \frac{60 \text{ minutes}}{1 \text{ hour}} = 4 \text{ minutes per customer},
+            \]
+            we can plug this into the equation:
+            \[
+                P(5 \le X \le 10) = P(X \le 10) - P(X \le 5) = 1 - e^{-10/4} - 1 + e^{-5/4} = 0.2044
+            \]
+            Therefore, there is a 20.4\% chance that the first customer comes between 5 and 10 minutes into the bank's opening.
 		}
 		\item What is the probability that the \textit{third} customer arrives between 5 and 10 minutes into the bank's opening?
 		\sol{
-
+            Let \(\alpha = 3\) with same theta from the previous part. Then:
+            \[
+                \int_{5}^{10} \frac{1}{\Gamma(\alpha) \theta^{\alpha}} \cdot x^{\alpha - 1} e^{-x/\theta} \, dx = \int_{5}^{10} \frac{x^{2} e^{-x/4}}{32} \, dx = 0.3247.
+            \]
+            Therefore, there is a 32.5\% chance that the third customer comes between 5 and 10 minutes into the bank's opening.
 		}
 	\end{enumerate}
 \newpage
@@ -363,15 +404,22 @@
 	\begin{enumerate}
 		\item What is the probability that a randomly selected swallow will have a speed between 28 and 38 ft/s?
 		\sol{
-
+            \[
+                P(28 \le X \le 38) = \frac{1}{4.3\mysqrt{2\pi}} \int_{28}^{38} \exp \left( -\frac{(t-30)^{2}}{2(4.3)^{2}} \right) \, dt = 0.6477.
+            \]
 		}
 		\item Suppose that 12 swallows are selected at random. What is the probability that exactly 8 have their speed between 28 and 38 ft/s?
 		\sol{
-
+            Let \(Y\) count the birds that have their speed between 28 and 38 ft/s. This implies \(Y \sim Binomial(12, 0.6477)\). Hence,
+            \[
+                P(Y = 8) = \binom{12}{8} 0.6477^{8} \left( 1 - 0.6477 \right)^{4} = 0.2361.
+            \]
 		}
 		\item Determine \(\pi_{0.90}\) for the swallow speed.
 		\sol{
-
+            \[
+                \pi_{0.90} = invNorm(.9, 30, 4.3, \text{LEFT}) = 35.5107.
+            \]
 		}
 	\end{enumerate}
 \end{enumerate}
