@@ -1,0 +1,342 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+\usepackage{amsmath,amssymb}
+\usepackage{subcaption}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\makeatletter
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\title{Discrete Exam 2 Note Sheets}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight
+3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.40in
+\advance\evensidemargin-1.45in
+\parindent0pt
+\parskip1pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\group}[2]{\langle #1, #2 \rangle}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{center}{\huge{\textbf{Algebra Exam 1 Note Sheets}}}\\
+\end{center}
+\begin{multicols*}{2}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{innerbox} = [draw=black, fill=gray!20, thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+        \underline{\textbf{Definitions:}} \\
+        
+    	\begin{tabular}{lp{9cm} l}
+        	\textit{Binary Operation:}
+            & A binary operation \(*\) on set \(S\) is a function from \(S \times S\) to \(S\). We denote an output as \(a * b\). Big Idea: Take 2 elements from \(S\), \((a,b)\) and the operation gives \(a * b\), which is an element of \(S\). \\
+            \textit{Commutative:}
+            & If \(a * b = b * a\) for all \(a,b \in S\). \\
+            \textit{Associative:} 
+            & If \((a * b) * c = a * (b * c)\) for all \(a,b,c \in S\). \\
+            \textit{Closed:}
+            & Suppose \(*\) is a binary operation on \(S\) and \(H \subset S\). We say \(H\) is \underline{closed under \(*\)} if for all \(a,b \in H\), \(a * b \in H\). \\
+            \textit{Identity:}
+            & There exists \(e \in G\) such that for all \(a \in G\), \(a * e = e * a = a\). \\
+            \textit{Inverse:}
+            & For all \(a \in G\), there exists \(a' \in G\) such that \(a * a' = a' * a = e\). \\
+    	\end{tabular}
+
+        \vspace{0.3cm}
+    
+        \underline{\textbf{Examples:}}
+
+        \begin{enumerate}
+            \item Let \(L = \{n^{2} \mid n \in \N\}\). Is \(L\) closed under \(+\)? No: \(16 + 4 \notin L\).
+            \item Is \(L\) closed under \(\cdot\)? Yes. Let \(a,b \in L\). There exists \(n,m \in L\) such that \(a = n^{2}\) and \(b = m^{2}\). Then \(a \cdot b = n^{2} \cdot m^{2} \implies a \cdot b = (nm)^{2}\). Since \(n,m \in \N\), \(a,b \in L\). Therefore, \(L\) is closed under \(\cdot\). 
+            \item For tables, calculations are made from the column element to the row element. Commutativity and associativity can be checked by testing all possible combinations.
+            \item Suppose that \(*\) is an associative and commutative binary operation on a set \(S\). Show that \(H = \{a \in S \mid a * a = a\}\) is closed under \(*\). (The elements of \(H\) are \textbf{idempotents} of the binary operation \(*\).)
+          
+            \textit{Solution}. Suppose that \(*\) is an associative and commutative binary operation on set \(S\). Let \(a,b \in H\) and consider the following:
+            \begin{align*}
+                (a * b) * (a * b) & = (b * a) * (a * b) & \text{commutative property,}   \\
+                                    & = b * (a * a) * b   & \text{associative property,}   \\
+                                    & = b * a * b         & \text{definition of } H,       \\
+                                    & = b * b * a         & \text{commutative property,}   \\
+                                    & = (b * b) * a       & \text{associative property,}   \\
+                                    & = b * a             & \text{property of } H,         \\
+                                    & = a * b             & \text{commutativity property.}
+            \end{align*}
+            Therefore, \(H\) is closed because \(a * b \in H\).
+        \end{enumerate}	
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.2 Binary Operations};
+\end{tikzpicture}
+
+
+%------------ Measures of Variability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions}}: \\
+    
+	\begin{tabular}{lp{9cm} l}
+    	\textit{Isomorphism:}
+        & Let \(\langle G, * \rangle\) and \(\group{G'}{*'}\) be 2 binary structures. We say they are \textit{isomorphic} if there exists an function \(\phi: G \to G'\) such that
+        \begin{enumerate}
+            \item \(\phi\) is a bijection
+            \item \(\phi\) preserves the operation (\(\forall a,b \in G\), \(\phi(a * b) = \phi(a) *' \phi(b)\)).
+        \end{enumerate}
+        \\
+        \textit{One-to-One:}
+        & If \(f(a) = f(b)\), then \(a = b\). \\
+        \textit{Onto:}
+        & Let \(f: X \to Y\). \(f\) is \textit{onto} if for every \(y \in Y\), there exists at least one \(x \in X\) such that \(f(x) = y\). 
+	\end{tabular}
+
+    \underline{\textbf{Examples:}}
+
+    \begin{enumerate}
+        \item \(\group{\Z}{+}\) with \(\phi: \Z \to 2\Z\) and \(\group{2\Z}{+}\) with \(\phi(x): 2x\). This is one-to-one (just draw a diagram and line them up to each other), and onto because every element in \(y\) has an \(x\) that is mapped to it. It's a homomorphism because \(\phi(a + b) = 2(a + b) = 2a + 2b = \phi(a) + \phi(b)\).
+    \end{enumerate}
+
+    To prove that two groups are not isomorphic, you must rely on \textit{structural properties}. Consider the following examples to demonstrate structural property differences:
+    \begin{enumerate}
+        \setcounter{enumi}{1}
+        \item The sets \(\Z\) and \(\Z^{+}\) both have cardinality \(\aleph_{0}\), and there are lots of one-to-one functions mapping \(\Z\) onto \(\Z^{+}\). However, the binary structures \(\group{\Z}{\cdot}\) and \(\group{\Z^{+}}{\cdot}\), where \(\cdot\) is the usual multiplication, are not isomorphic. In \(\group{\Z}{\cdot}\), there are two elements \(x\) such that \(x \cdot x = x\), namely 0 and 1. However, in \(\group{\Z^{+}}{\cdot}\), there is only the single element 1. 
+        \item The binary structures \(\group{\C}{\cdot}\) and \(\group{\R}{\cdot}\) under the usual multiplication are not isomorphic. (It can be shown that \(\C\) and \(\R\) have the same cardinality.) The equation \(x \cdot x = c\) has a solution \(x\) for all \(c \in \C\), but \(x \cdot x = -1\) has no solution in \(\R\).
+    \end{enumerate}
+    These are a list of possible structural and nonstructural properties:
+    \begin{multicols}{2}
+        \textbf{Structural Properites}
+        \begin{enumerate}
+            \item The set has 4 elements.
+            \item The operation is commutative.
+            \item \(x * x = x\) for all \(x \in S\).
+            \item The equation \(a * x = b\) has a solution \(x\) in \(S\) for all \(a,b \in S\)
+        \end{enumerate}
+
+        \textbf{Nonstructural Properties}
+        \begin{enumerate}
+            \item The number 4 is an element.
+            \item The operation is called ``addition.''
+            \item The elements of \(S\) are matrices.
+            \item \(S\) is a subset of \(\C\).
+        \end{enumerate}
+    \end{multicols}
+
+    \end{minipage}
+    };
+%------------ Measures of Variability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.3 Isomorphisms};
+\end{tikzpicture}
+
+
+%------------ Discrete Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+       
+    \underline{\textbf{Definitions:}} \\
+
+    \begin{tabular}{lp{9.8cm} l}
+        \textit{Group:}
+        & A \textit{group} \(\group{G}{*}\) is a set \(G\) closed under a binary operation \(*\) such that there is an inverse, an identity element, and the associative property is upheld. 
+    \end{tabular} \\
+	
+    \underline{\textbf{Examples:}}\\
+
+    Let \(*\) be defined on \(\Q^{+}\) as \(a * b = \frac{ab}{2}\). Show this is a group:
+    \begin{itemize}
+        \item \textbf{Associativity:} Let \(a,b,c \in \Q^{+}\). \((a * b) * c = \frac{ab}{2} * c = \frac{abc}{4} = \frac{2(bc/2)}{2} = a * \frac{bc}{2} = a * (b * c)\).
+        \item \textbf{Identity:} \(a * e = a \implies e = 2\). 
+        \item \textbf{Inverses:} \(a * a' = 2 \implies \frac{aa'}{2} = 2 \implies aa' = 4 \implies a' = \frac{4}{a} \implies a * \frac{4}{a} = \frac{a(4/a)}{2} = 2\). So, the identity is \(a' = \frac{4}{a}\), and this exists in the group.
+    \end{itemize}
+	
+    \end{minipage}
+};
+%------------ Discrete Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.4 Groups};
+\end{tikzpicture}
+
+
+%------------ Sets and Probability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}} \\
+
+    \begin{tabular}{lp{9.8cm} l}
+        \textit{Subgroup:}
+        & Let \(G\) be a group, where \(H \subseteq G\). \(H\) is called a \textit{subgroup} of \(G\) if:
+        \begin{enumerate}
+            \item \(H\) is closed under the operation.
+            \item Identity element belongs to \(H\).
+            \item Each element of \(H\) must have its inverse in \(H\).
+        \end{enumerate} 
+    \end{tabular} \\
+    \textbf{Note:} For finding subgroups of some modulo integer set, just use the divisors of the set.
+	
+    \underline{\textbf{Examples:}}
+    
+    \begin{enumerate}
+        \item Determine whether the group consisting of the \(n \times n\) matrices with determinant \(-1\) or 1 is a subgroup of \(GL(n, \R)\). \\
+        
+        Let \(H\) be the set of all \(n \times n\) matrices with determinant \(-1\) or \(1\). We will show that \(H\) is a subgroup of \(GL(n, \mathbb{R})\) by verifying the subgroup criterion:
+        \begin{itemize}
+            \item \textbf{Identity:} The identity matrix \(I_n\) has a determinant of \(1\), so \(I_n \in H\).
+            \item \textbf{Closure:} Let \(A, B \in H\). Then \(\det(A) = \pm 1\) and \(\det(B) = \pm 1\). The determinant of the product \(AB\) is given by \(\det(AB) = \det(A)\det(B) = (\pm 1)(\pm 1) = \pm 1.\) Thus, \(AB \in H\).
+            \item \textbf{Inverses:} Let \(A \in H\). Then \(\det(A) = \pm 1\). The determinant of the inverse \(A^{-1}\) is given by \(\det(A^{-1}) = \frac{1}{\det(A)} = \pm 1.\). Thus, \(A^{-1} \in H\).
+        \end{itemize}
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.5 Subgroups};
+\end{tikzpicture}
+
+
+%------------ Continuous Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}} \\
+
+    \begin{tabular}{lp{9cm} l}
+        \textit{Cyclic:}
+        & A group is \textit{cyclic} if there exists an element \(a \in G\) such that \(G = \{a^{n} \mid n \in \Z\} = \gen{a}\). We call the element \(a \in G\) a generator. \\
+        \textit{Order:}
+        & For any \(b \in G\), \(\gen{b}\) is a cyclic subgroup. The \textit{order} of element \(b\) is the cardinality of \(b\). \\
+        \textit{Relatively Prime:}
+        & If two integers are \textit{relatively prime}, then their \(\gcd(r,s) = 1\). Thus, there exists \(n,m \in \Z\) such that \(nr + ms = 1\).
+    \end{tabular} \\
+	
+    \textbf{The Division Algorithm for \(\Z\):} Let \(m\) be a positive integer, and \(n\) be any integer. Then there exists unique \(q\) and \(r\) such that \(n = m \cdot q + r\) with \(0 \leq r < m\) (where \(q\) is the quotient, \(r\) is the remainder). Idea: \(n = 42\), \(m = 8\), \(42 = 8(5) + 2\) and \(n = -42\), \(m = 8\), \(-42 = 8(-6) + 6\).
+    \begin{proof}
+        On a number line where we have 0, \(m\), \(2m\), etc. \(n\) is either a multiple of \(m\) or it falls between two multiples of \(m\). Let \(q\) be the largest integer such that \(qm \leq n\). Then \(r = n - qm\). Hence, \(0 \leq r < m\). 
+    \end{proof}
+
+    \underline{\textbf{Theorems:}} \\
+
+    \begin{tabular}{lp{9.8cm} l}
+        \textit{Theorem 1:}
+        & Every subgroup of a cyclic group is cyclic. \\
+        \textit{Theorem 2:}
+        & Let \(G\) be a cyclic subgroup. If \(G\) is infinite, then \(G \simeq \Z\). If \(G\) is finite, with order \(n\), then \(G \simeq \Z_{n}\). (\(\simeq\) is equivalence relation.) \\
+        \textit{Theorem 3:}
+        & Let \(G\) be a cyclic group with \(n\) elements with generator \(a\) and \(b = a^{s}\). Then \(b\) generates a cyclic subgroup of \(G\) of which contains \(\frac{n}{d}\) elements where \(d = \gcd(s,n)\). Also \(\gen{a^{s}} = \gen{a^{t}} \iff \gcd(s,n) = \gcd(t,n)\).
+    \end{tabular} \\
+
+    \end{minipage}
+};
+%------------ Continuous Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.6 Cyclic Groups};
+\end{tikzpicture}
+
+%------------ Continuous Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Properties of Cayley Digraphs:}}
+
+    \begin{enumerate}
+        \item The graph is always connected.
+        \item At most, 1 arc can go from 1 vertex to another.
+        \item Each vertex has exactly 1 type of each arc starting at the vertex and ending at the vertex.
+        \item If two sequences of arc types starting at one vertex end at the same place, then the same two sequences starting at a common vertex will end at the same place.
+    \end{enumerate}
+    Any digraph that has these properties is a group.
+    \end{minipage}
+};
+%------------ Continuous Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.7 Generating Sets};
+\end{tikzpicture}
+
+
+
+
+
+
+
+\end{multicols*}
+\end{document}
