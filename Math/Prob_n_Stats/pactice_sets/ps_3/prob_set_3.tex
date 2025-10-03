@@ -291,7 +291,7 @@
             \begin{align*}
                 \text{Var}(X) &= \int_{0}^{1} \left(x - \frac{6}{7}\right)^{2}6x^{5} \, dx \\
                 &= \int_{0}^{1} \left(x^{2} - \frac{12}{7}x + \frac{36}{49}\right) 6x^{5} \, dx \\
-                &= \int_{0}^{1} 6x^{7} - \frac{72}{7}x^{6} + \frac{216}{49}x^{5} \, dx \\
+                &= \int_{0}^{1} \left( 6x^{7} - \frac{72}{7}x^{6} + \frac{216}{49}x^{5} \right) \, dx \\
                 &= \frac{6}{8} - \frac{72}{49} + \frac{36}{49} \\
                 &= \frac{3}{196}.
             \end{align*}
@@ -311,7 +311,7 @@
         \sol{
             We choose \(u = \ln(x)\) so that \(du = \frac{1}{x}\), and \(dv = \frac{1}{x^{2}}\) so that \(v = -\frac{1}{x}\). This leaves us with the following:
             \begin{align*}
-                \left[ {uv} \right]_{1}^{\infty} - \int_{1}^{\infty} vdu &= \left[ {-\frac{\ln(x)}{x}} \right]_{1}^{\infty} + \int_{1}^{\infty} \frac{1}{x^{2}} \, dx \\
+                \left[ {uv} \right]_{1}^{\infty} - \int_{1}^{\infty} v \, du &= \left[ {-\frac{\ln(x)}{x}} \right]_{1}^{\infty} + \int_{1}^{\infty} \frac{1}{x^{2}} \, dx \\
                 &= \left( \frac{\ln(1)}{1} - \lim_{x \to \infty} \frac{\ln(x)}{x} \right) - \left( \lim_{x \to \infty} \frac{1}{x} - \frac{1}{1} \right)\\
                 &= (0 - 0) - (0 - 1) \\
                 &= 1
@@ -418,10 +418,39 @@
 		\item Determine \(\pi_{0.90}\) for the swallow speed.
 		\sol{
             \[
-                \pi_{0.90} = invNorm(.9, 30, 4.3, \text{LEFT}) = 35.5107.
+                \pi_{0.90} = \text{InvNorm}(.9, 30, 4.3, \text{LEFT}) = 35.5107.
             \]
 		}
 	\end{enumerate}
+\newpage
+
+    \item (3 points) An auto insurance company insures an automobile worth \$15,000 for one year under a policy with a \$1,000 deductible. During the policy year there is a \(0.04\) chance of partial damage to the car and a \(0.02\) chance of a total loss of the car. If there is partial damage to the car, the amount \(X\) of damage (in thousands) follows a distribution with density function \(f(x) = 0.5003e^{-x/2}\), for \(0 \le x \le 15\). Find the expected value of the payment the insurance company makes in a year.
+    \sol{
+        Let \(E\) be the expected payment for the insurance company. We have three cases to consider:
+        \begin{enumerate}[label=\arabic*.]
+            \item \textbf{No Damage:} The probability of no damage is 0.94. In this case, the insurance company pays \$0.
+            \item \textbf{Total Loss:} The probability of total loss is 0.02. The payment is the value of the car minus the deductible, which is \(\$\text{15,000} - \$\text{1,000} = \$\text{14,000}\).
+            \item \textbf{Partial Damage:} The probability of partial damage is \(0.04\). The damage amount \(X\), in thousands of dollars, follows the probability density function \(f(x) = 0.5003e^{-x/2}\) for \(0 \le x \le 15\). The deductible is \$1,000. The insurance payment for partial damage is therefore \(1000(X-1)\) if \(X > 1\) and 0 otherwise.
+        \end{enumerate}
+
+        The expected payment is the sum of the probabilities of each event multiplied by the corresponding payment amount. Let \(Y\) correspond to the payment for partial damage:
+        \[
+            E = (0.94 \cdot \$0) + (0.02 \cdot \$\text{14,000}) + (0.04 \cdot E[Y]).
+        \]
+
+        To find the expected payment for partial damage, we calculate the following integral:
+        \begin{align*}
+            E[Y] &= \int_{1}^{15} 1000(x-1)(0.5003e^{-x/2}) \, dx \\
+            &=  500.3 \int_{1}^{15} (x-1)e^{-x/2} \, dx \\
+            &\approx \$1211.96.
+        \end{align*}
+
+        Now, we can find the total expected payment:
+        \[
+            E = \$0 + \$280 + 0.04 \cdot \$1211.96 = \$280 + \$48.48 = \$328.48
+        \]
+        Therefore, the expected value of the payment the insurance company makes in a year is approximately \textbf{\$328.48}.
+    }
 \end{enumerate}
 
 \end{document}
