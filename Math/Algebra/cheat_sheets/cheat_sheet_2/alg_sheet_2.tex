@@ -1,0 +1,293 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+\usepackage{amsmath,amssymb}
+\usepackage{subcaption}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\makeatletter
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\title{Discrete Exam 2 Note Sheets}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight
+3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.40in
+\advance\evensidemargin-1.45in
+\parindent0pt
+\parskip1pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\group}[2]{\langle #1, #2 \rangle}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{center}{\huge{\textbf{Algebra Exam 2 Note Sheets}}}\\
+\end{center}
+\begin{multicols*}{2}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{innerbox} = [draw=black, fill=gray!20, thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+        \underline{\textbf{Definitions:}}
+    	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+            \item A \textit{permutation} of a set is a bijection of that set onto itself.
+            \begin{itemize}[itemsep=0pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+                \item The permutations of a set form a group with function composition as the binary operation. So, \(\sigma\tau\) is read right to left. For a multiplication table, it is read top first.
+                \item For the set \(\{1,2,\ldots,n\}\), we call the group of permutations \(S_{n}\), where \(|S_{n}| = n!\). 
+            \end{itemize}
+            \item Let \(f \colon A \to B\) be a function and \(H\) be a subset of \(A\). Then \\\(f(H) = \{f(x) \in H\}\) is called the \textit{image of \(H\) under \(f\)}.
+            \item \textbf{Cayley's Theorem:} Every group is isomorphic to a group of permutations (a subgroup of \(S_{n}\) where \(n =\) order of the group)
+            \item \textbf{Lemma:} If \(G\) and \(G'\) are groups and \(\varphi \colon G \to G'\) is a 1-1 homomorphism, then \(\varphi(G)\) is a subgroup of \(G'\) and \(G\) is isomorphic to \(\varphi(G)\).
+        \end{itemize}
+
+        \vspace{0.3cm}
+    
+        \underline{\textbf{Examples:}}
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item \(\begin{pmatrix}
+                1 & 2 & 3 & 4 & 5 & 6 \\
+                1 & 2 & 4 & 6 & 5 & 3
+            \end{pmatrix}\begin{pmatrix}
+                1 & 2 & 3 & 4 & 5 & 6\\
+                6 & 5 & 4 & 3 & 2 & 1 
+            \end{pmatrix} = \begin{pmatrix}
+                1 & 2 & 3 & 4 & 5 & 6\\
+                3 & 5 & 6 & 4 & 2 & 1 
+            \end{pmatrix}\).
+        \end{enumerate}
+
+        
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {2.8 Groups of Permutations};
+\end{tikzpicture}
+
+
+%------------ Measures of Variability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}}
+    
+	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Let \(A\) be a set and \(\sigma \in S_{A}\). For a fixed \(a \in A\), the \textit{orbit} of \(a\) under \(\sigma\) is \(\mathcal{O}_{a,\sigma} = \{\sigma^{n}(a) \mid n \in \Z\}\).
+        \item A permutation \(\sigma \in S_{n}\) is called a \textit{cycle} if it has at most one orbit containing more than one element. The \textit{length} of the cycle is the number of elements in that orbit. 
+        \item \textbf{Theorem:} Every permutation of a finite set can be written as the finite product of disjoint cycles.
+        \item A \textit{transposition} is a cycle of length 2. 
+        \item \textbf{Theorem:} Every permutation of a finite set is a product of transpositions.
+        \item \textbf{Theorem:} Every permutation can be written as either an odd or even number of transpositions. 
+        \item The set of partitioned even transpositions is called the \textit{alternating group}.
+        \item A \textit{permutation matrix} is one that has a single 1 per row/col and everything else are 0s. If the determinant of the matrix is 1, then the number of transpositions are even, otherwise, they are odd. 
+    \end{itemize}
+
+    \underline{\textbf{Examples:}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Find the orbit of 1 under \(\sigma = \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 \\
+            3 & 7 & 6 & 7 & 4 & 1 
+        \end{pmatrix}\): \(\sigma^{0}(1) = 1\), \(\sigma^{1}(1) = 3\), \(\sigma^{2}(1) = \sigma^{1}(3) = 6\), \(\sigma^{3}(1) = 1\). Thus, the orbit is \(\mathcal{O}_{1,\sigma} = \{1,3,6\}\).
+        \item Write \(\begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+            3 & 8 & 6 & 7 & 4 & 1 & 5 & 2
+        \end{pmatrix}\) as a cycle: \(\sigma = (1,3,6)(2,8)(4,7,5)\).
+    \end{enumerate}
+    
+
+    \end{minipage}
+    };
+%------------ Measures of Variability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {2.9 Orbits, Cycles, and the Alt. Groups};
+\end{tikzpicture}
+
+
+%------------ Discrete Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+       
+    \underline{\textbf{Definitions:}}
+	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Let \(G\) be a group with \(H\) as a subgroup, and \(a \in G\). We define \(aH = \{ ah \mid h \in H\}\). This is the \textit{left coset} of \(H\). Similarly, \(Ha = \{ha \mid h \in H\}\) is a \textit{right coset}. (Generally not a subgroup.)
+        \item \textbf{Lagrange's Theorem:} If \(G\) is a finite group with \(H\) as a subgroup, then \(|H|\) is a divisor of \(G\). 
+        \item \textbf{Corollary:} If group \(G\) has a prime order, the only subgroups are the trivial subgroup and \(G\). Therefore, this group must be cyclic. 
+    \end{itemize}
+	
+    \underline{\textbf{Examples:}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Let \(\sigma = (1,2,5,4)(2,3)\) in \(S_{5}\). Find the index of \(\gen{\sigma}\) in \(S_{5}\). We can rewrite \(\sigma\) as \((1,2,3,5,4)\) to help with composing. Following that, we get \(\sigma^{2} = (1,3,4,2,5)\), \(\sigma^{3} = (1,5,2,4,3)\), \(\sigma^{4} = (1,4,5,3,2)\), and \(\sigma^{5} = e\). Therefore, \(|\gen{\sigma}| = 5\), and the index of \(\gen{\sigma}\) in \(S_{5}\) is \(|S_{5}|/|\gen{\sigma}| = 120/4 = 30\)
+        \item Let \(\mu = (1,2,4,5)(3,6)\) in \(S_{6}\). Find the index of \(\gen{\mu}\) in \(S_{6}\). Because we are using disjoint cycles, the transposition cycle is the identity element when the power of \(\mu\) is even (from Example 9.14). We can make the same connection for the 4-element cycle: when the power of \(\mu\) is a multiple of 4, it is equal to the identity element. Thus, we know that \(\mu^{4} = e\), \(|\gen{\mu}| = 4\), and the index of \(\gen{\mu}\) in \(S_{6}\) is \(720/4 = 180\).
+        \item Let \(H\) be a subgroup of a group \(G\). Prove that if the partition of \(G\) into left cosets of \(H\) is the same as the partition into right cosets of \(H\), then \(g^{-1}hg \in H\) for all \(g \in G\) and all \(h \in H\). \textit{Solution.} The statement ``If the partition of \(G\) into left cosets of \(H\) is the same as the partition into right cosets of \(H\),'' implies \(gH = Hg\) for all \(g \in G\). Now, let \(g \in G\) and \(h \in H\). Our goal is to show that \(g^{-1}hg \in H\). Consider the element \(hg\). Since \(h \in H\), \(hg \in Hg\). Because \(Hg = gH\), it must be that \(hg \in gH\). By definition of left coset, \(hg \in gH\) means that \(hg = gh'\) for some \(h' \in H\). So, we just solve for this \(h'\). We start by multiplying both sides on the left by \(g^{-1}\):
+              \begin{align*}
+                g^{-1}(hg) &= g^{-1}(gh') \\
+                g^{-1}hg &= (g^{-1}g)h' \\
+                g^{-1}hg &= h'.
+              \end{align*}
+              Since \(h' \in H\), we have shown that \(g^{-1}hg \in H\).
+    \end{enumerate}
+    
+	
+    \end{minipage}
+};
+%------------ Discrete Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {2.10 Cosets \& Lagrange's Theorem};
+\end{tikzpicture}
+
+
+%------------ Discrete Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+       
+    \underline{\textbf{Examples:}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \setcounter{enumi}{3}
+        \item Let \(S_{A}\) be the group of all permutations of the set \(A\), and let \(c\) be one particular element of \(A\). Show that \(\{\sigma \in S_{A} \mid \sigma(c) = c \}\) is a subgroup \(S_{c,c}\) of \(S_{A}\). \textit{Solution.} \textbf{Identity:} The identity permutation \(e\) maps every element to itself, so \(e(c) = c\). Thus, \(e \in S_{c,c}\). \textbf{Closure:} Let \(\sigma, \tau \in S_{c,c}\). This means \(\sigma(c) = c\) and \(\tau(c) = c\). We must check their product: \((\sigma\tau)(c) = \sigma(\tau(c)) = \sigma(c) = c.\) \textbf{Inverses:} Let \(\sigma \in S_{c,c}\). As before, this means \(\sigma(c) = c\), and we also have to check \(\sigma^{-1}\). We will do this by multiplying \(\sigma^{-1}\) to both sides of the equation:
+                            \[
+                                \sigma^{-1}(\sigma(c)) = \sigma^{-1}(c) \implies (\sigma^{-1}\sigma)(c) = \sigma^{-1}(c) \implies e(c) = \sigma^{-1}(c)
+                            \]
+        Because \(\sigma^{-1}(c) = c\), the inverse \(\sigma^{-1}\) is in \(S_{c,c}\).
+        Since \(S_{c,c}\) contains the identity, is closed under the binary operation, and is closed under inverses, it is a subgroup of \(S_{A}\).
+    \end{enumerate}
+    
+	
+    \end{minipage}
+};
+%------------ Discrete Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {2.10 (cont.)};
+\end{tikzpicture}
+        
+
+%------------ Sets and Probability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}}
+
+	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item The \textit{cartesian product of sets}, \(S_{1}, S_{2}, \ldots, S_{n}\) is the set of all \(n\)-tuples \(a_{1},a_{2},\ldots,a_{n}\) where \(a_{i} \in S_{i}\) for \(i = 1,2,\ldots,n\). The cartesian product is denoted by either \(S_{1} \times S_{2} \times \cdots \times S_{n}\). 
+        \item \textbf{Theorem:} If \(G_{1}\) and \(G_{2}\) are groups, we define the \textit{direct product} \(G_{1} \times G_{2} = \{(a,b) \mid a \in G_{1}, b \in G_{2}\}\) and \(G_{1} \times G_{2}\) will have binary operation \((a_{1},b_{1})(a_{2},b_{2}) = (a_{1}a_{2}b_{1}b_{2})\). Also, \(\prod_{i = 1}^{n} G_{i}\) is a group, and the direct product of the group \(G_{i}\) under this operation.
+        \item \textbf{Theorem:} Let \(a_{1},a_{2}, \ldots, a_{n} \in \prod_{i = 1}^{n} G_{i}\). If each \(a_{i}\) has order \(r_{i}\) in \(G_{i}\),  then the order of \(a_{1},a_{2}, \ldots, a_{n}\) is the \textit{least common multiple} of \(r_{1}, r_{2}, \ldots, r_{n}\).
+        \item \textbf{Theorem:} Every finitely generated abelian group \(G\) is isomorphic to a direct product of the form \(\Z_{p_{1}^{r_{1}}} \times \Z_{p_{2}^{r_{2}}} \times \cdots \times \Z_{p_{n}^{r_{n}}} \times \Z \times \Z \times \cdots \times \Z\), where each \(p_{i}\) is prime, but not necessarily distinct and each \(r_{i}\) are positive integers.
+        \item \textbf{Theorem:} \(\Z_{n} \times \Z_{n}\) is cyclic if and only if \(m,n\) are relatively prime. Similarly, \(\Z_{m_{1}} \times \Z_{m_{2}} \times \cdots \times \Z_{m_{n}}\) is cyclic and isomorphic to \(\Z_{m_{1}} \times \Z_{m_{2}} \times \cdots \times \Z_{m_{n}}\) if, and only if every pair of \(m_{i}\) and \(m_{j}\) are relatively prime. 
+        \item A group \(G\) is decomposable if it is isomorphic to a direct product of proper nontrivial subgroups. 
+    \end{itemize}
+	
+    \underline{\textbf{Examples:}}\newcommand{\intgroup}[1]{\Z_{#1}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Find the order of \((8,4,10)\) in \(\Z_{12} \times \intgroup{60} \times \intgroup{24}\). 8 in \(\intgroup{12}\) is \(\frac{12}{\gcd(8,12)} = 3\). 4 in \(\intgroup{60}\) is \(\frac{60}{\gcd(4,60)} = 15\). 10 in \(\intgroup{24}\) is \(\frac{24}{\gcd(10,24)} = 12\). The order is \(\text{lcm}(3,15,12) = 60\).
+    \end{enumerate}
+    
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {2.11 Direct Products \& Finitely Generated Abelian Groups};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+	
+    \underline{\textbf{Examples:}}\newcommand{\intgroup}[1]{\Z_{#1}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item[8:47] For \(S_{n}\), show that if \(n \ge 3\), then the only element of \(\sigma\) of \(S_{n}\) satisfying \(\sigma\gamma = \gamma\sigma\) for all \(\gamma \in S_{n}\) is \(\sigma = i\), the identity permutation. \textit{Solution.} Suppose \(\sigma(i) = m \ne i\). Define \(\gamma \in S_{n}\) such that \(\gamma(i) = i\) and \(\gamma(m) = r\) where \(r \ne m\). (Note this is possible because \(n \ge 3\).) Then \(\sigma\gamma(i) = \sigma(\gamma(i)) = \sigma(i) = m\) while \(\gamma\sigma = \gamma(\sigma(i)) = \gamma(m) = r\), so \(\sigma\gamma \ne \gamma\sigma\). Thus \(\sigma\gamma = \gamma\sigma\) for all \(\gamma \in S_{n}\) only if \(\sigma\) is the identity permutation. 
+        \item[9:31] Let \(A\) be an infinite set. Let \(H\) be the set of all \(\sigma \in S_{A}\) such that the number of elements moved by \(\sigma\) (``\(\sigma\) \textbf{moves} \(a \in A\)'' if \(\sigma(a) \ne a\)) is finite. Show that \(H\) is a subgroup of \(S_{n}\). \textit{Solution.} \textbf{Closure:} Let \(\sigma,\mu \in H\). If \(\sigma\) moves elements \(s_{1},s_{2},\ldots,s_{k}\) of \(A\), and \(\mu\) moves elements \(r_{1},r_{2},\ldots,r_{m}\) of \(A\), then \(\sigma\mu\) can't move any elements not in the list \(s_{1},s_{2},\ldots,s_{k},r_{1},r_{2},\ldots,r_{m}\), so \(\sigma\mu\) moves at most a finite number of elements of \(A\), and hence in \(H\). Thus, \(H\) is closed under the operation of \(S_{A}\). \textbf{Identity:} The identity permutation is in \(H\) because it moves no elements of \(A\). \textbf{Inverses:} Because the elements moved by \(\sigma \in H\) are the same as the elements moved by \(\sigma^{-1}\), we see that for each \(\sigma \in H\), we have \(\sigma^{-1} \in H\) also. Thus, \(H\) is a subgroup of \(S_{A}\).
+        \item[X:34] Let \(G\) be a group of order \(pq\), where \(p\) and \(q\) are prime numbers. Show that every proper subgroup of \(G\) is cyclic. \textit{Solution.} The possible orders for a proper subgroup are \(p\), \(q\) and 1. Now \(p\) and \(q\) are primes and every group of prime order is cyclic, and of course every group of order 1 is cyclic. Thus, every proper subgroup of a group of order \(pq\) must be cyclic. 
+        \item[X:36] A previous problem showed that every finite group of even order \(2n\) contains an element of order 2. Using Lagrange's theorem, show that if \(n\) is odd, then an abelian group of order \(2n\) contains precisely one element of order 2. \textit{Solution.} Let \(G\) be abelian of order \(2n\) where \(n\) is odd. Suppose that \(G\) contains two elements, \(a\) and \(b\), of order \(2\). Then \((ab)^{2} = abab = aabb = ee = e\) and \(ab \ne e\) because the inverse of \(a\) is \(a\) itself. Thus \(ab\) also has order 2. It is easily checked that then \(\{e,a,b,ab\}\) is a subgroup of \(G\) of order 4. But this is impossible because \(n\) is odd and 4 does not divide \(2n\). Thus, there can't be two elements of order 2.  
+        \item[X:37] Show that a group with at least two elements but with no proper nontrivial subgroups must be finite and of prime order. \textit{Solution.} Let \(G\) be of order \(\ge 2\) but with no proper nontrivial subgroups. Let \(a \in G\), \(a \ne e\). Then \(\gen{a}\) is a nontrivial subgroup of \(G\), and thus must be \(G\) itself. Because every cyclic group not of prime order has proper subgroups, we see that \(G\) must be finite of prime order.
+        \item[11:16] Are the groups \(\Z_{2} \times \Z_{12}\) and \(\Z_{4} \times \Z_{6}\) isomorphic? Why or why not? \textit{Solution.} When we split these into two separate decompositions, we will see that they are isomorphic. First, we know that \(\Z_{mn} \simeq \Z_{n} \times \Z_{m} \iff \gcd(n,m) = 1\). Since 12 is not a prime number and \(\gcd(3,4) = 1\), then \(\Z_{12} \simeq \Z_{3} \times \Z_{4} \text{,\quad and }\quad \Z_{2} \times \Z_{12} \simeq \Z_{2} \times \Z_{3} \times \Z_{4}.\) The same thing applies for \(\Z_{6}\). It decomposes into \(\Z_{2} \times \Z_{3}\) because \(\gcd(2,3) = 1\). Thus, \(\Z_{4} \times \Z_{6} \simeq \Z_{2} \times \Z_{3} \times \Z_{4}.\)
+            Since both \(\Z_{2} \times \Z_{12}\) and \(\Z_{4} \times \Z_{6}\) decompose into the same product, they are isomorphic. 
+    \end{enumerate}
+
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Extra Problems};
+\end{tikzpicture}
+
+
+
+
+
+
+\end{multicols*}
+\end{document}

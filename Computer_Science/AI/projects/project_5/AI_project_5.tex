@@ -1,0 +1,412 @@
+\documentclass[12pt]{article}
+
+\usepackage[left=1in,right=1in,top=0.75in,bottom=1in]{geometry}
+% \usepackage[margin=1in,showframe]{geometry}
+\usepackage{minted}
+\setminted{linenos, breaklines=true}
+\usepackage{listings}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{booktabs}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\usepackage{float}
+\usepackage{caption}
+
+\setlength{\parindent}{0pt}
+
+\title{Project 5: Distance-Based Learning}
+\author{Paul Beggs \\ \href{https://github.com/PaulBeggs/A_Star}{GitHub Link}}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\section{K-Nearest Neighbors Data Analysis}
+
+For Tables 1 through 3 (\hyperref[apend:A]{Appendix A}), we can see that the KNN algorithm has perfect accuracy for `H' for all partitions and values of \(k\). The `A' has near-perfect accuracy when \(k=3,5\), but misses one in the first, second, and fourth partition when \(k=7\). I believe this discrepancy is because the `H's are more distinguishable than the `A's because when I drew them, there was less variation. That is, the `A's outer connecting lines can be longer, shorter, wider, or more constricted. Whereas, the `H's tended to all look more alike, and therefore had less variation. It also seems like when \(k\) is smaller, we get a better percentage correct. \\
+
+Then, for Tables 4 through 6 (\hyperref[apend:B]{Appendix B}), we see a similar result to the first 3 tables. `E' had a perfect record for each value of \(k\), and for each permutation. `H' had similar results, but slightly fumbled when \(k = 5\) for the first and fourth permutation. Finally, `A' performed well, but still had problems across each value of \(k\). I chalk these results up to a similar conclusion to the previous paragraph: while `E' does have similar characteristics to `A' and `H' (specifically, the middle bridging part and the left straight edge), but because of the other 2 straight lines in the `E,' it's enough to differentiate it from the other letters. \\
+
+For the remaining tables (\hyperref[apend:C]{Appendix C}), some letters perform significantly better than others. Like, `T' and `V' have perfect accuracy, but `A,' `H,' `E,' and `Q' all perform poorly. It's difficult to nail down if there is any meaningful change to be reported from a change in values of \(k\). However, just from looking, it would appear that when \(k = 7\), the algorithm performs the worst, \(k = 5\) performs the best, and \(k = 3\) is in the middle. 
+
+
+\section{Self-Organizing Map Data Analysis}
+
+
+\newpage
+
+\section*{Appendix A: KNN With Two Letters}\label{apend:A}
+
+\begin{table}[ht]
+    \centering
+    \label{tab:Knn032}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 5 & 5 & 100\% & 6 & 6 & 100\% & 5 & 4 & 80\% & 6 & 6 & 100\% \\
+        H & 5 & 5 & 100\% & 4 & 4 & 100\% & 5 & 5 & 100\% & 3 & 3 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{KNN\(_{3}\) 4-Way Cross Validation Results With Two Letters}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \label{tab:Knn052}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 4 & 4 & 100\% & 6 & 5 & 83\% & 5 & 5 & 100\% & 5 & 5 & 100\% \\
+        H & 6 & 6 & 100\% & 4 & 4 & 100\% & 5 & 5 & 100\% & 4 & 4 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{KNN\(_{5}\) 4-Way Cross Validation Results With Two Letters}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \label{tab:Knn072}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 5 & 4 & 80\% & 6 & 5 & 83\% & 3 & 3 & 100\% & 5 & 4 & 80\% \\
+        H & 5 & 5 & 100\% & 4 & 4 & 100\% & 7 & 7 & 100\% & 4 & 4 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{KNN\(_{7}\) 4-Way Cross Validation Results With Two Letters}
+\end{table}
+
+\newpage
+
+\section*{Appendix B: KNN With Three Letters}\label{apend:B}
+
+\begin{table}[ht]
+    \centering
+    \label{tab:Knn033}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 6 & 4 & 67\% & 4 & 4 & 100\% & 4 & 4 & 100\% & 5 & 5 & 100\% \\
+        E & 5 & 5 & 100\% & 7 & 7 & 100\% & 6 & 6 & 100\% & 2 & 2 & 100\% \\
+        H & 4 & 4 & 100\% & 4 & 4 & 100\% & 5 & 5 & 100\% & 7 & 7 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{KNN\(_{3}\) 4-Way Cross Validation Results With Three Letters}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \label{tab:Knn053}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 4 & 4 & 100\% & 7 & 7 & 100\% & 5 & 4 & 80\% & 3 & 3 & 100\% \\
+        E & 4 & 4 & 100\% & 3 & 3 & 100\% & 6 & 6 & 100\% & 5 & 5 & 100\% \\
+        H & 7 & 6 & 86\% & 3 & 3 & 100\% & 4 & 4 & 100\% & 6 & 5 & 83\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{KNN\(_{5}\) 4-Way Cross Validation Results With Three Letters}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \label{tab:Knn073}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 3 & 3 & 100\% & 4 & 4 & 100\% & 6 & 6 & 100\% & 6 & 4 & 67\% \\
+        E & 7 & 7 & 100\% & 5 & 5 & 100\% & 4 & 4 & 100\% & 4 & 4 & 100\% \\
+        H & 5 & 5 & 100\% & 6 & 6 & 100\% & 5 & 5 & 100\% & 4 & 4 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{KNN\(_{7}\) 4-Way Cross Validation Results With Three Letters}
+\end{table}
+
+\newpage
+
+\section*{Appendix C: KNN With Eight Letters}\label{apend:C}
+
+\begin{table}[h!]
+    \centering
+    \label{tab:Knn038}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 4 & 4 & 100\% & 3 & 3 & 100\% & 7 & 6 & 85\% & 6 & 4 & 67\% \\
+        E & 6 & 3 & 50\% & 3 & 1 & 33\% & 7 & 6 & 85\% & 4 & 3 & 75\% \\
+        H & 4 & 3 & 75\% & 5 & 4 & 80\% & 4 & 3 & 75\% & 7 & 1 & 14\% \\
+        L & 7 & 7 & 100\% & 7 & 7 & 100\% & 1 & 1 & 100\% & 5 & 5 & 100\% \\
+        Q & 8 & 6 & 75\% & 1 & 1 & 100\% & 6 & 4 & 67\% & 5 & 4 & 80\% \\
+        T & 3 & 3 & 100\% & 5 & 5 & 100\% & 7 & 7 & 100\% & 5 & 5 & 100\% \\
+        V & 4 & 4 & 100\% & 5 & 5 & 100\% & 5 & 5 & 100\% & 6 & 6 & 100\% \\
+        Z & 4 & 4 & 100\% & 11 & 9 & 81\% & 3 & 3 & 100\% & 2 & 2 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{KNN\(_{3}\) 4-Way Cross Validation Results With Eight Letters}
+\end{table}
+
+
+\begin{table}[h!]
+    \centering
+    \label{tab:Knn058}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 3 & 3 & 100\% & 5 & 4 & 80\% & 8 & 6 & 75\% & 4 & 4 & 100\% \\
+        E & 5 & 4 & 80\% & 3 & 2 & 67\% & 4 & 3 & 75\% & 8 & 5 & 63\% \\
+        H & 5 & 1 & 20\% & 4 & 2 & 50\% & 4 & 3 & 75\% & 7 & 4 & 57\% \\
+        L & 2 & 2 & 100\% & 3 & 3 & 100\% & 7 & 4 & 57\% & 8 & 8 & 100\% \\
+        Q & 9 & 3 & 33\% & 5 & 4 & 80\% & 3 & 3 & 100\% & 3 & 3 & 100\% \\
+        T & 5 & 5 & 100\% & 7 & 7 & 100\% & 4 & 4 & 100\% & 4 & 4 & 100\% \\
+        V & 4 & 4 & 100\% & 6 & 6 & 100\% & 7 & 7 & 100\% & 3 & 3 & 100\% \\
+        Z & 7 & 7 & 100\% & 7 & 7 & 100\% & 3 & 3 & 100\% & 3 & 3 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{KNN\(_{5}\) 4-Way Cross Validation Results With Eight Letters}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \label{tab:Knn708}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 3 & 3 & 100\% & 7 & 5 & 71\% & 9 & 5 & 56\% & 1 & 1 & 100\% \\
+        E & 2 & 1 & 50\% & 5 & 3 & 60\% & 7 & 4 & 57\% & 6 & 6 & 100\% \\
+        H & 8 & 8 & 100\% & 2 & 2 & 80\% & 4 & 2 & 50\% & 7 & 2 & 29\% \\
+        L & 7 & 3 & 43\% & 5 & 5 & 100\% & 2 & 2 & 100\% & 5 & 5 & 100\% \\
+        Q & 6 & 4 & 67\% & 7 & 5 & 71\% & 2 & 1 & 50\% & 5 & 4 & 80\% \\
+        T & 7 & 7 & 100\% & 1 & 1 & 100\% & 7 & 7 & 100\% & 5 & 5 & 100\% \\
+        V & 4 & 4 & 100\% & 7 & 7 & 100\% & 2 & 2 & 100\% & 6 & 6 & 100\% \\
+        Z & 3 & 3 & 100\% & 6 & 6 & 100\% & 7 & 6 & 86\% & 2 & 2 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{KNN\(_{7}\) 4-Way Cross Validation Results With Eight Letters}
+\end{table}
+
+% Self organizing map starts here
+
+\newpage
+
+\section*{Appendix D: SOM With Two Letters}\label{apend:A}
+
+\begin{table}[ht]
+    \centering
+    \label{tab:SOM062}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 3 & 3 & 100\% & 7 & 6 & 86\% & 6 & 4 & 67\% & 3 & 3 & 100\% \\
+        H & 7 & 5 & 71\% & 3 & 3 & 100\% & 4 & 4 & 100\% & 6 & 6 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{SOM\(_{6}\) 4-Way Cross Validation Results With Two Letters}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \label{tab:SOM082}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 7 & 6 & 86\% & 3 & 2 & 67\% & 6 & 2 & 33\% & 3 & 3 & 100\% \\
+        H & 3 & 3 & 100\% & 7 & 7 & 100\% & 4 & 3 & 75\% & 6 & 5 & 83\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{SOM\(_{8}\) 4-Way Cross Validation Results With Two Letters}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \label{tab:SOM102}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 6 & 2 & 33\% & 3 & 3 & 100\% & 6 & 3 & 50\% & 4 & 4 & 100\% \\
+        H & 4 & 4 & 100\% & 7 & 7 & 100\% & 4 & 4 & 100\% & 5 & 5 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{SOM\(_{10}\) 4-Way Cross Validation Results With Two Letters}
+\end{table}
+
+\newpage
+
+\section*{Appendix E: SOM With Three Letters}\label{apend:B}
+
+\begin{table}[ht]
+    \centering
+    \label{tab:SOM063}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 5 & 1 & 20\% & 6 & 4 & 67\% & 5 & 0 & 0\% & 3 & 1 & 33\% \\
+        E & 4 & 4 & 100\% & 4 & 4 & 100\% & 4 & 4 & 100\% & 8 & 8 & 100\% \\
+        H & 6 & 6 & 100\% & 5 & 4 & 80\% & 6 & 6 & 100\% & 3 & 3 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{SOM\(_{6}\) 4-Way Cross Validation Results With Three Letters}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \label{tab:SOM083}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 6 & 1 & 17\% & 6 & 5 & 83\% & 4 & 4 & 100\% & 3 & 3 & 100\% \\
+        E & 5 & 5 & 100\% & 5 & 5 & 100\% & 6 & 6 & 100\% & 4 & 4 & 100\% \\
+        H & 4 & 4 & 100\% & 4 & 4 & 100\% & 5 & 5 & 100\% & 7 & 3 & 43\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{SOM\(_{8}\) 4-Way Cross Validation Results With Three Letters}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \label{tab:SOM103}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 5 & 3 & 60\% & 4 & 3 & 75\% & 3 & 1 & 33\% & 7 & 1 & 14\% \\
+        E & 6 & 6 & 100\% & 4 & 4 & 100\% & 8 & 7 & 88\% & 2 & 2 & 100\% \\
+        H & 4 & 2 & 50\% & 7 & 4 & 57\% & 4 & 4 & 100\% & 5 & 4 & 80\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{SOM\(_{10}\) 4-Way Cross Validation Results With Three Letters}
+\end{table}
+
+\newpage
+
+\section*{Appendix F: SOM With Eight Letters}\label{apend:C}
+
+\begin{table}[h!]
+    \centering
+    \label{tab:SOM068}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 4 & 0 & 0\% & 4 & 1 & 25\% & 6 & 3 & 50\% & 6 & 2 & 33\% \\
+        E & 4 & 1 & 25\% & 5 & 2 & 40\% & 3 & 2 & 67\% & 8 & 0 & 0\% \\
+        H & 6 & 0 & 0\% & 6 & 0 & 0\% & 3 & 0 & 0\% & 5 & 0 & 0\% \\
+        L & 4 & 1 & 25\% & 6 & 6 & 100\% & 8 & 4 & 50\% & 2 & 2 & 100\% \\
+        Q & 6 & 3 & 50\% & 5 & 0 & 0\% & 4 & 3 & 75\% & 5 & 2 & 40\% \\
+        T & 6 & 6 & 100\% & 6 & 6 & 100\% & 4 & 4 & 100\% & 4 & 4 & 100\% \\
+        V & 3 & 3 & 100\% & 2 & 2 & 100\% & 8 & 8 & 100\% & 7 & 7 & 100\% \\
+        Z & 7 & 0 & 0\% & 6 & 5 & 83\% & 4 & 4 & 100\% & 3 & 3 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{SOM\(_{6}\) 4-Way Cross Validation Results With Eight Letters}
+\end{table}
+
+
+\begin{table}[h!]
+    \centering
+    \label{tab:SOM088}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 7 & 0 & 0\% & 6 & 1 & 17\% & 2 & 2 & 100\% & 5 & 0 & 0\% \\
+        E & 2 & 1 & 50\% & 6 & 5 & 83\% & 9 & 4 & 44\% & 3 & 2 & 67\% \\
+        H & 4 & 2 & 50\% & 4 & 0 & 0\% & 6 & 0 & 0\% & 6 & 1 & 17\% \\
+        L & 4 & 4 & 100\% & 8 & 8 & 100\% & 4 & 4 & 100\% & 4 & 4 & 100\% \\
+        Q & 7 & 3 & 43\% & 3 & 2 & 67\% & 6 & 2 & 33\% & 4 & 2 & 50\% \\
+        T & 8 & 8 & 100\% & 3 & 3 & 100\% & 3 & 3 & 100\% & 6 & 6 & 100\% \\
+        V & 2 & 2 & 100\% & 5 & 3 & 60\% & 6 & 5 & 83\% & 7 & 7 & 100\% \\
+        Z & 6 & 1 & 17\% & 5 & 4 & 80\% & 4 & 2 & 50\% & 5 & 5 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{SOM\(_{8}\) 4-Way Cross Validation Results With Eight Letters}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \label{tab:SOM108}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 6 & 3 & 50\% & 3 & 1 & 33\% & 4 & 4 & 100\% & 7 & 2 & 29\% \\
+        E & 6 & 3 & 50\% & 4 & 2 & 50\% & 7 & 2 & 29\% & 3 & 1 & 33\% \\
+        H & 4 & 2 & 50\% & 8 & 1 & 12\% & 7 & 0 & 0\% & 1 & 0 & 0\% \\
+        L & 7 & 7 & 100\% & 3 & 3 & 100\% & 8 & 8 & 100\% & 2 & 2 & 100\% \\
+        Q & 3 & 1 & 33\% & 4 & 0 & 0\% & 4 & 0 & 0\% & 9 & 4 & 44\% \\
+        T & 5 & 5 & 100\% & 9 & 9 & 100\% & 3 & 3 & 100\% & 3 & 3 & 100\% \\
+        V & 5 & 5 & 100\% & 4 & 4 & 100\% & 4 & 4 & 100\% & 7 & 7 & 100\% \\
+        Z & 4 & 3 & 75\% & 5 & 4 & 80\% & 3 & 2 & 67\% & 8 & 4 & 50\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{SOM\(_{10}\) 4-Way Cross Validation Results With Eight Letters}
+\end{table}
+
+
+\end{document}

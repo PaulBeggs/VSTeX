@@ -1,0 +1,355 @@
+\documentclass[12pt]{article}
+
+\usepackage[left=1in,right=1in,top=0.75in,bottom=1in]{geometry}
+% \usepackage[margin=1in,showframe]{geometry}
+\usepackage{minted}
+\setminted{linenos, breaklines=true}
+\usepackage{listings}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\usepackage{float}
+\usepackage{caption}
+\usepackage{graphicx}
+
+\setlength{\parindent}{0pt}
+
+\title{Project 7: Decision Trees \& Random Forest}
+\author{Paul Beggs \\ \href{https://github.com/PaulBeggs/A_Star}{GitHub Link}}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\section{Two-Letter Analysis}
+
+For the two-letter dataset, the learners performed very similarly to that of KNN. Both learners had near perfect accuracy (\hyperref[apend:A]{Appendix A}), which I attribute to the letters being relatively distinct from each other. This can be seen especially clearly with the decision tree's visualization (\hyperref[fig:twolettersDT]{Figure 1}), but less so with random forest's (\hyperref[fig:twolettersDT]{Figure 4}). This is because each tree in the random forest is trained on a different random sample of the data, and at every split, the tree is only allowed to consider a small subset of the total pixels. These trees culminate in a feature rich union of all 30 rule sets.  
+
+\section{Three-Letter Analysis}
+
+When the learners used the three-letter dataset, they performed worse than KNN, but we can see that the decision tree's results are consistent with that of random forest's (\hyperref[apend:B]{Appendix B}). Again, we see that not many features are needed to distinguish between the three letters for decision trees (\hyperref[fig:twolettersDT]{Figure 2}), but again the random forest's is full of features (\hyperref[fig:twolettersDT]{Figure 5}).
+
+\section{Eight-Letter Analysis}
+
+Finally, for the eight-letter dataset, we see a stark contrast between all learners: KNN does the best, followed by decision trees (\hyperref[tab:DT3]{Table 5}), and in dead last, random forest (\hyperref[tab:RT3]{Table 6}). It's honestly impressive how poorly the random forest learner does. If you look at \hyperref[fig:eightlettersRT]{Figure 6}, you'll see that for the `T,' `V,' `Z,' and `L' labels there is only one or two on pixels that differentiate one letter from another, thus leading to mislabeling of letters.
+
+\section{Conclusion}
+
+Through this analysis, there is a trend of relatively high performance for few letters, but as we increase the amount of letters in the data set, that performance diminishes. We see that the decision trees perform well, and this is because at every split, it scans all pixels and is guaranteed to find one perfect feature (if it exists) that gives the highest information gain. This is in contrast to the random forest learner consisting of trees who are forced to pick a feature that looks good from their random sample. This leads me to believe that we would be better off only employing random forest for images that are feature rich. It should not be used for images that consist of binary pixels, and more so for images that have full RGB values, for example. 
+\vfill
+\section*{Appendix A: Two Letter Dataset}\label{apend:A}
+
+\begin{table}[ht]
+    \centering
+    \label{tab:DT1}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 4 & 4 & 100\% & 3 & 3 & 100\% & 5 & 4 & 80\% & 7 & 6 & 86\% \\
+        H & 6 & 6 & 100\% & 7 & 7 & 100\% & 5 & 5 & 100\% & 2 & 2 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{Decision Tree 4-Way Cross Validation Results With Two Letters}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \label{tab:RT1}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 6 & 5 & 83\% & 5 & 5 & 100\% & 6 & 6 & 100\% & 2 & 2 & 100\% \\
+        H & 4 & 4 & 100\% & 5 & 5 & 100\% & 4 & 4 & 100\% & 7 & 6 & 86\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{Random Forest 4-Way Cross Validation Results With Two Letters}
+\end{table}
+\vfill
+\section*{Appendix B: Three Letter Dataset}\label{apend:B}
+
+\begin{table}[ht]
+    \centering
+    \label{tab:DT2}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 6 & 5 & 83\% & 4 & 4 & 100\% & 4 & 3 & 75\% & 5 & 5 & 100\% \\
+        E & 6 & 4 & 67\% & 5 & 4 & 80\% & 6 & 6 & 100\% & 3 & 3 & 100\% \\
+        H & 3 & 3 & 100\% & 6 & 6 & 100\% & 5 & 5 & 100\% & 6 & 5 & 83\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{Decision Tree 4-Way Cross Validation Results With Three Letters}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \label{tab:RT2}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 6 & 6 & 100\% & 4 & 3 & 75\% & 3 & 3 & 100\% & 6 & 6 & 100\% \\
+        E & 4 & 4 & 100\% & 5 & 5 & 100\% & 4 & 4 & 100\% & 7 & 6 & 86\% \\
+        H & 5 & 5 & 100\% & 6 & 5 & 83\% & 8 & 7 & 88\% & 1 & 1 & 100\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{Random Forest 4-Way Cross Validation Results With Three Letters}
+\end{table}
+
+\newpage
+\section*{Appendix C: Eight Letter Dataset}\label{apend:C}
+
+\begin{table}[h!]
+    \centering
+    \label{tab:DT3}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 5 & 3 & 60\% & 5 & 0 & 0\% & 5 & 3 & 60\% & 5 & 5 & 100\% \\
+        E & 8 & 6 & 75\% & 5 & 0 & 0\% & 2 & 0 & 0\% & 5 & 2 & 40\% \\
+        H & 6 & 3 & 50\% & 3 & 2 & 67\% & 7 & 5 & 71\% & 4 & 3 & 75\% \\
+        L & 3 & 2 & 67\% & 4 & 3 & 75\% & 7 & 3 & 43\% & 6 & 6 & 100\% \\
+        Q & 7 & 6 & 86\% & 4 & 0 & 0\% & 4 & 4 & 100\% & 5 & 3 & 60\% \\
+        T & 6 & 6 & 100\% & 4 & 3 & 75\% & 5 & 3 & 60\% & 5 & 5 & 100\% \\
+        V & 1 & 1 & 100\% & 11 & 3 & 27\% & 2 & 2 & 100\% & 6 & 6 & 100\% \\
+        Z & 4 & 4 & 100\% & 4 & 3 & 75\% & 8 & 6 & 75\% & 4 & 3 & 75\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{Decision Tree 4-Way Cross Validation Results With Eight Letters}
+\end{table}
+
+
+\begin{table}[h!]
+    \centering
+    \label{tab:RT3}
+    \begin{tabular}{cccccccccccccc}
+        \toprule
+        & \multicolumn{3}{c}{1\(^{\text{st}}\) Partition} & \multicolumn{3}{c}{2\(^{\text{nd}}\) Partition} & \multicolumn{3}{c}{3\(^{\text{rd}}\) Partition} & \multicolumn{3}{c}{4\(^{\text{th}}\) Partition} \\
+        \cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
+        \textbf{Lbl.} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} & \textbf{Ex.} & \textbf{Cor.} & \textbf{\%} \\
+        \midrule
+        A & 6 & 4 & 67\% & 6 & 6 & 100\% & 3 & 3 & 100\% & 5 & 1 & 20\% \\
+        E & 4 & 0 & 0\% & 6 & 0 & 0\% & 6 & 0 & 0\% & 4 & 3 & 75\% \\
+        H & 6 & 3 & 50\% & 4 & 3 & 75\% & 7 & 4 & 57\% & 3 & 3 & 100\% \\
+        L & 7 & 0 & 0\% & 5 & 1 & 20\% & 4 & 0 & 0\% & 4 & 1 & 25\% \\
+        Q & 2 & 2 & 100\% & 6 & 0 & 0\% & 6 & 0 & 0\% & 6 & 0 & 0\% \\
+        T & 5 & 0 & 0\% & 4 & 4 & 100\% & 4 & 0 & 0\% & 7 & 0 & 0\% \\
+        V & 4 & 0 & 0\% & 5 & 0 & 0\% & 6 & 0 & 0\% & 5 & 0 & 0\% \\
+        Z & 6 & 0 & 0\% & 4 & 0 & 0\% & 4 & 0 & 0\% & 6 & 0 & 0\% \\
+        \bottomrule
+    \end{tabular}
+    \caption{Random Forest 4-Way Cross Validation Results With Eight Letters}
+\end{table}
+
+\newpage
+
+\section*{Appendix D: Decision Tree Visualizations}\label{apend:D}
+
+\begin{figure}[h!]
+    \label{fig:twolettersDT}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.5in, height=1.5in]{visualizations/DT/2let/a.png}
+        \caption{A}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.5in, height=1.5in]{visualizations/DT/2let/h.png}
+        \caption{H}
+    \end{subfigure}
+    \caption{Two-Letter Visualizations}
+\end{figure}
+
+\begin{figure}[h!]
+    \label{fig:threelettersDT}
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.5in, height=1.5in]{visualizations/DT/3let/a.png}
+        \caption{A}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.5in, height=1.5in]{visualizations/DT/3let/h.png}
+        \caption{H}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.5in, height=1.5in]{visualizations/DT/3let/e.png}
+        \caption{E}
+    \end{subfigure}
+    \caption{Three-Letter Visualizations}
+\end{figure}
+
+\begin{figure}[h!]
+    \label{fig:eightlettersDT}
+    \centering
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/DT/8let/a.png}
+        \caption{A}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/DT/8let/e.png}
+        \caption{E}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/DT/8let/h.png}
+        \caption{H}
+    \end{subfigure}
+    \par\vspace{1em}
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/DT/8let/l.png}
+        \caption{L}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/DT/8let/t.png}
+        \caption{T}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/DT/8let/v.png}
+        \caption{V}
+    \end{subfigure}
+    \caption{Eight-Letter Visualizations}
+\end{figure}
+
+\newpage
+
+\section*{Appendix E: Random Forest Visualizations}\label{apend:E}
+
+\begin{figure}[h!]
+    \label{fig:twolettersRT}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.5in, height=1.5in]{visualizations/RT/2let/a.png}
+        \caption{A}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=1.5in, height=1.5in]{visualizations/RT/2let/h.png}
+        \caption{H}
+    \end{subfigure}
+    \caption{Two-Letter Visualizations}
+\end{figure}
+
+\begin{figure}[h!]
+    \label{fig:threelettersRT}
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.5in, height=1.5in]{visualizations/RT/3let/a.png}
+        \caption{A}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.5in, height=1.5in]{visualizations/RT/3let/h.png}
+        \caption{H}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1.5in, height=1.5in]{visualizations/RT/3let/e.png}
+        \caption{E}
+    \end{subfigure}
+    \caption{Three-Letter Visualizations}
+\end{figure}
+
+\begin{figure}[h!]
+    \label{fig:eightlettersRT}
+    \begin{subfigure}{0.225\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/RT/8let/a.png}
+        \caption{A}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.225\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/RT/8let/e.png}
+        \caption{E}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.225\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/RT/8let/h.png}
+        \caption{H}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.225\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/RT/8let/l.png}
+        \caption{L}
+    \end{subfigure}
+    \par\vspace{1em}
+    \begin{subfigure}{0.225\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/RT/8let/q.png}
+        \caption{Q}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.225\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/RT/8let/t.png}
+        \caption{T}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.225\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/RT/8let/v.png}
+        \caption{V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.225\textwidth}
+        \centering
+        \includegraphics[width=1.2in, height=1.2in]{visualizations/RT/8let/z.png}
+        \caption{Z}
+    \end{subfigure}
+    \caption{Eight-Letter Visualizations}
+\end{figure}
+
+\end{document}

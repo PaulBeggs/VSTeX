@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+
+\usepackage[left=1in,right=1in,top=0.75in,bottom=1in]{geometry}
+% \usepackage[margin=1in,showframe]{geometry}
+\usepackage{minted}
+\setminted{linenos, breaklines=true}
+\usepackage{listings}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\usepackage{float}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[framemethod=tikz]{mdframed}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	% backgroundcolor=white, % Needed for Dracula theme
+	% fontcolor=\documentTheme, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+
+\newenvironment{answer}{\textit{Answer.}}
+
+\newcommand{\ans}[1]{
+    \begin{customframedproof}[linecolor=horange!75,]
+        \begin{answer}
+        #1
+        \end{answer}
+    \end{customframedproof}
+}
+
+\setlength{\parindent}{0pt}
+
+\title{Project 9: Neural Networks}
+\author{Paul Beggs \\ \href{https://www.kaggle.com/code/paul123412/csci-335-project-8-fall-2025}{Kaggle Link}}
+\date{\today}
+
+
+
+\begin{document}
+\maketitle
+
+\section{Embedding Analysis}
+
+\begin{enumerate}
+	\item What are some examples of word combinations where the top predicted word plausibly makes sense?
+	\ans{
+		For most of the word combinations, the top word was ``the.'' This is understandable, seeing that ``the'' is the most common word in the Oxford English Corpus. A notable case that doesn't have ``the'' as the most common word is using ``I'' with the combination \texttt{['avenge', 'him', 'blindly']}. This makes sense as you can make sentences like ``I will avenge him,'' or ``I blindly followed him.''
+	}
+	\item What are some examples where the top predicted word doesn't make sense?
+	\ans{
+		Every combination has at least one of the following for the top predicted word: ``of,'' ``the,'' ``I,'' ``and,'' and/or ``a.'' None have an exceptional outlier, as you may expect. So, if I had to give an answer to this question, I suppose it would be the choice of ``I'' with the combination \texttt{['you', 'ever', 'hear']}. This is the most abnormal choice, but that is not saying much. 
+	}
+	\item In what ways can you see the concept of an embedding providing a model for what a word means?
+	\ans{
+		I can see that we can model a word's meaning through multidimensional arrays where how close a word is to similar words tell us how semantically similar they are. However, we see that in practice, the embedding is dominated by words like the ones I pointed out in the previous answers. So, perhaps in this case, the embedding is capturing the frequency of words, rather than what the words mean.   
+	}
+\end{enumerate}
+
+\end{document}

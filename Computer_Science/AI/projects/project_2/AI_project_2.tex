@@ -127,16 +127,18 @@ public class NegaMax extends CheckersSearcher {
 
     @Override
     public Optional<Duple<Integer, Move>> selectMove(Checkerboard board) {
+        int depth = getDepthLimit();
         numNodes = 0;
         int bestScore = -Integer.MAX_VALUE;
         Move bestMove = null;
         for (Move move : board.getCurrentPlayerMoves()) {
+            PlayerColor currentPlayer = board.getCurrentPlayer();
             Checkerboard alternative = board.duplicate();
             alternative.move(move);
+            int scoreForCurrentPlayer = getScoreForCurrentPlayer(depth, alternative, currentPlayer);
 
-            int score = -maxScore(alternative, getDepthLimit() - 1);
-            if (score > bestScore) {
-                bestScore = score;
+            if (scoreForCurrentPlayer > bestScore) {
+                bestScore = scoreForCurrentPlayer;
                 bestMove = move;
             }
         }
@@ -155,10 +157,25 @@ public class NegaMax extends CheckersSearcher {
         }
         int maxScore = -Integer.MAX_VALUE;
         for (Checkerboard alternative : board.getNextBoards()) {
-            int score = -maxScore(alternative, depth - 1);
-            maxScore = Math.max(maxScore, score);
+            PlayerColor currentPlayer = board.getCurrentPlayer();
+            int scoreForCurrentPlayer = getScoreForCurrentPlayer(depth, alternative, currentPlayer);
+
+            maxScore = Math.max(maxScore, scoreForCurrentPlayer);
         }
         return maxScore;
+    }
+
+    private int getScoreForCurrentPlayer(int depth, Checkerboard alternative, PlayerColor currentPlayer) {
+        PlayerColor nextPlayer = alternative.getCurrentPlayer();
+        int score = maxScore(alternative, depth - 1);
+
+        int scoreForCurrentPlayer;
+        if (currentPlayer == nextPlayer) {
+            scoreForCurrentPlayer = score;
+        } else {
+            scoreForCurrentPlayer = -score;
+        }
+        return scoreForCurrentPlayer;
     }
 }
 \end{minted}

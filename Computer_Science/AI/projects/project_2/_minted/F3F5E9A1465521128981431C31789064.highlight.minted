@@ -13,16 +13,18 @@
 
 \PYG{+w}{    }\PYG{n+nd}{@Override}
 \PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{n}{Optional}\PYG{o}{\PYGZlt{}}\PYG{n}{Duple}\PYG{o}{\PYGZlt{}}\PYG{n}{Integer}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Move}\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{+w}{ }\PYG{n+nf}{selectMove}\PYG{p}{(}\PYG{n}{Checkerboard}\PYG{+w}{ }\PYG{n}{board}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{depth}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{getDepthLimit}\PYG{p}{();}
 \PYG{+w}{        }\PYG{n}{numNodes}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
 \PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{bestScore}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{Integer}\PYG{p}{.}\PYG{n+na}{MAX\PYGZus{}VALUE}\PYG{p}{;}
 \PYG{+w}{        }\PYG{n}{Move}\PYG{+w}{ }\PYG{n}{bestMove}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{;}
 \PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Move}\PYG{+w}{ }\PYG{n}{move}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{board}\PYG{p}{.}\PYG{n+na}{getCurrentPlayerMoves}\PYG{p}{())}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{PlayerColor}\PYG{+w}{ }\PYG{n}{currentPlayer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{board}\PYG{p}{.}\PYG{n+na}{getCurrentPlayer}\PYG{p}{();}
 \PYG{+w}{            }\PYG{n}{Checkerboard}\PYG{+w}{ }\PYG{n}{alternative}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{board}\PYG{p}{.}\PYG{n+na}{duplicate}\PYG{p}{();}
 \PYG{+w}{            }\PYG{n}{alternative}\PYG{p}{.}\PYG{n+na}{move}\PYG{p}{(}\PYG{n}{move}\PYG{p}{);}
+\PYG{+w}{            }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{scoreForCurrentPlayer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{getScoreForCurrentPlayer}\PYG{p}{(}\PYG{n}{depth}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{alternative}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{currentPlayer}\PYG{p}{);}
 
-\PYG{+w}{            }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{score}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{maxScore}\PYG{p}{(}\PYG{n}{alternative}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{getDepthLimit}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
-\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{score}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{bestScore}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{                }\PYG{n}{bestScore}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{score}\PYG{p}{;}
+\PYG{+w}{            }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{scoreForCurrentPlayer}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{bestScore}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{bestScore}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{scoreForCurrentPlayer}\PYG{p}{;}
 \PYG{+w}{                }\PYG{n}{bestMove}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{move}\PYG{p}{;}
 \PYG{+w}{            }\PYG{p}{\PYGZcb{}}
 \PYG{+w}{        }\PYG{p}{\PYGZcb{}}
@@ -41,10 +43,25 @@
 \PYG{+w}{        }\PYG{p}{\PYGZcb{}}
 \PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{maxScore}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{Integer}\PYG{p}{.}\PYG{n+na}{MAX\PYGZus{}VALUE}\PYG{p}{;}
 \PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Checkerboard}\PYG{+w}{ }\PYG{n}{alternative}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{board}\PYG{p}{.}\PYG{n+na}{getNextBoards}\PYG{p}{())}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{            }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{score}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{maxScore}\PYG{p}{(}\PYG{n}{alternative}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{depth}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
-\PYG{+w}{            }\PYG{n}{maxScore}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{max}\PYG{p}{(}\PYG{n}{maxScore}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{score}\PYG{p}{);}
+\PYG{+w}{            }\PYG{n}{PlayerColor}\PYG{+w}{ }\PYG{n}{currentPlayer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{board}\PYG{p}{.}\PYG{n+na}{getCurrentPlayer}\PYG{p}{();}
+\PYG{+w}{            }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{scoreForCurrentPlayer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{getScoreForCurrentPlayer}\PYG{p}{(}\PYG{n}{depth}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{alternative}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{currentPlayer}\PYG{p}{);}
+
+\PYG{+w}{            }\PYG{n}{maxScore}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Math}\PYG{p}{.}\PYG{n+na}{max}\PYG{p}{(}\PYG{n}{maxScore}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{scoreForCurrentPlayer}\PYG{p}{);}
 \PYG{+w}{        }\PYG{p}{\PYGZcb{}}
 \PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{maxScore}\PYG{p}{;}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{k+kd}{private}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{getScoreForCurrentPlayer}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{depth}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Checkerboard}\PYG{+w}{ }\PYG{n}{alternative}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{PlayerColor}\PYG{+w}{ }\PYG{n}{currentPlayer}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{PlayerColor}\PYG{+w}{ }\PYG{n}{nextPlayer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{alternative}\PYG{p}{.}\PYG{n+na}{getCurrentPlayer}\PYG{p}{();}
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{score}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{maxScore}\PYG{p}{(}\PYG{n}{alternative}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{depth}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+
+\PYG{+w}{        }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{scoreForCurrentPlayer}\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{currentPlayer}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{nextPlayer}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{scoreForCurrentPlayer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{score}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{scoreForCurrentPlayer}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{score}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{scoreForCurrentPlayer}\PYG{p}{;}
 \PYG{+w}{    }\PYG{p}{\PYGZcb{}}
 \PYG{p}{\PYGZcb{}}
 \end{MintedVerbatim}

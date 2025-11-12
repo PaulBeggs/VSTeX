@@ -1,0 +1,804 @@
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% MAIN DOCUMENT %%%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\documentclass[12pt, oneside]{book}
+\usepackage{xcolor}
+\usepackage{minted}
+
+% \usepackage[T1]{fontenc}
+
+\usepackage{draculatheme}
+\newcommand{\documentTheme}{draculafg}
+\newcommand{\documentLogo}{../../images/small logo_white.png}
+\newcommand{\documentBigLogo}{../../images/logo_white_text.png}
+\usemintedstyle{dracula}
+
+% \newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
+% \newcommand{\documentLogo}{../../images/small logo.png}
+% \newcommand{\documentTheme}{black}
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{esint}
+\usepackage{adjustbox}
+\linespread{1}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning, arrows.meta, decorations.pathmorphing, decorations.pathreplacing}
+\usepgflibrary{shadings}
+\usepackage{pgfkeys}
+\usepackage{pdftexcmds}
+\usepackage{shellesc}
+\usepackage{algorithm, algorithmic, xspace}
+%%% Define new colors %%%
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%------- %
+% XHFILL %
+%------- %
+
+
+
+%%% Chapter Headings %%%
+
+\newcommand{\gradientrule}{
+    \begin{tikzpicture}
+        \shade[left color=orangehdx, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+    \end{tikzpicture}
+}
+
+\usepackage[Glenn]{fncychap}
+\ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
+\ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
+\usepackage{xpatch}
+
+% \xpatchcmd{\DOCH}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTI}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTIS}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+
+\xpatchcmd\DOCH
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTI
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTIS
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+
+
+% \usepackage[Bjornstrup]{fncychap}
+
+% \newcommand{\gradient}[1]{
+% \begin{tikzpicture}
+%     \node (rect) at (0,0) [fill=blue,,path fading=East,minimum width=\linewidth,minimum height=2.5cm] {};
+%     \node(title)[above left = 10pt and 10pt of rect.south east, anchor=south east, font=\CTV] {\textcolor{horange}{#1}};
+%     \ifnum \thechapter>0\node[left = 10pt of rect.north east,  anchor=center, font=\CNoV] {\textcolor{horange}{\thechapter}};\fi%
+% \end{tikzpicture}%
+% \vskip 40pt
+% }
+
+
+% \renewcommand{\DOCH}{}
+% \renewcommand{\DOTI}[1]{\gradient{#1}}
+% \renewcommand{\DOTIS}[1]{\gradient{#1}}
+
+%% Change Chapter Heading Placement %%
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
+
+
+
+% \newcommand*\chapterlabel{}\pmod
+% \titleformat{\chapter}
+%   {\gdef\chapterlabel{}
+%    \normalfont\sffamily\Huge\bfseries\scshape}
+%   {\gdef\chapterlabel{\thechapter\ }}{0pt}
+%   {\begin{tikzpicture}[remember picture,overlay]
+%     \node[yshift=-3cm] at (current page.north west)
+%       {\begin{tikzpicture}[remember picture, overlay]
+%         \draw[fill=LightSkyBlue] (0,0) rectangle
+%           (\paperwidth,3cm);
+%         \node[anchor=east,xshift=.9\paperwidth,rectangle,
+%               sharp corners=downhill=20pt,inner sep=11pt,
+%               fill=MidnightBlue]
+%               {\color{white}\chapterlabel#1};
+%        \end{tikzpicture}
+%       };
+%    \end{tikzpicture}
+%   }
+% \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+
+% \usepackage[Conny]{fncychap}
+% \usepackage[Rejne]{fncychap}
+% \ChNameVar{\bfseries}  % Makes the chapter "Chapter #" bold
+% \ChNumVar{\bfseries}   % Makes the chapter number bold
+% \ChTitleVar{\bfseries} % Makes the chapter title bold
+% % Define a custom color, for example:
+% \definecolor{mycolor}{RGB}{0,128,255}
+
+% % Redefine the chapter style in Rejne to change the line colors
+% \makeatletter
+% \ChRuleWidth{2pt}   % Change the thickness of the lines
+% \renewcommand{\DOCH}{%
+%   \vspace*{-50\p@}% Moves the chapter title up/down if needed
+%   {\color{mycolor} \hrule \@chapapp{} \space \thechapter \hrule}% Customizes the chapter header with color
+% }
+% \renewcommand{\DOTI}[1]{%
+%   \vskip 20\p@ % Adjusts the space above the title
+%   \bfseries #1\par % Embolden the title
+%   \vskip 20\p@ % Adjusts the space below the title
+% }
+% \makeatother
+
+% %% Change Chapter Heading Placement %%
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+% \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+% \makeatother
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
+
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+
+%% Headers and Footers %%
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\fancyhead[R]{\textcolor{draculafg}{\assignmentname}}
+\fancyhead[L]{\textcolor{draculafg}{Hendrix College}}
+\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
+\usepackage{xpatch}
+\xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
+\setlength{\footskip}{0.5in}
+\setlength{\headheight}{18.5764pt}
+
+
+%%%%% Colored Boxes %%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+% \tcbuselibrary{minted}
+\newcounter{BoxCounter}
+% \usepackage{dingbat}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%% MATH PACKAGES, ENVIRONMENTS, COMMANDS %%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%You'll need your own packages, theorem types, and commands.
+
+\usepackage{fix-cm}
+\usepackage{amsmath,amsthm, amsfonts, amssymb} 
+\usepackage{array, makecell}
+\usepackage{colortbl}
+\newcommand{\thickvrule}{\vrule width 1pt}
+\newcommand{\thickhrule}{\Xhline{1pt}}
+
+\usepackage{mathtools}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+
+
+%%% Custom Commands %%%
+% Natural Numbers 
+\newcommand{\N}{\mathbb{N}}
+
+% Whole Numbers
+\newcommand{\W}{\mathbb{W}}
+
+% Integers
+\newcommand{\Z}{\mathbb{Z}}
+
+% Rational Numbers
+\newcommand{\Q}{\mathbb{Q}}
+
+% Real Numbers
+\newcommand{\R}{\mathbb{R}}
+
+% Complex Numbers
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\I}{\mathbb{I}}
+
+\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
+
+\newcommand{\mysqrt}[1]{%
+	\mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+	\mathpalette\foodisplay{#1}%
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+		\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+		\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi}.}
+
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	backgroundcolor=draculabg, % Needed for Dracula theme
+	fontcolor=\documentTheme, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+% Define a new environment 'proofscratch' for Proof and Scratch Paper
+\newenvironment{proofscratch}[2]{%
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=false,
+        backgroundcolor=draculabg, % Background color for Dracula theme
+        fontcolor=\documentTheme,       % Font color for Dracula theme
+        innerleftmargin=-6pt,
+        innertopmargin=0pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        skipabove=\topsep,
+        skipbelow=\topsep,
+    ]
+    % % Begin TikZ picture for the vertical dotted line
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     % Draw a vertical dotted line at approximately the center of the mdframed width
+    %     \draw[dotted, thick] ([xshift=0.005\linewidth]current bounding box.north west) -- ([xshift=0.005\linewidth]current bounding box.south west);
+    % \end{tikzpicture}%
+    % % Create the left minipage for Proof
+    \begin{minipage}[t]{0.47\textwidth}%
+        \noindent\textit{Proof.} #1 \hfill \(\qed\)
+    \end{minipage}%
+    \hfill
+    % Create the right minipage for Scratch Paper
+    \begin{minipage}[t]{0.47\textwidth}%
+        \textit{Scratch Paper.} #2
+    \end{minipage}%
+}{
+    \end{mdframed}
+}
+
+\newenvironment{tipbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculapurple}{TIP:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{notebox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculagreen}{NOTE:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{warningbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculared}{WARNING:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{solution}{\textit{Solution.}}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\pf}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\def \proofDistance {10pt}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
+
+\newcommand{\ninn}{n \in \N}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
+
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\dydx}{\frac{dy}{dx}}
+\newcommand{\dxdy}{\frac{dx}{dy}}
+\newcommand{\dydt}{\frac{dy}{dt}}
+\newcommand{\dxdt}{\frac{dx}{dt}}
+\newcommand{\dzdt}{\frac{dz}{dt}}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
+
+\newcommand{\squigglyline}{%
+    \noindent
+    \tikz[baseline=-0.5ex]{
+        \draw[decorate, decoration={snake, amplitude=0.5mm, segment length=3mm}] 
+        (0,0) -- (\dimexpr\linewidth\relax,0);
+    }%
+}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\generator}[1]{\langle #1 \rangle}
+
+
+% end of preamble
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{document}
+
+\numberwithin{BoxCounter}{section}
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% COVER PAGE %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\newcommand{\assignmentname}{Homework 5: Sections 10 \& 11}
+
+% Do not use all caps.
+\newcommand{\cussubtitle}{Algebra}
+% Date format should be like: "January 1, 2001"
+\newcommand{\finaldate}{October 30, 2025}
+% Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
+\newcommand{\professor}{Dr. Christopher Camfield, Ph.D.}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+
+\begin{titlepage}
+    \begin{center}
+
+        \vspace*{-2cm}
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\
+        \vfill
+
+        % Horizontal line above the title in 'horange' color
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace{2em}
+
+        {\huge \textbf{\assignmentname}}
+
+        \vspace{1em} % Space between the title and the bottom line
+
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace*{1\baselineskip}
+
+        {\LARGE \textbf{\cussubtitle}}
+
+        \begin{large}
+            \vspace*{5\baselineskip}
+
+            \vspace*{1\baselineskip}
+
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+
+            \vspace*{1\baselineskip}
+
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
+
+            \vspace*{1\baselineskip}
+
+            \textit{Due}\\[1ex]
+            {\scshape  \finaldate} \\[0.3\baselineskip] % Year published
+
+            \thispagestyle{empty}
+
+        \end{large}
+    \end{center}
+\end{titlepage}
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+\section*{Section 10}
+
+% Section 10 Exercises 9, 11, 15, 16, 29, 44ab*
+% Section 11 Exercises 6, 7, 16, 23, 25
+
+\begin{enumerate}
+    \setcounter{enumi}{8}
+    \item Find all left cosets of the subgroup \(\{\rho_{0}, \rho_{2}\}\) of the group \(D_{4}\) given by Table 8.12.\vspace*{-1em}
+          \sol{
+              There are only 4 distinct left cosets:
+              \[
+                  \{\rho_{0}, \rho_{2}\}, \{\rho_{1}, \rho_{3}\}, \{\mu_{1}, \mu_{2}\}, \{\delta_{1}, \delta_{2}\}.
+              \]
+          }
+          \setcounter{enumi}{10}
+    \item Rewrite Table 8.12 in the order exhibited by the left cosets in Exercise 9. Do you seem to get a coset group of order 4? If so, is it isomorphic to \(\Z_{4}\) or the Klein 4-group \(V\)?
+          \sol{
+              The multiplication table on the left is made up of left cosets for \(D_{4}\). The subgroup \(H = \{\rho_{0}, \rho_{2}\}\) partitions \(D_{4}\) into the four left cosets from Exercise 9. Each colored block corresponds to one of these cosets. The table on the right is the multiplication table for the Klein 4-group. Notice that
+              \[
+                  \{\rho_{0}, \rho_{2}\} = e, \ \{\rho_{1}, \rho_{3}\} = a, \ \{\mu_{1}, \mu_{2}\} = b, \ \{\delta_{1}, \delta_{2}\} = c.
+              \]
+              Hence, \(D_{4}/H \simeq V\). \\
+
+              \definecolor{first}{HTML}{264653}
+              \definecolor{second}{HTML}{2a9d8f}
+              \definecolor{third}{HTML}{e9c46a}
+              \definecolor{fourth}{HTML}{f4a261}
+              \newcommand{\fc}{\cellcolor{first!70!draculabg}}\newcommand{\sco}{\cellcolor{second!70!draculabg}}\newcommand{\tc}{\cellcolor{third!70!draculabg}}\newcommand{\fco}{\cellcolor{fourth!70!draculabg}}
+              \renewcommand{\arraystretch}{1.5}
+              \hspace{1cm}\begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c|c|c|c|c}
+                                     & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) \\
+                  \noalign{\hrule height 1.5pt}
+                  \fc\(\rho_{0}\)    & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) \\
+                  \hline
+                  \fc\(\rho_{2}\)    & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) \\
+                  \hline
+                  \sco\(\rho_{1}\)   & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     \\
+                  \hline
+                  \sco\(\rho_{3}\)   & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     \\
+                  \hline
+                  \tc\(\mu_{1}\)     & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   \\
+                  \hline
+                  \tc\(\mu_{2}\)     & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   \\
+                  \hline
+                  \fco\(\delta_{1}\) & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    \\
+                  \hline
+                  \fco\(\delta_{2}\) & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    \\
+              \end{tabular}\hspace{1.25cm}
+              \begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c}
+                            & \fc\(e\)  & \sco\(a\) & \tc\(b\)  & \fco\(c\) \\
+                  \noalign{\hrule height 1.5pt}
+                  \fc\(e\)  & \fc\(e\)  & \sco\(a\) & \tc\(b\)  & \fco\(c\) \\
+                  \hline
+                  \sco\(a\) & \sco\(a\) & \fc\(e\)  & \fco\(c\) & \tc\(b\)  \\
+                  \hline
+                  \tc\(b\)  & \tc\(b\)  & \fco\(c\) & \fc\(e\)  & \sco\(a\) \\
+                  \hline
+                  \fco\(c\) & \fco\(c\) & \tc\(b\)  & \sco\(a\) & \fc\(e\)
+              \end{tabular}\hspace{1.25cm}
+
+              \vspace{1em}
+              (I had a lot of fun making these tables. Thanks for the assigning this awesome problem!)
+          }
+\newpage
+          \setcounter{enumi}{14}
+    \item Let \(\sigma = (1,2,5,4)(2,3)\) in \(S_{5}\). Find the index of \(\gen{\sigma}\) in \(S_{5}\).
+          \sol{
+              We can rewrite \(\sigma\) as \((1,2,3,5,4)\) to help with composing. Following that, we get \(\sigma^{2} = (1,3,4,2,5)\), \(\sigma^{3} = (1,5,2,4,3)\), \(\sigma^{4} = (1,4,5,3,2)\), and \(\sigma^{5} = e\). Therefore, \(|\gen{\sigma}| = 5\), and the index of \(\gen{\sigma}\) in \(S_{5}\) is \(|S_{5}|/|\gen{\sigma}| = 120/5 = 24\)
+          }
+    \item Let \(\mu = (1,2,4,5)(3,6)\) in \(S_{6}\). Find the index of \(\gen{\mu}\) in \(S_{6}\).
+          \sol{
+              Because we are using disjoint cycles, the transposition cycle is the identity element when the power of \(\mu\) is even (from Example 9.14). We can make the same connection for the 4-element cycle: when the power of \(\mu\) is a multiple of 4, it is equal to the identity element. Thus, we know that \(\mu^{4} = e\), \(|\gen{\mu}| = 4\), and the index of \(\gen{\mu}\) in \(S_{6}\) is \(720/4 = 180\).
+          }
+          \setcounter{enumi}{28}
+    \item Let \(H\) be a subgroup of a group \(G\). Prove that if the partition of \(G\) into left cosets of \(H\) is the same as the partition into right cosets of \(H\), then \(g^{-1}hg \in H\) for all \(g \in G\) and all \(h \in H\). (Note that this is the converse of Exercise 28.)
+          \sol{
+              The statement ``If the partition of \(G\) into left cosets of \(H\) is the same as the partition into right cosets of \(H\),'' implies \(gH = Hg\) for all \(g \in G\). Now, let \(g \in G\) and \(h \in H\). Our goal is to show that \(g^{-1}hg \in H\). Consider the element \(hg\). Since \(h \in H\), \(hg \in Hg\). Because \(Hg = gH\), it must be that \(hg \in gH\). By definition of left coset, \(hg \in gH\) means that \(hg = gh'\) for some \(h' \in H\). So, we just solve for this \(h'\). We start by multiplying both sides on the left by \(g^{-1}\):
+              \begin{align*}
+                g^{-1}(hg) &= g^{-1}(gh') \\
+                g^{-1}hg &= (g^{-1}g)h' \\
+                g^{-1}hg &= h'.
+              \end{align*}
+              Since \(h' \in H\), we have shown that \(g^{-1}hg \in H\).
+          }
+          \setcounter{enumi}{43}
+\newpage
+    \item Let \(S_{A}\) be the group of all permutations of the set \(A\), and let \(c\) be one particular element of \(A\).
+          \begin{enumerate}
+              \item Show that \(\{\sigma \in S_{A} \mid \sigma(c) = c \}\) is a subgroup \(S_{c,c}\) of \(S_{A}\).
+                    \sol{
+                        \begin{itemize}
+                            \item \textbf{Identity:} The identity permutation \(e\) maps every element to itself, so \(e(c) = c\). Thus, \(e \in S_{c,c}\).
+                            \item \textbf{Closure:} Let \(\sigma, \tau \in S_{c,c}\). This means \(\sigma(c) = c\) and \(\tau(c) = c\). We must check their product:
+                            \[
+                                (\sigma\tau)(c) = \sigma(\tau(c)) = \sigma(c) = c.
+                            \]
+                            \item \textbf{Inverses:} Let \(\sigma \in S_{c,c}\). As before, this means \(\sigma(c) = c\), and we also have to check \(\sigma^{-1}\). We will do this by multiplying \(\sigma^{-1}\) to both sides of the equation:
+                            \begin{align*}
+                                \sigma^{-1}(\sigma(c)) &= \sigma^{-1}(c) \\
+                                (\sigma^{-1}\sigma)(c) &= \sigma^{-1}(c) \\
+                                e(c) &= \sigma^{-1}(c) \\
+                                c &= \sigma^{-1}(c).
+                            \end{align*}
+                            Because \(\sigma^{-1}(c) = c\), the inverse \(\sigma^{-1}\) is in \(S_{c,c}\).
+                        \end{itemize}
+                        Since \(S_{c,c}\) contains the identity, is closed under the binary operation, and is closed under inverses, it is a subgroup of \(S_{A}\).
+                    }
+              \item Let \(d \neq c\) be another particular element of \(A\). Is \(S_{c,d} = \{\sigma \in S_{A} \mid \sigma(c) = d \}\) a subgroup of \(S_{A}\)? Why or why not?
+                    \sol{
+                        No, it is not a subgroup because it does not contain the identity element. The condition to be in \(S_{c,d}\) is that \(\sigma(c) = d\). Since we are given \(c \ne d\), we have \(e(c) \ne d\). Therefore, \(e \ne S_{c,d}\), and the set cannot be a subgroup. 
+                    }
+          \end{enumerate}
+\end{enumerate}
+
+\section*{Section 11}
+
+In Exercises 6 and 7, find the order of the given element of the direct product.
+
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item \((3, 10, 9)\) in \(\Z_{4} \times \Z_{12} \times \Z_{15}\).
+          \sol{
+            For each pair, we find 
+            \[
+                \frac{4}{\gcd(3,4)} = 4, \quad \frac{12}{\gcd(10,12)} = 6, \quad \frac{15}{\gcd(9,15)} = 5. 
+            \]
+            Thus, \(\text{lcm}(4,6,5) = 60\). 
+          }
+    \item \((3,6,12,16)\) in \(\Z_{4} \times \Z_{12} \times \Z_{20} \times \Z_{24}\).
+          \sol{
+            For each pair, we find
+            \[
+                \frac{4}{\gcd(3,4)} = 4, \quad \frac{12}{6,12} = 2, \quad \frac{20}{\gcd(12,20)} = 5, \quad \frac{24}{\gcd(16,24)} = 3.
+            \]
+            Thus, \(\text{lcm}(4,2,5,3) = 60\).
+          }
+          \setcounter{enumi}{15}
+    \item Are the groups \(\Z_{2} \times \Z_{12}\) and \(\Z_{4} \times \Z_{6}\) isomorphic? Why or why not?
+          \sol{
+            When we split these into two separate decompositions, we will see that they are isomorphic. First, we know that \(\Z_{mn} \simeq \Z_{n} \times \Z_{m} \iff \gcd(n,m) = 1\). Since 12 is not a prime number and \(\gcd(3,4) = 1\), then 
+            \[
+                \Z_{12} \simeq \Z_{3} \times \Z_{4} \text{,\quad and }\quad \Z_{2} \times \Z_{12} \simeq \Z_{2} \times \Z_{3} \times \Z_{4}.
+            \]
+            The same thing applies for \(\Z_{6}\). It decomposes into \(\Z_{2} \times \Z_{3}\) because \(\gcd(2,3) = 1\). Thus, 
+            \[
+                \Z_{4} \times \Z_{6} \simeq \Z_{2} \times \Z_{3} \times \Z_{4}.
+            \]
+            Since both \(\Z_{2} \times \Z_{12}\) and \(\Z_{4} \times \Z_{6}\) decompose into the same product, they are isomorphic. 
+          }
+\end{enumerate}
+
+In exercises 23 and 25, proceed as in Example 11.13 to find all abelian groups, up to isomorphism, of the given order.
+
+\begin{enumerate}
+    \setcounter{enumi}{22}
+    \item Order 32.
+          \sol{
+            Order 32 can be expressed as the product of \(2^{5}\). Then, by using Theorem 11.12, we get possibilities
+            \begin{enumerate}[label=(\arabic*)]
+                \item \(\Z_{2} \times \Z_{2} \times \Z_{2} \times \Z_{2} \times \Z_{2}\)
+                \item \(\Z_{4} \times \Z_{2} \times \Z_{2} \times \Z_{2}\)
+                \item \(\Z_{4} \times \Z_{4} \times \Z_{2}\)
+                \item \(\Z_{8} \times \Z_{2} \times \Z_{2}\)
+                \item \(\Z_{8} \times \Z_{4}\)
+                \item \(\Z_{16} \times \Z_{2}\)
+                \item \(\Z_{32}\)
+            \end{enumerate}
+            Therefore, there are 7 abelian groups.
+          }
+          \setcounter{enumi}{24}
+\newpage
+    \item Order 1089.
+          \sol{
+            Order 1089 can be expressed as the product of prime powers \(3^{2}11^{2}\). Thus,
+            \begin{enumerate}[label=(\arabic*)]
+                \item \(\Z_{3} \times \Z_{3} \times \Z_{11} \times \Z_{11}\)
+                \item \(\Z_{9} \times \Z_{11} \times \Z_{11}\)
+                \item \(\Z_{3} \times \Z_{3} \times \Z_{121}\)
+                \item \(\Z_{9} \times \Z_{121}\)
+            \end{enumerate}
+            Therefore, there are 4 abelian groups.
+          }
+\end{enumerate}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+\end{document}
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

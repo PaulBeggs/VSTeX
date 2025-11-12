@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{minted}
+\setminted{linenos, breaklines=true}
+
+\usepackage{hyperref}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\usepackage{float}
+\usepackage{caption}
+
+\setlength{\parindent}{0pt}
+
+\title{Essay 1}
+\author{Paul Beggs}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+In this essay, we will talk about how 
+
+The two algorithms that I think would be the most useful for the current problem are detailed below:
+
+\begin{itemize}
+    \item \textbf{Heuristic Search:} We learned that it's possible to implement ``treasures''  into our algorithm for searching, so it's possible to use this for similar applications for path finding to the trash and non-trash objects.
+    \item \textbf{Hierarchical Task Network (HTN):} I believe that employing an HTN is the most applicable for this problem. You can define logical steps that the robot can take for any given interaction. There are some problems when it comes to edge cases, but I'm assuming the programming is robust enough for that object identification. 
+\end{itemize}
+
+Building more into the last bullet point, for pickup, put down, and a sort function, you could do the following for each:
+
+\begin{itemize}
+    \item \textbf{Pickup:} If the robot has nothing in their hand, pick up the item and designate its location to the hand.
+    \item \textbf{Put Down:} If the robot has something in their hand, drop the item and designate the hand as empty.
+    \item \textbf{Sort:} The robot can scan objects using its camera. It can identify humans, trash, non-trash, and living beings. The robot then relies on internal programming to determine where each object should be deposited. 
+\end{itemize}
+
+In general, the robot will use these different methods with three different groups:
+
+\begin{itemize}
+    \item \textbf{Trash:} To be taken to the dump.
+    \item \textbf{Non-Trash:} Put back where it belongs if the robot deems the item is out of place.
+    \item \textbf{Humans \& Living Beings:} No direct intervention to be made with this group, just leave them alone.
+\end{itemize}
+\newpage
+\section{Problematic Example}
+
+Let's walk through an example of how the robot will use the methods and apply them to the same demographics from the previous section. Let's say that the robot is cleaning a room that seemingly has only trash, but also contains valuable items. The robot sees an item and runs its sorting method: It uses its camera to see that the item is brown, rectangular shaped, has no markings, and is on the floor (a cardboard box). It deems that this cardboard box is trash, so it uses its pickup method and carries the cardboard box to the dump and drops it off. The only problem is that someone was using that unmarked box as a way to move their belongings from their car to their apartment. So, the robot just threw away the person's property because it couldn't ``understand'' that there could be items inside the container. 
+
+\section{Conclusion}
+
+This robot problem has shown that even when we have a robot that is capable of correctly identifying objects, and having set guidelines in place for what the robot should do for any given object, there are still problems that can occur. I showed that the robot can use heuristic search when looking for an optimal path for finding trash in a room, but focused mainly on hierarchical task networks (HTN). I laid out an example where even if the robot is capable of correctly identifying objects using a sorting method, it can still lead to problems because the robot does not have a way of discerning an object's relative purpose. That is, objects usually have varied identifiable appearances (e.g., a cardboard box can have dents, markings, etc.), but they all have traits that make them classifiable. Nevertheless, if, for example, you do not know that cardboard boxes tend to have items inside them, then you have no way of knowing that someone could use it to transport valuable items. This is the true heart of the problem: \textbf{Understanding}. While you may be able to program many edge cases for a robot, it is impossible to \textit{plan} for every single case. This will always lead to failures, just like the example showed. 
+
+\end{document}

@@ -194,3 +194,8 @@ extrema
 Dorsolateral
 MazeExplorer
 piecewise
+cosets
+coset
+decompositions
+SOM
+monotonicity

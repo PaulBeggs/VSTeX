@@ -1,0 +1,286 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+\usepackage{amsmath,amssymb}
+\usepackage{subcaption}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\makeatletter
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\title{Discrete Exam 2 Note Sheets}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight
+3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.40in
+\advance\evensidemargin-1.45in
+\parindent0pt
+\parskip1pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\group}[2]{\langle #1, #2 \rangle}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{center}{\huge{\textbf{Probability \& Statistics Exam 2 Note Sheets}}}\\
+\end{center}
+\begin{multicols*}{2}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{innerbox} = [draw=black, fill=gray!20, thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}}
+    \begin{itemize}
+        \item \textbf{pdf of \(X\):} \(f \colon S \to \R\) has the following properties:
+        \begin{itemize}
+            \item \(f(x) \geq 0\) for all \(x \in S\); \(\int_{S} f(x) \, dx = 1\); if \((a,b) \subseteq S\), then \\
+            \(P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx\)
+        \end{itemize}
+        \item \textbf{CDF of \(X\):} \(F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t) \, dt\)
+        \item \textbf{Expected Value of \(X\):} \(E(X) = \mu = \int_{S} x f(x) \, dx\)
+        \item \textbf{Variance of \(X\):} \(\text{Var}(X) = \sigma^{2} = \int_{S} (x - \mu)^{2} f(x) \, dx = E(X^{2}) - \mu^{2}\)
+        \item \textbf{mfg of \(X\):} \(M_{X}(t) = E(e^{tX}) = \int_{S} e^{tx} f(x) \, dx\)
+        \item \textbf{Percentiles:} The \(p\)th percentile \(\pi_{p}\) is the value such that \(P(X \leq \pi_{p}) = p\). Thus, \(\int_{-\infty}^{\pi_{p}} f(x) \, dx = p\).
+        \item \textbf{Integration by Parts:} \(\int u \, dv = uv - \int v \, du\).
+        \item \textbf{Gamma Function:} \(\Gamma(\alpha) = \int_{0}^{\infty} t^{\alpha - 1} e^{-t} \, dt\), for \(\alpha > 0\).
+        \begin{itemize}
+            \item \(\Gamma(x) = (x - 1)\Gamma(x - 1)\), \(\Gamma(\frac{1}{2}) = \sqrt{\pi}\), \(\Gamma(x) = \frac{\Gamma(x + 1)}{x}\)
+        \end{itemize}
+
+    \end{itemize}
+    \underline{\textbf{Examples:}}
+    \begin{enumerate}
+        \item \(\int_{0}^{1} 2x e^{-x^{2}} \, dx \implies u = x^{2}, \, du = 2x \, dx \implies \int_{0}^{1} e^{-u} \, du = 1 - e^{-1}\)
+        \item Consider the function \(f(x) = cx^{5}\) on \([0,1]\).
+        \begin{enumerate}
+            \item Find \(c\). (Solve \(\int_{0}^{1} cx^{5} \, dx = 1\).)
+            \item Determine \(E(X)\). (Solve \(\int_{0}^{1} x \cdot cx^{5} \, dx\).)
+            \item Determine \(\text{Var}(X)\). (Solve \(\int_{0}^{1} (x - \mu)^{2} \cdot cx^{5} \, dx\).)
+            \item Determine the \(25\)th percentile. (Solve \(\int_{0}^{\pi_{25}} cx^{5} \, dx = 0.25\).)
+        \end{enumerate}
+        \item A pdf is given by \(f(x) = \frac{1}{2}\). for \(x \in [0,1] \cup [2,3]\), and 0 otherwise.
+        \begin{enumerate}
+            \item Determine \(E(X)\). (Solve \(\int_{0}^{1} x \cdot \frac{1}{2} \, dx + \int_{2}^{3} x \cdot \frac{1}{2} \, dx\). To do the variance, just replace \(x\) with \(x^{2}\) and then subtract \(\mu^{2}\).)
+        \end{enumerate}
+        \item The mean airspeed of an unladen swallow is 30 ft/s, with a std. dev. of 4.3 ft/s. Assuming the airspeed is normally distributed:
+        \begin{enumerate}
+            \item What is the probability that a randomly selected swallow has an airspeed between 28 and 38 ft/s? (\(P(28 \leq X \leq 38) = \texttt{normalcdf(28, 38, 30, 4.3)}\))
+        \end{enumerate}
+    \end{enumerate}
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 3: Continuous Distributions};
+\end{tikzpicture}
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \begin{enumerate}
+        \setcounter{enumi}{3}
+        \item 
+        \begin{enumerate}
+            \setcounter{enumii}{1}
+            \item Suppose that 12 swallows are selected at random. What is the probability that exactly 8 have their speed between 28 and 38 ft/s? (Use binomial formula with \(n = 12\), \(k = 8\), and \(p\) from previous problem.)
+        \end{enumerate}
+        \item An auto insurance company insures an automobile worth \$15,000 for one year under a policy with a \$1,000 deductible. During the policy year there is a \(0.04\) chance of partial damage to the car and a \(0.02\) chance of a total loss of the car. If there is partial damage to the car, the amount \(X\) of damage (in thousands) follows a distribution with density function \(f(x) = 0.5003e^{-x/2}\), for \(0 \le x \le 15\). Find the expected value of the payment the insurance company makes in a year.
+
+        \textit{Solution:} Let \(E = \text{expected yearly payment.}\) There are 3 cases: 1. No damage: \(P = 0.94, \text{ payment} = 0\). 2. Total loss: \(P = 0.02,  \text{ payment} = 14\text{,}000.\) 3. Partial damage: \(P = 0.04\), \(X \sim f(x) = 0.5003 e^{-x/2}, \, 0 \le x \le 15\) (in thousands). The payment for \(X > 1\) is \(1000(X - 1)\) and 0 otherwise. Expected payout for partial damage is \(\int_{1}^{15} 1000(X - 1) 0.5003 e^{-x/2} \, dx = 1211.96\). Thus, \(E = 0.94 \cdot 0 + 0.02 \cdot 14000 + 0.04 \cdot 1211.96 = 328.48\).
+
+    \end{enumerate}
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 3 (cont.)};
+\end{tikzpicture}
+
+
+
+%------------ Measures of Variability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}}
+    \begin{itemize}
+        \item \textbf{Joint pmf:} \(f(x,y) = P(X = x, Y = y)\)
+        \item \textbf{Marginal pmf of \(X\):} \(f_{X}(x) = \sum_{y} f(x,y) = P(X = x)\) for \(x \in S_{X}\)
+        \item \textbf{Mean of \(X_{i}\):} \(\mu_{X_{i}} = E(X_{i}) = \sum_{x_{i}} x_{i} f_{X_{i}}(x_{i})\)
+        \item \textbf{Variance of \(X_{i}\):} \(\text{Var}(X_{i}) = \sigma_{X_{i}}^{2} = \sum_{x_{i}} (x_{i} - \mu_{X_{i}})^{2} f_{X_{i}}(x_{i}) = E(X_{i}^{2}) - \mu_{X_{i}}^{2}\)
+        \item \textbf{Covariance of \(X\), \(Y\):} \(\text{Cov}(X,Y) = E[(X - \mu_{X})(Y - \mu_{Y})] = E(XY) - \mu_{X} \mu_{Y}\). If \(\text{Cov}(X,Y) = 0\), then \(X\) and \(Y\) are uncorrelated; if pos, \(X+\) and \(Y+\), if neg, \(X+\) and \(Y-\). If independent, then \(\text{Cov}(X,Y) = 0\).
+        \item \textbf{Correlation of \(X\) and \(Y\):} \(\rho_{X,Y} = \frac{\text{Cov}(X,Y)}{\sigma_{X} \sigma_{Y}}\), or \(\rho = 0\) if independent.
+        \item \textbf{Conditional pmf of \(X\) given \(Y\):} \(f_{X|Y}(x|y) = \frac{f(x,y)}{f_{Y}(y)}\) for \(y \in S_{Y}\)
+        \item \textbf{Conditional Expectation of \(X\) given \(Y\):} \(E(X|Y = y) = \sum_{x} x f_{X|Y}(x|y)\)
+        \item \textbf{Conditional Variance of \(X\) given \(Y\):} \(\text{Var}(X|Y = y) = E(X^{2}|Y = y) - (E(X|Y = y))^{2}\)
+        \item \textbf{Least Squares Regression Line:} \(y  = \mu_{Y} + \rho \frac{\sigma_{Y}}{\sigma_{X}} (X - \mu_{x})\)
+        \item \textbf{Independence Criteria:} If \(f(x,y) = f_{X}(x) f_{Y}(y)\) for all \(x \in S_{X}\), \(y \in S_{Y}\).
+    \end{itemize}
+
+    \end{minipage}
+    };
+%------------ Measures of Variability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 4: Bivariate Distributions};
+\end{tikzpicture}
+
+
+%------------ Discrete Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+       
+    \underline{\textbf{Examples:}}
+	\begin{enumerate}
+        \item An actuary determines that the annual number of tornadoes in counties \(P\) and \(Q\) are jointly distributed as follows: \\[0.5em]
+        \begin{tabular}{r||r|r|r|r}
+            & \multicolumn{4}{c}{County \(Q\)} \\
+            County \(P\) & 0 & 1 & 2 & 3 \\ \hline\hline
+            0 & 0.12 & 0.06 & 0.05 & 0.02 \\ 
+            1 & 0.13 & 0.15 & 0.12 & 0.03 \\
+            2 & 0.05 & 0.15 & 0.10 & 0.02
+        \end{tabular}
+        \begin{enumerate}
+            \item Determine the conditional expected number of tornados in county \(Q\), given that there are no tornados in county \(P\). \\
+            \((Q|P=0) = 0 \cdot \frac{0.12}{0.25} + 1 \cdot \frac{0.06}{0.25} + 2 \cdot \frac{0.05}{0.25} + 3 \cdot \frac{0.02}{0.25} = 0.88.\)
+            \item Calculate the conditional variance of the annual number of tornadoes in county \(Q\), given that there are no tornadoes in county \(P\). \\   
+            \(\text{Var}(Q|P=0) = E(Q^2|P=0) - (E(Q|P=0))^2 = 1.76 - 0.88^2 = 0.9856.\)
+            \item Are counties \(P\) and \(Q\) independent? Justify your answer. \\
+            No, because \(f(0,0) = 0.12 \neq f_{P}(0) f_{Q}(0) = 0.25 \cdot 0.30 = 0.075\).
+        \end{enumerate}
+        \item Let \(X\) be the weight of robin eggs, in grams, and \(Y\) be the daily high temperature, in degrees Celsius. Assume that \(X\) and \(Y\) have a bivariate normal distribution with \(\mu_{X} = 145.2\), \(\sigma^{2}_{X} = 109.2\), \(\mu_{Y} = 23.5\), \(\sigma^{2}_{Y} = 21.8\) and \(\rho = -0.34\). 
+        \begin{enumerate}
+            \item Find the least squares regression line for predicting \(Y\) from \(X\). \\
+            \(y = 23.5 + (-0.34) \frac{\sqrt{21.8}}{\sqrt{109.2}} (X - 145.2) = 23.5 - 0.152 (X - 145.2)\)
+            \item Using the line from part (a), predict the daily high temperature when the weight of a robin egg is 150 grams. \\
+            \(y = 23.5 - 0.152 (150 - 145.2) = 22.76\)
+            \item Find the probability that a robin egg weights between 142 and 152 grams. \\
+            \(P(142 \leq X \leq 152) = \texttt{normalcdf(142, 152, 145.2, 10.45)}\)
+            \item Given \(Y = 25.1\), find the probability that a robin egg weighs between 142 and 152 grams. (Use CDF formula w updated \(\mu\) and \(\sigma\):) \\
+            \(\mu_{X|Y = 25.1} = \mu_{X} + \rho \frac{\sigma_{X}}{\sigma_{Y}} (25.1 - \mu_{Y}) = 143.9824\) \\
+            \(\sigma^{2}_{X|Y = 25.1} = (1 - \rho^2) \sigma^{2}_{X} = 96.5765 \implies \sigma_{X|Y = 25.1} = \sqrt{96.5765} = 9.82\)
+        \end{enumerate}
+    \end{enumerate}
+    \end{minipage}
+};
+%------------ Discrete Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 4 (cont.)};
+\end{tikzpicture}
+
+
+%------------ Sets and Probability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    The formula for a z-score is \(z = \frac{x - \mu}{\sigma}\). The formula for converting a z-score to an x-value is \(x = \mu + z \sigma\).
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 5: Distributions of Functions of Random Variables};
+\end{tikzpicture}
+
+
+%------------ Sets and Probability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Examples:}}
+    \setcounter{enumi}{1}
+    \begin{enumerate}
+        \item Let \(X\) be a random variable with pdf \(f(x) = cx^{3}\) for \(0 < x < 2\). Let \(Y = X^{4}\). Determine the pdf of \(Y\). (cdf = \(F(y) = P(Y \le y) = P(X^{4} \le y) = P(X \le y^{1/4}) = F_{X}(y^{1/4})\), then differentiate to get pdf.)
+        \item Let \(X\) and \(Y\) be independent random variables with \(f(x) = 2x, 0 < x < 1\) and \(g(y) = 4y^{3}, 0 < y < 1\). Find \((0.5 < X < 1 \text{ and } 0.4 < Y < 0.8)\). (Since they are independent, just multiply their individual probabilities.)
+        \item Three basketball players each make 70\% of their free throws. They each take 10 free throws. Assuming independence among the players, what is the probability that at least one player makes more than 8? (This is the complement of all 3 making 8 or fewer. Hence, \(1 - (\texttt{binomcdf(10, 0.7, 8)})^{3} = 0.3844\).)
+        \item Suppose that each of \(Z_{1}, Z_{2}, \ldots, Z_{9}\) are distributed as \(N(0,1)\). Let \(W = Z_{1}^{2} + Z_{2}^{2} + \ldots + Z_{2}^{9}\). Find \(P(7.2 < W < 16)\). (Since \(W\) is chi-square with 9 degrees of freedom, use \texttt{x2cdf(7.2, 16, 9)}.)
+        \item 30 students roll a single 4-sided die until they get exactly 5 ones. Let \(\overline{X}\) be the average number of rolls needed. Use the CLT to approximate \(P(17 < \overline{X} < 19.5)\). (The number of rolls needed follows a negative binomial distribution with \(p = \frac{1}{4}\) and \(r = 5\). Thus, \(\mu_{X} = \frac{r}{p} = 20\) and \(\sigma^{2}_{X} = \frac{r(1 - p)}{p^{2}} = 60 \implies \sigma_{X} = \sqrt{60} = 7.746\). By the CLT, \(\overline{X} \sim N(20, \frac{60}{30}) = N(20, 2)\). Hence, \(P(17 < \overline{X} < 19.5) = \texttt{normalcdf(17, 19.5, 20, sqrt(2))} = 0.3449\).)
+        \item A certain exam has a mean score of 73 and std. dev. of 6.8. Use CLT to approximate the probability that \(n = 19\) students who took the exam have a mean larger than 75. (By CLT, \(\overline{X} \sim N(73, \frac{6.8^{2}}{19}) = N(73, 2.434)\). Thus, \(P(\overline{X} > 75) = \texttt{normalcdf(75, 1E99, 73, sqrt(2.434))} = 0.0999\).)
+        \item A certain brand of LED lightbulbs advertise that they have a mean lifetime of 12.4 years, and we will assume their lifetime is exponentially distributed. You purchase a random sample of size \(n = 34\), and find that the mean lifetime of your sample is 9.5 years. Use the Central Limit Theorem to (quantitatively) comment on how likely or unlikely this is? [Hint: Since the normal distribution is continuous, it does not make sense to talk about the probability that a sample has a particular mean. It might make sense to talk about the proportion of samples whose mean is at most some particular number, however.] \\
+        We know that an individual bulb has a lifetime with \(\mu = 12.4\) and \(\sigma^{2} = 12.4^{2} = 153.76\), assuming that the company's claim is correct. The mean lifetime of our sample would then follow \(N(12.4, 153.76/34)\). Thus, the probability of getting a sample with your mean lifetime or even shorter is given by \(\texttt{normalcdf(-1e99, 9.5, 12.4, 12.4/sqrt(34))} = 0.08633\). This is reasonably unlikely, either you got a fairly unusual sample or the company's claim about the mean lifetime is incorrect.
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 5 (cont.)};
+\end{tikzpicture}
+
+
+
+\end{multicols*}
+\end{document}

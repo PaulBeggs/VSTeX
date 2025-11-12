@@ -7,6 +7,8 @@
 \usepackage{hyperref}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \definecolor{horange}{HTML}{f58026}
 \hypersetup{
 	colorlinks=true,
@@ -30,9 +32,10 @@
 
 \section{Heuristic Descriptions \& Implementations}
 
-The Manhattan heuristic (\hyperref[list:manhattan]{Listing 1}) calculates the Manhattan distance between the current location of the \mintinline{java}{MazeExplorer} and the end location of the maze. If we let \(n_{1}\) and \(n_{2}\) be the coordinates of the current location and \(e_{1}\) and \(e_{2}\) be the coordinates of the end location, then the Manhattan distance is calculated as \(|n_{1} - e_{1}| + |n_{2} - e_{2}|\). This implementation is admissible because it never overestimates the true cost to reach the goal. Thus, the shortest path will never be larger than the Manhattan distance, as the shortest path may involve moving diagonally or taking a more direct route that is not captured by the Manhattan distance.
+\subsection{Manhattan Distance Only}
 
-\label{list:manhattan}
+The Manhattan heuristic calculates the Manhattan distance between the current location of the \mintinline{java}{MazeExplorer} and the end location of the maze. If we let \(n_{1}\) and \(n_{2}\) be the coordinates of the current location and \(e_{1}\) and \(e_{2}\) be the coordinates of the end location, then the Manhattan distance is calculated as \(md = |n_{1} - e_{1}| + |n_{2} - e_{2}|\). This implementation is admissible because we must make at least \(md\) moves to get the goal. Thus, the shortest path will never be larger than the Manhattan distance, as the actual path will certainly have more than moves due to the walls in the maze.
+\begin{listing}[h!]
 \begin{minted}{java}
 public class Manhattan implements ToIntFunction<MazeExplorer> {
     @Override
@@ -41,47 +44,21 @@ public class Manhattan implements ToIntFunction<MazeExplorer> {
     }
 }
 \end{minted}
-\captionof{listing}{Manhattan-Only Heuristic}
-\vspace{2em}
+\caption{Manhattan Distance Heuristic}
+\end{listing}
+% \subsection{Combined Distance}
 
-The Combined Distance heuristic (\hyperref[list:combined]{Listing 2}) works by starting with the current location of the \mintinline{java}{MazeExplorer}, the end location, and also initializes 3 sets of treasures: all treasures in the maze, treasures that have been found, and treasures that have not yet been found. Then, it begins by checking if there are any remaining treasures. If there are no remaining treasures, it returns the Manhattan distance to the end location. If there are remaining treasures, it calculates the minimum distance from the current location to any of the remaining treasures and the minimum distance from any of those treasures to the end location. Finally, it returns the sum of these two minimum distances. 
+% The Combined Distance heuristic works by starting with the current location of the \mintinline{java}{MazeExplorer}, the end location, and also initializes 3 treasures sets: all treasures in the maze, treasures that have been found, and treasures that have not yet been found (only the remaining treasures set matters, though). Then, it begins by checking if there are any remaining treasures. If there are no remaining treasures, it returns the Manhattan distance to the end location. If there are remaining treasures, it calculates the minimum distance from the current location to any of the remaining treasures and the minimum distance from any of those treasures to the end location. Finally, it returns the sum of these two minimum distances. \\
 
+% To know if the heuristic is monotonic, we need to check each criterion. We will refer to the combined distance heuristic as \(h_{combo}(n)\). To begin, we know that \(h_{combo}(\text{goal}) = 0\) because if there are no more treasures in the maze, then the heuristic defaults to the Manhattan distance (this also ensures that in any other case when there are no treasures left, \(h_{combo}(n)\) is monotonic).
 
-\label{list:combined}
-\begin{minted}{java}
-public class CombinedDist implements ToIntFunction<MazeExplorer> {
-    @Override
-    public int applyAsInt(MazeExplorer value) {
-        Pos currentLocation = value.getLocation();
-        Pos endLocation = value.getM().getEnd();
+\subsection{Maximum Distance}
 
-        Set<Pos> allTreasures = value.getAllTreasureFromMaze();
-        Set<Pos> foundTreasures = value.getAllTreasureFound();
+The maximum distance heuristic works by getting a set of all treasures on the map that have not been collected yet, and by initializing an integer \texttt{maxDist} value that is just the Manhattan distance from the \texttt{MazeExplorer} to the exit. Then, for each remaining treasure in the maze, it determines if that treasure's distance is larger than the any other treasure, or the exit, and then returns that distance. \\
 
-        Set<Pos> remainingTreasures = new HashSet<>(allTreasures);
-        remainingTreasures.removeAll(foundTreasures);
-
-        if (remainingTreasures.isEmpty()) {
-            return currentLocation.getManhattanDist(endLocation);
-        }
-
-        int minDistFromCurrent = Integer.MAX_VALUE;
-        int minDistToEnd = Integer.MAX_VALUE;
-
-        for (Pos treasure : remainingTreasures) {
-            minDistFromCurrent = Math.min(minDistFromCurrent, currentLocation.getManhattanDist(treasure));
-            minDistToEnd = Math.min(minDistToEnd, treasure.getManhattanDist(endLocation));
-        }
-        return minDistFromCurrent + minDistToEnd;
-    }
-}
-\end{minted}
-\captionof{listing}{Combined Distance Heuristic}
-\vspace{2em}
-
+To show that this heuristic is monotonic, we can start by looking at if \(h(\text{goal}) = 0\). We know that this is true because at the goal state, we have no remaining treasures, and \texttt{maxDist} is just the Manhattan distance to the end of the goal, so \(h(\text{goal})\) returns 0 (this reasoning also ensures that in any other case when there are no treasures left, \(h(n)\) is monotonic). Now, take the case of the \texttt{MazeExplorer} moving, and landing on a treasure \(T\). Before landing (at state \(n_{1}\)), \(h(n_{1})\) is either the distance to \(T\) (which is 1, since we are right next to it) or the distance to some other, further target. After landing (at state \(n_{2}\)), that treasure is removed from the list, and the new heuristic \(h(n_{2})\) is the maximum distance from our new location to all remaining targets. Now, because we only took one step, the maximum distance to all other targets cannot have dropped by more than 1. If \(T\) was the furthest target (meaning \(h(n_{1}) = 1\)), the new value \(h(n_{2})\) will be 0 or greater. So, in all scenarios, the heuristic value never drops by more than 1, so the condition \(h(n_{1}) - h(n_{2}) \le 1\) holds.
 
 \begin{listing}[h!]
-
 \begin{minted}{java}
 public class MaxDist implements ToIntFunction<MazeExplorer> {
     @Override
@@ -106,22 +83,48 @@ public class MaxDist implements ToIntFunction<MazeExplorer> {
     }
 }
 \end{minted}
-\caption{Max Distance Heuristic}\label{list:max}
+\caption{Maximum Distance Heuristic}
 \end{listing}
 
+\subsection{Counting Treasures}
+
+This heuristic works by simply counting all the treasures in the maze. If we don't have any treasures remaining, then we default to using the Manhattan distance, which is monotonic. If we do have treasures remaining, then we return the number of treasures. This ensures that the difference between \(h(n_{1})\) and \(h(n_{2})\) will never be larger than 1 because we can only collect one treasure per move. Thus, the formula for monotonicity \(h(n_{1}) - h(n_{2}) \le 1\) is true, and this heuristic is valid.
+
 \begin{listing}[h!]
-    
+\begin{minted}{java}
+public class CountTreasures implements ToIntFunction<MazeExplorer>  {
+    @Override
+    public int applyAsInt(MazeExplorer value) {
+        Set<Pos> allTreasures = value.getAllTreasureFromMaze();
+        Set<Pos> foundTreasures = value.getAllTreasureFound();
+        Set<Pos> remainingTreasures = new HashSet<>(allTreasures);
+        remainingTreasures.removeAll(foundTreasures);
+        if (remainingTreasures.isEmpty()) {
+            return value.getLocation().getManhattanDist(value.getM().getEnd());
+        } else {
+            return remainingTreasures.size();
+        }
+    }
+}
+\end{minted}
+\caption{Counting Treasures Heuristic}
+\end{listing}
+
+\subsection{Overly Confident}
+
+The overly confident heuristic is just the Manhattan distance, but we multiply the value returned by 3, and add 5. This fails the criteria for monotonicity because when we are at the goal, our state will be \(h(\text{goal}) = 5\), when it should be \(h(\text{goal}) = 0\).
+
+\begin{listing}[h!]
 \begin{minted}{java}
 public class OverlyConfident implements ToIntFunction<MazeExplorer> {
     @Override
     public int applyAsInt(MazeExplorer value) {
         int manhattanDistance = value.getLocation().getManhattanDist(value.getM().getEnd());
-        return manhattanDistance * 3 + 1;
+        return manhattanDistance * 3 + 5;
     }
 }
-
 \end{minted}
-\caption{Overly Confident Heuristic}\label{list:overly}
+\caption{Overly Confident Heuristic}
 \end{listing}
 
 \section{Experimentation and Analysis}
