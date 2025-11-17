@@ -4,9 +4,11 @@
 \usepackage{minted}
 \setminted{linenos, breaklines=true}
 
+\usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{subcaption}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \definecolor{horange}{HTML}{f58026}
@@ -56,7 +58,7 @@ public class Manhattan implements ToIntFunction<MazeExplorer> {
 
 The maximum distance heuristic works by getting a set of all treasures on the map that have not been collected yet, and by initializing an integer \texttt{maxDist} value that is just the Manhattan distance from the \texttt{MazeExplorer} to the exit. Then, for each remaining treasure in the maze, it determines if that treasure's distance is larger than the any other treasure, or the exit, and then returns that distance. \\
 
-To show that this heuristic is monotonic, we can start by looking at if \(h(\text{goal}) = 0\). We know that this is true because at the goal state, we have no remaining treasures, and \texttt{maxDist} is just the Manhattan distance to the end of the goal, so \(h(\text{goal})\) returns 0 (this reasoning also ensures that in any other case when there are no treasures left, \(h(n)\) is monotonic). Now, take the case of the \texttt{MazeExplorer} moving, and landing on a treasure \(T\). Before landing (at state \(n_{1}\)), \(h(n_{1})\) is either the distance to \(T\) (which is 1, since we are right next to it) or the distance to some other, further target. After landing (at state \(n_{2}\)), that treasure is removed from the list, and the new heuristic \(h(n_{2})\) is the maximum distance from our new location to all remaining targets. Now, because we only took one step, the maximum distance to all other targets cannot have dropped by more than 1. If \(T\) was the furthest target (meaning \(h(n_{1}) = 1\)), the new value \(h(n_{2})\) will be 0 or greater. So, in all scenarios, the heuristic value never drops by more than 1, so the condition \(h(n_{1}) - h(n_{2}) \le 1\) holds.
+To show this heuristic is monotonic, we can start by looking at if \(h(\text{goal}) = 0\). If we are at the goal state, then we have no remaining treasures, and \(h(\text{goal})\) returns the Manhattan distance to the end of the goal, which is 0 (this reasoning also ensures that in any other case when there are no treasures left, \(h(n)\) is monotonic). Now, take the case of the \texttt{MazeExplorer} moving, and landing on a treasure \(T\). Before landing (at state \(n_{1}\)), \(h(n_{1})\) is either the distance to \(T\) (which is 1, since we are right next to it) or the distance to some other, further target. After landing (at state \(n_{2}\)), that treasure is removed from the list, and the new heuristic \(h(n_{2})\) is the maximum distance from our new location to all remaining targets. Now, because we only took one step, the maximum distance to all other targets cannot have dropped by more than 1. If \(T\) was the furthest target (meaning \(h(n_{1}) = 1\)), the new value \(h(n_{2})\) will be 0 or greater. So, in all scenarios, the heuristic value never drops by more than 1, so the condition \(h(n_{1}) - h(n_{2}) \le 1\) holds. Therefore, the maximum distance heuristic is monotonic.
 
 \begin{listing}[h!]
 \begin{minted}{java}
@@ -88,7 +90,7 @@ public class MaxDist implements ToIntFunction<MazeExplorer> {
 
 \subsection{Counting Treasures}
 
-This heuristic works by simply counting all the treasures in the maze. If we don't have any treasures remaining, then we default to using the Manhattan distance, which is monotonic. If we do have treasures remaining, then we return the number of treasures. This ensures that the difference between \(h(n_{1})\) and \(h(n_{2})\) will never be larger than 1 because we can only collect one treasure per move. Thus, the formula for monotonicity \(h(n_{1}) - h(n_{2}) \le 1\) is true, and this heuristic is valid.
+This heuristic works by simply counting all the treasures in the maze. If we don't have any treasures remaining, then we default to using the Manhattan distance, which is monotonic. If we do have treasures remaining, then we return the number of treasures. This ensures that the difference between \(h(n_{1})\) and \(h(n_{2})\) will never be larger than 1 because we can only collect one treasure per move. Thus, the formula for monotonicity \(h(n_{1}) - h(n_{2}) \le 1\) is always true, and this heuristic is monotonic.
 
 \begin{listing}[h!]
 \begin{minted}{java}
@@ -127,14 +129,129 @@ public class OverlyConfident implements ToIntFunction<MazeExplorer> {
 \caption{Overly Confident Heuristic}
 \end{listing}
 
-\section{Experimentation and Analysis}
+\newpage
 
+\section{Experimentation Analysis}
 
 % A discussion of the relative merits of the heuristics relative to breadth-first search and each other, and
 % A discussion as to how varying the size, treasure, and perfection affects the general difficulty of solving a maze by computer
 % Discuss the degree to which the results matched your expectations
 
+\subsection{Heuristics Performance}
+
+For each \hyperref[tab:maze1tab]{maze}, you can see that the heuristic that consistently has the lowest branch factor and needs to explore the lowest amount of nodes is the maximum distance heuristic. While each monotonic heuristic had the same solution length (as would be expected by a monotonic heuristic by definition), there were variations among the amount of nodes searched, and the branching factors for each. As expected, breadth first search performed the worst among the monotonic heuristics, as it consistently explored the most nodes, and had either the same branching factor, or a higher one (this effect is most prominently seen in \hyperref[tab:maze3tab]{Table 5}). In a similar vein, the count treasures heuristic also did relatively poorly (when compared to maximum distance). We see that it explores almost as many nodes as breadth first search, but this is expected as it only updates when we reach a treasure, so it doesn't tell us which way to go. \\
+
+The most surprising heuristic was the one that only employed the Manhattan distance. Given its relative simplicity, it performed well and explored relatively few nodes in comparison to the other heuristics. Looking at the only non-monotonic heuristic, \texttt{OverlyConfident}, we see that even when the Manhattan distance is the only computation employed, it can go awry if it is arbitrarily scaled, making the heuristic non-admissible. Furthermore, this dubious scaling essentially sent the search on a wild goose chase, which led to the most nodes explored, and the greatest search depth in nearly every test case.
 
 
+\subsection{Maze Design}
+
+Depending on how the maze was set up, there can be a lot of variation in how many nodes we explore, and the branching factor. When controlling for only the dimensions of the maze, every heuristic was able to solve mazes up to \(2000\times 2000\) easily, as the branching factor stayed constant at \(1.0\) (anything higher than \(2000\times 2000\) would cause the GUI to lag too much). Then, when controlling mainly for perfection, it appears that the solvers also succeeded with relative ease. In general, it appears that the number of treasures is what has the largest effect upon the branching factor. As we can see that when we compare the maze designs, \hyperref[tab:maze3tab]{Maze 3} had the highest perfection, the smallest size, and the most treasures, supporting this conclusion. 
+
+\newpage
+
+\section*{Appendix A: Maze Data}
+
+\subsection*{Maze 1}
+
+\begin{table}[ht]
+    \label{tab:maze1tab}
+    \begin{minipage}{.58\linewidth}
+        \centering
+        \begin{tabular}{lcccc}
+            \toprule
+            \multicolumn{1}{c}{\textbf{Heuristic}} & \texttt{b*} & \textbf{Depth} & \textbf{Nodes} & \textbf{Sol. Len.} \\
+            \midrule
+            Breadth First & \(1.04\) & 238 & 1118685 & 239 \\
+            Manhattan Only & \(1.04\) & 239 & 785921 & 239 \\
+            Max. Distance & \(1.04\) & 238 & 464355 & 239 \\
+            Count Treasures & \(1.04\) & 238 & 1086557 & 239 \\
+            Overly Confident& \(1.04\) & 289 & 15603978 & 269 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Heuristic Results}
+    \end{minipage}
+    \begin{minipage}{.55\linewidth}
+        \centering
+        \begin{tabular}{rc}
+            \toprule
+            \textbf{Settings} & \textbf{Values} \\ \midrule
+            Treasures & 5 \\[.435em]
+            Width & 100\\[.435em]
+            Height & 100 \\[.435em]
+            Perfection & 25\% \\
+            \bottomrule
+        \end{tabular}
+        \caption{Maze 1 Settings}
+    \end{minipage}
+\end{table}
+
+\subsection*{Maze 2}
+
+\begin{table}[ht]
+    \label{tab:maze2tab}
+    \begin{minipage}{.58\linewidth}
+        \centering
+        \begin{tabular}{lcccc}
+            \toprule
+            \multicolumn{1}{c}{\textbf{Heuristic}} & \texttt{b*} & \textbf{Depth} & \textbf{Nodes} & \textbf{Sol. Len.} \\
+            \midrule
+            Breadth First & \(1.07\) & 181 & 9117955 & 181 \\
+            Manhattan Only & \(1.07\) & 181 & 3716463 & 181 \\
+            Max. Distance & \(1.06\) & 180 & 1721702 & 181 \\
+            Count Treasures & \(1.07\) & 180 & 8949824 & 181 \\
+            Overly Confident& \(1.06\) & 222 & 8588447 & 213 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Heuristic Results}
+    \end{minipage}
+    \begin{minipage}{.55\linewidth}
+        \centering
+        \begin{tabular}{rc}
+            \toprule
+            \textbf{Settings} & \textbf{Values} \\ \midrule
+            Treasures & 10 \\[.435em]
+            Width & 50 \\[.435em]
+            Height & 50 \\[.435em]
+            Perfection & 0\% \\
+            \bottomrule
+        \end{tabular}
+        \caption{Maze 2 Settings}
+    \end{minipage}
+\end{table}
+
+\subsection*{Maze 3}
+
+\begin{table}[ht]
+    \label{tab:maze3tab}
+    \begin{minipage}{.58\linewidth}
+        \centering
+        \begin{tabular}{lcccc}
+            \toprule
+            \multicolumn{1}{c}{\textbf{Heuristic}} & \texttt{b*} & \textbf{Depth} & \textbf{Nodes} & \textbf{Sol. Len.} \\
+            \midrule
+            Breadth First & \(1.14\) & 107 & 10646594 & 107 \\
+            Manhattan Only & \(1.13\) & 107 & 4469867 & 107 \\
+            Max. Distance & \(1.12\) & 106 & 1944758 & 107 \\
+            Count Treasures & \(1.14\) & 106 & 9133748 & 107 \\
+            Overly Confident& \(1.11\) & 133 & 10817669 & 113 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Heuristic Results}
+    \end{minipage}
+    \begin{minipage}{.55\linewidth}
+        \centering
+        \begin{tabular}{rc}
+            \toprule
+            \textbf{Settings} & \textbf{Values} \\ \midrule
+            Treasures & 13 \\[.435em]
+            Width & 25 \\[.435em]
+            Height & 25 \\[.435em]
+            Perfection & 75\% \\
+            \bottomrule
+        \end{tabular}
+        \caption{Maze 3 Settings}
+    \end{minipage}
+\end{table}
 
 \end{document}

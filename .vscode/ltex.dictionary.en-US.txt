@@ -199,3 +199,4 @@ coset
 decompositions
 SOM
 monotonicity
+conjugacy

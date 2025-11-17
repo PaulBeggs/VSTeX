@@ -52,7 +52,7 @@ public class BasicEval implements ToIntFunction<Checkerboard> {
 \captionof{listing}{Basic Evaluation Function}
 \vspace{2em}
 
-I've found that this evaluation function does not work well in practice. Since it does not give enough value to extraneous factors that can influence the outcome, such as piece positioning and potential future moves, it often leads to suboptimal play. For example, consider the board states from \hyperref[fig:board_states]{Figure 1}: Here, black can move any piece, but decides to move the piece at h6 to g5, causing an immediate capture by red on the next turn. I'm not sure what may be causing this behavior, but I suspect it may be due to the fact that the evaluation function does not account for potential captures or threats, leading to poor decision-making in certain scenarios.
+I've found that this evaluation function works well enough. It is capable of keeping their pieces from needlessly being captured, and capturing mine just fine. However, when it has an advantage, like being close to promoting their pieces, they don't press the advantage. For example, consider the board states from \hyperref[fig:board_states]{Figure 1}: Here, red can promote and have better pieces, but chooses to move the pieces closer to the back. I suppose moving to d3 also has merit, as they won the game either way.
 
 
 \begin{figure}[h!]
@@ -61,126 +61,56 @@ I've found that this evaluation function does not work well in practice. Since i
         \begin{tabular}{c|cccccccc|}
           \multicolumn{1}{c}{} & a & b & c & d & e & f & g & \multicolumn{1}{c}{h} \\
             \cline{2-9}
-          8 & . & r & . & r & . & r & . & r \\
-          7 & b & . & r & . & . & . & r & . \\
-          6 & . & . & . & r & . & r & . & b \\
-          5 & . & . & . & . & . & . & . & . \\
-          4 & . & . & . & . & . & . & . & b \\
-          3 & b & . & . & . & . & . & . & . \\
-          2 & . & b & . & b & . & b & . & . \\
-          1 & b & . & b & . & b & . & b & . \\
+          8 & . & . & . & . & . & B & . & . \\
+          7 & . & . & r & . & . & . & r & . \\
+          6 & . & r & . & . & . & r & . & r \\
+          5 & r & . & r & . & . & . & . & . \\
+          4 & . & . & . & b & . & . & . & . \\
+          3 & b & . & b & . & r & . & r & . \\
+          2 & . & b & . & . & . & . & . & r \\
+          1 & b & . & . & . & . & . & . & . \\
             \cline{2-9}
-            \multicolumn{9}{c}{\ \ Black to move}
+            \multicolumn{9}{c}{\ \ Red to move}
         \end{tabular} \\[0.5em]
-        \begin{tabular}{|cccccccc|}
-            \hline
-            . & r & . & r & . & r & . & r \\
-            b & . & r & . & . & . & r & . \\
-            . & . & . & r & . & r & . & b \\
-            . & . & . & . & . & . & b & . \\
-            . & . & . & . & . & . & . & . \\
-            b & . & . & . & . & . & . & . \\
-            . & b & . & b & . & b & . & . \\
-            b & . & b & . & b & . & b & . \\
-            \hline
-            \multicolumn{8}{c}{\text{Black moves to g5}}
+        \begin{tabular}{c|cccccccc|}
+          \multicolumn{1}{c}{} & a & b & c & d & e & f & g & \multicolumn{1}{c}{h} \\
+            \cline{2-9}
+          8 & . & . & . & . & . & B & . & . \\
+          7 & . & . & . & . & . & . & r & . \\
+          6 & . & r & . & r & . & r & . & r \\
+          5 & r & . & r & . & . & . & . & . \\
+          4 & . & . & . & b & . & . & . & . \\
+          3 & b & . & b & . & r & . & r & . \\
+          2 & . & b & . & . & . & . & . & r \\
+          1 & b & . & . & . & . & . & . & . \\
+            \cline{2-9}
+            \multicolumn{9}{c}{\text{\ \ Red moves to d3}}
         \end{tabular}
         \(\leftarrow\) Possible moves 
         \(\rightarrow\)
-        \begin{tabular}{|cccccccc|}
-            \hline
-            . & r & . & r & . & r & . & r \\
-            b & . & r & . & . & . & r & . \\
-            . & . & . & r & . & r & . & b \\
-            . & . & . & . & . & . & . & . \\
-            . & . & . & . & . & . & . & b \\
-            b & . & . & . & . & . & . & . \\
-            . & b & . & b & . & b & . & b \\
-            b & . & b & . & b & . & . & . \\
-            \hline
-            \multicolumn{8}{c}{\text{Black moves to h8}}
+        \begin{tabular}{c|cccccccc|}
+          \multicolumn{1}{c}{} & a & b & c & d & e & f & g & \multicolumn{1}{c}{h} \\
+            \cline{2-9}
+          8 & . & . & . & . & . & B & . & . \\
+          7 & . & . & r & . & . & . & r & . \\
+          6 & . & r & . & . & . & r & . & r \\
+          5 & r & . & r & . & . & . & . & . \\
+          4 & . & . & . & b & . & . & . & . \\
+          3 & b & . & b & . & r & . & r & . \\
+          2 & . & b & . & . & . & . & . & . \\
+          1 & b & . & . & . & . & . & R & . \\
+            \cline{2-9}
+            \multicolumn{9}{c}{\text{\ \ Red promotes}}
         \end{tabular}
         \caption{Board States}
 \end{figure}
 
 \newpage
 
-\section{Searcher Implementation}
+\section{Autocheckers Results}
 
-Due to the lack of foresight in our evaluation function, our searcher implementation is also prone to errors. As they say, trash in, trash out. However, I believe that with a more sophisticated evaluation function, the \mintinline{java}{NegaMax} searcher would perform significantly better. The code for the \mintinline{java}{NegaMax} searcher is provided in \hyperref[list:negamax]{Listing 2}. \\
+By running experiments with different depth levels, I found that it has a major effect upon the chance of winning. For example, when Player1 had a depth limit of 7 and Player2 had depth limit of 4, Player1 won 18 times, and Player2 only won 3 times out of 32 games. That's a pretty fair margin in my opinion. I wasn't able to run larger depth limits \(>8\), as the program took too long to run.
 
-When running \mintinline{java}{AutoCheckers} with both players running \mintinline{java}{NegaMax} with depth limits 2 and 7 for \mintinline{java}{Player1} and \mintinline{java}{Player2} respectively, I found that \mintinline{java}{Player2} tended to lose more often than not (5 game difference between the two players over 32 games). \\
-
-\label{list:negamax}
-\begin{minted}{java}
-public class NegaMax extends CheckersSearcher {
-    private int numNodes;
-
-    public NegaMax(ToIntFunction<Checkerboard> e) {
-        super(e);
-    }
-
-    @Override
-    public int numNodesExpanded() {
-        return numNodes;
-    }
-
-    @Override
-    public Optional<Duple<Integer, Move>> selectMove(Checkerboard board) {
-        int depth = getDepthLimit();
-        numNodes = 0;
-        int bestScore = -Integer.MAX_VALUE;
-        Move bestMove = null;
-        for (Move move : board.getCurrentPlayerMoves()) {
-            PlayerColor currentPlayer = board.getCurrentPlayer();
-            Checkerboard alternative = board.duplicate();
-            alternative.move(move);
-            int scoreForCurrentPlayer = getScoreForCurrentPlayer(depth, alternative, currentPlayer);
-
-            if (scoreForCurrentPlayer > bestScore) {
-                bestScore = scoreForCurrentPlayer;
-                bestMove = move;
-            }
-        }
-
-        if (bestMove == null) {
-            return Optional.empty();
-        }
-
-        return Optional.of(new Duple<>(bestScore, bestMove));
-    }
-
-    private int maxScore(Checkerboard board, int depth) {
-        numNodes += 1;
-        if (depth == 0 || board.gameOver()) {
-            return getEvaluator().applyAsInt(board);
-        }
-        int maxScore = -Integer.MAX_VALUE;
-        for (Checkerboard alternative : board.getNextBoards()) {
-            PlayerColor currentPlayer = board.getCurrentPlayer();
-            int scoreForCurrentPlayer = getScoreForCurrentPlayer(depth, alternative, currentPlayer);
-
-            maxScore = Math.max(maxScore, scoreForCurrentPlayer);
-        }
-        return maxScore;
-    }
-
-    private int getScoreForCurrentPlayer(int depth, Checkerboard alternative, PlayerColor currentPlayer) {
-        PlayerColor nextPlayer = alternative.getCurrentPlayer();
-        int score = maxScore(alternative, depth - 1);
-
-        int scoreForCurrentPlayer;
-        if (currentPlayer == nextPlayer) {
-            scoreForCurrentPlayer = score;
-        } else {
-            scoreForCurrentPlayer = -score;
-        }
-        return scoreForCurrentPlayer;
-    }
-}
-\end{minted}
-\captionof{listing}{NegaMax Searcher}
-\vspace{2em}
 
 
 \end{document}

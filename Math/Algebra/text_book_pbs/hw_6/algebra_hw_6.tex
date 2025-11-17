@@ -591,29 +591,72 @@ In Exercises 4 and 5, determine whether the given map \(\varphi\) is a homomorph
     \setcounter{enumi}{3}
     \item Let \(\varphi \funccolon \Z_{6} \to \Z_{2}\) be given by \(\varphi(x) = \text{the remainder of } x\) when divided by 2, as in the division algorithm.
     \sol{
-
+        We know \(\varphi(x) = x \bmod 2\), and we have binary operators \((a + b) \bmod 6\) for \(\Z_{6}\) and \((a + b) \bmod 2\) for \(\Z_{2}\). This leaves us with the following equation to check: 
+        \[
+            \varphi((a + b) \bmod 6) \stackrel{?}{=} (\varphi(a)  + \varphi(b)) \bmod 2
+        \]
+        For the left-hand side:
+        \[
+            \varphi((a + b) \bmod 6) = ((a + b) \bmod 6) \bmod 2.
+        \]
+        This simplifies down to \((a + b) \bmod 2\) since \(6 \equiv 0 \pmod{2}\). For the right-hand side:
+        \[
+            (\varphi(a) + \varphi(b)) \bmod 2 = (a \bmod 2 + b \bmod 2) \bmod 2.
+        \]
+        Since addition is commutative and associative in both groups, we can rewrite this as:
+        \[
+            (a + b) \bmod 2.
+        \]
+        Therefore, the equation holds, and the map is a homomorphism.
     }
 % Let¢ : Z::9 ----;. Z::2 be given by q:,(x) = th e remainder of x when divided by 2, as in the division algorithm .
     \item Let \(\varphi \funccolon \Z_{9} \to \Z_{2}\) be given by \(\varphi(x) = \text{the remainder of } x\) when divided by 2, as in the division algorithm.
     \sol{
-
+        This is not a homomorphism because the two sides of the equation are not equal:
+        \[
+            \varphi((3 + 7) \bmod 9) = \varphi(1) = 1,
+        \]
+        but 
+        \[
+            (\varphi(3) + \varphi(7)) \bmod 2 = (1 + 1) \bmod 2 = 0.
+        \]
     }
 
 \end{enumerate}
+
+\newpage
 
 In Exercises 19 and 23, compute the indicated quantities for the given homomorphism \(\varphi\). (See Exercise 46.)
 
 \begin{enumerate}
     \setcounter{enumi}{18}
-    \item \(\ker(\varphi)\) and \(\varphi(20)\) for \(\varphi \funccolon \Z \to S_{8}\) such that \(\varphi(1) = (1,4,2,6)(2,5,7)\).\footnote{I decided not to capitalize the `k' in ``ker'' to keep with \texttt{amsmath}'s \textbackslash\texttt{ker} command.}
+    \item \(\ker(\varphi)\) and \(\varphi(20)\) for \(\varphi \funccolon \Z \to S_{8}\) such that \(\varphi(1) = (1,4,2,6)(2,5,7)\).
     \sol{
-
+        We know \(\varphi(1) = (1,4,2,6)(2,5,7) = (1,4,2,5,7,6)\) has order 6, so \(\ker(\varphi) = 6\Z\). Then, we know from the homomorphism property:
+        \[
+            \varphi(20) = (\varphi(1))^{20} = (\varphi(1))^{18} (\varphi(1))^{2} = (\varphi(1))^{2} = (1,2,7)(4,5,6). 
+        \]
     }
 
     \setcounter{enumi}{22}
     \item \(\ker(\varphi)\) and \(\varphi(4, 6)\) for \(\varphi \funccolon \Z \times \Z \to \Z \times \Z\) where \(\varphi(1, 0) = (2, -3)\) and \(\varphi(0, 1) = (-1, 5)\).
     \sol{
-
+        We have:
+        \[
+            \varphi(x, y) = \varphi(x, 0) + \varphi(0, y) = x\varphi(1, 0) + y\varphi(0, 1) = (2x - y, -3x + 5y).
+        \]
+        To find the kernel, we set \(\varphi(x, y) = (0, 0)\):
+        \[
+                2x - y = 0 \quad \text{and} \quad -3x + 5y = 0
+        \]
+        From the first equation, we have \(y = 2x\). Substituting into the second equation gives:
+        \[
+            -3x + 5(2x) = -3x + 10x = 7x = 0 \implies x = 0.
+        \]
+        Thus, \(y = 0\) as well. Therefore, \(\ker(\varphi) = \{(0, 0)\}\). Now, we find \(\varphi(4, 6)\):
+        \[
+            \varphi(4, 6) = (2(4) - 6, -3(4) + 5(6)) = (8 - 6, -12 + 30) = (2, 18).
+        \]
     }
 
 \end{enumerate}
@@ -625,69 +668,103 @@ In Exercises 19 and 23, compute the indicated quantities for the given homomorph
     \setcounter{enumi}{43}
     \item Let \(\varphi \funccolon G \to G'\) be a group homomorphism. Show that if \(|G|\) is finite, then \(|\varphi[G]|\) is finite and is a divisor of \(|G|\).
     \sol{
-
+        Let \(\varphi \funccolon G \to G'\) be a group homomorphism, and let \(H = \ker(\varphi)\). Our goal is to show that the order of the preimage of \(G\), \(|\varphi[G]|\), is finite, and a divisor of \(|G|\), given \(G\) is finite. The theorem \(aH = \varphi^{-1}[\{\varphi(a)\}]\) maps a single coset to the same single element \(\varphi(a)\) in the image. This establishes a one-to-one correspondence between the set of all cosets (\(G/H\)) and the set of all images, \(\varphi[G]\). Because there is a one-to-one correspondence, the two sets must have equal size: \(|G/H| = |\varphi[G]|\). Then, by Lagrange's Theorem, since \(G\) is finite, the number of cosets (\(G/H\)) must be a finite number that divides the order of the group, \(|G|\).  Since \(|G/H| = |\varphi[G]|\), it follows that \(|\varphi[G]|\) must also be a finite number that divides \(|G|\).
     }    
 
-    \item Let \(\varphi \funccolon G \to G'\) be a group homomorphism. Show that if \(|G'|\) is finite, then, \(|\varphi[G]|\) is finite and is a divisor of \(|G'|\).
-    \sol{
+\newpage
 
+    \item Let \(\varphi \funccolon G \to G'\) be a group homomorphism. Show that if \(|G'|\) is finite, then \(|\varphi[G]|\) is finite and is a divisor of \(|G'|\).
+    \sol{
+        From Theorem 13.12 (3) (the fundamental properties of homomorphisms), if \(H\) is a subgroup of \(G\), then \(\varphi[H]\) is a subgroup of \(G'\). Now, let \(H = G\). It is certainly true that \(G\) is a subgroup of \(G\), so \(\varphi[G]\) is a subgroup of \(G'\). Then, by Lagrange's Theorem, since \(|G'|\) is finite, the order of its subgroup, \(|\varphi[G]|\) is also a finite number that divides \(|G'|\). 
     }
 
     \setcounter{enumi}{48}
-% Show that if G, G', and G11 are groups and if ¢ : G ----;. G' and y : G' ----;. G11 are homomorphisms, then the
-% composite map yep : G ----;. G11 is a homomorphism .
     \item Show that if \(G\), \(G'\), and \(G''\) are groups and if \(\varphi \funccolon G \to G'\) and \(\gamma \funccolon G' \to G''\) are homomorphisms, then the composite map \(\gamma \varphi \funccolon G \to G''\) is a homomorphism.
     \sol{
-
+        Let \(a, b \in G\). Then,
+        \begin{align}
+            (\gamma \varphi)(ab) &= \gamma(\varphi(ab)) \\
+            &= \gamma(\varphi(a)\varphi(b)) \\
+            &= \gamma(\varphi(a))\gamma(\varphi(b)) \\
+            &= (\gamma \varphi)(a)(\gamma \varphi)(b).
+        \end{align}
+        Equations (1) and (4) are from the definition of a composite map, and (2) and (3) are from the homomorphic properties of \(\varphi\) and \(\gamma\), respectively. Therefore, we have shown that the composite map is a homomorphism.
     }
 \end{enumerate}
 
 \section*{Section 14}
 % Section 14: Exercises 2, 6, 11, 15, 27, 30
 
-In Exercises 3 and 6, find the order of the given factor group.
+In Exercises 2 and 6, find the order of the given factor group.
 
 \begin{enumerate}
     \setcounter{enumi}{1}
     \item \((\Z_4 \times \Z_{12}) / (\gen{2} \times \gen{2})\)
     \sol{
-
+        In \(\Z_{4}\), the subgroup generated by \(\gen{2}\) is \(\{0,2\}\). Then, in \(\Z_{12}\), the subgroup generated by \(\gen{2}\) is \(\{0,2,4,6,8,10\}\). Thus, the subgroup \(\gen{2} \times \gen{2}\) has order \(2 \times 6 = 12\), and \(\Z_{4} \times \Z_{12}\) has order \(4 \times 12 = 48\). By Lagrange's Theorem, the order of the factor group is \(48 / 12 = 4\).
     }
 
     \setcounter{enumi}{5}
-    \item \((\Z_{12} \times \Z_8) / \gen{(4,3)}\)
+    \item \((\Z_{12} \times \Z_{18}) / \gen{(4,3)}\)
     \sol{
-
+        The order of \(\Z_{12} \times \Z_{18}\) is \(12 \times 18 = 216\). In \(\Z_{12} \times \Z_{18}\), the subgroup generated by \(\gen{(4,3)}\) has order 6. So, by Lagrange's Theorem, the order of the factor group is \(216 / 6 = 36\).
     }
 
 \end{enumerate}
 
-In Exercises 10 and 15, give the order of the element in the factor group.
+\newpage
+
+In Exercises 11 and 15, give the order of the element in the factor group.
 
 \begin{enumerate}
 
     \setcounter{enumi}{10}
     \item \((2, 1) + \gen{(1, 1)}\) in \((\Z_3 \times \Z_6) / \gen{(1, 1)}\)
     \sol{
-
+        In \(\Z_3 \times \Z_6\), \(\gen{(1,1)} = \{(1,1), (2,2), (0,3), (1,4), (2,5), (0,0)\}\). Then, we test the powers of \((2,1)\) until we find one that is in \(\gen{(1,1)}\):
+        \[
+            (2,1)(2,1) = (1,2), \quad (1,2)(2,1) = (0,3).
+        \]
+        So, the order of \((2, 1) + \gen{(1, 1)}\) in \((\Z_3 \times \Z_6) / \gen{(1, 1)}\) is 3. 
     }
 
     \setcounter{enumi}{14}
-    \item \((2, 0) + \gen{(4, 4)}\) in \((\Z_6 \times \Z_5) / \gen{(4, 4)}\)
+    \item \((2, 0) + \gen{(4, 4)}\) in \((\Z_6 \times \Z_8) / \gen{(4, 4)}\)
     \sol{
-
+        Since \((2,0)\) is in \(\gen{(4, 4)}\), \((2,0) + \gen{(4,4)}\) has order 1.
     }
 
     \setcounter{enumi}{26}
     \item A subgroup \(H\) is \textbf{conjugate to a subgroup} \(K\) of a group \(G\) if there exists an inner automorphism \(i_g\) of \(G\) such that \(i_g[H] = K\). Show that conjugacy is an equivalence relation on the collection of subgroups of \(G\).
     \sol{
-
+        Let \(H\), \(K\), and \(L\) be subgroups of \(G\). To show that conjugacy is an equivalence relation on the collection of subgroups of \(G\), we must show the following:
+        \begin{itemize}
+            \item \textbf{Reflexive:} We must show that \(H\) is conjugate to itself. That is, we must find an element \(g \in G\) such that \(H = i_{g}[H] = gHg^{-1}\). The obvious choice is the identity element \(e \in G\):
+            \[
+                H = i_{e}[H] = eHe^{-1} = \{ehe^{-1} \mid h \in H\} = \{h \mid h \in H\} = H.
+            \]
+            Thus, we have found an element \(g = e\) such that \(i_{g}[H] = H\), so the subgroup is conjugate to itself. Therefore, the relation is reflexive.
+            \item \textbf{Symmetric:} Assume \(H\) to be congruent to \(K\) (i.e., \(K = i_{g}[H] = gHg^{-1}\) for some \(g \in G\)). We must show \(K\) is congruent to \(H\). That is, for some \(g' \in G\), \(H = i_{g'}[K] = g'Kg'^{-1}\). If we multiply \(K = gHg^{-1}\) by \(g^{-1}\) and \(g\) on the left and right, respectively, we get \(g^{-1}Kg = H\). Thus, we have found our elements \(g' = g^{-1}\), and \(g'^{-1} = g\). Therefore, the relation is symmetric.
+            \item \textbf{Transitive:} Assume \(H\) to be congruent to \(K\) and \(K\) to be congruent to \(L\). Then, \(K = gHg^{-1}\) and \(L = pKp^{-1}\) for some \(p \in G\). We want to show \(L = g''Hg''^{-1}\). We can do that by using substitution:
+            \[
+                L = pKp^{-1} = pgHg^{-1}p^{-1}.
+            \]
+            Notice \(pg = g''\) and \(g^{-1}p^{-1} = (pg)^{-1} = g''\). The product \(pg\) and \((pg)^{-1}\) are both in \(G\) because \(G\) is a group. Thus, we have shown that \(H\) is conjugate to \(L\). Therefore, the relation is transitive.
+        \end{itemize}
     }
 
     \setcounter{enumi}{29}
     \item Let \(H\) be a normal subgroup of a group \(G\), and let \(m = (G \funccolon H)\). Show that \(a^m \in H\) for every \(a \in G\).
     \sol{
-
+        Let \(H\) be a normal subgroup of \(G\) and let \(m = (G \funccolon H)\). Because \(H\) is normal, we can form the factor group \(G/H\). The order of this group, \(|G/H|\), is equal to the index of \(H\) in \(G\), so \(|G/H| = m\). Now, let \(a\) be any element in \(G\). The corresponding element in the factor group \(G/H\) is the coset \(aH\). Let \(k\) be the order of this element \(aH\) in the factor group. By the definition of order, \((aH)^{k} = H\) (where \(H\) is the identity element of the factor group). By Lagrange's Theorem, the order of an element must divide the order of the group. Therefore, \(k\) divides \(m\). This implies that \(m = kq\) for some integer \(q\). Now, we can compute \((aH)^{m}\):
+        \[
+            (aH)^{m} = (aH)^{kq} = ((aH)^{k})^{q}.
+        \]
+        Since \((aH)^{k} = H\), we can substitute this back in:
+        \[
+            ((aH)^{k})^{q} = H^{q} = H.
+        \]
+        Using the definition of coset multiplication, we know that \((aH)^{m} = a^{m}H\). Therefore, we have shown that \(a^{m}H = H\). By the properties of cosets, \(gH = H\) implies \(g \in H\). Consequently, \(a^{m} \in H\).
     }
 
 
