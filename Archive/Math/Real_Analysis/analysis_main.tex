@@ -16,6 +16,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
 \linespread{1}
+\setlength{\parindent}{0pt}
 \usepackage{listings}
 \usepackage{tikz}
 \usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
@@ -23,7 +24,7 @@
 
 %%% Define new colors %%%
 \usepackage{xcolor}
-\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+\definecolor{horange}{rgb}{0.96, 0.51, 0.16}
 
 % Normal colors
 \definecolor{xred}{HTML}{BD4242}
@@ -88,7 +89,7 @@
 
 \newcommand{\gradientrule}{
     \begin{tikzpicture}
-        \shade[left color=orangehdx, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+        \shade[left color=horange, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
     \end{tikzpicture}
 }
 
@@ -112,13 +113,13 @@
 %   {}{\PatchFailed}
 
 \xpatchcmd\DOCH
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{\mghrulefill}{\color{horange}\mghrulefill}
 {}{\PatchFailed}
 \xpatchcmd\DOTI
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{\mghrulefill}{\color{horange}\mghrulefill}
 {}{\PatchFailed}
 \xpatchcmd\DOTIS
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{\mghrulefill}{\color{horange}\mghrulefill}
 {}{\PatchFailed}
 
 
@@ -229,7 +230,7 @@
 % \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
 \fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}} % Use for Dracula
 \usepackage{xpatch}
-\xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
+\xpretocmd\headrule{\color{horange}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
 \setlength{\headheight}{18.5764pt}
 
@@ -242,19 +243,20 @@
 \newcounter{BoxCounter}
 
 
-\newtcolorbox{note}{colback=black!15!white, colframe=black, boxrule=0.5mm, arc=4mm, left=4mm, right=4mm, top=2mm, bottom=2mm}
+\newtcolorbox{note}{colback=draculayellow!15!draculabg, colframe=draculayellow, boxrule=0.5mm, arc=4mm, left=4mm, right=4mm, top=2mm, bottom=2mm, coltext=draculafg}
 
 %% Numbered Theorems %%
 \newtcolorbox[use counter=BoxCounter, number within=section]{theorem}[1][]{%
 enhanced,
 sharp corners=uphill,
-    colframe=xblue, %color of frame
-    colback=xblue!15, %color of background
+    colframe=draculablue, %color of frame
+    colback=draculablue!15!draculabg, %color of background
     coltitle=white, %color of title text
+    coltext=draculafg,
     label={thm:\theBoxCounter},
     title={\large \textbf{Theorem \theBoxCounter}},
     attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=xblue},
+    boxed title style={colback=draculablue},
     #1
 }
 
@@ -263,13 +265,14 @@ sharp corners=uphill,
 \newtcolorbox[use counter=BoxCounter, number within=section]{ntheorem}[2][]{%
 enhanced,
 sharp corners=south,
-    colframe=xblue, %color of frame
-    colback=xblue!15, %color of background
+    colframe=draculablue, %color of frame
+    colback=draculablue!15!draculabg, %color of background
     coltitle=white, %color of title text
+    coltext=draculafg,
     label={thm:#2},
     title={\large \textbf{Theorem \theBoxCounter: #2}},
     attach boxed title to top center,
-    boxed title style={colback=xblue},
+    boxed title style={colback=draculablue},
     #1
 }
 
@@ -278,13 +281,14 @@ sharp corners=south,
 \newtcolorbox[use counter=BoxCounter, number within=section]{definition}[1][]{%
 enhanced,
 sharp corners=downhill,
-    colframe=xred,
-    colback=xred!15,
+    colframe=draculared,
+    colback=draculared!15!draculabg,
     coltitle=white,
+    coltext=draculafg,
     label={def:\theBoxCounter},
     title={\large \textbf{Definition \theBoxCounter}},
     attach boxed title to top right={xshift=-0.5cm},
-    boxed title style={colback=xred},
+    boxed title style={colback=draculared},
     #1
 }
 
@@ -293,13 +297,14 @@ sharp corners=downhill,
 \newtcolorbox[]{axiom}[2][]{%
 enhanced,
 sharp corners=downhill,
-    colframe=xdarkgreen,
-    colback=xdarkgreen!15,
+    colframe=draculagreen!70!draculabg,
+    colback=draculagreen!15!draculabg,
     coltitle=white,
+    coltext=draculafg,
     label={ax:#2},
     title={\large \textbf{Axiom of #2}},
     attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=xdarkgreen},
+    boxed title style={colback=draculagreen!70!draculabg},
     #1
 }
 
@@ -308,13 +313,14 @@ sharp corners=downhill,
 \newtcolorbox[]{exercise}[2][]{%
     enhanced,
     sharp corners=uphill,
-    colframe=orangehdx!75,
-    colback=orangehdx!10,
-    coltitle=black,
+    colframe=draculaorange,
+    colback=draculaorange!15!draculabg,
+    coltitle=draculafg,
+    coltext=draculafg,
     label={exerc:#2},
     title={\large \textbf{Exercise: #2}},
     attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=orangehdx!75},
+    boxed title style={colback=draculaorange},
     #1,
 }
 
@@ -324,42 +330,44 @@ sharp corners=downhill,
 \newtcolorbox[use counter=ExampleCounter, number within=chapter]{example}[2][]{%
 enhanced,
 sharp corners=south,
-    colframe=teal,
-    colback=teal!15,
+    colframe=draculasilver,
+    colback=draculasilver!15!draculabg,
     coltitle=white,
+    coltext=draculafg,
     label={ex:\theExampleCounter},
     title={\large \textbf{Example \theExampleCounter: #2}},
     attach boxed title to top center,
-    boxed title style={colback=teal},
+    boxed title style={colback=draculasilver},
     #1,
 }
 
 
 %% Corollaries %%
-\newtcolorbox[]{corollary}[3][]{%
-enhanced,
-sharp corners=downhill,
-    colframe=xgrayblue,  
-    colback=xgrayblue!15,        
-    coltitle=white,
-    title={\large \textbf{Corollary to #3: #2}},
-    attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=xgrayblue},
-    #1
-}
+% \newtcolorbox[]{corollary}[3][]{%
+% enhanced,
+% sharp corners=downhill,
+%     colframe=xgrayblue,  
+%     colback=xgrayblue!15!draculabg,        
+%     coltitle=white,
+%     title={\large \textbf{Corollary to #3: #2}},
+%     attach boxed title to top left={xshift=0.5cm},
+%     boxed title style={colback=xgrayblue},
+%     #1
+% }
 
 
 %% Lemmas %%
 \newtcolorbox[use counter=BoxCounter, number within=chapter]{lemma}[1][]{%
 enhanced,
 sharp corners=uphill,
-    colframe=xpurple,
-    colback=xpurple!15,
+    colframe=draculapurple,
+    colback=draculapurple!15!draculabg,
     coltitle=white,
+    coltext=draculafg,
     label={lm:\theBoxCounter},
     title={\large \textbf{Lemma \theBoxCounter}},
     attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=xpurple},
+    boxed title style={colback=draculapurple},
     #1,
 }
 
@@ -516,7 +524,7 @@ sharp corners=uphill,
     \end{customframedproof}
 }
 
-\newcommand{\lepfscratch}[2]{\pfscratch{#1}{#2}{teal}}
+\newcommand{\lepfscratch}[2]{\pfscratch{#1}{#2}{draculasilver}}
 
 \newcommand{\sbseteqpfbase}[5][We need to show these expressions are subsets of each other in order to prove they are equivalent.]{%
     \begin{customframedproof}[linecolor=#5]
@@ -585,7 +593,7 @@ sharp corners=uphill,
 
 % Command for exercise proofs with a predefined color
 \newcommand{\expf}[1]{
-    \begin{customframedproof}[linecolor=orangehdx!75,]
+    \begin{customframedproof}[linecolor=draculaorange,]
         \begin{proof}
         #1
         \end{proof}
@@ -593,7 +601,7 @@ sharp corners=uphill,
 }
 
 \newcommand{\lemmapf}[1]{
-    \begin{customframedproof}[linecolor=xpurple!75,]
+    \begin{customframedproof}[linecolor=draculapurple!75,]
         \begin{proof}
         #1
         \end{proof}
@@ -602,7 +610,7 @@ sharp corners=uphill,
 
 % Command for proofs that are contained within solution environments. 
 \newcommand{\innerpfbase}[1]{%
-    \begin{customframedproof}[linecolor=xgray]
+    \begin{customframedproof}[linecolor=draculaorange!80]
         \begin{proof}
             #1
         \end{proof}
@@ -619,7 +627,7 @@ sharp corners=uphill,
 
 % Command for theorems proofs with a predefined color
 \newcommand{\tpf}[1]{
-    \begin{customframedproof}[linecolor=xblue]
+    \begin{customframedproof}[linecolor=draculablue]
         \begin{proof}
         #1
         \end{proof}
@@ -635,7 +643,7 @@ sharp corners=uphill,
 }
 
 \newcommand{\sol}[1]{
-    \begin{customframedproof}[linecolor=orangehdx!75,]
+    \begin{customframedproof}[linecolor=draculaorange,]
         \begin{solution}
         #1
         \end{solution}
@@ -643,7 +651,7 @@ sharp corners=uphill,
 }
 
 \newcommand{\lesol}[1]{
-    \begin{customframedproof}[linecolor=teal]
+    \begin{customframedproof}[linecolor=draculasilver]
         \begin{solution}
         #1
         \end{solution}
@@ -651,7 +659,7 @@ sharp corners=uphill,
 }
 
 \newcommand{\lepf}[1]{
-    \begin{customframedproof}[linecolor=teal]
+    \begin{customframedproof}[linecolor=draculasilver]
         \begin{proof}
         #1
         \end{proof}
@@ -670,7 +678,7 @@ sharp corners=uphill,
 
 % Command for theorems proofs with a predefined color
 \newcommand{\epf}[1]{
-    \begin{customframedproof}[linecolor=teal]
+    \begin{customframedproof}[linecolor=draculasilver]
         \begin{proof}
         #1
         \end{proof}

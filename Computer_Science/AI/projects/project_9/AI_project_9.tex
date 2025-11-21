@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+
+\usepackage[left=1in,right=1in,top=0.75in,bottom=1in]{geometry}
+% \usepackage[margin=1in,showframe]{geometry}
+\usepackage{minted}
+\setminted{linenos, breaklines=true}
+\usepackage{listings}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\usepackage{float}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[framemethod=tikz]{mdframed}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	% backgroundcolor=white, % Needed for Dracula theme
+	% fontcolor=\documentTheme, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+
+\newenvironment{answer}{\textit{Answer.}}
+
+\newcommand{\ans}[1]{
+    \begin{customframedproof}[linecolor=horange!75,]
+        \begin{answer}
+        #1
+        \end{answer}
+    \end{customframedproof}
+}
+
+\setlength{\parindent}{0pt}
+
+\title{Project 9: Neural Networks}
+\author{Paul Beggs \\ \href{https://github.com/PaulBeggs/A_Star}{GitHub Link}}
+\date{\today}
+
+
+
+\begin{document}
+\maketitle
+
+\section{Markov Chain Analysis}
+
+Through testing different sentences, the Markov Chain was able to consistently identify the languages that it was trained on. For the other languages, it classified Somali and Yoruba as English, and Romanian and Portuguese as French. These choices make sense, as the Romanian, Portuguese, and French languages are all Romance languages. That is, they share bigrams like `qu', `ti', `ca', etc. The elephant in the room is that Spanish is, of course, also a Romance language, so the fact a language like Portuguese does not show any similarity is confusing. This disparity is probably due to the common character `ç' that both Portuguese and French share, but Spanish does not. The same explanation could also be applied between Romanian and French: both share the letter `î', of which, Spanish does not. For Somali and Yoruba, I'm not entirely sure why they are correlated with English, but I assume it has to do with the lack of letters with accents for Somali, and a lack of common accents with Yoruba.
+
+\end{document}

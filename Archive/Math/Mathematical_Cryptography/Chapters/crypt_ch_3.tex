@@ -12,7 +12,7 @@ Remember \hyperref[thm:Fermat's Little Theorem]{FLT} and \hyperref[Discrete Loga
 \end{theorem}
 
 \begin{corollary}
-    {1: Euler's Totient Theorem for \textit{phi}}If \(N\) is prime, \(a^{\varphi(N)} \equiv 1 \ (\text{mod } N)\). For \(\varphi(N)\), we can express it as \(N-1\) from \hyperref[thm:Fermat's Little Theorem]{FLT}.
+    {1: Euler's Totient Theorem for phi}If \(N\) is prime, \(a^{\varphi(N)} \equiv 1 \ (\text{mod } N)\). For \(\varphi(N)\), we can express it as \(N-1\) from \hyperref[thm:Fermat's Little Theorem]{FLT}.
 \end{corollary}
 
 \cpf{
@@ -20,7 +20,7 @@ Remember \hyperref[thm:Fermat's Little Theorem]{FLT} and \hyperref[Discrete Loga
 }
 
 \begin{corollary}
-    {2: Euler's Totient Theorem for \textit{phi}}If \(p,q\) are distinct primes, then \[
+    {2: Euler's Totient Theorem for phi}If \(p,q\) are distinct primes, then \[
         a^{(p-1)(q-1)} \equiv 1 \ (\text{mod } pq) \quad \text{for all } a  \text{ such that } \gcd(a, pq) = 1.
     \] From this, we can state that \(N = pq\).
 \end{corollary}
@@ -30,7 +30,7 @@ Remember \hyperref[thm:Fermat's Little Theorem]{FLT} and \hyperref[Discrete Loga
 }
 
 \begin{example}
-    {ETT for \textit{phi}}Find \(a^x \ (\text{mod } 15)\).
+    {ETT for phi}Find \(a^x \ (\text{mod } 15)\).
 \end{example}
 
 \lesol{
@@ -55,7 +55,6 @@ Recall that for Diffie Hellman Elgamal we need to find \(a^x \ (\text{mod } p)\)
 \begin{example}
     {RSA 1}Find \(x\): \(x^3 \equiv 2 \ (\text{mod } 17)\).
 \end{example}
-
 \lesol{
     \begin{enumerate}
         \item Check with \(\gcd(3, 17-1) = \gcd(3,16)\) and 17 is a prime number. Thus, we can use \refprop{3.2}.
@@ -64,6 +63,8 @@ Recall that for Diffie Hellman Elgamal we need to find \(a^x \ (\text{mod } p)\)
         \item To check: \(8^3 = 512 \ (\text{mod } 17) = 2\) \cmark
     \end{enumerate}
 }
+
+\newpage
 
 \wrpprop{3.5}{Let \(p\) and \(q\) be distinct primes and let \(e \geq 1\) satisfy
     \[
@@ -174,6 +175,7 @@ Recall that for Diffie Hellman Elgamal we need to find \(a^x \ (\text{mod } p)\)
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}
+\newpage
 \section{RSA Cryptosystem}
 
 \begin{table}[h!]
@@ -206,12 +208,11 @@ Remember, multiplying is easy; we have tools to compute large numbers. However, 
 \end{enumerate}
 \pfs
 
-We claim that \(m' = m\). \\
-
-\noindent \textit{Proof.} \begin{align*}
-    d  & \equiv e^{-1}\pmod{(p-1)(q-1)}                             \\
-    de & \equiv 1                       & \pmod{(p-1)(q-1)}         \\
-    de & = 1 + k(p-1)(q-1)              & \text{for some } k \in \Z
+\noindent \textit{Proof.} We claim that \(m' = m\).
+\begin{align*}
+    d  & \equiv e^{-1}\pmod{(p-1) (q-1)} \\
+    de & \equiv 1 \pmod{(p-1)(q-1)} \\
+    de & = 1 + k(p-1)(q-1), \text{ for some } k \in \Z
 \end{align*} Now that we know \(de\), we can compute \(m'\):
 
 \begin{align*}
@@ -220,12 +221,11 @@ We claim that \(m' = m\). \\
        & = m^{1 + k(p-1)(q-1)} \pmod{N}                  \\
        & = m \cdot m^{k(p-1)(q-1)} \pmod{N}              \\
        & = m \cdot (m^{(p-1)(q-1)})^k \pmod{N} \tag{3.1} \\
-       & = m \cdot 1^k \pmod{N}                          \\
        & = m \pmod{N}.
 \end{align*} Note for (3.1), we got 1 because we substituted for \(\varphi\). Hence, \begin{align*}
     m (m^{(p-1)(q-1)}) \pmod{N} & \equiv m (m^{\varphi(pq)} \pmod{N}) \\
                                 & \equiv m \cdot 1 \pmod{N}.
-\end{align*} \qed
+\end{align*}\qed
 
 Remember from Chapter 1, for a Cryptosystem to be a \hyperref[Successful Ciphers]{successful cipher}, it must satisfy the following properties:
 
@@ -252,6 +252,8 @@ Remember from Chapter 1, for a Cryptosystem to be a \hyperref[Successful Ciphers
         \item Then, \(m' = 435^{527} \pmod{2021} = 1050\).
     \end{enumerate}
 }
+
+\newpage
 
 \begin{center}
     \textbf{Remarks}:
@@ -289,6 +291,8 @@ Remember from Chapter 1, for a Cryptosystem to be a \hyperref[Successful Ciphers
               \end{align*}
     \end{enumerate}
 }
+
+\newpage
 
 \begin{exercise}
     {3.8} {Bob's RSA public key has modulus \(N = 12191\) and exponent \(e = 37\). Alice sends Bob the ciphertext \(c = 587\). Unfortunately, Bob has chosen too small a modulus. Help Eve \hyperref[sec:Ciphertext Attack]{by factoring} \(N\) and decrypting Alice's message. (Hint: \(N\) has a factor smaller than \(100\).)}
@@ -345,12 +349,12 @@ This involves factoring \(N = pq\). We only consider numbers below \(\sqrt{N}\).
 \subsection{Chosen Ciphertext Attack}
 \label{sec:Ciphertext Attack}
 
-If Eve can find \((p-1)(q-1)\), then \(p\) and \(q\) are easy.  \\
+% If Eve can find \((p-1)(q-1)\), then \(p\) and \(q\) are easy.  \\
 
-\noindent \textit{Proof.} \begin{align*}
-    (p-1)(q-1) & = pq - p - q + 1   \\
-               & = pq - (p +q) + 1.
-\end{align*} Thus, Eve just needs to solve the quadratic equation \((x-p)(x-q) = x^2 - (p+q)x + pq = 0\). \qed
+% \noindent \textit{Proof.} \begin{align*}
+%     (p-1)(q-1) & = pq - p - q + 1   \\
+%                & = pq - (p +q) + 1.
+% \end{align*} Thus, Eve just needs to solve the quadratic equation \((x-p)(x-q) = x^2 - (p+q)x + pq = 0\). \qed
 
 \begin{example}
     {CCA}Factor \(N = 2701\) such that \((p-1)(q - 1) = 2592\).
@@ -381,6 +385,8 @@ Thus, consider a new test that utilizes \hyperref[thm:Fermat's Little Theorem]{F
     {Fermat's Little Theorem, Version 2}If \(p\) is prime, then \(a^P \equiv a \pmod{p}\). Consider the contrapositive to this statement: if \(a^P \not\equiv 1 \pmod{p}\) for some \(a\), then \(P\) is \textit{not} prime.
 \end{theorem}
 
+\newpage
+
 \begin{example}
     {FLT}Let \(N = 21\). Is \(N\) prime?
 \end{example}
@@ -396,7 +402,7 @@ Thus, consider a new test that utilizes \hyperref[thm:Fermat's Little Theorem]{F
 However, there are some numbers will force all \(a\)'s to be fermat liars. These are called \textit{Carmichael Numbers}.
 
 \wrpdef{Carmichael Numbers}{A composite number \(N\) is a \textit{Carmichael Number} if \(a^N \equiv a \pmod{N}\) for all \(a\) such that \(\gcd(a,N) = 1\).}
-\newpage
+
 \begin{example}
     {Carmichael Numbers}Solve \(37^{561} \equiv \pmod{561}\). What can you conclude about 561? Is it prime?
 \end{example}
@@ -407,6 +413,9 @@ However, there are some numbers will force all \(a\)'s to be fermat liars. These
         \item If we check for all \(a < 561\), we will see that 561 has no \hyperref[Fermat Witness]{Fermat witnesses}. However, we know that 561 is composite, so that means 561 is a Carmichael Number.
     \end{enumerate}
 }
+
+\newpage
+
 \subsection{Miller-Rabin Primality Test}
 \label{sec:Miller-Rabin}
 
@@ -442,6 +451,8 @@ However, there are some numbers will force all \(a\)'s to be fermat liars. These
         \item \(a^{2^iq} \not\equiv -1 \pmod{N}\) for all \(i\) such that \(0 \leq i \leq k-1\).
     \end{enumerate}}
 
+\newpage
+
 \begin{example}
     {Miller-Rabin Test 1}Let \(N = 561\). Is \(N\) prime?
 \end{example}
@@ -466,6 +477,8 @@ However, there are some numbers will force all \(a\)'s to be fermat liars. These
 \lesol{
     \(N - 1 = 562 = 2(281)\). Start by solving \(7^{281} \pmod{563} \equiv 1\). Thus, 563 is a possible prime. Choose \(a = 8\). Then, \(8^{281} \pmod{563} \equiv -1\), so \(N\) is a possible prime.
 }
+
+\newpage
 
 \begin{example}
     {Miller-Rabin Test 3}Let \(N = 31001\). Determine if \(N\) is prime. 
@@ -574,18 +587,19 @@ def pollards_p_minus_1(base, mod, limit):
 \end{example}
 
 \lesol{ \vspace{0.5cm} \newline
-    \begin{tabular}{l|l|c|r}
+    \begin{tabular}{llcr}
+        \toprule
         \(B\) & \(\text{lcm}(k = 1,2\dots, 13)\)                                   & \(2^k - 1 \pmod{510143}\)             & \(\gcd(2^k - 1, 510143)\)      \\ \midrule
         5     & \(\text{lcm}(1,2,\underline{3},\underline{4},\underline{5}) = 60\) & \(2^{60 - 1 \pmod{540143}}\)          & \(\gcd(338353, 540143) = 1\)   \\ \midrule
-        7     & \(\text{lcm}(1,2,\dots,7) = 420\)                                  & \(2^{420} - 1 \pmod{540143} = 42942\) & \(\boxed{421}\  \text{Stop!}\) \\  \bottomrule
+        7     & \(\text{lcm}(1,2,\dots,7) = 420\)                                  & \(2^{420} - 1 \pmod{540143} = 42942\) & \(\boxed{421}\  \text{Stop!}\) \\ \bottomrule
     \end{tabular} \newline
 
-    Thus, we found that 421 is a factor of 540143.
+   \noindent Thus, we found that 421 is a factor of 540143.
 }
 
 \renewcommand{\theenumi}{\alph{enumi}}
 \renewcommand{\labelenumi}{(\theenumi)}
-\subsection{Exercise}
+\subsection{Exercises}
 
 \begin{exercise}
     {3.22} Use \hyperref[ex:3.10]{Pollard's} \(p - 1\) method to factor each of the following numbers.
@@ -613,6 +627,7 @@ def pollards_p_minus_1(base, mod, limit):
               %   \(B = 13\): \(2^{360360} \pmod{1739} = 1037\), \(\gcd(1037, 1739) = 37\) \\
               %   \(B = 17\): \(2^{12252240} \pmod{1739} = 1555\), \(\gcd(1555, 1739) = 37\) \\
               %   \(B = 19\): \(2^{232792560} \pmod{1739} = 667\), \(\gcd(666, 1739) = 37\) \\
+\newpage
         \item We will still be using the same steps from part (a), except this time we will skip straight to trying different \(B\)'s.
               \begin{itemize}
                   \item \(B = 5\): \(2^{60} - 1 \pmod{220459} = 120157\), \(\gcd(120157, 220459) = 1\).
@@ -627,6 +642,30 @@ def pollards_p_minus_1(base, mod, limit):
     \end{enumerate}
 }
 
+\begin{exercise}
+    {3.24} {For each of the following numbers \(N\), compute the values of \(N + 1^2, N + 2^2, N + 3^2, N + 4^2\),\dots as we did in Example 3.34 (\hyperref[ex:3.11]{Example 3.11 in notes}), until you find a value \(N + b^2\) that is a perfect square \(a^2\). Then use the values of \(a\) and \(b\) to factor \(N\).}\vspace*{-0.1cm}
+    \begin{center}
+        (a) \(N = 53357\) \qquad (b) \(N = 34571\)
+    \end{center}
+\end{exercise}
+
+\sol{
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item     \begin{align*}
+                  53357 + 1^2 & = 53358         & \text{not a square},            \\
+                  53357 + 2^2 & = 53361 = 231^2 & \text{Eureka! \textbf{square}.}
+              \end{align*} \(53357 = 231^2 - 2^2 = (231 + 2)(231 - 2) = 233 \cdot 229\). Therefore, 53357 factors into 233 and 229.
+        \item \begin{align*}
+                  34571 + 1^2 & = 34572         & \text{not a square},            \\
+                  34571 + 2^2 & = 34575         & \text{not a square},            \\
+                  34571 + 3^2 & = 34580         & \text{not a square},            \\
+                  34571 + 4^2 & = 34587         & \text{not a square},            \\
+                  34571 + 5^2 & = 34596 = 186^2 & \text{Eureka! \textbf{square}.}
+              \end{align*} \(34571 = 186^2 - 5^2 = (186 + 5)(186 - 5) = 191 \cdot 181\). Therefore, 34571 factors into 191 and 181.
+    \end{enumerate}
+}
+
+\newpage
 
 
 \renewcommand{\theenumi}{\arabic{enumi}}
@@ -651,7 +690,6 @@ To factor \(N\) we find a value \(k\) such that \(N + k^2 = m^2\) for some \(m \
     \end{align*}
 }
 
-
 \begin{example}
     {Factorization 2} Factor \(N = 25217\) by looking for an integer \(b\) making \(N + b^2\) a perfect square.
 \end{example}
@@ -669,7 +707,7 @@ To factor \(N\) we find a value \(k\) such that \(N + k^2 = m^2\) for some \(m \
         25217 + 5^2 & = 25242         & \text{not a square},            \\
         25217 + 6^2 & = 25253         & \text{not a square},            \\
         25217 + 7^2 & = 25266         & \text{not a square},            \\
-        25217 + 8^2 & = 25281 = 159^2 & \text{Eureka! \textbf{square}.}
+        25217 + 8^2 & = 25281 = 159^2 & \text{Eureka! \textbf{a square!}}
     \end{align*}
 
 
@@ -681,31 +719,4 @@ To factor \(N\) we find a value \(k\) such that \(N + k^2 = m^2\) for some \(m \
 
 }
 
-\renewcommand{\theenumi}{\alph{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
-\subsection{Exercise}
-
-\begin{exercise}
-    {3.24} {For each of the following numbers \(N\), compute the values of \(N + 1^2, N + 2^2, N + 3^2, N + 4^2\),\dots as we did in Example 3.34 (\hyperref[ex:3.11]{Example 3.11 in notes}), until you find a value \(N + b^2\) that is a perfect square \(a^2\). Then use the values of \(a\) and \(b\) to factor \(N\).}
-    \begin{enumerate}
-        \item \(N = 53357\)
-        \item \(N = 34571\)
-    \end{enumerate}
-\end{exercise}
-
-\sol{
-    \begin{enumerate}
-        \item     \begin{align*}
-                  53357 + 1^2 & = 53358         & \text{not a square},            \\
-                  53357 + 2^2 & = 53361 = 231^2 & \text{Eureka! \textbf{square}.}
-              \end{align*} \(53357 = 231^2 - 2^2 = (231 + 2)(231 - 2) = 233 \cdot 229\). Therefore, 53357 factors into 233 and 229.
-        \item \begin{align*}
-                  34571 + 1^2 & = 34572         & \text{not a square},            \\
-                  34571 + 2^2 & = 34575         & \text{not a square},            \\
-                  34571 + 3^2 & = 34580         & \text{not a square},            \\
-                  34571 + 4^2 & = 34587         & \text{not a square},            \\
-                  34571 + 5^2 & = 34596 = 186^2 & \text{Eureka! \textbf{square}.}
-              \end{align*} \(34571 = 186^2 - 5^2 = (186 + 5)(186 - 5) = 191 \cdot 181\). Therefore, 34571 factors into 191 and 181.
-    \end{enumerate}
-}
 

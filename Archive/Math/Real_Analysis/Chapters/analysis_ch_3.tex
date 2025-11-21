@@ -36,10 +36,8 @@ When we review the properties of a fractal, we see that the Cantor set is a frac
 \section{Open and closed Sets}
 
 \begin{definition}
-    For a point \(x \in \R\), and \(\epsilon > 0\), we define the \textit{epsilon-neighborhood} of \(x\) to be \(V_\epsilon(x) = \{y \in \R \mid |x - y| < \epsilon\}\).
+    For a point \(x \in \R\), and \(\epsilon > 0\), we define the \textit{epsilon-neighborhood} of \(x\) to be \(V_\epsilon(x) = \{y \in \R \mid |x - y| < \epsilon\}\). In other words, \(V_{\epsilon}(x)\) is the open interval \((x - \epsilon, x + \epsilon)\), centered at \(x\) with radius \(\epsilon\).
 \end{definition}
-
-In other words, \(V_{\epsilon}(x)\) is the open interval \((x - \epsilon, x + \epsilon)\), centered at \(x\) with radius \(\epsilon\).
 
 \subsection{Open Sets}
 
@@ -55,12 +53,10 @@ In other words, \(V_{\epsilon}(x)\) is the open interval \((x - \epsilon, x + \e
         \item \(\R\) is open.
         \item \(\emptyset\) is open.
         \item \(\{1\}\) is not open.
-        \item \([0,2]\) is not open.
         \item \(\Q\) is not open.
         \item \([4,6)\) is not open.
         \item \((0,1) \cup (1,3) \cup (5,10)\) is open.
         \item \((0,3] \cap [2,4)\) is open.
-        \item Cantor set is not open.
     \end{itemize}
 \end{multicols}
 
@@ -108,12 +104,12 @@ Note that we cannot use this for cases with infinity. For example, consider \(A_
         \item \([1,2)\) is not closed. Note that this set is neither open or closed. 
     \end{itemize}
 \end{multicols}
-
+\vfill
 \begin{theorem}
     A set \(B \subseteq \R\) is closed if, and only if, its complement is open. Similarly, a set \(A \subseteq \R\) is open if, and only if, its complement is closed.
 \end{theorem}
 
-\iffpf{Assume \(B \subseteq \R\) is a closed set. We will show that \(B^c\) is open. Let \(x \in B^c\). So, \(x \notin B\). This means \(x\) is not a limit point. (From the negated definition of limit point:) There must exist \(\epsilon >0\) such that no elements of \(B\) belong to \(V_\epsilon(x)\). Then, \(V_\epsilon(x) \subseteq B^c\). Therefore, \(B^c\) is open.}{Assume \(B^c\) is open. We will show that \(B\) is closed. Let \(x\) be a limit point of \(B\). For all \(\epsilon > 0\), there exists a \(b \in B\) such that \(b \subseteq V_\epsilon(x)\). So, \(V_\epsilon(x)\) is not a subset of \(B^c\). This is true for every \(\epsilon\). Since \(B^c\) is open, it must be that \(x \notin B^c\). Thus, \(x \in B\). So, \(B\) contains all its limit points. Therefore, \(B\) is closed.\qedhere}{}{xblue}
+\iffpf{Assume \(B \subseteq \R\) is a closed set. We will show that \(B^c\) is open. Let \(x \in B^c\). So, \(x \notin B\). This means \(x\) is not a limit point. (From the negated definition of limit point:) There must exist \(\epsilon >0\) such that no elements of \(B\) belong to \(V_\epsilon(x)\). Then, \(V_\epsilon(x) \subseteq B^c\). Therefore, \(B^c\) is open.}{Assume \(B^c\) is open. We will show that \(B\) is closed. Let \(x\) be a limit point of \(B\). For all \(\epsilon > 0\), there exists a \(b \in B\) such that \(b \subseteq V_\epsilon(x)\). So, \(V_\epsilon(x)\) is not a subset of \(B^c\). This is true for every \(\epsilon\). Since \(B^c\) is open, it must be that \(x \notin B^c\). Thus, \(x \in B\). So, \(B\) contains all its limit points. Therefore, \(B\) is closed.\qedhere}{}{draculablue}
 
 \begin{definition}
     Let \(A \subseteq \R\) and let \(L\) be the set of limit points of \(A\). The \textit{closure} of \(A\) is defined as \(\bar{A} = A \cup L\).
@@ -394,16 +390,24 @@ Note that we cannot use this for cases with infinity. For example, consider \(A_
     A set \(K \subseteq \R\) is a \textit{compact set} if every sequence from \(K\) has a convergent subsequence where the limit is also \(K\).
 \end{definition}
 
+\begin{example}
+    {Compactness}Let \(A = (0,1)\). Construct a set \(\mathcal{U}\) that is an open cover of \((0,1)\), but does not have a finite subcover.
+\end{example}
+
+\lesol{
+    Consider \(\mathcal{U} = \{(0,t) \mid 0 < t < 1\}\). Thus, \(\mathcal{U}\) is an open cover, but does not contain a finite amount of subcovers because there will always be a point not covered. 
+}
+
 \begin{theorem}
     A set \(K\) is compact if, and only if, it is closed and bounded.
 \end{theorem}
 
-\iffpf{Assume a set \(A \subseteq \R\) is closed and bounded. Thus, there exists a convergent subsequence by \namrefthm{Bolzano-Weierstrass Theorem}. Because \(A\) is closed, the limit is in the set by \defref{3.2.5}.}{Assume a set \(A\) is compact. If it is not bounded, then there exists an \((a_n)\) that heads toward infinity. This contradicts \defref{3.3.1}, so it must be bounded. Then, by the same definition, the limit points belong in the set, so it is closed.\qedhere}{}{xblue}
+\iffpf{Assume a set \(A \subseteq \R\) is closed and bounded. Thus, there exists a convergent subsequence by \namrefthm{Bolzano-Weierstrass Theorem}. Because \(A\) is closed, the limit is in the set by \defref{3.2.5}.}{Assume a set \(A\) is compact. If it is not bounded, then there exists an \((a_n)\) that heads toward infinity. This contradicts \defref{3.3.1}, so it must be bounded. Then, by the same definition, the limit points belong in the set, so it is closed.\qedhere}{}{draculablue}
 
 \begin{definition}
     Let \(A \in \R\). An \textit{open cover} for \(A\) is a collection of open sets \(\{O_\lambda \mid \lambda \in A\}\) whose union contains the set \(A\); that is \(A \subseteq \bigcup_{\lambda \in A}O_\lambda\). Given an open cover for \(A\), a \textit{finite subcover} is a finite sub-collection of open sets from the original open cover whose union still manages to completely contain \(A\).
 \end{definition}
-
+\newpage
 \begin{ntheorem}
     {Heine-Borel Theorem}Let \(K\) be a  subset of  \(\R\). All the following statements are equivalent in the sense that any of them implies the two others: 
     \begin{enumerate}[label=(\roman*)]
@@ -414,12 +418,12 @@ Note that we cannot use this for cases with infinity. For example, consider \(A_
 \end{ntheorem}
 
 \tpf{ The first set of ``if and only if proofs'' will be to prove (i) and (ii) are equivalent. Then, we will prove (ii) and (iii) are equivalent. 
-    \begin{customframedproof}[linecolor=xgray]
-        \begin{proofpart}[xgray]{(\(\Rightarrow\))}
+    \begin{customframedproof}[linecolor=draculablue]
+        \begin{proofpart}[draculablue]{(\(\Rightarrow\))}
             Assume \(K\) is compact. We need to show that \(K\) is closed and bounded. To show \(K\) is bounded, consider the open cover \(\mathcal{U} = \{(-n, n) \mid n \in \N\}\). \(\mathcal{U}\) covers all of \(\R\), so it certainly covers \(K\). Thus, there must exist a finite subcover. Consider the longest interval in the subcover. Then, \(K\) is a subset of this interval, so \(K\) is bounded. To show \(K\) is closed, we need to show every limit point belongs to \(K\). Assume \(x\) is a limit point of \(K\). From \defref{3.2.4} for every \(a \in K\), let \(\epsilon_a = \frac{1}{2}\disabs{a - x}\). Consider the open cover \(\mathcal{U} = \{V_{\epsilon_a}(a) \mid a \in K\} \). This covers every point on \(K\).
         \end{proofpart}
     \vspace{2mm}
-            \begin{proofpart}[xgray]{(\(\Leftarrow\))}
+            \begin{proofpart}[draculablue]{(\(\Leftarrow\))}
                 Because it is closed and bounded, by \numrefthm{3.3.2}, \(K\) is compact.
             \end{proofpart}
     \vspace{2mm}
@@ -427,12 +431,12 @@ Note that we cannot use this for cases with infinity. For example, consider \(A_
     \vspace{0.5cm}
     Now for the second part of the proof:
 
-    \begin{customframedproof}[linecolor=xgray]
-        \begin{proofpart}[xgray]{(\(\Rightarrow\))}
+    \begin{customframedproof}[linecolor=draculablue]
+        \begin{proofpart}[draculablue]{(\(\Rightarrow\))}
             Let \(x\) be a limit point of \(K\). This means there must exist a sequence \((x_n)\) in \(K\) with \(\limn x_n = x\). Suppose \(x \notin K\). For every \(y \in K\). Let \(\epsilon_y = \frac{1}{2}\disabs{y-x}\). Consider the open neighborhood \(V_{\epsilon_y}(y)\). Notice \(x \in V_{\epsilon_y} (y)\). Now, we will work with the collection of all such neighborhoods \(\mathcal{U} = \{V_{\epsilon_y}(y) \mid y \in K\}\). This \(\mathcal{U}\) is an open cover of \(K\). By our hypothesis there exists a finite subcover. There are some \(y_1,y_2,\dots,y_m\) such that \(K \subset \bigcup_{i = 1}^m V_{\epsilon_y}(y_i)\). Look at the distance from \(x\) to each \(y_i\): \((x - \epsilon_{y_i}\text{, } x + \epsilon_{y_i}) \cap V_{\epsilon_{y_i}} (y_i) = \emptyset\). Similar statements are for every \(y_i\). Let \(\epsilon = \min\{\epsilon_{y_1}, \epsilon_{y_2},\dots \epsilon_{y_M}\}\). Since there are infinitely many \(\epsilon > 0\), we see that \(V_\epsilon(x)\cap V_{\epsilon_y}(y_i) = \emptyset\) for every \(i \leq M\). So \(V_\epsilon (x) \cap K = \emptyset\). This gives us an \(\epsilon\)-neighborhood around \(x\) that does not intersect \(K\). Since \((x_n)\) approaches \(x\), there must be elements from the sequence that are inside of \(V_\epsilon(x)\). This creates a contradiction because we said \(x\) was a limit point. Therefore \(x \in u\) and \(K\) must be closed.
         \end{proofpart}
     \vspace{2mm}
-            \begin{proofpart}[xgray]{(\(\Leftarrow\))}
+            \begin{proofpart}[draculablue]{(\(\Leftarrow\))}
                 Let \(\mathcal{U}\) be an open cover of \(K\). Suppose there is no finite subcover. Since \(K\) is bounded there exists a closed interval \(I_0\) that contains \(K\). Bisect \(I_0\) and look at the two sub intervals \(A\) and \(B\). My claim is at least one of \(A \cap K\) and \(B \cap K\) does not have a finite subcover from \(\mathcal{U}\). If not, then we would have a finite subcover of all of K. Whichever half does not have a finites of cover will be called \(I_1\). Repeat this process. We get a sequence of nested closed intervals \(I_0 \supseteq I_1 \supseteq I_2 \supseteq \cdots\) such that for all \(j \in \N\), \(I_j \cap K\) does not have a finite subcover from \(\mathcal{U}\). Also, as the length of \(I_j\) approach 0, by the \namrefthm{Nested Interval Property}, there exists \(x \in \bigcap_{j = 1}^{\infty} I_j\). Since each \(I_j\) contains an element of \(K\) and the interval approaches 0, \(x\) must be a limit point of \(K\). Thus, since \(K\) is closed, \(x \in K\). There must be an open set \(U \in \mathcal{U}\) such that \(x \in U\). Since \(U\) is open and \(x \in U\), there exists an \(\epsilon > 0\) such that \(V_\epsilon(x) \subseteq U\). There is an \(I_j\) whose length is smaller than \(\epsilon\). This means \(I_j \subseteq V_\epsilon \subset U\). So \(\{U\}\) is a finite subcover of \(I_j \cap K\). This contradicts how we defined \(I_j\), therefore there must be a finite subcover from \(\mathcal{U}\). \qedhere
             \end{proofpart}
     \vspace{2mm}
@@ -443,13 +447,7 @@ Note that we cannot use this for cases with infinity. For example, consider \(A_
 \begin{note}
     This allows us to take an infinite amount of \(\epsilon\)-neighborhoods and turn them into finite subcovers.
 \end{note}
-\begin{example}
-    {Compactness}Let \(A = (0,1)\). Construct a set \(\mathcal{U}\) that is an open cover of \((0,1)\), but does not have a finite subcover.
-\end{example}
 
-\lesol{
-    Consider \(\mathcal{U} = \{(0,t) \mid 0 < t < 1\}\). Thus, \(\mathcal{U}\) is an open cover, but does not contain a finite amount of subcovers because there will always be a point not covered. 
-}
 
 % \renewcommand{\theenumi}{\alph{enumi}}
 % \renewcommand{\labelenumi}{(\theenumi)}

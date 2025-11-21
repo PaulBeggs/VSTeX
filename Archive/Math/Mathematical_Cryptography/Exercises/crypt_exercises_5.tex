@@ -182,7 +182,7 @@
     \end{center}
 
     To find the key, I used the following python code in \hyperref[lst:5.2]{Listing 5.2}. The key was found to be \texttt{CODES}.
-    \footnotetext{\(\phantom{0}^{1}\)A Google search with the decrypted words led me to the plaintext in proper grammatical form without capitalization and proper spacing.}
+    \footnotetext{\(\phantom{0}^{1}\)A Google search with the decrypted words led me to the plaintext in proper grammatical form with capitalization and proper spacing.}
 }
 \newpage
 \begin{lstlisting}[language=Python, caption=Python Code to Concatenate Strings, label={lst:5.1}]
@@ -208,13 +208,12 @@
     print('Decoded text (column-by-column):')
     print(decoded_text)
 \end{lstlisting}
-\vspace*{-0.5cm}
+\vspace*{-0.3cm}
 \begin{lstlisting}[language=Python, caption=Python Code to Find Key, label={lst:5.2}]
     # Plaintext and Ciphertext have been omitted because they would not fit in the page.
     plaintext = '...'
     ciphertext = '...'
     
-    # Known key length
     key_length = 5
     
     # Helper function to convert letters to alphabetical index (A=0, B=1, ..., Z=25)

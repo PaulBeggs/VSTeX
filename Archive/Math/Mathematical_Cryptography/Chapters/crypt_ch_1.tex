@@ -13,6 +13,7 @@
 \wrpdef{Cipher}{Replacing characters or letters. Simply, replacing one letter for another.}
 
 \wrpdef{Scytale Cipher}{Used by the Spartans in the \(5^{\text{th}}\) century B.C.. This is also known as a \textbf{Transposition Cipher}.}
+
 \wrpdef{Transposition Cipher}{Changed order, but the stayed the same.}
 
 \wrpdef{Plain Text}{Original message that is readable to humans. Abbreviated as [pt].}
@@ -22,6 +23,7 @@
 \wrpdef{Encrypting}{From plain text to cipher text. The inverse of encrypting is decrypting; which is going from the Plain Text [pt] to the Cipher Text [ct].}
 
 \wrpdef{Key}{A secret number or word used in encoding and decoding using a certain algorithm. Example: Caesar shift: \(A \rightarrow R\) rotated clockwise by 17}
+
 \wrpdef{Key Space}{The set of all keys, notated \(\mathcal{K}\). The cardinality (amount of different keys) is notated with absolute value symbols. (E.g., for the Caesar shift, \(|\mathcal{K}| = 26\) because there are 26 letters in the alphabet. Similarly, Scytale \(|\mathcal{K}| = \text{pt}\).)}
 
 \wrpdef{Brute Force Attack}{[During decryption] Trying all possible keys.}
@@ -42,9 +44,11 @@ Each letter can be replaced with any other letter. For example, you may have a k
 
 \wrpdef{Cryptanalysis}{Process of decrypting without a key.}
 
+\newpage
+
 \wrpdef{Bigrams}{Two letters that are commonly placed together in language. For example, ``Th'', ``is'', or ``He''.}
 
-\wrpdef{Frequency Analysis}{English language patterns} Note that \(13\%\) of letters that are used in the alphabet are (in order from least to greatest): E, T, A, O, N. In brief, the longer the text, the more likely these letters will pop up.
+\wrpdef{Frequency Analysis}{English language patterns. Note that \(13\%\) of letters that are used in the alphabet are (in order from greatest to least): E, T, A, O, N. In brief, the longer the text, the more likely these letters will pop up.} 
 
 \renewcommand{\theenumi}{\alph{enumi}}
 \renewcommand{\labelenumi}{(\theenumi)}
@@ -72,6 +76,9 @@ Each letter can be replaced with any other letter. For example, you may have a k
     \end{enumerate}
 }
 
+\newpage
+\vfill
+
 \begin{exercise}
     {1.2}Decrypt each of the following Caesar encryptions by trying the various possible
     shifts until you obtain readable text.
@@ -87,6 +94,7 @@ Each letter can be replaced with any other letter. For example, you may have a k
         \item LOVE IS NOT LOVE WHICH ALTERS WHEN IT ALTERATION FINDS
     \end{enumerate}
 }
+\vfill
 
 
 \begin{exercise}
@@ -102,6 +110,8 @@ Each letter can be replaced with any other letter. For example, you may have a k
         \item \texttt{IBX FEPA QL BQAAXW QW IBX FSVAXW}
     \end{enumerate}
 }
+\vfill
+\newpage
 
 \begin{exercise}
     {1.4} Each of the following messages has been encrypted using a simple substitution cipher. Decrypt them. For your convenience, we have given you a frequency table and a list of the most common bigrams that appear in the ciphertext.\ (If you do not want to recopy the ciphertexts by hand, they can be downloaded or printed from the web site listed in the preface.)
@@ -126,6 +136,7 @@ Each letter can be replaced with any other letter. For example, you may have a k
     \href{https://planetcalc.com/8047/}{Solver}.
 
 }
+\newpage
 
 \begin{exercise}
     {1.5}Suppose that you have an alphabet of 26 letters.
@@ -192,7 +203,33 @@ This is less complicated than it sounds: we are simply factoring the integers an
 \lesol{
     \(24 = 16(1) + 8\). Therefore, the quotient is 1 and the remainder is 8.
 }
+\newpage
+\begin{theorem}
+    {Euclidean Algorithm}Let \(a,b \in \Z^+\) with \(a \geq b\). The following algorithm computes \(\gcd(a,b)\) in a finite number of steps. \begin{enumerate}
+        \item Let \(r_0 = a, r_1 = b\);
+        \item Set \(i = 1\);
+        \item Divide \(r_{i - 1}\) by \(r_i\) to get quotient \(q_i\) and remainder \(r_{i + 1}\);
+        \item If \(r_{i + 1} = 0\), stop, and \(\gcd(a,b) = r_i\);
+        \item Otherwise, \(r_{i + 1} > 0\). Set \(i = i + 1\), and go back to step 3.
+        \item Step 3 is executed at most \(2\log_2(b) + 2\) times.
+    \end{enumerate}
+\end{theorem}
 
+
+% \begin{theorem}
+%     {}Let \(a,b \in \Z^+\) with \(a = bq + r\), \(0 \leq r < b\). Then, \(\gcd(a,b) = \gcd(b,r)\)
+% \end{theorem}
+
+% \tpf{
+%     Let \(d = \gcd(a,b) \Rightarrow d \mid a \text{ and } d \mid b \Rightarrow a = dk \text{ and } b = dl \text{ for some } k,l \in \Z\). We need to show \(d \mid b\) and \(d \mid r\). We already have \(d \mid b\), so we just need to solve for \(r\): \begin{align*}
+%         r & = a - bq    \\
+%           & = dk - dlq  \\
+%           & = d(k - lq)
+%     \end{align*} Notice that \((k - lq) \in \Z\). However, we also need to prove that \(d\) is the largest factor that Divides both. Hence, assume there exists a \(D \in \Z^+\) such that \(D\mid b\), \(D \mid r\), and \(D > d\). Then, \(D \times m = b\) and \(D \times n = r \Rightarrow a = D(mq) + D(n) \Rightarrow D \mid a\), but this leads to a contradiction because we said that \(d\) was the Greatest Common Divisor of \(a\). Hence, \(D = d\).
+% }
+
+% Example: \(150 = 4(36) + 6\) (Def 1.1.3) \(\Rightarrow \gcd(150,36) = \gcd(36,6) \Rightarrow 36 = 6(6) + 0 \Rightarrow \gcd(36,6) = \gcd(6,0) = 6\). \\
+\vfill
 \begin{example}
     {Euclidean Algorithm} Compute \(\gcd(2024, 748)\) using the Euclidean Algorithm.
 \end{example}
@@ -208,31 +245,9 @@ This is less complicated than it sounds: we are simply factoring the integers an
     \end{align*}
     Therefore, the greatest common divisor is 44.
 }
+\vfill
 
-% \begin{theorem}
-%     {}Let \(a,b \in \Z^+\) with \(a = bq + r\), \(0 \leq r < b\). Then, \(\gcd(a,b) = \gcd(b,r)\)
-% \end{theorem}
-
-% \tpf{
-%     Let \(d = \gcd(a,b) \Rightarrow d \mid a \text{ and } d \mid b \Rightarrow a = dk \text{ and } b = dl \text{ for some } k,l \in \Z\). We need to show \(d \mid b\) and \(d \mid r\). We already have \(d \mid b\), so we just need to solve for \(r\): \begin{align*}
-%         r & = a - bq    \\
-%           & = dk - dlq  \\
-%           & = d(k - lq)
-%     \end{align*} Notice that \((k - lq) \in \Z\). However, we also need to prove that \(d\) is the largest factor that Divides both. Hence, assume there exists a \(D \in \Z^+\) such that \(D\mid b\), \(D \mid r\), and \(D > d\). Then, \(D \times m = b\) and \(D \times n = r \Rightarrow a = D(mq) + D(n) \Rightarrow D \mid a\), but this leads to a contradiction because we said that \(d\) was the Greatest Common Divisor of \(a\). Hence, \(D = d\).
-% }
-
-% Example: \(150 = 4(36) + 6\) (Def 1.1.3) \(\Rightarrow \gcd(150,36) = \gcd(36,6) \Rightarrow 36 = 6(6) + 0 \Rightarrow \gcd(36,6) = \gcd(6,0) = 6\). \\
-
-\begin{theorem}
-    {Euclidean Algorithm}Let \(a,b \in \Z^+\) with \(a \geq b\). The following algorithm computes \(\gcd(a,b)\) in a finite number of steps. \begin{enumerate}
-        \item Let \(r_0 = a, r_1 = b\);
-        \item Set \(i = 1\);
-        \item Divide \(r_{i - 1}\) by \(r_i\) to get quotient \(q_i\) and remainder \(r_{i + 1}\);
-        \item If \(r_{i + 1} = 0\), stop, and \(\gcd(a,b) = r_i\);
-        \item Otherwise, \(r_{i + 1} > 0\). Set \(i = i + 1\), and go back to step 3.
-        \item Step 3 is executed at most \(2\log_2(b) + 2\) times.
-    \end{enumerate}
-\end{theorem}
+\newpage
 
 \begin{example}
     {Linear Combinations}Use Example 1.2 in determining the linear combination of 2024 and 748 that equals 44.
@@ -265,7 +280,10 @@ This is less complicated than it sounds: we are simply factoring the integers an
 \wrpdef{Relatively Prime}{Let \(a\) and \(b\) be \textit{relatively prime} if \(\gcd(a,b) = 1\). More generally, any equation \(Au + Bv = \gcd(A,B)\) can be reduced to the case of relatively prime numbers by dividing both sides by \(\gcd(A,B)\). Thus, \(\frac{A}{\gcd(A,B)}u + \frac{B}{\gcd(A,B)} = 1\) where \(a = A / \gcd(A,B)\) and \(b = B / \gcd(A,B)\) are relatively prime and satisfy \(au + bv = 1\).}
 
 \begin{theorem}
-    {Extended Euclidean Algorithm}Let \(a,b \in \Z^+\) with \(a \geq b\). Then the equation \(\gcd(a,b) = ua + vb\) always has a solution in integers \(u\) and \(v\). If \(u_0,v_0\) is any one solution, then every solution has the form \[u = u_0 + \frac{b \cdot t}{\gcd(a,b)} \text{ and } v = v_0 - \frac{a \cdot t}{\gcd(a,b)} \text{ for some integer } t \in \Z.\]
+    {Extended Euclidean Algorithm}Let \(a,b \in \Z^+\) with \(a \geq b\). Then the equation \(\gcd(a,b) = ua + vb\) always has a solution in integers \(u\) and \(v\). If \(u_0,v_0\) is any one solution, then every solution has the form 
+    \[
+        u = u_0 + \frac{b \cdot t}{\gcd(a,b)} \quad \text{and} \quad v = v_0 - \frac{a \cdot t}{\gcd(a,b)}, \text{ for some integer } t \in \Z.
+    \]
 \end{theorem}
 
 \begin{example}
@@ -337,7 +355,7 @@ Now we have our \(t = -67\), but we still need to find the modulo. Take the modu
 \end{example}
 
 \lesol{
-    In Example 1.2, we found that the gcd of 2024 and 748 have greatest common divisor of 44 and satisfy the equation \(-7 \cdot 2024 + 19 \cdot 748 = 44\). We can divide both sides by 44 to get \(46u + 17v = 1\). Therefore, 46 and 17 are relatively prime and \(u = -7\) and \(v = 19\) are the coefficents of a linear combination of 46 and 17 that equals 1.
+    In Example 1.2, we found that the gcd of 2024 and 748 have greatest common divisor of 44 and satisfy the equation \(-7 \cdot 2024 + 19 \cdot 748 = 44\). We can divide both sides by 44 to get \(46u + 17v = 1\). Therefore, 46 and 17 are relatively prime and \(u = -7\) and \(v = 19\) are the coefficients of a linear combination of 46 and 17 that equals 1.
 }
 
 \renewcommand{\theenumi}{\alph{enumi}}
@@ -583,6 +601,7 @@ Now we have our \(t = -67\), but we still need to find the modulo. Take the modu
               Because \(m \mid (b_1 - b_2)\) and \(m \mid (a_1 - a_2)\). We know from the definition of division that when we multiply those numbers by an integer like \(a_1\) and \(b_2\).\ \(m\) still divides the expression. Hence, \(m \mid (a_1 \cdot (b_1 - b_2))\) and \(m \mid (b_2 \cdot (a_1 - a_2))\). Therefore, \(m \mid (a_1 \cdot b_1 - a_2 \cdot b_2)\) and \(a_1 \cdot b_1 \equiv a_2 \cdot b_2 \ (\text{mod } m)\).\ \qedhere
     \end{itemize}
 }
+\newpage
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}
@@ -597,6 +616,7 @@ By the definition of division, we can write this as \(b - a = mk\) for some \(k 
         \item If \(a_1 \equiv a_2 \ (\text{mod } m)\) and \(b_1 \equiv b_2 \ (\text{mod } m)\) then \(a_1 \pm b_1 \equiv a_2 \pm b_2 \ (\text{mod } m) \equiv a_2\ (\text{mod } m) + b_2\ (\text{mod } m)\). Also, \(a_1b_1 = a_2b_2\ (\text{mod } m)=a_2\ (\text{mod } m) b_2\ (\text{mod } m)\)
         \item Let \(a \in \Z\). Then \(ab \equiv 1\ (\text{mod } m)\) for some \(b\equiv \Z \iff \gcd(a,m)=1\)
     \end{enumerate}}
+\vspace*{-1.5em}
 
 \wrpdef{Ring}{We write \(\Z/m\Z = \{0,1,2,\dots,m-1\}\) and call \(\Z / m\Z\) the \textit{ring of integers modulo} \(m\). We add and multiplying them as integers and then dividing the result by \(m\) and taking the remainder in order to obtain an element in \(\Z/m\Z\).}
 
@@ -619,21 +639,21 @@ Note that we will be finding the more traditional rings that are brought up in A
     Note that from the following table, 6 only has 2 inverses, \(1\) and \(5\). This is because in their respective column, there is a 1 in each row.
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|}
-            \toprule
+            \hline
             \(a\)         & 0 & 1 & 2 & 3 & 4 & 5 \\
-            \midrule
+            \hline
             \(a \cdot 0\) & 0 & 0 & 0 & 0 & 0 & 0 \\
-            \midrule
+            \hline
             \(a \cdot 1\) & 0 & 1 & 2 & 3 & 4 & 5 \\
-            \midrule
+            \hline
             \(a \cdot 2\) & 0 & 2 & 4 & 0 & 2 & 4 \\
-            \midrule
+            \hline
             \(a \cdot 3\) & 0 & 3 & 0 & 3 & 0 & 3 \\
-            \midrule
+            \hline
             \(a \cdot 4\) & 0 & 4 & 2 & 0 & 4 & 2 \\
-            \midrule
+            \hline
             \(a \cdot 5\) & 0 & 5 & 4 & 3 & 2 & 1 \\
-            \bottomrule
+            \hline
         \end{tabular}
     \end{center}
 
@@ -644,13 +664,13 @@ Note that we will be finding the more traditional rings that are brought up in A
         {(\Z/m\Z)}^* & = \{a \in \Z/m\Z \mid \gcd(a,m) = 1\}                      \\
                      & = \{a \in \Z/m\Z \mid \text{a has an inverse modulo } m.\}
     \end{align*}}
-
 \begin{center}
     \textbf{Click \hyperref[sec:Theory groups]{this link} to be teleported to section 2.5 where we discuss Groups. We use groups throughout the remainder of Chapter 1.} \\
 \end{center}
 
 
 \wrpdef{Euler's Phi Function}{The function \(\varphi(m)\) defined by the rule \[\varphi(m) = |\{0 \leq a < m \mid \gcd(a,m) = 1\}| \]}
+\vspace*{-1em}
 
 \subsection{Modular Arithmetic and Shift Ciphers}
 
@@ -661,6 +681,7 @@ Note that we will be finding the more traditional rings that are brought up in A
 \lesol{
     By shifting the letters by 3, we get ``KHOOR''. For the decryption, we would shift the letters by -3 to get the original message.
 }
+
 
 \subsection{Fast Powering Algorithm}
 \label{fast powering algorithm}
@@ -781,24 +802,19 @@ We can write the algorithm as follows: \begin{enumerate}[label=\arabic*.]
 \renewcommand{\labelenumi}{\theenumi.}
 \section{Prime Numbers, Unique Factorization, and Finite Fields}
 
-\begin{definition}
-    {Prime Number}A prime number is a positive integer greater than 1 whose only divisors are 1 and itself.
-\end{definition}
+\wrpdef{Prime Number}{A prime number is a positive integer greater than 1 whose only divisors are 1 and itself.}
 
-\textbf{Proposition 1.19} Let \(p\) be a prime number with \(a,b \in \Z\) such that \(p \mid ab\). \\
-Then \(p \mid a\) or \(p \mid b\). \\
+\wrpprop{1.19}{Let \(p\) be a prime number with \(a,b \in \Z\) such that \(p \mid ab\). Then \(p \mid a\) or \(p \mid b\).}
 
 \begin{theorem}
     {Fundamental Theorem of Arithmetic}Let \(a \geq 2\) be an integer. Then \(a\) can be factored as a product of prime numbers \[a = p_1^{e_1} \cdot p_2^{e_2} \cdots p_r^{e_r}.\] Further, other than rearranging the order of the factors, this factorization is unique.
 \end{theorem}
 
-\textbf{Proposition 1.21:} Let \(p\) be prime. Then every non-zero element of \(\Z/p\Z\) has a multiplicative inverse. \\
+\wrpprop{1.21}{Let \(p\) be prime. Then every non-zero element of \(\Z/p\Z\) has a multiplicative inverse. Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\gcd(x,p) = 1\) because of \refprop{1.13}.}
 
-Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\gcd(x,p) = 1\) because of \refprop{1.13}. \\
+\newpage
 
 \wrpdef{Field}{If \(p\) is prime, then \(\Z/p\Z\) of integers modulo \(p\) with its addition, subtraction, multiplication, and division rules is a \textit{field}. See the definition of \hyperref[Ring]{Ring} for more information on the properties of a field. (Note that a field is a type of ring, called a communicative ring.) We often notate fields as \(\F_p\) and \(\F_p^*\) as the group of units.}
-
-\pfs%
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\theenumi.}
@@ -827,6 +843,8 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
 \begin{theorem}
     {Primitive Root Theorem}Let \(p\) be a prime number. Then there exists an integer \(g\) such that there exists an \(x \in \F_p^*\) whose powers give every element of \(\F_p^*\), i.e., \[\F_p^* = \{1,g,g^2,g^3.\dots,g^{p - 2}\}.\] Elements with this property are called the \textit{primitive roots of} \(\F_p\) or \textit{generators of} \(\F_p^*\). They are elements of order \(p - 1\).
 \end{theorem}
+
+\newpage
 
 \begin{example}
     {Primitive Root}Find a primitive root modulo 7.
@@ -867,7 +885,7 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
                             a^{p - 2} & \equiv a^{-1} \ (\text{mod } p) \\
                             11^{45}   & \ (\text{mod } 47)
                         \end{align*}
-                        By the fast power algorithm, we need to find the binary representation of 45. Thus, \(45 \ (\text{mod } 2) = 1\), \(22 \ (\text{mod } 2) = 0\), \(11 \ (\text{mod } 2) = 1\), \(5 \ (\text{mod } 2) = 1\), \(2 \ (\text{mod } 2) = 0\), \(1 \ (\text{mod } 2) = 1\). From this, we have the binary representation of \(45_{10}\) as \(101101_2\). Hence, we will need to calculate \(2^5 \cdot 2^3 \cdot 2^2 \cdot 2^1 \cdot 2^0 \Rightarrow 11^{2^5} \cdot 11^{2^3} \cdot 11^{2^0} \Rightarrow 11^{32} \cdot 11^8 \cdot 11^4 \cdot 11 \equiv 17 \cdot 14 \cdot 25 \cdot 11\). Now, lets find the values of these numbers:
+                        By the fast power algorithm, we need to find the binary representation of 45. Thus, \(45 \ (\text{mod } 2) = 1\), \(22 \ (\text{mod } 2) = 0\), \(11 \ (\text{mod } 2) = 1\), \(5 \ (\text{mod } 2) = 1\), \(2 \ (\text{mod } 2) = 0\), \(1 \ (\text{mod } 2) = 1\). From this, we have the binary representation of \(45_{10}\) as \(101101_2\). Hence, we will need to calculate \(2^5 \cdot 2^3 \cdot 2^2 \cdot 2^1 \cdot 2^0 \Rightarrow 11^{2^5} \cdot 11^{2^3} \cdot 11^{2^0} \Rightarrow 11^{32} \cdot 11^8 \cdot 11^4 \cdot 11 \equiv 17 \cdot 14 \cdot 25 \cdot 11\). Now, these are:
                         \begin{align*}
                             11^1    & \equiv 11 \ (\text{mod } 47) \\
                             11^2    & \equiv 27 \ (\text{mod } 47) \\
@@ -876,7 +894,7 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
                             11^{16} & \equiv 8 \ (\text{mod } 47)  \\
                             11^{32} & \equiv 17 \ (\text{mod } 47)
                         \end{align*}
-                        Now, we can calculate \(11^{45} = 11^{32} \cdot 11^8 \cdot 11^4 \cdot 11 \equiv 17 \cdot 14 \cdot 25 \cdot 11 \ (\text{mod } 47)\). Further multiplying we get \(17 \cdot 14 \ (\text{mod } 47) \equiv 3\). Then, \(3 \cdot 25 \ (\text{mod } 47) \equiv 28\). And finally, \(28 \cdot 11 \ (\text{mod } 47) \equiv 30\). Thus confirming our previous answer in (i).
+                        Now, we can calculate \(11^{45} = 11^{32} \cdot 11^8 \cdot 11^4 \cdot 11 \equiv 17 \cdot 14 \cdot 25 \cdot 11 \ (\text{mod } 47)\). Further, multiplying we get \(17 \cdot 14 \ (\text{mod } 47) \equiv 3\). Then, \(3 \cdot 25 \ (\text{mod } 47) \equiv 28\). Finally, \(28 \cdot 11 \ (\text{mod } 47) \equiv 30\). Thus confirming our previous answer in (i).
               \end{enumerate}
               %
               %
@@ -985,9 +1003,7 @@ Put another way, \(x \in \Z_p\) has a multiplicative inverse if and only if \(\g
 
               7 is a primitive root. \\
 
-              \(8^1 \equiv 11 = 8\), \(8^2 \equiv 11 = 9\), \(8^3 \equiv 11 = 6\), \(8^4 \equiv 11 = 4\), \(8^5 \equiv 11 = 10\), \(8^6 \equiv 11 = 3\), \(8^7 \equiv 11 = 2\), \(8^8 \equiv 11 = 5\), \(8^9 \equiv 11 = 7\), \(8^{10} \equiv 11 = 1\),
-
-              8 is a primitive root.
+              \(8^1 \equiv 11 = 8\), \(8^2 \equiv 11 = 9\), \(8^3 \equiv 11 = 6\), \(8^4 \equiv 11 = 4\), \(8^5 \equiv 11 = 10\), \(8^6 \equiv 11 = 3\), \(8^7 \equiv 11 = 2\), \(8^8 \equiv 11 = 5\), \(8^9 \equiv 11 = 7\), \(8^{10} \equiv 11 = 1\), 8 is a primitive root.
     \end{enumerate}
 }
 \renewcommand{\theenumi}{\arabic{enumi}}

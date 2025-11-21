@@ -19,7 +19,9 @@ Remember the rules of logarithms: \begin{align*}
     \log_b(a / c)     & = \log_b(a) - \log_b(c)
 \end{align*}
 
-What is the value of \(x\) such that \(20^x = 21 \ (\text{mod } 23) \overset{\text{Brute-f}}{\Longrightarrow} \log_{20}21 = \boxed{7} \ (\text{mod } 23)\).~(Where \(7\) is from wolfram.)
+What is the value of \(x\) such that \(20^x = 21 \ (\text{mod } 23) \overset{\text{Brute-f}}{\Longrightarrow} \log_{20}21 = \boxed{7} \ (\text{mod } 23)\). (Where \(7\) is from wolfram.)
+
+\newpage
 
 \begin{example}
     {DLP}Find \(\log_2(10) \ (\text{mod } 11)\). In other words, find the value of \(x\) such that \(2^x \equiv 10 \ (\text{mod } 11)\).
@@ -95,6 +97,10 @@ D-H gives a way for Alice and Bob to get a secret shared key in an unsecure envi
     \item Alice computes \(B^a \ (\text{mod } p) = A'\) and Bob computes \(A^b \ (\text{mod } p) = B'\).
 \end{enumerate}
 
+\wrpdef{Diffie-Hellman Problem}{Let \(p\) be a prime number and \(g\) an integer. The \textit{Diffie-Hellman Problem} is the problem of computing the value of \(g^{ab} \ (\text{mod } p)\) from the known values of \(g^a \ (\text{mod } p)\) and \(g^b \ (\text{mod } p)\).}
+
+\newpage
+
 \begin{example}
     {D-H}Let \(p = 23\) and \(g = 5\). Alice chooses \(a = 6\) and Bob chooses \(b = 15\). Compute the shared secret key.
 \end{example}
@@ -108,16 +114,8 @@ D-H gives a way for Alice and Bob to get a secret shared key in an unsecure envi
     \end{align*}
 }
 
-\wrpdef{Diffie-Hellman Problem}{Let \(p\) be a prime number and \(g\) an integer. The \textit{Diffie-Hellman Problem} is the problem of computing the value of \(g^{ab} \ (\text{mod } p)\) from the known values of \(g^a \ (\text{mod } p)\) and \(g^b \ (\text{mod } p)\).}
-
-\renewcommand{\theenumi}{\alph{enumi}}
-\renewcommand{\labelenumi}{(\theenumi)}
-\subsection{Exercises}
 
 
-
-\renewcommand{\theenumi}{\arabic{enumi}}
-\renewcommand{\labelenumi}{\theenumi.}
 \section{Elgamal Public Key Cryptosystem}
 \label{sec:Elgamal}
 
@@ -147,7 +145,7 @@ D-H gives a way for Alice and Bob to get a secret shared key in an unsecure envi
     A   & = g^{a} \ (\text{mod } p)  & = & \ 2^{12} \ (\text{mod } 29) = 7     \\
     B   & = g^k \ (\text{mod } p)    & = & \ 2^5 \ (\text{mod } 29) = 3        \\
     c_1 & = g^k \ (\text{mod } p)    & = & \ 2^5 \ (\text{mod } 29) = 3        \\
-    c_2 & = m(A^k) \ (\text{mod } p) & = & \ 26(7^{5} \ (\text{mod } 29)) = 10 \\
+    c_2 & = m(A^k) \ (\text{mod } p) & = & \ 26(7^{5} \ (\text{mod } 29)) = 10
 \end{align*}
 Now, for Alice to decrypt the message, she must compute \({(c_1^a)}^{-1} \cdot c_2 \ (\text{mod } p)\):
 \[
@@ -287,22 +285,22 @@ For commutativity, for all \(a,b \in G\), \(a\times b = b \times a\). Some group
                         \end{bmatrix}\). When we multiply a matrix \(\begin{bmatrix}
                             a & b \\
                             c & d
-                        \end{bmatrix}\) by \(I\). We get \[\begin{bmatrix}
+                        \end{bmatrix}\) by \(I\). We get \(\begin{bmatrix}
                                 a & b \\
                                 c & d
-                            \end{bmatrix}\] \(\cdot
+                            \end{bmatrix} \cdot
                         \begin{bmatrix}
                             1 & 0 \\
                             0 & 1
                         \end{bmatrix} = \begin{bmatrix}
                             a & b \\
                             c & d
-                        \end{bmatrix}\)
+                        \end{bmatrix}\).
                   \item \textbf{Inverse Element:} False. Matrices with a non-zero determinant fail this criteria. Consider the matrix \(B =\)
                         \(\begin{bmatrix}
                             1 & 2 \\
                             3 & 4
-                        \end{bmatrix}\). The determinant would be \(\det((1)(4) - (2)(3) = -2\). Therefore, this matrix would not have an inverse.
+                        \end{bmatrix}\). The determinant would be \(\det((1)(4) - (2)(3)) = -2\). Therefore, this matrix would not have an inverse.
               \end{enumerate}
     \end{enumerate}
 }
@@ -343,7 +341,7 @@ Remember that to brute force the DLP, it takes \(P - 1\) steps. Recall \(g^{p-1}
         \item Find a match between the two lists: \(g^i \equiv hg^{-im} \ (\text{mod } p)\)
         \item \(x = i + jm\) is a solution for \(g^x \equiv h \ (\text{mod } p)\) (another way of saying ``\(x = i + jm\) is a solution for the \hyperref[Discrete Logarithm Problem]{DLP}'').
     \end{enumerate}}
-
+\vspace*{-1cm}
 \begin{example}
     {Baby-step, Giant-step}Use the Baby-step, Giant-step algorithm to solve for \(13^x \equiv 5 \ (\text{mod } 47)\).
 \end{example}
@@ -368,6 +366,8 @@ Remember that to brute force the DLP, it takes \(P - 1\) steps. Recall \(g^{p-1}
 \lesol{
 The number \(9704\) has order 1242 in \(\F_{17389}^*\). Set \(n = \lceil \sqrt{1242} \rceil = 36\) and \(u = g^{-n} = 9704{-36} = 2494\). Table 2.4 in the book lists the values of \(g^k\) and \(h\cdot u^{k}\) for \(k = 1,2 \dots\). From the table, we find the collision \[9704^7 = 14567 = 13896 \cdot 2494^{32} \text{ in } \F_{17389}.\] Using the fact that \(2494 = 9704^{-36}\), we compute \[13896 = 9704^7 \cdot 2494^{-32} = 9704^7 \cdot {(9704^{36}})^{32} = 9704^{1159} \text{ in } \F_{17389}.\] Hence, \(x = 1159\) solves the problem \(9704^x = 13896\) in \(\F_{17389}\).
     }
+
+\newpage
 
 \renewcommand{\theenumi}{\alph{enumi}}
 \renewcommand{\labelenumi}{(\theenumi)}
@@ -438,6 +438,7 @@ The number \(9704\) has order 1242 in \(\F_{17389}^*\). Set \(n = \lceil \sqrt{1
         \item Compute \(x = a_1n_1y_1 + a_2n_2y_2 + \cdots + a_kn_ky_k \ (\text{mod } m)\).
     \end{enumerate}
 \end{note}
+\newpage
 
 \begin{example}
     {CRT with New Algorithm}
@@ -445,7 +446,7 @@ The number \(9704\) has order 1242 in \(\F_{17389}^*\). Set \(n = \lceil \sqrt{1
 \end{example}
 
 \lesol{
-    \begin{enumerate}
+    \begin{enumerate}[itemsep=5pt, parsep=0pt, topsep=2pt, partopsep=0pt]
         \item Let \(m = 7 \cdot 8 = 56\).
         \item Compute \(n_1 = 8\) and \(n_2 = 7\).
         \item Compute \(y_1 = 8^{-1} \ (\text{mod } 7) = 1\) and \(y_2 = 7^{-1} \ (\text{mod } 8) = 7\).
@@ -582,7 +583,7 @@ This algorithm is used to solve \(g^x \equiv h \ (\text{mod } p)\) for \(p\) pri
         \item Compute \(x = (12)(823)(7) + (171)(30)(631) \pmod{24690} \equiv 22392\).
     \end{enumerate} Therefore, \(a = 22392\)
 }
-
+\newpage
 \renewcommand{\theenumi}{\alph{enumi}}
 \renewcommand{\labelenumi}{(\theenumi)}
 \subsection{Exercise}
@@ -609,13 +610,16 @@ This algorithm is used to solve \(g^x \equiv h \ (\text{mod } p)\) for \(p\) pri
         374^{b_0}              & \equiv 335 \pmod{433}
     \end{align*}
     Thus, through brute force, we find that \(b_0 = 20\). We can take our \(a_0\) and \(b_0\) to solve for \(x_1,x_2\):
-    \begin{align*}
-        x_1 & =  a_0 + 16a_1 \\
-        x_1 & = 15 \pmod{16}
-    \end{align*} and \begin{align*}
-        x_2 & = b_0 + 27b_1  \\
-        x_2 & = 20 \pmod{27}
-    \end{align*}
+    \[
+        x_{1} = a_{0} + 16a_{1} \implies x_{1} = 15 \pmod{16}, \qquad x_{2} = b_{0} + 27b_{1} \implies x_{2} = 20 \pmod{27}
+    \]
+    % \begin{align*}
+    %     x_1 & =  a_0 + 16a_1 \\
+    %     x_1 & = 15 \pmod{16}
+    % \end{align*} and \begin{align*}
+    %     x_2 & = b_0 + 27b_1  \\
+    %     x_2 & = 20 \pmod{27}
+    % \end{align*}
     At this point, we can solve the \hyperref[thm:Chinese Remainder]{CRT}.
     \begin{enumerate}[label=\arabic*.]
         \item Let \(m = 16 \cdot 27 = 432\).

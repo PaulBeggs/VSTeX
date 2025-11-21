@@ -20,11 +20,11 @@ To verify this signature, we compute:
 \[
     D \equiv S^{e} \pmod{N}
 \]
-
+\vfill
 \begin{example}
     {RSA Digital Signature}Given the following \((p,q,a)\) as \((1223,1987,2430101)\) with the verification exponent \(e = 948074\), publish a document and verify its signature.
 \end{example}
-
+\newpage
 \lesol{
     Samantha computers her private signing key \(d\) using secret values of \(p\) and \(q\) to compute \((p-1)(q-1) = 1222 \cdot 1986 = 2426892\) and then solving the congruence
     \[
@@ -48,7 +48,7 @@ To verify this signature, we compute:
     He verifies that the value of \(S^{e}\) modulo \(N\) is the same as the value of the digital document \(D = 1070777\).
 }
 
-\begin{table}[h!]
+\begin{table}[hb!]
     \centering
     \begin{tabular}{@{}p{0.9\textwidth}l@{}}
         \toprule
@@ -66,6 +66,7 @@ To verify this signature, we compute:
     \caption{RSA Digital Signatures}
 \end{table}
 
+\newpage
 
 \section{Elgamal Digital Signatures}
 

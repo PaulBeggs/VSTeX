@@ -16,54 +16,53 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
 \linespread{1}
-
+\setlength{\parindent}{0pt}
 \setlength{\headheight}{18.5764pt}
 
 %%% Define new colors %%%
 \usepackage{xcolor}
-\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
 
 % Normal colors
-\definecolor{xred}{HTML}{BD4242}
-\definecolor{xblue}{HTML}{4268BD}
-\definecolor{xgreen}{HTML}{52B256}
-\definecolor{xpurple}{HTML}{7F52B2}
-\definecolor{xorange}{HTML}{FD9337}
-\definecolor{xdotted}{HTML}{999999}
-\definecolor{xgray}{HTML}{777777}
-\definecolor{xcyan}{HTML}{80F5DC}
-\definecolor{xpink}{HTML}{F690EA}
-\definecolor{xgrayblue}{HTML}{49B095}
-\definecolor{xgraycyan}{HTML}{5AA1B9}
+% \definecolor{xred}{HTML}{BD4242}
+% \definecolor{xblue}{HTML}{4268BD}
+% \definecolor{xgreen}{HTML}{52B256}
+% \definecolor{xpurple}{HTML}{7F52B2}
+% \definecolor{xorange}{HTML}{FD9337}
+% \definecolor{xdotted}{HTML}{999999}
+% \definecolor{xgray}{HTML}{777777}
+% \definecolor{xcyan}{HTML}{80F5DC}
+% \definecolor{xpink}{HTML}{F690EA}
+% \definecolor{xgrayblue}{HTML}{49B095}
+% \definecolor{xgraycyan}{HTML}{5AA1B9}
 
-% Dark colors
-\colorlet{xdarkred}{red!85!black}
-\colorlet{xdarkblue}{xblue!85!black}
-\colorlet{xdarkgreen}{xgreen!85!black}
-\colorlet{xdarkpurple}{xpurple!85!black}
-\colorlet{xdarkorange}{xorange!85!black}
-\definecolor{xdarkcyan}{HTML}{008B8B}
-\colorlet{xdarkgray}{xgray!85!black}
+% % Dark colors
+% \colorlet{xdarkred}{red!85!black}
+% \colorlet{xdarkblue}{xblue!85!black}
+% \colorlet{xdarkgreen}{xgreen!85!black}
+% \colorlet{xdarkpurple}{xpurple!85!black}
+% \colorlet{xdarkorange}{xorange!85!black}
+% \definecolor{xdarkcyan}{HTML}{008B8B}
+% \colorlet{xdarkgray}{xgray!85!black}
 
 % Very dark colors
-\colorlet{xverydarkblue}{xblue!50!black}
+% \colorlet{xverydarkblue}{xblue!50!black}
 
 % Document-specific colors
-\colorlet{normaltextcolor}{black}
-\colorlet{figtextcolor}{xblue}
+% \colorlet{normaltextcolor}{black}
+% \colorlet{figtextcolor}{xblue}
 
 % Light colors
-\colorlet{xlightblue}{xblue!85!white}
+% \colorlet{xlightblue}{xblue!85!white}
 
 % Enumerated colors
-\colorlet{xcol0}{black}
-\colorlet{xcol1}{xred}
-\colorlet{xcol2}{xblue}
-\colorlet{xcol3}{xgreen}
-\colorlet{xcol4}{xpurple}
-\colorlet{xcol5}{xorange}
-\colorlet{xcol6}{xcyan}
-\colorlet{xcol7}{xpink!75!black}
+% \colorlet{xcol0}{black}
+% \colorlet{xcol1}{xred}
+% \colorlet{xcol2}{xblue}
+% \colorlet{xcol3}{xgreen}
+% \colorlet{xcol4}{xpurple}
+% \colorlet{xcol5}{xorange}
+% \colorlet{xcol6}{xcyan}
+% \colorlet{xcol7}{xpink!75!black}
 
 % Blue-Purple (should just used colorbrewer...)
 \definecolor{xrainbow0}{HTML}{e41a1c}
@@ -94,13 +93,13 @@
 % \ChNameVar{\large\color{black}}
 \usepackage{xpatch}
 \xpatchcmd\DOCH
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{\mghrulefill}{\color{horange}\mghrulefill}
 {}{\PatchFailed}
 \xpatchcmd\DOTI
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{\mghrulefill}{\color{horange}\mghrulefill}
 {}{\PatchFailed}
 \xpatchcmd\DOTIS
-{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{\mghrulefill}{\color{horange}\mghrulefill}
 {}{\PatchFailed}
 
 %% Change Chapter Heading Placement %%
@@ -138,9 +137,9 @@
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 \fancyhead[R]{\leftmark}
 \fancyhead[L]{Hendrix College}
-\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo.png}}
+\fancyhead[C]{\includegraphics[height=.50cm]{images/small logo_white.png}}
 \usepackage{xpatch}
-\xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
+\xpretocmd\headrule{\color{horange}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
 
 %%%%% Colored Boxes %%%%%
@@ -151,20 +150,21 @@
 % \numberwithin{BoxCounter}{section}
 
 
-\newtcolorbox{note}{colback=black!15!white, colframe=black, boxrule=0.5mm, arc=4mm, left=4mm, right=4mm, top=2mm, bottom=2mm}
+\newtcolorbox{note}{colback=draculayellow!15!draculabg, colframe=draculayellow, boxrule=0.5mm, arc=4mm, left=4mm, right=4mm, top=2mm, bottom=2mm, coltext=draculafg}
 
 %% Theorems %%
 \newtcolorbox[]{theorem}[2][]{%
     enhanced,
     sharp corners=uphill,
     rounded corners,
-    colframe=xblue, %color of frame
-    colback=xblue!15, %color of background
-    coltitle=white, %color of title text
+    colframe=draculablue, %color of frame
+    colback=draculablue!15!draculabg, %color of background
+    coltitle=draculafg, %color of title text
+    coltext=draculafg,
     label={thm:#2},
     title={\large \textbf{Theorem: #2}},
     attach boxed title to top center,
-    boxed title style={colback=xblue},
+    boxed title style={colback=draculablue},
     #1
 }
 
@@ -172,9 +172,9 @@
 
 % \newtcolorbox[]{sqrtTh}[2][]{%
 %     rounded corners,
-%     colframe=xblue, %color of frame
-%     colback=xblue!15, %color of background
-%     coltitle=white, %color of title text
+%     colframe=draculablue, %color of frame
+%     colback=draculablue!15!draculabg, %color of background
+%     coltitle=draculafg, %color of title text
 %     label={thm:#2},
 %     title={\large \textbf{Theorem: \texorpdfstring{The Irrationality of \(\sqrt{2}\)}{The Irrationality of sqrt(2)}}},
 %     #1
@@ -186,13 +186,15 @@
 \newtcolorbox[]{axiom}[2][]{%
     enhanced,
     sharp corners=downhill
-    colframe=xdarkgreen,
-    colback=xdarkgreen!15,
-    coltitle=white,
+    colframe=draculagreen,
+    colback=draculagreen!15!draculabg,
+    coltitle=draculafg,
+    coltext=draculafg,
+    after skip=-2pt,
     label={ax:#2},
     title={\large \textbf{Axiom of #2}},
     attach boxed title to top center,
-    boxed title style={colback=xdarkgreen, sharp corners=downhill},
+    boxed title style={colback=draculagreen, sharp corners=downhill},
     #1
 }
 
@@ -200,13 +202,15 @@
 \newtcolorbox[]{exercise}[2][]{%
     enhanced,
     sharp corners=downhill,
-    colframe=orangehdx!75,
-    colback=orangehdx!10,
-    coltitle=black,
+    colframe=draculasilver,
+    colback=draculasilver!15!draculabg,
+    coltitle=draculafg,
+    coltext=draculafg,
+    after skip=-2pt,
     label={exerc:#2},
     title={\large \textbf{Exercise #2}},
     attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=orangehdx!75},
+    boxed title style={colback=draculasilver!75},
     #1
 }
 
@@ -215,13 +219,15 @@
 \newtcolorbox[use counter=ExampleCounter, number within=chapter]{example}[2][]{%
 enhanced,
     sharp corners=downhill,
-    colframe=teal,
-    colback=teal!15,
-    coltitle=white,
+    colframe=draculared,
+    colback=draculared!15!draculabg,
+    coltitle=draculafg,
+    coltext=draculafg,
+    after skip=-2pt,
     label={ex:\theExampleCounter},
     title={\large \textbf{Example \theExampleCounter: #2}},
     attach boxed title to top center,
-    boxed title style={colback=teal},
+    boxed title style={colback=draculared},
     #1,
 }
 
@@ -230,12 +236,14 @@ enhanced,
 \newtcolorbox[]{corollary}[2][]{%
     enhanced,
     sharp corners=downhill,
-    colframe=xpurple,  
-    colback=xpurple!15,        
-    coltitle=white,
+    colframe=draculapurple,  
+    colback=draculapurple!15!draculabg,        
+    coltitle=draculafg,
+    coltext=draculafg,
+    after skip=-2pt,
     title={\large \textbf{Corollary #2}},
     attach boxed title to top left={xshift=0.5cm},
-    boxed title style={colback=xpurple},
+    boxed title style={colback=draculapurple},
     #1
 }
 
@@ -259,13 +267,13 @@ enhanced,
 %% Definitions %%
 \newenvironment{definition}[2][]{%
     \vspace{0.5em}
-    \noindent\quad\quad\textbf{Definition \textcolor{horange}{#2}:} #1
+    \noindent\quad\quad\textbf{Definition \textcolor{horange}{#2}:\label{#2}} #1
     \par\vspace{0.5em}\noindent
 }{\par\vspace{0.3em}\noindent}
 
 \newcommand{\wrpdef}[2]{%
     \begin{definition}
-        {#1}\label{#1}#2
+        {#1}#2
     \end{definition}
 }
 
@@ -343,8 +351,6 @@ enhanced,
   innerleftmargin=10pt,
   leftmargin=0pt,
   rightmargin=0pt,
-  skipabove=\topsep,
-  skipbelow=\topsep,
 ]{customframedproof}
 
 \newenvironment{proofpart}[2][black]{
@@ -418,7 +424,7 @@ enhanced,
 
 % Command for lemma proofs with a predefined color
 \newcommand{\expf}[1]{
-    \begin{customframedproof}[linecolor=orangehdx!75]
+    \begin{customframedproof}[linecolor=draculasilver!75]
         \begin{proof}
         #1
         \end{proof}
@@ -428,7 +434,7 @@ enhanced,
 
 % Command for theorems proofs with a predefined color
 \newcommand{\tpf}[1]{
-    \begin{customframedproof}[linecolor=xblue]
+    \begin{customframedproof}[linecolor=draculablue]
         \begin{proof}
         #1
         \end{proof}
@@ -436,7 +442,7 @@ enhanced,
 }
 % Command for corollaries proofs with a predefined color
 \newcommand{\cpf}[1]{
-    \begin{customframedproof}[linecolor=xpurple]
+    \begin{customframedproof}[linecolor=draculapurple]
         \begin{proof}
         #1
         \end{proof}
@@ -445,7 +451,7 @@ enhanced,
 
 % Need to add in customization for examples
 \newcommand{\sol}[1]{
-    \begin{customframedproof}[linecolor=orangehdx!75]
+    \begin{customframedproof}[linecolor=draculasilver!75]
         \begin{solution}
         #1
         \end{solution}
@@ -453,7 +459,7 @@ enhanced,
 }
 
 \newcommand{\lesol}[1]{
-    \begin{customframedproof}[linecolor=teal]
+    \begin{customframedproof}[linecolor=draculared]
         \begin{solution}
         #1
         \end{solution}
@@ -472,7 +478,7 @@ enhanced,
 
 % Command for theorems proofs with a predefined color
 \newcommand{\epf}[1]{
-    \begin{customframedproof}[linecolor=teal]
+    \begin{customframedproof}[linecolor=draculared]
         \begin{proof}
         #1
         \end{proof}
@@ -507,38 +513,27 @@ enhanced,
     upquote=true
 }
 
-% \definecolor{stringcolor}{RGB}{248, 217, 60}
-\definecolor{functioncolor}{RGB}{97, 227, 108}
-\definecolor{variablecolor}{RGB}{136,122,92}
-\definecolor{ifelsecolor}{RGB}{255, 121, 198}
-\definecolor{passedvarcolor}{RGB}{255, 184, 108}
-\definecolor{bordercolor}{RGB}{197, 31, 250}
-\definecolor{black}{RGB}{0, 0, 0}
-\definecolor{commentcolor}{RGB}{98, 114, 164}
-\definecolor{backcolor}{rgb}{0.95,0.95,0.92}
-\definecolor{stringcolor}{rgb}{0,0,0}
-
 % Define a custom style
 \lstdefinestyle{myStyle}{
-    backgroundcolor=\color{backcolor},   
-    commentstyle=\color{commentcolor},
-    keywordstyle=\color{functioncolor},
-    numberstyle=\tiny\color{commentcolor},
-    basicstyle=\ttfamily\footnotesize,
+    backgroundcolor=\color{draculabgalt},   
+    commentstyle=\color{draculacomment},
+    keywordstyle=\color{draculasilver},
+    numberstyle=\tiny\color{draculasilver},
+    basicstyle=\ttfamily\footnotesize\color{draculaorange},
+    identifierstyle=\ttfamily\color{draculapurple},
     breakatwhitespace=false,         
     breaklines=true,       
-    keywordstyle=\color{blue},          
+    keywordstyle=\color{draculayellow},          
     keepspaces=true,
-    numberstyle=\color{commentcolor},                 
+    numberstyle=\color{draculaorange},                 
     numbers=left,
-    stringstyle=\color{stringcolor},
+    stringstyle=\color{draculasilver},
     numbersep=5pt,                  
     showspaces=false,                
     showstringspaces=false,
     showtabs=false,            
     tabsize=4,
-    frame=tlrb      % Adds black bars on top and bottom
-    rulecolor=\color{black},         % Sets the frame color to black
+    frame=tlrb,      % Adds black bars on top and bottom
     xleftmargin=5.5ex,               % Extends background to include line numbers
     framexleftmargin=5.5ex,          % Ensures the frame includes the margin area
     framexrightmargin=0pt,           % Right margin
@@ -579,7 +574,7 @@ enhanced,
     \begin{center}
 
         \vspace*{-2cm}
-        \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
+        \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\
         \vfill
 
         % Horizontal line above the title in 'horange' color
@@ -744,16 +739,16 @@ enhanced,
 \input{Exercises/crypt_exercises_6}
 \addcontentsline{toc}{chapter}{Exercises 6}
 
-% \renewcommand{\theenumi}{\arabic{enumi}}
-% \renewcommand{\labelenumi}{\theenumi.}
-% \newpage
-% \fancyhead[R]{Exam Prep}
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+\newpage
+\fancyhead[R]{Exam Prep}
 
 
-% \chapter*{Exam Prep}\label{prep}
-% \vspace{-0.25in}
-% \input{Exam_Prep/Exam_2}
-% \addcontentsline{toc}{chapter}{Exam Prep}
+\chapter*{Exam Prep}\label{prep}
+\vspace{-0.25in}
+\input{Exam_Prep/Exam_2}
+\addcontentsline{toc}{chapter}{Exam Prep}
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

@@ -146,8 +146,18 @@ The most common application: For any \(a,b,c \in \R\), \(|a - b| \leq |a-c| + |c
 {Assume \(a = b\). Let \(\epsilon > 0\). Then \(|a-b| = 0 < \epsilon\)}
 {Assume for all \(\epsilon > 0\), \(|a-b| < \epsilon\). Suppose \(a \ne b\). Then \(a - b \ne 0\). So, \(|a-b| \ne 0\). Now, Consider \(\epsilon_0 = |a-b|\). By our assumption we know that \(|a-b| < \epsilon_0\). It is not true that \(|a-b| < |a - b|\). Therefore, it must be the case that \(a = b\).}
 {Therefore, by showing both sides of the implication accomplish the same thing as the other side, we know that \(a = b \text{ if and only if for all } \epsilon > 0, |a-b| < \epsilon.\)}
-{xblue}
+{draculablue}
 
+% \iffpfbase%
+% {
+%    Assume \(a = b\). Let \(\epsilon > 0\). Then \(|a-b| = 0 < \epsilon\) 
+% }{
+%     Assume for all \(\epsilon > 0\), \(|a-b| < \epsilon\). Suppose \(a \ne b\). Then \(a - b \ne 0\). So, \(|a-b| \ne 0\). Now, Consider \(\epsilon_0 = |a-b|\). By our assumption we know that \(|a-b| < \epsilon_0\). It is not true that \(|a-b| < |a - b|\). Therefore, it must be the case that \(a = b\).
+% }{
+%     Therefore, by showing both sides of the implication accomplish the same thing as the other side, we know that \(a = b \text{ if and only if for all } \epsilon > 0, |a-b| < \epsilon.\)
+% }{draculablue}
+
+\newpage
 \subsection{Mathematical Induction} \hfill
 
 \textit{Inductive Hypothesis:} Let \(x_1 = 1\). For all \(n \in \N\), let \(x_{n+1} = \frac{1}{2}x_n + 1\). \\
@@ -469,7 +479,7 @@ This lemma allows us to take any positive number and take a ``step back.'' In es
     Assume for every \(\epsilon > 0\), there exists \(x \in A\) such that \(s - \epsilon < x\). Let \(t\) be an upper bound of \(A\). Suppose \(t < s\). Consider \(\epsilon_0 = s - t > 0\). By our assumption, there exists \(x \in A\) such that \(s - \epsilon_0 < x\). So, \(t < x\). This contradicts that \(t\) is an upper bound of \(A\). So, \(t \geq s\). Thus, \(s\) is the least upper bound
 }{
     Therefore, by proving both the right and left implication, we have shown the statement to be true.
-}{xpurple}
+}{draculapurple}
 Analogous statement about infimums: Assume \(z\) is a lower bound of a set \(A \subseteq \R\). Then \(z = \inf A \iff \) for all \( \epsilon >0\), there exists \(y \in A\) such that \(y < z + \epsilon\).
 
 % \renewcommand{\theenumi}{\alph{enumi}}

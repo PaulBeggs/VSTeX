@@ -520,7 +520,7 @@
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\newcommand{\assignmentname}{Homework 5: Sections 13 \& 14}
+\newcommand{\assignmentname}{Homework 6: Sections 13 \& 14}
 
 % Do not use all caps.
 \newcommand{\cussubtitle}{Algebra}
@@ -667,20 +667,20 @@ In Exercises 19 and 23, compute the indicated quantities for the given homomorph
 
     \setcounter{enumi}{43}
     \item Let \(\varphi \funccolon G \to G'\) be a group homomorphism. Show that if \(|G|\) is finite, then \(|\varphi[G]|\) is finite and is a divisor of \(|G|\).
-    \sol{
+    \pf{
         Let \(\varphi \funccolon G \to G'\) be a group homomorphism, and let \(H = \ker(\varphi)\). Our goal is to show that the order of the preimage of \(G\), \(|\varphi[G]|\), is finite, and a divisor of \(|G|\), given \(G\) is finite. The theorem \(aH = \varphi^{-1}[\{\varphi(a)\}]\) maps a single coset to the same single element \(\varphi(a)\) in the image. This establishes a one-to-one correspondence between the set of all cosets (\(G/H\)) and the set of all images, \(\varphi[G]\). Because there is a one-to-one correspondence, the two sets must have equal size: \(|G/H| = |\varphi[G]|\). Then, by Lagrange's Theorem, since \(G\) is finite, the number of cosets (\(G/H\)) must be a finite number that divides the order of the group, \(|G|\).  Since \(|G/H| = |\varphi[G]|\), it follows that \(|\varphi[G]|\) must also be a finite number that divides \(|G|\).
     }    
 
 \newpage
 
     \item Let \(\varphi \funccolon G \to G'\) be a group homomorphism. Show that if \(|G'|\) is finite, then \(|\varphi[G]|\) is finite and is a divisor of \(|G'|\).
-    \sol{
+    \pf{
         From Theorem 13.12 (3) (the fundamental properties of homomorphisms), if \(H\) is a subgroup of \(G\), then \(\varphi[H]\) is a subgroup of \(G'\). Now, let \(H = G\). It is certainly true that \(G\) is a subgroup of \(G\), so \(\varphi[G]\) is a subgroup of \(G'\). Then, by Lagrange's Theorem, since \(|G'|\) is finite, the order of its subgroup, \(|\varphi[G]|\) is also a finite number that divides \(|G'|\). 
     }
 
     \setcounter{enumi}{48}
     \item Show that if \(G\), \(G'\), and \(G''\) are groups and if \(\varphi \funccolon G \to G'\) and \(\gamma \funccolon G' \to G''\) are homomorphisms, then the composite map \(\gamma \varphi \funccolon G \to G''\) is a homomorphism.
-    \sol{
+    \pf{
         Let \(a, b \in G\). Then,
         \begin{align}
             (\gamma \varphi)(ab) &= \gamma(\varphi(ab)) \\
@@ -736,7 +736,7 @@ In Exercises 11 and 15, give the order of the element in the factor group.
 
     \setcounter{enumi}{26}
     \item A subgroup \(H\) is \textbf{conjugate to a subgroup} \(K\) of a group \(G\) if there exists an inner automorphism \(i_g\) of \(G\) such that \(i_g[H] = K\). Show that conjugacy is an equivalence relation on the collection of subgroups of \(G\).
-    \sol{
+    \pf{
         Let \(H\), \(K\), and \(L\) be subgroups of \(G\). To show that conjugacy is an equivalence relation on the collection of subgroups of \(G\), we must show the following:
         \begin{itemize}
             \item \textbf{Reflexive:} We must show that \(H\) is conjugate to itself. That is, we must find an element \(g \in G\) such that \(H = i_{g}[H] = gHg^{-1}\). The obvious choice is the identity element \(e \in G\):
@@ -749,13 +749,13 @@ In Exercises 11 and 15, give the order of the element in the factor group.
             \[
                 L = pKp^{-1} = pgHg^{-1}p^{-1}.
             \]
-            Notice \(pg = g''\) and \(g^{-1}p^{-1} = (pg)^{-1} = g''\). The product \(pg\) and \((pg)^{-1}\) are both in \(G\) because \(G\) is a group. Thus, we have shown that \(H\) is conjugate to \(L\). Therefore, the relation is transitive.
+            Notice \(pg = g''\) and \(g^{-1}p^{-1} = (pg)^{-1} = g''\). The product \(pg\) and \((pg)^{-1}\) are both in \(G\) because \(G\) is a group. Thus, we have shown that \(H\) is conjugate to \(L\). Therefore, the relation is transitive. \qedhere
         \end{itemize}
     }
-
+\newpage
     \setcounter{enumi}{29}
     \item Let \(H\) be a normal subgroup of a group \(G\), and let \(m = (G \funccolon H)\). Show that \(a^m \in H\) for every \(a \in G\).
-    \sol{
+    \pf{
         Let \(H\) be a normal subgroup of \(G\) and let \(m = (G \funccolon H)\). Because \(H\) is normal, we can form the factor group \(G/H\). The order of this group, \(|G/H|\), is equal to the index of \(H\) in \(G\), so \(|G/H| = m\). Now, let \(a\) be any element in \(G\). The corresponding element in the factor group \(G/H\) is the coset \(aH\). Let \(k\) be the order of this element \(aH\) in the factor group. By the definition of order, \((aH)^{k} = H\) (where \(H\) is the identity element of the factor group). By Lagrange's Theorem, the order of an element must divide the order of the group. Therefore, \(k\) divides \(m\). This implies that \(m = kq\) for some integer \(q\). Now, we can compute \((aH)^{m}\):
         \[
             (aH)^{m} = (aH)^{kq} = ((aH)^{k})^{q}.
@@ -764,7 +764,7 @@ In Exercises 11 and 15, give the order of the element in the factor group.
         \[
             ((aH)^{k})^{q} = H^{q} = H.
         \]
-        Using the definition of coset multiplication, we know that \((aH)^{m} = a^{m}H\). Therefore, we have shown that \(a^{m}H = H\). By the properties of cosets, \(gH = H\) implies \(g \in H\). Consequently, \(a^{m} \in H\).
+        Thus, we have shown that \((aH)^{m} = a^{m}H = H\). By the properties of cosets, \(gH = H\) implies \(g \in H\). Consequently, \(a^{m} \in H\).
     }
 
 

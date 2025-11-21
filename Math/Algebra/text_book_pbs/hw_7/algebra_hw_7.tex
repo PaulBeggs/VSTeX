@@ -3,21 +3,21 @@
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\documentclass[12pt]{article}
+\documentclass[12pt, oneside]{book}
 \usepackage{xcolor}
 \usepackage{minted}
 
 % \usepackage[T1]{fontenc}
 
-% \usepackage{draculatheme}
-% \newcommand{\documentTheme}{draculafg}
-% \newcommand{\documentLogo}{../../images/small logo_white.png}
-% \newcommand{\documentBigLogo}{../../images/logo_white_text.png}
-% \usemintedstyle{dracula}
+\usepackage{draculatheme}
+\newcommand{\documentTheme}{draculafg}
+\newcommand{\documentLogo}{../../images/small logo_white.png}
+\newcommand{\documentBigLogo}{../../images/logo_white_text.png}
+\usemintedstyle{dracula}
 
-\newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
-\newcommand{\documentLogo}{../../images/small logo.png}
-\newcommand{\documentTheme}{black}
+% \newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
+% \newcommand{\documentLogo}{../../images/small logo.png}
+% \newcommand{\documentTheme}{black}
 
 %%% AESTHETICS %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -33,16 +33,12 @@
 \linespread{1}
 \usepackage{listings}
 \usepackage{tikz}
-\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning, arrows.meta, decorations.pathmorphing, decorations.pathreplacing}
 \usepgflibrary{shadings}
-\usepackage{lastpage}
 \usepackage{pgfkeys}
 \usepackage{pdftexcmds}
 \usepackage{shellesc}
 \usepackage{algorithm, algorithmic, xspace}
-\usepackage{caption}
-\usepackage{subcaption}
-
 %%% Define new colors %%%
 \definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
 
@@ -114,9 +110,9 @@
 }
 
 \usepackage[Glenn]{fncychap}
-% \ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
-% \ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
-% \ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
+\ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
+\ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
 \usepackage{xpatch}
 
 % \xpatchcmd{\DOCH}
@@ -158,12 +154,12 @@
 
 %% Change Chapter Heading Placement %%
 \usepackage{etoolbox}
-% \makeatletter
-% \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
-% \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
-% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
-% \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
-% \makeatother
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
 
 
 
@@ -218,7 +214,7 @@
 % \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
 % \makeatother
 
-% \renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
+\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
 
 
 %%% FIGURES %%%
@@ -233,24 +229,16 @@
 \hypersetup{
 	colorlinks=true,
 	linkcolor=horange,
-	filecolor=horange,
+	filecolor=horange,      
 	urlcolor=horange,
 }
 
 
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
-% \pagestyle{standard} % options: empty , plain , fancy
-% \fancypagestyle{standard}{
-%     \fancyhead[R]{\assignmentname}
-%     \fancyhead[L]{Hendrix College}
-%     \fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
-%     \fancyfoot[R]{\rule{\textwidth}{0.5pt} \\ Page \thepage\ of~\pageref*{LastPage}} % Right-aligned 
-% }
-\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
 \pagestyle{fancy} % options: empty , plain , fancy
-\fancyhead[R]{\assignmentname}
-\fancyhead[L]{Hendrix College}
+\fancyhead[R]{\textcolor{draculafg}{\assignmentname}}
+\fancyhead[L]{\textcolor{draculafg}{Hendrix College}}
 \fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
@@ -264,7 +252,7 @@
 \tcbuselibrary{theorems}
 % \tcbuselibrary{minted}
 \newcounter{BoxCounter}
-\usepackage{dingbat}
+% \usepackage{dingbat}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -273,16 +261,13 @@
 %You'll need your own packages, theorem types, and commands.
 
 \usepackage{fix-cm}
-\usepackage{amsmath,amsthm} 
+\usepackage{amsmath,amsthm, amsfonts, amssymb} 
 \usepackage{array, makecell}
 \usepackage{colortbl}
 \newcommand{\thickvrule}{\vrule width 1pt}
-
 \newcommand{\thickhrule}{\Xhline{1pt}}
 
 \usepackage{mathtools}
-\usepackage{tabularx}
-\usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{mathrsfs}
 \usepackage{changepage}
@@ -345,8 +330,8 @@
 	\end{tikzpicture}%
 }
 
-% \renewcommand{\theenumi}{\arabic{enumi}}
-% \renewcommand{\labelenumi}{\textbf{\theenumi}.}
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi}.}
 
 % \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
 
@@ -357,7 +342,7 @@
 	leftline=true,
 	linewidth=1.5pt,
 	linecolor=black, % default color, will be overridden in custom commands
-	% backgroundcolor=draculafg, % Needed for Dracula theme
+	backgroundcolor=draculabg, % Needed for Dracula theme
 	fontcolor=\documentTheme, % Needed for Dracula theme
 	innertopmargin=0pt,
 	innerbottommargin=5pt,
@@ -395,40 +380,6 @@
 }{
     \end{adjustwidth}
     \end{minipage}
-    \end{mdframed}
-}
-
-% Define a new environment 'proofscratch' for Proof and Scratch Paper
-\newenvironment{proofscratch}[2]{%
-    \begin{mdframed}[
-        topline=false,
-        bottomline=false,
-        rightline=false,
-        leftline=false,
-        backgroundcolor=draculabg, % Background color for Dracula theme
-        fontcolor=\documentTheme,       % Font color for Dracula theme
-        innerleftmargin=-6pt,
-        innertopmargin=0pt,
-        leftmargin=0pt,
-        rightmargin=0pt,
-        skipabove=\topsep,
-        skipbelow=\topsep,
-    ]
-    % % Begin TikZ picture for the vertical dotted line
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     % Draw a vertical dotted line at approximately the center of the mdframed width
-    %     \draw[dotted, thick] ([xshift=0.005\linewidth]current bounding box.north west) -- ([xshift=0.005\linewidth]current bounding box.south west);
-    % \end{tikzpicture}%
-    % % Create the left minipage for Proof
-    \begin{minipage}[t]{0.47\textwidth}%
-        \noindent\textit{Proof.} #1 \hfill \(\qed\)
-    \end{minipage}%
-    \hfill
-    % Create the right minipage for Scratch Paper
-    \begin{minipage}[t]{0.47\textwidth}%
-        \textit{Scratch Paper.} #2
-    \end{minipage}%
-}{
     \end{mdframed}
 }
 
@@ -542,6 +493,8 @@
 \newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
 \newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
 
+\newcommand{\funccolon}{\, \colon}
+
 \newcommand{\squigglyline}{%
     \noindent
     \tikz[baseline=-0.5ex]{
@@ -549,7 +502,11 @@
         (0,0) -- (\dimexpr\linewidth\relax,0);
     }%
 }
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\generator}[1]{\langle #1 \rangle}
+
 
 % end of preamble
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -563,16 +520,18 @@
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\newcommand{\assignmentname}{Writing Assignment 3}
+\newcommand{\assignmentname}{Homework 7: Section 15}
 
 % Do not use all caps.
-\newcommand{\cussubtitle}{Probability \& Statistics}
+\newcommand{\cussubtitle}{Algebra}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{November 21, 2025}
+\newcommand{\finaldate}{November 25, 2025}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
-\newcommand{\professor}{Prof.\ Lars Seme, M.S.}
+\newcommand{\professor}{Dr. Christopher Camfield, Ph.D.}
 
-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
 
 \begin{titlepage}
     \begin{center}
@@ -621,122 +580,63 @@
         \end{large}
     \end{center}
 \end{titlepage}
-% \pagestyle{standard}
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\section{Introduction}
+\section*{Section 15}
 
-It can often be the case that when we collect empirical data, it can be challenging to distinguish between known theoretical distributions based on summary statistics alone. Thus, the focus of this paper is to investigate three distinct datasets\textemdash\textbf{Data1}, \textbf{Data2}, \textbf{Data3}\textemdash where each has \(n = 200\) samples, and each sample is generated by one of these methods:
+% Section 15: Exercises 1-12(choose any 4), 20, 21, 28, 29
+In Exercises 1, 4, 8, and through 11, classify the given group according to the fundamental theorem of finitely generated
+abelian groups.
+
 \begin{enumerate}
-    \item \(X \sim 15 + Gamma(6.25, 0.8)\)
-    \item \(Y \sim 20 + \left(\sqrt{4/3}\right)t(3)\)
-    \item \(Z \sim 20 + N(0,4)\).
-\end{enumerate} 
+    \item \((\Z_{2} \times \Z_{4}) / \gen{(0,1)}\)
+    \sol{
+        
+    }
 
-\section{Data Analysis}
-
-A quick check to determine where the data came from is to find the mean and variance of each theoretical distribution, and compare it with the sample mean and sample variance from the empirical ones. First, let us investigate the theoretical distributions:
-\begin{enumerate}
-    \item We know that \(X\) is gamma-distributed and shifted by 15, so its mean and variance formulas are \(\mu = 15 + \alpha\theta\) and \(\sigma^{2} = \alpha\theta^{2}\). Substituting \(\alpha\) for 6.25, and \(\theta\) for 0.8, we see that 
-    \[
-        \mu = 15 + (6.25 \cdot 0.8) = \boxed{20} \quad \text{ and } \quad \sigma^{2} = (0.64)(6.25) = \boxed{4}.
-    \]
-    \item For \(Y\), since it is \(t\)-distributed, its mean is usually 0, and its variance is found by solving \(\frac{r}{r - 2}\) for \(r > 2\). However, it is shifted by 20 and scaled by a factor of \(\sqrt{4/3}\), so we find its mean and variance to be:
-    \[
-        \mu = 0 + 20 = \boxed{20} \quad \text{ and } \quad \sigma^{2} = \frac{3}{3 - 2} \cdot \left(\sqrt{4/3}\right)^{2} = \boxed{4}.
-    \]
-    \item Then for \(Z\), we find the mean and variance from the distribution parameters, but we must also shift the mean by 20:
-    \[
-        \mu = 0 + 20 = \boxed{20} \quad \text{ and } \quad \sigma^{2} = \boxed{4}.
-    \]
+    \setcounter{enumi}{3}
+    \item \((\Z_{4} \times \Z_{8}) / \gen{(1,2)}\)
+    \sol{
+        
+    }
+    \setcounter{enumi}{7}
+    \item \((\Z \times \Z \times \Z) / \gen{(1,1,1)}\)
+    \sol{
+        
+    }
+    \setcounter{enumi}{9}
+    \item \((\Z \times \Z \times \Z_{8}) / \gen{(0,4,0)}\)
+    \sol{
+        
+    }
 \end{enumerate}
 
-The empirical means and sample variances can be seen in \hyperref[tab:dataStats]{Table 1}. These results leave us in a rather awkward situation: all of our theoretical distributions have the same mean and variance, and (perhaps unsurprisingly) the empirical distributions also have similar means with each other, and with the theoretical distributions. Thus, we must tackle this investigation from another angle.
-\begin{table}[htbp]
-    \centering
-    \begin{tabularx}{\textwidth}{lYYYYYYY}
-        \toprule
-         & \textbf{Min.} & \(Q_{1}\) & \textbf{Median} & \(Q_{3}\) & \textbf{Max.} & \textbf{Mean} & \textbf{S. Var.} \\  \midrule
-        \textbf{Data1} & \(9.325\) & \(19.101\) & \(20.095\) & \(20.979\) & \(26.490\) & 19.947 & 3.908 \\ \midrule
-        \textbf{Data2} & \(16.179\) & \(18.486\) & \(19.777\) & \(21.163\) & \(27.306\) & 19.978 & 3.962 \\ \midrule
-        \textbf{Data3} & \(14.057\) & \(18.665\) & \(20.093\) & \(21.462\) & \(25.354\) & 20.125 & 4.086 \\
-        \bottomrule
-    \end{tabularx}
-    \caption{Dataset Statistics}\label{tab:dataStats}
-\end{table} 
-\newpage
-\section{Box Plots \& Histograms}
 
-For \textbf{Data1}, we see that its  histogram follows a bell-shaped curve (\hyperref[fig:data1histbox]{Figure 1 (a)}), and can see numerous outliers in its box plot (\hyperref[fig:data1histbox]{Figure 1 (b)}). Then, for \textbf{Data2}'s histogram (\hyperref[fig:data2histbox]{Figure 2 (a)}), we see that is also roughly bell shaped, but is right skewed. \textbf{Data3}'s histogram is also bell-shaped (\hyperref[fig:data3histbox]{Figure 3 (a)}), with most of its data being falling within the interquartile range with only 1 outlier, as seen in its box plot (\hyperref[fig:data3histbox]{Figure 3 (b)}). From these observations, we can make the draw the following connections:
-\begin{itemize}
-    \item \textbf{Gamma Distribution:} We know that the gamma distribution follows a shape similar to that of \textbf{Data2}'s, where there is a right skew with a bell-shape. We also know that gamma's sample space is non-negative, so we know that it must start at 15 (due to \(Y\)'s shifting). This leaves us with the clear choice that \textbf{Data2} must be gamma-distributed, as it is the only distribution that starts above 15 (as per \hyperref[tab:dataStats]{Table 1}).
-    \item \textbf{Normal \& T Distributions:} Like the gamma distribution, these both are bell-shaped, but the normal curve has the property where 95\% of the data falls within two standard deviations of the mean. Compare that to \textbf{Data1}'s distribution that has two outliers that are over five standard deviations from the mean. This tells us that the \textbf{Data1} cannot be normally distributed.
-\end{itemize}
-Thus, through a process of elimination, we have strong evidence that \textbf{Data1} is \(t\)-distributed, \textbf{Data2} is gamma-distributed, and \textbf{Data3} is normally distributed. Now, to ensure our choices are valid, we will now investigate q-q plots.
+In Exercises 20 and 21, let \(F\) be the additive group of all functions mapping \(\R\) into \(\R\), and let \(F^*\) be the multiplicative group of all elements of \(F\) that do not assume the value 0 at any point of \(\R\).
 
-\section{Q-Q Plots}
+\begin{enumerate}
+    \setcounter{enumi}{19}
+    \item Let K be the subgroup of F consisting of the constant functions equal to 1. Find a subgroup of \(F\) to which \(F / K\) is isomorphic.
+    \sol{
+        
+    }
+    \item Let \(K^{*}\) be the subgroup of \(F^{*}\) consisting of the nonzero constant functions. Find a subgroup of \(F^{*}\) to which \(F^{*} / K^{*}\) is isomorphic.
+    \sol{
+        
+    }
+    \setcounter{enumi}{27}
+    \item Give an example of a group \(G\) having no elements of finite order \(> 1\) but having a factor group \(G / H\), all of whose elements are of finite order.
+    \sol{
+        
+    }
+    \item Let \(H\) and \(K\) be normal subgroups of a group \(G\). Give an example showing that we may have \(H \simeq  K\) while \(G / H\) is not isomorphic to \(G / K\).
+    \sol{
+        
+    }
+\end{enumerate}
 
-Q-q plots are measurements that take a data values at specific percentiles, and compares them to theoretical counterparts. For example, the smallest value in \textbf{Data1}'s set is \(\approx 9.326\) with percentile \(\approx 0.005\). So, we can take that percentile and calculate the corresponding value in one of our distributions and compare values. It is important to note that if the empirical distribution's value and the theoretical distribution's value are equal for every percentile, then that shows that both distributions are equivalent. In q-q plots, that relationship is modeled as \(y = x\), and can be seen as a straight line. Now, in our q-q plots (\hyperref[fig:qqplots]{Figure 4}), we see that \textbf{Data1} and the \(t\) distribution plot has a straight line (albeit with a few outliers); \textbf{Data2} and the gamma distribution plot is almost a near perfect straight line; and \textbf{Data3} and the normal curve plot show the straightest line for all datasets vs.\@ the normal distribution. 
-
-
-\section{Conclusion}
-
-Through our analysis, we have shown that when you cannot rely on comparing means and variances of empirical distributions to theoretical distributions, you still have other tools that you can rely on. Specifically, we examined histograms and box plots and gained strong evidence that \textbf{Data1} was \(t\)-distributed because it contained outliers that made it so that it could not be gamma-distributed, nor could it be normally distributed because it had outliers that were more than 5 standard deviations from the mean. Then, we also saw that the only theoretical distribution that could be mapped to \textbf{Data2} was gamma because the other two empirical distributions started below 15, which gamma cannot because its support is non-negative. Finally, that left \textbf{Data3} to be mapped to the normal distribution. Finally, we looked at q-q plots that directly supported our conclusions from the histograms and box plots. Thus, through this investigation, we have definitively shown that \textbf{Data1} is \(t\)-distributed, \textbf{Data2} is gamma-distributed, and \textbf{Data3} is normally distributed. 
-
-
-
-\newpage
-
-\section*{Appendix A:\@ Histograms \& Box Plots}
-
-\begin{figure}[h!]
-    \centering\label{fig:data1histbox}
-    \begin{subfigure}[c]{0.475\linewidth}
-        \includegraphics[width=\linewidth]{graphs/Histograms/Data1Hist.png}
-        \caption{Histogram}
-    \end{subfigure}
-    \begin{subfigure}[c]{0.475\linewidth}
-        \includegraphics[width=\linewidth]{graphs/BoxPlots/Data1Box.png}
-        \caption{Box Plot}
-    \end{subfigure}
-\caption{\textbf{Data1}'s Histogram \& Box Plot}    
-\end{figure}
-
-\begin{figure}[h!]
-    \centering\label{fig:data2histbox}
-    \begin{subfigure}[c]{0.475\linewidth}
-        \includegraphics[width=\linewidth]{graphs/Histograms/Data2Hist.png}
-        \caption{Histogram}
-    \end{subfigure}
-    \begin{subfigure}[c]{0.475\linewidth}
-        \includegraphics[width=\linewidth]{graphs/BoxPlots/Data2Box.png}
-        \caption{Box Plot}
-    \end{subfigure}
-\caption{\textbf{Data2}'s Histogram \& Box Plot}    
-\end{figure}
-
-\newpage
-
-\begin{figure}[ht]
-    \centering\label{fig:data3histbox}
-    \begin{subfigure}[c]{0.475\linewidth}
-        \includegraphics[width=\linewidth]{graphs/Histograms/Data3Hist.png}
-        \caption{Histogram}
-    \end{subfigure}
-    \begin{subfigure}[c]{0.475\linewidth}
-        \includegraphics[width=\linewidth]{graphs/BoxPlots/Data3Box.png}
-        \caption{Box Plot}
-    \end{subfigure}
-\caption{\textbf{Data3}'s Histogram \& Box Plot}    
-\end{figure}
-
-\newpage
-\section*{Appendix B:\@ Q-Q Plots}
-
-\begin{figure}[h]
-    \centering
-    \label{fig:qqplots}
-    \includegraphics[width=\linewidth]{graphs/allqqs.png}
-    \caption{All Q-Q Plots; All plots are shown on the same data range for consistency.}
-\end{figure}
-
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 \end{document}
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

@@ -66,7 +66,7 @@ We can rearrange these terms such that we can `force' the series to converge to 
 ``To get close'' means is that we are finding a bigger and bigger \(N\) as \(\epsilon\) gets smaller. Note that the choice of \(N\) certainly depends on \(\epsilon\). This idea of ``getting close'' can be seen in the following definition:
 
 \begin{tcolorbox}%
-    [enhanced, sharp corners=downhill, colframe=xred, colback=xred!15, coltitle=white, label=def:2.2.3B, title={\large \textbf{Definition 2.2.3B}},attach boxed title to top right={xshift=-0.5cm}, boxed title style={colback=xred}]
+    [enhanced, sharp corners=downhill, colframe=draculared, colback=draculared!15!draculabg, coltitle=white, coltext=draculafg, label=def:2.2.3B, title={\large \textbf{Definition 2.2.3B}},attach boxed title to top right={xshift=-0.5cm}, boxed title style={colback=draculared}]
     A sequence \( (a_n) \) converges to \( a \) if, given any \( \epsilon \)-neighborhood \( V_\epsilon(a) \) of \( a \), there exists a point in the sequence after which all of the terms are in \( V_\epsilon(a) \). In other words, every \( \epsilon \)-neighborhood contains all but a finite number of the terms of \( (a_n) \).
 \end{tcolorbox}
 
@@ -1100,7 +1100,7 @@ This yields the identity
 \[
     1 + r + r^{2} + \cdots r^{n} = \frac{1-r^{n + 1}}{1 - r}.
 \]
-
+\vfill
 \begin{example}
     {Cauchy Sequence}Consider the sequence \(a_1 = 1, a_2 = 2,\) where \[a_n = \frac{a_{n-1} + a_{n-2}}{2} \text{ for all } n \geq 2.\] Show this sequence is Cauchy.
 \end{example}
@@ -1123,7 +1123,7 @@ Now, conclude the proof by letting \(\epsilon > 0\). We know \((1/2^n) \rightarr
 \begin{note}
     \textbf{Note:} To find the limit of this series, a proof strategy is finding subsequences that are odd and even, and show the converge to the same limit.
 \end{note}
-
+\vfill
 \begin{ntheorem}
     {Cauchy Criterion}A sequence \(x_n\) converges if, and only if, it is a Cauchy sequence.
 \end{ntheorem}
@@ -1148,7 +1148,7 @@ Now, conclude the proof by letting \(\epsilon > 0\). We know \((1/2^n) \rightarr
                                    & = \epsilon.
               \end{align*} Therefore, \((x_n) \rightarrow L\).
     \end{itemize}}{By proving both directions of the inequality, we found that a sequence \((x_n)\) converges if, and only if, it is a Cauchy sequence.}%
-{xblue}%
+{draculablue}%
 
 \begin{definition}
     A sequence is called \textit{contracting} is there exists \(0 < C < 1\) such that for all \(n \in \N\), \(\disabs{x_{n+1} - x_n} \leq C\disabs{x_n - x_{n-1}}\).
