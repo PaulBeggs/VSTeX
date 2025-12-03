@@ -92,7 +92,7 @@
 \setlength{\parindent}{0pt}
 
 \title{Project 9: Neural Networks}
-\author{Paul Beggs \\ \href{https://github.com/PaulBeggs/A_Star}{GitHub Link}}
+\author{Paul Beggs \\ \href{https://github.com/PaulBeggs/A_Star}{CSCI 335 Repo}, \href{https://github.com/PaulBeggs/AI_Agents}{Python Code}}
 \date{\today}
 
 
@@ -103,5 +103,11 @@
 \section{Markov Chain Analysis}
 
 Through testing different sentences, the Markov Chain was able to consistently identify the languages that it was trained on. For the other languages, it classified Somali and Yoruba as English, and Romanian and Portuguese as French. These choices make sense, as the Romanian, Portuguese, and French languages are all Romance languages. That is, they share bigrams like `qu', `ti', `ca', etc. The elephant in the room is that Spanish is, of course, also a Romance language, so the fact a language like Portuguese does not show any similarity is confusing. This disparity is probably due to the common character `ç' that both Portuguese and French share, but Spanish does not. The same explanation could also be applied between Romanian and French: both share the letter `î', of which, Spanish does not. For Somali and Yoruba, I'm not entirely sure why they are correlated with English, but I assume it has to do with the lack of letters with accents for Somali, and a lack of common accents with Yoruba.
+
+\section{LLM Program}
+
+For this part of the assignment, I got too overzealous, which led to problems when I tried to implement the agent in the program. I wanted to create a dungeon crawler that is augmented by LLMs, but I quickly found out that the agents could not live up to what I wanted them to do. In the program, my idea was to have an inventory where the user has custom weapons, artifacts, and maps that have different difficulty. The user can equip artifacts that will change the amount of health/stamina/defense (even though they were all supposed to have a purpose, the only one that was viable to use was the health metric). These are all accessible by typing \texttt{status} in the main loop. I also implemented functionality, so the user could change what weapon they are using, which would have an effect in the dungeon, but this also fell short, as I could not get the LLMs to interact with these stats at all. 
+
+\subsection{Chatbot Functionality}
 
 \end{document}

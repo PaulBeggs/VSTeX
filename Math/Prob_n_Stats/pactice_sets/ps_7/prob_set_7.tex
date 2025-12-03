@@ -1,0 +1,442 @@
+\documentclass[11pt]{article}
+
+\usepackage{fix-cm}
+\usepackage{tikz}
+\usepackage{forest} 
+\usepackage{amsmath,amsthm} 
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+% \usepackage{draculatheme}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum} 
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{
+	decorations.markings,
+	trees,
+	arrows,
+	automata,
+	shapes,
+	backgrounds,
+	calc,
+	patterns
+}
+
+\setlength{\parindent}{0pt}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	% backgroundcolor=draculabg, % Needed for Dracula theme
+	% fontcolor=draculafg, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        innertopmargin=10pt,
+        innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[left=0.5in,right=0.5in,top=1in,bottom=1in]{geometry}
+% \usepackage{setspace}
+% \linespread{1}
+\usepackage{listings}
+
+%%% Define new colors %%%
+\usepackage{xcolor}
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+% \graphicspath{ {images/} }  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\mysqrt}[1]{%
+  \mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+  \mathpalette\foodisplay{#1}%
+}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+	% #1: math style, #2: content
+	\sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+    	\node[inner sep=0, outer sep=0] (sqrt) {\(#1\sqrt{#2}\)}; % Use the current math style
+    	\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+  	\end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+    % #1: math style, #2: content
+    \sbox0{\(#1\sqrt{#2}\)}% Measure the size of the standard sqrt in the current style
+    \begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {\(\displaystyle\sqrt{#2}\)}; % Force displaystyle
+    	\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{||\mb{#1}'(#2)||}
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+% \renewcommand{\theenumi}{\arabic{enumi}} 
+% \renewcommand{\labelenumi}{\theenumi.}
+
+\title{Probability and Statistics: Practice Set 7}
+\author{Paul Beggs}
+\date{\today}
+
+%%% Custom Comands %%%
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\I}{\ensuremath{\mathbb{I}}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\mbi}{\mathbf{i}}
+\newcommand{\mbj}{\mathbf{j}}
+\newcommand{\mbk}{\mathbf{k}}
+\newcommand{\mbr}{\mathbf{r}}
+
+\newcommand{\bigpfrac}[2]{\left( \frac{#1}{#2} \right)}
+\newcommand{\negbigpfrac}[2]{\left(- \frac{#1}{#2} \right)}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item (2 points) Suppose a researcher wishes to see if students who sleep less than 8 hours before an exam have a mean score of 80 or better on the exam. Their null hypothesis is that the mean score is less than or equal to 80. They use \(\alpha = 0.05\) and sample \(n = 36\) students and determine \(p = 0.03\) and so reject \(H_{0}\). If a later survey of all student exam scores shows that in fact,  students who sleep less than 8 hours have a mean exam score of 78.2, what kind of error has the initial researcher made?
+    \sol{
+        The researcher made a Type I Error.
+    }
+    \vfill
+    \item (2 points) A researcher wants to test an alternative hypothesis that eating a fun sized bag of M\&Ms before an exam improve test scores. They make a control group of size \(n = 23\) and treatment group of size \(n = 26\) and \(\alpha = 0.05\). They run their \(t\)-test, but find \(p = 0.0861\). They then run another version of the same experiment, with sample sizes \(n = 28\) for the control and \(n = 25\) for the treatment, but find \(p = 0.0912\). They repeat this again, using various similar sample sizes and find \(p = 0.5023\) and then \(p = 0.0781\) and finally \(p = 0.0234\). They reason that they have found a true result, since it only took 5 attempts, and at \(\alpha = 0.05\), they should only encounter spurious results about 1 in 20 times. Briefly, critique their process.
+    \sol{
+        This researcher has engaged in \(p\)-hacking. Wherein, instead of accepting the first valid \(p\)-value, they kept trying to reach the \(p<\alpha\) threshold for their data. This leads to an increase in Type I/II errors. Also, their reasoning for the spurious results is also flawed: they have not found a ``true result'' because it only took 5 attempts. Instead, they kept rolling the dice until they encountered a Type I Error.
+    }
+    \vfill
+    \item (2 points) You flip a coin 300 times and get 128 heads. Use the calculator to build a \(99\%\) confidence interval for the proportion of heads this coin produces. What can you say about the fairness of the coin?
+    \sol{
+        Using \texttt{1-PropZInt} with \(x = 128\) and \(n = 300\), we get \((0.353, 0.500)\) as our 99\% confidence interval. Since the value \(0.5\) is included within the 99\% CI, we cannot conclude that the coin is unfair at \(\alpha = 0.1\).
+    } 
+\newpage
+    \item (3 points) Week-old ducklings have a mean weight of 423 g. You are concerned about a new industrial plant upstream from your favorite pond, and so weigh a random sample of \(n = 43\) week-old ducklings. You find \(\overline{x} = 413.7\) g and \(s = 33.9\). At \(\alpha = 0.05\), is there evidence that the plant is causing the ducks to be underweight? Use the NHST steps.
+    \sol{
+        Our population consists of week-old ducklings. Our test is one-tailed because we think the ducklings are less in weight. We hypothesize that:
+        \begin{itemize}
+            \item \(H_{0} \colon \mu \geq 423\) \textendash\@ The average duckling weighs at least 423 grams.
+            \item \(H_{1} \colon \mu < 423\) \textendash\@ The average duckling weighs less than 423 grams.
+        \end{itemize}
+        For our sample, we will use a 1-sample \(t\)-test. This yields \(t_{\text{samp}} = -1.799\), \(p = 0.04\). Since \(p < \alpha\), we \textbf{reject} the null hypothesis. We find the 90\% confidence interval to be \((405,422.4)\). Our effect size is calculated like so:
+        \[
+            d = \frac{\overline{x} - \mu_{0}}{s} = \frac{413.7 - 423}{33.9} = -0.274.
+        \]
+        Therefore, our effect is small. These data lead us to conclude that the industrial plant upstream has a negative small effect upon week-old ducklings.
+    }
+    \vfill
+    \item (3 points) Prof. Seme gives the same 5 NHST questions to his MATH 215 and MATH 310 students, and assigns each student a grade. We will treat each as a random sample of all Intro Stats and Math-Major-Adjacent Stats students. Using the data in the table below, is there evidence, at \(\alpha = 0.01\), that there is a difference in performance between the two groups? Use the NHST steps. \\
+    \begin{tabular}[htbp]{|c||c|c|}
+        \hline
+         & MATH 215 & MATH 310 \\ \hline\hline
+        Mean Score & 74.7 & 81.2 \\ \hline
+        Sample St. Dev. & 12.3 & 9.1 \\ \hline
+        Count & 35 & 23 \\ \hline
+    \end{tabular}
+    \sol{
+        We have two populations: one consisting of all students who belong to Intro Stats (MATH 215), and the other being all students in Math-Major-Adjacent Stats (MATH 310). Our test is two-tailed because we are investigating if there is any difference at all. Thus, we posit the following hypotheses:
+        \begin{itemize}
+            \item \(H_{0} \colon \mu_{215} = \mu_{310}\) \textendash\@ There is no difference in-between MATH 215 and MATH 310.
+            \item \(H_{1} \colon \mu_{215} \ne \mu_{310}\) \textendash\@ There is a difference in-between MATH 215 and MATH 310.
+        \end{itemize}
+        We will use a 2-sample \(t\)-test where we do not assume that the two populations have the same variance (not pooled), as we are working with two separate populations. We find \(t_{\text{samp}} = -2.309\), \(p = 0.02\). Since \(p > \alpha\), we \textbf{fail to reject} \(H_{0}\), we do not have sufficient evidence that there is a difference in scores between MATH 215 and MATH 310. We find the \(99\%\) confidence interval to be \((-14.01, 1.01)\), which we note includes 0. Now, we find \(s_{p}\) and the effect size:
+        \[
+            s_{p} = \sqrt{\frac{12.3^{2} + 9.1^{2}}{2}} = 10.82, \qquad \implies \qquad d = \frac{\overline{x_{1}} - \overline{x_{2}}}{s_{p}} = -0.601.
+        \]
+        While the sample data shows a medium effect size, we do not have enough evidence to support that there is a difference in the populations. 
+    }
+\newpage
+    \item (3 points) We are also interested in whether the variances of the two classes (from the previous problem) are different. So, to repeat, Prof. Seme gives the same 5 NHST questions to his MATH 215 and MATH 310 students, and assigns each student a grade. We will treat each as a random sample of all Intro Stats and Math-Major-Adjacent Stats students. Using the data in the table below, is there evidence, at \(\alpha = 0.05\), that there is a difference the variance in performance between the two groups? Use the NHST steps. \\
+    \begin{tabular}[htbp]{|c||c|c|}
+        \hline
+         & MATH 215 & MATH 310 \\ \hline\hline
+        Mean Score & 74.7 & 81.2 \\ \hline
+        Sample St. Dev. & 12.3 & 9.1 \\ \hline
+        Count & 35 & 23 \\ \hline
+    \end{tabular}
+    \sol{
+        The population consists of all students who belong to Intro Stats (MATH 215) and all Math-Major-Adjacent Stats (MATH 310). Our test is two-sided as we are only looking for a \textit{difference} in variances. Thus, we have hypotheses:
+        \begin{itemize}
+            \item \(H_{0} \colon \sigma^{2}_{215} = \sigma^{2}_{310}\) \textendash\@ The two variances are the same. 
+            \item \(H_{1} \colon \sigma^{2}_{215} \ne \sigma^{2}_{310}\) \textendash\@ The two variances are different. 
+        \end{itemize}
+        We will use a 2-sample \(F\)-test. We find that \(F_{\text{samp}} = 1.827\), \(p = 0.14\). Since \(p > \alpha\), we \textbf{fail to reject} \(H_{0}\). \\
+        
+        We do not have evidence to suggest that the variances are different.
+    }
+    \vfill
+    \item (3 points) A professor wonders if students are more likely to be absent on Friday in the 3-day-a-week class than Monday or Wednesday (i.e. not exactly equal across all days). The professor uses a single course one semester as though it is a random sample, and counts that of 100 total absences, 41 were on a Friday. Is there evidence, at \(\alpha = 0.05\) to support the professor's suspicion about Fridays? Use the NHST steps. 
+    \sol{
+        The population consists of all absences in the semester. We are examining the proportion of absences that occur on Fridays (\(p\)). If absences are distributed equally across the 3 class days, we expect \(p = 1/3\).
+        
+        Because the professor suspects students are \textit{more} likely to be absent on Fridays, this is a one-tailed test. Thus, our hypotheses are:
+        \begin{itemize}
+            \item \(H_{0} \colon p = 1/3\) \textendash\@ Friday absences occur at the expected rate.
+            \item \(H_{a} \colon p > 1/3\) \textendash\@ Friday absences occur more frequently than random chance.
+        \end{itemize}
+
+        We use a 1-proportion \(Z\)-test. We find that \(z_{\text{samp}} = 1.63\), \(p = 0.052\). Since \(p > \alpha\) we \textbf{fail to reject} \(H_{0}\). We find the 90\% confidence interval to be \((0.329, 0.491)\), which we note contains \(\frac{1}{3}\). Our effect size is calculated below:
+        \[
+            d = 2\arcsin\left(\sqrt{\hat{p}}\right) - 2\arcsin\left(\sqrt{p_{0}}\right) = 2\arcsin\left(\sqrt{41/100}\right) - 2\arcsin\left(\sqrt{.3\overline{3}}\right) = 0.159.
+        \]
+        Our effect is small. \\
+        
+        We conclude that there is not sufficient evidence at \(\alpha = 0.05\) to support the claim that absences are more likely on Fridays, though the result is borderline. Additionally, even if they were significant, our result would would have a small effect.
+    }
+    \newpage
+    \item (3 points) A random sample of Hendrix and Ozarks students shows that 25 of 48 Hendrix students have taken a statistics class in college and 17 of 50 Ozarks students have. Is there evidence, at \(\alpha = 0.1\) that there is a difference in the proportion of students who take stats at the two schools? Use the NHST steps.
+    \sol{
+        We have two populations here: all Hendrix students that have taken a statistics class in college, and all Ozarks Students who have also taken a statistics class. Since we are only interested in determining if there is a difference in the population, this is a two-tailed test. Our hypotheses are:
+        \begin{itemize}
+            \item \(H_{0} \colon p_{O} = p_{H}\) \textendash\@ There is no difference between the proportion of Ozarks students that take statistics and that of Hendrix students.
+            \item \(H_{1} \colon p_{O} \ne p_{H}\) \textendash\@ There is a difference between the proportion of Ozarks students that take statistics and that of Hendrix students.
+        \end{itemize}
+        We will use a two sample \(Z\)-test for proportion. We find that \(z_{\text{samp}} = 1.81\), \(p = 0.07\). Since \(p > \alpha\), we \textbf{reject} \(H_{0}\). Since our sample was two-sided and \(\alpha = 0.1\), we find the 90\% confidence interval to be \((0.0189, 0.342)\), which we note does not include 0. We find the effect size to be
+        \[
+            d = 2\arcsin\left(\sqrt{\hat{p}_{1}}\right) - 2\arcsin\left(\sqrt{\hat{p}_{2}}\right) = 2\arcsin\left(\sqrt{25/48}\right) - 2\arcsin\left(\sqrt{17/50}\right) = 0.367.
+        \] 
+        Thus, our effect is small-medium. Overall, we support a claim that there is a difference between the proportion of students who take stats at Ozarks and Hendrix. In addition, our effect size tells us that our result is small to medium. 
+    }
+    \vfill
+    \item (3 points) It is known that, over the past 10 years, 50\% of Hendrix students come from AR, 29\% from TX, 10\% from OK, 5\% from MO, 3\% from TN, and 3\% elsewhere. A survey of 120 students who have recently taken Calculus I shows that 54 are from AR, 23 from TX, 17 from OK, 8 from MO, 8 from TN, and 10 elsewhere. Is there evidence, at \(\alpha = 0.05\), that the distribution of students who take Calculus I is different from the overall Hendrix population?
+    \sol{
+        We will use the \(\chi^{2}\)-GOF-Test. From the given data, we have the following table: \\
+
+        \begin{tabularx}{\textwidth}{lYYYYYY}
+            \toprule
+             & \textbf{AR} & \textbf{TX} & \textbf{OK} & \textbf{MO} & \textbf{TN} & \textbf{Else.} \\ \midrule
+            \textbf{Observed} & 54 & 23 & 17 & 8 & 8 & 10 \\ \midrule
+            \textbf{Expected} & 60 & 34.8 & 12 & 6 & 3.6 & 3.6  \\ \bottomrule
+        \end{tabularx} \\
+        
+        By typing these data into my TI-84 for \(L_{1}\) and \(L_{2}\), and then using \texttt{X2GOF-Test}, I got \(\chi^{2}_{\text{samp}} = 24.107\), \(p = 0\). Since \(p < \alpha\), we \textbf{reject} \(H_{0}\) and conclude that there is a difference between the students who take Calculus I and the overall Hendrix population.
+    }
+    \newpage
+    \item (3 points) You are interested in whether there is a relationship between a student's major area (Humanities, Nat Sci, Soc Sci, or Interdisciplinary) and the amount of sleep they get. You survey students and find the data in the table below. What can you say, at \(\alpha = 0.05\)? Use the NHST steps. \\
+    \begin{tabular}[htbp]{|c||c|c|c|c|}
+        \hline
+        Sleep & Human. & Nat. Sci. & Soc. Sci. & Inter. \\ \hline
+        8+ Hours & 12 & 34 & 36 & 9 \\ \hline
+        6.5 - 7.9 Hours & 17 & 31 & 42 & 11 \\ \hline
+        6.4- Hours & 13 & 29 & 43 & 12 \\ \hline
+    \end{tabular}
+    \sol{
+        We have two categories: Sleep amount and major area. We want to see if there is some dependence between the two categories. Thus, we have the following hypotheses:
+        \begin{itemize}
+            \item \(H_{0} \colon\) Sleep amount and major are independent.
+            \item \(H_{1}:\) Sleep amount and majors are dependent.
+        \end{itemize}
+        We will use a \(\chi^{2}\)-test of independence. We find that \(\chi^{2} = 2.055\), and \(p = 0.915\). Since \(p > \alpha\), we \textbf{fail to reject} \(H_{0}\). We lack evidence to support the claim that there is a relationship between the amount of sleep a student gets and their major.
+    }
+    \item (3 points) You want to know if Hendrix students have differences in their average number of M\&Ms eaten per week, depending on their home state. You run an ANOVA, at \(\alpha = 0.05\) and find the following table: \\
+    \begin{tabular}[htbp]{|c|c|c|c|c|}
+        \hline
+        Groups & Count & Sum & Average & Variance \\ \hline
+        AR & 34 & 6791.78 & 199.76 & 194.84 \\ \hline
+        LA & 29 & 6238.93 & 215.14 & 226.15 \\ \hline
+        MO & 25 & 4582.62 & 183.30 & 298.45 \\ \hline
+        OK & 25 & 4909.81 & 196.39 & 144.80 \\ \hline
+        TX & 25 & 4517.76 & 180.71 & 271.74 \\ \hline
+    \end{tabular} \\[0.5em]
+
+    ANOVA\\
+    \begin{tabular}[htbp]{|l||r|r|r|r|r|r|}
+        \hline
+        Source of Variation & SS & df & MS & F & P-value & F crit \\ \hline
+        Between Groups & 20975.92 & 4 & 5243.98 & 23.31 & 1.2879E-14 & 2.44 \\ \hline
+        Within Groups & 29921.96 & 133 & 224.98 & & & \\ \hline
+        & & & & & & \\ \hline
+        Total & 50897.89 & 137 & & & &  \\ \hline
+    \end{tabular}
+    \sol{
+        We are investigating the means of samples from 5 different states. Our hypotheses are
+        \begin{itemize}
+            \item \(H_{0} \colon \mu_{AR} = \mu_{LA} = \mu_{MO} = \mu_{OK} = \mu_{TX}\) \textendash\@ The mean number of M\&Ms eaten are the same among all groups.
+            \item \(H_{1}:\) There is at least one group that has a different weekly mean M\&Ms eaten.
+        \end{itemize}
+        Using the given table, we see that \(F_{\text{samp}} = 23.31\), \(p = 1.29\text{E -}14\). Since \(p < \alpha\), we \textbf{reject} \(H_{0}\). We find the effect size to be 
+        \[
+            \eta^{2} = \frac{SS_{\text{between}}}{SS_{\text{total}}} = \frac{20975.92}{50897.89} = 0.412.
+        \]
+        We have a very large effect size. Thus, we have found a strong relationship between home state and M\&M consumption. It appears that the home state and candy eating habits are strongly related.
+    }
+\end{enumerate}
+
+\end{document} 

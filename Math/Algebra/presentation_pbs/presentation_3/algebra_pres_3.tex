@@ -237,7 +237,7 @@
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
 \pagestyle{fancy} % options: empty , plain , fancy
-\fancyhead[R]{Presentation Problem 2}
+\fancyhead[R]{Presentation Problem 3}
 \fancyhead[L]{Hendrix College}
 \fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
 \usepackage{xpatch}
@@ -528,6 +528,7 @@
 \newcommand{\vecfuc}[2]{\mb{#1}(#2)}
 \newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
 \newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
+\newcommand{\funccolon}{\ \colon}
 
 
 % end of preamble
@@ -541,61 +542,47 @@
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\newcommand{\assignmentname}{Presentation Problem 2}
+\newcommand{\assignmentname}{Presentation Problem 3}
 
-
-
-In Exercises 30 through 34, determine whether the given function is a permutation of \(\R\).
+In Exercises 10 and 15, determine whether the given map \(\varphi\) is a homomorphism. 
 
 \begin{enumerate}
-    \setcounter{enumi}{29}
-    \item \(f_{1} \colon \R \to \R\) defined by \(f_{1}(x) = x + 1\).
-    \sol{
-        A permutation of a set is a bijective function from the set to itself. Thus, we need to check if \(f_1\) is both injective and surjective:
-        \begin{itemize}
-            \item \textbf{Injective:} Assume \(f_1(x_1) = f_1(x_2)\). This implies: 
-            \[
-            x_1 + 1 = x_2 + 1 \implies x_1 = x_2.
-            \]
-            Thus, \(f_1\) is injective.
-            \item \textbf{Surjective:} Let \(y \in \R\) be arbitrary. We need to find \(x \in \R\) such that \(f_1(x) = y\):
-            \[
-            f_1(x) = x + 1 = y \implies x = y - 1.
-            \]
-            Because \(y - 1 \in \R\), \(f_1\) is surjective.
-        \end{itemize}
-        Therefore, \(f_1\) is a permutation of \(\R\).
+    \setcounter{enumi}{9}
+    \item Let \(F\) be the additive group of all continuous functions mapping \(\R\) to \(\R\). Let \(\R\) be the additive group of real numbers, and let \(\varphi \funccolon F \to \R\) be given by
+    \[
+        \varphi(f) = \int_{0}^{4} f(x) \, dx.
+    \]
 
-    }
-    \item \(f_{2} \colon \R \to \R\) defined by \(f_{2}(x) = x^{2}\).
     \sol{
-        This function is not a permutation because it is not injective. For example, \(f_{2}(1) = 1^{2} = 1\) and \(f_{2}(-1) = (-1)^{2} = 1\), but \(1 \neq -1\).
+        This problem is exactly like Example 13.9, but we use \([0,4]\) for the domain instead of \([0,1]\). Thus, the following computation shows that \(\varphi\) is a homomorphism:
+        \begin{align*}
+            \varphi(f + g) &= \int_{0}^{4} (f + g)(x) \, dx \\
+            &= \int_{0}^{4} [f(x) + g(x)] \, dx \\
+            &= \int_{0}^{4} f(x) \, dx + \int_{0}^{4} g(x) \, dx \\
+            &= \varphi(f) + \varphi(g).
+        \end{align*}
     }
-    \item \(f_{3} \colon \R \to \R\) defined by \(f_{3}(x) = - x^{3}\).
+    \setcounter{enumi}{14}
+
+    \item Let \(F\) be the multiplicative group of all continuous functions mapping \(\R\) into \(\R\) that are nonzero at every \(x \in \R\). Let \(\R^{*}\) be the multiplicative group of nonzero real numbers. Let \(\varphi \funccolon F \to \R^{*}\) be given by
+    \[
+        \varphi(f) = \int_{0}^{1} f(x) \, dx.
+    \]
     \sol{
-        \begin{itemize}
-            \item \textbf{Injective:} Assume \(f_3(x_1) = f_3(x_2)\). This implies:
-            \[
-                -x_1^3 = -x_2^3 \implies x_1^3 = x_2^3 \implies x_1 = x_2.
-            \]
-            Hence, \(f_{2}\) is injective.
-            \item \textbf{Surjective:} Let \(y \in \R\) be arbitrary. We need to find \(x \in \R\) such that \(f_3(x) = y\):
-            \[
-                f_3(x) = -x^3 = y \implies x^3 = -y \implies x = \sqrt[3]{-y}.
-            \]
-            Since \(\sqrt[3]{-y} \in \R\) for any \(y \in \R\), \(f_3\) is surjective.
-        \end{itemize}
-        Therefore, \(f_3\) is a permutation of \(\R\).
-    }
-    \newpage
-    \item \(f_{4} \colon \R \to \R\) defined by \(f_{4}(x) = e^{x}\).
-    \sol{
-        This function is not a permutation because it is not surjective. That is, \(e^{x}\) is always positive for all \(x \in \R\), so there is no \(x \in \R\) such that \(f_{4}(x) = -1\), for example.
-    }
-    \item \(f_{5} \colon \R \to \R\) defined by \(f_{5}(x) = x^{3} - x^{2} - 2x\).
-    \sol{
-        This function is also not a permutation because it is not injective. For example, \(f_{5}(0) = 0^{3} - 0^{2} - 2 \cdot 0 = 0\) and \(f_{5}(2) = 2^{3} - 2^{2} - 2 \cdot 2 = 8 - 4 - 4 = 0\), but \(0 \neq 2\).
+        For this problem, \(\varphi\) is not a homomorphism. A counterexample can be shown by using \(f(x) = x^{2} + 1\) and \(g(x) = x^{4} + 1\). Consider the following:
+        \begin{align*}
+            \varphi(f \cdot g) &= \int_{0}^{1} \left[ x^{6} + x^{4} + x^{2} + 1 \right] \, dx  \\
+            &= \frac{1}{7} + \frac{1}{5} + \frac{1}{3} + 1 = \frac{176}{105}.
+        \end{align*}
+        However, 
+        \begin{align*}
+            \varphi(f) \cdot \varphi(g) &= \int_{0}^{1} \left( x^{2} + 1 \right) \, dx \cdot \int_{0}^{1} \left( x^{4} + 1 \right) \, dx \\
+            &= \left(1 + \frac{1}{3}\right)\left(1 + \frac{1}{5}\right) = \frac{8}{5}.
+        \end{align*}
+        Since \(\varphi(f \cdot g) \ne \varphi(f) \cdot \varphi(g)\), \(\varphi\) is not a homomorphism. 
     }
 \end{enumerate}
+
+
 
 \end{document}

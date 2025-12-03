@@ -585,30 +585,29 @@
 \section*{Section 15}
 
 % Section 15: Exercises 1-12(choose any 4), 20, 21, 28, 29
-In Exercises 1, 4, 8, and through 11, classify the given group according to the fundamental theorem of finitely generated
-abelian groups.
+In Exercises 1, 3, 4, and 7, classify the given group according to the fundamental theorem of finitely generated abelian groups.
 
 \begin{enumerate}
     \item \((\Z_{2} \times \Z_{4}) / \gen{(0,1)}\)
     \sol{
-        
+        \(\gen{(0,1)}\) has order 4, so \((\Z_{2} \times \Z_{4}) / \gen{(0,1)}\) has order 2. Therefore, this leaves only one choice: \((\Z_{2} \times \Z_{4}) / \gen{(0,1)} \simeq \Z_{2}\).
     }
-
+    \setcounter{enumi}{2}
+    \item \((\Z_{2} \times \Z_{4}) / \gen{(1,2)}\)
+    \sol{
+        \(\gen{(1,2)}\) has order 2, so \((\Z_{2} \times \Z_{4}) / \gen{(1,2)}\) has order 4. This leaves us with two choices: \(\Z_{4}\) or \(\Z_{2} \times \Z_{2}\). Since \((1,1) + \gen{(1,2)}\) has order 4 in the factor group, we must have \((\Z_{2} \times \Z_{4}) / \gen{(1,2)} \simeq \Z_{4}\).
+    }
     \setcounter{enumi}{3}
     \item \((\Z_{4} \times \Z_{8}) / \gen{(1,2)}\)
     \sol{
-        
+        \(|\gen{(1,2)}| = 8 \implies |(\Z_{4} \times \Z_{8}) / \gen{(1,2)}| = 8\). Therefore, either \(\Z_{8}\) or \(\Z_{4} \times \Z_{2}\). Since \(|(0,1) + \gen{(1,2)}| = 8\), \((\Z_{4} \times \Z_{8}) / \gen{(1,2)} \simeq \Z_{8}\).
     }
-    \setcounter{enumi}{7}
-    \item \((\Z \times \Z \times \Z) / \gen{(1,1,1)}\)
+    \setcounter{enumi}{6}
+    \item \((\Z \times \Z) / \gen{(1,2)}\)
     \sol{
-        
+        In the factor group, everything in the subgroup becomes the identity, so \((1,2) = (0,0)\). This implies \(x + 2y = 0\), or \(x = -2y\). Therefore, every element in the factor group can be written as \((-2y,y) = y(-2,1)\). Since \(x\) depends on \(y\), the factor group is isomorphic to \(\Z\). 
     }
-    \setcounter{enumi}{9}
-    \item \((\Z \times \Z \times \Z_{8}) / \gen{(0,4,0)}\)
-    \sol{
-        
-    }
+
 \end{enumerate}
 
 
@@ -616,22 +615,23 @@ In Exercises 20 and 21, let \(F\) be the additive group of all functions mapping
 
 \begin{enumerate}
     \setcounter{enumi}{19}
-    \item Let K be the subgroup of F consisting of the constant functions equal to 1. Find a subgroup of \(F\) to which \(F / K\) is isomorphic.
+    \item Let \(K\) be the subgroup of \(F\) consisting of the constant functions. Find a subgroup of \(F\) to which \(F / K\) is isomorphic.
     \sol{
-        
+        Define a homomorphism \(\varphi \funccolon F \to F\) by \(\varphi(f) = f(x) - f(0)\). The kernel of this map consists of all functions where \(f(x) - f(0) = 0\), which implies \(f(x)\) is constant, so \(\ker(\varphi) = K\). The image of the map, \(\varphi[F]\), is the set of all functions that evaluate to 0 at \(x = 0\). By the fundamental theorem of homomorphisms, \(F/K\) is isomorphic to the subgroup \(\{f \in F \mid f(0) = 0\}\).
     }
+\newpage
     \item Let \(K^{*}\) be the subgroup of \(F^{*}\) consisting of the nonzero constant functions. Find a subgroup of \(F^{*}\) to which \(F^{*} / K^{*}\) is isomorphic.
     \sol{
-        
+        This problem is almost exactly like the last one: Define a homomorphism \(\varphi \funccolon F^{*} \to F^{*}\) by \(\varphi(f) = f(x) / f(0)\). The kernel of this map consists of all functions where \(f(x) / f(0) = 1\), which implies \(f(x)\) is constant, so \(\ker(\varphi) = K^{*}\). The image of the map, \(\varphi[F^{*}]\), is the set of all functions that evaluate to 1 at \(x = 0\). By the fundamental theorem of homomorphisms, \(F^{*}/K^{*}\) is isomorphic to the subgroup \(\{f \in F^{*} \mid f(0) = 1\}\).
     }
     \setcounter{enumi}{27}
     \item Give an example of a group \(G\) having no elements of finite order \(> 1\) but having a factor group \(G / H\), all of whose elements are of finite order.
-    \sol{
-        
+    \pf{
+        The group \(G = \Z\) contains only the identity element, 0, with finite order. Every other integer has infinite order. Thus, \(G\) has no elements of finite order \(> 1\). Now, consider \(G / H\) where \(H = 2\Z\). Since this factor group has order 2, it is isomorphic to \(\Z_{2}\). Then, since \(\Z_{2}\) is itself finite, all of its elements must also have finite order.
     }
     \item Let \(H\) and \(K\) be normal subgroups of a group \(G\). Give an example showing that we may have \(H \simeq  K\) while \(G / H\) is not isomorphic to \(G / K\).
-    \sol{
-        
+    \pf{
+        Let \(G = \Z_{4} \times \Z_{2}\). Consider the subgroups \(H = \gen{(2,0)}\) and \(K = \gen{(0,1)}\). Both \(H\) and \(K\) are subgroups of order 2. Since there is only one group of order 2 up to isomorphism, \(H \simeq K\). Notice, however, that \(G/H \simeq \Z_{2} \times \Z_{2}\), while \(G/K \simeq \Z_{4}\). Therefore, \(G/H \not\simeq G/K\). 
     }
 \end{enumerate}
 

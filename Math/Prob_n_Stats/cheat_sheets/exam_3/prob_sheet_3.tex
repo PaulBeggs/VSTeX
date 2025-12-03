@@ -1,0 +1,283 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+\usepackage{amsmath,amssymb}
+\usepackage{subcaption}
+\usepackage[english]{babel}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage{enumitem}
+
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\makeatletter
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\title{Discrete Exam 2 Note Sheets}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight
+3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.40in
+\advance\evensidemargin-1.45in
+\parindent0pt
+\parskip1pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\group}[2]{\langle #1, #2 \rangle}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{center}{\huge{\textbf{Probability \& Statistics Exam 3 Note Sheets}}}\\
+\end{center}
+\begin{multicols*}{2}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{innerbox} = [draw=black, fill=gray!20, thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \textbf{Empirical Rule.} Approximately 68\%, 95\%, and 99.7\% live within 1, 2, and 3 standard deviations of the mean if the data is roughly bell shaped.
+
+    \textbf{Order Statistics:} Suppose \(X\) is a continuous random variable with CDF \(F(x)\) and pdf \(f(x)\) on the interval \(x \in (a, b)\) and we select a random sample of size \(n\). Then, the random variables \(Y_{1} < Y_{2} < \cdots < Y_{n}\) are the order statistics; that is, \(Y_{1}\) is the smallest of \(X_{i}\), \(Y_{2}\) is the second smallest, \(Y_{n}\) is the largest. \\
+
+    The CDF of \(Y_{r}\) is: \(G_{r}(y) = P(Y_{r} \le y) = \sum_{k = r}^{n}\binom{n}{k}[F(y)^{k}][1 - F(y)]^{n - k}\). \\
+    The pdf of \(Y_{r}\) is: \(g_{r}(y) = P(Y_{r} = y) = \frac{n!}{(r - 1)!(n - r)!}[F(y)^{r - 1}][1 - F(y)]^{n - r}f(y)\).
+
+    \textbf{Maximum Likelihood:} Find \(L(\theta) = \sum_{i = 1}^{n}f(x_{i}, \theta)\) where \(f(x_{i},\theta)\) is from the distribution that you are looking for. Then, find \(\frac{d}{d\theta}L'(\theta) = 0\).
+
+    \textbf{Sample Mean:} \(\overline{x} = \frac{1}{n}\sum_{i = 1}^{n}x_{i}\). \textbf{S. Variance:} \(s^{2} = \frac{(\sum_{i = 1}^{n}x^{2}_{i} - n\overline{x}^{2})}{n - 1}\).
+
+    \textbf{\underline{Examples:}}
+    \begin{enumerate}[itemsep=3pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Suppose that \(X\) has CDF \(F(x) = x^{2}\) for \(0 < x < 1\). Let \(n = 6\) and \(Y_{r}\) be the 6 order statistics. Find \(P(Y_{4} < 0.7)\). (We can either use CDF as is, or use the pdf and integrate from 0 to 1. If asked for \(E(Y)\), use pdf and add a \(y\).) 
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item \textit{CDF Version:} \(\displaystyle \sum_{k = 4}^{6} \phantom{1}_{6}C_{k}(.7^{2})^{k}(1 - .7^{2})^{6 - k}\). 
+            \item \textit{pdf Version:} \(\displaystyle \int_{0}^{.7} \frac{6!}{3!2!}(y^{2})^{3}(1 - y^{2})^{2}(2y)\, dy\).
+        \end{enumerate}
+        \item Let \(X_{1}, X_{2}, \ldots, X_{n}\) be a random sample from a distribution with pdf \(f(x;\theta) = (1/\theta^{2})xe^{-x\theta}\), for \(0 < x < \infty\) and \(0 < \theta < \infty\). Find \(\hat{\theta}\). \\
+        \textit{Solution.} \(\displaystyle L(\theta) = \prod_{i=1}^{n} (1/\theta^{2})xe^{-x/\theta} = \left( \prod_{i = 1}^{n} 1/\theta^{2} \right) \left( \prod_{i = 1}^{n} x_{i} \right) \left( \prod_{i = 1}^{n} e^{-x_{i}/\theta} \right) \Rightarrow\) \\
+        \(\displaystyle \ln(L(\theta)) = -2n\ln(\theta) + \sum \ln(x_{i}) - \frac{1}{\theta} \sum x_{i} \Rightarrow  \ln(L'(\theta)) = \frac{-2n}{\theta} + \frac{1}{\theta^{2}} \sum x_{i}\) \\
+        \(\displaystyle \Rightarrow 0 = \ln(L'(\theta)) \Rightarrow \frac{2n}{\theta} = \frac{1}{\theta^{2}} \sum x_{i} \Rightarrow \theta = \left(\sum x_{i}\right) / 2n \Rightarrow \theta = \overline{x}/2\).
+        \item Suppose \(X \sim N(\mu, 1)\). Find \(\hat{\mu}\). \\
+        \textit{Solution.} \(\displaystyle L(\mu) = \prod_{i = 1}^{n} \frac{1}{\sqrt{2\pi}} \exp\left( -\frac{(x - \mu)^{2}}{2} \right)\) \\
+        \(\Rightarrow \ln(L(\mu)) = \sum \ln \left( \frac{1}{\sqrt{2\pi}} \exp\left( -\frac{(x - \mu)^{2}}{2} \right) \right) = \sum \left( \ln\left(\frac{1}{\sqrt{2\pi}} \right) - \frac{(x - \mu)^{2}}{2} \right) \) \\
+        \(\Rightarrow \displaystyle\frac{d}{d\mu} \ln(L(\mu)) = \sum(x_{i} - \mu) \Rightarrow 0 = n\overline{x} - n\mu \Rightarrow \mu = \overline{x}\).
+        \item Consider the data given by 6, 10, 14, 16, 18, 18, 18, 20. (Store in \(L_{1}\) and run \texttt{1-Var Stats})
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item Find the sample mean, \(\overline{x}\): \textit{Solution.} \(1/8(6 + 10 + \cdots + 20) = 15\). 
+            \item Find the sample standard deviation, \(s\): \\
+            \textit{Solution:} \(s^{2} = \frac{1}{(8-1)} (6^{2} + \cdots + 20^{2} - 8(15)^{2}) = \frac{170}{7} \implies s = 4.78\)
+        \end{enumerate}
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 6: Point Estimation};
+\end{tikzpicture}
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    For the confidence interval, if one tailed, use \(CI = 1 - 2\alpha\).
+
+    \underline{\textbf{Examples:}}
+    
+    \begin{enumerate}[itemsep=3pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item You flip a coin 300 times and get 128 heads. Use the calculator to build a \(99\%\) confidence interval for the proportion of heads this coin produces. What can you say about the fairness of the coin? \textbf{\textit{Solution.}} Using \texttt{1-PropZInt} with \(x = 128\) and \(n = 300\), we get \((0.353, 0.500)\) as our 99\% confidence interval. Since the value \(0.5\) is included within the 99\% CI, we cannot conclude that the coin is unfair at \(\alpha = 0.1\).
+
+        \item Week-old ducklings have a mean weight of 423 g. You are concerned about a new industrial plant upstream from your favorite pond, and so weigh a random sample of \(n = 43\) week-old ducklings. You find \(\overline{x} = 413.7\) g and \(s = 33.9\). At \(\alpha = 0.05\), is there evidence that the plant is causing the ducks to be underweight? Use the NHST steps. \textbf{\textit{Solution.}} \textbf{Population:} Week-old ducklings in the pond. \textbf{Tailed:} one. \textbf{Hypotheses:} \(H_{1}: \mu \ge 423\) \textendash\@ They weight more than 423; \(H_{0}:\) They weigh less. \textbf{Test:} 1-sample \(t\)-test: \(t_{\text{samp}} = -1.799\), \(p = 0.04\). \textbf{Decision:} Since \(p < \alpha\), we reject the null hypothesis. \textbf{CI:} \(90\%: (405, 422.4)\). \textbf{Effect Size:} \(d = \frac{\overline{x} - \mu_{0}}{s} = -0.247\), small effect. \textbf{Conclusion:} These data lead us to conclude that the industrial plant upstream has a small negative effect upon week-old ducklings in the pond. 
+
+        \item Prof. Seme gives the same 5 NHST questions to his MATH 215 and MATH 310 students, and assigns each student a grade. We will treat each as a random sample of all Intro Stats and Math-Major-Adjacent Stats students. Using the data in the table below, is there evidence, at \(\alpha = 0.01\), that there is a difference in performance between the two groups? Use the NHST steps. \\
+        \begin{tabular}[htbp]{|c||c|c|}
+            \hline
+            & MATH 215 & MATH 310 \\ \hline\hline
+            Mean Score & 74.7 & 81.2 \\ \hline
+            Sample St. Dev. & 12.3 & 9.1 \\ \hline
+            Count & 35 & 23 \\ \hline
+        \end{tabular}\\
+        \textbf{\textit{Solution.}} \textbf{Population:} All students in MATH 215 and all students in MATH 310. \textbf{Tailed:} two. \textbf{Hypotheses:} \(H_{0}: \mu_{215} = \mu_{310}\) \textendash\@ no difference; \(H_{1}: \mu_{215} \ne \mu_{310}\), difference. \textbf{Test:} 2-sample \(t\)-test with not equal variance: \(t_{\text{samp}} = -2.309\), \(p = 0.02\). \textbf{Decision:} fail to reject the null hypothesis. \textbf{CI:} \(99\%: (-14,1)\), which we note includes 0. \textbf{Effect Size:} (Find \(s_{p}\), and then use that to find \(d\)). \textbf{Conclusion:} While the sample data shows a medium effect size, we do not have enough evidence at \(\alpha = 0.01\) to support that there is a difference in the populations.
+
+        \item Determine if there is a difference in the variance between the two groups using the data from the previous problem. \textbf{\textit{Solution.}} \textbf{Population:} same as before. \textbf{Tailed:} two (keyword \textit{difference}). \textbf{Hypotheses:} \(H_{0}:\) \(\sigma^{2}_{215} = \sigma^{2}_{310}\) \textendash\@ The two variances are the same; \(H_{1} \colon \sigma^{2}_{215} \ne \sigma^{2}_{310}\). \textbf{Test:} We will use a 2-sample \(F\)-test: \(F_{\text{samp}} = 1.827\), \(p = 0.14\). \textbf{Decision:} fail to reject. \textbf{Conclusion:} We do not have evidence to suggest that the variances are different.
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 8: Tests of Statistical Hypotheses};
+\end{tikzpicture}
+
+
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Examples:}}
+    
+    \begin{enumerate}[itemsep=3pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item A professor wonders if students are more likely to be absent on Friday in the 3-day-a-week class than Monday or Wednesday (i.e. not exactly equal across all days). The professor uses a single course one semester as though it is a random sample, and counts that of 100 total absences, 41 were on a Friday. Is there evidence, at \(\alpha = 0.05\) to support the professor's suspicion about Fridays? Use the NHST steps. \textit{\textbf{Solution.}} \textbf{Population:} All absences in the semester. \textbf{Tailed:} one. \textbf{Hypotheses:} \(H_{0}: p = 1/3\) \textendash\@ Friday absences occur at the expected rate; \(H_{1}:\) They don't. \textbf{Test:} 1-proportion \(z\)-test: \(z_{\text{samp}} = 1.63\), \(p = 0.052\) \textbf{Decision:} fail to reject. \textbf{CI:} \(90\%: (0.329, 0.491)\), which contains \(1/3\). \textbf{ES:}  \(d = 2\arcsin\left(\sqrt{\hat{p}}\right) - 2\arcsin\left(\sqrt{p_{0}}\right) = 0.159\), small. \textbf{Conclusion:} We conclude that there is not sufficient evidence at \(\alpha = 0.05\) to support the claim that absences are more likely on Fridays, though the result is borderline. Additionally, even if they were significant, our result would would have a small effect.
+
+        \item A random sample of Hendrix and Ozarks students shows that 25 of 48 Hendrix students have taken a statistics class in college and 17 of 50 Ozarks students have. Is there evidence, at \(\alpha = 0.1\) that there is a difference in the proportion of students who take stats at the two schools? Use the NHST steps. \textbf{\textit{Solution.}} \textbf{Population:} All Hendrix students and all Ozarks students. \textbf{Tailed:} 2. \textbf{Hypotheses:} \textendash\@ There is no difference between the proportion of Ozarks students that take statistics and that of Hendrix students; \(H_{1}:\) is a difference. \textbf{Test:} two sample \(z\)-test: \(z_{\text{samp}} = 1.81\), \(p = 0.07\). \textbf{Decision:} Reject. \textbf{CI:} \(90\%: (0.18, 0.34)\). \textbf{ES:} \(d = 2\arcsin\left(\sqrt{\hat{p}_{1}}\right) - 2\arcsin\left(\sqrt{\hat{p}_{2}}\right) = .37\); small to medium. \textbf{Conclusion:} We have evidence to support the claim that there is a difference between the proportion of students who take stats at Ozarks and Hendrix. Additionally, our effect size tell us that our result is small to medium. 
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 8 (cont.)};
+\end{tikzpicture}
+
+
+
+%------------ Measures of Variability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+    \textbf{GOF:} Store observed data in \texttt{L1}, and expected in \texttt{L2}. \(df\) is found by subtracting 1 from the number of categories. The hypotheses are \(H_{0}:\) the sample is drawn from a population with the claimed distribution, or \(H_{1}:\) from a different distribution. 
+
+    \textbf{Test for Independence:} Store the contingency table in matrix \texttt{[A]}, then use \texttt{X2-Test}. The hypotheses are \(H_{0}:\) the two categories are independent, \(H_{1}:\) they are dependent (some relationship exists between them). \\
+    \textbf{\underline{Examples:}}
+    \begin{enumerate}
+        \item You are interested in whether there is a relationship between a student's major area, and the amount of sleep they get. You survey students and find the data in the table below. What can you say, at \(\alpha = 0.05\)? Use the NHST. \\
+    \begin{tabular}[htbp]{|c||c|c|c|c|}
+        \hline
+        Sleep & Human. & Nat. Sci. & Soc. Sci. & Inter. \\ \hline
+        8+ Hours & 12 & 34 & 36 & 9 \\ \hline
+        6.5 - 7.9 Hours & 17 & 31 & 42 & 11 \\ \hline
+        6.4- Hours & 13 & 29 & 43 & 12 \\ \hline
+    \end{tabular}
+
+        
+    \end{enumerate}
+
+    \end{minipage}
+    };
+%------------ Measures of Variability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 9: Additional Tests};
+\end{tikzpicture}
+
+
+
+
+
+%------------ Measures of Variability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+    
+    \textbf{\underline{Examples:}}
+    \begin{enumerate}
+        \item[]\textbf{\textit{Solution.}} (for 1) \textbf{Population:} All college students. \textbf{Hypotheses:} \(H_{0}:\) Sleep amount and major are independent; \(H_{1}:\) they are dependent. \textbf{Test:} \(\chi^{2}\)-test of independence: \(\chi^{2} = ...\) \(p = 0.91\). \textbf{Decision:} fail to reject. \textbf{Conclusion:} We lack evidence to support the claim that there is a relationship between the amount of sleep a student gets and their major. 
+
+        \setcounter{enumi}{1} 
+        \item It is known that, over the past 10 years, 50\% of Hendrix students come from AR, 29\% from TX, 10\% from OK, 5\% from MO, 3\% from TN, and 3\% elsewhere. A survey of 120 students who have recently taken Calculus I shows that 54 are from AR, 23 from TX, 17 from OK, 8 from MO, 8 from TN, and 10 elsewhere. Is there evidence, at \(\alpha = 0.05\), that the distribution of students who take Calculus I is different from the overall Hendrix population? \textit{Solution:} Population is all Hendrix Students. We will use the \(\chi^{2}\)-GOF-Test. From the given data, we have the following table: \\
+
+        \begin{tabularx}{0.90\textwidth}{lYYYYYY}
+            \toprule
+             & \textbf{AR} & \textbf{TX} & \textbf{OK} & \textbf{MO} & \textbf{TN} & \textbf{Else.} \\ \midrule
+            \textbf{Obs.} & 54 & 23 & 17 & 8 & 8 & 10 \\ \midrule
+            \textbf{Exp.} & 60 & 34.8 & 12 & 6 & 3.6 & 3.6  \\ \bottomrule
+        \end{tabularx} \\
+        
+        I got \(\chi^{2}_{\text{samp}} = 24.107\), \(p = 0\). Since \(p < \alpha\), we \textbf{reject} \(H_{0}\) and conclude that there is a difference between the students who take Calculus I and the overall Hendrix population.
+        \item You want to know if Hendrix students have differences in their average number of M\&Ms eaten per week, depending on their home state. You run an ANOVA, at \(\alpha = 0.05\) and find the following table: 
+
+    ANOVA\\
+    \begin{tabular}[htbp]{|l||r|r|r|r|r|}
+        \hline
+        Source of Variation & SS & df & MS & F & P-value \\ \hline
+        Between Groups & 20975.92 & 4 & 5243.98 & 23.31 & 1.2879E-14 \\ \hline
+        Within Groups & 29921.96 & 133 & 224.98 & &  \\ \hline
+        & & & & &  \\ \hline
+        Total & 50897.89 & 137 & & & \\ \hline
+    \end{tabular}
+
+    \textbf{\textit{Solution.}} \textbf{Population:} All Hendrix students. \textbf{Hypotheses:} \(H_{0} \colon \mu_{AR} = \mu_{LA} = \mu_{MO} = \mu_{OK} = \mu_{TX}\) \textendash\@ The mean number of M\&Ms eaten are the same among all groups; \(H_{1}:\) There is at least one group that has a different weekly mean M\&Ms eaten. We see that \(F_{\text{samp}} = 23.31\), \(p = 1.29\text{E -}14\). \textbf{Decision:} reject \(H_{0}\). \textbf{Effect Size:} \(\eta^{2} = \frac{SS_{\text{between}}}{SS_{\text{total}}} = \frac{20975.92}{50897.89} = 0.412\); we have a very large effect size (\(\eta^{2} = 0.01, 0.06, 0.14\): small, medium, large, respectively). \textbf{Conclusion:} Thus, we have found a strong relationship between home state and M\&M consumption. It appears that the home state and candy eating habits are strongly related.
+    \end{enumerate}
+
+    \end{minipage}
+    };
+%------------ Measures of Variability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 9: (cont.)};
+\end{tikzpicture}
+
+
+
+
+
+\end{multicols*}
+\end{document}
