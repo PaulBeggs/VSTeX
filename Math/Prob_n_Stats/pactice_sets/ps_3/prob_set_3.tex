@@ -451,6 +451,36 @@
         \]
         Therefore, the expected value of the payment the insurance company makes in a year is approximately \textbf{\$328.48}.
     }
+    \item A store monitors the number of customers that come in during randomly chosen 1 hour windows and finds the following data:
+    \begin{tabular}[htbp]{cc}
+        \toprule
+        \textbf{Customer} & \textbf{Count} \\ \midrule
+        0 & 12 \\ \midrule
+        1 & 19 \\ \midrule
+        2 & 31 \\ \midrule
+        3 & 24 \\ \midrule
+        4 & 15 \\ \midrule
+        5 & 10 \\ \midrule
+        6 & 5 \\ \midrule
+        7 or more & 4 \\ \bottomrule
+    \end{tabular}
+
+    At \(\alpha = 0.05\), is \(Poisson(2.2)\) a reasonable model for the number of customers who come in during an hour? Use the NHST Steps:
+    \sol{\textbf{Population:} All 1-hour windows of customer traffic at the store. 
+
+        \textbf{Tailed:} Right-tailed (Chi-square Goodness of Fit tests are always right-tailed). 
+
+        \textbf{Hypotheses:} \(H_{0}\): The number of customers follows a Poisson distribution with \(\lambda=2.2\). \(H_{1}\): The number of customers does not follow a Poisson distribution with \(\lambda=2.2\). 
+
+        \textbf{Test Statistic and (p) value:} Using combined categories \((0, 1, 2, 3, 4, \ge 5)\): \(\chi^{2}=16.28\), \(df=5\), \(p \approx 0.0061\).
+
+        \textbf{Decision (to reject or not):} Reject \(H_{0}\) (since \(0.0061<0.05\)). 
+        
+        \textbf{Confidence interval:} The 95\% Confidence Interval for the true mean number of customers is \([2.36,2.99]\). Note that the hypothesized \(\lambda=2.2\) falls outside this interval. 
+        
+        \textbf{Effect size:} Cohen's \(w=0.37\) (Medium to Large effect). 
+        
+        \textbf{Summary:} There is statistically significant evidence to conclude that the number of customers entering the store does not follow a Poisson(2.2) distribution. The observed data shows a higher average number of customers (2.68) than the model predicts. }
 \end{enumerate}
 
 \end{document}

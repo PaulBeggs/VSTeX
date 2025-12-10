@@ -1,0 +1,732 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath, amsthm, amsfonts, amssymb} 
+\usepackage{array, makecell}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+\usepackage{subcaption}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\makeatletter
+
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\title{Discrete Exam 2 Note Sheets}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight
+3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.40in
+\advance\evensidemargin-1.45in
+\parindent0pt
+\parskip1pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\group}[2]{\langle #1, #2 \rangle}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+
+\newcommand{\funccolon}{\ \colon}
+
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{center}{\huge{\textbf{Algebra Exam 3 Note Sheets}}}\\
+\end{center}
+\begin{multicols*}{2}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{innerbox} = [draw=black, fill=gray!20, thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+        \underline{\textbf{Definitions:}} \\
+        
+    	\begin{tabular}{lp{9cm} l}
+        	\textit{Binary Operation:}
+            & A binary operation \(*\) on set \(S\) is a function from \(S \times S\) to \(S\). We denote an output as \(a * b\). Big Idea: Take 2 elements from \(S\), \((a,b)\) and the operation gives \(a * b\), which is an element of \(S\). \\
+            \textit{Commutative:}
+            & If \(a * b = b * a\) for all \(a,b \in S\). \\
+            \textit{Associative:} 
+            & If \((a * b) * c = a * (b * c)\) for all \(a,b,c \in S\). \\
+            \textit{Closed:}
+            & Suppose \(*\) is a binary operation on \(S\) and \(H \subset S\). We say \(H\) is \underline{closed under \(*\)} if for all \(a,b \in H\), \(a * b \in H\). \\
+            \textit{Identity:}
+            & There exists \(e \in G\) such that for all \(a \in G\), \(a * e = e * a = a\). \\
+            \textit{Inverse:}
+            & For all \(a \in G\), there exists \(a' \in G\) such that \(a * a' = a' * a = e\). \\
+    	\end{tabular}
+
+        \vspace{0.3cm}
+    
+        \underline{\textbf{Examples:}}
+
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item Let \(L = \{n^{2} \mid n \in \N\}\). Is \(L\) closed under \(+\)? No: \(16 + 4 \notin L\).
+            \item Is \(L\) closed under \(\cdot\)? Yes. Let \(a,b \in L\). There exists \(n,m \in L\) such that \(a = n^{2}\) and \(b = m^{2}\). Then \(a \cdot b = n^{2} \cdot m^{2} \implies a \cdot b = (nm)^{2}\). Since \(n,m \in \N\), \(a,b \in L\). Therefore, \(L\) is closed under \(\cdot\). 
+            \item For tables, calculations are made from the column element to the row element. Commutativity and associativity can be checked by testing all possible combinations.
+            \item Let \(*\) be defined on \(\R^{+}\) by letting \(a * b = \frac{a + b}{ab}\). 
+            \begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+                \item Is \(*\) commutative? \textit{Sol.} \(a * b = \frac{a + b}{ab} = \frac{b + a}{ba} = b * a\) because addition and multiplication on the real line are commutative.
+                \item Is \(*\) associative? \textit{Sol.} No. Counterexample: \((4 * 2) * 3 = \frac{4 + 2}{8} * 3 = \ldots\).
+                \item Explain why \(*\) does not define a binary operation on \(\R\). \textit{Sol.} Since \(1,0 \in \R\), \(1 * 0 = \frac{1 + 0}{(1)0}\) is undefined, so the set is not closed.
+                \item Explain why \(*\) does not define a binary operation on \(\R^{*} = \R \backslash \{0\}\). \textit{Sol.} Since \(-1,1 \in \R^{*}\), \(-1 * 1 = \frac{-1 + 1}{(-1)(1)} = 0\), which is not in \(\R^{*}\), so it's not closed. 
+            \end{itemize}
+            \item Consider the set of matrices \(H = \left\{ \begin{bmatrix}
+            a & -b \\
+            b & a
+            \end{bmatrix} \bigg| \ a,b \in \R \right\}\). Show that \(\gen{\C, \cdot}\) is isomorphic to \(\gen{H, \cdot}\) using the map \(\varphi(a + bi) = \begin{bmatrix}
+                a & -b \\
+                b & a
+            \end{bmatrix}\). \textit{Solution:} 1-1: Let \(\varphi(a + bi) = \varphi(c + di)\). Then, \(\begin{bmatrix}
+                a & - b \\
+                b & a
+            \end{bmatrix} = \begin{bmatrix}
+                c & -d \\
+                d & c
+            \end{bmatrix}\), so that \(a = c\) and \(b = d\). Onto: If \(\begin{bmatrix}
+                a & -b \\
+                b & a
+            \end{bmatrix} \in H\), then \(\varphi(a + bi) = \begin{bmatrix}
+                a & -b \\
+                b & a
+            \end{bmatrix}\). So, \(\varphi\) is onto. \\
+            Homomorphism: \(\varphi(a + bi) \cdot \varphi(c + di) = \begin{bmatrix}
+                a & -b \\
+                b & a
+            \end{bmatrix} \cdot \begin{bmatrix}
+                c & -d \\
+                d & c
+            \end{bmatrix} = \begin{bmatrix}
+                ac - bd & -(bc + ad) \\
+                bc + cd & ac - bd
+            \end{bmatrix} = \varphi((ac - bd) + (ad + bc)i) = \varphi((a + bi) \cdot (c + di))\).
+            % \item Suppose that \(*\) is an associative and commutative binary operation on a set \(S\). Show that \(H = \{a \in S \mid a * a = a\}\) is closed under \(*\). (The elements of \(H\) are \textbf{idempotents} of the binary operation \(*\).)
+          
+            % \textit{Solution}. Suppose that \(*\) is an associative and commutative binary operation on set \(S\). Let \(a,b \in H\) and consider the following:
+            % \begin{align*}
+            %     (a * b) * (a * b) & = (b * a) * (a * b) & \text{commutative property,}   \\
+            %                         & = b * (a * a) * b   & \text{associative property,}   \\
+            %                         & = b * a * b         & \text{definition of } H,       \\
+            %                         & = b * b * a         & \text{commutative property,}   \\
+            %                         & = (b * b) * a       & \text{associative property,}   \\
+            %                         & = b * a             & \text{property of } H,         \\
+            %                         & = a * b             & \text{commutativity property.}
+            % \end{align*}
+            % Therefore, \(H\) is closed because \(a * b \in H\).
+        \end{enumerate}	
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.2 Binary Operations};
+\end{tikzpicture}
+
+
+%------------ Measures of Variability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions}}: \\
+    
+	\begin{tabular}{lp{9cm} l}
+    	\textit{Isomorphism:}
+        & Let \(\langle G, * \rangle\) and \(\group{G'}{*'}\) be 2 binary structures. We say they are \textit{isomorphic} if there exists an function \(\phi: G \to G'\) such that
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item \(\phi\) is a bijection
+            \item \(\phi\) preserves the operation (\(\forall a,b \in G\), \(\phi(a * b) = \phi(a) *' \phi(b)\)).
+        \end{enumerate}
+        \\
+        \textit{One-to-One:}
+        & If \(f(a) = f(b)\), then \(a = b\). \\
+        \textit{Onto:}
+        & Let \(f: X \to Y\). \(f\) is \textit{onto} if for every \(y \in Y\), there exists at least one \(x \in X\) such that \(f(x) = y\). 
+	\end{tabular}
+
+    \underline{\textbf{Examples:}}
+
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item \(\group{\Z}{+}\) with \(\phi: \Z \to 2\Z\) and \(\group{2\Z}{+}\) with \(\phi(x): 2x\). This is one-to-one (just draw a diagram and line them up to each other), and onto because every element in \(y\) has an \(x\) that is mapped to it. It's a homomorphism because \(\phi(a + b) = 2(a + b) = 2a + 2b = \phi(a) + \phi(b)\).
+    \end{enumerate}
+
+    To prove that two groups are not isomorphic, you must rely on \textit{structural properties}. Consider the following examples to demonstrate structural property differences:
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \setcounter{enumi}{1}
+        \item The sets \(\Z\) and \(\Z^{+}\) both have cardinality \(\aleph_{0}\), and there are lots of one-to-one functions mapping \(\Z\) onto \(\Z^{+}\). However, the binary structures \(\group{\Z}{\cdot}\) and \(\group{\Z^{+}}{\cdot}\), where \(\cdot\) is the usual multiplication, are not isomorphic. In \(\group{\Z}{\cdot}\), there are two elements \(x\) such that \(x \cdot x = x\), namely 0 and 1. However, in \(\group{\Z^{+}}{\cdot}\), there is only the single element 1. 
+        \item The binary structures \(\group{\C}{\cdot}\) and \(\group{\R}{\cdot}\) under the usual multiplication are not isomorphic. (It can be shown that \(\C\) and \(\R\) have the same cardinality.) The equation \(x \cdot x = c\) has a solution \(x\) for all \(c \in \C\), but \(x \cdot x = -1\) has no solution in \(\R\).
+    \end{enumerate}
+    These are a list of possible structural and nonstructural properties:
+    \begin{multicols}{2}
+        \textbf{Structural Properites}
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item The set has 4 elements.
+            \item The operation is commutative.
+            \item \(x * x = x\) for all \(x \in S\).
+            \item The equation \(a * x = b\) has a solution \(x\) in \(S\) for all \(a,b \in S\)
+        \end{enumerate}
+
+        \textbf{Nonstructural Properties}
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item The number 4 is an element.
+            \item The operation is called ``addition.''
+            \item The elements of \(S\) are matrices.
+            \item \(S\) is a subset of \(\C\).
+        \end{enumerate}
+    \end{multicols}
+
+    \end{minipage}
+    };
+%------------ Measures of Variability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.3 Isomorphisms};
+\end{tikzpicture}
+
+
+%------------ Discrete Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+       
+    \underline{\textbf{Definitions:}}
+
+A \textit{group} \(\group{G}{*}\) is a set \(G\) closed under a binary operation \(*\) such that there is an inverse, an identity element, and the associative property is upheld. 
+	
+    \underline{\textbf{Examples:}}
+
+    Let \(*\) be defined on \(\Q^{+}\) as \(a * b = \frac{ab}{2}\). Show this is a group:
+    \begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item \textbf{Associativity:} Let \(a,b,c \in \Q^{+}\). \((a * b) * c = \frac{ab}{2} * c = \frac{abc}{4} = \frac{2(bc/2)}{2} = a * \frac{bc}{2} = a * (b * c)\).
+        \item \textbf{Identity:} \(a * e = a \implies e = 2\). 
+        \item \textbf{Inverses:} \(a * a' = 2 \implies \frac{aa'}{2} = 2 \implies aa' = 4 \implies a' = \frac{4}{a} \implies a * \frac{4}{a} = \frac{a(4/a)}{2} = 2\). So, the identity is \(a' = \frac{4}{a}\), and this exists in the group.
+    \end{itemize}
+	
+    \end{minipage}
+};
+%------------ Discrete Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.4 Groups};
+\end{tikzpicture}
+
+
+%------------ Sets and Probability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}} \\
+
+    \begin{tabular}{lp{9.8cm} l}
+        \textit{Subgroup:}
+        & Let \(G\) be a group, where \(H \subseteq G\). \(H\) is called a \textit{subgroup} of \(G\) if:
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item \(H\) is closed under the operation.
+            \item Identity element belongs to \(H\).
+            \item Each element of \(H\) must have its inverse in \(H\).
+        \end{enumerate} 
+    \end{tabular} \\
+    \textbf{Note:} For finding subgroups of some modulo integer set, just use the divisors of the set.
+	
+    \underline{\textbf{Examples:}}
+    
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Determine whether the group consisting of the \(n \times n\) matrices with determinant \(-1\) or 1 is a subgroup of \(GL(n, \R)\). 
+        Let \(H\) be the set of all \(n \times n\) matrices with determinant \(-1\) or \(1\). We will show that \(H\) is a subgroup of \(GL(n, \mathbb{R})\) by verifying the subgroup criterion:
+        \begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item \textbf{Identity:} The identity matrix \(I_n\) has a determinant of \(1\), so \(I_n \in H\).
+            \item \textbf{Closure:} Let \(A, B \in H\). Then \(\det(A) = \pm 1\) and \(\det(B) = \pm 1\). The determinant of the product \(AB\) is given by \(\det(AB) = \det(A)\det(B) = (\pm 1)(\pm 1) = \pm 1.\) Thus, \(AB \in H\).
+            \item \textbf{Inverses:} Let \(A \in H\). Then \(\det(A) = \pm 1\). The determinant of the inverse \(A^{-1}\) is given by \(\det(A^{-1}) = \frac{1}{\det(A)} = \pm 1.\). Thus, \(A^{-1} \in H\).
+        \end{itemize}
+        \item When drawing subgroup diagrams for a cyclic group (e.g., \(\Z_{30}\)), list out the divisors (e.g., 1, 2, 3, 5, 6, 10, 15, 0) and have \(\Z_{30}\) at the top, and \(\gen{0}\) at the bottom. 
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.5 Subgroups};
+\end{tikzpicture}
+
+
+%------------ Continuous Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}} \\
+
+    \begin{tabular}{lp{9cm} l}
+        \textit{Cyclic:}
+        & A group is \textit{cyclic} if there exists an element \(a \in G\) such that \(G = \{a^{n} \mid n \in \Z\} = \gen{a}\). We call the element \(a \in G\) a generator. \\
+        \textit{Order:}
+        & For any \(b \in G\), \(\gen{b}\) is a cyclic subgroup. The \textit{order} of element \(b\) is the cardinality of \(b\). \\
+        \textit{Relatively Prime:}
+        & If two integers are \textit{relatively prime}, then their \(\gcd(r,s) = 1\). Thus, there exists \(n,m \in \Z\) such that \(nr + ms = 1\).
+    \end{tabular} \\
+	
+    \textbf{The Division Algorithm for \(\Z\):} Let \(m\) be a positive integer, and \(n\) be any integer. Then there exists unique \(q\) and \(r\) such that \(n = m \cdot q + r\) with \(0 \leq r < m\) (where \(q\) is the quotient, \(r\) is the remainder). Idea: \(n = 42\), \(m = 8\), \(42 = 8(5) + 2\) and \(n = -42\), \(m = 8\), \(-42 = 8(-6) + 6\).
+    \begin{proof}
+        On a number line where we have 0, \(m\), \(2m\), etc. \(n\) is either a multiple of \(m\) or it falls between two multiples of \(m\). Let \(q\) be the largest integer such that \(qm \leq n\). Then \(r = n - qm\). Hence, \(0 \leq r < m\). 
+    \end{proof}
+
+    \underline{\textbf{Theorems:}} \\
+
+    \begin{tabular}{lp{9.8cm} l}
+        \textit{Theorem 1:}
+        & Every subgroup of a cyclic group is cyclic. \\
+        \textit{Theorem 2:}
+        & Let \(G\) be a cyclic subgroup. If \(G\) is infinite, then \(G \simeq \Z\). If \(G\) is finite, with order \(n\), then \(G \simeq \Z_{n}\). (\(\simeq\) is equivalence relation.) \\
+        \textit{Theorem 3:}
+        & Let \(G\) be a cyclic group with \(n\) elements with generator \(a\) and \(b = a^{s}\). Then \(b\) generates a cyclic subgroup of \(G\) of which contains \(\frac{n}{d}\) elements where \(d = \gcd(s,n)\). Also \(\gen{a^{s}} = \gen{a^{t}} \iff \gcd(s,n) = \gcd(t,n)\).
+    \end{tabular} \\
+
+    \end{minipage}
+};
+%------------ Continuous Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.6 Cyclic Groups};
+\end{tikzpicture}
+
+%------------ Continuous Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Properties of Cayley Digraphs:}}
+
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item The graph is always connected.
+        \item At most, 1 arc can go from 1 vertex to another.
+        \item Each vertex has exactly 1 type of each arc starting at the vertex and ending at the vertex.
+        \item If two sequences of arc types starting at one vertex end at the same place, then the same two sequences starting at a common vertex will end at the same place.
+    \end{enumerate}
+    Any digraph that has these properties is a group. \\
+
+    If asked to draw a Cayley digraph, start with the identity element, and then use the specified generating elements to build the graph from there. For example, take \(\Z_{8}\) with the generator set \(\{2,5\}\). You would start with 0, but then have different lines. One for 2, \(\ell_{1}\), and one for 5, \(\ell_{2}\). \(\ell_{1}: 0 \to 2 \to 4 \to 6 \to 0\), \(\ell_{2}: 0 \to 5 \to 2 \to 7 \to 4 \to 1 \to 6 \to 3 \to 0\). Then, connect each line to each other. In other words, every vertex should have 4 lines going through it.  
+    \end{minipage}
+};
+%------------ Continuous Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {1.7 Generating Sets};
+\end{tikzpicture}
+
+
+
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+        \underline{\textbf{Definitions:}}
+    	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt]
+            \item A \textit{permutation} of a set is a bijection of that set onto itself.
+            \begin{itemize}[itemsep=0pt, parsep=0pt, topsep=1pt, partopsep=0pt]
+                \item The permutations of a set form a group with function composition as the binary operation. So, \(\sigma\tau\) is read right to left. For a multiplication table, it is read top first.
+                \item For the set \(\{1,2,\ldots,n\}\), we call the group of permutations \(S_{n}\), where \(|S_{n}| = n!\). 
+            \end{itemize}
+            \item Let \(f \colon A \to B\) be a function and \(H\) be a subset of \(A\). Then \\\(f(H) = \{f(x) \in H\}\) is called the \textit{image of \(H\) under \(f\)}.
+            \item \textbf{Cayley's Theorem:} Every group is isomorphic to a group of permutations (a subgroup of \(S_{n}\) where \(n =\) order of the group)
+            \item \textbf{Lemma:} If \(G\) and \(G'\) are groups and \(\varphi \colon G \to G'\) is a 1-1 homomorphism, then \(\varphi(G)\) is a subgroup of \(G'\) and \(G\) is isomorphic to \(\varphi(G)\).
+        \end{itemize}
+
+        \vspace{0.3cm}
+    
+        \underline{\textbf{Examples:}}
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item \(\begin{pmatrix}
+                1 & 2 & 3 & 4 & 5 & 6 \\
+                1 & 2 & 4 & 6 & 5 & 3
+            \end{pmatrix}\begin{pmatrix}
+                1 & 2 & 3 & 4 & 5 & 6\\
+                6 & 5 & 4 & 3 & 2 & 1 
+            \end{pmatrix} = \begin{pmatrix}
+                1 & 2 & 3 & 4 & 5 & 6\\
+                3 & 5 & 6 & 4 & 2 & 1 
+            \end{pmatrix}\).
+        \end{enumerate}
+
+        
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {2.8 Groups of Permutations};
+\end{tikzpicture}
+
+
+%------------ Measures of Variability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}}
+    
+	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Let \(A\) be a set and \(\sigma \in S_{A}\). For a fixed \(a \in A\), the \textit{orbit} of \(a\) under \(\sigma\) is \(\mathcal{O}_{a,\sigma} = \{\sigma^{n}(a) \mid n \in \Z\}\).
+        \item A permutation \(\sigma \in S_{n}\) is called a \textit{cycle} if it has at most one orbit containing more than one element. The \textit{length} of the cycle is the number of elements in that orbit. 
+        \item \textbf{Theorem:} Every permutation of a finite set can be written as the finite product of disjoint cycles.
+        \item A \textit{transposition} is a cycle of length 2. 
+        \item \textbf{Theorem:} Every permutation of a finite set is a product of transpositions.
+        \item \textbf{Theorem:} Every permutation can be written as either an odd or even number of transpositions. 
+        \item The set of partitioned even transpositions is called the \textit{alternating group}.
+        \item A \textit{permutation matrix} is one that has a single 1 per row/col and everything else are 0s. If the determinant of the matrix is 1, then the number of transpositions are even, otherwise, they are odd. 
+    \end{itemize}
+
+    \underline{\textbf{Examples:}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Find the orbit of 1 under \(\sigma = \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 \\
+            3 & 7 & 6 & 7 & 4 & 1 
+        \end{pmatrix}\): \(\sigma^{0}(1) = 1\), \(\sigma^{1}(1) = 3\), \(\sigma^{2}(1) = \sigma^{1}(3) = 6\), \(\sigma^{3}(1) = 1\). Thus, the orbit is \(\mathcal{O}_{1,\sigma} = \{1,3,6\}\).
+        \item Write \(\begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+            3 & 8 & 6 & 7 & 4 & 1 & 5 & 2
+        \end{pmatrix}\) as a cycle: \(\sigma = (1,3,6)(2,8)(4,7,5)\).
+    \end{enumerate}
+    
+
+    \end{minipage}
+    };
+%------------ Measures of Variability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {2.9 Orbits, Cycles, and the Alt. Groups};
+\end{tikzpicture}
+
+
+%------------ Discrete Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+       
+    \underline{\textbf{Definitions:}}
+	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Let \(G\) be a group with \(H\) as a subgroup, and \(a \in G\). We define \(aH = \{ ah \mid h \in H\}\). This is the \textit{left coset} of \(H\). Similarly, \(Ha = \{ha \mid h \in H\}\) is a \textit{right coset}. (Generally not a subgroup.)
+        \item Let \(H\) be a subgroup of group \(G\). The number of left cosets of \(H\) in \(G\) is the \textit{index} \((G \funccolon H)\) \textit{of H in G}.
+        \item \textbf{Lagrange's Theorem:} If \(G\) is a finite group with \(H\) as a subgroup, then \(|H|\) is a divisor of \(G\). 
+        \item \textbf{Corollary:} If group \(G\) has a prime order, the only subgroups are the trivial subgroup and \(G\). Therefore, this group must be cyclic. 
+    \end{itemize}
+	
+    \underline{\textbf{Examples:}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Let \(\sigma = (1,2,5,4)(2,3)\) in \(S_{5}\). Find the index of \(\gen{\sigma}\) in \(S_{5}\). We can rewrite \(\sigma\) as \((1,2,3,5,4)\) to help with composing. Following that, we get \(\sigma^{2} = (1,3,4,2,5)\), \(\sigma^{3} = (1,5,2,4,3)\), \(\sigma^{4} = (1,4,5,3,2)\), and \(\sigma^{5} = e\). Therefore, \(|\gen{\sigma}| = 5\), and the index of \(\gen{\sigma}\) in \(S_{5}\) is \(|S_{5}|/|\gen{\sigma}| = 120/4 = 30\)
+        \item Let \(\mu = (1,2,4,5)(3,6)\) in \(S_{6}\). Find the index of \(\gen{\mu}\) in \(S_{6}\). Because we are using disjoint cycles, the transposition cycle is the identity element when the power of \(\mu\) is even. We can make the same connection for the 4-element cycle: when the power of \(\mu\) is a multiple of 4, it is equal to the identity element. We know that \(\mu^{4} = e\), \(|\gen{\mu}| = 4\), and the index of \(\gen{\mu}\) in \(S_{6}\) is \(720/4 = 180\).
+        \item Let \(H\) be a subgroup of a group \(G\). Prove that if the partition of \(G\) into left cosets of \(H\) is the same as the partition into right cosets of \(H\), then \(g^{-1}hg \in H\) for all \(g \in G\) and all \(h \in H\). \textit{Solution.} The statement ``If the partition of \(G\) into left cosets of \(H\) is the same as the partition into right cosets of \(H\),'' implies \(gH = Hg\) for all \(g \in G\). Now, let \(g \in G\) and \(h \in H\). Our goal is to show that \(g^{-1}hg \in H\). Consider the element \(hg\). Since \(h \in H\), \(hg \in Hg\). Because \(Hg = gH\), it must be that \(hg \in gH\). By definition of left coset, \(hg \in gH\) means that \(hg = gh'\) for some \(h' \in H\). So, we just solve for this \(h'\). We start by multiplying both sides on the left by \(g^{-1}\): \(g^{-1}(hg) = g^{-1}(gh') = (g^{-1}g)h' = h'\). Since \(h' \in H\), we have shown that \(g^{-1}hg \in H\).
+        \item Recall the multiplication table for \(S_{3}\): \qquad\qquad Left coset table:\\
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c|c|c}
+             & \(\rho_{0}\) & \(\rho_{1}\) & \(\rho_{2}\) & \(\mu_{1}\) & \(\mu_{2}\) & \(\mu_{3}\) \\\noalign{\hrule height 1.5pt}
+            \(\rho_{0}\) & \(\rho_{0}\) & \(\rho_{1}\) & \(\rho_{2}\) & \(\mu_{1}\) & \(\mu_{2}\) & \(\mu_{3}\) \\\hline
+            \(\rho_{1}\) & \(\rho_{1}\) & \(\rho_{2}\) & \(\rho_{0}\) & \(\mu_{3}\) & \(\mu_{1}\) & \(\mu_{2}\) \\\hline
+            \(\rho_{2}\) & \(\rho_{2}\) & \(\rho_{0}\) & \(\rho_{1}\) & \(\mu_{2}\) & \(\mu_{3}\) & \(\mu_{1}\) \\\hline
+            \(\mu_{1}\) & \(\mu_{1}\) & \(\mu_{2}\) & \(\mu_{3}\) & \(\rho_{0}\) & \(\rho_{1}\) & \(\rho_{2}\) \\\hline
+            \(\mu_{2}\) & \(\mu_{2}\) & \(\mu_{3}\) & \(\mu_{1}\) & \(\rho_{2}\) & \(\rho_{0}\) & \(\rho_{1}\) \\\hline
+            \(\mu_{3}\) & \(\mu_{3}\) & \(\mu_{1}\) & \(\mu_{2}\) & \(\rho_{1}\) & \(\rho_{2}\) & \(\rho_{0}\) \\
+        \end{tabular}
+        \hfill\begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c|c|c}
+             & \(\rho_{0}\) & \(\mu_{3}\) & \(\rho_{1}\) & \(\mu_{2}\) & \(\rho_{2}\) & \(\mu_{1}\) \\\noalign{\hrule height 1.5pt}
+            \(\rho_{0}\) & \(\rho_{0}\) & \(\mu_{3}\) & \(\rho_{1}\) & \(\mu_{2}\) & \(\rho_{2}\) & \(\mu_{1}\) \\\hline
+            \(\mu_{3}\) & \(\mu_{3}\) & \(\rho_{0}\) & \(\mu_{1}\) & \(\rho_{2}\) & \(\mu_{2}\) & \(\rho_{1}\) \\\hline
+            \(\rho_{1}\) & \(\rho_{1}\) & \(\mu_{2}\) & \(\rho_{2}\) & \(\mu_{1}\) & \(\rho_{0}\) & \(\mu_{3}\) \\\hline
+            \(\mu_{2}\) & \(\mu_{2}\) & \(\rho_{1}\) & \(\mu_{3}\) & \(\rho_{0}\) & \(\mu_{1}\) & \(\rho_{2}\) \\\hline
+            \(\rho_{2}\) & \(\rho_{2}\) & \(\mu_{1}\) & \(\rho_{0}\) & \(\mu_{3}\) & \(\rho_{1}\) & \(\mu_{2}\) \\\hline
+            \(\mu_{1}\) & \(\mu_{1}\) & \(\rho_{2}\) & \(\mu_{2}\) & \(\rho_{1}\) & \(\mu_{3}\) & \(\rho_{0}\) \\
+        \end{tabular}
+    \end{enumerate}
+    
+	
+    \end{minipage}
+};
+%------------ Discrete Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {2.10 Cosets \& Lagrange's Theorem};
+\end{tikzpicture}
+
+
+
+
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+    \underline{\textbf{Examples:}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \setcounter{enumi}{3}
+        \item
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item List the left cosets of the subgroup \(\{\rho_{0}, \mu_{3}\}\). \\\textit{Solution.} \(\{\rho_{0},\mu_{3}\},\ \{\rho_{1},\mu_{2}\},\ \{\rho_{2},\mu_{1}\}\). (This is found by just multiplying \(\{\rho_{0}, \mu_{3}\}\) by \(\rho\)s and \(\mu\)s until we get non-unique elements.)
+            \item Does this create a coset group? \textit{Solution.} No. The the table is not made up of the blocks that correspond to the elements defined in (a).
+        \end{enumerate}
+    \end{enumerate}
+    
+	
+    \end{minipage}
+};
+%------------ Discrete Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {2.10 (cont.)};
+\end{tikzpicture}
+
+
+%------------ Discrete Random Variable and Distributions ---------------
+% \begin{tikzpicture}
+% \node [mybox] (box){%
+%     \begin{minipage}{0.46\textwidth}
+       
+%     \underline{\textbf{Examples:}}
+%     \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+%         \setcounter{enumi}{3}
+%         \item Let \(S_{A}\) be the group of all permutations of the set \(A\), and let \(c\) be one particular element of \(A\). Show that \(\{\sigma \in S_{A} \mid \sigma(c) = c \}\) is a subgroup \(S_{c,c}\) of \(S_{A}\). \textit{Solution.} \textbf{Identity:} The identity permutation \(e\) maps every element to itself, so \(e(c) = c\). Thus, \(e \in S_{c,c}\). \textbf{Closure:} Let \(\sigma, \tau \in S_{c,c}\). This means \(\sigma(c) = c\) and \(\tau(c) = c\). We must check their product: \((\sigma\tau)(c) = \sigma(\tau(c)) = \sigma(c) = c.\) \textbf{Inverses:} Let \(\sigma \in S_{c,c}\). As before, this means \(\sigma(c) = c\), and we also have to check \(\sigma^{-1}\). We will do this by multiplying \(\sigma^{-1}\) to both sides of the equation:
+%         \[
+%             \sigma^{-1}(\sigma(c)) = \sigma^{-1}(c) \implies (\sigma^{-1}\sigma)(c) = \sigma^{-1}(c) \implies e(c) = \sigma^{-1}(c)
+%         \]
+%         Because \(\sigma^{-1}(c) = c\), the inverse \(\sigma^{-1}\) is in \(S_{c,c}\).
+%         Since \(S_{c,c}\) contains the identity, is closed under the binary operation, and is closed under inverses, it is a subgroup of \(S_{A}\).
+%     \end{enumerate}
+    
+	
+%     \end{minipage}
+% };
+% %------------ Discrete Random Variable and Distributions Header ---------------------
+% \node[fancytitle, right=10pt] at (box.north west) {2.10 (cont.)};
+% \end{tikzpicture}
+        
+
+%------------ Sets and Probability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}}
+
+	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item The \textit{cartesian product of sets}, \(S_{1}, S_{2}, \ldots, S_{n}\) is the set of all \(n\)-tuples \(a_{1},a_{2},\ldots,a_{n}\) where \(a_{i} \in S_{i}\) for \(i = 1,2,\ldots,n\). The cartesian product is denoted by either \(S_{1} \times S_{2} \times \cdots \times S_{n}\). 
+        \item \textbf{Theorem:} If \(G_{1}\) and \(G_{2}\) are groups, we define the \textit{direct product} \(G_{1} \times G_{2} = \{(a,b) \mid a \in G_{1}, b \in G_{2}\}\) and \(G_{1} \times G_{2}\) will have binary operation \((a_{1},b_{1})(a_{2},b_{2}) = (a_{1}a_{2}b_{1}b_{2})\). Also, \(\prod_{i = 1}^{n} G_{i}\) is a group, and the direct product of the group \(G_{i}\) under this operation.
+        \item \textbf{Theorem:} Let \(a_{1},a_{2}, \ldots, a_{n} \in \prod_{i = 1}^{n} G_{i}\). If each \(a_{i}\) has order \(r_{i}\) in \(G_{i}\),  then the order of \(a_{1},a_{2}, \ldots, a_{n}\) is the \textit{least common multiple} of \(r_{1}, r_{2}, \ldots, r_{n}\).
+        \item \textbf{Theorem:} Every finitely generated abelian group \(G\) is isomorphic to a direct product of the form \(\Z_{p_{1}^{r_{1}}} \times \Z_{p_{2}^{r_{2}}} \times \cdots \times \Z_{p_{n}^{r_{n}}} \times \Z \times \Z \times \cdots \times \Z\), where each \(p_{i}\) is prime, but not necessarily distinct and each \(r_{i}\) are positive integers.
+        \item \textbf{Theorem:} \(\Z_{m} \times \Z_{n}\) is cyclic if and only if \(m,n\) are relatively prime. Similarly, \(\Z_{m_{1}} \times \Z_{m_{2}} \times \cdots \times \Z_{m_{n}}\) is cyclic and isomorphic to \(\Z_{m_{1}} \times \Z_{m_{2}} \times \cdots \times \Z_{m_{n}}\) if, and only if every pair of \(m_{i}\) and \(m_{j}\) are relatively prime. 
+        \item A group \(G\) is decomposable if it is isomorphic to a direct product of proper nontrivial subgroups. 
+    \end{itemize}
+	
+    \underline{\textbf{Examples:}}\newcommand{\intgroup}[1]{\Z_{#1}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Find the order of \((8,4,10)\) in \(\Z_{12} \times \intgroup{60} \times \intgroup{24}\). 8 in \(\intgroup{12}\) is \(\frac{12}{\gcd(8,12)} = 3\). 4 in \(\intgroup{60}\) is \(\frac{60}{\gcd(4,60)} = 15\). 10 in \(\intgroup{24}\) is \(\frac{24}{\gcd(10,24)} = 12\). The order is \(\text{lcm}(3,15,12) = 60\).
+        \item Consider this permutation from \(S_{9}: \sigma = \begin{pmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+            6 & 4 & 9 & 2 & 7 & 5 & 1 & 3 & 8 
+        \end{pmatrix}\). (a) Express \(\sigma\) as a product of disjoint cycles. (b) What is the order of \(\sigma\)? (c) Express \(\sigma\) as a product of transpositions. (d) Is \(\sigma\) an even or odd permutation? \textit{Solutions.} (a) \((1,6,5,7)(2,4)(3,9,8)\). (b) Notice \((1,6,5,7)\) has order 4, and the others have order 2 and 3 respectively. Thus, the order is \(\text{lcm}(4,2,3) = 12\). (c) \((1,6)(6,5)(5,7)(2,4)(3,9)(9,8)\). (d) even.
+        \item Consider the group \(\Z_{12} \times \Z_{8} \times \Z_{15}\). Is this group isomorphic to \(\Z_{4} \times \Z_{45} \times \Z_{8}\)? \textit{Solution.} No. \(\Z_{45} \simeq \Z_{9} \times \Z_{5} \not\simeq \Z_{3} \times \Z_{3} \times \Z_{5}\) because of prime relativity. 
+        \item Find all abelian groups, up to isomorphism, of order 360. \textit{Solution.} This can be factored into \(2^{3}3^{2}5\). We get 6 abelian groups of order 360: \begin{enumerate}[label=(\arabic*),itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item \(\Z_{2} \times \Z_{2} \times \Z_{2} \times \Z_{3} \times \Z_{3} \times \Z_{5}\) \qquad (2) \(\Z_{2} \times \Z_{4} \times \Z_{3} \times \Z_{3} \times \Z_{5}\)
+            \item[(3)] \(\Z_{2} \times \Z_{2} \times \Z_{2} \times \Z_{9} \times \Z_{5}\) \quad\qquad \ \ \ \ (4) \(\Z_{2} \times \Z_{4} \times \Z_{9} \times \Z_{5}\) 
+            \item[(5)] \(\Z_{8} \times \Z_{3} \times \Z_{3} \times \Z_{5}\) \qquad\qquad\qquad\ \ (6) \(\Z_{8} \times \Z_{9} \times \Z_{5}\)
+        \end{enumerate}
+    \end{enumerate}
+    
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {2.11 Direct Products \& Finitely Generated Abelian Groups};
+\end{tikzpicture}
+
+% \begin{tikzpicture}
+% \node [mybox] (box){%
+%     \begin{minipage}{0.46\textwidth}
+	
+%     \underline{\textbf{Examples:}}\newcommand{\intgroup}[1]{\Z_{#1}}
+%     \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+%         \item[8:47] For \(S_{n}\), show that if \(n \ge 3\), then the only element of \(\sigma\) of \(S_{n}\) satisfying \(\sigma\gamma = \gamma\sigma\) for all \(\gamma \in S_{n}\) is \(\sigma = i\), the identity permutation. \textit{Solution.} Suppose \(\sigma(i) = m \ne i\). Define \(\gamma \in S_{n}\) such that \(\gamma(i) = i\) and \(\gamma(m) = r\) where \(r \ne m\). (Note this is possible because \(n \ge 3\).) Then \(\sigma\gamma(i) = \sigma(\gamma(i)) = \sigma(i) = m\) while \(\gamma\sigma = \gamma(\sigma(i)) = \gamma(m) = r\), so \(\sigma\gamma \ne \gamma\sigma\). Thus \(\sigma\gamma = \gamma\sigma\) for all \(\gamma \in S_{n}\) only if \(\sigma\) is the identity permutation. 
+%         \item[9:31] Let \(A\) be an infinite set. Let \(H\) be the set of all \(\sigma \in S_{A}\) such that the number of elements moved by \(\sigma\) (``\(\sigma\) \textbf{moves} \(a \in A\)'' if \(\sigma(a) \ne a\)) is finite. Show that \(H\) is a subgroup of \(S_{n}\). \textit{Solution.} \textbf{Closure:} Let \(\sigma,\mu \in H\). If \(\sigma\) moves elements \(s_{1},s_{2},\ldots,s_{k}\) of \(A\), and \(\mu\) moves elements \(r_{1},r_{2},\ldots,r_{m}\) of \(A\), then \(\sigma\mu\) can't move any elements not in the list \(s_{1},s_{2},\ldots,s_{k},r_{1},r_{2},\ldots,r_{m}\), so \(\sigma\mu\) moves at most a finite number of elements of \(A\), and hence in \(H\). Thus, \(H\) is closed under the operation of \(S_{A}\). \textbf{Identity:} The identity permutation is in \(H\) because it moves no elements of \(A\). \textbf{Inverses:} Because the elements moved by \(\sigma \in H\) are the same as the elements moved by \(\sigma^{-1}\), we see that for each \(\sigma \in H\), we have \(\sigma^{-1} \in H\) also. Thus, \(H\) is a subgroup of \(S_{A}\).
+%         \item[X:34] Let \(G\) be a group of order \(pq\), where \(p\) and \(q\) are prime numbers. Show that every proper subgroup of \(G\) is cyclic. \textit{Solution.} The possible orders for a proper subgroup are \(p\), \(q\) and 1. Now \(p\) and \(q\) are primes and every group of prime order is cyclic, and of course every group of order 1 is cyclic. Thus, every proper subgroup of a group of order \(pq\) must be cyclic. 
+%         \item[X:36] A previous problem showed that every finite group of even order \(2n\) contains an element of order 2. Using Lagrange's theorem, show that if \(n\) is odd, then an abelian group of order \(2n\) contains precisely one element of order 2. \textit{Solution.} Let \(G\) be abelian of order \(2n\) where \(n\) is odd. Suppose that \(G\) contains two elements, \(a\) and \(b\), of order \(2\). Then \((ab)^{2} = abab = aabb = ee = e\) and \(ab \ne e\) because the inverse of \(a\) is \(a\) itself. Thus \(ab\) also has order 2. It is easily checked that then \(\{e,a,b,ab\}\) is a subgroup of \(G\) of order 4. But this is impossible because \(n\) is odd and 4 does not divide \(2n\). Thus, there can't be two elements of order 2.  
+%         \item[X:37] Show that a group with at least two elements but with no proper nontrivial subgroups must be finite and of prime order. \textit{Solution.} Let \(G\) be of order \(\ge 2\) but with no proper nontrivial subgroups. Let \(a \in G\), \(a \ne e\). Then \(\gen{a}\) is a nontrivial subgroup of \(G\), and thus must be \(G\) itself. Because every cyclic group not of prime order has proper subgroups, we see that \(G\) must be finite of prime order.
+%         \item[11:16] Are the groups \(\Z_{2} \times \Z_{12}\) and \(\Z_{4} \times \Z_{6}\) isomorphic? Why or why not? \textit{Solution.} When we split these into two separate decompositions, we will see that they are isomorphic. First, we know that \(\Z_{mn} \simeq \Z_{n} \times \Z_{m} \iff \gcd(n,m) = 1\). Since 12 is not a prime number and \(\gcd(3,4) = 1\), then \(\Z_{12} \simeq \Z_{3} \times \Z_{4} \text{,\quad and }\quad \Z_{2} \times \Z_{12} \simeq \Z_{2} \times \Z_{3} \times \Z_{4}.\) The same thing applies for \(\Z_{6}\). It decomposes into \(\Z_{2} \times \Z_{3}\) because \(\gcd(2,3) = 1\). Thus, \(\Z_{4} \times \Z_{6} \simeq \Z_{2} \times \Z_{3} \times \Z_{4}.\)
+%             Since both \(\Z_{2} \times \Z_{12}\) and \(\Z_{4} \times \Z_{6}\) decompose into the same product, they are isomorphic. 
+%     \end{enumerate}
+
+
+%     \end{minipage}
+% };
+% %------------ Sets and Probability Header ---------------------
+% \node[fancytitle, right=10pt] at (box.north west) {Extra Problems};
+% \end{tikzpicture}
+
+
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}} \\
+    \textit{For these definitions, \(\varphi\) is a homomorphism from \(G\) to \(G'\), unless stated otherwise.}
+
+	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item A map \(\varphi\) of a group \(G\) into a group \(G'\) is a \textit{homomorphism} if the homomorphism property \(\varphi(a*b) = \varphi(a)*'\varphi(b)\) holds for all \(a,b \in G\). The \textit{trivial homomorphism} is \(\varphi \funccolon G \to G',\ \varphi(g) = e'\). 
+        \item \textbf{Theorem:} Let \(G,\ G'\) be groups with \(\varphi\). Then \(\varphi\) has the following properties:
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item \(\varphi(e) = e'\). \qquad 2. If \(a \in G\), then \(\varphi(a^{-1}) = \varphi(a)^{-1}\). 
+            \item[3.] If \(H\) is a subgroup of \(G\), then \(\varphi[H]\) is a subgroup of \(G'\). 
+            \item[4.] If \(K'\) is a subgroup of \(G'\), then \(\varphi^{-1}[K']\) is a subgroup of \(G\).
+        \end{enumerate}
+        \item Let \(\varphi\) be a mapping of a set \(X\) into a set \(Y\), and let \(A \subseteq X\) and \(B \subseteq Y\). The \textit{image} \(\varphi[A]\) \textit{of A in Y under \(\varphi\)} is \(\{\varphi(a) \mid a \in A\}\). The set \(\varphi[X]\) is the \textit{range of \(\varphi\)}. The \textit{inverse image} \(\varphi^{-1}[B]\) \textit{of B in X} is \(\{x \in X \mid \varphi(x) \in B\}\)
+        \item The subgroup \(\varphi^{-1}[\{e'\}] = \{x \in G \mid \varphi(x) = e'\}\) is called the \textit{kernel} of \(\varphi\). \(\ker(\varphi)\) is a subgroup of \(G\). 
+        \item \textbf{Theorem:} Let \(\varphi \funccolon G \to G'\), \(H = \ker(\varphi)\), and \(a \in G\). Then \\\(aH = \{x \in G \mid \varphi(x) = \varphi(a)\} = Ha\).
+        \item \(\varphi\) is 1-1 iff \(\ker(\varphi) = \{e\}\). (\(\varphi\) has a trivial kernel.)
+        \item A subgroup \(H\) of \(G\) is called a \textit{normal subgroup} if for all \(g \in G\), \(gH = Hg\). Every subgroup of an abelian subgroup is normal. Equivalent definitions:
+        \begin{itemize}
+            \item \(\forall g \in G,\ h \in H,\ ghg^{-1} \in H\). \qquad \textendash\ \(\forall g \in G, gHg^{-1} = H\). 
+        \end{itemize}
+    \end{itemize}
+	
+    \underline{\textbf{Examples:}}\newcommand{\intgroup}[1]{\Z_{#1}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Let \(\varphi \funccolon \Z_{6} \to \Z_{2}\) be given by \(\varphi(x) = \text{the remainder of } x\) when divided by 2, as in the division algorithm. Determine if \(\varphi\) is a homomorphism. \textit{Solution.}
+        We know \(\varphi(x) = x \bmod 2\), and we have binary operators \((a + b) \bmod 6\) for \(\Z_{6}\) and \((a + b) \bmod 2\) for \(\Z_{2}\). This leaves us with the following equation to check: \(\varphi((a + b) \bmod 6) = (\varphi(a)  + \varphi(b)) \bmod 2\). 
+        For the left-hand side: \(\varphi((a + b) \bmod 6) = ((a + b) \bmod 6) \bmod 2.\)
+        This simplifies down to \((a + b) \bmod 2\) since \(6 \equiv 0 \pmod{2}\). For the right-hand side: \((\varphi(a) + \varphi(b)) \bmod 2 = (a \bmod 2 + b \bmod 2) \bmod 2.\)
+        Since addition is commutative and associative in both groups, we can rewrite this as: \((a + b) \bmod 2.\) Therefore, the equation holds, and the map is a homomorphism.
+        \item Let \(\varphi \funccolon \Z_{9} \to \Z_{2}\) be given by \(\varphi(x) = \text{the remainder of } x\) when divided by 2, as in the division algorithm. \textit{Solution.}
+        This is not a homomorphism because the two sides of the equation are not equal: \(\varphi((3 + 7) \bmod 9) = \varphi(1) = 1 \ne (\varphi(3) + \varphi(7)) \bmod 2 = (1 + 1) \bmod 2 = 0.\)
+        \item Compute \(\ker(\varphi)\) and \(\varphi(20)\) for \(\varphi \funccolon \Z \to S_{8}\) such that \(\varphi(1) = (1,4,2,6)(2,5,7)\). \textit{Solution.}
+        We know \(\varphi(1) = (1,4,2,6)(2,5,7) = (1,4,2,5,7,6)\) has order 6, so \(\ker(\varphi) = 6\Z\). Then, we know from the homomorphism property that \(\varphi(20) = (\varphi(1))^{20} = (\varphi(1))^{18} (\varphi(1))^{2} = (\varphi(1))^{2} = (1,2,7)(4,5,6).\)
+    \end{enumerate}
+    
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {3.13 Homomorphisms};
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}} \\
+    \textit{For these definitions, \(\varphi\) is a homomorphism from \(G\) to \(G'\), unless stated otherwise.}
+
+	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item \textbf{Fundamental Theorem of Homomorphisms:} Let \(\varphi \funccolon G \to G'\) with \(H = \ker(\varphi)\). Then the cosets of \(H\) form a \textit{factor group}, \(G/H\), where \((aH)(bH) = (ab)H\). Also, the map \(\mu \funccolon G/H \to \varphi[G]\) defined by \(\mu(aH) = \varphi(a)\) is an isomorphism. both coset multiplication and \(\mu\) are well defined, independent of the choices \(a\) and \(b\) from the cosets. 
+        \item \textbf{Theorem:} Let \(H \le G\). Coset multiplication is well defined iff \(H\) is a normal subgroup of \(G\).
+        \item \textbf{Theorem:} Let \(H\) be a normal subgroup of \(G\). Define \(\gamma \funccolon G \to G/H\) by \(\gamma(g) = gH\). Then \(\gamma\) is a homomorphism with kernel \(H\).
+        \item An isomorphism \(\varphi \funccolon G \to G\) is called an \textit{automorphism}.
+        \item For a given \(g \in G\), the map \(i_{g} \funccolon G \to G\) defined by \(i_{g}(x) = gxg^{-1}\) is called the \textit{inner automorphism} of \(G\) by \(g\), and \(i_{g}(x)\) is the \textit{conjugation of \(x\) by g}.
+        \item For a subgroup \(H\) of \(G\), \(i_{g}[H] = \{ghg^{-1} \mid h \in H\}\) is called a \textit{conjugate subgroup} of \(H\).
+    \end{itemize}
+	
+    \underline{\textbf{Examples:}}\newcommand{\intgroup}[1]{\Z_{#1}}
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Find the order of \((\Z_4 \times \Z_{12}) / (\gen{2} \times \gen{2})\). \textit{Solution.}
+        In \(\Z_{4}\), the subgroup generated by \(\gen{2}\) is \(\{0,2\}\). Then, in \(\Z_{12}\), the subgroup generated by \(\gen{2}\) is \(\{0,2,4,6,8,10\}\). Thus, the subgroup \(\gen{2} \times \gen{2}\) has order \(2 \times 6 = 12\), and \(\Z_{4} \times \Z_{12}\) has order \(4 \times 12 = 48\). By Lagrange's Theorem, the order of the factor group is \(48 / 12 = 4\).
+        \item Find the order of \((\Z_{12} \times \Z_{18}) / \gen{(4,3)}\). \textit{Solution.}
+        The order of \(\Z_{12} \times \Z_{18}\) is \(12 \times 18 = 216\). In \(\Z_{12} \times \Z_{18}\), the subgroup generated by \(\gen{(4,3)}\) has order 6. So, by Lagrange's Theorem, the order of the factor group is \(216 / 6 = 36\).
+        \item Find the order of the element in the factor group:
+        \begin{enumerate}
+            \item \((2, 1) + \gen{(1, 1)}\) in \((\Z_3 \times \Z_6) / \gen{(1, 1)}\). \textit{Solution.}
+        In \(\Z_3 \times \Z_6\), \(\gen{(1,1)} = \{(1,1), (2,2), (0,3), (1,4), (2,5), (0,0)\}\). Then, we test the powers of \((2,1)\) until we find one that is in \(\gen{(1,1)}\): \((2,1)(2,1) = (1,2) \implies (1,2)(2,1) = (0,3).\)
+        So, the order of \((2, 1) + \gen{(1, 1)}\) in \((\Z_3 \times \Z_6) / \gen{(1, 1)}\) is 3. 
+        \end{enumerate}
+    \end{enumerate}
+    
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {3.14 Factor Groups};
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}}
+
+	\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item A group is called \textit{simple} if it is nontrivial and has no proper nontrivial normal subgroups (i.e., only the identity and the group itself.)
+        \item A \textit{maximal normal subgroup} of a group \(G\) is a normal proper subgroup \(M\) for which there is no normal proper subgroup of \(G\) which properly contains \(M\). 
+        \item \textbf{Theorem:} \(M\) is a maximal normal subgroup of \(G\) iff \(G/M\) is simple.
+        \item \textbf{Theorem:} Let \(\varphi \funccolon G \to G'\) be a group homomorphism. If \(N\) is a normal subgroup of \(G\), then \(\varphi[N]\) is a normal subgroup of \(\varphi[G]\). If \(N'\) is a normal subgroup of \(\varphi[G]\), then \(\varphi^{-1}[N']\) is a normal subgroup of \(G\). 
+        \item We define the \textit{center of a group} to be \(Z(G) = \{z \in G \mid \forall g \in G, zg = gz\}\). \(Z(G)\) is a normal subgroup.
+        \item For any \(a,b \in G\), consider \(aba^{-1}b^{-1}\). If \(a\) and \(b\) commute, then \(aba^{-1}b^{-1} = e\), if they don't then \(aba^{-1}b^{-1}\) is not the identity. Each \(aba^{-1}b^{-1}\) is called a \textit{commuter} of \(G\). The \textit{commutator subgroup} of \(G\) is the subgroup generated by the commutators. This is the set of finite products of commutators, which is not abelian.  
+    \end{itemize}
+	
+    \underline{\textbf{Examples:}} (For 1-4, classify the group according to the fundamental theorem of finitely generated abelian groups)
+    \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item \((\Z_{2} \times \Z_{4}) / \gen{(0,1)}\). \textit{Solution.}
+        \(\gen{(0,1)}\) has order 4, so \((\Z_{2} \times \Z_{4}) / \gen{(0,1)}\) has order 2. Therefore, this leaves only one choice: \((\Z_{2} \times \Z_{4}) / \gen{(0,1)} \simeq \Z_{2}\).
+    \item \((\Z_{2} \times \Z_{4}) / \gen{(1,2)}\). \textit{Solution.}
+        \(\gen{(1,2)}\) has order 2, so \((\Z_{2} \times \Z_{4}) / \gen{(1,2)}\) has order 4. This leaves us with two choices: \(\Z_{4}\) or \(\Z_{2} \times \Z_{2}\). Since \((1,1) + \gen{(1,2)}\) has order 4 in the factor group, we must have \((\Z_{2} \times \Z_{4}) / \gen{(1,2)} \simeq \Z_{4}\).
+    \item \((\Z_{4} \times \Z_{8}) / \gen{(1,2)}\). \textit{Solution.}
+        \(|\gen{(1,2)}| = 4 \implies |(\Z_{4} \times \Z_{8}) / \gen{(1,2)}| = 8\). Therefore, either \(\Z_{8}\) or \(\Z_{4} \times \Z_{2}\). Since \(|(0,1) + \gen{(1,2)}| = 8\), \((\Z_{4} \times \Z_{8}) / \gen{(1,2)} \simeq \Z_{8}\).
+    \item \((\Z \times \Z \times \Z) / \gen{(1,1,1)}\). \textit{Solution.} 
+        The 1 in the generator \((1,1,1)\) of \(\gen{(1,1,1)}\) shows that each coset of \(\gen{(1,1,1)}\) contains a unique element of the form \((0,m,n)\), and of course, every such element of \(\Z \times \Z \times \Z\) is in some coset of \(\gen{(1,1,1)}\). We can choose these representatives \((0,m,n)\) to compute in the factor group, which therefore must be isomorphic to \(\Z \times \Z\).
+    \item Find both the center and the commutator subgroups of \(\Z_{3} \times S_{3}\). \textit{Solution.} Because \(\rho_{0}\) is the only element of \(S_{3}\) that commutes with every element of \(S_{3}\), we see that \(Z(\Z_{3} \times S_{3}) = \Z_{3} \times \{\rho_{0}\}\). Because \(A_{3}\) is in the commutator subgroup of \(S_{3}\), we see that the commutator subgroup of \(\Z_{3} \times S_{3}\) is \(\{0\} \times S_{3}\).
+    
+    \end{enumerate}
+    
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {3.15 Factor Group Computations};
+\end{tikzpicture}
+
+
+
+
+\end{multicols*}
+\end{document}

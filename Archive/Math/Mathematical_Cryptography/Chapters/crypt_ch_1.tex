@@ -733,7 +733,7 @@ We can write the algorithm as follows: \begin{enumerate}[label=\arabic*.]
               \setcounter{enumi}{2}
         \item \(x^2 \equiv 3 \ (\text{mod } 11)\)
               \setcounter{enumi}{6}
-        \item \(x \equiv 1 \ (\text{mod } 5)\) and also, \(x \equiv 2 \ (\text{mod } 7)\).\ (Find all solutions modulo 35, that is, find the solutions satisfying \(0 \leq x \leq 34\).
+        \item \(x \equiv 1 \ (\text{mod } 5)\) and also, \(x \equiv 2 \ (\text{mod } 7)\).\ (Find all solutions modulo 35, that is, find the solutions satisfying \(0 \leq x \leq 34\).)
     \end{enumerate}
 \end{exercise}
 
@@ -928,7 +928,7 @@ We can write the algorithm as follows: \begin{enumerate}[label=\arabic*.]
                             345^{64}  & \equiv 529 \ (\text{mod } 587) \\
                             345^{128} & \equiv 429 \ (\text{mod } 587) \\
                             345^{256} & \equiv 310 \ (\text{mod } 587) \\
-                            345^{512} & \equiv 419 \ (\text{mod } 587) \\
+                            345^{512} & \equiv 419 \ (\text{mod } 587)
                         \end{align*}
                         Now we can multiply and solve: \(345^{2^9} \cdot 345^{2^6} \cdot 345^{2^3} \cdot 345^{2^0} \Rightarrow 419 \cdot 529 \cdot 177 \cdot 345 \ (\text{mod } 587) = 114\). Therefore, the inverse of \(345 \ (\text{mod } 587)\) is \(114\).
               \end{enumerate}
@@ -1242,7 +1242,7 @@ This section will cover ASCII\@: We can take strings of 8 bits and convert them 
         \item Convert the decimal numbers \(8734\) and \(5177\) into binary numbers, combine them using XOR, and convert the result back into a decimal number.
     \end{enumerate}
 \end{exercise}
-
+\vspace{1em}
 For this exercise, I will be using these python functions that I wrote:
 \begin{lstlisting}[language=Python,numbers=left]
 def compute_binary(num):

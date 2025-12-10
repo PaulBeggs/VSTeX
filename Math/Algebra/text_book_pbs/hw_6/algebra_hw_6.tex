@@ -267,7 +267,6 @@
 \newcommand{\thickvrule}{\vrule width 1pt}
 \newcommand{\thickhrule}{\Xhline{1pt}}
 
-\usepackage{mathtools}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{mathrsfs}
 \usepackage{changepage}
@@ -609,7 +608,7 @@ In Exercises 4 and 5, determine whether the given map \(\varphi\) is a homomorph
         \]
         Therefore, the equation holds, and the map is a homomorphism.
     }
-% Let¢ : Z::9 ----;. Z::2 be given by q:,(x) = th e remainder of x when divided by 2, as in the division algorithm .
+    
     \item Let \(\varphi \funccolon \Z_{9} \to \Z_{2}\) be given by \(\varphi(x) = \text{the remainder of } x\) when divided by 2, as in the division algorithm.
     \sol{
         This is not a homomorphism because the two sides of the equation are not equal:
@@ -758,11 +757,11 @@ In Exercises 11 and 15, give the order of the element in the factor group.
     \pf{
         Let \(H\) be a normal subgroup of \(G\) and let \(m = (G \funccolon H)\). Because \(H\) is normal, we can form the factor group \(G/H\). The order of this group, \(|G/H|\), is equal to the index of \(H\) in \(G\), so \(|G/H| = m\). Now, let \(a\) be any element in \(G\). The corresponding element in the factor group \(G/H\) is the coset \(aH\). Let \(k\) be the order of this element \(aH\) in the factor group. By the definition of order, \((aH)^{k} = H\) (where \(H\) is the identity element of the factor group). By Lagrange's Theorem, the order of an element must divide the order of the group. Therefore, \(k\) divides \(m\). This implies that \(m = kq\) for some integer \(q\). Now, we can compute \((aH)^{m}\):
         \[
-            (aH)^{m} = (aH)^{kq} = ((aH)^{k})^{q}.
+            (aH)^{m} = (aH)^{kq} = \left((aH)^{k}\right)^{q}.
         \]
         Since \((aH)^{k} = H\), we can substitute this back in:
         \[
-            ((aH)^{k})^{q} = H^{q} = H.
+            \left((aH)^{k}\right)^{q} = H^{q} = H.
         \]
         Thus, we have shown that \((aH)^{m} = a^{m}H = H\). By the properties of cosets, \(gH = H\) implies \(g \in H\). Consequently, \(a^{m} \in H\).
     }
