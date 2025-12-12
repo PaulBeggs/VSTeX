@@ -1,0 +1,701 @@
+\documentclass{article}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+\usepackage{multicol}
+\usepackage{amsmath, amsthm, amsfonts, amssymb} 
+\usepackage{array, makecell}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning, fit, arrows.meta}
+\usepackage{subcaption}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+
+\setlist[enumerate]{
+    itemsep=0pt,
+    parsep=0pt,
+    topsep=2pt,
+    partopsep=0pt
+}
+\setlist[itemize]{
+    itemsep=1pt,
+    parsep=0pt,
+    topsep=2pt,
+    partopsep=0pt
+}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage{enumitem}
+\newenvironment{solution}
+  {\textit{\textbf{Sol.}}}
+
+\newcommand{\sol}[1]{
+    \begin{solution}
+        #1
+    \end{solution}
+}   
+
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+\title{Discrete Exam 2 Note Sheets}
+\usepackage[utf8]{inputenc}
+
+\advance\topmargin-.8in
+\advance\textheight
+3in
+\advance\textwidth3in
+\advance\oddsidemargin-1.40in
+\advance\evensidemargin-1.45in
+\parindent0pt
+\parskip1pt
+\newcommand{\hr}{\centerline{\rule{3.5in}{1pt}}}
+
+% Natural Numbers 
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+
+% Whole Numbers
+\newcommand{\W}{\ensuremath{\mathbb{W}}}
+
+% Integers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+% Rational Numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+
+% Real Numbers
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+% Complex Numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\group}[2]{\langle #1, #2 \rangle}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+
+\begin{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{center}{\huge{\textbf{Probability \& Statistics Final Exam Note Sheet}}}\\
+\end{center}
+\begin{multicols*}{2}
+
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{innerbox} = [draw=black, fill=gray!20, thick,
+    rectangle, rounded corners, inner sep=5pt, inner ysep=10pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, font=\bfseries]
+
+
+
+
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+    \begin{center}
+        \begin{tabularx}{\linewidth}{XXX}
+            \toprule
+            \textbf{Replacement} & \textbf{Order} & \textbf{Number of Outcomes} \\ \midrule
+            With & Matters & \(n^{r}\) \\ \midrule
+            Without & Matters & \(_{n}P_{r} = \frac{n!}{(n - r)!}\) \\ \midrule
+            With & Does Not Matter & \(_{n}C_{r} = \frac{n!}{(n - r)!r!} = \binom{n}{r}\) \\ \bottomrule
+        \end{tabularx}
+    \end{center}
+
+    \begin{itemize}
+        \item \textit{Conditional Probability:} \(P(A \mid B) = \frac{P(A \cap B)}{P(B)}\). If i.i.d.: \(P(A \mid B) = P(A)\).
+    \end{itemize}
+
+    \textbf{\underline{Examples:}}
+
+    \begin{enumerate}
+  	\item Four people are choosing an integer from \(\{1,2,\dots,10\}\) at random\textemdash assume that each choice is equally likely. What is the probability that all four choose different numbers?
+  	\sol{
+        For all 4 people, each integer has a \(\frac{1}{10}\) chance of being picked. That means there are \(10^{4} = 10000\) possible combinations. We calculate \(_{10}P_{4} = 5040\). We find \(\frac{5040}{10000} = 50.4\%\).
+  	}
+
+	\item A pair of fair, 6-sided dice are thrown. Find the probability that the sum has a total above 9.
+  	\sol{
+		Each two pair outcome has a \(\frac{1}{36}\) chance of being picked. There are one, two, and three ways to get a 12, 11, and 10, respectively. Thus, there is a \(\frac{1 + 2 + 3}{36} = \frac{1}{6}\) chance of getting a sum above 9.
+  	}
+    \item  Three cards are drawn from a standard 52-card deck. Find the probability that at least one card is an Ace.
+	\sol{
+		The probability of getting 3 cards that have no Aces in them is \(P(OOO) = \frac{48}{52} \cdot \frac{47}{51} \cdot \frac{46}{50} = \frac{4324}{5525}.\)
+		We can find the probability of at least one Ace by finding the complement of this probability: \(P(\text{at least 1 Ace}) = P'(OOO) = 1 - \frac{4324}{5525} = \frac{1201}{5525}.\)
+		Therefore, we have approximately a \(\boxed{21.73\%}\) chance of getting at least one Ace.
+	}
+    \item In a certain state, car license plates have the format of three letters followed by three numbers. How many possible license plates are there?
+	\sol{
+		Since we can use duplicate letters and numbers in the license plates, we find the total possible license plates with \({26^{3} \cdot 10^{3} = 17576000}\).
+	}
+    \item A fair coin is flipped three times. Given that you have at least one Head, find the probability that you have at least two Heads.
+	\sol{
+		Let event \(A\) be the probability of getting at least 2 Heads, and event \(B\) being at least 1 Head. The sample space consists of 8 outcomes, only one of which does not contain at least one head: \(\{TTT\}\). Hence, \(P(B) = \frac{7}{8}\). Then, there are 4 outcomes that contain at least one head, so \(P(A) = \frac{4}{8} = \frac{1}{2}\). It follows that \(P(A \cap B) = P(A)\) given that having at least two heads implies having at least one. Thus, \(P(\text{At least } 2 H\mid \text{At least }1 H) = \frac{P(A \cap B)}{P(B)} = \frac{1/2}{7/8} = \frac{4}{7}.\)
+    }
+    \item Suppose a moment generating function for \(X\) is \(M(t) = \frac{4}{9} + \frac{1}{3}e^{t} + \frac{2}{9}e^{3t}\). Find \(P(X = 0), \ P(X = 2), \ E(X), \ Var(X)\). \sol{
+        From \(M(t)\), we get \(f(x) = \frac{4}{9}, \ \frac{1}{3}, \ \frac{2}{9}\). Thus, \(P(X = 0) = \frac{4}{9}\), \(P(X = 2) = 0\) (no prob for 0). To find \(E(X)\), derive the mgf and set \(t = 0\). For the variance, you get \(E(X^{2})\) from \(M''(t = 0)\). Use that in the formula \(E(X^{2}) - (\mu)^{2}\).
+    }
+
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 1: Probability};
+\end{tikzpicture}
+
+
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \textbf{\underline{Examples:}}
+
+    \begin{enumerate}
+  	\item An urn contains 5 Red, 7 Blue, and 1 White marbles. Two balls will be selected, without replacement.
+  	\begin{enumerate}
+        \item Assuming that order matters, write the sample space for this experiment, and each outcome's probability. [Hint: If you draw a Red, followed by a White, you might write \((R,W),0.12345\). A probability tree might be useful here.]
+    \end{enumerate}
+	\sol{
+		\vspace{5cm}
+    }
+    \item The flu comes in two forms: Mild and severe. 4\% of students have mild, and 2\% the severe. A test is 97\% reliable, but cannot tell between strains.
+    \vspace{5.5cm}
+    \begin{enumerate}
+        \item Suppose you notice you have the \(\Sigma\)s (i.e., you have either strain). What is the probability that you have the severe strain?
+        \sol{
+
+        }
+        \item Suppose you take the test and it comes back positive. What is the probability that you are infected with either strain?
+        \sol{
+
+        }
+        \item If you test is negative, what is the probability that you are infected with the severe strain? \sol{}
+    \end{enumerate}
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 1: (cont)};
+\end{tikzpicture}
+
+\newpage
+
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \textbf{\underline{Examples:}}
+
+    \begin{enumerate}
+  	\item An urn contains 10 marbles: 4 Red and 6 Blue. A second urn contains 16 Red marbles and an unknown number of Blue marbles. A single marble is drawn from each urn. The probability that both marbles are the same color is \(0.44\). How many blue marbles are there in the second urn?
+	\sol{
+		We have two urns: Urn\(_{1}\): 4 Red, 6 Blue: 10 total, and Urn\(_{2}\): 16 Red, \(b\) Blue: \(16 + b\) total. Let event \(A\) be getting both red. Thus, we find the probability to be: \(P(A) = \frac{4}{10} \cdot \frac{16}{16 + b}.\)
+		Similarly, let event \(B\) be getting both blue. Hence: \(P(B) = \frac{6}{10} \cdot \frac{b}{16 + b}.\)
+		Thus, the total probability is \(P(A \cup B) = \frac{4}{10} \cdot \frac{16}{16 + b} + \frac{6}{10} \cdot \frac{b}{16 + b} = \frac{(64 + 6b)}{10(16 + b)}.\) Then, set the equation equal to \(0.44\) and solve for \(b\).
+    }
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 1: (cont)};
+\end{tikzpicture}
+
+
+
+
+
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \textbf{\underline{Examples:}}
+
+    \begin{enumerate}
+        \item Consider a basketball player that makes only 60\% of their shots. Assuming that each throw is independent of each other:
+        \begin{enumerate}
+            \item Find the probability that in 14 shots, they make exactly 11. \sol{
+                Let \(X\) count the number of shots. \(X \sim bimnom(14,.6,11)\).
+            }
+            \item '' 14 shots, make at least 9. \sol{
+                \(P(X \ge 9) = 1 - \text{binomcdf}(14,.6,8)\). 
+            }
+            \item They take 14 shots. Given that they make at least 9, find the probability that they make exactly 11. \sol{
+                \(P(X = 11 \mid X \ge 9) = \text{(a)/(b)}\). Since \(11\) is contained in \(X \ge 9\), \(P(A \cap B) = P(A)\). 
+            }
+            \item Find the probability that they make their first shot in their 3rd attempt. \sol{
+                \(Y\) counts num of attempts: \(Y \sim geometric\). \(P(Y = 3) = 0.096\). 
+            }
+            \item Find probability that their 4th make occurs on 7th shot. \sol{
+                \(Z \sim NegBinom\). \(\binom{7-1}{4-1}p^{4}(1 - p)^{7-4}\). 
+            }
+        \end{enumerate}
+        \item This course contains 20 total students, 8 of whom are declared math majors. If 5 are selected \textit{without replacement} (hypergeometric), at random, find the probability that exactly 2 are math majors. \sol{
+            12 are non-math majors. \(N_{1} = 8\), \(N_{2} = 12\), \(x = 2\), \(n = 5\). Thus, \(f(x) = \frac{\binom{N_{1}}{x}\binom{N_{2}}{n - x}}{\binom{N}{n}}\) 
+        }
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 2: Discrete Distributions};
+\end{tikzpicture}
+
+
+
+
+
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+
+    \underline{\textbf{Definitions:}}
+    \begin{itemize}
+        \item \textbf{pdf of \(X\):} \(f \colon S \to \R\) has the following properties:
+        \begin{itemize}
+            \item \(f(x) \geq 0\) for all \(x \in S\); \(\int_{S} f(x) \, dx = 1\); if \((a,b) \subseteq S\), then \\
+            \(P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx\)
+        \end{itemize}
+        \item \textbf{CDF of \(X\):} \(F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t) \, dt\)
+        \item \textbf{Expected Value of \(X\):} \(E(X) = \mu = \int_{S} x f(x) \, dx\)
+        \item \textbf{Variance of \(X\):} \(\text{Var}(X) = \sigma^{2} = \int_{S} (x - \mu)^{2} f(x) \, dx = E(X^{2}) - \mu^{2}\)
+        \item \textbf{mfg of \(X\):} \(M_{X}(t) = E(e^{tX}) = \int_{S} e^{tx} f(x) \, dx\)
+        \item \textbf{Percentiles:} The \(p\)th percentile \(\pi_{p}\) is the value such that \(P(X \leq \pi_{p}) = p\). Thus, \(\int_{-\infty}^{\pi_{p}} f(x) \, dx = p\).
+
+
+    \end{itemize}
+
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 6: Point Estimation};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \begin{itemize}
+        \item \textbf{Integration by Parts:} \(\int u \, dv = uv - \int v \, du\).
+        \item \textbf{Gamma Function:} \(\Gamma(\alpha) = \int_{0}^{\infty} t^{\alpha - 1} e^{-t} \, dt\), for \(\alpha > 0\).
+        \begin{itemize}
+            \item \(\Gamma(x) = (x - 1)\Gamma(x - 1)\), \(\Gamma(\frac{1}{2}) = \sqrt{\pi}\), \(\Gamma(x) = \frac{\Gamma(x + 1)}{x}\)
+        \end{itemize}
+    \end{itemize}
+
+    \underline{\textbf{Examples:}}
+    \begin{enumerate}
+        \item \(\int_{0}^{1} 2x e^{-x^{2}} \, dx \implies u = x^{2}, \, du = 2x \, dx \implies \int_{0}^{1} e^{-u} \, du = 1 - e^{-1}\)
+        \item Consider the function \(f(x) = cx^{5}\) on \([0,1]\).
+        \begin{enumerate}
+            \item Find \(c\). (Solve \(\int_{0}^{1} cx^{5} \, dx = 1\).)
+            \item Determine \(E(X)\). (Solve \(\int_{0}^{1} x \cdot cx^{5} \, dx\).)
+            \item Determine \(\text{Var}(X)\). (Solve \(\int_{0}^{1} (x - \mu)^{2} \cdot cx^{5} \, dx\).)
+            \item Determine the \(25\)th percentile. (Solve \(\int_{0}^{\pi_{25}} cx^{5} \, dx = 0.25\).)
+        \end{enumerate}
+        \item A pdf is given by \(f(x) = \frac{1}{2}\). for \(x \in [0,1] \cup [2,3]\), and 0 otherwise.
+        \begin{enumerate}
+            \item Determine \(E(X)\). (Solve \(\int_{0}^{1} x \cdot \frac{1}{2} \, dx + \int_{2}^{3} x \cdot \frac{1}{2} \, dx\). To do the variance, just replace \(x\) with \(x^{2}\) and then subtract \(\mu^{2}\).)
+        \end{enumerate}
+        \item The mean airspeed of an unladen swallow is 30 ft/s, with a std. dev. of 4.3 ft/s. Assuming the airspeed is normally distributed:
+        \begin{enumerate}
+            \item What is the probability that a randomly selected swallow has an airspeed between 28 and 38 ft/s? (\(P(28 \leq X \leq 38) = \texttt{normalcdf(28, 38, 30, 4.3)}\))
+            \item Suppose that 12 swallows are selected at random. What is the probability that exactly 8 have their speed between 28 and 38 ft/s? (Use binomial formula with \(n = 12\), \(k = 8\), and \(p\) from previous problem.)
+        \end{enumerate}
+    \end{enumerate}
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 3: Continuous Distributions};
+\end{tikzpicture}
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \begin{enumerate}
+        \setcounter{enumi}{4}
+        \item An auto insurance company insures an automobile worth \$15,000 for one year under a policy with a \$1,000 deductible. During the policy year there is a \(0.04\) chance of partial damage to the car and a \(0.02\) chance of a total loss of the car. If there is partial damage to the car, the amount \(X\) of damage (in thousands) follows a distribution with density function \(f(x) = 0.5003e^{-x/2}\), for \(0 \le x \le 15\). Find the expected value of the payment the insurance company makes in a year.
+
+        \textit{Solution:} Let \(E = \text{expected yearly payment.}\) There are 3 cases: 1. No damage: \(P = 0.94, \text{ payment} = 0\). 2. Total loss: \(P = 0.02,  \text{ payment} = 14\text{,}000.\) 3. Partial damage: \(P = 0.04\), \(X \sim f(x) = 0.5003 e^{-x/2}, \, 0 \le x \le 15\) (in thousands). The payment for \(X > 1\) is \(1000(X - 1)\) and 0 otherwise. Expected payout for partial damage is \(\int_{1}^{15} 1000(X - 1) 0.5003 e^{-x/2} \, dx = 1211.96\). Thus, \(E = 0.94 \cdot 0 + 0.02 \cdot 14000 + 0.04 \cdot 1211.96 = 328.48\).
+
+    \end{enumerate}
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 3 (cont.)};
+\end{tikzpicture}
+
+
+
+%------------ Measures of Variability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Definitions:}}
+    \begin{itemize}
+        \item \textbf{Joint pmf:} \(f(x,y) = P(X = x, Y = y)\)
+        \item \textbf{Marginal pmf of \(X\):} \(f_{X}(x) = \sum_{y} f(x,y) = P(X = x)\) for \(x \in S_{X}\)
+        \item \textbf{Mean of \(X_{i}\):} \(\mu_{X_{i}} = E(X_{i}) = \sum_{x_{i}} x_{i} f_{X_{i}}(x_{i})\)
+        \item \textbf{Variance of \(X_{i}\):} \(\text{Var}(X_{i}) = \sigma_{X_{i}}^{2} = \sum_{x_{i}} (x_{i} - \mu_{X_{i}})^{2} f_{X_{i}}(x_{i}) = E(X_{i}^{2}) - \mu_{X_{i}}^{2}\)
+        \item \textbf{Covariance of \(X\), \(Y\):} \(\text{Cov}(X,Y) = E[(X - \mu_{X})(Y - \mu_{Y})] = E(XY) - \mu_{X} \mu_{Y}\). If \(\text{Cov}(X,Y) = 0\), then \(X\) and \(Y\) are uncorrelated; if pos, \(X+\) and \(Y+\), if neg, \(X+\) and \(Y-\). If independent, then \(\text{Cov}(X,Y) = 0\).
+        \item \textbf{Correlation of \(X\) and \(Y\):} \(\rho_{X,Y} = \frac{\text{Cov}(X,Y)}{\sigma_{X} \sigma_{Y}}\), or \(\rho = 0\) if independent.
+        \item \textbf{Conditional pmf of \(X\) given \(Y\):} \(f_{X|Y}(x|y) = \frac{f(x,y)}{f_{Y}(y)}\) for \(y \in S_{Y}\)
+        \item \textbf{Conditional Expectation of \(X\) given \(Y\):} \(E(X|Y = y) = \sum_{x} x f_{X|Y}(x|y)\)
+        \item \textbf{Conditional Variance of \(X\) given \(Y\):} \(\text{Var}(X|Y = y) = E(X^{2}|Y = y) - (E(X|Y = y))^{2}\)
+        \item \textbf{Least Squares Regression Line:} \(y  = \mu_{Y} + \rho \frac{\sigma_{Y}}{\sigma_{X}} (X - \mu_{x})\)
+        \item \textbf{Independence Criteria:} If \(f(x,y) = f_{X}(x) f_{Y}(y)\) for all \(x \in S_{X}\), \(y \in S_{Y}\).
+    \end{itemize}
+
+    \end{minipage}
+    };
+%------------ Measures of Variability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 4: Bivariate Distributions};
+\end{tikzpicture}
+
+
+%------------ Discrete Random Variable and Distributions ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+       
+    \underline{\textbf{Examples:}}
+	\begin{enumerate}
+        \item An actuary determines that the annual number of tornadoes in counties \(P\) and \(Q\) are jointly distributed as follows: \\[0.5em]
+        \begin{tabular}{r||r|r|r|r}
+            & \multicolumn{4}{c}{County \(Q\)} \\
+            County \(P\) & 0 & 1 & 2 & 3 \\ \hline\hline
+            0 & 0.12 & 0.06 & 0.05 & 0.02 \\ 
+            1 & 0.13 & 0.15 & 0.12 & 0.03 \\
+            2 & 0.05 & 0.15 & 0.10 & 0.02
+        \end{tabular}
+        \begin{enumerate}
+            \item Determine the conditional expected number of tornados in county \(Q\), given that there are no tornados in county \(P\). \\
+            \((Q|P=0) = 0 \cdot \frac{0.12}{0.25} + 1 \cdot \frac{0.06}{0.25} + 2 \cdot \frac{0.05}{0.25} + 3 \cdot \frac{0.02}{0.25} = 0.88.\)
+            \item Calculate the conditional variance of the annual number of tornadoes in county \(Q\), given that there are no tornadoes in county \(P\). \\   
+            \(\text{Var}(Q|P=0) = E(Q^2|P=0) - (E(Q|P=0))^2 = 1.76 - 0.88^2 = 0.9856.\)
+            \item Are counties \(P\) and \(Q\) independent? Justify your answer. \\
+            No, because \(f(0,0) = 0.12 \neq f_{P}(0) f_{Q}(0) = 0.25 \cdot 0.30 = 0.075\).
+        \end{enumerate}
+        \item Let \(X\) be the weight of robin eggs, in grams, and \(Y\) be the daily high temperature, in degrees Celsius. Assume that \(X\) and \(Y\) have a bivariate normal distribution with \(\mu_{X} = 145.2\), \(\sigma^{2}_{X} = 109.2\), \(\mu_{Y} = 23.5\), \(\sigma^{2}_{Y} = 21.8\) and \(\rho = -0.34\). 
+        \begin{enumerate}
+            \item Find the least squares regression line for predicting \(Y\) from \(X\). \\
+            \(y = 23.5 + (-0.34) \frac{\sqrt{21.8}}{\sqrt{109.2}} (X - 145.2) = 23.5 - 0.152 (X - 145.2)\)
+            \item Using the line from part (a), predict the daily high temperature when the weight of a robin egg is 150 grams. \\
+            \(y = 23.5 - 0.152 (150 - 145.2) = 22.76\)
+            \item Find the probability that a robin egg weights between 142 and 152 grams. \\
+            \(P(142 \leq X \leq 152) = \texttt{normalcdf(142, 152, 145.2, 10.45)}\)
+            \item Given \(Y = 25.1\), find the probability that a robin egg weighs between 142 and 152 grams. (Use CDF formula w updated \(\mu\) and \(\sigma\):) \\
+            \(\mu_{X|Y = 25.1} = \mu_{X} + \rho \frac{\sigma_{X}}{\sigma_{Y}} (25.1 - \mu_{Y}) = 143.9824\) \\
+            \(\sigma^{2}_{X|Y = 25.1} = (1 - \rho^2) \sigma^{2}_{X} = 96.5765 \implies \sigma_{X|Y = 25.1} = \sqrt{96.5765} = 9.82\)
+        \end{enumerate}
+    \end{enumerate}
+    \end{minipage}
+};
+%------------ Discrete Random Variable and Distributions Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 4 (cont.)};
+\end{tikzpicture}
+
+
+%------------ Sets and Probability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    The formula for a z-score is \(z = \frac{x - \mu}{\sigma}\). The formula for converting a z-score to an x-value is \(x = \mu + z \sigma\).
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 5: Distributions of Functions of Random Variables};
+\end{tikzpicture}
+
+
+%------------ Sets and Probability ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+
+    \underline{\textbf{Examples:}}
+    \setcounter{enumi}{1}
+    \begin{enumerate}
+        \item Let \(X\) be a random variable with pdf \(f(x) = cx^{3}\) for \(0 < x < 2\). Let \(Y = X^{4}\). Determine the pdf of \(Y\). (cdf = \(F(y) = P(Y \le y) = P(X^{4} \le y) = P(X \le y^{1/4}) = F_{X}(y^{1/4})\), then differentiate to get pdf.)
+        \item Let \(X\) and \(Y\) be independent random variables with \(f(x) = 2x, 0 < x < 1\) and \(g(y) = 4y^{3}, 0 < y < 1\). Find \((0.5 < X < 1 \text{ and } 0.4 < Y < 0.8)\). (Since they are independent, just multiply their individual probabilities.)
+        \item Three basketball players each make 70\% of their free throws. They each take 10 free throws. Assuming independence among the players, what is the probability that at least one player makes more than 8? (This is the complement of all 3 making 8 or fewer. Hence, \(1 - (\texttt{binomcdf(10, 0.7, 8)})^{3} = 0.3844\).)
+        \item Suppose that each of \(Z_{1}, Z_{2}, \ldots, Z_{9}\) are distributed as \(N(0,1)\). Let \(W = Z_{1}^{2} + Z_{2}^{2} + \ldots + Z_{2}^{9}\). Find \(P(7.2 < W < 16)\). (Since \(W\) is chi-square with 9 degrees of freedom, use \texttt{x2cdf(7.2, 16, 9)}.)
+        \item 30 students roll a single 4-sided die until they get exactly 5 ones. Let \(\overline{X}\) be the average number of rolls needed. Use the CLT to approximate \(P(17 < \overline{X} < 19.5)\). (The number of rolls needed follows a negative binomial distribution with \(p = \frac{1}{4}\) and \(r = 5\). Thus, \(\mu_{X} = \frac{r}{p} = 20\) and \(\sigma^{2}_{X} = \frac{r(1 - p)}{p^{2}} = 60 \implies \sigma_{X} = \sqrt{60} = 7.746\). By the CLT, \(\overline{X} \sim N(20, \frac{60}{30}) = N(20, 2)\). Hence, \(P(17 < \overline{X} < 19.5) = \texttt{normalcdf(17, 19.5, 20, sqrt(2))} = 0.3449\).)
+        \item A certain exam has a mean score of 73 and std. dev. of 6.8. Use CLT to approximate the probability that \(n = 19\) students who took the exam have a mean larger than 75. (By CLT, \(\overline{X} \sim N(73, \frac{6.8^{2}}{19}) = N(73, 2.434)\). Thus, \(P(\overline{X} > 75) = \texttt{normalcdf(75, 1E99, 73, sqrt(2.434))} = 0.0999\).)
+        \item A certain brand of LED lightbulbs advertise that they have a mean lifetime of 12.4 years, and we will assume their lifetime is exponentially distributed. You purchase a random sample of size \(n = 34\), and find that the mean lifetime of your sample is 9.5 years. Use the Central Limit Theorem to (quantitatively) comment on how likely or unlikely this is? [Hint: Since the normal distribution is continuous, it does not make sense to talk about the probability that a sample has a particular mean. It might make sense to talk about the proportion of samples whose mean is at most some particular number, however.] \\
+        We know that an individual bulb has a lifetime with \(\mu = 12.4\) and \(\sigma^{2} = 12.4^{2} = 153.76\), assuming that the company's claim is correct. The mean lifetime of our sample would then follow \(N(12.4, 153.76/34)\). Thus, the probability of getting a sample with your mean lifetime or even shorter is given by \(\texttt{normalcdf(-1e99, 9.5, 12.4, 12.4/sqrt(34))} = 0.08633\). This is reasonably unlikely, either you got a fairly unusual sample or the company's claim about the mean lifetime is incorrect.
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Sets and Probability Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 5 (cont.)};
+\end{tikzpicture}
+
+
+
+
+
+
+%------------ Measures of Center ---------------
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.46\textwidth}
+    \textbf{Empirical Rule.} Approximately 68\%, 95\%, and 99.7\% live within 1, 2, and 3 standard deviations of the mean if the data is roughly bell shaped.
+
+    \textbf{Order Statistics:} Suppose \(X\) is a continuous random variable with CDF \(F(x)\) and pdf \(f(x)\) on the interval \(x \in (a, b)\) and we select a random sample of size \(n\). Then, the random variables \(Y_{1} < Y_{2} < \cdots < Y_{n}\) are the order statistics; that is, \(Y_{1}\) is the smallest of \(X_{i}\), \(Y_{2}\) is the second smallest, \(Y_{n}\) is the largest. \\
+
+    The CDF of \(Y_{r}\) is: \(G_{r}(y) = P(Y_{r} \le y) = \sum_{k = r}^{n}\binom{n}{k}[F(y)^{k}][1 - F(y)]^{n - k}\). \\
+    The pdf of \(Y_{r}\) is: \(g_{r}(y) = P(Y_{r} = y) = \frac{n!}{(r - 1)!(n - r)!}[F(y)^{r - 1}][1 - F(y)]^{n - r}f(y)\).
+
+    \textbf{Maximum Likelihood:} Find \(L(\theta) = \sum_{i = 1}^{n}f(x_{i}, \theta)\) where \(f(x_{i},\theta)\) is from the distribution that you are looking for. Then, find \(\frac{d}{d\theta}L'(\theta) = 0\).
+
+    \textbf{Sample Mean:} \(\overline{x} = \frac{1}{n}\sum_{i = 1}^{n}x_{i}\). \textbf{S. Variance:} \(s^{2} = \frac{(\sum_{i = 1}^{n}x^{2}_{i} - n\overline{x}^{2})}{n - 1}\).
+
+    \textbf{\underline{Examples:}}
+    \begin{enumerate}[itemsep=3pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+        \item Suppose that \(X\) has CDF \(F(x) = x^{2}\) for \(0 < x < 1\). Let \(n = 6\) and \(Y_{r}\) be the 6 order statistics. Find \(P(Y_{4} < 0.7)\). (We can either use CDF as is, or use the pdf and integrate from 0 to 1. If asked for \(E(Y)\), use pdf and add a \(y\).) 
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item \textit{CDF Version:} \(\displaystyle \sum_{k = 4}^{6} \phantom{1}_{6}C_{k}(.7^{2})^{k}(1 - .7^{2})^{6 - k}\). 
+            \item \textit{pdf Version:} \(\displaystyle \int_{0}^{.7} \frac{6!}{3!2!}(y^{2})^{3}(1 - y^{2})^{2}(2y)\, dy\).
+        \end{enumerate}
+        \item Let \(X_{1}, X_{2}, \ldots, X_{n}\) be a random sample from a distribution with pdf \(f(x;\theta) = (1/\theta^{2})xe^{-x\theta}\), for \(0 < x < \infty\) and \(0 < \theta < \infty\). Find \(\hat{\theta}\). \\
+        \textit{Solution.} \(\displaystyle L(\theta) = \prod_{i=1}^{n} (1/\theta^{2})xe^{-x/\theta} = \left( \prod_{i = 1}^{n} 1/\theta^{2} \right) \left( \prod_{i = 1}^{n} x_{i} \right) \left( \prod_{i = 1}^{n} e^{-x_{i}/\theta} \right) \Rightarrow\) \\
+        \(\displaystyle \ln(L(\theta)) = -2n\ln(\theta) + \sum \ln(x_{i}) - \frac{1}{\theta} \sum x_{i} \Rightarrow  \ln(L'(\theta)) = \frac{-2n}{\theta} + \frac{1}{\theta^{2}} \sum x_{i}\) \\
+        \(\displaystyle \Rightarrow 0 = \ln(L'(\theta)) \Rightarrow \frac{2n}{\theta} = \frac{1}{\theta^{2}} \sum x_{i} \Rightarrow \theta = \left(\sum x_{i}\right) / 2n \Rightarrow \theta = \overline{x}/2\).
+        \item Suppose \(X \sim N(\mu, 1)\). Find \(\hat{\mu}\). \\
+        \textit{Solution.} \(\displaystyle L(\mu) = \prod_{i = 1}^{n} \frac{1}{\sqrt{2\pi}} \exp\left( -\frac{(x - \mu)^{2}}{2} \right)\) \\
+        \(\Rightarrow \ln(L(\mu)) = \sum \ln \left( \frac{1}{\sqrt{2\pi}} \exp\left( -\frac{(x - \mu)^{2}}{2} \right) \right) = \sum \left( \ln\left(\frac{1}{\sqrt{2\pi}} \right) - \frac{(x - \mu)^{2}}{2} \right) \) \\
+        \(\Rightarrow \displaystyle\frac{d}{d\mu} \ln(L(\mu)) = \sum(x_{i} - \mu) \Rightarrow 0 = n\overline{x} - n\mu \Rightarrow \mu = \overline{x}\).
+        \item Consider the data given by 6, 10, 14, 16, 18, 18, 18, 20. (Store in \(L_{1}\) and run \texttt{1-Var Stats})
+        \begin{enumerate}[itemsep=0pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+            \item Find the sample mean, \(\overline{x}\): \textit{Solution.} \(1/8(6 + 10 + \cdots + 20) = 15\). 
+            \item Find the sample standard deviation, \(s\): \\
+            \textit{Solution:} \(s^{2} = \frac{1}{(8-1)} (6^{2} + \cdots + 20^{2} - 8(15)^{2}) = \frac{170}{7} \implies s = 4.78\)
+        \end{enumerate}
+    \end{enumerate}
+
+    \end{minipage}
+};
+%------------ Measures of Center Header ---------------------
+\node[fancytitle, right=10pt] at (box.north west) {Chapter 6: Point Estimation};
+\end{tikzpicture}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% %------------ Measures of Center ---------------
+% \begin{tikzpicture}
+% \node [mybox] (box){%
+%     \begin{minipage}{0.46\textwidth}
+
+%     For the confidence interval, if one tailed, use \(CI = 1 - 2\alpha\).
+
+%     \underline{\textbf{Examples:}}
+    
+%     \begin{enumerate}[itemsep=3pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+%         \item You flip a coin 300 times and get 128 heads. Use the calculator to build a \(99\%\) confidence interval for the proportion of heads this coin produces. What can you say about the fairness of the coin? \textbf{\textit{Solution.}} Using \texttt{1-PropZInt} with \(x = 128\) and \(n = 300\), we get \((0.353, 0.500)\) as our 99\% confidence interval. Since the value \(0.5\) is included within the 99\% CI, we cannot conclude that the coin is unfair at \(\alpha = 0.1\).
+
+%         \item Week-old ducklings have a mean weight of 423 g. You are concerned about a new industrial plant upstream from your favorite pond, and so weigh a random sample of \(n = 43\) week-old ducklings. You find \(\overline{x} = 413.7\) g and \(s = 33.9\). At \(\alpha = 0.05\), is there evidence that the plant is causing the ducks to be underweight? Use the NHST steps. \textbf{\textit{Solution.}} \textbf{Population:} Week-old ducklings in the pond. \textbf{Tailed:} one. \textbf{Hypotheses:} \(H_{1}: \mu \ge 423\) \textendash\@ They weight more than 423; \(H_{0}:\) They weigh less. \textbf{Test:} 1-sample \(t\)-test: \(t_{\text{samp}} = -1.799\), \(p = 0.04\). \textbf{Decision:} Since \(p < \alpha\), we reject the null hypothesis. \textbf{CI:} \(90\%: (405, 422.4)\). \textbf{Effect Size:} \(d = \frac{\overline{x} - \mu_{0}}{s} = -0.247\), small effect. \textbf{Conclusion:} These data lead us to conclude that the industrial plant upstream has a small negative effect upon week-old ducklings in the pond. 
+
+%         \item Prof. Seme gives the same 5 NHST questions to his MATH 215 and MATH 310 students, and assigns each student a grade. We will treat each as a random sample of all Intro Stats and Math-Major-Adjacent Stats students. Using the data in the table below, is there evidence, at \(\alpha = 0.01\), that there is a difference in performance between the two groups? Use the NHST steps. \\
+%         \begin{tabular}[htbp]{|c||c|c|}
+%             \hline
+%             & MATH 215 & MATH 310 \\ \hline\hline
+%             Mean Score & 74.7 & 81.2 \\ \hline
+%             Sample St. Dev. & 12.3 & 9.1 \\ \hline
+%             Count & 35 & 23 \\ \hline
+%         \end{tabular}\\
+%         \textbf{\textit{Solution.}} \textbf{Population:} All students in MATH 215 and all students in MATH 310. \textbf{Tailed:} two. \textbf{Hypotheses:} \(H_{0}: \mu_{215} = \mu_{310}\) \textendash\@ no difference; \(H_{1}: \mu_{215} \ne \mu_{310}\), difference. \textbf{Test:} 2-sample \(t\)-test with not equal variance: \(t_{\text{samp}} = -2.309\), \(p = 0.02\). \textbf{Decision:} fail to reject the null hypothesis. \textbf{CI:} \(99\%: (-14,1)\), which we note includes 0. \textbf{Effect Size:} (Find \(s_{p}\), and then use that to find \(d\)). \textbf{Conclusion:} While the sample data shows a medium effect size, we do not have enough evidence at \(\alpha = 0.01\) to support that there is a difference in the populations.
+
+%         \item Determine if there is a difference in the variance between the two groups using the data from the previous problem. \textbf{\textit{Solution.}} \textbf{Population:} same as before. \textbf{Tailed:} two (keyword \textit{difference}). \textbf{Hypotheses:} \(H_{0}:\) \(\sigma^{2}_{215} = \sigma^{2}_{310}\) \textendash\@ The two variances are the same; \(H_{1} \colon \sigma^{2}_{215} \ne \sigma^{2}_{310}\). \textbf{Test:} We will use a 2-sample \(F\)-test: \(F_{\text{samp}} = 1.827\), \(p = 0.14\). \textbf{Decision:} fail to reject. \textbf{Conclusion:} We do not have evidence to suggest that the variances are different.
+%     \end{enumerate}
+
+%     \end{minipage}
+% };
+% %------------ Measures of Center Header ---------------------
+% \node[fancytitle, right=10pt] at (box.north west) {Chapter 8: Tests of Statistical Hypotheses};
+% \end{tikzpicture}
+
+
+
+% %------------ Measures of Center ---------------
+% \begin{tikzpicture}
+% \node [mybox] (box){%
+%     \begin{minipage}{0.46\textwidth}
+
+%     \underline{\textbf{Examples:}}
+    
+%     \begin{enumerate}[itemsep=3pt, parsep=0pt, topsep=2pt, partopsep=0pt]
+%         \item A professor wonders if students are more likely to be absent on Friday in the 3-day-a-week class than Monday or Wednesday (i.e. not exactly equal across all days). The professor uses a single course one semester as though it is a random sample, and counts that of 100 total absences, 41 were on a Friday. Is there evidence, at \(\alpha = 0.05\) to support the professor's suspicion about Fridays? Use the NHST steps. \textit{\textbf{Solution.}} \textbf{Population:} All absences in the semester. \textbf{Tailed:} one. \textbf{Hypotheses:} \(H_{0}: p = 1/3\) \textendash\@ Friday absences occur at the expected rate; \(H_{1}:\) They don't. \textbf{Test:} 1-proportion \(z\)-test: \(z_{\text{samp}} = 1.63\), \(p = 0.052\) \textbf{Decision:} fail to reject. \textbf{CI:} \(90\%: (0.329, 0.491)\), which contains \(1/3\). \textbf{ES:}  \(d = 2\arcsin\left(\sqrt{\hat{p}}\right) - 2\arcsin\left(\sqrt{p_{0}}\right) = 0.159\), small. \textbf{Conclusion:} We conclude that there is not sufficient evidence at \(\alpha = 0.05\) to support the claim that absences are more likely on Fridays, though the result is borderline. Additionally, even if they were significant, our result would would have a small effect.
+
+%         \item A random sample of Hendrix and Ozarks students shows that 25 of 48 Hendrix students have taken a statistics class in college and 17 of 50 Ozarks students have. Is there evidence, at \(\alpha = 0.1\) that there is a difference in the proportion of students who take stats at the two schools? Use the NHST steps. \textbf{\textit{Solution.}} \textbf{Population:} All Hendrix students and all Ozarks students. \textbf{Tailed:} 2. \textbf{Hypotheses:} \textendash\@ There is no difference between the proportion of Ozarks students that take statistics and that of Hendrix students; \(H_{1}:\) is a difference. \textbf{Test:} two sample \(z\)-test: \(z_{\text{samp}} = 1.81\), \(p = 0.07\). \textbf{Decision:} Reject. \textbf{CI:} \(90\%: (0.18, 0.34)\). \textbf{ES:} \(d = 2\arcsin\left(\sqrt{\hat{p}_{1}}\right) - 2\arcsin\left(\sqrt{\hat{p}_{2}}\right) = .37\); small to medium. \textbf{Conclusion:} We have evidence to support the claim that there is a difference between the proportion of students who take stats at Ozarks and Hendrix. Additionally, our effect size tell us that our result is small to medium. 
+%     \end{enumerate}
+
+%     \end{minipage}
+% };
+% %------------ Measures of Center Header ---------------------
+% \node[fancytitle, right=10pt] at (box.north west) {Chapter 8 (cont.)};
+% \end{tikzpicture}
+
+
+
+% %------------ Measures of Variability ---------------
+% \begin{tikzpicture}
+% \node [mybox] (box){%
+%     \begin{minipage}{0.46\textwidth}
+%     \textbf{GOF:} Store observed data in \texttt{L1}, and expected in \texttt{L2}. \(df\) is found by subtracting 1 from the number of categories. The hypotheses are \(H_{0}:\) the sample is drawn from a population with the claimed distribution, or \(H_{1}:\) from a different distribution. 
+
+%     \textbf{Test for Independence:} Store the contingency table in matrix \texttt{[A]}, then use \texttt{X2-Test}. The hypotheses are \(H_{0}:\) the two categories are independent, \(H_{1}:\) they are dependent (some relationship exists between them). \\
+%     \textbf{\underline{Examples:}}
+%     \begin{enumerate}
+%         \item You are interested in whether there is a relationship between a student's major area, and the amount of sleep they get. You survey students and find the data in the table below. What can you say, at \(\alpha = 0.05\)? Use the NHST. \\
+%     \begin{tabular}[htbp]{|c||c|c|c|c|}
+%         \hline
+%         Sleep & Human. & Nat. Sci. & Soc. Sci. & Inter. \\ \hline
+%         8+ Hours & 12 & 34 & 36 & 9 \\ \hline
+%         6.5 - 7.9 Hours & 17 & 31 & 42 & 11 \\ \hline
+%         6.4- Hours & 13 & 29 & 43 & 12 \\ \hline
+%     \end{tabular}
+
+        
+%     \end{enumerate}
+
+%     \end{minipage}
+%     };
+% %------------ Measures of Variability Header ---------------------
+% \node[fancytitle, right=10pt] at (box.north west) {Chapter 9: Additional Tests};
+% \end{tikzpicture}
+
+
+
+
+
+% %------------ Measures of Variability ---------------
+% \begin{tikzpicture}
+% \node [mybox] (box){%
+%     \begin{minipage}{0.46\textwidth}
+    
+%     \textbf{\underline{Examples:}}
+%     \begin{enumerate}
+%         \item[]\textbf{\textit{Solution.}} (for 1) \textbf{Population:} All college students. \textbf{Hypotheses:} \(H_{0}:\) Sleep amount and major are independent; \(H_{1}:\) they are dependent. \textbf{Test:} \(\chi^{2}\)-test of independence: \(\chi^{2} = ...\) \(p = 0.91\). \textbf{Decision:} fail to reject. \textbf{Conclusion:} We lack evidence to support the claim that there is a relationship between the amount of sleep a student gets and their major. 
+
+%         \setcounter{enumi}{1} 
+%         \item It is known that, over the past 10 years, 50\% of Hendrix students come from AR, 29\% from TX, 10\% from OK, 5\% from MO, 3\% from TN, and 3\% elsewhere. A survey of 120 students who have recently taken Calculus I shows that 54 are from AR, 23 from TX, 17 from OK, 8 from MO, 8 from TN, and 10 elsewhere. Is there evidence, at \(\alpha = 0.05\), that the distribution of students who take Calculus I is different from the overall Hendrix population? \textit{Solution:} Population is all Hendrix Students. We will use the \(\chi^{2}\)-GOF-Test. From the given data, we have the following table: \\
+
+%         \begin{tabularx}{0.90\textwidth}{lYYYYYY}
+%             \toprule
+%              & \textbf{AR} & \textbf{TX} & \textbf{OK} & \textbf{MO} & \textbf{TN} & \textbf{Else.} \\ \midrule
+%             \textbf{Obs.} & 54 & 23 & 17 & 8 & 8 & 10 \\ \midrule
+%             \textbf{Exp.} & 60 & 34.8 & 12 & 6 & 3.6 & 3.6  \\ \bottomrule
+%         \end{tabularx} \\
+        
+%         I got \(\chi^{2}_{\text{samp}} = 24.107\), \(p = 0\). Since \(p < \alpha\), we \textbf{reject} \(H_{0}\) and conclude that there is a difference between the students who take Calculus I and the overall Hendrix population.
+%         \item You want to know if Hendrix students have differences in their average number of M\&Ms eaten per week, depending on their home state. You run an ANOVA, at \(\alpha = 0.05\) and find the following table: 
+
+%     ANOVA\\
+%     \begin{tabular}[htbp]{|l||r|r|r|r|r|}
+%         \hline
+%         Source of Variation & SS & df & MS & F & P-value \\ \hline
+%         Between Groups & 20975.92 & 4 & 5243.98 & 23.31 & 1.2879E-14 \\ \hline
+%         Within Groups & 29921.96 & 133 & 224.98 & &  \\ \hline
+%         & & & & &  \\ \hline
+%         Total & 50897.89 & 137 & & & \\ \hline
+%     \end{tabular}
+
+%     \textbf{\textit{Solution.}} \textbf{Population:} All Hendrix students. \textbf{Hypotheses:} \(H_{0} \colon \mu_{AR} = \mu_{LA} = \mu_{MO} = \mu_{OK} = \mu_{TX}\) \textendash\@ The mean number of M\&Ms eaten are the same among all groups; \(H_{1}:\) There is at least one group that has a different weekly mean M\&Ms eaten. We see that \(F_{\text{samp}} = 23.31\), \(p = 1.29\text{E -}14\). \textbf{Decision:} reject \(H_{0}\). \textbf{Effect Size:} \(\eta^{2} = \frac{SS_{\text{between}}}{SS_{\text{total}}} = \frac{20975.92}{50897.89} = 0.412\); we have a very large effect size (\(\eta^{2} = 0.01, 0.06, 0.14\): small, medium, large, respectively). \textbf{Conclusion:} Thus, we have found a strong relationship between home state and M\&M consumption. It appears that the home state and candy eating habits are strongly related.
+%     \end{enumerate}
+
+%     \end{minipage}
+%     };
+% %------------ Measures of Variability Header ---------------------
+% \node[fancytitle, right=10pt] at (box.north west) {Chapter 9: (cont.)};
+% \end{tikzpicture}
+
+
+
+
+
+\end{multicols*}
+\end{document}
