@@ -92,7 +92,7 @@
 \setlength{\parindent}{0pt}
 
 \title{Project 9: Neural Networks}
-\author{Paul Beggs \\ \href{https://github.com/PaulBeggs/A_Star}{CSCI 335 Repo}, \href{https://github.com/PaulBeggs/AI_Agents}{Python Code}}
+\author{Paul Beggs \\ \href{https://github.com/PaulBeggs/A_Star}{CSCI 335 Repo}, \href{https://github.com/PaulBeggs/AI_Agents}{Python Code for Chatbots}}
 \date{\today}
 
 
@@ -108,6 +108,10 @@ Through testing different sentences, the Markov Chain was able to consistently i
 
 For this part of the assignment, I got too overzealous, which led to problems when I tried to implement the agent in the program. I wanted to create a dungeon crawler that is augmented by LLMs, but I quickly found out that the agents could not live up to what I wanted them to do. In the program, my idea was to have an inventory where the user has custom weapons, artifacts, and maps that have different difficulty. The user can equip artifacts that will change the amount of health/stamina/defense (even though they were all supposed to have a purpose, the only one that was viable to use was the health metric). These are all accessible by typing \texttt{status} in the main loop. I also implemented functionality, so the user could change what weapon they are using, which would have an effect in the dungeon, but this also fell short, as I could not get the LLMs to interact with these stats at all. 
 
+\newpage
+
 \subsection{Chatbot Functionality}
+
+I tried to get the chatbots to tailor dungeons according to the difficulty, or provide statistics for the weapons, and also incorporate an equipped weapon's stats into a fight, but they just couldn't. This is clearly because Gemma is too small, and could not handle the all instructions at once. It's a shame because I really enjoyed making the dungeon crawler, as it reminded me of my Comp Sci Intro final project.
 
 \end{document}

@@ -9,15 +9,15 @@
 
 % \usepackage[T1]{fontenc}
 
-% \usepackage{draculatheme}
-% \newcommand{\documentTheme}{draculafg}
-% \newcommand{\documentLogo}{../../images/small logo_white.png}
-% \newcommand{\documentBigLogo}{../../images/logo_white_text.png}
-% \usemintedstyle{dracula}
+\usepackage{draculatheme}
+\newcommand{\documentTheme}{draculafg}
+\newcommand{\documentLogo}{../../images/small logo_white.png}
+\newcommand{\documentBigLogo}{../../images/logo_white_text.png}
+\usemintedstyle{dracula}
 
-\newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
-\newcommand{\documentLogo}{../../images/small logo.png}
-\newcommand{\documentTheme}{black}
+% \newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
+% \newcommand{\documentLogo}{../../images/small logo.png}
+% \newcommand{\documentTheme}{black}
 
 %%% AESTHETICS %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -115,15 +115,6 @@
 \ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
 \usepackage{xpatch}
 
-% \xpatchcmd{\DOCH}
-%   {\mghrulefill}{\gradientrule\mghrulefill}
-%   {}{\PatchFailed}
-% \xpatchcmd{\DOTI}
-%   {\mghrulefill}{\gradientrule\mghrulefill}
-%   {}{\PatchFailed}
-% \xpatchcmd{\DOTIS}
-%   {\mghrulefill}{\gradientrule\mghrulefill}
-%   {}{\PatchFailed}
 
 \xpatchcmd\DOCH
 {\mghrulefill}{\color{orangehdx}\mghrulefill}
@@ -136,21 +127,6 @@
 {}{\PatchFailed}
 
 
-% \usepackage[Bjornstrup]{fncychap}
-
-% \newcommand{\gradient}[1]{
-% \begin{tikzpicture}
-%     \node (rect) at (0,0) [fill=blue,,path fading=East,minimum width=\linewidth,minimum height=2.5cm] {};
-%     \node(title)[above left = 10pt and 10pt of rect.south east, anchor=south east, font=\CTV] {\textcolor{horange}{#1}};
-%     \ifnum \thechapter>0\node[left = 10pt of rect.north east,  anchor=center, font=\CNoV] {\textcolor{horange}{\thechapter}};\fi%
-% \end{tikzpicture}%
-% \vskip 40pt
-% }
-
-
-% \renewcommand{\DOCH}{}
-% \renewcommand{\DOTI}[1]{\gradient{#1}}
-% \renewcommand{\DOTIS}[1]{\gradient{#1}}
 
 %% Change Chapter Heading Placement %%
 \usepackage{etoolbox}
@@ -162,57 +138,6 @@
 \makeatother
 
 
-
-% \newcommand*\chapterlabel{}\pmod
-% \titleformat{\chapter}
-%   {\gdef\chapterlabel{}
-%    \normalfont\sffamily\Huge\bfseries\scshape}
-%   {\gdef\chapterlabel{\thechapter\ }}{0pt}
-%   {\begin{tikzpicture}[remember picture,overlay]
-%     \node[yshift=-3cm] at (current page.north west)
-%       {\begin{tikzpicture}[remember picture, overlay]
-%         \draw[fill=LightSkyBlue] (0,0) rectangle
-%           (\paperwidth,3cm);
-%         \node[anchor=east,xshift=.9\paperwidth,rectangle,
-%               sharp corners=downhill=20pt,inner sep=11pt,
-%               fill=MidnightBlue]
-%               {\color{white}\chapterlabel#1};
-%        \end{tikzpicture}
-%       };
-%    \end{tikzpicture}
-%   }
-% \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
-
-% \usepackage[Conny]{fncychap}
-% \usepackage[Rejne]{fncychap}
-% \ChNameVar{\bfseries}  % Makes the chapter "Chapter #" bold
-% \ChNumVar{\bfseries}   % Makes the chapter number bold
-% \ChTitleVar{\bfseries} % Makes the chapter title bold
-% % Define a custom color, for example:
-% \definecolor{mycolor}{RGB}{0,128,255}
-
-% % Redefine the chapter style in Rejne to change the line colors
-% \makeatletter
-% \ChRuleWidth{2pt}   % Change the thickness of the lines
-% \renewcommand{\DOCH}{%
-%   \vspace*{-50\p@}% Moves the chapter title up/down if needed
-%   {\color{mycolor} \hrule \@chapapp{} \space \thechapter \hrule}% Customizes the chapter header with color
-% }
-% \renewcommand{\DOTI}[1]{%
-%   \vskip 20\p@ % Adjusts the space above the title
-%   \bfseries #1\par % Embolden the title
-%   \vskip 20\p@ % Adjusts the space below the title
-% }
-% \makeatother
-
-% %% Change Chapter Heading Placement %%
-% \usepackage{etoolbox}
-% \makeatletter
-% \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
-% \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
-% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
-% \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
-% \makeatother
 
 \renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
 
@@ -233,12 +158,13 @@
 	urlcolor=horange,
 }
 
+\newcommand{\assignmentname}{Homework 1: Chapter 1}
 
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
 \pagestyle{fancy} % options: empty , plain , fancy
-\fancyhead[R]{Final Exam Take Home}
-\fancyhead[L]{Hendrix College}
+\fancyhead[R]{\textcolor{draculafg}{\assignmentname}}
+\fancyhead[L]{\textcolor{draculafg}{Hendrix College}}
 \fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
@@ -344,7 +270,7 @@
 	leftline=true,
 	linewidth=1.5pt,
 	linecolor=black, % default color, will be overridden in custom commands
-	% backgroundcolor=draculafg, % Needed for Dracula theme
+	backgroundcolor=draculabg, % Needed for Dracula theme
 	fontcolor=\documentTheme, % Needed for Dracula theme
 	innertopmargin=0pt,
 	innerbottommargin=5pt,
@@ -529,174 +455,74 @@
 \newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
 \newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
 
+\newcommand{\squigglyline}{%
+    \noindent
+    \tikz[baseline=-0.5ex]{
+        \draw[decorate, decoration={snake, amplitude=0.5mm, segment length=3mm}] 
+        (0,0) -- (\dimexpr\linewidth\relax,0);
+    }%
+}
+
 
 % end of preamble
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \begin{document}
-\numberwithin{BoxCounter}{section}
 
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-% \textbf{Definitions}
+% Do not use all caps.
+\newcommand{\cussubtitle}{Algebra}
+% Date format should be like: "January 1, 2001"
+\newcommand{\finaldate}{Septemeber 4, 2025}
+% Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
+\newcommand{\professor}{Dr. Christopher Camfield, Ph.D.}
 
-% Recall that an \textbf{automorphism} of a group \(G\) is an isomorphism \(\varphi : G \to G\). The \textbf{automorphism group}, \(Aut(G)\), is the group of all automorphisms on \(G\) with function composition as its operation. \\
-
-% For two groups \(A\) and \(X\) with respective identity elements \(e\) and \(e'\), let \(G\) be the set of ordered pairs, 
-% \[
-%     G = \{(a,x) \mid a \in A, x \in X\}. 
-% \]
-% Let \(\varphi\) be a homomorphism from \(X\) to the automorphism group on \(A\),
-% \[
-%     \varphi : X \to Aut(A).
-% \]
-% This means that for each \(x \in X\), we have an automorphism \(\varphi_{x} : A \to A\). Since \(\varphi\) is a homomorphism, then for any \(x,y \in X\) and \(a \in A\), \(\varphi_{xy}(a) = \varphi_{x}(\varphi_{y}(a))\). Also, \(\varphi_{e'} : A \to A\) is the identity map on \(A\). \\
-
-% For your exam, we will define a binary operation on \(G\) that we are going to call the \(\varphi\)-product. Multiplication in \(G\) is defined as 
-% \[
-%     (a,x)(b,y) = (a\varphi_{x}(b), xy).
-% \]
-% Since \(\varphi_{x}(b) \in A\), the \(\varphi\)-product does indeed belong to \(G\). Notice that this multiplication is very similar to a direct product. We just use the automorphism \(\varphi_{x}\) to do something to \(b\) before multiplying the terms. In fact, if \(\varphi\) is trivial (meaning every \(\varphi_{x}\) is the identity map), then \(G\) is the direct product \(A \times X\). \\
-
-
-\textbf{Problems}
-\begin{enumerate}
-    \item Show that \(G\) with the \(\varphi\)-product is a group.
-    \pf{ 
-        For any \(a,b,c \in A\) and \(x,y,z \in X\), we will show that \(G\) with the \(\varphi\)-product is a group.
-    \begin{enumerate}
-        \item \textbf{Associativity:} We will show that
-        \[
-            [(a,x)(b,y)](c,z) = (a,x)[(b,y)(c,z)],
-        \]
-        which proves that \(G\) is associative. Thus, consider the left side of the equation:
-        \begin{align*}
-            [(a,x)(b,y)](c,z) &= (a\varphi_{x}(b),xy)(c,z) \\
-            &= (a\varphi_{x}(b)\varphi_{xy}(c),xyz).
-        \end{align*}
-        Now for the right side:
-        \begin{align*}
-             (a,x)[(b,y)(c,z)] &= (a,x)(b\varphi_{y}(c),yz) \\
-             &= (a\varphi_{x}(b\varphi_{y}(c)),xyz) \\
-             &= (a\varphi_{x}(b)\varphi_{x}(\varphi_{y}(c)),xyz) \\
-             &= (a\varphi_{x}(b)\varphi_{xy}(c),xyz).
-        \end{align*}
-        Therefore, we have shown
-        \[
-            [(a,x)(b,y)](c,z) = (a,x)[(b,y)(c,z)],
-        \]
-        and \(G\) is associative.
-        \item \textbf{Identity:} We conjecture that \(G\)'s identity element is \((e,e')\). Hence, we will show 
-        \[
-            (e,e')(a,x) = (a,x)(e,e') = (a,x)
-        \]
-        for \(e \in A\) and \(e' \in X\) to prove this conjecture. Thus, consider the following:
-        \[
-            (e,e')(a,x) = (e\varphi_{e'}(a),e'x) = (ea, x) = (a,x).
-        \]
-        Now for the other direction:
-        \[
-            (a,x)(e,e') = (a\varphi_{x}(e),xe') = (ae,x) = (a,x).
-        \]
-        Therefore, \((e,e')\) is the identity of \(G\).
-        \item \textbf{Inverses:} We conjecture that the inverses of \((a,x)\) is \((\varphi_{x^{-1}}(a^{-1}), x^{-1})\). To prove this, we must show 
-        \[
-            (a,x)(\varphi_{x^{-1}}(a^{-1}), x^{-1}) = (\varphi_{x^{-1}}(a^{-1}), x^{-1})(a,x) = (e,e').
-        \]
-        Thus, consider the following:
-        \begin{align*}
-            (a,x)(\varphi_{x^{-1}}(a^{-1}), x^{-1}) &= (a\varphi_{x}\left(\varphi_{x^{-1}}(a^{-1})\right), xx^{-1}) \\
-            &= (a\varphi_{xx^{-1}}(a^{-1}), e') \\
-            &= (a\varphi_{e'}(a^{-1}), e') \\
-            &= (aa^{-1}, e') \\
-            &= (e,e').
-        \end{align*}
-        Now, for the other direction:
-        \begin{align*}
-            (\varphi_{x^{-1}}(a^{-1}), x^{-1})(a,x) &= (\varphi_{x^{-1}}(a^{-1})\varphi_{x^{-1}}(a), x^{-1}x) \\
-            &= (\varphi_{x^{-1}}(a^{-1}a), e') \\
-            &= (\varphi_{x^{-1}}(e), e') \\
-            &= (e,e').
-        \end{align*}
-        Therefore, we have shown the identity element is \((\varphi_{x^{-1}}(a^{-1}), x^{-1}) \in G\). \qedhere
-    \end{enumerate}  
-    }
-    \item Let \(\tilde{A} = \{(a,e') \mid a \in A\}\) and \(\tilde{X} = \{(e,x) \mid x \in X\}\).
-    \begin{enumerate}
-        \item Prove that \(A \simeq \tilde{A}\) by showing \((a,e')(b,e') = (ab,e')\).
-        \pf{
-            Consider the following:
-            \[
-                (a,e')(b,e') = (a\varphi_{e'}(b),e'e') = (ab,e').
-            \]
-            This shows that \(A\) is isomorphic to \(\tilde{A}\).
-        }
-        \item Prove that \(X \simeq \tilde{X}\) by showing \((e,x)(e,y) = (e,xy)\).
-        \pf{
-            Consider the following:
-            \[
-                (e,x)(e,y) = (e\varphi_{x}(e),xy) = (e,xy)
-            \]
-            This shows that \(X\) is isomorphic to \(\tilde{X}\).
-        }
-        As a result, we can think of \(A\) and \(X\) as subgroups of \(G\).
-    \end{enumerate}
-    \item Show that in general, \(G\) is not abelian.
-        \begin{enumerate}
-            \item Do this by comparing \((a,e')(e,x)\) and \((e,x)(a,e')\).
-            \sol{
-                Consider the following:
-                \[
-                    (a,e')(e,x) = (a\varphi_{e'}(e),e'x) = (a,x).
-                \]
-                However, 
-                \[
-                    (e,x)(a,e') = (e\varphi_{x}(a), xe') = (\varphi_{x}(a), x).
-                \]}
-                \item If \(\varphi\) is not trivial, then there exists \(x \in X\) and \(a \in A\) with \(\varphi_{x}(a) \ne a\). This and part (a) show \(G\) is not abelian (even if \(A\) and \(X\) are both abelian).
-        \end{enumerate}
-    
-
-    \item Show that \(A\) (actually \(\tilde{A}\)) is a normal subgroup of \(G\).
-    \begin{enumerate}
-        \item Let \((a,x) \in G\) and \(b \in A\). Show that \((a,x)(b,e')(a,x)^{-1} \in \tilde{A}\).
-    \end{enumerate}
-    \pf{
-        Let \((a,x) \in G\) and \(b \in A\). By showing \((a,x)(b,e')(a,x)^{-1} \in \tilde{A}\), we will prove that \(A\) is a normal subgroup of \(G\). Thus, consider the following:
-        \begin{align*}
-            (a,x)(b,e')(a,x)^{-1} &= (a\varphi_{x}(b), xe')(\varphi_{x^{-1}}(a^{-1}),x^{-1}) \\ 
-            &= (a \varphi_{x}(b) \varphi_{e'}(a^{-1}), xx^{-1}e') \\
-            &= (a \varphi_{x}(b) a^{-1}, e').
-        \end{align*}
-        Since \(a, \ \varphi_{x}(b), \ a^{-1}\) are all in \(A\), their product is also in \(A\). Thus, \((a \varphi_{x}(b) a^{-1}, e')\) belongs to \(\tilde{A}\), and \(\tilde{A}\) is a normal subgroup of \(G\). 
-    }
-\end{enumerate}
-\textbf{Application}
-
-% Products like these are sometimes denoted using the symbol \(A \rtimes_{\varphi} X\). This provides a way to deconstruct non-abelian groups in a similar way to what we did with finite abelian groups.
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \begin{enumerate}
+    \item An automobile manufacturer makes a profit of \$1,500 on the sale of a certain model. It is estimated that for every \$100 of rebate, sales increase by 15\%.
+    \begin{enumerate}
+        \item What amount of rebate will maximize profit? Use the five-step method, and model as one-variable optimization problem.
+        \sol{
+            \begin{enumerate}[label=(\arabic*)]
+                \item 
+            \end{enumerate}
+        }
+        \setcounter{enumii}{2}
+        \item Suppose that rebates actually generate only a 10\% increase in sales per \$100. What is the effect? What if the response is somewhere between 10 and 15\% per \$100 of rebate?
+        \sol{
+
+        }
+        \item Under what circumstances would a rebate offer cause a random reduction in profit?
+        \sol{
+
+        }
+    \end{enumerate}
     \setcounter{enumi}{4}
-    \item Let \(\varphi : \Z_{2} \to Aut(\Z_{4})\) be defined as follows:
-    \begin{align*}
-        \varphi_{0} & : \Z_{4} \to \Z_{4} \text{ is the identity map: } \varphi_{0}(n) = n \\
-        \varphi_{1} & : \Z_{4} \to \Z_{4} \text{ maps to inverses: } \varphi_{1}(n) = n^{-1} 
-    \end{align*}
-    Show that \(D_{4}\) is isomorphic to \(\Z_{4} \rtimes_{\varphi} \Z_{2}\). 
-    \pf{
-        To relate the structures, it will be easiest to use the 2-generator form of \(D_{4}\) where \(D_{4} = \{r,s \mid r^{4} = e, s^{2} = e, rs = sr^{-1}\}\) from our notes. This is because the order of \(\Z_{4} = 4\) and \(\Z_{2} = 2\), implying \(\Z_{4} \rtimes_{\varphi} \Z_{2}\)'s elements must be of the form \((n,m)\) where \(n = \{0,1,2,3\}\) and \(m = \{0,1\}\), matching the order of \(D_{4}\)'s generators. The operation for the group is addition, making the product rule \((a,x)(b,y) = (a + \varphi_{x}(b), x+ y)\). Now, we must check that \(rs = sr^{-1}\) is true for the corresponding elements in \(\Z_{4} \rtimes_{\varphi} \Z_{2}\). By using orders, we can match \(r\) to \((1,0)\), and \(s\) to \((0,1)\). First, we check the left side:
-        \[
-            (1,0)(0,1) = (1 + \varphi_{0}(0), 1 + 0) = (1, 1).
-        \]
-        For the right side:
-        \[
-            (0,1)(1,0)^{-1} = (0,1)(3,0) = (0 + \varphi_{1}(3), 0 + 1) = (1,1).
-        \]
-        Hence, the two sides match. Therefore, we have shown that both groups have the same structural relationships between generators, so \(D_{4} \simeq \Z_{4} \rtimes_{\varphi} \Z_{2}\).
-    }
+    \item  It is estimated that the growth rate of the fin whale population (per year) is \(rx(1 - x/K)\), where \(r = 0.08\) is the intrinsic growth rate, \(K = 400\text{,000}\) is the maximum sustainable population, and \(x\) is the current population, now around 70,000. It is further estimated that the number of whales harvested per year is about \(0.00001 \ Ex\), where \(E\) is the level of fishing effort in boat-days. Given a fixed level of effort, population will eventually stabilize at the level where growth rate equals harvest rate.
+    \begin{enumerate}
+        \item What level of effort will maximize the sustained harvest rate? Model as a one-variable optimization problem using the five-step method.
+        \sol{
+            \begin{enumerate}[label=(\arabic*)]
+                \item 
+            \end{enumerate}
+        }
+    \end{enumerate}
+    \item In Exercise 5, suppose that the cost of whaling is \$500 per boat-day, and the price of a fin whale carcass is \$6,000.
+    \begin{enumerate}
+        \item Find the level of effort that will maximize profit over the long term. Model as a one-variable optimization problem using the five-step method.
+        \sol{
+            \begin{enumerate}[label=(\arabic*)]
+                \item 
+            \end{enumerate}
+        }
+    \end{enumerate}
 \end{enumerate}
+
+
 
 \end{document}

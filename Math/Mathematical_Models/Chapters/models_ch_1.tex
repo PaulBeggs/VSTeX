@@ -1,0 +1,76 @@
+\section{The Five-Step Method}
+
+\textbf{Step 1: Ask the Question.}
+
+\begin{itemize}
+    \item Make a list of all the variables in the problem, including appropriate units.
+    \item Be careful not to confuse variables and constants.
+    \item State any assumptions you are making about these variables, including equations and inequalities.
+    \item Check units to make sure that your assumptions make sense.
+    \item State the objective of the problem in precise mathematical terms.
+\end{itemize}
+
+\textbf{Step 2: Select the modeling approach.}
+
+
+\begin{itemize}
+    	\item Choose a general solution procedure to be followed in solving this problem.
+    	\item Generally speaking, success in this step requires experience, skill, and
+    familiarity with the relevant literature.
+    	\item In this book we will usually specify the modeling approach to be used.
+\end{itemize}
+
+\textbf{Step 3. Formulate the model.}
+
+\begin{itemize}
+    	\item Restate the question posed in step 1 in the terms of the modeling approach
+    specified in step 2.
+    	\item You may need to relabel some variables specified in step 1 in order
+    to agree with the notation used in step 2.
+    	\item Note any additional assumptions made in order to fit the problem described in step 1 into the mathematical structure specified in step 2.
+\end{itemize}
+
+\textbf{Step 4. Solve the model.}
+
+\begin{itemize}
+    	\item Apply the general solution procedure specified in step 2 to the specific
+    problem formulated in step 3.
+    	\item Be careful in your mathematics. Check your work for math errors. Does
+    your answer make sense?
+    	\item Use appropriate technology. Computer algebra systems, graphics, and
+    numerical software will increase the range of problems within your grasp,
+    and they also help reduce math errors.
+\end{itemize}
+
+\textbf{Step 5. Answer the question.}
+
+\begin{itemize}
+    	\item Rephrase the results of step 4 in nontechnical terms.
+    	\item Avoid mathematical symbols and jargon.
+    	\item Anyone who can understand the statement of the question as it was presented to you should be able to understand your answer.
+\end{itemize}
+
+\begin{example}
+    {Pigs 1} A pig weighing 200 pounds gains 5 pounds per day and costs 45 cents per day to keep. The market price for pigs is 65 cents per pound, but is falling at 1 cent per day. When should the pig be sold to maximize profits?
+\end{example}
+
+\lesol{
+    Begin by labeling \textcolor{draculablue}{parameters} and \textcolor{draculared}{variables}, and relate them with \textcolor{draculagreen}{equations}: \\
+    
+    \begin{tabular}{lp{10cm} l}
+        \(t\) & \textcolor{draculared}{\textit{time (days)}}, \\
+        \(m_{0} = 0.65\) & \textcolor{draculablue}{\textit{initial market price (\$)}}, \\
+        \(r_{m} = -0.01\) & \textcolor{draculablue}{\textit{rate of change of market price (\$)}}, \\
+        \(w_{0} = 200\) & \textcolor{draculablue}{\textit{initial weight (lbs)}}, \\
+        \(r_{w} = 5\) & \textcolor{draculablue}{\textit{rate of change of weight (lbs)}}, \\
+        \(d = 0.45\) & \textcolor{draculablue}{\textit{daily costs}}, \\
+        \(m(t) = m_{0} + r_{m}t\) & \textcolor{draculagreen}{\textit{market price after \(t\) days (\$)}}, \\
+        \(w(t) = w_{0} + r_{0}t\) & \textcolor{draculagreen}{\textit{pig's weight after \(t\) days (lbs)}}, \\
+        \(c(t) = dt\) & \textcolor{draculagreen}{\textit{total cost after \(t\) days (\$)}},  \\
+        \(p(t) = r(t) - c(t)\) & \textcolor{draculagreen}{\textit{profit after \(t\) days (\$)}}. \\[1em]
+    \end{tabular}
+
+    We take the derivative of \(p(t)\) and set it equal to 0 to get the critical points, which we can then evaluate. 
+}
+
+

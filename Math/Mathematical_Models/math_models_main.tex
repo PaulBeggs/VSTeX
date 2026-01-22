@@ -25,7 +25,7 @@
 
 %%% Dimensions and Spacing %%%
 \usepackage[margin=1in]{geometry}
-% \setlength{\parindent}{0pt}
+\setlength{\parindent}{0pt}
 \usepackage{setspace}
 \usepackage{mathtools}
 \linespread{1}
@@ -139,8 +139,8 @@
 % \newcommand{\gradient}[1]{
 % \begin{tikzpicture}
 %     \node (rect) at (0,0) [fill=blue,,path fading=East,minimum width=\linewidth,minimum height=2.5cm] {};
-%     \node(title)[above left = 10pt and 10pt of rect.south east, anchor=south east, font=\CTV] {\textcolor{horange}{#1}};
-%     \ifnum \thechapter>0\node[left = 10pt of rect.north east,  anchor=center, font=\CNoV] {\textcolor{horange}{\thechapter}};\fi%
+%     \node(title)[above left = 10pt and 10pt of rect.south east, anchor=south east, font=\CTV] {\textcolor{draculapink}{#1}};
+%     \ifnum \thechapter>0\node[left = 10pt of rect.north east,  anchor=center, font=\CNoV] {\textcolor{draculapink}{\thechapter}};\fi%
 % \end{tikzpicture}%
 % \vskip 40pt
 % }
@@ -258,15 +258,388 @@
 \xpretocmd\headrule{\color{draculapink}}{}{\PatchFailed}
 \setlength{\footskip}{0.5in}
 \setlength{\headheight}{18.5764pt}
-
+\usepackage{dingbat}
 
 %%%%% Colored Boxes %%%%%
 \usepackage{tcolorbox}
 \tcbuselibrary{skins}
 \tcbuselibrary{theorems}
-% \tcbuselibrary{minted}
-\newcounter{BoxCounter}
-\usepackage{dingbat}
+\tcbuselibrary{minted}
+% \numberwithin{BoxCounter}{section}
+
+
+\newtcolorbox{note}{colback=draculayellow!15!draculabg, colframe=draculayellow, boxrule=0.5mm, arc=4mm, left=4mm, right=4mm, top=2mm, bottom=2mm, coltext=draculafg}
+
+%% Theorems %%
+\newtcolorbox[]{theorem}[2][]{%
+    enhanced,
+    sharp corners=uphill,
+    rounded corners,
+    colframe=draculablue, %color of frame
+    colback=draculablue!15!draculabg, %color of background
+    coltitle=draculafg, %color of title text
+    coltext=draculafg,
+    label={thm:#2},
+    title={\large \textbf{Theorem: #2}},
+    attach boxed title to top center,
+    boxed title style={colback=draculablue},
+    #1
+}
+
+% %% This command needs to exist for the square root of 2 theorem to work
+
+% \newtcolorbox[]{sqrtTh}[2][]{%
+%     rounded corners,
+%     colframe=draculablue, %color of frame
+%     colback=draculablue!15!draculabg, %color of background
+%     coltitle=draculafg, %color of title text
+%     label={thm:#2},
+%     title={\large \textbf{Theorem: \texorpdfstring{The Irrationality of \(\sqrt{2}\)}{The Irrationality of sqrt(2)}}},
+%     #1
+% }
+
+
+
+%% Axioms %%
+\newtcolorbox[]{axiom}[2][]{%
+    enhanced,
+    sharp corners=downhill
+    colframe=draculagreen,
+    colback=draculagreen!15!draculabg,
+    coltitle=draculafg,
+    coltext=draculafg,
+    after skip=-2pt,
+    label={ax:#2},
+    title={\large \textbf{Axiom of #2}},
+    attach boxed title to top center,
+    boxed title style={colback=draculagreen, sharp corners=downhill},
+    #1
+}
+
+%% Exercises %%
+\newtcolorbox[]{exercise}[2][]{%
+    enhanced,
+    sharp corners=downhill,
+    colframe=draculasilver,
+    colback=draculasilver!15!draculabg,
+    coltitle=draculafg,
+    coltext=draculafg,
+    after skip=-2pt,
+    label={exerc:#2},
+    title={\large \textbf{Exercise #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=draculasilver!75},
+    #1
+}
+
+%% Examples %%
+\newcounter{ExampleCounter}
+\newtcolorbox[use counter=ExampleCounter, number within=chapter]{example}[2][]{%
+enhanced,
+    sharp corners=downhill,
+    colframe=draculared,
+    colback=draculared!15!draculabg,
+    coltitle=draculafg,
+    coltext=draculafg,
+    after skip=-2pt,
+    label={ex:\theExampleCounter},
+    title={\large \textbf{Example \theExampleCounter: #2}},
+    attach boxed title to top center,
+    boxed title style={colback=draculared},
+    #1,
+}
+
+
+%% Corollaries %%
+\newtcolorbox[]{corollary}[2][]{%
+    enhanced,
+    sharp corners=downhill,
+    colframe=draculapurple,  
+    colback=draculapurple!15!draculabg,        
+    coltitle=draculafg,
+    coltext=draculafg,
+    after skip=-2pt,
+    title={\large \textbf{Corollary #2}},
+    attach boxed title to top left={xshift=0.5cm},
+    boxed title style={colback=draculapurple},
+    #1
+}
+
+%% Propositions %%
+\newenvironment{proposition}[2][]{ % Optional title argument
+    \vspace{0.5em}
+    \noindent\quad\quad\textbf{Proposition \textcolor{horange}{#2}:} #1
+    \par\vspace{0.5em}\noindent
+}{\par\vspace{1em}\noindent}
+
+\newcommand{\wrpprop}[2]{%
+    \begin{proposition}
+        {#1}\label{prop:#1}#2
+    \end{proposition}
+}
+
+\newcommand{\refprop}[1]{%
+    \hyperref[prop:#1]{Proposition #1}%
+}
+
+%% Definitions %%
+\newenvironment{definition}[2][]{%
+    \vspace{0.5em}
+    \noindent\quad\quad\textbf{Definition \textcolor{horange}{#2}:\label{#2}} #1
+    \par\vspace{0.5em}\noindent
+}{\par\vspace{0.3em}\noindent}
+
+\newcommand{\wrpdef}[2]{%
+    \begin{definition}
+        {#1}#2
+    \end{definition}
+}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%% MATH PACKAGES, ENVIRONMENTS, COMMANDS %%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%You'll need your own packages, theroem types, and commands.
+
+\usepackage{tikz}
+\usepackage{pifont}
+\usetikzlibrary{shapes,backgrounds,calc,patterns}
+\usepackage{amsmath,amsthm} 
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{tabularx}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{lipsum} 
+\usepackage{booktabs}   
+\usepackage{ragged2e}
+\usepackage{multirow}
+
+
+
+
+%%% New Environments %%%
+\newtheorem{exmp}{Example}[section]
+
+%%% Custom Comands %%%
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
+
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+\newmdenv[
+  topline=false,
+  bottomline=true,
+  rightline=false,
+  leftline=true,
+  linewidth=1.5pt,
+  linecolor=black, % default color, will be overridden in custom commands
+  backgroundcolor=draculabg, % Needed for Dracula theme
+  fontcolor=draculafg, % Needed for Dracula theme
+  innertopmargin=0pt,
+  innerbottommargin=5pt,
+  innerrightmargin=10pt,
+  innerleftmargin=10pt,
+  leftmargin=0pt,
+  rightmargin=0pt,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newcommand{\sbseteqpf}[4]{%
+    \begin{customframedproof}[linecolor=#4]
+        \begin{proof}
+                We need to show these expressions are subsets of each other so we can utilize \thm{subset} to prove they are equal: 
+            \begin{proofpart}[#4]{(\(\subseteq\))}
+                #1
+            \end{proofpart}
+    \vspace{2mm}
+            \begin{proofpart}[#4]{(\(\supseteq\))}
+                #2
+            \end{proofpart}
+    \vspace{2mm}
+            Therefore, by \thm{subset}, #3
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\iffpfbase}[5][We show this by proving both implications:]{
+    \begin{customframedproof}[linecolor=#5]
+        \begin{proof}
+            #1 % This is the optional text, with a default value
+            \begin{proofpart}[#5]{(\(\Rightarrow\))}
+                #2
+            \end{proofpart}
+    \vspace{2mm}
+            \begin{proofpart}[#5]{(\(\Leftarrow\))}
+                #3
+            \end{proofpart}
+    \vspace{2mm}
+            #4
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\iffpf}[5][We will show this by proving both implications:]{
+    \raisebox{0.85em}{\begin{minipage}[t]{0.90\textwidth}
+        \iffpfbase[#1]{#2}{#3}{#4}{#5}
+    \end{minipage}}
+}
+
+% Command for lemma proofs with a predefined color
+\newcommand{\expf}[1]{
+    \begin{customframedproof}[linecolor=draculasilver!75]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+
+% Command for theorems proofs with a predefined color
+\newcommand{\tpf}[1]{
+    \begin{customframedproof}[linecolor=draculablue]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+% Command for corollaries proofs with a predefined color
+\newcommand{\cpf}[1]{
+    \begin{customframedproof}[linecolor=draculapurple]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+% Need to add in customization for examples
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=draculasilver!75]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\lesol}[1]{
+    \begin{customframedproof}[linecolor=draculared]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\pb}[2]{
+    \begin{exercise}{#1}[label=ex:#1]
+    #2
+    \end{exercise}
+}
+
+\def \proofDistance {10pt}
+\newenvironment{solution}
+  {\textit{Solution.}}
+
+% Command for theorems proofs with a predefined color
+\newcommand{\epf}[1]{
+    \begin{customframedproof}[linecolor=draculared]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+   %% CODE FORMATING %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\usepackage{listings}
+\lstdefinestyle{javaStyle}{
+    language=Java,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{blue},
+    commentstyle=\color{green},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    captionpos=b,
+    frame=single,
+    tabsize=4,
+    upquote=true
+}
+
+% Define a custom style
+\lstdefinestyle{myStyle}{
+    backgroundcolor=\color{draculabgalt},   
+    commentstyle=\color{draculacomment},
+    keywordstyle=\color{draculasilver},
+    numberstyle=\tiny\color{draculasilver},
+    basicstyle=\ttfamily\footnotesize\color{draculaorange},
+    identifierstyle=\ttfamily\color{draculapurple},
+    breakatwhitespace=false,         
+    breaklines=true,       
+    keywordstyle=\color{draculayellow},          
+    keepspaces=true,
+    numberstyle=\color{draculaorange},                 
+    numbers=left,
+    stringstyle=\color{draculasilver},
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,            
+    tabsize=4,
+    frame=tlrb,      % Adds black bars on top and bottom
+    xleftmargin=5.5ex,               % Extends background to include line numbers
+    framexleftmargin=5.5ex,          % Ensures the frame includes the margin area
+    framexrightmargin=0pt,           % Right margin
+    framextopmargin=1pt,             % Adjusts top margin of frame
+    framexbottommargin=1pt           % Adjusts bottom margin of frame
+}
+
+\lstset{style=myStyle}
+
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -313,8 +686,6 @@
 
 \newcommand{\I}{\mathbb{I}}
 
-\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
-
 \newcommand{\mysqrt}[1]{%
   \mathpalette\foo{#1}%
 }
@@ -341,90 +712,6 @@
   \end{tikzpicture}%
 }
 
-
-% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
-
-\newmdenv[
-  topline=false,
-  bottomline=true,
-  rightline=false,
-  leftline=true,
-  linewidth=1.5pt,
-  linecolor=black, % default color, will be overridden in custom commands
-  backgroundcolor=draculabg, % Needed for Dracula theme
-  fontcolor=\documentTheme, % Needed for Dracula theme
-  innertopmargin=0pt,
-  innerbottommargin=5pt,
-  innerrightmargin=10pt,
-  innerleftmargin=10pt,
-  leftmargin=0pt,
-  rightmargin=0pt,
-  skipabove=\topsep,
-  skipbelow=\topsep,
-]{customframedproof}
-
-\newenvironment{proofpart}[2][black]{
-    \begin{mdframed}[
-        topline=false,
-        bottomline=false,
-        rightline=false,
-        leftline=true,
-        linewidth=1pt,
-        linecolor=#1!40, % Custom color
-        % innertopmargin=10pt,
-        % innerbottommargin=10pt,
-        innerleftmargin=10pt,
-        innerrightmargin=10pt,
-        leftmargin=0pt,
-        rightmargin=0pt,
-        % skipabove=\topsep,
-        % skipbelow=\topsep%
-    ]
-    \noindent
-    \begin{minipage}[t]{0.08\textwidth}%
-        \textbf{#2}%
-    \end{minipage}%
-    \begin{minipage}[t]{0.90\textwidth}%
-        \begin{adjustwidth}{0pt}{0pt}%
-}{
-    \end{adjustwidth}
-    \end{minipage}
-    \end{mdframed}
-}
-
-% Define a new environment 'proofscratch' for Proof and Scratch Paper
-\newenvironment{proofscratch}[2]{%
-    \begin{mdframed}[
-        topline=false,
-        bottomline=false,
-        rightline=false,
-        leftline=false,
-        backgroundcolor=draculabg, % Background color for Dracula theme
-        fontcolor=\documentTheme,       % Font color for Dracula theme
-        innerleftmargin=-6pt,
-        innertopmargin=0pt,
-        leftmargin=0pt,
-        rightmargin=0pt,
-        skipabove=\topsep,
-        skipbelow=\topsep,
-    ]
-    % % Begin TikZ picture for the vertical dotted line
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     % Draw a vertical dotted line at approximately the center of the mdframed width
-    %     \draw[dotted, thick] ([xshift=0.005\linewidth]current bounding box.north west) -- ([xshift=0.005\linewidth]current bounding box.south west);
-    % \end{tikzpicture}%
-    % % Create the left minipage for Proof
-    \begin{minipage}[t]{0.47\textwidth}%
-        \noindent\textit{Proof.} #1 \hfill \(\qed\)
-    \end{minipage}%
-    \hfill
-    % Create the right minipage for Scratch Paper
-    \begin{minipage}[t]{0.47\textwidth}%
-        \textit{Scratch Paper.} #2
-    \end{minipage}%
-}{
-    \end{mdframed}
-}
 
 \newcommand{\nobulletitem}[1]{\item {\itshape #1}}
 
@@ -483,19 +770,6 @@
   }
 
 
-
-\newcommand{\sol}[1]{
-    \begin{customframedproof}[linecolor=draculapink!75,]
-        \begin{solution}
-        #1
-        \end{solution}
-    \end{customframedproof}
-}
-
-\def \proofDistance {10pt}
-\newenvironment{solution}
-  {\textit{Solution.}}
-
 \newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
 \newcommand{\limn}{\lim_{n \rightarrow \infty}}
 \newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
@@ -550,17 +824,18 @@
 
 \begin{document}
 
-\numberwithin{BoxCounter}{section}
-
-
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 % Do not use all caps.
-\newcommand{\titlestandin}{Machine Learning Notes (Book 2)}
-\newcommand{\cussubtitle}{``An Introduction To Statistical Learning''}
+\newcommand{\titlestandin}[0]{Mathematical Models Notes}
+\newcommand{\cussubtitle}[0]{MATH 365}
 % Date format should be like: "January 1, 2001"
+\newcommand{\startdate}[0]{January 20, 2026}
+\newcommand{\customenddate}[0]{May 5, 2026}
+% Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
+\newcommand{\professor}[0]{Prof. Christopher Camfield, Ph.D.}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -570,11 +845,9 @@
     \begin{center}
 
         \vspace*{-2cm}
-        \begin{figure}[h!]
-            \centering
-            \includegraphics[width=0.6\textwidth]{images/ML_logo_v3.png}\\
-            \caption{``The Transformer'' Recreated in TikZ from \href{https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf}{``Attention Is All You Need''}}
-        \end{figure}
+        % \includegraphics[width=0.8\textwidth]{images/Hendrix Logo.png}\\
+        \includegraphics[width=0.8\textwidth]{images/logo_white_text.png}\\ % Use for Dracula. Its the all white version of the logo.
+        \vfill
 
         \textcolor{draculapink}{\rule{\textwidth}{1.0pt}}
 
@@ -593,15 +866,33 @@
         \begin{large}
             \vspace*{2\baselineskip}
 
+            \textit{Start}  \\[1ex]
+            {\scshape \startdate} \\[0.3\baselineskip] % Year published
+
+            \vspace*{1\baselineskip}
+
             \emph{Author} \\[1ex]
             %Submitted by \\[\baselineskip]
             {\Large Paul Beggs \\ \par} % Editor list
-            {\href{mailto:PaulBeggs03@gmail.com}{{PaulBeggs03@gmail.com}}}\\ % Editor affiliation
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+
+            \vspace*{1\baselineskip}
+
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
+
+            \vspace*{1\baselineskip}
+
+            \textit{End}\\[1ex]
+            {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
+
+            \thispagestyle{empty}
 
         \end{large}
     \end{center}
 \end{titlepage}
 \pagebreak
+
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -624,23 +915,11 @@
 % Reset the headers to default for the rest of the document
 \fancyhead[R]{\leftmark}
 
-
-
-
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\chapter{Introduction}
+\chapter{One Variable Optimization}\label{real vars}
 \vspace*{-0.25in}
-\input{Chapters/1_Introduction.tex}
-
+\input{Chapters/models_ch_1}
 \setcounter{chapter}{1}
 
-
-
-
-
-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 \end{document}
-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-
-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
