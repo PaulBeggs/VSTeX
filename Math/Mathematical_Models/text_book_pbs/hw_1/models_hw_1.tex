@@ -15,6 +15,16 @@
 \newcommand{\documentBigLogo}{../../images/logo_white_text.png}
 \usemintedstyle{dracula}
 
+\usemintedstyle{dracula}
+
+\setminted{
+    linenos=true,
+    numbersep=5pt,
+    frame=lines,
+    framesep=2mm,
+    breaklines=true
+}
+
 % \newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
 % \newcommand{\documentLogo}{../../images/small logo.png}
 % \newcommand{\documentTheme}{black}
@@ -475,40 +485,127 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 % Do not use all caps.
-\newcommand{\cussubtitle}{Algebra}
+\newcommand{\cussubtitle}{Mathematical Models}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{Septemeber 4, 2025}
+\newcommand{\finaldate}{January 27, 2026}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
 \newcommand{\professor}{Dr. Christopher Camfield, Ph.D.}
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{titlepage}
+    \begin{center}
+
+        \vspace*{-2cm}
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\
+        \vfill
+
+        % Horizontal line above the title in 'horange' color
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace{2em}
+
+        {\huge \textbf{\assignmentname}}
+
+        \vspace{1em} % Space between the title and the bottom line
+
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace*{1\baselineskip}
+
+        {\LARGE \textbf{\cussubtitle}}
+
+        \begin{large}
+            \vspace*{5\baselineskip}
+
+            \vspace*{1\baselineskip}
+
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+
+            \vspace*{1\baselineskip}
+
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
+
+            \vspace*{1\baselineskip}
+
+            \textit{Due}\\[1ex]
+            {\scshape  \finaldate} \\[0.3\baselineskip] % Year published
+
+            \thispagestyle{empty}
+
+        \end{large}
+    \end{center}
+\end{titlepage}
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
 
 \begin{enumerate}
     \item An automobile manufacturer makes a profit of \$1,500 on the sale of a certain model. It is estimated that for every \$100 of rebate, sales increase by 15\%.
     \begin{enumerate}
         \item What amount of rebate will maximize profit? Use the five-step method, and model as one-variable optimization problem.
         \sol{
+            Five-step method:
             \begin{enumerate}[label=(\arabic*)]
-                \item 
+                \item What amount of rebate will maximize profit?
+                \item Single variable optimization.
+                \item Label \textcolor{draculared}{variables} and \textcolor{draculablue}{parameters}, and relate them with \textcolor{draculagreen}{equations}:\\[-.5em]
+
+                \begin{tabular}{lp{10cm} l}
+                    \(r\) & \textcolor{draculared}{\textit{rebate amount (\$)}} \\
+                    \(p_{0} = 1500\) & \textcolor{draculablue}{\textit{initial profit per sale (\$)}} \\
+                    \(s = .15\) & \textcolor{draculablue}{\textit{sales rate (\$)}} \\
+                    \(r_{0} = 100\) & \textcolor{draculablue}{\textit{initial rebate value (\$)}} \\
+                    \(i(r) = (r/r_{0}) \cdot s\) & \textcolor{draculagreen}{\textit{sales increase for \(r\) rebate}} \\
+                    \(s(r) = p_{0} - r\) & \textcolor{draculagreen}{\textit{profit after \(r\) rebate (\$)}} \\
+                    \(n(r) = s(r)(1 + i(r))\) & \textcolor{draculagreen}{\textit{net profit for \(r\) rebate (\$)}} \\[.5em]
+                \end{tabular}
+
+                \item Plugging in the parameters into our equations, we get
+                \[
+                    i(r) = \frac{0.15 \cdot r}{100}, \quad s(r) = 1500 - r, \quad n(r) = (1500 - r)\left(1 + \frac{0.15 \cdot r}{100}\right).
+                \]
+                Then, we take the derivative of \(n(r)\) and set it to 0 to get the optimal rebate value:
+                \[
+                    n'(r) = -0.003r + 1.25 \implies r = \frac{1250}{3}.
+                \]
+                \item To maximize the profit on the sale of the model, the automobile manufacturer should include a \$416.68 rebate on every purchase. 
             \end{enumerate}
         }
         \setcounter{enumii}{2}
         \item Suppose that rebates actually generate only a 10\% increase in sales per \$100. What is the effect? What if the response is somewhere between 10 and 15\% per \$100 of rebate?
         \sol{
-
+            If the rebates only generate a 10\% increase, then the best rebate value would be \$250. 
         }
         \item Under what circumstances would a rebate offer cause a random reduction in profit?
         \sol{
 
         }
     \end{enumerate}
+    \newpage
     \setcounter{enumi}{4}
     \item  It is estimated that the growth rate of the fin whale population (per year) is \(rx(1 - x/K)\), where \(r = 0.08\) is the intrinsic growth rate, \(K = 400\text{,000}\) is the maximum sustainable population, and \(x\) is the current population, now around 70,000. It is further estimated that the number of whales harvested per year is about \(0.00001 \ Ex\), where \(E\) is the level of fishing effort in boat-days. Given a fixed level of effort, population will eventually stabilize at the level where growth rate equals harvest rate.
     \begin{enumerate}
         \item What level of effort will maximize the sustained harvest rate? Model as a one-variable optimization problem using the five-step method.
         \sol{
+            The five-step method:
             \begin{enumerate}[label=(\arabic*)]
-                \item 
+                \item What level of effort will maximize the sustained harvest rate?
+                \item Single variable optimization.
+                \item Label \textcolor{draculared}{variables} and \textcolor{draculablue}{parameters}, and relate them with \textcolor{draculagreen}{equations}:\\[-.5em]
+
+                \begin{tabular}{lp{10cm} l}
+                    \(E\) & \textcolor{draculared}{\textit{level of effort}} \\
+                    \(r = 0.08\) & \textcolor{draculablue}{\textit{intrinsic growth rate}} \\
+                    \(K = 400000\) & \textcolor{draculablue}{\textit{maximum sustainable population}} \\
+                    \(x = 70000\) & \textcolor{draculablue}{\textit{current population}} \\
+                    \(gr = 4620\) & \textcolor{draculablue}{\textit{current growth rate (per year)}} \\
+                    \(g(x) = rx(1 - x/K)\) & \textcolor{draculagreen}{\textit{growth rate of fin whales as a function of current whales (per year)}} \\
+                    \(h(E) = 0.00001Ex\) & \textcolor{draculagreen}{\textit{number of whales harvested (per year)}} \\[.5em]
+                \end{tabular}
             \end{enumerate}
         }
     \end{enumerate}

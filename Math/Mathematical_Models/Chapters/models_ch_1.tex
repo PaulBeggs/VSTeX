@@ -55,7 +55,7 @@
 \end{example}
 
 \lesol{
-    Begin by labeling \textcolor{draculablue}{parameters} and \textcolor{draculared}{variables}, and relate them with \textcolor{draculagreen}{equations}: \\
+    Begin by labeling \textcolor{draculared}{variables} and \textcolor{draculablue}{parameters}, and relate them with \textcolor{draculagreen}{equations}: \\
     
     \begin{tabular}{lp{10cm} l}
         \(t\) & \textcolor{draculared}{\textit{time (days)}}, \\
@@ -73,4 +73,35 @@
     We take the derivative of \(p(t)\) and set it equal to 0 to get the critical points, which we can then evaluate. 
 }
 
+
+\begin{figure}[ht]
+    \begin{minted}{python}
+    # Example 1.1 Pig Problem
+    t = var('t')  # time in days
+
+    # Parameters
+    w0 = 200   # init weight of pig
+    rw = 5     # growth rate of pig (lb/day)
+    m0 = 0.65  # init market price ($/pound)
+    rm = -0.01 # market price rate of change ($/lbs/day)
+    d  = 0.45  # daily cost to keep the pig
+
+    # Functions
+    w(t) = w0 + rw*t   # weight of pig
+    m(t) = m0 + rm*t   # market price
+    r(t) = w(t)*m(t)   # revenue
+    c(t) = d*t         # cost
+    p(t) = r(t) - c(t) # profit
+
+    # Solve the Model
+    pprime    = p.derivative(t)        # derivative of profit
+    critpts   = solve(pprime(t)==0,t)  # critical points
+    optimum_t = critpts[0].rhs()       # best time to sell the pig
+    maxprofit = p(optimum_t)           # maximum profit
+
+    print(f'The best time to sell the pig is in {optimum_t} days.')  # optimum_t=8
+    print(f'The maximum profit is ${round(maxprofit,3)}.')           # maxprofit=133.20
+    \end{minted}
+    \caption{Python Code for the Pig Problem}
+\end{figure}
 

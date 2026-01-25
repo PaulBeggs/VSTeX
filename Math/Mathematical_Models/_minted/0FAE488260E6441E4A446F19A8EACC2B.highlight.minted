@@ -1,0 +1,27 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+    \PYG{c+c1}{\PYGZsh{} Example 1.1 Pig Problem}
+    \PYG{n}{t} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}t\PYGZsq{}}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} time in days}
+
+    \PYG{c+c1}{\PYGZsh{} Parameters}
+    \PYG{n}{w0} \PYG{o}{=} \PYG{l+m+mi}{200}   \PYG{c+c1}{\PYGZsh{} init weight of pig}
+    \PYG{n}{rw} \PYG{o}{=} \PYG{l+m+mi}{5}     \PYG{c+c1}{\PYGZsh{} growth rate of pig (lb/day)}
+    \PYG{n}{m0} \PYG{o}{=} \PYG{l+m+mf}{0.65}  \PYG{c+c1}{\PYGZsh{} init market price (\PYGZdl{}/pound)}
+    \PYG{n}{rm} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.01} \PYG{c+c1}{\PYGZsh{} market price rate of change (\PYGZdl{}/lbs/day)}
+    \PYG{n}{d}  \PYG{o}{=} \PYG{l+m+mf}{0.45}  \PYG{c+c1}{\PYGZsh{} daily cost to keep the pig}
+
+    \PYG{c+c1}{\PYGZsh{} Functions}
+    \PYG{n}{w}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{w0} \PYG{o}{+} \PYG{n}{rw}\PYG{o}{*}\PYG{n}{t}   \PYG{c+c1}{\PYGZsh{} weight of pig}
+    \PYG{n}{m}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{m0} \PYG{o}{+} \PYG{n}{rm}\PYG{o}{*}\PYG{n}{t}   \PYG{c+c1}{\PYGZsh{} market price}
+    \PYG{n}{r}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{w}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}\PYG{o}{*}\PYG{n}{m}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} revenue}
+    \PYG{n}{c}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{d}\PYG{o}{*}\PYG{n}{t}         \PYG{c+c1}{\PYGZsh{} cost}
+    \PYG{n}{p}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{r}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} profit}
+
+    \PYG{c+c1}{\PYGZsh{} Solve the Model}
+    \PYG{n}{pprime}    \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}        \PYG{c+c1}{\PYGZsh{} derivative of profit}
+    \PYG{n}{critpts}   \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{pprime}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} critical points}
+    \PYG{n}{optimum\PYGZus{}t} \PYG{o}{=} \PYG{n}{critpts}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{()}       \PYG{c+c1}{\PYGZsh{} best time to sell the pig}
+    \PYG{n}{maxprofit} \PYG{o}{=} \PYG{n}{p}\PYG{p}{(}\PYG{n}{optimum\PYGZus{}t}\PYG{p}{)}           \PYG{c+c1}{\PYGZsh{} maximum profit}
+
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}The best time to sell the pig is in }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{optimum\PYGZus{}t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ days.\PYGZsq{}}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} optimum\PYGZus{}t=8}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}The maximum profit is \PYGZdl{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{maxprofit}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{.\PYGZsq{}}\PYG{p}{)}           \PYG{c+c1}{\PYGZsh{} maxprofit=133.20}
+\end{MintedVerbatim}

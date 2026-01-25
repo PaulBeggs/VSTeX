@@ -1,10 +1,19 @@
 \documentclass[12pt]{article}
 
-\usepackage[margin=1in]{geometry}
+\usepackage[left=1in,right=1in,top=0.75in,bottom=1in]{geometry}
+% \usepackage[margin=1in,showframe]{geometry}
 \usepackage{minted}
 \setminted{linenos, breaklines=true}
+\usepackage{listings}
 
-\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
 \usepackage{hyperref}
 \usepackage{xcolor}
 \definecolor{horange}{HTML}{f58026}
@@ -17,6 +26,40 @@
 
 \usepackage{float}
 \usepackage{caption}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[framemethod=tikz]{mdframed}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	% backgroundcolor=white, % Needed for Dracula theme
+	% fontcolor=\documentTheme, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	% skipabove=\topsep,
+	% skipbelow=\topsep,
+]{customframedproof}
+
+
+
+\newenvironment{answer}{\textit{Answer.}}
+
+\newcommand{\ans}[1]{
+    \begin{customframedproof}[linecolor=horange!75,]
+        \begin{answer}
+        #1
+        \end{answer}
+    \end{customframedproof}
+}
 
 \setlength{\parindent}{0pt}
 
@@ -27,6 +70,140 @@
 \begin{document}
 
 \maketitle
+
+\textbf{Kaggle ID: Paul123412}
+
+\section{Poem}
+
+I chose the poem titled ``All's Well That Ends Well.'' It had an unknown author.
+
+\begin{enumerate}
+	\item What makes this selection interesting to you?
+	\ans{
+		I was reading through a couple of the other poems on the public domain database, but I thought this one stood out the most to me. I just found it humorous how every assumption of ``That was well'' or ``That was bad,'' was met with the exact opposite reaction. That being said, the poem is a bit crass in that it ends with the ``scolding'' wife dying in the burning house. I don't much support that.
+	}
+	\item What do you estimate is the reading level for this text?
+	\ans{
+		I suppose a 6th grader could read this poem and understand it well.
+	}
+	\item Would you say that this selection conveys an overall positive or negative sentiment?\vspace*{-.4cm}
+	\ans{
+		Positive sentiment; as everything works out in the end.  
+	}
+	\item Formulate a research question you hope to answer by analyzing this selection computationally.
+	\ans{
+		Given the mixing of positive and negative keywords like ``not so well'' or ``No, not so well,'' I'm curious to see what sentiment a classifier would give it. 
+	}
+\end{enumerate}
+
+\newpage
+
+\section{Novel}
+
+For the novel, I chose Mark Twain's ``Adventures of Huckleberry Finn.''
+
+\begin{enumerate}
+	\item What makes this selection interesting to you?
+	\ans{
+		This was the first book that I really fell in love with at school. I loved the story of a boy from Missouri who leaves an abusive home with his father in search of adventures and freedom.  Then, I took Special Focus -- Mark Twain, and I found out even more about the book by synthesizing Mark Twain's other works, and his philosophies.
+	}
+	\item What do you estimate is the reading level for this text?
+	\ans{
+		Because it was mostly written in the first person as Huck, it is a bit hard to read, as he uses many contractions and some made up words. So, I'd say 9th or 10th grade.  
+	}
+	\item Would you say that this selection conveys an overall positive or negative sentiment?\vspace*{-.4cm}
+	\ans{
+		Overall positive.
+	}
+	\item Formulate a research question you hope to answer by analyzing this selection computationally.
+	\ans{
+		As I said, most of the words in this book are contractions, and they are hard to parse. So, I want to delve into the challenge of cleaning the data and analyzing it to its full ability. 
+	}
+\end{enumerate}
+
+\section{Images}
+
+\subsection{Landscape}
+
+For the landscape, I went with Bob Ross' ``Lake Below Snow-Capped Peaks and Cloudy Sky.''
+
+\begin{enumerate}
+	\item What makes this selection interesting to you?
+	\ans{
+		Bob Ross was the first painter that I have memories of. Just watching him paint his ``happy trees'' and giving rocks a ``friend'' so that they wouldn't be lonely was very moving to me. He was the only painter that talked like a normal person (albeit, I didn't know hardly any other painters). This painting in particular is a favorite of mine because of the pink in front of and behind the mountain. That color makes it stand out from other similar paintings, and brings some livelyness to it. 
+	}
+	\newpage
+
+	\item Would you say that this selection conveys an overall positive or negative sentiment?\vspace*{-.4cm}
+	\ans{
+		Overall positive.
+	}
+
+	\item Formulate a research question you hope to answer by analyzing this selection computationally.
+	\ans{
+		Can a program distinguish between the trees, the mountain, and the lake? I would really like to know if it could do that.
+	}
+\end{enumerate}
+
+\subsection{Portrait}
+
+As for the portrait, I chose Van Gogh's ``Self-Portrait with Grey Felt Hat.''
+
+\begin{enumerate}
+	\item What makes this selection interesting to you?
+	\ans{
+		I really like Van Gogh, his ``Starry Night'' is a beautiful painting that I have always enjoyed very much, but his life was the most interesting to me. The fact that he lived his entire life making beautiful paintings, but still without recognition and while battling depression is mind-boggling to me. He is an inspiration to not give up in face of struggle, but to persevere (maybe without cutting an ear off).  
+	}
+	\item Would you say that this selection conveys an overall positive or negative sentiment?\vspace*{-.4cm}
+	\ans{
+		Overall, negative.
+	}
+	\item Formulate a research question you hope to answer by analyzing this selection computationally.
+	\ans{
+		Given that this isn't a photograph from a digital camera, would a classifier still be able to identify the frown or furrowed eyebrows? 
+	}
+\end{enumerate}
+
+\section{Music}
+
+\subsection{Instrumental}
+
+I went with ``F\"ur Elise'' by Beethoven.
+
+\begin{enumerate}
+	\item What makes this selection interesting to you?
+	\ans{
+		I love how this song makes me feel! When listening with headphones on, I can just close my eyes and \textit{become} the music. My whole body just feels in-tune with it.  
+	}
+	\newpage
+	\item Would you say that this selection conveys an overall positive or negative sentiment?\vspace*{-.4cm}
+	\ans{
+		Overall, positive; although, this is a hard question to answer.
+	}
+	\item Formulate a research question you hope to answer by analyzing this selection computationally.
+	\ans{
+		Using sentiment, how can we make an algorithm that picks the best music given a user's music history?
+	}
+\end{enumerate}
+
+\subsection{Lyrical}
+
+I chose ``We are the Champions'' by Queen. 
+
+\begin{enumerate}
+	\item What makes this selection interesting to you?
+	\ans{
+		When I was younger, I would listen to this song on repeat. In fact, I have a distinct memory of staying up till 3 am on a school night listening to this song. My brother found me and promptly told me to go to bed. This song is also one of my mom's favorite (for good reason). 
+	}
+	\item Would you say that this selection conveys an overall positive or negative sentiment?\vspace*{-.4cm}
+	\ans{
+		Overall, positive. 
+	}
+	\item Formulate a research question you hope to answer by analyzing this selection computationally.
+	\ans{
+		Can we make an algorithm that is able to detect that ``We are the Champions'' is sung by the same artist as ``Bohemian Rhapsody'' using just the data from the song?
+	}
+\end{enumerate}
 
 
 
