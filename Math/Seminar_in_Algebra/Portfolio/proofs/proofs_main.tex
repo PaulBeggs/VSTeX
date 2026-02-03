@@ -423,48 +423,6 @@ enhanced,
     \end{mdframed}
 }
 
-\newcommand{\sbseteqpf}[4]{%
-    \begin{customframedproof}[linecolor=#4]
-        \begin{proof}
-                We need to show these expressions are subsets of each other so we can utilize \thm{subset} to prove they are equal: 
-            \begin{proofpart}[#4]{(\(\subseteq\))}
-                #1
-            \end{proofpart}
-    \vspace{2mm}
-            \begin{proofpart}[#4]{(\(\supseteq\))}
-                #2
-            \end{proofpart}
-    \vspace{2mm}
-            Therefore, by \thm{subset}, #3
-        \end{proof}
-    \end{customframedproof}
-}
-
-\newcommand{\iffpfbase}[5][We show this by proving both implications:]{
-    \begin{customframedproof}[linecolor=#5]
-        \begin{proof}
-            #1 % This is the optional text, with a default value
-            \begin{proofpart}[#5]{(\(\Rightarrow\))}
-                #2
-            \end{proofpart}
-    \vspace{2mm}
-            \begin{proofpart}[#5]{(\(\Leftarrow\))}
-                #3
-            \end{proofpart}
-    \vspace{2mm}
-            #4
-        \end{proof}
-    \end{customframedproof}
-}
-
-
-
-\newcommand{\iffpf}[5][We will show this by proving both implications:]{
-    \raisebox{0.85em}{\begin{minipage}[t]{0.90\textwidth}
-        \iffpfbase[#1]{#2}{#3}{#4}{#5}
-    \end{minipage}}
-}
-
 % Command for lemma proofs with a predefined color
 \newcommand{\expf}[1]{
     \vspace*{-.25cm}
@@ -489,6 +447,14 @@ enhanced,
 \newcommand{\cpf}[1]{
     \vspace*{-.25cm}
     \begin{customframedproof}[linecolor=xpurple]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\newcommand{\pf}[1]{
+    \begin{customframedproof}[linecolor=horange!75]
         \begin{proof}
         #1
         \end{proof}
@@ -749,14 +715,14 @@ enhanced,
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
+\newcommand{\assignmentname}{Five Proofs \& Intros.}
+
 % Do not use all caps.
-\newcommand{\titlestandin}[0]{Final Portfolio}
-\newcommand{\cussubtitle}[0]{MATH 420}
+\newcommand{\cussubtitle}{Seminar in Algebra}
 % Date format should be like: "January 1, 2001"
-\newcommand{\startdate}[0]{January 20, 2026}
-\newcommand{\customenddate}[0]{May 5, 2026}
+\newcommand{\finaldate}{January 29, 2026}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
-\newcommand{\professor}[0]{Dr. Carol Ann Downes, Ph.D.}
+\newcommand{\professor}{Dr. Carol Ann Downes, Ph.D.}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -766,14 +732,15 @@ enhanced,
     \begin{center}
 
         \vspace*{-2cm}
-        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\ 
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\
         \vfill
 
+        % Horizontal line above the title in 'horange' color
         \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
         \vspace{2em}
 
-        {\huge \textbf{\titlestandin}}
+        {\huge \textbf{\assignmentname}}
 
         \vspace{1em} % Space between the title and the bottom line
 
@@ -784,10 +751,7 @@ enhanced,
         {\LARGE \textbf{\cussubtitle}}
 
         \begin{large}
-            \vspace*{2\baselineskip}
-
-            \textit{Start}  \\[1ex]
-            {\scshape \startdate} \\[0.3\baselineskip] % Year published
+            \vspace*{5\baselineskip}
 
             \vspace*{1\baselineskip}
 
@@ -803,50 +767,75 @@ enhanced,
 
             \vspace*{1\baselineskip}
 
-            \textit{End}\\[1ex]
-            {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
+            \textit{Due}\\[1ex]
+            {\scshape  \finaldate} \\[0.3\baselineskip] % Year published
 
             \thispagestyle{empty}
 
         \end{large}
     \end{center}
 \end{titlepage}
-\pagebreak
 
 
-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-
-%%% Table of Contents %%%
-
-
-% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-
-% Helper command to fix header for double paged ToC.
-% Temporarily adjust section marks for Table of Contents
-\begin{spacing}{1} % Can change spacing between entries in TOC
-    \renewcommand{\contentsname}{\Large\textbf{Table of Contents}} % Can rename here
-    \markboth{}{} % Clear the header marks for TOC
-    \pagestyle{fancy} % Ensure fancy style is active
-    \fancyhead[R]{Table of Contents} % Set TOC-specific header manually
-    \tableofcontents
-    \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
-\end{spacing}
 
 % Reset the headers to default for the rest of the document
 \fancyhead[R]{\leftmark}
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item 
+    
+    %In the proof below, we want to show that given a homomorphism between two groups, that if the domain is finite, then the preimage is also finite and a divisor of the domain. The crux of this proof lies in the utility of Lagrange's Theorem. But to use it, we must identify a subgroup of the domain, which are the cosets. However, we are interested in the preimage, not the cosets, so we want to link the elements in the cosets to the elements in the image. To do so, we use Theorem 13.15 to make the link. This establishes a one-to-one correspondence. Since we know that the cosets are finite and divide the domain, and that the cosets and preimages have a one-to-one correspondence, we are able to prove that the preimage is finite and divide the domain.
+    
+    This proof works by using Lagrange's Theorem to relate the size of the image to the size of the domain. My strategy was to identify a subset of the domain that partitions it perfectly—the cosets of the kernel—and link those to the image. The difficulty arose when trying to rigorously connect the cosets (\(G/H\)) to the image (\(\varphi[G]\)). Theorem 13.15 saved me here, as it establishes the necessary one-to-one correspondence between cosets and image elements. By establishing that the cosets divide the group order, and that the image has the same size as the set of cosets, we see a clear example of how algebraic structures limit the behavior of functions. The structure of the domain dictates that the image size must be a divisor. 
 
+    Let \(\varphi : G \to G'\) be a group homomorphism. Show that if \(|G|\) is finite, then \(|\varphi[G]|\) is finite and is a divisor of \(|G|\).
+    \pf{
+        Let \(\varphi : G \to G'\) be a group homomorphism, and let \(H = \ker(\varphi)\). Our goal is to show that the order of the preimage of \(G\), \(|\varphi[G]|\), is finite, and a divisor of \(|G|\), given \(G\) is finite. Theorem 13.15 tells us that \(aH = \varphi^{-1}[\{\varphi(a)\}]\) maps a single coset to the same single element \(\varphi(a)\) in the image. This establishes a one-to-one correspondence between the set of all cosets (\(G/H\)) and the set of all images, \(\varphi[G]\). Because there is a one-to-one correspondence, the two sets must have equal size: \(|G/H| = |\varphi[G]|\). Then, by Lagrange's Theorem, since \(G\) is finite, the number of cosets (\(G/H\)) must be a finite number that divides the order of the group, \(|G|\).  Since \(|G/H| = |\varphi[G]|\), it follows that \(|\varphi[G]|\) must also be a finite number that divides \(|G|\).
+    }  
 
-\chapter{Summary Page}\label{summary}
-\vspace*{-0.25in}
-\input{chapters/seminar_theme_summary.tex}
-\setcounter{chapter}{1}
+    \item In this proof,  I needed to show that the image is a divisor of the codomain (\(|G'|\)). I realized I didn't need to look at kernels or cosets here; I simply needed to prove that the image \(\varphi[G]\) is a valid subgroup of \(G'\). Once I established that the image is a subgroup using the fundamental properties of homomorphisms, the rest fell into place immediately via Lagrange's Theorem. Thus, I found that because the image satisfies the group axioms to be a subgroup, it is subject to the structural limitations of the parent group, specifically regarding its order.
 
-\chapter{Portfolio Items}
-\vspace*{-0.25in}
-\input{chapters/portfolio_items.tex}
-\setcounter{chapter}{2}
+    Let \(\varphi : G \to G'\) be a group homomorphism. Show that if \(|G'|\) is finite, then \(|\varphi[G]|\) is finite and is a divisor of \(|G'|\).
+    \pf{
+        From Theorem 13.12 (3) (the fundamental properties of homomorphisms), if \(H\) is a subgroup of \(G\), then \(\varphi[H]\) is a subgroup of \(G'\). Now, let \(H = G\). It is certainly true that \(G\) is a subgroup of \(G\), so \(\varphi[G]\) is a subgroup of \(G'\). Then, by Lagrange's Theorem, since \(|G'|\) is finite, the order of its subgroup, \(|\varphi[G]|\) is also a finite number that divides \(|G'|\).
+    }
+\newpage
+    \item This proof is concerned with transitivity through composite maps. I showed that for any three groups connected through two homomorphisms, the composite mapping is also a homomorphism. These types of direct computation proofs are my favorite; by just leveraging definitions, we are able to draw connections between group structures with logical steps that are easily auditable. Consequentially, I found that the structure-preserving property holds up even when we chain multiple systems together, allowing us to build larger mathematical arguments from smaller, verified blocks.
 
+    Show that if \(G\), \(G'\), and \(G''\) are groups and if \(\varphi : G \to G'\) and \(\gamma : G' \to G''\) are homomorphisms, then the composite map \(\gamma \varphi : G \to G''\) is a homomorphism.
+
+    \pf{
+        Let \(a, b \in G\). Then,
+        \begin{align}
+            (\gamma \varphi)(ab) &= \gamma(\varphi(ab)) \\
+            &= \gamma(\varphi(a)\varphi(b)) \\
+            &= \gamma(\varphi(a))\gamma(\varphi(b)) \\
+            &= (\gamma \varphi)(a)(\gamma \varphi)(b).
+        \end{align}
+        Equations (1) and (4) are from the definition of a composite map, and (2) and (3) are from the homomorphic properties of \(\varphi\) and \(\gamma\), respectively. Therefore, we have shown that the composite map is a homomorphism.
+    }
+      
+    \item This proof deals with the specific conditions required for left and right cosets to form identical partitions. My goal was to prove if the partitions are the same, then the element \(g^{-1}hg\) must belong to the subgroup. Writing this required a shift in perspective, moving from thinking about individual element operations to thinking about set equality (\(gH=Hg\)). This proof shows that the property of normality is the structural requirement that allows us to identify factor group candidates from subgroups.
+
+    Let \(H\) be a subgroup of a group \(G\). Prove that if the partition of \(G\) into left cosets of \(H\) is the same as the partition into right cosets of \(H\), then \(g^{-1}hg \in H\) for all \(g \in G\) and all \(h \in H\).
+    \pf{
+        The statement ``If the partition of \(G\) into left cosets of \(H\) is the same as the partition into right cosets of \(H\),'' implies \(gH = Hg\) for all \(g \in G\). Now, let \(g \in G\) and \(h \in H\). Our goal is to show that \(g^{-1}hg \in H\). Consider the element \(hg\). Since \(h \in H\), \(hg \in Hg\). Because \(Hg = gH\), it must be that \(hg \in gH\). By definition of left coset, \(hg \in gH\) means that \(hg = gh'\) for some \(h' \in H\). So, we just solve for this \(h'\). We start by multiplying both sides on the left by \(g^{-1}\):
+        \begin{align*}
+        g^{-1}(hg) &= g^{-1}(gh') \\
+        g^{-1}hg &= (g^{-1}g)h' \\
+        g^{-1}hg &= h'.
+        \end{align*}
+        Since \(h' \in H\), we have shown that \(g^{-1}hg \in H\).
+    }
+
+      
+    \item For this proof, I moved away from theorems to an application involving groups of functions. My goal was to identify the structure of the factor group \(F/K\) by finding a simpler group it is isomorphic to. To do this, I used the Fundamental Homomorphism Theorem: I defined a map that eliminates the constant functions (the kernel), and then used the theorem to show that the quotient group is isomorphic to the image. So, we took a complex structure (\(F/K\)) and used a homomorphism to classify it as being structurally identical to the group of functions rooted at zero.
+
+    Let \(K\) be the subgroup of \(F\) consisting of the constant functions, where \(F\) is the additive group of all functions mapping \(\R\) into \(\R\). Find a subgroup of \(F\) to which \(F / K\) is isomorphic.
+    \pf{
+        Define a homomorphism \(\varphi : F \to F\) by \(\varphi(f) = f(x) - f(0)\). The kernel of this map consists of all functions where \(f(x) - f(0) = 0\), which implies \(f(x)\) is constant, so \(\ker(\varphi) = K\). The image of the map, \(\varphi[F]\), is the set of all functions that evaluate to 0 at \(x = 0\). Since \(\ker(\varphi) = K\), the Fundamental Homomorphism Theorem states that \(F/\ker(\varphi) \cong \varphi[F]\). 
+    }
+\end{enumerate}
 
 \end{document}

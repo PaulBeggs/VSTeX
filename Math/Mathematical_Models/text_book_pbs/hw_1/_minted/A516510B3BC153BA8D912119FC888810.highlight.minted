@@ -1,0 +1,23 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Problem 1.5}
+\PYG{n}{E} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}E\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}x\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Parameters}
+\PYG{n}{r} \PYG{o}{=} \PYG{l+m+mf}{0.08}    \PYG{c+c1}{\PYGZsh{} intrinsic growth rate}
+\PYG{n}{K} \PYG{o}{=} \PYG{l+m+mi}{400\PYGZus{}000} \PYG{c+c1}{\PYGZsh{} maximum sustainable population}
+\PYG{c+c1}{\PYGZsh{} x = 70\PYGZus{}000  \PYGZsh{} current population}
+
+\PYG{c+c1}{\PYGZsh{} Functions}
+\PYG{n}{g}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{n}{r}\PYG{o}{*}\PYG{n}{x}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{x} \PYG{o}{/} \PYG{n}{K}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} h(E) = 0.00001 * E * x}
+
+\PYG{c+c1}{\PYGZsh{} Find Maximum Sustainable Population}
+\PYG{n}{gprime} \PYG{o}{=} \PYG{n}{g}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{gcrit} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{gprime}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{optim\PYGZus{}g} \PYG{o}{=} \PYG{n}{gcrit}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{()}
+\PYG{n}{maxharvest} \PYG{o}{=} \PYG{n}{g}\PYG{p}{(}\PYG{n}{optim\PYGZus{}g}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{optim\PYGZus{}g}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{maxharvest}\PYG{p}{)}
+\end{MintedVerbatim}

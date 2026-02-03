@@ -1,0 +1,32 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Variables}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}x\PYGZsq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Blue whale population}
+\PYG{n}{y} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}y\PYGZsq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Fin whale population}
+
+\PYG{c+c1}{\PYGZsh{} Parameters}
+\PYG{n}{r\PYGZus{}x} \PYG{o}{=} \PYG{l+m+mf}{0.05} \PYG{c+c1}{\PYGZsh{} Growth rate for blue whales (whale per year)}
+\PYG{n}{r\PYGZus{}y} \PYG{o}{=} \PYG{l+m+mf}{0.08} \PYG{c+c1}{\PYGZsh{} \PYGZsq{}\PYGZsq{} fin whales (whale per year)}
+\PYG{n}{K\PYGZus{}x} \PYG{o}{=} \PYG{l+m+mi}{150\PYGZus{}000} \PYG{c+c1}{\PYGZsh{} Max sustainable population for blue whales}
+\PYG{n}{K\PYGZus{}y} \PYG{o}{=} \PYG{l+m+mi}{400\PYGZus{}000} \PYG{c+c1}{\PYGZsh{} \PYGZsq{}\PYGZsq{} for fin whales}
+\PYG{n}{alpha\PYGZus{}x} \PYG{o}{=} \PYG{l+m+mi}{10} \PYG{o}{**} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{8} \PYG{c+c1}{\PYGZsh{} Effects of competition for blue whales}
+\PYG{n}{alpha\PYGZus{}y} \PYG{o}{=} \PYG{l+m+mi}{10} \PYG{o}{**} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{8} \PYG{c+c1}{\PYGZsh{} \PYGZsq{}\PYGZsq{} for fin whales}
+\PYG{n}{price\PYGZus{}x} \PYG{o}{=} \PYG{l+m+mi}{12\PYGZus{}000} \PYG{c+c1}{\PYGZsh{} Blue whale carcass (\PYGZdl{} / whale)}
+\PYG{n}{price\PYGZus{}y} \PYG{o}{=} \PYG{l+m+mi}{6\PYGZus{}000} \PYG{c+c1}{\PYGZsh{} Fin whale carcass (\PYGZdl{} / whale)}
+
+\PYG{c+c1}{\PYGZsh{} Equations}
+\PYG{n}{dx\PYGZus{}dt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{r\PYGZus{}x} \PYG{o}{*} \PYG{n}{x} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{x} \PYG{o}{/} \PYG{n}{K\PYGZus{}x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{alpha\PYGZus{}x} \PYG{o}{*} \PYG{n}{x} \PYG{o}{*} \PYG{n}{y} \PYG{c+c1}{\PYGZsh{} Growth (\PYGZam{} harvest) rate for blue whales}
+\PYG{n}{dy\PYGZus{}dt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{r\PYGZus{}y} \PYG{o}{*} \PYG{n}{y} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{y} \PYG{o}{/} \PYG{n}{K\PYGZus{}y}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{alpha\PYGZus{}y} \PYG{o}{*} \PYG{n}{x} \PYG{o}{*} \PYG{n}{y} \PYG{c+c1}{\PYGZsh{} \PYGZsq{}\PYGZsq{} for fin whales}
+\PYG{n}{revenue}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{p}{(}\PYG{n}{price\PYGZus{}x} \PYG{o}{*} \PYG{n}{dx\PYGZus{}dt}\PYG{p}{)} \PYG{o}{+} \PYG{p}{(}\PYG{n}{price\PYGZus{}y} \PYG{o}{*} \PYG{n}{dy\PYGZus{}dt}\PYG{p}{)}
+\PYG{n}{G}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{dx\PYGZus{}dt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{+} \PYG{n}{dy\PYGZus{}dt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Growth rate for whales}
+
+\PYG{c+c1}{\PYGZsh{} Solve the model}
+\PYG{n}{revenue\PYGZus{}x} \PYG{o}{=} \PYG{n}{revenue}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Partial derivative with respect to x}
+\PYG{n}{revenue\PYGZus{}y} \PYG{o}{=} \PYG{n}{revenue}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Partial derivative with respect to x}
+\PYG{n}{solutions} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{([}\PYG{n}{revenue\PYGZus{}x}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{revenue\PYGZus{}y}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} get critical points}
+\PYG{n}{optimal\PYGZus{}x} \PYG{o}{=} \PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{solutions}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(),} \PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{n}{optimal\PYGZus{}y} \PYG{o}{=} \PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{solutions}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(),} \PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}The optimal number of blue whales is }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{optimal\PYGZus{}x}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{. For fin whales, it is }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{optimal\PYGZus{}y}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{.\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n}{most\PYGZus{}revenue} \PYG{o}{=} \PYG{n}{revenue}\PYG{p}{(}\PYG{n}{optimal\PYGZus{}x}\PYG{p}{,} \PYG{n}{optimal\PYGZus{}y}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{most\PYGZus{}revenue}\PYG{p}{)}
+\end{MintedVerbatim}

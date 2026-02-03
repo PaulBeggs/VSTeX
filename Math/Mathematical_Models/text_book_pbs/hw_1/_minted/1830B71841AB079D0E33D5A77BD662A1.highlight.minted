@@ -1,0 +1,24 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Problem 1.1}
+\PYG{n}{r} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}r\PYGZsq{}}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Rebate in dollars}
+\PYG{n}{N} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}N\PYGZsq{}}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Number of cars}
+
+\PYG{c+c1}{\PYGZsh{} Parameters}
+\PYG{n}{p0} \PYG{o}{=} \PYG{l+m+mi}{1500} \PYG{c+c1}{\PYGZsh{} initial profit per sale (\PYGZdl{})}
+\PYG{n}{s}  \PYG{o}{=} \PYG{l+m+mf}{.15}  \PYG{c+c1}{\PYGZsh{} sales rate (\PYGZpc{})}
+\PYG{n}{r0} \PYG{o}{=} \PYG{l+m+mi}{100}  \PYG{c+c1}{\PYGZsh{} initial rebate value}
+
+\PYG{c+c1}{\PYGZsh{} Functions}
+\PYG{n}{i}\PYG{p}{(}\PYG{n}{r}\PYG{p}{)} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{p}{(}\PYG{n}{r}\PYG{o}{/}\PYG{n}{r0}\PYG{p}{)} \PYG{o}{*} \PYG{n}{s}  \PYG{c+c1}{\PYGZsh{} sales increase for r rebate}
+\PYG{n}{b}\PYG{p}{(}\PYG{n}{r}\PYG{p}{)} \PYG{o}{=} \PYG{n}{p0} \PYG{o}{\PYGZhy{}} \PYG{n}{r}          \PYG{c+c1}{\PYGZsh{} profit after r rebate}
+\PYG{n}{p}\PYG{p}{(}\PYG{n}{r}\PYG{p}{)} \PYG{o}{=} \PYG{n}{b}\PYG{p}{(}\PYG{n}{r}\PYG{p}{)} \PYG{o}{*} \PYG{n}{i}\PYG{p}{(}\PYG{n}{r}\PYG{p}{)} \PYG{o}{*} \PYG{n}{N} \PYG{c+c1}{\PYGZsh{} net profit for r rebate}
+
+\PYG{c+c1}{\PYGZsh{} Solve the model}
+\PYG{n}{pprime} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{r}\PYG{p}{)}       \PYG{c+c1}{\PYGZsh{} derivative of profit}
+\PYG{n}{pcrits} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{pprime}\PYG{p}{(}\PYG{n}{r}\PYG{p}{)}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{r}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} critical points}
+\PYG{n}{optim\PYGZus{}r} \PYG{o}{=} \PYG{n}{pcrits}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{()}      \PYG{c+c1}{\PYGZsh{} best rebate value}
+\PYG{n}{maxprofit} \PYG{o}{=} \PYG{n}{p}\PYG{p}{(}\PYG{n}{optim\PYGZus{}r}\PYG{p}{)}         \PYG{c+c1}{\PYGZsh{} maximum profit given the best rebate value}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}The best rebate is \PYGZdl{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{optim\PYGZus{}r}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{.\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}The maximum profit is \PYGZdl{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{maxprofit}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{.\PYGZsq{}}\PYG{p}{)}
+\end{MintedVerbatim}

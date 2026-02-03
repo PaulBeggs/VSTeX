@@ -200,3 +200,4 @@ decompositions
 SOM
 monotonicity
 conjugacy
+homomorphisms

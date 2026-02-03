@@ -544,249 +544,115 @@
 
 
 \begin{enumerate}
-    \item An automobile manufacturer makes a profit of \$1,500 on the sale of a certain model. It is estimated that for every \$100 of rebate, sales increase by 15\%. \hyperref[ex:1]{Python Code}
+    \item Ecologists use the following model to represent the growth process of two competing species, \(x\) and \(y\):
+    \[
+        \frac{dx}{dt} = r_{1}x\left(1 - \frac{x}{K_{1}}\right) - \alpha_{1}xy, \quad \frac{dy}{dt} = r_{2}y\left(1 - \frac{y}{K_{2}}\right) - \alpha_{2}xy.
+    \]
+    The variables \(x\) and \(y\) represent the number in each population; the parameters \(r_{i}\) represent the intrinsic growth rates of each species; \(K_{i}\) represents the maximum sustainable population in the absence of competition; and \(\alpha_{i}\) represents the effects of competition. Studies of the blue whale and fin whale populations have determined the following parameter values (\(t\) in years):
+
+    \begin{center}
+        \begin{tabular}[htbp]{ccc}
+            \toprule
+            & Blue & Fin \\ \midrule
+            \(r\) & 0.05 & 0.08 \\
+            \(K\) & 150,000 & 400,000 \\ 
+            \(\alpha\) & \(10^{-8}\) & \(10^{-8}\) \\ \bottomrule
+        \end{tabular}
+    \end{center}
     \begin{enumerate}
-        \item What amount of rebate will maximize profit? Use the five-step method, and model as one-variable optimization problem.
+        \item Determine the population levels \(x\) and \(y\) that maximize the number of new whales born each year. Use the five-step method, and model as an unconstrained optimization problem. \hyperref[ex:1]{Python Code}
         \sol{
-            Five-step method:
-            \begin{enumerate}[label=(\arabic*)]
-                \item What amount of rebate will maximize profit?
-                \item Single variable optimization.
-                \item Label \textcolor{draculared}{variables} and \textcolor{draculablue}{parameters}, and relate them with \textcolor{draculagreen}{equations}:\\[-.5em]
-
-                \begin{tabular}{lp{10cm} l}
-                    \(r\) & \textcolor{draculared}{\textit{rebate amount (\$)}} \\
-                    \(N\) & \textcolor{draculared}{\textit{cars sold}} \\
-                    \(p_{0} = 1500\) & \textcolor{draculablue}{\textit{initial profit per sale (\$)}} \\
-                    \(s = .15\) & \textcolor{draculablue}{\textit{sales rate increase per \(r_{0}\) rebate}} \\
-                    \(r_{0} = 100\) & \textcolor{draculablue}{\textit{initial rebate value (\$)}} \\
-                    \(i(r) = 1 + (r/r_{0}) \cdot s\) & \textcolor{draculagreen}{\textit{sales increase for \(r\) rebate}} \\
-                    \(s(r) = (p_{0} - r)N\) & \textcolor{draculagreen}{\textit{profit after \(r\) rebate for \(N\) cars sold (\$)}} \\
-                    \(n(r) = s(r)i(r)\) & \textcolor{draculagreen}{\textit{net profit after \(r\) rebate (\$)}} \\[.5em]
-                \end{tabular}
-
-                \item Plugging in the parameters into our equations, we get
-                \[
-                    i(r) = 1 + \frac{0.15r}{100}, \quad s(r) = 1500 - r, \quad n(r) = (1500 - r)N\left(1 + \frac{0.15r}{100}\right)
-                \]
-                Then, we take the derivative of \(n(r)\) and set it to 0 to get the optimal rebate value:
-                \[
-                    n'(r) = -0.003r + 1.25 \implies r = \frac{1250}{3}.
-                \]
-                \item To maximize the profit on the sale of the model, the automobile manufacturer should include a \$416.68 rebate on every purchase. This results in a \$1760.42 profit for each car sold. 
-            \end{enumerate}
-        }
-        \setcounter{enumii}{2}
-        \item Suppose that rebates actually generate only a 10\% increase in sales per \$100. What is the effect? What if the response is somewhere between 10 and 15\% per \$100 of rebate?
-        \sol{
-            If the rebates only generate a 10\% increase, then the best rebate value would be \$250. This would drop our expected profit to \$1562.50 per car. For an increase in sales between 11 and 14\%, we would require a rebate of \$295.45, \$333.33, \$365.38, and \$392.86 respectively. In turn, we would expect profit values of \$1596.02, \$1633.33, \$1673.56, and \$1716.07 per rebate. 
-        }
-    \newpage
-        \item Under what circumstances would a rebate offer cause a random reduction in profit?
-        \sol{
-            For a sales rate of 10\% per \$100 of rebate, any amount of rebate over \$500 would start to return profits less than \$1500. If the sales rate were 15\%, then any rebate above \$833.33 would also return less than \$1500. 
+            Our goal is to find the optimal population for blue and fin whales that maximize the number of new whales born each year. We will model this as an unconstrained optimization problem. After some work (see python code), we find that the optimal number of blue and fin whales is 69,104 and 196,545, respectively. Maintaining these populations result in an annual growth rate of 9,589 new whales per year.  
         }
     \end{enumerate}
-    \setcounter{enumi}{4}
-    \item  It is estimated that the growth rate of the fin whale population (per year) is \(rx(1 - x/K)\), where \(r = 0.08\) is the intrinsic growth rate, \(K = 400\text{,000}\) is the maximum sustainable population, and \(x\) is the current population, now around 70,000. It is further estimated that the number of whales harvested per year is about \(0.00001 \ Ex\), where \(E\) is the level of fishing effort in boat-days. Given a fixed level of effort, population will eventually stabilize at the level where growth rate equals harvest rate. \hyperref[ex:5]{Python Code}
+    \item Reconsider the whale problem of Exercise 1, but now consider the economic ramifications of harvesting. 
     \begin{enumerate}
-        \item What level of effort will maximize the sustained harvest rate? Model as a one-variable optimization problem using the five-step method.
+        \item A blue whale carcass is worth \$12,000, and a fin whale carcass is worth about half as much. Assuming that controlled harvesting can be used to maintain \(x\) and \(y\) at any desired level, what population levels will produce the maximum revenue? (Once population reaches the desired levels, the population levels will be kept constant by harvesting at a rate equal to the growth rate.) Use the five-step method. Model as an unconstrained optimization problem. \hyperref[ex:3]{Python Code}
+        
         \sol{
-            The five-step method:
-            \begin{enumerate}[label=(\arabic*)]
-                \item What level of effort will maximize the sustained harvest rate?
-                \item Single variable optimization.
-                \item Label \textcolor{draculared}{variables} and \textcolor{draculablue}{parameters}, and relate them with \textcolor{draculagreen}{equations}:\\[-.5em]
-
-                \begin{tabular}{lp{10cm} l}
-                    \(E\) & \textcolor{draculared}{\textit{level of effort (boat-days)}} \\
-                    \(x\) & \textcolor{draculared}{\textit{population (whales per year)}} \\
-                    \(r = 0.08\) & \textcolor{draculablue}{\textit{intrinsic growth rate (whales per year)}} \\
-                    \(K = 400000\) & \textcolor{draculablue}{\textit{max sustainable population (whales per year)}} \\
-                    \(g(x) = rx(1 - x/K)\) & \textcolor{draculagreen}{\textit{growth rate of fin whales (whales per year)}} \\
-                    \(h(E) = 0.00001Ex\) & \textcolor{draculagreen}{\textit{fin whales harvested (whales per year)}} \\[.5em]
-                \end{tabular}
-                
-                \item To determine the level of fishing effort to maximize the harvest rate, we first must find the optimal whale population for \(x\). Then, we can plug this number in for \(h(E)\) and solve for \(E\). Treating \(x\) as a variable and setting \(g'(x)\) to 0, we find that the optimal population is 200,000. This leaves the growth rate at 8,000 whales per year, so this is the most that can be harvested per year. With these numbers, we can solve for \(E\):
-                \[
-                    8000 = 0.00001(200000)E \implies E = 4000.
-                \]
-                Thus, the optimal level of effort is 4000 boat-days per year.
-                \item To optimize a sustainable harvest rate, we should harvest at most 8,000 whales per year. To keep this population, we must keep a level of effort of 4,000 boat-days at the maximum.
-            \end{enumerate}
-        }
-    \end{enumerate}
-\newpage
-
-    \item In Exercise 5, suppose that the cost of whaling is \$500 per boat-day, and the price of a fin whale carcass is \$6,000. \hyperref[ex:6]{Python Code}
-    \begin{enumerate}
-        \item Find the level of effort that will maximize profit over the long term. Model as a one-variable optimization problem using the five-step method.
-        \sol{
-            The five-step method:
-            \begin{enumerate}[label=(\arabic*)]
-                \item What level of effort will maximize the profit over the long term?
-                \item Single variable optimization.
-                \item Label \textcolor{draculared}{variables} and \textcolor{draculablue}{parameters}, and relate them with \textcolor{draculagreen}{equations}:\\[-.5em]
-
-                \begin{tabular}{lp{10cm} l}
-                    \(E\) & \textcolor{draculared}{\textit{level of effort (boat-days)}} \\
-                    \(x\) & \textcolor{draculared}{\textit{population (whales per year)}} \\
-                    \(r = 0.08\) & \textcolor{draculablue}{\textit{intrinsic growth rate (whales per year)}} \\
-                    \(w = 500\) & \textcolor{draculablue}{\textit{cost of whaling per boat-day (\$ per boat day)}} \\
-                    \(f = 6000\) & \textcolor{draculablue}{\textit{price of a fin whale carcass (\$ per whale)}} \\
-                    \(K = 400000\) & \textcolor{draculablue}{\textit{max sustainable population (whales per year)}} \\
-                    \(g(x) = rx(1 - x/K)\) & \textcolor{draculagreen}{\textit{growth rate of fin whales (whales per year)}} \\
-                    \(R(x) = h(E)f\) & \textcolor{draculagreen}{\textit{revenue (\$ per year)}} \\
-                    \(c(x) = wE\) & \textcolor{draculagreen}{\textit{cost (\$ per year)}} \\
-                    \(p(x) = R(x) - c(x)\) & \textcolor{draculagreen}{\textit{profit (\$ per year)}} \\
-                    \(h(E) = 0.00001Ex\) & \textcolor{draculagreen}{\textit{number of whales harvested (whales per year)}} \\[.5em]
-                \end{tabular}
-                
-                \item To relate variables, we can set \(h(E) = g(x)\) and solve for \(E\) in terms of \(x\): 
-                \begin{align*}
-                    h(E) &= g(x) \\
-                    0.00001Ex &= 0.08x(1 - x/400000) \\
-                    E &= -0.02x + 8000.
-                \end{align*}
-                Now, we make the substitution of \(E\), and update our equations:
-                \[
-                    R(x) = 0.06x \left(-0.02x + 8000\right), \quad c(x) = 500\left(-0.02x + 8000\right).
-                \]
-                This gives us an updated profit equation:
-                \[
-                    p(x) = \left(-0.02x + 8000\right)(0.06x - 500).
-                \]
-                Taking the derivative and setting it to 0, we find that the optimum amount of whales to be kept alive is 204,167 (\(x\)). With this number, we can find the optimum level of effort by solving
-                \[
-                    E = -0.02x + 8000 \implies E = 3917 \text{ boat-days per year.}
-                \]
-                Then, we know the number of whales that must be harvested is 
-                \[
-                    0.00001(3917)(204167) = 7997 \text{ whales per year.}
-                \]
-                These harvests will gain the whaling company 46 million dollars per year.
-                \item While maintaining a steady yearly whale population of 204,167 with 3917 boat-days per year, the whaling company should harvest 7997 whales per year. In turn, they will profit 46 million dollars per year. 
-            \end{enumerate}
+            Our goal is to maximize revenue for the whaling operation. We model this as an unconstrained optimization problem. We find that the optimal number of blue and fin whales is 70,619 and 194,704, respectively. Maintaining these populations yields an annual revenue of approximately \$67,914,605.90.
         }
     \end{enumerate}
 \end{enumerate}
 
-\newpage
-
-
 \begin{figure}
     \label{ex:1}
     \begin{minted}{python}
-# Problem 1.1
-r = var('r')  # Rebate in dollars
-N = var('N')  # Number of cars 
+# Variables
+x = var('x') # Blue whale population
+y = var('y') # Fin whale population
 
 # Parameters
-p0 = 1500 # initial profit per sale ($)
-s  = .15  # sales rate (%)
-r0 = 100  # initial rebate value
-
-# Functions
-i(r) = 1 + (r/r0) * s  # sales increase for r rebate
-b(r) = p0 - r          # profit after r rebate
-p(r) = b(r) * i(r) * N # net profit for r rebate
-
-# Solve the model
-pprime = p.derivative(r)       # derivative of profit
-pcrits = solve(pprime(r)==0,r) # critical points 
-optim_r = pcrits[0].rhs()      # best rebate value
-maxprofit = p(optim_r)         # maximum profit given the best rebate value
-
-print(f'The best rebate is ${round(optim_r, 2)}.')
-print(f'The maximum profit is ${maxprofit}.')
-    \end{minted}
-    \caption{Exercise 1 Code}
-\end{figure}
-
-
-
-
-
-
-
-\begin{figure}
-    \label{ex:5}
-    \begin{minted}{python}
-# Problem 1.5
-E = var('E')
-x = var('x')
-
-# Parameters
-r = 0.08    # intrinsic growth rate
-K = 400_000 # maximum sustainable population
-# x = 70_000  # current population
-
-# Functions
-g(x) = r*x*(1 - x / K)
-# h(E) = 0.00001 * E * x
-
-# Find Maximum Sustainable Population
-gprime = g.derivative(x)
-gcrit = solve(gprime(x)==0,x)
-optim_g = gcrit[0].rhs()
-maxharvest = g(optim_g)
-
-print(optim_g)
-print(maxharvest)
-    \end{minted}
-    \caption{Exercise 5 Code}
-\end{figure}
-
-
-
-
-
-
-\begin{figure}
-    \label{ex:6}
-    \begin{minted}{python}
-# Problem 1.6
-E = var('E') # level of effort (boat-days)
-x = var('x') # population (whales per year)
-
-# Parameters
-r = 0.08 # intrinsic growth rate (whales per year)
-w = 500 # cost of whaling per boat-day ($ per boat-day)
-f = 6000 # price of a fin whale carcass ($ per whale)
-K = 400_000 # max sustainable whale population (whales per year)
+r_x = 0.05 # Growth rate for blue whales (whale per year)
+r_y = 0.08 # '' fin whales (whale per year)
+K_x = 150_000 # Max sustainable population for blue whales 
+K_y = 400_000 # '' for fin whales 
+alpha_x = 10 ** -8 # Effects of competition for blue whales
+alpha_y = 10 ** -8 # '' for fin whales
 
 # Equations
-g(x) = r*x * ( 1 - x/K) # growth rate of whales (whales per year)
-h(E) = 0.00001 *E * x # number of whales harvested (whales per year)
-R(x) = h(E) * f # revenue ($ per year)
-c(x) = w *E # cost ($ per year)
-p(x) = R(x) - c(x) # profit ($ per year)
-
-# Solve for E in terms of x
-solve(h(E)==g(x),E) # Gives [E == -1/50*x + 8000]
-
-# Substitute E in equations
-hn(x) = 0.00001 * (-1/50*x + 8000) * x
-Rn(x) = hn(x) * f
-cn(x) = w * (-1/50*x + 8000)
-pn(x) = Rn(x) - cn(x)
+dx_dt(x,y) = r_x * x * (1 - x / K_x) - alpha_x * x * y # Growth rate for blue whales
+dy_dt(x,y) = r_y * y * (1 - y / K_y) - alpha_y * x * y # '' for fin whales
+G(x,y) = dx_dt(x,y) + dy_dt(x,y) # Growth rate for whales
 
 # Solve the model
-pprime = pn.derivative(x)
-pcrits = solve(pprime(x)==0,x)
-xoptim = pcrits[0].rhs()
-maxprofit = pn(xoptim)
+growth_x = G.derivative(x) # Partial derivative with respect to x
+growth_y = G.derivative(y) # '' with respect to y
+solutions = solve([growth_x(x,y) == 0, growth_y(x,y) == 0], x, y) # get critical points
+# print(solutions)
+optimal_x = round(solutions[0][0].rhs(), 0)
+optimal_y = round(solutions[0][1].rhs(), 0)
+print(f"The optimal number of blue whales is {optimal_x}. For fin whales, it is {optimal_y}.")
 
-print(f"To maximize profits, the you must keep {xoptim} whales alive. This gives a profit of {maxprofit}")
-
-# Find the optimum number of whales to be harvested and the effort required
-lvl_o_effort = 8000 - .02 * xoptim # Change to .02 to fix pmdas problem
-harvest = 0.00001 * lvl_o_effort * xoptim
-
-print(lvl_o_effort, harvest)
+most_whales = G(optimal_x, optimal_y)
+print(most_whales)
     \end{minted}
-    \caption{Exercise 6 Code}
+
+    \caption{Exercise 1 Code}
+    
 \end{figure}
+
+
+
+\begin{figure}
+    \label{ex:3}
+    \begin{minted}{python}
+# Variables
+x = var('x') # Blue whale population
+y = var('y') # Fin whale population
+
+# Parameters
+r_x = 0.05 # Growth rate for blue whales (whale per year)
+r_y = 0.08 # '' fin whales (whale per year)
+K_x = 150_000 # Max sustainable population for blue whales 
+K_y = 400_000 # '' for fin whales 
+alpha_x = 10 ** -8 # Effects of competition for blue whales
+alpha_y = 10 ** -8 # '' for fin whales
+price_x = 12_000 # Blue whale carcass ($ / whale)
+price_y = 6_000 # Fin whale carcass ($ / whale)
+
+# Equations
+dx_dt(x,y) = r_x * x * (1 - x / K_x) - alpha_x * x * y # Growth (& harvest) rate for blue whales
+dy_dt(x,y) = r_y * y * (1 - y / K_y) - alpha_y * x * y # '' for fin whales
+revenue(x,y) = (price_x * dx_dt) + (price_y * dy_dt)
+G(x,y) = dx_dt(x,y) + dy_dt(x,y) # Growth rate for whales
+
+# Solve the model
+revenue_x = revenue.derivative(x) # Partial derivative with respect to x
+revenue_y = revenue.derivative(y) # Partial derivative with respect to x
+solutions = solve([revenue_x(x,y) == 0, revenue_y(x,y) == 0], x, y) # get critical points
+optimal_x = round(solutions[0][0].rhs(), 0)
+optimal_y = round(solutions[0][1].rhs(), 0)
+print(f"The optimal number of blue whales is {optimal_x}. For fin whales, it is {optimal_y}.")
+
+most_revenue = revenue(optimal_x, optimal_y)
+print(most_revenue)
+    \end{minted}
+
+    \caption{Exercise 3 Code}
+    
+\end{figure}
+
 
 
 

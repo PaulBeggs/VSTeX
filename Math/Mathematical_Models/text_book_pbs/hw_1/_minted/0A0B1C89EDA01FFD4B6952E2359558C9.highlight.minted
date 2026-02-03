@@ -1,0 +1,41 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Problem 1.6}
+\PYG{n}{E} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}E\PYGZsq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} level of effort (boat\PYGZhy{}days)}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}x\PYGZsq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} population (whales per year)}
+
+\PYG{c+c1}{\PYGZsh{} Parameters}
+\PYG{n}{r} \PYG{o}{=} \PYG{l+m+mf}{0.08} \PYG{c+c1}{\PYGZsh{} intrinsic growth rate (whales per year)}
+\PYG{n}{w} \PYG{o}{=} \PYG{l+m+mi}{500} \PYG{c+c1}{\PYGZsh{} cost of whaling per boat\PYGZhy{}day (\PYGZdl{} per boat\PYGZhy{}day)}
+\PYG{n}{f} \PYG{o}{=} \PYG{l+m+mi}{6000} \PYG{c+c1}{\PYGZsh{} price of a fin whale carcass (\PYGZdl{} per whale)}
+\PYG{n}{K} \PYG{o}{=} \PYG{l+m+mi}{400\PYGZus{}000} \PYG{c+c1}{\PYGZsh{} max sustainable whale population (whales per year)}
+
+\PYG{c+c1}{\PYGZsh{} Equations}
+\PYG{n}{g}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{n}{r}\PYG{o}{*}\PYG{n}{x} \PYG{o}{*} \PYG{p}{(} \PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{o}{/}\PYG{n}{K}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} growth rate of whales (whales per year)}
+\PYG{n}{h}\PYG{p}{(}\PYG{n}{E}\PYG{p}{)} \PYG{o}{=} \PYG{l+m+mf}{0.00001} \PYG{o}{*}\PYG{n}{E} \PYG{o}{*} \PYG{n}{x} \PYG{c+c1}{\PYGZsh{} number of whales harvested (whales per year)}
+\PYG{n}{R}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{n}{h}\PYG{p}{(}\PYG{n}{E}\PYG{p}{)} \PYG{o}{*} \PYG{n}{f} \PYG{c+c1}{\PYGZsh{} revenue (\PYGZdl{} per year)}
+\PYG{n}{c}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{n}{w} \PYG{o}{*}\PYG{n}{E} \PYG{c+c1}{\PYGZsh{} cost (\PYGZdl{} per year)}
+\PYG{n}{p}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{n}{R}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} profit (\PYGZdl{} per year)}
+
+\PYG{c+c1}{\PYGZsh{} Solve for E in terms of x}
+\PYG{n}{solve}\PYG{p}{(}\PYG{n}{h}\PYG{p}{(}\PYG{n}{E}\PYG{p}{)}\PYG{o}{==}\PYG{n}{g}\PYG{p}{(}\PYG{n}{x}\PYG{p}{),}\PYG{n}{E}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Gives [E == \PYGZhy{}1/50*x + 8000]}
+
+\PYG{c+c1}{\PYGZsh{} Substitute E in equations}
+\PYG{n}{hn}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{l+m+mf}{0.00001} \PYG{o}{*} \PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{50}\PYG{o}{*}\PYG{n}{x} \PYG{o}{+} \PYG{l+m+mi}{8000}\PYG{p}{)} \PYG{o}{*} \PYG{n}{x}
+\PYG{n}{Rn}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{n}{hn}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{*} \PYG{n}{f}
+\PYG{n}{cn}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{n}{w} \PYG{o}{*} \PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{50}\PYG{o}{*}\PYG{n}{x} \PYG{o}{+} \PYG{l+m+mi}{8000}\PYG{p}{)}
+\PYG{n}{pn}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{n}{Rn}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{cn}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Solve the model}
+\PYG{n}{pprime} \PYG{o}{=} \PYG{n}{pn}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{pcrits} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{pprime}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{xoptim} \PYG{o}{=} \PYG{n}{pcrits}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{()}
+\PYG{n}{maxprofit} \PYG{o}{=} \PYG{n}{pn}\PYG{p}{(}\PYG{n}{xoptim}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}To maximize profits, the you must keep }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{xoptim}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ whales alive. This gives a profit of }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{maxprofit}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Find the optimum number of whales to be harvested and the effort required}
+\PYG{n}{lvl\PYGZus{}o\PYGZus{}effort} \PYG{o}{=} \PYG{l+m+mi}{8000} \PYG{o}{\PYGZhy{}} \PYG{l+m+mf}{.02} \PYG{o}{*} \PYG{n}{xoptim} \PYG{c+c1}{\PYGZsh{} Change to .02 to fix pmdas problem}
+\PYG{n}{harvest} \PYG{o}{=} \PYG{l+m+mf}{0.00001} \PYG{o}{*} \PYG{n}{lvl\PYGZus{}o\PYGZus{}effort} \PYG{o}{*} \PYG{n}{xoptim}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{lvl\PYGZus{}o\PYGZus{}effort}\PYG{p}{,} \PYG{n}{harvest}\PYG{p}{)}
+\end{MintedVerbatim}
