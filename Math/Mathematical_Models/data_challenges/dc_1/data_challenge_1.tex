@@ -168,7 +168,7 @@
 	urlcolor=horange,
 }
 
-\newcommand{\assignmentname}{Homework 2: Chapter 2}
+\newcommand{\assignmentname}{Data Challenge 1}
 
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
@@ -487,7 +487,7 @@
 % Do not use all caps.
 \newcommand{\cussubtitle}{Mathematical Models}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{January 27, 2026}
+\newcommand{\finaldate}{February 3, 2026}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
 \newcommand{\professor}{Dr. Christopher Camfield, Ph.D.}
 
@@ -542,118 +542,8 @@
 \end{titlepage}
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
+\section*{Initial Strategies}
 
-\begin{enumerate}
-    \item Ecologists use the following model to represent the growth process of two competing species, \(x\) and \(y\):
-    \[
-        \frac{dx}{dt} = r_{1}x\left(1 - \frac{x}{K_{1}}\right) - \alpha_{1}xy, \quad \frac{dy}{dt} = r_{2}y\left(1 - \frac{y}{K_{2}}\right) - \alpha_{2}xy.
-    \]
-    The variables \(x\) and \(y\) represent the number in each population; the parameters \(r_{i}\) represent the intrinsic growth rates of each species; \(K_{i}\) represents the maximum sustainable population in the absence of competition; and \(\alpha_{i}\) represents the effects of competition. Studies of the blue whale and fin whale populations have determined the following parameter values (\(t\) in years):
-
-    \begin{center}
-        \begin{tabular}[htbp]{ccc}
-            \toprule
-            & Blue & Fin \\ \midrule
-            \(r\) & 0.05 & 0.08 \\
-            \(K\) & 150,000 & 400,000 \\ 
-            \(\alpha\) & \(10^{-8}\) & \(10^{-8}\) \\ \bottomrule
-        \end{tabular}
-    \end{center}
-    \begin{enumerate}
-        \item Determine the population levels \(x\) and \(y\) that maximize the number of new whales born each year. Use the five-step method, and model as an unconstrained optimization problem. \hyperref[ex:1]{Python Code}
-        \sol{
-            Our goal is to find the optimal population for blue and fin whales that maximize the number of new whales born each year. We will model this as an unconstrained optimization problem. After some work (see python code), we find that the optimal number of blue and fin whales is 69,104 and 196,545, respectively. Maintaining these populations result in an annual growth rate of 9,589 new whales per year.  
-        }
-    \end{enumerate}
-    \item Reconsider the whale problem of Exercise 1, but now consider the economic ramifications of harvesting. 
-    \begin{enumerate}
-        \item A blue whale carcass is worth \$12,000, and a fin whale carcass is worth about half as much. Assuming that controlled harvesting can be used to maintain \(x\) and \(y\) at any desired level, what population levels will produce the maximum revenue? (Once population reaches the desired levels, the population levels will be kept constant by harvesting at a rate equal to the growth rate.) Use the five-step method. Model as an unconstrained optimization problem. \hyperref[ex:3]{Python Code}
-        
-        \sol{
-            Our goal is to maximize revenue for the whaling operation. We model this as an unconstrained optimization problem. We find that the optimal number of blue and fin whales is 70,619 and 194,704, respectively. Maintaining these populations yields an annual revenue of approximately \$67,914,605.90.
-        }
-    \end{enumerate}
-\end{enumerate}
-
-\begin{figure}
-    \label{ex:1}
-    \begin{minted}{python}
-# Variables
-x = var('x') # Blue whale population
-y = var('y') # Fin whale population
-
-# Parameters
-r_x = 0.05 # Growth rate for blue whales (whale per year)
-r_y = 0.08 # '' fin whales (whale per year)
-K_x = 150_000 # Max sustainable population for blue whales 
-K_y = 400_000 # '' for fin whales 
-alpha_x = 10 ** -8 # Effects of competition for blue whales
-alpha_y = 10 ** -8 # '' for fin whales
-
-# Equations
-dx_dt(x,y) = r_x * x * (1 - x / K_x) - alpha_x * x * y # Growth rate for blue whales
-dy_dt(x,y) = r_y * y * (1 - y / K_y) - alpha_y * x * y # '' for fin whales
-G(x,y) = dx_dt(x,y) + dy_dt(x,y) # Growth rate for whales
-
-# Solve the model
-growth_x = G.derivative(x) # Partial derivative with respect to x
-growth_y = G.derivative(y) # '' with respect to y
-solutions = solve([growth_x(x,y) == 0, growth_y(x,y) == 0], x, y) # get critical points
-# print(solutions)
-optimal_x = round(solutions[0][0].rhs(), 0)
-optimal_y = round(solutions[0][1].rhs(), 0)
-print(f"The optimal number of blue whales is {optimal_x}. For fin whales, it is {optimal_y}.")
-
-most_whales = G(optimal_x, optimal_y)
-print(most_whales)
-    \end{minted}
-
-    \caption{Exercise 1 Code}
-    
-\end{figure}
-
-
-
-\begin{figure}
-    \label{ex:3}
-    \begin{minted}{python}
-# Variables
-x = var('x') # Blue whale population
-y = var('y') # Fin whale population
-
-# Parameters
-r_x = 0.05 # Growth rate for blue whales (whale per year)
-r_y = 0.08 # '' fin whales (whale per year)
-K_x = 150_000 # Max sustainable population for blue whales 
-K_y = 400_000 # '' for fin whales 
-alpha_x = 10 ** -8 # Effects of competition for blue whales
-alpha_y = 10 ** -8 # '' for fin whales
-price_x = 12_000 # Blue whale carcass ($ / whale)
-price_y = 6_000 # Fin whale carcass ($ / whale)
-
-# Equations
-dx_dt(x,y) = r_x * x * (1 - x / K_x) - alpha_x * x * y # Growth (& harvest) rate for blue whales
-dy_dt(x,y) = r_y * y * (1 - y / K_y) - alpha_y * x * y # '' for fin whales
-revenue(x,y) = (price_x * dx_dt) + (price_y * dy_dt)
-G(x,y) = dx_dt(x,y) + dy_dt(x,y) # Growth rate for whales
-
-# Solve the model
-revenue_x = revenue.derivative(x) # Partial derivative with respect to x
-revenue_y = revenue.derivative(y) # Partial derivative with respect to x
-solutions = solve([revenue_x(x,y) == 0, revenue_y(x,y) == 0], x, y) # get critical points
-optimal_x = round(solutions[0][0].rhs(), 0)
-optimal_y = round(solutions[0][1].rhs(), 0)
-print(f"The optimal number of blue whales is {optimal_x}. For fin whales, it is {optimal_y}.")
-
-most_revenue = revenue(optimal_x, optimal_y)
-print(most_revenue)
-    \end{minted}
-
-    \caption{Exercise 3 Code}
-    
-\end{figure}
-
-
-
+The naive strategy of averaging all points on the plane does not work because we will not get an accurate account of all temperatures. Instead, we must employ a more sophisticated model that will account for regions that do not have any sampled points, and for those that have an over sampling of points. In this case, I think that it would be best for us to take a weighted average approach: for regions that are over sampled (thereby skewing the average), we apply a normalization factor that improves adds more weight to the other terms in the data set. 
 
 \end{document}
