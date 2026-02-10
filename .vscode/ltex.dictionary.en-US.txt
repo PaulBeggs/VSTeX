@@ -201,3 +201,4 @@ SOM
 monotonicity
 conjugacy
 homomorphisms
+granularities

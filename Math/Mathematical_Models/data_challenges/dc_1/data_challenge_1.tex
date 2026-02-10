@@ -3,7 +3,7 @@
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\documentclass[12pt, oneside]{book}
+\documentclass[12pt]{article}
 \usepackage{xcolor}
 \usepackage{minted}
 
@@ -147,9 +147,6 @@
 \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
 \makeatother
 
-
-
-\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
 
 
 %%% FIGURES %%%
@@ -542,8 +539,20 @@
 \end{titlepage}
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\section*{Initial Strategies}
+\section{Introduction}
 
-The naive strategy of averaging all points on the plane does not work because we will not get an accurate account of all temperatures. Instead, we must employ a more sophisticated model that will account for regions that do not have any sampled points, and for those that have an over sampling of points. In this case, I think that it would be best for us to take a weighted average approach: for regions that are over sampled (thereby skewing the average), we apply a normalization factor that improves adds more weight to the other terms in the data set. 
+In the present problem, our goal was to develop a strategy for calculating the average temperature of a 2D surface plotted on an \(xy\)-plane with uneven sampling. We accomplished this goal by exploring the efficacy of different strategies, and how viable they would be at solving the problem. These strategies are: \textbf{na\"ive} and \textbf{partition, evaluate, and allocate}. The na\"ive strategy assumes homogeneity among all data points, and averages all points regardless of concentration. Conversely, by partitioning, evaluating, and allocating, we could break up the plane into different granularities (i.e., how many partitions we considered). With this strategy, we were able to quantify each region's representation in the overall average, and justify the resulting average temperature. 
+
+\section{Strategies}
+
+\subsection{Na\"ive}
+
+As mentioned in the introduction, the naïve strategy consists of assuming all points in the plane are spread equally among themselves.  
+
+Instead, we must employ a more sophisticated model that will account for regions that do not have any sampled points, and for those that have an over sampling of points. In this case, I think that it would be best for us to take a weighted average approach: for regions that are over sampled (thereby skewing the average), we apply a normalization factor that improves adds more weight to the other terms in the data set. 
+
+\subsection{Current}
+
+\section{Conclusion}
 
 \end{document}
