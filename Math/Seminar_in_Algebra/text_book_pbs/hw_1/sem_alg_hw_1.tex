@@ -1,0 +1,807 @@
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% MAIN DOCUMENT %%%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\documentclass[12pt, oneside]{book}
+\usepackage{xcolor}
+\usepackage{minted}
+
+% \usepackage[T1]{fontenc}
+
+% \usepackage{draculatheme}
+% \newcommand{\documentTheme}{draculafg}
+% \newcommand{\documentLogo}{../../images/small logo_white.png}
+% \newcommand{\documentBigLogo}{../../images/logo_white_text.png}
+% \usemintedstyle{dracula}
+
+\newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
+\newcommand{\documentLogo}{../../images/small logo.png}
+\newcommand{\documentTheme}{black}
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{esint}
+\usepackage{adjustbox}
+\linespread{1}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning, arrows.meta, decorations.pathmorphing, decorations.pathreplacing}
+\usepgflibrary{shadings}
+\usepackage{pgfkeys}
+\usepackage{pdftexcmds}
+\usepackage{shellesc}
+\usepackage{algorithm, algorithmic, xspace}
+%%% Define new colors %%%
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%------- %
+% XHFILL %
+%------- %
+
+
+
+%%% Chapter Headings %%%
+
+\newcommand{\gradientrule}{
+    \begin{tikzpicture}
+        \shade[left color=orangehdx, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+    \end{tikzpicture}
+}
+
+\usepackage[Glenn]{fncychap}
+\ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
+\ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
+\usepackage{xpatch}
+
+% \xpatchcmd{\DOCH}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTI}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTIS}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+
+\xpatchcmd\DOCH
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTI
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTIS
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+
+
+% \usepackage[Bjornstrup]{fncychap}
+
+% \newcommand{\gradient}[1]{
+% \begin{tikzpicture}
+%     \node (rect) at (0,0) [fill=blue,,path fading=East,minimum width=\linewidth,minimum height=2.5cm] {};
+%     \node(title)[above left = 10pt and 10pt of rect.south east, anchor=south east, font=\CTV] {\textcolor{horange}{#1}};
+%     \ifnum \thechapter>0\node[left = 10pt of rect.north east,  anchor=center, font=\CNoV] {\textcolor{horange}{\thechapter}};\fi%
+% \end{tikzpicture}%
+% \vskip 40pt
+% }
+
+
+% \renewcommand{\DOCH}{}
+% \renewcommand{\DOTI}[1]{\gradient{#1}}
+% \renewcommand{\DOTIS}[1]{\gradient{#1}}
+
+%% Change Chapter Heading Placement %%
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
+
+
+
+% \newcommand*\chapterlabel{}\pmod
+% \titleformat{\chapter}
+%   {\gdef\chapterlabel{}
+%    \normalfont\sffamily\Huge\bfseries\scshape}
+%   {\gdef\chapterlabel{\thechapter\ }}{0pt}
+%   {\begin{tikzpicture}[remember picture,overlay]
+%     \node[yshift=-3cm] at (current page.north west)
+%       {\begin{tikzpicture}[remember picture, overlay]
+%         \draw[fill=LightSkyBlue] (0,0) rectangle
+%           (\paperwidth,3cm);
+%         \node[anchor=east,xshift=.9\paperwidth,rectangle,
+%               sharp corners=downhill=20pt,inner sep=11pt,
+%               fill=MidnightBlue]
+%               {\color{white}\chapterlabel#1};
+%        \end{tikzpicture}
+%       };
+%    \end{tikzpicture}
+%   }
+% \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+
+% \usepackage[Conny]{fncychap}
+% \usepackage[Rejne]{fncychap}
+% \ChNameVar{\bfseries}  % Makes the chapter "Chapter #" bold
+% \ChNumVar{\bfseries}   % Makes the chapter number bold
+% \ChTitleVar{\bfseries} % Makes the chapter title bold
+% % Define a custom color, for example:
+% \definecolor{mycolor}{RGB}{0,128,255}
+
+% % Redefine the chapter style in Rejne to change the line colors
+% \makeatletter
+% \ChRuleWidth{2pt}   % Change the thickness of the lines
+% \renewcommand{\DOCH}{%
+%   \vspace*{-50\p@}% Moves the chapter title up/down if needed
+%   {\color{mycolor} \hrule \@chapapp{} \space \thechapter \hrule}% Customizes the chapter header with color
+% }
+% \renewcommand{\DOTI}[1]{%
+%   \vskip 20\p@ % Adjusts the space above the title
+%   \bfseries #1\par % Embolden the title
+%   \vskip 20\p@ % Adjusts the space below the title
+% }
+% \makeatother
+
+% %% Change Chapter Heading Placement %%
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+% \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+% \makeatother
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
+
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+
+%% Headers and Footers %%
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\fancyhead[R]{\textcolor{\documentTheme}{\assignmentname}}
+\fancyhead[L]{\textcolor{\documentTheme}{Hendrix College}}
+\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
+\usepackage{xpatch}
+\xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
+\setlength{\footskip}{0.5in}
+\setlength{\headheight}{18.5764pt}
+
+
+%%%%% Colored Boxes %%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+% \tcbuselibrary{minted}
+\newcounter{BoxCounter}
+% \usepackage{dingbat}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%% MATH PACKAGES, ENVIRONMENTS, COMMANDS %%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%You'll need your own packages, theorem types, and commands.
+
+\usepackage{fix-cm}
+\usepackage{amsmath,amsthm, amsfonts, amssymb} 
+\usepackage{array, makecell}
+\usepackage{colortbl}
+\newcommand{\thickvrule}{\vrule width 1pt}
+\newcommand{\thickhrule}{\Xhline{1pt}}
+
+\usepackage{mathtools}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+
+
+%%% Custom Commands %%%
+% Natural Numbers 
+\newcommand{\N}{\mathbb{N}}
+
+% Whole Numbers
+\newcommand{\W}{\mathbb{W}}
+
+% Integers
+\newcommand{\Z}{\mathbb{Z}}
+
+% Rational Numbers
+\newcommand{\Q}{\mathbb{Q}}
+
+% Real Numbers
+\newcommand{\R}{\mathbb{R}}
+
+% Complex Numbers
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\I}{\mathbb{I}}
+
+\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
+
+\newcommand{\mysqrt}[1]{%
+	\mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+	\mathpalette\foodisplay{#1}%
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+		\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+		\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi}.}
+
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	% backgroundcolor=draculabg, % Needed for Dracula theme
+	% fontcolor=\documentTheme, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{tipbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculapurple}{TIP:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{notebox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculagreen}{NOTE:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{warningbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculared}{WARNING:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{solution}{\textit{Solution.}}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\pf}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\def \proofDistance {10pt}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
+
+\newcommand{\ninn}{n \in \N}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
+
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\dydx}{\frac{dy}{dx}}
+\newcommand{\dxdy}{\frac{dx}{dy}}
+\newcommand{\dydt}{\frac{dy}{dt}}
+\newcommand{\dxdt}{\frac{dx}{dt}}
+\newcommand{\dzdt}{\frac{dz}{dt}}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
+
+\newcommand{\funccolon}{\, \colon}
+
+\newcommand{\squigglyline}{%
+    \noindent
+    \tikz[baseline=-0.5ex]{
+        \draw[decorate, decoration={snake, amplitude=0.5mm, segment length=3mm}] 
+        (0,0) -- (\dimexpr\linewidth\relax,0);
+    }%
+}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\generator}[1]{\langle #1 \rangle}
+
+
+% end of preamble
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{document}
+
+\numberwithin{BoxCounter}{section}
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% COVER PAGE %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\newcommand{\assignmentname}{Homework 1: Sections 18 \& 19}
+
+% Do not use all caps.
+\newcommand{\cussubtitle}{Seminar in Algebra}
+% Date format should be like: "January 1, 2001"
+\newcommand{\finaldate}{February 12, 2025}
+% Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
+\newcommand{\professor}{Dr. Carol Ann Downes, Ph.D.}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+
+\begin{titlepage}
+    \begin{center}
+
+        \vspace*{-2cm}
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\
+        \vfill
+
+        % Horizontal line above the title in 'horange' color
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace{2em}
+
+        {\huge \textbf{\assignmentname}}
+
+        \vspace{1em} % Space between the title and the bottom line
+
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace*{1\baselineskip}
+
+        {\LARGE \textbf{\cussubtitle}}
+
+        \begin{large}
+            \vspace*{5\baselineskip}
+
+            \vspace*{1\baselineskip}
+
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+
+            \vspace*{1\baselineskip}
+
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
+
+            \vspace*{1\baselineskip}
+
+            \textit{Due}\\[1ex]
+            {\scshape  \finaldate} \\[0.3\baselineskip] % Year published
+
+            \thispagestyle{empty}
+
+        \end{large}
+    \end{center}
+\end{titlepage}
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+% IV.18: 5, 16, 18, 19, 32, (read statement of 42), 43, 44, 46, 50 
+% IV.19: 4, 18, 23, 26
+\section*{Section 18}
+
+In Exercise 5, compute the product in the given ring.
+\begin{enumerate}
+    \setcounter{enumi}{4}
+    \item \((2,3)(3,5)\) in \(\Z_{5} \times \Z_{9}\)
+    \sol{
+        \[
+            (2,3)(3,5) = (6, 15) = (6 \bmod 5, 15 \bmod 9) = (1, 6).
+        \]
+    }    
+\end{enumerate}
+
+In Exercises 16, 18, and 19, describe all units in the given ring.
+
+\begin{enumerate}
+    \setcounter{enumi}{15}
+    \item \(\Z_{5}\)
+    \sol{
+        Every element in \(\Z_{5}\) is a unit (except 0), as each of them are relatively prime to 5.
+    }
+    \setcounter{enumi}{17}
+    \item \(\Z \times \Q \times \Z\)
+    \sol{
+        The units in \(\Z\) are \(\{1, -1\}\), the units in \(\Q\) are \(\Q \setminus \{0\}\), and the units in the second \(\Z\) are also \(\{1, -1\}\). Thus, the units in \(\Z \times \Q \times \Z\) are of the form \((\pm 1, q, \pm 1)\) where \(q \in \Q \setminus \{0\}\).
+    }
+    \item \(\Z_{4}\)
+    \sol{
+        The only relatively prime elements to 4 in \(\Z_{4}\) are 1 and 3, so they are the units.
+    }
+\end{enumerate}
+
+\textbf{Concepts}
+
+\begin{enumerate}
+    \setcounter{enumi}{31}
+    \item Given an example of a ring with unity \(1 \ne 0\) that has a subring with nonzero unity \(1' \ne 1\). [Hint: Consider a direct product or a subring of \(\Z_{6}\)]
+    \sol{
+        Consider the ring \(\Z_{6}\). The element \(1\) is the unity of \(\Z_{6}\). However, the subset \(\{0, 3\}\) forms a subring of \(\Z_{6}\) with unity \(1' = 3\) because \(3 \cdot 3 \equiv 3\) and \(3 \cdot 0 \equiv 0\).
+    }
+\end{enumerate}
+
+\newpage
+\textbf{Theory}
+
+\begin{enumerate}
+    \setcounter{enumi}{43}
+    \item Show that the multiplicative inverse of a unit in a ring with unity is unique.
+    \pf{
+        Let \(u\) be a unit in a ring \(R\) with unity, and suppose \(v\) and \(w\) are both multiplicative inverses of \(u\). Then we have \(uv =vu = 1\) and \(uw = wu = 1\). Multiply the equation \(uv = 1\) on the left by \(w\):
+        \begin{align*}
+            w(uv) &= w \cdot 1 \\
+            (wu)v &= w & \text{associativity \& identity property,}\\
+            1 \cdot v &= w & \text{since } wu = 1, \\
+            v &= w & \text{identity property.}
+        \end{align*}
+        Thus, the multiplicative inverse of a unit in a ring with unity is unique.
+    }
+    \item An element of \(a\) of a ring \(R\) is \textbf{idempotent} if \(a^{2} = a\).
+    \begin{enumerate}[label=\textbf{\alph*.}]
+        \item Show that the set of all idempotent elements of a commutative ring is closed under multiplication.
+        \pf{
+            Let \(a\) and \(b\) be idempotent elements in a commutative ring \(R\). Then we have \(a^{2} = a\) and \(b^{2} = b\). We want to show that the product \(ab\) is also idempotent, i.e., \((ab)^{2} = ab\).
+            \begin{align*}
+                (ab)^{2} &= (ab)(ab) \\
+                &= a(b(ab)) & \text{associativity,}\\
+                &= a((ab)b) & \text{since } R \text{ is commutative,}\\
+                &= (a^{2}b)b & \text{associativity,}\\
+                &= (ab)b & \text{since } a^{2} = a,\\
+                &= a(b^{2}) & \text{associativity,}\\
+                &= ab & \text{since } b^{2} = b.
+            \end{align*}
+            Thus, the set of all idempotent elements of a commutative ring is closed under multiplication.
+        }
+
+        \item Find all idempotents in the ring \(\Z_{6} \times \Z_{12}\).
+        \sol{
+            Using a Python script and exhaustively searching \(\Z_{6}\) and \(\Z_{12}\), we get the individual idempotents of 0, 1, 3, and 4 for \(\Z_{6}\) and 0, 1, 4, and 9 for \(\Z_{12}\). Taking a combination of each element, we get 16 idempotent sets.  
+        }
+    \end{enumerate}
+    \newpage
+    \setcounter{enumi}{45}
+    \item (Linear algebra) Recall that for an \(m \times n\) matrix \(A\), the \textit{transpose} \(A^{T}\) of \(A\) is the matrix whose \(j\)th column is the \(j\)th row of \(A\). Show that if \(A\) is an \(m \times n\) matrix such that \(A^{T}A\) is invertible, then the \textit{projection matrix} \(P = A(A^{T}A)^{-1}A^{T}\) is an idempotent in the ring of \(n \times n\) matrices.
+    \pf{
+        We will show that \(P\) is an idempotent by computing \(P^{2}\):
+        \begin{align*}
+            P^{2} &= [A(A^{T}A)^{-1}A^{T}][A(A^{T}A)^{-1}A^{T}] \\
+            &= A[(A^{T}A)^{-1}(A^{T}A)][(A^{T}A)^{-1}A^{T}] & \text{matrix associativity,} \\
+            &= A(I_{A})[(A^{T}A)^{-1}A^{T}] & \text{matrix inverses,} \\
+            &= A[(A^{T}A)^{-1}A^{T}] & \text{matrix identity,} \\
+            &= A(A^{T}A)^{-1}A^{T} & \text{matrix associativity,} \\
+            &= P & \text{definition of } P.
+        \end{align*}
+        Thus, we have shown that \(P^{2} = P\). Therefore, \(P\) is an idempotent.
+    }
+    \setcounter{enumi}{49}
+    \item Let \(R\) be a ring, and let \(a\) be a fixed element of \(R\). Let \(I_{a} = \{x \in R \mid ax = 0\}\). Show that \(I_{a}\) is a subring of \(R\). 
+    \pf{
+        To prove that \(I_{a}\) is a subring of \(R\), we need to prove the statements given by Exercise 48 (\& from theorem in notes):
+        \begin{enumerate}[label=(\arabic*)]
+            \item \(0\in I_a\) because \(a\cdot 0=0\).
+            \item If \(b,c\in I_a\) then 
+            \begin{align*}
+                a(b-c) &=ab-ac & \text{left distributive laws from } R, \\
+                &=0-0 & \text{definition of } I_{a}, \\
+                &=0 & \text{inverse property from } R.
+            \end{align*}
+            Thus, \(b-c\in I_a\).
+            \item If \(b,c\in I_a\) then 
+            \begin{align*}
+                a(bc) &=(ab)c & \text{associativity from } R, \\
+                &=0\cdot c & \text{definition of } I_{a}, \\
+                &=0 & \text{definition of } I_{a}.
+            \end{align*}
+            Thus, \(bc\in I_a\).
+        \end{enumerate}
+        Therefore, \(I_a\) is a subring of \(R\).
+    }
+\end{enumerate}
+
+\newpage
+
+\section*{Section 19}
+
+\begin{enumerate}
+    \setcounter{enumi}{3}
+    \item Find all solutions of \(x^{2} + 2x + 4 = 0\) in \(\Z_{6}\).
+    \sol{
+        Using a Python script to search through values \(x \in [0,5]\), we find the only solution to the equation is \(x = 2\).
+    }
+
+\end{enumerate}
+
+\textbf{Concepts}
+
+\begin{enumerate}
+    \setcounter{enumi}{17}
+    \item Each of the six numbered regions in Fig. 19.10 corresponds to a certain type of ring. Give an example of a ring in each of the six cells. For example, a ring in the region numbered 3 must be commutative (it is inside the commutative circle), have unity, but not be an integral domain. 
+    \sol{
+        Starting from 6 and working inward, we have: 6. \(M_{2}(2\Z)\); 5. \(M_{2}(\R)\); 4. \(2\Z\); 3. \(\Z_{6}\); 2. \(\Z_{2}\); 1. \(\R\).  
+    }
+
+\end{enumerate}
+
+\textbf{Theory}
+
+\begin{enumerate}
+    \setcounter{enumi}{22}
+    \item An element \(a\) of a ring \(R\) is \textbf{idempotent} if \(a^{2} = a\). Show that a division ring contains exactly two idempotent elements.
+    \pf{
+        Let $R$ be a division ring and let $a \in R$ be an idempotent element, so $a^2 = a$. First, note that $0^2 = 0$, so $0$ is an idempotent element. Now, suppose $a \neq 0$. Since $R$ is a division ring, $a$ is a unit, so $a^{-1}$ exists. 
+        Rearranging $a^2 = a$ gives $a^2 - a = 0$, which factors as $a(a - 1) = 0$. 
+        We can solve for $a - 1$ as follows:
+        \begin{align*}
+            a(a - 1) &= 0 \\
+            a^{-1}(a(a - 1)) &= a^{-1} \cdot 0 & \text{left multiply by } a^{-1}, \\
+            (a^{-1}a)(a - 1) &= 0 & \text{associativity,} \\
+            1(a - 1) &= 0 & \text{inverse property,} \\
+            a - 1 &= 0 & \text{identity property,} \\
+            a &= 1 & \text{add 1 to both sides.}
+        \end{align*}
+        Thus, the only nonzero idempotent element is 1. Therefore, there are exactly two idempotent elements.
+    }
+\newpage
+
+    \setcounter{enumi}{25}
+    \item Let \(R\) be a ring that contains at least two elements. Suppose for each nonzero \(a \in R\), there exists a unique \(b \in R\) such that \(aba = a\).
+    \begin{enumerate}[label=\textbf{\alph*.}]
+        \item Show that \(R\) has no divisors of 0.
+        \sol{
+            Let \(a,c \in R\) with \(a \ne 0\) such that \(ac = 0\). Additionally, assume there exists a unique \(b \in R\) such that \(aba = a\). Our goal is to show that \(b + c = b\), implying \(c = 0\). Hence, consider the following computation:
+            \begin{align*}
+                a(b + c)a &= aba + aca & \text{left and right distribution,} \\
+                &= a + aca & aba = a \text{ property,} \\
+                &= a + (ac)a & \text{associativity,} \\
+                &= a + 0a & ac = 0 \text{ property,} \\
+                &= a & \text{Theorem 18.8 (1) \& add. id.}  
+            \end{align*}
+            Thus, we have shown that \((b + c)\) behaves exactly like \(b\), meaning \(b + c = b\) because \(b\) is unique, so \(c = 0\).
+        }
+        \item Show that \(bab = b\).
+        \sol{
+            To show that \(bab = b\), we are going to leverage the theorem in the notes that states, ``The cancellation laws hold in ring \(R\) if, and only if, \(R\) has no zero divisors.'' This allows us to compute the following:
+            \begin{align*}
+                aba &= a \\
+                baba &= ba & \text{left multiplication,} \\
+                bab &= b & \text{cancellation laws for } a.
+            \end{align*}
+        }
+        \item Show that \(R\) has unity.
+        \sol{
+            Given the results from (b) and \(R\)'s \(aba = a\) property, we conjecture that \(ab = 1\) (i.e., \(ab\) is \(R\)'s unity). To prove this conjecture, we must show that for an element \(c \in R\), that \(c(ab) = (ab)c = c\). Thus, consider the following computation:
+            \begin{align*}
+                aba &= a \\
+                caba &= ca & \text{left multiplication by } c, \\
+                c(ab) &= c & \text{cancellation laws \& associativity.}
+            \end{align*}
+            Now, for the other direction:
+            \begin{align*}
+                bab &= b \\
+                babc &= bc & \text{right multiplication by } c, \\
+                (ab)c &= c & \text{cancellation laws \& associativity.}
+            \end{align*}
+            Thus, we have shown that \(R\)'s unity is \(ab\).
+        }
+        \item Show that \(R\) is a division ring.
+        \sol{
+            From part (c), we know $R$ has a unity, $1$, and for any nonzero $a$, $ab = 1$.
+            From part (b), we have $bab = b$. Multiplying by $a$ on the right gives $baba = ba$. Substituting $aba=a$, we get $ba = 1$.
+            Thus, for every $a$, there exists $b \in R$ such that $ab = ba = 1$. This means every nonzero element is a unit.
+            Since $R$ is a ring with unity and every nonzero element has an inverse, $R$ is a division ring.
+        }
+    \end{enumerate}
+\end{enumerate}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+\end{document}
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

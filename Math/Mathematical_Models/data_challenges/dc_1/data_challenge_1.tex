@@ -540,12 +540,13 @@
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \section{Introduction}
+\(\cdot\)\(\ne\)
 
-In the present problem, our goal was to develop a strategy for calculating the average temperature of a 2D surface plotted on an \(xy\)-plane with uneven sampling. We accomplished this goal by exploring the efficacy of different strategies and how viable they would be at solving the problem. These strategies are: the \textbf{Na\"ive Approach} and \textbf{Grid Partitioning}. The na\"ive strategy assumes a uniform distribution of all data points and averages all points regardless of concentration. Conversely, by partitioning, evaluating, and allocating, we could subdivide the plane into different granularities (e.g., four partitions versus eight). With this strategy, we were able to quantify each region's representation in the overall average and justify the resulting average temperature. 
+In the present problem, our goal was to develop a strategy for calculating the average temperature of a 2D surface plotted on an \(xy\)-plane with uneven sampling. We accomplished this goal by exploring the efficacy of different strategies and how viable they would be at solving the problem. These strategies are: the \textbf{Naïve Approach} and \textbf{Grid Partitioning}. The naïve strategy assumes a uniform distribution of all data points and averages all points regardless of concentration. Conversely, by partitioning, evaluating, and allocating, we could subdivide the plane into different granularities (e.g., four partitions or eight). With this strategy, we were able to quantify each region's representation in the overall average and justify the resulting average temperature. 
 
 \section{Strategies}
 
-\subsection{Na\"ive}
+\subsection{Naïve}
 
 The naïve strategy consists of assuming all points on the surface are spread equally among themselves, and then averaging by taking the sum of the temperature values and dividing by the number of points (counts). This approach is inadequate for the present problem because we have high concentrations of data toward the leftmost part of the plane. Put concretely, there are 21 data points within the box \(x \in [15, 20]\), \(y \in [0, 10]\), which constitutes 42\% of the available data. Thus, we need a more sophisticated approach that scales the over-sampled regions to match sparsely-sampled ones.
 

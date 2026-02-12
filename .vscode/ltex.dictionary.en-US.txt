@@ -202,3 +202,5 @@ monotonicity
 conjugacy
 homomorphisms
 granularities
+subring
+idempotents
