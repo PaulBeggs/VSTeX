@@ -585,6 +585,18 @@
 
 % IV.18: 5, 16, 18, 19, 32, (read statement of 42), 43, 44, 46, 50 
 % IV.19: 4, 18, 23, 26
+
+
+\section*{Cover Sheet}
+
+This is my first cover sheet that I've written, so I'm not sure how well it will be, but here goes. I thought that for the first couple of Exercises in Section 18 were fairly straightforward. Specifically, I found that doing Exercise 5 in Section 18 really helped with Exercise 32, because I could check unity to make sure that it acted properly (i.e., \(e \cdot a = a\)). For Exercise 43, I knew that I needed to show that \(v = w\) because we had done similar proofs when we had to prove that identities were unique. It helped to just state what resources that I had, then go from there. Exercise 44 followed this same Exercise. For Exercise 46, I actually did the wrong Exercise first, and only realized it when Noah asked me for a hint on how to start. We both knew that we needed to incorporate all information from the Exercise (e.g., use \(n,m \in \Z^{+}\) to show that \((a + b)^{n + m} = 0\)), but we initially didn't know how to incorporate the commutativity part of the Exercise. Then, he realized that we could use the binomial theorem, and then I just had two cases to work through. Exercise 50 was straightforward because I had a checklist that I could work toward. For example, on (3), I knew that I needed to show that \(bc \in I_{a}\), so I needed to show that \(a(bc) \in I_{a}\), which was done with associativity and relying on definitions. \\
+
+The first two Exercises in Section 19 were straightforward: for 4, just iteratively run through all possibilities, and return the only ones that work. For 18, the chart that we had in the notes also helped a ton. It practically did that problem for me (we only didn't have integer domains in the notes, but I knew \(\Z_{p}\) (where \(p\) is prime) had no zero divisors, so that helped). For Exercise 23, I was messing around with possible elements on my scratch paper that could be candidates for the two idempotent elements, and I landed on 0 and 1 by just trying a few possible ones. I could easily prove 0, but 1 was a bit more difficult because of when \(a = 0\), it doesn't have an inverse. That was until I realized I could just restrict \(a\) to be nonzero, and that was the key. Finally, for Exercise 26, I knew for part (a) that I just needed to use the uniqueness identity of \(b\), and rely on definitions. So, I found an element \((b + c)\) that had to equal \(b\) (bc uniqueness), and the only way for that equation to be true, would be if \(c = 0\). This showed that \(ac = 0\), and \(a\) was nonzero, so no zero divisors. I was extremely stuck on (b) because I couldn't figure out how to cancel out \(a\) with an inverse because I didn't know what that inverse was, or what it would equal after the computation was finished. So, I searched my notes and found the theorem that said cancellation laws held when there were no zero divisors, which was definitely the ah-ha moment of the problem. \\
+
+Overall, this homework took me about \(\approx 9\) hours to complete, with trying again and again, but I think I did a good job trying to square off any loose ends or ambiguities. 
+
+
+\newpage
 \section*{Section 18}
 
 In Exercise 5, compute the product in the given ring.
@@ -631,7 +643,7 @@ In Exercises 16, 18, and 19, describe all units in the given ring.
 \textbf{Theory}
 
 \begin{enumerate}
-    \setcounter{enumi}{43}
+    \setcounter{enumi}{42}
     \item Show that the multiplicative inverse of a unit in a ring with unity is unique.
     \pf{
         Let \(u\) be a unit in a ring \(R\) with unity, and suppose \(v\) and \(w\) are both multiplicative inverses of \(u\). Then we have \(uv =vu = 1\) and \(uw = wu = 1\). Multiply the equation \(uv = 1\) on the left by \(w\):
@@ -667,19 +679,35 @@ In Exercises 16, 18, and 19, describe all units in the given ring.
     \end{enumerate}
     \newpage
     \setcounter{enumi}{45}
-    \item (Linear algebra) Recall that for an \(m \times n\) matrix \(A\), the \textit{transpose} \(A^{T}\) of \(A\) is the matrix whose \(j\)th column is the \(j\)th row of \(A\). Show that if \(A\) is an \(m \times n\) matrix such that \(A^{T}A\) is invertible, then the \textit{projection matrix} \(P = A(A^{T}A)^{-1}A^{T}\) is an idempotent in the ring of \(n \times n\) matrices.
+    \item An element \(a\) for ring \(R\) is \textbf{nilpotent} if \(a^{n} = 0\) for some \(n \in \Z^{+}\). Show that if \(a\) and \(b\) are nilpotent elts of a commutative ring, then \(a + b\) is also nilpotent. 
     \pf{
-        We will show that \(P\) is an idempotent by computing \(P^{2}\):
-        \begin{align*}
-            P^{2} &= [A(A^{T}A)^{-1}A^{T}][A(A^{T}A)^{-1}A^{T}] \\
-            &= A[(A^{T}A)^{-1}(A^{T}A)][(A^{T}A)^{-1}A^{T}] & \text{matrix associativity,} \\
-            &= A(I_{A})[(A^{T}A)^{-1}A^{T}] & \text{matrix inverses,} \\
-            &= A[(A^{T}A)^{-1}A^{T}] & \text{matrix identity,} \\
-            &= A(A^{T}A)^{-1}A^{T} & \text{matrix associativity,} \\
-            &= P & \text{definition of } P.
-        \end{align*}
-        Thus, we have shown that \(P^{2} = P\). Therefore, \(P\) is an idempotent.
+        Let \(a,b \in \Z^{+}\). This means there exists some \(n,m\in \Z^{+}\) for which \(a^{n} = 0\) and \(b^{m} = 0\). Our goal is to show that \((a + b)^{n + m} = 0\). Since \(R\) is a commutative ring, we can use the binomial theorem to help here (thanks to an insight from Noah). Thus, consider the following:
+        \[
+            (a + b)^{n + m} = \sum^{n + m}_{k=0} \binom{n + m}{k} a^{k}b^{(n + m)-k}.
+        \]
+        Note that every element in each term is a multiple of our nilpotent elements, so our goal is to show that each of these elements are 0 for any value of \(k\). Thus, consider these two cases:
+        \begin{itemize}[topsep=2pt]
+            \item \textbf{\(k \ge n\)}: If \(k \ge n\), then \(a^{k} = a^{n}a^{k -n} = 0a^{k - n} = 0\), so the whole term is 0.
+            \item \textbf{\(k < n\)}: Since \(k < n\), it follows that \(-k > -n\). Therefore, \((n + m) - k > n + m - n = m\) (because \(R\) is commutative). Since the exponent of \(b\) is greater than \(m\), \(b^{(n + m)-k} = 0\). 
+        \end{itemize}
+        Therefore, we have shown that \((a + b)^{n + m} = 0\).
     }
+
+
+
+    % \item (Linear algebra) Recall that for an \(m \times n\) matrix \(A\), the \textit{transpose} \(A^{T}\) of \(A\) is the matrix whose \(j\)th column is the \(j\)th row of \(A\). Show that if \(A\) is an \(m \times n\) matrix such that \(A^{T}A\) is invertible, then the \textit{projection matrix} \(P = A(A^{T}A)^{-1}A^{T}\) is an idempotent in the ring of \(n \times n\) matrices.
+    % \pf{
+    %     We will show that \(P\) is an idempotent by computing \(P^{2}\):
+    %     \begin{align*}
+    %         P^{2} &= [A(A^{T}A)^{-1}A^{T}][A(A^{T}A)^{-1}A^{T}] \\
+    %         &= A[(A^{T}A)^{-1}(A^{T}A)][(A^{T}A)^{-1}A^{T}] & \text{matrix associativity,} \\
+    %         &= A(I_{A})[(A^{T}A)^{-1}A^{T}] & \text{matrix inverses,} \\
+    %         &= A[(A^{T}A)^{-1}A^{T}] & \text{matrix identity,} \\
+    %         &= A(A^{T}A)^{-1}A^{T} & \text{matrix associativity,} \\
+    %         &= P & \text{definition of } P.
+    %     \end{align*}
+    %     Thus, we have shown that \(P^{2} = P\). Therefore, \(P\) is an idempotent.
+    % }
     \setcounter{enumi}{49}
     \item Let \(R\) be a ring, and let \(a\) be a fixed element of \(R\). Let \(I_{a} = \{x \in R \mid ax = 0\}\). Show that \(I_{a}\) is a subring of \(R\). 
     \pf{
@@ -763,7 +791,7 @@ In Exercises 16, 18, and 19, describe all units in the given ring.
                 &= a + 0a & ac = 0 \text{ property,} \\
                 &= a & \text{Theorem 18.8 (1) \& add. id.}  
             \end{align*}
-            Thus, we have shown that \((b + c)\) behaves exactly like \(b\), meaning \(b + c = b\) because \(b\) is unique, so \(c = 0\).
+            Thus, we have shown that \((b + c)\) behaves exactly like \(b\), meaning \(b + c = b\) because \(b\) is unique, so \(c = 0\). Thus, \(R\) has no zero divisors.
         }
         \item Show that \(bab = b\).
         \sol{
