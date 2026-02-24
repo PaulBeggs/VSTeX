@@ -1,0 +1,26 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Show that the pig is gaining weight at 5 lbs / day at t = 0:}
+\PYG{n}{w}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{l+m+mi}{800} \PYG{o}{/} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{+} \PYG{l+m+mi}{3} \PYG{o}{*} \PYG{p}{(}\PYG{n}{math}\PYG{o}{.}\PYG{n}{e}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{t}\PYG{o}{/}\PYG{l+m+mi}{30}\PYG{p}{))}
+\PYG{n}{w\PYGZus{}prime}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{w}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+\PYG{n}{w\PYGZus{}pprime}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{w\PYGZus{}prime}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+\PYG{n}{w\PYGZus{}ppprime}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{w\PYGZus{}pprime}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}At t=0, the pig is gaining }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{w\PYGZus{}prime}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ lbs per day\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Calculate as t gets large}
+\PYG{c+c1}{\PYGZsh{} t\PYGZus{}0 = 3 \PYGZsh{} bad guess; close to crit point}
+\PYG{n}{t\PYGZus{}0} \PYG{o}{=} \PYG{l+m+mi}{30}
+\PYG{n}{guesses}\PYG{o}{=}\PYG{p}{[}\PYG{n}{t\PYGZus{}0}\PYG{p}{]}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{):}
+    \PYG{n}{t\PYGZus{}0} \PYG{o}{=} \PYG{n}{t\PYGZus{}0} \PYG{o}{\PYGZhy{}} \PYG{n}{w\PYGZus{}pprime}\PYG{p}{(}\PYG{n}{t\PYGZus{}0}\PYG{p}{)} \PYG{o}{/} \PYG{n}{w\PYGZus{}ppprime}\PYG{p}{(}\PYG{n}{t\PYGZus{}0}\PYG{p}{)}
+    \PYG{n}{guesses}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{t\PYGZus{}0}\PYG{p}{)}
+
+\PYG{n}{root} \PYG{o}{=} \PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{guesses}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}There is a root at }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{root}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{. It corresponds to maximum growth rate of }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{w\PYGZus{}prime}\PYG{p}{(}\PYG{n}{root}\PYG{p}{),}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{.\PYGZsq{}}\PYG{p}{)}
+
+
+\PYG{c+c1}{\PYGZsh{} Returns:}
+\PYG{c+c1}{\PYGZsh{} At t=0, the pig is gaining 5.0 lbs per day}
+\PYG{c+c1}{\PYGZsh{} There is a root at 32.96. It corresponds to maximum growth rate of 6.667.}
+\end{MintedVerbatim}

@@ -1,0 +1,57 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Variables}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}x\PYGZsq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} editorial budget}
+\PYG{n}{y} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}y\PYGZsq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} sales budget}
+
+\PYG{c+c1}{\PYGZsh{} Parameters}
+\PYG{n}{x\PYGZus{}0}    \PYG{o}{=} \PYG{l+m+mi}{80\PYGZus{}000}  \PYG{c+c1}{\PYGZsh{} current editorial budget (\PYGZdl{} / week)}
+\PYG{n}{y\PYGZus{}0}    \PYG{o}{=} \PYG{l+m+mi}{30\PYGZus{}000}  \PYG{c+c1}{\PYGZsh{} current sales budget (\PYGZdl{} / week)}
+\PYG{n}{subs\PYGZus{}0} \PYG{o}{=} \PYG{l+m+mi}{80\PYGZus{}000}  \PYG{c+c1}{\PYGZsh{} current subscribers (subscriber / week)}
+\PYG{n}{ads\PYGZus{}0}  \PYG{o}{=} \PYG{l+m+mi}{350}     \PYG{c+c1}{\PYGZsh{} current ads (pages / week)}
+
+\PYG{n}{d\PYGZus{}p\PYGZus{}ad}  \PYG{o}{=} \PYG{l+m+mi}{250}     \PYG{c+c1}{\PYGZsh{} dollars per advertisement}
+\PYG{n}{d\PYGZus{}p\PYGZus{}pap} \PYG{o}{=} \PYG{l+m+mf}{1.50}    \PYG{c+c1}{\PYGZsh{} dollars per paper (per subscriber)}
+
+\PYG{n}{cir\PYGZus{}budget} \PYG{o}{=} \PYG{l+m+mi}{30\PYGZus{}000}
+\PYG{n}{fixed\PYGZus{}cost} \PYG{o}{=} \PYG{l+m+mi}{60\PYGZus{}000}
+
+\PYG{n}{x\PYGZus{}cut\PYGZus{}rate} \PYG{o}{=} \PYG{l+m+mf}{.1} \PYG{c+c1}{\PYGZsh{} the budget cut rate}
+\PYG{n}{y\PYGZus{}inc\PYGZus{}rate} \PYG{o}{=} \PYG{l+m+mf}{.2} \PYG{c+c1}{\PYGZsh{} sales increase rate}
+
+\PYG{n}{x\PYGZus{}sub\PYGZus{}loss} \PYG{o}{=} \PYG{l+m+mf}{.02} \PYG{c+c1}{\PYGZsh{} expected loss of subscribers (per 10\PYGZpc{} cut)}
+\PYG{n}{x\PYGZus{}ads\PYGZus{}loss} \PYG{o}{=} \PYG{l+m+mf}{.01} \PYG{c+c1}{\PYGZsh{} expected loss of ads (per 10\PYGZpc{} cut)}
+\PYG{n}{y\PYGZus{}adv\PYGZus{}inc}  \PYG{o}{=} \PYG{l+m+mf}{.15} \PYG{c+c1}{\PYGZsh{} rate increase in advertisements (per 20\PYGZpc{} budget increase)}
+
+\PYG{c+c1}{\PYGZsh{} subs change per ad page change}
+\PYG{n}{slope\PYGZus{}ads\PYGZus{}subs} \PYG{o}{=} \PYG{l+m+mi}{1000} \PYG{o}{/} \PYG{l+m+mi}{50}
+
+\PYG{c+c1}{\PYGZsh{} pages per dollar spent on editorial}
+\PYG{n}{slope\PYGZus{}x\PYGZus{}ads}  \PYG{o}{=} \PYG{p}{(}\PYG{n}{ads\PYGZus{}0} \PYG{o}{*} \PYG{n}{x\PYGZus{}ads\PYGZus{}loss}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{x\PYGZus{}0} \PYG{o}{*} \PYG{n}{x\PYGZus{}cut\PYGZus{}rate}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} pages per dollar spent on sales}
+\PYG{n}{slope\PYGZus{}y\PYGZus{}ads}  \PYG{o}{=} \PYG{p}{(}\PYG{n}{ads\PYGZus{}0} \PYG{o}{*} \PYG{n}{y\PYGZus{}adv\PYGZus{}inc}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{y\PYGZus{}0} \PYG{o}{*} \PYG{n}{y\PYGZus{}inc\PYGZus{}rate}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} sub loss per editorial \PYGZdl{} loss}
+\PYG{n}{slope\PYGZus{}x\PYGZus{}subs} \PYG{o}{=} \PYG{p}{(}\PYG{n}{subs\PYGZus{}0} \PYG{o}{*} \PYG{n}{x\PYGZus{}sub\PYGZus{}loss}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{x\PYGZus{}0} \PYG{o}{*} \PYG{n}{x\PYGZus{}cut\PYGZus{}rate}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Equations}
+\PYG{n}{A}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{ads\PYGZus{}0} \PYG{o}{+} \PYG{n}{slope\PYGZus{}x\PYGZus{}ads}\PYG{o}{*}\PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{x\PYGZus{}0}\PYG{p}{)} \PYG{o}{+} \PYG{n}{slope\PYGZus{}y\PYGZus{}ads}\PYG{o}{*}\PYG{p}{(}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{y\PYGZus{}0}\PYG{p}{)}
+\PYG{n}{S}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{subs\PYGZus{}0} \PYG{o}{+} \PYG{n}{slope\PYGZus{}x\PYGZus{}subs}\PYG{o}{*}\PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{x\PYGZus{}0}\PYG{p}{)} \PYG{o}{+} \PYG{n}{slope\PYGZus{}ads\PYGZus{}subs}\PYG{o}{*}\PYG{p}{(}\PYG{n}{A}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{ads\PYGZus{}0}\PYG{p}{)}
+\PYG{n}{R}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{d\PYGZus{}p\PYGZus{}pap} \PYG{o}{*} \PYG{n}{S}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{+} \PYG{n}{d\PYGZus{}p\PYGZus{}ad} \PYG{o}{*} \PYG{n}{A}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}
+\PYG{n}{C}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{x} \PYG{o}{+} \PYG{n}{y} \PYG{o}{+} \PYG{n}{cir\PYGZus{}budget} \PYG{o}{+} \PYG{n}{fixed\PYGZus{}cost}
+\PYG{n}{P}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{R}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{C}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Lagrange multipliers}
+\PYG{n}{lam} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}lam\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{g}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{y}
+\PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{50000}
+
+\PYG{n}{sales\PYGZus{}const} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{([}
+    \PYG{n}{P}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)} \PYG{o}{==} \PYG{n}{lam} \PYG{o}{*} \PYG{n}{g}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{y}\PYG{p}{),}
+    \PYG{n}{g} \PYG{o}{==} \PYG{n}{k}
+\PYG{p}{],} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{,} \PYG{n}{lam}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{sales\PYGZus{}const}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{P}\PYG{p}{(}\PYG{l+m+mi}{40000}\PYG{p}{,} \PYG{l+m+mi}{50000}\PYG{p}{))}
+\end{MintedVerbatim}

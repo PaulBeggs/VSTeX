@@ -542,282 +542,38 @@
 \end{titlepage}
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-% Chapter 2, Exercise 9ac (will need to look at Exercise 7 for part of the setup)
-% Chapter 3, Exercise 2ab
-% Chapter 3, Exercise 10bc
-
-% **The two problems from Chapter 3 will use what we are doing in class on Thursday 2/12.
-
-\section*{Chapter 2}
-
-\begin{enumerate}
-    \setcounter{enumi}{8}
-    \item Reconsider the newspaper problem of Exercise 7, but now look at the newspaper’s business expenses. The current weekly business expenses for the paper are as follows: \$80,000 for the editorial department (news, features, editorials); \$30,000 for the sales department (advertising); \$30,000 for the circulation department; and \$60,000 in fixed costs (mortgage, utilities, maintenance). The new management is considering cuts in the editorial department. It is estimated that the paper can operate with a minimum of a \$40,000/week editorial budget. Reducing the editorial budget will save money, but it will also affect the quality of the paper. Experience in other markets suggests that the paper will lose 2\% of its subscribers and 1\% of its advertisers for every 10\% cut in the editorial budget. Management is also considering an increase in the sales budget. Recently the management of another paper in a similar market expanded its advertising sales budget by 20\%. The result was a 15\% increase in advertisements. The sales budget may be increased to as much as \$50,000/week, but the overall budget for business expenses will not be increased beyond the current level of \$200,000/week.
-    \begin{enumerate}
-        \item Find the editorial and sales budget listings that maximize profit. Assume that the subscription price remains at \$1.50/week, and the advertising price stays at \$250/page. Use the five-step method, and model as a constrained optimization problem. Solve using the method of Lagrange multipliers. \hyperref[ex:1]{Python Code}
-        \sol{
-            We find that the optimal way to maximize profit is to maximize the sales budget to its limit, \$50,000, and to reduce the editorial budget to as low as possible. This conclusion comes from the profit function:
-            \[
-                P(x,y) = -0.5775x + 1.45y + 10200,
-            \]
-            where \(x\) and \(y\) are the editorial and sales budgets, respectively. We see that for every additional dollar spent on the editorial budget, the company actually decreases profit rather than increasing it. Thus, the new management's idea of cutting the editorial budget to \$40,000 per week is a valid plan (while also keeping the sales budget locked at \$50,000), and will net a weekly profit of \$59600.
-        }
-        \setcounter{enumii}{2}
-        \item Draw a graph of the feasible region for this problem. Indicate the location of the optimal solution on this graph. Which of the constraints are binding at the optimal solution? How is this related to the shadow prices? \hyperref[fig:1]{Feasible Region}
-        \sol{
-            As mentioned in part (a), the sales constraint is the most binding. Regarding shadow prices, we find that by looking at lambda in our Lagrange multiplier equation, we don't even rely upon the editorial budget at all. So, by just looking at the lambda value of \(1.45\), we know that for every dollar spent on sales, we would increase the profit by that amount. 
-        }
-    \end{enumerate}
-\end{enumerate}
+% Chapter 3, Exercise 16ad, 18ac
 
 \section*{Chapter 3}
 
 \begin{enumerate}
-    \setcounter{enumi}{1}
-    \item Reconsider the pig problem of Example 1.1, but now suppose that the weight of the pig after \(t\) days is \(w = 800/(1 + 3e^{-t/30})\) lbs. 
+    \setcounter{enumi}{15}
+    \item A manufacturer of personal computers sells three desktop models. Model \(A\) costs \$850 to manufacture and sells for \$1,250; model \(B\) costs \$950 to manufacture and sells for \$1,400; and model \(C\) costs \$1,500 to manufacture and sells for \$2,500. The company purchases 10,000 desktop cases each month, and each computer requires one case. Models \(A\) and \(B\) use a 15–inch monitor, and the company can obtain 5,000 of these monitors per month. Model \(C\) uses a 17–inch monitor, and 7,500 of these are available per month. The remaining components are freely available. The company has 20,000 hours of production capacity available per month, and the production of each unit of model \(A\), \(B\), and \(C\) requires 1, 1.25, and 1.75 hours respectively.
     \begin{enumerate}
-        \item Show that the pig is gaining about 5 lbs/day at \(t = 0\). What happens as \(t\) increases? \hyperref[ex:2]{Python Code}
+        \item How many of each type of computer should the company produce? Use the five-step method and solve as a linear programming problem.
         \sol{
-            To show that the pig is gaining 5 pounds per day at \(t = 0\), we find the derivative of \(w\), \(w'(t)\), and evaluate \(w'(0)\). We find that \(w'(0) = 5\). Using Newton's method, we find that as \(t\) increases, the growth rate of the pig slowly increases, until we hit an inflection point at \(t \approx 32.96\), where the growth rate tops out at \(6 \frac{2}{3}\), and decreases thereafter. Then, if we assume that the pig will live forever (i.e., as \(t \to \infty\)), we find 
-            \[
-                \lim_{t \to \infty}  \frac{800}{1 + 3e^{-t/30}}  = \frac{800}{1 + 3(0)} = 800 \text{ lbs}
-            \]
-            is the largest that the pig can get.
+            
         }
-        \item Find the optimal time to sell the pig. Use the five-step approach, and model as a one–variable optimization problem. \hyperref[ex:3]{Python Code}
+        \setcounter{enumii}{3}
+        \item The company is considering a new desktop model \(D\). This model will cost \$1,250 to manufacture and will sell for \$1,895. It requires a desktop case, a 17–inch monitor, and 1.5 hours of production. How will this change the results of parts (a) and (b)? Would you advise the company to go ahead with their plans to introduce this new model?
         \sol{
-            Given the new function to calculate the weight of the pig with old parameters holding, the best time to sell the pig is at 12.33 days. Selling at this time yields a net profit of \$135.42. 
+            
         }
     \end{enumerate}
-    \setcounter{enumi}{9}
-    \item Reconsider the newspaper problem of Exercise 7 in Chapter 2, but now suppose that we choose to maximize our profit margin (profit as a percentage of revenue). Assume that our business expenses remain fixed at \$200,000 per week. \hyperref[ex:4]{Python Code}
+    \setcounter{enumi}{17}
+    \item The Green Supply Company manufactures plastic grocery bags and milk jugs. The company can obtain 5,000 lbs of used plastic bags, 18,000 lbs of used plastic milk jugs, and 40,000 of industrial plastic scraps per week at a cost of \$18, \$12, and \$10 per 100 lbs respectively. The company has orders for 4,000 boxes of plastic bags and 80,000 milk jugs per week. One box of plastic bags requires 6 lbs of plastic, costs \$5 to manufacture, and sells for \$14. It costs \$9 and requires 14 lbs of plastic to make 100 milk jugs, and the jugs retail for \$20. The plastic bags must be at least 25\% post– consumer recycled plastic (used milk jugs or bags) because of consumer preference, and the milk jugs must be at most 50\% post–consumer recycled plastic for strength.
     \begin{enumerate}
-        \setcounter{enumii}{1}
-        \item Let \(z = f(x, y)\) denote the objective function you obtained in part (a). Use a computer algebra system to determine \(F = \partial f /\partial x\) and \( G = \partial f /\partial y\). Then determine \(\partial F/\partial x\), \(\partial F/\partial y\), \(\partial G/\partial x\), and \(\partial G/\partial y\).
+        \item Determine the optimal mix of plastics for each product. Use the five-step method and model as a linear programming problem.
         \sol{
-            \(F = -100000x - 10y + 157500\); \(G = -10x - 1y + 475\); \(\partial F/\partial x = -100000\); \(\partial F/\partial y = -10\); \(\partial G/\partial x = -10\); and \(\partial G/\partial y = -1\).
+            
         }
-        \item Use Newton’s method in two variables to obtain a precise answer to the question in part (a). Use the approximate solution from part (a) as your initial estimate. The required derivatives were calculated in part (b). \hyperref[ex:5]{Python Code}
+        \setcounter{enumii}{2}
+        \item A new supplier can provide industrial plastic scraps at \$8 per 100 lbs. How does this change the results in parts (a) and (b)? 
         \sol{
-            Using Newton's method with initial guesses of \$1.50 and \$350 per subscription and ad price, respectively, we find the optimal prices to be approximately \$1.53 and \$459.71, respectively.
+            
         }
     \end{enumerate}
 \end{enumerate}
 
-\newpage
-
-\label{ex:1}
-\begin{minted}{python}
-# Variables
-x = var('x') # editorial budget
-y = var('y') # sales budget
-
-# Parameters
-x_0    = 80_000  # current editorial budget ($ / week)
-y_0    = 30_000  # current sales budget ($ / week)
-subs_0 = 80_000  # current subscribers (subscriber / week)
-ads_0  = 350     # current ads (pages / week)
-
-d_p_ad  = 250     # dollars per advertisement
-d_p_pap = 1.50    # dollars per paper (per subscriber)
-
-cir_budget = 30_000
-fixed_cost = 60_000
-
-x_cut_rate = .1 # the budget cut rate
-y_inc_rate = .2 # sales increase rate
-
-x_sub_loss = .02 # expected loss of subscribers (per 10% cut)
-x_ads_loss = .01 # expected loss of ads (per 10% cut)
-y_adv_inc  = .15 # rate increase in advertisements (per 20% budget increase)
-
-# subs change per ad page change
-slope_ads_subs = 1000 / 50
-
-# pages per dollar spent on editorial
-slope_x_ads  = (ads_0 * x_ads_loss) / (x_0 * x_cut_rate)
-
-# pages per dollar spent on sales
-slope_y_ads  = (ads_0 * y_adv_inc) / (y_0 * y_inc_rate)
-
-# sub loss per editorial $ loss 
-slope_x_subs = (subs_0 * x_sub_loss) / (x_0 * x_cut_rate)
-
-# Equations
-A(x,y) = ads_0 + slope_x_ads*(x - x_0) + slope_y_ads*(y - y_0)
-S(x,y) = subs_0 + slope_x_subs*(x - x_0) + slope_ads_subs*(A(x,y) - ads_0)
-R(x,y) = d_p_pap * S(x,y) + d_p_ad * A(x,y)
-C(x,y) = x + y + cir_budget + fixed_cost
-P(x,y) = R(x,y) - C(x,y)
-
-# Lagrange multipliers
-lam = var('lam')
-
-g(x,y) = y
-k = 50000
-
-sales_const = solve([
-    P.derivative(y) == lam * g.derivative(y),
-    g == k
-], x, y, lam)
-
-print(sales_const)
-print(P(40000, 50000))
-\end{minted}
-    \captionof{listing}{Exercise 1 Code}
-
-\begin{figure}[h!]
-    \label{fig:1}
-    \includegraphics[width=\linewidth]{ex_1_profits.png}
-    \caption{Contour plot of the profit function with the linear constraint function in green.}
-\end{figure}
-
-
-
-\newpage
-
-    \label{ex:2}
-    \begin{minted}{python}
-# Show that the pig is gaining weight at 5 lbs / day at t = 0:
-w(t) = 800 / (1 + 3 * (math.e)^(-t/30))
-w_prime(t) = w.derivative(t)
-w_pprime(t) = w_prime.derivative(t)
-w_ppprime(t) = w_pprime.derivative(t)
-
-print(f"At t=0, the pig is gaining {w_prime(0)} lbs per day")
-
-# Calculate as t gets large
-# t_0 = 3 # bad guess; close to crit point
-t_0 = 30
-guesses=[t_0]
-
-for i in range(10):
-    t_0 = t_0 - w_pprime(t_0) / w_ppprime(t_0)
-    guesses.append(t_0)
-    
-root = round(guesses[-1], 2)
-print(f'There is a root at {root}. It corresponds to maximum growth rate of {round(w_prime(root),3)}.')
-
-
-# Returns:
-# At t=0, the pig is gaining 5.0 lbs per day
-# There is a root at 32.96. It corresponds to maximum growth rate of 6.667.
-    \end{minted}
-
-    \captionof{listing}{Exercise 2 (a) Code}
-    
-\newpage
-
-
-
-    \label{ex:3}
-    \begin{minted}{python}
-# new pig problem
-t = var('t')  # time in days
-
-# Parameters
-w0 = 200   # init weight of pig
-rw = 5     # growth rate of pig (lb/day)
-m0 = 0.65  # init market price ($/pound)
-rm = -0.01 # market price rate of change ($/lbs/day)
-d  = 0.45  # daily cost to keep the pig
-
-# Functions
-w(t) = 800 / (1 + 3 *(math.e)^(-t/30))   # weight of pig
-m(t) = m0 + rm*t   # market price
-r(t) = w(t)*m(t)   # revenue
-c(t) = d*t         # cost
-p(t) = r(t) - c(t) # profit
-
-# Solve the Model
-pprime    = p.derivative(t)        # derivative of profit
-ppprime = pprime.derivative(t)
-
-t_0 = 2
-guesses=[t_0]
-for i in range(10):
-    t_0 = t_0 - pprime(t_0) / ppprime(t_0)
-    guesses.append(t_0)
-
-root = guesses[-1]
-print(guesses)
-print(f"There is a root at {root}. It corresponds to a profit of ${p(root)}.")
-show(plot(pprime(t), 0, 20))
-show(plot(p(t),0,20))
-
-# Returns:
-# There is a root at 12.33. It corresponds to a profit of $135.42.
-    \end{minted}
-
-    \captionof{listing}{Exercise 2 (b) Code}
-    
-
-\newpage
-
-\label{ex:4}
-\begin{minted}{python}
-# Variables
-x = var('x') # sub price
-y = var('y') # ad price
-
-# Parameters
-subs_0 = 80_000  # current subscribers (subscriber / week)
-ads_0  = 350     # current ads (pages / week)
-d_p_ad  = 250    # dollars per advertisement
-d_p_pap = 1.50   # dollars per paper (per subscriber)
-
-slope_price_subs = -50000 # -5000 subs per $0.10
-slope_price_ads = -0.5    # -50 pages per $100
-slope_ads_subs = 20       # 20 subs per page
-
-# Equations
-A(y) = ads_0 + slope_price_ads * (y - d_p_ad)
-S(x, y) = subs_0 + slope_price_subs * (x - d_p_pap) + slope_ads_subs * (A(y) - ads_0)
-z(x, y) = (x * S(x, y)) + (y * A(y))
-
-#first derivatives
-F(x,y) = z.derivative(x)
-G(x,y) = z.derivative(y)
-
-print(f"{F=}")
-print(f"{G=}")
-
-#Second derivatives
-F_x(x,y) = F.derivative(x)
-F_y(x,y) = F.derivative(y)
-G_x(x,y) = G.derivative(x)
-G_y(x,y) = G.derivative(y)
-
-print(f"{F_x=}")
-print(f"{F_y=}")
-print(f"{G_x=}")
-print(f"{G_y=}")
-\end{minted}
-
-    \captionof{listing}{Exercise 3 (b) Code}
-
-    \newpage
-
-\label{ex:5}
-\begin{minted}{python}
-OF(x,y) = [F(x,y), G(x,y)]
-
-
-def df(v):
-    (x,y) = v
-    return Matrix([grad(j)(x,y) for j in OF])
-
-X = vector([1.5, 350])
-
-guesses=[X]
-for i in range(5):
-    (x,y) = X
-    X = X - df(X).inverse() * OF(x,y)
-    guesses.append(X)
-    
-print(guesses)
-print(f'There is a solution at approximately {guesses[-1]}')
-\end{minted}
-\captionof{listing}{Exercise 3 (c)}
 
 \end{document}
