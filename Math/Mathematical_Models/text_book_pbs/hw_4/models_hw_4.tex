@@ -168,7 +168,7 @@
 	urlcolor=horange,
 }
 
-\newcommand{\assignmentname}{Homework 3: Chapters 2 \& 3}
+\newcommand{\assignmentname}{Homework 4: Chapter 3 (Lin Alg)}
 
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
@@ -489,7 +489,7 @@
 % Date format should be like: "January 1, 2001"
 \newcommand{\finaldate}{February 17, 2026}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
-\newcommand{\professor}{Dr. Christopher Camfield, Ph.D.}
+\newcommand{\professor}{Dr. Christopher Camfield}
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -548,32 +548,59 @@
 
 \begin{enumerate}
     \setcounter{enumi}{15}
-    \item A manufacturer of personal computers sells three desktop models. Model \(A\) costs \$850 to manufacture and sells for \$1,250; model \(B\) costs \$950 to manufacture and sells for \$1,400; and model \(C\) costs \$1,500 to manufacture and sells for \$2,500. The company purchases 10,000 desktop cases each month, and each computer requires one case. Models \(A\) and \(B\) use a 15–inch monitor, and the company can obtain 5,000 of these monitors per month. Model \(C\) uses a 17–inch monitor, and 7,500 of these are available per month. The remaining components are freely available. The company has 20,000 hours of production capacity available per month, and the production of each unit of model \(A\), \(B\), and \(C\) requires 1, 1.25, and 1.75 hours respectively.
+    \item A manufacturer of personal computers sells three desktop models. Model \(A\) costs \$850 to manufacture and sells for \$1,250; model \(B\) costs \$950 to manufacture and sells for \$1,400; and model \(C\) costs \$1,500 to manufacture and sells for \$2,500. The company purchases 10,000 desktop cases each month, and each computer requires one case. Models \(A\) and \(B\) use a 15–inch monitor, and the company can obtain 5,000 of these monitors per month. Model \(C\) uses a 17–inch monitor, and 7,500 of these are available per month. The remaining components are freely available. The company has 20,000 hours of production capacity available per month, and the production of each unit of model \(A\), \(B\), and \(C\) requires 1, 1.25, and 1.75 hours respectively. \hyperref[ex:1]{Excel Sheet}
     \begin{enumerate}
         \item How many of each type of computer should the company produce? Use the five-step method and solve as a linear programming problem.
+
         \sol{
-            
+            To maximize profits, the company should make 0 model \(A\)'s, 2,500 model \(B\)'s, and 7,500 model \(C\)'s to achieve a maximum monthly profit of \$8,625,000. It is also prudent to note that we have an additional 3,750 hours of production and 2,500 15-inch monitors available that we are not utilizing because we have a supply bottleneck of cases and 17-inch monitors. 
         }
+
         \setcounter{enumii}{3}
+
         \item The company is considering a new desktop model \(D\). This model will cost \$1,250 to manufacture and will sell for \$1,895. It requires a desktop case, a 17–inch monitor, and 1.5 hours of production. How will this change the results of parts (a) and (b)? Would you advise the company to go ahead with their plans to introduce this new model?
+
         \sol{
-            
+            We can advise the company with two arguments that approach the problem in different ways: 
+            \begin{enumerate}[label=\arabic*)]
+                \item \textbf{Modeling:} We can give them the results of running the program again with the addition of model \(D\), which outputs that the company should stick to 2,500 model \(B\)'s and 7,500 model \(C\)'s. Or, we could give them a logical argument that doesn't involve another round of computation.
+                \item \textbf{Logic:} As mentioned in part (a), we have a bottleneck of cases and 17-inch monitors, with labor-hours and 15-inch monitors that are not being utilized because of the fact. Thus, adding a new model that requires less labor-hours, but also dips into the case and 17-inch monitor supply is not advisable, as it does not address the bottleneck. In addition, the profit for model \(C\) is \$1000, whereas model \(D\) is \$645. This shows that the company would experience a net loss of \$355 per unit if they produced model \(D\) over \(C\). Therefore, the company should not include the new model, as it is less profitable than model \(C\), while also providing no added benefit, as the company already has a glut of labor-hours. They can look to increase profits by maximizing the number of model \(C\)'s they produce, until the labor-hours constraint is met (assuming demands stays constant given an influx of only one model (worked for Nvidia though)).
+            \end{enumerate}
         }
+
+    \newpage
     \end{enumerate}
     \setcounter{enumi}{17}
-    \item The Green Supply Company manufactures plastic grocery bags and milk jugs. The company can obtain 5,000 lbs of used plastic bags, 18,000 lbs of used plastic milk jugs, and 40,000 of industrial plastic scraps per week at a cost of \$18, \$12, and \$10 per 100 lbs respectively. The company has orders for 4,000 boxes of plastic bags and 80,000 milk jugs per week. One box of plastic bags requires 6 lbs of plastic, costs \$5 to manufacture, and sells for \$14. It costs \$9 and requires 14 lbs of plastic to make 100 milk jugs, and the jugs retail for \$20. The plastic bags must be at least 25\% post– consumer recycled plastic (used milk jugs or bags) because of consumer preference, and the milk jugs must be at most 50\% post–consumer recycled plastic for strength.
+    \item The Green Supply Company manufactures plastic grocery bags and milk jugs. The company can obtain 5,000 lbs of used plastic bags, 18,000 lbs of used plastic milk jugs, and 40,000 of industrial plastic scraps per week at a cost of \$18, \$12, and \$10 per 100 lbs respectively. The company has orders for 4,000 boxes of plastic bags and 80,000 milk jugs per week. One box of plastic bags requires 6 lbs of plastic, costs \$5 to manufacture, and sells for \$14. It costs \$9 and requires 14 lbs of plastic to make 100 milk jugs, and the jugs retail for \$20. The plastic bags must be at least 25\% post– consumer recycled plastic (used milk jugs or bags) because of consumer preference, and the milk jugs must be at most 50\% post–consumer recycled plastic for strength. \hyperref[ex:2]{Excel Sheet}
     \begin{enumerate}
         \item Determine the optimal mix of plastics for each product. Use the five-step method and model as a linear programming problem.
         \sol{
-            
+            We find the optimal mix of plastics to be 6,000 lbs of recycled plastic jugs and 29,200 lbs of plastic scrap. These values yield a profit of \$41,160 per week. Also, it's worth noting that we assumed the prices of \$18, \$12, and \$10 per 100 pounds could be changed to \$0.18, \$0.12, and \$0.1 per 1 pound. If it were the case that the company could only get those prices if they bought the plastic wholesale (i.e., only available in 100 lbs quantities), then the model would have to be slightly altered. 
         }
         \setcounter{enumii}{2}
         \item A new supplier can provide industrial plastic scraps at \$8 per 100 lbs. How does this change the results in parts (a) and (b)? 
         \sol{
-            
+            Given the new supplier, we would not change the amounts of plastic that we are ordering, as we are already maxing out the plastic scraps as it stands. The company would, however, experience have a profit increase of \$584. 
         }
     \end{enumerate}
 \end{enumerate}
+
+\newpage
+
+\begin{figure}
+\label{ex:1}
+    \includegraphics[width=\linewidth]{images/PB16a.png}
+    \caption{Linear programming solution in Excel for Exercise 16}
+\end{figure}
+
+
+\newpage
+
+\begin{figure}
+\label{ex:2}
+    \includegraphics[width=\linewidth]{images/PB18a.png}
+    \caption{Linear programming solution in Excel for Exercise 18}
+\end{figure}
 
 
 \end{document}

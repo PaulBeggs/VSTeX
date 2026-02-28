@@ -530,9 +530,9 @@
 % Do not use all caps.
 \newcommand{\cussubtitle}{Seminar in Algebra}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{February 26, 2025}
+\newcommand{\finaldate}{March 3, 2025}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
-\newcommand{\professor}{Dr. Carol Ann Downes, Ph.D.}
+\newcommand{\professor}{Dr. Carol Ann Downes}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -604,7 +604,30 @@ In Exercise 1, find the sum and the product of the given polynomials in the give
 \begin{enumerate}
     \item \(f(x) = 4x - 5, g(x) = 2x^{2} - 4x + 2 \text{ in } \Z_{8}[x]\).
           \sol{
-
+            For addition, we can use the following formula to find the answer to \(f(x) + g(x)\):
+            \[
+                \sum_{i = 0}^{\infty} (a_{i} + b_{i}) x^{i} = (-5 + 2)x^{0} + (4 - 4)x^{1} + (0 + 2)x^{2} = -3 + 2x^{2} \equiv 5 + 2x^{2} \text{ in }  \Z_{8}[x].
+            \]
+            For multiplication, it's easier to find the terms first, and then sum everything together afterwards. So, we start by finding \(c_{0}\):
+            \[
+                c_{0} = a_{0}b_{0} = (-5)(2) = -10.
+            \]
+            Then, for \(c_{1}\):
+            \[
+                c_{1} = a_{0}b_{1} + a_{1}b_{0} = (-5)(-4) + (4)(2) = 28.
+            \]
+            For \(c_{2}\):
+            \[
+                c_{2} = a_{0}b_{2} + a_{1}b_{1} + (0) = (-5)(2) + (4)(-4) = -26.
+            \]
+            Finally, for \(c_{3}\):
+            \[
+                c_{3} = (0) + a_{1}b_{2} + (0) + (0) = (4)(2) = 8.
+            \]
+            Plugging this into the multiplication formula to find \(f(x)g(x)\):
+            \[
+                \sum_{i = 0}^{\infty} c_{n}x^{n} = -10 + 28x -26x^{2} + 8x^{3}.
+            \] 
           }
 \end{enumerate}
 
@@ -614,20 +637,27 @@ In Exercise 7 and 8, \(F = E = \C\) in Theorem 22.4. Compute for the indicated e
     \setcounter{enumi}{6}
     \item \(\varphi_{2}(x^{2} + 3)\)
           \sol{
-
+            We find that 
+            \[
+                \varphi_{2}(x^{2} + 3) = 4 + 3 = 7.
+            \]
           }
     \item \(\varphi_{i}(2x^{3} - x^{2} + 3x + 2)\)
           \sol{
-
+            We find
+            \[
+                \varphi_{i}(2x^{3} - x^{2} + 3x + 2) \phantom{2} = \phantom{2} 2(i)^{3} - (i)^{2} + 3(i) + 2 \phantom{2} = \phantom{ } -2i + 1 + 3i + 2 \phantom{2} = \phantom{2} i + 3.
+            \]
           }
-
 \end{enumerate}
+
+\newpage
 
 \textbf{Concepts}
 
 \begin{enumerate}
     \setcounter{enumi}{21}
-    \item Find a polynomial of degree \(>0\) in \(Z_{4}[x]\) that is a unit.
+    \item Find a polynomial of degree \(>0\) in \(\Z_{4}[x]\) that is a unit.
           \sol{
 
           }
@@ -693,7 +723,7 @@ In Exercise 2, find \(q(x)\) and \(r(x)\) as described by the division algorithm
               \]
           }
           \setcounter{enumi}{9}
-    \item  The polynomial \(x^{3} + 2x^{2} + 2x + 1\) can be factored into linear factors in \(Z_{7} [x]\). Find this factorization.
+    \item  The polynomial \(x^{3} + 2x^{2} + 2x + 1\) can be factored into linear factors in \(\Z_{7} [x]\). Find this factorization.
           \sol{
 
           }
@@ -709,7 +739,7 @@ In Exercise 2, find \(q(x)\) and \(r(x)\) as described by the division algorithm
           }
 \end{enumerate}
 
-In Exercises 18 and 20, determine whether the polynomial in \(Z[x]\) satisfies an Eisenstein criterion for irreducibility over \(\Q\).
+In Exercises 18 and 20, determine whether the polynomial in \(\Z[x]\) satisfies an Eisenstein criterion for irreducibility over \(\Q\).
 
 \begin{enumerate}
     \setcounter{enumi}{17}
