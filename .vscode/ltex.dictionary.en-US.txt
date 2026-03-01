@@ -204,3 +204,4 @@ homomorphisms
 granularities
 subring
 idempotents
+coprime
