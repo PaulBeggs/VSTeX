@@ -205,3 +205,4 @@ granularities
 subring
 idempotents
 coprime
+subrings

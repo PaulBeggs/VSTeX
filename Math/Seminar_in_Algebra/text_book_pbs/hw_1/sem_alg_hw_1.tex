@@ -635,7 +635,11 @@ In Exercises 16, 18, and 19, describe all units in the given ring.
     \setcounter{enumi}{31}
     \item Given an example of a ring with unity \(1 \ne 0\) that has a subring with nonzero unity \(1' \ne 1\). [Hint: Consider a direct product or a subring of \(\Z_{6}\)]
     \sol{
-        Consider the ring \(\Z_{6}\). The element \(1\) is the unity of \(\Z_{6}\). However, the subset \(\{0, 3\}\) forms a subring of \(\Z_{6}\) with unity \(1' = 3\) because \(3 \cdot 3 \equiv 3\) and \(3 \cdot 0 \equiv 0\).
+        Consider the ring \(\Z_{6}\). The element \(1\) is the unity of \(\Z_{6}\). However, the subset \(\{0, 3\}\) forms a subring of \(\Z_{6}\) with unity \(3\) because \(3 \cdot 3 \equiv 3\) and \(3 \cdot 0 \equiv 0\). To show that this subset is a subring, we have to show that for all \(a,b \in S\), \(a - b \in S\), \(ab \in S\), and \(0 \in S\). We have already shown \(0 \in S\), and with the computation \(0 \cdot 0 \equiv 0\), we have shown \(ab \in S\). Thus, we need only show the second condition:
+        \[
+            3 - 0 \equiv 3, \quad 3 -3 \equiv 0, \quad \text{and} \quad 0 - 0 \equiv 0. 
+        \]   
+        Since \(\Z_{6}\) is commutative, we have satisfied all conditions. 
     }
 \end{enumerate}
 
@@ -655,7 +659,7 @@ In Exercises 16, 18, and 19, describe all units in the given ring.
         \end{align*}
         Thus, the multiplicative inverse of a unit in a ring with unity is unique.
     }
-    \item An element of \(a\) of a ring \(R\) is \textbf{idempotent} if \(a^{2} = a\).
+    \item An element \(a\) of a ring \(R\) is \textbf{idempotent} if \(a^{2} = a\).
     \begin{enumerate}[label=\textbf{\alph*.}]
         \item Show that the set of all idempotent elements of a commutative ring is closed under multiplication.
         \pf{
@@ -681,33 +685,21 @@ In Exercises 16, 18, and 19, describe all units in the given ring.
     \setcounter{enumi}{45}
     \item An element \(a\) for ring \(R\) is \textbf{nilpotent} if \(a^{n} = 0\) for some \(n \in \Z^{+}\). Show that if \(a\) and \(b\) are nilpotent elts of a commutative ring, then \(a + b\) is also nilpotent. 
     \pf{
-        Let \(a,b \in \Z^{+}\). This means there exists some \(n,m\in \Z^{+}\) for which \(a^{n} = 0\) and \(b^{m} = 0\). Our goal is to show that \((a + b)^{n + m} = 0\). Since \(R\) is a commutative ring, we can use the binomial theorem to help here (thanks to an insight from Noah). Thus, consider the following:
+        Let \(a,b \in R\), a commutative ring. This means there exists some \(n,m\in \Z^{+}\) for which \(a^{n} = 0\) and \(b^{m} = 0\). Our goal is to show that \((a + b)^{n + m} = 0\). Since \(R\) is a commutative ring, we can use distributive laws and the binomial theorem to help here. Thus, consider the following:
         \[
             (a + b)^{n + m} = \sum^{n + m}_{k=0} \binom{n + m}{k} a^{k}b^{(n + m)-k}.
         \]
         Note that every element in each term is a multiple of our nilpotent elements, so our goal is to show that each of these elements are 0 for any value of \(k\). Thus, consider these two cases:
         \begin{itemize}[topsep=2pt]
             \item \textbf{\(k \ge n\)}: If \(k \ge n\), then \(a^{k} = a^{n}a^{k -n} = 0a^{k - n} = 0\), so the whole term is 0.
-            \item \textbf{\(k < n\)}: Since \(k < n\), it follows that \(-k > -n\). Therefore, \((n + m) - k > n + m - n = m\) (because \(R\) is commutative). Since the exponent of \(b\) is greater than \(m\), \(b^{(n + m)-k} = 0\). 
+            \item \textbf{\(k < n\)}: Since \(k < n\), it follows that \(-k > -n\). Therefore, \((n + m) - k > n + m - n = m\) (because \(\langle R, + \rangle\) is an abelian group). Since the exponent of \(b\) is greater than \(m\), \(b^{(n + m)-k} = 0\). 
         \end{itemize}
         Therefore, we have shown that \((a + b)^{n + m} = 0\).
     }
 
 
 
-    % \item (Linear algebra) Recall that for an \(m \times n\) matrix \(A\), the \textit{transpose} \(A^{T}\) of \(A\) is the matrix whose \(j\)th column is the \(j\)th row of \(A\). Show that if \(A\) is an \(m \times n\) matrix such that \(A^{T}A\) is invertible, then the \textit{projection matrix} \(P = A(A^{T}A)^{-1}A^{T}\) is an idempotent in the ring of \(n \times n\) matrices.
-    % \pf{
-    %     We will show that \(P\) is an idempotent by computing \(P^{2}\):
-    %     \begin{align*}
-    %         P^{2} &= [A(A^{T}A)^{-1}A^{T}][A(A^{T}A)^{-1}A^{T}] \\
-    %         &= A[(A^{T}A)^{-1}(A^{T}A)][(A^{T}A)^{-1}A^{T}] & \text{matrix associativity,} \\
-    %         &= A(I_{A})[(A^{T}A)^{-1}A^{T}] & \text{matrix inverses,} \\
-    %         &= A[(A^{T}A)^{-1}A^{T}] & \text{matrix identity,} \\
-    %         &= A(A^{T}A)^{-1}A^{T} & \text{matrix associativity,} \\
-    %         &= P & \text{definition of } P.
-    %     \end{align*}
-    %     Thus, we have shown that \(P^{2} = P\). Therefore, \(P\) is an idempotent.
-    % }
+
     \setcounter{enumi}{49}
     \item Let \(R\) be a ring, and let \(a\) be a fixed element of \(R\). Let \(I_{a} = \{x \in R \mid ax = 0\}\). Show that \(I_{a}\) is a subring of \(R\). 
     \pf{
@@ -752,7 +744,7 @@ In Exercises 16, 18, and 19, describe all units in the given ring.
     \setcounter{enumi}{17}
     \item Each of the six numbered regions in Fig. 19.10 corresponds to a certain type of ring. Give an example of a ring in each of the six cells. For example, a ring in the region numbered 3 must be commutative (it is inside the commutative circle), have unity, but not be an integral domain. 
     \sol{
-        Starting from 6 and working inward, we have: 6. \(M_{2}(2\Z)\); 5. \(M_{2}(\R)\); 4. \(2\Z\); 3. \(\Z_{6}\); 2. \(\Z_{2}\); 1. \(\R\).  
+        Starting from 6 and working inward, we have: 6. \(M_{2}(2\Z)\); 5. \(M_{2}(\R)\); 4. \(2\Z\); 3. \(\Z_{6}\); 2. \(\Z\); 1. \(\R\).  
     }
 
 \end{enumerate}
@@ -828,8 +820,121 @@ In Exercises 16, 18, and 19, describe all units in the given ring.
     \end{enumerate}
 \end{enumerate}
 
+\newpage
+
+\section*{Practice}
+
+\begin{enumerate}
+    \item Let \(R\) be a commutative ring and let N be the set of all nilpotent elements in \(R\). Prove that \(N\) is a subring of \(R\).
+    \pf{
+        Let \((a,b) \in R_{1} \times R_{2}\) be idempotent. Then, \((a,b)^{2} = (a,b)\). Now, consider the following computation:
+        \[
+            (a,b)^{2} = (a,b)(a,b) = (a \cdot a, b \cdot b).
+        \]
+        The only way for \((a,b)^{2}\) to equal \((a,b)\) is if \(a \cdot a = a\) and \(b \cdot b = b\). Thus, \(a\) and \(b\) must be idempotent elements. 
+        
+        Now, assume \(a\) and \(b\) are idempotent elements in their respective rings. Then, \(a^{2} = a\) in \(R_{1}\) and \(b^{2} = b\) in \(R_{2}\). Now, consider the following computation:
+        \[
+            (a,b)^{2} = (a,b)(a,b) = (a \cdot a, b \cdot b) = (a, b).
+        \]
+        Thus, we have shown that \((a,b)\) is idempotent.
+    }
+    \item Let \(R\) be a commutative ring and let \(N\) be the set of all nilpotent elements in \(R\). Prove that \(N\) is a subring of \(R\).
+    \pf{
+        Let \(a,b \in N\) where \(a^{n} = 0\) and \(b^{m} = 0\) for some \(n,m \in \Z^{+}\). Then, consider the following:
+        \begin{enumerate}
+            \item \(0 \in N\): Since \(0^{1} = 0 \), \(0 \in N\).  
+            \item \(a - b \in N\): Consider \(a - b = a + (-b)\). Since \((-b)^{m} = \pm b^{m} = 0\), \(-b\) is nilpotent. Therefore, by Exercise 46, \(a + (-b)\) is nilpotent. 
+            \item \(ab \in N\): Compute \((ab)^{nm} = (a)^{nm}(b)^{nm} = (a^{n})^{m}(b^{m})^{n} = 0 \cdot 0 = 0\), this \(ab\) is nilpotent. 
+        \end{enumerate}
+        Thus, since we have shown all the subring axioms hold, \(N\) is a subring of \(R\).
+    }
+    \item Let \(R\) be a ring with unity \(1 \ne 0\). Prove that if \(a \in R\) is a nilpotent element, then \(a\) cannot be a unit. 
+    \pf{
+        Let \(a\) be a nilpotent element in \(R\) such that for some \(n \in \Z^{+}\), \(a^{n} = 0\) where \(n\) is the smallest such integer. For the sake of contradiction, assume \(a\) is a unit such that \(au = 1\) for some \(u \in R\). Consider the computation:
+        \[
+            a^{n} = a \cdot a^{n - 1} = 0.
+        \]
+        Now, multiply both sides by inverse \(u\):
+        \[
+            u \cdot a \cdot a^{n - 1} = u \cdot 0.
+        \]
+        Since \(ua = 1\), we get \(1 \cdot a^{n - 1} = 0\), which means \(a^{n - 1} = 0\). But we said that \(n\) was the smallest such \(n\) such that \(a^{n} = 0\). This is a contradiction. Therefore, \(a\) cannot be a unit.    
+    }
+    \item Let \(R\) be a ring with unity \(1 \ne 0\). Prove that if \(e \in R\) is idempotent, and \(e \ne 0\) and \(e \ne 1\), then \(e\) must be a zero divisor. 
+    \pf{
+        Let \(e \in R\) be an idempotent element with \(e \ne 0\) and \(e \ne 1\). Then \(e^{2} = e\), and since \(e \ne 0\), we can rearrange \(e^{2} = e\) to be \(e^{2} - e = 0\). Factor to get
+        \[
+            e(e - 1) = 0.
+        \]
+        Since \(e \ne 0\) and \(e \ne 1\), we have two nonzero elements multiplying together to get 0. Therefore, \(e\) must be a zero divisor. 
+    }
+    \item Let \(R\) be a ring, and let \(S_{1}\) and \(S_{2}\) be subrings of \(R\). Prove that their intersection, \(S_{1} \cap S_{2}\), is also a subring of \(R\). 
+    \pf{
+        We will show that \(S_{1} \cap S_{2}\) is a subring by satisfying the subring axioms:
+        \begin{enumerate}
+            \item \(0 \in S_{1} \cap S_{2}\): Since both \(S_{1}\) and \(S_{2}\) are both subrings of \(R\), \(0 \in S_{1}\) and \(0 \in S_{2}\), so \(0 \in S_{1} \cap S_{2}\).
+            \item \(a - b \in S_{1} \cap S_{2}\): Let \(a,b \in S_{1} \cap S_{2}\). This means \(a,b \in S_{1}\) and \(a,b \in S_{2}\). Because \(S_{1}\) is a subring, it is closed under subtraction, so \(a - b \in S_{1}\). The same argument applies for \(S_{2}\). Therefore, \(a - b \in S_{1} \cap S_{2}\)
+            \item \(ab \in S_{1} \cap S_{2}\): Following the same logic as part (b), if we let \(a,b \in S_{1} \cap S_{2}\), then their product \(ab \in S_{1}\) because \(S_{1}\) is a subring. By the same logic, \(ab \in S_{2}\). Therefore, \(ab \in S_{1} \cap S_{2}\).
+        \end{enumerate}
+        Therefore, we have shown that \(S_{1} \cap S_{2}\) is a subring of \(R\). 
+    }
+    \item Prove that \(Z(R)\) is a subring of \(R\). (Where \(Z(R)\) is known as the \textit{center of a ring} \(R\), is the set of all elements in \(R\) that commute with everything in \(R\). Formally: \(Z(R) = \{x \in R \mid xr = rx \text{ for all } r \in R\}\).)
+    \pf{
+        We will show that \(Z(R)\) is a subring by satisfying the subring axioms:
+        \begin{enumerate}
+            \item \(0 \in Z(R)\): Since \(0x = x0 = 0\), \(0 \in Z(R)\).
+            \item \(a - b \in Z(R)\): Let \(a, b \in Z(R)\). Then
+            \begin{align*}
+                (a - b)r &= ar - br & \text{right distributive laws},\\
+                &= ra - rb  & \text{since } a,b \in Z(R), \text{ they commute with } r,\\
+                &= r(a - b) & \text{left distributive laws}.
+            \end{align*}
+            \item \(ab \in Z(R)\): Let \(a,b \in Z(R)\). Now, consider the computation
+            \begin{align*}
+                (ab)r &= a(br) & \text{associativity}, \\
+                &= a(rb) & \text{since } b \in Z(R), \text{ it commutes with } r, \\
+                &= (ar)b &\text{associativity}, \\
+                &= (ra)b & \text{since } a \in Z(R), \text{ it commutes with } r, \\
+                &= r(ab) & \text{associativity.}
+            \end{align*}
+        \end{enumerate}
+        Therefore, we have shown that \(Z(R)\) is a subring of \(R\). 
+    }
+    \item Prove that if \(R\) is a Boolean ring (meaning \(x^{2} = x\) for all \(x \in R\)), then \(R\) must be a commutative ring (meaning \(xy = yx\) for all \(x,y \in R\)).
+    \pf{
+        To show that \(R\) is a commutative ring, we must show that multiplication is commutative. Let \(x, y \in R\). Since \(R\) is a boolean ring, every element is idempotent, so \((x + x)^{2} = (x + x)\). So, 
+        \[
+            (x + x) = (x + x)^{2} = x^{2} + x^{2} + x^{2} + x^{2} = x + x + x + x
+        \] 
+        is only true if \(x = -x\). Now, consider
+        \[
+            (x + y) = (x + y)^{2} = x^{2} + xy + yx + y^{2} = x + xy + yx + y.
+        \]
+        Thus, \(xy = -yx\) as well. Since every element is its own inverse, then \(yx = -yx\), so by substitution, we get \(xy = yx\). Therefore, multiplication is commutative.  
+    }
+    \item Let \(R\) be a finite commutative ring with unity. Prove that every nonzero element in \(R\) is either a unit or a zero divisor. 
+    \pf{
+        Let \(a\) be a nonzero element in \(R\), and assume \(a\) is a unit, so the cancellation laws hold. Consider the infinite list of its powers \(a, a^{2}, a^{3}, \dots\).  Because \(R\) is finite, this list must repeat, meaning \(a^{i} = a^{j}\) for some \(i < j\). Thus, \(a^{i} = a^{i}a^{j - i}\). Since we can cancel \(a\), we cancel it \(i\) times to get \(1 = a^{j - i}\). Now, let \(k = j - i\). Since \(i < j\), we know \(k \ge 1\). Now, we can rewrite \(1 = a^{k}\) as \(1 = aa^{k - 1}\). Since \(a\) multiplied by some \(a^{k-1}\) equals the unity, then \(a\) is a unit. Therefore, if \(a\) is nonzero, it is either a zero divisor or it is a unit.
+    }
+\end{enumerate}
+
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 \end{document}
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+    % \item (Linear algebra) Recall that for an \(m \times n\) matrix \(A\), the \textit{transpose} \(A^{T}\) of \(A\) is the matrix whose \(j\)th column is the \(j\)th row of \(A\). Show that if \(A\) is an \(m \times n\) matrix such that \(A^{T}A\) is invertible, then the \textit{projection matrix} \(P = A(A^{T}A)^{-1}A^{T}\) is an idempotent in the ring of \(n \times n\) matrices.
+    % \pf{
+    %     We will show that \(P\) is an idempotent by computing \(P^{2}\):
+    %     \begin{align*}
+    %         P^{2} &= [A(A^{T}A)^{-1}A^{T}][A(A^{T}A)^{-1}A^{T}] \\
+    %         &= A[(A^{T}A)^{-1}(A^{T}A)][(A^{T}A)^{-1}A^{T}] & \text{matrix associativity,} \\
+    %         &= A(I_{A})[(A^{T}A)^{-1}A^{T}] & \text{matrix inverses,} \\
+    %         &= A[(A^{T}A)^{-1}A^{T}] & \text{matrix identity,} \\
+    %         &= A(A^{T}A)^{-1}A^{T} & \text{matrix associativity,} \\
+    %         &= P & \text{definition of } P.
+    %     \end{align*}
+    %     Thus, we have shown that \(P^{2} = P\). Therefore, \(P\) is an idempotent.
+    % }
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

@@ -610,7 +610,7 @@ In Exercise 1, find the sum and the product of the given polynomials in the give
             \[
                 \sum_{i = 0}^{\infty} (a_{i} + b_{i}) x^{i} = (-5 + 2)x^{0} + (4 - 4)x^{1} + (0 + 2)x^{2} = -3 + 2x^{2} \equiv 5 + 2x^{2} \text{ in }  \Z_{8}[x].
             \]
-            For multiplication, it's easier to find the terms first, and then sum everything together afterwards. So, we start by finding \(c_{0}\):
+            For multiplication, we'll find the terms first, and then sum everything together afterwards. So, we start by finding \(c_{0}\):
             \[
                 c_{0} = a_{0}b_{0} = (-5)(2) = -10.
             \]
@@ -628,7 +628,7 @@ In Exercise 1, find the sum and the product of the given polynomials in the give
             \]
             Plugging this into the multiplication formula to find \(f(x)g(x)\):
             \[
-                \sum_{i = 0}^{\infty} c_{n}x^{n} = -10 + 28x -26x^{2} + 8x^{3}.
+                \sum_{i = 0}^{\infty} c_{n}x^{n} = -10 + 28x -26x^{2} + 8x^{3} \equiv 6 + 4x + 6x^{2} \text{ in } \Z_{8}[x].
             \] 
           }
 \end{enumerate}
@@ -666,16 +666,6 @@ In Exercise 7 and 8, \(F = E = \C\) in Theorem 22.4. Compute for the indicated e
                 f(x)^{2} = a^{2}x^{2} + 2abx + b^{2}.
             \] 
             For this equation to equal 1, we need the \(x\) terms to be equivalent to \(0 \pmod{4}\), and for \(b^{2} \equiv 1 \pmod{4}\). Thus, let \(a = 2\) and \(b = 1\) (or 3, as \(3^{2} \pmod{4} \equiv 1\) and \(2 \cdot 2 \cdot 3 \equiv 0 \pmod{4}\)). Then, we have found that \(2x + 1\) is a unit in \(\Z_{4}[x]\).
-            % To find a polynomial of degree \(>0\), \(f(x)\) that is a unit in \(\Z_{4}[x]\), we need to find another polynomial \(g(x) \in \Z_{4}[x]\) such that \(f(x)g(x) = 1\). Let \(f(x) = ax + b\), and \(g(x) = cx + d\) so that both polynomials are of degree 1. Thus, we have the following equation:
-            % \begin{align*}
-            %     f(x)g(x) &= (ax + b)(cx + d) \\
-            %     &= acx^{2} + adx + bcx + bd.
-            % \end{align*}
-            % For our equation to be equal to one, we need to get rid of all indeterminate \(x\)-values, and ensure \(bd\) equals 1. From this, we get \(b = d = 1\) (or equivalently, \(b = d = 3\), as \(9 \pmod 4 \equiv 1\), but we stick with the former equation, as either computation works). We can use the fact that we are in \(\Z_{4}[x]\) to send the other terms to 0. So, we want:
-            % \[
-            %     acx^{2} \equiv 0 \pmod{4} \quad \text{and} \quad ax + cx \equiv 0 \pmod{4}.
-            % \]
-            % We see that \(a = c = 2\) works for this purpose. Thus, we have found that \(f(x) = g(x)\), and also that \(2x + 1\) is a unit.
           }
 \end{enumerate}
 
@@ -686,7 +676,6 @@ In Exercise 7 and 8, \(F = E = \C\) in Theorem 22.4. Compute for the indicated e
     \item Prove that if \(D\) is an integral domain, then \(D[x]\) is an integral domain.
           \pf{
             % Must show: D[x] has no divisors of 0, is a commutative ring with unity \(1 \ne 0\).
-            % Thus, if the coefficients of a polynomial are from an integral domain, one can solve a polynomial equation in which the polynomial can be factored into linear factors in the usual fashion by setting each factor equal to 0. 
             Let \(D\) be an integral domain. We will show that \(D[x]\) satisfies all integral domain axioms. From Theorem 22.2, since \(D\) is commutative with unity \(1 \ne 0\), so does \(D[x]\). So, we are left with showing that \(D[x]\) has no 0 divisors. Let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(D[x]\), where \(f(x)\) has degree \(n\), and \(g(x)\) has degree \(m\). Thus, we have
             \[
                 f(x) = a_{n}x^{n} + \cdots + a_{1}x + a_{0} \quad \text{and} \quad g(x) = b_{m}x^{m} + \cdots + b_{1}x + b_{0},
@@ -706,7 +695,7 @@ In Exercise 7 and 8, \(F = E = \C\) in Theorem 22.4. Compute for the indicated e
 \newpage
               \item Find the units in \(\Z_{7}[x]\).
                     \sol{
-                        Unlike \(\Z\) in the previous part, \(\Z_{7}\) is a field, but we know that \(\Z_{7}[x]\) is an integral domain by the notes, and also in the comment following Example 22.3. Thus, we know the units of \(\Z_{7}[x]\) are 1, 2, 3, 4, 5, and 6. 
+                        Unlike \(\Z\) in the previous part, \(\Z_{7}\) is a field, but we know that \(\Z_{7}[x]\) is an integral domain by the notes and in the comment following Example 22.3. Thus, we know the units of \(\Z_{7}[x]\) are 1, 2, 3, 4, 5, and 6. 
                     }
           \end{enumerate}
 \end{enumerate}
@@ -733,14 +722,14 @@ In Exercise 2, find \(q(x)\) and \(r(x)\) as described by the division algorithm
                         &          &        &   &        &   & x^4 & + & 3x^3 & - & x^{2}  &   &    &   &   \\
         \cline{7-11}
                         &          &        &   &        &   &     & - & 3x^3 & + & 5x^{2} & - & 3x &   &   \\
-                        &          &        &   &        &   &     &   & 3x^3 & - & 2x^2   & + & 3x &   &   \\
+                        &          &        &   &        &   &     & - & 3x^3 & - & 2x^2   & + & 3x &   &   \\
         \cline{8-13}
                         &          &        &   &        &   &     &   &      &   &        & - & 6x & + & 2 \\
     \end{array}
               \]
               Thus, we find
               \[
-                  q(x) = 5x^{4} + 5x^{2} - x \qquad \text{and} \qquad r(x) = -6x + 2.
+                  q(x) = 5x^{4} + 5x^{2} - x \qquad \text{and} \qquad r(x) = x + 2.
               \]
           }
           \setcounter{enumi}{9}
@@ -807,7 +796,7 @@ In Exercises 18 and 20, determine whether the polynomial in \(\Z[x]\) satisfies 
     \setcounter{enumi}{33}
     \item Show that for \(p\) a prime, the polynomial \(x^{p} + a\) in \(\Z_{p} [x]\) is not irreducible for any \(a \in \Z_{p}\).
           \pf{
-            Since \(p\) is prime, the degree of our polynomial is \(p \ge 2\). We know that a polynomial of degree 2 or higher is not irreducible if it has a root in the field by Theorem 23.10. Remember that Corollary 20.2 tells us that \(x^{p} \equiv x \pmod{p}\) for any \(x \in \Z\). Thus, evaluating the polynomial at \(x = -a\) gives
+            Since \(p\) is prime, the degree of our polynomial is \(p \ge 2\). We know that a polynomial of degree 2 or higher is not irreducible if it has a root in the field. So, we plan to find a root. Remember that Corollary 20.2 tells us that \(x^{p} \equiv x \pmod{p}\) for any \(x \in \Z\). Thus, evaluating the polynomial at \(x = -a\) gives
             \[
                 (-a)^{p} + a \equiv -a + a \equiv 0 \pmod{p}.
             \]
