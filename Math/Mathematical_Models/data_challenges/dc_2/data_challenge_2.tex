@@ -3,7 +3,7 @@
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\documentclass[12pt, oneside]{book}
+\documentclass[12pt]{article}
 \usepackage{xcolor}
 \usepackage{minted}
 
@@ -35,7 +35,6 @@
 
 %%% Dimensions and Spacing %%%
 \usepackage[margin=1in]{geometry}
-\setlength{\parindent}{0pt}
 \usepackage{setspace}
 \usepackage{mathtools}
 \usepackage{esint}
@@ -48,7 +47,8 @@
 \usepackage{pgfkeys}
 \usepackage{pdftexcmds}
 \usepackage{shellesc}
-\usepackage{algorithm, algorithmic, xspace}
+\usepackage{algpseudocode, algorithmicx, xspace}
+\usepackage{algorithm}
 %%% Define new colors %%%
 \definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
 
@@ -149,15 +149,12 @@
 
 
 
-\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
-
-
 %%% FIGURES %%%
 \usepackage{graphicx}  
 % \numberwithin{figure}{section}
 \usepackage{float}
 \usepackage{caption}
-
+\usepackage{tabularx}
 %%% Hyperlinks %%%
 \usepackage{hyperref}
 \definecolor{horange}{HTML}{f58026}
@@ -168,7 +165,7 @@
 	urlcolor=horange,
 }
 
-\newcommand{\assignmentname}{Homework 2: Chapter 2}
+\newcommand{\assignmentname}{Data Challenge 2}
 
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
@@ -487,7 +484,7 @@
 % Do not use all caps.
 \newcommand{\cussubtitle}{Mathematical Models}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{January 27, 2026}
+\newcommand{\finaldate}{March 6, 2026}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
 \newcommand{\professor}{Dr. Christopher Camfield}
 
@@ -542,117 +539,99 @@
 \end{titlepage}
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
+\section{Introduction}
 
-\begin{enumerate}
-    \item Ecologists use the following model to represent the growth process of two competing species, \(x\) and \(y\):
-    \[
-        \frac{dx}{dt} = r_{1}x\left(1 - \frac{x}{K_{1}}\right) - \alpha_{1}xy, \quad \frac{dy}{dt} = r_{2}y\left(1 - \frac{y}{K_{2}}\right) - \alpha_{2}xy.
-    \]
-    The variables \(x\) and \(y\) represent the number in each population; the parameters \(r_{i}\) represent the intrinsic growth rates of each species; \(K_{i}\) represents the maximum sustainable population in the absence of competition; and \(\alpha_{i}\) represents the effects of competition. Studies of the blue whale and fin whale populations have determined the following parameter values (\(t\) in years):
+When trying to find the temperature of a room, we often take many samples and average them together to achieve a global average. However, to ensure average is appropriately sampling the whole room, we take many recordings. For this problem, we take 500 temperature samples of a \(20 \times 10 \times 8\) room, showcased in \hyperref[implicit]{Figure 1}. In an ideal situation, we would have evenly sampled temperatures across the whole room, so we know that when we average them, we are appropriately sectioning off the room into equally representable sections. However, in this paper, we walk through an approach of finding the average temperature when the sampling is \textit{uneven}.
 
-    \begin{center}
-        \begin{tabular}[htbp]{ccc}
-            \toprule
-            & Blue & Fin \\ \midrule
-            \(r\) & 0.05 & 0.08 \\
-            \(K\) & 150,000 & 400,000 \\ 
-            \(\alpha\) & \(10^{-8}\) & \(10^{-8}\) \\ \bottomrule
-        \end{tabular}
-    \end{center}
-    \begin{enumerate}
-        \item Determine the population levels \(x\) and \(y\) that maximize the number of new whales born each year. Use the five-step method, and model as an unconstrained optimization problem. \hyperref[ex:1]{Python Code}
-        \sol{
-            Our goal is to find the optimal population for blue and fin whales that maximize the number of new whales born each year. We will model this as an unconstrained optimization problem. After some work (see python code), we find that the optimal number of blue and fin whales is 69,104 and 196,545, respectively. Maintaining these populations result in an annual growth rate of 9,589 new whales per year.  
-        }
-    \end{enumerate}
-    \setcounter{enumi}{2}
+\section{The Algorithm}
 
-    \item Reconsider the whale problem of Exercise 1, but now consider the economic ramifications of harvesting. 
-    \begin{enumerate}
-        \item A blue whale carcass is worth \$12,000, and a fin whale carcass is worth about half as much. Assuming that controlled harvesting can be used to maintain \(x\) and \(y\) at any desired level, what population levels will produce the maximum revenue? (Once population reaches the desired levels, the population levels will be kept constant by harvesting at a rate equal to the growth rate.) Use the five-step method. Model as an unconstrained optimization problem. \hyperref[ex:3]{Python Code}
-        
-        \sol{
-            Our goal is to maximize revenue for the whaling operation. We model this as an unconstrained optimization problem. We find that the optimal number of blue and fin whales is 70,619 and 194,704, respectively. Maintaining these populations yields an annual revenue of approximately \$67,914,605.90.
-        }
-    \end{enumerate}
-\end{enumerate}
+\subsection{Overview}
+
+As mentioned in the introduction, our room consists of 500 unevenly sampled temperatures, each with an associated \(x\), \(y\), and \(z\) coordinate. Because our room is unevenly sampled, we fill the room with 216 rectangular prisms (or simply a ``box''). Then, we account for every box's boundary, and add the contained temperatures to a list associated with that box. Once we have every temperature in the box accounted for, we find the average temperature, and then multiply it by the reciprocal of the total boxes. This achieves a weighting effect that reduces the impact of boxes that are overcrowded, and bolsters those that are sparse. If a box is empty, then we assume the temperature to be equal to the average of temperature values, 54.96. We do this for every box, and add each box's weighted temperature together to achieve a weighted global average temperature of 55.24. The rest of this section goes into the details of this summary.
+
+\subsection{Initialization \& Sorting}
+
+First, our goal is to set up the boxes so that we have an equal partition that fills the room. We do this by partitioning each dimension into intervals, denoted in the \hyperref[init]{initialization} algorithm as \(n_{bins}\). For example, if we set \(n_{bins} = 6\), then we would have box lengths along the \(x\)-axis of \(bl_{x} = 10/3\) because the total length is of the room is 20. So, we define how many intervals we want, so we can create boxes that have equally distributed lengths along the whole of the room. Finding the optimal number for \(n_{bins}\) came down to balancing the number of empty boxes to ones that had values. We settled on 6 because it left us with only 21 boxes that were empty, thus allowing for an appropriate amount of partitioning, while not letting the global average dominate the weighted average. 
+
+Since we have 3 dimensions and 6 bins, we end up with 216 total boxes that we can assign temperatures to. To assign temperatures to each box, we have to know which box that temperature is in. So, we start by calculating the box lengths for every dimension in the room. Then, for each coordinate in the data set, we divide it by the respective box length and round down. This forces the coordinate into one of the 0 to \(n_{bins} - 1\) bins. To account for points that may fall on the room's border, we force them into the last bin available.
+
+
+To put the \hyperref[assign]{assigning temperatures} algorithm into context, we walk through 2 examples with \(n_{bins} = 6\), so \(bl_{x} = 10/3\), \(bl_{y} = 5/3\), and \(bl_{z} = 4/3\). The first example has coordinates \((5.3,4.2,3.0)\) with associated temperature \(43.702245\). We divide each by the box lengths to get \(i = 1\), \(j = 2\), and \(k = 2\). Thus, we know this coordinate falls within the bounds of this indexed box, so we add the temperature. The second example is to do with a point that is on the border. Note that, for our room with dimensions \(20 \times 10 \times 8\), we actually don't have any points that fall on the border, but it is good practice to have the check in place. So, let point \((20.0, 9.5, 8)\) be in the room. We would calculate \(i = \lfloor 20 / 3.33 \rfloor = 6\), \(j = \lfloor 9.5 / 1.66\rfloor = 5\), and \(k = \lfloor 8 / 1.33 \rfloor = 6\). Notice that indices \(i\) and \(k\) are not included in the range \(\{0,1, \ldots, n_{bins} - 1\}\). Thus, this is why we included the \(\min(...)\) check in the formula. At the end of the loop, we assign the temperature to the associated box.
+
+
+\subsection{Calculating the Weighted Average}
+
+Now that we have every temperature assigned to a box, we can calculate the global weighted temperature for the room, as shown in the \hyperref[calc]{calculation} algorithm. Now, each box either has one or more temperatures, or none at all. So, if the box has more than one temperature, we calculate the average in the box; however, if the box is empty, then we calculate the average of \textit{all} temperatures in the room, and assign the box that value. At the end, we do a weighted sum of every box's recorded temperature by multiplying the average by a scaling value, the reciprocal of the number of boxes. This allows for equality among each box, so not one box dominates the weighted average. For this problem, we find a total weighted average of 55.24 degrees, or just 0.28 degrees higher than the global average.
+
+\section{Conclusion}
+
+In closing, we note that while our approach limits the problem of uneven sampling, there remains room for improvement. One of the main problems of our model is the assumption that empty boxes take on the global average of the room. It is more likely that an empty space shares the temperature of its immediate surroundings rather than the average of the entire room. Additionally, there are much more sophisticated approaches such as an Octree algorithm or Voronoi tessellation, which solve the empty box problem entirely.
+
+Despite this limitation, the binning approach provides a more accurate representation of the room's temperature than a naive global average. Because our 500 sensors are unevenly distributed, the arithmetic average would be disproportionately skewed by regions with a high density of sensors. By partitioning the space into 216 equal-volume boxes and averaging the temperatures within them first, our algorithm guarantees that every region of the room has an equal weight in the final calculation.
+
+
+\newpage
+\vfill
+
+\begin{algorithm}[h!]
+    \caption{Partition initialization}
+    \label{init}
+    \begin{algorithmic}[1] % The number tells where the line numbering should start
+        \Procedure{MakeBoxes}{$n_{bins}$} \Comment{Initialize an empty box for all points}
+        \For{\(i \in \{0, 1, \ldots, n_{bins} - 1\}\)} \Comment{\(n_{bins} \in \Z^{+}\)}
+            \For{\(j \in \{0, 1, \ldots, n_{bins} - 1\}\)}
+                \For{\(k \in \{0, 1, \ldots, n_{bins} - 1\}\)}
+                    \State \(boxes[(i, j, k)]\)
+                \EndFor
+            \EndFor
+        \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[h!]
+    \caption{Assigning temperatures}
+    \label{assign}
+    \begin{algorithmic}[1]
+        \Procedure{FillBoxes}{$xs, \ ys,\ zs,\ temps,\ n_{bins}$}
+        \State \(bl_{x} \gets rl_{x} / n_{bins}\) \Comment{\(bl_{x}\) is the \textit{box length} along the \(x\)-dimension} 
+        \State \(bl_{y} \gets rl_{y} / n_{bins}\) \Comment{\(rl_{y}\) is the \textit{room length} along the \(y\)-dimension}
+        \State \(bl_{z} \gets rl_{z} / n_{bins}\) 
+        \For{\(x,\in xs, \ y \in ys,\ z \in zs,\ t \in temps\)} \Comment{Find temperature's coordinates}
+            \State \(i \gets \min(\lfloor x / bl_{x}\rfloor,\ n_{bins} - 1)\)
+            \State \(j \gets \min(\lfloor y / bl_{y}\rfloor,\ n_{bins} - 1)\)
+            \State \(k \gets \min(\lfloor z / bl_{z}\rfloor,\ n_{bins} - 1)\)
+            \State \(boxes[(i,j,k)] \gets t\) \Comment{Add temperature to its box}
+        \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[h!]
+    \caption{Calculate global temperature through weighting}
+    \label{calc}
+    \begin{algorithmic}[1]
+        \Procedure{WeightTemperature}{$boxes$} \Comment{Get the room's temperature}
+        \For{\(b_{temps} \in boxes\)} \Comment{For each box's list of temperatures}
+            \If{length\((b_{temps}) > 0\)} 
+                \State \(box_{avg} \gets \text{sum}(b_{temps}) / \text{length}(b_{temps})\) \Comment{Average this box's temps}
+            \Else 
+                \State \(box_{avg} \gets \text{sum}(all_{temps}) / \text{length}(all_{temps})\) \Comment{Global average temp as substitute}
+            \EndIf
+            \State \(total_{temp} \gets box_{avg} \cdot (1 / n_{boxes})\) \Comment{Add weighted temperature to total temp}
+        \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\vfill
+
+\newpage
 
 \begin{figure}
-    \label{ex:1}
-    \begin{minted}{python}
-# Variables
-x = var('x') # Blue whale population
-y = var('y') # Fin whale population
-
-# Parameters
-r_x = 0.05 # Growth rate for blue whales (whale per year)
-r_y = 0.08 # '' fin whales (whale per year)
-K_x = 150_000 # Max sustainable population for blue whales 
-K_y = 400_000 # '' for fin whales 
-alpha_x = 10 ** -8 # Effects of competition for blue whales
-alpha_y = 10 ** -8 # '' for fin whales
-
-# Equations
-dx_dt(x,y) = r_x * x * (1 - x / K_x) - alpha_x * x * y # Growth rate for blue whales
-dy_dt(x,y) = r_y * y * (1 - y / K_y) - alpha_y * x * y # '' for fin whales
-G(x,y) = dx_dt(x,y) + dy_dt(x,y) # Growth rate for whales
-
-# Solve the model
-growth_x = G.derivative(x) # Partial derivative with respect to x
-growth_y = G.derivative(y) # '' with respect to y
-solutions = solve([growth_x(x,y) == 0, growth_y(x,y) == 0], x, y) # get critical points
-# print(solutions)
-optimal_x = round(solutions[0][0].rhs(), 0)
-optimal_y = round(solutions[0][1].rhs(), 0)
-print(f"The optimal number of blue whales is {optimal_x}. For fin whales, it is {optimal_y}.")
-
-most_whales = G(optimal_x, optimal_y)
-print(most_whales)
-    \end{minted}
-
-    \caption{Exercise 1 Code}
-    
-\end{figure}
-
-
-
-\begin{figure}
-    \label{ex:3}
-    \begin{minted}{python}
-# Variables
-x = var('x') # Blue whale population
-y = var('y') # Fin whale population
-
-# Parameters
-r_x = 0.05 # Growth rate for blue whales (whale per year)
-r_y = 0.08 # '' fin whales (whale per year)
-K_x = 150_000 # Max sustainable population for blue whales 
-K_y = 400_000 # '' for fin whales 
-alpha_x = 10 ** -8 # Effects of competition for blue whales
-alpha_y = 10 ** -8 # '' for fin whales
-price_x = 12_000 # Blue whale carcass ($ / whale)
-price_y = 6_000 # Fin whale carcass ($ / whale)
-
-# Equations
-dx_dt(x,y) = r_x * x * (1 - x / K_x) - alpha_x * x * y # Growth (& harvest) rate for blue whales
-dy_dt(x,y) = r_y * y * (1 - y / K_y) - alpha_y * x * y # '' for fin whales
-revenue(x,y) = (price_x * dx_dt) + (price_y * dy_dt)
-G(x,y) = dx_dt(x,y) + dy_dt(x,y) # Growth rate for whales
-
-# Solve the model
-revenue_x = revenue.derivative(x) # Partial derivative with respect to x
-revenue_y = revenue.derivative(y) # Partial derivative with respect to x
-solutions = solve([revenue_x(x,y) == 0, revenue_y(x,y) == 0], x, y) # get critical points
-optimal_x = round(solutions[0][0].rhs(), 0)
-optimal_y = round(solutions[0][1].rhs(), 0)
-print(f"The optimal number of blue whales is {optimal_x}. For fin whales, it is {optimal_y}.")
-
-most_revenue = revenue(optimal_x, optimal_y)
-print(most_revenue)
-    \end{minted}
-
-    \caption{Exercise 3 Code}
-    
+    \label{implicit}
+    \includegraphics[width=\linewidth]{images/implicit.png}
+    \caption{Implicit plot of all 500 color coded points. Red indicates high values, blue indicates low values.}
 \end{figure}
 
 
