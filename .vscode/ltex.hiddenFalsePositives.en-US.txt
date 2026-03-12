@@ -14,3 +14,6 @@
 {"rule":"WHITESPACE_RULE","sentence":"^\\Q80 40   40 0\\E$"}
 {"rule":"WHITESPACE_RULE","sentence":"^\\Q[R] [L]Hendrix College [C]\\E$"}
 {"rule":"TOO_LONG_PARAGRAPH","sentence":"^\\QThis confirms that the critical point \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a saddle point when \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qdefinition of the kernel is front and center, in the second sentence.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qthe process and I went astray with the kernel definition.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qidentity of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q instead of the additive.\\E$"}
