@@ -1,0 +1,733 @@
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% MAIN DOCUMENT %%%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\documentclass[12pt, oneside]{book}
+\usepackage{xcolor}
+\usepackage{minted}
+
+% \usepackage[T1]{fontenc}
+
+% \usepackage{draculatheme}
+% \newcommand{\documentTheme}{draculafg}
+% \newcommand{\documentLogo}{../../images/small logo_white.png}
+% \newcommand{\documentBigLogo}{../../images/logo_white_text.png}
+% \usemintedstyle{dracula}
+
+\newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
+\newcommand{\documentLogo}{../../images/small logo.png}
+\newcommand{\documentTheme}{black}
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{esint}
+\usepackage{adjustbox}
+\linespread{1}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning, arrows.meta, decorations.pathmorphing, decorations.pathreplacing}
+\usepgflibrary{shadings}
+\usepackage{pgfkeys}
+\usepackage{pdftexcmds}
+\usepackage{shellesc}
+\usepackage{algorithm, algorithmic, xspace}
+%%% Define new colors %%%
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%------- %
+% XHFILL %
+%------- %
+
+
+
+%%% Chapter Headings %%%
+
+\newcommand{\gradientrule}{
+    \begin{tikzpicture}
+        \shade[left color=orangehdx, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+    \end{tikzpicture}
+}
+
+\usepackage[Glenn]{fncychap}
+\ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
+\ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
+\usepackage{xpatch}
+
+% \xpatchcmd{\DOCH}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTI}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTIS}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+
+\xpatchcmd\DOCH
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTI
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTIS
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+
+
+% \usepackage[Bjornstrup]{fncychap}
+
+% \newcommand{\gradient}[1]{
+% \begin{tikzpicture}
+%     \node (rect) at (0,0) [fill=blue,,path fading=East,minimum width=\linewidth,minimum height=2.5cm] {};
+%     \node(title)[above left = 10pt and 10pt of rect.south east, anchor=south east, font=\CTV] {\textcolor{horange}{#1}};
+%     \ifnum \thechapter>0\node[left = 10pt of rect.north east,  anchor=center, font=\CNoV] {\textcolor{horange}{\thechapter}};\fi%
+% \end{tikzpicture}%
+% \vskip 40pt
+% }
+
+
+% \renewcommand{\DOCH}{}
+% \renewcommand{\DOTI}[1]{\gradient{#1}}
+% \renewcommand{\DOTIS}[1]{\gradient{#1}}
+
+%% Change Chapter Heading Placement %%
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
+
+
+
+% \newcommand*\chapterlabel{}\pmod
+% \titleformat{\chapter}
+%   {\gdef\chapterlabel{}
+%    \normalfont\sffamily\Huge\bfseries\scshape}
+%   {\gdef\chapterlabel{\thechapter\ }}{0pt}
+%   {\begin{tikzpicture}[remember picture,overlay]
+%     \node[yshift=-3cm] at (current page.north west)
+%       {\begin{tikzpicture}[remember picture, overlay]
+%         \draw[fill=LightSkyBlue] (0,0) rectangle
+%           (\paperwidth,3cm);
+%         \node[anchor=east,xshift=.9\paperwidth,rectangle,
+%               sharp corners=downhill=20pt,inner sep=11pt,
+%               fill=MidnightBlue]
+%               {\color{white}\chapterlabel#1};
+%        \end{tikzpicture}
+%       };
+%    \end{tikzpicture}
+%   }
+% \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+
+% \usepackage[Conny]{fncychap}
+% \usepackage[Rejne]{fncychap}
+% \ChNameVar{\bfseries}  % Makes the chapter "Chapter #" bold
+% \ChNumVar{\bfseries}   % Makes the chapter number bold
+% \ChTitleVar{\bfseries} % Makes the chapter title bold
+% % Define a custom color, for example:
+% \definecolor{mycolor}{RGB}{0,128,255}
+
+% % Redefine the chapter style in Rejne to change the line colors
+% \makeatletter
+% \ChRuleWidth{2pt}   % Change the thickness of the lines
+% \renewcommand{\DOCH}{%
+%   \vspace*{-50\p@}% Moves the chapter title up/down if needed
+%   {\color{mycolor} \hrule \@chapapp{} \space \thechapter \hrule}% Customizes the chapter header with color
+% }
+% \renewcommand{\DOTI}[1]{%
+%   \vskip 20\p@ % Adjusts the space above the title
+%   \bfseries #1\par % Embolden the title
+%   \vskip 20\p@ % Adjusts the space below the title
+% }
+% \makeatother
+
+% %% Change Chapter Heading Placement %%
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+% \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+% \makeatother
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
+
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+
+%% Headers and Footers %%
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\fancyhead[R]{\textcolor{\documentTheme}{\assignmentname}}
+\fancyhead[L]{\textcolor{\documentTheme}{Hendrix College}}
+\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
+\usepackage{xpatch}
+\xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
+\setlength{\footskip}{0.5in}
+\setlength{\headheight}{18.5764pt}
+
+
+%%%%% Colored Boxes %%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+% \tcbuselibrary{minted}
+\newcounter{BoxCounter}
+% \usepackage{dingbat}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%% MATH PACKAGES, ENVIRONMENTS, COMMANDS %%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%You'll need your own packages, theorem types, and commands.
+
+\usepackage{fix-cm}
+\usepackage{amsmath,amsthm, amsfonts, amssymb} 
+\usepackage{array, makecell}
+\usepackage{colortbl}
+\newcommand{\thickvrule}{\vrule width 1pt}
+\newcommand{\thickhrule}{\Xhline{1pt}}
+
+\usepackage{mathtools}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+
+
+%%% Custom Commands %%%
+% Natural Numbers 
+\newcommand{\N}{\mathbb{N}}
+
+% Whole Numbers
+\newcommand{\W}{\mathbb{W}}
+
+% Integers
+\newcommand{\Z}{\mathbb{Z}}
+
+% Rational Numbers
+\newcommand{\Q}{\mathbb{Q}}
+
+% Real Numbers
+\newcommand{\R}{\mathbb{R}}
+
+% Complex Numbers
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\I}{\mathbb{I}}
+
+\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
+
+\newcommand{\mysqrt}[1]{%
+	\mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+	\mathpalette\foodisplay{#1}%
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+		\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+		\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi}.}
+
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	% backgroundcolor=draculabg, % Needed for Dracula theme
+	% fontcolor=\documentTheme, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{tipbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculapurple}{TIP:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{notebox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculagreen}{NOTE:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{warningbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculared}{WARNING:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{solution}{\textit{Solution.}}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\pf}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\def \proofDistance {10pt}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
+
+\newcommand{\ninn}{n \in \N}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
+
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\dydx}{\frac{dy}{dx}}
+\newcommand{\dxdy}{\frac{dx}{dy}}
+\newcommand{\dydt}{\frac{dy}{dt}}
+\newcommand{\dxdt}{\frac{dx}{dt}}
+\newcommand{\dzdt}{\frac{dz}{dt}}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
+
+\newcommand{\funccolon}{\, \colon}
+
+\newcommand{\squigglyline}{%
+    \noindent
+    \tikz[baseline=-0.5ex]{
+        \draw[decorate, decoration={snake, amplitude=0.5mm, segment length=3mm}] 
+        (0,0) -- (\dimexpr\linewidth\relax,0);
+    }%
+}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\generator}[1]{\langle #1 \rangle}
+
+
+% end of preamble
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{document}
+
+\numberwithin{BoxCounter}{section}
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% COVER PAGE %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\newcommand{\assignmentname}{Homework 2: Sections 20 \& 21}
+
+% Do not use all caps.
+\newcommand{\cussubtitle}{Seminar in Algebra}
+% Date format should be like: "January 1, 2001"
+\newcommand{\finaldate}{February 19, 2025}
+% Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
+\newcommand{\professor}{Dr. Carol Ann Downes}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+
+\begin{titlepage}
+    \begin{center}
+
+        \vspace*{-2cm}
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\
+        \vfill
+
+        % Horizontal line above the title in 'horange' color
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace{2em}
+
+        {\huge \textbf{\assignmentname}}
+
+        \vspace{1em} % Space between the title and the bottom line
+
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace*{1\baselineskip}
+
+        {\LARGE \textbf{\cussubtitle}}
+
+        \begin{large}
+            \vspace*{5\baselineskip}
+
+            \vspace*{1\baselineskip}
+
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+
+            \vspace*{1\baselineskip}
+
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
+
+            \vspace*{1\baselineskip}
+
+            \textit{Due}\\[1ex]
+            {\scshape  \finaldate} \\[0.3\baselineskip] % Year published
+
+            \thispagestyle{empty}
+
+        \end{large}
+    \end{center}
+\end{titlepage}
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+% IV.20: 11, 12, 13, 14, 24, 27
+% IV.21: 12, 14
+
+\section*{Cover Sheet}
+
+For the first 4 Exercises, I found that it really helped to have a very formal formulaic approach for solving the congruences. So, even though it was kind of redundant to go into so much detail for Exercise 11, that extra detail helped when I was going through the other Exercises. For Exercise 24, I started assembling the multiplication table, and I immediately had almost a knee-jerk reaction that the multiplicative group of units was isomorphic to the Klein-4 group. Then, I just looked at Exercise 11 from Section 10, and that confirmed my hypothesis (it also let me use that sweet color coding that I used for that problem as well!).\\ 
+
+For Exercise 27, I knew that factoring the equation and solving for \(x\) was the key, but I was stuck on showing that 1 and \(p - 1\) are the \textit{only} solution. That was until I remembered \(\Z_{p}\) had no zero divisors, so I could force ``traditional'' arithmetic laws that only allowed for 2 solutions. I struggled more with Section 21 though. Like, in Exercise 12 (a) I had difficulty finding a unity candidate, but once I went back to my definitions and saw the \([(a,b)] \sim [(c,d)] \iff ad = bc\) definition, I knew that I could force it by just setting \([(a,b)]\) to \([(t,t)]\). For (b), the hint that you provided was a lot of help. With it, I was able to just follow a computation proof that was very similar to (a).
+
+
+\newpage
+\section*{Section 20}
+
+In Exercises 11 through 14, describe all solutions of the given congruence, as we did in Examples 20.14 and 20.15.
+
+\begin{enumerate}
+    \setcounter{enumi}{10}
+    \item \(2x \equiv 6 \pmod{4}\)
+          \sol{
+              (\textit{Note:} Even though this first problem is fairly straightforward, I want to go into excruciating detail so that the process is properly established for Exercises 12-14.) First, we find \(d = \gcd(2,4) = 2\), which does divide 6. The comment to Corollary 20.13 tells us that the solutions to this congruence are all elements of the residue classes
+              \[
+                  (s + km_{1}) + (m\Z) \quad \text{where} \quad m_{1} = m / d
+              \]
+              and \(k\) runs through all integers from 0 to \(d - 1\). Additionally, we find \(s\) by solving for \(x\) in the equation \(a_{1}x = b_{1}\) in \(\Z_{m}\), where \(a_{1} = a / d\) and \(b_{1} = b / d\). Now, we can apply this to our problem. We get
+              \[
+                  d = 2, \quad m_{1} = 2, \quad k \in \{0,1\}, \quad a_{1} = 1, \quad \text{and} \quad b_{1} = 3.
+              \]
+              These values give us the equation \(x = 3\) in \(\Z_{2}\). Solving, we see that \(x = 1\), giving the solution \(s = 1\). Thus, our residue classes are
+              \[
+                  (1 + (0)2) + 4\Z = 1 + 4\Z,
+              \]
+              and
+              \[
+                  (1 + 1(2)) + 4\Z = 3 + 4\Z.
+              \]
+          }
+    \item \(22x \equiv 5 \pmod{15}\)
+          \sol{
+              We calculate \(d = \gcd(22, 15)\) and find \(d = 1\). Thus, we know there is only one solution, which we find to be \(x = 5\) by repeatedly trying different values. Hence, this gives us \(5 + 15\Z\) as our set of solutions.
+          }
+    \item \(36x \equiv 15 \pmod{24}\)
+          \sol{
+              We calculate \(d = \gcd(36, 24) = 12\), which we note does not divide 15. Hence, this congruence does not have any solutions.
+          }
+\newpage
+    \item \(45x \equiv 15 \pmod{24}\)
+          \sol{
+              We calculate \(d = \gcd(45,24) = 3\), which does divide 15. Thus, we can assemble our components:
+              \[
+                  d = 3, \quad m_{1} = 8, \quad k \in \{0,1,2\}, \quad a_{1} = 15, \quad \text{and} \quad b_{1} = 5.
+              \]
+              With these components, we assemble the equation \(15x = 5\) in \(\Z_{8}\). (Note we can further reduce this to \(7x = 5\) because we are in \(\Z_{8}\).) We find \(x = 3\) by trying different combinations. This gives us the solution \(s = 3\). Thus, our residue classes are
+              \[
+                  3 + 24\Z, \quad 11 + 24\Z, \quad \text{and} \quad 19 + 24\Z.
+              \]
+          }
+\end{enumerate}
+
+\textbf{Concepts}
+
+\begin{enumerate}
+    \setcounter{enumi}{23}
+    \item Give the group multiplication table for the multiplicative group of units in \(\Z_{12}\). To which group of order 4 is it isomorphic?
+          \sol{
+              We first find the multiplicative group of units to be \(\{1, 5, 7, 11\}\). This allows us to construct the unit's multiplicative table (left), which we note is isomorphic to the Klein-4 group (right):
+
+              \definecolor{first}{HTML}{65d3f5}
+              \definecolor{second}{HTML}{2a9d8f}
+              \definecolor{third}{HTML}{e9c46a}
+              \definecolor{fourth}{HTML}{f4a261}
+              \newcommand{\fc}{\cellcolor{first!80!white}}\newcommand{\sco}{\cellcolor{second!80!white}}\newcommand{\tc}{\cellcolor{third!80!white}}\newcommand{\fco}{\cellcolor{fourth!80!white}}
+              \renewcommand{\arraystretch}{1.5}
+              \begin{center}
+                \begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c}
+                          & \fc 1   & \sco 5  & \tc 7   & \fco 11 \\
+                  \noalign{\hrule height 1.5pt}
+                  \fc 1   & \fc 1   & \sco 5  & \tc 7   & \fco 11 \\
+                  \hline
+                  \sco 5  & \sco 5  & \fc 1   & \fco 11 & \tc 7   \\
+                  \hline
+                  \tc 7   & \tc 7   & \fco 11 & \fc 1   & \sco 5  \\
+                  \hline
+                  \fco 11 & \fco 11 & \tc 7   & \sco 5  & \fc 1
+              \end{tabular}\hspace{1.25cm}
+              \begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c}
+                            & \fc\(e\)  & \sco\(a\) & \tc\(b\)  & \fco\(c\) \\
+                  \noalign{\hrule height 1.5pt}
+                  \fc\(e\)  & \fc\(e\)  & \sco\(a\) & \tc\(b\)  & \fco\(c\) \\
+                  \hline
+                  \sco\(a\) & \sco\(a\) & \fc\(e\)  & \fco\(c\) & \tc\(b\)  \\
+                  \hline
+                  \tc\(b\)  & \tc\(b\)  & \fco\(c\) & \fc\(e\)  & \sco\(a\) \\
+                  \hline
+                  \fco\(c\) & \fco\(c\) & \tc\(b\)  & \sco\(a\) & \fc\(e\)
+              \end{tabular}
+              \end{center}
+          }
+\end{enumerate}
+
+\textbf{Theory}
+
+\begin{enumerate}
+    \setcounter{enumi}{26}
+    \item Show that 1 and \(p - 1\) are the only elements of the field \(\Z_{p}\) that are their own multiplicative inverse. [\textit{Hint:} Consider the equation \(x^{2} - 1 = 0\).]
+          \pf{
+            An element is its own inverse if \(x \cdot x = 1\). If we subtract 1 from both sides, we get \(x^{2} - 1 = 0\). Factoring, we see that \((x + 1)(x - 1) = 0\). Since \(\Z_{p}\) has no zero divisors, this equation is only true for \(x = \pm 1\). Since we are in \(\Z_{p}\), \(-1 \equiv p - 1\). Therefore, we have shown that \(1\) and \(p - 1\) are the only elements that are their own multiplicative inverse.
+          }
+\end{enumerate}
+
+\newpage
+
+\section*{Section 21}
+\textbf{Theory}
+
+\begin{enumerate}
+    \setcounter{enumi}{11}
+    \item Let \(R\) be a nonzero commutative ring, and let \(T\) be a nonempty subset of \(R\) closed under multiplication and containing neither 0 nor divisors of 0. Starting with \(R \times T\) and otherwise exactly following the construction in this section, we can show that the ring \(R\) can be enlarged to a partial ring of quotients \(Q(R, T)\). Think about this for 15 minutes or so; look back over the construction and see why things still work. In particular, show the following:
+          \begin{enumerate}
+              \item \(Q(R, T)\) has unity even if \(R\) does not.
+                    \pf{
+                        To show that \(Q(R,T)\) has unity, consider an element \(t \in T\), which exists because \(T\) is nonempty. Now, let \(a \in R\) and \(b \in T\) so that \([(a,b)] \in Q(R,T)\). This gives us the computation
+                        \[
+                            [(t,t)][(a,b)] = [(ta, tb)],
+                        \]
+                        which is allowed by Lemma 21.3. Then, by Lemma 21.2, we know that \((ta, tb) \sim (a,b)\) because \(tab = tba\), which holds since the elements \(a\) and \(b\) commute in \(R\). (A symmetrical argument holds that shows \((at, bt) \sim (a,b)\).) Thus, \([(t,t)]\) is the unity of \(Q(R,T)\).
+                    }
+              \item In \(Q(R, T)\), every nonzero element of \(T\) is a unit. (\textit{Note:} You must show that for non-zero \(t\) in \(T\), \([(tt, t)]\) is a unit in \(Q(R,T)\). You should explain why \(t\) is represented by the equivalence class \([(tt, t)]\) as opposed to \([(t, 1)]\) as in Lemma 21.4.)
+                    \pf{
+                        To show that every nonzero element of \(T\) is a unit, consider the equivalence class \([(tt,t)]\). We need to show that for some \([(a,b)] \in Q(R,T)\), that \([(tt,t)][(a,b)] = [(t,t)]\). We can choose \(a = t\) and \(b = tt\) to be this equivalence class because \(t \in R\) (as \(T \subseteq R\)), and multiplication is closed in \(T\), so the product of \(t\cdot t\) is contained. Thus, consider the computation
+                        \[
+                            [(tt,t)][(t,tt)] = [(ttt,ttt)].
+                        \]
+                        Then, we know \([ttt,ttt]\) is equivalent to \([t,t]\) because \(tttt = tttt\). Thus, we have shown that every nonzero element of \(T\) is a unit. Note that we choose \([(tt,t)]\) instead of \([(t,1)]\), as we cannot assume that \(1 \in T\) (which would then imply \(1 \in R\), which we also don't know). Then, we find \([(tt,t)]\) by multiplying \(t \in R\) by \(t\), which is contained because \(R\) is a nonzero commutative ring. 
+                    }
+          \end{enumerate}
+          \setcounter{enumi}{13}
+    \item With reference to Exercise 12, how many elements are there in the ring \(Q(\Z_{4}, \{1,3\})\)? \vspace*{-1em}
+          \sol{
+            There are 4 total elements. We do not gain any elements from \(T = \{1,3\}\) in this case, as they are already accounted for in \(\Z_{4}\). 
+          }
+\end{enumerate}
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+\end{document}
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

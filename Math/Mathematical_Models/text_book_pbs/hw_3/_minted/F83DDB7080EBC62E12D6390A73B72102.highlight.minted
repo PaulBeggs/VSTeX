@@ -1,0 +1,38 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Variables}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}x\PYGZsq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} sub price}
+\PYG{n}{y} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}y\PYGZsq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} ad price}
+
+\PYG{c+c1}{\PYGZsh{} Parameters}
+\PYG{n}{subs\PYGZus{}0} \PYG{o}{=} \PYG{l+m+mi}{80\PYGZus{}000}  \PYG{c+c1}{\PYGZsh{} current subscribers (subscriber / week)}
+\PYG{n}{ads\PYGZus{}0}  \PYG{o}{=} \PYG{l+m+mi}{350}     \PYG{c+c1}{\PYGZsh{} current ads (pages / week)}
+\PYG{n}{d\PYGZus{}p\PYGZus{}ad}  \PYG{o}{=} \PYG{l+m+mi}{250}    \PYG{c+c1}{\PYGZsh{} dollars per advertisement}
+\PYG{n}{d\PYGZus{}p\PYGZus{}pap} \PYG{o}{=} \PYG{l+m+mf}{1.50}   \PYG{c+c1}{\PYGZsh{} dollars per paper (per subscriber)}
+
+\PYG{n}{slope\PYGZus{}price\PYGZus{}subs} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{50000} \PYG{c+c1}{\PYGZsh{} \PYGZhy{}5000 subs per \PYGZdl{}0.10}
+\PYG{n}{slope\PYGZus{}price\PYGZus{}ads} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5}    \PYG{c+c1}{\PYGZsh{} \PYGZhy{}50 pages per \PYGZdl{}100}
+\PYG{n}{slope\PYGZus{}ads\PYGZus{}subs} \PYG{o}{=} \PYG{l+m+mi}{20}       \PYG{c+c1}{\PYGZsh{} 20 subs per page}
+
+\PYG{c+c1}{\PYGZsh{} Equations}
+\PYG{n}{A}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{ads\PYGZus{}0} \PYG{o}{+} \PYG{n}{slope\PYGZus{}price\PYGZus{}ads} \PYG{o}{*} \PYG{p}{(}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{d\PYGZus{}p\PYGZus{}ad}\PYG{p}{)}
+\PYG{n}{S}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{subs\PYGZus{}0} \PYG{o}{+} \PYG{n}{slope\PYGZus{}price\PYGZus{}subs} \PYG{o}{*} \PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{d\PYGZus{}p\PYGZus{}pap}\PYG{p}{)} \PYG{o}{+} \PYG{n}{slope\PYGZus{}ads\PYGZus{}subs} \PYG{o}{*} \PYG{p}{(}\PYG{n}{A}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{ads\PYGZus{}0}\PYG{p}{)}
+\PYG{n}{z}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{p}{(}\PYG{n}{x} \PYG{o}{*} \PYG{n}{S}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{))} \PYG{o}{+} \PYG{p}{(}\PYG{n}{y} \PYG{o}{*} \PYG{n}{A}\PYG{p}{(}\PYG{n}{y}\PYG{p}{))}
+
+\PYG{c+c1}{\PYGZsh{}first derivatives}
+\PYG{n}{F}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{z}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{G}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{z}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{F}\PYG{l+s+si}{=\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{G}\PYG{l+s+si}{=\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}Second derivatives}
+\PYG{n}{F\PYGZus{}x}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{F}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{F\PYGZus{}y}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{F}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)}
+\PYG{n}{G\PYGZus{}x}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{G}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{G\PYGZus{}y}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{G}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{y}\PYG{p}{)}
+
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{F\PYGZus{}x}\PYG{l+s+si}{=\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{F\PYGZus{}y}\PYG{l+s+si}{=\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{G\PYGZus{}x}\PYG{l+s+si}{=\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{G\PYGZus{}y}\PYG{l+s+si}{=\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\end{MintedVerbatim}

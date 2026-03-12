@@ -1,0 +1,37 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} new pig problem}
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}t\PYGZsq{}}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} time in days}
+
+\PYG{c+c1}{\PYGZsh{} Parameters}
+\PYG{n}{w0} \PYG{o}{=} \PYG{l+m+mi}{200}   \PYG{c+c1}{\PYGZsh{} init weight of pig}
+\PYG{n}{rw} \PYG{o}{=} \PYG{l+m+mi}{5}     \PYG{c+c1}{\PYGZsh{} growth rate of pig (lb/day)}
+\PYG{n}{m0} \PYG{o}{=} \PYG{l+m+mf}{0.65}  \PYG{c+c1}{\PYGZsh{} init market price (\PYGZdl{}/pound)}
+\PYG{n}{rm} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.01} \PYG{c+c1}{\PYGZsh{} market price rate of change (\PYGZdl{}/lbs/day)}
+\PYG{n}{d}  \PYG{o}{=} \PYG{l+m+mf}{0.45}  \PYG{c+c1}{\PYGZsh{} daily cost to keep the pig}
+
+\PYG{c+c1}{\PYGZsh{} Functions}
+\PYG{n}{w}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{l+m+mi}{800} \PYG{o}{/} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{+} \PYG{l+m+mi}{3} \PYG{o}{*}\PYG{p}{(}\PYG{n}{math}\PYG{o}{.}\PYG{n}{e}\PYG{p}{)}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{t}\PYG{o}{/}\PYG{l+m+mi}{30}\PYG{p}{))}   \PYG{c+c1}{\PYGZsh{} weight of pig}
+\PYG{n}{m}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{m0} \PYG{o}{+} \PYG{n}{rm}\PYG{o}{*}\PYG{n}{t}   \PYG{c+c1}{\PYGZsh{} market price}
+\PYG{n}{r}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{w}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}\PYG{o}{*}\PYG{n}{m}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}   \PYG{c+c1}{\PYGZsh{} revenue}
+\PYG{n}{c}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{d}\PYG{o}{*}\PYG{n}{t}         \PYG{c+c1}{\PYGZsh{} cost}
+\PYG{n}{p}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{=} \PYG{n}{r}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{c}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} profit}
+
+\PYG{c+c1}{\PYGZsh{} Solve the Model}
+\PYG{n}{pprime}    \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}        \PYG{c+c1}{\PYGZsh{} derivative of profit}
+\PYG{n}{ppprime} \PYG{o}{=} \PYG{n}{pprime}\PYG{o}{.}\PYG{n}{derivative}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+
+\PYG{n}{t\PYGZus{}0} \PYG{o}{=} \PYG{l+m+mi}{2}
+\PYG{n}{guesses}\PYG{o}{=}\PYG{p}{[}\PYG{n}{t\PYGZus{}0}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{):}
+    \PYG{n}{t\PYGZus{}0} \PYG{o}{=} \PYG{n}{t\PYGZus{}0} \PYG{o}{\PYGZhy{}} \PYG{n}{pprime}\PYG{p}{(}\PYG{n}{t\PYGZus{}0}\PYG{p}{)} \PYG{o}{/} \PYG{n}{ppprime}\PYG{p}{(}\PYG{n}{t\PYGZus{}0}\PYG{p}{)}
+    \PYG{n}{guesses}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{t\PYGZus{}0}\PYG{p}{)}
+
+\PYG{n}{root} \PYG{o}{=} \PYG{n}{guesses}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{guesses}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}There is a root at }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{root}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{. It corresponds to a profit of \PYGZdl{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{p}\PYG{p}{(}\PYG{n}{root}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{.\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{show}\PYG{p}{(}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{pprime}\PYG{p}{(}\PYG{n}{t}\PYG{p}{),} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{))}
+\PYG{n}{show}\PYG{p}{(}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{p}\PYG{p}{(}\PYG{n}{t}\PYG{p}{),}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{20}\PYG{p}{))}
+
+\PYG{c+c1}{\PYGZsh{} Returns:}
+\PYG{c+c1}{\PYGZsh{} There is a root at 12.33. It corresponds to a profit of \PYGZdl{}135.42.}
+\end{MintedVerbatim}

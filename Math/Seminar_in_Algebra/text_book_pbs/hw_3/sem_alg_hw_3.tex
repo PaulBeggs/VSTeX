@@ -1,0 +1,812 @@
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% MAIN DOCUMENT %%%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\documentclass[12pt, oneside]{book}
+\usepackage{xcolor}
+\usepackage{minted}
+
+% \usepackage[T1]{fontenc}
+
+% \usepackage{draculatheme}
+% \newcommand{\documentTheme}{draculafg}
+% \newcommand{\documentLogo}{../../images/small logo_white.png}
+% \newcommand{\documentBigLogo}{../../images/logo_white_text.png}
+% \usemintedstyle{dracula}
+
+\newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
+\newcommand{\documentLogo}{../../images/small logo.png}
+\newcommand{\documentTheme}{black}
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{esint}
+\usepackage{adjustbox}
+\linespread{1}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning, arrows.meta, decorations.pathmorphing, decorations.pathreplacing}
+\usepgflibrary{shadings}
+\usepackage{pgfkeys}
+\usepackage{pdftexcmds}
+\usepackage{shellesc}
+\usepackage{algorithm, algorithmic, xspace}
+%%% Define new colors %%%
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%------- %
+% XHFILL %
+%------- %
+
+
+
+%%% Chapter Headings %%%
+
+\newcommand{\gradientrule}{
+    \begin{tikzpicture}
+        \shade[left color=orangehdx, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+    \end{tikzpicture}
+}
+
+\usepackage[Glenn]{fncychap}
+\ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
+\ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
+\usepackage{xpatch}
+
+% \xpatchcmd{\DOCH}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTI}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+% \xpatchcmd{\DOTIS}
+%   {\mghrulefill}{\gradientrule\mghrulefill}
+%   {}{\PatchFailed}
+
+\xpatchcmd\DOCH
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTI
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTIS
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+
+
+% \usepackage[Bjornstrup]{fncychap}
+
+% \newcommand{\gradient}[1]{
+% \begin{tikzpicture}
+%     \node (rect) at (0,0) [fill=blue,,path fading=East,minimum width=\linewidth,minimum height=2.5cm] {};
+%     \node(title)[above left = 10pt and 10pt of rect.south east, anchor=south east, font=\CTV] {\textcolor{horange}{#1}};
+%     \ifnum \thechapter>0\node[left = 10pt of rect.north east,  anchor=center, font=\CNoV] {\textcolor{horange}{\thechapter}};\fi%
+% \end{tikzpicture}%
+% \vskip 40pt
+% }
+
+
+% \renewcommand{\DOCH}{}
+% \renewcommand{\DOTI}[1]{\gradient{#1}}
+% \renewcommand{\DOTIS}[1]{\gradient{#1}}
+
+%% Change Chapter Heading Placement %%
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
+
+
+
+% \newcommand*\chapterlabel{}\pmod
+% \titleformat{\chapter}
+%   {\gdef\chapterlabel{}
+%    \normalfont\sffamily\Huge\bfseries\scshape}
+%   {\gdef\chapterlabel{\thechapter\ }}{0pt}
+%   {\begin{tikzpicture}[remember picture,overlay]
+%     \node[yshift=-3cm] at (current page.north west)
+%       {\begin{tikzpicture}[remember picture, overlay]
+%         \draw[fill=LightSkyBlue] (0,0) rectangle
+%           (\paperwidth,3cm);
+%         \node[anchor=east,xshift=.9\paperwidth,rectangle,
+%               sharp corners=downhill=20pt,inner sep=11pt,
+%               fill=MidnightBlue]
+%               {\color{white}\chapterlabel#1};
+%        \end{tikzpicture}
+%       };
+%    \end{tikzpicture}
+%   }
+% \titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+
+% \usepackage[Conny]{fncychap}
+% \usepackage[Rejne]{fncychap}
+% \ChNameVar{\bfseries}  % Makes the chapter "Chapter #" bold
+% \ChNumVar{\bfseries}   % Makes the chapter number bold
+% \ChTitleVar{\bfseries} % Makes the chapter title bold
+% % Define a custom color, for example:
+% \definecolor{mycolor}{RGB}{0,128,255}
+
+% % Redefine the chapter style in Rejne to change the line colors
+% \makeatletter
+% \ChRuleWidth{2pt}   % Change the thickness of the lines
+% \renewcommand{\DOCH}{%
+%   \vspace*{-50\p@}% Moves the chapter title up/down if needed
+%   {\color{mycolor} \hrule \@chapapp{} \space \thechapter \hrule}% Customizes the chapter header with color
+% }
+% \renewcommand{\DOTI}[1]{%
+%   \vskip 20\p@ % Adjusts the space above the title
+%   \bfseries #1\par % Embolden the title
+%   \vskip 20\p@ % Adjusts the space below the title
+% }
+% \makeatother
+
+% %% Change Chapter Heading Placement %%
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+% \patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+% \patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+% \makeatother
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
+
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+
+%% Headers and Footers %%
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\fancyhead[R]{\textcolor{\documentTheme}{\assignmentname}}
+\fancyhead[L]{\textcolor{\documentTheme}{Hendrix College}}
+\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
+\usepackage{xpatch}
+\xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
+\setlength{\footskip}{0.5in}
+\setlength{\headheight}{18.5764pt}
+
+
+%%%%% Colored Boxes %%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+% \tcbuselibrary{minted}
+\newcounter{BoxCounter}
+% \usepackage{dingbat}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%% MATH PACKAGES, ENVIRONMENTS, COMMANDS %%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%You'll need your own packages, theorem types, and commands.
+
+\usepackage{fix-cm}
+\usepackage{amsmath,amsthm, amsfonts, amssymb} 
+\usepackage{array, makecell}
+\usepackage{colortbl}
+\newcommand{\thickvrule}{\vrule width 1pt}
+\newcommand{\thickhrule}{\Xhline{1pt}}
+
+\usepackage{mathtools}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+
+
+%%% Custom Commands %%%
+% Natural Numbers 
+\newcommand{\N}{\mathbb{N}}
+
+% Whole Numbers
+\newcommand{\W}{\mathbb{W}}
+
+% Integers
+\newcommand{\Z}{\mathbb{Z}}
+
+% Rational Numbers
+\newcommand{\Q}{\mathbb{Q}}
+
+% Real Numbers
+\newcommand{\R}{\mathbb{R}}
+
+% Complex Numbers
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\I}{\mathbb{I}}
+
+\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
+
+\newcommand{\mysqrt}[1]{%
+	\mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+	\mathpalette\foodisplay{#1}%
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+		\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+		\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi}.}
+
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	% backgroundcolor=draculabg, % Needed for Dracula theme
+	% fontcolor=\documentTheme, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{tipbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculapurple}{TIP:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{notebox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculagreen}{NOTE:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{warningbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculared}{WARNING:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{solution}{\textit{Solution.}}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\pf}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\usepackage{scalerel}
+\setcounter{MaxMatrixCols}{20}
+
+\newcommand{\longdiv}{\smash{\mkern-0.43mu\vstretch{1.31}{\hstretch{.7}{)}}\mkern-5.2mu\vstretch{1.31}{\hstretch{.7}{)}}}}
+
+\def \proofDistance {10pt}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
+
+\newcommand{\ninn}{n \in \N}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
+
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\dydx}{\frac{dy}{dx}}
+\newcommand{\dxdy}{\frac{dx}{dy}}
+\newcommand{\dydt}{\frac{dy}{dt}}
+\newcommand{\dxdt}{\frac{dx}{dt}}
+\newcommand{\dzdt}{\frac{dz}{dt}}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
+
+\newcommand{\funccolon}{\, \colon}
+
+\newcommand{\squigglyline}{%
+    \noindent
+    \tikz[baseline=-0.5ex]{
+        \draw[decorate, decoration={snake, amplitude=0.5mm, segment length=3mm}] 
+        (0,0) -- (\dimexpr\linewidth\relax,0);
+    }%
+}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\generator}[1]{\langle #1 \rangle}
+
+
+% end of preamble
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{document}
+
+\numberwithin{BoxCounter}{section}
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% COVER PAGE %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\newcommand{\assignmentname}{Homework 3: Sections 22 \& 23}
+
+% Do not use all caps.
+\newcommand{\cussubtitle}{Seminar in Algebra}
+% Date format should be like: "January 1, 2001"
+\newcommand{\finaldate}{March 3, 2025}
+% Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
+\newcommand{\professor}{Dr. Carol Ann Downes}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+
+\begin{titlepage}
+    \begin{center}
+
+        \vspace*{-2cm}
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\
+        \vfill
+
+        % Horizontal line above the title in 'horange' color
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace{2em}
+
+        {\huge \textbf{\assignmentname}}
+
+        \vspace{1em} % Space between the title and the bottom line
+
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace*{1\baselineskip}
+
+        {\LARGE \textbf{\cussubtitle}}
+
+        \begin{large}
+            \vspace*{5\baselineskip}
+
+            \vspace*{1\baselineskip}
+
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+
+            \vspace*{1\baselineskip}
+
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
+
+            \vspace*{1\baselineskip}
+
+            \textit{Due}\\[1ex]
+            {\scshape  \finaldate} \\[0.3\baselineskip] % Year published
+
+            \thispagestyle{empty}
+
+        \end{large}
+    \end{center}
+\end{titlepage}
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+% IV.22: 1, 7, 8, 22, 24, 25
+% IV.23: 2, 10, 14, 16, 18, 20, 31, 34
+
+
+\section*{Cover Sheet}
+
+Exercises 1 through 8 were nice, as I just followed definitions. I will say that I really appreciate the evaluation homomorphism and its application. I think it allows us to essentially ``go back'' and use traditional substitution with the indeterminate values; only now, we have to leverage mapping properties to do it. For Exercise 22, I worked through this whole elaborate solution of showing that \(f(x)g(x) = 1\), only to find out that the same solution works by just setting \(f(x) = g(x)\), and the solution is much more straightforward (not as lengthy). So, I decided to rewrite it to cut down on the redundant logic. Exercise 24 was pretty difficult for me. Just like the previous problem, I started out with a premise that was overly convoluted and got stuck (I tried to use the definition of multiplication for \(D[x]\)). So, I started over, and went with a proof that followed from the definition of zero divisors: Take two nonzero elements, and show that their product is not 0. After that, I relied on the properties of integral domains, and that helped a lot. For the next Exercise, I had a lot of intuition following from the previous Exercise and Exercise 22. So, from them, I knew the points that I needed to hit with my description, and I just filled in the missing parts. Parts (b) and (c) followed directly from (a). \\
+
+Then, for section 23, I had a blast with Exercise 2. Fancy \LaTeX\ table formatting (or \verb|array| formatting, in this case) is fun to mess around with. For the next Exercise, I followed the procedure outlined in the notes, and then I checked my answer with a Python script. Just for fun, I tried the next problem with the script, but it fell short because it couldn't find the \((2x + 3)\) root. Instead, it found 3 other roots, but they could not reassemble the original polynomial (because of the coefficient 2 that accompanied the \(x^{3}\) indeterminate), so I guess I need to work on it more. Exercises 10, 14, 16, 18, and 20 were all fun computation problems that just required using different tools that we established in the chapter. Exercise 31 was pretty hard. The hint was a godsend, as it really helped put things into a roadmap, but finding the total amount of reducible polynomials was the hardest part. However, breaking the task up into quadratics of the form \(x^{2} + ax + b\) helped, as I knew that I could factor those easier than the ones with a leading \(c\) coefficient (which I had to account for by just multiplying). Then, for the final proof, as soon as I saw the \(x^{p}\), I knew that we were going to do something with Fermat's Little Theorem. So, when I went back to Section 20, Corollary 20.2 was the key I was missing. 
+
+\newpage
+\section*{Section 22}
+
+In Exercise 1, find the sum and the product of the given polynomials in the given polynomial ring.
+
+\begin{enumerate}
+    \item \(f(x) = 4x - 5, g(x) = 2x^{2} - 4x + 2 \text{ in } \Z_{8}[x]\).
+          \sol{
+            For addition, we can use the following formula to find the answer to \(f(x) + g(x)\):
+            \[
+                \sum_{i = 0}^{\infty} (a_{i} + b_{i}) x^{i} = (-5 + 2)x^{0} + (4 - 4)x^{1} + (0 + 2)x^{2} = -3 + 2x^{2} \equiv 5 + 2x^{2} \text{ in }  \Z_{8}[x].
+            \]
+            For multiplication, we'll find the terms first, and then sum everything together afterwards. So, we start by finding \(c_{0}\):
+            \[
+                c_{0} = a_{0}b_{0} = (-5)(2) = -10.
+            \]
+            Then, for \(c_{1}\):
+            \[
+                c_{1} = a_{0}b_{1} + a_{1}b_{0} = (-5)(-4) + (4)(2) = 28.
+            \]
+            For \(c_{2}\):
+            \[
+                c_{2} = a_{0}b_{2} + a_{1}b_{1} + (0) = (-5)(2) + (4)(-4) = -26.
+            \]
+            Finally, for \(c_{3}\):
+            \[
+                c_{3} = (0) + a_{1}b_{2} + (0) + (0) = (4)(2) = 8.
+            \]
+            Plugging this into the multiplication formula to find \(f(x)g(x)\):
+            \[
+                \sum_{i = 0}^{\infty} c_{n}x^{n} = -10 + 28x -26x^{2} + 8x^{3} \equiv 6 + 4x + 6x^{2} \text{ in } \Z_{8}[x].
+            \] 
+          }
+\end{enumerate}
+
+In Exercise 7 and 8, \(F = E = \C\) in Theorem 22.4. Compute for the indicated evaluation homomorphism.
+
+\begin{enumerate}
+    \setcounter{enumi}{6}
+    \item \(\varphi_{2}(x^{2} + 3)\)
+          \sol{
+            We find that 
+            \[
+                \varphi_{2}(x^{2} + 3) = 4 + 3 = 7.
+            \]
+          }
+    \item \(\varphi_{i}(2x^{3} - x^{2} + 3x + 2)\)
+          \sol{
+            We find
+            \[
+                \varphi_{i}(2x^{3} - x^{2} + 3x + 2) \phantom{2} = \phantom{2} 2(i)^{3} - (i)^{2} + 3(i) + 2 \phantom{2} = \phantom{ } -2i + 1 + 3i + 2 \phantom{2} = \phantom{2} i + 3.
+            \]
+          }
+\end{enumerate}
+
+\newpage
+
+\textbf{Concepts}
+
+\begin{enumerate}
+    \setcounter{enumi}{21}
+    \item Find a polynomial of degree \(>0\) in \(\Z_{4}[x]\) that is a unit.
+          \sol{
+            To find a polynomial of degree \(>0\), say \(f(x)\), that is a unit in \(\Z_{4}[x]\), we need some polynomial \(g(x) \in \Z_{4}[x]\) such that \(f(x)g(x) = 1\). Let \(f(x) = g(x)\), where \(f(x) = ax + b\), and consider the computation
+            \[
+                f(x)^{2} = a^{2}x^{2} + 2abx + b^{2}.
+            \] 
+            For this equation to equal 1, we need the \(x\) terms to be equivalent to \(0 \pmod{4}\), and for \(b^{2} \equiv 1 \pmod{4}\). Thus, let \(a = 2\) and \(b = 1\) (or 3, as \(3^{2} \pmod{4} \equiv 1\) and \(2 \cdot 2 \cdot 3 \equiv 0 \pmod{4}\)). Then, we have found that \(2x + 1\) is a unit in \(\Z_{4}[x]\).
+          }
+\end{enumerate}
+
+\textbf{Theory}
+
+\begin{enumerate}
+    \setcounter{enumi}{23}
+    \item Prove that if \(D\) is an integral domain, then \(D[x]\) is an integral domain.
+          \pf{
+            % Must show: D[x] has no divisors of 0, is a commutative ring with unity \(1 \ne 0\).
+            Let \(D\) be an integral domain. We will show that \(D[x]\) satisfies all integral domain axioms. From Theorem 22.2, since \(D\) is commutative with unity \(1 \ne 0\), so does \(D[x]\). So, we are left with showing that \(D[x]\) has no 0 divisors. Let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(D[x]\), where \(f(x)\) has degree \(n\), and \(g(x)\) has degree \(m\). Thus, we have
+            \[
+                f(x) = a_{n}x^{n} + \cdots + a_{1}x + a_{0} \quad \text{and} \quad g(x) = b_{m}x^{m} + \cdots + b_{1}x + b_{0},
+            \]
+            where \(a_{n} \ne 0\) and \(b_{m} \ne 0\). Now, consider the product \(f(x)g(x)\). The term with the highest degree in \(f(x)g(x)\) is \(a_{n}b_{m}x^{n+m}\). Since \(D\) is an integral domain, and \(a_{n},b_{m} \ne 0\), we know their product \(a_{n}b_{m} \ne 0\). Therefore, \(f(x)g(x)\) is nonzero. Thus, \(D[x]\) has no 0 divisors, and is an integral domain.
+          }
+    \item Let \(D\) be an integral domain and \(x\) an indeterminate.
+          \begin{enumerate}
+              \item Describe the units in \(D[x]\).
+                    \sol{
+                        Because \(D\) is an integral domain, the degree of the product of two nonzero polynomials is the sum of their degrees (as we saw in the previous Exercise). Therefore, the only way two polynomials can multiply to equal 1 (which has degree 0) is if both polynomials have degree 0. Thus, the units of \(D[x]\) are the constant polynomials that correspond to the units in \(D\).
+                    }
+              \item Find the units in \(\Z[x]\).
+                    \sol{
+                        Since \(\Z\) is an integral domain, we know that \(\Z[x]\) is also an integral domain by Exercise 24. Thus, by part (a), we know the units of \(\Z[x]\) are 1 and \(-1\). 
+                    }
+\newpage
+              \item Find the units in \(\Z_{7}[x]\).
+                    \sol{
+                        Unlike \(\Z\) in the previous part, \(\Z_{7}\) is a field, but we know that \(\Z_{7}[x]\) is an integral domain by the notes and in the comment following Example 22.3. Thus, we know the units of \(\Z_{7}[x]\) are 1, 2, 3, 4, 5, and 6. 
+                    }
+          \end{enumerate}
+\end{enumerate}
+
+\section*{Section 23}
+
+In Exercise 2, find \(q(x)\) and \(r(x)\) as described by the division algorithm so that \(f(x) = g(x)q(x) + r(x)\) with \(r(x) = 0\) or of degree less than the degree of \(g(x)\).
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
+
+    \item \(f(x) = x^{6} + 3x^{5} + 4x^{2} - 3x + 2\) and \(g(x) = 3x^{2} + 2x - 3\) in \(\Z_{7}[x]\).
+          \sol{(\textbf{Credit:} Long division formatting thanks to \href{https://tex.stackexchange.com/a/584377}{Harry on StackExchange}.)
+              \[
+    \arraycolsep=1pt
+    \renewcommand\arraystretch{1.2}
+    \begin{array}{*1r @{\hskip\arraycolsep}c@{\hskip\arraycolsep} *{13}r}
+                        &          & 5x^{4} & + & 5x^{2} & - & x\phantom{^{4}}   &   &      &   &        &   &    &   &   \\
+        \cline{2-15}
+        3x^{2} + 2x - 3 & \longdiv & x^{6}  & + & 3x^{5} &   &     &   &      & + & 4x^{2} & - & 3x & + & 2 \\
+                        &          & x^{6}  & + & 3x^{5} & - & x^4 &   &      &   &        &   &    &   &   \\
+        \cline{3-7}
+                        &          &        &   &        &   & x^4 &   &      & + & 4x^{2} &   &    &   &   \\
+                        &          &        &   &        &   & x^4 & + & 3x^3 & - & x^{2}  &   &    &   &   \\
+        \cline{7-11}
+                        &          &        &   &        &   &     & - & 3x^3 & + & 5x^{2} & - & 3x &   &   \\
+                        &          &        &   &        &   &     & - & 3x^3 & - & 2x^2   & + & 3x &   &   \\
+        \cline{8-13}
+                        &          &        &   &        &   &     &   &      &   &        & - & 6x & + & 2 \\
+    \end{array}
+              \]
+              Thus, we find
+              \[
+                  q(x) = 5x^{4} + 5x^{2} - x \qquad \text{and} \qquad r(x) = x + 2.
+              \]
+          }
+          \setcounter{enumi}{9}
+    \item  The polynomial \(x^{3} + 2x^{2} + 2x + 1\) can be factored into linear factors in \(\Z_{7} [x]\). Find this factorization.
+          \sol{
+            By following the procedure laid out in the notes (i.e., hunt for 0s, then use division algorithm to rewrite \(f(x)\) by \(x - a\), then repeat), we factor \(x^{3} + 2x^{2} + 2x + 1\) into \((x - 6)(x - 4)(x - 2)\), or equivalently: \((x + 1)(x + 3)(x + 5)\).
+          }
+          \setcounter{enumi}{13}
+    \item Show that \(f(x) = x^{2} + 8x - 2\) is irreducible over \(\Q\). Is \(f(x)\) irreducible over \(\R\)? Over \(\C\)?
+          \sol{
+            We begin by finding the roots of \(f(x)\) to be \(\frac{-8 \pm \sqrt{72}}{2} = -4 \pm 3\sqrt{2}\). Since these roots are irrational, \(f(x)\) is irreducible over \(\Q\). However, \(f(x)\) is reducible over \(\R\) and \(\C\) because those roots exist in their respective sets. 
+          }
+\newpage
+          \setcounter{enumi}{15}
+    \item Demonstrate that \(x^{3} + 3x^{2} - 8\) is irreducible over \(\Q\).
+          \sol{
+            Corollary 23.12 tells us that if \(f(x)\) has a zero in \(\Q\), then it has a zero \(m\) in \(\Z\), and \(m\) must divide \(a_{0}\). Thus, we check all possible factors of \(-8\): \(\pm 1, \pm 2, \pm 4, \pm 8\) and find no zeros. Therefore, the polynomial is irreducible. 
+          }
+\end{enumerate}
+
+In Exercises 18 and 20, determine whether the polynomial in \(\Z[x]\) satisfies an Eisenstein criterion for irreducibility over \(\Q\).
+
+\begin{enumerate}
+    \setcounter{enumi}{17}
+    \item \(x^{2} - 12\)
+          \sol{
+            By using \(p = 3\), we satisfy the Eisenstein criterion because \(3 \nmid 1\), \(3 \mid 12\), and \(3^{2} \nmid 12\).
+          }
+          \setcounter{enumi}{19}
+    \item \(4x^{10} - 9x^{3} + 24x - 18\)
+          \sol{
+            The polynomial \(f(x)\) does not satisfy an Eisenstein criterion, as the only \(p\) that works is 3 (which we get from \(\gcd(9,24, 18)\)) fails \(p^{2} \nmid 18\). 
+          }
+\end{enumerate}
+
+\textbf{Concepts}
+
+\begin{enumerate}
+    \setcounter{enumi}{30}
+    \item  Find the number of irreducible quadratic polynomials in \(\Z_{p} [x]\), where \(p\) is a prime. [\textit{Hint}: Find the number of reducible polynomials of the form \(x^{2} + ax + b\), then the number of reducible quadratics, and subtract this from the total number of quadratics.]
+          \sol{
+            For the total number of quadratics (i.e., polynomials of the form \(cx^{2} + ax + b\)), we have to ensure that the leading coefficient is nonzero, so we have \(p - 1\) choices. For \(a\) and \(b\), they can be any element in \(\Z_{p}\). Thus, we have \(p^{2}\) choices, giving a total of \((p-1)p^{2}\). 
+
+            From the hint, we should first consider the reducible polynomials \(x^{2} + ax + b\) first. Factoring these, we get polynomials of the form \((x - u)(x - v)\). We can account for all choices of distinct \(u\) and \(v\) by using the binomial coefficient \(\binom{p}{2}\), but we are missing the cases when \(u = v\), so we add in a \(p\) to account for every element in \(\Z_{p}\). Then, to get the total number of reducible polynomials, we multiply our total by the choices for the \(c\) coefficient (\(p -1\)). Thus, we are left with
+            \begin{align*}
+                (p - 1)\left(\binom{p}{2} + p\right) &= (p - 1)\left(\frac{p(p - 1)(p - 2)!}{2 \cdot 1 \cdot (p - 2)!} + p\right) \\
+                &= (p - 1)\left(\frac{p(p - 1)}{2} + \frac{2p}{2}\right) \\
+                &= (p - 1)\left(\frac{p(p + 1)}{2}\right)
+            \end{align*}
+            total reducible polynomials.
+
+            Now, to find the total irreducible polynomials, we compute the following:
+            \begin{align*}
+                (p-1)p^{2} - (p - 1)\left(\frac{p(p + 1)}{2}\right) &= (p - 1)\left(p^{2} - \frac{p(p + 1)}{2}\right) \\
+                &= \frac{1}{2}(p - 1)(2p^{2} - p^{2} + p) \\
+                &= \frac{1}{2}p(p^{2} + p - p - 1) \\
+                &= \frac{1}{2}p(p^{2} - 1).
+            \end{align*}
+          }
+\end{enumerate}
+\textbf{Theory}
+
+\begin{enumerate}
+    \setcounter{enumi}{33}
+    \item Show that for \(p\) a prime, the polynomial \(x^{p} + a\) in \(\Z_{p} [x]\) is not irreducible for any \(a \in \Z_{p}\).
+          \pf{
+            Since \(p\) is prime, the degree of our polynomial is \(p \ge 2\). We know that a polynomial of degree 2 or higher is not irreducible if it has a root in the field. So, we plan to find a root. Remember that Corollary 20.2 tells us that \(x^{p} \equiv x \pmod{p}\) for any \(x \in \Z\). Thus, evaluating the polynomial at \(x = -a\) gives
+            \[
+                (-a)^{p} + a \equiv -a + a \equiv 0 \pmod{p}.
+            \]
+            Therefore, we have shown that \(-a\) is a root, meaning the polynomial can be factored and is not irreducible.
+          }
+\end{enumerate}
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+\end{document}
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%

@@ -201,3 +201,8 @@ SOM
 monotonicity
 conjugacy
 homomorphisms
+granularities
+subring
+idempotents
+coprime
+subrings
