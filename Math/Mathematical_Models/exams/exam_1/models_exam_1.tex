@@ -204,6 +204,7 @@
 
 \newcommand{\thickhrule}{\Xhline{1pt}}
 
+\usepackage{subfig}
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
@@ -542,46 +543,58 @@
 \end{titlepage}
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-Choose any of the 4 below, must include one from chapter 4:
-\begin{itemize}
-    \item Chapter 1, Exercise 7a
-    \item Chapter 2, Exercise 2a
-    \item Chapter 3, Exercise 6a*
+% Choose any of the 4 below, must include one from chapter 4:
+% \begin{itemize}
+%     \item Chapter 1, Exercise 7a
+%     \item Chapter 2, Exercise 2a
+%     \item Chapter 3, Exercise 6a*
 
-    *Newton's Method will likely crash.  Use contour plots (perhaps a few zooming in) and/or test a bunch of points in your search for the minimum.
-    \item Chapter 3, Exercise 15a
-    \item Chapter 4, Exercise 5abc
-    \item Chapter 4, Exercise 7abc
-\end{itemize}
+%     *Newton's Method will likely crash.  Use contour plots (perhaps a few zooming in) and/or test a bunch of points in your search for the minimum.
+%     \item Chapter 3, Exercise 15a
+%     \item Chapter 4, Exercise 5abc
+%     \item Chapter 4, Exercise 7abc
+% \end{itemize}
 
-\section*{Chapter 1}
+% \section*{Chapter 1}
 
-\begin{enumerate}
-    \setcounter{enumi}{6}
-    \item Reconsider the pig problem of Example 1.1, but now suppose that our objective is to maximize our profit rate (\$/day). Assume that we have already owned the pig for 90 days and have invested \$100 in this pig to date.
-    \begin{enumerate}
-        \item Find the best time to sell the pig. Use the five-step method, and model as a one–variable optimization problem.
-        \sol{
+% \begin{enumerate}
+%     \setcounter{enumi}{6}
+%     \item Reconsider the pig problem of Example 1.1, but now suppose that our objective is to maximize our profit rate (\$/day). Assume that we have already owned the pig for 90 days and have invested \$100 in this pig to date.
+%     \begin{enumerate}
+%         \item Find the best time to sell the pig. Use the five-step method, and model as a one–variable optimization problem.
+%         \sol{
             
-        }
-    \end{enumerate}
-\end{enumerate}
+%         }
+%     \end{enumerate}
+% \end{enumerate}
 
 \section*{Chapter 2}
 
 \begin{enumerate}
     \setcounter{enumi}{1}
-    \item Reconsider the whale problem of Exercise 1 (on HW 2), but now look at the total number of whales. We will say that the whale population levels \(x\) and \(y\) are feasible provided that both \(x\) and \(y\) are nonnegative. We will say that the population levels \(x\) and \(y\) are \textit{sustainable} provided that both of the growth rates \(dx/dt\) and \(dy/dt\) are nonnegative.
+    \item Reconsider the whale problem of Exercise 1, but now look at the total number of whales. We will say that the whale population levels \(x\) and \(y\) are feasible provided that both \(x\) and \(y\) are nonnegative. We will say that the population levels \(x\) and \(y\) are \textit{sustainable} provided that both of the growth rates \(dx/dt\) and \(dy/dt\) are nonnegative.
     \begin{enumerate}
         \item Determine the population levels that are feasible, sustainable, and that maximize the total whale population \(x + y\). Use the five-step method, and model as a constrained optimization problem.
         \sol{
-            
+            While ensuring that the population levels are feasible and sustainable, we find the total number of whales to be \(138\text{,}207 + 393\text{,}090 = 531\text{,}297\). We found this number by first plotting \(W(x,y) = x + y\), where \(W\) is a function that just counts \(x\) blue and \(y\) fin whales, and ensuring we stay within the sustainable region, where \(\frac{dx}{dt}\) and \(\frac{dy}{dt}\) are positive (see \hyperref[whales]{Figure 1}). Then, we set \(\frac{dx}{dt}\) and \(\frac{dy}{dt}\) equal to zero, and solve for \(y\) and \(x\) respectively. This gave us two line equations, which we plotted in Desmos, where we found their intersection (see \hyperref[desmos]{Figure 2}). We know this intersection is the maximum because of our first plot. (Note: I could have also found the intersection by setting each linear equation to 0 and solving for both, but I thought the Desmos visual was more appealing.)
         }
     \end{enumerate}
 \end{enumerate}
 
 \section*{Chapter 3}
 
+\begin{enumerate}
+    \setcounter{enumi}{5}
+    \item Reconsider the facility location problem of Example 3.2, but now assume that the response time from point \((x_{0}, y_{0})\) to point \((x_{1}, y_{1})\) is proportional to the road travel distance \(|x_{1} - x_{0}| + |y_{1} - y_{0}|\). 
+    \begin{enumerate}
+        \item Find the location that minimizes average response time. Use the five-step method, and model as a multivariable unconstrained optimization problem. \hyperref[ex:2]{Python Code}
+        \sol{
+            To find the optimal location that minimizes average response time, we used contour maps to iteratively get closer to the optimal response time given by \(z(x,y)\). Through this process (see \hyperref[e6ch3]{Figure 3}), we find that the contour plots continuously approach \(x = 1\), \(y = 3\) (going any further than \(x \in [0.999, 1.001]\), \(y \in [2.999, 3.001]\) breaks the plot). Plugging these values in for our response time function, we get \(z(1,3) = 7.145\), which we find to be the best response time. (Also, I used the same random search method that they tried in the book, and as I constricted the random ranges for \(x\) and \(y\) closer to 1 and 3, \(z(x,y)\) never went lower than 7.145.)
+        }
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
 \begin{table}[htbp]
     \centering
     \begin{tabular}{cc|cccc|c}
@@ -596,13 +609,19 @@ Choose any of the 4 below, must include one from chapter 4:
     \caption{(3.7) Shipping cost per truckload in dollars}\label{tab:}
 \end{table}
 
+
 \begin{enumerate}
+
     \setcounter{enumi}{14}
     \item  The Burningham textiles company has three textile mills located in the southern U.S. and four distribution centers located in Michigan, New York, California, and Georgia. The estimated yearly output from each mill, the allocation to each warehouse, and the shipping costs are tabulated in Table 3.7.
     \begin{enumerate}
         \item Find the transportation plan that minimizes shipping costs. Use the five-step method, and solve as a linear programming problem using a computer.
         \sol{
-            
+            Through using the Simplex LP Solver on Excel, we find a minimum shipping cost of \$198,200 with the shipment distribution as follows: 
+            \[
+                \text{CA}_{1} = 105, \quad \text{MI}_{2} = 70, \quad \text{NY}_{2} = 90, \quad \text{NY}_{3} = 10, \quad \text{GA}_{3} = 75,
+            \]
+            and with the rest receiving no utilization. The Excel sheet calculation is available in \hyperref[excel]{Figure 4}.
         }
     \end{enumerate}
 \end{enumerate}
@@ -624,14 +643,113 @@ Choose any of the 4 below, must include one from chapter 4:
     \begin{enumerate}
         \item Can the two species of whales coexist? Use the five-step method, and model as a dynamical system in steady state.
         \sol{
-
+            The two species of whales can coexist. They will reach a stable equilibrium at \((3535, 399810)\) (see \hyperref[fig:whales]{Figure 5}).
         }
         \item Sketch the vector field for this model. Classify each equilibrium point as stable or unstable.
         \sol{
-
+            The vector field (stream plot) is available in \hyperref[fig:whales]{Figure 5}, and each equilibrium is classified in \hyperref[tab:eigen]{Table 2}.
         }
         \item Assuming that there are currently 5,000 blue whales and 70,000 fin whales, what does this model predict about the future of the two populations?
+        \sol{
+            It depends on the growth of each species. One concern could be that the fin whales have a much higher starting population, so they could populate quickly and drive the blue whales to extinction. However, if that does not happen, then the two species can coexist, as explained in part (a). 
+        }
     \end{enumerate}
 \end{enumerate}
 
+\begin{table}[htbp]
+    \label{tab:eigen}
+    \centering
+    \begin{tabular}{rrrrr}
+        \toprule
+        \textbf{Blue Whales} & \textbf{Finn Whales} & \textbf{Eigen 1} & \textbf{Eigen 2} & \textbf{Type} \\ \midrule
+        \(0\) & \(0\) & \(-0.078\) & \(-0.051\) & Sink \\
+        \(3000\) & \(0\) & \(-0.078\) & \(0.025\) & Saddle \\
+        \(150000\) & \(0\) & \(-0.078\) & \(-0.047\) & Sink \\
+        \(0\) & \(400000\) & \(-0.070\) & \(-0.055\) & Sink \\
+        \(0\) & \(15000\) & \(-0.051\) & \(0.039\) & Saddle \\
+        \(3018\) & \(15012\) & \(0.023\) & \(0.039\) & Source \\ 
+        \(149513\) & \(15595\) & \(-0.047\) & \(0.039\) & Saddle \\ 
+        \(137698\) & \(392568\) & \(-0.070\) & \(-0.043\) & Sink \\ 
+        \(3535\) & \(399810\) & \(-0.070\) & \(0.021\) & Saddle \\
+        \bottomrule
+    \end{tabular}
+    \caption{Display of equilibrium points, their eigenvalues, and the associated type for each.}
+\end{table}
+
+\newpage
+
+\section*{Plots \& Code}
+
+\begin{figure}[h!]
+    \label{whales}
+    \centering
+    \includegraphics[width=0.65\linewidth]{images/whales_contour.png}
+    \caption{Contour plot for \(W(x,y)\) with boundaries \(\frac{dx}{dt} \ge 0\) and \(\frac{dy}{dt} \ge 0\) (white lines) for Chapter 2, Exercise 2. The \(x\)-axis represents blue whales, and the \(y\)-axis represents fin whales.}
+\end{figure}
+
+\begin{figure}[h!]
+    \label{desmos}
+    \centering
+    \includegraphics[width=0.60\linewidth]{images/desmos_whales.png}
+    \caption{Intersection of the lines \(\frac{dx}{dt} = 0\) and \(\frac{dy}{dt} = 0\) for Chapter 2, Exercise 2.}
+\end{figure}
+
+
+\begin{figure}[h]
+    \label{e6ch3}
+    \centering
+    \subfloat[\(6 \times 6\) Contour Plot]{
+        \includegraphics[width=.42\textwidth]{images/6x6contour.png}
+    }
+    \hfill
+    \subfloat[\(1.1 \times 3.1\) Contour Plot]{
+        \includegraphics[width=.42\textwidth]{images/3_1x_1_1contour.png}
+    }
+    \vfill
+    \subfloat[\(1.03 \times 3.03\) Contour Plot]{
+        \includegraphics[width=.42\textwidth]{images/3_03x1_03contour.png}
+    }
+    \hfill
+    \subfloat[\(1.01 \times 3.01\) Contour Plot]{
+        \includegraphics[width=.42\textwidth]{images/3_01x1_01contour.png}
+    }
+    \caption{Contour plots for the response time function \(z(x,y)\) in Chapter 3, Exercise 6. Degree of precision sequentially increases from (a) to (d).}
+\end{figure}
+\newpage
+\label{ex:2}
+\begin{minted}{python}
+x, y, z = var("x,y,z")
+z(x,y) = 3.2 + 1.7 * (
+    6 * (abs(x - 1) + abs(y - 5))^(0.91) + \
+    8 * (abs(x - 3) + abs(y - 5))^(0.91) + \
+    8 * (abs(x - 5) + abs(y - 5))^(0.91) + \
+    21 * (abs(x - 1) + abs(y - 3))^(0.91) + \
+    6 * (abs(x - 3) + abs(y - 3))^(0.91) + \
+    3 * (abs(x - 5) + abs(y - 3))^(0.91) + \
+    18 * (abs(x - 1) + abs(y - 1))^(0.91) + \
+    8 * (abs(x - 3) + abs(y - 1))^(0.91) + \
+    6 * (abs(x - 5) + abs(y - 1))^(0.91)
+)/84
+\end{minted}
+\captionof{listing}{Response time function for Chapter 3, Exercise 6.}
+
+\newpage
+
+\begin{figure}[h!]
+    \label{excel}
+    \centering
+    \includegraphics[width=0.70\textwidth]{images/textiles_excel.png}
+    \caption{Excel output for the linear programming problem in Chapter 3, Exercise 15.}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \label{fig:whales}
+    \includegraphics[width=0.65\textwidth]{images/whales_stream.png}
+    \caption{Stream plot of the growth rates of blue and fin whales in Chapter 4, Exercise 5. The red points are equilibriums, each labeled in \hyperref[tab:eigen]{Table 2}. The green point denotes the starting populations for part (c).}
+\end{figure}
+
 \end{document}
+
+
+
