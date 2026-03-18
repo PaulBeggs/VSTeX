@@ -1,0 +1,85 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{update\PYGZus{}whales}\PYG{p}{(}\PYG{n}{blue}\PYG{p}{,} \PYG{n}{fin}\PYG{p}{,} \PYG{n}{time}\PYG{p}{,} \PYG{n}{alpha}\PYG{p}{,} \PYG{n}{E}\PYG{p}{,} \PYG{n}{tab}\PYG{p}{):}
+    \PYG{n}{tab}\PYG{o}{.}\PYG{n}{append}\PYG{p}{((}\PYG{n}{blue}\PYG{p}{,} \PYG{n}{fin}\PYG{p}{,} \PYG{n}{time}\PYG{p}{,} \PYG{n}{alpha}\PYG{p}{,} \PYG{n}{E}\PYG{p}{))}
+    \PYG{k}{return} \PYG{n}{tab}
+
+\PYG{k+kn}{from}\PYG{+w}{ }\PYG{n+nn}{sage.manifolds.operators}\PYG{+w}{ }\PYG{k+kn}{import} \PYG{o}{*}
+
+\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{a}\PYG{p}{,}\PYG{n}{t}\PYG{o}{=}\PYG{n}{var}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}x,y,a,t\PYGZsq{}}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} x = blue, y = fin}
+
+\PYG{c+c1}{\PYGZsh{} Parameters}
+\PYG{n}{rB}\PYG{o}{=}\PYG{l+m+mf}{0.05} \PYG{c+c1}{\PYGZsh{} Growth rate for blue whales}
+\PYG{n}{rF}\PYG{o}{=}\PYG{l+m+mf}{0.08} \PYG{c+c1}{\PYGZsh{} Growth rate for finwhales}
+\PYG{n}{kB} \PYG{o}{=} \PYG{l+m+mf}{150000.} \PYG{c+c1}{\PYGZsh{} Carrying capacity for blue whales}
+\PYG{n}{kF} \PYG{o}{=} \PYG{l+m+mf}{400000.} \PYG{c+c1}{\PYGZsh{} Carrying capacity for fin whales}
+\PYG{n}{q}\PYG{o}{=}\PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Catchability coefficient}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{A}\PYG{p}{(}\PYG{n}{v}\PYG{p}{):}
+    \PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{v}
+    \PYG{k}{return} \PYG{n}{Matrix}\PYG{p}{([}\PYG{n}{grad}\PYG{p}{(}\PYG{n}{j}\PYG{p}{)(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n}{F}\PYG{p}{])}
+
+\PYG{n}{deltat} \PYG{o}{=} \PYG{l+m+mf}{0.5}
+
+\PYG{c+c1}{\PYGZsh{} a0 = 10\PYGZca{}(\PYGZhy{}8)}
+\PYG{n}{t0} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{n}{x0}\PYG{o}{=}\PYG{l+m+mf}{5000.}
+\PYG{n}{y0}\PYG{o}{=}\PYG{l+m+mf}{70000.}
+
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{x0}
+\PYG{n}{y} \PYG{o}{=} \PYG{n}{y0}
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{t0}
+\PYG{n}{outputs} \PYG{o}{=} \PYG{p}{[]}
+
+\PYG{n}{starting\PYGZus{}pop} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{([(}\PYG{l+m+mi}{5000}\PYG{p}{,} \PYG{l+m+mi}{70000}\PYG{p}{)],} \PYG{n}{size}\PYG{o}{=}\PYG{l+m+mi}{30}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}green\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{for} \PYG{n}{E} \PYG{o+ow}{in} \PYG{p}{[}\PYG{l+m+mi}{1000}\PYG{p}{,} \PYG{l+m+mi}{2000}\PYG{p}{,} \PYG{l+m+mi}{3000}\PYG{p}{,} \PYG{l+m+mi}{4000}\PYG{p}{,} \PYG{l+m+mi}{5000}\PYG{p}{]:}
+    \PYG{k}{for} \PYG{n}{alpha} \PYG{o+ow}{in} \PYG{p}{[}\PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{9}\PYG{p}{),} \PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{8}\PYG{p}{),} \PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{6}\PYG{p}{),} \PYG{l+m+mi}{10}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{p}{)]:}
+        \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{Starting loop for alpha=}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{alpha}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{, E=}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{E}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+        \PYG{n}{should\PYGZus{}break} \PYG{o}{=} \PYG{k+kc}{False}
+        \PYG{n}{dxdt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{rB}\PYG{o}{*}\PYG{n}{x}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{o}{/}\PYG{n}{kB}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{alpha}\PYG{o}{*}\PYG{n}{x}\PYG{o}{*}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{q}\PYG{o}{*}\PYG{n}{E}\PYG{o}{*}\PYG{n}{x} \PYG{c+c1}{\PYGZsh{} Growth rate for blue whales}
+        \PYG{n}{dydt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{rF}\PYG{o}{*}\PYG{n}{y}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{o}{/}\PYG{n}{kF}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{alpha}\PYG{o}{*}\PYG{n}{x}\PYG{o}{*}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{q}\PYG{o}{*}\PYG{n}{E}\PYG{o}{*}\PYG{n}{y} \PYG{c+c1}{\PYGZsh{} Growth rate for fin whales}
+
+        \PYG{n}{equil} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{([}\PYG{n}{dxdt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{dydt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{],}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}
+        \PYG{n}{equil} \PYG{o}{=} \PYG{p}{[[}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{i}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(),}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{eq}\PYG{p}{]} \PYG{k}{for} \PYG{n}{eq} \PYG{o+ow}{in} \PYG{n}{equil}\PYG{p}{]}
+        \PYG{n}{eqpts} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{equil}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}red\PYGZsq{}}\PYG{p}{,} \PYG{n}{size}\PYG{o}{=}\PYG{l+m+mi}{40}\PYG{p}{)}
+
+        \PYG{n}{F}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{p}{[}\PYG{n}{dxdt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{),}\PYG{n}{dydt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)]}
+
+        \PYG{n}{output}\PYG{o}{=}\PYG{p}{[]}
+        \PYG{k}{for} \PYG{n}{eq} \PYG{o+ow}{in} \PYG{n}{equil}\PYG{p}{:}
+            \PYG{n}{eigen}\PYG{o}{=}\PYG{p}{[}\PYG{n}{lam}\PYG{o}{.}\PYG{n}{n}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{)} \PYG{k}{for} \PYG{n}{lam} \PYG{o+ow}{in} \PYG{n}{A}\PYG{p}{(}\PYG{n}{eq}\PYG{p}{)}\PYG{o}{.}\PYG{n}{eigenvalues}\PYG{p}{()]} \PYG{c+c1}{\PYGZsh{} Find eigenvalues at the equilibrium point}
+            \PYG{n}{etype} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Other\PYGZdq{}}
+            \PYG{n}{etype} \PYG{o}{=} \PYG{n}{get\PYGZus{}equil\PYGZus{}type}\PYG{p}{(}\PYG{n}{eigen}\PYG{p}{)}
+            \PYG{n}{output}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{eq}\PYG{o}{+}\PYG{n}{eigen}\PYG{o}{+}\PYG{p}{[}\PYG{n}{etype}\PYG{p}{])}
+
+        \PYG{n}{display}\PYG{p}{(}\PYG{n}{table}\PYG{p}{(}\PYG{n}{output}\PYG{p}{,} \PYG{n}{header\PYGZus{}row}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Blue Whales\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Fin Whales\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Eigen 1\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Eigen 2\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Type\PYGZsq{}}\PYG{p}{]))}
+        \PYG{n}{streams} \PYG{o}{=} \PYG{n}{streamline\PYGZus{}plot}\PYG{p}{([}\PYG{n}{dxdt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{),}\PYG{n}{dydt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)],} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{43050}\PYG{p}{,}\PYG{l+m+mi}{200000}\PYG{p}{),} \PYG{p}{(}\PYG{n}{y}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5000}\PYG{p}{,}\PYG{l+m+mi}{500000}\PYG{p}{),}
+                          \PYG{n}{axes\PYGZus{}labels}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Blue Whales\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Fin Whales\PYGZsq{}}\PYG{p}{],} \PYG{n}{title}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Whale Population\PYGZdq{}}\PYG{p}{)}
+        \PYG{n}{display}\PYG{p}{(}\PYG{n}{streams} \PYG{o}{+} \PYG{n}{eqpts} \PYG{o}{+} \PYG{n}{starting\PYGZus{}pop}\PYG{p}{)}
+
+        \PYG{n}{x} \PYG{o}{=} \PYG{n}{x0}
+        \PYG{n}{y} \PYG{o}{=} \PYG{n}{y0}
+        \PYG{n}{t} \PYG{o}{=} \PYG{n}{t0}
+
+        \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{20000}\PYG{p}{):}
+            \PYG{n}{deltax}\PYG{o}{=}\PYG{n}{dxdt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}\PYG{o}{*}\PYG{n}{deltat}
+            \PYG{n}{deltay}\PYG{o}{=}\PYG{n}{dydt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}\PYG{o}{*}\PYG{n}{deltat}
+            \PYG{n}{t}\PYG{o}{+=}\PYG{n}{deltat}
+            \PYG{n}{x}\PYG{o}{+=}\PYG{n}{deltax}
+            \PYG{n}{y}\PYG{o}{+=}\PYG{n}{deltay}
+            \PYG{k}{if} \PYG{n}{x}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{0}\PYG{p}{:}
+                \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}Blue whales all gone. }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ blue whales win. It took }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ years.\PYGZsq{}}\PYG{p}{)}
+                \PYG{n}{should\PYGZus{}break} \PYG{o}{=} \PYG{k+kc}{True}
+            \PYG{k}{elif} \PYG{n}{y}\PYG{o}{\PYGZlt{}}\PYG{l+m+mi}{0}\PYG{p}{:}
+                \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}Fin whales all gone. }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ blue whales win. It took }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{t}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{ years.\PYGZsq{}}\PYG{p}{)}
+                \PYG{n}{should\PYGZus{}break} \PYG{o}{=} \PYG{k+kc}{True}
+            \PYG{k}{elif} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{output}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{])} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{1000} \PYG{o+ow}{and} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{output}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{l+m+mi}{1}\PYG{p}{])} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{3000}\PYG{p}{:}
+                \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Equilibrium found! Blue whales: }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{. Fin whales: }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{. It took }\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ years\PYGZdq{}}\PYG{p}{)}
+                \PYG{n}{should\PYGZus{}break} \PYG{o}{=} \PYG{k+kc}{True}
+
+            \PYG{k}{if} \PYG{n}{should\PYGZus{}break}\PYG{p}{:}
+                \PYG{k}{break}
+        \PYG{n}{outputs} \PYG{o}{=} \PYG{n}{update\PYGZus{}whales}\PYG{p}{(}\PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{),} \PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{),} \PYG{n+nb}{round}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{),} \PYG{n}{alpha}\PYG{p}{,} \PYG{n}{E}\PYG{p}{,} \PYG{n}{outputs}\PYG{p}{)}
+
+\PYG{n}{display}\PYG{p}{(}\PYG{n}{table}\PYG{p}{(}\PYG{n}{outputs}\PYG{p}{,} \PYG{n}{header\PYGZus{}row}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Blue Whales\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Fin Whales\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Time (years)\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}}\PYG{l+s+se}{\PYGZbs{}\PYGZbs{}}\PYG{l+s+s2}{alpha\PYGZdl{}\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}E\PYGZdl{}\PYGZdq{}}\PYG{p}{]))}
+\end{MintedVerbatim}
