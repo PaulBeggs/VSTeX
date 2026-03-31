@@ -332,6 +332,8 @@
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\textbf{\theenumi}.}
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{\textbf{\theenumii}.}
 
 % \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
 
@@ -530,7 +532,7 @@
 % Do not use all caps.
 \newcommand{\cussubtitle}{Seminar in Algebra}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{March 19, 2025}
+\newcommand{\finaldate}{March 19, 2026}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
 \newcommand{\professor}{Dr. Carol Ann Downes}
 
@@ -588,13 +590,9 @@
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 
-% IV.22: 1, 7, 8, 22, 24, 25
-% IV.23: 2, 10, 14, 16, 18, 20, 31, 34
-
-
 \section*{Cover Sheet}
 
-
+For the first two computations, I just followed what we did in my notes. Exercise 4 is a little scuffed because I couldn't fit the ``\(+8\Z\)'' term, but at least I added a note. For Exercise 18, I wanted to define cases to give me resources to use in solving the proof. That is, by partitioning the kernel into two bins of either trivial or nontrivial, I can exploit properties of either bin. For the former, I was able to use Corollary 26.6, and quickly prove the one-to-one half. For the other half, I knew that I needed to map an element in \(F\) to 0, but first I needed to set up the mapping. So, I used the oldest trick in the book, and just multiplied by 1. Then, I could use substitution and associativity to get \(a\) alone. Then, after I applied \(\varphi\), I could use the fact that \(a \in N\) to get a zero to multiply by. This was what I needed to send \(x\) to 0. Exercise 22 involved a lot of drawing a lot of arrows on my scratch paper, and keeping track of where elements resided in the space. Doing part \textbf{a} first helped a lot, as part \textbf{c} was very similar, so I just had to modify it as needed. Exercise 24 was very similar to Exercise 18, so I was able to follow the same partitioning strategy that I did for that one. For the first part, I needed to show that the homomorphism was bijective. I got surjectivity because for every mapping \(x + \{0\}\), there is always an \(x \in F\). For injectivity, I just followed the definition, and the proof wrote itself. For the second half, I followed what I did for Exercise 18, but I needed to expand upon it to show that \(N\) was actually \(F\). This was done by just using the ideal property of \(a \cdot n \in N\) for \(a \in R\) and \(n \in N\). Then, for Exercise 26, I was very thankful that you had us do Exercise 50 all that time ago, so I could just plug that in. The second half of the proof was just computations. Exercise 29 was confusing to start off with. I didn't really understand what the question was asking until I played with the homomorphism mapping for a couple of elements. Then, I just applied the homomorphism property along with the definition of units. Finally, for Exercise 37, I just followed what I did for Exam 1 in the first semester of Algebra, except this time, I needed to show the additive group is also satisfied (we only showed that \(\gen{\C, \cdot}\) was isomorphic to \(M_{2}(\R)\)).
 
 \newpage
 % V.26: 3, 4, 18, 22, 24, 26, 29, 37
@@ -606,11 +604,36 @@
     \setcounter{enumi}{2}   
     \item Find all ideals \(N\) of \(\Z_{12}\). In each case, compute \(\Z_{12}/N\); that is, find a known ring to which the quotient ring is isomorphic.
     \sol{
-
+        There are 6 ideals: \(\gen{0}, \gen{1}, \gen{2}, \gen{3}, \gen{4}, \text{ and } \gen{6}\). By computing \(a + N\) and \(a \cdot N\) for each ideal \(N\) and \(a \in \Z_{12}\), we find \(\Z_{12} / \gen{0} \cong \Z_{12}\), \(\Z_{12} / \gen{1} \cong \{0\}\), \(\Z_{12} / \gen{2} \cong \Z_{2}\), \(\Z_{12} / \gen{3} \cong \Z_{3}\), \(\Z_{12} / \gen{4} \cong \Z_{4}\), and \(\Z_{12} / \gen{6} \cong \Z_{6}\).
     }
     \item Give addition and multiplication tables for \(2\Z/8\Z\). Are \(2\Z/8\Z\) and \(\Z_{4}\) isomorphic rings?
     \sol{
-
+        Distinct elements of \(2\Z/8\Z\) look like \(a + 8\Z\) for \(a \in \{0, 2, 4, 6\}\). In the following tables, we omit the \(+ 8\Z\) term for succinctness, but they should be in each cell. 
+            \begin{center}
+                \begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c}
+                        \(+\) & 0 & 2 & 4 & 6 \\
+                  \noalign{\hrule height 1.5pt}
+                   0 & 0 & 2 & 4 & 6 \\
+                  \hline
+                   2 & 2 & 4 & 6 & 0 \\
+                  \hline
+                   4 & 4 & 6 & 0 & 2 \\
+                  \hline
+                   6 & 6 & 0 & 2 & 4
+              \end{tabular}\hspace{1.25cm}
+              \begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c}
+                        \(\cdot\) & 0 & 2 & 4 & 6 \\
+                  \noalign{\hrule height 1.5pt}
+                   0 & 0 & 0 & 0 & 0 \\
+                  \hline
+                   2 & 0 & 4 & 0 & 4 \\
+                  \hline
+                   4 & 0 & 0 & 0 & 0 \\
+                  \hline
+                   6 & 0 & 4 & 0 & 4
+              \end{tabular}
+        \end{center}
+        From the multiplication table, we see that \(2\Z/8\Z\) and \(\Z_{4}\) are not isomorphic. For example, take element \(2 \in \Z_{4}\): We get \(2 \cdot 2 \equiv 0 \pmod{4}\); compare that to \(2 \in 2\Z/8\Z\): \(2 \cdot 2 + 8\Z = 4 + 8\Z\). 
     }
 \end{enumerate}
 
@@ -620,7 +643,20 @@
     \setcounter{enumi}{17}   
     \item Show that each homomorphism from a field to a ring is either one to one or maps everything to 0.
     \pf{
-
+        Let \(\varphi : F \to R\) be a homomorphism from field \(F\) to ring \(R\) with kernel \(N\). We have two cases: if \(N = \{0\}\), then \(\varphi\) is one-to-one by Corollary 26.6. Thus, we are left with showing that when \(N \ne \{0\}\), \(\varphi\) maps every element in \(F\) to 0. So, suppose \(N \ne \{0\}\). This implies there exists a nonzero element \(a \in F\) that is also in \(N\). Since \(F\) is a field, \(a^{-1} \in F\). Thus, take an \(x \in F\), and consider the following computation:
+        \[
+            x = x \cdot 1 = x \cdot (a^{-1}a) = (xa^{-1})a.
+        \]
+        Now apply the homomorphism property to both sides:
+        \begin{align*}
+            \varphi(x) &= \varphi((xa^{-1})a) \\
+            &= \varphi(xa^{-1}) \varphi(a). 
+        \end{align*}
+        Since \(a \in N\), we know \(\varphi(a) = 0\). Hence, 
+        \[
+            \varphi(x) = \varphi(xa^{-1}) \cdot 0 = 0
+        \]
+        Thus, since \(x\) was arbitrary, we have shown that for all \(x \in F\), \(\varphi(x) = 0\). Therefore, \(\varphi\) maps everything to 0. 
     }
 
     \setcounter{enumi}{21}   
@@ -628,37 +664,60 @@
     \begin{enumerate}
         \item Show that \(\varphi[N]\) is an ideal of \(\varphi[R]\).
         \pf{
-
-        }
+            To prove that \(\varphi[N]\) is an ideal of \(\varphi[R]\), we must show that \(\varphi[N]\) is a subring, and for all \(r \in R\), that for all \(\varphi(r) \in \varphi[R]\), \(\varphi(r)\varphi[N] \subseteq \varphi[N]\) and \(\varphi[N]\varphi(r) \subseteq \varphi[N]\). Since \(N\) is an ideal of \(R\), \(N\) is a subring of \(R\). Then, by Theorem 26.3, we know that \(\varphi[N]\) is a subring of \(\varphi[R]\) as well. To show the second ideal property, let \(r \in R\) and \(n \in N\). Since \(N\) is an ideal, we get \(rn \in N\) and \(nr \in N\). Therefore, we find \(\varphi(rn) = \varphi(r)\varphi(n) \in \varphi[N]\) and \(\varphi(nr) = \varphi(n)\varphi(r) \in \varphi[N]\). Therefore, \(\varphi[N]\) is an ideal of \(\varphi[R]\). 
+        } 
         \item Give an example to show that \(\varphi[N]\) need not be an ideal of \(R'\).
         \sol{
-
+            Let \(R = \Z\), \(R' = \Q\) and \(N = \Z\) with \(\varphi : \Z \to \Q\) defined by \(\varphi(x) = x\). Thus, \(\varphi[N] = \varphi[\Z] = \Z\). Consider \(1 \in \Z\) and \(\frac{1}{2} \in \Q\). Multiplying, we get \(1 \cdot \frac{1}{2} = \frac{1}{2} \notin \Z\). Hence, \(\varphi[N]\) is not an ideal of \(\Q\). 
         }
         \item Let \(N'\) be an ideal either of \(\varphi[R]\) or of \(R'\). Show that \(\varphi^{-1}[N']\) is an ideal of \(R\).
         \pf{
-
+            To show that \(\varphi^{-1}[N']\) is an ideal of \(R\), we need to show the same properties of an ideal, like what we did in part \textbf{a}. Since \(N'\) is an ideal of \(R'\) it is a subring. Then, by Theorem 26.3 we know that \(\varphi^{-1}[N']\) is a subring of \(R\). Now, let \(r \in R\) and \(x \in \varphi^{-1}[N']\). Then, \(\varphi(r) \in \varphi[R]\) and \(\varphi(x) \in N'\). Applying the homomorphism property, we get \(\varphi(rx) = \varphi(r)\varphi(x)\). Then, because \(N'\) is ideal in \(\varphi[R]\) or \(R'\) and \(\varphi(r)\) is in \(\varphi[R] \subseteq R'\), \(\varphi(r)\varphi(x) \in N'\). So, \(\varphi(rx) \in N'\), hence \(rx \in \varphi^{-1}[N']\). A symmetrical argument shows \(xr \in \varphi^{-1}[N']\). Therefore, \(\varphi^{-1}[N']\) is an ideal of \(R\). 
         }
     \end{enumerate}
 
     \setcounter{enumi}{23}   
     \item Show that a factor ring of a field is either the trivial (zero) ring of one element or is isomorphic to the field. 
     \pf{
+        Let \(F\) be a field and \(N\) an ideal of \(F\). Following from Exercise 18, we know that either \(N = {0}\) or \(N \ne \{0\}\). If \(N = \{0\}\), define a mapping \(\varphi : F \to F/\{0\}\) by \(\varphi(x) = x + \{0\}\). This mapping is surjective by definition. To show it is injective, suppose \(\varphi(x) = \varphi(y)\). Then \(x + \{0\} = y + \{0\}\), which implies \(x - y \in \{0\}\), and thus \(x = y\). Since \(\varphi\) is a bijective ring homomorphism, it is an isomorphism. Therefore, \(F/\{0\} \cong F\). 
+        
+        Now, suppose that \(N \ne \{0\}\). Then there exists a nonzero element \(a \in N\). Since \(F\) is a field, \(a\) has a multiplicative inverse \(a^{-1} \in F\). Since \(N\) is an ideal, we can take \(a \in N\) and \(a^{-1} \in F\) to get \(a^{-1}a \in N\), which means \(1 \in N\). For any arbitrary \(x \in F\), we then have \(x \cdot 1 = x \in N\). Thus, \(F \subseteq N\), which implies \(N = F\). The factor ring \(F/F\) consists of a single coset, namely the additive identity \(0 + F\). Since it contains only one element, \(F/F\) is the trivial zero ring.
 
+        Thus, a factor ring of a field is either the trivial ring of one element or is isomorphic to the field itself.
     }
 
     \setcounter{enumi}{25}   
     \item Let \(R\) be a commutative ring and let \(a \in R\). Show that \(I_{a} = \{x \in R \mid ax = 0\}\) is an ideal of \(R\). 
     \pf{
-
+        From Section 18, Exercise 50, we have that \(I_{a}\) is a subring. Thus, we need only show that \(xr \in I_a\) and \(rx \in I_a\) for \(x \in I_a\) and \(r \in R\). Thus, consider the following:
+        \[
+            a(xr) = (ax)r = 0 \cdot r = 0.
+        \]
+        So, \(xr \in I_{a}\). Now, since \(R\) is a commutative ring, we can rearrange \(a(rx)\):
+        \[
+            a(rx) = a(xr) = 0.
+        \]
+        So, \(rx \in I_{a}\). Therefore, we have shown that \(I_{a}\) is an ideal of \(R\).
     }
 
     \setcounter{enumi}{28}   
     \item Let \(\varphi\) be a homomorphism of a ring \(R\) with unity onto a nonzero ring \(R'\). Let \(u\) be a unit in \(R\). Show that \(\varphi(u)\) is a unit in \(R'\).
     \pf{
+        Let \(\varphi : R \to R'\) be a surjective ring homomorphism where \(R\) has unity \(1_R\) and \(R'\) is a nonzero ring. Because \(\varphi\) is surjective, the unity of \(R\) maps to the unity of \(R'\). Thus, \(\varphi(1_R) = 1_{R'}\). 
 
+        Let \(u\) be a unit in \(R\). By definition, there exists an element \(u^{-1} \in R\) such that \(u u^{-1} = u^{-1} u = 1_R\). Applying \(\varphi\) to this equation, we get:
+        \[
+            \varphi(u u^{-1}) = \varphi(1_R) \quad \text{and} \quad \varphi(u^{-1} u) = \varphi(1_R).
+        \]
+        Then, using the homomorphism property of \(\varphi\), we can expand the left side of both equations:
+        \[
+            \varphi(u)\varphi(u^{-1}) = 1_{R'} \quad \text{and} \quad \varphi(u^{-1})\varphi(u) = 1_{R'}.
+        \]
+        This demonstrates that \(\varphi(u)\) has a multiplicative inverse, \(\varphi(u^{-1})\), in \(R'\). Therefore, \(\varphi(u)\) is a unit in \(R'\).
     }
 
     \setcounter{enumi}{36}   
+\newpage
     \item Show that \(\varphi : \C \to M_{2}(\R)\) given by
     \[
         \varphi(a + bi) = \begin{pmatrix}
@@ -668,7 +727,49 @@
     \]
     for \(a,b \in \R\) gives an isomorphism of \(\C\) with the subring \(\varphi[\C]\) of \(M_{2}(\R)\). 
     \pf{
-
+        To show that \(\varphi\) is an isomorphism, we must prove it is a bijection and that it is a homomorphism. Notice that since the codomain of \(\varphi\) is defined as its image, \(\varphi[\C]\), the mapping is surjective by definition. To show that \(\varphi\) is injective, suppose \(\varphi(a + bi) = \varphi(c + di)\) for \(c,d \in \C\). Then, 
+        \[
+            \begin{pmatrix}
+                a & b \\
+                -b & a
+            \end{pmatrix} = \begin{pmatrix}
+                c & d \\
+                -d & c
+            \end{pmatrix}.
+        \]
+        We see that \(a = c\) and \(b = d\), so \(\varphi\) is injective. Now, we show that \(\varphi\) is a homomorphism. First, we show that the additive property is maintained:
+        \begin{align*}
+            \varphi((a + bi) + (c + di)) &=  \varphi((a + c) + (b + d)i) \\
+            &= \begin{bmatrix}
+                a + c & b + d \\
+                - b - d & a + c
+            \end{bmatrix} \\
+            &= \begin{bmatrix}
+                a & b \\
+                - b & a 
+            \end{bmatrix} + \begin{bmatrix}
+                c & d \\
+                - d & c 
+            \end{bmatrix}\\
+            &= \varphi(a + bi) + \varphi(c + di).
+        \end{align*}
+        Now, for multiplication:
+        \begin{align*}
+            \varphi((a + bi)(c + di)) &= \varphi((ac - bd) + (ad + bc)i) \\
+            &= \begin{bmatrix}
+                ac - bd & ad + bc \\
+                -ad - bc & ac - bd
+            \end{bmatrix} \\
+            &= \begin{bmatrix}
+                a & b \\
+                -b & a 
+            \end{bmatrix} \begin{bmatrix}
+                c & d \\
+                -d & c
+            \end{bmatrix} \\
+            &= \varphi(a + bi)\varphi(c + di).
+        \end{align*}
+        Thus, we have shown that \(\varphi\) gives an isomorphism of \(\C\) with the subring \(\varphi[\C]\) of \(M_{2}(\R)\).
     }
 
 \end{enumerate}

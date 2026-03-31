@@ -9,15 +9,15 @@
 
 % \usepackage[T1]{fontenc}
 
-\usepackage{draculatheme}
-\newcommand{\documentTheme}{draculafg}
-\newcommand{\documentLogo}{../../images/small logo_white.png}
-\newcommand{\documentBigLogo}{../../images/logo_white_text.png}
-\usemintedstyle{dracula}
+% \usepackage{draculatheme}
+% \newcommand{\documentTheme}{draculafg}
+% \newcommand{\documentLogo}{../../images/small logo_white.png}
+% \newcommand{\documentBigLogo}{../../images/logo_white_text.png}
+% \usemintedstyle{dracula}
 
-% \newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
-% \newcommand{\documentLogo}{../../images/small logo.png}
-% \newcommand{\documentTheme}{black}
+\newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
+\newcommand{\documentLogo}{../../images/small logo.png}
+\newcommand{\documentTheme}{black}
 
 %%% AESTHETICS %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -33,7 +33,7 @@
 \linespread{1}
 \usepackage{listings}
 \usepackage{tikz}
-\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning, arrows.meta, decorations.pathmorphing, decorations.pathreplacing}
 \usepgflibrary{shadings}
 \usepackage{pgfkeys}
 \usepackage{pdftexcmds}
@@ -237,8 +237,8 @@
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
 \pagestyle{fancy} % options: empty , plain , fancy
-\fancyhead[R]{\textcolor{draculafg}{\assignmentname}}
-\fancyhead[L]{\textcolor{draculafg}{Hendrix College}}
+\fancyhead[R]{\textcolor{\documentTheme}{\assignmentname}}
+\fancyhead[L]{\textcolor{\documentTheme}{Hendrix College}}
 \fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
 \usepackage{xpatch}
 \xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
@@ -252,6 +252,7 @@
 \tcbuselibrary{theorems}
 % \tcbuselibrary{minted}
 \newcounter{BoxCounter}
+% \usepackage{dingbat}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -260,15 +261,13 @@
 %You'll need your own packages, theorem types, and commands.
 
 \usepackage{fix-cm}
-\usepackage{amsmath,amsthm} 
+\usepackage{amsmath,amsthm, amsfonts, amssymb} 
 \usepackage{array, makecell}
 \usepackage{colortbl}
 \newcommand{\thickvrule}{\vrule width 1pt}
-
 \newcommand{\thickhrule}{\Xhline{1pt}}
 
 \usepackage{mathtools}
-\usepackage{amssymb}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{mathrsfs}
 \usepackage{changepage}
@@ -345,8 +344,8 @@
 	leftline=true,
 	linewidth=1.5pt,
 	linecolor=black, % default color, will be overridden in custom commands
-	backgroundcolor=draculabg, % Needed for Dracula theme
-	fontcolor=\documentTheme, % Needed for Dracula theme
+	% backgroundcolor=draculabg, % Needed for Dracula theme
+	% fontcolor=\documentTheme, % Needed for Dracula theme
 	innertopmargin=0pt,
 	innerbottommargin=5pt,
 	innerrightmargin=10pt,
@@ -383,40 +382,6 @@
 }{
     \end{adjustwidth}
     \end{minipage}
-    \end{mdframed}
-}
-
-% Define a new environment 'proofscratch' for Proof and Scratch Paper
-\newenvironment{proofscratch}[2]{%
-    \begin{mdframed}[
-        topline=false,
-        bottomline=false,
-        rightline=false,
-        leftline=false,
-        backgroundcolor=draculabg, % Background color for Dracula theme
-        fontcolor=\documentTheme,       % Font color for Dracula theme
-        innerleftmargin=-6pt,
-        innertopmargin=0pt,
-        leftmargin=0pt,
-        rightmargin=0pt,
-        skipabove=\topsep,
-        skipbelow=\topsep,
-    ]
-    % % Begin TikZ picture for the vertical dotted line
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     % Draw a vertical dotted line at approximately the center of the mdframed width
-    %     \draw[dotted, thick] ([xshift=0.005\linewidth]current bounding box.north west) -- ([xshift=0.005\linewidth]current bounding box.south west);
-    % \end{tikzpicture}%
-    % % Create the left minipage for Proof
-    \begin{minipage}[t]{0.47\textwidth}%
-        \noindent\textit{Proof.} #1 \hfill \(\qed\)
-    \end{minipage}%
-    \hfill
-    % Create the right minipage for Scratch Paper
-    \begin{minipage}[t]{0.47\textwidth}%
-        \textit{Scratch Paper.} #2
-    \end{minipage}%
-}{
     \end{mdframed}
 }
 
@@ -486,6 +451,11 @@
     \end{customframedproof}
 }
 
+\usepackage{scalerel}
+\setcounter{MaxMatrixCols}{20}
+
+\newcommand{\longdiv}{\smash{\mkern-0.43mu\vstretch{1.31}{\hstretch{.7}{)}}\mkern-5.2mu\vstretch{1.31}{\hstretch{.7}{)}}}}
+
 \def \proofDistance {10pt}
 
 \newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
@@ -530,6 +500,8 @@
 \newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
 \newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
 
+\newcommand{\funccolon}{\, \colon}
+
 \newcommand{\squigglyline}{%
     \noindent
     \tikz[baseline=-0.5ex]{
@@ -537,6 +509,10 @@
         (0,0) -- (\dimexpr\linewidth\relax,0);
     }%
 }
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\generator}[1]{\langle #1 \rangle}
 
 
 % end of preamble
@@ -551,14 +527,14 @@
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\newcommand{\assignmentname}{Homework 2: Sections 3 \& 4}
+\newcommand{\assignmentname}{Homework 5: Section 27}
 
 % Do not use all caps.
-\newcommand{\cussubtitle}{Algebra}
+\newcommand{\cussubtitle}{Seminar in Algebra}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{Septemeber 11, 2025}
+\newcommand{\finaldate}{April 2, 2026}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
-\newcommand{\professor}{Dr. Christopher Camfield}
+\newcommand{\professor}{Dr. Carol Ann Downes}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -612,226 +588,80 @@
     \end{center}
 \end{titlepage}
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
-\section*{Section 3}
-% In Exercises 6 and 7, determine whether the given map is an isomorphism of the first binary structure with the second. If it is not an isomorphism, why not?
-\begin{enumerate}
-    \setcounter{enumi}{5}
-    \item \(\langle \Q, \cdot \rangle\) with \(\langle \Q, \cdot \rangle\) where \(\phi(x) = x^{2}\) for \(x \in \Q\).
-          \sol{
-              The binary operation \(\phi\) is not an isomorphism because it is not one-to-one. A counterexample is that \(\phi\) is not one-to-one because \(\phi(1) = 1\) and \(\phi(-1) = 1\).
-          }
 
-    \item \(\langle \R, \cdot \rangle\) with \(\langle \R, \cdot \rangle\) where \(\phi(x) = x^{3}\) for \(x \in \R\).
-          \sol{
-              The binary operation \(\phi\) is an isomorphism because it has the following properties:
-              \begin{itemize}
-                  \item \textbf{One-to-one:} If \(\phi(x) = \phi(y)\), then \(x^{3} = y^{3}\). Taking the cube root of both sides, we have \(x = y\). Thus, \(\phi\) is one-to-one.
-                  \item \textbf{Onto:} For any \(z \in \R\), we can find an \(x \in \R\) such that \(\phi(x) = z\). Specifically, we can choose \(x = \sqrt[3]{z}\). Therefore, \(\phi\) is onto.
-                  \item \textbf{Homomorphism:} For any \(x, y \in \R\), we have
-                        \[
-                            \phi(x \cdot y) = (x \cdot y)^{3} = x^{3} \cdot y^{3} = \phi(x) \cdot \phi(y).
-                        \]
-                        Therefore, \(\phi\) preserves the binary operation.
-              \end{itemize}
-          }
 
-\end{enumerate}
-\squigglyline \\
+\section*{Cover Sheet}
 
-% In Exercise 11 and 12, let \(F\) be the set of all functions mapping \(\R\) into \(\R\) that have derivatives of all orders. Follow the instructions for Exercises 6 and 7.
-\begin{enumerate}
-    \setcounter{enumi}{10}
-    \item \(\langle F, + \rangle\) with \(\langle F, + \rangle\) where \(\phi(f) = f'\), the derivative of \(f\).
-          \sol{
-              The binary operation \(\phi\) is not an isomorphism because it is not one-to-one. A counterexample is that \(\phi(f) = \phi(g)\) for \(f(x) = x^{2}\) and \(g(x) = x^{2} + 1\), but \(f \ne g\).
-          }
 
-    \item \(\langle F, + \rangle\) with \(\langle \R, + \rangle\) where \(\phi(f) = f'(0)\).
-          \sol{
-              Similarly to the previous problem, the binary operation \(\phi\) is not an isomorphism because it is not one-to-one. A counterexample is that \(\phi(f) = \phi(g)\) for \(f(x) = \frac{x}{2}\) and \(g(x) = x^{2} + \frac{x}{2}\), but \(f \ne g\).
-          }
-\end{enumerate}
 
 \newpage
-\section*{Section 4}
+% V.27: 2, 4, 15, 16, 17, 24, 29, 37
+% Hint on 15-17: Ideals must be subrings. Once you have an ideal, you can figure out if it’s maximal/prime by looking at the factor ring’s structure.
+% Hint on 29: Think about the canonical homomorphism mapping R to R/M.
 
-% In Exercise 3, determine whether the binary operation \(*\) gives a group structure on the given set. If no group results, give the first axiom in the order \(\mathcal{G}_{1},\ \mathcal{G}_{2},\ \mathcal{G}_{3}\) from Definition 4.1 that does not hold.
+\section*{Section 27}
+
+\textbf{Computations}
 
 \begin{enumerate}
-    \setcounter{enumi}{2}
-    \item Let \(*\) be defined on \(\R^{+}\) by letting \(a * b = \mysqrt{ab}\).
-          \sol{
-              The binary operation \(*\) does not give a group structure on \(\R^{+}\) because it fails \(\mathcal{G}_{1}\). A counterexample is that \((1 * 2) * 3 = \sqrt{2} * 3 = \sqrt{3\sqrt{2}}\), but \(1 * (2 * 3) = 1 * \mysqrt{6} = \sqrt{\sqrt{6}}\). Since \(\sqrt{3\sqrt{2}} \ne \sqrt{\sqrt{6}}\), the operation is not associative.
-          }
+	\setcounter{enumi}{1}
+	\item Find all prime ideals and all maximal ideals of \(\Z_{12}\).
+	\sol{
 
+	}
+
+	\setcounter{enumi}{3}
+	\item Find all prime ideals and all maximal ideals of \(\Z_{2} \times \Z_{4}\). 
+	\sol{
+
+	}
 \end{enumerate}
-\squigglyline \\
 
-% In Exercise 12, determine whether the given set of matrices under matrix multiplication is a group. Recall that a \textbf{diagonal matrix} is a square matrix whose only nonzero entries lie on the \textbf{main diagonal}, from the upper left to the lower right comer. Associated with each \(n \times n\) matrix \(A\) is a number called the determinant of \(A\), denoted by \(\det(A)\). If \(A\) and \(B\) are both \(n \times n\) matrices, then \(\det(AB) = \det(A) \det(B)\). Also, \(\det(I_{n}) = 1\) and \(A\) is invertible if and only if \(\det(A) \ne 0\).
+\textbf{Concepts}
 
 \begin{enumerate}
-    \setcounter{enumi}{11}
-    \item All \(n \times n\) diagonal matrices under matrix multiplication.
-          \sol{
-              The set of all \(n \times n\) diagonal matrices under matrix multiplication does not form a group because it fails \(\mathcal{G}_{3}\). A counterexample is the diagonal matrix
-              \[
-                  A = \begin{bmatrix}
-                      1 & 0 \\
-                      0 & 0
-                  \end{bmatrix},
-              \]
-              which is not invertible since \(\det(A) = 0\).
-          }
+% Hint on 15-17: Ideals must be subrings. Once you have an ideal, you can figure out if it’s maximal/prime by looking at the factor ring’s structure.
 
+	\setcounter{enumi}{14}
+	\item Find a maximal ideal of \(\Z \times \Z\).
+	\sol{
+
+	}
+
+	\item Find a prime ideal of \(\Z \times \Z\) that is not maximal.
+	\sol{
+
+	}
+
+	\item Find a nontrivial proper ideal of \(\Z \times \Z\) that is not prime.
+	\sol{
+
+	}
 \end{enumerate}
-\squigglyline \\
+
+\textbf{Theory}
+
 \begin{enumerate}
-    \setcounter{enumi}{18}
-    \item Let \(S\) be the set of all real numbers except -1. Define \(*\) on \(S\) by \(a * b = a + b + ab\).
-          \begin{enumerate}[label=\textbf{\alph*.}]
-              \item Show that \(*\) gives a binary operation on \(S\).
-                    \sol{
-                        Let \(a, b \in S\). Assume, for the sake of contradiction, that \(a * b = -1\). Then,
-                        \begin{align*}
-                            a * b          & = -1 \\
-                            a + b + ab     & = -1 \\
-                            ab + a + b + 1 & = 0  \\
-                            (a + 1)(b + 1) & = 0.
-                        \end{align*}
-                        Notice this equation is only true if \(a = -1\) and \(b = -1\), which contradicts our assumption that \(a, b \in S\). Thus, \(a * b \ne -1\) and so \(a * b \in S\). Therefore, \(*\) is a binary operation on \(S\).
-                    }
-              \item Show that \((S, *)\) is a group.
-                    \sol{
-                        We will verify that \((S, *)\) satisfies the group axioms:
-                        \begin{itemize}
-                            \item \(\mathcal{G}_{1}\) (Associativity): Let \(a, b, c \in S\). Then,
-                                  \begin{align*}
-                                      (a * b) * c & = (a + b + ab) * c                 \\
-                                                  & = (a + b + ab) + c + (a + b + ab)c \\
-                                                  & = a + b + ab + c + ac + bc + abc.
-                                  \end{align*}
-                                  Similarly,
-                                  \begin{align*}
-                                      a * (b * c) & = a * (b + c + bc)                 \\
-                                                  & = a + (b + c + bc) + a(b + c + bc) \\
-                                                  & = a + b + c + bc + ab + ac + abc.
-                                  \end{align*}
-                                  Since both expressions are equal, we have \((a * b) * c = a * (b * c)\), confirming associativity.
+	\setcounter{enumi}{23}
+	\item Let \(R\) be a finite commutative ring with unity. Show that every prime ideal in \(R\) is a maximal ideal.
+	\pf{
 
-                            \item \(\mathcal{G}_{2}\) (Identity Element): We need to find an element \(e \in S\) such that for all \(a \in S\), \(a * e = e * a = a\). Let \(e = 0\). Then,
-                                  \[
-                                      a * 0 = a + 0 + a(0) = a,
-                                  \]
-                                  and
-                                  \[
-                                      0 * a = 0 + a + 0(a) = a.
-                                  \]
-                                  Since \(0 \in S\), it serves as the identity element.
+	}
 
-                            \item \(\mathcal{G}_{3}\) (Inverse Element): For each \(a \in S\), we need to find an element \(a'\in S\) such that \(a * a'= a'* a = e\), where \(e\) is the identity element found above. We want to solve for \(a'\) in the equation:
-                                  \begin{align*}
-                                      a * a'      & = 0   \\
-                                      \intertext{This gives us:}
-                                      a + a'+ aa' & = 0.
-                                      \intertext{Rearranging, we have:}
-                                      aa'+ a'     & = -a,
-                                      \intertext{or}
-                                      a'(a + 1)   & = -a.
-                                  \end{align*}
-                                  Since \(a \in S\), we have \(a + 1 \ne 0\), and thus we can divide by \(a + 1\) to find:
-                                  \[
-                                      a'= \frac{-a}{a + 1}.
-                                  \]
-                                  With candidate \(a'\) identified, we can plug in to verify:
-                                  \[
-                                      a * a' = a + \frac{-a}{a + 1} + a\left(\frac{-a}{a + 1}\right) = 0,
-                                  \]
-                                  and
-                                  \[
-                                      a' * a = \frac{-a}{a + 1} + a + \left(\frac{-a}{a + 1}\right)a = 0.
-                                  \]
-                                  Since \(a' \ne -1\), we have \(a' \in S\). Therefore, every element in \(S\) has an inverse in \(S\).
-                        \end{itemize}
-                    }
-              \item Find the solution of the equation \(2* x* 3 = 7\) in \(S\).
-                    \sol{
-                        Since we are working with an expression in \(S\), we have to be mindful of the order of operations. Since we don't have a nice way to ``decouple'' \(x\) from its coefficient, we'll have to work from the outside in. First, we must use the inverses (and Theorem 4.15) to get rid of the 2 and 3 from the left side:
-                        \[
-                            2 * (x * 3) = 7 \quad \Rightarrow \quad 2' * (2 * x * 3) * 3' = 2' * 7 * 3'.
-                        \]
-                        Using the associative property, we can rewrite the left side as:
-                        \[
-                            (2' * 2) * x * (3 * 3') = 2' * 7 * 3'.
-                        \]
-                        Since \(2' * 2 = 0\) and \(3 * 3' = 0\):
-                        \[
-                            0 * x * 0 = 2' * 7 * 3'.
-                        \]
-                        The identity property tells us that \(0 * x = x\) and \(x * 0 = x\), so:
-                        \[
-                            x = 2' * 7 * 3'.
-                        \]
-                        Using the formula for inverses found in part (b), we have:
-                        \[
-                            2' = \frac{-2}{2 + 1} = -\frac{2}{3}, \quad 3' = \frac{-3}{3 + 1} = -\frac{3}{4}.
-                        \]
-                        Substituting these values back into our equation for \(x\), we have:
-                        \[
-                            x = \left(-\frac{2}{3}\right) * 7 * \left(-\frac{3}{4}\right).
-                        \]
-                        Thus, we can expand the right side:
-                        \begin{align*}
-                            x & = \left[\left(-\frac{2}{3}\right) + 7 + \left(-\frac{2}{3}\right)(7)\right] * \left(-\frac{3}{4}\right) \\
-                              & = \frac{5}{3} * \left(-\frac{3}{4}\right)                                                               \\
-                              & = \frac{5}{3} + \left(-\frac{3}{4}\right) + \left(\frac{5}{3}\right)\left(-\frac{3}{4}\right)           \\
-                              & = -\frac{1}{3}.
-                        \end{align*}
+% Hint on 29: Think about the canonical homomorphism mapping R to R/M.
+	\setcounter{enumi}{28}
+	\item Show that \(N\) is a maximal ideal in a ring \(R\) if and only if \(R/N\) is a \textbf{simple ring}, that is, it is nontrivial and has no proper nontrivial ideals. (Compare with Theorem 15.18).
+	\pf{
 
-                    }
-          \end{enumerate}
+	}
 
-
-\end{enumerate}
-\squigglyline \\
-\begin{enumerate}
-    \setcounter{enumi}{40}
-    \item Let \(G\) be a group and let \(g\) be one fixed element of \(G\). Show that the map \(i_g\), such that \(i_g(x) = gxg^{-1}\) for \(x \in G\), is an isomorphism of \(G\) with itself.
-          \sol{
-              We will verify that \(i_g\) satisfies the properties of an isomorphism:
-              \begin{itemize}
-                  \item \textbf{One-to-one:} Assume \(i_g(x) = i_g(y)\) for some \(x, y \in G\). Then,
-                        \[
-                            gxg^{-1} = gyg^{-1}.
-                        \]
-                        Utilizing Theorem 4.15, we can multiply both sides on the left by \(g^{-1}\) and on the right by \(g\), revealing:
-                        \[
-                            g^{-1}(gxg^{-1})g = g^{-1}(gyg^{-1})g,
-                        \]
-                        which we can rearrange using the associative property to get:
-                        \[
-                            (g^{-1}g)x(g^{-1}g) = (g^{-1}g)y(g^{-1}g).
-                        \]
-                        Since \(g^{-1}g = e\), the identity element of \(G\), we have:
-                        \[
-                            x = y.
-                        \]
-                        Thus, \(i_g\) is one-to-one.
-
-                  \item \textbf{Onto:} Let $y \in G$. We need to find an $x \in G$ such that $i_g(x) = y$. Consider the element $x = g^{-1}yg$. Since $g, y \in G$, it follows that $g^{-1} \in G$, and by the closure property of the group, $x = g^{-1}yg \in G$. Now we can verify that this choice of $x$ maps to $y$:
-                        \[
-                            i_g(x) = i_g(g^{-1}yg) = g(g^{-1}yg)g^{-1} = (gg^{-1})y(gg^{-1}) = y.
-                        \]
-                        Therefore, \(i_g\) is onto.
-
-                  \item \textbf{Homomorphism:} Let \(x, y \in G\). Then,
-                        \begin{align*}
-                            i_{g}(x)i_{g}(y) = gxg^{-1}gyg^{-1} = gx(g^{-1}g)yg^{-1} = gxyg^{-1} = i_{g}(xy).
-                        \end{align*}
-                        Therefore, \(i_g\) preserves the group operation.
-              \end{itemize}
-              Since \(i_g\) is a bijection and a homomorphism, it is an isomorphism of \(G\) with itself.
-          }
-
+	\setcounter{enumi}{36}
+	\item Show that for a field \(F\), the set \(S\) of all matrices of the form
+	\[\begin{pmatrix}
+		a & b \\
+		0 & 0
+	\end{pmatrix}\]
+	for \(a,b \in F\) is a \textbf{right ideal} but not a \textbf{left ideal} of \(M_{2}(F)\). That is, show that \(S\) is a subring closed under multiplication on the \textit{right} by any element of \(M_{2}(F)\), but is not closed under \textit{left} multiplication.
 \end{enumerate}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
