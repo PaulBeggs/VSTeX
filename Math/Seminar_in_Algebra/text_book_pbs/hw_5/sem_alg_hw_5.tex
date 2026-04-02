@@ -607,13 +607,17 @@
 	\setcounter{enumi}{1}
 	\item Find all prime ideals and all maximal ideals of \(\Z_{12}\).
 	\sol{
-
+		We know the ideals of \(\Z_{12}\) are \(\gen{0}, \gen{1}, \gen{2}, \gen{3}, \gen{4}\), and \(\gen{6}\) from Exercise 3 from Section 26. We find that \(\gen{2}\) and \(\gen{3}\) are maximal ideals because their respective quotient rings with \(\Z_{12}\) are fields. This implies they are also prime ideals. The remaining ideals are neither maximal nor prime, as each of them are not an integral domain because they have zero divisors. 
 	}
 
 	\setcounter{enumi}{3}
 	\item Find all prime ideals and all maximal ideals of \(\Z_{2} \times \Z_{4}\). 
 	\sol{
-
+		We find the ideals of \(\Z_{2}\) to be \(\{0\}\) and \(\Z_{2}\) because it is a field. For \(\Z_{4}\), we find \(\{0\}, \{0,2\}\) and \(\Z_{4}\). To find the ideals of \(\Z_{2} \times \Z_{4}\), we find the Cartesian product of each ideal for each ring. This leaves us with 6 ideals:
+		\[
+			\{0\} \times \{0\}, \ \{0\} \times \{0, 2\}, \ \{0\} \times \Z_{4}, \ \Z_{2} \times \{0\}, \ \Z_{2} \times \{0, 2\}, \text{ and } \ \Z_{2} \times \Z_{4}.
+		\]
+		We start by finding the prime ideals. Recall for a prime ideal \(N\) that \(ab \in N\) implies either \(a \in N\) or \(b \in N\) for \(a,b \in R\). Thus, we find a product \((0,0)\) that is present in every ideal, and find that \((0,1) \cdot (1,0) = (0,0)\). So, if an ideal contains either \((0,1)\) or \((1,0)\) (but not both), we know it's a candidate prime ideal. We find 3 candidates with this method: (1) \(\{0\} \times \Z_{4}\), (2) \(\Z_{2} \times \{0\}\), and (3) \(\Z_{2} \times \{0, 2\}\). Notice that (2) is not prime because \((\Z_{2} \times \Z_{4}) / (\Z_{2} \times \{0\}) \cong \Z_{4}\), which is not an integral domain. Thus leaving (1) and (3), which are maximal ideals because their quotient rings are fields (which also confirms they are prime). 
 	}
 \end{enumerate}
 
@@ -625,34 +629,35 @@
 	\setcounter{enumi}{14}
 	\item Find a maximal ideal of \(\Z \times \Z\).
 	\sol{
-
+		Following from the previous Exercise, we find \(N = 2\Z \times \Z\) to be a maximal ideal because \((\Z \times \Z) / N \cong \Z_{2}\), which is a field. 
 	}
 
 	\item Find a prime ideal of \(\Z \times \Z\) that is not maximal.
 	\sol{
-
+		We pick \(N = \{0\} \times \Z\) to get \((\Z \times \Z) / N \cong \Z\), which is an integral domain. So, \(N\) is prime, but not maximal.
 	}
 
 	\item Find a nontrivial proper ideal of \(\Z \times \Z\) that is not prime.
 	\sol{
-
+		Recall that \(\Z / 4\Z \cong \Z_{4}\) (from notes), which is not an integral domain. So, we let \(N = 4\Z \times \Z\) to get \((\Z \times \Z) / N \cong \Z_{4}\), a nontrivial proper ideal.
 	}
 \end{enumerate}
 
+\newpage
 \textbf{Theory}
 
 \begin{enumerate}
 	\setcounter{enumi}{23}
 	\item Let \(R\) be a finite commutative ring with unity. Show that every prime ideal in \(R\) is a maximal ideal.
 	\pf{
-
+		Let \(N\) be a prime ideal in \(R\). Since \(R\) is finite, the number of cosets in \(R/N\) must also be finite. Because \(N\) is a prime ideal, \(R/N\) is a finite integral domain by Theorem 27.15. Then, by Theorem 19.11, \(R/N\) is a field. Hence, \(N\) is a maximal ideal by Theorem 27.9.  
 	}
 
 % Hint on 29: Think about the canonical homomorphism mapping R to R/M.
 	\setcounter{enumi}{28}
 	\item Show that \(N\) is a maximal ideal in a ring \(R\) if and only if \(R/N\) is a \textbf{simple ring}, that is, it is nontrivial and has no proper nontrivial ideals. (Compare with Theorem 15.18).
 	\pf{
-
+		(\(\Rightarrow\)) Let \(N\) be a maximal ideal in a ring \(R\). Consider the canonical homomorphism \(\gamma : R \to R/N\) 
 	}
 
 	\setcounter{enumi}{36}
@@ -662,6 +667,9 @@
 		0 & 0
 	\end{pmatrix}\]
 	for \(a,b \in F\) is a \textbf{right ideal} but not a \textbf{left ideal} of \(M_{2}(F)\). That is, show that \(S\) is a subring closed under multiplication on the \textit{right} by any element of \(M_{2}(F)\), but is not closed under \textit{left} multiplication.
+	\pf{
+ 
+	}
 \end{enumerate}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
