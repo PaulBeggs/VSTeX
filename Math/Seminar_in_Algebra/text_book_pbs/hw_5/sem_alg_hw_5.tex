@@ -594,7 +594,7 @@
 
 For the first Exercise, I was thankful that I could use the previous homework's found ideals for \(\Z_{12}\) to then find the prime and maximal ones. Then, I used Theorem 27.9 to show that since factor rings are fields, the ideals are maximal (and also prime). The next Exercise was more difficult. At first, I had trouble finding the ideals of the Cartesian ring, but then I realized that if I just find the ideals of each ring first, and take the Cartesian product of each element, I'll get every ideal. After that, I found a way to characterize each ideal as a candidate prime one, then I could confirm it with theorems by quotient-ing and finding the isomorphisms. I found the Concepts subsection to be straightforward, as I gained a lot of insight from the Computations subsection. Each question asked for a quotient ring that was either a field, an integral domain, or neither. So, I just used what we had been doing in class for examples, and ideas from Computations to generate them. \\
 
-Moving on from Concepts and Computations, we get to the Theory subsection. I quite liked Exercise 24, as I just chained theorems together to get the end result. That is, in my head, I wanted to show that \(R/N\) was a field. Since it was already an integral domain, I asked ``How do we turn integral domains into fields?'' So, I went back to Section 19 and found the theorem to connect the two concepts. For Exercise 29, I started with an ideal \(I\), and used the canonical homomorphism to get another ideal \(\gamma^{-1}[I]\) of \(R\), so that I could eventually sandwich \(\gamma^{-1}[I]\) between \(N\) and \(R\) and use \(N\)'s maximal property. I used \(\gamma\)'s kernel to establish the left subset expression, and \(\gamma^{-1}[I]\)'s property as a subring for the right subset expression. I think that using Theorem 26.3 was a bit overkill because it may be obvious that \(N\) is the additive identity, but I figure here that it doesn't hurt to be overzealous. The rest of this half was just computations and identifying ideals. I thought the second half was easier because \(N \subseteq M \subseteq R\) is much stronger than having an ideal of the factor ring. We get that \(M\) is an ideal because we inherit \(R\)'s element's properties, so \(mN \subseteq N\) and \(Nm \subseteq N\) for \(m \in M\) and \(m \in R\). I think I could have explained this further, but the proof was already really long. The rest of the proof was computations like the other half. Finally, for Exercise 37,
+Moving on from Concepts and Computations, we get to the Theory subsection. I quite liked Exercise 24, as I just chained theorems together to get the end result. That is, in my head, I wanted to show that \(R/N\) was a field. Since it was already an integral domain, I asked ``How do we turn integral domains into fields?'' So, I went back to Section 19 and found the theorem to connect the two concepts. For Exercise 29, I started with an ideal \(I\), and used the canonical homomorphism to get another ideal \(\gamma^{-1}[I]\) of \(R\), so that I could eventually sandwich \(\gamma^{-1}[I]\) between \(N\) and \(R\) and use \(N\)'s maximal property. I used \(\gamma\)'s kernel to establish the left subset expression, and \(\gamma^{-1}[I]\)'s property as a subring for the right subset expression. I think that using Theorem 26.3 was a bit overkill because it may be obvious that \(N\) is the additive identity, but I figure here that it doesn't hurt to be overzealous. The rest of this half was just computations and identifying ideals. I thought the second half was easier because \(N \subseteq M \subseteq R\) is much stronger than having an ideal of the factor ring. We get that \(M\) is an ideal because we inherit \(R\)'s element's properties, so \(mN \subseteq N\) and \(Nm \subseteq N\) for \(m \in M\) and \(m \in R\). I think I could have explained this further, but the proof was already really long. The rest of the proof was computations like the other half. Finally, for Exercise 37, I just followed the checklist for subrings, and then did some simple matrix computations.
 
 
 \newpage
@@ -660,20 +660,20 @@ Moving on from Concepts and Computations, we get to the Theory subsection. I qui
 	\setcounter{enumi}{28}
 	\item Show that \(N\) is a maximal ideal in a ring \(R\) if and only if \(R/N\) is a \textbf{simple ring}, that is, it is nontrivial and has no proper nontrivial ideals. (Compare with Theorem 15.18).
 	\pf{
-		(\(\Rightarrow\)) Let \(N\) be a maximal ideal in a ring \(R\), and let \(I\) be any ideal of \(R/N\). Consider the canonical homomorphism \(\gamma : R \to R/N\) as defined in the Fundamental Homomorphism Theorem for Rings. By Exercise 22, part \textbf{c}, \(\gamma^{-1}[I]\) is an ideal of \(R\). When we map \(0 \in R\) through \(\gamma\), we get \(\gamma(0) = 0 + N = \{N\}\), implying \(N\) is the additive identity of \(R/N\) by Theorem 26.3.  Furthermore, the canonical homomorphism has kernel with the property \(\ker(\gamma) = \gamma^{-1}[\{N\}] = N\). Because \(I\) is an ideal of \(R/N\), it contains the additive identity, \(\{N\} \subseteq I\). So, we apply \(\gamma^{-1}\) to our subset expression to get \(N \subseteq \gamma^{-1}[I]\). 
-		Using our previous results, and the \(N\)'s maximal properties, we get two results: \(N \subseteq \gamma^{-1}[I] \subseteq R\) and, consequentially, either \(\gamma^{-1}[I] = N\) or \(\gamma^{-1}[I] = R\). Applying the homomorphism property, we get:
+		(\(\Rightarrow\)) Let \(N\) be a maximal ideal in a ring \(R\), and let \(I\) be any ideal of \(R/N\). Consider the canonical homomorphism \(\gamma : R \to R/N\) as defined in the Fundamental Homomorphism Theorem for Rings. By Exercise 22, part \textbf{c}, \(\gamma^{-1}[I]\) is an ideal of \(R\). So, \(\gamma^{-1}[I] \subseteq R\). When we map \(0 \in R\) through \(\gamma\), we get \(\gamma(0) = 0 + N = \{N\}\), implying \(N\) is the additive identity of \(R/N\) by Theorem 26.3. Thus, we know \(\ker(\gamma) = \gamma^{-1}[\{N\}] = N\). Because \(I\) is an ideal of \(R/N\), it contains the additive identity, so \(\{N\} \subseteq I\). Then, we apply \(\gamma^{-1}\) to our subset expression to get \(N \subseteq \gamma^{-1}[I]\). 
+		Since \(N\) is a maximal ideal in \(R\), we get two results: \(N \subseteq \gamma^{-1}[I] \subseteq R\) and, consequentially, either \(\gamma^{-1}[I] = N\) or \(\gamma^{-1}[I] = R\). Applying the homomorphism property, we get:
 		\begin{enumerate}[label=(\arabic*)]
 			\item If \(\gamma[N] = N + N = \{N\}\), then \(I = \{N\}\), which is the trivial ideal (in \(R/N\)),
 			\item If \(\gamma[R] = R + N = R/N\), then \(I = R/N\), which is the improper ideal.
 		\end{enumerate}
 		Since every ideal \(I\) of \(R/N\) is either \(\{N\}\) or \(R/N\), \(R/N\) has no proper nontrivial ideals. Therefore, \(R/N\) is a simple ring.
 
-		(\(\Leftarrow\)) Let \(R/N\) be a simple ring. Let \(M\) be an ideal of \(R\) such that \(N \subseteq M \subseteq R\). We will show that either \(M = R\) or \(M = N\). Applying the canonical homomorphism to \(M\), we get \(\gamma[M] = M + N\). Since \(M\) is completely contained in \(R\), every element \(m \in M\) is also in \(R\). So, \(\gamma(m) = m + N\) gives \(\gamma[M]\) as an ideal. Since \(R/N\) is simple, \(M\) is either trivial, \(\{N\}\), or the ring itself, \(R/N\). Applying \(\gamma^{-1}\) to \(\gamma[M]\) gives:
+		(\(\Leftarrow\)) Let \(R/N\) be a simple ring. Let \(M\) be an ideal of \(R\) such that \(N \subseteq M \subseteq R\). We will show that either \(M = R\) or \(M = N\). Applying the canonical homomorphism to \(M\), we get \(\gamma[M] = M + N\). Since \(M\) is completely contained in \(R\), every element \(m \in M\) is also in \(R\). So, \(\gamma(m) = m + N\) gives \(\gamma[M]\) as an ideal. Since \(R/N\) is simple, \(\gamma[M]\) is either trivial, \(\{N\}\), or the ring itself, \(R/N\). Applying \(\gamma^{-1}\) to \(\gamma[M]\) gives:
 		\begin{enumerate}[label=(\arabic*)]
 			\item If \(\gamma[M] = \{N\}\), then \(M = \gamma^{-1}[\{N\}] = N\),
 			\item If \(\gamma[M] = R/N\), then \(M = \gamma^{-1}[R/N] = R\). 
 		\end{enumerate}
-		Therefore, no proper ideal exists between \(N\) and \(R\), meaning \(N\) is a maximal ideal in \(R\). 
+		Therefore, no proper ideal exists between \(N\) and \(R\), implying \(N\) is a maximal ideal in \(R\). 
 	}
 
 	\newpage
@@ -767,10 +767,10 @@ Moving on from Concepts and Computations, we get to the Theory subsection. I qui
 			\end{align*}
 			So, multiplication in \(S\) is associative.
 		\end{enumerate}
-		Thus, \(S\) is a subring of \(M_{2}(F)\). We now check to the left and right product of two matrices \(\begin{pmatrix}
+		Thus, \(S\) is a subring of \(M_{2}(F)\). We now show that right multiplication is closed for matrices \(\begin{pmatrix}
 			a & b \\
 			0 & 0 
-		\end{pmatrix} \in S\) and \(\begin{pmatrix} x & y \\ z & w \end{pmatrix} \in M_{2}(F)\) is in \(S\). First, we compute left multiplication:
+		\end{pmatrix} \in S\) and \(\begin{pmatrix} x & y \\ z & w \end{pmatrix} \in M_{2}(F)\):
 		\[
 			\begin{pmatrix}
 				a & b \\
@@ -779,10 +779,24 @@ Moving on from Concepts and Computations, we get to the Theory subsection. I qui
 				x & y \\
 				z & w
 			\end{pmatrix} = \begin{pmatrix}
-				ax + bz & ay \\
+				ax + bz & ay + bw \\
 				0 & 0
-			\end{pmatrix}
+			\end{pmatrix}.
 		\]
+		Hence, the product is contained in \(S\). Then, we compute a counterexample to show that multiplication is not closed on the left:
+		\[
+			\begin{pmatrix}
+				0 & 0 \\
+				1 & 0
+			\end{pmatrix} \cdot \begin{pmatrix}
+				a & b \\
+				0 & 0
+			\end{pmatrix} = \begin{pmatrix}
+				0 & 0 \\
+				0 & b
+			\end{pmatrix}.
+		\]
+		Thus, we have shown that \(S\) is closed under multiplication by any element of \(M_{2}(F)\) on the right, but not on the left. Therefore, \(S\) is a right ideal of \(M_{2}(F)\).  
 	}
 \end{enumerate}
 
