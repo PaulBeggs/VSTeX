@@ -527,7 +527,7 @@
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\newcommand{\assignmentname}{Homework 6: Sections 27 \& 29}
+\newcommand{\assignmentname}{Homework 6: Section 27}
 
 % Do not use all caps.
 \newcommand{\cussubtitle}{Seminar in Algebra}
@@ -606,17 +606,17 @@
 	\setcounter{enumi}{4}
 	\item Find all \(c \in \Z_{3}\) such that \(\Z_{3}[x]/\gen{x^{2} + c}\) is a field.
 	\sol{
-
+		We can use Theorem 23.10 to evaluate \(p(x) = x^{2} + c\) by testing each \(c \in \Z_{3}\) and each \(x \in \Z_{3}\). If we find a \(c\) such that for all \(x\), the result is not equivalent to 0, then that value of \(c\) implies \(p(x)\) is irreducible. Then, by the Corollary (in notes) to Theorem 27.25, the factor group is a field. Thus, we exhaustively iterate and find that \(c = 1\) is the only value that works.
 	}
 
 	\item Find all \(c \in \Z_{3}\) such that \(\Z_{3}[x]/\gen{x^{3} + x^{2} + c}\) is a field.
 	\sol{
-
+		Using the same process as Exercise 5, we find \(c = 2\) is the only value that works.
 	}
 
 	\item Find all \(c \in \Z_{3}\) such that \(\Z_{3}[x]/\gen{x^{3} + cx^{2} + 1}\) is a field.
 	\sol{
-
+		Using the same process as Exercise 5, we find \(c = 2\) is the only value that works.
 	}
 \end{enumerate}
 
@@ -627,17 +627,14 @@
 	\setcounter{enumi}{17}
 	\item Is \(\Q[x]/\gen{x^{2} - 5x + 6}\) a field? Why?
 	\sol{
-
+		No. The polynomial \(f(x) = x^{2} - 5x + 6\) can be expressed as a product of two polynomials. Namely, \((x - 3)\) and \((x - 2)\). Therefore, \(f(x)\) is not irreducible over \(\Q\) by definition. Then, by the Corollary to Theorem 27.25, \(\Q[x]/\gen{x^{2} - 5x + 6}\) cannot be a field.
 	}
 
 	\item Is \(\Q[x]/\gen{x^{2} - 6x + 6}\) a field? Why?
 	\sol{
-
+		Yes. By the Eisenstein Criterion, we get that \(x^{2} - 6x + 6\) is an irreducible polynomial over \(\Q\) for \(p = 3\). Then, by the Corollary to Theorem 27.25, \(\Q[x]/\gen{x^{2} - 6x + 6}\) is a field. 
 	}
 \end{enumerate}
-
-\section*{Section 29}
-
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 \end{document}
