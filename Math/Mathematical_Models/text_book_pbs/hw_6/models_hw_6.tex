@@ -1,0 +1,742 @@
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% MAIN DOCUMENT %%%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\documentclass[12pt, oneside]{book}
+\usepackage{xcolor}
+\usepackage{minted}
+
+% \usepackage[T1]{fontenc}
+
+\usepackage{draculatheme}
+\newcommand{\documentTheme}{draculafg}
+\newcommand{\documentLogo}{../../images/small logo_white.png}
+\newcommand{\documentBigLogo}{../../images/logo_white_text.png}
+\usemintedstyle{dracula}
+
+\usemintedstyle{dracula}
+
+\setminted{
+    linenos=true,
+    numbersep=5pt,
+    frame=lines,
+    framesep=2mm,
+    breaklines=true
+}
+
+% \newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
+% \newcommand{\documentLogo}{../../images/small logo.png}
+% \newcommand{\documentTheme}{black}
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{esint}
+\usepackage{adjustbox}
+\linespread{1}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning}
+\usepgflibrary{shadings}
+\usepackage{pgfkeys}
+\usepackage{pdftexcmds}
+\usepackage{shellesc}
+\usepackage{algorithm, algorithmic, xspace}
+%%% Define new colors %%%
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%------- %
+% XHFILL %
+%------- %
+
+
+
+%%% Chapter Headings %%%
+
+\newcommand{\gradientrule}{
+    \begin{tikzpicture}
+        \shade[left color=orangehdx, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+    \end{tikzpicture}
+}
+
+\usepackage[Glenn]{fncychap}
+\ChTitleVar{\bfseries\scshape\color{\documentTheme}} % Needed for Dracula theme
+\ChNumVar{\large\selectfont\color{\documentTheme}} % Needed for Dracula theme
+\ChNameVar{\large\color{\documentTheme}} % Needed for Dracula theme
+\usepackage{xpatch}
+
+
+\xpatchcmd\DOCH
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTI
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+\xpatchcmd\DOTIS
+{\mghrulefill}{\color{orangehdx}\mghrulefill}
+{}{\PatchFailed}
+
+
+
+%% Change Chapter Heading Placement %%
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\@makeschapterhead}{\vspace*{50\p@}}{\vspace*{-20\p@}}{}{}
+\patchcmd{\DOTI}{\vskip 80\p@}{\vskip 40\p@}{}{}
+\patchcmd{\DOTIS}{\vskip 40\p@}{\vskip 0\p@}{}{}
+\makeatother
+
+
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
+
+
+%%% listingS %%%
+\usepackage{graphicx}  
+% \numberwithin{listing}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\newcommand{\assignmentname}{Homework 6: Chapter 7}
+
+%% Headers and Footers %%
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\fancyhead[R]{\textcolor{draculafg}{\assignmentname}}
+\fancyhead[L]{\textcolor{draculafg}{Hendrix College}}
+\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
+\usepackage{xpatch}
+\xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
+\setlength{\footskip}{0.5in}
+\setlength{\headheight}{18.5764pt}
+
+
+%%%%% Colored Boxes %%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+% \tcbuselibrary{minted}
+\newcounter{BoxCounter}
+\usepackage{dingbat}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%% MATH PACKAGES, ENVIRONMENTS, COMMANDS %%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%You'll need your own packages, theorem types, and commands.
+
+\usepackage{fix-cm}
+\usepackage{amsmath,amsthm} 
+\usepackage{array, makecell}
+\usepackage{colortbl}
+\newcommand{\thickvrule}{\vrule width 1pt}
+
+\newcommand{\thickhrule}{\Xhline{1pt}}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+
+
+%%% Custom Commands %%%
+% Natural Numbers 
+\newcommand{\N}{\mathbb{N}}
+
+% Whole Numbers
+\newcommand{\W}{\mathbb{W}}
+
+% Integers
+\newcommand{\Z}{\mathbb{Z}}
+
+% Rational Numbers
+\newcommand{\Q}{\mathbb{Q}}
+
+% Real Numbers
+\newcommand{\R}{\mathbb{R}}
+
+% Complex Numbers
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\I}{\mathbb{I}}
+
+\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
+
+\newcommand{\mysqrt}[1]{%
+	\mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+	\mathpalette\foodisplay{#1}%
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+		\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+		\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi}.}
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{\textbf{\theenumii}.}
+
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	backgroundcolor=draculabg, % Needed for Dracula theme
+	fontcolor=\documentTheme, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+% Define a new environment 'proofscratch' for Proof and Scratch Paper
+\newenvironment{proofscratch}[2]{%
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=false,
+        backgroundcolor=draculabg, % Background color for Dracula theme
+        fontcolor=\documentTheme,       % Font color for Dracula theme
+        innerleftmargin=-6pt,
+        innertopmargin=0pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        skipabove=\topsep,
+        skipbelow=\topsep,
+    ]
+    % % Begin TikZ picture for the vertical dotted line
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     % Draw a vertical dotted line at approximately the center of the mdframed width
+    %     \draw[dotted, thick] ([xshift=0.005\linewidth]current bounding box.north west) -- ([xshift=0.005\linewidth]current bounding box.south west);
+    % \end{tikzpicture}%
+    % % Create the left minipage for Proof
+    \begin{minipage}[t]{0.47\textwidth}%
+        \noindent\textit{Proof.} #1 \hfill \(\qed\)
+    \end{minipage}%
+    \hfill
+    % Create the right minipage for Scratch Paper
+    \begin{minipage}[t]{0.47\textwidth}%
+        \textit{Scratch Paper.} #2
+    \end{minipage}%
+}{
+    \end{mdframed}
+}
+
+\newenvironment{tipbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculapurple}{TIP:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{notebox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculagreen}{NOTE:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{warningbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculared}{WARNING:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{solution}{\textit{Solution.}}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\pf}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\def \proofDistance {10pt}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
+
+\newcommand{\ninn}{n \in \N}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
+
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\dydx}{\frac{dy}{dx}}
+\newcommand{\dxdy}{\frac{dx}{dy}}
+\newcommand{\dydt}{\frac{dy}{dt}}
+\newcommand{\dxdt}{\frac{dx}{dt}}
+\newcommand{\dzdt}{\frac{dz}{dt}}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
+
+\newcommand{\squigglyline}{%
+    \noindent
+    \tikz[baseline=-0.5ex]{
+        \draw[decorate, decoration={snake, amplitude=0.5mm, segment length=3mm}] 
+        (0,0) -- (\dimexpr\linewidth\relax,0);
+    }%
+}
+
+
+% end of preamble
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{document}
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% COVER PAGE %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+% Do not use all caps.
+\newcommand{\cussubtitle}{Mathematical Models}
+% Date format should be like: "January 1, 2001"
+\newcommand{\finaldate}{April 14, 2026}
+% Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
+\newcommand{\professor}{Dr. Christopher Camfield}
+
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{titlepage}
+    \begin{center}
+
+        \vspace*{-2cm}
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\
+        \vfill
+
+        % Horizontal line above the title in 'horange' color
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace{2em}
+
+        {\huge \textbf{\assignmentname}}
+
+        \vspace{1em} % Space between the title and the bottom line
+
+        \textcolor{horange}{\rule{\textwidth}{1.0pt}}
+
+        \vspace*{1\baselineskip}
+
+        {\LARGE \textbf{\cussubtitle}}
+
+        \begin{large}
+            \vspace*{5\baselineskip}
+
+            \vspace*{1\baselineskip}
+
+            \emph{Author} \\[1ex]
+            %Submitted by \\[\baselineskip]
+            {\Large Paul Beggs \\ \par} % Editor list
+            {\href{mailto:BeggsPA@Hendrix.edu}{{BeggsPA@Hendrix.edu}}}\\ % Editor affiliation
+
+            \vspace*{1\baselineskip}
+
+            \textit{Instructor} \\[1ex] % Tagline(s) or further description
+            \professor
+
+            \vspace*{1\baselineskip}
+
+            \textit{Due}\\[1ex]
+            {\scshape  \finaldate} \\[0.3\baselineskip] % Year published
+
+            \thispagestyle{empty}
+
+        \end{large}
+    \end{center}
+\end{titlepage}
+% -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+\section*{Chapter 7}
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
+    \item Reconsider the diode problem of Example 7.1. In this exercise we will investigate the problem of estimating the failure rate \(q\). In Example 7.1 we assumed that \(q = 0.003\); in other words, that 3 out of 1,000 diodes are flawed.
+    \begin{enumerate}
+        \item Suppose that we test a batch of 1,000 diodes and we find that 3 are flawed. On this basis we estimate that \(q =\) 3/1,000. How accurate is this estimate? Use the five-step method, and model as a statistical inference problem. [Suggestion: Define a random variable \(X_{n}\) to represent the status of the \(n\)th diode. Let \(X_{n} = 0\) if the \(n\)th diode is good, or \(X_{n} = 1\) if the \(n\)th diode has a flaw. Then the sum
+        \[
+            \frac{X_{1} + \cdots + X_{n}}{n}
+        \]
+        represents the fraction of bad diodes, and the central limit theorem can be used to estimate the likely variation of this sum from the true mean \(q\).]
+        \sol{
+            From the problem, we get the variables \(n = 1000\), \(q = 0.003\) (true mean), \(p = 1 - q = 0.997\), \(d_{\text{bad}} = 3\), \(\overline{x} = d_{\text{bad}} / n = 0.003\). Since \(X_{n}\) is 1 if the \(n\)th diode is flawed, and 0 if good, we get the expected value
+            \[
+                \mu = 0 \cdot p + 1 \cdot q = 0.003.
+            \]
+            Plugging this into the formula for the standard deviation:
+            \[
+                \sigma = \sqrt{(1 - \mu)^{2}q + (0 - \mu)^{2}p} \approx 0.05469.
+            \]
+            With these values, we calculate the left and right bounds of the 95\% confidence interval:
+            \[
+                \left[\mu - 2\frac{\sigma}{\sqrt{n}},\ \mu + 2\frac{\sigma}{\sqrt{n}}\right] = [-0.0005, 0.0065].
+            \]
+            Thus, we can be 95\% confident that the true failure rate \(\overline{x} \in [-0.0005, 0.0065]\). 
+        }
+        \item Repeat part (a), assuming that 30 bad diodes were found in a batch of 10,000.
+        \sol{
+            Repeating part (a) with the changed variables \(n = 10000\), \(d_{\text{bad}} = 30\), we get everything else as the same, but our 95\% confidence interval has changed:
+            \[
+                [0.0019, 0.0041].
+            \]
+            Thus, the possible values for which \(\overline{x}\) could be, has constricted to a smaller interval. This implies that our estimate is even stronger than what we found in part (a).
+        }
+
+\newpage
+
+        \item How many diodes need to be tested in order to be 95\% sure that we have determined the failure rate to within 10\% of its true value? Assume that the true value is close to our original estimate of \(q = 0.003\).
+        \sol{
+            To find the number of diodes, we solve for \(n\) in the equation
+            \begin{align*}
+                2 \cdot \frac{\sigma}{\sqrt{n}} &= 0.003 \cdot 0.1 \\
+                n &= {\left(\frac{2\sigma}{0.0003}\right)}^{2} \\
+                n &= 132933.
+            \end{align*}
+            We can check this \(n\) to be sure that our calculations are correct:
+            \[
+                0.003 - 2 \frac{0.05469}{\sqrt{132933}} = 0.0027, \quad 0.003 + 2 \frac{0.05469}{\sqrt{132933}} = 0.0033.
+            \]
+            Thus, we can be confident in this number of diodes.
+        }
+        \item How many diodes need to be tested in order to be 95\% sure that we have determined the failure rate to within 1\% of its true value? Assume that the true value is close to our original estimate of \(q = 0.003\).
+        \sol{
+            Repeating what we did in part (c), but by replacing 10\% with 1\%, we find \(n = 13293333\), which is expected.
+        }
+    \end{enumerate}
+
+
+    \setcounter{enumi}{6}
+
+
+
+    \item The Michigan state lottery runs a game in which you pay \$1 to buy a ticket containing a three–digit number of your choice. If your number is drawn at the end of the day, you win \$500.
+    \begin{enumerate}
+        \item Suppose you were to buy one ticket per week for a year. What are your chances of coming out a winner for the year? [Hint: It is easy to compute the probability of coming out a loser!]
+        \sol{
+            We know there are 52 weeks in a year, so there are \(1 \cdot 52 = 52\) entires in a year for 1 entry per week. The chance of guessing a number correctly with \(n\) digits follows the formula \(10^{n}\). For \(n = 3\), we get \(0.001\). Then, we find the chance of losing per entry as \(1 - 1 / 0.001 = 0.999\). Putting everything together, we find the yearly probability of winning to be
+            \[
+                P(\text{winning at least 1 ticket}) = 1 - (0.999)^{52} = 0.0507,
+            \]
+            or a 5.07\% chance of winning.
+        }
+
+\newpage
+
+        \item  Can you improve your chances of coming out a winner this year by purchasing more than one ticket per week? Calculate the probability of coming out a winner if you buy \(n\) tickets a week, for \(n = 1, 2, 3, \ldots, 9\).
+        \sol{
+            Using the procedure laid out in part (a), we get \hyperref[tab:ticket]{Table 1}. From the table, we see that you can improve your chances of winning \textit{at least once} by buying another ticket. However, this does not mean that you would be a ``winner'' in the long term. 
+            
+            That is, if you buy one ticket per week, per year, you are spending \$52 per year, and are expecting a \$0.50 payout per ticket (1/1000 chance at \$500). Thus, you are expecting to make \(0.50 \cdot 52 = \$26\) through the lottery this year. This yields a yearly net loss of \(26 - 52 = - \$26\). 
+            
+            Now, if you buy 9 tickets per week, you're spending \$468 per year for a 37\% chance of winning at least once this year. Then, for 468 tickets you would expect a return of \$234 from the lottery. Thus, when we calculate your ``profit,'' we find that you would be losing \(234 - 468 = - \$234\) dollars per year.
+
+            Thus, by comparing expected payouts, we find that buying more tickets is much worse than sticking to just one per year. Although, the best option would to buy no ticket at all, as that yields the greatest ROI.
+        }
+
+    \end{enumerate}
+\end{enumerate}
+
+\begin{table}[h!]
+    \label{tab:ticket}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \(n\) & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ 
+        \hline
+        \(P(n)\) & 0.0507 & 0.0988 & 0.1445 & 0.1879 & 0.229 & 0.2681 & 0.3052 & 0.3405 & 0.3739 \\
+        \hline
+    \end{tabular}
+    \caption{For \(n\) entries per week, we have a \(P(n)\) probability of winning at least once in a year.}
+\end{table}
+
+
+\begin{enumerate}
+    \item[]
+    \begin{enumerate}
+        \setcounter{enumii}{2}
+        \item Suppose that the state lottery sells 1,000,000 tickets this week. What is the range of likely variation in the amount of money the state will make this week? How likely is it that the state will lose money this week? Use the central limit theorem.
+        \sol{
+            First, we calculate the expected payout and variance for one ticket:
+            \[
+                E(x_{n}) = 500 \cdot 0.001 = 0.5, \quad Var(x_{n}) = [500^{2} \cdot 0.001] - E(x_{n})^{2} = 249.75. 
+            \]
+            Expanding to 1,000,000 tickets:
+            \[
+                E[X] = 1000000 \cdot 0.5 = 500000, \quad Var[X] = 1000000 \cdot 249.75 = 24975000,
+            \]
+            and \(\sigma = 15803.48\). Thus, we find the range of likely variation in the amount of money the state will make in the week:
+            \[
+                [E[X] - 2\sigma, \ E[X] + 2\sigma] = [\text{\$468,393}, \ \text{\$531,607}].
+            \]
+            To determine the likelihood of the state losing money, we solve for \(\hat{\sigma}\) in the equation \(E[X] - \hat{\sigma}(\sigma)\):
+            \begin{align*}
+                500000 - \hat{\sigma}(15803.48) &= 0 \\
+                \hat{\sigma} &= \frac{500000}{15803.48} \\
+                \hat{\sigma} &\approx 31.64.
+            \end{align*}
+            Thus, the probability of the state to profit 0 dollars lies approximately 31.64 standard deviations away from the mean. Note that since we have 1,000,000 data, we can treat these data as normally distributed by the central limit theorem. Therefore, we know that 99.97\% of the data is within 3 standard deviations. So, at 31.64 standard deviations, the probability of the state losing money is effectively zero.
+
+            Put another way, it is equally likely that the state doubles their expected payout from the lottery. 
+        }
+    \end{enumerate}
+
+
+
+    \setcounter{enumi}{8}
+
+
+
+    \item (Murphy’s Law, part II) You are at the supermarket checkout stand. After waiting for what seems like an unusually long time to check out, you decide to conduct a scientific experiment. One by one, you measure the length of time each customer has to wait. You continue until you find one who has to wait longer than you did.
+    \begin{enumerate}
+        \item  Let \(X\) denote the time you had to wait, and let \(X_{n}\) denote the time the \(n\)th customer had to wait. Let \(N\) denote the number of the first customer \(n\) for which \(X_{n} \ge X\). To be fair, assume that \(X, X_{1}, X_{2}, \ldots\) are identically distributed. Explain why the probability that \(N \ge n\) (i.e., that out of the group consisting of you and the first \(n - 1\) customers, you waited the longest) must equal \(1/n\).
+        \sol{
+            From the problem, we get that \(N \ge n\) implies that the first \(n - 1\) customers waited less than \(X\). That is,
+            \[
+                X > X_{1} \text{ and } X > X_{2} \text{ and } \ldots, \text{ and } X > X_{n - 1}.
+            \]
+            In other words, \(X\) is the largest value in the group:
+            \[
+                P(N \ge n) = P(X = \max(X, X_{1}, X_{2}, \ldots, X_{n - 1})).
+            \]
+            From our maximum function, we have \(n\) independently distributed random variables, \(\{X, X_{1}, X_{2}, \ldots, X_{n - 1}\}\). Thus, each random variable has the same \(p\) probability that they have the maximum time. Since someone must have the maximum time, we know that the sum of every probability must equal 1:
+            \[
+                \underbrace{p + p + \cdots + p}_{n \text{ times}} = 1,
+            \]
+            which we can rewrite as
+            \[
+                n \cdot p = 1.
+            \]
+            Then, by dividing by \(n\), we get
+            \[
+                p = \frac{1}{n}.
+            \]
+            Since \(p\) is the probability that \(X\) is the maximum, and the maximum is the exact same as \(N \ge n\), we know \(P(N \ge n) = 1/n\).
+        }
+        \item Calculate the probability distribution of the random variable \(N\).
+        \sol{
+            We find \(P(N = n)\) by taking the difference of waiting for at least \(n\) customers, and waiting for at least \(n + 1\) customers:
+            \begin{align*}
+                P(N = n) &= P(N \ge n) - P(N \ge n + 1) \\
+                &= \frac{1}{n} - \frac{1}{n + 1} \\
+                &= \frac{n + 1 - n}{n(n + 1)} \\
+                &= \frac{1}{n(n + 1)}.
+            \end{align*}
+        }
+        \item  Calculate the expected value \(EN\), which represents the number of customers you must observe, on average, until you find one who waited longer than you did.
+        \sol{
+            Recall that the expected value of any discrete distribution is
+            \[
+                \sum_{n = 1}^{\infty} n \cdot P(N = n).
+            \]
+            Substituting with our probability distribution, we find
+            \begin{align*}
+                \sum_{n = 1}^{\infty} n \cdot P(N = n) &= \sum_{n = 1}^{\infty} n \cdot \frac{1}{n(n + 1)} \\
+                &= \sum_{n = 1}^{\infty} \frac{1}{n + 1}.
+            \end{align*}
+            This sum is known as the harmonic series, which diverges to infinity. Thus, we have shown that we will have to observe an infinite number (on average, thankfully) of customers until we find someone who has waited longer than us. 
+        }
+    \end{enumerate}
+\end{enumerate}
+
+
+
+
+\end{document}
