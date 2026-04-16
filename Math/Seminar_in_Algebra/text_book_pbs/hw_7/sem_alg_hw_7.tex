@@ -594,7 +594,7 @@
 
 \section*{Cover Sheet}
 
-
+For the first and sixth Exercise, I apologize for them being cramped (especially 6, as I should have included \(\alpha = \sqrt{3 - \sqrt{6}}\), but the align formatting was making it look really weird). Besides that though, I liked doing these calculations, as it was just getting one side of the equation equal to 0, which I have been doing for the majority of my life at this point. Exercise 9 was done in the notes, so I just had to write down what we did in class. Exercise 30 included some combinatorics, which I always find interesting. Proofs that have ``Prove [this fact]'' are also my favorite, because it allows me to work forward and backward to meet in the middle. For example, I started by looking at Theorems, and found 29.18. I didn't immediately know what to do next, so I took \(q^{n}\) and expanded it. Then, looking back at the theorem, it clicked that each \(\beta\) is like a unique trial that has \(q\) possible outcomes. From there, I just needed to say \textit{how} it has those outcomes. Then, for Exercise 31 (a), I got the polynomial by just trying different combinations, but I should have just gone back to HW 6. In Part (b), I basically just followed what they did in Example 29.19, and finished by using Exercise 30 to make the calculation. In the next Section, it was all about using Theorem 30.23. Exercise 7 caught me off guard at first, because I didn't know what they were asking for. So, I went back and looked at Examples, and found the isomorphism from 29.19.
 
 \newpage
 % VI.29: 1, 6, 9, 30, 31
@@ -608,7 +608,18 @@ In Exercise 1, show that the given number \(\alpha \in \C\) is algebraic over \(
 \begin{enumerate}
 	\item 1 + \(\sqrt{2}\)
 	\sol{
-		
+		% Following what we did in class, to find an \(f(x)\) such that \(f(\alpha) = 0\), we start by squaring \(\alpha\): \(\alpha^{2} = 3 + 2\sqrt{2}\). Then, we try \(\alpha^{2} -3\) to get \(2\sqrt{2}\) alone. Then, we know \((\alpha^{2} -3)^{2}\) is just \((2\sqrt{2})^{2} = 8\). Expanding \((\alpha^{2} -3)^{2}\), we find 
+		% \[
+		% 	(1 + \sqrt{2})^{4} - 6(1 - \sqrt{2})^{2} + 9 = 8.
+		% \]
+		% Thus, we get the polynomial \(\alpha^{4} - 6\alpha^{2} + 1\).
+		Set \(\alpha = 1 + \sqrt{2}\) and solve \(\alpha = 0\) by computing the following:
+		\begin{align*}
+			\alpha &= 1 + \sqrt{2} \\
+			\alpha - 1 &= \sqrt{2} \\
+			\alpha^{2} - 2\alpha - 1 &= 0.
+		\end{align*}
+		Thus, we have shown \(f(\alpha) = 0\) with \(x^{2} - 2x - 1 \in \Q[x]\).
 	}
 \end{enumerate}
 
@@ -618,7 +629,12 @@ In Exercise 6, find \(\irr{\alpha, \Q}\) and \(\deg(\alpha, \Q)\) for the given 
 	\setcounter{enumi}{5}
 	\item \(\sqrt{3 - \sqrt{6}}\)
 	\sol{
-		
+		To find the irreducible polynomial, we set \(\alpha = \sqrt{3 - \sqrt{6}}\) and solve:
+		\begin{align*}
+			\alpha^{2} - 3 &= - \sqrt{6} \\
+			\alpha^{4} - 6 \alpha^{2} + 3 &= 0.
+		\end{align*}
+		This polynomial has degree 4, and is irreducible by Theorem 23.15 for \(p = 3\). 
 	}
 \end{enumerate}
 
@@ -629,7 +645,7 @@ In Exercise 9, classify the given \(\alpha \in \C\) as either algebraic or trans
 
 	\item \(\alpha = i\), \(F = \Q\)
 	\sol{
-		
+		\(i\) is algebraic over \(\Q\) for the polynomial \(x^{2} + 1\). It has degree 2. 
 	}
 \end{enumerate}
 
@@ -639,38 +655,43 @@ In Exercise 9, classify the given \(\alpha \in \C\) as either algebraic or trans
 	\setcounter{enumi}{29}
 	\item Let \(E\) be an extension field of a finite field \(F\), where \(F\) has \(q\) elements. Let \(\alpha \in E\) be algebraic over \(F\) of degree \(n\). Prove that \(F(\alpha)\) has \(q^{n}\) elements. 
 	\pf{
-
+		From Theorem 29.18, every element in \(F(\alpha)\) can be expressed uniquely as \(\beta = b_{0} + b_{1} \alpha + \cdots + b_{n - 1}\alpha^{n - 1},\) for \(b_{i} \in F\). Since there are \(q\) elements in \(F\), there are \(q\) choices for each \(b_{i}\). Because there are \(n\) such \(b_{i}\) (\(b_{0}\) to \(b_{n - 1}\)), there are \(q \times q \times \cdots q \ (n \text{ times})\) total combinations. This gives \(q^{n}\) elements in \(F(\alpha)\).
 	}
+\newpage
 	\item \begin{enumerate}
 		\item Show that there exists an irreducible polynomial of degree 3 in \(\Z_{3}[x]\).
+		\sol{
+			The polynomial \(p(x) = x^{3} + x^{2} + 2\) is irreducible in \(\Z_{3}[x]\) by Theorem 23.10, and is of degree 3.
+		}
 		\item Show from part (a) that there exists a finite field of 27 elements. [\textit{Hint:} Use Exercise 30.]
+		\pf{
+			By Kronecker's Theorem, we know there exists an extension field \(E\) of \(\Z_{3}[x]\) containing a zero \(\alpha\) of \(p(x) = x^{3} + x^{2} + 2\). Since \(\Z_{3}\) has 3 elements, and this \(\alpha\) is algebraic over \(\Z_{3}\) with degree \(3\). Therefore, by Exercise 30, \(\Z_{3}(\alpha)\) has 27 elements.
+		}
 	\end{enumerate}
-	\pf{
 
-	}
 \end{enumerate}
 
 \section*{Section 30}
 % VI.30: 4, 5, 6, 7
 
-In Exercises 4 through 8, given a basis for the indicated vector space over the field.
+In Exercises 4 through 7, give a basis for the indicated vector space over the field.
 \begin{enumerate}
 	\setcounter{enumi}{3}
 	\item \(\Q(\sqrt{2})\) over \(\Q\).
 	\sol{
-
+		For \(\alpha = \sqrt{2}\), we find \(\irr{\sqrt{2}, \Q} = x^{2} - 2\), which is of degree 2. Hence, \(\Q(\sqrt{2})\) is a 2-dimensional vector space over \(\Q\) with basis \(\{1, \sqrt{2}\}\) by Theorem 30.23.
 	}
 	\item \(\R(\sqrt{2})\) over \(\R\).
 	\sol{
-		
+		\(\irr{\sqrt{2}, \R} = x - \sqrt{2}\). So, we have a basis of \(\{1\}\) for \(\R(\sqrt{2})\) over \(\R\).
 	}
 	\item \(\Q(\sqrt[3]{2})\) over \(\Q\).
 	\sol{
-		
+		\(\irr{\sqrt[3]{2}, \Q} = x^{3} - 2\). So, we have basis \(\{1, 2^{1/3}, 2^{2/3}\}\) for \(\Q(\sqrt[3]{2})\) over \(\Q\).
 	}
-	\item \(\C\) over \(\R\)
+	\item \(\C\) over \(\R\).
 	\sol{
-		
+		From the awesome Example 29.19, we know that \(\R(i) \cong \C\). Therefore, we get \(\irr{i, \R} = x^{2} + 1\). So, we have basis \(\{1, i\}\) for \(\C\) over \(\R\).
 	}
 \end{enumerate}
 
