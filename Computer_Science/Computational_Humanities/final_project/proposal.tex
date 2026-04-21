@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+
+% \usepackage[left=1in,right=1in,top=0.75in,bottom=1in]{geometry}
+\usepackage[margin=1in]{geometry}
+\usepackage{minted}
+\setminted{linenos, breaklines=true}
+\usepackage{listings}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{subcaption}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+\title{Final Project Proposal}
+\author{Paul Beggs}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Research Question}
+
+The question I wish to answer is, ``Can we find similarities within a movie script to allow a user to query a labeled dataset and receive an answer?'' That is, for the website \href{https://imsdb.com/}{IMSDb}, I'd have to develop a pattern-matching algorithm to create categories in which the text falls into. Then, I can find the similarities between and inside the categories. This allows for smart user querying; in which, by parsing the user's query, I can see if it's a narration, plot, or character dialogue related question. This would be enabled through the noticeable patterns throughout the site. Including indentation to distinguish between character dialogue and scene narration, capital letters and emboldened text for speakers and scene information, newlines to show time progression, and more. Similarity would then be calculated using the cosine distance between the user's query and a block of text.
+
+For example, the movie \href{https://imsdb.com/scripts/Cast-Away.html}{\textit{Cast Away}} has their entire script on IMSDb. You can parse the HTML to get characters like ``\textbf{CHUCK}'', or settings like ``\textbf{INT.  CHUCK'S HOUSE - MOMENTS LATER}''. If a user were to ask ``What happens to Chuck when he's in the plane?'' It could search for character dialogue for Chuck, and find the phrase ``The plane went down. My friends died. I washed up on an island. Then I found these barrels, built the raft, and here I am.'' I may need to employ some additional tools to narrow down the results for each query to be the most relevant, so that may be done with a \href{https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2}{cross-encoder} model from Hugging Face.
+
+% Note: I originally was going to do something with Reading Comprehension, but I think this project's 
+
+\section{Data Set}
+
+I will be using around 10-15 movie scrips all gathered from the IMSDb website. If there is any cleaning to be done for the scripts, I will have to do it. The site says that it's database is for educational purposes, so I take that to mean I am able to use it, so long as I do not intend to make money, which I do not. The \textit{Cast Away} HTML script file is 192 KB, so if assume that is the average file size for 15 files, the whole corpus will be 2.88 MB.
+
+\section{References}
+
+I will explain my usage of the \href{https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2}{cross-encoder} model from Hugging Face, and properly cite it. I will also cite the \href{https://imsdb.com/}{IMSDb} website as well.
+
+\end{document}
