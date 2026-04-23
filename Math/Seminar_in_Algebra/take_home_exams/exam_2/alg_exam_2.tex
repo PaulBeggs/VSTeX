@@ -1,0 +1,526 @@
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% MAIN DOCUMENT %%%
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\documentclass[12pt]{article}
+\usepackage{xcolor}
+\usepackage{minted}
+
+% \usepackage[T1]{fontenc}
+
+% \usepackage{draculatheme}
+% \newcommand{\documentTheme}{draculafg}
+% \newcommand{\documentLogo}{../../images/small logo_white.png}
+% \newcommand{\documentBigLogo}{../../images/logo_white_text.png}
+% \usemintedstyle{dracula}
+
+\newcommand{\documentBigLogo}{../../images/Hendrix Logo.png}
+\newcommand{\documentLogo}{../../images/small logo.png}
+\newcommand{\documentTheme}{black}
+
+%%% AESTHETICS %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+
+%%% Dimensions and Spacing %%%
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\usepackage{mathtools}
+\linespread{1}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,backgrounds,calc,patterns,positioning, arrows.meta, decorations.pathmorphing, decorations.pathreplacing}
+\usepgflibrary{shadings}
+\usepackage{pgfkeys}
+\usepackage{pdftexcmds}
+\usepackage{shellesc}
+\usepackage{algorithm, algorithmic, xspace}
+%%% Define new colors %%%
+\definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
+
+% Normal colors
+\definecolor{xred}{HTML}{BD4242}
+\definecolor{xblue}{HTML}{4268BD}
+\definecolor{xgreen}{HTML}{52B256}
+\definecolor{xpurple}{HTML}{7F52B2}
+\definecolor{xorange}{HTML}{FD9337}
+\definecolor{xdotted}{HTML}{999999}
+\definecolor{xgray}{HTML}{777777}
+\definecolor{xcyan}{HTML}{80F5DC}
+\definecolor{xpink}{HTML}{F690EA}
+\definecolor{xgrayblue}{HTML}{49B095}
+\definecolor{xgraycyan}{HTML}{5AA1B9}
+
+% Dark colors
+\colorlet{xdarkred}{red!85!black}
+\colorlet{xdarkblue}{xblue!85!black}
+\colorlet{xdarkgreen}{xgreen!85!black}
+\colorlet{xdarkpurple}{xpurple!85!black}
+\colorlet{xdarkorange}{xorange!85!black}
+\definecolor{xdarkcyan}{HTML}{008B8B}
+\colorlet{xdarkgray}{xgray!85!black}
+
+% Very dark colors
+\colorlet{xverydarkblue}{xblue!50!black}
+
+% Document-specific colors
+\colorlet{normaltextcolor}{black}
+\colorlet{figtextcolor}{xblue}
+
+% Enumerated colors
+\colorlet{xcol0}{black}
+\colorlet{xcol1}{xred}
+\colorlet{xcol2}{xblue}
+\colorlet{xcol3}{xgreen}
+\colorlet{xcol4}{xpurple}
+\colorlet{xcol5}{xorange}
+\colorlet{xcol6}{xcyan}
+\colorlet{xcol7}{xpink!75!black}
+
+% Blue-Purple (should just used colorbrewer...)
+\definecolor{xrainbow0}{HTML}{e41a1c}
+\definecolor{xrainbow1}{HTML}{a24057}
+\definecolor{xrainbow2}{HTML}{606692}
+\definecolor{xrainbow3}{HTML}{3a85a8}
+\definecolor{xrainbow4}{HTML}{42977e}
+\definecolor{xrainbow5}{HTML}{4aaa54}
+\definecolor{xrainbow6}{HTML}{629363}
+\definecolor{xrainbow7}{HTML}{7e6e85}
+\definecolor{xrainbow8}{HTML}{9c509b}
+\definecolor{xrainbow9}{HTML}{c4625d}
+\definecolor{xrainbow10}{HTML}{eb751f}
+\definecolor{xrainbow11}{HTML}{ff9709}
+
+%------- %
+% XHFILL %
+%------- %
+
+
+
+%%% Chapter Headings %%%
+
+\newcommand{\gradientrule}{
+    \begin{tikzpicture}
+        \shade[left color=orangehdx, right color=black, middle color=gray] (0,0) rectangle (\linewidth,0.4pt);
+    \end{tikzpicture}
+}
+
+\usepackage{xpatch}
+
+%%% FIGURES %%%
+\usepackage{graphicx}  
+% \numberwithin{figure}{section}
+\usepackage{float}
+\usepackage{caption}
+
+%%% Hyperlinks %%%
+\usepackage{hyperref}
+\definecolor{horange}{HTML}{f58026}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=horange,
+	filecolor=horange,      
+	urlcolor=horange,
+}
+
+
+%% Headers and Footers %%
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\fancyhead[R]{\textcolor{\documentTheme}{Take Home Exam 2}}
+\fancyhead[L]{\textcolor{\documentTheme}{Hendrix College}}
+\fancyhead[C]{\includegraphics[height=.50cm]{\documentLogo}} % Use for Dracula
+\usepackage{xpatch}
+\xpretocmd\headrule{\color{orangehdx}}{}{\PatchFailed}
+\setlength{\footskip}{0.5in}
+\setlength{\headheight}{18.5764pt}
+
+
+%%%%% Colored Boxes %%%%%
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{theorems}
+% \tcbuselibrary{minted}
+\newcounter{BoxCounter}
+% \usepackage{dingbat}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+%% MATH PACKAGES, ENVIRONMENTS, COMMANDS %%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%You'll need your own packages, theorem types, and commands.
+
+\usepackage{fix-cm}
+\usepackage{amsmath,amsthm, amsfonts, amssymb} 
+\usepackage{array, makecell}
+\usepackage{colortbl}
+\newcommand{\thickvrule}{\vrule width 1pt}
+\newcommand{\thickhrule}{\Xhline{1pt}}
+
+\usepackage{mathtools}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{mathrsfs}
+\usepackage{changepage}
+\usepackage{multicol}
+\usepackage{slashed}
+\usepackage{enumerate}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{kantlipsum}  %This package lets us generate random text for example purposes.
+\usepackage{pgfplots}
+
+
+%%% Custom Commands %%%
+% Natural Numbers 
+\newcommand{\N}{\mathbb{N}}
+
+% Whole Numbers
+\newcommand{\W}{\mathbb{W}}
+
+% Integers
+\newcommand{\Z}{\mathbb{Z}}
+
+% Rational Numbers
+\newcommand{\Q}{\mathbb{Q}}
+
+% Real Numbers
+\newcommand{\R}{\mathbb{R}}
+
+% Complex Numbers
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\I}{\mathbb{I}}
+
+\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
+
+\newcommand{\mysqrt}[1]{%
+	\mathpalette\foo{#1}%
+}
+\newcommand{\dmysqrt}[1]{%
+	\mathpalette\foodisplay{#1}%
+}
+
+% !TeX spellcheck = off
+\newcommand{\foo}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
+		\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+% !TeX spellcheck = off
+\newcommand{\foodisplay}[2]{%
+	% #1: math style, #2: content
+	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
+	\begin{tikzpicture}[baseline=(sqrt.base)]
+		\node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
+		\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
+	\end{tikzpicture}%
+}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi}.}
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{\textbf{\theenumii}.}
+
+% \newcommand{}{\marginnote{\includegraphics[width=2em]{caution.png}}}
+
+\newmdenv[
+	topline=false,
+	bottomline=true,
+	rightline=false,
+	leftline=true,
+	linewidth=1.5pt,
+	linecolor=black, % default color, will be overridden in custom commands
+	% backgroundcolor=draculabg, % Needed for Dracula theme
+	% fontcolor=\documentTheme, % Needed for Dracula theme
+	innertopmargin=0pt,
+	innerbottommargin=5pt,
+	innerrightmargin=10pt,
+	innerleftmargin=10pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+]{customframedproof}
+
+\newenvironment{proofpart}[2][black]{
+    \begin{mdframed}[
+        topline=false,
+        bottomline=false,
+        rightline=false,
+        leftline=true,
+        linewidth=1pt,
+        linecolor=#1!40, % Custom color
+        % innertopmargin=10pt,
+        % innerbottommargin=10pt,
+        innerleftmargin=10pt,
+        innerrightmargin=10pt,
+        leftmargin=0pt,
+        rightmargin=0pt,
+        % skipabove=\topsep,
+        % skipbelow=\topsep%
+    ]
+    \noindent
+    \begin{minipage}[t]{0.08\textwidth}%
+        \textbf{#2}%
+    \end{minipage}%
+    \begin{minipage}[t]{0.90\textwidth}%
+        \begin{adjustwidth}{0pt}{0pt}%
+}{
+    \end{adjustwidth}
+    \end{minipage}
+    \end{mdframed}
+}
+
+\newenvironment{tipbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculapurple}{TIP:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{notebox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculagreen}{NOTE:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{warningbox}
+	{%
+		\par\noindent%
+		% Top dashed line (using \textwidth)
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.65em}%
+		\noindent\textbf{\textcolor{draculared}{WARNING:}}\quad%
+	}
+	{%
+		\par%
+		% Bottom dashed line
+		\noindent%
+		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
+		\par\vspace{0.35em}
+	}
+
+\newenvironment{solution}{\textit{Solution.}}
+
+\newcommand{\sol}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75,]
+        \begin{solution}
+        #1
+        \end{solution}
+    \end{customframedproof}
+}
+
+\newcommand{\pf}[1]{
+    \begin{customframedproof}[linecolor=orangehdx!75]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
+\def \proofDistance {10pt}
+
+\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\limn}{\lim_{n \rightarrow \infty}}
+\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
+
+\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
+
+\newcommand{\ninn}{n \in \N}
+
+\newcommand{\mb}[1]{\mathbf{#1}}
+
+\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
+\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
+
+
+\newcommand{\proj}{\text{proj}}
+
+\newcommand{\p}{\partial}
+
+\newcommand{\dydx}{\frac{dy}{dx}}
+\newcommand{\dxdy}{\frac{dx}{dy}}
+\newcommand{\dydt}{\frac{dy}{dt}}
+\newcommand{\dxdt}{\frac{dx}{dt}}
+\newcommand{\dzdt}{\frac{dz}{dt}}
+
+\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
+
+\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
+
+\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
+
+\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
+
+\newcommand{\imb}{\mb{i}}
+\newcommand{\jmb}{\mb{j}}
+\newcommand{\kmb}{\mb{k}}
+\newcommand{\rmb}{\mb{r}}
+\newcommand{\umb}{\mb{u}}
+
+\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
+\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
+\newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
+
+\newcommand{\funccolon}{\, \colon}
+
+\newcommand{\squigglyline}{%
+    \noindent
+    \tikz[baseline=-0.5ex]{
+        \draw[decorate, decoration={snake, amplitude=0.5mm, segment length=3mm}] 
+        (0,0) -- (\dimexpr\linewidth\relax,0);
+    }%
+}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\generator}[1]{\langle #1 \rangle}
+
+\title{Take Home Exam 2}
+\date{\today}
+\author{Paul Beggs}
+
+% end of preamble
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{document}
+
+
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%%% COVER PAGE %%%
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\begin{enumerate}
+	\item Recall that the polynomial \(x^{2} + 1\) is irreducible in \(\Z_{3}[x]\), so \(\Z_{3}[x] / \gen{x^{2} + 1}\) is a field. Consider the isomorphic field extension \(\Z_{3}(\alpha)\) of \(\Z_{3}\), where \(\alpha\) is the root of \(x^{2} + 1\).
+	\begin{enumerate}
+		\item List all elements of \(\Z_{3}(\alpha)\)
+		\sol{
+			By Exercise 30 in Section 29, we know there are \(3^{2} = 9\) elements in the field \(\Z_{3}(\alpha)\). Then, by Theorem 29.18, we know they can be uniquely expressed as 
+			\[
+				b_{0} + b_{1}\alpha, 
+			\]
+			for \(b_{i} \in \Z_{3}\). Thus, we get a list of elements:
+			\[
+				\{0,\ 1,\ 2,\ 0 + \alpha,\ 1 + \alpha,\ 2 + \alpha,\ 0 + 2\alpha,\ 1 + 2\alpha,\ 2 + 2\alpha\} 
+			\]
+		}
+
+		\item Compute \((a + b\alpha)(c + d\alpha)\) for arbitrary \(a,b,c,d \in \Z_{3}\), simplifying your answer using the fact that \(\alpha^{2} = -1\). 
+		\sol{
+			We compute
+			\begin{align*}
+				(a + b\alpha)(c + d\alpha) &= ac + ad\alpha + bc\alpha + bd\alpha^{2} \\
+				&= ac + \alpha(ad + bc) - bd
+			\end{align*}
+		}
+
+		\item Using your result from part (b), construct the addition and multiplication tables for \(\Z_{3}(\alpha)\). 
+		\sol{
+			The addition and multiplication tables are presented in \hyperref[tab:add]{Table 1} and \hyperref[tab:multi]{Table 2} respectively.
+		}
+
+	\end{enumerate}
+	
+	\item Let \(p\) be a prime number and let \(\alpha \in \R\) be a root of the polynomial \(x^{p} - 2\). Set \(F = \Q(\alpha)\).
+	\begin{enumerate}
+		\item Show that \([F : \Q] = p\).
+		\pf{
+			Let \(x^{p} - 2 = g(x) \in \Q[x]\) with \(\alpha \in \R\) a root. This polynomial is irreducible over \(\Q\) by Eisenstein's criterion for prime \(q = 2\). Because \(g(x)\) is a monic, irreducible polynomial with \(g(\alpha) = 0\), it is the minimal polynomial for \(\alpha\) over \(\Q\), which means \(\deg(\alpha, \Q) = p\). Furthermore, since \(\R\) is an extension field of \(\Q\) and \(\alpha\) is algebraic over \(\Q\), then by Theorem 30.23, \(F = \Q(\alpha)\) is a \(p\)-dimensional vector space over \(\Q\). Thus, \([F : \Q] = p\).
+		}
+\newpage
+		\item Show that the only subfields of \(F\) are \(\Q\) and \(F\). (\textit{Hint: Let \(F'\) be a subfield of \(F\) and create a tower of fields with \(F'\).})
+		\pf{
+			Suppose that \(F'\) is a subfield of \(F\). This creates a tower of fields \(\Q \subseteq F' \subseteq F\). Then, by Theorem 31.4, we have that 
+			\begin{equation}
+				[F : \Q] = [F : F'][F' : \Q].
+			\end{equation}
+			We know from part (a) that \([F : \Q] = p\), and since \(p\) is prime, it only factors into \(1 \cdot p\). Thus, we have two cases:
+			\begin{itemize}
+				\item \textbf{Case 1:} If \([F' : \Q] = 1\), then \(F' = \Q\).
+				\item \textbf{Case 2:} If \([F' : \Q] = p\), then \([F : F'] = 1\) because \([F : \Q] = p\). Thus, \(F' = F\).
+			\end{itemize}
+			Therefore, in either case, \(F'\) is either \(F\) or \(\Q\). Hence, the only subfields of \(F\) are \(\Q\) and \(F\).
+		}
+
+		\item Let \(\beta \in F\ \backslash\ \Q\). Show that \(\Q(\beta) = F\), and conclude that \(\alpha = p(\beta)\) for some polynomial \(p(x) \in \Q[x]\).
+		\pf{
+			Suppose \(\beta \in F\ \backslash\ \Q\). From part (a), we know that \(F\) is a simple extension of \(\Q\) with \(\alpha\) algebraic over \(\Q\) with \(\deg(\alpha, \Q) = p\). Then, from Theorem 29.18, we know every element in \(F\) can be expressed uniquely as 
+			\[
+				b_{0} + b_{1}\alpha + \cdots + b_{p - 1}\alpha^{p-1},
+			\]
+			for \(b_{i} \in \Q\). Now, since \(\beta \in F\ \backslash\ \Q\), we know \(\beta \notin \Q\). Therefore, \(\beta\) cannot be the constant term \(b_{0}\), meaning there must be at least one coefficient \(b_{1}\) through \(b_{p - 1}\) that is nonzero. Then, Theorem 30.23 tells us that this \(\beta \in F\) is algebraic over \(\Q\), and \(\deg(\beta, \Q) \le \deg(\alpha, \Q)\). Thus, we can create a tower of fields \(\Q \subseteq \Q(\beta) \subseteq F\). Then, part (b) tells us that \(\Q(\beta)\) must be equal to either \(\Q\) or \(F\). Because \(\beta \notin \Q\), the field \(\Q(\beta)\) consists of elements that are outside \(\Q\), so \(\Q(\beta) \ne \Q\). Thus, it must be that \(\Q(\beta) = F\).
+
+			Since \(\Q(\beta) = F\), it follows that \(\alpha \in \Q(\beta)\). So, by Theorem 29.18, we can express this \(\alpha\) as a unique polynomial \(p(\beta)\) for \(p(x) \in \Q[x]\). 
+		}
+		
+	\end{enumerate} 
+\end{enumerate}
+\newpage
+\begin{table}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\label{tab:add}
+	\begin{tabular}{c!{\vrule width 1.5pt}>{\centering\arraybackslash}p{1.25cm}|c|c|c|c|c|c|c|c}
+		+ & 0 & $1$ & $2$ & $\alpha$ & $1 + \alpha$ & $2 + \alpha$ & $2\alpha$ & $1 + 2\alpha$ & $2 + 2\alpha$ \\
+		\noalign{\hrule height 1.5pt}
+		0 & 0 & $1$ & $2$ & $\alpha$ & $1 + \alpha$ & $2 + \alpha$ & $2\alpha$ & $1 + 2\alpha$ & $2 + 2\alpha$ \\\hline
+		$1$ & $1$ & $2$ & 0 & $1 + \alpha$ & $2 + \alpha$ & $\alpha$ & $1 + 2\alpha$ & $2 + 2\alpha$ & $2\alpha$ \\\hline
+		$2$ & $2$ & 0 & $1$ & $2 + \alpha$ & $\alpha$ & $1 + \alpha$ & $2 + 2\alpha$ & $2\alpha$ & $1 + 2\alpha$ \\\hline
+		$\alpha$ & $\alpha$ & $1 + \alpha$ & $2 + \alpha$ & $2\alpha$ & $1 + 2\alpha$ & $2 + 2\alpha$ & 0 & $1$ & $2$ \\\hline
+		$1 + \alpha$ & $1 + \alpha$ & $2 + \alpha$ & $\alpha$ & $1 + 2\alpha$ & $2 + 2\alpha$ & $2\alpha$ & $1$ & $2$ & 0 \\\hline
+		$2 + \alpha$ & $2 + \alpha$ & $\alpha$ & $1 + \alpha$ & $2 + 2\alpha$ & $2\alpha$ & $1 + 2\alpha$ & $2$ & 0 & $1$ \\\hline
+		$2\alpha$ & $2\alpha$ & $1 + 2\alpha$ & $2 + 2\alpha$ & 0 & $1$ & $2$ & $\alpha$ & $1 + \alpha$ & $2 + \alpha$ \\\hline
+		$1 + 2\alpha$ & $1 + 2\alpha$ & $2 + 2\alpha$ & $2\alpha$ & $1$ & $2$ & 0 & $1 + \alpha$ & $2 + \alpha$ & $\alpha$ \\\hline
+		$2 + 2\alpha$ & $2 + 2\alpha$ & $2\alpha$ & $1 + 2\alpha$ & $2$ & 0 & $1$ & $2 + \alpha$ & $\alpha$ & $1 + \alpha$ \\
+	\end{tabular}
+	\caption{Addition table for the elements of \(\Z_{3}(\alpha)\).}
+\end{table}
+
+\begin{table}
+	\centering
+	\renewcommand{\arraystretch}{1.5}
+	\label{tab:multi}
+	\begin{tabular}{c!{\vrule width 1.5pt}>{\centering\arraybackslash}p{1.25cm}|c|c|c|c|c|c|c|c}
+		\(\cdot\) & 0 & $1$ & $2$ & $\alpha$ & $1 + \alpha$ & $2 + \alpha$ & $2\alpha$ & $1 + 2\alpha$ & $2 + 2\alpha$ \\
+		\noalign{\hrule height 1.5pt}
+		\(0\) & \(0\) & \(0\) & \(0\) & \(0\) & \(0\) & \(0\) & \(0\) & \(0\) & \(0\) \\\hline 
+		\(1\) & \(0\) & \(2\) & \(1\) & \(\alpha\) & \(2+\alpha\) & \(1+\alpha\) & \(2\alpha\) & \(2+2\alpha\) & \(1+2\alpha\) \\\hline 
+		\(2\) & \(0\) & \(1\) & \(2\) & \(2\alpha\) & \(1+2\alpha\) & \(2+2\alpha\) & \(\alpha\) & \(1+\alpha\) & \(2+\alpha\) \\\hline 
+		\(\alpha\) & \(0\) & \(\alpha\) & \(2\alpha\) & \(1\) & \(1+\alpha\) & \(1+2\alpha\) & \(2\) & \(2+\alpha\) & \(2+2\alpha\) \\\hline 
+		\(1 + \alpha\) & \(0\) & \(2+\alpha\) & \(1+2\alpha\) & \(1+\alpha\) & \(2\alpha\) & \(2+3\alpha\) & \(2+2\alpha\) & \(1+3\alpha\) & \(\alpha\) \\\hline 
+		\(2 + \alpha\) & \(0\) & \(1+\alpha\) & \(2+2\alpha\) & \(1+2\alpha\) & \(2+3\alpha\) & \(-3+\alpha\) & \(2+\alpha\) & \(5\alpha\) & \(1\) \\\hline 
+		\(2\alpha\) & \(0\) & \(2\alpha\) & \(\alpha\) & \(2\) & \(2+2\alpha\) & \(2+\alpha\) & \(1\) & \(1+2\alpha\) & \(1+\alpha\) \\\hline 
+		\(1 + 2\alpha\) & \(0\) & \(2+2\alpha\) & \(1+\alpha\) & \(2+\alpha\) & \(1+3\alpha\) & \(5\alpha\) & \(1+2\alpha\) & \(3+\alpha\) & \(2\) \\\hline 
+		\(2 + 2\alpha\) & \(0\) & \(1+2\alpha\) & \(2+\alpha\) & \(2+2\alpha\) & \(\alpha\) & \(1\) & \(1+\alpha\) & \(2\) & \(2\alpha\) \\ 
+	\end{tabular}
+	\caption{Multiplication table for the elements of \(\Z_{3}(\alpha)\).}
+\end{table}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+\end{document}
