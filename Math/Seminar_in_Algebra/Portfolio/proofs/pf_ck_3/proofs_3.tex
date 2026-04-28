@@ -796,7 +796,7 @@ enhanced,
     \pf{
         My proof.
     }
-    \item (\textbf{Compare and Contrast})  
+    \item (\textbf{Compare and Contrast}) For both of these proofs, I was working with rings of polynomials where the coefficients of the rings are elements of fields. The first dealt with the field \(\Z_{p}\), and the second with \(\Q\) I needed to first find a zero, and then prove that a zero cannot exist in the field to 
     
     Show that for \(p\) a prime, the polynomial \(x^{p} + a\) in \(\Z_{p} [x]\) is not irreducible for any \(a \in \Z_{p}\).
     \pf{
@@ -809,33 +809,48 @@ enhanced,
 
     Prove that \(x^{2} - 3\) is irreducible over \(\Q(\sqrt[3]{2})\).
     \pf{
-
+        Suppose, for the sake of a contradiction, that \(x^{2} - 3\) is not irreducible over \(\Q(\sqrt[3]{2})\). That is, \(\sqrt{3} \in \Q(\sqrt[3]{2})\), so \(\Q(\sqrt{3})\) is a field extension of \(\Q(\sqrt[3]{2})\). Then, by Theorem 31.4, \([\Q(\sqrt[3]{2}) : \Q] = [\Q(\sqrt[3]{2}) : \Q(\sqrt{3})] \cdot [\Q(\sqrt{3}) : \Q]\). We know \([\Q(\sqrt[3]{2}) : \Q] = 3\) and \([\Q(\sqrt{3}) : \Q] = 2\). This would mean \(3 = [\Q(\sqrt[3]{2}) : \Q(\sqrt{3})] \cdot 2\), implying 2 divides 3, which is not true. Therefore, \(\sqrt{3} \notin \Q(\sqrt[3]{2})\), and by Theorem 23.10, the polynomial \(x^{2} - 3\) is irreducible.
     }
 \newpage
-    \item (\textbf{Compare and Contrast}) 
+    \item (\textbf{Compare and Contrast}) These two proofs deal with finding ideals of a ring through distinct methods. In both proofs, I needed to show two things: the ideal in question is a subring, and that when elements in \(R\) are multiplied by the ideal, that they stay within the ideal. The first accomplishes this by using Theorem 26.3, which gives \(\varphi[N]\) as a subfield of \(\varphi[R]\), since \(N\) is a subring of \(R\). Then, for the second property, I utilized the homomorphism property of \(\varphi\) to get an element \(r \in R\) from the map \(\varphi(r) \in \varphi[R]\) and multiply it by \(\varphi[N]\). Then, for the second proof, I proved that \(I_{a}\) is a subring of \(R\) without using the commutativity of \(R\), but by purely just using the properties of rings and the definition of \(I_{a}\). Proving the second property of ideals did require using commutativity, as showing \(rx \in I_{a}\) would be impossible without it. Thus, even though the technique used for both of these proofs are distinct in nature, it shows that we can get ideals of rings through maps, or by the structure of the ideal itself.
     
     Let \(\varphi : R \to R'\) be a ring homomorphism and let \(N\) be an ideal of \(R\). Show that \(\varphi[N]\) is an ideal of \(\varphi[R]\).
     \pf{
-
+        % To prove that \(\varphi[N]\) is an ideal of \(\varphi[R]\), we must show that \(\varphi[N]\) is a subring, and for an \(x \in \varphi[R]\), that \(x\varphi[N] \subseteq \varphi[N]\) and \(\varphi[N]x \subseteq \varphi[N]\). Since \(N\) is an ideal of \(R\), \(N\) is a subring of \(R\). Then, by Theorem 26.3, we know that \(\varphi[N]\) is a subring of \(\varphi[R]\) as well. For the second ideal property, we first note that since \(x \in \varphi[R]\), there must be an \(\varphi^{-1}(x) \in R\) for which \(x = \varphi^{-1}(x)\). Since \(N\) is an ideal, we get \(rn \in N\) and \(nr \in N\). Therefore, we find \(\varphi(rn) = \varphi(r)\varphi(n) \in \varphi[N]\) and \(\varphi(nr) = \varphi(n)\varphi(r) \in \varphi[N]\). Therefore, \(\varphi[N]\) is an ideal of \(\varphi[R]\).
+        To prove that \(\varphi[N]\) is an ideal of \(\varphi[R]\), we must show that \(\varphi[N]\) is a subring, and for all \(r \in R\), that for all \(\varphi(r) \in \varphi[R]\), \(\varphi(r)\varphi[N] \subseteq \varphi[N]\) and \(\varphi[N]\varphi(r) \subseteq \varphi[N]\). Since \(N\) is an ideal of \(R\), \(N\) is a subring of \(R\). Then, by Theorem 26.3, we know that \(\varphi[N]\) is a subring of \(\varphi[R]\) as well. To show the second ideal property, let \(r \in R\) and \(n \in N\). Since \(N\) is an ideal, we get \(rn \in N\) and \(nr \in N\). Therefore, we find \(\varphi(rn) = \varphi(r)\varphi(n) \in \varphi[N]\) and \(\varphi(nr) = \varphi(n)\varphi(r) \in \varphi[N]\). Therefore, \(\varphi[N]\) is an ideal of \(\varphi[R]\).
     }
 
     Let \(R\) be a commutative ring and let \(a \in R\). Show that \(I_{a} = \{x \in R \mid ax = 0\}\) is an ideal of \(R\). 
     \pf{
-
+        To prove that \(I_{a}\) is a subring of \(R\), we must show the following:
+        \begin{enumerate}[label=(\arabic*)]
+            \item \(0\in I_a\) because \(a\cdot 0=0\).
+            \item If \(b,c\in I_a\) then \(a(b-c) = ab-ac = 0 - 0 = 0\) by the distributive laws of \(R\) and the definition of \(I_{a}\). Thus, \(b-c\in I_a\).
+            \item If \(b,c\in I_a\) then \(a(bc) = (ab)c = 0 \cdot c = 0\) by the associativity from \(R\) and the definition of \(I_{a}\). Thus, \(bc\in I_a\).
+        \end{enumerate}
+        Therefore, \(I_a\) is a subring of \(R\). Thus, we need only show that \(xr \in I_a\) and \(rx \in I_a\) for \(x \in I_a\) and \(r \in R\). Thus, consider the following:
+        \[
+            a(xr) = (ax)r = 0 \cdot r = 0.
+        \]
+        So, \(xr \in I_{a}\). Now, since \(R\) is a commutative ring, we can rearrange \(a(rx)\):
+        \[
+            a(rx) = a(xr) = 0.
+        \]
+        So, \(rx \in I_{a}\). Therefore, we have shown that \(I_{a}\) is an ideal of \(R\).
     }
 \newpage
-    \item 
+    \item  
 
     Show that a factor ring of a field is either the trivial (zero) ring of one element or is isomorphic to the field. 
     \pf{
         Let \(F\) be a field with ideal \(N\). Since \(F\) is a field and \(N\) is an ideal, either \(N = F\) or \(N = \{0\}\). If \(N = F\), then we know from Exercise 18, that for all \(a \in F\), \(\varphi(a) = 0'\). So, the factor ring \(F/F\) consists of only one element (the identity element), it is the trivial ring. Conversely, if \(N = \{0\}\), define a mapping \(\varphi : F \to F/\{0\}\) by \(x + \{0\}\) for \(x \in F\). This mapping is surjective by definition. It is also injective by Exercise 18. Thus, \(\varphi\) is a bijective homomorphism, meaning it is an isomorphism. Therefore, \(F/\{0\} \cong F\).
     }
 
-    \item 
+    \item (\textbf{Touchstone}) 
 
     Show that each homomorphism from a field to a ring is either one to one or maps everything to 0.
     \pf{
-        Let \(\varphi : F \to R\) be a ring homomorphism with kernel \(N\). Since \(F\) is a field and \(N\) is an ideal, we know either \(N = F\) or \(N = \{0\}\) because a field can have no proper nontrivial ideals. If \(N = F\), then every element in \(F\) is in \(N\). So, for all \(a \in F\), \(\varphi(a) = 0'\) for \(0' \in R\). If \(N = \{0\}\), then \(\varphi\) is one-to-one.
+        Let \(\varphi : F \to R\) be a ring homomorphism with kernel \(N\). Since \(F\) is a field and \(N\) is an ideal, we know either \(N = F\) or \(N = \{0\}\) by Corollary 27.6. If \(N = F\), then every element in \(F\) is in \(N\). So, for all \(a \in F\), \(\varphi(a) = 0'\) for \(0' \in R\). If \(N = \{0\}\), then \(\varphi\) is one-to-one.
     }
 \end{enumerate}
 
