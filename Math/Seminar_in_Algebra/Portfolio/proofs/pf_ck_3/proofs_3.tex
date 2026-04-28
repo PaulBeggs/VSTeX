@@ -697,6 +697,9 @@ enhanced,
 \newcommand{\rmb}{\mb{r}}
 \newcommand{\umb}{\mb{u}}
 
+\newcommand{\irr}[1]{\text{irr}(#1)}
+
+
 \newcommand{\vecfuc}[2]{\mb{#1}(#2)}
 \newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
 \newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
@@ -715,12 +718,12 @@ enhanced,
 %%% COVER PAGE %%%
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
-\newcommand{\assignmentname}{Five Proofs \& Intros. (2)}
+\newcommand{\assignmentname}{Five Proofs \& Intros. (3)}
 
 % Do not use all caps.
 \newcommand{\cussubtitle}{Seminar in Algebra}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{March 12, 2026}
+\newcommand{\finaldate}{April 28, 2026}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
 \newcommand{\professor}{Dr. Carol Ann Downes, Ph.D.}
 
@@ -783,103 +786,56 @@ enhanced,
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 \begin{enumerate}[label=\textbf{\arabic*.}]
-    \item \textbf{(Most Improved)} I first solved this problem on the first in-class exam, and did quite poorly, as I forgot the definition of the kernel, and thought the kernel mapped elements to the \textit{multiplicative} identity of \(R'\) instead of the additive. So, in my first approach, I botched the kernel definition, and did not use homomorphic property altogether. However, I was able to provide a general ``idea'' of what I needed to do: Show that \(ab \notin \ker(\varphi)\) by using the fact that \(a,b \notin \ker(\varphi)\) and \(R'\) has no zero divisors. I just did not \textit{show} the process and I went astray with the kernel definition. 
+    \item (\textbf{Major Theorem}) 
     
-    Thus, we arrive at the revised proof, where the \textit{correct} definition of the kernel is front and center, in the second sentence. Then, I set \(\varphi(ab) = 0'\) to lead to a contradiction, thus proving that \(ab \notin \ker(\varphi)\). I did this by using the homomorphic property of \(\varphi\) to establish an equality between \(\varphi(ab)\) and \(\varphi(a)\varphi(b)\). Then, I dug a level deeper and pointed out that neither \(\varphi(a)\) nor \(\varphi(b)\) can be equal to \(0'\) by the problem statement. Then, I used \(R'\)'s property as an integral domain, and pointed out that it has no zero divisors, so the product \(\varphi(a)\varphi(b) \ne 0'\). I finished off by connecting the dots: since \(\varphi(a)\varphi(b) \ne 0\), then \(\varphi(ab) \ne 0\), so \(ab \notin \ker(\varphi)\). 
-    
-    Let \(R\) and \(R'\) be rings, let \(\varphi : R \to R'\) be a homomorphism, and let \(a,b \in R\). Prove that if \(R'\) is an integral domain and \(a,b \notin \ker(\varphi)\), then \(ab \notin \ker(\varphi)\). 
+    Let \(E\) be a simple extension \(F(\alpha)\) of a field \(F\), and let \(\alpha\) be algebraic over \(F\). Let the degree of \(\irr{\alpha, F}\) be \(n \ge 1\). Then, every element \(\beta\) of \(E = F(\alpha)\) can be uniquely expressed in the form 
+    \[
+        \beta = b_{0} + b_{1}\alpha + \cdots + b_{n-1}\alpha^{n-1},
+    \]
+    where the \(b_{i}\) are in \(F\).
     \pf{
-        Let \(\varphi\) be a homomorphism that exists between rings \(R\) and \(R'\), defined as \(\varphi : R \to R'\), and let \(a,b \in R\). Recall that \(\ker(\varphi) = \{r \in R \mid \varphi(r) = 0'\}\), where \(0'\) is the additive identity of \(R'\). Now, suppose that \(a \notin \ker(\varphi)\), \(b \notin \ker(\varphi)\), and \(R'\) is an integral domain. To show that \(ab \notin \ker(\varphi)\), suppose to the contrary that \(ab \in \ker(\varphi)\) instead. This means \(\varphi(ab) = 0'\). Since \(\varphi\) is a homomorphism, we can expand the left side to get \(\varphi(ab) = \varphi(a)\varphi(b) = 0'\). However, this cannot be true, as \(\varphi(a)\) and \(\varphi(b)\) cannot equal \(0'\), and their product cannot equal \(0'\) since \(R'\) is an integral domain and has no zero divisors. Thus, it must be that \(ab \notin \ker(\varphi)\).   
+        My proof.
     }
-    \item In this proof, my goal was to find a zero in \(\Z_{p}[x]\) that matched any \(a \in \Z_{p}[x]\). I did this by first noting that a polynomial is reducible if it is greater than or equal to 2, and it has a zero. Then, I used a corollary to Fermat's Little Theorem to show that for the \(x^{p}\) term, since it is equivalent to \(x\), we can set \(x = -a\) to get \(-a + a \equiv 0 \pmod{p}\). Thus, since a zero was found, the polynomial is reducible. 
+    \item (\textbf{Compare and Contrast})  
     
     Show that for \(p\) a prime, the polynomial \(x^{p} + a\) in \(\Z_{p} [x]\) is not irreducible for any \(a \in \Z_{p}\).
     \pf{
-        Since \(p\) is prime, the degree of our polynomial is \(p \ge 2\). We know that a polynomial of degree 2 or higher is not irreducible if it has a zero in the field. So, we plan to find a zero. Remember that Corollary 20.2 tells us that \(x^{p} \equiv x \pmod{p}\) for any \(x \in \Z\). Thus, evaluating the polynomial at \(x = -a\) gives
+        Since \(p\) is prime, the degree of our polynomial is \(p \ge 2\). We know that a polynomial of degree 2 or higher is not irreducible if it has a zero in the field. So, we plan to find a zero. Recall that the Corollary to the Little Theorem of Fermat tells us that \(x^{p} \equiv x \pmod{p}\) for any \(x \in \Z\). Thus, evaluating the polynomial at \(x = -a\) gives
         \[
             (-a)^{p} + a \equiv -a + a \equiv 0 \pmod{p}.
         \]
         Therefore, we have shown that \(-a\) is a zero, meaning the polynomial can be factored and is not irreducible.
     }
-\newpage
-    \item \textbf{(A High Point)} In this problem, I used the group of symmetries of the square, \(D_{4}\) in combination with its 8 permutations: \(\rho_{i}\), \(\mu_{i}\), \(\delta_{i}\) for rotations, mirror images, and diagonal flips respectively. I also used the Klein 4-group, which is the simplest abelian group that is not cyclic. Then, I found the left cosets by multiplying \(\{\rho_{0}, \rho_{2}\}\) by each permutation. This gives an isomorphism between \(D_{4}/H\) and \(V\) because they have the exact same structure. I am particularly proud of this problem because of the significance of the two groups in the same problem. Throughout the semester, we had talked extensively about the Klein 4-group, and we had marveled at the all the symmetries of the \(D_{4}\) group. Thus, due to the relevance of these two groups (and the beauty of the tables next to each other), I figured I must include it.
-    
-    Build a table in the order exhibited by the left cosets of the subgroup \(\{\rho_{0}, \rho_{2}\}\) of the group \(D_{4}\). Do you seem to get a coset group of order 4? If so, is it isomorphic to \(\Z_{4}\) or the Klein 4-group \(V\)?
-          \sol{
-              The multiplication table on the left is made up of left cosets for \(D_{4}\). The subgroup \(H = \{\rho_{0}, \rho_{2}\}\) partitions \(D_{4}\) into the four left cosets. Namely, 
-              \[
-                    \{\rho_{0}, \rho_{2}\}, \ \{\rho_{1}, \rho_{3}\}, \ \{\mu_{1}, \mu_{2}\}, \ \{\delta_{1}, \delta_{2}\}.
-              \]
-              Each colored block corresponds to one of these cosets. The table on the right is the multiplication table for the Klein 4-group. Notice that
-              \[
-                  \{\rho_{0}, \rho_{2}\} = e, \ \{\rho_{1}, \rho_{3}\} = a, \ \{\mu_{1}, \mu_{2}\} = b, \ \{\delta_{1}, \delta_{2}\} = c.
-              \]
-              Hence, \(D_{4}/H \cong V\). \\
 
-              \definecolor{first}{HTML}{65d3f5}
-              \definecolor{second}{HTML}{2a9d8f}
-              \definecolor{third}{HTML}{e9c46a}
-              \definecolor{fourth}{HTML}{f4a261}
-              \newcommand{\fc}{\cellcolor{first!80!white}}\newcommand{\sco}{\cellcolor{second!80!white}}\newcommand{\tc}{\cellcolor{third!80!white}}\newcommand{\fco}{\cellcolor{fourth!80!white}}
-              \renewcommand{\arraystretch}{1.5}
-              \hspace{1cm}\begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c|c|c|c|c}
-                  & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) \\
-                  \noalign{\hrule height 1.5pt}
-                  \fc\(\rho_{0}\)    & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) \\
-                  \hline
-                  \fc\(\rho_{2}\)    & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) \\
-                  \hline
-                  \sco\(\rho_{1}\)   & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     \\
-                  \hline
-                  \sco\(\rho_{3}\)   & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     \\
-                  \hline
-                  \tc\(\mu_{1}\)     & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   \\
-                  \hline
-                  \tc\(\mu_{2}\)     & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   \\
-                  \hline
-                  \fco\(\delta_{1}\) & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    \\
-                  \hline
-                  \fco\(\delta_{2}\) & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    \\
-              \end{tabular}\hspace{1.25cm}
-              \begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c}
-                            & \fc\(e\)  & \sco\(a\) & \tc\(b\)  & \fco\(c\) \\
-                  \noalign{\hrule height 1.5pt}
-                  \fc\(e\)  & \fc\(e\)  & \sco\(a\) & \tc\(b\)  & \fco\(c\) \\
-                  \hline
-                  \sco\(a\) & \sco\(a\) & \fc\(e\)  & \fco\(c\) & \tc\(b\)  \\
-                  \hline
-                  \tc\(b\)  & \tc\(b\)  & \fco\(c\) & \fc\(e\)  & \sco\(a\) \\
-                  \hline
-                  \fco\(c\) & \fco\(c\) & \tc\(b\)  & \sco\(a\) & \fc\(e\)
-              \end{tabular}\hspace{1.25cm}
-          }
-\newpage
-        \item This proof dealt with using the properties of integral domains, to show that \(D[x]\) is also an integral domain. First, since the coefficients of \(D[x]\) reside in \(D\), I used Theorem 22.2 to check off all but one property of integral domains: zero divisors. So, I just needed to find two nonzero elements in \(D[x]\) and show that their product does not equal 0. So, I let \(f(x)\) be of degree \(n\), and \(g(x)\) of degree \(m\) and multiplied them together, with at least one element in each being nonzero, \(a_{n}\) and \(b_{m}\) respectively. These were what I multiplied together to show that their product is nonzero, using \(D\)'s no zero divisors in the process. 
-
-        Prove that if \(D\) is an integral domain, then \(D[x]\) is an integral domain.
-        \pf{
-            % Must show: D[x] has no divisors of 0, is a commutative ring with unity \(1 \ne 0\).
-            Let \(D\) be an integral domain. We will show that \(D[x]\) satisfies all integral domain axioms. From Theorem 22.2, since \(D\) is an integral domain, it is also a commutative ring with unity \(1 \ne 0\). Hence, \(D[x]\) is also a commutative ring with unity \(1 \ne 0\). So, we are left with showing that \(D[x]\) has no zero divisors. Let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(D[x]\), where \(f(x)\) has degree \(n\), and \(g(x)\) has degree \(m\). Thus, we have
-            \[
-                f(x) = a_{n}x^{n} + \cdots + a_{1}x + a_{0} \quad \text{and} \quad g(x) = b_{m}x^{m} + \cdots + b_{1}x + b_{0},
-            \]
-            where \(a_{n} \ne 0\) and \(b_{m} \ne 0\). Now, consider the product \(f(x)g(x)\). The term with the highest degree in \(f(x)g(x)\) is \(a_{n}b_{m}x^{n+m}\). Since \(D\) is an integral domain, and \(a_{n},b_{m} \ne 0\), we know their product \(a_{n}b_{m} \ne 0\). Therefore, \(f(x)g(x)\) is nonzero. Thus, \(D[x]\) has no 0 divisors, and is an integral domain.
-        }
-
-        \item I actually did this proof incorrectly at first, and only realized it when Noah asked me for a hint on how to start. We both knew that we needed to incorporate all information from the problem (e.g., use \(n,m \in \Z^{+}\) to show that \((a + b)^{n + m} = 0\)), but we initially didn't know how to incorporate the commutativity part of the problem. Then, he realized that we could use the binomial theorem, which just called for two cases to be worked through. 
-
-        An element \(a\) for ring \(R\) is \textbf{nilpotent} if \(a^{n} = 0\) for some \(n \in \Z^{+}\). Show that if \(a\) and \(b\) are nilpotent elts of a commutative ring, then \(a + b\) is also nilpotent. 
+    Prove that \(x^{2} - 3\) is irreducible over \(\Q(\sqrt[3]{2})\).
     \pf{
-        Let \(a,b \in R\), a commutative ring. This means there exists some \(n,m\in \Z^{+}\) for which \(a^{n} = 0\) and \(b^{m} = 0\). Our goal is to show that \((a + b)^{n + m} = 0\). Since \(R\) is a commutative ring, we can use distributive laws and the binomial theorem to help here. Thus, consider the following:
-        \[
-            (a + b)^{n + m} = \sum^{n + m}_{k=0} \binom{n + m}{k} a^{k}b^{(n + m)-k}.
-        \]
-        Note that every element in each term is a multiple of our nilpotent elements, so our goal is to show that each of these elements are 0 for any value of \(k\). Thus, consider these two cases:
-        \begin{itemize}[topsep=2pt]
-            \item \textbf{\(k \ge n\)}: If \(k \ge n\), then \(a^{k} = a^{n}a^{k -n} = 0a^{k - n} = 0\), so the whole term is 0.
-            \item \textbf{\(k < n\)}: Since \(k < n\), it follows that \(-k > -n\). Therefore, \((n + m) - k > n + m - n = m\) (because \(\langle R, + \rangle\) is an abelian group). Since the exponent of \(b\) is greater than \(m\), \(b^{(n + m)-k} = 0\). 
-        \end{itemize}
-        Therefore, we have shown that \((a + b)^{n + m} = 0\).
+
+    }
+\newpage
+    \item (\textbf{Compare and Contrast}) 
+    
+    Let \(\varphi : R \to R'\) be a ring homomorphism and let \(N\) be an ideal of \(R\). Show that \(\varphi[N]\) is an ideal of \(\varphi[R]\).
+    \pf{
+
+    }
+
+    Let \(R\) be a commutative ring and let \(a \in R\). Show that \(I_{a} = \{x \in R \mid ax = 0\}\) is an ideal of \(R\). 
+    \pf{
+
+    }
+\newpage
+    \item 
+
+    Show that a factor ring of a field is either the trivial (zero) ring of one element or is isomorphic to the field. 
+    \pf{
+        Let \(F\) be a field with ideal \(N\). Since \(F\) is a field and \(N\) is an ideal, either \(N = F\) or \(N = \{0\}\). If \(N = F\), then we know from Exercise 18, that for all \(a \in F\), \(\varphi(a) = 0'\). So, the factor ring \(F/F\) consists of only one element (the identity element), it is the trivial ring. Conversely, if \(N = \{0\}\), define a mapping \(\varphi : F \to F/\{0\}\) by \(x + \{0\}\) for \(x \in F\). This mapping is surjective by definition. It is also injective by Exercise 18. Thus, \(\varphi\) is a bijective homomorphism, meaning it is an isomorphism. Therefore, \(F/\{0\} \cong F\).
+    }
+
+    \item 
+
+    Show that each homomorphism from a field to a ring is either one to one or maps everything to 0.
+    \pf{
+        Let \(\varphi : F \to R\) be a ring homomorphism with kernel \(N\). Since \(F\) is a field and \(N\) is an ideal, we know either \(N = F\) or \(N = \{0\}\) because a field can have no proper nontrivial ideals. If \(N = F\), then every element in \(F\) is in \(N\). So, for all \(a \in F\), \(\varphi(a) = 0'\) for \(0' \in R\). If \(N = \{0\}\), then \(\varphi\) is one-to-one.
     }
 \end{enumerate}
 
