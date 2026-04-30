@@ -4,7 +4,7 @@
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 \documentclass[12pt, oneside]{book}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{minted}
 
 % \usepackage[T1]{fontenc}
@@ -423,48 +423,6 @@ enhanced,
     \end{mdframed}
 }
 
-\newcommand{\sbseteqpf}[4]{%
-    \begin{customframedproof}[linecolor=#4]
-        \begin{proof}
-                We need to show these expressions are subsets of each other so we can utilize \thm{subset} to prove they are equal: 
-            \begin{proofpart}[#4]{(\(\subseteq\))}
-                #1
-            \end{proofpart}
-    \vspace{2mm}
-            \begin{proofpart}[#4]{(\(\supseteq\))}
-                #2
-            \end{proofpart}
-    \vspace{2mm}
-            Therefore, by \thm{subset}, #3
-        \end{proof}
-    \end{customframedproof}
-}
-
-\newcommand{\iffpfbase}[5][We show this by proving both implications:]{
-    \begin{customframedproof}[linecolor=#5]
-        \begin{proof}
-            #1 % This is the optional text, with a default value
-            \begin{proofpart}[#5]{(\(\Rightarrow\))}
-                #2
-            \end{proofpart}
-    \vspace{2mm}
-            \begin{proofpart}[#5]{(\(\Leftarrow\))}
-                #3
-            \end{proofpart}
-    \vspace{2mm}
-            #4
-        \end{proof}
-    \end{customframedproof}
-}
-
-
-
-\newcommand{\iffpf}[5][We will show this by proving both implications:]{
-    \raisebox{0.85em}{\begin{minipage}[t]{0.90\textwidth}
-        \iffpfbase[#1]{#2}{#3}{#4}{#5}
-    \end{minipage}}
-}
-
 % Command for lemma proofs with a predefined color
 \newcommand{\expf}[1]{
     \vspace*{-.25cm}
@@ -495,10 +453,18 @@ enhanced,
     \end{customframedproof}
 }
 
+\newcommand{\pf}[1]{
+    \begin{customframedproof}[linecolor=horange!75]
+        \begin{proof}
+        #1
+        \end{proof}
+    \end{customframedproof}
+}
+
 % Need to add in customization for examples
 \newcommand{\sol}[1]{
     \vspace*{-.25cm}
-    \begin{customframedproof}[linecolor=gray!75]
+    \begin{customframedproof}[linecolor=horange!75]
         \begin{solution}
         #1
         \end{solution}
@@ -730,6 +696,11 @@ enhanced,
 \newcommand{\kmb}{\mb{k}}
 \newcommand{\rmb}{\mb{r}}
 \newcommand{\umb}{\mb{u}}
+
+\newcommand{\gen}[1]{\langle #1 \rangle}
+
+\newcommand{\irr}[1]{\text{irr}(#1)}
+
 
 \newcommand{\vecfuc}[2]{\mb{#1}(#2)}
 \newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}

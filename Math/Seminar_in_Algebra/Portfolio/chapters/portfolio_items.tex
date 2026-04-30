@@ -1,0 +1,240 @@
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item This proof works by using Lagrange's Theorem to relate the size of the image to the size of the domain. My strategy was to identify a subset of the domain that partitions it perfectly—the cosets of the kernel—and link those to the image. The difficulty arose when trying to rigorously connect the cosets (\(G/H\)) to the image (\(\varphi[G]\)). Theorem 13.15 saved me here, as it establishes the necessary one-to-one correspondence between cosets and image elements. By establishing that the cosets divide the group order, and that the image has the same size as the set of cosets, we see a clear example of how algebraic structures limit the behavior of functions. The structure of the domain dictates that the image size must be a divisor. 
+
+    Let \(\varphi : G \to G'\) be a group homomorphism. Show that if \(|G|\) is finite, then \(|\varphi[G]|\) is finite and is a divisor of \(|G|\).
+    \pf{
+        Let \(\varphi : G \to G'\) be a group homomorphism, and let \(H = \ker(\varphi)\). Our goal is to show that the order of the preimage of \(G\), \(|\varphi[G]|\), is finite, and a divisor of \(|G|\), given \(G\) is finite. Theorem 13.15 tells us that \(aH = \varphi^{-1}[\{\varphi(a)\}]\) maps a single coset to the same single element \(\varphi(a)\) in the image. This establishes a one-to-one correspondence between the set of all cosets (\(G/H\)) and the set of all images, \(\varphi[G]\). Because there is a one-to-one correspondence, the two sets must have equal size: \(|G/H| = |\varphi[G]|\). Then, by Lagrange's Theorem, since \(G\) is finite, the number of cosets (\(G/H\)) must be a finite number that divides the order of the group, \(|G|\).  Since \(|G/H| = |\varphi[G]|\), it follows that \(|\varphi[G]|\) must also be a finite number that divides \(|G|\).
+    }  
+
+    \item In this proof,  I needed to show that the image is a divisor of the codomain (\(|G'|\)). I realized I didn't need to look at kernels or cosets here; I simply needed to prove that the image \(\varphi[G]\) is a valid subgroup of \(G'\). Once I established that the image is a subgroup using the fundamental properties of homomorphisms, the rest fell into place immediately via Lagrange's Theorem. Thus, I found that because the image satisfies the group axioms to be a subgroup, it is subject to the structural limitations of the parent group, specifically regarding its order.
+
+    Let \(\varphi : G \to G'\) be a group homomorphism. Show that if \(|G'|\) is finite, then \(|\varphi[G]|\) is finite and is a divisor of \(|G'|\).
+    \pf{
+        From Theorem 13.12 (3) (the fundamental properties of homomorphisms), if \(H\) is a subgroup of \(G\), then \(\varphi[H]\) is a subgroup of \(G'\). Now, let \(H = G\). It is certainly true that \(G\) is a subgroup of \(G\), so \(\varphi[G]\) is a subgroup of \(G'\). Then, by Lagrange's Theorem, since \(|G'|\) is finite, the order of its subgroup, \(|\varphi[G]|\) is also a finite number that divides \(|G'|\).
+    }
+\newpage
+    \item This proof is concerned with transitivity through composite maps. I showed that for any three groups connected through two homomorphisms, the composite mapping is also a homomorphism. These types of direct computation proofs are my favorite; by just leveraging definitions, we are able to draw connections between group structures with logical steps that are easily auditable. Consequentially, I found that the structure-preserving property holds up even when we chain multiple systems together, allowing us to build larger mathematical arguments from smaller, verified blocks.
+
+    Show that if \(G\), \(G'\), and \(G''\) are groups and if \(\varphi : G \to G'\) and \(\gamma : G' \to G''\) are homomorphisms, then the composite map \(\gamma \varphi : G \to G''\) is a homomorphism.
+
+    \pf{
+        Let \(a, b \in G\). Then,
+        \begin{align}
+            (\gamma \varphi)(ab) &= \gamma(\varphi(ab)) \\
+            &= \gamma(\varphi(a)\varphi(b)) \\
+            &= \gamma(\varphi(a))\gamma(\varphi(b)) \\
+            &= (\gamma \varphi)(a)(\gamma \varphi)(b).
+        \end{align}
+        Equations (1) and (4) are from the definition of a composite map, and (2) and (3) are from the homomorphic properties of \(\varphi\) and \(\gamma\), respectively. Therefore, we have shown that the composite map is a homomorphism.
+    }
+      
+    \item This proof deals with the specific conditions required for left and right cosets to form identical partitions. My goal was to prove if the partitions are the same, then the element \(g^{-1}hg\) must belong to the subgroup. Writing this required a shift in perspective, moving from thinking about individual element operations to thinking about set equality (\(gH=Hg\)). This proof shows that the property of normality is the structural requirement that allows us to identify factor group candidates from subgroups.
+
+    Let \(H\) be a subgroup of a group \(G\). Prove that if the partition of \(G\) into left cosets of \(H\) is the same as the partition into right cosets of \(H\), then \(g^{-1}hg \in H\) for all \(g \in G\) and all \(h \in H\).
+    \pf{
+        The statement ``If the partition of \(G\) into left cosets of \(H\) is the same as the partition into right cosets of \(H\),'' implies \(gH = Hg\) for all \(g \in G\). Now, let \(g \in G\) and \(h \in H\). Our goal is to show that \(g^{-1}hg \in H\). Consider the element \(hg\). Since \(h \in H\), \(hg \in Hg\). Because \(Hg = gH\), it must be that \(hg \in gH\). By definition of left coset, \(hg \in gH\) means that \(hg = gh'\) for some \(h' \in H\). So, we just solve for this \(h'\). We start by multiplying both sides on the left by \(g^{-1}\):
+        \begin{align*}
+        g^{-1}(hg) &= g^{-1}(gh') \\
+        g^{-1}hg &= (g^{-1}g)h' \\
+        g^{-1}hg &= h'.
+        \end{align*}
+        Since \(h' \in H\), we have shown that \(g^{-1}hg \in H\).
+    }
+
+      
+    \item For this proof, I moved away from theorems to an application involving groups of functions. My goal was to identify the structure of the factor group \(F/K\) by finding a simpler group it is isomorphic to. To do this, I used the Fundamental Homomorphism Theorem: I defined a map that eliminates the constant functions (the kernel), and then used the theorem to show that the quotient group is isomorphic to the image. So, we took a complex structure (\(F/K\)) and used a homomorphism to classify it as being structurally identical to the group of functions rooted at zero.
+
+    Let \(K\) be the subgroup of \(F\) consisting of the constant functions, where \(F\) is the additive group of all functions mapping \(\R\) into \(\R\). Find a subgroup of \(F\) to which \(F / K\) is isomorphic.
+    \pf{
+        Define a homomorphism \(\varphi : F \to F\) by \(\varphi(f) = f(x) - f(0)\). The kernel of this map consists of all functions where \(f(x) - f(0) = 0\), which implies \(f(x)\) is constant, so \(\ker(\varphi) = K\). The image of the map, \(\varphi[F]\), is the set of all functions that evaluate to 0 at \(x = 0\). Since \(\ker(\varphi) = K\), the Fundamental Homomorphism Theorem states that \(F/\ker(\varphi) \cong \varphi[F]\). 
+    }
+    \item \textbf{(Most Improved)} I first solved this problem on the first in-class exam, and did quite poorly, as I forgot the definition of the kernel, and thought the kernel mapped elements to the \textit{multiplicative} identity of \(R'\) instead of the additive. So, in my first approach, I botched the kernel definition, and did not use homomorphic property altogether. However, I was able to provide a general ``idea'' of what I needed to do: Show that \(ab \notin \ker(\varphi)\) by using the fact that \(a,b \notin \ker(\varphi)\) and \(R'\) has no zero divisors. I just did not \textit{show} the process and I went astray with the kernel definition. 
+    
+    Thus, we arrive at the revised proof, where the \textit{correct} definition of the kernel is front and center, in the second sentence. Then, I set \(\varphi(ab) = 0'\) to lead to a contradiction, thus proving that \(ab \notin \ker(\varphi)\). I did this by using the homomorphic property of \(\varphi\) to establish an equality between \(\varphi(ab)\) and \(\varphi(a)\varphi(b)\). Then, I dug a level deeper and pointed out that neither \(\varphi(a)\) nor \(\varphi(b)\) can be equal to \(0'\) by the problem statement. Then, I used \(R'\)'s property as an integral domain, and pointed out that it has no zero divisors, so the product \(\varphi(a)\varphi(b) \ne 0'\). I finished off by connecting the dots: since \(\varphi(a)\varphi(b) \ne 0\), then \(\varphi(ab) \ne 0\), so \(ab \notin \ker(\varphi)\). 
+    
+    Let \(R\) and \(R'\) be rings, let \(\varphi : R \to R'\) be a homomorphism, and let \(a,b \in R\). Prove that if \(R'\) is an integral domain and \(a,b \notin \ker(\varphi)\), then \(ab \notin \ker(\varphi)\). 
+    \pf{
+        Let \(\varphi\) be a homomorphism that exists between rings \(R\) and \(R'\), defined as \(\varphi : R \to R'\), and let \(a,b \in R\). Recall that \(\ker(\varphi) = \{r \in R \mid \varphi(r) = 0'\}\), where \(0'\) is the additive identity of \(R'\). Now, suppose that \(a \notin \ker(\varphi)\), \(b \notin \ker(\varphi)\), and \(R'\) is an integral domain. To show that \(ab \notin \ker(\varphi)\), suppose to the contrary that \(ab \in \ker(\varphi)\) instead. This means \(\varphi(ab) = 0'\). Since \(\varphi\) is a homomorphism, we can expand the left side to get \(\varphi(ab) = \varphi(a)\varphi(b) = 0'\). However, this cannot be true, as \(\varphi(a)\) and \(\varphi(b)\) cannot equal \(0'\), and their product cannot equal \(0'\) since \(R'\) is an integral domain and has no zero divisors. Thus, it must be that \(ab \notin \ker(\varphi)\).   
+    }
+    \item In this proof, my goal was to find a zero in \(\Z_{p}[x]\) that matched any \(a \in \Z_{p}[x]\). I did this by first noting that a polynomial is reducible if it is greater than or equal to 2, and it has a zero. Then, I used a corollary to Fermat's Little Theorem to show that for the \(x^{p}\) term, since it is equivalent to \(x\), we can set \(x = -a\) to get \(-a + a \equiv 0 \pmod{p}\). Thus, since a zero was found, the polynomial is reducible. 
+    
+    Show that for \(p\) a prime, the polynomial \(x^{p} + a\) in \(\Z_{p} [x]\) is not irreducible for any \(a \in \Z_{p}\).
+    \pf{
+        Since \(p\) is prime, the degree of our polynomial is \(p \ge 2\). We know that a polynomial of degree 2 or higher is not irreducible if it has a zero in the field. So, we plan to find a zero. Remember that Corollary 20.2 tells us that \(x^{p} \equiv x \pmod{p}\) for any \(x \in \Z\). Thus, evaluating the polynomial at \(x = -a\) gives
+        \[
+            (-a)^{p} + a \equiv -a + a \equiv 0 \pmod{p}.
+        \]
+        Therefore, we have shown that \(-a\) is a zero, meaning the polynomial can be factored and is not irreducible.
+    }
+\newpage
+    \item \textbf{(A High Point)} In this problem, I used the group of symmetries of the square, \(D_{4}\) in combination with its 8 permutations: \(\rho_{i}\), \(\mu_{i}\), \(\delta_{i}\) for rotations, mirror images, and diagonal flips respectively. I also used the Klein 4-group, which is the simplest abelian group that is not cyclic. Then, I found the left cosets by multiplying \(\{\rho_{0}, \rho_{2}\}\) by each permutation. This gives an isomorphism between \(D_{4}/H\) and \(V\) because they have the exact same structure. I am particularly proud of this problem because of the significance of the two groups in the same problem. Throughout the semester, we had talked extensively about the Klein 4-group, and we had marveled at the all the symmetries of the \(D_{4}\) group. Thus, due to the relevance of these two groups (and the beauty of the tables next to each other), I figured I must include it.
+    
+    Build a table in the order exhibited by the left cosets of the subgroup \(\{\rho_{0}, \rho_{2}\}\) of the group \(D_{4}\). Do you seem to get a coset group of order 4? If so, is it isomorphic to \(\Z_{4}\) or the Klein 4-group \(V\)?
+          \sol{
+              The multiplication table on the left is made up of left cosets for \(D_{4}\). The subgroup \(H = \{\rho_{0}, \rho_{2}\}\) partitions \(D_{4}\) into the four left cosets. Namely, 
+              \[
+                    \{\rho_{0}, \rho_{2}\}, \ \{\rho_{1}, \rho_{3}\}, \ \{\mu_{1}, \mu_{2}\}, \ \{\delta_{1}, \delta_{2}\}.
+              \]
+              Each colored block corresponds to one of these cosets. The table on the right is the multiplication table for the Klein 4-group. Notice that
+              \[
+                  \{\rho_{0}, \rho_{2}\} = e, \ \{\rho_{1}, \rho_{3}\} = a, \ \{\mu_{1}, \mu_{2}\} = b, \ \{\delta_{1}, \delta_{2}\} = c.
+              \]
+              Hence, \(D_{4}/H \cong V\). \\
+
+              \definecolor{first}{HTML}{65d3f5}
+              \definecolor{second}{HTML}{2a9d8f}
+              \definecolor{third}{HTML}{e9c46a}
+              \definecolor{fourth}{HTML}{f4a261}
+              \newcommand{\fc}{\cellcolor{first!80!white}}\newcommand{\sco}{\cellcolor{second!80!white}}\newcommand{\tc}{\cellcolor{third!80!white}}\newcommand{\fco}{\cellcolor{fourth!80!white}}
+              \renewcommand{\arraystretch}{1.5}
+              \hspace{1cm}\begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c|c|c|c|c}
+                  & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) \\
+                  \noalign{\hrule height 1.5pt}
+                  \fc\(\rho_{0}\)    & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) \\
+                  \hline
+                  \fc\(\rho_{2}\)    & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) \\
+                  \hline
+                  \sco\(\rho_{1}\)   & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     \\
+                  \hline
+                  \sco\(\rho_{3}\)   & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     \\
+                  \hline
+                  \tc\(\mu_{1}\)     & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   \\
+                  \hline
+                  \tc\(\mu_{2}\)     & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   \\
+                  \hline
+                  \fco\(\delta_{1}\) & \fco\(\delta_{1}\) & \fco\(\delta_{2}\) & \tc\(\mu_{1}\)     & \tc\(\mu_{2}\)     & \sco\(\rho_{1}\)   & \sco\(\rho_{3}\)   & \fc\(\rho_{0}\)    & \fc\(\rho_{2}\)    \\
+                  \hline
+                  \fco\(\delta_{2}\) & \fco\(\delta_{2}\) & \fco\(\delta_{1}\) & \tc\(\mu_{2}\)     & \tc\(\mu_{1}\)     & \sco\(\rho_{3}\)   & \sco\(\rho_{1}\)   & \fc\(\rho_{2}\)    & \fc\(\rho_{0}\)    \\
+              \end{tabular}\hspace{1.25cm}
+              \begin{tabular}[htbp]{c!{\vrule width 1.5pt}c|c|c|c}
+                            & \fc\(e\)  & \sco\(a\) & \tc\(b\)  & \fco\(c\) \\
+                  \noalign{\hrule height 1.5pt}
+                  \fc\(e\)  & \fc\(e\)  & \sco\(a\) & \tc\(b\)  & \fco\(c\) \\
+                  \hline
+                  \sco\(a\) & \sco\(a\) & \fc\(e\)  & \fco\(c\) & \tc\(b\)  \\
+                  \hline
+                  \tc\(b\)  & \tc\(b\)  & \fco\(c\) & \fc\(e\)  & \sco\(a\) \\
+                  \hline
+                  \fco\(c\) & \fco\(c\) & \tc\(b\)  & \sco\(a\) & \fc\(e\)
+              \end{tabular}\hspace{1.25cm}
+          }
+\newpage
+        \item This proof dealt with using the properties of integral domains, to show that \(D[x]\) is also an integral domain. First, since the coefficients of \(D[x]\) reside in \(D\), I used Theorem 22.2 to check off all but one property of integral domains: zero divisors. So, I just needed to find two nonzero elements in \(D[x]\) and show that their product does not equal 0. So, I let \(f(x)\) be of degree \(n\), and \(g(x)\) of degree \(m\) and multiplied them together, with at least one element in each being nonzero, \(a_{n}\) and \(b_{m}\) respectively. These were what I multiplied together to show that their product is nonzero, using \(D\)'s no zero divisors in the process. 
+
+        Prove that if \(D\) is an integral domain, then \(D[x]\) is an integral domain.
+        \pf{
+            % Must show: D[x] has no divisors of 0, is a commutative ring with unity \(1 \ne 0\).
+            Let \(D\) be an integral domain. We will show that \(D[x]\) satisfies all integral domain axioms. From Theorem 22.2, since \(D\) is an integral domain, it is also a commutative ring with unity \(1 \ne 0\). Hence, \(D[x]\) is also a commutative ring with unity \(1 \ne 0\). So, we are left with showing that \(D[x]\) has no zero divisors. Let \(f(x)\) and \(g(x)\) be nonzero polynomials in \(D[x]\), where \(f(x)\) has degree \(n\), and \(g(x)\) has degree \(m\). Thus, we have
+            \[
+                f(x) = a_{n}x^{n} + \cdots + a_{1}x + a_{0} \quad \text{and} \quad g(x) = b_{m}x^{m} + \cdots + b_{1}x + b_{0},
+            \]
+            where \(a_{n} \ne 0\) and \(b_{m} \ne 0\). Now, consider the product \(f(x)g(x)\). The term with the highest degree in \(f(x)g(x)\) is \(a_{n}b_{m}x^{n+m}\). Since \(D\) is an integral domain, and \(a_{n},b_{m} \ne 0\), we know their product \(a_{n}b_{m} \ne 0\). Therefore, \(f(x)g(x)\) is nonzero. Thus, \(D[x]\) has no 0 divisors, and is an integral domain.
+        }
+
+        \item I actually did this proof incorrectly at first, and only realized it when Noah asked me for a hint on how to start. We both knew that we needed to incorporate all information from the problem (e.g., use \(n,m \in \Z^{+}\) to show that \((a + b)^{n + m} = 0\)), but we initially didn't know how to incorporate the commutativity part of the problem. Then, he realized that we could use the binomial theorem, which just called for two cases to be worked through. 
+
+        An element \(a\) for ring \(R\) is \textbf{nilpotent} if \(a^{n} = 0\) for some \(n \in \Z^{+}\). Show that if \(a\) and \(b\) are nilpotent elts of a commutative ring, then \(a + b\) is also nilpotent. 
+    \pf{
+        Let \(a,b \in R\), a commutative ring. This means there exists some \(n,m\in \Z^{+}\) for which \(a^{n} = 0\) and \(b^{m} = 0\). Our goal is to show that \((a + b)^{n + m} = 0\). Since \(R\) is a commutative ring, we can use distributive laws and the binomial theorem to help here. Thus, consider the following:
+        \[
+            (a + b)^{n + m} = \sum^{n + m}_{k=0} \binom{n + m}{k} a^{k}b^{(n + m)-k}.
+        \]
+        Note that every element in each term is a multiple of our nilpotent elements, so our goal is to show that each of these elements are 0 for any value of \(k\). Thus, consider these two cases:
+        \begin{itemize}[topsep=2pt]
+            \item \textbf{\(k \ge n\)}: If \(k \ge n\), then \(a^{k} = a^{n}a^{k -n} = 0a^{k - n} = 0\), so the whole term is 0.
+            \item \textbf{\(k < n\)}: Since \(k < n\), it follows that \(-k > -n\). Therefore, \((n + m) - k > n + m - n = m\) (because \(\langle R, + \rangle\) is an abelian group). Since the exponent of \(b\) is greater than \(m\), \(b^{(n + m)-k} = 0\). 
+        \end{itemize}
+        Therefore, we have shown that \((a + b)^{n + m} = 0\).
+    }
+    \item (\textbf{Major Theorem}) This is Kronecker's Theorem, and referenced throughout \textit{A First Course in Abstract Algebra} by John Fraleigh and Victor Katz as the ``basic goal'' they are trying to accomplish. That is, ``to show that any nonconstant polynomial \(f(x)\) in \(F[x]\) has a zero in some field \(E\) containing \(F\)'' (pg. 250). Thus, I thought it appropriate to include it as a Major Theorem in this portfolio. The proof itself involves irreducible polynomials, factor rings, an isomorphism, cosets, and the evaluation homomorphism. It highlights the importance of using maps to achieve structure by embedding our original field into a factor ring where the missing root emerges.
+    
+    For this proof, I thought that defining \(\alpha = x + \gen{p}\) was a very clever technique. By treating the determinant \(x\) itself as the representative of a coset, we force the polynomial to evaluate to its own ideal, which acts as the zero element in the new field.
+    
+    Let \(F\) be a field and let \(f(x)\) be a nonconstant polynomial in \(F[x]\). Then there exists an extension field \(E\) of \(F\) and an \(\alpha \in E\) such that \(f(\alpha) = 0\).
+    \pf{
+        Let \(F\) be a field, and let \(f(x)\) be a nonconstant polynomial in \(F[x]\). Then, by Theorem 23.20, we can write this \(f(x)\) as a product of irreducible polynomials over \(F\). Let \(p(x)\) be a polynomial in this factorization with \(\deg(p(x)) > 1\). Then, by Theorem 27.25, since this polynomial is irreducible over \(F\), \(\gen{p(x)}\) is a maximal ideal of \(F[x]\). Hence, \(E = F[x]/\gen{p(x)}\) is a field. Now, to show that \(F\) is a subfield of \(E\), let \(\psi : F \to F[x]/\gen{p(x)}\) be given by \(a \mapsto a + \gen{p(x)}\) for \(a \in F\). To show that this map is a homomorphism, let \(a,b \in F\). We check the operations of addition and multiplication:
+        \[
+            \psi(a + b) = (a + b) + \gen{p(x)} = (a + \gen{p(x)}) + (b + \gen{p(x)}) = \psi(a) + \psi(b)
+        \]
+        \[
+            \psi(ab) = (ab) + \gen{p(x)} = (a + \gen{p(x)})(b + \gen{p(x)}) = \psi(a)\psi(b)
+        \]
+        Thus, \(\psi\) is a homomorphism.
+        
+        Next, we show that \(\psi\) is one-to-one so that we can identify \(F\) with a subfield of \(E\). Suppose \(\psi(a) = \psi(b)\) for some \(a,b \in F\). Then \(a + \gen{p(x)} = b + \gen{p(x)}\), which implies \(a - b \in \gen{p(x)}\). Because \(a,b \in F\), their difference \(a - b\) is a constant polynomial. However, the ideal \(\gen{p(x)}\) only consists of multiples of \(p(x)\). Since \(\deg(p(x)) > 1\), the only constant polynomial in \(\gen{p(x)}\) is 0. Therefore, \(a - b = 0\), meaning \(a = b\). This shows \(\psi\) is one-to-one, and that there is an isomorphic copy of \(F\) in \(E\): \(\{a + \gen{p(x)} \mid a \in F\}\). 
+
+        Finally, let \(\alpha = x + \gen{p(x)} \in E\). We must show that \(\alpha\) is a root of \(f(x)\). Since \(p(x)\) is a factor of \(f(x)\), we can write \(f(x) = p(x)q(x)\) for some \(q(x) \in F[x]\). Let \(p(x) = a_{0} + a_{1}x + \cdots + a_{n}x^{n}\). We use the evaluation homomorphism \(\varphi_{\alpha} : F[x] \to E\) to find 
+        \begin{align*}
+            \varphi_{\alpha}(p(x)) &= a_{0} + a_{1}(x + \gen{p(x)}) + \cdots a_{n}(x + \gen{p(x)})^{n}
+            \intertext{We can choose \(x\) to be representative of the coset \(x + \gen{p(x)}\) so that}
+            p(\alpha) &= (a_{0} + a_{1}x + \cdots + a_{n}x^{n}) + \gen{p(x)} \\
+            p(\alpha) &= p(x) + \gen{p(x)} \\
+            p(\alpha) &= \gen{p(x)}.
+        \end{align*}
+        Thus, \(p(\alpha) = \varphi_{\alpha}(p(x)) = 0\) in \(E\). Therefore, \(\alpha \in F[x]/\gen{p(x)}\) such that \(f(\alpha) = 0\).
+    }
+    \item (\textbf{High Point}) I am very proud of this solution, as solving the problem outright is not possible, and requires building another finite extension to use the Tower Theorem (Theorem 31.4). So, I took the given field extension \(\Q(\sqrt{2}, \sqrt[3]{2})\) and found another field for which it was also an extension for: \(\Q(\sqrt[3]{2})\). This new field allowed me to build the tower, by also being an extension of \(\Q\). Thus, I had two bases, and 2 field extensions, so I could use the Tower Theorem and finally answer the main problem. This solution was a bit tedious, but the reward from checking the edge cases was worth it.
+    
+    Find the degree and basis for the field extension \(\Q(\sqrt{2}, \sqrt[3]{2})\) over \(\Q\).
+    \sol{
+        We start by showing that \(\sqrt{2} \notin \Q(\sqrt[3]{2})\) because \(\deg(\sqrt{2}, \Q) = 2\) and 2 is not a divisor of \(3 = \deg(\sqrt[3]{2}, \Q)\). Therefore, we have \(\Q(\sqrt{2}, \sqrt[3]{2})\) over \(\Q(\sqrt[3]{2})\) with \(f(x) = x^{2} - 2\). Thus, 
+		\[
+			[\Q(\sqrt{2}, \sqrt[3]{2}) : \Q(\sqrt[3]{2})] = \deg(f(x)) = 2.
+		\]
+		Then, we find \(\Q(\sqrt[3]{2})\) over \(\Q\) has degree \([\Q(\sqrt[3]{2}) : \Q] = 3\) for \(g(x) = x^{3} - 2\). Then, we use Theorem 30.23 to produce bases \(\{1, \sqrt{2}\}\) for \(\Q(\sqrt{2}, \sqrt[3]{2})\) over \(\Q(\sqrt[3]{2})\), and \(\{1, \sqrt[3]{2}, (\sqrt[3]{2})^{2}\}\) for \(\Q(\sqrt[3]{2})\) over \(\Q\). By Theorem 31.4, we find 
+		\[
+			[\Q(\sqrt{2}, \sqrt[3]{2}) : \Q] = [\Q(\sqrt{2}, \sqrt[3]{2}) : \Q(\sqrt[3]{2})][\Q(\sqrt[3]{2}) : \Q] = 6,
+		\] 
+		and we get a basis (from the proof of Theorem 31.4):
+		\[
+			\{1, \sqrt{2}, \sqrt[3]{2}, \sqrt{2}\sqrt[3]{2}, (\sqrt[3]{2})^{2}, \sqrt{2}(\sqrt[3]{2})^{2}\}
+		\]
+		for \(\Q(\sqrt{2}, \sqrt[3]{2})\) over \(\Q\). Finally, we note that \(f(x)\) is irreducible over \(\Q(\sqrt[3]{2})\) by Theorem 23.10, and \(g(x)\) is irreducible over \(\Q\) by Eisenstein's criterion for \(p = 2\).
+    }
+    
+\newpage
+    \item (\textbf{Compare and Contrast}) These two proofs deal with finding ideals of a ring through different methods. In both proofs, I needed to show two things: the ideal in question is a subring, and that when elements in \(R\) are multiplied by the ideal, that they stay within the ideal. The first accomplishes this by using Theorem 26.3, which gives \(\varphi[N]\) as a subring of \(\varphi[R]\), since \(N\) is a subring of \(R\). Then, I started with arbitrary \(x \in \varphi[R]\) and \(y \in \varphi[N]\), and used \(N\)'s ideal property along with the homomorphism property of \(\varphi\) to show that \(xy\) and \(yx\) are contained in \(\varphi[N]\). Then, for the second proof, I proved that \(I_{a}\) is a subring of \(R\) without using the commutativity of \(R\), but by purely just using the properties of rings and the definition of \(I_{a}\). Proving the second property of ideals did require using commutativity, as showing \(rx \in I_{a}\) would be impossible without it. Thus, even though the technique used for both of these proofs are distinct in nature, it shows that we can get ideals of rings through maps, or by the structure of the ideal itself.
+    
+    Let \(\varphi : R \to R'\) be a ring homomorphism and let \(N\) be an ideal of \(R\). Show that \(\varphi[N]\) is an ideal of \(\varphi[R]\).
+    \pf{
+        To prove that \(\varphi[N]\) is an ideal of \(\varphi[R]\), we must show that \(\varphi[N]\) is a subring, and for an \(x \in \varphi[R]\), that \(x\varphi[N] \subseteq \varphi[N]\) and \(\varphi[N]x \subseteq \varphi[N]\). Since \(N\) is an ideal of \(R\), \(N\) is a subring of \(R\). Then, by Theorem 26.3, we know that \(\varphi[N]\) is a subring of \(\varphi[R]\) as well. To show the second ideal property, let \(x \in \varphi[R]\) and \(y \in \varphi[N]\). By the definition of image, there exists some \(r \in R\) such that \(x = \varphi(r)\) and some \(n \in N\) such that \(y = \varphi(n)\). Since \(N\) is an ideal of \(R\), we get \(rn \in N\) and \(nr \in N\). Therefore, we find:
+        \begin{align*}
+            xy = \varphi(r)\varphi(n) = \varphi(rn) &\in \varphi[N] \\
+            yx = \varphi(n)\varphi(r) = \varphi(nr) &\in \varphi[N].
+        \end{align*}
+        Therefore, \(\varphi[N]\) is an ideal of \(\varphi[R]\).
+    }
+
+    Let \(R\) be a commutative ring and let \(a \in R\). Show that \(I_{a} = \{x \in R \mid ax = 0\}\) is an ideal of \(R\). 
+    \pf{
+        To prove that \(I_{a}\) is a subring of \(R\), we must show the following:
+        \begin{enumerate}[label=(\arabic*)]
+            \item \(0\in I_a\) because \(a\cdot 0=0\).
+            \item If \(b,c\in I_a\) then \(a(b-c) = ab-ac = 0 - 0 = 0\) by the distributive laws of \(R\) and the definition of \(I_{a}\). Thus, \(b-c\in I_a\).
+            \item If \(b,c\in I_a\) then \(a(bc) = (ab)c = 0 \cdot c = 0\) by the associativity from \(R\) and the definition of \(I_{a}\). Thus, \(bc\in I_a\).
+        \end{enumerate}
+        Therefore, \(I_a\) is a subring of \(R\). Thus, we need only show that \(xr \in I_a\) and \(rx \in I_a\) for \(x \in I_a\) and \(r \in R\). Thus, consider the following:
+        \[
+            a(xr) = (ax)r = 0 \cdot r = 0.
+        \]
+        So, \(xr \in I_{a}\). Now, since \(R\) is a commutative ring, we can rearrange \(a(rx)\):
+        \[
+            a(rx) = a(xr) = 0.
+        \]
+        So, \(rx \in I_{a}\). Therefore, we have shown that \(I_{a}\) is an ideal of \(R\).
+    }
+
+    \item (\textbf{Touchstone}) This proof is beautiful because it highlights how rigid fields are. That is, unlike rings or groups, which can be broken down into smaller factor structures through ideals or normal subgroups, fields cannot. Because a field possesses no nontrivial ideals, applying a map only yields two outcomes: we either compress the whole structure into the trivial ring, or we preserve it through an isomorphic copy. Thus, fields are a foundational building block that cannot be structurally broken down without collapsing entirely.
+
+    Show that a factor ring of a field is either the trivial (zero) ring of one element or is isomorphic to the field. 
+    \pf{
+        Let \(F\) be a field with ideal \(N\). Since \(F\) is a field and \(N\) is an ideal, either \(N = F\) or \(N = \{0\}\). If \(N = F\), then we know from Exercise 18, Section 26, that for all \(a \in F\), \(\varphi(a) = 0'\). So, the factor ring \(F/F\) consists of only one element (the identity element), so it is the trivial ring. Conversely, if \(N = \{0\}\), define a mapping \(\varphi : F \to F/\{0\}\) by \(x + \{0\}\) for \(x \in F\). This mapping is surjective by definition. It is also injective by Exercise 18, Section 26. Thus, \(\varphi\) is a bijective homomorphism, meaning it is an isomorphism. Therefore, \(F/\{0\} \cong F\).
+    }
+
+    \item (\textbf{Touchstone}) I like this proof because it is so elegant. In it, I essentially just link theorems together to make a conclusion. Reading the proof statement basically tells you exactly what the theorems are stating without needing to know what the theorems actually say. 
+
+    Let \(R\) be a finite commutative ring with unity. Show that every prime ideal in \(R\) is a maximal ideal.
+	\pf{
+		Let \(N\) be a prime ideal in \(R\). Since \(R\) is finite, the number of cosets in \(R/N\) must also be finite. Because \(N\) is a prime ideal, \(R/N\) is a finite integral domain by Theorem 27.15. Then, by Theorem 19.11, \(R/N\) is a field. Hence, \(N\) is a maximal ideal by Theorem 27.9.  
+	}
+\end{enumerate}

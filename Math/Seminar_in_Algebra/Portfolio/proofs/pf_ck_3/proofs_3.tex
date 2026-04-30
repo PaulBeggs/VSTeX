@@ -697,6 +697,8 @@ enhanced,
 \newcommand{\rmb}{\mb{r}}
 \newcommand{\umb}{\mb{u}}
 
+\newcommand{\gen}[1]{\langle #1 \rangle}
+
 \newcommand{\irr}[1]{\text{irr}(#1)}
 
 
@@ -786,38 +788,63 @@ enhanced,
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 \begin{enumerate}[label=\textbf{\arabic*.}]
-    \item (\textbf{Major Theorem}) 
+    \item (\textbf{Major Theorem}) This is Kronecker's Theorem, and referenced throughout \textit{A First Course in Abstract Algebra} by John Fraleigh and Victor Katz as the ``basic goal'' they are trying to accomplish. That is, ``to show that any nonconstant polynomial \(f(x)\) in \(F[x]\) has a zero in some field \(E\) containing \(F\)'' (pg. 250). Thus, I thought it appropriate to include it as a Major Theorem in this portfolio. The proof itself involves irreducible polynomials, factor rings, an isomorphism, cosets, and the evaluation homomorphism. It highlights the importance of using maps to achieve structure by embedding our original field into a factor ring where the missing root emerges.
     
-    Let \(E\) be a simple extension \(F(\alpha)\) of a field \(F\), and let \(\alpha\) be algebraic over \(F\). Let the degree of \(\irr{\alpha, F}\) be \(n \ge 1\). Then, every element \(\beta\) of \(E = F(\alpha)\) can be uniquely expressed in the form 
-    \[
-        \beta = b_{0} + b_{1}\alpha + \cdots + b_{n-1}\alpha^{n-1},
-    \]
-    where the \(b_{i}\) are in \(F\).
-    \pf{
-        My proof.
-    }
-    \item (\textbf{Compare and Contrast}) For both of these proofs, I was working with rings of polynomials where the coefficients of the rings are elements of fields. The first dealt with the field \(\Z_{p}\), and the second with \(\Q\) I needed to first find a zero, and then prove that a zero cannot exist in the field to 
+    For this proof, I thought that defining \(\alpha = x + \gen{p}\) was a very clever technique. By treating the determinant \(x\) itself as the representative of a coset, we force the polynomial to evaluate to its own ideal, which acts as the zero element in the new field.
     
-    Show that for \(p\) a prime, the polynomial \(x^{p} + a\) in \(\Z_{p} [x]\) is not irreducible for any \(a \in \Z_{p}\).
+    Let \(F\) be a field and let \(f(x)\) be a nonconstant polynomial in \(F[x]\). Then there exists an extension field \(E\) of \(F\) and an \(\alpha \in E\) such that \(f(\alpha) = 0\).
     \pf{
-        Since \(p\) is prime, the degree of our polynomial is \(p \ge 2\). We know that a polynomial of degree 2 or higher is not irreducible if it has a zero in the field. So, we plan to find a zero. Recall that the Corollary to the Little Theorem of Fermat tells us that \(x^{p} \equiv x \pmod{p}\) for any \(x \in \Z\). Thus, evaluating the polynomial at \(x = -a\) gives
+        Let \(F\) be a field, and let \(f(x)\) be a nonconstant polynomial in \(F[x]\). Then, by Theorem 23.20, we can write this \(f(x)\) as a product of irreducible polynomials over \(F\). Let \(p(x)\) be a polynomial in this factorization with \(\deg(p(x)) > 1\). Then, by Theorem 27.25, since this polynomial is irreducible over \(F\), \(\gen{p(x)}\) is a maximal ideal of \(F[x]\). Hence, \(E = F[x]/\gen{p(x)}\) is a field. Now, to show that \(F\) is a subfield of \(E\), let \(\psi : F \to F[x]/\gen{p(x)}\) be given by \(a \mapsto a + \gen{p(x)}\) for \(a \in F\). To show that this map is a homomorphism, let \(a,b \in F\). We check the operations of addition and multiplication:
         \[
-            (-a)^{p} + a \equiv -a + a \equiv 0 \pmod{p}.
+            \psi(a + b) = (a + b) + \gen{p(x)} = (a + \gen{p(x)}) + (b + \gen{p(x)}) = \psi(a) + \psi(b)
         \]
-        Therefore, we have shown that \(-a\) is a zero, meaning the polynomial can be factored and is not irreducible.
-    }
+        \[
+            \psi(ab) = (ab) + \gen{p(x)} = (a + \gen{p(x)})(b + \gen{p(x)}) = \psi(a)\psi(b)
+        \]
+        Thus, \(\psi\) is a homomorphism.
+        
+        Next, we show that \(\psi\) is one-to-one so that we can identify \(F\) with a subfield of \(E\). Suppose \(\psi(a) = \psi(b)\) for some \(a,b \in F\). Then \(a + \gen{p(x)} = b + \gen{p(x)}\), which implies \(a - b \in \gen{p(x)}\). Because \(a,b \in F\), their difference \(a - b\) is a constant polynomial. However, the ideal \(\gen{p(x)}\) only consists of multiples of \(p(x)\). Since \(\deg(p(x)) > 1\), the only constant polynomial in \(\gen{p(x)}\) is 0. Therefore, \(a - b = 0\), meaning \(a = b\). This shows \(\psi\) is one-to-one, and that there is an isomorphic copy of \(F\) in \(E\): \(\{a + \gen{p(x)} \mid a \in F\}\). 
 
-    Prove that \(x^{2} - 3\) is irreducible over \(\Q(\sqrt[3]{2})\).
-    \pf{
-        Suppose, for the sake of a contradiction, that \(x^{2} - 3\) is not irreducible over \(\Q(\sqrt[3]{2})\). That is, \(\sqrt{3} \in \Q(\sqrt[3]{2})\), so \(\Q(\sqrt{3})\) is a field extension of \(\Q(\sqrt[3]{2})\). Then, by Theorem 31.4, \([\Q(\sqrt[3]{2}) : \Q] = [\Q(\sqrt[3]{2}) : \Q(\sqrt{3})] \cdot [\Q(\sqrt{3}) : \Q]\). We know \([\Q(\sqrt[3]{2}) : \Q] = 3\) and \([\Q(\sqrt{3}) : \Q] = 2\). This would mean \(3 = [\Q(\sqrt[3]{2}) : \Q(\sqrt{3})] \cdot 2\), implying 2 divides 3, which is not true. Therefore, \(\sqrt{3} \notin \Q(\sqrt[3]{2})\), and by Theorem 23.10, the polynomial \(x^{2} - 3\) is irreducible.
+        Finally, let \(\alpha = x + \gen{p(x)} \in E\). We must show that \(\alpha\) is a root of \(f(x)\). Since \(p(x)\) is a factor of \(f(x)\), we can write \(f(x) = p(x)q(x)\) for some \(q(x) \in F[x]\). Let \(p(x) = a_{0} + a_{1}x + \cdots + a_{n}x^{n}\). We use the evaluation homomorphism \(\varphi_{\alpha} : F[x] \to E\) to find 
+        \begin{align*}
+            \varphi_{\alpha}(p(x)) &= a_{0} + a_{1}(x + \gen{p(x)}) + \cdots a_{n}(x + \gen{p(x)})^{n}
+            \intertext{We can choose \(x\) to be representative of the coset \(x + \gen{p(x)}\) so that}
+            p(\alpha) &= (a_{0} + a_{1}x + \cdots + a_{n}x^{n}) + \gen{p(x)} \\
+            p(\alpha) &= p(x) + \gen{p(x)} \\
+            p(\alpha) &= \gen{p(x)}.
+        \end{align*}
+        Thus, \(p(\alpha) = \varphi_{\alpha}(p(x)) = 0\) in \(E\). Therefore, \(\alpha \in F[x]/\gen{p(x)}\) such that \(f(\alpha) = 0\).
     }
+    \item (\textbf{High Point}) I am very proud of this solution, as solving the problem outright is not possible, and requires building another finite extension to use the Tower Theorem (Theorem 31.4). So, I took the given field extension \(\Q(\sqrt{2}, \sqrt[3]{2})\) and found another field for which it was also an extension for: \(\Q(\sqrt[3]{2})\). This new field allowed me to build the tower, by also being an extension of \(\Q\). Thus, I had two bases, and 2 field extensions, so I could use the Tower Theorem and finally answer the main problem. This solution was a bit tedious, but the reward from checking the edge cases was worth it.
+    
+    Find the degree and basis for the field extension \(\Q(\sqrt{2}, \sqrt[3]{2})\) over \(\Q\).
+    \sol{
+        We start by showing that \(\sqrt{2} \notin \Q(\sqrt[3]{2})\) because \(\deg(\sqrt{2}, \Q) = 2\) and 2 is not a divisor of \(3 = \deg(\sqrt[3]{2}, \Q)\). Therefore, we have \(\Q(\sqrt{2}, \sqrt[3]{2})\) over \(\Q(\sqrt[3]{2})\) with \(f(x) = x^{2} - 2\). Thus, 
+		\[
+			[\Q(\sqrt{2}, \sqrt[3]{2}) : \Q(\sqrt[3]{2})] = \deg(f(x)) = 2.
+		\]
+		Then, we find \(\Q(\sqrt[3]{2})\) over \(\Q\) has degree \([\Q(\sqrt[3]{2}) : \Q] = 3\) for \(g(x) = x^{3} - 2\). Then, we use Theorem 30.23 to produce bases \(\{1, \sqrt{2}\}\) for \(\Q(\sqrt{2}, \sqrt[3]{2})\) over \(\Q(\sqrt[3]{2})\), and \(\{1, \sqrt[3]{2}, (\sqrt[3]{2})^{2}\}\) for \(\Q(\sqrt[3]{2})\) over \(\Q\). By Theorem 31.4, we find 
+		\[
+			[\Q(\sqrt{2}, \sqrt[3]{2}) : \Q] = [\Q(\sqrt{2}, \sqrt[3]{2}) : \Q(\sqrt[3]{2})][\Q(\sqrt[3]{2}) : \Q] = 6,
+		\] 
+		and we get a basis (from the proof of Theorem 31.4):
+		\[
+			\{1, \sqrt{2}, \sqrt[3]{2}, \sqrt{2}\sqrt[3]{2}, (\sqrt[3]{2})^{2}, \sqrt{2}(\sqrt[3]{2})^{2}\}
+		\]
+		for \(\Q(\sqrt{2}, \sqrt[3]{2})\) over \(\Q\). Finally, we note that \(f(x)\) is irreducible over \(\Q(\sqrt[3]{2})\) by Theorem 23.10, and \(g(x)\) is irreducible over \(\Q\) by Eisenstein's criterion for \(p = 2\).
+    }
+    
 \newpage
-    \item (\textbf{Compare and Contrast}) These two proofs deal with finding ideals of a ring through distinct methods. In both proofs, I needed to show two things: the ideal in question is a subring, and that when elements in \(R\) are multiplied by the ideal, that they stay within the ideal. The first accomplishes this by using Theorem 26.3, which gives \(\varphi[N]\) as a subfield of \(\varphi[R]\), since \(N\) is a subring of \(R\). Then, for the second property, I utilized the homomorphism property of \(\varphi\) to get an element \(r \in R\) from the map \(\varphi(r) \in \varphi[R]\) and multiply it by \(\varphi[N]\). Then, for the second proof, I proved that \(I_{a}\) is a subring of \(R\) without using the commutativity of \(R\), but by purely just using the properties of rings and the definition of \(I_{a}\). Proving the second property of ideals did require using commutativity, as showing \(rx \in I_{a}\) would be impossible without it. Thus, even though the technique used for both of these proofs are distinct in nature, it shows that we can get ideals of rings through maps, or by the structure of the ideal itself.
+    \item (\textbf{Compare and Contrast}) These two proofs deal with finding ideals of a ring through different methods. In both proofs, I needed to show two things: the ideal in question is a subring, and that when elements in \(R\) are multiplied by the ideal, that they stay within the ideal. The first accomplishes this by using Theorem 26.3, which gives \(\varphi[N]\) as a subring of \(\varphi[R]\), since \(N\) is a subring of \(R\). Then, I started with arbitrary \(x \in \varphi[R]\) and \(y \in \varphi[N]\), and used \(N\)'s ideal property along with the homomorphism property of \(\varphi\) to show that \(xy\) and \(yx\) are contained in \(\varphi[N]\). Then, for the second proof, I proved that \(I_{a}\) is a subring of \(R\) without using the commutativity of \(R\), but by purely just using the properties of rings and the definition of \(I_{a}\). Proving the second property of ideals did require using commutativity, as showing \(rx \in I_{a}\) would be impossible without it. Thus, even though the technique used for both of these proofs are distinct in nature, it shows that we can get ideals of rings through maps, or by the structure of the ideal itself.
     
     Let \(\varphi : R \to R'\) be a ring homomorphism and let \(N\) be an ideal of \(R\). Show that \(\varphi[N]\) is an ideal of \(\varphi[R]\).
     \pf{
-        % To prove that \(\varphi[N]\) is an ideal of \(\varphi[R]\), we must show that \(\varphi[N]\) is a subring, and for an \(x \in \varphi[R]\), that \(x\varphi[N] \subseteq \varphi[N]\) and \(\varphi[N]x \subseteq \varphi[N]\). Since \(N\) is an ideal of \(R\), \(N\) is a subring of \(R\). Then, by Theorem 26.3, we know that \(\varphi[N]\) is a subring of \(\varphi[R]\) as well. For the second ideal property, we first note that since \(x \in \varphi[R]\), there must be an \(\varphi^{-1}(x) \in R\) for which \(x = \varphi^{-1}(x)\). Since \(N\) is an ideal, we get \(rn \in N\) and \(nr \in N\). Therefore, we find \(\varphi(rn) = \varphi(r)\varphi(n) \in \varphi[N]\) and \(\varphi(nr) = \varphi(n)\varphi(r) \in \varphi[N]\). Therefore, \(\varphi[N]\) is an ideal of \(\varphi[R]\).
-        To prove that \(\varphi[N]\) is an ideal of \(\varphi[R]\), we must show that \(\varphi[N]\) is a subring, and for all \(r \in R\), that for all \(\varphi(r) \in \varphi[R]\), \(\varphi(r)\varphi[N] \subseteq \varphi[N]\) and \(\varphi[N]\varphi(r) \subseteq \varphi[N]\). Since \(N\) is an ideal of \(R\), \(N\) is a subring of \(R\). Then, by Theorem 26.3, we know that \(\varphi[N]\) is a subring of \(\varphi[R]\) as well. To show the second ideal property, let \(r \in R\) and \(n \in N\). Since \(N\) is an ideal, we get \(rn \in N\) and \(nr \in N\). Therefore, we find \(\varphi(rn) = \varphi(r)\varphi(n) \in \varphi[N]\) and \(\varphi(nr) = \varphi(n)\varphi(r) \in \varphi[N]\). Therefore, \(\varphi[N]\) is an ideal of \(\varphi[R]\).
+        To prove that \(\varphi[N]\) is an ideal of \(\varphi[R]\), we must show that \(\varphi[N]\) is a subring, and for an \(x \in \varphi[R]\), that \(x\varphi[N] \subseteq \varphi[N]\) and \(\varphi[N]x \subseteq \varphi[N]\). Since \(N\) is an ideal of \(R\), \(N\) is a subring of \(R\). Then, by Theorem 26.3, we know that \(\varphi[N]\) is a subring of \(\varphi[R]\) as well. To show the second ideal property, let \(x \in \varphi[R]\) and \(y \in \varphi[N]\). By the definition of image, there exists some \(r \in R\) such that \(x = \varphi(r)\) and some \(n \in N\) such that \(y = \varphi(n)\). Since \(N\) is an ideal of \(R\), we get \(rn \in N\) and \(nr \in N\). Therefore, we find:
+        \begin{align*}
+            xy = \varphi(r)\varphi(n) = \varphi(rn) &\in \varphi[N] \\
+            yx = \varphi(n)\varphi(r) = \varphi(nr) &\in \varphi[N].
+        \end{align*}
+        Therefore, \(\varphi[N]\) is an ideal of \(\varphi[R]\).
     }
 
     Let \(R\) be a commutative ring and let \(a \in R\). Show that \(I_{a} = \{x \in R \mid ax = 0\}\) is an ideal of \(R\). 
@@ -838,20 +865,20 @@ enhanced,
         \]
         So, \(rx \in I_{a}\). Therefore, we have shown that \(I_{a}\) is an ideal of \(R\).
     }
-\newpage
-    \item  
+
+    \item (\textbf{Touchstone}) This proof is beautiful because it highlights how rigid fields are. That is, unlike rings or groups, which can be broken down into smaller factor structures through ideals or normal subgroups, fields cannot. Because a field possesses no nontrivial ideals, applying a map only yields two outcomes: we either compress the whole structure into the trivial ring, or we preserve it through an isomorphic copy. Thus, fields are a foundational building block that cannot be structurally broken down without collapsing entirely.
 
     Show that a factor ring of a field is either the trivial (zero) ring of one element or is isomorphic to the field. 
     \pf{
-        Let \(F\) be a field with ideal \(N\). Since \(F\) is a field and \(N\) is an ideal, either \(N = F\) or \(N = \{0\}\). If \(N = F\), then we know from Exercise 18, that for all \(a \in F\), \(\varphi(a) = 0'\). So, the factor ring \(F/F\) consists of only one element (the identity element), it is the trivial ring. Conversely, if \(N = \{0\}\), define a mapping \(\varphi : F \to F/\{0\}\) by \(x + \{0\}\) for \(x \in F\). This mapping is surjective by definition. It is also injective by Exercise 18. Thus, \(\varphi\) is a bijective homomorphism, meaning it is an isomorphism. Therefore, \(F/\{0\} \cong F\).
+        Let \(F\) be a field with ideal \(N\). Since \(F\) is a field and \(N\) is an ideal, either \(N = F\) or \(N = \{0\}\). If \(N = F\), then we know from Exercise 18, Section 26, that for all \(a \in F\), \(\varphi(a) = 0'\). So, the factor ring \(F/F\) consists of only one element (the identity element), so it is the trivial ring. Conversely, if \(N = \{0\}\), define a mapping \(\varphi : F \to F/\{0\}\) by \(x + \{0\}\) for \(x \in F\). This mapping is surjective by definition. It is also injective by Exercise 18, Section 26. Thus, \(\varphi\) is a bijective homomorphism, meaning it is an isomorphism. Therefore, \(F/\{0\} \cong F\).
     }
 
-    \item (\textbf{Touchstone}) 
+    \item (\textbf{Touchstone}) I like this proof because it is so elegant. In it, I essentially just link theorems together to make a conclusion. Reading the proof statement basically tells you exactly what the theorems are stating without needing to know what the theorems actually say. 
 
-    Show that each homomorphism from a field to a ring is either one to one or maps everything to 0.
-    \pf{
-        Let \(\varphi : F \to R\) be a ring homomorphism with kernel \(N\). Since \(F\) is a field and \(N\) is an ideal, we know either \(N = F\) or \(N = \{0\}\) by Corollary 27.6. If \(N = F\), then every element in \(F\) is in \(N\). So, for all \(a \in F\), \(\varphi(a) = 0'\) for \(0' \in R\). If \(N = \{0\}\), then \(\varphi\) is one-to-one.
-    }
+    Let \(R\) be a finite commutative ring with unity. Show that every prime ideal in \(R\) is a maximal ideal.
+	\pf{
+		Let \(N\) be a prime ideal in \(R\). Since \(R\) is finite, the number of cosets in \(R/N\) must also be finite. Because \(N\) is a prime ideal, \(R/N\) is a finite integral domain by Theorem 27.15. Then, by Theorem 19.11, \(R/N\) is a field. Hence, \(N\) is a maximal ideal by Theorem 27.9.  
+	}
 \end{enumerate}
 
 \end{document}
