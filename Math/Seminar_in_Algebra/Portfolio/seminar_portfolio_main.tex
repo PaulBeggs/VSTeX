@@ -25,7 +25,6 @@
 
 %%% Dimensions and Spacing %%%
 \usepackage[margin=1in]{geometry}
-\setlength{\parindent}{0pt}
 \usepackage{setspace}
 \usepackage{mathtools}
 \linespread{1}
@@ -164,19 +163,19 @@
 \renewcommand{\thesection}{\thechapter.\arabic{section}} %% Chapter.Section Numbering
 
 % Section title: 90% opacity
-\titleformat{\section}
-  {\normalfont\Large\bfseries\color{horange!100}}
-  {\thesection}{1em}{}
+% \titleformat{\section}
+%   {\normalfont\Large\bfseries\color{horange!100}}
+%   {\thesection}{1em}{}
 
-% Subsection title: 80% opacity
-\titleformat{\subsection}
-  {\normalfont\large\bfseries\color{horange!75}}
-  {\thesubsection}{1em}{}
+% % Subsection title: 80% opacity
+% \titleformat{\subsection}
+%   {\normalfont\large\bfseries\color{horange!75}}
+%   {\thesubsection}{1em}{}
 
-% Subsubsection title: 70% opacity
-\titleformat{\subsubsection}
-  {\normalfont\normalsize\bfseries\color{horange!50}}
-  {\thesubsubsection}{1em}{}
+% % Subsubsection title: 70% opacity
+% \titleformat{\subsubsection}
+%   {\normalfont\normalsize\bfseries\color{horange!50}}
+%   {\thesubsubsection}{1em}{}
 
 %%% FIGURES %%%
 \usepackage{graphicx}  
@@ -480,15 +479,11 @@ enhanced,
     \end{customframedproof}
 }
 
-\newcommand{\pb}[2]{
-    \begin{exercise}{#1}[label=ex:#1]
-    #2
-    \end{exercise}
-}
-
 \def \proofDistance {10pt}
 \newenvironment{solution}
   {\textit{Solution.}}
+
+\newenvironment{problem}{\textbf{Problem.}}
 
 % Command for theorems proofs with a predefined color
 \newcommand{\epf}[1]{
@@ -721,13 +716,14 @@ enhanced,
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
 % Do not use all caps.
-\newcommand{\titlestandin}[0]{Final Portfolio}
-\newcommand{\cussubtitle}[0]{MATH 420}
+\newcommand{\assignmentname}{Final Portfolio}
+
+% Do not use all caps.
+\newcommand{\cussubtitle}{Seminar in Algebra}
 % Date format should be like: "January 1, 2001"
-\newcommand{\startdate}[0]{January 20, 2026}
-\newcommand{\customenddate}[0]{May 5, 2026}
+\newcommand{\finaldate}{May 6, 2026}
 % Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
-\newcommand{\professor}[0]{Dr. Carol Ann Downes}
+\newcommand{\professor}{Dr. Carol Ann Downes}
 
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -737,14 +733,15 @@ enhanced,
     \begin{center}
 
         \vspace*{-2cm}
-        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\ 
+        \includegraphics[width=0.8\textwidth]{\documentBigLogo}\\
         \vfill
 
+        % Horizontal line above the title in 'horange' color
         \textcolor{horange}{\rule{\textwidth}{1.0pt}}
 
         \vspace{2em}
 
-        {\huge \textbf{\titlestandin}}
+        {\huge \textbf{\assignmentname}}
 
         \vspace{1em} % Space between the title and the bottom line
 
@@ -755,10 +752,7 @@ enhanced,
         {\LARGE \textbf{\cussubtitle}}
 
         \begin{large}
-            \vspace*{2\baselineskip}
-
-            \textit{Start}  \\[1ex]
-            {\scshape \startdate} \\[0.3\baselineskip] % Year published
+            \vspace*{5\baselineskip}
 
             \vspace*{1\baselineskip}
 
@@ -774,8 +768,8 @@ enhanced,
 
             \vspace*{1\baselineskip}
 
-            \textit{End}\\[1ex]
-            {\scshape  \customenddate} \\[0.3\baselineskip] % Year published
+            \textit{Due}\\[1ex]
+            {\scshape  \finaldate} \\[0.3\baselineskip] % Year published
 
             \thispagestyle{empty}
 
