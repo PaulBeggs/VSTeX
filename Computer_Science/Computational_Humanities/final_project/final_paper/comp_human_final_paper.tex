@@ -1,0 +1,79 @@
+\documentclass[stu,12pt,floatsintext]{apa7}
+
+\usepackage[american]{babel}
+\usepackage{booktabs}
+
+\usepackage{csquotes} 
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa} 
+\addbibresource{bibliography.bib}
+
+\usepackage[T1]{fontenc} 
+\usepackage{mathptmx} 
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{light-gray}{HTML}{E0E0E0}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+\shorttitle{Mapping Character Sentiment}
+\title{Mapping Sentiment Networks Between Characters in Novels}
+\author{Paul Beggs}
+\duedate{May 7, 2026}
+\authorsaffiliations{Hendrix College}
+\course{CSCI 270: Computational Humanities}
+\professor{Dr. Gabriel Ferrer} 
+
+\begin{document}
+
+\maketitle
+
+For my final project in CSCI 270, I choose to develop an algorithm to create a sentiment network between characters in novels. Through this project, it is possible to see the summative relationship between characters throughout the novel. To achieve this goal, an algorithm was formulated to identify characters, get their relative position in the novel, find other characters that are close to them, and then calculate the sentiment of the text between the identified characters. 
+
+I chose to do this project because it was closely aligned with the sentiment labs that we did over the course of the semester. That is, we plotted the sentiment of text over the course of a novel with the help of a moving average, scored songs based on the sentiment of song lyrics and instrumental data, and so on. The idea for this project came from finding the relative sentiment over time for a novel. I wanted to specifically learn more about the relationships of characters, while also cutting as much exposition from the sentiment scorer to achieve sentiment scores that were entirely dictated by character interactions.
+
+To use this tool, there can be some manual fine-tuning involved to get the best results, but you can theoretically track character sentiments for any book.    
+
+\section{Data}
+
+The data I created in this project were taken from the CSCI 270 novel corpus. Each student in CSCI 270 needed to contribute a novel to the corpus in the first lab of the class. Thus, the original corpus consisted of 21 text files, all in UTF-8 encoding, for a total size of 13.04 MB. Most of the books were gathered through Project Gutenberg. To create a corpus that would work best with my algorithm, I removed \textit{JPod} by Douglas Coupland, and another file that consisted of every \textit{Lord of the Rings} book. These files were removed because the former had too much noise spread throughout the book which made finding characters difficult, and the latter would take too long to parse. Plus, I thought that using only \textit{The Hobbit} would be good enough. The last change I made to the corpus was to remove the preamble, table of contents, and license to ensure the books consisted of the main chapters. This gave me a version of the books that only had the main chapters and no author names or publishing corporations. 
+
+\section{Algorithm}
+
+The algorithm is broken up into 3 subsections for simplicity. The first two subsections detail how I used trained classifiers for character identification and sentiment calculations. The last subsection is an in-depth walk through the interaction between the classifiers and the code I wrote. 
+
+\subsection{Character Identification}
+
+To identify characters in a novel, I was originally going to visit each book's respective Wikipedia page and manually create a massive Python dictionary for each book in the corpus. Instead, I decided to use an open-source library called \code{spaCy}, which has models designed for natural language processing \parencite{spacy}. I used \code{spaCy}'s \code{en\_core\_web\_lg} pipeline to search the document and identify people in each book. With this pipeline, I was able to get a list of all the characters in each book and their relative position in the text. This was done using the \code{doc.ents} and \code{doc.sents} methods, which return a list of named entities and sentences, respectively. The named entities were then filtered to include only people, and the sentences were used to get the relative position of each character in the text. 
+
+In general, this method worked well, but there were some problems with it. For example, some characters were not identified as people and therefore were not included in the list of characters. This was especially true for characters that had mythical or non-human names, such as ``Gandalf'' from \textit{The Hobbit}. The reason for this is that the model was trained mostly on news, and thus it struggled to recognize names from fictional contexts. Some manual fine-tuning was required to get the best results, but overall, this method was much more efficient than manually creating a dictionary for each book. In the last subsection, I will go into more detail about how characters were identified, sorted, and filtered to get the best results.
+
+\subsection{Scoring Sentiment}
+
+The model used for sentiment analysis is called \code{VADER} (Valence Aware Dictionary and sEntiment Reasoner) \parencite{hutto2014vader}. \code{VADER} is a lexicon and rule-based sentiment analysis tool that was trained mainly on labeled text with sentiment from social media posts. Given this training set, I thought it would perform better than other general-purpose sentiment analysis tools such as \code{TextBlob}, which generally give neutral scores. \code{VADER} works by assigning a sentiment score to each word of the text and then combining those scores to get an overall sentiment score for the text. The sentiment score is a float between -1 and 1, where -1 is the most negative sentiment, 0 is neutral, and 1 is the most positive sentiment.
+
+\subsection{Putting Everything Together}
+
+The algorithm comprises an initial ``character clumping'', and then four main steps: character identification, sorting, sentiment scoring, and network creation. To ensure that names found by \code{spaCy} are not referencing the same person (e.g. ``Bilbo'', ``Baggins'', ``Bilbo Baggins''), I get the most popular 20 characters in the book by counting the instances they show up in a histogram. Then, I iterate through the list of characters and manually identify which characters are the same person. We will use these aliases during the first step to ensure that all references to the same character are counted together. With that, we can move onto the first step.
+
+Character identification is done by iterating through each entity identified by \code{spaCy} and checking if the entity's label is \code{PERSON}, \code{LOC}, or \code{GPE}. The latter two labels are included because some characters are identified as locations or geopolitical entities, such as ``Gandalf'' from before. Then I created a list of string names and iterated through the entities to see if they match any of the names in the list. If they do, then add the entity to a list of characters and move onto consolidation and sorting.
+
+To consolidate, I used another histogram and took only the top 8 characters in the book. To ensure that each character was attributed to the same person, the aliases identified in the clumping step were used to consolidate characters that are the same person. For example, if ``Bilbo,'' ``Baggins,'' and ``Bilbo Baggins'' are all identified as characters, I consolidated them into one name called ``Bilbo Baggins''. Now, each character's name will obviously appear multiple times throughout the novel, so I had to find each time the name appears and pair the name with the position of the sentence in the book. For quick look-ups during the pairing, I created a dictionary that has sentences as keys and sentence positions as values. Finally, the pairs were sorted by their position in the text, and can be used in sentiment scoring.
+
+To score sentiment, I first iterated through the sorted list of character-position pairs, two pairs at a time. In this loop, the two pairs needed to satisfy a couple of conditions: they could not be the same person, must be close to each other, and they cannot overlap with the previous two pairs if all four pairs are the same people. The first check was easy: if they have the same name, move on. For the second condition, the distance between the two characters was calculated by taking the absolute value of the difference between their positions. If the distance was less than three, then I formed a range of text consisting of the first's position minus 1 and the second's position plus 1. This was done to ensure that there was some additional context added to the interaction between characters. Lastly, if the previous two pairs had the same names as the current ones and the ranges overlapped, then the loop continued. I included this last check because I did not want the sentiment scores to double-dip. If each of those conditions were met, then \code{VADER} would score interaction. 
+
+Once every character interaction has an associated score, we can move onto plotting to visually represent the relationships through network diagrams. First, I built a dictionary that would take character-character pairs as keys, and for each key, a list of every sentiment score between those characters would be attributed. With this dictionary, I could build a list of tuples, where the first and second indices of the tuples were characters, the third index was the number of times they interacted, and the fourth index was the mean of the interaction score list. These tuples were then unpacked in the same order, and added as an edge in a \code{networkx} graph with the number of interactions as the weight and the mean sentiment score as the color. Finally, the network was plotted using \code{matplotlib} with a circular layout. The edge colors were determined by the mean sentiment score, with a colormap that ranged from red (negative) to green (positive). The edge widths were determined by the number of interactions, with a range that was normalized to ensure that the edges were not too thick or too thin.
+
+After passing each book's content through this algorithm, I was able to get a network diagram for each book that visually represented the relationships between characters based on their interactions and the sentiment of those interactions. These diagrams can be seen in the next section, along with an analysis of the results.
+
+\section{Analysis}
+
+
+
+\section{Future Work}
+
+
+
+\printbibliography
+
+
+
+\end{document}

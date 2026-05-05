@@ -1,5 +1,9 @@
 \begin{enumerate}[label=\textbf{\arabic*.}]
-    \item This proof works by using Lagrange's Theorem to relate the size of the image to the size of the domain. My strategy was to identify a subset of the domain that partitions it perfectly—the cosets of the kernel—and link those to the image. The difficulty arose when trying to rigorously connect the cosets (\(G/H\)) to the image (\(\varphi[G]\)). Theorem 13.15 saved me here, as it establishes the necessary one-to-one correspondence between cosets and image elements. By establishing that the cosets divide the group order, and that the image has the same size as the set of cosets, we see a clear example of how algebraic structures limit the behavior of functions. The structure of the domain dictates that the image size must be a divisor. 
+    \item (\textbf{Compare and Contrast}) These two proofs are focused on exploring the same concept of the homomorphisms's image, but from opposite ends of the mapping. They both hinge on Lagrange's Theorem to enforce restrictions upon the size of the image, but they emphasize different mechanics of how a homomorphism acts as a structural filter. 
+    
+    This proof works by using Lagrange's Theorem to relate the size of the image to the size of the domain. My strategy was to identify a subset of the domain that partitions it perfectly—the cosets of the kernel—and link those to the image. The difficulty arose when trying to rigorously connect the cosets (\(G/H\)) to the image (\(\varphi[G]\)). Theorem 13.15 saved me here, as it establishes the necessary one-to-one correspondence between them. By showing that the kernel filters the domain into cosets, we see that the structure of the domain forces the size of the image to be a divisor of \(|G|\).
+
+    In contrast, the second proof is entirely focused on the codomain \((G')\), and not on the kernel. Thus, I knew that I only needed to prove that the image \(\varphi[G]\) is a valid subgroup of \(G'\). Once I established this with using the fundamental properties of homomorphisms, the rest fell into place via Lagrange's Theorem. Then, because the image satisfies the group axioms, it must adhere to the structural limitations of the parent group, meaning its order must divide \(|G'|\). Through these proofs, we see that our mapping filter is so rigid that the resulting image is both locked into the structural boundaries of both its starting point and its destination. 
 
     \begin{problem}
         Let \(\varphi : G \to G'\) be a group homomorphism. Show that if \(|G|\) is finite, then \(|\varphi[G]|\) is finite and is a divisor of \(|G|\).
@@ -7,8 +11,8 @@
     \pf{
         Let \(\varphi : G \to G'\) be a group homomorphism, and let \(H = \ker(\varphi)\). Our goal is to show that the order of the preimage of \(G\), \(|\varphi[G]|\), is finite, and a divisor of \(|G|\), given \(G\) is finite. Theorem 13.15 tells us that \(aH = \varphi^{-1}[\{\varphi(a)\}]\) maps a single coset to the same single element \(\varphi(a)\) in the image. This establishes a one-to-one correspondence between the set of all cosets (\(G/H\)) and the set of all images, \(\varphi[G]\). Because there is a one-to-one correspondence, the two sets must have equal size: \(|G/H| = |\varphi[G]|\). Then, by Lagrange's Theorem, since \(G\) is finite, the number of cosets (\(G/H\)) must be a finite number that divides the order of the group, \(|G|\).  Since \(|G/H| = |\varphi[G]|\), it follows that \(|\varphi[G]|\) must also be a finite number that divides \(|G|\).
     }
-
-    \item In this proof,  I needed to show that the image is a divisor of the codomain (\(|G'|\)). I realized I didn't need to look at kernels or cosets here; I simply needed to prove that the image \(\varphi[G]\) is a valid subgroup of \(G'\). Once I established that the image is a subgroup using the fundamental properties of homomorphisms, the rest fell into place immediately via Lagrange's Theorem. Thus, I found that because the image satisfies the group axioms to be a subgroup, it is subject to the structural limitations of the parent group, specifically regarding its order.
+    Other proof on the next page.
+    \newpage
 
     \begin{problem}
         Let \(\varphi : G \to G'\) be a group homomorphism. Show that if \(|G'|\) is finite, then \(|\varphi[G]|\) is finite and is a divisor of \(|G'|\).
@@ -16,7 +20,6 @@
     \pf{
         From Theorem 13.12 (3) (the fundamental properties of homomorphisms), if \(H\) is a subgroup of \(G\), then \(\varphi[H]\) is a subgroup of \(G'\). Now, let \(H = G\). It is certainly true that \(G\) is a subgroup of \(G\), so \(\varphi[G]\) is a subgroup of \(G'\). Then, by Lagrange's Theorem, since \(|G'|\) is finite, the order of its subgroup, \(|\varphi[G]|\) is also a finite number that divides \(|G'|\).
     }
-    \newpage
     \item This proof is concerned with transitivity through composite maps. I showed that for any three groups connected through two homomorphisms, the composite mapping is also a homomorphism. These types of direct computation proofs are my favorite; by just leveraging definitions, we are able to draw connections between group structures with logical steps that are easily auditable. Consequentially, I found that the structure-preserving property holds up even when we chain multiple systems together, allowing us to build larger mathematical arguments from smaller, verified blocks.
 
     \begin{problem}
@@ -32,6 +35,7 @@
         \end{align}
         Equations (1) and (4) are from the definition of a composite map, and (2) and (3) are from the homomorphic properties of \(\varphi\) and \(\gamma\), respectively. Therefore, we have shown that the composite map is a homomorphism.
     }
+    \newpage
 
     \item This proof deals with the specific conditions required for left and right cosets to form identical partitions. My goal was to prove if the partitions are the same, then the element \(g^{-1}hg\) must belong to the subgroup. Writing this required a shift in perspective, moving from thinking about individual element operations to thinking about set equality (\(gH=Hg\)). This proof shows that the property of normality is the structural requirement that allows us to identify factor group candidates from subgroups.
 
@@ -48,7 +52,6 @@
         Since \(h' \in H\), we have shown that \(g^{-1}hg \in H\).
     }
 
-    \newpage
     \item For this proof, I moved away from theorems to an application involving groups of functions. My goal was to identify the structure of the factor group \(F/K\) by finding a simpler group it is isomorphic to. To do this, I used the Fundamental Homomorphism Theorem: I defined a map that eliminates the constant functions (the kernel), and then used the theorem to show that the quotient group is isomorphic to the image. So, we took a complex structure (\(F/K\)) and used a homomorphism to classify it as being structurally identical to the group of functions rooted at zero.
 
     \begin{problem}
@@ -57,6 +60,8 @@
     \pf{
         Define a homomorphism \(\varphi : F \to F\) by \(\varphi(f) = f(x) - f(0)\). The kernel of this map consists of all functions where \(f(x) - f(0) = 0\), which implies \(f(x)\) is constant, so \(\ker(\varphi) = K\). The image of the map, \(\varphi[F]\), is the set of all functions that evaluate to 0 at \(x = 0\). Since \(\ker(\varphi) = K\), the Fundamental Homomorphism Theorem states that \(F/\ker(\varphi) \cong \varphi[F]\). 
     }
+    \newpage
+
     \item \textbf{(Most Improved)} I first solved this problem on the first in-class exam, and did quite poorly, as I forgot the definition of the kernel, and thought the kernel mapped elements to the \textit{multiplicative} identity of \(R'\) instead of the additive. So, in my first approach, I botched the kernel definition, and did not use homomorphic property altogether. However, I was able to provide a general ``idea'' of what I needed to do: Show that \(ab \notin \ker(\varphi)\) by using the fact that \(a,b \notin \ker(\varphi)\) and \(R'\) has no zero divisors. I just did not \textit{show} the process and I went astray with the kernel definition. 
 
     Thus, we arrive at the revised proof, where the \textit{correct} definition of the kernel is front and center, in the second sentence. Then, I set \(\varphi(ab) = 0'\) to lead to a contradiction, thus proving that \(ab \notin \ker(\varphi)\). I did this by using the homomorphic property of \(\varphi\) to establish an equality between \(\varphi(ab)\) and \(\varphi(a)\varphi(b)\). Then, I dug a level deeper and pointed out that neither \(\varphi(a)\) nor \(\varphi(b)\) can be equal to \(0'\) by the problem statement. Then, I used \(R'\)'s property as an integral domain, and pointed out that it has no zero divisors, so the product \(\varphi(a)\varphi(b) \ne 0'\). I finished off by connecting the dots: since \(\varphi(a)\varphi(b) \ne 0\), then \(\varphi(ab) \ne 0\), so \(ab \notin \ker(\varphi)\). 
@@ -67,7 +72,6 @@
     \pf{
         Let \(\varphi\) be a homomorphism that exists between rings \(R\) and \(R'\), defined as \(\varphi : R \to R'\), and let \(a,b \in R\). Recall that \(\ker(\varphi) = \{r \in R \mid \varphi(r) = 0'\}\), where \(0'\) is the additive identity of \(R'\). Now, suppose that \(a \notin \ker(\varphi)\), \(b \notin \ker(\varphi)\), and \(R'\) is an integral domain. To show that \(ab \notin \ker(\varphi)\), suppose to the contrary that \(ab \in \ker(\varphi)\) instead. This means \(\varphi(ab) = 0'\). Since \(\varphi\) is a homomorphism, we can expand the left side to get \(\varphi(ab) = \varphi(a)\varphi(b) = 0'\). However, this cannot be true, as \(\varphi(a)\) and \(\varphi(b)\) cannot equal \(0'\), and their product cannot equal \(0'\) since \(R'\) is an integral domain and has no zero divisors. Thus, it must be that \(ab \notin \ker(\varphi)\).   
     }
-
     \newpage
 
     \item In this proof, my goal was to find a zero in \(\Z_{p}[x]\) that matched any \(a \in \Z_{p}[x]\). I did this by first noting that a polynomial is reducible if it is greater than or equal to 2, and it has a zero. Then, I used a corollary to Fermat's Little Theorem to show that for the \(x^{p}\) term, since it is equivalent to \(x\), we can set \(x = -a\) to get \(-a + a \equiv 0 \pmod{p}\). Thus, since a zero was found, the polynomial is reducible. 
@@ -153,23 +157,6 @@
             }
     \newpage
 
-    \item I did this proof incorrectly at first, and only realized it when Noah asked me for a hint on how to start. We both knew that we needed to incorporate all information from the problem (e.g., use \(n,m \in \Z^{+}\) to show that \((a + b)^{n + m} = 0\)), but we initially didn't know how to incorporate the commutativity part of the problem. Then, he realized that we could use the binomial theorem, which just called for two cases to be worked through. 
-
-    \begin{problem}
-        An element \(a\) for ring \(R\) is \textbf{nilpotent} if \(a^{n} = 0\) for some \(n \in \Z^{+}\). Show that if \(a\) and \(b\) are nilpotent elts of a commutative ring, then \(a + b\) is also nilpotent.
-    \end{problem}
-    \pf{
-        Let \(a,b \in R\), a commutative ring. This means there exists some \(n,m\in \Z^{+}\) for which \(a^{n} = 0\) and \(b^{m} = 0\). Our goal is to show that \((a + b)^{n + m} = 0\). Since \(R\) is a commutative ring, we can use distributive laws and the binomial theorem to help here. Thus, consider the following:
-        \[
-            (a + b)^{n + m} = \sum^{n + m}_{k=0} \binom{n + m}{k} a^{k}b^{(n + m)-k}.
-        \]
-        Note that every element in each term is a multiple of our nilpotent elements, so our goal is to show that each of these elements are 0 for any value of \(k\). Thus, consider these two cases:
-        \begin{itemize}[topsep=2pt]
-            \item \textbf{\(k \ge n\)}: If \(k \ge n\), then \(a^{k} = a^{n}a^{k -n} = 0a^{k - n} = 0\), so the whole term is 0.
-            \item \textbf{\(k < n\)}: Since \(k < n\), it follows that \(-k > -n\). Therefore, \((n + m) - k > n + m - n = m\) (because \(\langle R, + \rangle\) is an abelian group). Since the exponent of \(b\) is greater than \(m\), \(b^{(n + m)-k} = 0\). 
-        \end{itemize}
-        Therefore, we have shown that \((a + b)^{n + m} = 0\).
-    }
     \item (\textbf{Major Theorem}) This is Kronecker's Theorem, and referenced throughout \textit{A First Course in Abstract Algebra} by John Fraleigh and Victor Katz as the ``basic goal'' they are trying to accomplish. That is, ``to show that any nonconstant polynomial \(f(x)\) in \(F[x]\) has a zero in some field \(E\) containing \(F\)'' (pg. 250). Thus, I thought it appropriate to include it as a Major Theorem in this portfolio. The proof itself involves irreducible polynomials, factor rings, an isomorphism, cosets, and the evaluation homomorphism. It highlights the importance of using maps to achieve structure by embedding our original field into a factor ring where the missing root emerges.
 
     For this proof, I thought that defining \(\alpha = x + \gen{p}\) was a very clever technique. By treating the indeterminate \(x\) itself as the representative of a coset, we force the polynomial to evaluate to its own ideal, which acts as the zero element in the new field.
@@ -200,6 +187,25 @@
         Thus, \(p(\alpha) = \varphi_{\alpha}(p(x)) = 0\) in \(E\). Therefore, \(\alpha \in F[x]/\gen{p(x)}\) such that \(f(\alpha) = 0\).
     }
 
+
+    \item I did this proof incorrectly at first, and only realized it when Noah asked me for a hint on how to start. We both knew that we needed to incorporate all information from the problem (e.g., use \(n,m \in \Z^{+}\) to show that \((a + b)^{n + m} = 0\)), but we initially didn't know how to incorporate the commutativity part of the problem. Then, he realized that we could use the binomial theorem, which just called for two cases to be worked through. 
+
+    \begin{problem}
+        An element \(a\) for ring \(R\) is \textbf{nilpotent} if \(a^{n} = 0\) for some \(n \in \Z^{+}\). Show that if \(a\) and \(b\) are nilpotent elts of a commutative ring, then \(a + b\) is also nilpotent.
+    \end{problem}
+    \pf{
+        Let \(a,b \in R\), a commutative ring. This means there exists some \(n,m\in \Z^{+}\) for which \(a^{n} = 0\) and \(b^{m} = 0\). Our goal is to show that \((a + b)^{n + m} = 0\). Since \(R\) is a commutative ring, we can use distributive laws and the binomial theorem to help here. Thus, consider the following:
+        \[
+            (a + b)^{n + m} = \sum^{n + m}_{k=0} \binom{n + m}{k} a^{k}b^{(n + m)-k}.
+        \]
+        Note that every element in each term is a multiple of our nilpotent elements, so our goal is to show that each of these elements are 0 for any value of \(k\). Thus, consider these two cases:
+        \begin{itemize}[topsep=2pt]
+            \item \textbf{\(k \ge n\)}: If \(k \ge n\), then \(a^{k} = a^{n}a^{k -n} = 0a^{k - n} = 0\), so the whole term is 0.
+            \item \textbf{\(k < n\)}: Since \(k < n\), it follows that \(-k > -n\). Therefore, \((n + m) - k > n + m - n = m\) (because \(\langle R, + \rangle\) is an abelian group). Since the exponent of \(b\) is greater than \(m\), \(b^{(n + m)-k} = 0\). 
+        \end{itemize}
+        Therefore, we have shown that \((a + b)^{n + m} = 0\).
+    }
+    \newpage
     \item (\textbf{High Point}) I am very proud of this solution, as solving the problem outright is not possible, and requires building another finite extension to use the Tower Theorem (Theorem 31.4). So, I took the given field extension \(\Q(\sqrt{2}, \sqrt[3]{2})\) and found another field for which it was also an extension for: \(\Q(\sqrt[3]{2})\). This new field allowed me to build the tower, by also being an extension of \(\Q\). Thus, I had two bases, and 2 field extensions, so I could use the Tower Theorem and finally answer the main problem. This solution was a bit tedious, but the reward from checking the edge cases was worth it.
 
     \begin{problem}
@@ -220,8 +226,8 @@
         \]
         for \(\Q(\sqrt{2}, \sqrt[3]{2})\) over \(\Q\). Finally, we note that \(f(x)\) is irreducible over \(\Q(\sqrt[3]{2})\) by Theorem 23.10, and \(g(x)\) is irreducible over \(\Q\) by Eisenstein's criterion for \(p = 2\).
     }
-
     \newpage
+
     \item (\textbf{Compare and Contrast}) These two proofs deal with finding ideals of a ring through different methods. In both proofs, I needed to show two things: the ideal in question is a subring, and that when elements in \(R\) are multiplied by the ideal, that they stay within the ideal. The first accomplishes this by using Theorem 26.3, which gives \(\varphi[N]\) as a subring of \(\varphi[R]\), since \(N\) is a subring of \(R\). Then, I started with arbitrary \(x \in \varphi[R]\) and \(y \in \varphi[N]\), and used \(N\)'s ideal property along with the homomorphism property of \(\varphi\) to show that \(xy\) and \(yx\) are contained in \(\varphi[N]\). Then, for the second proof, I proved that \(I_{a}\) is a subring of \(R\) without using the commutativity of \(R\), but by purely just using the properties of rings and the definition of \(I_{a}\). Proving the second property of ideals did require using commutativity, as showing \(rx \in I_{a}\) would be impossible without it. Thus, even though the technique used for both of these proofs are distinct in nature, it shows that we can get ideals of rings through maps, or by the structure of the ideal itself.
 
     \begin{problem}
@@ -246,18 +252,10 @@
             If \(b,c\in I_a\) then \(a(b-c) = ab-ac = 0 - 0 = 0\) by the distributive laws of \(R\) and the definition of \(I_{a}\). Thus, \(b-c\in I_a\).
             \item If \(b,c\in I_a\) then \(a(bc) = (ab)c = 0 \cdot c = 0\) by the associativity from \(R\) and the definition of \(I_{a}\). Thus, \(bc\in I_a\).
         \end{enumerate}
-        Therefore, \(I_a\) is a subring of \(R\). Thus, we need only show that \(xr \in I_a\) and \(rx \in I_a\) for \(x \in I_a\) and \(r \in R\). Thus, consider the following:
-        \[
-            a(xr) = (ax)r = 0 \cdot r = 0.
-        \]
-        So, \(xr \in I_{a}\). Now, since \(R\) is a commutative ring, we can rearrange \(a(rx)\):
-        \[
-            a(rx) = a(xr) = 0.
-        \]
-        So, \(rx \in I_{a}\). Therefore, we have shown that \(I_{a}\) is an ideal of \(R\).
+        Therefore, \(I_a\) is a subring of \(R\). Thus, we need only show that \(xr \in I_a\) and \(rx \in I_a\) for \(x \in I_a\) and \(r \in R\). Thus, \(a(xr) = (ax)r = 0 \cdot r = 0\). So, \(xr \in I_{a}\). Now, since \(R\) is a commutative ring, we can rearrange \(a(rx)= a(xr) = 0\). So, \(rx \in I_{a}\). Therefore, we have shown that \(I_{a}\) is an ideal of \(R\).
     }
 
-    \item (\textbf{Touchstone}) This proof is beautiful because it highlights how rigid fields are. That is, unlike rings or groups, which can be broken down into smaller factor structures through ideals or normal subgroups, fields cannot. Because a field possesses no nontrivial ideals, applying a map only yields two outcomes: we either compress the whole structure into the trivial ring, or we preserve it through an isomorphic copy. Thus, fields are a foundational building block that cannot be structurally broken down without collapsing entirely.
+    \item (\textbf{Touchstone}) This proof is beautiful because it highlights how rigid fields are. That is, unlike rings or groups, which can be broken down into smaller factor structures through ideals or normal subgroups, fields cannot. Because a field possesses no nontrivial ideals, applying a map only yields two outcomes: we either compress the whole structure into the trivial ring, or we preserve it through an isomorphic copy. Thus, fields cannot be structurally broken down without collapsing entirely.
 
     \begin{problem}
         Show that a factor ring of a field is either the trivial (zero) ring of one element or is isomorphic to the field. 
@@ -273,5 +271,110 @@
     \end{problem}
     \pf{
         Let \(N\) be a prime ideal in \(R\). Since \(R\) is finite, the number of cosets in \(R/N\) must also be finite. Because \(N\) is a prime ideal, \(R/N\) is a finite integral domain by Theorem 27.15. Then, by Theorem 19.11, \(R/N\) is a field. Hence, \(N\) is a maximal ideal by Theorem 27.9.  
+    }
+    \newpage
+    \item (\textbf{Major Theorem}) This proof is included as a major theorem because we use it constantly under the hood for many of the later proofs in the sequence. There are also a lot of elements in this proof that we have used throughout both semesters. That is, it involves a subring proof, an isomorphism proof, and computing a function composition. Each step in the proof heavily relies upon the homomorphic properties of \(\varphi\) to establish properties. This really highlights the imperative nature of ring homomorphisms, and how integral they are to anything we do in abstract algebra.  
+
+    \begin{problem}
+        (Fundamental Homomorphism Theorem for Rings) Let \(\varphi : R \to R'\) be a ring homomorphism with kernel \(N\). Then \(\varphi[R]\) is a ring, and the map \(\mu : R/N \to \varphi[R]\) given by \(\mu(x + N) = \varphi(x)\) is an isomorphism. If \(\gamma : R \to R/N\) is the homomorphism given by \(\gamma(x) = x + N\), then for each \(x \in R\), we have \(\varphi(x) = \mu\gamma(x)\).
+    \end{problem}
+    \pf{
+        To show \(\varphi[R]\) is a subring of \(R'\), we must verify the following:
+        \begin{itemize}
+            \item Since \(\varphi\) is a ring homomorphism, then by Theorem 26.3, it must map the additive identity of \(R\) to the additive identity of \(R'\). Thus, \(\varphi(0) = 0'\), which means \(0' \in \varphi[R]\).
+            \item Let \(a,b \in \varphi[R]\). This means there exists \(r_{1}, r_{2} \in R\) such that \(\varphi(r_{1}) = a\) and \(\varphi(r_{2}) = b\). Then, \(a - b = \varphi(r_{1}) - \varphi(r_{2}) = \varphi(r_{1} - r_{2})\). Since \(r_{1} - r_{2} \in R\), it follows that \(a - b \in \varphi[R]\).
+            \item Using the same \(r_{1},r_{2}\) as before: \(ab = \varphi(r_{1})\varphi(r_{2}) = \varphi(r_{1}r_{2})\). Since \(r_{1}r_{2} \in R\), it follows that \(ab \in \varphi[R]\).
+        \end{itemize}
+        Now, we must show that \(\mu\) is well-defined and injective. Thus, suppose \(x + N = y + N\). Then, \(x - y \in N\). Since \(N = \ker(\varphi)\), this implies \(\varphi(x - y) = 0\) or \(\varphi(x) - \varphi(y) = 0\). Thus, \(\varphi(x) = \varphi(y)\) implies \(\varphi(x + N) = \varphi(y + N)\). This argument also works in reverse to show that \(\mu\) is one-to-one: if \(\mu(x + N) = \mu(y + N)\), then \(\varphi(x) = \varphi(y)\), meaning \(x - y \in \ker(\varphi)\), so \(x + N = y + N\). Then, we show \(\mu\) is a ring homomorphism:
+        \begin{align*}
+            \mu((x + N)(y + N)) &= \mu(xy + N) & \text{By definition of multi. in } R/N \\
+            &= \varphi(xy) & \text{By definition of } \mu \\
+            &= \varphi(x)\varphi(y) & \text{Because } \varphi \text{ is a ring homom.}
+        \end{align*}
+        Thus, \(\mu\) is a ring homomorphism. To complete the proof that \(\mu\) is an isomorphism,  we must show that \(\mu\) is onto. By definition, the codomain of \(\mu\) is the image \(\varphi[R]\). For any \(y \in \varphi[R]\), there exists an \(x \in R\) such that \(\varphi(x) = y\). Thus, \(\varphi(x + N) = \varphi(x) = y\). Finally, let \(\gamma : R \to R/N\) be given by \(\gamma(x) = x + N\). Then, \(\mu\gamma(x) = \mu(x + N) = \varphi(x)\). This holds for all \(x \in R\), so \(\varphi = \mu\gamma\).
+    }
+\newpage
+    \item This was the first proof that really introduced us to idempotent elements. I included it in this portfolio because the idea of idempotency comes up time and again throughout the course. The actual proof is by computation, which are also my favorite ones to do. At first, this proof can be a bit tricky, because you need to set up the computation to get the final result. But, if you just follow the definition of closure, you can work your way backward to get to the solution. 
+
+    \begin{problem}
+        Suppose that \(*\) is an associative and commutative binary operation on a set \(S\). Show that \(H = \{a \in S \mid a * a = a\}\) is closed under \(*\). (The elements of \(H\) are \textbf{idempotents} of the binary operation \(*\).)
+    \end{problem}
+    \pf{
+    Suppose that \(*\) is an associative and commutative binary operation on set \(S\). Let \(a,b \in H\) and consider the following:
+    \begin{align*}
+        (a * b) * (a * b) & = (b * a) * (a * b) & \text{commutative property,}   \\
+                        & = b * (a * a) * b   & \text{associative property,}   \\
+                        & = b * a * b         & \text{definition of } H,       \\
+                        & = b * b * a         & \text{commutative property,}   \\
+                        & = (b * b) * a       & \text{associative property,}   \\
+                        & = b * a             & \text{property of } H,         \\
+                        & = a * b             & \text{commutativity property.}
+    \end{align*}
+    Therefore, \(H\) is closed because \(a * b \in H\).
+    }
+    \item This proof is used in Proof 13 because it establishes the fact that any homomorphism from a field to a ring is either one-to-one, or that it maps everything to 0. This solution came from the fact that a field only ever has two ideals: itself, and the trivial ring. So, we have two cases: if the ideal is the field, then every element is in the kernel, so every element gets sent to 0. If the ideal is the trivial ring, then the map is one-to-one by the corollary. Doing this proof was nice because a lot of the heavy lifting was done by the fact that fields have only 2 ideals. With that, I just had to connect the remaining dots. 
+    
+    \begin{problem}
+        Show that each homomorphism from a field to a ring is either one to one or maps everything to 0.
+    \end{problem}
+    \pf{
+        Let \(\varphi : F \to R\) be a ring homomorphism with kernel \(N\). Since \(F\) is a field and \(N\) is an ideal, we know either \(N = F\) or \(N = \{0\}\) by Corollary 27.6. If \(N = F\), then every element in \(F\) is in \(N\). So, for all \(a \in F\), \(\varphi(a) = 0'\) for \(0' \in R\). If \(N = \{0\}\), then \(\varphi\) is one-to-one by Corollary 26.6.
+    }
+
+
+    \newpage
+
+    \item (\textbf{Most Improved}) This proof was originally on the first algebra exam, and it completely caught me off guard because of the mapping. We had done Exercise 23 of Section 2 as a homework problem, but it was a difficult problem for me, and I did not include it on my exam cheat sheet. So, when this proof came up on the exam, I felt lost. Nevertheless, I did know the 3 things that were needed to prove that a map is an isomorphism, so I listed them, but failed at the onto step, and the homomorphism steps. I didn't think to multiply the complex elements inside the map, so I just tried to produce a matrix from the start. 
+    
+    Now, the revised proof flows much better, and correctly identifies that the map is onto almost purely by definition of how it was set up. Finding that the map was one-to-one can be done by just following the definition of injectivity, and going from there. The final homomorphism step was tricky, but after multiplying the elements, we can get a matrix, and split it in two to demonstrate the homomorphism property. 
+
+    \begin{problem}
+        Let \(H\) be the subset of \(M_{2}(\R)\) consisting of all matrices of the form \(\begin{bmatrix}
+            a & -b \\
+            b & a
+        \end{bmatrix}\) for \(a,b \in \R\). Exercise 23 of Section 2 shows that \(H\) is closed under both matrix addition and matrix multiplication. Show that \(\gen{\C, \cdot}\) is isomorphic to \(\gen{H, \cdot}\).
+    \end{problem}
+    \pf{
+        Let the map \(\varphi : \C \to H\) be given by \(\varphi(a + bi) = \begin{bmatrix}
+            a & -b \\
+            b & a
+        \end{bmatrix}\) for \(a,b \in \R\). To show that any map is an isomorphism, we must show that it is one-to-one, onto, and that it is a homomorphism.
+        \begin{itemize}
+            \item \textbf{One-to-one:} If \(\varphi(a + bi) = \varphi(c + di)\) for \(c,d \in \R\), then \(\begin{bmatrix}
+                a & -b \\
+                b & a
+            \end{bmatrix} = \begin{bmatrix}
+                c & -d \\
+                d & c
+            \end{bmatrix}\) is only true if \(a = c\) and \(b = d\). Thus, \(\varphi\) is one-to-one.
+            \item \textbf{Onto:} Let \(\begin{bmatrix}
+                a & -b \\
+                b & a
+            \end{bmatrix} \in H\), for \(a,b \in \R\). Then, \(\varphi(a + bi) = \begin{bmatrix}
+                a & -b \\
+                b & a
+            \end{bmatrix}\) from the definition of \(\varphi\). Hence, the mapping is onto, and therefore a bijection 
+            \item \textbf{Homomorphism:} Consider the computation
+            \[
+                \varphi((a + bi) \cdot (c + di)) = \varphi((ac - bd) + (ad + bc)i) = \begin{bmatrix}
+                    ac - bd & -(ad + bc) \\
+                    ad + bc & ac - bd
+                \end{bmatrix}
+            \]
+            \[
+                \begin{bmatrix}
+                    ac - bd & -(ad + bc) \\
+                    ad + bc & ac - bd
+                \end{bmatrix} = \begin{bmatrix}
+                    a & -b \\
+                    b & a
+                \end{bmatrix} \cdot \begin{bmatrix}
+                    c & -d \\
+                    d & c
+                \end{bmatrix} = \varphi(a + bi) \cdot \varphi(c + di).
+            \]
+            Hence, \(\varphi\) is a homomorphism.
+        \end{itemize}
+        Since we have shown that \(\varphi\) is a bijective homomorphism, then \(\varphi\) is an isomorphism.
     }
 \end{enumerate}

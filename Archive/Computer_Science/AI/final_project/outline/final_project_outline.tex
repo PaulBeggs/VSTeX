@@ -1,0 +1,136 @@
+\documentclass[stu,12pt,floatsintext]{apa7}
+
+\usepackage[american]{babel}
+
+\usepackage{booktabs}
+
+\usepackage{csquotes} 
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa} 
+\addbibresource{bibliography.bib}
+
+\usepackage[T1]{fontenc} 
+\usepackage{mathptmx} 
+\usepackage{hyperref}
+
+
+\title{Hyperparameter Optimization in Artificial Intelligence (Outline)}
+\author{Paul Beggs}
+\duedate{December, 15, 2025}
+\affiliation{Hendrix College}
+\course{CSCI 335: Artificial Intelligence}
+\professor{Dr. Gabriel Ferrer} 
+
+\begin{document}
+\maketitle
+
+% \renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+(1 page)
+\begin{itemize}
+    \item Introduce hyperparameters:
+    \begin{itemize}
+        \item What they are,
+        \item Why they are used,
+        \item How they are tuned,
+        \item In what ways different architectures use hyperparameters.
+    \end{itemize}
+    \item Explain how the choice of algorithm for hyperparameter optimization can be subject to the number of dimensions. 
+    \item Speak on ``the curse of dimensionality.''
+    \item Walk the reader through the layout of the paper by following the thesis statement: ``My aim is to show that as the complexity of training an architecture increases, so does the need for more complex hyperparameter optimization methods.''
+\end{itemize}
+
+\section{Hyperparameter Optimizers}
+
+\subsection{Grid Search}
+(1 page)
+\begin{itemize}
+    \item Works by dispersing points equally across a grid and exhaustively trying every combination of hyperparameters together (\href{https://www.w3schools.com/python/python_ml_grid_search.asp}{source}). 
+    \item Then, it runs the model to get an accuracy score for each combination of hyperparameters. 
+    \item Discrete vs. Continuous vs. Categorical (even though categorical is technically discrete)
+    \begin{itemize}
+        \item For SVMs, their kernels can be modeled because there aren't many of them, so dimensionality is low. 
+        \item Continuous values can be literally anything, so exponential time complexity explodes quickly
+    \end{itemize}
+    \item Can be used for any amount of parameters, and has the added benefit of parallelization, where you can run many GPUs simultaneously. 
+    \item Need to include a transitional sentence like ``although grid search is good with few hyperparameters and is easy to parallelize, random search is just as easy to parallelize and can handle more hyperparameters.'' (This sucks.)
+\end{itemize}
+
+\subsection{Random Search}
+(1 page)
+\begin{itemize}
+    \item Similar to grid search, in that it uses points in a grid.
+    \begin{itemize}
+        \item Different in that the points are randomly sampled from a uniform distribution
+        \item The random sampling has the benefit of not sampling the same point twice. Thus, avoids ``dumb'' hyperparameters and allows it to have a wider breadth for the more important hyperparameter. 
+        \begin{itemize}
+            \item Example to show this would be good 
+        \end{itemize}
+    \end{itemize}
+    \item In general, is more reliable and accurate than grid search, given the same computational budget. 
+    \item Relies on the condition that the training data are identically independently distributed (\href{https://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf}{source}).
+    \item Transition to Bayesian optimization could be focused on the fact that random search is memoryless, so it can't learn from other data that its already tried.
+\end{itemize}
+
+\subsection{Bayesian Optimization}
+(1 page)
+\begin{itemize}
+    \item Start by showing how this is different from grid and random search
+    \begin{itemize}
+        \item Uses a prior 
+    \end{itemize}
+\end{itemize}
+
+\subsection{Simulated Annealing}
+(1 page)
+
+
+\section{Handwriting Analysis}
+(1.33 page)
+
+\begin{itemize}
+    \item What is handwriting analysis?
+    \item What are some different ways to accomplish this task?
+    \begin{itemize}
+        \item K-NN (\href{https://www.geeksforgeeks.org/machine-learning/k-nearest-neighbours/#}{How K-NN works}, \href{https://medium.com/@sammedapatil003/handwritten-digit-recognition-2fa1ae839305}{How it works with handwriting analysis})
+        \begin{itemize}
+            \item For handwriting analysis, depending on the dimension of the drawing box, we have \(n \times m\) dimensions that we use the algorithm on.
+            \item Cluster data according to the value \(k\). \(k\) should be chosen so that you are able to cluster like data together, but also so you do not make one group so dominant that others are overwritten.
+            \item Example: If a new data point is added to a group, use \(k\) as a threshold for adding it to another group.
+        \end{itemize}
+        % \item Random forest (\href{https://hal.science/hal-00436372}{usual random forest hyperparameters} is 2)
+        % \item Self organizing maps
+    \end{itemize}
+    \item What kind of hyperparameter optimizers should be used here?
+    \begin{itemize}
+        \item Grid search.
+        \begin{itemize}
+            \item Hard to say: We could have hundreds of pixels that are each presented in the space as their own dimension. These pixels would take on transparency values from 0 to 255, largely adding to the space problem.
+        \end{itemize}
+        \item Random search.
+        \begin{itemize}
+            \item Given how many tests that we would want to do, this would allow us to 
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section{Sentiment Analysis}
+(1.33 page)
+
+
+
+\section{Facial Recognition}
+(1.33 page)
+
+\section{Conclusion}
+(1 page)
+
+\begin{itemize}
+    \item Restate thesis.
+    \item Walk through what we have gone over in the paper.
+    \item Iterate the importance of how using a proper algorithm can lead to better results for less compute, or how more complicated algorithms require more complicated algorithms to cut back on compute. 
+\end{itemize}
+
+\printbibliography
+
+\end{document}

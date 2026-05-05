@@ -52,65 +52,6 @@
 %%% Define new colors %%%
 \definecolor{orangehdx}{rgb}{0.96, 0.51, 0.16}
 
-% Normal colors
-\definecolor{xred}{HTML}{BD4242}
-\definecolor{xblue}{HTML}{4268BD}
-\definecolor{xgreen}{HTML}{52B256}
-\definecolor{xpurple}{HTML}{7F52B2}
-\definecolor{xorange}{HTML}{FD9337}
-\definecolor{xdotted}{HTML}{999999}
-\definecolor{xgray}{HTML}{777777}
-\definecolor{xcyan}{HTML}{80F5DC}
-\definecolor{xpink}{HTML}{F690EA}
-\definecolor{xgrayblue}{HTML}{49B095}
-\definecolor{xgraycyan}{HTML}{5AA1B9}
-
-% Dark colors
-\colorlet{xdarkred}{red!85!black}
-\colorlet{xdarkblue}{xblue!85!black}
-\colorlet{xdarkgreen}{xgreen!85!black}
-\colorlet{xdarkpurple}{xpurple!85!black}
-\colorlet{xdarkorange}{xorange!85!black}
-\definecolor{xdarkcyan}{HTML}{008B8B}
-\colorlet{xdarkgray}{xgray!85!black}
-
-% Very dark colors
-\colorlet{xverydarkblue}{xblue!50!black}
-
-% Document-specific colors
-\colorlet{normaltextcolor}{black}
-\colorlet{figtextcolor}{xblue}
-
-% Enumerated colors
-\colorlet{xcol0}{black}
-\colorlet{xcol1}{xred}
-\colorlet{xcol2}{xblue}
-\colorlet{xcol3}{xgreen}
-\colorlet{xcol4}{xpurple}
-\colorlet{xcol5}{xorange}
-\colorlet{xcol6}{xcyan}
-\colorlet{xcol7}{xpink!75!black}
-
-% Blue-Purple (should just used colorbrewer...)
-\definecolor{xrainbow0}{HTML}{e41a1c}
-\definecolor{xrainbow1}{HTML}{a24057}
-\definecolor{xrainbow2}{HTML}{606692}
-\definecolor{xrainbow3}{HTML}{3a85a8}
-\definecolor{xrainbow4}{HTML}{42977e}
-\definecolor{xrainbow5}{HTML}{4aaa54}
-\definecolor{xrainbow6}{HTML}{629363}
-\definecolor{xrainbow7}{HTML}{7e6e85}
-\definecolor{xrainbow8}{HTML}{9c509b}
-\definecolor{xrainbow9}{HTML}{c4625d}
-\definecolor{xrainbow10}{HTML}{eb751f}
-\definecolor{xrainbow11}{HTML}{ff9709}
-
-%------- %
-% XHFILL %
-%------- %
-
-
-
 %%% Chapter Headings %%%
 
 \newcommand{\gradientrule}{
@@ -168,7 +109,7 @@
 	urlcolor=horange,
 }
 
-\newcommand{\assignmentname}{Exam 1}
+\newcommand{\assignmentname}{Exam 2}
 
 %% Headers and Footers %%
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
@@ -241,33 +182,6 @@
 
 \newcommand{\I}{\mathbb{I}}
 
-\newcommand{\pfs}{\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}\vspace{0.5cm}}
-
-\newcommand{\mysqrt}[1]{%
-	\mathpalette\foo{#1}%
-}
-\newcommand{\dmysqrt}[1]{%
-	\mathpalette\foodisplay{#1}%
-}
-
-% !TeX spellcheck = off
-\newcommand{\foo}[2]{%
-	% #1: math style, #2: content
-	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
-	\begin{tikzpicture}[baseline=(sqrt.base)]
-		\node[inner sep=0, outer sep=0] (sqrt) {$#1\sqrt{#2}$}; % Use the current math style
-		\draw([yshift=-0.045em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
-	\end{tikzpicture}%
-}
-% !TeX spellcheck = off
-\newcommand{\foodisplay}[2]{%
-	% #1: math style, #2: content
-	\sbox0{$#1\sqrt{#2}$}% Measure the size of the standard sqrt in the current style
-	\begin{tikzpicture}[baseline=(sqrt.base)]
-		\node[inner sep=0, outer sep=0] (sqrt) {$\displaystyle\sqrt{#2}$}; % Force displaystyle
-		\draw[line width=0.4pt] ([yshift=-0.044em]sqrt.north east) -- ++(0,-0.5ex); % Draw the tick
-	\end{tikzpicture}%
-}
 
 \renewcommand{\theenumi}{\arabic{enumi}}
 \renewcommand{\labelenumi}{\textbf{\theenumi}.}
@@ -295,116 +209,9 @@
 	skipbelow=\topsep,
 ]{customframedproof}
 
-\newenvironment{proofpart}[2][black]{
-    \begin{mdframed}[
-        topline=false,
-        bottomline=false,
-        rightline=false,
-        leftline=true,
-        linewidth=1pt,
-        linecolor=#1!40, % Custom color
-        % innertopmargin=10pt,
-        % innerbottommargin=10pt,
-        innerleftmargin=10pt,
-        innerrightmargin=10pt,
-        leftmargin=0pt,
-        rightmargin=0pt,
-        % skipabove=\topsep,
-        % skipbelow=\topsep%
-    ]
-    \noindent
-    \begin{minipage}[t]{0.08\textwidth}%
-        \textbf{#2}%
-    \end{minipage}%
-    \begin{minipage}[t]{0.90\textwidth}%
-        \begin{adjustwidth}{0pt}{0pt}%
-}{
-    \end{adjustwidth}
-    \end{minipage}
-    \end{mdframed}
-}
 
-% Define a new environment 'proofscratch' for Proof and Scratch Paper
-\newenvironment{proofscratch}[2]{%
-    \begin{mdframed}[
-        topline=false,
-        bottomline=false,
-        rightline=false,
-        leftline=false,
-        backgroundcolor=draculabg, % Background color for Dracula theme
-        fontcolor=\documentTheme,       % Font color for Dracula theme
-        innerleftmargin=-6pt,
-        innertopmargin=0pt,
-        leftmargin=0pt,
-        rightmargin=0pt,
-        skipabove=\topsep,
-        skipbelow=\topsep,
-    ]
-    % % Begin TikZ picture for the vertical dotted line
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     % Draw a vertical dotted line at approximately the center of the mdframed width
-    %     \draw[dotted, thick] ([xshift=0.005\linewidth]current bounding box.north west) -- ([xshift=0.005\linewidth]current bounding box.south west);
-    % \end{tikzpicture}%
-    % % Create the left minipage for Proof
-    \begin{minipage}[t]{0.47\textwidth}%
-        \noindent\textit{Proof.} #1 \hfill \(\qed\)
-    \end{minipage}%
-    \hfill
-    % Create the right minipage for Scratch Paper
-    \begin{minipage}[t]{0.47\textwidth}%
-        \textit{Scratch Paper.} #2
-    \end{minipage}%
-}{
-    \end{mdframed}
-}
 
-\newenvironment{tipbox}
-	{%
-		\par\noindent%
-		% Top dashed line (using \textwidth)
-		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
-		\par\vspace{0.65em}%
-		\noindent\textbf{\textcolor{draculapurple}{TIP:}}\quad%
-	}
-	{%
-		\par%
-		% Bottom dashed line
-		\noindent%
-		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculapurple] (0,0) -- (\textwidth,0);}%
-		\par\vspace{0.35em}
-	}
 
-\newenvironment{notebox}
-	{%
-		\par\noindent%
-		% Top dashed line (using \textwidth)
-		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
-		\par\vspace{0.65em}%
-		\noindent\textbf{\textcolor{draculagreen}{NOTE:}}\quad%
-	}
-	{%
-		\par%
-		% Bottom dashed line
-		\noindent%
-		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculagreen] (0,0) -- (\textwidth,0);}%
-		\par\vspace{0.35em}
-	}
-
-\newenvironment{warningbox}
-	{%
-		\par\noindent%
-		% Top dashed line (using \textwidth)
-		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
-		\par\vspace{0.65em}%
-		\noindent\textbf{\textcolor{draculared}{WARNING:}}\quad%
-	}
-	{%
-		\par%
-		% Bottom dashed line
-		\noindent%
-		\tikz[baseline]{\draw[dash pattern=on 3pt off 2pt, line width=0.5pt, color=draculared] (0,0) -- (\textwidth,0);}%
-		\par\vspace{0.35em}
-	}
 
 \newenvironment{solution}{\textit{Solution.}}
 
@@ -424,59 +231,6 @@
     \end{customframedproof}
 }
 
-\def \proofDistance {10pt}
-
-\newcommand{\disabs}[1]{\ensuremath{\left|#1\right|}}
-\newcommand{\limn}{\lim_{n \rightarrow \infty}}
-\newcommand{\limx}[2]{\lim_{x \rightarrow #1}#2}
-
-\newcommand{\limc}[1]{\lim_{x \rightarrow c}#1}
-
-\newcommand{\ninn}{n \in \N}
-
-\newcommand{\mb}[1]{\mathbf{#1}}
-
-\newcommand{\limsupn}[1]{\limsup_{n\rightarrow \infty}#1}
-\newcommand{\liminfn}[1]{\liminf_{n\rightarrow \infty}#1}
-
-
-\newcommand{\proj}{\text{proj}}
-
-\newcommand{\p}{\partial}
-
-\newcommand{\dydx}{\frac{dy}{dx}}
-\newcommand{\dxdy}{\frac{dx}{dy}}
-\newcommand{\dydt}{\frac{dy}{dt}}
-\newcommand{\dxdt}{\frac{dx}{dt}}
-\newcommand{\dzdt}{\frac{dz}{dt}}
-
-\newcommand{\barNotationT}[1]{\bigg|_{t = #1}}
-
-\newcommand{\cyanit}[1]{\textit{\textcolor{cyan}{#1}}}
-
-\newcommand{\brackett}[1]{\left\langle #1 \right\rangle}
-
-\newcommand{\norm}[1]{\left\lVert \mathbf{#1}\right\rVert}
-
-\newcommand{\imb}{\mb{i}}
-\newcommand{\jmb}{\mb{j}}
-\newcommand{\kmb}{\mb{k}}
-\newcommand{\rmb}{\mb{r}}
-\newcommand{\umb}{\mb{u}}
-
-\newcommand{\vecfuc}[2]{\mb{#1}(#2)}
-\newcommand{\dvecfuc}[2]{\mb{#1}'(#2)}
-\newcommand{\normdvecfuc}[2]{\|\mb{#1}'(#2)\|}
-
-\newcommand{\squigglyline}{%
-    \noindent
-    \tikz[baseline=-0.5ex]{
-        \draw[decorate, decoration={snake, amplitude=0.5mm, segment length=3mm}] 
-        (0,0) -- (\dimexpr\linewidth\relax,0);
-    }%
-}
-
-
 % end of preamble
 %-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
 
@@ -490,8 +244,7 @@
 % Do not use all caps.
 \newcommand{\cussubtitle}{Mathematical Models}
 % Date format should be like: "January 1, 2001"
-\newcommand{\finaldate}{March 12, 2026}
-% Be sure to include degree recognition (e.g., B.S., M.S., Ph.D)
+\newcommand{\finaldate}{May 5, 2042}
 \newcommand{\professor}{Dr. Christopher Camfield}
 
 % -%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
@@ -556,16 +309,115 @@
 
 \section*{Chapter 6}
 
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item Reconsider the war problem of Example 6.1. In this problem we will investigate the effect of tactical nuclear weapons on the battle. As a desperation move, the blue commander considers calling for a tactical nuclear strike. It is estimated that such a strike will kill or incapacitate 70\% of the red force, and 35\% of the blue force as well.
+    \begin{enumerate}
+        \item Use a computer implementation of the algorithm in Fig. 6.2 to simulate the discrete–time dynamical system in Eq. (6.3), assuming that the blue commander calls for an immediate nuclear strike. Start with initial conditions \(x_{1} = (0.30)5.0\), \(x_{2} = (0.65)2.0\), and assume \(\lambda = 3\). Who wins the battle, and how long does it take? How many divisions survive on the winning side? How does blue benefit from calling for a nuclear attack in this case?
+        \sol{
+            Blue wins the battle with 0.96 divisions remaining. The battle lasted 8.7 days. If blue did not use the tactical nuclear strike, but everything else was still the same, Red would have won the battle with 3.15 divisions remaining, and it would have taken an additional day.
+        }
+        \item  Simulate the case where the blue commander waits for six hours and then calls for a nuclear attack. Simulate six hours of battle, starting with \(x_{1} = 5\) divisions and \(x_{2} = 2\) divisions. Reduce the remaining number of troops for both sides to represent the results of a nuclear strike, and then continue the simulation. Answer the same questions as in part (a).
+        \sol{
+            Blue wins the battle with 0.92 divisions remaining. The battle lasted 9.2 days. Since Blue decided to wait to use the tactical nuke, the battle lasted .5 days longer, and they lost 0.04 more of their division. Further analysis shows that by extending the time before Blue's commander sends the nuke, the more Blue troops are lost, and the longer the battle goes on (e.g., 36 hours \(\rightarrow\) 0.69 remaining, 11.9 days). 
+        }
+        \item Compare the results of parts (a) and (b) to the case of conventional combat summarized in the chapter. Discuss the benefits of a tactical nuclear strike by blue. Can such a move be effective and, if so, when should the commander request the strike?
+        \sol{
+            In the conventional combat simulations that we have simulated in this chapter (e.g., Example 6.1), we found that when \(\lambda < 5.5\), Blue usually loses. So, in the case where \(\lambda < 5.5\), Blue should use the tactical nuclear strike as soon as they can. This is because Red has a troop advantage, so equalizing the total number of troops is Blue's best bet (e.g., after nuke: Red: 1.5 divisions, Blue: 1.3 divisions).
+        }
+        (don't miss part d on the next page)
+\newpage
+
+\begin{table}[t]
+    \caption{Chapter 6, Exercise 3 Battle Simulation Results}
+    \begin{minipage}{.5\linewidth}
+      \caption{Immediate Strike}
+      \centering
+        \begin{tabular}{llll}
+            $\lambda$ & Winner & Remaining & Time \\ \hline
+            $1.0$ & Red & $0.72$ & $25.55$ \\
+            $1.5$ & Blue & $0.44$ & $26.8$ \\
+            $2.0$ & Blue & $0.75$ & $15.2$ \\
+            $5.0$ & Blue & $1.11$ & $4.8$ \\
+            $6.0$ & Blue & $1.14$ & $3.9$ \\
+        \end{tabular}
+    \end{minipage}%
+    \begin{minipage}{.5\linewidth}
+      \centering
+        \caption{6-Hour Delayed Strike}
+            \begin{tabular}{llll}
+            $\lambda$ & Winner & Remaining & Time \\ \hline
+            $1.0$ & Red & $0.77$ & $23.95$ \\
+            $1.5$ & Blue & $0.34$ & $31.1$ \\
+            $2.0$ & Blue & $0.69$ & $16.25$ \\
+            $5.0$ & Blue & $1.07$ & $5.05$ \\
+            $6.0$ & Blue & $1.1$ & $4.15$ \\
+            \end{tabular}
+    \end{minipage} 
+\end{table}
+
+        \item  Examine the sensitivity of your conclusions in part (c) to the extent \(\lambda\) of blue weapon superiority. Repeat the simulations of parts (a) and (b) for each of the cases \(\lambda = 1.0\), 1.5, 2.0, 5.0, and 6.0, and answer the same questions as before.
+        \sol{
+            As we can see from the results in Table 1, the value of \(\lambda\) has a negligible effect upon the time-related decision of striking immediately or waiting 6 hours. In any case, it is always preferable for Blue to use a tactical nuke immediately (including the case where they do not use the nuke at all).
+        }
+    \end{enumerate}
+
+    % \setcounter{enumi}{10}
+    % \item Reconsider the predator–prey model of Exercise 7 in Chapter 4.
+    % \begin{enumerate}
+    %     \item Determine by simulation the equilibrium levels for whales and krill. Use the simple simulation technique discussed in Section 6.2. Begin at several different initial conditions and run the simulation until both population levels have settled down into steady state.
+    %     \sol{
+
+    %     }
+
+    %     \item Suppose that after both population levels have settled down into steady state, an ecological disaster kills off 20\% of the whales and 80\% of the krill. Describe what happens to the two species, and how long it takes.
+    %      \sol{
+
+    %     }
+        
+    %     \item Suppose that harvesting has depleted the whales to 5\% of their equilibrium population level, while krill remain at about the same level. Describe what happens once harvesting is stopped. How long does it take for the whales to grow back? What happens to the krill population?
+    %     \sol{
+
+    %     }
+        
+    %     \item Examine the sensitivity of your results in part (c) to the assumption that 5\% of the whales remain. Simulate each of the cases where 1, 3, 7, or 10\% remain, and tabulate your results. How sensitive is the time it takes for the whales to grow back to the extent to which the population is depleted?
+    %     \sol{
+
+    %     }
+        
+    % \end{enumerate}
+\end{enumerate}
 
 
 \section*{Chapter 7}
 
-
-
-\section*{Chapter 8}
-
-
 \begin{enumerate}
+    \setcounter{enumi}{9}
+    \item (Murphy’s Law, part III) A doctor of internal medicine with a busy practice expects to be called into the hospital to respond to a serious heart attack on average about once every two weeks. Assume that heart attacks in this physician’s patient population occur at random with this rate. One such emergency call is a challenge. Two such calls in a single day is a disaster.
+    \begin{enumerate}
+        \item How many heart attacks should the physician expect to respond to in a single year?
+        \sol{
+            If a heart attack happens once every two weeks and there are 52 weeks in a year, then the physician should expect 26 heart attacks per year.
+        }
+        
+        \item Explain why the probability that \(n\) heart attacks during the year all occur on different days is
+        \[
+            \frac{365}{365} \cdot \frac{364}{365} \cdot \frac{363}{365} \cdots \frac{365 - n + 1}{365}.
+        \]
+        \sol{
+            We start with the case of \(n = 1\). The probability that 1 heart attack occurs on any day in the year, is of course, \(365 / 365 = 1\). For \(n = 2\), we know there was a heart attack on a different day already, so there are now \(364\) out of 365 available days in the year, giving a probability of \(364/365\). Then, for the \(n\)th heart attack, it must avoid all other days occupied by the \(n - 1\) heart attacks. Thus, the available days left are \(365 - (n - 1)\), or \(365 - n + 1\) out of 365 days, giving a probability of \((365 - n + 1) / 365\). We find the probability of independent events happening in sequence by multiplying them together, giving the product of fractions above.  
+        }
+        
+        \item What is the probability that the doctor has to respond to two or more heart attacks on the same day sometime this year?
+        \sol{
+            From part (a), we have that 26 heart attacks are expected this year. We want to know the probability of at least 1 heart attack appearing on the same day as another. This is the complement of the probability that all 26 heart attacks occur on different days, which we can compute from part (b). Thus, we find that the probability is 59.8\%.
+        }
+
+    \end{enumerate}
+    
+    
+
+
     \setcounter{enumi}{13}
     \item (Geometric distribution) In this problem, we investigate the discrete version of the exponential distribution. Suppose that arrivals occur at random times \(i = 1,2,3,\cdots\). Then, the time \(X\) between two successive arrivals has the geometric distribution
     \[
@@ -587,20 +439,22 @@
             \[
                 P(X > i) = pq^{i} \sum_{k = i + 1}^{\infty} = 1 + q + q^{2} + \cdots.
             \]
-            Using the hint, we are left with \(pq^{i}(1 - q)^{-1}\). Substituting \((1 - p)\) back for \(q\), and we find:
+            Using the hint, we are left with \(P(X > i) = pq^{i}(1 - q)^{-1}\). Substituting \((1 - p)\) back for \(q\), and we find:
             \[
                 P(X > i) = pq^{i}(1 - q)^{-1} = p\frac{(1 - p)^{i}}{(1 - (1 - p))} = (1 - p)^{i}.
             \]
             
         }
+\newpage
+
         \item Use part (a) to show that \(X\) has the memoryless property \(P(X > i + j \mid X > j) = P(X > i)\).
         \sol{
             Consider the following:
             \begin{align*}
                 P(X > i + j \mid X > j) &= \frac{P(X > i + j \text{ and } X > i)}{P(X > i)} \\
                 &= \frac{P(X > i + j)}{P(X > j)} \\
-                &= \frac{q^{i + j}}{q^{j}} \\
-                &= q^{i} \\
+                &= \frac{(1 - p)^{i + j}}{(1 - p)^{j}} \\
+                &= (1 - p)^{i} \\
                 &= P(X > i).
             \end{align*}
         }
@@ -618,9 +472,104 @@
             \[
                 E[X] = p\sum_{i = 1}^{\infty} iq^{i - 1} = 1 + 2q^{1} + 3q^{2} + \cdots.
             \]
+            From the hint, we get that \(E[X] = p(1 - q)^{-2}\). Substituting \(q = (1 - p)\), we find:
+            \[
+                E[X]= \frac{p}{(1 - (1 - p))^{2}} = \frac{1}{p}.
+            \]
+            Thus, we expect it takes \(1/p\) trials to observe an arrival. To answer the last question, consider the case of us expecting 10 trials before an arrival. This implies \(10 = 1/p \implies p = 1/10\), which is exactly the rate we would expect before an arrival. Meaning \(p\) is the arrival rate.
         }
     \end{enumerate}
 \end{enumerate}
+
+
+\newpage
+
+\section*{Chapter 8}
+
+\begin{enumerate}
+    \setcounter{enumi}{3}
+    % \item Reconsider the inventory problem of Example 8.1, but now suppose that three additional aquariums are ordered any time that there are less than two in stock at the end of the week.
+    % \begin{enumerate}
+    %     \item  Determine the probability that demand exceeds supply on any given week. Use the five-step method, and model as a Markov chain in steady state.
+    %     \sol{
+    %         With transition matrix
+    %         \[
+    %             P = \begin{pmatrix}
+    %                 0.0 & 0.0 & 0.6321 & 0.3679 \\
+    %                 0.0 & 0.3679 & 0.2642 & 0.3679 \\
+    %                 0.0 & 0.3679 & 0.4482 & 0.1839 \\
+    %                 0.0 & 0.1839 & 0.3869 & 0.4292 
+    %             \end{pmatrix},
+    %         \]
+    %         we find the steady-state probability distribution of the number of aquariums in stock to be \(\pi = [0.0, 0.309, 0.372, 0.319]\). Now, with the steady-state probability distribution, we want to find 
+    %         \[
+    %             \sum_{i = 1}^{4}P(X_{n} = i)P(D_{n} > i),
+    %         \]
+    %         where \(P(X_{n} = i)\) is \(\pi_{i}\) such that \(i\) corresponds to an index in \(\pi\). We find \(P(D_{n} > i)\) by the complement rule:
+    %         \[
+    %             P(D_{n} > i) = 1 - P(D_{n} \le i).
+    %         \]
+    %         By this procedure, we find the probability that demands exceeds supply to be \(3.3\)\%.
+    %     }
+    %     \item Use the steady–state probabilities from part (a) to calculate the expected number of aquariums sold per week under this inventory policy.
+    %     \sol{
+
+    %     }
+    %     \item  Repeat part (b) for the inventory policy in Example 8.1.
+    %     \item Suppose that the store makes a profit of \$5 per 20–gallon aquarium sold. How much would the store gain by implementing the new inventory policy?
+    % \end{enumerate}
+    \setcounter{enumi}{4}
+    \item For the purposes of this problem, we will consider the stock market to be in one of three states:
+    \begin{center}
+        \begin{tabular}{ll}
+            1 & Bear market \\
+            2 & Strong bull market \\
+            3 & Weak bull market
+        \end{tabular}
+    \end{center}
+    Historically, a certain mutual fund gained \(-3\)\%, \(28\)\%, and \(10\%\) annually when the market was in states 1, 2, and 3 respectively. Assume that the state transition probability matrix
+    \[
+        P = \begin{pmatrix}
+            0.90 & 0.02 & 0.08 \\
+            0.05 & 0.85 & 0.10 \\
+            0.05 & 0.05 & 0.90
+        \end{pmatrix}
+    \]
+    applies to the weekly change of state in the stock market.
+    \begin{enumerate}
+        \item Determine the steady–state distribution of market state.
+        \sol{
+            The steady-state distribution is \(\pi = [1/3, 1/5, 7/15]\).
+        }
+        \item Suppose that \$10,000 is invested in this fund for ten years. Determine the expected total yield. Does the order of state transitions make any difference?
+        \sol{
+            First we calculate the expected annual return:
+            \[
+                E[\text{Return}] = -(1/3)(0.03) + (1/5)(0.28) + (7/15)(0.1) = 0.09267.
+            \]
+            Then, using the formula for compound interest, we find the revenue:
+            \[
+                10000(1 + 0.09267)^{10} = 24259.23.
+            \]
+            The total yield is revenue minus cost (or cost basis, in this instance):
+            \[
+                24259.97 - 10000 = 14259.23.
+            \]
+            Thus, the total yield is \$14,259.97. To answer the last question: No, the order of state transitions does not make any difference. This is because we are using the steady-state distribution to calculate the expected return, which is independent of the initial state and the order of transitions.
+        }
+
+\newpage
+        \item In the worst–case scenario, the long–run expected proportion of time in each market state is 40\%, 20\%, and 40\%, respectively. What is the effect on the answer to part (b)?
+        \sol{
+            Using the new distribution, \(\pi = [0.4, 0.2, 0.4]\), and the same process as in part (b), we get a total yield of \$12,402.31. Thus, the new distribution yields a net profit decrease of \$1,857.66.
+        }
+        \item Does this mutual fund offer a better investment opportunity than a money market fund currently yielding about 8\%? Consider that the money market fund offers a lower risk.
+        \sol{
+            Assuming an annual compound interest rate of 8\%, the money market fund does not provide a better investment opportunity. Letting \$10,000 spend 10 years in the money market account yields a profit of \$11,589.25, which is \$813.06 less than the worse case scenario given in part (c). 
+        }
+    \end{enumerate}
+\end{enumerate}
+
 
 
 \end{document}

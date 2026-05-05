@@ -1,49 +1,45 @@
 \section{Introduction}
 
-In abstract algebra, one of the main ways of identifying structure is through maps. We use maps such as homomorphisms and isomorphisms to build new sets with new structure. In other cases, such as factor rings of fields, there are only two options, as proven in \textit{this proof} wherein the factor ring of a field only has two choices: the trivial ring, or the field itself. Hence, we rely on maps to preserve, transform, and modify structure by shrinking or expanding groups, rings, and fields. 
+From a fundamental perspective, we study abstract algebra to explore structure. In that, by studying structure, we can discover shared properties between abstract systems, while still operating under rules and axioms. Furthermore, understanding structure allows us to filter, dissect, and categorize seemingly chaotic mathematical spaces. We use homomorphisms to project complex algebraic structures down to simpler ones, revealing the underlying mechanics of the system. The kernel of a homomorphism acts as an elemental filter, letting us mod out specific information, while the image captures the surviving structure. Once a system is reduced, we use isomorphisms as our main tool for classification, to identify when two algebraic structures behave in the same way structurally, even if they appear vastly different on the surface. Therefore, by breaking down complex systems into their fundamental components with the properties of homomorphisms and classifying them through isomorphisms, we can build up a stronger understanding of algebraic behavior.  
 
-Then, for maps, we also have the kernel of homomorphisms, in which \(\ker(\varphi) = \{r \in R \mid \varphi(r) = 0'\}\). I struggled with this concept quite a bit with groups, and had an even harder time when we revisited it with rings. Problem 6 details my problem with the kernel. That is, the definition of the kernel was difficult for me understand, as the definition did not tell me much at first. It wasn't until I understood that it was directly related to the mapping of elements. So, ``an element in the kernel'' directly translates to that element gets mapped to the 0 of the other ring in the map. 
-
-
+Thus, in this portfolio, I will explore how homomorphisms and isomorphisms act as the primary mechanisms for reducing and classifying algebraic systems. Through selected proofs spanning groups, rings, and fields, I will demonstrate how these mapping tools allow us to identify and remove differences, collapse complex sets into manageable factor spaces, and ultimately uncover the fundamental building blocks of algebra.
 
 
-\begin{theorem}
-    {ttt} This is my theorem!
-\end{theorem}
+\section{Homomorphisms \& Their Kernels}
 
-\tpf{
-    \lipsum[1]
-}
+The definition of a homomorphism provides a mapping between two algebraic structures, while also preserving element-wise operations. Thus, we use this mapping as a means to transform rigid or overly complex structures into manageable parts while maintaining the structure that we want. Viewed through this angle, the homomorphism provides the pathway and its kernel, defined as \(\{a \in R \mid \varphi(a) = 0'\}\),  removes unwanted aspects to yield a product we can work with. An example of this filtering functionality can be seen with the compare and contrast proofs from Proof 1 in the portfolio. In these proofs, we look at an arbitrary group homomorphism mapping some group \(G\) to another group \(G'\). Even without knowing anything about the specific elements inside these groups, the mapping's kernel partitions the domain perfectly, preserving enough structure to tell us how their sizes relate.
 
-\begin{axiom}
-    {axiom 1}  test
-\end{axiom}
+The non-compromising nature of this filtering process can be best seen when applied to structures that cannot be broken down, such as fields. Proof 17 from the portfolio shows that any homomorphism from a field to a ring is either one-to-one, or maps everything to \(0'\). This happens because the kernel of any ring homomorphism must be an ideal. Since a field cannot have any proper non-trivial ideals, its kernel is restricted to exactly two options: the trivial ideal \(\{0\}\) or the entire field itself. In other words, a field's structure forces the kernel to either preserve everything from the field (a one-to-one map), or discard all of it to zero. Thus, we see that every homomorphism and its kernel must abide by strict rules imposed by the structural limitations of the domain it is applied to.  
 
-\begin{exercise}
-    {e1e} this is an ex
-\end{exercise}
+\section{Quotients \& Factor Spaces}
 
-\expf{
-    \lipsum[1]
-}
+Since we defined homomorphisms and their kernels as structural filters, it makes sense to explore the spaces left behind after filtering. Hence, we arrive at the concept of quotient structures. Now, to make any factor group or factor ring, we can only quotient by either normal subgroups or ideals. This restriction is required to ensure that the component-wise operations remain well-defined. In Proof 3 from the portfolio, we explore this well-defined property by proving that if the left cosets of a subgroup \(H\) are the same as its right cosets, then \(g^{-1}hg \in H\) for all \(g \in G\) and \(h \in H\). This normality condition is thus the exact structural prerequisite needed to collapse a group into a valid factor group.
 
-\begin{example}
-    {.eqe} this eqe
-\end{example}
+Once this normality has been established, we can map out how factor spaces operate. One example of this can be seen in Proof 8 of my portfolio, where I built a coset table for the subgroup \(\{p_{0}, p_{2}\}\) within the dihedral group \(D_{4}\). Essentially, by reducing the symmetries of a square by this subgroup, we are left with a new quotient group of order 4. To find whether this new structure operates like the Klein-4 group or \(\Z_{4}\), I showed that each element of the coset behaves exactly like the elements of the Klein-4 group. This exercise highlights the importance of quotients: we can take a rigid and non-abelian group like \(D_{4}\), and fold it into a smaller, abelian system.
 
-\lesol{
-    \lipsum[1]
-}
+This same logic applies to rings, where the structural prerequisite shifts from normal subgroups to ideals. In Proof 12, I compare two different ways ideals interact with ring structures. I show how a ring homomorphism maps an ideal \(N\) to a new ideal \(\varphi[N]\), and I contrast this with proving the set \(I_{a} = \{x \in R \mid ax = 0\}\) forms an ideal within \(R\). By identifying these ideals, we establish the framework needed to mod out specific elements and collapse a large ring into a smaller factor ring.
 
-\begin{corollary}
-    {ddawd} eeeee
-\end{corollary}
 
-\cpf{
-    \lipsum[1]
-}
+\section{Isomorphisms}
 
-\begin{proposition}
-    {eee} this is a proposition
-\end{proposition}
+After using kernels and ideals to collapse our structures into factor spaces, we need a way to identify and relate the new structure to what we know. Thus, we use isomorphisms as our main tool for classification. While a homomorphism shows how two structures relate, an isomorphism tells us when two structures are fundamentally identical.
 
+We see this classification process explicitly in Proof 4. Here, we examine the additive group of functions mapping \(R\) into \(R\), denoted as \(F\), and its subgroup of constant functions, \(K\). By finding a subgroup isomorphic to the factor group \(F/K\), we identify the essential structure that remains when we strip away all constant behavior. The isomorphism bridges the gap between an abstract quotient space and a recognizable subgroup.
+
+Furthermore, isomorphisms help us categorize the boundaries of algebraic behavior. In Proof 13, I build on the groundwork laid in Proof 15 by showing that a factor ring of a field is either the trivial zero ring or is isomorphic to the field itself. Using the same fact that a field has no proper non-trivial ideals, we can force the structure of the factor ring to either be reduced to nothing, or remain identical to the original field.
+
+\section{Field Extensions}
+
+In the earlier topics of the course, homomorphisms and quotients were primarily used to break structures down. However, these same mechanisms can be used to construct new systems. Instead of modding out by an ideal to simplify a space, we can mod out by a maximal ideal generated by an irreducible polynomial to build a larger space where new solutions exist.
+
+This constructive property is the focus of my Major Theorem selection in Proof 9. The theorem guarantees that for any field $F$ and any nonconstant polynomial $f(x)$, there exists an extension field $E$ containing a root of that polynomial. By constructing the quotient ring $F[x]/\langle p(x) \rangle$, where $p(x)$ is an irreducible factor, we produce a space where the previously unsolvable polynomial now has a root. We use the mechanics of polynomials and ideals to build a new structure entirely.
+
+Once these new extension fields are constructed, we measure and classify their internal architecture. Proof 11 investigates the field extension $\mathbb{Q}(\sqrt{2}, \sqrt[3]{2})$ over $\mathbb{Q}$. By determining its degree and finding a basis, we apply the tools of linear algebra to understand the size of this algebraic extension. Just as we measured the size of a homomorphic image using divisors in Proof 1, we measure the complexity of our new fields through their bases and degrees.
+
+\section{Conclusion}
+
+It can be tempting to see abstract algebra as a disjointed collection of axioms, groups, rings, and fields. However, as this portfolio demonstrates, the study of algebra is unified by the exploration of structure.
+
+Through the proofs curated in this portfolio, a clear narrative emerges. We use homomorphisms as filters to navigate between systems, relying on kernels to isolate the properties we want. We use normal subgroups and ideals to collapse unwieldy structures into manageable factor spaces. We deploy isomorphisms to classify these resulting spaces, proving when seemingly different systems are structurally identical. Finally, we use irreducible polynomials and quotient rings to build extension fields that provide solutions.
+
+Looking back on the progression from basic group definitions to field extensions, the underlying search for structure remains the same. In five years from now, I may not be able to remember how to construct a dihedral coset table, or find the exact prime ideal of a polynomial ring. Yet, the foundational understanding of how to analyze, deconstruct, and categorize mathematical spaces will remain.
